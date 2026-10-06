@@ -1001,6 +1001,94 @@
       "redshifts": "0, 10, 17",
       "adapter": "scripts/digitize_colibre_chaikin26_highz.py",
       "note": "Reference SFR-M* (star-forming) and stellar-to-halo mass relations of L200m6 at z=0, 10 and 17 from the appendix figure (preprint)."
+    },
+    {
+      "id": "wilkins17-bluetides-tables",
+      "suite": "BlueTides",
+      "status": "ingested",
+      "access": "arXiv LaTeX tables",
+      "url": "https://arxiv.org/abs/1704.00954",
+      "relations": [
+        "gsmf",
+        "ssfr",
+        "mzr",
+        "shmr",
+        "uvlf",
+        "bh"
+      ],
+      "redshifts": "z 8-14",
+      "adapter": "scripts/transcribe_bluetides_wilkins17.py",
+      "note": "Tabulated GSMF, median sSFR, median star-forming gas metallicity (raw log Z), stellar-to-DM mass ratio, intrinsic and attenuated UV luminosity functions with Schechter fits, and median SMBH mass versus stellar mass (z 8-14). The table heading calls the observed UV LF dust-corrected while the caption says attenuated; the record states this."
+    },
+    {
+      "id": "vijayan21-flares-uvlf",
+      "suite": "FLARES",
+      "status": "ingested",
+      "access": "arXiv LaTeX tables",
+      "url": "https://arxiv.org/abs/2008.06057",
+      "relations": [
+        "uvlf"
+      ],
+      "redshifts": "z 5-10",
+      "adapter": "scripts/transcribe_flares_vijayan21_uvlf.py",
+      "note": "Binned UV luminosity function with Poisson errors and Schechter fits (first row of the parameter table) at z 5-10."
+    },
+    {
+      "id": "vijayan21-flares-sfrd",
+      "suite": "FLARES",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2008.06057",
+      "relations": [
+        "sfrd"
+      ],
+      "redshifts": "z 5-10",
+      "adapter": "scripts/digitize_flares_vijayan21_sfrd.py",
+      "note": "Composite total, unobscured (UV) and obscured (IR) SFR density at z 5-10."
+    },
+    {
+      "id": "vogelsberger14-illustris",
+      "suite": "Illustris",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1405.2921",
+      "relations": [
+        "sfrd",
+        "btfr",
+        "stfr"
+      ],
+      "redshifts": "SFRD z 0-11; TF z 0",
+      "adapter": "scripts/digitize_illustris_vogelsberger14.py",
+      "note": "Total SFR density (axis log(1+z) converted exactly) and per-galaxy baryonic and stellar Tully-Fisher points for 42 disc galaxies."
+    },
+    {
+      "id": "kannan25-thesanzoom",
+      "suite": "THESAN-zoom",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2502.20437",
+      "relations": [
+        "gsmf",
+        "uvlf",
+        "sfrd"
+      ],
+      "redshifts": "GSMF z 3.5-9.5; UVLF z 3.5-14.5; SFRD z 3-14",
+      "adapter": "scripts/digitize_thesanzoom_kannan25.py",
+      "note": "Stellar mass function, UV luminosity function (fiducial and Bouwens+16 dust) and SFR density (M_UV<-17) of the zoom sample; redshift-bin edges recorded."
+    },
+    {
+      "id": "dubois16-horizonagn",
+      "suite": "Horizon-AGN",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1606.03086",
+      "relations": [
+        "size",
+        "ssfr"
+      ],
+      "redshifts": "size z 0-4; sSFR z 0.3",
+      "adapter": "scripts/digitize_horizonagn_size_dubois16.py, scripts/digitize_horizonagn_ssfr_dubois16.py",
+      "note": "Size-mass relation at z 0, 0.5, 1, 2, 3, 4 and mean sSFR of Horizon-AGN and Horizon-noAGN at z 0.3 from IDL-style PDFs (major ticks as calibration)."
     }
   ]
 }

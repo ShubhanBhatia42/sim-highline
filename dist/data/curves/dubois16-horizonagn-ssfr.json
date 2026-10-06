@@ -1,0 +1,229 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "dubois16.horizon-agn.ssfr.z0.3",
+      "source": "Horizon-AGN",
+      "run": "Horizon-AGN (mean sSFR, Dubois+16)",
+      "kind": "simulation",
+      "relation": "ssfr",
+      "epoch": {
+        "zRepresentative": 0.3,
+        "zNominal": 0.3,
+        "zMin": 0.3,
+        "zMax": 0.3,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 total stellar mass of the galaxy (galaxy finder)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 mean specific star formation rate (axis in Gyr^-1, converted to yr^-1)",
+        "yUnit": "log10(yr^-1)"
+      },
+      "domain": {
+        "xMin": 9,
+        "xMax": 12.287
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9,
+            "y": -10.0999
+          },
+          {
+            "x": 9.167,
+            "y": -10.0979
+          },
+          {
+            "x": 9.513,
+            "y": -10.103
+          },
+          {
+            "x": 9.86,
+            "y": -10.141
+          },
+          {
+            "x": 10.207,
+            "y": -10.1758
+          },
+          {
+            "x": 10.553,
+            "y": -10.2523
+          },
+          {
+            "x": 10.9,
+            "y": -10.3692
+          },
+          {
+            "x": 11.247,
+            "y": -10.5961
+          },
+          {
+            "x": 11.593,
+            "y": -10.9927
+          },
+          {
+            "x": 11.94,
+            "y": -11.2797
+          },
+          {
+            "x": 12.287,
+            "y": -11.5758
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies, Horizon-AGN at z=0.3",
+        "warning": "Mean sSFR of Horizon-AGN galaxies at z=0.3, read from the vector path of Dubois et al. 2016 (the error bars of the mean and the Karim+11 points are not extracted). AGN feedback creates a population of passive massive galaxies, absent without AGN."
+      },
+      "definitions": {
+        "massDefinition": "total-galaxy-finder",
+        "imf": "unspecified",
+        "cosmology": "unspecified",
+        "population": "all",
+        "sfrStatistic": "mean",
+        "sfrTimescaleMyr": "unspecified"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Dubois et al. 2016, MNRAS 463, 3948 (arXiv:1606.03086), mean sSFR as a function of stellar mass at z=0.3",
+        "doi": "10.1093/mnras/stw2265",
+        "url": "https://arxiv.org/abs/1606.03086",
+        "retrieved": "2026-10-05",
+        "figure": "Mean sSFR versus galaxy stellar mass for Horizon-AGN (solid) and Horizon-noAGN (dashed) at z=0.3",
+        "panel": "solid line",
+        "checksumSha256": "593c6542d03c019435ba00ba9ef8ef58189d0addd148320e86458742a5f671de",
+        "sourceMember": "ssfrvsmgal-eps-converted-to.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: major ticks (longer strokes) assigned the labels read from the rendered figure (glyph paths): x 9-13 in log10 M, y 0.001, 0.01, 0.1 Gyr^-1 (log); y converted to yr^-1 by subtracting 9 dex",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "dubois16.horizon-noagn.ssfr.z0.3",
+      "source": "Horizon-AGN",
+      "run": "Horizon-noAGN (mean sSFR, Dubois+16)",
+      "kind": "simulation",
+      "relation": "ssfr",
+      "epoch": {
+        "zRepresentative": 0.3,
+        "zNominal": 0.3,
+        "zMin": 0.3,
+        "zMax": 0.3,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 total stellar mass of the galaxy (galaxy finder)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 mean specific star formation rate (axis in Gyr^-1, converted to yr^-1)",
+        "yUnit": "log10(yr^-1)"
+      },
+      "domain": {
+        "xMin": 9,
+        "xMax": 13.327
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9,
+            "y": -10.0546
+          },
+          {
+            "x": 9.167,
+            "y": -10.0543
+          },
+          {
+            "x": 9.513,
+            "y": -10.085
+          },
+          {
+            "x": 9.86,
+            "y": -10.1015
+          },
+          {
+            "x": 10.207,
+            "y": -10.1177
+          },
+          {
+            "x": 10.553,
+            "y": -10.1255
+          },
+          {
+            "x": 10.9,
+            "y": -10.1235
+          },
+          {
+            "x": 11.247,
+            "y": -10.1316
+          },
+          {
+            "x": 11.593,
+            "y": -10.1273
+          },
+          {
+            "x": 11.94,
+            "y": -10.1334
+          },
+          {
+            "x": 12.287,
+            "y": -10.1539
+          },
+          {
+            "x": 12.633,
+            "y": -10.1441
+          },
+          {
+            "x": 12.98,
+            "y": -10.2358
+          },
+          {
+            "x": 13.327,
+            "y": -10.1618
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies, Horizon-noAGN at z=0.3",
+        "warning": "Mean sSFR of Horizon-noAGN galaxies at z=0.3, read from the vector path of Dubois et al. 2016 (the error bars of the mean and the Karim+11 points are not extracted). AGN feedback creates a population of passive massive galaxies, absent without AGN."
+      },
+      "definitions": {
+        "massDefinition": "total-galaxy-finder",
+        "imf": "unspecified",
+        "cosmology": "unspecified",
+        "population": "all",
+        "sfrStatistic": "mean",
+        "sfrTimescaleMyr": "unspecified"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Dubois et al. 2016, MNRAS 463, 3948 (arXiv:1606.03086), mean sSFR as a function of stellar mass at z=0.3",
+        "doi": "10.1093/mnras/stw2265",
+        "url": "https://arxiv.org/abs/1606.03086",
+        "retrieved": "2026-10-05",
+        "figure": "Mean sSFR versus galaxy stellar mass for Horizon-AGN (solid) and Horizon-noAGN (dashed) at z=0.3",
+        "panel": "dashed line",
+        "checksumSha256": "593c6542d03c019435ba00ba9ef8ef58189d0addd148320e86458742a5f671de",
+        "sourceMember": "ssfrvsmgal-eps-converted-to.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: major ticks (longer strokes) assigned the labels read from the rendered figure (glyph paths): x 9-13 in log10 M, y 0.001, 0.01, 0.1 Gyr^-1 (log); y converted to yr^-1 by subtracting 9 dex",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 {
- "total": 1460,
+ "total": 1552,
  "known": 16,
  "errors": 0,
  "warnings": 0,
- "info": 213,
+ "info": 265,
  "byCode": {
-  "info:no-cosmology": 140,
-  "info:no-mass-definition": 73,
+  "info:no-cosmology": 186,
+  "info:no-mass-definition": 79,
   "known:x-out-of-range": 1,
   "known:y-out-of-range": 6,
   "known:quenched-decreases": 2,
@@ -112,7 +112,8 @@
    "yUnit": [
     "dex",
     "12+log10(O/H)",
-    "log10(Zgas)"
+    "log10(Zgas)",
+    "log10(mass fraction)"
    ],
    "massDefinitions": [
     "-",
@@ -128,6 +129,7 @@
    ],
    "massDefinitions": [
     "aperture-30pkpc",
+    "total-galaxy-finder",
     "unspecified",
     "aperture-2rhalf-stars",
     "total-bound-subhalo",
@@ -176,6 +178,7 @@
    ],
    "massDefinitions": [
     "unspecified",
+    "total-galaxy-finder",
     "aperture-Reff-stars",
     "aperture-30pkpc",
     "aperture-50pkpc"
@@ -209,7 +212,8 @@
     "all-baryons-within-virial-radius",
     "stars-plus-neutral-gas",
     "baryonic mass as defined in the paper",
-    "baryonic, stars plus 1.4 M_HI within r_gal"
+    "baryonic, stars plus 1.4 M_HI within r_gal",
+    "unspecified"
    ]
   },
   "stfr": {
@@ -307,6 +311,78 @@
    "maxAbs": 0.176
   },
   {
+   "a": "vijayan21.flares.uvlf.binned.z10",
+   "b": "wilkins22.flares.uvlf.observed.z10",
+   "relation": "uvlf",
+   "n": 8,
+   "medianOffset": -0.002,
+   "maxAbs": 0.815
+  },
+  {
+   "a": "vijayan21.flares.uvlf.binned.z10",
+   "b": "wilkins22.flares.uvlf.intrinsic.z10",
+   "relation": "uvlf",
+   "n": 10,
+   "medianOffset": -0.03,
+   "maxAbs": 1.813
+  },
+  {
+   "a": "wilkins22.flares.uvlf.observed.z10",
+   "b": "wilkins22.flares.uvlf.intrinsic.z10",
+   "relation": "uvlf",
+   "n": 16,
+   "medianOffset": -0.022,
+   "maxAbs": 1.315
+  },
+  {
+   "a": "wilkins17.bluetides.uvlf.intrinsic.z8",
+   "b": "wilkins17.bluetides.uvlf.observed.z8",
+   "relation": "uvlf",
+   "n": 12,
+   "medianOffset": 0.14,
+   "maxAbs": 1.76
+  },
+  {
+   "a": "wilkins17.bluetides.uvlf.intrinsic.z9",
+   "b": "wilkins17.bluetides.uvlf.observed.z9",
+   "relation": "uvlf",
+   "n": 11,
+   "medianOffset": 0.02,
+   "maxAbs": 1.25
+  },
+  {
+   "a": "wilkins17.bluetides.uvlf.intrinsic.z10",
+   "b": "wilkins17.bluetides.uvlf.observed.z10",
+   "relation": "uvlf",
+   "n": 10,
+   "medianOffset": 0.02,
+   "maxAbs": 0.93
+  },
+  {
+   "a": "wilkins17.bluetides.uvlf.intrinsic.z11",
+   "b": "wilkins17.bluetides.uvlf.observed.z11",
+   "relation": "uvlf",
+   "n": 9,
+   "medianOffset": 0,
+   "maxAbs": 0.6
+  },
+  {
+   "a": "wilkins17.bluetides.uvlf.intrinsic.z12",
+   "b": "wilkins17.bluetides.uvlf.observed.z12",
+   "relation": "uvlf",
+   "n": 8,
+   "medianOffset": 0,
+   "maxAbs": 0.34
+  },
+  {
+   "a": "wilkins17.bluetides.uvlf.intrinsic.z13",
+   "b": "wilkins17.bluetides.uvlf.observed.z13",
+   "relation": "uvlf",
+   "n": 7,
+   "medianOffset": 0,
+   "maxAbs": 0.16
+  },
+  {
    "a": "wilkins22.flares.uvlf.observed.z15",
    "b": "wilkins22.flares.uvlf.intrinsic.z15",
    "relation": "uvlf",
@@ -345,14 +421,6 @@
    "n": 15,
    "medianOffset": -0.032,
    "maxAbs": 1.77
-  },
-  {
-   "a": "wilkins22.flares.uvlf.observed.z10",
-   "b": "wilkins22.flares.uvlf.intrinsic.z10",
-   "relation": "uvlf",
-   "n": 16,
-   "medianOffset": -0.022,
-   "maxAbs": 1.315
   }
  ],
  "issues": [
@@ -2362,6 +2430,474 @@
    "source": "SPHINX20",
    "msg": "1/7 points outside plausible y -1.5,3",
    "reason": "One compact z=8 galaxy at the resolution floor, as published."
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.gsmf.z8",
+   "file": "wilkins17-bluetides.json",
+   "relation": "gsmf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.gsmf.z9",
+   "file": "wilkins17-bluetides.json",
+   "relation": "gsmf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.gsmf.z10",
+   "file": "wilkins17-bluetides.json",
+   "relation": "gsmf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.gsmf.z11",
+   "file": "wilkins17-bluetides.json",
+   "relation": "gsmf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.gsmf.z12",
+   "file": "wilkins17-bluetides.json",
+   "relation": "gsmf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.gsmf.z13",
+   "file": "wilkins17-bluetides.json",
+   "relation": "gsmf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.ssfr.z8",
+   "file": "wilkins17-bluetides.json",
+   "relation": "ssfr",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.ssfr.z9",
+   "file": "wilkins17-bluetides.json",
+   "relation": "ssfr",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.ssfr.z10",
+   "file": "wilkins17-bluetides.json",
+   "relation": "ssfr",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.ssfr.z11",
+   "file": "wilkins17-bluetides.json",
+   "relation": "ssfr",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.ssfr.z12",
+   "file": "wilkins17-bluetides.json",
+   "relation": "ssfr",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.ssfr.z13",
+   "file": "wilkins17-bluetides.json",
+   "relation": "ssfr",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.mzrraw.z8",
+   "file": "wilkins17-bluetides.json",
+   "relation": "mzr",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-mass-definition",
+   "id": "wilkins17.bluetides.mzrraw.z8",
+   "file": "wilkins17-bluetides.json",
+   "relation": "mzr",
+   "source": "BlueTides",
+   "msg": "massDefinition missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.mzrraw.z9",
+   "file": "wilkins17-bluetides.json",
+   "relation": "mzr",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-mass-definition",
+   "id": "wilkins17.bluetides.mzrraw.z9",
+   "file": "wilkins17-bluetides.json",
+   "relation": "mzr",
+   "source": "BlueTides",
+   "msg": "massDefinition missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.mzrraw.z10",
+   "file": "wilkins17-bluetides.json",
+   "relation": "mzr",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-mass-definition",
+   "id": "wilkins17.bluetides.mzrraw.z10",
+   "file": "wilkins17-bluetides.json",
+   "relation": "mzr",
+   "source": "BlueTides",
+   "msg": "massDefinition missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.mzrraw.z11",
+   "file": "wilkins17-bluetides.json",
+   "relation": "mzr",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-mass-definition",
+   "id": "wilkins17.bluetides.mzrraw.z11",
+   "file": "wilkins17-bluetides.json",
+   "relation": "mzr",
+   "source": "BlueTides",
+   "msg": "massDefinition missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.mzrraw.z12",
+   "file": "wilkins17-bluetides.json",
+   "relation": "mzr",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-mass-definition",
+   "id": "wilkins17.bluetides.mzrraw.z12",
+   "file": "wilkins17-bluetides.json",
+   "relation": "mzr",
+   "source": "BlueTides",
+   "msg": "massDefinition missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.mzrraw.z13",
+   "file": "wilkins17-bluetides.json",
+   "relation": "mzr",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-mass-definition",
+   "id": "wilkins17.bluetides.mzrraw.z13",
+   "file": "wilkins17-bluetides.json",
+   "relation": "mzr",
+   "source": "BlueTides",
+   "msg": "massDefinition missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.shmr.z8",
+   "file": "wilkins17-bluetides.json",
+   "relation": "shmr",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.shmr.z9",
+   "file": "wilkins17-bluetides.json",
+   "relation": "shmr",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.shmr.z10",
+   "file": "wilkins17-bluetides.json",
+   "relation": "shmr",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.shmr.z11",
+   "file": "wilkins17-bluetides.json",
+   "relation": "shmr",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.shmr.z12",
+   "file": "wilkins17-bluetides.json",
+   "relation": "shmr",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.shmr.z13",
+   "file": "wilkins17-bluetides.json",
+   "relation": "shmr",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.bh.median.z8",
+   "file": "wilkins17-bluetides.json",
+   "relation": "bh",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.bh.median.z9",
+   "file": "wilkins17-bluetides.json",
+   "relation": "bh",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.bh.median.z10",
+   "file": "wilkins17-bluetides.json",
+   "relation": "bh",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.bh.median.z11",
+   "file": "wilkins17-bluetides.json",
+   "relation": "bh",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.uvlf.intrinsic.z8",
+   "file": "wilkins17-bluetides.json",
+   "relation": "uvlf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.uvlf.intrinsic.z9",
+   "file": "wilkins17-bluetides.json",
+   "relation": "uvlf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.uvlf.intrinsic.z10",
+   "file": "wilkins17-bluetides.json",
+   "relation": "uvlf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.uvlf.intrinsic.z11",
+   "file": "wilkins17-bluetides.json",
+   "relation": "uvlf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.uvlf.intrinsic.z12",
+   "file": "wilkins17-bluetides.json",
+   "relation": "uvlf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.uvlf.intrinsic.z13",
+   "file": "wilkins17-bluetides.json",
+   "relation": "uvlf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.uvlf.observed.z8",
+   "file": "wilkins17-bluetides.json",
+   "relation": "uvlf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.uvlf.observed.z9",
+   "file": "wilkins17-bluetides.json",
+   "relation": "uvlf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.uvlf.observed.z10",
+   "file": "wilkins17-bluetides.json",
+   "relation": "uvlf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.uvlf.observed.z11",
+   "file": "wilkins17-bluetides.json",
+   "relation": "uvlf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.uvlf.observed.z12",
+   "file": "wilkins17-bluetides.json",
+   "relation": "uvlf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.uvlf.observed.z13",
+   "file": "wilkins17-bluetides.json",
+   "relation": "uvlf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.uvlf.schechter.z8",
+   "file": "wilkins17-bluetides.json",
+   "relation": "uvlf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.uvlf.schechter.z9",
+   "file": "wilkins17-bluetides.json",
+   "relation": "uvlf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.uvlf.schechter.z10",
+   "file": "wilkins17-bluetides.json",
+   "relation": "uvlf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.uvlf.schechter.z11",
+   "file": "wilkins17-bluetides.json",
+   "relation": "uvlf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.uvlf.schechter.z12",
+   "file": "wilkins17-bluetides.json",
+   "relation": "uvlf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "wilkins17.bluetides.uvlf.schechter.z13",
+   "file": "wilkins17-bluetides.json",
+   "relation": "uvlf",
+   "source": "BlueTides",
+   "msg": "definitions.cosmology missing"
   },
   {
    "sev": "known",

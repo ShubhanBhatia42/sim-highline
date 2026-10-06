@@ -1,0 +1,2253 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "kannan25.thesanzoom.gsmf.z4",
+      "source": "THESAN-zoom",
+      "run": "THESAN-ZOOM (14 zoom-in galaxies, Kannan+25)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 4,
+        "zNominal": 4,
+        "zMin": 3.5,
+        "zMax": 4.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within twice the stellar half-mass radius",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function per dex",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 6.329,
+        "xMax": 10.376
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.329,
+            "y": -0.0518
+          },
+          {
+            "x": 6.557,
+            "y": -0.214
+          },
+          {
+            "x": 6.939,
+            "y": -0.3534
+          },
+          {
+            "x": 7.321,
+            "y": -0.6595
+          },
+          {
+            "x": 7.703,
+            "y": -0.8863
+          },
+          {
+            "x": 8.085,
+            "y": -0.9561
+          },
+          {
+            "x": 8.467,
+            "y": -1.441
+          },
+          {
+            "x": 8.849,
+            "y": -1.7352
+          },
+          {
+            "x": 9.231,
+            "y": -2.1556
+          },
+          {
+            "x": 9.612,
+            "y": -3.3514
+          },
+          {
+            "x": 9.994,
+            "y": -3.4988
+          },
+          {
+            "x": 10.376,
+            "y": -4.4951
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the THESAN-ZOOM sample",
+        "warning": "Stellar mass function of THESAN-ZOOM in the redshift bin 3.5-4.5, read from the vector path of Kannan et al. 2025 (observational points not extracted). THESAN-ZOOM resimulates 14 selected high-redshift galaxies and their surroundings; how the sample is combined into volume-averaged functions is described in the paper, not in the figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies of the zoom sample, as drawn",
+        "massDefinition": "aperture-2rhalf-stars"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), galaxy stellar mass function, 3.5 <= z < 4.5",
+        "doi": "10.33232/001c.145804",
+        "url": "https://arxiv.org/abs/2502.20437",
+        "retrieved": "2026-10-05",
+        "figure": "Galaxy stellar mass function at z=3.5-9.5",
+        "panel": "3.5<=z<4.5",
+        "checksumSha256": "4ab7e9d09110417abd5a3120c1662f28c05be16ead0a31fedf0208b5a1e51b0f",
+        "sourceMember": "Figures/GSMF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (bottom row, per column) snapped to ticks; y: numeric tick labels (left column, per row, minus glyphs included) snapped to ticks",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan25.thesanzoom.gsmf.z5",
+      "source": "THESAN-zoom",
+      "run": "THESAN-ZOOM (14 zoom-in galaxies, Kannan+25)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 4.5,
+        "zMax": 5.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within twice the stellar half-mass radius",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function per dex",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 6.085,
+        "xMax": 9.677
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.085,
+            "y": -0.0518
+          },
+          {
+            "x": 6.23,
+            "y": -0.144
+          },
+          {
+            "x": 6.574,
+            "y": -0.2946
+          },
+          {
+            "x": 6.919,
+            "y": -0.4839
+          },
+          {
+            "x": 7.264,
+            "y": -0.7248
+          },
+          {
+            "x": 7.609,
+            "y": -0.9588
+          },
+          {
+            "x": 7.953,
+            "y": -1.1512
+          },
+          {
+            "x": 8.298,
+            "y": -1.4974
+          },
+          {
+            "x": 8.643,
+            "y": -1.7889
+          },
+          {
+            "x": 8.988,
+            "y": -2.2068
+          },
+          {
+            "x": 9.332,
+            "y": -2.809
+          },
+          {
+            "x": 9.677,
+            "y": -3.285
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the THESAN-ZOOM sample",
+        "warning": "Stellar mass function of THESAN-ZOOM in the redshift bin 4.5-5.5, read from the vector path of Kannan et al. 2025 (observational points not extracted). THESAN-ZOOM resimulates 14 selected high-redshift galaxies and their surroundings; how the sample is combined into volume-averaged functions is described in the paper, not in the figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies of the zoom sample, as drawn",
+        "massDefinition": "aperture-2rhalf-stars"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), galaxy stellar mass function, 4.5 <= z < 5.5",
+        "doi": "10.33232/001c.145804",
+        "url": "https://arxiv.org/abs/2502.20437",
+        "retrieved": "2026-10-05",
+        "figure": "Galaxy stellar mass function at z=3.5-9.5",
+        "panel": "4.5<=z<5.5",
+        "checksumSha256": "4ab7e9d09110417abd5a3120c1662f28c05be16ead0a31fedf0208b5a1e51b0f",
+        "sourceMember": "Figures/GSMF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (bottom row, per column) snapped to ticks; y: numeric tick labels (left column, per row, minus glyphs included) snapped to ticks",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan25.thesanzoom.gsmf.z6",
+      "source": "THESAN-zoom",
+      "run": "THESAN-ZOOM (14 zoom-in galaxies, Kannan+25)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 5.5,
+        "zMax": 6.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within twice the stellar half-mass radius",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function per dex",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 6.19,
+        "xMax": 9.567
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.19,
+            "y": -0.1951
+          },
+          {
+            "x": 6.527,
+            "y": -0.3948
+          },
+          {
+            "x": 6.865,
+            "y": -0.5895
+          },
+          {
+            "x": 7.203,
+            "y": -0.8903
+          },
+          {
+            "x": 7.541,
+            "y": -1.0615
+          },
+          {
+            "x": 7.878,
+            "y": -1.3808
+          },
+          {
+            "x": 8.216,
+            "y": -1.664
+          },
+          {
+            "x": 8.554,
+            "y": -2.0966
+          },
+          {
+            "x": 8.891,
+            "y": -2.3849
+          },
+          {
+            "x": 9.229,
+            "y": -3.1309
+          },
+          {
+            "x": 9.567,
+            "y": -3.9769
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the THESAN-ZOOM sample",
+        "warning": "Stellar mass function of THESAN-ZOOM in the redshift bin 5.5-6.5, read from the vector path of Kannan et al. 2025 (observational points not extracted). THESAN-ZOOM resimulates 14 selected high-redshift galaxies and their surroundings; how the sample is combined into volume-averaged functions is described in the paper, not in the figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies of the zoom sample, as drawn",
+        "massDefinition": "aperture-2rhalf-stars"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), galaxy stellar mass function, 5.5 <= z < 6.5",
+        "doi": "10.33232/001c.145804",
+        "url": "https://arxiv.org/abs/2502.20437",
+        "retrieved": "2026-10-05",
+        "figure": "Galaxy stellar mass function at z=3.5-9.5",
+        "panel": "5.5<=z<6.5",
+        "checksumSha256": "4ab7e9d09110417abd5a3120c1662f28c05be16ead0a31fedf0208b5a1e51b0f",
+        "sourceMember": "Figures/GSMF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (bottom row, per column) snapped to ticks; y: numeric tick labels (left column, per row, minus glyphs included) snapped to ticks",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan25.thesanzoom.gsmf.z7",
+      "source": "THESAN-zoom",
+      "run": "THESAN-ZOOM (14 zoom-in galaxies, Kannan+25)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 6.5,
+        "zMax": 7.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within twice the stellar half-mass radius",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function per dex",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 6.144,
+        "xMax": 9.425
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.144,
+            "y": -0.2551
+          },
+          {
+            "x": 6.472,
+            "y": -0.4255
+          },
+          {
+            "x": 6.8,
+            "y": -0.6233
+          },
+          {
+            "x": 7.128,
+            "y": -0.9954
+          },
+          {
+            "x": 7.456,
+            "y": -1.2599
+          },
+          {
+            "x": 7.785,
+            "y": -1.5151
+          },
+          {
+            "x": 8.113,
+            "y": -1.8463
+          },
+          {
+            "x": 8.441,
+            "y": -2.1856
+          },
+          {
+            "x": 8.769,
+            "y": -2.7316
+          },
+          {
+            "x": 9.097,
+            "y": -3.3474
+          },
+          {
+            "x": 9.425,
+            "y": -4.1578
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the THESAN-ZOOM sample",
+        "warning": "Stellar mass function of THESAN-ZOOM in the redshift bin 6.5-7.5, read from the vector path of Kannan et al. 2025 (observational points not extracted). THESAN-ZOOM resimulates 14 selected high-redshift galaxies and their surroundings; how the sample is combined into volume-averaged functions is described in the paper, not in the figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies of the zoom sample, as drawn",
+        "massDefinition": "aperture-2rhalf-stars"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), galaxy stellar mass function, 6.5 <= z < 7.5",
+        "doi": "10.33232/001c.145804",
+        "url": "https://arxiv.org/abs/2502.20437",
+        "retrieved": "2026-10-05",
+        "figure": "Galaxy stellar mass function at z=3.5-9.5",
+        "panel": "6.5<=z<7.5",
+        "checksumSha256": "4ab7e9d09110417abd5a3120c1662f28c05be16ead0a31fedf0208b5a1e51b0f",
+        "sourceMember": "Figures/GSMF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (bottom row, per column) snapped to ticks; y: numeric tick labels (left column, per row, minus glyphs included) snapped to ticks",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan25.thesanzoom.gsmf.z8",
+      "source": "THESAN-zoom",
+      "run": "THESAN-ZOOM (14 zoom-in galaxies, Kannan+25)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 7.5,
+        "zMax": 8.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within twice the stellar half-mass radius",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function per dex",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 6.064,
+        "xMax": 9.16
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.064,
+            "y": -0.4024
+          },
+          {
+            "x": 6.374,
+            "y": -0.6771
+          },
+          {
+            "x": 6.684,
+            "y": -0.7055
+          },
+          {
+            "x": 6.993,
+            "y": -1.0944
+          },
+          {
+            "x": 7.303,
+            "y": -1.3907
+          },
+          {
+            "x": 7.612,
+            "y": -1.6275
+          },
+          {
+            "x": 7.922,
+            "y": -1.9373
+          },
+          {
+            "x": 8.232,
+            "y": -2.2906
+          },
+          {
+            "x": 8.541,
+            "y": -3.2959
+          },
+          {
+            "x": 8.851,
+            "y": -3.4736
+          },
+          {
+            "x": 9.16,
+            "y": -4.2231
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the THESAN-ZOOM sample",
+        "warning": "Stellar mass function of THESAN-ZOOM in the redshift bin 7.5-8.5, read from the vector path of Kannan et al. 2025 (observational points not extracted). THESAN-ZOOM resimulates 14 selected high-redshift galaxies and their surroundings; how the sample is combined into volume-averaged functions is described in the paper, not in the figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies of the zoom sample, as drawn",
+        "massDefinition": "aperture-2rhalf-stars"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), galaxy stellar mass function, 7.5 <= z < 8.5",
+        "doi": "10.33232/001c.145804",
+        "url": "https://arxiv.org/abs/2502.20437",
+        "retrieved": "2026-10-05",
+        "figure": "Galaxy stellar mass function at z=3.5-9.5",
+        "panel": "7.5<=z<8.5",
+        "checksumSha256": "4ab7e9d09110417abd5a3120c1662f28c05be16ead0a31fedf0208b5a1e51b0f",
+        "sourceMember": "Figures/GSMF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (bottom row, per column) snapped to ticks; y: numeric tick labels (left column, per row, minus glyphs included) snapped to ticks",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan25.thesanzoom.gsmf.z9",
+      "source": "THESAN-zoom",
+      "run": "THESAN-ZOOM (14 zoom-in galaxies, Kannan+25)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 9,
+        "zNominal": 9,
+        "zMin": 8.5,
+        "zMax": 9.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within twice the stellar half-mass radius",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function per dex",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 6.194,
+        "xMax": 8.824
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.194,
+            "y": -0.7622
+          },
+          {
+            "x": 6.486,
+            "y": -0.9492
+          },
+          {
+            "x": 6.778,
+            "y": -1.1795
+          },
+          {
+            "x": 7.07,
+            "y": -1.3935
+          },
+          {
+            "x": 7.363,
+            "y": -1.663
+          },
+          {
+            "x": 7.655,
+            "y": -2.0373
+          },
+          {
+            "x": 7.947,
+            "y": -2.3938
+          },
+          {
+            "x": 8.24,
+            "y": -2.9456
+          },
+          {
+            "x": 8.532,
+            "y": -3.9238
+          },
+          {
+            "x": 8.824,
+            "y": -4.181
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the THESAN-ZOOM sample",
+        "warning": "Stellar mass function of THESAN-ZOOM in the redshift bin 8.5-9.5, read from the vector path of Kannan et al. 2025 (observational points not extracted). THESAN-ZOOM resimulates 14 selected high-redshift galaxies and their surroundings; how the sample is combined into volume-averaged functions is described in the paper, not in the figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies of the zoom sample, as drawn",
+        "massDefinition": "aperture-2rhalf-stars"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), galaxy stellar mass function, 8.5 <= z < 9.5",
+        "doi": "10.33232/001c.145804",
+        "url": "https://arxiv.org/abs/2502.20437",
+        "retrieved": "2026-10-05",
+        "figure": "Galaxy stellar mass function at z=3.5-9.5",
+        "panel": "8.5<=z<9.5",
+        "checksumSha256": "4ab7e9d09110417abd5a3120c1662f28c05be16ead0a31fedf0208b5a1e51b0f",
+        "sourceMember": "Figures/GSMF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (bottom row, per column) snapped to ticks; y: numeric tick labels (left column, per row, minus glyphs included) snapped to ticks",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan25.thesanzoom.uvlf.fiducial.z4",
+      "source": "THESAN-zoom",
+      "run": "THESAN-ZOOM (14 zoom-in galaxies, Kannan+25), fiducial dust",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 4,
+        "zNominal": 4,
+        "zMin": 3.5,
+        "zMax": 4.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame 1500 A, AB, attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -24.089,
+        "xMax": -12.011
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -24.089,
+            "y": -5.221
+          },
+          {
+            "x": -22.991,
+            "y": -4.3328
+          },
+          {
+            "x": -21.893,
+            "y": -3.6377
+          },
+          {
+            "x": -20.795,
+            "y": -2.7174
+          },
+          {
+            "x": -19.697,
+            "y": -2.1667
+          },
+          {
+            "x": -18.599,
+            "y": -1.7855
+          },
+          {
+            "x": -17.501,
+            "y": -1.4352
+          },
+          {
+            "x": -16.403,
+            "y": -1.1314
+          },
+          {
+            "x": -15.305,
+            "y": -0.9002
+          },
+          {
+            "x": -14.207,
+            "y": -0.6468
+          },
+          {
+            "x": -13.109,
+            "y": -0.4586
+          },
+          {
+            "x": -12.011,
+            "y": -0.2868
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the THESAN-ZOOM sample",
+        "warning": "UV luminosity function of THESAN-ZOOM in the redshift bin 3.5-4.5 with the fiducial THESAN-ZOOM dust model (attenuated), read from the vector path of Kannan et al. 2025. The paper notes the fiducial dust model overshoots the bright end at z below about 7 because of too little dust. Observations and the TNG and MillenniumTNG comparison curves are not extracted. THESAN-ZOOM resimulates 14 selected high-redshift galaxies and their surroundings; how the sample is combined into volume-averaged functions is described in the paper, not in the figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies of the zoom sample, as drawn",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "fiducial THESAN-ZOOM dust model (attenuated)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), UV luminosity function, 3.5 <= z < 4.5",
+        "doi": "10.33232/001c.145804",
+        "url": "https://arxiv.org/abs/2502.20437",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity function at z=3.5-14.5",
+        "panel": "3.5<=z<4.5, solid black curve",
+        "checksumSha256": "4bbbca251567849e84ece12d0c47d8ab69758ce110a568527e93819c43f9becf",
+        "sourceMember": "Figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (bottom row, per column) snapped to ticks (axis runs from -14 to -24); y: numeric tick labels (left column, per row) snapped to ticks",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan25.thesanzoom.uvlf.bouwens16.z4",
+      "source": "THESAN-zoom",
+      "run": "THESAN-ZOOM (14 zoom-in galaxies, Kannan+25), bouwens16 dust",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 4,
+        "zNominal": 4,
+        "zMin": 3.5,
+        "zMax": 4.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame 1500 A, AB, attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.376,
+        "xMax": -12.274
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.376,
+            "y": -4.7869
+          },
+          {
+            "x": -21.366,
+            "y": -3.7417
+          },
+          {
+            "x": -20.355,
+            "y": -2.7164
+          },
+          {
+            "x": -19.345,
+            "y": -2.086
+          },
+          {
+            "x": -18.335,
+            "y": -1.7232
+          },
+          {
+            "x": -17.325,
+            "y": -1.3969
+          },
+          {
+            "x": -16.315,
+            "y": -1.1097
+          },
+          {
+            "x": -15.304,
+            "y": -0.9017
+          },
+          {
+            "x": -14.294,
+            "y": -0.6646
+          },
+          {
+            "x": -13.284,
+            "y": -0.4879
+          },
+          {
+            "x": -12.274,
+            "y": -0.3262
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the THESAN-ZOOM sample",
+        "warning": "UV luminosity function of THESAN-ZOOM in the redshift bin 3.5-4.5 with the Bouwens+16 empirical attenuation relation applied to the intrinsic luminosities, read from the vector path of Kannan et al. 2025. The paper notes the fiducial dust model overshoots the bright end at z below about 7 because of too little dust. Observations and the TNG and MillenniumTNG comparison curves are not extracted. THESAN-ZOOM resimulates 14 selected high-redshift galaxies and their surroundings; how the sample is combined into volume-averaged functions is described in the paper, not in the figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies of the zoom sample, as drawn",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "Bouwens+16 empirical attenuation relation applied to the intrinsic luminosities"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), UV luminosity function, 3.5 <= z < 4.5",
+        "doi": "10.33232/001c.145804",
+        "url": "https://arxiv.org/abs/2502.20437",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity function at z=3.5-14.5",
+        "panel": "3.5<=z<4.5, dashed black curve",
+        "checksumSha256": "4bbbca251567849e84ece12d0c47d8ab69758ce110a568527e93819c43f9becf",
+        "sourceMember": "Figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (bottom row, per column) snapped to ticks (axis runs from -14 to -24); y: numeric tick labels (left column, per row) snapped to ticks",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan25.thesanzoom.uvlf.fiducial.z6",
+      "source": "THESAN-zoom",
+      "run": "THESAN-ZOOM (14 zoom-in galaxies, Kannan+25), fiducial dust",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 5.5,
+        "zMax": 6.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame 1500 A, AB, attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.658,
+        "xMax": -12.287
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.658,
+            "y": -4.5886
+          },
+          {
+            "x": -21.69,
+            "y": -3.4105
+          },
+          {
+            "x": -20.722,
+            "y": -3.0609
+          },
+          {
+            "x": -19.754,
+            "y": -2.5332
+          },
+          {
+            "x": -18.786,
+            "y": -2.0588
+          },
+          {
+            "x": -17.818,
+            "y": -1.6829
+          },
+          {
+            "x": -16.85,
+            "y": -1.4158
+          },
+          {
+            "x": -15.882,
+            "y": -1.1311
+          },
+          {
+            "x": -14.914,
+            "y": -0.8255
+          },
+          {
+            "x": -13.946,
+            "y": -0.6328
+          },
+          {
+            "x": -12.978,
+            "y": -0.3576
+          },
+          {
+            "x": -12.287,
+            "y": -0.0518
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the THESAN-ZOOM sample",
+        "warning": "UV luminosity function of THESAN-ZOOM in the redshift bin 5.5-6.5 with the fiducial THESAN-ZOOM dust model (attenuated), read from the vector path of Kannan et al. 2025. The paper notes the fiducial dust model overshoots the bright end at z below about 7 because of too little dust. Observations and the TNG and MillenniumTNG comparison curves are not extracted. THESAN-ZOOM resimulates 14 selected high-redshift galaxies and their surroundings; how the sample is combined into volume-averaged functions is described in the paper, not in the figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies of the zoom sample, as drawn",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "fiducial THESAN-ZOOM dust model (attenuated)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), UV luminosity function, 5.5 <= z < 6.5",
+        "doi": "10.33232/001c.145804",
+        "url": "https://arxiv.org/abs/2502.20437",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity function at z=3.5-14.5",
+        "panel": "5.5<=z<6.5, solid black curve",
+        "checksumSha256": "4bbbca251567849e84ece12d0c47d8ab69758ce110a568527e93819c43f9becf",
+        "sourceMember": "Figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (bottom row, per column) snapped to ticks (axis runs from -14 to -24); y: numeric tick labels (left column, per row) snapped to ticks",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan25.thesanzoom.uvlf.bouwens16.z6",
+      "source": "THESAN-zoom",
+      "run": "THESAN-ZOOM (14 zoom-in galaxies, Kannan+25), bouwens16 dust",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 5.5,
+        "zMax": 6.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame 1500 A, AB, attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -21.436,
+        "xMax": -12.223
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -21.436,
+            "y": -3.8196
+          },
+          {
+            "x": -20.53,
+            "y": -3.1465
+          },
+          {
+            "x": -19.625,
+            "y": -2.5702
+          },
+          {
+            "x": -18.719,
+            "y": -2.0824
+          },
+          {
+            "x": -17.814,
+            "y": -1.6927
+          },
+          {
+            "x": -16.909,
+            "y": -1.4611
+          },
+          {
+            "x": -16.003,
+            "y": -1.1582
+          },
+          {
+            "x": -15.098,
+            "y": -0.9012
+          },
+          {
+            "x": -14.193,
+            "y": -0.6636
+          },
+          {
+            "x": -13.287,
+            "y": -0.4728
+          },
+          {
+            "x": -12.382,
+            "y": -0.153
+          },
+          {
+            "x": -12.223,
+            "y": -0.0518
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the THESAN-ZOOM sample",
+        "warning": "UV luminosity function of THESAN-ZOOM in the redshift bin 5.5-6.5 with the Bouwens+16 empirical attenuation relation applied to the intrinsic luminosities, read from the vector path of Kannan et al. 2025. The paper notes the fiducial dust model overshoots the bright end at z below about 7 because of too little dust. Observations and the TNG and MillenniumTNG comparison curves are not extracted. THESAN-ZOOM resimulates 14 selected high-redshift galaxies and their surroundings; how the sample is combined into volume-averaged functions is described in the paper, not in the figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies of the zoom sample, as drawn",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "Bouwens+16 empirical attenuation relation applied to the intrinsic luminosities"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), UV luminosity function, 5.5 <= z < 6.5",
+        "doi": "10.33232/001c.145804",
+        "url": "https://arxiv.org/abs/2502.20437",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity function at z=3.5-14.5",
+        "panel": "5.5<=z<6.5, dashed black curve",
+        "checksumSha256": "4bbbca251567849e84ece12d0c47d8ab69758ce110a568527e93819c43f9becf",
+        "sourceMember": "Figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (bottom row, per column) snapped to ticks (axis runs from -14 to -24); y: numeric tick labels (left column, per row) snapped to ticks",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan25.thesanzoom.uvlf.fiducial.z8",
+      "source": "THESAN-zoom",
+      "run": "THESAN-ZOOM (14 zoom-in galaxies, Kannan+25), fiducial dust",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 7.5,
+        "zMax": 8.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame 1500 A, AB, attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -21.495,
+        "xMax": -12.692
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -21.495,
+            "y": -4.3947
+          },
+          {
+            "x": -20.645,
+            "y": -3.7197
+          },
+          {
+            "x": -19.796,
+            "y": -2.9787
+          },
+          {
+            "x": -18.946,
+            "y": -2.5057
+          },
+          {
+            "x": -18.096,
+            "y": -2.0893
+          },
+          {
+            "x": -17.247,
+            "y": -1.8607
+          },
+          {
+            "x": -16.397,
+            "y": -1.513
+          },
+          {
+            "x": -15.547,
+            "y": -1.2881
+          },
+          {
+            "x": -14.698,
+            "y": -1.0016
+          },
+          {
+            "x": -13.848,
+            "y": -0.7166
+          },
+          {
+            "x": -12.998,
+            "y": -0.2074
+          },
+          {
+            "x": -12.692,
+            "y": -0.0518
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the THESAN-ZOOM sample",
+        "warning": "UV luminosity function of THESAN-ZOOM in the redshift bin 7.5-8.5 with the fiducial THESAN-ZOOM dust model (attenuated), read from the vector path of Kannan et al. 2025. The paper notes the fiducial dust model overshoots the bright end at z below about 7 because of too little dust. Observations and the TNG and MillenniumTNG comparison curves are not extracted. THESAN-ZOOM resimulates 14 selected high-redshift galaxies and their surroundings; how the sample is combined into volume-averaged functions is described in the paper, not in the figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies of the zoom sample, as drawn",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "fiducial THESAN-ZOOM dust model (attenuated)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), UV luminosity function, 7.5 <= z < 8.5",
+        "doi": "10.33232/001c.145804",
+        "url": "https://arxiv.org/abs/2502.20437",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity function at z=3.5-14.5",
+        "panel": "7.5<=z<8.5, solid black curve",
+        "checksumSha256": "4bbbca251567849e84ece12d0c47d8ab69758ce110a568527e93819c43f9becf",
+        "sourceMember": "Figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (bottom row, per column) snapped to ticks (axis runs from -14 to -24); y: numeric tick labels (left column, per row) snapped to ticks",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan25.thesanzoom.uvlf.bouwens16.z8",
+      "source": "THESAN-zoom",
+      "run": "THESAN-ZOOM (14 zoom-in galaxies, Kannan+25), bouwens16 dust",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 7.5,
+        "zMax": 8.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame 1500 A, AB, attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -20.791,
+        "xMax": -12.635
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -20.791,
+            "y": -4.126
+          },
+          {
+            "x": -19.977,
+            "y": -3.3477
+          },
+          {
+            "x": -19.164,
+            "y": -2.746
+          },
+          {
+            "x": -18.35,
+            "y": -2.2398
+          },
+          {
+            "x": -17.537,
+            "y": -1.9535
+          },
+          {
+            "x": -16.723,
+            "y": -1.6533
+          },
+          {
+            "x": -15.909,
+            "y": -1.3841
+          },
+          {
+            "x": -15.096,
+            "y": -1.143
+          },
+          {
+            "x": -14.282,
+            "y": -0.8766
+          },
+          {
+            "x": -13.469,
+            "y": -0.5739
+          },
+          {
+            "x": -12.655,
+            "y": -0.0625
+          },
+          {
+            "x": -12.635,
+            "y": -0.0518
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the THESAN-ZOOM sample",
+        "warning": "UV luminosity function of THESAN-ZOOM in the redshift bin 7.5-8.5 with the Bouwens+16 empirical attenuation relation applied to the intrinsic luminosities, read from the vector path of Kannan et al. 2025. The paper notes the fiducial dust model overshoots the bright end at z below about 7 because of too little dust. Observations and the TNG and MillenniumTNG comparison curves are not extracted. THESAN-ZOOM resimulates 14 selected high-redshift galaxies and their surroundings; how the sample is combined into volume-averaged functions is described in the paper, not in the figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies of the zoom sample, as drawn",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "Bouwens+16 empirical attenuation relation applied to the intrinsic luminosities"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), UV luminosity function, 7.5 <= z < 8.5",
+        "doi": "10.33232/001c.145804",
+        "url": "https://arxiv.org/abs/2502.20437",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity function at z=3.5-14.5",
+        "panel": "7.5<=z<8.5, dashed black curve",
+        "checksumSha256": "4bbbca251567849e84ece12d0c47d8ab69758ce110a568527e93819c43f9becf",
+        "sourceMember": "Figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (bottom row, per column) snapped to ticks (axis runs from -14 to -24); y: numeric tick labels (left column, per row) snapped to ticks",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan25.thesanzoom.uvlf.fiducial.z10",
+      "source": "THESAN-zoom",
+      "run": "THESAN-ZOOM (14 zoom-in galaxies, Kannan+25), fiducial dust",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 9.5,
+        "zMax": 10.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame 1500 A, AB, attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -20.795,
+        "xMax": -12.395
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -20.795,
+            "y": -4.876
+          },
+          {
+            "x": -20.031,
+            "y": -3.8055
+          },
+          {
+            "x": -19.267,
+            "y": -3.5754
+          },
+          {
+            "x": -18.504,
+            "y": -2.9051
+          },
+          {
+            "x": -17.74,
+            "y": -2.3865
+          },
+          {
+            "x": -16.977,
+            "y": -2.0705
+          },
+          {
+            "x": -16.213,
+            "y": -1.7908
+          },
+          {
+            "x": -15.449,
+            "y": -1.525
+          },
+          {
+            "x": -14.686,
+            "y": -1.263
+          },
+          {
+            "x": -13.922,
+            "y": -0.6295
+          },
+          {
+            "x": -13.159,
+            "y": -0.4353
+          },
+          {
+            "x": -12.395,
+            "y": -0.0268
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the THESAN-ZOOM sample",
+        "warning": "UV luminosity function of THESAN-ZOOM in the redshift bin 9.5-10.5 with the fiducial THESAN-ZOOM dust model (attenuated), read from the vector path of Kannan et al. 2025. The paper notes the fiducial dust model overshoots the bright end at z below about 7 because of too little dust. Observations and the TNG and MillenniumTNG comparison curves are not extracted. THESAN-ZOOM resimulates 14 selected high-redshift galaxies and their surroundings; how the sample is combined into volume-averaged functions is described in the paper, not in the figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies of the zoom sample, as drawn",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "fiducial THESAN-ZOOM dust model (attenuated)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), UV luminosity function, 9.5 <= z < 10.5",
+        "doi": "10.33232/001c.145804",
+        "url": "https://arxiv.org/abs/2502.20437",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity function at z=3.5-14.5",
+        "panel": "9.5<=z<10.5, solid black curve",
+        "checksumSha256": "4bbbca251567849e84ece12d0c47d8ab69758ce110a568527e93819c43f9becf",
+        "sourceMember": "Figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (bottom row, per column) snapped to ticks (axis runs from -14 to -24); y: numeric tick labels (left column, per row) snapped to ticks",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan25.thesanzoom.uvlf.bouwens16.z10",
+      "source": "THESAN-zoom",
+      "run": "THESAN-ZOOM (14 zoom-in galaxies, Kannan+25), bouwens16 dust",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 9.5,
+        "zMax": 10.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame 1500 A, AB, attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -20.281,
+        "xMax": -12.171
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -20.281,
+            "y": -4.8608
+          },
+          {
+            "x": -19.543,
+            "y": -3.641
+          },
+          {
+            "x": -18.806,
+            "y": -3.2466
+          },
+          {
+            "x": -18.069,
+            "y": -2.6217
+          },
+          {
+            "x": -17.332,
+            "y": -2.2281
+          },
+          {
+            "x": -16.594,
+            "y": -1.9709
+          },
+          {
+            "x": -15.857,
+            "y": -1.6605
+          },
+          {
+            "x": -15.12,
+            "y": -1.414
+          },
+          {
+            "x": -14.383,
+            "y": -1.1619
+          },
+          {
+            "x": -13.645,
+            "y": -0.5503
+          },
+          {
+            "x": -12.908,
+            "y": -0.2983
+          },
+          {
+            "x": -12.171,
+            "y": 0.124
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the THESAN-ZOOM sample",
+        "warning": "UV luminosity function of THESAN-ZOOM in the redshift bin 9.5-10.5 with the Bouwens+16 empirical attenuation relation applied to the intrinsic luminosities, read from the vector path of Kannan et al. 2025. The paper notes the fiducial dust model overshoots the bright end at z below about 7 because of too little dust. Observations and the TNG and MillenniumTNG comparison curves are not extracted. THESAN-ZOOM resimulates 14 selected high-redshift galaxies and their surroundings; how the sample is combined into volume-averaged functions is described in the paper, not in the figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies of the zoom sample, as drawn",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "Bouwens+16 empirical attenuation relation applied to the intrinsic luminosities"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), UV luminosity function, 9.5 <= z < 10.5",
+        "doi": "10.33232/001c.145804",
+        "url": "https://arxiv.org/abs/2502.20437",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity function at z=3.5-14.5",
+        "panel": "9.5<=z<10.5, dashed black curve",
+        "checksumSha256": "4bbbca251567849e84ece12d0c47d8ab69758ce110a568527e93819c43f9becf",
+        "sourceMember": "Figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (bottom row, per column) snapped to ticks (axis runs from -14 to -24); y: numeric tick labels (left column, per row) snapped to ticks",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan25.thesanzoom.uvlf.fiducial.z12",
+      "source": "THESAN-zoom",
+      "run": "THESAN-ZOOM (14 zoom-in galaxies, Kannan+25), fiducial dust",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 12,
+        "zNominal": 12,
+        "zMin": 11.5,
+        "zMax": 12.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame 1500 A, AB, attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -18.595,
+        "xMax": -12.269
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -18.595,
+            "y": -3.6047
+          },
+          {
+            "x": -18.02,
+            "y": -3.3481
+          },
+          {
+            "x": -17.445,
+            "y": -3.112
+          },
+          {
+            "x": -16.87,
+            "y": -2.5604
+          },
+          {
+            "x": -16.295,
+            "y": -2.3794
+          },
+          {
+            "x": -15.719,
+            "y": -2.1735
+          },
+          {
+            "x": -15.144,
+            "y": -1.8119
+          },
+          {
+            "x": -14.569,
+            "y": -1.7395
+          },
+          {
+            "x": -13.994,
+            "y": -0.8213
+          },
+          {
+            "x": -13.419,
+            "y": -0.3544
+          },
+          {
+            "x": -12.844,
+            "y": -0.3495
+          },
+          {
+            "x": -12.269,
+            "y": -0.0165
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the THESAN-ZOOM sample",
+        "warning": "UV luminosity function of THESAN-ZOOM in the redshift bin 11.5-12.5 with the fiducial THESAN-ZOOM dust model (attenuated), read from the vector path of Kannan et al. 2025. The paper notes the fiducial dust model overshoots the bright end at z below about 7 because of too little dust. Observations and the TNG and MillenniumTNG comparison curves are not extracted. THESAN-ZOOM resimulates 14 selected high-redshift galaxies and their surroundings; how the sample is combined into volume-averaged functions is described in the paper, not in the figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies of the zoom sample, as drawn",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "fiducial THESAN-ZOOM dust model (attenuated)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), UV luminosity function, 11.5 <= z < 12.5",
+        "doi": "10.33232/001c.145804",
+        "url": "https://arxiv.org/abs/2502.20437",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity function at z=3.5-14.5",
+        "panel": "11.5<=z<12.5, solid black curve",
+        "checksumSha256": "4bbbca251567849e84ece12d0c47d8ab69758ce110a568527e93819c43f9becf",
+        "sourceMember": "Figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (bottom row, per column) snapped to ticks (axis runs from -14 to -24); y: numeric tick labels (left column, per row) snapped to ticks",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan25.thesanzoom.uvlf.bouwens16.z12",
+      "source": "THESAN-zoom",
+      "run": "THESAN-ZOOM (14 zoom-in galaxies, Kannan+25), bouwens16 dust",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 12,
+        "zNominal": 12,
+        "zMin": 11.5,
+        "zMax": 12.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame 1500 A, AB, attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -18.408,
+        "xMax": -12.187
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -18.408,
+            "y": -3.5974
+          },
+          {
+            "x": -17.842,
+            "y": -3.3408
+          },
+          {
+            "x": -17.277,
+            "y": -2.9529
+          },
+          {
+            "x": -16.711,
+            "y": -2.4996
+          },
+          {
+            "x": -16.145,
+            "y": -2.3211
+          },
+          {
+            "x": -15.58,
+            "y": -2.1023
+          },
+          {
+            "x": -15.014,
+            "y": -1.776
+          },
+          {
+            "x": -14.449,
+            "y": -1.6762
+          },
+          {
+            "x": -13.883,
+            "y": -0.632
+          },
+          {
+            "x": -13.318,
+            "y": -0.3701
+          },
+          {
+            "x": -12.752,
+            "y": -0.1083
+          },
+          {
+            "x": -12.187,
+            "y": 0.0307
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the THESAN-ZOOM sample",
+        "warning": "UV luminosity function of THESAN-ZOOM in the redshift bin 11.5-12.5 with the Bouwens+16 empirical attenuation relation applied to the intrinsic luminosities, read from the vector path of Kannan et al. 2025. The paper notes the fiducial dust model overshoots the bright end at z below about 7 because of too little dust. Observations and the TNG and MillenniumTNG comparison curves are not extracted. THESAN-ZOOM resimulates 14 selected high-redshift galaxies and their surroundings; how the sample is combined into volume-averaged functions is described in the paper, not in the figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies of the zoom sample, as drawn",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "Bouwens+16 empirical attenuation relation applied to the intrinsic luminosities"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), UV luminosity function, 11.5 <= z < 12.5",
+        "doi": "10.33232/001c.145804",
+        "url": "https://arxiv.org/abs/2502.20437",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity function at z=3.5-14.5",
+        "panel": "11.5<=z<12.5, dashed black curve",
+        "checksumSha256": "4bbbca251567849e84ece12d0c47d8ab69758ce110a568527e93819c43f9becf",
+        "sourceMember": "Figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (bottom row, per column) snapped to ticks (axis runs from -14 to -24); y: numeric tick labels (left column, per row) snapped to ticks",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan25.thesanzoom.uvlf.fiducial.z14",
+      "source": "THESAN-zoom",
+      "run": "THESAN-ZOOM (14 zoom-in galaxies, Kannan+25), fiducial dust",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 14,
+        "zNominal": 14,
+        "zMin": 13.5,
+        "zMax": 14.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame 1500 A, AB, attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -18.31,
+        "xMax": -12.293
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -18.31,
+            "y": -4.1239
+          },
+          {
+            "x": -17.847,
+            "y": -3.3958
+          },
+          {
+            "x": -17.385,
+            "y": -3.7318
+          },
+          {
+            "x": -16.922,
+            "y": -3.2831
+          },
+          {
+            "x": -16.459,
+            "y": -2.6926
+          },
+          {
+            "x": -15.996,
+            "y": -2.7433
+          },
+          {
+            "x": -15.533,
+            "y": -2.4135
+          },
+          {
+            "x": -15.07,
+            "y": -2.555
+          },
+          {
+            "x": -14.608,
+            "y": -2.1494
+          },
+          {
+            "x": -14.145,
+            "y": -1.6725
+          },
+          {
+            "x": -13.682,
+            "y": -0.8555
+          },
+          {
+            "x": -13.219,
+            "y": -0.7474
+          },
+          {
+            "x": -12.756,
+            "y": -0.6282
+          },
+          {
+            "x": -12.293,
+            "y": -0.7299
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the THESAN-ZOOM sample",
+        "warning": "UV luminosity function of THESAN-ZOOM in the redshift bin 13.5-14.5 with the fiducial THESAN-ZOOM dust model (attenuated), read from the vector path of Kannan et al. 2025. The paper notes the fiducial dust model overshoots the bright end at z below about 7 because of too little dust. Observations and the TNG and MillenniumTNG comparison curves are not extracted. THESAN-ZOOM resimulates 14 selected high-redshift galaxies and their surroundings; how the sample is combined into volume-averaged functions is described in the paper, not in the figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies of the zoom sample, as drawn",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "fiducial THESAN-ZOOM dust model (attenuated)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), UV luminosity function, 13.5 <= z < 14.5",
+        "doi": "10.33232/001c.145804",
+        "url": "https://arxiv.org/abs/2502.20437",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity function at z=3.5-14.5",
+        "panel": "13.5<=z<14.5, solid black curve",
+        "checksumSha256": "4bbbca251567849e84ece12d0c47d8ab69758ce110a568527e93819c43f9becf",
+        "sourceMember": "Figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (bottom row, per column) snapped to ticks (axis runs from -14 to -24); y: numeric tick labels (left column, per row) snapped to ticks",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan25.thesanzoom.uvlf.bouwens16.z14",
+      "source": "THESAN-zoom",
+      "run": "THESAN-ZOOM (14 zoom-in galaxies, Kannan+25), bouwens16 dust",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 14,
+        "zNominal": 14,
+        "zMin": 13.5,
+        "zMax": 14.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame 1500 A, AB, attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -18.258,
+        "xMax": -12.275
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -18.258,
+            "y": -4.1214
+          },
+          {
+            "x": -17.797,
+            "y": -3.541
+          },
+          {
+            "x": -17.337,
+            "y": -3.5185
+          },
+          {
+            "x": -16.877,
+            "y": -3.2489
+          },
+          {
+            "x": -16.417,
+            "y": -2.6758
+          },
+          {
+            "x": -15.956,
+            "y": -2.7169
+          },
+          {
+            "x": -15.496,
+            "y": -2.4353
+          },
+          {
+            "x": -15.036,
+            "y": -2.5275
+          },
+          {
+            "x": -14.576,
+            "y": -2.1428
+          },
+          {
+            "x": -14.116,
+            "y": -1.6748
+          },
+          {
+            "x": -13.655,
+            "y": -0.8497
+          },
+          {
+            "x": -13.195,
+            "y": -0.7428
+          },
+          {
+            "x": -12.735,
+            "y": -0.6291
+          },
+          {
+            "x": -12.275,
+            "y": -0.6838
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the THESAN-ZOOM sample",
+        "warning": "UV luminosity function of THESAN-ZOOM in the redshift bin 13.5-14.5 with the Bouwens+16 empirical attenuation relation applied to the intrinsic luminosities, read from the vector path of Kannan et al. 2025. The paper notes the fiducial dust model overshoots the bright end at z below about 7 because of too little dust. Observations and the TNG and MillenniumTNG comparison curves are not extracted. THESAN-ZOOM resimulates 14 selected high-redshift galaxies and their surroundings; how the sample is combined into volume-averaged functions is described in the paper, not in the figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies of the zoom sample, as drawn",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "Bouwens+16 empirical attenuation relation applied to the intrinsic luminosities"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), UV luminosity function, 13.5 <= z < 14.5",
+        "doi": "10.33232/001c.145804",
+        "url": "https://arxiv.org/abs/2502.20437",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity function at z=3.5-14.5",
+        "panel": "13.5<=z<14.5, dashed black curve",
+        "checksumSha256": "4bbbca251567849e84ece12d0c47d8ab69758ce110a568527e93819c43f9becf",
+        "sourceMember": "Figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (bottom row, per column) snapped to ticks (axis runs from -14 to -24); y: numeric tick labels (left column, per row) snapped to ticks",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan25.thesanzoom.sfrd.fiducial",
+      "source": "THESAN-zoom",
+      "run": "THESAN-ZOOM (14 zoom-in galaxies, Kannan+25), fiducial dust",
+      "kind": "simulation",
+      "relation": "sfrd",
+      "epoch": {
+        "zRepresentative": 8.5,
+        "zNominal": 8.5,
+        "zMin": 3,
+        "zMax": 14,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift",
+        "xUnit": "redshift",
+        "yDefinition": "log10 star formation rate density of galaxies brighter than M_UV = -17 (attenuated)",
+        "yUnit": "log10(Msun yr^-1 cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 3,
+        "xMax": 14
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 3,
+            "y": -1.21
+          },
+          {
+            "x": 4,
+            "y": -1.2445
+          },
+          {
+            "x": 5,
+            "y": -1.3073
+          },
+          {
+            "x": 6,
+            "y": -1.4903
+          },
+          {
+            "x": 7,
+            "y": -1.6472
+          },
+          {
+            "x": 8,
+            "y": -1.9588
+          },
+          {
+            "x": 9,
+            "y": -2.2593
+          },
+          {
+            "x": 10,
+            "y": -2.5527
+          },
+          {
+            "x": 11,
+            "y": -2.9263
+          },
+          {
+            "x": 12,
+            "y": -3.3277
+          },
+          {
+            "x": 13,
+            "y": -3.5634
+          },
+          {
+            "x": 14,
+            "y": -3.888
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the THESAN-ZOOM sample brighter than M_UV = -17",
+        "warning": "SFR density of THESAN-ZOOM galaxies brighter than M_UV=-17 versus redshift (z 3 to 14) with the fiducial THESAN-ZOOM dust model (attenuated), read from the vector path of Kannan et al. 2025; the observational points and the MillenniumTNG curve are not extracted. THESAN-ZOOM resimulates 14 selected high-redshift galaxies and their surroundings; how the sample is combined into volume-averaged functions is described in the paper, not in the figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies of the zoom sample, as drawn",
+        "sfrIndicator": "instantaneous SFR",
+        "sfrIntegrationLimit": "integrated down to M_UV = -17",
+        "dustCorrection": "fiducial THESAN-ZOOM dust model (attenuated)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), star formation rate density",
+        "doi": "10.33232/001c.145804",
+        "url": "https://arxiv.org/abs/2502.20437",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the star formation rate density, z=3-14",
+        "panel": "solid black curve",
+        "checksumSha256": "eab66c0a617a3abb79f3250c375ab4b53570e2b1d814c0cc80a49fb7c771c48c",
+        "sourceMember": "Figures/SFRD.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels (minus glyphs included) snapped to ticks",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan25.thesanzoom.sfrd.bouwens16",
+      "source": "THESAN-zoom",
+      "run": "THESAN-ZOOM (14 zoom-in galaxies, Kannan+25), bouwens16 dust",
+      "kind": "simulation",
+      "relation": "sfrd",
+      "epoch": {
+        "zRepresentative": 8.5,
+        "zNominal": 8.5,
+        "zMin": 3,
+        "zMax": 14,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift",
+        "xUnit": "redshift",
+        "yDefinition": "log10 star formation rate density of galaxies brighter than M_UV = -17 (attenuated)",
+        "yUnit": "log10(Msun yr^-1 cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 3,
+        "xMax": 14
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 3,
+            "y": -1.405
+          },
+          {
+            "x": 4,
+            "y": -1.409
+          },
+          {
+            "x": 5,
+            "y": -1.438
+          },
+          {
+            "x": 6,
+            "y": -1.6215
+          },
+          {
+            "x": 7,
+            "y": -1.7784
+          },
+          {
+            "x": 8,
+            "y": -2.059
+          },
+          {
+            "x": 9,
+            "y": -2.3611
+          },
+          {
+            "x": 10,
+            "y": -2.6267
+          },
+          {
+            "x": 11,
+            "y": -2.9903
+          },
+          {
+            "x": 12,
+            "y": -3.4114
+          },
+          {
+            "x": 13,
+            "y": -3.6763
+          },
+          {
+            "x": 14,
+            "y": -3.919
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the THESAN-ZOOM sample brighter than M_UV = -17",
+        "warning": "SFR density of THESAN-ZOOM galaxies brighter than M_UV=-17 versus redshift (z 3 to 14) with the Bouwens+16 empirical attenuation relation applied to the intrinsic luminosities, read from the vector path of Kannan et al. 2025; the observational points and the MillenniumTNG curve are not extracted. THESAN-ZOOM resimulates 14 selected high-redshift galaxies and their surroundings; how the sample is combined into volume-averaged functions is described in the paper, not in the figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies of the zoom sample, as drawn",
+        "sfrIndicator": "instantaneous SFR",
+        "sfrIntegrationLimit": "integrated down to M_UV = -17",
+        "dustCorrection": "Bouwens+16 empirical attenuation relation applied to the intrinsic luminosities"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), star formation rate density",
+        "doi": "10.33232/001c.145804",
+        "url": "https://arxiv.org/abs/2502.20437",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the star formation rate density, z=3-14",
+        "panel": "dashed black curve",
+        "checksumSha256": "eab66c0a617a3abb79f3250c375ab4b53570e2b1d814c0cc80a49fb7c771c48c",
+        "sourceMember": "Figures/SFRD.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels (minus glyphs included) snapped to ticks",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

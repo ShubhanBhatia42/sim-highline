@@ -8,7 +8,7 @@ const known = JSON.parse(await readFile(new URL("data/audit-known.json", root), 
 const issues = [];
 const flag = (sev, code, r, msg) => { const k = known.find(k => k.code === code && r.id.startsWith(k.idPrefix)); issues.push({ sev: k ? "known" : sev, code, id: r.id, file: r._file, relation: r.relation, source: r.source, msg, reason: k?.reason }); };
 const RANGE = {
-  gsmf: { y: [-11, 2], x: [3, 13.7] }, sfms: { y: [-7, 4.5], x: [3, 13.7] }, ssfr: { y: [-14, -6], x: [3, 13] }, mzr: { y: [-5, 10], x: [3, 13] },
+  gsmf: { y: [-11, 2], x: [3, 13.7] }, sfms: { y: [-7, 4.5], x: [3, 13.7] }, ssfr: { y: [-14, -6], x: [3, 14] }, mzr: { y: [-5, 10], x: [3, 13] },
   zstar: { y: [-4, 10], x: [3, 13.7] }, size: { y: [-1.5, 3], x: [3, 13] }, shmr: { y: [-6, 0.1], x: [6, 16.5] }, bh: { y: [3, 11.5], x: [3, 13] },
   bhsigma: { y: [3, 11.5], x: [0.8, 3.2] }, quenched: { y: [-0.05, 1.05], x: [3, 13] }, jstar: { y: [-1, 6], x: [4, 13.7] }, btfr: { y: [4, 13], x: [0.5, 3.2] },
   stfr: { y: [0.5, 3.2], x: [3, 13] }, gas: { y: [-4, 3], x: [3, 13] }, smd: { y: [3, 10], x: [0, 15] }, uvlf: { y: [-9, 1], x: [-25, -5] }, sfrd: { y: [-6, 0], x: [0, 20] }, metald: { y: [-6, 3], x: [0, 15] }
