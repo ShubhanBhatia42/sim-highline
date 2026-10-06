@@ -1,0 +1,81 @@
+{
+  "version": "0.8.0",
+  "released": "2026-10-07",
+  "doi": null,
+  "nRecords": 1460,
+  "nPoints": 45905,
+  "nParametric": 79,
+  "parametricSampling": "40 points over the record domain at zRepresentative; the published expression is evaluated, nothing else is generated",
+  "columns": {
+    "records": [
+      "record_id",
+      "kind",
+      "source",
+      "run",
+      "relation",
+      "z",
+      "z_min",
+      "z_max",
+      "representation",
+      "interval_kind",
+      "connect",
+      "x_unit",
+      "y_unit",
+      "x_definition",
+      "y_definition",
+      "tier",
+      "rankable",
+      "calibration",
+      "population_note",
+      "mass_class",
+      "cosmology_h0",
+      "cosmology_om",
+      "imf",
+      "mass_definition",
+      "halo_mass_definition",
+      "population",
+      "sfr_timescale_myr",
+      "sfr_statistic",
+      "quenching_criterion",
+      "size_definition",
+      "metallicity_quantity",
+      "gas_phase",
+      "density_frame",
+      "citation",
+      "doi",
+      "url",
+      "checksum_sha256",
+      "retrieved",
+      "definitions_json"
+    ],
+    "points": [
+      "record_id",
+      "point_index",
+      "x",
+      "y",
+      "y_low",
+      "y_high",
+      "x_low",
+      "x_high",
+      "count"
+    ]
+  },
+  "files": {
+    "sim-highline-records.csv": {
+      "sha256": "78e5fa241a9a0dbb5a446ce76de607f94bf7b1391fe979107e881c691c3692fc",
+      "bytes": 1158263
+    },
+    "sim-highline-points.csv": {
+      "sha256": "fd3f17a9e7a72f5feaa2b416955a9212261f1c485c23f66d1e69a1f0587b4251",
+      "bytes": 2857390
+    },
+    "sim-highline-records.json": {
+      "sha256": "990425a3708e5cc63548209d23f0e15d71334b6acabde86ccd5398a66cb5d2e1",
+      "bytes": 4191067
+    },
+    "sim-highline-citations.bib": {
+      "sha256": "26f4f8b083b880190538a3c0569454b805513c89abb8b1fb25c1a7e8bb0271e3",
+      "bytes": 24839
+    }
+  }
+}

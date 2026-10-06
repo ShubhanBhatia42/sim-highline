@@ -1,0 +1,200 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "marszewski24.fire2.mzrz.evolution.ab",
+      "source": "FIRE-2",
+      "run": "high-z zooms, redshift-evolving fit (Slope and normalization evolution, A(z) and B(z))",
+      "kind": "simulation",
+      "relation": "mzr",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 5,
+        "zMax": 12,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 gas-phase Z/Zsun (Zsun = 0.02, Anders & Grevesse 1989)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 6,
+        "xMax": 10.5
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "log(Z/Zsun) = A(z) log(M*/Msun) + B(z); A = a ((1+z)/9)^alpha, B = b ((1+z)/9)^beta",
+        "expression": "a*Math.pow((1+z)/9,alpha)*x+b*Math.pow((1+z)/9,beta)",
+        "parameters": {
+          "a": 0.3717,
+          "b": -4.251,
+          "alpha": 0.2065,
+          "beta": 0.1493
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the FIRE-2 high-redshift zoom suite at integer redshifts z=5-12, linear fits to medians in five stellar-mass bins",
+        "warning": "Slope and normalization evolution, A(z) and B(z). Fit of Marszewski et al. 2024 to bin medians of the zoom sample (not volume complete) over log M* = 6 to the sample maximum; the domain 6-10.5 is the plotted fit range read from the paper's figure. Metallicity is the mass-weighted mean over gas within 0.2 Rvir; O/H follows from 12+log(O/H) = log(Z/Zsun) + 9.00 (the paper's FIRE-1 calibration, with its systematics)."
+      },
+      "definitions": {
+        "metallicityQuantity": "gas-metal-mass-fraction",
+        "metallicityCalibration": "intrinsic-simulation (mass-weighted gas within 0.2 Rvir; Zsun = 0.02)",
+        "imf": "unspecified",
+        "population": "all galaxies of the zoom suite",
+        "cosmology": {
+          "H0": 67.66,
+          "Om": 0.3111
+        },
+        "cosmologyNote": "Planck 2020 (flat LCDM), values as in the Planck 2018 release"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Marszewski et al. 2024, ApJL 967, L41 (arXiv:2403.08853), best-fit parameters table",
+        "doi": "10.3847/2041-8213/ad4cee",
+        "url": "https://arxiv.org/abs/2403.08853",
+        "retrieved": "2026-10-05",
+        "checksumSha256": "65a8fc01e8fb27f4d19e5efab387e673797356012f77d5e6647fda3e12781905",
+        "sourceMember": "sample631.tex table:1 (arXiv source, transcribed)",
+        "extractionMethod": "transcribed from the arXiv LaTeX table; A(5), A(12) and B(12) checked against the per-redshift fits printed on the paper's figure"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Zoom samples are not volume complete (see Known caveats)."
+    },
+    {
+      "id": "marszewski24.fire2.mzrz.evolution.b",
+      "source": "FIRE-2",
+      "run": "high-z zooms, redshift-evolving fit (Normalization evolution, B(z) with fixed slope)",
+      "kind": "simulation",
+      "relation": "mzr",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 5,
+        "zMax": 12,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 gas-phase Z/Zsun (Zsun = 0.02, Anders & Grevesse 1989)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 6,
+        "xMax": 10.5
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "log(Z/Zsun) = A(z) log(M*/Msun) + B(z); A = a ((1+z)/9)^alpha, B = b ((1+z)/9)^beta",
+        "expression": "a*Math.pow((1+z)/9,alpha)*x+b*Math.pow((1+z)/9,beta)",
+        "parameters": {
+          "a": 0.3683,
+          "b": -4.232,
+          "alpha": 0,
+          "beta": 0.038
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the FIRE-2 high-redshift zoom suite at integer redshifts z=5-12, linear fits to medians in five stellar-mass bins",
+        "warning": "Normalization evolution, B(z) with fixed slope. Fit of Marszewski et al. 2024 to bin medians of the zoom sample (not volume complete) over log M* = 6 to the sample maximum; the domain 6-10.5 is the plotted fit range read from the paper's figure. Metallicity is the mass-weighted mean over gas within 0.2 Rvir; O/H follows from 12+log(O/H) = log(Z/Zsun) + 9.00 (the paper's FIRE-1 calibration, with its systematics)."
+      },
+      "definitions": {
+        "metallicityQuantity": "gas-metal-mass-fraction",
+        "metallicityCalibration": "intrinsic-simulation (mass-weighted gas within 0.2 Rvir; Zsun = 0.02)",
+        "imf": "unspecified",
+        "population": "all galaxies of the zoom suite",
+        "cosmology": {
+          "H0": 67.66,
+          "Om": 0.3111
+        },
+        "cosmologyNote": "Planck 2020 (flat LCDM), values as in the Planck 2018 release"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Marszewski et al. 2024, ApJL 967, L41 (arXiv:2403.08853), best-fit parameters table",
+        "doi": "10.3847/2041-8213/ad4cee",
+        "url": "https://arxiv.org/abs/2403.08853",
+        "retrieved": "2026-10-05",
+        "checksumSha256": "65a8fc01e8fb27f4d19e5efab387e673797356012f77d5e6647fda3e12781905",
+        "sourceMember": "sample631.tex table:1 (arXiv source, transcribed)",
+        "extractionMethod": "transcribed from the arXiv LaTeX table; A(5), A(12) and B(12) checked against the per-redshift fits printed on the paper's figure"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Zoom samples are not volume complete (see Known caveats)."
+    },
+    {
+      "id": "marszewski24.fire2.mzrz.evolution.none",
+      "source": "FIRE-2",
+      "run": "high-z zooms, redshift-evolving fit (No evolution (fixed slope and normalization))",
+      "kind": "simulation",
+      "relation": "mzr",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 5,
+        "zMax": 12,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 gas-phase Z/Zsun (Zsun = 0.02, Anders & Grevesse 1989)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 6,
+        "xMax": 10.5
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "log(Z/Zsun) = A(z) log(M*/Msun) + B(z); A = a ((1+z)/9)^alpha, B = b ((1+z)/9)^beta",
+        "expression": "a*Math.pow((1+z)/9,alpha)*x+b*Math.pow((1+z)/9,beta)",
+        "parameters": {
+          "a": 0.3702,
+          "b": -4.241,
+          "alpha": 0,
+          "beta": 0
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the FIRE-2 high-redshift zoom suite at integer redshifts z=5-12, linear fits to medians in five stellar-mass bins",
+        "warning": "No evolution (fixed slope and normalization). Fit of Marszewski et al. 2024 to bin medians of the zoom sample (not volume complete) over log M* = 6 to the sample maximum; the domain 6-10.5 is the plotted fit range read from the paper's figure. Metallicity is the mass-weighted mean over gas within 0.2 Rvir; O/H follows from 12+log(O/H) = log(Z/Zsun) + 9.00 (the paper's FIRE-1 calibration, with its systematics)."
+      },
+      "definitions": {
+        "metallicityQuantity": "gas-metal-mass-fraction",
+        "metallicityCalibration": "intrinsic-simulation (mass-weighted gas within 0.2 Rvir; Zsun = 0.02)",
+        "imf": "unspecified",
+        "population": "all galaxies of the zoom suite",
+        "cosmology": {
+          "H0": 67.66,
+          "Om": 0.3111
+        },
+        "cosmologyNote": "Planck 2020 (flat LCDM), values as in the Planck 2018 release"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Marszewski et al. 2024, ApJL 967, L41 (arXiv:2403.08853), best-fit parameters table",
+        "doi": "10.3847/2041-8213/ad4cee",
+        "url": "https://arxiv.org/abs/2403.08853",
+        "retrieved": "2026-10-05",
+        "checksumSha256": "65a8fc01e8fb27f4d19e5efab387e673797356012f77d5e6647fda3e12781905",
+        "sourceMember": "sample631.tex table:1 (arXiv source, transcribed)",
+        "extractionMethod": "transcribed from the arXiv LaTeX table; A(5), A(12) and B(12) checked against the per-redshift fits printed on the paper's figure"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Zoom samples are not volume complete (see Known caveats)."
+    }
+  ]
+}

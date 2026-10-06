@@ -1,0 +1,290 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "kaviraj17.horizon-agn.sfrd",
+      "source": "Horizon-AGN",
+      "run": "Horizon-AGN (SFR density, Kaviraj+17)",
+      "kind": "simulation",
+      "relation": "sfrd",
+      "epoch": {
+        "zRepresentative": 3,
+        "zNominal": 3,
+        "zMin": 0.019,
+        "zMax": 5.998,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift (axis is log10(1+z), converted exactly)",
+        "xUnit": "redshift",
+        "yDefinition": "log10 cosmic star formation rate density",
+        "yUnit": "log10(Msun yr^-1 Mpc^-3)"
+      },
+      "domain": {
+        "xMin": 0.019,
+        "xMax": 5.998
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 0.019,
+            "y": -1.886
+          },
+          {
+            "x": 0.033,
+            "y": -1.85
+          },
+          {
+            "x": 0.057,
+            "y": -1.78
+          },
+          {
+            "x": 0.072,
+            "y": -1.7599
+          },
+          {
+            "x": 0.089,
+            "y": -1.7334
+          },
+          {
+            "x": 0.109,
+            "y": -1.7071
+          },
+          {
+            "x": 0.145,
+            "y": -1.6704
+          },
+          {
+            "x": 0.17,
+            "y": -1.6365
+          },
+          {
+            "x": 0.204,
+            "y": -1.595
+          },
+          {
+            "x": 0.239,
+            "y": -1.5663
+          },
+          {
+            "x": 0.271,
+            "y": -1.5663
+          },
+          {
+            "x": 0.294,
+            "y": -1.5757
+          },
+          {
+            "x": 0.329,
+            "y": -1.5574
+          },
+          {
+            "x": 0.351,
+            "y": -1.5225
+          },
+          {
+            "x": 0.385,
+            "y": -1.4982
+          },
+          {
+            "x": 0.434,
+            "y": -1.4826
+          },
+          {
+            "x": 0.472,
+            "y": -1.4531
+          },
+          {
+            "x": 0.505,
+            "y": -1.4256
+          },
+          {
+            "x": 0.54,
+            "y": -1.4061
+          },
+          {
+            "x": 0.573,
+            "y": -1.3873
+          },
+          {
+            "x": 0.61,
+            "y": -1.3634
+          },
+          {
+            "x": 0.655,
+            "y": -1.3355
+          },
+          {
+            "x": 0.718,
+            "y": -1.3092
+          },
+          {
+            "x": 0.754,
+            "y": -1.2891
+          },
+          {
+            "x": 0.778,
+            "y": -1.2747
+          },
+          {
+            "x": 0.847,
+            "y": -1.2472
+          },
+          {
+            "x": 0.899,
+            "y": -1.2131
+          },
+          {
+            "x": 0.955,
+            "y": -1.1932
+          },
+          {
+            "x": 1.002,
+            "y": -1.1703
+          },
+          {
+            "x": 1.059,
+            "y": -1.1521
+          },
+          {
+            "x": 1.133,
+            "y": -1.128
+          },
+          {
+            "x": 1.236,
+            "y": -1.1019
+          },
+          {
+            "x": 1.268,
+            "y": -1.0832
+          },
+          {
+            "x": 1.334,
+            "y": -1.0654
+          },
+          {
+            "x": 1.404,
+            "y": -1.0427
+          },
+          {
+            "x": 1.48,
+            "y": -1.021
+          },
+          {
+            "x": 2.361,
+            "y": -0.9418
+          },
+          {
+            "x": 2.532,
+            "y": -0.9183
+          },
+          {
+            "x": 2.725,
+            "y": -0.9061
+          },
+          {
+            "x": 2.977,
+            "y": -0.898
+          },
+          {
+            "x": 3.137,
+            "y": -0.9061
+          },
+          {
+            "x": 3.351,
+            "y": -0.9267
+          },
+          {
+            "x": 3.51,
+            "y": -0.9374
+          },
+          {
+            "x": 3.639,
+            "y": -0.953
+          },
+          {
+            "x": 3.926,
+            "y": -0.9737
+          },
+          {
+            "x": 3.928,
+            "y": -0.9955
+          },
+          {
+            "x": 4.089,
+            "y": -1.021
+          },
+          {
+            "x": 4.148,
+            "y": -1.0539
+          },
+          {
+            "x": 4.392,
+            "y": -1.0802
+          },
+          {
+            "x": 4.458,
+            "y": -1.1146
+          },
+          {
+            "x": 4.528,
+            "y": -1.1629
+          },
+          {
+            "x": 4.748,
+            "y": -1.2795
+          },
+          {
+            "x": 4.822,
+            "y": -1.2173
+          },
+          {
+            "x": 5.074,
+            "y": -1.3576
+          },
+          {
+            "x": 5.447,
+            "y": -1.3935
+          },
+          {
+            "x": 5.998,
+            "y": -1.4541
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all star formation in the box",
+        "warning": "Cosmic star formation history of Horizon-AGN (z 0 to 6), read from the PostScript vector paths of Kaviraj et al. 2017. The grey band is the observational range of Hopkins 2006 and is not extracted. IMF, cosmology and the density frame are not stated in the figure."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": "unspecified",
+        "densityFrame": "unspecified",
+        "sfrIndicator": "unspecified",
+        "population": "all galaxies"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), cosmic star formation history",
+        "doi": "10.1093/mnras/stx126",
+        "url": "https://arxiv.org/abs/1605.09379",
+        "retrieved": "2026-10-05",
+        "figure": "Predicted cosmic star formation history compared with Hopkins & Beacom 2006",
+        "panel": "red curve",
+        "checksumSha256": "218bd65760e7cd8da2669399dd990d102c033d8db01f8b0c3eddd29f33a5dd89",
+        "sourceMember": "cosmicsfh.ps (converted to PDF with the PostScript bounding box)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: major ticks (longer strokes) assigned the labels read from the rendered figure (the labels are glyph paths): x 0.0-0.8 in log10(1+z), y -1.0 to -2.5; x converted exactly to z",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

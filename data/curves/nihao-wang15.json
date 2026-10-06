@@ -1,0 +1,951 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "wang15.nihao.shmr.galaxies.z0",
+      "source": "NIHAO zoom suite",
+      "run": "Wang+15, individual galaxies",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M200 (AHF, 200x critical density)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 M*(<0.2 R200) / M200",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 9.5966,
+        "xMax": 12.5478
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": false,
+        "points": [
+          {
+            "x": 9.5966,
+            "y": -5.1166
+          },
+          {
+            "x": 9.7084,
+            "y": -3.6256
+          },
+          {
+            "x": 9.7574,
+            "y": -4.1822
+          },
+          {
+            "x": 9.7745,
+            "y": -4.7101
+          },
+          {
+            "x": 9.7818,
+            "y": -4.1564
+          },
+          {
+            "x": 9.7882,
+            "y": -5.0582
+          },
+          {
+            "x": 9.8007,
+            "y": -4.7288
+          },
+          {
+            "x": 9.8102,
+            "y": -3.5697
+          },
+          {
+            "x": 9.9581,
+            "y": -3.754
+          },
+          {
+            "x": 9.9795,
+            "y": -5.461
+          },
+          {
+            "x": 10.0212,
+            "y": -3.6652
+          },
+          {
+            "x": 10.0374,
+            "y": -3.2212
+          },
+          {
+            "x": 10.0414,
+            "y": -3.5086
+          },
+          {
+            "x": 10.1106,
+            "y": -3.1597
+          },
+          {
+            "x": 10.1367,
+            "y": -3.5547
+          },
+          {
+            "x": 10.1461,
+            "y": -3.6121
+          },
+          {
+            "x": 10.1644,
+            "y": -3.3906
+          },
+          {
+            "x": 10.1818,
+            "y": -3.2276
+          },
+          {
+            "x": 10.2201,
+            "y": -3.2493
+          },
+          {
+            "x": 10.2304,
+            "y": -3.405
+          },
+          {
+            "x": 10.2742,
+            "y": -3.0567
+          },
+          {
+            "x": 10.2967,
+            "y": -3.5724
+          },
+          {
+            "x": 10.3284,
+            "y": -3.2178
+          },
+          {
+            "x": 10.3802,
+            "y": -3.301
+          },
+          {
+            "x": 10.3856,
+            "y": -3.4011
+          },
+          {
+            "x": 10.3979,
+            "y": -2.9266
+          },
+          {
+            "x": 10.4099,
+            "y": -3.2764
+          },
+          {
+            "x": 10.4314,
+            "y": -2.7999
+          },
+          {
+            "x": 10.4425,
+            "y": -2.8766
+          },
+          {
+            "x": 10.4983,
+            "y": -2.7587
+          },
+          {
+            "x": 10.5079,
+            "y": -2.74
+          },
+          {
+            "x": 10.5132,
+            "y": -3.0463
+          },
+          {
+            "x": 10.5185,
+            "y": -2.9445
+          },
+          {
+            "x": 10.549,
+            "y": -3.3817
+          },
+          {
+            "x": 10.6284,
+            "y": -2.8388
+          },
+          {
+            "x": 10.6325,
+            "y": -2.6561
+          },
+          {
+            "x": 10.6884,
+            "y": -2.8877
+          },
+          {
+            "x": 10.6884,
+            "y": -2.5517
+          },
+          {
+            "x": 10.6902,
+            "y": -2.6038
+          },
+          {
+            "x": 10.6964,
+            "y": -2.7359
+          },
+          {
+            "x": 10.7126,
+            "y": -2.6263
+          },
+          {
+            "x": 10.721,
+            "y": -2.6757
+          },
+          {
+            "x": 10.781,
+            "y": -2.6443
+          },
+          {
+            "x": 10.85,
+            "y": -2.4521
+          },
+          {
+            "x": 10.9465,
+            "y": -2.5055
+          },
+          {
+            "x": 10.9509,
+            "y": -2.3945
+          },
+          {
+            "x": 10.9647,
+            "y": -2.3605
+          },
+          {
+            "x": 10.9675,
+            "y": -2.2827
+          },
+          {
+            "x": 11.0607,
+            "y": -2.7344
+          },
+          {
+            "x": 11.0719,
+            "y": -2.3183
+          },
+          {
+            "x": 11.0792,
+            "y": -2.1513
+          },
+          {
+            "x": 11.1173,
+            "y": -2.1502
+          },
+          {
+            "x": 11.1703,
+            "y": -1.8649
+          },
+          {
+            "x": 11.1959,
+            "y": -2.2972
+          },
+          {
+            "x": 11.1987,
+            "y": -2.138
+          },
+          {
+            "x": 11.2253,
+            "y": -2.3999
+          },
+          {
+            "x": 11.2856,
+            "y": -2.3251
+          },
+          {
+            "x": 11.3201,
+            "y": -1.648
+          },
+          {
+            "x": 11.4031,
+            "y": -1.7903
+          },
+          {
+            "x": 11.4116,
+            "y": -1.6482
+          },
+          {
+            "x": 11.4265,
+            "y": -1.8824
+          },
+          {
+            "x": 11.4281,
+            "y": -1.6894
+          },
+          {
+            "x": 11.4814,
+            "y": -1.9168
+          },
+          {
+            "x": 11.4928,
+            "y": -1.6224
+          },
+          {
+            "x": 11.5119,
+            "y": -1.9766
+          },
+          {
+            "x": 11.5119,
+            "y": -1.9344
+          },
+          {
+            "x": 11.5428,
+            "y": -1.9033
+          },
+          {
+            "x": 11.6107,
+            "y": -1.5172
+          },
+          {
+            "x": 11.6263,
+            "y": -2.0409
+          },
+          {
+            "x": 11.6365,
+            "y": -2.0377
+          },
+          {
+            "x": 11.716,
+            "y": -1.483
+          },
+          {
+            "x": 11.7226,
+            "y": -1.5078
+          },
+          {
+            "x": 11.7597,
+            "y": -1.5953
+          },
+          {
+            "x": 11.8102,
+            "y": -1.5431
+          },
+          {
+            "x": 11.8376,
+            "y": -1.7657
+          },
+          {
+            "x": 11.9031,
+            "y": -1.3846
+          },
+          {
+            "x": 11.9063,
+            "y": -1.422
+          },
+          {
+            "x": 11.9509,
+            "y": -1.4581
+          },
+          {
+            "x": 11.9685,
+            "y": -1.1962
+          },
+          {
+            "x": 11.9745,
+            "y": -1.3232
+          },
+          {
+            "x": 11.9961,
+            "y": -1.1713
+          },
+          {
+            "x": 12.0086,
+            "y": -1.3384
+          },
+          {
+            "x": 12.0492,
+            "y": -1.1543
+          },
+          {
+            "x": 12.0645,
+            "y": -1.8165
+          },
+          {
+            "x": 12.0719,
+            "y": -1.8047
+          },
+          {
+            "x": 12.3404,
+            "y": -1.1974
+          },
+          {
+            "x": 12.3692,
+            "y": -1.1706
+          },
+          {
+            "x": 12.5478,
+            "y": -1.2555
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "isolated zoom centrals",
+        "warning": "NIHAO main target haloes: isolated zoom-in centrals selected without regard to structure or merger history, so not a volume-complete sample. M200 from AHF with Delta=200 times the critical density; M* within 0.2 R200; SFR from stars formed within 0.2 R200 over the last 100 Myr. No AGN feedback."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.1,
+          "Om": 0.3175
+        },
+        "massDefinition": "sphere-0.2R200",
+        "haloMassDefinition": "M200crit",
+        "haloMassHistory": "current",
+        "population": "isolated-zoom-centrals"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Wang et al. 2015, MNRAS 454, 83 (NIHAO project I), Tables A1-A2",
+        "doi": "10.1093/mnras/stv1937",
+        "url": "https://arxiv.org/abs/1503.04818",
+        "retrieved": "2026-10-05",
+        "sourceMember": "Appendix A, Tables A1 and A2 (88 main target haloes, z=0), transcribed from the arXiv v3 PDF"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Individual galaxies as tabulated (88)."
+    },
+    {
+      "id": "wang15.nihao.shmr.median.z0",
+      "source": "NIHAO zoom suite",
+      "run": "Wang+15, binned medians",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M200 (AHF, 200x critical density)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 M*(<0.2 R200) / M200",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 9.75,
+        "xMax": 12.25
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.75,
+            "y": -4.4461,
+            "yLow": -5.0909,
+            "yHigh": -3.6821,
+            "count": 10
+          },
+          {
+            "x": 10.25,
+            "y": -3.2628,
+            "yLow": -3.5528,
+            "yHigh": -2.9318,
+            "count": 20
+          },
+          {
+            "x": 10.75,
+            "y": -2.6502,
+            "yLow": -2.9036,
+            "yHigh": -2.436,
+            "count": 18
+          },
+          {
+            "x": 11.25,
+            "y": -2.0274,
+            "yLow": -2.3224,
+            "yHigh": -1.6647,
+            "count": 16
+          },
+          {
+            "x": 11.75,
+            "y": -1.5172,
+            "yLow": -1.953,
+            "yHigh": -1.3576,
+            "count": 17
+          },
+          {
+            "x": 12.25,
+            "y": -1.2679,
+            "yLow": -1.8071,
+            "yHigh": -1.1673,
+            "count": 6
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "isolated zoom centrals",
+        "warning": "NIHAO main target haloes: isolated zoom-in centrals selected without regard to structure or merger history, so not a volume-complete sample. M200 from AHF with Delta=200 times the critical density; M* within 0.2 R200; SFR from stars formed within 0.2 R200 over the last 100 Myr. No AGN feedback. Medians computed by sim-highline from the 88 tabulated galaxies in 0.5 dex bins with at least 5 galaxies."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.1,
+          "Om": 0.3175
+        },
+        "massDefinition": "sphere-0.2R200",
+        "haloMassDefinition": "M200crit",
+        "haloMassHistory": "current",
+        "population": "isolated-zoom-centrals"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "Wang et al. 2015, MNRAS 454, 83 (NIHAO project I), Tables A1-A2",
+        "doi": "10.1093/mnras/stv1937",
+        "url": "https://arxiv.org/abs/1503.04818",
+        "retrieved": "2026-10-05",
+        "sourceMember": "Appendix A, Tables A1 and A2 (88 main target haloes, z=0), transcribed from the arXiv v3 PDF"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Binned from Wang et al. 2015 Tables A1-A2."
+    },
+    {
+      "id": "wang15.nihao.sfms.galaxies.z0",
+      "source": "NIHAO zoom suite",
+      "run": "Wang+15, individual galaxies",
+      "kind": "simulation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M*(<0.2 R200)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 SFR averaged over 100 Myr within 0.2 R200",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 5.0645,
+        "xMax": 11.2923
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": false,
+        "points": [
+          {
+            "x": 5.0645,
+            "y": -4.2007
+          },
+          {
+            "x": 5.0719,
+            "y": -4.9208
+          },
+          {
+            "x": 5.5752,
+            "y": -4.2366
+          },
+          {
+            "x": 6.2405,
+            "y": -3.7696
+          },
+          {
+            "x": 6.7243,
+            "y": -3.8539
+          },
+          {
+            "x": 6.7738,
+            "y": -3.7696
+          },
+          {
+            "x": 6.9542,
+            "y": -2.8861
+          },
+          {
+            "x": 7.0792,
+            "y": -2.8539
+          },
+          {
+            "x": 7.1106,
+            "y": -2.5086
+          },
+          {
+            "x": 7.1673,
+            "y": -4.4089
+          },
+          {
+            "x": 7.2175,
+            "y": -2.4089
+          },
+          {
+            "x": 7.5658,
+            "y": -2.6021
+          },
+          {
+            "x": 7.7679,
+            "y": -3.3768
+          },
+          {
+            "x": 7.7896,
+            "y": -2.3565
+          },
+          {
+            "x": 7.8007,
+            "y": -2.3279
+          },
+          {
+            "x": 7.9605,
+            "y": -4.1079
+          },
+          {
+            "x": 7.9763,
+            "y": -4.1079
+          },
+          {
+            "x": 8.0453,
+            "y": -2.1079
+          },
+          {
+            "x": 8.0864,
+            "y": -2.4318
+          },
+          {
+            "x": 8.0864,
+            "y": -2.0269
+          },
+          {
+            "x": 8.1367,
+            "y": -4.4089
+          },
+          {
+            "x": 8.1367,
+            "y": -1.8239
+          },
+          {
+            "x": 8.3263,
+            "y": -1.9208
+          },
+          {
+            "x": 8.3979,
+            "y": -2.5376
+          },
+          {
+            "x": 8.4409,
+            "y": -1.0605
+          },
+          {
+            "x": 8.5563,
+            "y": -1.2596
+          },
+          {
+            "x": 8.6042,
+            "y": -1.5376
+          },
+          {
+            "x": 8.6848,
+            "y": -1.0605
+          },
+          {
+            "x": 8.7536,
+            "y": -1.2218
+          },
+          {
+            "x": 8.8254,
+            "y": -3.1024
+          },
+          {
+            "x": 8.8987,
+            "y": -1.4202
+          },
+          {
+            "x": 8.9279,
+            "y": -1.5686
+          },
+          {
+            "x": 8.9605,
+            "y": -0.4202
+          },
+          {
+            "x": 8.9671,
+            "y": -1.0088
+          },
+          {
+            "x": 9.0607,
+            "y": -1.1739
+          },
+          {
+            "x": 9.3054,
+            "y": -1.0223
+          },
+          {
+            "x": 9.5353,
+            "y": -0.3768
+          },
+          {
+            "x": 9.5441,
+            "y": -0.0605
+          },
+          {
+            "x": 9.5647,
+            "y": 0.0414
+          },
+          {
+            "x": 9.5775,
+            "y": -0.4318
+          },
+          {
+            "x": 9.5855,
+            "y": -0.1805
+          },
+          {
+            "x": 9.5988,
+            "y": -0.2147
+          },
+          {
+            "x": 9.6128,
+            "y": -0.2076
+          },
+          {
+            "x": 9.6395,
+            "y": -0.1308
+          },
+          {
+            "x": 9.6721,
+            "y": -0.1024
+          },
+          {
+            "x": 9.7388,
+            "y": -0.4089
+          },
+          {
+            "x": 9.7634,
+            "y": 0.0492
+          },
+          {
+            "x": 9.8704,
+            "y": 0.0969
+          },
+          {
+            "x": 10.0719,
+            "y": 0.5888
+          },
+          {
+            "x": 10.0934,
+            "y": 0.1732
+          },
+          {
+            "x": 10.1644,
+            "y": -0.0362
+          },
+          {
+            "x": 10.2148,
+            "y": 0.3541
+          },
+          {
+            "x": 10.233,
+            "y": 0.4393
+          },
+          {
+            "x": 10.248,
+            "y": 0.0043
+          },
+          {
+            "x": 10.2672,
+            "y": 0.0934
+          },
+          {
+            "x": 10.2672,
+            "y": 1.1123
+          },
+          {
+            "x": 10.4843,
+            "y": 0.5635
+          },
+          {
+            "x": 10.4928,
+            "y": 0.4654
+          },
+          {
+            "x": 10.5185,
+            "y": 1.017
+          },
+          {
+            "x": 10.6513,
+            "y": 1.1202
+          },
+          {
+            "x": 10.6702,
+            "y": 0.3096
+          },
+          {
+            "x": 10.7723,
+            "y": 0.433
+          },
+          {
+            "x": 10.8248,
+            "y": 0.5647
+          },
+          {
+            "x": 10.8949,
+            "y": 0.6325
+          },
+          {
+            "x": 11.143,
+            "y": 0.9279
+          },
+          {
+            "x": 11.1987,
+            "y": 0.9101
+          },
+          {
+            "x": 11.2923,
+            "y": 1.0449
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "isolated zoom centrals",
+        "warning": "NIHAO main target haloes: isolated zoom-in centrals selected without regard to structure or merger history, so not a volume-complete sample. M200 from AHF with Delta=200 times the critical density; M* within 0.2 R200; SFR from stars formed within 0.2 R200 over the last 100 Myr. No AGN feedback. 21 galaxies with tabulated SFR = 0.00 (no stars formed in 100 Myr at the table's precision) are omitted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.1,
+          "Om": 0.3175
+        },
+        "massDefinition": "sphere-0.2R200",
+        "sfrTimescaleMyr": 100,
+        "sfrStatistic": "median",
+        "population": "isolated-zoom-centrals"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Wang et al. 2015, MNRAS 454, 83 (NIHAO project I), Tables A1-A2",
+        "doi": "10.1093/mnras/stv1937",
+        "url": "https://arxiv.org/abs/1503.04818",
+        "retrieved": "2026-10-05",
+        "sourceMember": "Appendix A, Tables A1 and A2 (88 main target haloes, z=0), transcribed from the arXiv v3 PDF"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Individual galaxies as tabulated."
+    },
+    {
+      "id": "wang15.nihao.sfms.median.z0",
+      "source": "NIHAO zoom suite",
+      "run": "Wang+15, binned medians",
+      "kind": "simulation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M*(<0.2 R200)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 SFR averaged over 100 Myr within 0.2 R200",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 7.75,
+        "xMax": 10.75
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.75,
+            "y": -2.9894,
+            "yLow": -4.1079,
+            "yHigh": -2.3508,
+            "count": 6
+          },
+          {
+            "x": 8.25,
+            "y": -2.0674,
+            "yLow": -2.5249,
+            "yHigh": -1.8355,
+            "count": 8
+          },
+          {
+            "x": 8.75,
+            "y": -1.2596,
+            "yLow": -1.5599,
+            "yHigh": -1.0233,
+            "count": 9
+          },
+          {
+            "x": 9.75,
+            "y": -0.1556,
+            "yLow": -0.3845,
+            "yHigh": 0.0433,
+            "count": 12
+          },
+          {
+            "x": 10.25,
+            "y": 0.3967,
+            "yLow": 0.0435,
+            "yHigh": 0.5777,
+            "count": 10
+          },
+          {
+            "x": 10.75,
+            "y": 0.5986,
+            "yLow": 0.4083,
+            "yHigh": 1.0377,
+            "count": 6
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "isolated zoom centrals",
+        "warning": "NIHAO main target haloes: isolated zoom-in centrals selected without regard to structure or merger history, so not a volume-complete sample. M200 from AHF with Delta=200 times the critical density; M* within 0.2 R200; SFR from stars formed within 0.2 R200 over the last 100 Myr. No AGN feedback. Medians of the 67 galaxies with SFR > 0, 0.5 dex bins with at least 5 galaxies; 21 SFR = 0 galaxies omitted, so low-mass medians are biased high."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.1,
+          "Om": 0.3175
+        },
+        "massDefinition": "sphere-0.2R200",
+        "sfrTimescaleMyr": 100,
+        "sfrStatistic": "median",
+        "population": "isolated-zoom-centrals"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "Wang et al. 2015, MNRAS 454, 83 (NIHAO project I), Tables A1-A2",
+        "doi": "10.1093/mnras/stv1937",
+        "url": "https://arxiv.org/abs/1503.04818",
+        "retrieved": "2026-10-05",
+        "sourceMember": "Appendix A, Tables A1 and A2 (88 main target haloes, z=0), transcribed from the arXiv v3 PDF"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Binned from Wang et al. 2015 Tables A1-A2."
+    }
+  ]
+}

@@ -1,0 +1,4657 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "kannan22.thesan.uvlf.t1.z6",
+      "source": "THESAN-1",
+      "run": "THESAN-1",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, AB, dust attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.05,
+        "xMax": -11.13
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.05,
+            "y": -5.0539
+          },
+          {
+            "x": -21.79,
+            "y": -4.4007
+          },
+          {
+            "x": -21.53,
+            "y": -4.3136
+          },
+          {
+            "x": -21.27,
+            "y": -4.0125
+          },
+          {
+            "x": -21.01,
+            "y": -3.9078
+          },
+          {
+            "x": -20.75,
+            "y": -3.7017
+          },
+          {
+            "x": -20.49,
+            "y": -3.6226
+          },
+          {
+            "x": -20.23,
+            "y": -3.3593
+          },
+          {
+            "x": -19.97,
+            "y": -3.3175
+          },
+          {
+            "x": -19.71,
+            "y": -3.1119
+          },
+          {
+            "x": -19.45,
+            "y": -3.0165
+          },
+          {
+            "x": -19.19,
+            "y": -2.914
+          },
+          {
+            "x": -18.93,
+            "y": -2.7486
+          },
+          {
+            "x": -18.67,
+            "y": -2.6193
+          },
+          {
+            "x": -18.41,
+            "y": -2.525
+          },
+          {
+            "x": -18.15,
+            "y": -2.4281
+          },
+          {
+            "x": -17.89,
+            "y": -2.2942
+          },
+          {
+            "x": -17.63,
+            "y": -2.1885
+          },
+          {
+            "x": -17.37,
+            "y": -2.0803
+          },
+          {
+            "x": -17.11,
+            "y": -2.0153
+          },
+          {
+            "x": -16.85,
+            "y": -1.9603
+          },
+          {
+            "x": -16.59,
+            "y": -1.8617
+          },
+          {
+            "x": -16.33,
+            "y": -1.7727
+          },
+          {
+            "x": -16.07,
+            "y": -1.6512
+          },
+          {
+            "x": -15.81,
+            "y": -1.5159
+          },
+          {
+            "x": -15.55,
+            "y": -1.3826
+          },
+          {
+            "x": -15.29,
+            "y": -1.2906
+          },
+          {
+            "x": -15.03,
+            "y": -1.2317
+          },
+          {
+            "x": -14.77,
+            "y": -1.1879
+          },
+          {
+            "x": -14.51,
+            "y": -1.1365
+          },
+          {
+            "x": -14.25,
+            "y": -1.0827
+          },
+          {
+            "x": -13.99,
+            "y": -1.0191
+          },
+          {
+            "x": -13.73,
+            "y": -0.9393
+          },
+          {
+            "x": -13.47,
+            "y": -0.8542
+          },
+          {
+            "x": -13.21,
+            "y": -0.7679
+          },
+          {
+            "x": -12.95,
+            "y": -0.6889
+          },
+          {
+            "x": -12.69,
+            "y": -0.6142
+          },
+          {
+            "x": -12.43,
+            "y": -0.5481
+          },
+          {
+            "x": -12.17,
+            "y": -0.5003
+          },
+          {
+            "x": -11.91,
+            "y": -0.4527
+          },
+          {
+            "x": -11.65,
+            "y": -0.414
+          },
+          {
+            "x": -11.39,
+            "y": -0.398
+          },
+          {
+            "x": -11.13,
+            "y": -0.4113
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Dust-attenuated rest-frame 1500 A luminosity function of THESAN-1 at z=6, read from the vector paths of Kannan et al. 2022. The figure plots each redshift offset by -(z-8) dex; that offset was added back, so y is the physical value. Vogelsberger+20 dust-to-metal scaling of the Gnedin 2014 attenuation."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "population": "all galaxies",
+        "dustCorrection": "dust attenuated (Vogelsberger+20 dust-to-metal scaling of the Gnedin 2014 attenuation)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), UV luminosity functions at z=6-10, z=6",
+        "doi": "10.1093/mnras/stab3710",
+        "url": "https://arxiv.org/abs/2110.00584",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity functions at z=6-10",
+        "panel": "z=6",
+        "checksumSha256": "0fa2634128ceab009944e388392544cacc4c437c30b25a2e21307cb93a66edf3",
+        "sourceMember": "figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks; y includes the +(z-8) offset removal (curves are plotted offset by -(z-8))",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan22.thesan.uvlf.t1dust.z6",
+      "source": "THESAN-1",
+      "run": "THESAN-1 (dust-model attenuation)",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, AB, dust attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -23.783,
+        "xMax": -11.217
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -23.783,
+            "y": -4.2981
+          },
+          {
+            "x": -23.35,
+            "y": -4.3727
+          },
+          {
+            "x": -22.917,
+            "y": -4.1618
+          },
+          {
+            "x": -22.483,
+            "y": -3.997
+          },
+          {
+            "x": -22.05,
+            "y": -4.0717
+          },
+          {
+            "x": -21.617,
+            "y": -3.8692
+          },
+          {
+            "x": -21.183,
+            "y": -3.6037
+          },
+          {
+            "x": -20.75,
+            "y": -3.3809
+          },
+          {
+            "x": -20.317,
+            "y": -3.1265
+          },
+          {
+            "x": -19.883,
+            "y": -2.9846
+          },
+          {
+            "x": -19.45,
+            "y": -2.7699
+          },
+          {
+            "x": -19.017,
+            "y": -2.6308
+          },
+          {
+            "x": -18.583,
+            "y": -2.4652
+          },
+          {
+            "x": -18.15,
+            "y": -2.3332
+          },
+          {
+            "x": -17.717,
+            "y": -2.2115
+          },
+          {
+            "x": -17.283,
+            "y": -2.1267
+          },
+          {
+            "x": -16.85,
+            "y": -1.9903
+          },
+          {
+            "x": -16.417,
+            "y": -1.8106
+          },
+          {
+            "x": -15.983,
+            "y": -1.6092
+          },
+          {
+            "x": -15.55,
+            "y": -1.3838
+          },
+          {
+            "x": -15.117,
+            "y": -1.2515
+          },
+          {
+            "x": -14.683,
+            "y": -1.1701
+          },
+          {
+            "x": -14.25,
+            "y": -1.0807
+          },
+          {
+            "x": -13.817,
+            "y": -0.9661
+          },
+          {
+            "x": -13.383,
+            "y": -0.8245
+          },
+          {
+            "x": -12.95,
+            "y": -0.6882
+          },
+          {
+            "x": -12.517,
+            "y": -0.5685
+          },
+          {
+            "x": -12.083,
+            "y": -0.4836
+          },
+          {
+            "x": -11.65,
+            "y": -0.4165
+          },
+          {
+            "x": -11.217,
+            "y": -0.4062
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Dust-attenuated rest-frame 1500 A luminosity function of THESAN-1 (dust-model attenuation) at z=6, read from the vector paths of Kannan et al. 2022. The figure plots each redshift offset by -(z-8) dex; that offset was added back, so y is the physical value. dust mass from the THESAN empirical dust model."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "population": "all galaxies",
+        "dustCorrection": "dust attenuated (dust mass from the THESAN empirical dust model)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), UV luminosity functions at z=6-10, z=6",
+        "doi": "10.1093/mnras/stab3710",
+        "url": "https://arxiv.org/abs/2110.00584",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity functions at z=6-10",
+        "panel": "z=6",
+        "checksumSha256": "0fa2634128ceab009944e388392544cacc4c437c30b25a2e21307cb93a66edf3",
+        "sourceMember": "figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks; y includes the +(z-8) offset removal (curves are plotted offset by -(z-8))",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan22.thesan.uvlf.t2.z6",
+      "source": "THESAN-1",
+      "run": "THESAN-2 (lower resolution)",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, AB, dust attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.31,
+        "xMax": -11.13
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.31,
+            "y": -4.656
+          },
+          {
+            "x": -22.05,
+            "y": -4.5099
+          },
+          {
+            "x": -21.79,
+            "y": -4.4519
+          },
+          {
+            "x": -21.53,
+            "y": -3.957
+          },
+          {
+            "x": -21.27,
+            "y": -3.9078
+          },
+          {
+            "x": -21.01,
+            "y": -3.8926
+          },
+          {
+            "x": -20.75,
+            "y": -3.7752
+          },
+          {
+            "x": -20.49,
+            "y": -3.5556
+          },
+          {
+            "x": -20.23,
+            "y": -3.5037
+          },
+          {
+            "x": -19.97,
+            "y": -3.3959
+          },
+          {
+            "x": -19.71,
+            "y": -3.1271
+          },
+          {
+            "x": -19.45,
+            "y": -3.0973
+          },
+          {
+            "x": -19.19,
+            "y": -2.9093
+          },
+          {
+            "x": -18.93,
+            "y": -2.795
+          },
+          {
+            "x": -18.67,
+            "y": -2.6595
+          },
+          {
+            "x": -18.41,
+            "y": -2.5675
+          },
+          {
+            "x": -18.15,
+            "y": -2.3558
+          },
+          {
+            "x": -17.89,
+            "y": -2.2269
+          },
+          {
+            "x": -17.63,
+            "y": -2.1023
+          },
+          {
+            "x": -17.37,
+            "y": -2.0255
+          },
+          {
+            "x": -17.11,
+            "y": -1.9793
+          },
+          {
+            "x": -16.85,
+            "y": -1.9406
+          },
+          {
+            "x": -16.59,
+            "y": -1.8668
+          },
+          {
+            "x": -16.33,
+            "y": -1.8085
+          },
+          {
+            "x": -16.07,
+            "y": -1.7206
+          },
+          {
+            "x": -15.81,
+            "y": -1.6334
+          },
+          {
+            "x": -15.55,
+            "y": -1.5599
+          },
+          {
+            "x": -15.29,
+            "y": -1.4693
+          },
+          {
+            "x": -15.03,
+            "y": -1.4102
+          },
+          {
+            "x": -14.77,
+            "y": -1.3569
+          },
+          {
+            "x": -14.51,
+            "y": -1.3412
+          },
+          {
+            "x": -14.25,
+            "y": -1.3237
+          },
+          {
+            "x": -13.99,
+            "y": -1.3209
+          },
+          {
+            "x": -13.73,
+            "y": -1.3485
+          },
+          {
+            "x": -13.47,
+            "y": -1.398
+          },
+          {
+            "x": -13.21,
+            "y": -1.4546
+          },
+          {
+            "x": -12.95,
+            "y": -1.5788
+          },
+          {
+            "x": -12.69,
+            "y": -1.7679
+          },
+          {
+            "x": -12.43,
+            "y": -2.0585
+          },
+          {
+            "x": -12.17,
+            "y": -2.3959
+          },
+          {
+            "x": -11.91,
+            "y": -2.8636
+          },
+          {
+            "x": -11.65,
+            "y": -3.3506
+          },
+          {
+            "x": -11.39,
+            "y": -4.0125
+          },
+          {
+            "x": -11.13,
+            "y": -4.8779
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Dust-attenuated rest-frame 1500 A luminosity function of THESAN-2 (lower resolution) at z=6, read from the vector paths of Kannan et al. 2022. The figure plots each redshift offset by -(z-8) dex; that offset was added back, so y is the physical value. same dust scaling."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "population": "all galaxies",
+        "dustCorrection": "dust attenuated (same dust scaling)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), UV luminosity functions at z=6-10, z=6",
+        "doi": "10.1093/mnras/stab3710",
+        "url": "https://arxiv.org/abs/2110.00584",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity functions at z=6-10",
+        "panel": "z=6",
+        "checksumSha256": "0fa2634128ceab009944e388392544cacc4c437c30b25a2e21307cb93a66edf3",
+        "sourceMember": "figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks; y includes the +(z-8) offset removal (curves are plotted offset by -(z-8))",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan22.thesan.uvlf.sdao2.z6",
+      "source": "THESAN-1",
+      "run": "THESAN-SDAO-2",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, AB, dust attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.57,
+        "xMax": -11.13
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.57,
+            "y": -5.0539
+          },
+          {
+            "x": -22.31,
+            "y": -4.8779
+          },
+          {
+            "x": -22.05,
+            "y": -4.4519
+          },
+          {
+            "x": -21.79,
+            "y": -4.355
+          },
+          {
+            "x": -21.53,
+            "y": -4.0327
+          },
+          {
+            "x": -21.27,
+            "y": -3.9236
+          },
+          {
+            "x": -21.01,
+            "y": -3.8109
+          },
+          {
+            "x": -20.75,
+            "y": -3.7868
+          },
+          {
+            "x": -20.49,
+            "y": -3.5991
+          },
+          {
+            "x": -20.23,
+            "y": -3.5626
+          },
+          {
+            "x": -19.97,
+            "y": -3.3506
+          },
+          {
+            "x": -19.71,
+            "y": -3.1481
+          },
+          {
+            "x": -19.45,
+            "y": -3.0785
+          },
+          {
+            "x": -19.19,
+            "y": -2.858
+          },
+          {
+            "x": -18.93,
+            "y": -2.7926
+          },
+          {
+            "x": -18.67,
+            "y": -2.6586
+          },
+          {
+            "x": -18.41,
+            "y": -2.5321
+          },
+          {
+            "x": -18.15,
+            "y": -2.3502
+          },
+          {
+            "x": -17.89,
+            "y": -2.2179
+          },
+          {
+            "x": -17.63,
+            "y": -2.1011
+          },
+          {
+            "x": -17.37,
+            "y": -2.0377
+          },
+          {
+            "x": -17.11,
+            "y": -1.9919
+          },
+          {
+            "x": -16.85,
+            "y": -1.935
+          },
+          {
+            "x": -16.59,
+            "y": -1.8736
+          },
+          {
+            "x": -16.33,
+            "y": -1.8196
+          },
+          {
+            "x": -16.07,
+            "y": -1.7457
+          },
+          {
+            "x": -15.81,
+            "y": -1.6656
+          },
+          {
+            "x": -15.55,
+            "y": -1.6106
+          },
+          {
+            "x": -15.29,
+            "y": -1.5296
+          },
+          {
+            "x": -15.03,
+            "y": -1.4992
+          },
+          {
+            "x": -14.77,
+            "y": -1.4745
+          },
+          {
+            "x": -14.51,
+            "y": -1.4952
+          },
+          {
+            "x": -14.25,
+            "y": -1.5091
+          },
+          {
+            "x": -13.99,
+            "y": -1.5588
+          },
+          {
+            "x": -13.73,
+            "y": -1.6381
+          },
+          {
+            "x": -13.47,
+            "y": -1.7192
+          },
+          {
+            "x": -13.21,
+            "y": -1.844
+          },
+          {
+            "x": -12.95,
+            "y": -2.0466
+          },
+          {
+            "x": -12.69,
+            "y": -2.2901
+          },
+          {
+            "x": -12.43,
+            "y": -2.5753
+          },
+          {
+            "x": -12.17,
+            "y": -3.0831
+          },
+          {
+            "x": -11.91,
+            "y": -3.5626
+          },
+          {
+            "x": -11.65,
+            "y": -4.3136
+          },
+          {
+            "x": -11.39,
+            "y": -4.7529
+          },
+          {
+            "x": -11.13,
+            "y": -5.355
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Dust-attenuated rest-frame 1500 A luminosity function of THESAN-SDAO-2 at z=6, read from the vector paths of Kannan et al. 2022. The figure plots each redshift offset by -(z-8) dex; that offset was added back, so y is the physical value. same dust scaling."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "population": "all galaxies",
+        "dustCorrection": "dust attenuated (same dust scaling)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), UV luminosity functions at z=6-10, z=6",
+        "doi": "10.1093/mnras/stab3710",
+        "url": "https://arxiv.org/abs/2110.00584",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity functions at z=6-10",
+        "panel": "z=6",
+        "checksumSha256": "0fa2634128ceab009944e388392544cacc4c437c30b25a2e21307cb93a66edf3",
+        "sourceMember": "figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks; y includes the +(z-8) offset removal (curves are plotted offset by -(z-8))",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan22.thesan.uvlf.t1.z7",
+      "source": "THESAN-1",
+      "run": "THESAN-1",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, AB, dust attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.31,
+        "xMax": -11.13
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.31,
+            "y": -5.054
+          },
+          {
+            "x": -22.05,
+            "y": -4.7529
+          },
+          {
+            "x": -21.79,
+            "y": -4.4519
+          },
+          {
+            "x": -21.53,
+            "y": -4.4007
+          },
+          {
+            "x": -21.27,
+            "y": -4.1245
+          },
+          {
+            "x": -21.01,
+            "y": -4.1789
+          },
+          {
+            "x": -20.75,
+            "y": -4.0762
+          },
+          {
+            "x": -20.49,
+            "y": -3.9932
+          },
+          {
+            "x": -20.23,
+            "y": -3.7987
+          },
+          {
+            "x": -19.97,
+            "y": -3.5696
+          },
+          {
+            "x": -19.71,
+            "y": -3.4465
+          },
+          {
+            "x": -19.45,
+            "y": -3.2794
+          },
+          {
+            "x": -19.19,
+            "y": -3.0627
+          },
+          {
+            "x": -18.93,
+            "y": -2.997
+          },
+          {
+            "x": -18.67,
+            "y": -2.858
+          },
+          {
+            "x": -18.41,
+            "y": -2.7443
+          },
+          {
+            "x": -18.15,
+            "y": -2.644
+          },
+          {
+            "x": -17.89,
+            "y": -2.5675
+          },
+          {
+            "x": -17.63,
+            "y": -2.4184
+          },
+          {
+            "x": -17.37,
+            "y": -2.3404
+          },
+          {
+            "x": -17.11,
+            "y": -2.2282
+          },
+          {
+            "x": -16.85,
+            "y": -2.1214
+          },
+          {
+            "x": -16.59,
+            "y": -2.0494
+          },
+          {
+            "x": -16.33,
+            "y": -1.9428
+          },
+          {
+            "x": -16.07,
+            "y": -1.7921
+          },
+          {
+            "x": -15.81,
+            "y": -1.575
+          },
+          {
+            "x": -15.55,
+            "y": -1.412
+          },
+          {
+            "x": -15.29,
+            "y": -1.2893
+          },
+          {
+            "x": -15.03,
+            "y": -1.222
+          },
+          {
+            "x": -14.77,
+            "y": -1.1536
+          },
+          {
+            "x": -14.51,
+            "y": -1.0992
+          },
+          {
+            "x": -14.25,
+            "y": -1.0352
+          },
+          {
+            "x": -13.99,
+            "y": -0.9558
+          },
+          {
+            "x": -13.73,
+            "y": -0.8612
+          },
+          {
+            "x": -13.47,
+            "y": -0.7738
+          },
+          {
+            "x": -13.21,
+            "y": -0.6949
+          },
+          {
+            "x": -12.95,
+            "y": -0.6128
+          },
+          {
+            "x": -12.69,
+            "y": -0.5405
+          },
+          {
+            "x": -12.43,
+            "y": -0.4907
+          },
+          {
+            "x": -12.17,
+            "y": -0.4795
+          },
+          {
+            "x": -11.91,
+            "y": -0.4713
+          },
+          {
+            "x": -11.65,
+            "y": -0.4885
+          },
+          {
+            "x": -11.39,
+            "y": -0.5311
+          },
+          {
+            "x": -11.13,
+            "y": -0.6147
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Dust-attenuated rest-frame 1500 A luminosity function of THESAN-1 at z=7, read from the vector paths of Kannan et al. 2022. The figure plots each redshift offset by -(z-8) dex; that offset was added back, so y is the physical value. Vogelsberger+20 dust-to-metal scaling of the Gnedin 2014 attenuation."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "population": "all galaxies",
+        "dustCorrection": "dust attenuated (Vogelsberger+20 dust-to-metal scaling of the Gnedin 2014 attenuation)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), UV luminosity functions at z=6-10, z=7",
+        "doi": "10.1093/mnras/stab3710",
+        "url": "https://arxiv.org/abs/2110.00584",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity functions at z=6-10",
+        "panel": "z=7",
+        "checksumSha256": "0fa2634128ceab009944e388392544cacc4c437c30b25a2e21307cb93a66edf3",
+        "sourceMember": "figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks; y includes the +(z-8) offset removal (curves are plotted offset by -(z-8))",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan22.thesan.uvlf.t2.z7",
+      "source": "THESAN-1",
+      "run": "THESAN-2 (lower resolution)",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, AB, dust attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.57,
+        "xMax": -11.91
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.57,
+            "y": -5.355
+          },
+          {
+            "x": -22.31,
+            "y": -5.054
+          },
+          {
+            "x": -22.05,
+            "y": -4.5768
+          },
+          {
+            "x": -21.79,
+            "y": -4.4007
+          },
+          {
+            "x": -21.53,
+            "y": -4.2758
+          },
+          {
+            "x": -21.27,
+            "y": -4.4007
+          },
+          {
+            "x": -21.01,
+            "y": -4.2089
+          },
+          {
+            "x": -20.75,
+            "y": -4.2089
+          },
+          {
+            "x": -20.49,
+            "y": -4.0328
+          },
+          {
+            "x": -20.23,
+            "y": -3.8235
+          },
+          {
+            "x": -19.97,
+            "y": -3.7987
+          },
+          {
+            "x": -19.71,
+            "y": -3.4359
+          },
+          {
+            "x": -19.45,
+            "y": -3.3912
+          },
+          {
+            "x": -19.19,
+            "y": -3.2478
+          },
+          {
+            "x": -18.93,
+            "y": -3.0475
+          },
+          {
+            "x": -18.67,
+            "y": -2.94
+          },
+          {
+            "x": -18.41,
+            "y": -2.7529
+          },
+          {
+            "x": -18.15,
+            "y": -2.5289
+          },
+          {
+            "x": -17.89,
+            "y": -2.3019
+          },
+          {
+            "x": -17.63,
+            "y": -2.1969
+          },
+          {
+            "x": -17.37,
+            "y": -2.0939
+          },
+          {
+            "x": -17.11,
+            "y": -2.0239
+          },
+          {
+            "x": -16.85,
+            "y": -1.9883
+          },
+          {
+            "x": -16.59,
+            "y": -1.9262
+          },
+          {
+            "x": -16.33,
+            "y": -1.8328
+          },
+          {
+            "x": -16.07,
+            "y": -1.7452
+          },
+          {
+            "x": -15.81,
+            "y": -1.6633
+          },
+          {
+            "x": -15.55,
+            "y": -1.595
+          },
+          {
+            "x": -15.29,
+            "y": -1.5115
+          },
+          {
+            "x": -15.03,
+            "y": -1.4807
+          },
+          {
+            "x": -14.77,
+            "y": -1.4571
+          },
+          {
+            "x": -14.51,
+            "y": -1.4767
+          },
+          {
+            "x": -14.25,
+            "y": -1.5067
+          },
+          {
+            "x": -13.99,
+            "y": -1.5471
+          },
+          {
+            "x": -13.73,
+            "y": -1.6373
+          },
+          {
+            "x": -13.47,
+            "y": -1.7551
+          },
+          {
+            "x": -13.21,
+            "y": -1.9342
+          },
+          {
+            "x": -12.95,
+            "y": -2.172
+          },
+          {
+            "x": -12.69,
+            "y": -2.494
+          },
+          {
+            "x": -12.43,
+            "y": -2.8971
+          },
+          {
+            "x": -12.17,
+            "y": -3.3818
+          },
+          {
+            "x": -11.91,
+            "y": -3.9748
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Dust-attenuated rest-frame 1500 A luminosity function of THESAN-2 (lower resolution) at z=7, read from the vector paths of Kannan et al. 2022. The figure plots each redshift offset by -(z-8) dex; that offset was added back, so y is the physical value. same dust scaling."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "population": "all galaxies",
+        "dustCorrection": "dust attenuated (same dust scaling)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), UV luminosity functions at z=6-10, z=7",
+        "doi": "10.1093/mnras/stab3710",
+        "url": "https://arxiv.org/abs/2110.00584",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity functions at z=6-10",
+        "panel": "z=7",
+        "checksumSha256": "0fa2634128ceab009944e388392544cacc4c437c30b25a2e21307cb93a66edf3",
+        "sourceMember": "figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks; y includes the +(z-8) offset removal (curves are plotted offset by -(z-8))",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan22.thesan.uvlf.sdao2.z7",
+      "source": "THESAN-1",
+      "run": "THESAN-SDAO-2",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, AB, dust attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.31,
+        "xMax": -11.65
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.31,
+            "y": -4.5768
+          },
+          {
+            "x": -22.05,
+            "y": -4.5768
+          },
+          {
+            "x": -21.79,
+            "y": -4.3136
+          },
+          {
+            "x": -21.53,
+            "y": -4.4007
+          },
+          {
+            "x": -21.27,
+            "y": -4.5099
+          },
+          {
+            "x": -21.01,
+            "y": -4.0997
+          },
+          {
+            "x": -20.75,
+            "y": -4.2089
+          },
+          {
+            "x": -20.49,
+            "y": -4.0762
+          },
+          {
+            "x": -20.23,
+            "y": -3.8779
+          },
+          {
+            "x": -19.97,
+            "y": -3.6922
+          },
+          {
+            "x": -19.71,
+            "y": -3.4465
+          },
+          {
+            "x": -19.45,
+            "y": -3.3136
+          },
+          {
+            "x": -19.19,
+            "y": -3.1646
+          },
+          {
+            "x": -18.93,
+            "y": -3.0327
+          },
+          {
+            "x": -18.67,
+            "y": -2.94
+          },
+          {
+            "x": -18.41,
+            "y": -2.7348
+          },
+          {
+            "x": -18.15,
+            "y": -2.5148
+          },
+          {
+            "x": -17.89,
+            "y": -2.3284
+          },
+          {
+            "x": -17.63,
+            "y": -2.244
+          },
+          {
+            "x": -17.37,
+            "y": -2.1476
+          },
+          {
+            "x": -17.11,
+            "y": -2.0766
+          },
+          {
+            "x": -16.85,
+            "y": -2.0313
+          },
+          {
+            "x": -16.59,
+            "y": -1.9518
+          },
+          {
+            "x": -16.33,
+            "y": -1.9087
+          },
+          {
+            "x": -16.07,
+            "y": -1.8181
+          },
+          {
+            "x": -15.81,
+            "y": -1.7858
+          },
+          {
+            "x": -15.55,
+            "y": -1.7412
+          },
+          {
+            "x": -15.29,
+            "y": -1.6898
+          },
+          {
+            "x": -15.03,
+            "y": -1.6624
+          },
+          {
+            "x": -14.77,
+            "y": -1.6855
+          },
+          {
+            "x": -14.51,
+            "y": -1.7293
+          },
+          {
+            "x": -14.25,
+            "y": -1.7979
+          },
+          {
+            "x": -13.99,
+            "y": -1.9107
+          },
+          {
+            "x": -13.73,
+            "y": -2.0358
+          },
+          {
+            "x": -13.47,
+            "y": -2.2085
+          },
+          {
+            "x": -13.21,
+            "y": -2.4281
+          },
+          {
+            "x": -12.95,
+            "y": -2.7165
+          },
+          {
+            "x": -12.69,
+            "y": -3.1271
+          },
+          {
+            "x": -12.43,
+            "y": -3.6068
+          },
+          {
+            "x": -12.17,
+            "y": -4.241
+          },
+          {
+            "x": -11.91,
+            "y": -5.054
+          },
+          {
+            "x": -11.65,
+            "y": -5.355
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Dust-attenuated rest-frame 1500 A luminosity function of THESAN-SDAO-2 at z=7, read from the vector paths of Kannan et al. 2022. The figure plots each redshift offset by -(z-8) dex; that offset was added back, so y is the physical value. same dust scaling."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "population": "all galaxies",
+        "dustCorrection": "dust attenuated (same dust scaling)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), UV luminosity functions at z=6-10, z=7",
+        "doi": "10.1093/mnras/stab3710",
+        "url": "https://arxiv.org/abs/2110.00584",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity functions at z=6-10",
+        "panel": "z=7",
+        "checksumSha256": "0fa2634128ceab009944e388392544cacc4c437c30b25a2e21307cb93a66edf3",
+        "sourceMember": "figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks; y includes the +(z-8) offset removal (curves are plotted offset by -(z-8))",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan22.thesan.uvlf.t1.z8",
+      "source": "THESAN-1",
+      "run": "THESAN-1",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, AB, dust attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.57,
+        "xMax": -11.13
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.57,
+            "y": -5.355
+          },
+          {
+            "x": -22.31,
+            "y": -5.355
+          },
+          {
+            "x": -22.05,
+            "y": -5.355
+          },
+          {
+            "x": -21.79,
+            "y": -5.054
+          },
+          {
+            "x": -21.53,
+            "y": -4.7529
+          },
+          {
+            "x": -21.27,
+            "y": -4.4519
+          },
+          {
+            "x": -21.01,
+            "y": -4.5099
+          },
+          {
+            "x": -20.75,
+            "y": -4.4008
+          },
+          {
+            "x": -20.49,
+            "y": -4.4519
+          },
+          {
+            "x": -20.23,
+            "y": -4.0126
+          },
+          {
+            "x": -19.97,
+            "y": -3.8779
+          },
+          {
+            "x": -19.71,
+            "y": -3.7639
+          },
+          {
+            "x": -19.45,
+            "y": -3.5161
+          },
+          {
+            "x": -19.19,
+            "y": -3.4412
+          },
+          {
+            "x": -18.93,
+            "y": -3.2758
+          },
+          {
+            "x": -18.67,
+            "y": -3.1847
+          },
+          {
+            "x": -18.41,
+            "y": -2.997
+          },
+          {
+            "x": -18.15,
+            "y": -2.875
+          },
+          {
+            "x": -17.89,
+            "y": -2.7879
+          },
+          {
+            "x": -17.63,
+            "y": -2.7286
+          },
+          {
+            "x": -17.37,
+            "y": -2.5871
+          },
+          {
+            "x": -17.11,
+            "y": -2.4459
+          },
+          {
+            "x": -16.85,
+            "y": -2.3472
+          },
+          {
+            "x": -16.59,
+            "y": -2.2546
+          },
+          {
+            "x": -16.33,
+            "y": -2.1002
+          },
+          {
+            "x": -16.07,
+            "y": -1.9185
+          },
+          {
+            "x": -15.81,
+            "y": -1.6526
+          },
+          {
+            "x": -15.55,
+            "y": -1.449
+          },
+          {
+            "x": -15.29,
+            "y": -1.3099
+          },
+          {
+            "x": -15.03,
+            "y": -1.228
+          },
+          {
+            "x": -14.77,
+            "y": -1.1656
+          },
+          {
+            "x": -14.51,
+            "y": -1.0894
+          },
+          {
+            "x": -14.25,
+            "y": -1.025
+          },
+          {
+            "x": -13.99,
+            "y": -0.9406
+          },
+          {
+            "x": -13.73,
+            "y": -0.8477
+          },
+          {
+            "x": -13.47,
+            "y": -0.7685
+          },
+          {
+            "x": -13.21,
+            "y": -0.6985
+          },
+          {
+            "x": -12.95,
+            "y": -0.634
+          },
+          {
+            "x": -12.69,
+            "y": -0.5821
+          },
+          {
+            "x": -12.43,
+            "y": -0.5579
+          },
+          {
+            "x": -12.17,
+            "y": -0.5804
+          },
+          {
+            "x": -11.91,
+            "y": -0.6229
+          },
+          {
+            "x": -11.65,
+            "y": -0.6832
+          },
+          {
+            "x": -11.39,
+            "y": -0.7845
+          },
+          {
+            "x": -11.13,
+            "y": -0.9336
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Dust-attenuated rest-frame 1500 A luminosity function of THESAN-1 at z=8, read from the vector paths of Kannan et al. 2022. The figure plots each redshift offset by -(z-8) dex; that offset was added back, so y is the physical value. Vogelsberger+20 dust-to-metal scaling of the Gnedin 2014 attenuation."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "population": "all galaxies",
+        "dustCorrection": "dust attenuated (Vogelsberger+20 dust-to-metal scaling of the Gnedin 2014 attenuation)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), UV luminosity functions at z=6-10, z=8",
+        "doi": "10.1093/mnras/stab3710",
+        "url": "https://arxiv.org/abs/2110.00584",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity functions at z=6-10",
+        "panel": "z=8",
+        "checksumSha256": "0fa2634128ceab009944e388392544cacc4c437c30b25a2e21307cb93a66edf3",
+        "sourceMember": "figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks; y includes the +(z-8) offset removal (curves are plotted offset by -(z-8))",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan22.thesan.uvlf.t2.z8",
+      "source": "THESAN-1",
+      "run": "THESAN-2 (lower resolution)",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, AB, dust attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.83,
+        "xMax": -11.65
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.83,
+            "y": -5.355
+          },
+          {
+            "x": -22.57,
+            "y": -5.355
+          },
+          {
+            "x": -21.79,
+            "y": -5.355
+          },
+          {
+            "x": -21.53,
+            "y": -4.7529
+          },
+          {
+            "x": -21.27,
+            "y": -4.8779
+          },
+          {
+            "x": -21.01,
+            "y": -4.656
+          },
+          {
+            "x": -20.75,
+            "y": -4.4008
+          },
+          {
+            "x": -20.49,
+            "y": -4.355
+          },
+          {
+            "x": -20.23,
+            "y": -4.2411
+          },
+          {
+            "x": -19.97,
+            "y": -3.9236
+          },
+          {
+            "x": -19.71,
+            "y": -3.8636
+          },
+          {
+            "x": -19.45,
+            "y": -3.6829
+          },
+          {
+            "x": -19.19,
+            "y": -3.4742
+          },
+          {
+            "x": -18.93,
+            "y": -3.4056
+          },
+          {
+            "x": -18.67,
+            "y": -3.2478
+          },
+          {
+            "x": -18.41,
+            "y": -2.9784
+          },
+          {
+            "x": -18.15,
+            "y": -2.6885
+          },
+          {
+            "x": -17.89,
+            "y": -2.4438
+          },
+          {
+            "x": -17.63,
+            "y": -2.3065
+          },
+          {
+            "x": -17.37,
+            "y": -2.1921
+          },
+          {
+            "x": -17.11,
+            "y": -2.1338
+          },
+          {
+            "x": -16.85,
+            "y": -2.0669
+          },
+          {
+            "x": -16.59,
+            "y": -2.0147
+          },
+          {
+            "x": -16.33,
+            "y": -1.9373
+          },
+          {
+            "x": -16.07,
+            "y": -1.856
+          },
+          {
+            "x": -15.81,
+            "y": -1.7922
+          },
+          {
+            "x": -15.55,
+            "y": -1.73
+          },
+          {
+            "x": -15.29,
+            "y": -1.6761
+          },
+          {
+            "x": -15.03,
+            "y": -1.6567
+          },
+          {
+            "x": -14.77,
+            "y": -1.6583
+          },
+          {
+            "x": -14.51,
+            "y": -1.7105
+          },
+          {
+            "x": -14.25,
+            "y": -1.7864
+          },
+          {
+            "x": -13.99,
+            "y": -1.9122
+          },
+          {
+            "x": -13.73,
+            "y": -2.0297
+          },
+          {
+            "x": -13.47,
+            "y": -2.2587
+          },
+          {
+            "x": -13.21,
+            "y": -2.5237
+          },
+          {
+            "x": -12.95,
+            "y": -2.8365
+          },
+          {
+            "x": -12.69,
+            "y": -3.2512
+          },
+          {
+            "x": -12.43,
+            "y": -3.8109
+          },
+          {
+            "x": -12.17,
+            "y": -4.5768
+          },
+          {
+            "x": -11.91,
+            "y": -5.355
+          },
+          {
+            "x": -11.65,
+            "y": -5.355
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Dust-attenuated rest-frame 1500 A luminosity function of THESAN-2 (lower resolution) at z=8, read from the vector paths of Kannan et al. 2022. The figure plots each redshift offset by -(z-8) dex; that offset was added back, so y is the physical value. same dust scaling."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "population": "all galaxies",
+        "dustCorrection": "dust attenuated (same dust scaling)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), UV luminosity functions at z=6-10, z=8",
+        "doi": "10.1093/mnras/stab3710",
+        "url": "https://arxiv.org/abs/2110.00584",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity functions at z=6-10",
+        "panel": "z=8",
+        "checksumSha256": "0fa2634128ceab009944e388392544cacc4c437c30b25a2e21307cb93a66edf3",
+        "sourceMember": "figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks; y includes the +(z-8) offset removal (curves are plotted offset by -(z-8))",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan22.thesan.uvlf.sdao2.z8",
+      "source": "THESAN-1",
+      "run": "THESAN-SDAO-2",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, AB, dust attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.83,
+        "xMax": -12.17
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.83,
+            "y": -5.355
+          },
+          {
+            "x": -22.57,
+            "y": -5.355
+          },
+          {
+            "x": -21.79,
+            "y": -5.054
+          },
+          {
+            "x": -21.53,
+            "y": -4.656
+          },
+          {
+            "x": -21.27,
+            "y": -5.355
+          },
+          {
+            "x": -21.01,
+            "y": -4.656
+          },
+          {
+            "x": -20.75,
+            "y": -4.4519
+          },
+          {
+            "x": -20.49,
+            "y": -4.2758
+          },
+          {
+            "x": -20.23,
+            "y": -4.1245
+          },
+          {
+            "x": -19.97,
+            "y": -3.9933
+          },
+          {
+            "x": -19.71,
+            "y": -3.94
+          },
+          {
+            "x": -19.45,
+            "y": -3.6829
+          },
+          {
+            "x": -19.19,
+            "y": -3.4519
+          },
+          {
+            "x": -18.93,
+            "y": -3.3959
+          },
+          {
+            "x": -18.67,
+            "y": -3.1509
+          },
+          {
+            "x": -18.41,
+            "y": -2.957
+          },
+          {
+            "x": -18.15,
+            "y": -2.6922
+          },
+          {
+            "x": -17.89,
+            "y": -2.5142
+          },
+          {
+            "x": -17.63,
+            "y": -2.3795
+          },
+          {
+            "x": -17.37,
+            "y": -2.2981
+          },
+          {
+            "x": -17.11,
+            "y": -2.2208
+          },
+          {
+            "x": -16.85,
+            "y": -2.1954
+          },
+          {
+            "x": -16.59,
+            "y": -2.1204
+          },
+          {
+            "x": -16.33,
+            "y": -2.0503
+          },
+          {
+            "x": -16.07,
+            "y": -2.0123
+          },
+          {
+            "x": -15.81,
+            "y": -1.9565
+          },
+          {
+            "x": -15.55,
+            "y": -1.9577
+          },
+          {
+            "x": -15.29,
+            "y": -1.9039
+          },
+          {
+            "x": -15.03,
+            "y": -1.9094
+          },
+          {
+            "x": -14.77,
+            "y": -1.9481
+          },
+          {
+            "x": -14.51,
+            "y": -2.0565
+          },
+          {
+            "x": -14.25,
+            "y": -2.1463
+          },
+          {
+            "x": -13.99,
+            "y": -2.3325
+          },
+          {
+            "x": -13.73,
+            "y": -2.5212
+          },
+          {
+            "x": -13.47,
+            "y": -2.7891
+          },
+          {
+            "x": -13.21,
+            "y": -3.1144
+          },
+          {
+            "x": -12.95,
+            "y": -3.6474
+          },
+          {
+            "x": -12.69,
+            "y": -4.0328
+          },
+          {
+            "x": -12.43,
+            "y": -4.4519
+          },
+          {
+            "x": -12.17,
+            "y": -5.355
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Dust-attenuated rest-frame 1500 A luminosity function of THESAN-SDAO-2 at z=8, read from the vector paths of Kannan et al. 2022. The figure plots each redshift offset by -(z-8) dex; that offset was added back, so y is the physical value. same dust scaling."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "population": "all galaxies",
+        "dustCorrection": "dust attenuated (same dust scaling)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), UV luminosity functions at z=6-10, z=8",
+        "doi": "10.1093/mnras/stab3710",
+        "url": "https://arxiv.org/abs/2110.00584",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity functions at z=6-10",
+        "panel": "z=8",
+        "checksumSha256": "0fa2634128ceab009944e388392544cacc4c437c30b25a2e21307cb93a66edf3",
+        "sourceMember": "figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks; y includes the +(z-8) offset removal (curves are plotted offset by -(z-8))",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan22.thesan.uvlf.t1.z9",
+      "source": "THESAN-1",
+      "run": "THESAN-1",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 9,
+        "zNominal": 9,
+        "zMin": 9,
+        "zMax": 9,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, AB, dust attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.31,
+        "xMax": -11.13
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.31,
+            "y": -5.054
+          },
+          {
+            "x": -22.05,
+            "y": -5.355
+          },
+          {
+            "x": -21.79,
+            "y": -5.355
+          },
+          {
+            "x": -21.53,
+            "y": -4.8779
+          },
+          {
+            "x": -21.27,
+            "y": -5.054
+          },
+          {
+            "x": -21.01,
+            "y": -4.8779
+          },
+          {
+            "x": -20.75,
+            "y": -4.8779
+          },
+          {
+            "x": -20.49,
+            "y": -4.4008
+          },
+          {
+            "x": -20.23,
+            "y": -4.656
+          },
+          {
+            "x": -19.97,
+            "y": -4.0997
+          },
+          {
+            "x": -19.71,
+            "y": -4.054
+          },
+          {
+            "x": -19.45,
+            "y": -3.9571
+          },
+          {
+            "x": -19.19,
+            "y": -3.7868
+          },
+          {
+            "x": -18.93,
+            "y": -3.6474
+          },
+          {
+            "x": -18.67,
+            "y": -3.4307
+          },
+          {
+            "x": -18.41,
+            "y": -3.3464
+          },
+          {
+            "x": -18.15,
+            "y": -3.2183
+          },
+          {
+            "x": -17.89,
+            "y": -3.107
+          },
+          {
+            "x": -17.63,
+            "y": -2.9605
+          },
+          {
+            "x": -17.37,
+            "y": -2.8735
+          },
+          {
+            "x": -17.11,
+            "y": -2.7125
+          },
+          {
+            "x": -16.85,
+            "y": -2.6068
+          },
+          {
+            "x": -16.59,
+            "y": -2.4607
+          },
+          {
+            "x": -16.33,
+            "y": -2.2831
+          },
+          {
+            "x": -16.07,
+            "y": -2.0157
+          },
+          {
+            "x": -15.81,
+            "y": -1.722
+          },
+          {
+            "x": -15.55,
+            "y": -1.4934
+          },
+          {
+            "x": -15.29,
+            "y": -1.3482
+          },
+          {
+            "x": -15.03,
+            "y": -1.2543
+          },
+          {
+            "x": -14.77,
+            "y": -1.19
+          },
+          {
+            "x": -14.51,
+            "y": -1.1295
+          },
+          {
+            "x": -14.25,
+            "y": -1.0707
+          },
+          {
+            "x": -13.99,
+            "y": -0.9895
+          },
+          {
+            "x": -13.73,
+            "y": -0.9055
+          },
+          {
+            "x": -13.47,
+            "y": -0.843
+          },
+          {
+            "x": -13.21,
+            "y": -0.8012
+          },
+          {
+            "x": -12.95,
+            "y": -0.7485
+          },
+          {
+            "x": -12.69,
+            "y": -0.7196
+          },
+          {
+            "x": -12.43,
+            "y": -0.7323
+          },
+          {
+            "x": -12.17,
+            "y": -0.7936
+          },
+          {
+            "x": -11.91,
+            "y": -0.8822
+          },
+          {
+            "x": -11.65,
+            "y": -1.0091
+          },
+          {
+            "x": -11.39,
+            "y": -1.1874
+          },
+          {
+            "x": -11.13,
+            "y": -1.4244
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Dust-attenuated rest-frame 1500 A luminosity function of THESAN-1 at z=9, read from the vector paths of Kannan et al. 2022. The figure plots each redshift offset by -(z-8) dex; that offset was added back, so y is the physical value. Vogelsberger+20 dust-to-metal scaling of the Gnedin 2014 attenuation."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "population": "all galaxies",
+        "dustCorrection": "dust attenuated (Vogelsberger+20 dust-to-metal scaling of the Gnedin 2014 attenuation)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), UV luminosity functions at z=6-10, z=9",
+        "doi": "10.1093/mnras/stab3710",
+        "url": "https://arxiv.org/abs/2110.00584",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity functions at z=6-10",
+        "panel": "z=9",
+        "checksumSha256": "0fa2634128ceab009944e388392544cacc4c437c30b25a2e21307cb93a66edf3",
+        "sourceMember": "figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks; y includes the +(z-8) offset removal (curves are plotted offset by -(z-8))",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan22.thesan.uvlf.t2.z9",
+      "source": "THESAN-1",
+      "run": "THESAN-2 (lower resolution)",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 9,
+        "zNominal": 9,
+        "zMin": 9,
+        "zMax": 9,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, AB, dust attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -21.79,
+        "xMax": -12.43
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -21.79,
+            "y": -5.054
+          },
+          {
+            "x": -21.53,
+            "y": -5.355
+          },
+          {
+            "x": -21.27,
+            "y": -5.355
+          },
+          {
+            "x": -21.01,
+            "y": -5.355
+          },
+          {
+            "x": -20.75,
+            "y": -5.054
+          },
+          {
+            "x": -20.49,
+            "y": -4.656
+          },
+          {
+            "x": -20.23,
+            "y": -4.355
+          },
+          {
+            "x": -19.97,
+            "y": -4.2089
+          },
+          {
+            "x": -19.71,
+            "y": -4.355
+          },
+          {
+            "x": -19.45,
+            "y": -4.054
+          },
+          {
+            "x": -19.19,
+            "y": -3.7529
+          },
+          {
+            "x": -18.93,
+            "y": -3.7215
+          },
+          {
+            "x": -18.67,
+            "y": -3.4307
+          },
+          {
+            "x": -18.41,
+            "y": -3.1877
+          },
+          {
+            "x": -18.15,
+            "y": -2.8779
+          },
+          {
+            "x": -17.89,
+            "y": -2.6474
+          },
+          {
+            "x": -17.63,
+            "y": -2.4696
+          },
+          {
+            "x": -17.37,
+            "y": -2.3842
+          },
+          {
+            "x": -17.11,
+            "y": -2.3268
+          },
+          {
+            "x": -16.85,
+            "y": -2.2454
+          },
+          {
+            "x": -16.59,
+            "y": -2.1993
+          },
+          {
+            "x": -16.33,
+            "y": -2.1439
+          },
+          {
+            "x": -16.07,
+            "y": -2.0678
+          },
+          {
+            "x": -15.81,
+            "y": -2.0167
+          },
+          {
+            "x": -15.55,
+            "y": -1.9901
+          },
+          {
+            "x": -15.29,
+            "y": -1.9179
+          },
+          {
+            "x": -15.03,
+            "y": -1.9144
+          },
+          {
+            "x": -14.77,
+            "y": -1.9541
+          },
+          {
+            "x": -14.51,
+            "y": -2.0529
+          },
+          {
+            "x": -14.25,
+            "y": -2.1711
+          },
+          {
+            "x": -13.99,
+            "y": -2.3651
+          },
+          {
+            "x": -13.73,
+            "y": -2.5747
+          },
+          {
+            "x": -13.47,
+            "y": -2.8339
+          },
+          {
+            "x": -13.21,
+            "y": -3.2581
+          },
+          {
+            "x": -12.95,
+            "y": -3.7868
+          },
+          {
+            "x": -12.69,
+            "y": -4.3136
+          },
+          {
+            "x": -12.43,
+            "y": -5.054
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Dust-attenuated rest-frame 1500 A luminosity function of THESAN-2 (lower resolution) at z=9, read from the vector paths of Kannan et al. 2022. The figure plots each redshift offset by -(z-8) dex; that offset was added back, so y is the physical value. same dust scaling."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "population": "all galaxies",
+        "dustCorrection": "dust attenuated (same dust scaling)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), UV luminosity functions at z=6-10, z=9",
+        "doi": "10.1093/mnras/stab3710",
+        "url": "https://arxiv.org/abs/2110.00584",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity functions at z=6-10",
+        "panel": "z=9",
+        "checksumSha256": "0fa2634128ceab009944e388392544cacc4c437c30b25a2e21307cb93a66edf3",
+        "sourceMember": "figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks; y includes the +(z-8) offset removal (curves are plotted offset by -(z-8))",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan22.thesan.uvlf.sdao2.z9",
+      "source": "THESAN-1",
+      "run": "THESAN-SDAO-2",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 9,
+        "zNominal": 9,
+        "zMin": 9,
+        "zMax": 9,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, AB, dust attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.05,
+        "xMax": -12.69
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.05,
+            "y": -5.355
+          },
+          {
+            "x": -21.79,
+            "y": -5.355
+          },
+          {
+            "x": -21.53,
+            "y": -5.054
+          },
+          {
+            "x": -21.27,
+            "y": -5.054
+          },
+          {
+            "x": -21.01,
+            "y": -4.8779
+          },
+          {
+            "x": -20.75,
+            "y": -4.656
+          },
+          {
+            "x": -20.49,
+            "y": -4.8779
+          },
+          {
+            "x": -20.23,
+            "y": -4.5769
+          },
+          {
+            "x": -19.97,
+            "y": -4.3136
+          },
+          {
+            "x": -19.71,
+            "y": -4.2758
+          },
+          {
+            "x": -19.45,
+            "y": -4.0328
+          },
+          {
+            "x": -19.19,
+            "y": -3.7422
+          },
+          {
+            "x": -18.93,
+            "y": -3.639
+          },
+          {
+            "x": -18.67,
+            "y": -3.4256
+          },
+          {
+            "x": -18.41,
+            "y": -3.1818
+          },
+          {
+            "x": -18.15,
+            "y": -2.9172
+          },
+          {
+            "x": -17.89,
+            "y": -2.7266
+          },
+          {
+            "x": -17.63,
+            "y": -2.579
+          },
+          {
+            "x": -17.37,
+            "y": -2.5193
+          },
+          {
+            "x": -17.11,
+            "y": -2.459
+          },
+          {
+            "x": -16.85,
+            "y": -2.4007
+          },
+          {
+            "x": -16.59,
+            "y": -2.3696
+          },
+          {
+            "x": -16.33,
+            "y": -2.3272
+          },
+          {
+            "x": -16.07,
+            "y": -2.2754
+          },
+          {
+            "x": -15.81,
+            "y": -2.2529
+          },
+          {
+            "x": -15.55,
+            "y": -2.2591
+          },
+          {
+            "x": -15.29,
+            "y": -2.1963
+          },
+          {
+            "x": -15.03,
+            "y": -2.257
+          },
+          {
+            "x": -14.77,
+            "y": -2.2928
+          },
+          {
+            "x": -14.51,
+            "y": -2.4486
+          },
+          {
+            "x": -14.25,
+            "y": -2.6283
+          },
+          {
+            "x": -13.99,
+            "y": -2.8735
+          },
+          {
+            "x": -13.73,
+            "y": -3.1402
+          },
+          {
+            "x": -13.47,
+            "y": -3.4799
+          },
+          {
+            "x": -13.21,
+            "y": -4.054
+          },
+          {
+            "x": -12.95,
+            "y": -4.4519
+          },
+          {
+            "x": -12.69,
+            "y": -5.355
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Dust-attenuated rest-frame 1500 A luminosity function of THESAN-SDAO-2 at z=9, read from the vector paths of Kannan et al. 2022. The figure plots each redshift offset by -(z-8) dex; that offset was added back, so y is the physical value. same dust scaling."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "population": "all galaxies",
+        "dustCorrection": "dust attenuated (same dust scaling)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), UV luminosity functions at z=6-10, z=9",
+        "doi": "10.1093/mnras/stab3710",
+        "url": "https://arxiv.org/abs/2110.00584",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity functions at z=6-10",
+        "panel": "z=9",
+        "checksumSha256": "0fa2634128ceab009944e388392544cacc4c437c30b25a2e21307cb93a66edf3",
+        "sourceMember": "figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks; y includes the +(z-8) offset removal (curves are plotted offset by -(z-8))",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan22.thesan.uvlf.t1.z10",
+      "source": "THESAN-1",
+      "run": "THESAN-1",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, AB, dust attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -21.27,
+        "xMax": -11.13
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -21.27,
+            "y": -5.355
+          },
+          {
+            "x": -21.01,
+            "y": -4.8779
+          },
+          {
+            "x": -20.75,
+            "y": -5.355
+          },
+          {
+            "x": -20.49,
+            "y": -4.8779
+          },
+          {
+            "x": -20.23,
+            "y": -4.8779
+          },
+          {
+            "x": -19.97,
+            "y": -5.054
+          },
+          {
+            "x": -19.71,
+            "y": -4.753
+          },
+          {
+            "x": -19.45,
+            "y": -4.355
+          },
+          {
+            "x": -19.19,
+            "y": -4.1509
+          },
+          {
+            "x": -18.93,
+            "y": -4.2089
+          },
+          {
+            "x": -18.67,
+            "y": -3.8499
+          },
+          {
+            "x": -18.41,
+            "y": -3.7318
+          },
+          {
+            "x": -18.15,
+            "y": -3.6738
+          },
+          {
+            "x": -17.89,
+            "y": -3.5099
+          },
+          {
+            "x": -17.63,
+            "y": -3.3464
+          },
+          {
+            "x": -17.37,
+            "y": -3.1564
+          },
+          {
+            "x": -17.11,
+            "y": -3.0433
+          },
+          {
+            "x": -16.85,
+            "y": -2.8764
+          },
+          {
+            "x": -16.59,
+            "y": -2.6866
+          },
+          {
+            "x": -16.33,
+            "y": -2.4385
+          },
+          {
+            "x": -16.07,
+            "y": -2.1541
+          },
+          {
+            "x": -15.81,
+            "y": -1.8235
+          },
+          {
+            "x": -15.55,
+            "y": -1.5804
+          },
+          {
+            "x": -15.29,
+            "y": -1.4391
+          },
+          {
+            "x": -15.03,
+            "y": -1.3469
+          },
+          {
+            "x": -14.77,
+            "y": -1.2817
+          },
+          {
+            "x": -14.51,
+            "y": -1.2204
+          },
+          {
+            "x": -14.25,
+            "y": -1.1678
+          },
+          {
+            "x": -13.99,
+            "y": -1.0997
+          },
+          {
+            "x": -13.73,
+            "y": -1.0413
+          },
+          {
+            "x": -13.47,
+            "y": -0.9992
+          },
+          {
+            "x": -13.21,
+            "y": -0.9735
+          },
+          {
+            "x": -12.95,
+            "y": -0.9306
+          },
+          {
+            "x": -12.69,
+            "y": -0.9238
+          },
+          {
+            "x": -12.43,
+            "y": -0.9659
+          },
+          {
+            "x": -12.17,
+            "y": -1.0757
+          },
+          {
+            "x": -11.91,
+            "y": -1.2271
+          },
+          {
+            "x": -11.65,
+            "y": -1.4194
+          },
+          {
+            "x": -11.39,
+            "y": -1.6861
+          },
+          {
+            "x": -11.13,
+            "y": -2.0499
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Dust-attenuated rest-frame 1500 A luminosity function of THESAN-1 at z=10, read from the vector paths of Kannan et al. 2022. The figure plots each redshift offset by -(z-8) dex; that offset was added back, so y is the physical value. Vogelsberger+20 dust-to-metal scaling of the Gnedin 2014 attenuation."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "population": "all galaxies",
+        "dustCorrection": "dust attenuated (Vogelsberger+20 dust-to-metal scaling of the Gnedin 2014 attenuation)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), UV luminosity functions at z=6-10, z=10",
+        "doi": "10.1093/mnras/stab3710",
+        "url": "https://arxiv.org/abs/2110.00584",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity functions at z=6-10",
+        "panel": "z=10",
+        "checksumSha256": "0fa2634128ceab009944e388392544cacc4c437c30b25a2e21307cb93a66edf3",
+        "sourceMember": "figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks; y includes the +(z-8) offset removal (curves are plotted offset by -(z-8))",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan22.thesan.uvlf.t2.z10",
+      "source": "THESAN-1",
+      "run": "THESAN-2 (lower resolution)",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, AB, dust attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -20.75,
+        "xMax": -12.95
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -20.75,
+            "y": -5.054
+          },
+          {
+            "x": -20.49,
+            "y": -5.355
+          },
+          {
+            "x": -20.23,
+            "y": -5.054
+          },
+          {
+            "x": -19.97,
+            "y": -4.8779
+          },
+          {
+            "x": -19.71,
+            "y": -4.8779
+          },
+          {
+            "x": -19.45,
+            "y": -4.5769
+          },
+          {
+            "x": -19.19,
+            "y": -4.355
+          },
+          {
+            "x": -18.93,
+            "y": -4.0763
+          },
+          {
+            "x": -18.67,
+            "y": -3.811
+          },
+          {
+            "x": -18.41,
+            "y": -3.5038
+          },
+          {
+            "x": -18.15,
+            "y": -3.176
+          },
+          {
+            "x": -17.89,
+            "y": -2.875
+          },
+          {
+            "x": -17.63,
+            "y": -2.7175
+          },
+          {
+            "x": -17.37,
+            "y": -2.5938
+          },
+          {
+            "x": -17.11,
+            "y": -2.5619
+          },
+          {
+            "x": -16.85,
+            "y": -2.5187
+          },
+          {
+            "x": -16.59,
+            "y": -2.4396
+          },
+          {
+            "x": -16.33,
+            "y": -2.3945
+          },
+          {
+            "x": -16.07,
+            "y": -2.3585
+          },
+          {
+            "x": -15.81,
+            "y": -2.3136
+          },
+          {
+            "x": -15.55,
+            "y": -2.2985
+          },
+          {
+            "x": -15.29,
+            "y": -2.2498
+          },
+          {
+            "x": -15.03,
+            "y": -2.2509
+          },
+          {
+            "x": -14.77,
+            "y": -2.3132
+          },
+          {
+            "x": -14.51,
+            "y": -2.4579
+          },
+          {
+            "x": -14.25,
+            "y": -2.6068
+          },
+          {
+            "x": -13.99,
+            "y": -2.9017
+          },
+          {
+            "x": -13.73,
+            "y": -3.2616
+          },
+          {
+            "x": -13.47,
+            "y": -3.7018
+          },
+          {
+            "x": -13.21,
+            "y": -4.054
+          },
+          {
+            "x": -12.95,
+            "y": -5.054
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Dust-attenuated rest-frame 1500 A luminosity function of THESAN-2 (lower resolution) at z=10, read from the vector paths of Kannan et al. 2022. The figure plots each redshift offset by -(z-8) dex; that offset was added back, so y is the physical value. same dust scaling."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "population": "all galaxies",
+        "dustCorrection": "dust attenuated (same dust scaling)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), UV luminosity functions at z=6-10, z=10",
+        "doi": "10.1093/mnras/stab3710",
+        "url": "https://arxiv.org/abs/2110.00584",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity functions at z=6-10",
+        "panel": "z=10",
+        "checksumSha256": "0fa2634128ceab009944e388392544cacc4c437c30b25a2e21307cb93a66edf3",
+        "sourceMember": "figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks; y includes the +(z-8) offset removal (curves are plotted offset by -(z-8))",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan22.thesan.uvlf.sdao2.z10",
+      "source": "THESAN-1",
+      "run": "THESAN-SDAO-2",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, AB, dust attenuated)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -20.75,
+        "xMax": -13.47
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -20.75,
+            "y": -5.054
+          },
+          {
+            "x": -20.49,
+            "y": -5.355
+          },
+          {
+            "x": -20.23,
+            "y": -4.6561
+          },
+          {
+            "x": -19.97,
+            "y": -4.8779
+          },
+          {
+            "x": -19.71,
+            "y": -4.753
+          },
+          {
+            "x": -19.45,
+            "y": -4.4008
+          },
+          {
+            "x": -19.19,
+            "y": -4.3136
+          },
+          {
+            "x": -18.93,
+            "y": -4.0126
+          },
+          {
+            "x": -18.67,
+            "y": -3.8926
+          },
+          {
+            "x": -18.41,
+            "y": -3.4574
+          },
+          {
+            "x": -18.15,
+            "y": -3.2512
+          },
+          {
+            "x": -17.89,
+            "y": -3.0126
+          },
+          {
+            "x": -17.63,
+            "y": -2.9157
+          },
+          {
+            "x": -17.37,
+            "y": -2.7695
+          },
+          {
+            "x": -17.11,
+            "y": -2.7412
+          },
+          {
+            "x": -16.85,
+            "y": -2.6979
+          },
+          {
+            "x": -16.59,
+            "y": -2.6894
+          },
+          {
+            "x": -16.33,
+            "y": -2.6407
+          },
+          {
+            "x": -16.07,
+            "y": -2.6076
+          },
+          {
+            "x": -15.81,
+            "y": -2.625
+          },
+          {
+            "x": -15.55,
+            "y": -2.6449
+          },
+          {
+            "x": -15.29,
+            "y": -2.5509
+          },
+          {
+            "x": -15.03,
+            "y": -2.6084
+          },
+          {
+            "x": -14.77,
+            "y": -2.7256
+          },
+          {
+            "x": -14.51,
+            "y": -2.9417
+          },
+          {
+            "x": -14.25,
+            "y": -3.117
+          },
+          {
+            "x": -13.99,
+            "y": -3.5289
+          },
+          {
+            "x": -13.73,
+            "y": -3.8637
+          },
+          {
+            "x": -13.47,
+            "y": -4.3136
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Dust-attenuated rest-frame 1500 A luminosity function of THESAN-SDAO-2 at z=10, read from the vector paths of Kannan et al. 2022. The figure plots each redshift offset by -(z-8) dex; that offset was added back, so y is the physical value. same dust scaling."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "population": "all galaxies",
+        "dustCorrection": "dust attenuated (same dust scaling)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), UV luminosity functions at z=6-10, z=10",
+        "doi": "10.1093/mnras/stab3710",
+        "url": "https://arxiv.org/abs/2110.00584",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity functions at z=6-10",
+        "panel": "z=10",
+        "checksumSha256": "0fa2634128ceab009944e388392544cacc4c437c30b25a2e21307cb93a66edf3",
+        "sourceMember": "figures/UVLF.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks; y includes the +(z-8) offset removal (curves are plotted offset by -(z-8))",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan22.thesan.sfrd.t1",
+      "source": "THESAN-1",
+      "run": "THESAN-1",
+      "kind": "simulation",
+      "relation": "sfrd",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 5.592177484748817,
+        "zMax": 15.154076265043987,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift",
+        "xUnit": "redshift",
+        "yDefinition": "log10 cosmic star-formation rate density of all gas cells in the box",
+        "yUnit": "log10(Msun yr^-1 cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 5.592,
+        "xMax": 15.154
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 5.592,
+            "y": -1.5625
+          },
+          {
+            "x": 5.646,
+            "y": -1.5932
+          },
+          {
+            "x": 5.674,
+            "y": -1.5831
+          },
+          {
+            "x": 5.728,
+            "y": -1.5967
+          },
+          {
+            "x": 5.784,
+            "y": -1.6204
+          },
+          {
+            "x": 5.84,
+            "y": -1.6282
+          },
+          {
+            "x": 5.896,
+            "y": -1.6496
+          },
+          {
+            "x": 5.952,
+            "y": -1.6467
+          },
+          {
+            "x": 5.981,
+            "y": -1.6605
+          },
+          {
+            "x": 6.038,
+            "y": -1.6773
+          },
+          {
+            "x": 6.096,
+            "y": -1.6811
+          },
+          {
+            "x": 6.154,
+            "y": -1.6952
+          },
+          {
+            "x": 6.213,
+            "y": -1.7148
+          },
+          {
+            "x": 6.273,
+            "y": -1.7304
+          },
+          {
+            "x": 6.332,
+            "y": -1.7371
+          },
+          {
+            "x": 6.393,
+            "y": -1.7518
+          },
+          {
+            "x": 6.453,
+            "y": -1.7679
+          },
+          {
+            "x": 6.515,
+            "y": -1.7815
+          },
+          {
+            "x": 6.576,
+            "y": -1.7978
+          },
+          {
+            "x": 6.67,
+            "y": -1.8149
+          },
+          {
+            "x": 6.733,
+            "y": -1.8272
+          },
+          {
+            "x": 6.797,
+            "y": -1.8418
+          },
+          {
+            "x": 6.861,
+            "y": -1.8508
+          },
+          {
+            "x": 6.925,
+            "y": -1.8739
+          },
+          {
+            "x": 7.023,
+            "y": -1.8875
+          },
+          {
+            "x": 7.089,
+            "y": -1.8977
+          },
+          {
+            "x": 7.256,
+            "y": -1.9321
+          },
+          {
+            "x": 7.324,
+            "y": -1.9464
+          },
+          {
+            "x": 7.427,
+            "y": -1.9669
+          },
+          {
+            "x": 7.496,
+            "y": -1.9818
+          },
+          {
+            "x": 7.601,
+            "y": -1.998
+          },
+          {
+            "x": 7.672,
+            "y": -2.0106
+          },
+          {
+            "x": 7.779,
+            "y": -2.0285
+          },
+          {
+            "x": 7.888,
+            "y": -2.0504
+          },
+          {
+            "x": 7.961,
+            "y": -2.0573
+          },
+          {
+            "x": 8.071,
+            "y": -2.0952
+          },
+          {
+            "x": 8.183,
+            "y": -2.0948
+          },
+          {
+            "x": 8.297,
+            "y": -2.1074
+          },
+          {
+            "x": 8.412,
+            "y": -2.1261
+          },
+          {
+            "x": 8.528,
+            "y": -2.1385
+          },
+          {
+            "x": 8.646,
+            "y": -2.1543
+          },
+          {
+            "x": 8.765,
+            "y": -2.1714
+          },
+          {
+            "x": 8.885,
+            "y": -2.1863
+          },
+          {
+            "x": 9.007,
+            "y": -2.2029
+          },
+          {
+            "x": 9.131,
+            "y": -2.2189
+          },
+          {
+            "x": 9.298,
+            "y": -2.2394
+          },
+          {
+            "x": 9.426,
+            "y": -2.2534
+          },
+          {
+            "x": 9.554,
+            "y": -2.2691
+          },
+          {
+            "x": 9.729,
+            "y": -2.2903
+          },
+          {
+            "x": 9.861,
+            "y": -2.3067
+          },
+          {
+            "x": 10.04,
+            "y": -2.3302
+          },
+          {
+            "x": 10.223,
+            "y": -2.3518
+          },
+          {
+            "x": 10.408,
+            "y": -2.3758
+          },
+          {
+            "x": 10.596,
+            "y": -2.4014
+          },
+          {
+            "x": 10.787,
+            "y": -2.4282
+          },
+          {
+            "x": 10.982,
+            "y": -2.4562
+          },
+          {
+            "x": 11.18,
+            "y": -2.486
+          },
+          {
+            "x": 11.432,
+            "y": -2.5251
+          },
+          {
+            "x": 11.637,
+            "y": -2.5637
+          },
+          {
+            "x": 11.898,
+            "y": -2.6025
+          },
+          {
+            "x": 12.165,
+            "y": -2.6496
+          },
+          {
+            "x": 12.382,
+            "y": -2.6897
+          },
+          {
+            "x": 12.715,
+            "y": -2.7533
+          },
+          {
+            "x": 12.998,
+            "y": -2.8101
+          },
+          {
+            "x": 13.288,
+            "y": -2.8794
+          },
+          {
+            "x": 13.643,
+            "y": -2.9474
+          },
+          {
+            "x": 14.007,
+            "y": -3.0292
+          },
+          {
+            "x": 14.38,
+            "y": -3.1163
+          },
+          {
+            "x": 14.762,
+            "y": -3.2087
+          },
+          {
+            "x": 15.154,
+            "y": -3.3155
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies in the box",
+        "warning": "Total cosmic SFR density of THESAN-1 versus redshift, read from the vector paths of Kannan et al. 2022. The halo-mass-split contributions (thin dashed, dash-dot, dotted lines) are not extracted. The paper notes the SFRD is converged below z=8 only; lower-resolution runs fall an order of magnitude short at high z."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "sfrIndicator": "instantaneous SFR of star-forming gas",
+        "population": "all galaxies"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), evolution of the star formation rate density",
+        "doi": "10.1093/mnras/stab3710",
+        "url": "https://arxiv.org/abs/2110.00584",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the star formation rate density",
+        "panel": "total (thick solid line)",
+        "checksumSha256": "4868e39b9a9e5fe140b6a87f735ae6a0df0837a8202d04f5919888a10a01c7bb",
+        "sourceMember": "figures/sfrbin.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks (frame from the long axis strokes)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan22.thesan.sfrd.t2",
+      "source": "THESAN-1",
+      "run": "THESAN-2 (lower resolution)",
+      "kind": "simulation",
+      "relation": "sfrd",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 5.499961198556029,
+        "zMax": 15.73765343666158,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift",
+        "xUnit": "redshift",
+        "yDefinition": "log10 cosmic star-formation rate density of all gas cells in the box",
+        "yUnit": "log10(Msun yr^-1 cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 5.5,
+        "xMax": 15.738
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 5.5,
+            "y": -1.7008
+          },
+          {
+            "x": 5.545,
+            "y": -1.7058
+          },
+          {
+            "x": 5.591,
+            "y": -1.7149
+          },
+          {
+            "x": 5.638,
+            "y": -1.7238
+          },
+          {
+            "x": 5.686,
+            "y": -1.7337
+          },
+          {
+            "x": 5.735,
+            "y": -1.7444
+          },
+          {
+            "x": 5.784,
+            "y": -1.754
+          },
+          {
+            "x": 5.835,
+            "y": -1.7607
+          },
+          {
+            "x": 5.886,
+            "y": -1.7736
+          },
+          {
+            "x": 5.939,
+            "y": -1.78
+          },
+          {
+            "x": 5.992,
+            "y": -1.7945
+          },
+          {
+            "x": 6.046,
+            "y": -1.8087
+          },
+          {
+            "x": 6.102,
+            "y": -1.825
+          },
+          {
+            "x": 6.159,
+            "y": -1.8393
+          },
+          {
+            "x": 6.216,
+            "y": -1.853
+          },
+          {
+            "x": 6.275,
+            "y": -1.8652
+          },
+          {
+            "x": 6.335,
+            "y": -1.8752
+          },
+          {
+            "x": 6.397,
+            "y": -1.8873
+          },
+          {
+            "x": 6.459,
+            "y": -1.902
+          },
+          {
+            "x": 6.523,
+            "y": -1.9216
+          },
+          {
+            "x": 6.589,
+            "y": -1.9193
+          },
+          {
+            "x": 6.656,
+            "y": -1.9398
+          },
+          {
+            "x": 6.724,
+            "y": -1.9572
+          },
+          {
+            "x": 6.794,
+            "y": -1.9623
+          },
+          {
+            "x": 6.865,
+            "y": -1.9746
+          },
+          {
+            "x": 6.938,
+            "y": -2.0096
+          },
+          {
+            "x": 7.013,
+            "y": -2.0173
+          },
+          {
+            "x": 7.09,
+            "y": -2.0306
+          },
+          {
+            "x": 7.168,
+            "y": -2.0476
+          },
+          {
+            "x": 7.249,
+            "y": -2.0583
+          },
+          {
+            "x": 7.331,
+            "y": -2.0765
+          },
+          {
+            "x": 7.415,
+            "y": -2.1006
+          },
+          {
+            "x": 7.502,
+            "y": -2.1106
+          },
+          {
+            "x": 7.591,
+            "y": -2.1293
+          },
+          {
+            "x": 7.682,
+            "y": -2.1463
+          },
+          {
+            "x": 7.776,
+            "y": -2.1588
+          },
+          {
+            "x": 7.872,
+            "y": -2.1747
+          },
+          {
+            "x": 7.971,
+            "y": -2.2034
+          },
+          {
+            "x": 8.073,
+            "y": -2.2244
+          },
+          {
+            "x": 8.178,
+            "y": -2.2535
+          },
+          {
+            "x": 8.285,
+            "y": -2.2628
+          },
+          {
+            "x": 8.396,
+            "y": -2.2864
+          },
+          {
+            "x": 8.511,
+            "y": -2.3148
+          },
+          {
+            "x": 8.629,
+            "y": -2.3345
+          },
+          {
+            "x": 8.75,
+            "y": -2.3603
+          },
+          {
+            "x": 8.876,
+            "y": -2.3811
+          },
+          {
+            "x": 9.005,
+            "y": -2.4102
+          },
+          {
+            "x": 9.139,
+            "y": -2.4464
+          },
+          {
+            "x": 9.278,
+            "y": -2.4756
+          },
+          {
+            "x": 9.421,
+            "y": -2.5041
+          },
+          {
+            "x": 9.569,
+            "y": -2.5436
+          },
+          {
+            "x": 9.723,
+            "y": -2.5794
+          },
+          {
+            "x": 9.883,
+            "y": -2.6157
+          },
+          {
+            "x": 10.048,
+            "y": -2.6481
+          },
+          {
+            "x": 10.221,
+            "y": -2.7021
+          },
+          {
+            "x": 10.399,
+            "y": -2.7451
+          },
+          {
+            "x": 10.586,
+            "y": -2.7945
+          },
+          {
+            "x": 10.78,
+            "y": -2.8462
+          },
+          {
+            "x": 10.982,
+            "y": -2.9047
+          },
+          {
+            "x": 11.193,
+            "y": -2.9682
+          },
+          {
+            "x": 11.414,
+            "y": -3.0396
+          },
+          {
+            "x": 11.645,
+            "y": -3.1039
+          },
+          {
+            "x": 11.887,
+            "y": -3.1857
+          },
+          {
+            "x": 12.141,
+            "y": -3.2587
+          },
+          {
+            "x": 12.408,
+            "y": -3.3594
+          },
+          {
+            "x": 12.689,
+            "y": -3.4568
+          },
+          {
+            "x": 12.985,
+            "y": -3.5542
+          },
+          {
+            "x": 13.298,
+            "y": -3.6769
+          },
+          {
+            "x": 13.628,
+            "y": -3.7971
+          },
+          {
+            "x": 13.979,
+            "y": -3.9261
+          },
+          {
+            "x": 14.351,
+            "y": -4.0721
+          },
+          {
+            "x": 14.747,
+            "y": -4.2203
+          },
+          {
+            "x": 15.17,
+            "y": -4.3795
+          },
+          {
+            "x": 15.622,
+            "y": -4.5705
+          },
+          {
+            "x": 15.738,
+            "y": -4.6166
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies in the box",
+        "warning": "Total cosmic SFR density of THESAN-2 (lower resolution) versus redshift, read from the vector paths of Kannan et al. 2022. The halo-mass-split contributions (thin dashed, dash-dot, dotted lines) are not extracted. The paper notes the SFRD is converged below z=8 only; lower-resolution runs fall an order of magnitude short at high z."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "sfrIndicator": "instantaneous SFR of star-forming gas",
+        "population": "all galaxies"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), evolution of the star formation rate density",
+        "doi": "10.1093/mnras/stab3710",
+        "url": "https://arxiv.org/abs/2110.00584",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the star formation rate density",
+        "panel": "total (thick solid line)",
+        "checksumSha256": "4868e39b9a9e5fe140b6a87f735ae6a0df0837a8202d04f5919888a10a01c7bb",
+        "sourceMember": "figures/sfrbin.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks (frame from the long axis strokes)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kannan22.thesan.sfrd.sdao2",
+      "source": "THESAN-1",
+      "run": "THESAN-SDAO-2",
+      "kind": "simulation",
+      "relation": "sfrd",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 5.499961198556029,
+        "zMax": 15.73765343666158,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift",
+        "xUnit": "redshift",
+        "yDefinition": "log10 cosmic star-formation rate density of all gas cells in the box",
+        "yUnit": "log10(Msun yr^-1 cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 5.5,
+        "xMax": 15.738
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 5.5,
+            "y": -1.7013
+          },
+          {
+            "x": 5.545,
+            "y": -1.7102
+          },
+          {
+            "x": 5.591,
+            "y": -1.7326
+          },
+          {
+            "x": 5.638,
+            "y": -1.732
+          },
+          {
+            "x": 5.686,
+            "y": -1.7419
+          },
+          {
+            "x": 5.735,
+            "y": -1.7578
+          },
+          {
+            "x": 5.784,
+            "y": -1.7758
+          },
+          {
+            "x": 5.835,
+            "y": -1.7818
+          },
+          {
+            "x": 5.886,
+            "y": -1.7885
+          },
+          {
+            "x": 5.939,
+            "y": -1.7997
+          },
+          {
+            "x": 5.992,
+            "y": -1.8162
+          },
+          {
+            "x": 6.046,
+            "y": -1.8265
+          },
+          {
+            "x": 6.102,
+            "y": -1.8452
+          },
+          {
+            "x": 6.159,
+            "y": -1.8535
+          },
+          {
+            "x": 6.216,
+            "y": -1.8674
+          },
+          {
+            "x": 6.275,
+            "y": -1.8852
+          },
+          {
+            "x": 6.335,
+            "y": -1.9026
+          },
+          {
+            "x": 6.397,
+            "y": -1.916
+          },
+          {
+            "x": 6.459,
+            "y": -1.9247
+          },
+          {
+            "x": 6.523,
+            "y": -1.948
+          },
+          {
+            "x": 6.589,
+            "y": -1.9515
+          },
+          {
+            "x": 6.656,
+            "y": -1.9629
+          },
+          {
+            "x": 6.724,
+            "y": -1.9827
+          },
+          {
+            "x": 6.794,
+            "y": -1.9988
+          },
+          {
+            "x": 6.865,
+            "y": -2.0194
+          },
+          {
+            "x": 6.938,
+            "y": -2.0399
+          },
+          {
+            "x": 7.013,
+            "y": -2.0499
+          },
+          {
+            "x": 7.09,
+            "y": -2.0667
+          },
+          {
+            "x": 7.168,
+            "y": -2.0895
+          },
+          {
+            "x": 7.249,
+            "y": -2.1041
+          },
+          {
+            "x": 7.331,
+            "y": -2.1214
+          },
+          {
+            "x": 7.415,
+            "y": -2.1482
+          },
+          {
+            "x": 7.502,
+            "y": -2.1607
+          },
+          {
+            "x": 7.591,
+            "y": -2.1897
+          },
+          {
+            "x": 7.682,
+            "y": -2.2084
+          },
+          {
+            "x": 7.776,
+            "y": -2.2305
+          },
+          {
+            "x": 7.872,
+            "y": -2.245
+          },
+          {
+            "x": 7.971,
+            "y": -2.277
+          },
+          {
+            "x": 8.073,
+            "y": -2.2982
+          },
+          {
+            "x": 8.178,
+            "y": -2.3305
+          },
+          {
+            "x": 8.285,
+            "y": -2.3449
+          },
+          {
+            "x": 8.396,
+            "y": -2.3746
+          },
+          {
+            "x": 8.511,
+            "y": -2.4053
+          },
+          {
+            "x": 8.629,
+            "y": -2.436
+          },
+          {
+            "x": 8.75,
+            "y": -2.4681
+          },
+          {
+            "x": 8.876,
+            "y": -2.4911
+          },
+          {
+            "x": 9.005,
+            "y": -2.5225
+          },
+          {
+            "x": 9.139,
+            "y": -2.5689
+          },
+          {
+            "x": 9.278,
+            "y": -2.6018
+          },
+          {
+            "x": 9.421,
+            "y": -2.637
+          },
+          {
+            "x": 9.569,
+            "y": -2.6833
+          },
+          {
+            "x": 9.723,
+            "y": -2.7313
+          },
+          {
+            "x": 9.883,
+            "y": -2.7723
+          },
+          {
+            "x": 10.048,
+            "y": -2.8098
+          },
+          {
+            "x": 10.221,
+            "y": -2.876
+          },
+          {
+            "x": 10.399,
+            "y": -2.9221
+          },
+          {
+            "x": 10.586,
+            "y": -2.9794
+          },
+          {
+            "x": 10.78,
+            "y": -3.044
+          },
+          {
+            "x": 10.982,
+            "y": -3.1109
+          },
+          {
+            "x": 11.193,
+            "y": -3.1899
+          },
+          {
+            "x": 11.414,
+            "y": -3.2654
+          },
+          {
+            "x": 11.645,
+            "y": -3.3414
+          },
+          {
+            "x": 11.887,
+            "y": -3.4328
+          },
+          {
+            "x": 12.141,
+            "y": -3.5172
+          },
+          {
+            "x": 12.408,
+            "y": -3.6358
+          },
+          {
+            "x": 12.689,
+            "y": -3.7468
+          },
+          {
+            "x": 12.985,
+            "y": -3.8553
+          },
+          {
+            "x": 13.298,
+            "y": -3.9958
+          },
+          {
+            "x": 13.628,
+            "y": -4.1426
+          },
+          {
+            "x": 13.979,
+            "y": -4.2848
+          },
+          {
+            "x": 14.351,
+            "y": -4.4459
+          },
+          {
+            "x": 14.747,
+            "y": -4.6265
+          },
+          {
+            "x": 15.17,
+            "y": -4.8001
+          },
+          {
+            "x": 15.622,
+            "y": -5.0147
+          },
+          {
+            "x": 15.738,
+            "y": -5.0686
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies in the box",
+        "warning": "Total cosmic SFR density of THESAN-SDAO-2 versus redshift, read from the vector paths of Kannan et al. 2022. The halo-mass-split contributions (thin dashed, dash-dot, dotted lines) are not extracted. The paper notes the SFRD is converged below z=8 only; lower-resolution runs fall an order of magnitude short at high z."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "comoving",
+        "sfrIndicator": "instantaneous SFR of star-forming gas",
+        "population": "all galaxies"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), evolution of the star formation rate density",
+        "doi": "10.1093/mnras/stab3710",
+        "url": "https://arxiv.org/abs/2110.00584",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the star formation rate density",
+        "panel": "total (thick solid line)",
+        "checksumSha256": "4868e39b9a9e5fe140b6a87f735ae6a0df0837a8202d04f5919888a10a01c7bb",
+        "sourceMember": "figures/sfrbin.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks (frame from the long axis strokes)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

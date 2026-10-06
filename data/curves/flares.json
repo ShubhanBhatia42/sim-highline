@@ -1,0 +1,1734 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model)",
+      "kind": "simulation",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "snapshot",
+        "snapshot": 5
+      },
+      "scatter": null,
+      "calibration": "prediction",
+      "rankable": true,
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "FLARES (Lovell et al. 2021; Vijayan et al. 2021) galaxy properties as redistributed in github.com/louisarts/Arts24LRD (data/raw_FLARES_data.hdf5); region weights from github.com/flaresimulations/flares (weight_files/weights_grid.txt); relations derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/flaresimulations/flares",
+        "retrieved": "2026-10-03",
+        "checksumSha256": "3c29fc43dca164454f7cdb076866c7c1dd9a854a936d728bdfcfe90f2d304dff",
+        "sourceMember": "raw_FLARES_data.hdf5:005_z010p000; weights_grid.txt"
+      },
+      "notes": "Composite volume from 40 zoom regions of radius 14 cMpc/h, combined with the official FLARES overdensity weights following the method in the flares repository README.",
+      "id": "flares.gsmf.z10",
+      "relation": "gsmf",
+      "axes": {
+        "xDefinition": "log10 stellar mass (30 pkpc)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 weighted galaxy number density per dex",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.3,
+        "xMax": 10.3
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.3,
+            "y": -4.1424,
+            "yLow": -4.2965,
+            "yHigh": -4.0289,
+            "count": 107
+          },
+          {
+            "x": 8.5,
+            "y": -4.3907,
+            "yLow": -4.5688,
+            "yHigh": -4.2647,
+            "count": 95
+          },
+          {
+            "x": 8.7,
+            "y": -4.5698,
+            "yLow": -4.8339,
+            "yHigh": -4.4068,
+            "count": 49
+          },
+          {
+            "x": 8.9,
+            "y": -4.7273,
+            "yLow": -5.0527,
+            "yHigh": -4.5434,
+            "count": 56
+          },
+          {
+            "x": 9.1,
+            "y": -4.9067,
+            "yLow": -5.4336,
+            "yHigh": -4.6756,
+            "count": 30
+          },
+          {
+            "x": 9.3,
+            "y": -4.793,
+            "yLow": -5.2116,
+            "yHigh": -4.5839,
+            "count": 21
+          },
+          {
+            "x": 9.5,
+            "y": -5.3331,
+            "yLow": -6.0713,
+            "yHigh": -5.0737,
+            "count": 14
+          },
+          {
+            "x": 9.7,
+            "y": -6.0634,
+            "yLow": -6.6592,
+            "yHigh": -5.8212,
+            "count": 5
+          },
+          {
+            "x": 10.1,
+            "y": -6.1589,
+            "yLow": -7.2417,
+            "yHigh": -5.8762,
+            "count": 2
+          },
+          {
+            "x": 10.3,
+            "y": -7.2206,
+            "yLow": -8.5216,
+            "yHigh": -6.9196,
+            "count": 1
+          }
+        ]
+      },
+      "selection": {
+        "population": "all",
+        "warning": "Galaxies with M*(30 pkpc) >= 1.8e+08 Msun (100 gas particle masses). Region weights reconstruct a representative volume; the galaxy table is a third-party extraction of the FLARES master file, so completeness below the published FLARES mass cut is not guaranteed. Errors are weighted Poisson."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      }
+    },
+    {
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model)",
+      "kind": "simulation",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "snapshot",
+        "snapshot": 5
+      },
+      "scatter": null,
+      "calibration": "prediction",
+      "rankable": true,
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "FLARES (Lovell et al. 2021; Vijayan et al. 2021) galaxy properties as redistributed in github.com/louisarts/Arts24LRD (data/raw_FLARES_data.hdf5); region weights from github.com/flaresimulations/flares (weight_files/weights_grid.txt); relations derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/flaresimulations/flares",
+        "retrieved": "2026-10-03",
+        "checksumSha256": "3c29fc43dca164454f7cdb076866c7c1dd9a854a936d728bdfcfe90f2d304dff",
+        "sourceMember": "raw_FLARES_data.hdf5:005_z010p000; weights_grid.txt"
+      },
+      "notes": "Composite volume from 40 zoom regions of radius 14 cMpc/h, combined with the official FLARES overdensity weights following the method in the flares repository README.",
+      "id": "flares.sfms.z10",
+      "relation": "sfms",
+      "axes": {
+        "xDefinition": "log10 stellar mass (30 pkpc)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 instantaneous SFR (30 pkpc), weighted median of star-forming galaxies",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 8.3,
+        "xMax": 9.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.3,
+            "y": -0.0263,
+            "yLow": -0.3549,
+            "yHigh": 0.2639,
+            "count": 107
+          },
+          {
+            "x": 8.5,
+            "y": 0.5155,
+            "yLow": 0.4336,
+            "yHigh": 0.7998,
+            "count": 95
+          },
+          {
+            "x": 8.7,
+            "y": 0.713,
+            "yLow": 0.6887,
+            "yHigh": 0.8352,
+            "count": 49
+          },
+          {
+            "x": 8.9,
+            "y": 0.8467,
+            "yLow": 0.6939,
+            "yHigh": 1.2136,
+            "count": 56
+          },
+          {
+            "x": 9.1,
+            "y": 1.194,
+            "yLow": 1.1692,
+            "yHigh": 1.2058,
+            "count": 30
+          },
+          {
+            "x": 9.3,
+            "y": 1.6405,
+            "yLow": 1.3774,
+            "yHigh": 1.694,
+            "count": 21
+          },
+          {
+            "x": 9.5,
+            "y": 1.6382,
+            "yLow": 1.6286,
+            "yHigh": 1.6422,
+            "count": 14
+          }
+        ]
+      },
+      "selection": {
+        "population": "star-forming",
+        "warning": "Galaxies with M*(30 pkpc) >= 1.8e+08 Msun (100 gas particle masses). Region weights reconstruct a representative volume; the galaxy table is a third-party extraction of the FLARES master file, so completeness below the published FLARES mass cut is not guaranteed. Star-forming: sSFR > 0.2/t_age(z), as in the other sim-highline pipelines."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "population": "star-forming",
+        "sfrTimescaleMyr": "instantaneous",
+        "sfrStatistic": "median"
+      }
+    },
+    {
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model)",
+      "kind": "simulation",
+      "epoch": {
+        "zRepresentative": 9,
+        "zNominal": 9,
+        "zMin": 9,
+        "zMax": 9,
+        "mode": "snapshot",
+        "snapshot": 6
+      },
+      "scatter": null,
+      "calibration": "prediction",
+      "rankable": true,
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "FLARES (Lovell et al. 2021; Vijayan et al. 2021) galaxy properties as redistributed in github.com/louisarts/Arts24LRD (data/raw_FLARES_data.hdf5); region weights from github.com/flaresimulations/flares (weight_files/weights_grid.txt); relations derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/flaresimulations/flares",
+        "retrieved": "2026-10-03",
+        "checksumSha256": "3c29fc43dca164454f7cdb076866c7c1dd9a854a936d728bdfcfe90f2d304dff",
+        "sourceMember": "raw_FLARES_data.hdf5:006_z009p000; weights_grid.txt"
+      },
+      "notes": "Composite volume from 40 zoom regions of radius 14 cMpc/h, combined with the official FLARES overdensity weights following the method in the flares repository README.",
+      "id": "flares.gsmf.z9",
+      "relation": "gsmf",
+      "axes": {
+        "xDefinition": "log10 stellar mass (30 pkpc)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 weighted galaxy number density per dex",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.3,
+        "xMax": 10.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.3,
+            "y": -3.6355,
+            "yLow": -3.7162,
+            "yHigh": -3.5675,
+            "count": 263
+          },
+          {
+            "x": 8.5,
+            "y": -3.8666,
+            "yLow": -3.9663,
+            "yHigh": -3.7856,
+            "count": 232
+          },
+          {
+            "x": 8.7,
+            "y": -4.1599,
+            "yLow": -4.3106,
+            "yHigh": -4.0482,
+            "count": 121
+          },
+          {
+            "x": 8.9,
+            "y": -4.4373,
+            "yLow": -4.6659,
+            "yHigh": -4.2883,
+            "count": 73
+          },
+          {
+            "x": 9.1,
+            "y": -4.5145,
+            "yLow": -4.7463,
+            "yHigh": -4.3642,
+            "count": 79
+          },
+          {
+            "x": 9.3,
+            "y": -4.617,
+            "yLow": -4.8619,
+            "yHigh": -4.4614,
+            "count": 54
+          },
+          {
+            "x": 9.5,
+            "y": -4.9637,
+            "yLow": -5.2093,
+            "yHigh": -4.8078,
+            "count": 36
+          },
+          {
+            "x": 9.7,
+            "y": -5.0013,
+            "yLow": -6.0039,
+            "yHigh": -4.7224,
+            "count": 14
+          },
+          {
+            "x": 9.9,
+            "y": -5.3111,
+            "yLow": -5.982,
+            "yHigh": -5.0591,
+            "count": 9
+          },
+          {
+            "x": 10.1,
+            "y": -6.0035,
+            "yLow": -6.4722,
+            "yHigh": -5.7834,
+            "count": 6
+          },
+          {
+            "x": 10.3,
+            "y": -7.2206,
+            "yLow": -8.5216,
+            "yHigh": -6.9196,
+            "count": 1
+          },
+          {
+            "x": 10.5,
+            "y": -7.2206,
+            "yLow": -8.5216,
+            "yHigh": -6.9196,
+            "count": 1
+          }
+        ]
+      },
+      "selection": {
+        "population": "all",
+        "warning": "Galaxies with M*(30 pkpc) >= 1.8e+08 Msun (100 gas particle masses). Region weights reconstruct a representative volume; the galaxy table is a third-party extraction of the FLARES master file, so completeness below the published FLARES mass cut is not guaranteed. Errors are weighted Poisson."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      }
+    },
+    {
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model)",
+      "kind": "simulation",
+      "epoch": {
+        "zRepresentative": 9,
+        "zNominal": 9,
+        "zMin": 9,
+        "zMax": 9,
+        "mode": "snapshot",
+        "snapshot": 6
+      },
+      "scatter": null,
+      "calibration": "prediction",
+      "rankable": true,
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "FLARES (Lovell et al. 2021; Vijayan et al. 2021) galaxy properties as redistributed in github.com/louisarts/Arts24LRD (data/raw_FLARES_data.hdf5); region weights from github.com/flaresimulations/flares (weight_files/weights_grid.txt); relations derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/flaresimulations/flares",
+        "retrieved": "2026-10-03",
+        "checksumSha256": "3c29fc43dca164454f7cdb076866c7c1dd9a854a936d728bdfcfe90f2d304dff",
+        "sourceMember": "raw_FLARES_data.hdf5:006_z009p000; weights_grid.txt"
+      },
+      "notes": "Composite volume from 40 zoom regions of radius 14 cMpc/h, combined with the official FLARES overdensity weights following the method in the flares repository README.",
+      "id": "flares.sfms.z9",
+      "relation": "sfms",
+      "axes": {
+        "xDefinition": "log10 stellar mass (30 pkpc)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 instantaneous SFR (30 pkpc), weighted median of star-forming galaxies",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 8.3,
+        "xMax": 9.7
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.3,
+            "y": 0.1668,
+            "yLow": -0.1351,
+            "yHigh": 0.3664,
+            "count": 261
+          },
+          {
+            "x": 8.5,
+            "y": 0.5199,
+            "yLow": 0.1295,
+            "yHigh": 0.6651,
+            "count": 231
+          },
+          {
+            "x": 8.7,
+            "y": 0.8105,
+            "yLow": 0.6876,
+            "yHigh": 0.9728,
+            "count": 121
+          },
+          {
+            "x": 8.9,
+            "y": 1.0073,
+            "yLow": 0.9328,
+            "yHigh": 1.0365,
+            "count": 73
+          },
+          {
+            "x": 9.1,
+            "y": 1.1626,
+            "yLow": 0.4642,
+            "yHigh": 1.5246,
+            "count": 79
+          },
+          {
+            "x": 9.3,
+            "y": 1.4079,
+            "yLow": 1.3044,
+            "yHigh": 1.5764,
+            "count": 54
+          },
+          {
+            "x": 9.5,
+            "y": 1.4779,
+            "yLow": 1.3272,
+            "yHigh": 1.6423,
+            "count": 36
+          },
+          {
+            "x": 9.7,
+            "y": 1.6444,
+            "yLow": 1.6367,
+            "yHigh": 1.6476,
+            "count": 14
+          }
+        ]
+      },
+      "selection": {
+        "population": "star-forming",
+        "warning": "Galaxies with M*(30 pkpc) >= 1.8e+08 Msun (100 gas particle masses). Region weights reconstruct a representative volume; the galaxy table is a third-party extraction of the FLARES master file, so completeness below the published FLARES mass cut is not guaranteed. Star-forming: sSFR > 0.2/t_age(z), as in the other sim-highline pipelines."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "population": "star-forming",
+        "sfrTimescaleMyr": "instantaneous",
+        "sfrStatistic": "median"
+      }
+    },
+    {
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model)",
+      "kind": "simulation",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
+        "mode": "snapshot",
+        "snapshot": 7
+      },
+      "scatter": null,
+      "calibration": "prediction",
+      "rankable": true,
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "FLARES (Lovell et al. 2021; Vijayan et al. 2021) galaxy properties as redistributed in github.com/louisarts/Arts24LRD (data/raw_FLARES_data.hdf5); region weights from github.com/flaresimulations/flares (weight_files/weights_grid.txt); relations derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/flaresimulations/flares",
+        "retrieved": "2026-10-03",
+        "checksumSha256": "3c29fc43dca164454f7cdb076866c7c1dd9a854a936d728bdfcfe90f2d304dff",
+        "sourceMember": "raw_FLARES_data.hdf5:007_z008p000; weights_grid.txt"
+      },
+      "notes": "Composite volume from 40 zoom regions of radius 14 cMpc/h, combined with the official FLARES overdensity weights following the method in the flares repository README.",
+      "id": "flares.gsmf.z8",
+      "relation": "gsmf",
+      "axes": {
+        "xDefinition": "log10 stellar mass (30 pkpc)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 weighted galaxy number density per dex",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.3,
+        "xMax": 10.7
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.3,
+            "y": -3.2356,
+            "yLow": -3.285,
+            "yHigh": -3.1913,
+            "count": 675
+          },
+          {
+            "x": 8.5,
+            "y": -3.2914,
+            "yLow": -3.346,
+            "yHigh": -3.2429,
+            "count": 568
+          },
+          {
+            "x": 8.7,
+            "y": -3.9322,
+            "yLow": -4.039,
+            "yHigh": -3.8465,
+            "count": 264
+          },
+          {
+            "x": 8.9,
+            "y": -3.9574,
+            "yLow": -4.0671,
+            "yHigh": -3.87,
+            "count": 184
+          },
+          {
+            "x": 9.1,
+            "y": -4.063,
+            "yLow": -4.1971,
+            "yHigh": -3.9607,
+            "count": 117
+          },
+          {
+            "x": 9.3,
+            "y": -4.1498,
+            "yLow": -4.3086,
+            "yHigh": -4.0338,
+            "count": 118
+          },
+          {
+            "x": 9.5,
+            "y": -4.5496,
+            "yLow": -4.751,
+            "yHigh": -4.4125,
+            "count": 82
+          },
+          {
+            "x": 9.7,
+            "y": -4.8258,
+            "yLow": -4.9998,
+            "yHigh": -4.7019,
+            "count": 62
+          },
+          {
+            "x": 9.9,
+            "y": -4.8853,
+            "yLow": -5.4041,
+            "yHigh": -4.6556,
+            "count": 35
+          },
+          {
+            "x": 10.1,
+            "y": -5.8673,
+            "yLow": -6.1769,
+            "yHigh": -5.6884,
+            "count": 12
+          },
+          {
+            "x": 10.3,
+            "y": -5.8913,
+            "yLow": -6.217,
+            "yHigh": -5.7073,
+            "count": 9
+          },
+          {
+            "x": 10.5,
+            "y": -5.4101,
+            "yLow": -6.7111,
+            "yHigh": -5.1149,
+            "count": 3
+          },
+          {
+            "x": 10.7,
+            "y": -7.2206,
+            "yLow": -8.5216,
+            "yHigh": -6.9196,
+            "count": 1
+          }
+        ]
+      },
+      "selection": {
+        "population": "all",
+        "warning": "Galaxies with M*(30 pkpc) >= 1.8e+08 Msun (100 gas particle masses). Region weights reconstruct a representative volume; the galaxy table is a third-party extraction of the FLARES master file, so completeness below the published FLARES mass cut is not guaranteed. Errors are weighted Poisson."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      }
+    },
+    {
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model)",
+      "kind": "simulation",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
+        "mode": "snapshot",
+        "snapshot": 7
+      },
+      "scatter": null,
+      "calibration": "prediction",
+      "rankable": true,
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "FLARES (Lovell et al. 2021; Vijayan et al. 2021) galaxy properties as redistributed in github.com/louisarts/Arts24LRD (data/raw_FLARES_data.hdf5); region weights from github.com/flaresimulations/flares (weight_files/weights_grid.txt); relations derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/flaresimulations/flares",
+        "retrieved": "2026-10-03",
+        "checksumSha256": "3c29fc43dca164454f7cdb076866c7c1dd9a854a936d728bdfcfe90f2d304dff",
+        "sourceMember": "raw_FLARES_data.hdf5:007_z008p000; weights_grid.txt"
+      },
+      "notes": "Composite volume from 40 zoom regions of radius 14 cMpc/h, combined with the official FLARES overdensity weights following the method in the flares repository README.",
+      "id": "flares.sfms.z8",
+      "relation": "sfms",
+      "axes": {
+        "xDefinition": "log10 stellar mass (30 pkpc)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 instantaneous SFR (30 pkpc), weighted median of star-forming galaxies",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 8.3,
+        "xMax": 10.1
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.3,
+            "y": 0.1044,
+            "yLow": -0.2168,
+            "yHigh": 0.3049,
+            "count": 673
+          },
+          {
+            "x": 8.5,
+            "y": 0.3322,
+            "yLow": 0.0606,
+            "yHigh": 0.5841,
+            "count": 568
+          },
+          {
+            "x": 8.7,
+            "y": 0.5915,
+            "yLow": 0.2876,
+            "yHigh": 0.8567,
+            "count": 264
+          },
+          {
+            "x": 8.9,
+            "y": 1.0167,
+            "yLow": 0.7866,
+            "yHigh": 1.0587,
+            "count": 184
+          },
+          {
+            "x": 9.1,
+            "y": 1.077,
+            "yLow": 0.9896,
+            "yHigh": 1.258,
+            "count": 115
+          },
+          {
+            "x": 9.3,
+            "y": 1.2958,
+            "yLow": 1.2664,
+            "yHigh": 1.3727,
+            "count": 118
+          },
+          {
+            "x": 9.5,
+            "y": 1.369,
+            "yLow": 1.2912,
+            "yHigh": 1.5609,
+            "count": 80
+          },
+          {
+            "x": 9.7,
+            "y": 1.5607,
+            "yLow": 1.2245,
+            "yHigh": 1.7858,
+            "count": 62
+          },
+          {
+            "x": 9.9,
+            "y": 1.3777,
+            "yLow": 1.3413,
+            "yHigh": 2.0086,
+            "count": 35
+          },
+          {
+            "x": 10.1,
+            "y": 1.7724,
+            "yLow": 1.4736,
+            "yHigh": 2.0826,
+            "count": 12
+          }
+        ]
+      },
+      "selection": {
+        "population": "star-forming",
+        "warning": "Galaxies with M*(30 pkpc) >= 1.8e+08 Msun (100 gas particle masses). Region weights reconstruct a representative volume; the galaxy table is a third-party extraction of the FLARES master file, so completeness below the published FLARES mass cut is not guaranteed. Star-forming: sSFR > 0.2/t_age(z), as in the other sim-highline pipelines."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "population": "star-forming",
+        "sfrTimescaleMyr": "instantaneous",
+        "sfrStatistic": "median"
+      }
+    },
+    {
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model)",
+      "kind": "simulation",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "snapshot",
+        "snapshot": 8
+      },
+      "scatter": null,
+      "calibration": "prediction",
+      "rankable": true,
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "FLARES (Lovell et al. 2021; Vijayan et al. 2021) galaxy properties as redistributed in github.com/louisarts/Arts24LRD (data/raw_FLARES_data.hdf5); region weights from github.com/flaresimulations/flares (weight_files/weights_grid.txt); relations derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/flaresimulations/flares",
+        "retrieved": "2026-10-03",
+        "checksumSha256": "3c29fc43dca164454f7cdb076866c7c1dd9a854a936d728bdfcfe90f2d304dff",
+        "sourceMember": "raw_FLARES_data.hdf5:008_z007p000; weights_grid.txt"
+      },
+      "notes": "Composite volume from 40 zoom regions of radius 14 cMpc/h, combined with the official FLARES overdensity weights following the method in the flares repository README.",
+      "id": "flares.gsmf.z7",
+      "relation": "gsmf",
+      "axes": {
+        "xDefinition": "log10 stellar mass (30 pkpc)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 weighted galaxy number density per dex",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.3,
+        "xMax": 10.9
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.3,
+            "y": -2.9253,
+            "yLow": -2.959,
+            "yHigh": -2.8941,
+            "count": 1393
+          },
+          {
+            "x": 8.5,
+            "y": -2.9764,
+            "yLow": -3.0121,
+            "yHigh": -2.9434,
+            "count": 1311
+          },
+          {
+            "x": 8.7,
+            "y": -3.1179,
+            "yLow": -3.1619,
+            "yHigh": -3.0779,
+            "count": 735
+          },
+          {
+            "x": 8.9,
+            "y": -3.6785,
+            "yLow": -3.7584,
+            "yHigh": -3.6111,
+            "count": 392
+          },
+          {
+            "x": 9.1,
+            "y": -3.9603,
+            "yLow": -4.0737,
+            "yHigh": -3.8704,
+            "count": 254
+          },
+          {
+            "x": 9.3,
+            "y": -3.8551,
+            "yLow": -3.9558,
+            "yHigh": -3.7735,
+            "count": 211
+          },
+          {
+            "x": 9.5,
+            "y": -4.0163,
+            "yLow": -4.1436,
+            "yHigh": -3.918,
+            "count": 192
+          },
+          {
+            "x": 9.7,
+            "y": -3.9921,
+            "yLow": -4.1162,
+            "yHigh": -3.8958,
+            "count": 150
+          },
+          {
+            "x": 9.9,
+            "y": -4.4543,
+            "yLow": -4.6205,
+            "yHigh": -4.3343,
+            "count": 89
+          },
+          {
+            "x": 10.1,
+            "y": -5.0954,
+            "yLow": -5.2263,
+            "yHigh": -4.995,
+            "count": 58
+          },
+          {
+            "x": 10.3,
+            "y": -5.3714,
+            "yLow": -5.5598,
+            "yHigh": -5.2405,
+            "count": 32
+          },
+          {
+            "x": 10.5,
+            "y": -5.2018,
+            "yLow": -5.6242,
+            "yHigh": -4.9917,
+            "count": 16
+          },
+          {
+            "x": 10.7,
+            "y": -6.5432,
+            "yLow": -6.8912,
+            "yHigh": -6.3526,
+            "count": 4
+          },
+          {
+            "x": 10.9,
+            "y": -7.2206,
+            "yLow": -8.5216,
+            "yHigh": -6.9196,
+            "count": 1
+          }
+        ]
+      },
+      "selection": {
+        "population": "all",
+        "warning": "Galaxies with M*(30 pkpc) >= 1.8e+08 Msun (100 gas particle masses). Region weights reconstruct a representative volume; the galaxy table is a third-party extraction of the FLARES master file, so completeness below the published FLARES mass cut is not guaranteed. Errors are weighted Poisson."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      }
+    },
+    {
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model)",
+      "kind": "simulation",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "snapshot",
+        "snapshot": 8
+      },
+      "scatter": null,
+      "calibration": "prediction",
+      "rankable": true,
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "FLARES (Lovell et al. 2021; Vijayan et al. 2021) galaxy properties as redistributed in github.com/louisarts/Arts24LRD (data/raw_FLARES_data.hdf5); region weights from github.com/flaresimulations/flares (weight_files/weights_grid.txt); relations derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/flaresimulations/flares",
+        "retrieved": "2026-10-03",
+        "checksumSha256": "3c29fc43dca164454f7cdb076866c7c1dd9a854a936d728bdfcfe90f2d304dff",
+        "sourceMember": "raw_FLARES_data.hdf5:008_z007p000; weights_grid.txt"
+      },
+      "notes": "Composite volume from 40 zoom regions of radius 14 cMpc/h, combined with the official FLARES overdensity weights following the method in the flares repository README.",
+      "id": "flares.sfms.z7",
+      "relation": "sfms",
+      "axes": {
+        "xDefinition": "log10 stellar mass (30 pkpc)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 instantaneous SFR (30 pkpc), weighted median of star-forming galaxies",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 8.3,
+        "xMax": 10.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.3,
+            "y": 0.0138,
+            "yLow": -0.2197,
+            "yHigh": 0.2138,
+            "count": 1385
+          },
+          {
+            "x": 8.5,
+            "y": 0.2274,
+            "yLow": -0.0317,
+            "yHigh": 0.4471,
+            "count": 1309
+          },
+          {
+            "x": 8.7,
+            "y": 0.469,
+            "yLow": 0.2951,
+            "yHigh": 0.6713,
+            "count": 734
+          },
+          {
+            "x": 8.9,
+            "y": 0.7927,
+            "yLow": 0.5252,
+            "yHigh": 0.9949,
+            "count": 392
+          },
+          {
+            "x": 9.1,
+            "y": 1.0753,
+            "yLow": 0.8767,
+            "yHigh": 1.1455,
+            "count": 254
+          },
+          {
+            "x": 9.3,
+            "y": 1.2591,
+            "yLow": 1.0273,
+            "yHigh": 1.3477,
+            "count": 211
+          },
+          {
+            "x": 9.5,
+            "y": 1.4063,
+            "yLow": 1.3099,
+            "yHigh": 1.5248,
+            "count": 192
+          },
+          {
+            "x": 9.7,
+            "y": 1.5509,
+            "yLow": 1.349,
+            "yHigh": 1.7095,
+            "count": 150
+          },
+          {
+            "x": 9.9,
+            "y": 1.7196,
+            "yLow": 1.2467,
+            "yHigh": 1.8932,
+            "count": 89
+          },
+          {
+            "x": 10.1,
+            "y": 1.9644,
+            "yLow": 1.7186,
+            "yHigh": 2.16,
+            "count": 58
+          },
+          {
+            "x": 10.3,
+            "y": 1.9512,
+            "yLow": 1.5617,
+            "yHigh": 2.1955,
+            "count": 31
+          },
+          {
+            "x": 10.5,
+            "y": 1.9962,
+            "yLow": 1.9565,
+            "yHigh": 2.2034,
+            "count": 15
+          }
+        ]
+      },
+      "selection": {
+        "population": "star-forming",
+        "warning": "Galaxies with M*(30 pkpc) >= 1.8e+08 Msun (100 gas particle masses). Region weights reconstruct a representative volume; the galaxy table is a third-party extraction of the FLARES master file, so completeness below the published FLARES mass cut is not guaranteed. Star-forming: sSFR > 0.2/t_age(z), as in the other sim-highline pipelines."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "population": "star-forming",
+        "sfrTimescaleMyr": "instantaneous",
+        "sfrStatistic": "median"
+      }
+    },
+    {
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model)",
+      "kind": "simulation",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "snapshot",
+        "snapshot": 9
+      },
+      "scatter": null,
+      "calibration": "prediction",
+      "rankable": true,
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "FLARES (Lovell et al. 2021; Vijayan et al. 2021) galaxy properties as redistributed in github.com/louisarts/Arts24LRD (data/raw_FLARES_data.hdf5); region weights from github.com/flaresimulations/flares (weight_files/weights_grid.txt); relations derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/flaresimulations/flares",
+        "retrieved": "2026-10-03",
+        "checksumSha256": "3c29fc43dca164454f7cdb076866c7c1dd9a854a936d728bdfcfe90f2d304dff",
+        "sourceMember": "raw_FLARES_data.hdf5:009_z006p000; weights_grid.txt"
+      },
+      "notes": "Composite volume from 40 zoom regions of radius 14 cMpc/h, combined with the official FLARES overdensity weights following the method in the flares repository README.",
+      "id": "flares.gsmf.z6",
+      "relation": "gsmf",
+      "axes": {
+        "xDefinition": "log10 stellar mass (30 pkpc)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 weighted galaxy number density per dex",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.3,
+        "xMax": 11.1
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.3,
+            "y": -2.553,
+            "yLow": -2.5751,
+            "yHigh": -2.5319,
+            "count": 2677
+          },
+          {
+            "x": 8.5,
+            "y": -2.5841,
+            "yLow": -2.6071,
+            "yHigh": -2.5623,
+            "count": 2686
+          },
+          {
+            "x": 8.7,
+            "y": -2.8214,
+            "yLow": -2.8512,
+            "yHigh": -2.7935,
+            "count": 1692
+          },
+          {
+            "x": 8.9,
+            "y": -3.0564,
+            "yLow": -3.0967,
+            "yHigh": -3.0195,
+            "count": 990
+          },
+          {
+            "x": 9.1,
+            "y": -3.4192,
+            "yLow": -3.4788,
+            "yHigh": -3.3668,
+            "count": 556
+          },
+          {
+            "x": 9.3,
+            "y": -3.5614,
+            "yLow": -3.6327,
+            "yHigh": -3.5002,
+            "count": 378
+          },
+          {
+            "x": 9.5,
+            "y": -3.566,
+            "yLow": -3.6385,
+            "yHigh": -3.5038,
+            "count": 379
+          },
+          {
+            "x": 9.7,
+            "y": -3.8909,
+            "yLow": -3.9886,
+            "yHigh": -3.8113,
+            "count": 309
+          },
+          {
+            "x": 9.9,
+            "y": -3.9207,
+            "yLow": -4.0325,
+            "yHigh": -3.8319,
+            "count": 242
+          },
+          {
+            "x": 10.1,
+            "y": -3.9625,
+            "yLow": -4.0811,
+            "yHigh": -3.8694,
+            "count": 179
+          },
+          {
+            "x": 10.3,
+            "y": -4.5951,
+            "yLow": -4.7266,
+            "yHigh": -4.4943,
+            "count": 88
+          },
+          {
+            "x": 10.5,
+            "y": -4.9506,
+            "yLow": -5.1695,
+            "yHigh": -4.8058,
+            "count": 53
+          },
+          {
+            "x": 10.7,
+            "y": -5.1712,
+            "yLow": -5.5477,
+            "yHigh": -4.9726,
+            "count": 26
+          },
+          {
+            "x": 10.9,
+            "y": -6.0896,
+            "yLow": -6.315,
+            "yHigh": -5.942,
+            "count": 7
+          },
+          {
+            "x": 11.1,
+            "y": -8.4339,
+            "yLow": -9.7349,
+            "yHigh": -8.1329,
+            "count": 1
+          }
+        ]
+      },
+      "selection": {
+        "population": "all",
+        "warning": "Galaxies with M*(30 pkpc) >= 1.8e+08 Msun (100 gas particle masses). Region weights reconstruct a representative volume; the galaxy table is a third-party extraction of the FLARES master file, so completeness below the published FLARES mass cut is not guaranteed. Errors are weighted Poisson."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      }
+    },
+    {
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model)",
+      "kind": "simulation",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "snapshot",
+        "snapshot": 9
+      },
+      "scatter": null,
+      "calibration": "prediction",
+      "rankable": true,
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "FLARES (Lovell et al. 2021; Vijayan et al. 2021) galaxy properties as redistributed in github.com/louisarts/Arts24LRD (data/raw_FLARES_data.hdf5); region weights from github.com/flaresimulations/flares (weight_files/weights_grid.txt); relations derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/flaresimulations/flares",
+        "retrieved": "2026-10-03",
+        "checksumSha256": "3c29fc43dca164454f7cdb076866c7c1dd9a854a936d728bdfcfe90f2d304dff",
+        "sourceMember": "raw_FLARES_data.hdf5:009_z006p000; weights_grid.txt"
+      },
+      "notes": "Composite volume from 40 zoom regions of radius 14 cMpc/h, combined with the official FLARES overdensity weights following the method in the flares repository README.",
+      "id": "flares.sfms.z6",
+      "relation": "sfms",
+      "axes": {
+        "xDefinition": "log10 stellar mass (30 pkpc)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 instantaneous SFR (30 pkpc), weighted median of star-forming galaxies",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 8.3,
+        "xMax": 10.7
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.3,
+            "y": -0.0932,
+            "yLow": -0.3995,
+            "yHigh": 0.1341,
+            "count": 2666
+          },
+          {
+            "x": 8.5,
+            "y": 0.1023,
+            "yLow": -0.1421,
+            "yHigh": 0.2956,
+            "count": 2676
+          },
+          {
+            "x": 8.7,
+            "y": 0.3253,
+            "yLow": 0.0525,
+            "yHigh": 0.5367,
+            "count": 1686
+          },
+          {
+            "x": 8.9,
+            "y": 0.6111,
+            "yLow": 0.3596,
+            "yHigh": 0.7804,
+            "count": 989
+          },
+          {
+            "x": 9.1,
+            "y": 0.8865,
+            "yLow": 0.6758,
+            "yHigh": 1.0633,
+            "count": 556
+          },
+          {
+            "x": 9.3,
+            "y": 1.1781,
+            "yLow": 1.0826,
+            "yHigh": 1.4002,
+            "count": 376
+          },
+          {
+            "x": 9.5,
+            "y": 1.3502,
+            "yLow": 1.1251,
+            "yHigh": 1.514,
+            "count": 378
+          },
+          {
+            "x": 9.7,
+            "y": 1.4988,
+            "yLow": 1.2695,
+            "yHigh": 1.6891,
+            "count": 306
+          },
+          {
+            "x": 9.9,
+            "y": 1.6351,
+            "yLow": 1.4808,
+            "yHigh": 1.7306,
+            "count": 241
+          },
+          {
+            "x": 10.1,
+            "y": 1.7683,
+            "yLow": 1.4432,
+            "yHigh": 1.855,
+            "count": 178
+          },
+          {
+            "x": 10.3,
+            "y": 1.8276,
+            "yLow": 1.692,
+            "yHigh": 2.0272,
+            "count": 86
+          },
+          {
+            "x": 10.5,
+            "y": 1.9899,
+            "yLow": 1.9535,
+            "yHigh": 2.1609,
+            "count": 52
+          },
+          {
+            "x": 10.7,
+            "y": 2.0981,
+            "yLow": 2.0893,
+            "yHigh": 2.1569,
+            "count": 25
+          }
+        ]
+      },
+      "selection": {
+        "population": "star-forming",
+        "warning": "Galaxies with M*(30 pkpc) >= 1.8e+08 Msun (100 gas particle masses). Region weights reconstruct a representative volume; the galaxy table is a third-party extraction of the FLARES master file, so completeness below the published FLARES mass cut is not guaranteed. Star-forming: sSFR > 0.2/t_age(z), as in the other sim-highline pipelines."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "population": "star-forming",
+        "sfrTimescaleMyr": "instantaneous",
+        "sfrStatistic": "median"
+      }
+    },
+    {
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model)",
+      "kind": "simulation",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "snapshot",
+        "snapshot": 10
+      },
+      "scatter": null,
+      "calibration": "prediction",
+      "rankable": true,
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "FLARES (Lovell et al. 2021; Vijayan et al. 2021) galaxy properties as redistributed in github.com/louisarts/Arts24LRD (data/raw_FLARES_data.hdf5); region weights from github.com/flaresimulations/flares (weight_files/weights_grid.txt); relations derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/flaresimulations/flares",
+        "retrieved": "2026-10-03",
+        "checksumSha256": "3c29fc43dca164454f7cdb076866c7c1dd9a854a936d728bdfcfe90f2d304dff",
+        "sourceMember": "raw_FLARES_data.hdf5:010_z005p000; weights_grid.txt"
+      },
+      "notes": "Composite volume from 40 zoom regions of radius 14 cMpc/h, combined with the official FLARES overdensity weights following the method in the flares repository README.",
+      "id": "flares.gsmf.z5",
+      "relation": "gsmf",
+      "axes": {
+        "xDefinition": "log10 stellar mass (30 pkpc)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 weighted galaxy number density per dex",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.3,
+        "xMax": 11.3
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.3,
+            "y": -2.2524,
+            "yLow": -2.2684,
+            "yHigh": -2.2371,
+            "count": 4756
+          },
+          {
+            "x": 8.5,
+            "y": -2.2367,
+            "yLow": -2.2523,
+            "yHigh": -2.2217,
+            "count": 4758
+          },
+          {
+            "x": 8.7,
+            "y": -2.4396,
+            "yLow": -2.4592,
+            "yHigh": -2.4209,
+            "count": 3313
+          },
+          {
+            "x": 8.9,
+            "y": -2.6621,
+            "yLow": -2.6872,
+            "yHigh": -2.6384,
+            "count": 2232
+          },
+          {
+            "x": 9.1,
+            "y": -2.9156,
+            "yLow": -2.9489,
+            "yHigh": -2.8847,
+            "count": 1390
+          },
+          {
+            "x": 9.3,
+            "y": -3.2176,
+            "yLow": -3.2647,
+            "yHigh": -3.1752,
+            "count": 783
+          },
+          {
+            "x": 9.5,
+            "y": -3.3275,
+            "yLow": -3.3807,
+            "yHigh": -3.2802,
+            "count": 597
+          },
+          {
+            "x": 9.7,
+            "y": -3.3192,
+            "yLow": -3.3746,
+            "yHigh": -3.2702,
+            "count": 635
+          },
+          {
+            "x": 9.9,
+            "y": -3.4989,
+            "yLow": -3.5649,
+            "yHigh": -3.4416,
+            "count": 499
+          },
+          {
+            "x": 10.1,
+            "y": -3.5967,
+            "yLow": -3.6685,
+            "yHigh": -3.5351,
+            "count": 465
+          },
+          {
+            "x": 10.3,
+            "y": -3.87,
+            "yLow": -3.9643,
+            "yHigh": -3.7926,
+            "count": 286
+          },
+          {
+            "x": 10.5,
+            "y": -4.3476,
+            "yLow": -4.5074,
+            "yHigh": -4.2311,
+            "count": 148
+          },
+          {
+            "x": 10.7,
+            "y": -4.5308,
+            "yLow": -4.722,
+            "yHigh": -4.3985,
+            "count": 84
+          },
+          {
+            "x": 10.9,
+            "y": -5.1672,
+            "yLow": -5.5319,
+            "yHigh": -4.9718,
+            "count": 33
+          },
+          {
+            "x": 11.1,
+            "y": -5.0582,
+            "yLow": -6.0451,
+            "yHigh": -4.7802,
+            "count": 10
+          },
+          {
+            "x": 11.3,
+            "y": -7.4031,
+            "yLow": -8.4567,
+            "yHigh": -7.1217,
+            "count": 2
+          }
+        ]
+      },
+      "selection": {
+        "population": "all",
+        "warning": "Galaxies with M*(30 pkpc) >= 1.8e+08 Msun (100 gas particle masses). Region weights reconstruct a representative volume; the galaxy table is a third-party extraction of the FLARES master file, so completeness below the published FLARES mass cut is not guaranteed. Errors are weighted Poisson."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      }
+    },
+    {
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model)",
+      "kind": "simulation",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "snapshot",
+        "snapshot": 10
+      },
+      "scatter": null,
+      "calibration": "prediction",
+      "rankable": true,
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "FLARES (Lovell et al. 2021; Vijayan et al. 2021) galaxy properties as redistributed in github.com/louisarts/Arts24LRD (data/raw_FLARES_data.hdf5); region weights from github.com/flaresimulations/flares (weight_files/weights_grid.txt); relations derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/flaresimulations/flares",
+        "retrieved": "2026-10-03",
+        "checksumSha256": "3c29fc43dca164454f7cdb076866c7c1dd9a854a936d728bdfcfe90f2d304dff",
+        "sourceMember": "raw_FLARES_data.hdf5:010_z005p000; weights_grid.txt"
+      },
+      "notes": "Composite volume from 40 zoom regions of radius 14 cMpc/h, combined with the official FLARES overdensity weights following the method in the flares repository README.",
+      "id": "flares.sfms.z5",
+      "relation": "sfms",
+      "axes": {
+        "xDefinition": "log10 stellar mass (30 pkpc)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 instantaneous SFR (30 pkpc), weighted median of star-forming galaxies",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 8.3,
+        "xMax": 11.1
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.3,
+            "y": -0.2146,
+            "yLow": -0.4946,
+            "yHigh": -0.0053,
+            "count": 4711
+          },
+          {
+            "x": 8.5,
+            "y": -0.0091,
+            "yLow": -0.2675,
+            "yHigh": 0.2027,
+            "count": 4742
+          },
+          {
+            "x": 8.7,
+            "y": 0.2295,
+            "yLow": -0.0049,
+            "yHigh": 0.4238,
+            "count": 3303
+          },
+          {
+            "x": 8.9,
+            "y": 0.4372,
+            "yLow": 0.2365,
+            "yHigh": 0.6635,
+            "count": 2231
+          },
+          {
+            "x": 9.1,
+            "y": 0.7,
+            "yLow": 0.49,
+            "yHigh": 0.9581,
+            "count": 1389
+          },
+          {
+            "x": 9.3,
+            "y": 1.0239,
+            "yLow": 0.7573,
+            "yHigh": 1.1547,
+            "count": 782
+          },
+          {
+            "x": 9.5,
+            "y": 1.2661,
+            "yLow": 1.0581,
+            "yHigh": 1.4547,
+            "count": 594
+          },
+          {
+            "x": 9.7,
+            "y": 1.3689,
+            "yLow": 1.1731,
+            "yHigh": 1.5864,
+            "count": 632
+          },
+          {
+            "x": 9.9,
+            "y": 1.5109,
+            "yLow": 1.2489,
+            "yHigh": 1.6558,
+            "count": 490
+          },
+          {
+            "x": 10.1,
+            "y": 1.646,
+            "yLow": 1.4194,
+            "yHigh": 1.8816,
+            "count": 456
+          },
+          {
+            "x": 10.3,
+            "y": 1.7976,
+            "yLow": 1.5877,
+            "yHigh": 2.027,
+            "count": 279
+          },
+          {
+            "x": 10.5,
+            "y": 1.9618,
+            "yLow": 1.8351,
+            "yHigh": 2.073,
+            "count": 142
+          },
+          {
+            "x": 10.7,
+            "y": 2.206,
+            "yLow": 1.812,
+            "yHigh": 2.4273,
+            "count": 80
+          },
+          {
+            "x": 10.9,
+            "y": 2.0665,
+            "yLow": 2.0456,
+            "yHigh": 2.2025,
+            "count": 32
+          },
+          {
+            "x": 11.1,
+            "y": 1.9802,
+            "yLow": 1.8821,
+            "yHigh": 2.0927,
+            "count": 10
+          }
+        ]
+      },
+      "selection": {
+        "population": "star-forming",
+        "warning": "Galaxies with M*(30 pkpc) >= 1.8e+08 Msun (100 gas particle masses). Region weights reconstruct a representative volume; the galaxy table is a third-party extraction of the FLARES master file, so completeness below the published FLARES mass cut is not guaranteed. Star-forming: sSFR > 0.2/t_age(z), as in the other sim-highline pipelines."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "population": "star-forming",
+        "sfrTimescaleMyr": "instantaneous",
+        "sfrStatistic": "median"
+      }
+    }
+  ]
+}

@@ -1,0 +1,475 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "rodriguezgomez22.tng100.jstar.kappa_rot.late.z0",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 centrals, kappa_rot >= 0.5 (late-type)",
+      "kind": "simulation",
+      "relation": "jstar",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass of the whole Subfind object",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 specific angular momentum of the stars, j_stars, of the whole Subfind object",
+        "yUnit": "log10(kpc km/s)"
+      },
+      "domain": {
+        "xMin": 9,
+        "xMax": 11.6667
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 9,
+            "y": 2.2419,
+            "yLow": 2.0559,
+            "yHigh": 2.457
+          },
+          {
+            "x": 9.3333,
+            "y": 2.3482,
+            "yLow": 2.1577,
+            "yHigh": 2.5732
+          },
+          {
+            "x": 9.6667,
+            "y": 2.487,
+            "yLow": 2.2681,
+            "yHigh": 2.7181
+          },
+          {
+            "x": 10,
+            "y": 2.6099,
+            "yLow": 2.3726,
+            "yHigh": 2.8421
+          },
+          {
+            "x": 10.3333,
+            "y": 2.7685,
+            "yLow": 2.488,
+            "yHigh": 3.0155
+          },
+          {
+            "x": 10.6667,
+            "y": 3.0224,
+            "yLow": 2.7617,
+            "yHigh": 3.2137
+          },
+          {
+            "x": 11,
+            "y": 3.283,
+            "yLow": 3.1378,
+            "yHigh": 3.4131
+          },
+          {
+            "x": 11.3333,
+            "y": 3.559,
+            "yLow": 3.4312,
+            "yHigh": 3.683
+          },
+          {
+            "x": 11.6667,
+            "y": 3.6708,
+            "yLow": 3.5814,
+            "yHigh": 3.833
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies, kappa_rot >= 0.5 (late-type)",
+        "warning": "Median j_stars of kappa_rot >= 0.5 (late-type) TNG100-1 central galaxies at z=0 with the 16th-84th percentile range at fixed stellar mass, read from the vector paths of Rodriguez-Gomez et al. 2022 (kinematic morphology, kappa_rot of Sales+10 / Rodriguez-Gomez+17). Properties are measured for the whole Subfind object with no aperture, so the values are not comparable to aperture-based j_stars without caution; the paper's observational overlays (Fall+13, Posti+18) are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "total-subhalo (entire Subfind object, no aperture)",
+        "population": "centrals, split by morphology",
+        "jDefinition": "stars, entire Subfind object, frame centred on the potential minimum (Genel+15 method)",
+        "sfrStatistic": "median"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Rodriguez-Gomez et al. 2022, MNRAS 512, 5978 (arXiv:2203.10098), j_stars-M_stars relation for central galaxies at z=0 (kinematic morphology, kappa_rot of Sales+10 / Rodriguez-Gomez+17)",
+        "doi": "10.1093/mnras/stac806",
+        "url": "https://arxiv.org/abs/2203.10098",
+        "retrieved": "2026-10-05",
+        "figure": "j_stars versus stellar mass for IllustrisTNG centrals at z=0 (top panels, Fall diagram)",
+        "panel": "kappa classification, late-type median with 16th-84th percentile band",
+        "checksumSha256": "aaaafafae0113dddb3151b418b119a53b858139cc0c3fa462ce8ed7b19aafc74",
+        "sourceMember": "jstar_vs_mstar_by_kappa_L75n1820TNG_099_centrals_fr13.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: decade labels (10^n words) snapped to major ticks and validated by the minor-tick pattern at log10(2..9); log axes",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "rodriguezgomez22.tng100.jstar.kappa_rot.early.z0",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 centrals, kappa_rot < 0.5 (early-type)",
+      "kind": "simulation",
+      "relation": "jstar",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass of the whole Subfind object",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 specific angular momentum of the stars, j_stars, of the whole Subfind object",
+        "yUnit": "log10(kpc km/s)"
+      },
+      "domain": {
+        "xMin": 9,
+        "xMax": 12
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 9,
+            "y": 1.808,
+            "yLow": 1.4589,
+            "yHigh": 2.0884
+          },
+          {
+            "x": 9.3333,
+            "y": 1.9326,
+            "yLow": 1.5514,
+            "yHigh": 2.2312
+          },
+          {
+            "x": 9.6667,
+            "y": 2.0726,
+            "yLow": 1.7223,
+            "yHigh": 2.3842
+          },
+          {
+            "x": 10,
+            "y": 2.2163,
+            "yLow": 1.873,
+            "yHigh": 2.5484
+          },
+          {
+            "x": 10.3333,
+            "y": 2.2885,
+            "yLow": 1.9141,
+            "yHigh": 2.6756
+          },
+          {
+            "x": 10.6667,
+            "y": 2.6032,
+            "yLow": 2.2252,
+            "yHigh": 2.8791
+          },
+          {
+            "x": 11,
+            "y": 2.862,
+            "yLow": 2.487,
+            "yHigh": 3.207
+          },
+          {
+            "x": 11.3333,
+            "y": 3.2896,
+            "yLow": 2.8117,
+            "yHigh": 3.5064
+          },
+          {
+            "x": 11.6667,
+            "y": 3.4717,
+            "yLow": 3.0819,
+            "yHigh": 3.8149
+          },
+          {
+            "x": 12,
+            "y": 3.6843,
+            "yLow": 3.2832,
+            "yHigh": 4.0864
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies, kappa_rot < 0.5 (early-type)",
+        "warning": "Median j_stars of kappa_rot < 0.5 (early-type) TNG100-1 central galaxies at z=0 with the 16th-84th percentile range at fixed stellar mass, read from the vector paths of Rodriguez-Gomez et al. 2022 (kinematic morphology, kappa_rot of Sales+10 / Rodriguez-Gomez+17). Properties are measured for the whole Subfind object with no aperture, so the values are not comparable to aperture-based j_stars without caution; the paper's observational overlays (Fall+13, Posti+18) are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "total-subhalo (entire Subfind object, no aperture)",
+        "population": "centrals, split by morphology",
+        "jDefinition": "stars, entire Subfind object, frame centred on the potential minimum (Genel+15 method)",
+        "sfrStatistic": "median"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Rodriguez-Gomez et al. 2022, MNRAS 512, 5978 (arXiv:2203.10098), j_stars-M_stars relation for central galaxies at z=0 (kinematic morphology, kappa_rot of Sales+10 / Rodriguez-Gomez+17)",
+        "doi": "10.1093/mnras/stac806",
+        "url": "https://arxiv.org/abs/2203.10098",
+        "retrieved": "2026-10-05",
+        "figure": "j_stars versus stellar mass for IllustrisTNG centrals at z=0 (top panels, Fall diagram)",
+        "panel": "kappa classification, early-type median with 16th-84th percentile band",
+        "checksumSha256": "aaaafafae0113dddb3151b418b119a53b858139cc0c3fa462ce8ed7b19aafc74",
+        "sourceMember": "jstar_vs_mstar_by_kappa_L75n1820TNG_099_centrals_fr13.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: decade labels (10^n words) snapped to major ticks and validated by the minor-tick pattern at log10(2..9); log axes",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "rodriguezgomez22.tng100.jstar.plate.late.z0",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 centrals, P(Late) >= 0.5 (spirals)",
+      "kind": "simulation",
+      "relation": "jstar",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass of the whole Subfind object",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 specific angular momentum of the stars, j_stars, of the whole Subfind object",
+        "yUnit": "log10(kpc km/s)"
+      },
+      "domain": {
+        "xMin": 9.6667,
+        "xMax": 12
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.6667,
+            "y": 2.4079,
+            "yLow": 2.1097,
+            "yHigh": 2.6773
+          },
+          {
+            "x": 10,
+            "y": 2.5946,
+            "yLow": 2.3323,
+            "yHigh": 2.8322
+          },
+          {
+            "x": 10.3333,
+            "y": 2.8077,
+            "yLow": 2.5215,
+            "yHigh": 3.0305
+          },
+          {
+            "x": 10.6667,
+            "y": 3.0514,
+            "yLow": 2.8321,
+            "yHigh": 3.2209
+          },
+          {
+            "x": 11,
+            "y": 3.2669,
+            "yLow": 3.06,
+            "yHigh": 3.3932
+          },
+          {
+            "x": 11.3333,
+            "y": 3.4023,
+            "yLow": 3.2158,
+            "yHigh": 3.6074
+          },
+          {
+            "x": 11.6667,
+            "y": 3.5924,
+            "yLow": 3.1414,
+            "yHigh": 3.8959
+          },
+          {
+            "x": 12,
+            "y": 3.6899,
+            "yLow": 3.4992,
+            "yHigh": 4.1615
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies, P(Late) >= 0.5 (spirals)",
+        "warning": "Median j_stars of P(Late) >= 0.5 (spirals) TNG100-1 central galaxies at z=0 with the 16th-84th percentile range at fixed stellar mass, read from the vector paths of Rodriguez-Gomez et al. 2022 (visual-like morphology, P(Late) of Huertas-Company+19). Properties are measured for the whole Subfind object with no aperture, so the values are not comparable to aperture-based j_stars without caution; the paper's observational overlays (Fall+13, Posti+18) are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "total-subhalo (entire Subfind object, no aperture)",
+        "population": "centrals, split by morphology",
+        "jDefinition": "stars, entire Subfind object, frame centred on the potential minimum (Genel+15 method)",
+        "sfrStatistic": "median"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Rodriguez-Gomez et al. 2022, MNRAS 512, 5978 (arXiv:2203.10098), j_stars-M_stars relation for central galaxies at z=0 (visual-like morphology, P(Late) of Huertas-Company+19)",
+        "doi": "10.1093/mnras/stac806",
+        "url": "https://arxiv.org/abs/2203.10098",
+        "retrieved": "2026-10-05",
+        "figure": "j_stars versus stellar mass for IllustrisTNG centrals at z=0 (top panels, Fall diagram)",
+        "panel": "plate classification, late-type median with 16th-84th percentile band",
+        "checksumSha256": "27ac14dd73ddc7a55caa20330e64cdf21913e29451a8ad4f6093eb8c7e7def0d",
+        "sourceMember": "jstar_vs_mstar_by_P_Late_L75n1820TNG_099_centrals_fr13.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: decade labels (10^n words) snapped to major ticks and validated by the minor-tick pattern at log10(2..9); log axes",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "rodriguezgomez22.tng100.jstar.plate.early.z0",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 centrals, P(Late) < 0.5 (ellipticals and lenticulars)",
+      "kind": "simulation",
+      "relation": "jstar",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass of the whole Subfind object",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 specific angular momentum of the stars, j_stars, of the whole Subfind object",
+        "yUnit": "log10(kpc km/s)"
+      },
+      "domain": {
+        "xMin": 9.6667,
+        "xMax": 12
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.6667,
+            "y": 2.2489,
+            "yLow": 1.862,
+            "yHigh": 2.6126
+          },
+          {
+            "x": 10,
+            "y": 2.3366,
+            "yLow": 1.9792,
+            "yHigh": 2.653
+          },
+          {
+            "x": 10.3333,
+            "y": 2.4563,
+            "yLow": 2.1272,
+            "yHigh": 2.6999
+          },
+          {
+            "x": 10.6667,
+            "y": 2.6721,
+            "yLow": 2.3201,
+            "yHigh": 2.9615
+          },
+          {
+            "x": 11,
+            "y": 3.0066,
+            "yLow": 2.5541,
+            "yHigh": 3.3629
+          },
+          {
+            "x": 11.3333,
+            "y": 3.3273,
+            "yLow": 2.7894,
+            "yHigh": 3.5561
+          },
+          {
+            "x": 11.6667,
+            "y": 3.4008,
+            "yLow": 3.0825,
+            "yHigh": 3.6914
+          },
+          {
+            "x": 12,
+            "y": 3.5975,
+            "yLow": 3.2354,
+            "yHigh": 4.0826
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies, P(Late) < 0.5 (ellipticals and lenticulars)",
+        "warning": "Median j_stars of P(Late) < 0.5 (ellipticals and lenticulars) TNG100-1 central galaxies at z=0 with the 16th-84th percentile range at fixed stellar mass, read from the vector paths of Rodriguez-Gomez et al. 2022 (visual-like morphology, P(Late) of Huertas-Company+19). Properties are measured for the whole Subfind object with no aperture, so the values are not comparable to aperture-based j_stars without caution; the paper's observational overlays (Fall+13, Posti+18) are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "total-subhalo (entire Subfind object, no aperture)",
+        "population": "centrals, split by morphology",
+        "jDefinition": "stars, entire Subfind object, frame centred on the potential minimum (Genel+15 method)",
+        "sfrStatistic": "median"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Rodriguez-Gomez et al. 2022, MNRAS 512, 5978 (arXiv:2203.10098), j_stars-M_stars relation for central galaxies at z=0 (visual-like morphology, P(Late) of Huertas-Company+19)",
+        "doi": "10.1093/mnras/stac806",
+        "url": "https://arxiv.org/abs/2203.10098",
+        "retrieved": "2026-10-05",
+        "figure": "j_stars versus stellar mass for IllustrisTNG centrals at z=0 (top panels, Fall diagram)",
+        "panel": "plate classification, early-type median with 16th-84th percentile band",
+        "checksumSha256": "27ac14dd73ddc7a55caa20330e64cdf21913e29451a8ad4f6093eb8c7e7def0d",
+        "sourceMember": "jstar_vs_mstar_by_P_Late_L75n1820TNG_099_centrals_fr13.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: decade labels (10^n words) snapped to major ticks and validated by the minor-tick pattern at log10(2..9); log axes",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

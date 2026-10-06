@@ -1,0 +1,293 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "volonteri16.horizon-agn.bh.z5",
+      "source": "Horizon-AGN",
+      "run": "Horizon-AGN",
+      "kind": "simulation",
+      "relation": "bh",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 total galaxy stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 black hole mass (best-fit linear correlation)",
+        "yUnit": "log10(Msun)"
+      },
+      "domain": {
+        "xMin": 8.544,
+        "xMax": 10.102
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.544,
+            "y": 6.1014
+          },
+          {
+            "x": 10.102,
+            "y": 7.6989
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies in haloes above 8e10 Msun with >50 star particles",
+        "warning": "Best-fit linear correlation (black line, slope 1.026) read from Volonteri et al. 2016 (MNRAS 460, 2979), Fig. 12 panel z=5; the paper gives no table. Recorded as the line's two ends, clipped to the extent of the plotted galaxy contours (themselves cut by the plot's lower limit near M_BH = 10^6.1 Msun); the line is a straight fit, nothing is interpolated. The figure's orange guide line (M_BH = 0.002 M_gal) was used to verify the axis calibration. The -0.33 dex galaxy-mass shift the paper applies in its z=0 observational comparison does not apply to this figure."
+      },
+      "definitions": {
+        "massDefinition": "stellar mass within region above 178x mean total matter density",
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "population": "all",
+        "bhMassMethod": "simulation-bh-particle"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Volonteri et al. 2016, MNRAS 460, 2979, Fig. 12 (arXiv source numbering) panel z=5",
+        "doi": "10.1093/mnras/stw1123",
+        "url": "https://arxiv.org/abs/1602.01941",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 12",
+        "panel": "top left (z=5)",
+        "checksumSha256": "d519315a4d7b90d4709843db8b2b47fd4264822595a86afdb33f2c83061c5b74",
+        "sourceMember": "mbh_mgal_z-eps-converted-to.pdf (black best-fit line)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: major ticks 9-12 (58.4 pt/dex); y: major ticks 7-9 (59.9 pt/dex) by panel; labels are outlines so tick values taken from the render; guide line M_BH=0.002 M_gal asserted",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "volonteri16.horizon-agn.bh.z3",
+      "source": "Horizon-AGN",
+      "run": "Horizon-AGN",
+      "kind": "simulation",
+      "relation": "bh",
+      "epoch": {
+        "zRepresentative": 3,
+        "zNominal": 3,
+        "zMin": 3,
+        "zMax": 3,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 total galaxy stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 black hole mass (best-fit linear correlation)",
+        "yUnit": "log10(Msun)"
+      },
+      "domain": {
+        "xMin": 8.716,
+        "xMax": 10.86
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.716,
+            "y": 6.1014
+          },
+          {
+            "x": 10.86,
+            "y": 8.2482
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies in haloes above 8e10 Msun with >50 star particles",
+        "warning": "Best-fit linear correlation (black line, slope 1.001) read from Volonteri et al. 2016 (MNRAS 460, 2979), Fig. 12 panel z=3; the paper gives no table. Recorded as the line's two ends, clipped to the extent of the plotted galaxy contours (themselves cut by the plot's lower limit near M_BH = 10^6.1 Msun); the line is a straight fit, nothing is interpolated. The figure's orange guide line (M_BH = 0.002 M_gal) was used to verify the axis calibration. The -0.33 dex galaxy-mass shift the paper applies in its z=0 observational comparison does not apply to this figure."
+      },
+      "definitions": {
+        "massDefinition": "stellar mass within region above 178x mean total matter density",
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "population": "all",
+        "bhMassMethod": "simulation-bh-particle"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Volonteri et al. 2016, MNRAS 460, 2979, Fig. 12 (arXiv source numbering) panel z=3",
+        "doi": "10.1093/mnras/stw1123",
+        "url": "https://arxiv.org/abs/1602.01941",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 12",
+        "panel": "top right (z=3)",
+        "checksumSha256": "d519315a4d7b90d4709843db8b2b47fd4264822595a86afdb33f2c83061c5b74",
+        "sourceMember": "mbh_mgal_z-eps-converted-to.pdf (black best-fit line)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: major ticks 9-12 (58.4 pt/dex); y: major ticks 7-9 (59.9 pt/dex) by panel; labels are outlines so tick values taken from the render; guide line M_BH=0.002 M_gal asserted",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "volonteri16.horizon-agn.bh.z2",
+      "source": "Horizon-AGN",
+      "run": "Horizon-AGN",
+      "kind": "simulation",
+      "relation": "bh",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 2,
+        "zMax": 2,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 total galaxy stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 black hole mass (best-fit linear correlation)",
+        "yUnit": "log10(Msun)"
+      },
+      "domain": {
+        "xMin": 8.902,
+        "xMax": 11.257
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.902,
+            "y": 6.1011
+          },
+          {
+            "x": 11.257,
+            "y": 8.6365
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies in haloes above 8e10 Msun with >50 star particles",
+        "warning": "Best-fit linear correlation (black line, slope 1.077) read from Volonteri et al. 2016 (MNRAS 460, 2979), Fig. 12 panel z=2; the paper gives no table. Recorded as the line's two ends, clipped to the extent of the plotted galaxy contours (themselves cut by the plot's lower limit near M_BH = 10^6.1 Msun); the line is a straight fit, nothing is interpolated. The figure's orange guide line (M_BH = 0.002 M_gal) was used to verify the axis calibration. The -0.33 dex galaxy-mass shift the paper applies in its z=0 observational comparison does not apply to this figure."
+      },
+      "definitions": {
+        "massDefinition": "stellar mass within region above 178x mean total matter density",
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "population": "all",
+        "bhMassMethod": "simulation-bh-particle"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Volonteri et al. 2016, MNRAS 460, 2979, Fig. 12 (arXiv source numbering) panel z=2",
+        "doi": "10.1093/mnras/stw1123",
+        "url": "https://arxiv.org/abs/1602.01941",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 12",
+        "panel": "bottom left (z=2)",
+        "checksumSha256": "d519315a4d7b90d4709843db8b2b47fd4264822595a86afdb33f2c83061c5b74",
+        "sourceMember": "mbh_mgal_z-eps-converted-to.pdf (black best-fit line)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: major ticks 9-12 (58.4 pt/dex); y: major ticks 7-9 (59.9 pt/dex) by panel; labels are outlines so tick values taken from the render; guide line M_BH=0.002 M_gal asserted",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "volonteri16.horizon-agn.bh.z1",
+      "source": "Horizon-AGN",
+      "run": "Horizon-AGN",
+      "kind": "simulation",
+      "relation": "bh",
+      "epoch": {
+        "zRepresentative": 1,
+        "zNominal": 1,
+        "zMin": 1,
+        "zMax": 1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 total galaxy stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 black hole mass (best-fit linear correlation)",
+        "yUnit": "log10(Msun)"
+      },
+      "domain": {
+        "xMin": 9.082,
+        "xMax": 11.593
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.082,
+            "y": 6.1011
+          },
+          {
+            "x": 11.593,
+            "y": 8.9957
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies in haloes above 8e10 Msun with >50 star particles",
+        "warning": "Best-fit linear correlation (black line, slope 1.153) read from Volonteri et al. 2016 (MNRAS 460, 2979), Fig. 12 panel z=1; the paper gives no table. Recorded as the line's two ends, clipped to the extent of the plotted galaxy contours (themselves cut by the plot's lower limit near M_BH = 10^6.1 Msun); the line is a straight fit, nothing is interpolated. The figure's orange guide line (M_BH = 0.002 M_gal) was used to verify the axis calibration. The -0.33 dex galaxy-mass shift the paper applies in its z=0 observational comparison does not apply to this figure."
+      },
+      "definitions": {
+        "massDefinition": "stellar mass within region above 178x mean total matter density",
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "population": "all",
+        "bhMassMethod": "simulation-bh-particle"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Volonteri et al. 2016, MNRAS 460, 2979, Fig. 12 (arXiv source numbering) panel z=1",
+        "doi": "10.1093/mnras/stw1123",
+        "url": "https://arxiv.org/abs/1602.01941",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 12",
+        "panel": "bottom right (z=1)",
+        "checksumSha256": "d519315a4d7b90d4709843db8b2b47fd4264822595a86afdb33f2c83061c5b74",
+        "sourceMember": "mbh_mgal_z-eps-converted-to.pdf (black best-fit line)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: major ticks 9-12 (58.4 pt/dex); y: major ticks 7-9 (59.9 pt/dex) by panel; labels are outlines so tick values taken from the render; guide line M_BH=0.002 M_gal asserted",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

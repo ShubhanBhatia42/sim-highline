@@ -1,0 +1,1760 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "donnari19.tng300.quenched-sfr1dex.z0.3",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (SFR<MS-1dex)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.3,
+        "zNominal": 0.3,
+        "zMin": 0.3,
+        "zMax": 0.3,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.098,
+        "xMax": 11.486
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.098,
+            "y": 0.2597
+          },
+          {
+            "x": 9.298,
+            "y": 0.223
+          },
+          {
+            "x": 9.497,
+            "y": 0.1968
+          },
+          {
+            "x": 9.696,
+            "y": 0.1786
+          },
+          {
+            "x": 9.895,
+            "y": 0.1749
+          },
+          {
+            "x": 10.097,
+            "y": 0.2303
+          },
+          {
+            "x": 10.296,
+            "y": 0.3637
+          },
+          {
+            "x": 10.492,
+            "y": 0.5409
+          },
+          {
+            "x": 10.687,
+            "y": 0.7115
+          },
+          {
+            "x": 10.883,
+            "y": 0.8249
+          },
+          {
+            "x": 11.083,
+            "y": 0.8959
+          },
+          {
+            "x": 11.281,
+            "y": 0.8836
+          },
+          {
+            "x": 11.486,
+            "y": 0.8328
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve vertices read from the vector paths of Donnari et al. 2019 (MNRAS 485, 4817), Quenched-fraction figure, z=0.3 panel; no table exists. The paper's curves include mock observational uncertainties of 0.2 dex on M* and 0.3 dex on SFR, so they are not the raw catalogue fractions.  The paper's z labels are the plotted epochs; curves extend past 10^11.5 Msun but are clipped by the axis there and dropped here."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all",
+        "sfrTimescaleMyr": 200,
+        "quenchingCriterion": "SFR below the star-forming main sequence by 1 dex (linear MS extrapolated at high mass; SFR within 2 R_half over 200 Myr)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2019, MNRAS 485, 4817, quenched-fraction figure (fig:Qfrac_methods, bottom panels)",
+        "doi": "10.1093/mnras/stz712",
+        "url": "https://arxiv.org/abs/1812.07584",
+        "retrieved": "2026-10-05",
+        "figure": "fig:Qfrac_methods (bottom panels; QfracVSmass.pdf)",
+        "panel": "z=0.3 panel",
+        "checksumSha256": "ad2f3f0778afd2f8ceca4ef4166061cf2b25f7e4f8c88ad392e69ef83c761a91",
+        "sourceMember": "QfracVSmass.pdf (TNG300-1, sfr1dex line, 10 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-11.5; y: labelled ticks 0-1; the three panels share axes (offset by frame origin; labels asserted)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari19.tng300.quenched-uvj.z0.3",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (UVJ)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.3,
+        "zNominal": 0.3,
+        "zMin": 0.3,
+        "zMax": 0.3,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.098,
+        "xMax": 11.486
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.098,
+            "y": 0.2414
+          },
+          {
+            "x": 9.298,
+            "y": 0.1945
+          },
+          {
+            "x": 9.497,
+            "y": 0.1658
+          },
+          {
+            "x": 9.696,
+            "y": 0.1427
+          },
+          {
+            "x": 9.895,
+            "y": 0.1353
+          },
+          {
+            "x": 10.097,
+            "y": 0.1906
+          },
+          {
+            "x": 10.296,
+            "y": 0.3286
+          },
+          {
+            "x": 10.492,
+            "y": 0.5172
+          },
+          {
+            "x": 10.687,
+            "y": 0.6885
+          },
+          {
+            "x": 10.883,
+            "y": 0.8067
+          },
+          {
+            "x": 11.083,
+            "y": 0.8726
+          },
+          {
+            "x": 11.281,
+            "y": 0.854
+          },
+          {
+            "x": 11.486,
+            "y": 0.8391
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve vertices read from the vector paths of Donnari et al. 2019 (MNRAS 485, 4817), Quenched-fraction figure, z=0.3 panel; no table exists. The paper's curves include mock observational uncertainties of 0.2 dex on M* and 0.3 dex on SFR, so they are not the raw catalogue fractions.  The paper's z labels are the plotted epochs; curves extend past 10^11.5 Msun but are clipped by the axis there and dropped here."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all",
+        "sfrTimescaleMyr": 200,
+        "quenchingCriterion": "TNG UVJ colour cut (dust-attenuated rest-frame U-V vs V-J, Donnari et al. 2019 eqs. TNG_cut)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2019, MNRAS 485, 4817, quenched-fraction figure (fig:Qfrac_methods, bottom panels)",
+        "doi": "10.1093/mnras/stz712",
+        "url": "https://arxiv.org/abs/1812.07584",
+        "retrieved": "2026-10-05",
+        "figure": "fig:Qfrac_methods (bottom panels; QfracVSmass.pdf)",
+        "panel": "z=0.3 panel",
+        "checksumSha256": "ad2f3f0778afd2f8ceca4ef4166061cf2b25f7e4f8c88ad392e69ef83c761a91",
+        "sourceMember": "QfracVSmass.pdf (TNG300-1, uvj line, 10 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-11.5; y: labelled ticks 0-1; the three panels share axes (offset by frame origin; labels asserted)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari19.tng100.quenched-sfr1dex.z0.3",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (SFR<MS-1dex)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.3,
+        "zNominal": 0.3,
+        "zMin": 0.3,
+        "zMax": 0.3,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.093,
+        "xMax": 11.495
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.093,
+            "y": 0.1913
+          },
+          {
+            "x": 9.293,
+            "y": 0.1667
+          },
+          {
+            "x": 9.497,
+            "y": 0.1591
+          },
+          {
+            "x": 9.693,
+            "y": 0.1419
+          },
+          {
+            "x": 9.898,
+            "y": 0.1572
+          },
+          {
+            "x": 10.099,
+            "y": 0.1767
+          },
+          {
+            "x": 10.294,
+            "y": 0.3147
+          },
+          {
+            "x": 10.489,
+            "y": 0.479
+          },
+          {
+            "x": 10.69,
+            "y": 0.6069
+          },
+          {
+            "x": 10.883,
+            "y": 0.6596
+          },
+          {
+            "x": 11.085,
+            "y": 0.6653
+          },
+          {
+            "x": 11.283,
+            "y": 0.6
+          },
+          {
+            "x": 11.495,
+            "y": 0.4706
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve vertices read from the vector paths of Donnari et al. 2019 (MNRAS 485, 4817), Quenched-fraction figure, z=0.3 panel; no table exists. The paper's curves include mock observational uncertainties of 0.2 dex on M* and 0.3 dex on SFR, so they are not the raw catalogue fractions.  The paper's z labels are the plotted epochs; curves extend past 10^11.5 Msun but are clipped by the axis there and dropped here."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all",
+        "sfrTimescaleMyr": 200,
+        "quenchingCriterion": "SFR below the star-forming main sequence by 1 dex (linear MS extrapolated at high mass; SFR within 2 R_half over 200 Myr)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2019, MNRAS 485, 4817, quenched-fraction figure (fig:Qfrac_methods, bottom panels)",
+        "doi": "10.1093/mnras/stz712",
+        "url": "https://arxiv.org/abs/1812.07584",
+        "retrieved": "2026-10-05",
+        "figure": "fig:Qfrac_methods (bottom panels; QfracVSmass.pdf)",
+        "panel": "z=0.3 panel",
+        "checksumSha256": "ad2f3f0778afd2f8ceca4ef4166061cf2b25f7e4f8c88ad392e69ef83c761a91",
+        "sourceMember": "QfracVSmass.pdf (TNG100-1, sfr1dex line, 10 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-11.5; y: labelled ticks 0-1; the three panels share axes (offset by frame origin; labels asserted)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari19.tng100.quenched-uvj.z0.3",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (UVJ)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.3,
+        "zNominal": 0.3,
+        "zMin": 0.3,
+        "zMax": 0.3,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.093,
+        "xMax": 11.495
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.093,
+            "y": 0.1682
+          },
+          {
+            "x": 9.293,
+            "y": 0.1394
+          },
+          {
+            "x": 9.497,
+            "y": 0.1293
+          },
+          {
+            "x": 9.693,
+            "y": 0.1139
+          },
+          {
+            "x": 9.898,
+            "y": 0.123
+          },
+          {
+            "x": 10.099,
+            "y": 0.1455
+          },
+          {
+            "x": 10.294,
+            "y": 0.2879
+          },
+          {
+            "x": 10.489,
+            "y": 0.4551
+          },
+          {
+            "x": 10.69,
+            "y": 0.5847
+          },
+          {
+            "x": 10.883,
+            "y": 0.6056
+          },
+          {
+            "x": 11.085,
+            "y": 0.5837
+          },
+          {
+            "x": 11.283,
+            "y": 0.5461
+          },
+          {
+            "x": 11.495,
+            "y": 0.4265
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve vertices read from the vector paths of Donnari et al. 2019 (MNRAS 485, 4817), Quenched-fraction figure, z=0.3 panel; no table exists. The paper's curves include mock observational uncertainties of 0.2 dex on M* and 0.3 dex on SFR, so they are not the raw catalogue fractions.  The paper's z labels are the plotted epochs; curves extend past 10^11.5 Msun but are clipped by the axis there and dropped here."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all",
+        "sfrTimescaleMyr": 200,
+        "quenchingCriterion": "TNG UVJ colour cut (dust-attenuated rest-frame U-V vs V-J, Donnari et al. 2019 eqs. TNG_cut)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2019, MNRAS 485, 4817, quenched-fraction figure (fig:Qfrac_methods, bottom panels)",
+        "doi": "10.1093/mnras/stz712",
+        "url": "https://arxiv.org/abs/1812.07584",
+        "retrieved": "2026-10-05",
+        "figure": "fig:Qfrac_methods (bottom panels; QfracVSmass.pdf)",
+        "panel": "z=0.3 panel",
+        "checksumSha256": "ad2f3f0778afd2f8ceca4ef4166061cf2b25f7e4f8c88ad392e69ef83c761a91",
+        "sourceMember": "QfracVSmass.pdf (TNG100-1, uvj line, 10 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-11.5; y: labelled ticks 0-1; the three panels share axes (offset by frame origin; labels asserted)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari19.illustris.quenched-sfr1dex.z0.3",
+      "source": "Illustris",
+      "run": "Illustris-1 (SFR<MS-1dex)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.3,
+        "zNominal": 0.3,
+        "zMin": 0.3,
+        "zMax": 0.3,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.094,
+        "xMax": 11.485
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.094,
+            "y": 0.1053
+          },
+          {
+            "x": 9.293,
+            "y": 0.099
+          },
+          {
+            "x": 9.496,
+            "y": 0.0834
+          },
+          {
+            "x": 9.693,
+            "y": 0.0747
+          },
+          {
+            "x": 9.892,
+            "y": 0.0708
+          },
+          {
+            "x": 10.09,
+            "y": 0.0773
+          },
+          {
+            "x": 10.288,
+            "y": 0.0803
+          },
+          {
+            "x": 10.49,
+            "y": 0.1063
+          },
+          {
+            "x": 10.693,
+            "y": 0.2265
+          },
+          {
+            "x": 10.88,
+            "y": 0.262
+          },
+          {
+            "x": 11.076,
+            "y": 0.4217
+          },
+          {
+            "x": 11.281,
+            "y": 0.6111
+          },
+          {
+            "x": 11.485,
+            "y": 0.6598
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve vertices read from the vector paths of Donnari et al. 2019 (MNRAS 485, 4817), Quenched-fraction figure, z=0.3 panel; no table exists. The paper's curves include mock observational uncertainties of 0.2 dex on M* and 0.3 dex on SFR, so they are not the raw catalogue fractions. Illustris is shown only with the SFR-based selection. The paper's z labels are the plotted epochs; curves extend past 10^11.5 Msun but are clipped by the axis there and dropped here."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "population": "all",
+        "sfrTimescaleMyr": 200,
+        "quenchingCriterion": "SFR below the star-forming main sequence by 1 dex (linear MS extrapolated at high mass; SFR within 2 R_half over 200 Myr)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2019, MNRAS 485, 4817, quenched-fraction figure (fig:Qfrac_methods, bottom panels)",
+        "doi": "10.1093/mnras/stz712",
+        "url": "https://arxiv.org/abs/1812.07584",
+        "retrieved": "2026-10-05",
+        "figure": "fig:Qfrac_methods (bottom panels; QfracVSmass.pdf)",
+        "panel": "z=0.3 panel",
+        "checksumSha256": "ad2f3f0778afd2f8ceca4ef4166061cf2b25f7e4f8c88ad392e69ef83c761a91",
+        "sourceMember": "QfracVSmass.pdf (Illustris-1, sfr1dex line, 10 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-11.5; y: labelled ticks 0-1; the three panels share axes (offset by frame origin; labels asserted)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari19.tng300.quenched-sfr1dex.z0.75",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (SFR<MS-1dex)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.75,
+        "zNominal": 0.75,
+        "zMin": 0.75,
+        "zMax": 0.75,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.098,
+        "xMax": 11.478
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.098,
+            "y": 0.0493
+          },
+          {
+            "x": 9.298,
+            "y": 0.0354
+          },
+          {
+            "x": 9.498,
+            "y": 0.03
+          },
+          {
+            "x": 9.697,
+            "y": 0.0294
+          },
+          {
+            "x": 9.898,
+            "y": 0.04
+          },
+          {
+            "x": 10.097,
+            "y": 0.0798
+          },
+          {
+            "x": 10.297,
+            "y": 0.1935
+          },
+          {
+            "x": 10.494,
+            "y": 0.3736
+          },
+          {
+            "x": 10.689,
+            "y": 0.5438
+          },
+          {
+            "x": 10.881,
+            "y": 0.6881
+          },
+          {
+            "x": 11.081,
+            "y": 0.7724
+          },
+          {
+            "x": 11.279,
+            "y": 0.8049
+          },
+          {
+            "x": 11.478,
+            "y": 0.7653
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve vertices read from the vector paths of Donnari et al. 2019 (MNRAS 485, 4817), Quenched-fraction figure, z=0.75 panel; no table exists. The paper's curves include mock observational uncertainties of 0.2 dex on M* and 0.3 dex on SFR, so they are not the raw catalogue fractions.  The paper's z labels are the plotted epochs; curves extend past 10^11.5 Msun but are clipped by the axis there and dropped here."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all",
+        "sfrTimescaleMyr": 200,
+        "quenchingCriterion": "SFR below the star-forming main sequence by 1 dex (linear MS extrapolated at high mass; SFR within 2 R_half over 200 Myr)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2019, MNRAS 485, 4817, quenched-fraction figure (fig:Qfrac_methods, bottom panels)",
+        "doi": "10.1093/mnras/stz712",
+        "url": "https://arxiv.org/abs/1812.07584",
+        "retrieved": "2026-10-05",
+        "figure": "fig:Qfrac_methods (bottom panels; QfracVSmass.pdf)",
+        "panel": "z=0.75 panel",
+        "checksumSha256": "ad2f3f0778afd2f8ceca4ef4166061cf2b25f7e4f8c88ad392e69ef83c761a91",
+        "sourceMember": "QfracVSmass.pdf (TNG300-1, sfr1dex line, 10 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-11.5; y: labelled ticks 0-1; the three panels share axes (offset by frame origin; labels asserted)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari19.tng300.quenched-uvj.z0.75",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (UVJ)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.75,
+        "zNominal": 0.75,
+        "zMin": 0.75,
+        "zMax": 0.75,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.098,
+        "xMax": 11.478
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.098,
+            "y": 0.104
+          },
+          {
+            "x": 9.298,
+            "y": 0.0663
+          },
+          {
+            "x": 9.498,
+            "y": 0.04
+          },
+          {
+            "x": 9.697,
+            "y": 0.0292
+          },
+          {
+            "x": 9.898,
+            "y": 0.0309
+          },
+          {
+            "x": 10.097,
+            "y": 0.0674
+          },
+          {
+            "x": 10.297,
+            "y": 0.1837
+          },
+          {
+            "x": 10.494,
+            "y": 0.3706
+          },
+          {
+            "x": 10.689,
+            "y": 0.5472
+          },
+          {
+            "x": 10.881,
+            "y": 0.6933
+          },
+          {
+            "x": 11.081,
+            "y": 0.7669
+          },
+          {
+            "x": 11.279,
+            "y": 0.804
+          },
+          {
+            "x": 11.478,
+            "y": 0.7606
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve vertices read from the vector paths of Donnari et al. 2019 (MNRAS 485, 4817), Quenched-fraction figure, z=0.75 panel; no table exists. The paper's curves include mock observational uncertainties of 0.2 dex on M* and 0.3 dex on SFR, so they are not the raw catalogue fractions.  The paper's z labels are the plotted epochs; curves extend past 10^11.5 Msun but are clipped by the axis there and dropped here."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all",
+        "sfrTimescaleMyr": 200,
+        "quenchingCriterion": "TNG UVJ colour cut (dust-attenuated rest-frame U-V vs V-J, Donnari et al. 2019 eqs. TNG_cut)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2019, MNRAS 485, 4817, quenched-fraction figure (fig:Qfrac_methods, bottom panels)",
+        "doi": "10.1093/mnras/stz712",
+        "url": "https://arxiv.org/abs/1812.07584",
+        "retrieved": "2026-10-05",
+        "figure": "fig:Qfrac_methods (bottom panels; QfracVSmass.pdf)",
+        "panel": "z=0.75 panel",
+        "checksumSha256": "ad2f3f0778afd2f8ceca4ef4166061cf2b25f7e4f8c88ad392e69ef83c761a91",
+        "sourceMember": "QfracVSmass.pdf (TNG300-1, uvj line, 10 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-11.5; y: labelled ticks 0-1; the three panels share axes (offset by frame origin; labels asserted)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari19.tng100.quenched-sfr1dex.z0.75",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (SFR<MS-1dex)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.75,
+        "zNominal": 0.75,
+        "zMin": 0.75,
+        "zMax": 0.75,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.094,
+        "xMax": 11.479
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.094,
+            "y": 0.1216
+          },
+          {
+            "x": 9.297,
+            "y": 0.1054
+          },
+          {
+            "x": 9.495,
+            "y": 0.0923
+          },
+          {
+            "x": 9.699,
+            "y": 0.077
+          },
+          {
+            "x": 9.896,
+            "y": 0.0663
+          },
+          {
+            "x": 10.097,
+            "y": 0.1203
+          },
+          {
+            "x": 10.296,
+            "y": 0.2046
+          },
+          {
+            "x": 10.491,
+            "y": 0.3397
+          },
+          {
+            "x": 10.692,
+            "y": 0.4632
+          },
+          {
+            "x": 10.875,
+            "y": 0.527
+          },
+          {
+            "x": 11.089,
+            "y": 0.5538
+          },
+          {
+            "x": 11.277,
+            "y": 0.5465
+          },
+          {
+            "x": 11.479,
+            "y": 0.5854
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve vertices read from the vector paths of Donnari et al. 2019 (MNRAS 485, 4817), Quenched-fraction figure, z=0.75 panel; no table exists. The paper's curves include mock observational uncertainties of 0.2 dex on M* and 0.3 dex on SFR, so they are not the raw catalogue fractions.  The paper's z labels are the plotted epochs; curves extend past 10^11.5 Msun but are clipped by the axis there and dropped here."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all",
+        "sfrTimescaleMyr": 200,
+        "quenchingCriterion": "SFR below the star-forming main sequence by 1 dex (linear MS extrapolated at high mass; SFR within 2 R_half over 200 Myr)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2019, MNRAS 485, 4817, quenched-fraction figure (fig:Qfrac_methods, bottom panels)",
+        "doi": "10.1093/mnras/stz712",
+        "url": "https://arxiv.org/abs/1812.07584",
+        "retrieved": "2026-10-05",
+        "figure": "fig:Qfrac_methods (bottom panels; QfracVSmass.pdf)",
+        "panel": "z=0.75 panel",
+        "checksumSha256": "ad2f3f0778afd2f8ceca4ef4166061cf2b25f7e4f8c88ad392e69ef83c761a91",
+        "sourceMember": "QfracVSmass.pdf (TNG100-1, sfr1dex line, 10 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-11.5; y: labelled ticks 0-1; the three panels share axes (offset by frame origin; labels asserted)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari19.tng100.quenched-uvj.z0.75",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (UVJ)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.75,
+        "zNominal": 0.75,
+        "zMin": 0.75,
+        "zMax": 0.75,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.094,
+        "xMax": 11.479
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.094,
+            "y": 0.114
+          },
+          {
+            "x": 9.297,
+            "y": 0.0957
+          },
+          {
+            "x": 9.495,
+            "y": 0.0788
+          },
+          {
+            "x": 9.699,
+            "y": 0.0694
+          },
+          {
+            "x": 9.896,
+            "y": 0.047
+          },
+          {
+            "x": 10.097,
+            "y": 0.0947
+          },
+          {
+            "x": 10.296,
+            "y": 0.2012
+          },
+          {
+            "x": 10.491,
+            "y": 0.3274
+          },
+          {
+            "x": 10.692,
+            "y": 0.4586
+          },
+          {
+            "x": 10.875,
+            "y": 0.5108
+          },
+          {
+            "x": 11.089,
+            "y": 0.5487
+          },
+          {
+            "x": 11.277,
+            "y": 0.5
+          },
+          {
+            "x": 11.479,
+            "y": 0.4878
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve vertices read from the vector paths of Donnari et al. 2019 (MNRAS 485, 4817), Quenched-fraction figure, z=0.75 panel; no table exists. The paper's curves include mock observational uncertainties of 0.2 dex on M* and 0.3 dex on SFR, so they are not the raw catalogue fractions.  The paper's z labels are the plotted epochs; curves extend past 10^11.5 Msun but are clipped by the axis there and dropped here."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all",
+        "sfrTimescaleMyr": 200,
+        "quenchingCriterion": "TNG UVJ colour cut (dust-attenuated rest-frame U-V vs V-J, Donnari et al. 2019 eqs. TNG_cut)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2019, MNRAS 485, 4817, quenched-fraction figure (fig:Qfrac_methods, bottom panels)",
+        "doi": "10.1093/mnras/stz712",
+        "url": "https://arxiv.org/abs/1812.07584",
+        "retrieved": "2026-10-05",
+        "figure": "fig:Qfrac_methods (bottom panels; QfracVSmass.pdf)",
+        "panel": "z=0.75 panel",
+        "checksumSha256": "ad2f3f0778afd2f8ceca4ef4166061cf2b25f7e4f8c88ad392e69ef83c761a91",
+        "sourceMember": "QfracVSmass.pdf (TNG100-1, uvj line, 10 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-11.5; y: labelled ticks 0-1; the three panels share axes (offset by frame origin; labels asserted)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari19.illustris.quenched-sfr1dex.z0.75",
+      "source": "Illustris",
+      "run": "Illustris-1 (SFR<MS-1dex)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.75,
+        "zNominal": 0.75,
+        "zMin": 0.75,
+        "zMax": 0.75,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.094,
+        "xMax": 11.468
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.094,
+            "y": 0.0702
+          },
+          {
+            "x": 9.293,
+            "y": 0.0657
+          },
+          {
+            "x": 9.493,
+            "y": 0.0637
+          },
+          {
+            "x": 9.692,
+            "y": 0.0588
+          },
+          {
+            "x": 9.894,
+            "y": 0.0529
+          },
+          {
+            "x": 10.091,
+            "y": 0.0523
+          },
+          {
+            "x": 10.293,
+            "y": 0.0557
+          },
+          {
+            "x": 10.492,
+            "y": 0.08
+          },
+          {
+            "x": 10.695,
+            "y": 0.119
+          },
+          {
+            "x": 10.893,
+            "y": 0.1754
+          },
+          {
+            "x": 11.097,
+            "y": 0.2527
+          },
+          {
+            "x": 11.289,
+            "y": 0.2924
+          },
+          {
+            "x": 11.468,
+            "y": 0.2941
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve vertices read from the vector paths of Donnari et al. 2019 (MNRAS 485, 4817), Quenched-fraction figure, z=0.75 panel; no table exists. The paper's curves include mock observational uncertainties of 0.2 dex on M* and 0.3 dex on SFR, so they are not the raw catalogue fractions. Illustris is shown only with the SFR-based selection. The paper's z labels are the plotted epochs; curves extend past 10^11.5 Msun but are clipped by the axis there and dropped here."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "population": "all",
+        "sfrTimescaleMyr": 200,
+        "quenchingCriterion": "SFR below the star-forming main sequence by 1 dex (linear MS extrapolated at high mass; SFR within 2 R_half over 200 Myr)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2019, MNRAS 485, 4817, quenched-fraction figure (fig:Qfrac_methods, bottom panels)",
+        "doi": "10.1093/mnras/stz712",
+        "url": "https://arxiv.org/abs/1812.07584",
+        "retrieved": "2026-10-05",
+        "figure": "fig:Qfrac_methods (bottom panels; QfracVSmass.pdf)",
+        "panel": "z=0.75 panel",
+        "checksumSha256": "ad2f3f0778afd2f8ceca4ef4166061cf2b25f7e4f8c88ad392e69ef83c761a91",
+        "sourceMember": "QfracVSmass.pdf (Illustris-1, sfr1dex line, 10 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-11.5; y: labelled ticks 0-1; the three panels share axes (offset by frame origin; labels asserted)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari19.tng300.quenched-sfr1dex.z1.75",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (SFR<MS-1dex)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 1.75,
+        "zNominal": 1.75,
+        "zMin": 1.75,
+        "zMax": 1.75,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.096,
+        "xMax": 11.478
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.096,
+            "y": 0.0235
+          },
+          {
+            "x": 9.296,
+            "y": 0.0113
+          },
+          {
+            "x": 9.497,
+            "y": 0.0086
+          },
+          {
+            "x": 9.697,
+            "y": 0.0058
+          },
+          {
+            "x": 9.896,
+            "y": 0.01
+          },
+          {
+            "x": 10.095,
+            "y": 0.0277
+          },
+          {
+            "x": 10.295,
+            "y": 0.0997
+          },
+          {
+            "x": 10.491,
+            "y": 0.2308
+          },
+          {
+            "x": 10.685,
+            "y": 0.3982
+          },
+          {
+            "x": 10.884,
+            "y": 0.5435
+          },
+          {
+            "x": 11.072,
+            "y": 0.6582
+          },
+          {
+            "x": 11.274,
+            "y": 0.7131
+          },
+          {
+            "x": 11.478,
+            "y": 0.7746
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve vertices read from the vector paths of Donnari et al. 2019 (MNRAS 485, 4817), Quenched-fraction figure, z=1.75 panel; no table exists. The paper's curves include mock observational uncertainties of 0.2 dex on M* and 0.3 dex on SFR, so they are not the raw catalogue fractions.  The paper's z labels are the plotted epochs; curves extend past 10^11.5 Msun but are clipped by the axis there and dropped here."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all",
+        "sfrTimescaleMyr": 200,
+        "quenchingCriterion": "SFR below the star-forming main sequence by 1 dex (linear MS extrapolated at high mass; SFR within 2 R_half over 200 Myr)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2019, MNRAS 485, 4817, quenched-fraction figure (fig:Qfrac_methods, bottom panels)",
+        "doi": "10.1093/mnras/stz712",
+        "url": "https://arxiv.org/abs/1812.07584",
+        "retrieved": "2026-10-05",
+        "figure": "fig:Qfrac_methods (bottom panels; QfracVSmass.pdf)",
+        "panel": "z=1.75 panel",
+        "checksumSha256": "ad2f3f0778afd2f8ceca4ef4166061cf2b25f7e4f8c88ad392e69ef83c761a91",
+        "sourceMember": "QfracVSmass.pdf (TNG300-1, sfr1dex line, 10 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-11.5; y: labelled ticks 0-1; the three panels share axes (offset by frame origin; labels asserted)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari19.tng300.quenched-uvj.z1.75",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (UVJ)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 1.75,
+        "zNominal": 1.75,
+        "zMin": 1.75,
+        "zMax": 1.75,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.096,
+        "xMax": 11.478
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.096,
+            "y": 0.002
+          },
+          {
+            "x": 9.296,
+            "y": 0.0011
+          },
+          {
+            "x": 9.497,
+            "y": 0.0011
+          },
+          {
+            "x": 9.697,
+            "y": 0.0014
+          },
+          {
+            "x": 9.896,
+            "y": 0.0045
+          },
+          {
+            "x": 10.095,
+            "y": 0.0198
+          },
+          {
+            "x": 10.295,
+            "y": 0.0967
+          },
+          {
+            "x": 10.491,
+            "y": 0.2428
+          },
+          {
+            "x": 10.685,
+            "y": 0.4249
+          },
+          {
+            "x": 10.884,
+            "y": 0.5767
+          },
+          {
+            "x": 11.072,
+            "y": 0.6947
+          },
+          {
+            "x": 11.274,
+            "y": 0.7316
+          },
+          {
+            "x": 11.478,
+            "y": 0.7746
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve vertices read from the vector paths of Donnari et al. 2019 (MNRAS 485, 4817), Quenched-fraction figure, z=1.75 panel; no table exists. The paper's curves include mock observational uncertainties of 0.2 dex on M* and 0.3 dex on SFR, so they are not the raw catalogue fractions.  The paper's z labels are the plotted epochs; curves extend past 10^11.5 Msun but are clipped by the axis there and dropped here."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all",
+        "sfrTimescaleMyr": 200,
+        "quenchingCriterion": "TNG UVJ colour cut (dust-attenuated rest-frame U-V vs V-J, Donnari et al. 2019 eqs. TNG_cut)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2019, MNRAS 485, 4817, quenched-fraction figure (fig:Qfrac_methods, bottom panels)",
+        "doi": "10.1093/mnras/stz712",
+        "url": "https://arxiv.org/abs/1812.07584",
+        "retrieved": "2026-10-05",
+        "figure": "fig:Qfrac_methods (bottom panels; QfracVSmass.pdf)",
+        "panel": "z=1.75 panel",
+        "checksumSha256": "ad2f3f0778afd2f8ceca4ef4166061cf2b25f7e4f8c88ad392e69ef83c761a91",
+        "sourceMember": "QfracVSmass.pdf (TNG300-1, uvj line, 10 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-11.5; y: labelled ticks 0-1; the three panels share axes (offset by frame origin; labels asserted)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari19.tng100.quenched-sfr1dex.z1.75",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (SFR<MS-1dex)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 1.75,
+        "zNominal": 1.75,
+        "zMin": 1.75,
+        "zMax": 1.75,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.092,
+        "xMax": 11.482
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.092,
+            "y": 0.0585
+          },
+          {
+            "x": 9.295,
+            "y": 0.0358
+          },
+          {
+            "x": 9.496,
+            "y": 0.0226
+          },
+          {
+            "x": 9.692,
+            "y": 0.025
+          },
+          {
+            "x": 9.901,
+            "y": 0.0254
+          },
+          {
+            "x": 10.096,
+            "y": 0.0615
+          },
+          {
+            "x": 10.296,
+            "y": 0.1024
+          },
+          {
+            "x": 10.499,
+            "y": 0.239
+          },
+          {
+            "x": 10.682,
+            "y": 0.3148
+          },
+          {
+            "x": 10.883,
+            "y": 0.4577
+          },
+          {
+            "x": 11.074,
+            "y": 0.6
+          },
+          {
+            "x": 11.284,
+            "y": 0.6304
+          },
+          {
+            "x": 11.482,
+            "y": 0.75
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve vertices read from the vector paths of Donnari et al. 2019 (MNRAS 485, 4817), Quenched-fraction figure, z=1.75 panel; no table exists. The paper's curves include mock observational uncertainties of 0.2 dex on M* and 0.3 dex on SFR, so they are not the raw catalogue fractions.  The paper's z labels are the plotted epochs; curves extend past 10^11.5 Msun but are clipped by the axis there and dropped here."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all",
+        "sfrTimescaleMyr": 200,
+        "quenchingCriterion": "SFR below the star-forming main sequence by 1 dex (linear MS extrapolated at high mass; SFR within 2 R_half over 200 Myr)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2019, MNRAS 485, 4817, quenched-fraction figure (fig:Qfrac_methods, bottom panels)",
+        "doi": "10.1093/mnras/stz712",
+        "url": "https://arxiv.org/abs/1812.07584",
+        "retrieved": "2026-10-05",
+        "figure": "fig:Qfrac_methods (bottom panels; QfracVSmass.pdf)",
+        "panel": "z=1.75 panel",
+        "checksumSha256": "ad2f3f0778afd2f8ceca4ef4166061cf2b25f7e4f8c88ad392e69ef83c761a91",
+        "sourceMember": "QfracVSmass.pdf (TNG100-1, sfr1dex line, 10 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-11.5; y: labelled ticks 0-1; the three panels share axes (offset by frame origin; labels asserted)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari19.tng100.quenched-uvj.z1.75",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (UVJ)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 1.75,
+        "zNominal": 1.75,
+        "zMin": 1.75,
+        "zMax": 1.75,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.092,
+        "xMax": 11.482
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.092,
+            "y": 0.0352
+          },
+          {
+            "x": 9.295,
+            "y": 0.0266
+          },
+          {
+            "x": 9.496,
+            "y": 0.0138
+          },
+          {
+            "x": 9.692,
+            "y": 0.0171
+          },
+          {
+            "x": 9.901,
+            "y": 0.0143
+          },
+          {
+            "x": 10.096,
+            "y": 0.0466
+          },
+          {
+            "x": 10.296,
+            "y": 0.0957
+          },
+          {
+            "x": 10.499,
+            "y": 0.246
+          },
+          {
+            "x": 10.682,
+            "y": 0.3231
+          },
+          {
+            "x": 10.883,
+            "y": 0.4726
+          },
+          {
+            "x": 11.074,
+            "y": 0.6235
+          },
+          {
+            "x": 11.284,
+            "y": 0.5217
+          },
+          {
+            "x": 11.482,
+            "y": 0.75
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve vertices read from the vector paths of Donnari et al. 2019 (MNRAS 485, 4817), Quenched-fraction figure, z=1.75 panel; no table exists. The paper's curves include mock observational uncertainties of 0.2 dex on M* and 0.3 dex on SFR, so they are not the raw catalogue fractions.  The paper's z labels are the plotted epochs; curves extend past 10^11.5 Msun but are clipped by the axis there and dropped here."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all",
+        "sfrTimescaleMyr": 200,
+        "quenchingCriterion": "TNG UVJ colour cut (dust-attenuated rest-frame U-V vs V-J, Donnari et al. 2019 eqs. TNG_cut)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2019, MNRAS 485, 4817, quenched-fraction figure (fig:Qfrac_methods, bottom panels)",
+        "doi": "10.1093/mnras/stz712",
+        "url": "https://arxiv.org/abs/1812.07584",
+        "retrieved": "2026-10-05",
+        "figure": "fig:Qfrac_methods (bottom panels; QfracVSmass.pdf)",
+        "panel": "z=1.75 panel",
+        "checksumSha256": "ad2f3f0778afd2f8ceca4ef4166061cf2b25f7e4f8c88ad392e69ef83c761a91",
+        "sourceMember": "QfracVSmass.pdf (TNG100-1, uvj line, 10 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-11.5; y: labelled ticks 0-1; the three panels share axes (offset by frame origin; labels asserted)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari19.illustris.quenched-sfr1dex.z1.75",
+      "source": "Illustris",
+      "run": "Illustris-1 (SFR<MS-1dex)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 1.75,
+        "zNominal": 1.75,
+        "zMin": 1.75,
+        "zMax": 1.75,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.088,
+        "xMax": 11.48
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.088,
+            "y": 0.0318
+          },
+          {
+            "x": 9.29,
+            "y": 0.0305
+          },
+          {
+            "x": 9.49,
+            "y": 0.0341
+          },
+          {
+            "x": 9.693,
+            "y": 0.0283
+          },
+          {
+            "x": 9.894,
+            "y": 0.03
+          },
+          {
+            "x": 10.092,
+            "y": 0.028
+          },
+          {
+            "x": 10.284,
+            "y": 0.0341
+          },
+          {
+            "x": 10.5,
+            "y": 0.0509
+          },
+          {
+            "x": 10.675,
+            "y": 0.0349
+          },
+          {
+            "x": 10.895,
+            "y": 0.089
+          },
+          {
+            "x": 11.078,
+            "y": 0.1413
+          },
+          {
+            "x": 11.282,
+            "y": 0.2419
+          },
+          {
+            "x": 11.48,
+            "y": 0.25
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve vertices read from the vector paths of Donnari et al. 2019 (MNRAS 485, 4817), Quenched-fraction figure, z=1.75 panel; no table exists. The paper's curves include mock observational uncertainties of 0.2 dex on M* and 0.3 dex on SFR, so they are not the raw catalogue fractions. Illustris is shown only with the SFR-based selection. The paper's z labels are the plotted epochs; curves extend past 10^11.5 Msun but are clipped by the axis there and dropped here."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "population": "all",
+        "sfrTimescaleMyr": 200,
+        "quenchingCriterion": "SFR below the star-forming main sequence by 1 dex (linear MS extrapolated at high mass; SFR within 2 R_half over 200 Myr)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2019, MNRAS 485, 4817, quenched-fraction figure (fig:Qfrac_methods, bottom panels)",
+        "doi": "10.1093/mnras/stz712",
+        "url": "https://arxiv.org/abs/1812.07584",
+        "retrieved": "2026-10-05",
+        "figure": "fig:Qfrac_methods (bottom panels; QfracVSmass.pdf)",
+        "panel": "z=1.75 panel",
+        "checksumSha256": "ad2f3f0778afd2f8ceca4ef4166061cf2b25f7e4f8c88ad392e69ef83c761a91",
+        "sourceMember": "QfracVSmass.pdf (Illustris-1, sfr1dex line, 10 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-11.5; y: labelled ticks 0-1; the three panels share axes (offset by frame origin; labels asserted)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

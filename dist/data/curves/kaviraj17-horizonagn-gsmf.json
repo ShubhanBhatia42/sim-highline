@@ -1,0 +1,1637 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "kaviraj17.horizon-agn.gsmf.z0.1",
+      "source": "Horizon-AGN",
+      "run": "Horizon-AGN",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 9.15,
+        "xMax": 12.151
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.15,
+            "y": -1.637,
+            "yLow": -1.6479,
+            "yHigh": -1.6262
+          },
+          {
+            "x": 9.45,
+            "y": -1.6732,
+            "yLow": -1.6841,
+            "yHigh": -1.6624
+          },
+          {
+            "x": 9.75,
+            "y": -1.7469,
+            "yLow": -1.759,
+            "yHigh": -1.7348
+          },
+          {
+            "x": 10.05,
+            "y": -1.8555,
+            "yLow": -1.87,
+            "yHigh": -1.8422
+          },
+          {
+            "x": 10.35,
+            "y": -1.9726,
+            "yLow": -1.9883,
+            "yHigh": -1.9569
+          },
+          {
+            "x": 10.651,
+            "y": -2.1585,
+            "yLow": -2.179,
+            "yHigh": -2.1392
+          },
+          {
+            "x": 10.95,
+            "y": -2.4445,
+            "yLow": -2.4723,
+            "yHigh": -2.418
+          },
+          {
+            "x": 11.25,
+            "y": -2.8525,
+            "yLow": -2.8984,
+            "yHigh": -2.8115
+          },
+          {
+            "x": 11.55,
+            "y": -3.351,
+            "yLow": -3.4355,
+            "yHigh": -3.2798
+          },
+          {
+            "x": 11.851,
+            "y": -3.8676,
+            "yLow": -4.0366,
+            "yHigh": -3.7469
+          },
+          {
+            "x": 12.151,
+            "y": -4.5085,
+            "yLow": -4.9949,
+            "yHigh": -4.2852
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Prediction (thick grey line) and Poisson-uncertainty band read from the vector paths of Kaviraj et al. 2017 Fig. 7 (z=0.1 panel); no table exists. The paper states the band width indicates Poisson uncertainties."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), Fig. 7 (arXiv source numbering; mf.ps), z=0.1 panel",
+        "doi": "10.1093/mnras/stx126",
+        "url": "https://arxiv.org/abs/1605.09379",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 7",
+        "panel": "z=0.1",
+        "checksumSha256": "ea4da833e73a02f621fe953d618e73fbd5ecce4f9dfc1b94e5e1ba952991e219",
+        "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kaviraj17.horizon-noagn.gsmf.z0.1",
+      "source": "Horizon-AGN",
+      "run": "Horizon-noAGN",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 9.15,
+        "xMax": 12.801
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.15,
+            "y": -1.6153
+          },
+          {
+            "x": 9.45,
+            "y": -1.666
+          },
+          {
+            "x": 9.75,
+            "y": -1.742
+          },
+          {
+            "x": 10.05,
+            "y": -1.8434
+          },
+          {
+            "x": 10.35,
+            "y": -1.969
+          },
+          {
+            "x": 10.651,
+            "y": -2.1295
+          },
+          {
+            "x": 10.95,
+            "y": -2.3166
+          },
+          {
+            "x": 11.25,
+            "y": -2.5375
+          },
+          {
+            "x": 11.55,
+            "y": -2.7692
+          },
+          {
+            "x": 11.851,
+            "y": -3.0613
+          },
+          {
+            "x": 12.151,
+            "y": -3.386
+          },
+          {
+            "x": 12.45,
+            "y": -3.7626
+          },
+          {
+            "x": 12.75,
+            "y": -4.208
+          },
+          {
+            "x": 12.801,
+            "y": -4.3154
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Pink dashed Horizon-noAGN prediction (a twin simulation without black-hole feedback) of Kaviraj et al. 2017 Fig. 7 (z=0.1 panel); no table exists. A different physical model from Horizon-AGN, kept as its own run."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), Fig. 7 (arXiv source numbering; mf.ps), z=0.1 panel",
+        "doi": "10.1093/mnras/stx126",
+        "url": "https://arxiv.org/abs/1605.09379",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 7",
+        "panel": "z=0.1",
+        "checksumSha256": "ea4da833e73a02f621fe953d618e73fbd5ecce4f9dfc1b94e5e1ba952991e219",
+        "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kaviraj17.horizon-agn.gsmf.z0.4",
+      "source": "Horizon-AGN",
+      "run": "Horizon-AGN",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0.4,
+        "zNominal": 0.4,
+        "zMin": 0.4,
+        "zMax": 0.4,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 9.15,
+        "xMax": 12.15
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.15,
+            "y": -1.6817,
+            "yLow": -1.6926,
+            "yHigh": -1.672
+          },
+          {
+            "x": 9.45,
+            "y": -1.7348,
+            "yLow": -1.7457,
+            "yHigh": -1.724
+          },
+          {
+            "x": 9.75,
+            "y": -1.8229,
+            "yLow": -1.835,
+            "yHigh": -1.8109
+          },
+          {
+            "x": 10.05,
+            "y": -1.9376,
+            "yLow": -1.9521,
+            "yHigh": -1.9243
+          },
+          {
+            "x": 10.35,
+            "y": -2.0631,
+            "yLow": -2.08,
+            "yHigh": -2.0486
+          },
+          {
+            "x": 10.65,
+            "y": -2.2755,
+            "yLow": -2.2961,
+            "yHigh": -2.2562
+          },
+          {
+            "x": 10.95,
+            "y": -2.5954,
+            "yLow": -2.6244,
+            "yHigh": -2.5664
+          },
+          {
+            "x": 11.25,
+            "y": -3.048,
+            "yLow": -3.0999,
+            "yHigh": -3.0022
+          },
+          {
+            "x": 11.55,
+            "y": -3.5972,
+            "yLow": -3.6998,
+            "yHigh": -3.5139
+          },
+          {
+            "x": 11.85,
+            "y": -4.1705,
+            "yLow": -4.5773,
+            "yHigh": -4.0221
+          },
+          {
+            "x": 12.15,
+            "y": -4.9261,
+            "yLow": -6.459,
+            "yHigh": -4.6316
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Prediction (thick grey line) and Poisson-uncertainty band read from the vector paths of Kaviraj et al. 2017 Fig. 7 (z=0.4 panel); no table exists. The paper states the band width indicates Poisson uncertainties."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), Fig. 7 (arXiv source numbering; mf.ps), z=0.4 panel",
+        "doi": "10.1093/mnras/stx126",
+        "url": "https://arxiv.org/abs/1605.09379",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 7",
+        "panel": "z=0.4",
+        "checksumSha256": "ea4da833e73a02f621fe953d618e73fbd5ecce4f9dfc1b94e5e1ba952991e219",
+        "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kaviraj17.horizon-noagn.gsmf.z0.4",
+      "source": "Horizon-AGN",
+      "run": "Horizon-noAGN",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0.4,
+        "zNominal": 0.4,
+        "zMin": 0.4,
+        "zMax": 0.4,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 9.15,
+        "xMax": 12.75
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.15,
+            "y": -1.6612
+          },
+          {
+            "x": 9.45,
+            "y": -1.724
+          },
+          {
+            "x": 9.75,
+            "y": -1.812
+          },
+          {
+            "x": 10.05,
+            "y": -1.9303
+          },
+          {
+            "x": 10.35,
+            "y": -2.0607
+          },
+          {
+            "x": 10.65,
+            "y": -2.2236
+          },
+          {
+            "x": 10.95,
+            "y": -2.4325
+          },
+          {
+            "x": 11.25,
+            "y": -2.6534
+          },
+          {
+            "x": 11.55,
+            "y": -2.9189
+          },
+          {
+            "x": 11.85,
+            "y": -3.2641
+          },
+          {
+            "x": 12.15,
+            "y": -3.6286
+          },
+          {
+            "x": 12.45,
+            "y": -4.0402
+          },
+          {
+            "x": 12.75,
+            "y": -4.558
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Pink dashed Horizon-noAGN prediction (a twin simulation without black-hole feedback) of Kaviraj et al. 2017 Fig. 7 (z=0.4 panel); no table exists. A different physical model from Horizon-AGN, kept as its own run."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), Fig. 7 (arXiv source numbering; mf.ps), z=0.4 panel",
+        "doi": "10.1093/mnras/stx126",
+        "url": "https://arxiv.org/abs/1605.09379",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 7",
+        "panel": "z=0.4",
+        "checksumSha256": "ea4da833e73a02f621fe953d618e73fbd5ecce4f9dfc1b94e5e1ba952991e219",
+        "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kaviraj17.horizon-agn.gsmf.z0.8",
+      "source": "Horizon-AGN",
+      "run": "Horizon-AGN",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0.8,
+        "zNominal": 0.8,
+        "zMin": 0.8,
+        "zMax": 0.8,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 9.15,
+        "xMax": 11.851
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.15,
+            "y": -1.6912,
+            "yLow": -1.7008,
+            "yHigh": -1.6815
+          },
+          {
+            "x": 9.45,
+            "y": -1.7588,
+            "yLow": -1.7696,
+            "yHigh": -1.7491
+          },
+          {
+            "x": 9.75,
+            "y": -1.8577,
+            "yLow": -1.8698,
+            "yHigh": -1.8469
+          },
+          {
+            "x": 10.05,
+            "y": -1.976,
+            "yLow": -1.9893,
+            "yHigh": -1.9627
+          },
+          {
+            "x": 10.35,
+            "y": -2.139,
+            "yLow": -2.1558,
+            "yHigh": -2.1233
+          },
+          {
+            "x": 10.651,
+            "y": -2.4033,
+            "yLow": -2.425,
+            "yHigh": -2.3816
+          },
+          {
+            "x": 10.95,
+            "y": -2.7666,
+            "yLow": -2.8004,
+            "yHigh": -2.734
+          },
+          {
+            "x": 11.25,
+            "y": -3.2881,
+            "yLow": -3.3532,
+            "yHigh": -3.2313
+          },
+          {
+            "x": 11.55,
+            "y": -3.9289,
+            "yLow": -4.0774,
+            "yHigh": -3.8191
+          },
+          {
+            "x": 11.851,
+            "y": -4.6025,
+            "yLow": -5.212,
+            "yHigh": -4.39
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Prediction (thick grey line) and Poisson-uncertainty band read from the vector paths of Kaviraj et al. 2017 Fig. 7 (z=0.8 panel); no table exists. The paper states the band width indicates Poisson uncertainties."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), Fig. 7 (arXiv source numbering; mf.ps), z=0.8 panel",
+        "doi": "10.1093/mnras/stx126",
+        "url": "https://arxiv.org/abs/1605.09379",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 7",
+        "panel": "z=0.8",
+        "checksumSha256": "ea4da833e73a02f621fe953d618e73fbd5ecce4f9dfc1b94e5e1ba952991e219",
+        "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kaviraj17.horizon-noagn.gsmf.z0.8",
+      "source": "Horizon-AGN",
+      "run": "Horizon-noAGN",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0.8,
+        "zNominal": 0.8,
+        "zMin": 0.8,
+        "zMax": 0.8,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 9.15,
+        "xMax": 12.45
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.15,
+            "y": -1.667
+          },
+          {
+            "x": 9.45,
+            "y": -1.7431
+          },
+          {
+            "x": 9.75,
+            "y": -1.8421
+          },
+          {
+            "x": 10.05,
+            "y": -1.9688
+          },
+          {
+            "x": 10.35,
+            "y": -2.1148
+          },
+          {
+            "x": 10.651,
+            "y": -2.3091
+          },
+          {
+            "x": 10.95,
+            "y": -2.53
+          },
+          {
+            "x": 11.25,
+            "y": -2.7847
+          },
+          {
+            "x": 11.55,
+            "y": -3.1022
+          },
+          {
+            "x": 11.851,
+            "y": -3.4739
+          },
+          {
+            "x": 12.151,
+            "y": -3.9036
+          },
+          {
+            "x": 12.45,
+            "y": -4.39
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Pink dashed Horizon-noAGN prediction (a twin simulation without black-hole feedback) of Kaviraj et al. 2017 Fig. 7 (z=0.8 panel); no table exists. A different physical model from Horizon-AGN, kept as its own run."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), Fig. 7 (arXiv source numbering; mf.ps), z=0.8 panel",
+        "doi": "10.1093/mnras/stx126",
+        "url": "https://arxiv.org/abs/1605.09379",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 7",
+        "panel": "z=0.8",
+        "checksumSha256": "ea4da833e73a02f621fe953d618e73fbd5ecce4f9dfc1b94e5e1ba952991e219",
+        "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kaviraj17.horizon-agn.gsmf.z1.6",
+      "source": "Horizon-AGN",
+      "run": "Horizon-AGN",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 1.6,
+        "zNominal": 1.6,
+        "zMin": 1.6,
+        "zMax": 1.6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 9.15,
+        "xMax": 11.55
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.15,
+            "y": -1.7237,
+            "yLow": -1.7334,
+            "yHigh": -1.7141
+          },
+          {
+            "x": 9.45,
+            "y": -1.8275,
+            "yLow": -1.8384,
+            "yHigh": -1.8167
+          },
+          {
+            "x": 9.75,
+            "y": -1.9507,
+            "yLow": -1.9627,
+            "yHigh": -1.9386
+          },
+          {
+            "x": 10.05,
+            "y": -2.1148,
+            "yLow": -2.1293,
+            "yHigh": -2.1004
+          },
+          {
+            "x": 10.35,
+            "y": -2.3743,
+            "yLow": -2.3948,
+            "yHigh": -2.355
+          },
+          {
+            "x": 10.65,
+            "y": -2.6302,
+            "yLow": -2.6616,
+            "yHigh": -2.6013
+          },
+          {
+            "x": 10.95,
+            "y": -3.0201,
+            "yLow": -3.0768,
+            "yHigh": -2.9706
+          },
+          {
+            "x": 11.25,
+            "y": -3.7346,
+            "yLow": -3.8735,
+            "yHigh": -3.6284
+          },
+          {
+            "x": 11.55,
+            "y": -4.4963,
+            "yLow": -4.967,
+            "yHigh": -4.2754
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Prediction (thick grey line) and Poisson-uncertainty band read from the vector paths of Kaviraj et al. 2017 Fig. 7 (z=1.6 panel); no table exists. The paper states the band width indicates Poisson uncertainties."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), Fig. 7 (arXiv source numbering; mf.ps), z=1.6 panel",
+        "doi": "10.1093/mnras/stx126",
+        "url": "https://arxiv.org/abs/1605.09379",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 7",
+        "panel": "z=1.6",
+        "checksumSha256": "ea4da833e73a02f621fe953d618e73fbd5ecce4f9dfc1b94e5e1ba952991e219",
+        "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kaviraj17.horizon-noagn.gsmf.z1.6",
+      "source": "Horizon-AGN",
+      "run": "Horizon-noAGN",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 1.6,
+        "zNominal": 1.6,
+        "zMin": 1.6,
+        "zMax": 1.6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 9.15,
+        "xMax": 12.15
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.15,
+            "y": -1.6912
+          },
+          {
+            "x": 9.45,
+            "y": -1.8034
+          },
+          {
+            "x": 9.75,
+            "y": -1.9374
+          },
+          {
+            "x": 10.05,
+            "y": -2.0931
+          },
+          {
+            "x": 10.35,
+            "y": -2.2947
+          },
+          {
+            "x": 10.65,
+            "y": -2.5361
+          },
+          {
+            "x": 10.95,
+            "y": -2.8246
+          },
+          {
+            "x": 11.25,
+            "y": -3.1661
+          },
+          {
+            "x": 11.55,
+            "y": -3.5958
+          },
+          {
+            "x": 11.85,
+            "y": -4.0678
+          },
+          {
+            "x": 12.15,
+            "y": -4.6785
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Pink dashed Horizon-noAGN prediction (a twin simulation without black-hole feedback) of Kaviraj et al. 2017 Fig. 7 (z=1.6 panel); no table exists. A different physical model from Horizon-AGN, kept as its own run."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), Fig. 7 (arXiv source numbering; mf.ps), z=1.6 panel",
+        "doi": "10.1093/mnras/stx126",
+        "url": "https://arxiv.org/abs/1605.09379",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 7",
+        "panel": "z=1.6",
+        "checksumSha256": "ea4da833e73a02f621fe953d618e73fbd5ecce4f9dfc1b94e5e1ba952991e219",
+        "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kaviraj17.horizon-agn.gsmf.z2.7",
+      "source": "Horizon-AGN",
+      "run": "Horizon-AGN",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 2.7,
+        "zNominal": 2.7,
+        "zMin": 2.7,
+        "zMax": 2.7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 9.25,
+        "xMax": 11.25
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.25,
+            "y": -1.9559,
+            "yLow": -1.9656,
+            "yHigh": -1.9438
+          },
+          {
+            "x": 9.75,
+            "y": -2.2516,
+            "yLow": -2.2649,
+            "yHigh": -2.2347
+          },
+          {
+            "x": 10.25,
+            "y": -2.7404,
+            "yLow": -2.7634,
+            "yHigh": -2.7103
+          },
+          {
+            "x": 10.75,
+            "y": -3.257,
+            "yLow": -3.321,
+            "yHigh": -3.1786
+          },
+          {
+            "x": 11.25,
+            "y": -4.7103,
+            "yLow": -5.4671,
+            "yHigh": -3.9716
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Prediction (thick grey line) and Poisson-uncertainty band read from the vector paths of Kaviraj et al. 2017 Fig. 7 (z=2.7 panel); no table exists. The paper states the band width indicates Poisson uncertainties."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), Fig. 7 (arXiv source numbering; mf.ps), z=2.7 panel",
+        "doi": "10.1093/mnras/stx126",
+        "url": "https://arxiv.org/abs/1605.09379",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 7",
+        "panel": "z=2.7",
+        "checksumSha256": "ea4da833e73a02f621fe953d618e73fbd5ecce4f9dfc1b94e5e1ba952991e219",
+        "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kaviraj17.horizon-noagn.gsmf.z2.7",
+      "source": "Horizon-AGN",
+      "run": "Horizon-noAGN",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 2.7,
+        "zNominal": 2.7,
+        "zMin": 2.7,
+        "zMax": 2.7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 9.25,
+        "xMax": 11.75
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.25,
+            "y": -1.9607
+          },
+          {
+            "x": 9.75,
+            "y": -2.2649
+          },
+          {
+            "x": 10.25,
+            "y": -2.6608
+          },
+          {
+            "x": 10.75,
+            "y": -3.2148
+          },
+          {
+            "x": 11.25,
+            "y": -3.9511
+          },
+          {
+            "x": 11.75,
+            "y": -5.035
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Pink dashed Horizon-noAGN prediction (a twin simulation without black-hole feedback) of Kaviraj et al. 2017 Fig. 7 (z=2.7 panel); no table exists. A different physical model from Horizon-AGN, kept as its own run."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), Fig. 7 (arXiv source numbering; mf.ps), z=2.7 panel",
+        "doi": "10.1093/mnras/stx126",
+        "url": "https://arxiv.org/abs/1605.09379",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 7",
+        "panel": "z=2.7",
+        "checksumSha256": "ea4da833e73a02f621fe953d618e73fbd5ecce4f9dfc1b94e5e1ba952991e219",
+        "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kaviraj17.horizon-agn.gsmf.z4",
+      "source": "Horizon-AGN",
+      "run": "Horizon-AGN",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 4,
+        "zNominal": 4,
+        "zMin": 4,
+        "zMax": 4,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 9.25,
+        "xMax": 10.75
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.25,
+            "y": -2.225,
+            "yLow": -2.2444,
+            "yHigh": -2.2021
+          },
+          {
+            "x": 9.75,
+            "y": -2.796,
+            "yLow": -2.8334,
+            "yHigh": -2.7537
+          },
+          {
+            "x": 10.25,
+            "y": -3.5492,
+            "yLow": -3.6578,
+            "yHigh": -3.4429
+          },
+          {
+            "x": 10.75,
+            "y": -4.5642,
+            "yLow": -5.5407,
+            "yHigh": -4.2383
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Prediction (thick grey line) and Poisson-uncertainty band read from the vector paths of Kaviraj et al. 2017 Fig. 7 (z=4 panel); no table exists. The paper states the band width indicates Poisson uncertainties."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), Fig. 7 (arXiv source numbering; mf.ps), z=4 panel",
+        "doi": "10.1093/mnras/stx126",
+        "url": "https://arxiv.org/abs/1605.09379",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 7",
+        "panel": "z=4",
+        "checksumSha256": "ea4da833e73a02f621fe953d618e73fbd5ecce4f9dfc1b94e5e1ba952991e219",
+        "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kaviraj17.horizon-noagn.gsmf.z4",
+      "source": "Horizon-AGN",
+      "run": "Horizon-noAGN",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 4,
+        "zNominal": 4,
+        "zMin": 4,
+        "zMax": 4,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 9.25,
+        "xMax": 11.25
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.25,
+            "y": -2.2987
+          },
+          {
+            "x": 9.75,
+            "y": -2.7851
+          },
+          {
+            "x": 10.25,
+            "y": -3.391
+          },
+          {
+            "x": 10.75,
+            "y": -4.1852
+          },
+          {
+            "x": 11.25,
+            "y": -5.4164
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Pink dashed Horizon-noAGN prediction (a twin simulation without black-hole feedback) of Kaviraj et al. 2017 Fig. 7 (z=4 panel); no table exists. A different physical model from Horizon-AGN, kept as its own run."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), Fig. 7 (arXiv source numbering; mf.ps), z=4 panel",
+        "doi": "10.1093/mnras/stx126",
+        "url": "https://arxiv.org/abs/1605.09379",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 7",
+        "panel": "z=4",
+        "checksumSha256": "ea4da833e73a02f621fe953d618e73fbd5ecce4f9dfc1b94e5e1ba952991e219",
+        "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kaviraj17.horizon-agn.gsmf.z5",
+      "source": "Horizon-AGN",
+      "run": "Horizon-AGN",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 9.3,
+        "xMax": 10.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.3,
+            "y": -2.8229,
+            "yLow": -2.8495,
+            "yHigh": -2.7988
+          },
+          {
+            "x": 9.901,
+            "y": -3.6304,
+            "yLow": -3.7088,
+            "yHigh": -3.564
+          },
+          {
+            "x": 10.5,
+            "y": -4.8977,
+            "yLow": -5.6002,
+            "yHigh": -4.6419
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Prediction (thick grey line) and Poisson-uncertainty band read from the vector paths of Kaviraj et al. 2017 Fig. 7 (z=5 panel); no table exists. The paper states the band width indicates Poisson uncertainties."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), Fig. 7 (arXiv source numbering; mf.ps), z=5 panel",
+        "doi": "10.1093/mnras/stx126",
+        "url": "https://arxiv.org/abs/1605.09379",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 7",
+        "panel": "z=5",
+        "checksumSha256": "ea4da833e73a02f621fe953d618e73fbd5ecce4f9dfc1b94e5e1ba952991e219",
+        "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kaviraj17.horizon-noagn.gsmf.z5",
+      "source": "Horizon-AGN",
+      "run": "Horizon-noAGN",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 9.3,
+        "xMax": 11.101
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.3,
+            "y": -2.8374
+          },
+          {
+            "x": 9.901,
+            "y": -3.523
+          },
+          {
+            "x": 10.5,
+            "y": -4.4572
+          },
+          {
+            "x": 11.101,
+            "y": -6.0432
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Pink dashed Horizon-noAGN prediction (a twin simulation without black-hole feedback) of Kaviraj et al. 2017 Fig. 7 (z=5 panel); no table exists. A different physical model from Horizon-AGN, kept as its own run."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), Fig. 7 (arXiv source numbering; mf.ps), z=5 panel",
+        "doi": "10.1093/mnras/stx126",
+        "url": "https://arxiv.org/abs/1605.09379",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 7",
+        "panel": "z=5",
+        "checksumSha256": "ea4da833e73a02f621fe953d618e73fbd5ecce4f9dfc1b94e5e1ba952991e219",
+        "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kaviraj17.horizon-agn.gsmf.z6",
+      "source": "Horizon-AGN",
+      "run": "Horizon-AGN",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 9.3,
+        "xMax": 10.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.3,
+            "y": -3.5085,
+            "yLow": -3.5399,
+            "yHigh": -3.4795
+          },
+          {
+            "x": 9.9,
+            "y": -4.4005,
+            "yLow": -4.5199,
+            "yHigh": -4.3063
+          },
+          {
+            "x": 10.5,
+            "y": -5.4663,
+            "yLow": -6.5851,
+            "yHigh": -5.1826
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Prediction (thick grey line) and Poisson-uncertainty band read from the vector paths of Kaviraj et al. 2017 Fig. 7 (z=6 panel); no table exists. The paper states the band width indicates Poisson uncertainties."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), Fig. 7 (arXiv source numbering; mf.ps), z=6 panel",
+        "doi": "10.1093/mnras/stx126",
+        "url": "https://arxiv.org/abs/1605.09379",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 7",
+        "panel": "z=6",
+        "checksumSha256": "ea4da833e73a02f621fe953d618e73fbd5ecce4f9dfc1b94e5e1ba952991e219",
+        "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "kaviraj17.horizon-noagn.gsmf.z6",
+      "source": "Horizon-AGN",
+      "run": "Horizon-noAGN",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 9.3,
+        "xMax": 10.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.3,
+            "y": -3.5085
+          },
+          {
+            "x": 9.9,
+            "y": -4.4005
+          },
+          {
+            "x": 10.5,
+            "y": -5.4663
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Pink dashed Horizon-noAGN prediction (a twin simulation without black-hole feedback) of Kaviraj et al. 2017 Fig. 7 (z=6 panel); no table exists. A different physical model from Horizon-AGN, kept as its own run."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), Fig. 7 (arXiv source numbering; mf.ps), z=6 panel",
+        "doi": "10.1093/mnras/stx126",
+        "url": "https://arxiv.org/abs/1605.09379",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 7",
+        "panel": "z=6",
+        "checksumSha256": "ea4da833e73a02f621fe953d618e73fbd5ecce4f9dfc1b94e5e1ba952991e219",
+        "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

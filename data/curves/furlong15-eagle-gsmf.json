@@ -1,0 +1,1777 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "furlong15.eagle-ref.gsmf.z0.1",
+      "source": "EAGLE",
+      "run": "Ref-L100N1504",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy number density per dex, dn/dlog10(M*)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.5,
+        "xMax": 11.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.5,
+            "y": -1.5996
+          },
+          {
+            "x": 8.7,
+            "y": -1.7045
+          },
+          {
+            "x": 8.9,
+            "y": -1.7785
+          },
+          {
+            "x": 9.1,
+            "y": -1.8557
+          },
+          {
+            "x": 9.3,
+            "y": -1.9385
+          },
+          {
+            "x": 9.5,
+            "y": -2.0179
+          },
+          {
+            "x": 9.7,
+            "y": -2.1181
+          },
+          {
+            "x": 9.9,
+            "y": -2.2061
+          },
+          {
+            "x": 10.1,
+            "y": -2.2609
+          },
+          {
+            "x": 10.3,
+            "y": -2.3603
+          },
+          {
+            "x": 10.5,
+            "y": -2.4532
+          },
+          {
+            "x": 10.7,
+            "y": -2.6235
+          },
+          {
+            "x": 10.9,
+            "y": -2.8466
+          },
+          {
+            "x": 11.1,
+            "y": -3.2039
+          },
+          {
+            "x": 11.3,
+            "y": -3.627
+          },
+          {
+            "x": 11.5,
+            "y": -4.0387
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Solid segment only of the curve in Furlong et al. 2015 Fig. 2 panel 1 (z=0.1): bins with >=100 baryonic particles and >=10 galaxies; the dotted (<100 particles) and dashed (<10 galaxies) segments are omitted. Vertices are the plotted 0.2 dex bin centres; the paper gives no table for these curves."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Furlong et al. 2015, MNRAS 450, 4486, Fig. 2 (arXiv source numbering) panel 1",
+        "doi": "10.1093/mnras/stv852",
+        "url": "https://arxiv.org/abs/1410.3485",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 2",
+        "panel": "panel 1 (z=0.1)",
+        "checksumSha256": "a43c5fb814756658ee5de34b5494bc28dbaa86b240547c4e0456d6432765add5",
+        "sourceMember": "smf9.pdf (solid Ref-L100N1504 line, 3 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: page pt from labelled ticks 7-12 (34.93 pt/dex); y: ticks -1..-6 (34.93 pt/dex); panels share axes, offset by frame origin; labels asserted per panel",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "target",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "furlong15.eagle-recal.gsmf.z0.1",
+      "source": "EAGLE",
+      "run": "Recal-L025N0752",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy number density per dex, dn/dlog10(M*)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.7,
+        "xMax": 10.7
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.7,
+            "y": -1.3518
+          },
+          {
+            "x": 7.9,
+            "y": -1.4154
+          },
+          {
+            "x": 8.1,
+            "y": -1.4763
+          },
+          {
+            "x": 8.3,
+            "y": -1.4831
+          },
+          {
+            "x": 8.5,
+            "y": -1.5318
+          },
+          {
+            "x": 8.7,
+            "y": -1.6213
+          },
+          {
+            "x": 8.9,
+            "y": -1.8048
+          },
+          {
+            "x": 9.1,
+            "y": -1.7154
+          },
+          {
+            "x": 9.3,
+            "y": -1.8813
+          },
+          {
+            "x": 9.5,
+            "y": -2.1045
+          },
+          {
+            "x": 9.7,
+            "y": -2.0206
+          },
+          {
+            "x": 9.9,
+            "y": -2.0462
+          },
+          {
+            "x": 10.1,
+            "y": -2.021
+          },
+          {
+            "x": 10.3,
+            "y": -2.1355
+          },
+          {
+            "x": 10.5,
+            "y": -2.441
+          },
+          {
+            "x": 10.7,
+            "y": -2.4265
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Solid segment only of the curve in Furlong et al. 2015 Fig. 2 panel 1 (z=0.1): bins with >=100 baryonic particles and >=10 galaxies; the dotted (<100 particles) and dashed (<10 galaxies) segments are omitted. Vertices are the plotted 0.2 dex bin centres; the paper gives no table for these curves."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Furlong et al. 2015, MNRAS 450, 4486, Fig. 2 (arXiv source numbering) panel 1",
+        "doi": "10.1093/mnras/stv852",
+        "url": "https://arxiv.org/abs/1410.3485",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 2",
+        "panel": "panel 1 (z=0.1)",
+        "checksumSha256": "a43c5fb814756658ee5de34b5494bc28dbaa86b240547c4e0456d6432765add5",
+        "sourceMember": "smf9.pdf (solid Recal-L025N0752 line, 3 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: page pt from labelled ticks 7-12 (34.93 pt/dex); y: ticks -1..-6 (34.93 pt/dex); panels share axes, offset by frame origin; labels asserted per panel",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "target",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "furlong15.eagle-ref.gsmf.z0.5",
+      "source": "EAGLE",
+      "run": "Ref-L100N1504",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0.5,
+        "zNominal": 0.5,
+        "zMin": 0.5,
+        "zMax": 0.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy number density per dex, dn/dlog10(M*)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.5,
+        "xMax": 11.3
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.5,
+            "y": -1.5687
+          },
+          {
+            "x": 8.7,
+            "y": -1.6671
+          },
+          {
+            "x": 8.9,
+            "y": -1.7436
+          },
+          {
+            "x": 9.1,
+            "y": -1.8455
+          },
+          {
+            "x": 9.3,
+            "y": -1.9239
+          },
+          {
+            "x": 9.5,
+            "y": -2.0057
+          },
+          {
+            "x": 9.7,
+            "y": -2.1138
+          },
+          {
+            "x": 9.9,
+            "y": -2.2136
+          },
+          {
+            "x": 10.1,
+            "y": -2.2593
+          },
+          {
+            "x": 10.3,
+            "y": -2.3536
+          },
+          {
+            "x": 10.5,
+            "y": -2.4541
+          },
+          {
+            "x": 10.7,
+            "y": -2.6345
+          },
+          {
+            "x": 10.9,
+            "y": -2.9137
+          },
+          {
+            "x": 11.1,
+            "y": -3.3233
+          },
+          {
+            "x": 11.3,
+            "y": -3.6882
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Solid segment only of the curve in Furlong et al. 2015 Fig. 2 panel 2 (z=0.5): bins with >=100 baryonic particles and >=10 galaxies; the dotted (<100 particles) and dashed (<10 galaxies) segments are omitted. Vertices are the plotted 0.2 dex bin centres; the paper gives no table for these curves."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Furlong et al. 2015, MNRAS 450, 4486, Fig. 2 (arXiv source numbering) panel 2",
+        "doi": "10.1093/mnras/stv852",
+        "url": "https://arxiv.org/abs/1410.3485",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 2",
+        "panel": "panel 2 (z=0.5)",
+        "checksumSha256": "a43c5fb814756658ee5de34b5494bc28dbaa86b240547c4e0456d6432765add5",
+        "sourceMember": "smf9.pdf (solid Ref-L100N1504 line, 3 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: page pt from labelled ticks 7-12 (34.93 pt/dex); y: ticks -1..-6 (34.93 pt/dex); panels share axes, offset by frame origin; labels asserted per panel",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "furlong15.eagle-recal.gsmf.z0.5",
+      "source": "EAGLE",
+      "run": "Recal-L025N0752",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0.5,
+        "zNominal": 0.5,
+        "zMin": 0.5,
+        "zMax": 0.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy number density per dex, dn/dlog10(M*)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.7,
+        "xMax": 10.3
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.7,
+            "y": -1.3074
+          },
+          {
+            "x": 7.9,
+            "y": -1.3074
+          },
+          {
+            "x": 8.1,
+            "y": -1.423
+          },
+          {
+            "x": 8.3,
+            "y": -1.4737
+          },
+          {
+            "x": 8.5,
+            "y": -1.6141
+          },
+          {
+            "x": 8.7,
+            "y": -1.6688
+          },
+          {
+            "x": 8.9,
+            "y": -1.6753
+          },
+          {
+            "x": 9.1,
+            "y": -1.7096
+          },
+          {
+            "x": 9.3,
+            "y": -2.0635
+          },
+          {
+            "x": 9.5,
+            "y": -2.0325
+          },
+          {
+            "x": 9.7,
+            "y": -1.9267
+          },
+          {
+            "x": 9.9,
+            "y": -2.0969
+          },
+          {
+            "x": 10.1,
+            "y": -2.1147
+          },
+          {
+            "x": 10.3,
+            "y": -2.1727
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Solid segment only of the curve in Furlong et al. 2015 Fig. 2 panel 2 (z=0.5): bins with >=100 baryonic particles and >=10 galaxies; the dotted (<100 particles) and dashed (<10 galaxies) segments are omitted. Vertices are the plotted 0.2 dex bin centres; the paper gives no table for these curves."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Furlong et al. 2015, MNRAS 450, 4486, Fig. 2 (arXiv source numbering) panel 2",
+        "doi": "10.1093/mnras/stv852",
+        "url": "https://arxiv.org/abs/1410.3485",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 2",
+        "panel": "panel 2 (z=0.5)",
+        "checksumSha256": "a43c5fb814756658ee5de34b5494bc28dbaa86b240547c4e0456d6432765add5",
+        "sourceMember": "smf9.pdf (solid Recal-L025N0752 line, 3 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: page pt from labelled ticks 7-12 (34.93 pt/dex); y: ticks -1..-6 (34.93 pt/dex); panels share axes, offset by frame origin; labels asserted per panel",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "furlong15.eagle-ref.gsmf.z1",
+      "source": "EAGLE",
+      "run": "Ref-L100N1504",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 1,
+        "zNominal": 1,
+        "zMin": 1,
+        "zMax": 1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy number density per dex, dn/dlog10(M*)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.5,
+        "xMax": 11.3
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.5,
+            "y": -1.5505
+          },
+          {
+            "x": 8.7,
+            "y": -1.641
+          },
+          {
+            "x": 8.9,
+            "y": -1.7439
+          },
+          {
+            "x": 9.1,
+            "y": -1.8282
+          },
+          {
+            "x": 9.3,
+            "y": -1.9454
+          },
+          {
+            "x": 9.5,
+            "y": -2.0463
+          },
+          {
+            "x": 9.7,
+            "y": -2.1559
+          },
+          {
+            "x": 9.9,
+            "y": -2.2426
+          },
+          {
+            "x": 10.1,
+            "y": -2.3197
+          },
+          {
+            "x": 10.3,
+            "y": -2.3862
+          },
+          {
+            "x": 10.5,
+            "y": -2.5452
+          },
+          {
+            "x": 10.7,
+            "y": -2.7133
+          },
+          {
+            "x": 10.9,
+            "y": -3.1051
+          },
+          {
+            "x": 11.1,
+            "y": -3.4559
+          },
+          {
+            "x": 11.3,
+            "y": -3.9788
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Solid segment only of the curve in Furlong et al. 2015 Fig. 2 panel 3 (z=1.0): bins with >=100 baryonic particles and >=10 galaxies; the dotted (<100 particles) and dashed (<10 galaxies) segments are omitted. Vertices are the plotted 0.2 dex bin centres; the paper gives no table for these curves."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Furlong et al. 2015, MNRAS 450, 4486, Fig. 2 (arXiv source numbering) panel 3",
+        "doi": "10.1093/mnras/stv852",
+        "url": "https://arxiv.org/abs/1410.3485",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 2",
+        "panel": "panel 3 (z=1.0)",
+        "checksumSha256": "a43c5fb814756658ee5de34b5494bc28dbaa86b240547c4e0456d6432765add5",
+        "sourceMember": "smf9.pdf (solid Ref-L100N1504 line, 3 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: page pt from labelled ticks 7-12 (34.93 pt/dex); y: ticks -1..-6 (34.93 pt/dex); panels share axes, offset by frame origin; labels asserted per panel",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "furlong15.eagle-recal.gsmf.z1",
+      "source": "EAGLE",
+      "run": "Recal-L025N0752",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 1,
+        "zNominal": 1,
+        "zMin": 1,
+        "zMax": 1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy number density per dex, dn/dlog10(M*)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.7,
+        "xMax": 10.3
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.7,
+            "y": -1.242
+          },
+          {
+            "x": 7.9,
+            "y": -1.267
+          },
+          {
+            "x": 8.1,
+            "y": -1.3646
+          },
+          {
+            "x": 8.3,
+            "y": -1.5218
+          },
+          {
+            "x": 8.5,
+            "y": -1.6141
+          },
+          {
+            "x": 8.7,
+            "y": -1.6316
+          },
+          {
+            "x": 8.9,
+            "y": -1.7545
+          },
+          {
+            "x": 9.1,
+            "y": -2.0477
+          },
+          {
+            "x": 9.3,
+            "y": -1.9267
+          },
+          {
+            "x": 9.5,
+            "y": -1.9151
+          },
+          {
+            "x": 9.7,
+            "y": -2.1938
+          },
+          {
+            "x": 9.9,
+            "y": -2.1525
+          },
+          {
+            "x": 10.1,
+            "y": -2.2396
+          },
+          {
+            "x": 10.3,
+            "y": -2.3809
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Solid segment only of the curve in Furlong et al. 2015 Fig. 2 panel 3 (z=1.0): bins with >=100 baryonic particles and >=10 galaxies; the dotted (<100 particles) and dashed (<10 galaxies) segments are omitted. Vertices are the plotted 0.2 dex bin centres; the paper gives no table for these curves."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Furlong et al. 2015, MNRAS 450, 4486, Fig. 2 (arXiv source numbering) panel 3",
+        "doi": "10.1093/mnras/stv852",
+        "url": "https://arxiv.org/abs/1410.3485",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 2",
+        "panel": "panel 3 (z=1.0)",
+        "checksumSha256": "a43c5fb814756658ee5de34b5494bc28dbaa86b240547c4e0456d6432765add5",
+        "sourceMember": "smf9.pdf (solid Recal-L025N0752 line, 3 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: page pt from labelled ticks 7-12 (34.93 pt/dex); y: ticks -1..-6 (34.93 pt/dex); panels share axes, offset by frame origin; labels asserted per panel",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "furlong15.eagle-ref.gsmf.z2",
+      "source": "EAGLE",
+      "run": "Ref-L100N1504",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 2,
+        "zMax": 2,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy number density per dex, dn/dlog10(M*)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.5,
+        "xMax": 11.1
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.5,
+            "y": -1.6034
+          },
+          {
+            "x": 8.7,
+            "y": -1.7265
+          },
+          {
+            "x": 8.9,
+            "y": -1.8561
+          },
+          {
+            "x": 9.1,
+            "y": -1.9672
+          },
+          {
+            "x": 9.3,
+            "y": -2.0817
+          },
+          {
+            "x": 9.5,
+            "y": -2.2332
+          },
+          {
+            "x": 9.7,
+            "y": -2.3825
+          },
+          {
+            "x": 9.9,
+            "y": -2.499
+          },
+          {
+            "x": 10.1,
+            "y": -2.4935
+          },
+          {
+            "x": 10.3,
+            "y": -2.6747
+          },
+          {
+            "x": 10.5,
+            "y": -2.8432
+          },
+          {
+            "x": 10.7,
+            "y": -3.248
+          },
+          {
+            "x": 10.9,
+            "y": -3.5768
+          },
+          {
+            "x": 11.1,
+            "y": -4.1871
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Solid segment only of the curve in Furlong et al. 2015 Fig. 2 panel 4 (z=2.0): bins with >=100 baryonic particles and >=10 galaxies; the dotted (<100 particles) and dashed (<10 galaxies) segments are omitted. Vertices are the plotted 0.2 dex bin centres; the paper gives no table for these curves."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Furlong et al. 2015, MNRAS 450, 4486, Fig. 2 (arXiv source numbering) panel 4",
+        "doi": "10.1093/mnras/stv852",
+        "url": "https://arxiv.org/abs/1410.3485",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 2",
+        "panel": "panel 4 (z=2.0)",
+        "checksumSha256": "a43c5fb814756658ee5de34b5494bc28dbaa86b240547c4e0456d6432765add5",
+        "sourceMember": "smf9.pdf (solid Ref-L100N1504 line, 3 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: page pt from labelled ticks 7-12 (34.93 pt/dex); y: ticks -1..-6 (34.93 pt/dex); panels share axes, offset by frame origin; labels asserted per panel",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "furlong15.eagle-recal.gsmf.z2",
+      "source": "EAGLE",
+      "run": "Recal-L025N0752",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 2,
+        "zMax": 2,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy number density per dex, dn/dlog10(M*)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.7,
+        "xMax": 10.1
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.7,
+            "y": -1.2004
+          },
+          {
+            "x": 7.9,
+            "y": -1.2827
+          },
+          {
+            "x": 8.1,
+            "y": -1.4737
+          },
+          {
+            "x": 8.3,
+            "y": -1.5504
+          },
+          {
+            "x": 8.5,
+            "y": -1.7167
+          },
+          {
+            "x": 8.7,
+            "y": -1.9038
+          },
+          {
+            "x": 8.9,
+            "y": -1.8614
+          },
+          {
+            "x": 9.1,
+            "y": -2.0178
+          },
+          {
+            "x": 9.3,
+            "y": -2.1147
+          },
+          {
+            "x": 9.5,
+            "y": -2.0969
+          },
+          {
+            "x": 9.7,
+            "y": -2.4157
+          },
+          {
+            "x": 10.1,
+            "y": -2.3487
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Solid segment only of the curve in Furlong et al. 2015 Fig. 2 panel 4 (z=2.0): bins with >=100 baryonic particles and >=10 galaxies; the dotted (<100 particles) and dashed (<10 galaxies) segments are omitted. Vertices are the plotted 0.2 dex bin centres; the paper gives no table for these curves."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Furlong et al. 2015, MNRAS 450, 4486, Fig. 2 (arXiv source numbering) panel 4",
+        "doi": "10.1093/mnras/stv852",
+        "url": "https://arxiv.org/abs/1410.3485",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 2",
+        "panel": "panel 4 (z=2.0)",
+        "checksumSha256": "a43c5fb814756658ee5de34b5494bc28dbaa86b240547c4e0456d6432765add5",
+        "sourceMember": "smf9.pdf (solid Recal-L025N0752 line, 3 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: page pt from labelled ticks 7-12 (34.93 pt/dex); y: ticks -1..-6 (34.93 pt/dex); panels share axes, offset by frame origin; labels asserted per panel",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "furlong15.eagle-ref.gsmf.z3",
+      "source": "EAGLE",
+      "run": "Ref-L100N1504",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 3,
+        "zNominal": 3,
+        "zMin": 3,
+        "zMax": 3,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy number density per dex, dn/dlog10(M*)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.5,
+        "xMax": 10.9
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.5,
+            "y": -1.7832
+          },
+          {
+            "x": 8.7,
+            "y": -1.9158
+          },
+          {
+            "x": 8.9,
+            "y": -2.0633
+          },
+          {
+            "x": 9.1,
+            "y": -2.2172
+          },
+          {
+            "x": 9.3,
+            "y": -2.3655
+          },
+          {
+            "x": 9.5,
+            "y": -2.5295
+          },
+          {
+            "x": 9.7,
+            "y": -2.7496
+          },
+          {
+            "x": 9.9,
+            "y": -2.7305
+          },
+          {
+            "x": 10.1,
+            "y": -2.8554
+          },
+          {
+            "x": 10.3,
+            "y": -3.0889
+          },
+          {
+            "x": 10.5,
+            "y": -3.3872
+          },
+          {
+            "x": 10.7,
+            "y": -3.757
+          },
+          {
+            "x": 10.9,
+            "y": -4.2596
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Solid segment only of the curve in Furlong et al. 2015 Fig. 2 panel 5 (z=3.0): bins with >=100 baryonic particles and >=10 galaxies; the dotted (<100 particles) and dashed (<10 galaxies) segments are omitted. Vertices are the plotted 0.2 dex bin centres; the paper gives no table for these curves."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Furlong et al. 2015, MNRAS 450, 4486, Fig. 2 (arXiv source numbering) panel 5",
+        "doi": "10.1093/mnras/stv852",
+        "url": "https://arxiv.org/abs/1410.3485",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 2",
+        "panel": "panel 5 (z=3.0)",
+        "checksumSha256": "a43c5fb814756658ee5de34b5494bc28dbaa86b240547c4e0456d6432765add5",
+        "sourceMember": "smf9.pdf (solid Ref-L100N1504 line, 3 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: page pt from labelled ticks 7-12 (34.93 pt/dex); y: ticks -1..-6 (34.93 pt/dex); panels share axes, offset by frame origin; labels asserted per panel",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "furlong15.eagle-recal.gsmf.z3",
+      "source": "EAGLE",
+      "run": "Recal-L025N0752",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 3,
+        "zNominal": 3,
+        "zMin": 3,
+        "zMax": 3,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy number density per dex, dn/dlog10(M*)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.7,
+        "xMax": 9.3
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.7,
+            "y": -1.3365
+          },
+          {
+            "x": 7.9,
+            "y": -1.4737
+          },
+          {
+            "x": 8.1,
+            "y": -1.6376
+          },
+          {
+            "x": 8.3,
+            "y": -1.7167
+          },
+          {
+            "x": 8.5,
+            "y": -1.8047
+          },
+          {
+            "x": 8.7,
+            "y": -2.0178
+          },
+          {
+            "x": 8.9,
+            "y": -1.9764
+          },
+          {
+            "x": 9.1,
+            "y": -2.0969
+          },
+          {
+            "x": 9.3,
+            "y": -2.4157
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Solid segment only of the curve in Furlong et al. 2015 Fig. 2 panel 5 (z=3.0): bins with >=100 baryonic particles and >=10 galaxies; the dotted (<100 particles) and dashed (<10 galaxies) segments are omitted. Vertices are the plotted 0.2 dex bin centres; the paper gives no table for these curves."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Furlong et al. 2015, MNRAS 450, 4486, Fig. 2 (arXiv source numbering) panel 5",
+        "doi": "10.1093/mnras/stv852",
+        "url": "https://arxiv.org/abs/1410.3485",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 2",
+        "panel": "panel 5 (z=3.0)",
+        "checksumSha256": "a43c5fb814756658ee5de34b5494bc28dbaa86b240547c4e0456d6432765add5",
+        "sourceMember": "smf9.pdf (solid Recal-L025N0752 line, 3 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: page pt from labelled ticks 7-12 (34.93 pt/dex); y: ticks -1..-6 (34.93 pt/dex); panels share axes, offset by frame origin; labels asserted per panel",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "furlong15.eagle-ref.gsmf.z4",
+      "source": "EAGLE",
+      "run": "Ref-L100N1504",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 4,
+        "zNominal": 4,
+        "zMin": 4,
+        "zMax": 4,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy number density per dex, dn/dlog10(M*)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.5,
+        "xMax": 10.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.5,
+            "y": -1.9974
+          },
+          {
+            "x": 8.7,
+            "y": -2.1653
+          },
+          {
+            "x": 8.9,
+            "y": -2.3344
+          },
+          {
+            "x": 9.1,
+            "y": -2.5052
+          },
+          {
+            "x": 9.3,
+            "y": -2.682
+          },
+          {
+            "x": 9.5,
+            "y": -2.9547
+          },
+          {
+            "x": 9.7,
+            "y": -3.0706
+          },
+          {
+            "x": 9.9,
+            "y": -3.1051
+          },
+          {
+            "x": 10.1,
+            "y": -3.2717
+          },
+          {
+            "x": 10.3,
+            "y": -3.5452
+          },
+          {
+            "x": 10.5,
+            "y": -3.9788
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Solid segment only of the curve in Furlong et al. 2015 Fig. 2 panel 6 (z=4.0): bins with >=100 baryonic particles and >=10 galaxies; the dotted (<100 particles) and dashed (<10 galaxies) segments are omitted. Vertices are the plotted 0.2 dex bin centres; the paper gives no table for these curves."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Furlong et al. 2015, MNRAS 450, 4486, Fig. 2 (arXiv source numbering) panel 6",
+        "doi": "10.1093/mnras/stv852",
+        "url": "https://arxiv.org/abs/1410.3485",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 2",
+        "panel": "panel 6 (z=4.0)",
+        "checksumSha256": "a43c5fb814756658ee5de34b5494bc28dbaa86b240547c4e0456d6432765add5",
+        "sourceMember": "smf9.pdf (solid Ref-L100N1504 line, 3 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: page pt from labelled ticks 7-12 (34.93 pt/dex); y: ticks -1..-6 (34.93 pt/dex); panels share axes, offset by frame origin; labels asserted per panel",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "furlong15.eagle-recal.gsmf.z4",
+      "source": "EAGLE",
+      "run": "Recal-L025N0752",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 4,
+        "zNominal": 4,
+        "zMin": 4,
+        "zMax": 4,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy number density per dex, dn/dlog10(M*)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.7,
+        "xMax": 9.1
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.7,
+            "y": -1.5311
+          },
+          {
+            "x": 7.9,
+            "y": -1.6436
+          },
+          {
+            "x": 8.1,
+            "y": -1.8417
+          },
+          {
+            "x": 8.3,
+            "y": -1.8821
+          },
+          {
+            "x": 8.5,
+            "y": -2.0035
+          },
+          {
+            "x": 8.7,
+            "y": -2.1727
+          },
+          {
+            "x": 8.9,
+            "y": -2.3809
+          },
+          {
+            "x": 9.1,
+            "y": -2.3809
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Solid segment only of the curve in Furlong et al. 2015 Fig. 2 panel 6 (z=4.0): bins with >=100 baryonic particles and >=10 galaxies; the dotted (<100 particles) and dashed (<10 galaxies) segments are omitted. Vertices are the plotted 0.2 dex bin centres; the paper gives no table for these curves."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Furlong et al. 2015, MNRAS 450, 4486, Fig. 2 (arXiv source numbering) panel 6",
+        "doi": "10.1093/mnras/stv852",
+        "url": "https://arxiv.org/abs/1410.3485",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 2",
+        "panel": "panel 6 (z=4.0)",
+        "checksumSha256": "a43c5fb814756658ee5de34b5494bc28dbaa86b240547c4e0456d6432765add5",
+        "sourceMember": "smf9.pdf (solid Recal-L025N0752 line, 3 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: page pt from labelled ticks 7-12 (34.93 pt/dex); y: ticks -1..-6 (34.93 pt/dex); panels share axes, offset by frame origin; labels asserted per panel",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "furlong15.eagle-ref.gsmf.z5",
+      "source": "EAGLE",
+      "run": "Ref-L100N1504",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy number density per dex, dn/dlog10(M*)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.5,
+        "xMax": 10.3
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.5,
+            "y": -2.2972
+          },
+          {
+            "x": 8.7,
+            "y": -2.4828
+          },
+          {
+            "x": 8.9,
+            "y": -2.7012
+          },
+          {
+            "x": 9.1,
+            "y": -2.9263
+          },
+          {
+            "x": 9.3,
+            "y": -3.2636
+          },
+          {
+            "x": 9.5,
+            "y": -3.3516
+          },
+          {
+            "x": 9.7,
+            "y": -3.3615
+          },
+          {
+            "x": 9.9,
+            "y": -3.5528
+          },
+          {
+            "x": 10.1,
+            "y": -3.7959
+          },
+          {
+            "x": 10.3,
+            "y": -4.1871
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Solid segment only of the curve in Furlong et al. 2015 Fig. 2 panel 7 (z=5.0): bins with >=100 baryonic particles and >=10 galaxies; the dotted (<100 particles) and dashed (<10 galaxies) segments are omitted. Vertices are the plotted 0.2 dex bin centres; the paper gives no table for these curves."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Furlong et al. 2015, MNRAS 450, 4486, Fig. 2 (arXiv source numbering) panel 7",
+        "doi": "10.1093/mnras/stv852",
+        "url": "https://arxiv.org/abs/1410.3485",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 2",
+        "panel": "panel 7 (z=5.0)",
+        "checksumSha256": "a43c5fb814756658ee5de34b5494bc28dbaa86b240547c4e0456d6432765add5",
+        "sourceMember": "smf9.pdf (solid Ref-L100N1504 line, 3 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: page pt from labelled ticks 7-12 (34.93 pt/dex); y: ticks -1..-6 (34.93 pt/dex); panels share axes, offset by frame origin; labels asserted per panel",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "furlong15.eagle-recal.gsmf.z5",
+      "source": "EAGLE",
+      "run": "Recal-L025N0752",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy number density per dex, dn/dlog10(M*)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.7,
+        "xMax": 8.7
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.7,
+            "y": -1.6955
+          },
+          {
+            "x": 7.9,
+            "y": -1.7873
+          },
+          {
+            "x": 8.1,
+            "y": -1.9897
+          },
+          {
+            "x": 8.3,
+            "y": -2.2396
+          },
+          {
+            "x": 8.5,
+            "y": -2.2908
+          },
+          {
+            "x": 8.7,
+            "y": -2.4157
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Solid segment only of the curve in Furlong et al. 2015 Fig. 2 panel 7 (z=5.0): bins with >=100 baryonic particles and >=10 galaxies; the dotted (<100 particles) and dashed (<10 galaxies) segments are omitted. Vertices are the plotted 0.2 dex bin centres; the paper gives no table for these curves."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Furlong et al. 2015, MNRAS 450, 4486, Fig. 2 (arXiv source numbering) panel 7",
+        "doi": "10.1093/mnras/stv852",
+        "url": "https://arxiv.org/abs/1410.3485",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 2",
+        "panel": "panel 7 (z=5.0)",
+        "checksumSha256": "a43c5fb814756658ee5de34b5494bc28dbaa86b240547c4e0456d6432765add5",
+        "sourceMember": "smf9.pdf (solid Recal-L025N0752 line, 3 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: page pt from labelled ticks 7-12 (34.93 pt/dex); y: ticks -1..-6 (34.93 pt/dex); panels share axes, offset by frame origin; labels asserted per panel",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "furlong15.eagle-ref.gsmf.z6",
+      "source": "EAGLE",
+      "run": "Ref-L100N1504",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy number density per dex, dn/dlog10(M*)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.5,
+        "xMax": 9.9
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.5,
+            "y": -2.6082
+          },
+          {
+            "x": 8.7,
+            "y": -2.8617
+          },
+          {
+            "x": 8.9,
+            "y": -3.0862
+          },
+          {
+            "x": 9.1,
+            "y": -3.3872
+          },
+          {
+            "x": 9.3,
+            "y": -3.4881
+          },
+          {
+            "x": 9.5,
+            "y": -3.6882
+          },
+          {
+            "x": 9.7,
+            "y": -3.757
+          },
+          {
+            "x": 9.9,
+            "y": -4.1549
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Solid segment only of the curve in Furlong et al. 2015 Fig. 2 panel 8 (z=6.0): bins with >=100 baryonic particles and >=10 galaxies; the dotted (<100 particles) and dashed (<10 galaxies) segments are omitted. Vertices are the plotted 0.2 dex bin centres; the paper gives no table for these curves."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Furlong et al. 2015, MNRAS 450, 4486, Fig. 2 (arXiv source numbering) panel 8",
+        "doi": "10.1093/mnras/stv852",
+        "url": "https://arxiv.org/abs/1410.3485",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 2",
+        "panel": "panel 8 (z=6.0)",
+        "checksumSha256": "a43c5fb814756658ee5de34b5494bc28dbaa86b240547c4e0456d6432765add5",
+        "sourceMember": "smf9.pdf (solid Ref-L100N1504 line, 3 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: page pt from labelled ticks 7-12 (34.93 pt/dex); y: ticks -1..-6 (34.93 pt/dex); panels share axes, offset by frame origin; labels asserted per panel",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "furlong15.eagle-ref.gsmf.z7",
+      "source": "EAGLE",
+      "run": "Ref-L100N1504",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy number density per dex, dn/dlog10(M*)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.5,
+        "xMax": 9.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.5,
+            "y": -3.0246
+          },
+          {
+            "x": 8.7,
+            "y": -3.301
+          },
+          {
+            "x": 8.9,
+            "y": -3.6576
+          },
+          {
+            "x": 9.1,
+            "y": -3.757
+          },
+          {
+            "x": 9.3,
+            "y": -3.8386
+          },
+          {
+            "x": 9.5,
+            "y": -4.1249
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Solid segment only of the curve in Furlong et al. 2015 Fig. 2 panel 9 (z=7.0): bins with >=100 baryonic particles and >=10 galaxies; the dotted (<100 particles) and dashed (<10 galaxies) segments are omitted. Vertices are the plotted 0.2 dex bin centres; the paper gives no table for these curves."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Furlong et al. 2015, MNRAS 450, 4486, Fig. 2 (arXiv source numbering) panel 9",
+        "doi": "10.1093/mnras/stv852",
+        "url": "https://arxiv.org/abs/1410.3485",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 2",
+        "panel": "panel 9 (z=7.0)",
+        "checksumSha256": "a43c5fb814756658ee5de34b5494bc28dbaa86b240547c4e0456d6432765add5",
+        "sourceMember": "smf9.pdf (solid Ref-L100N1504 line, 3 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: page pt from labelled ticks 7-12 (34.93 pt/dex); y: ticks -1..-6 (34.93 pt/dex); panels share axes, offset by frame origin; labels asserted per panel",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

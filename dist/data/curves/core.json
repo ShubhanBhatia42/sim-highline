@@ -1,0 +1,409 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "speagle14.sfms.evolution",
+      "source": "Speagle et al. 2014",
+      "run": null,
+      "kind": "observation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 0,
+        "zMin": 0,
+        "zMax": 6,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass, Kroupa IMF",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 star-formation rate",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 9,
+        "xMax": 11.5
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "y=(0.84-0.026*t)*x-(6.51-0.11*t)",
+        "parameters": {
+          "cosmicAgeGyr": "computed at selected redshift"
+        },
+        "expression": "(0.84-0.026*t)*x-(6.51-0.11*t)",
+        "ageCosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
+      },
+      "scatter": {
+        "value": 0.2,
+        "unit": "dex",
+        "meaning": "approximate inter-study-corrected scatter"
+      },
+      "selection": {
+        "population": "star-forming",
+        "warning": "Compilation combines heterogeneous SFR indicators and effective timescales."
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Speagle et al. 2014, ApJS 214, 15",
+        "doi": "10.1088/0067-0049/214/2/15",
+        "url": "https://arxiv.org/abs/1405.2041",
+        "retrieved": "2026-09-30"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Analytic redshift evolution; display the equation rather than interpolating unrelated epoch curves.",
+      "definitions": {
+        "massDefinition": "sed-total",
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "population": "star-forming",
+        "sfrTimescaleMyr": "heterogeneous",
+        "sfrStatistic": "unspecified"
+      }
+    },
+    {
+      "id": "lelli19.btfr.z0",
+      "source": "SPARC / Lelli et al. 2019",
+      "run": null,
+      "kind": "observation",
+      "relation": "btfr",
+      "epoch": {
+        "zRepresentative": 0,
+        "zMin": 0,
+        "zMax": 0.05,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 mean velocity on flat rotation-curve portion",
+        "xUnit": "log10(km/s)",
+        "yDefinition": "log10 baryonic mass",
+        "yUnit": "log10(Msun)"
+      },
+      "domain": {
+        "xMin": 1.25,
+        "xMax": 2.75
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "y=a*x+b",
+        "parameters": {
+          "slope": 3.85,
+          "slopeError": 0.09,
+          "intercept": 2.01
+        },
+        "expression": "slope*x+intercept"
+      },
+      "scatter": {
+        "value": 0.026,
+        "unit": "dex",
+        "meaning": "approximately 6 percent orthogonal intrinsic scatter"
+      },
+      "selection": {
+        "population": "153 rotationally supported SPARC disks",
+        "velocity": "Vflat"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Lelli, McGaugh & Schombert 2019",
+        "doi": "10.1093/mnras/stz205",
+        "url": "https://arxiv.org/abs/1901.05966",
+        "retrieved": "2026-09-30"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Do not compare directly with Vmax, V2.2 or integrated linewidth relations.",
+      "definitions": {
+        "massDefinition": "stars-plus-atomic-gas",
+        "velocityDefinition": "vflat"
+      }
+    },
+    {
+      "id": "kormendyho13.bhsigma.z0",
+      "source": "Kormendy & Ho 2013",
+      "run": null,
+      "kind": "observation",
+      "relation": "bhsigma",
+      "epoch": {
+        "zRepresentative": 0,
+        "zMin": 0,
+        "zMax": 0.01,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar velocity dispersion",
+        "xUnit": "log10(km/s)",
+        "yDefinition": "log10 dynamical black-hole mass",
+        "yUnit": "log10(Msun)"
+      },
+      "domain": {
+        "xMin": 1.7,
+        "xMax": 2.55
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "y=log10(0.309e9)+4.38*(x-log10(200))",
+        "parameters": {
+          "normalizationAt200": 8.49,
+          "slope": 4.38
+        },
+        "expression": "normalizationAt200+slope*(x-log10(200))"
+      },
+      "scatter": {
+        "value": 0.29,
+        "unit": "dex",
+        "meaning": "intrinsic scatter"
+      },
+      "selection": {
+        "population": "classical bulges and ellipticals",
+        "excludes": "pseudobulges from primary fit"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Kormendy & Ho 2013, ARA&A 51, 511",
+        "doi": "10.1146/annurev-astro-082708-101811",
+        "url": "https://arxiv.org/abs/1304.7762",
+        "retrieved": "2026-09-30"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Dynamical detections are heterogeneous and resolution-selected.",
+      "definitions": {
+        "sigmaDefinition": "sigma-e",
+        "bhMassMethod": "dynamical",
+        "population": "classical-bulges-and-ellipticals"
+      }
+    },
+    {
+      "id": "stott13.size.sf.z040",
+      "source": "Stott et al. 2013",
+      "run": null,
+      "kind": "observation",
+      "relation": "size",
+      "epoch": {
+        "zRepresentative": 0.4,
+        "zMin": 0.3,
+        "zMax": 0.5,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 effective half-light radius",
+        "yUnit": "log10(kpc)"
+      },
+      "domain": {
+        "xMin": 9,
+        "xMax": 11.2
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "y=a*(x-10)+b",
+        "parameters": {
+          "slope": 0.08,
+          "slopeError": 0.02,
+          "intercept": 0.55,
+          "interceptError": 0.03
+        },
+        "expression": "slope*(x-10)+intercept"
+      },
+      "scatter": null,
+      "selection": {
+        "population": "H-alpha selected star-forming galaxies",
+        "size": "rest-frame optical effective half-light radius"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Stott et al. 2013, MNRAS 430, 1158, Table 1",
+        "doi": "10.1093/mnras/sts684",
+        "url": "https://www.roe.ac.uk/~pnb/papers/hizels_stott.pdf",
+        "retrieved": "2026-10-02"
+      },
+      "calibration": "validation",
+      "rankable": false,
+      "notes": "Published fit, not digitized. Context only against stellar half-mass radii because size definition and population selection differ.",
+      "definitions": {
+        "sizeDefinition": "optical-half-light",
+        "population": "halpha-star-forming",
+        "imf": "unspecified",
+        "massDefinition": "sed-total"
+      }
+    },
+    {
+      "id": "stott13.size.sf.z084",
+      "source": "Stott et al. 2013",
+      "run": null,
+      "kind": "observation",
+      "relation": "size",
+      "epoch": {
+        "zRepresentative": 0.84,
+        "zMin": 0.74,
+        "zMax": 0.94,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 effective half-light radius",
+        "yUnit": "log10(kpc)"
+      },
+      "domain": {
+        "xMin": 9,
+        "xMax": 11.2
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "y=a*(x-10)+b",
+        "parameters": {
+          "slope": 0.03,
+          "slopeError": 0.02,
+          "intercept": 0.54,
+          "interceptError": 0.01
+        },
+        "expression": "slope*(x-10)+intercept"
+      },
+      "scatter": null,
+      "selection": {
+        "population": "H-alpha selected star-forming galaxies",
+        "size": "rest-frame optical effective half-light radius"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Stott et al. 2013, MNRAS 430, 1158, Table 1",
+        "doi": "10.1093/mnras/sts684",
+        "url": "https://www.roe.ac.uk/~pnb/papers/hizels_stott.pdf",
+        "retrieved": "2026-10-02"
+      },
+      "calibration": "validation",
+      "rankable": false,
+      "notes": "Published fit; context only because definitions differ.",
+      "definitions": {
+        "sizeDefinition": "optical-half-light",
+        "population": "halpha-star-forming",
+        "imf": "unspecified",
+        "massDefinition": "sed-total"
+      }
+    },
+    {
+      "id": "stott13.size.sf.z147",
+      "source": "Stott et al. 2013",
+      "run": null,
+      "kind": "observation",
+      "relation": "size",
+      "epoch": {
+        "zRepresentative": 1.47,
+        "zMin": 1.37,
+        "zMax": 1.57,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 effective half-light radius",
+        "yUnit": "log10(kpc)"
+      },
+      "domain": {
+        "xMin": 9,
+        "xMax": 11.2
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "y=a*(x-10)+b",
+        "parameters": {
+          "slope": 0.03,
+          "slopeError": 0.02,
+          "intercept": 0.59,
+          "interceptError": 0.01
+        },
+        "expression": "slope*(x-10)+intercept"
+      },
+      "scatter": null,
+      "selection": {
+        "population": "H-alpha selected star-forming galaxies",
+        "size": "rest-frame optical effective half-light radius"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Stott et al. 2013, MNRAS 430, 1158, Table 1",
+        "doi": "10.1093/mnras/sts684",
+        "url": "https://www.roe.ac.uk/~pnb/papers/hizels_stott.pdf",
+        "retrieved": "2026-10-02"
+      },
+      "calibration": "validation",
+      "rankable": false,
+      "notes": "Published fit; context only because definitions differ.",
+      "definitions": {
+        "sizeDefinition": "optical-half-light",
+        "population": "halpha-star-forming",
+        "imf": "unspecified",
+        "massDefinition": "sed-total"
+      }
+    },
+    {
+      "id": "stott13.size.sf.z223",
+      "source": "Stott et al. 2013",
+      "run": null,
+      "kind": "observation",
+      "relation": "size",
+      "epoch": {
+        "zRepresentative": 2.23,
+        "zMin": 2.13,
+        "zMax": 2.33,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 effective half-light radius",
+        "yUnit": "log10(kpc)"
+      },
+      "domain": {
+        "xMin": 9,
+        "xMax": 11.2
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "y=a*(x-10)+b",
+        "parameters": {
+          "slope": 0.08,
+          "slopeError": 0.03,
+          "intercept": 0.51,
+          "interceptError": 0.02
+        },
+        "expression": "slope*(x-10)+intercept"
+      },
+      "scatter": null,
+      "selection": {
+        "population": "H-alpha selected star-forming galaxies",
+        "size": "rest-frame optical effective half-light radius"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Stott et al. 2013, MNRAS 430, 1158, Table 1",
+        "doi": "10.1093/mnras/sts684",
+        "url": "https://www.roe.ac.uk/~pnb/papers/hizels_stott.pdf",
+        "retrieved": "2026-10-02"
+      },
+      "calibration": "validation",
+      "rankable": false,
+      "notes": "Published fit; context only because definitions differ.",
+      "definitions": {
+        "sizeDefinition": "optical-half-light",
+        "population": "halpha-star-forming",
+        "imf": "unspecified",
+        "massDefinition": "sed-total"
+      }
+    }
+  ]
+}

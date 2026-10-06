@@ -1,0 +1,733 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "genel15.illustris.jstar.all.z0",
+      "source": "Illustris",
+      "run": "Illustris-1 (all galaxies)",
+      "kind": "simulation",
+      "relation": "jstar",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 logarithmic mean stellar specific angular momentum j* [kpc km/s]",
+        "yUnit": "log10(kpc km/s)"
+      },
+      "domain": {
+        "xMin": 9.182,
+        "xMax": 12.3
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.182,
+            "y": 2.1557
+          },
+          {
+            "x": 9.534,
+            "y": 2.2827
+          },
+          {
+            "x": 9.885,
+            "y": 2.4453
+          },
+          {
+            "x": 10.236,
+            "y": 2.6346
+          },
+          {
+            "x": 10.588,
+            "y": 2.798
+          },
+          {
+            "x": 10.939,
+            "y": 2.9622
+          },
+          {
+            "x": 11.291,
+            "y": 3.1758
+          },
+          {
+            "x": 11.642,
+            "y": 3.3305
+          },
+          {
+            "x": 11.993,
+            "y": 3.6411
+          },
+          {
+            "x": 12.3,
+            "y": 3.8065
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "Illustris galaxies, all",
+        "warning": "Logarithmic mean j* (all) of Illustris galaxies at z=0, read from the vector paths of Genel et al. 2015; no table exists. The paper states the median curves are essentially indistinguishable from the means. The Fall and Romanowsky 2013 observed relations, the grey full distribution and the visually classified galaxies (squares) are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "massDefinition": "unspecified",
+        "population": "all",
+        "jDefinition": "unspecified (stellar j* of Illustris galaxies)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2015, ApJ 804, L40 (arXiv:1503.01117), stellar specific angular momentum versus stellar mass, z=0",
+        "doi": "10.1088/2041-8205/804/2/L40",
+        "url": "https://arxiv.org/abs/1503.01117",
+        "retrieved": "2026-10-05",
+        "figure": "z=0 relation between stellar specific angular momentum and stellar mass",
+        "panel": "z=0",
+        "checksumSha256": "0d32edb7f4b4633c1195834cef1b41c9202dd308f9eb15cee68d3422f7860c2b",
+        "sourceMember": "f1.eps (converted to PDF)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels of each panel; y: numeric tick labels of the left panel (shared axis, panel extents asserted equal)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel15.illustris.jstar.flat.z0",
+      "source": "Illustris",
+      "run": "Illustris-1 (extreme axial ratio: flat)",
+      "kind": "simulation",
+      "relation": "jstar",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 logarithmic mean stellar specific angular momentum j* [kpc km/s]",
+        "yUnit": "log10(kpc km/s)"
+      },
+      "domain": {
+        "xMin": 9.159,
+        "xMax": 11.681
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.159,
+            "y": 2.6498
+          },
+          {
+            "x": 9.439,
+            "y": 2.7644
+          },
+          {
+            "x": 9.719,
+            "y": 2.8592
+          },
+          {
+            "x": 10,
+            "y": 2.9708
+          },
+          {
+            "x": 10.28,
+            "y": 3.0671
+          },
+          {
+            "x": 10.56,
+            "y": 3.156
+          },
+          {
+            "x": 10.84,
+            "y": 3.2094
+          },
+          {
+            "x": 11.121,
+            "y": 3.2822
+          },
+          {
+            "x": 11.401,
+            "y": 3.4406
+          },
+          {
+            "x": 11.681,
+            "y": 3.5087
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "Illustris galaxies, selected on axial ratio (flat)",
+        "warning": "Logarithmic mean j* (selected on axial ratio (flat)) of Illustris galaxies at z=0, read from the vector paths of Genel et al. 2015; no table exists. The paper states the median curves are essentially indistinguishable from the means. The Fall and Romanowsky 2013 observed relations, the grey full distribution and the visually classified galaxies (squares) are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "massDefinition": "unspecified",
+        "population": "all",
+        "jDefinition": "unspecified (stellar j* of Illustris galaxies)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2015, ApJ 804, L40 (arXiv:1503.01117), stellar specific angular momentum versus stellar mass, z=0",
+        "doi": "10.1088/2041-8205/804/2/L40",
+        "url": "https://arxiv.org/abs/1503.01117",
+        "retrieved": "2026-10-05",
+        "figure": "z=0 relation between stellar specific angular momentum and stellar mass",
+        "panel": "z=0",
+        "checksumSha256": "0d32edb7f4b4633c1195834cef1b41c9202dd308f9eb15cee68d3422f7860c2b",
+        "sourceMember": "f1.eps (converted to PDF)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels of each panel; y: numeric tick labels of the left panel (shared axis, panel extents asserted equal)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel15.illustris.jstar.round.z0",
+      "source": "Illustris",
+      "run": "Illustris-1 (extreme axial ratio: round)",
+      "kind": "simulation",
+      "relation": "jstar",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 logarithmic mean stellar specific angular momentum j* [kpc km/s]",
+        "yUnit": "log10(kpc km/s)"
+      },
+      "domain": {
+        "xMin": 9.177,
+        "xMax": 11.846
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.177,
+            "y": 1.6606
+          },
+          {
+            "x": 9.474,
+            "y": 1.7986
+          },
+          {
+            "x": 9.77,
+            "y": 1.8962
+          },
+          {
+            "x": 10.067,
+            "y": 2.0344
+          },
+          {
+            "x": 10.363,
+            "y": 2.2019
+          },
+          {
+            "x": 10.66,
+            "y": 2.415
+          },
+          {
+            "x": 10.956,
+            "y": 2.7264
+          },
+          {
+            "x": 11.253,
+            "y": 2.7824
+          },
+          {
+            "x": 11.55,
+            "y": 3.0419
+          },
+          {
+            "x": 11.846,
+            "y": 3.7104
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "Illustris galaxies, selected on axial ratio (round)",
+        "warning": "Logarithmic mean j* (selected on axial ratio (round)) of Illustris galaxies at z=0, read from the vector paths of Genel et al. 2015; no table exists. The paper states the median curves are essentially indistinguishable from the means. The Fall and Romanowsky 2013 observed relations, the grey full distribution and the visually classified galaxies (squares) are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "massDefinition": "unspecified",
+        "population": "all",
+        "jDefinition": "unspecified (stellar j* of Illustris galaxies)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2015, ApJ 804, L40 (arXiv:1503.01117), stellar specific angular momentum versus stellar mass, z=0",
+        "doi": "10.1088/2041-8205/804/2/L40",
+        "url": "https://arxiv.org/abs/1503.01117",
+        "retrieved": "2026-10-05",
+        "figure": "z=0 relation between stellar specific angular momentum and stellar mass",
+        "panel": "z=0",
+        "checksumSha256": "0d32edb7f4b4633c1195834cef1b41c9202dd308f9eb15cee68d3422f7860c2b",
+        "sourceMember": "f1.eps (converted to PDF)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels of each panel; y: numeric tick labels of the left panel (shared axis, panel extents asserted equal)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel15.illustris.jstar.diffuse.z0",
+      "source": "Illustris",
+      "run": "Illustris-1 (extreme morphology: diffuse)",
+      "kind": "simulation",
+      "relation": "jstar",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 logarithmic mean stellar specific angular momentum j* [kpc km/s]",
+        "yUnit": "log10(kpc km/s)"
+      },
+      "domain": {
+        "xMin": 9.762,
+        "xMax": 11.163
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.762,
+            "y": 2.7564
+          },
+          {
+            "x": 9.918,
+            "y": 2.7652
+          },
+          {
+            "x": 10.074,
+            "y": 2.8011
+          },
+          {
+            "x": 10.229,
+            "y": 2.8621
+          },
+          {
+            "x": 10.385,
+            "y": 2.9089
+          },
+          {
+            "x": 10.541,
+            "y": 2.9505
+          },
+          {
+            "x": 10.696,
+            "y": 3.0128
+          },
+          {
+            "x": 10.852,
+            "y": 3.1244
+          },
+          {
+            "x": 11.008,
+            "y": 3.1719
+          },
+          {
+            "x": 11.163,
+            "y": 3.34
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "Illustris galaxies, selected on morphology (diffuse)",
+        "warning": "Logarithmic mean j* (selected on morphology (diffuse)) of Illustris galaxies at z=0, read from the vector paths of Genel et al. 2015; no table exists. The paper states the median curves are essentially indistinguishable from the means. The Fall and Romanowsky 2013 observed relations, the grey full distribution and the visually classified galaxies (squares) are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "massDefinition": "unspecified",
+        "population": "all",
+        "jDefinition": "unspecified (stellar j* of Illustris galaxies)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2015, ApJ 804, L40 (arXiv:1503.01117), stellar specific angular momentum versus stellar mass, z=0",
+        "doi": "10.1088/2041-8205/804/2/L40",
+        "url": "https://arxiv.org/abs/1503.01117",
+        "retrieved": "2026-10-05",
+        "figure": "z=0 relation between stellar specific angular momentum and stellar mass",
+        "panel": "z=0",
+        "checksumSha256": "0d32edb7f4b4633c1195834cef1b41c9202dd308f9eb15cee68d3422f7860c2b",
+        "sourceMember": "f1.eps (converted to PDF)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels of each panel; y: numeric tick labels of the left panel (shared axis, panel extents asserted equal)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel15.illustris.jstar.concentrated.z0",
+      "source": "Illustris",
+      "run": "Illustris-1 (extreme morphology: concentrated)",
+      "kind": "simulation",
+      "relation": "jstar",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 logarithmic mean stellar specific angular momentum j* [kpc km/s]",
+        "yUnit": "log10(kpc km/s)"
+      },
+      "domain": {
+        "xMin": 9.858,
+        "xMax": 12.3
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.858,
+            "y": 2.3577
+          },
+          {
+            "x": 10.139,
+            "y": 2.5084
+          },
+          {
+            "x": 10.419,
+            "y": 2.7112
+          },
+          {
+            "x": 10.699,
+            "y": 2.8147
+          },
+          {
+            "x": 10.979,
+            "y": 2.9513
+          },
+          {
+            "x": 11.259,
+            "y": 3.1389
+          },
+          {
+            "x": 11.54,
+            "y": 3.3008
+          },
+          {
+            "x": 11.82,
+            "y": 3.4254
+          },
+          {
+            "x": 12.1,
+            "y": 3.7205
+          },
+          {
+            "x": 12.3,
+            "y": 3.854
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "Illustris galaxies, selected on morphology (concentrated)",
+        "warning": "Logarithmic mean j* (selected on morphology (concentrated)) of Illustris galaxies at z=0, read from the vector paths of Genel et al. 2015; no table exists. The paper states the median curves are essentially indistinguishable from the means. The Fall and Romanowsky 2013 observed relations, the grey full distribution and the visually classified galaxies (squares) are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "massDefinition": "unspecified",
+        "population": "all",
+        "jDefinition": "unspecified (stellar j* of Illustris galaxies)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2015, ApJ 804, L40 (arXiv:1503.01117), stellar specific angular momentum versus stellar mass, z=0",
+        "doi": "10.1088/2041-8205/804/2/L40",
+        "url": "https://arxiv.org/abs/1503.01117",
+        "retrieved": "2026-10-05",
+        "figure": "z=0 relation between stellar specific angular momentum and stellar mass",
+        "panel": "z=0",
+        "checksumSha256": "0d32edb7f4b4633c1195834cef1b41c9202dd308f9eb15cee68d3422f7860c2b",
+        "sourceMember": "f1.eps (converted to PDF)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels of each panel; y: numeric tick labels of the left panel (shared axis, panel extents asserted equal)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel15.illustris.jstar.star-forming.z0",
+      "source": "Illustris",
+      "run": "Illustris-1 (extreme sSFR: star-forming)",
+      "kind": "simulation",
+      "relation": "jstar",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 logarithmic mean stellar specific angular momentum j* [kpc km/s]",
+        "yUnit": "log10(kpc km/s)"
+      },
+      "domain": {
+        "xMin": 9.115,
+        "xMax": 11.073
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.115,
+            "y": 2.2304
+          },
+          {
+            "x": 9.333,
+            "y": 2.3228
+          },
+          {
+            "x": 9.55,
+            "y": 2.4261
+          },
+          {
+            "x": 9.768,
+            "y": 2.5359
+          },
+          {
+            "x": 9.986,
+            "y": 2.6279
+          },
+          {
+            "x": 10.203,
+            "y": 2.7674
+          },
+          {
+            "x": 10.421,
+            "y": 2.8633
+          },
+          {
+            "x": 10.638,
+            "y": 2.9559
+          },
+          {
+            "x": 10.856,
+            "y": 3.0266
+          },
+          {
+            "x": 11.073,
+            "y": 3.0372
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "Illustris galaxies, selected on specific SFR (star-forming)",
+        "warning": "Logarithmic mean j* (selected on specific SFR (star-forming)) of Illustris galaxies at z=0, read from the vector paths of Genel et al. 2015; no table exists. The paper states the median curves are essentially indistinguishable from the means. The Fall and Romanowsky 2013 observed relations, the grey full distribution and the visually classified galaxies (squares) are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "massDefinition": "unspecified",
+        "population": "all",
+        "jDefinition": "unspecified (stellar j* of Illustris galaxies)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2015, ApJ 804, L40 (arXiv:1503.01117), stellar specific angular momentum versus stellar mass, z=0",
+        "doi": "10.1088/2041-8205/804/2/L40",
+        "url": "https://arxiv.org/abs/1503.01117",
+        "retrieved": "2026-10-05",
+        "figure": "z=0 relation between stellar specific angular momentum and stellar mass",
+        "panel": "z=0",
+        "checksumSha256": "0d32edb7f4b4633c1195834cef1b41c9202dd308f9eb15cee68d3422f7860c2b",
+        "sourceMember": "f1.eps (converted to PDF)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels of each panel; y: numeric tick labels of the left panel (shared axis, panel extents asserted equal)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel15.illustris.jstar.quiescent.z0",
+      "source": "Illustris",
+      "run": "Illustris-1 (extreme sSFR: quiescent)",
+      "kind": "simulation",
+      "relation": "jstar",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 logarithmic mean stellar specific angular momentum j* [kpc km/s]",
+        "yUnit": "log10(kpc km/s)"
+      },
+      "domain": {
+        "xMin": 9.189,
+        "xMax": 12.3
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.189,
+            "y": 1.6442
+          },
+          {
+            "x": 9.54,
+            "y": 1.7788
+          },
+          {
+            "x": 9.89,
+            "y": 1.9235
+          },
+          {
+            "x": 10.241,
+            "y": 2.168
+          },
+          {
+            "x": 10.592,
+            "y": 2.5342
+          },
+          {
+            "x": 10.942,
+            "y": 2.8241
+          },
+          {
+            "x": 11.293,
+            "y": 3.1619
+          },
+          {
+            "x": 11.644,
+            "y": 3.325
+          },
+          {
+            "x": 11.995,
+            "y": 3.6411
+          },
+          {
+            "x": 12.3,
+            "y": 3.8062
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "Illustris galaxies, selected on specific SFR (quiescent)",
+        "warning": "Logarithmic mean j* (selected on specific SFR (quiescent)) of Illustris galaxies at z=0, read from the vector paths of Genel et al. 2015; no table exists. The paper states the median curves are essentially indistinguishable from the means. The Fall and Romanowsky 2013 observed relations, the grey full distribution and the visually classified galaxies (squares) are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "massDefinition": "unspecified",
+        "population": "all",
+        "jDefinition": "unspecified (stellar j* of Illustris galaxies)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2015, ApJ 804, L40 (arXiv:1503.01117), stellar specific angular momentum versus stellar mass, z=0",
+        "doi": "10.1088/2041-8205/804/2/L40",
+        "url": "https://arxiv.org/abs/1503.01117",
+        "retrieved": "2026-10-05",
+        "figure": "z=0 relation between stellar specific angular momentum and stellar mass",
+        "panel": "z=0",
+        "checksumSha256": "0d32edb7f4b4633c1195834cef1b41c9202dd308f9eb15cee68d3422f7860c2b",
+        "sourceMember": "f1.eps (converted to PDF)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels of each panel; y: numeric tick labels of the left panel (shared axis, panel extents asserted equal)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

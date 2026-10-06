@@ -1,0 +1,2573 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "donnari21.tng300.quenched-cent.z0.1",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (centrals)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.097,
+        "xMax": 11.891
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.097,
+            "y": 0.0557,
+            "yLow": 0.0541,
+            "yHigh": 0.0572
+          },
+          {
+            "x": 9.297,
+            "y": 0.0522,
+            "yLow": 0.0506,
+            "yHigh": 0.0537
+          },
+          {
+            "x": 9.497,
+            "y": 0.0457,
+            "yLow": 0.0442,
+            "yHigh": 0.0473
+          },
+          {
+            "x": 9.696,
+            "y": 0.0446,
+            "yLow": 0.043,
+            "yHigh": 0.0462
+          },
+          {
+            "x": 9.898,
+            "y": 0.0653,
+            "yLow": 0.0632,
+            "yHigh": 0.0674
+          },
+          {
+            "x": 10.097,
+            "y": 0.1591,
+            "yLow": 0.1554,
+            "yHigh": 0.1627
+          },
+          {
+            "x": 10.298,
+            "y": 0.3612,
+            "yLow": 0.355,
+            "yHigh": 0.3674
+          },
+          {
+            "x": 10.493,
+            "y": 0.5958,
+            "yLow": 0.5863,
+            "yHigh": 0.6053
+          },
+          {
+            "x": 10.688,
+            "y": 0.7792,
+            "yLow": 0.7654,
+            "yHigh": 0.7929
+          },
+          {
+            "x": 10.884,
+            "y": 0.8779,
+            "yLow": 0.8581,
+            "yHigh": 0.8976
+          },
+          {
+            "x": 11.086,
+            "y": 0.9357,
+            "yLow": 0.9067,
+            "yHigh": 0.9646
+          },
+          {
+            "x": 11.289,
+            "y": 0.9216,
+            "yLow": 0.8818,
+            "yHigh": 0.9613
+          },
+          {
+            "x": 11.482,
+            "y": 0.8809,
+            "yLow": 0.8289,
+            "yHigh": 0.9329
+          },
+          {
+            "x": 11.683,
+            "y": 0.8675,
+            "yLow": 0.7976,
+            "yHigh": 0.9373
+          },
+          {
+            "x": 11.891,
+            "y": 0.8623,
+            "yLow": 0.7544,
+            "yHigh": 0.9702
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Curve and shaded Poisson band read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), nominal-comparison figure, centrals at z=0.1; no table exists. The figure legend notes mock observational uncertainties of 0.2 dex in M* and 0.6 dex in SFR, so these are not raw catalogue fractions. Cosmic-variance hatching around TNG100 is not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas cells within 2 R_half)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, quenched fractions vs observations (QF_Cent_ALL_errors_z01), z=0.1",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_Cent_ALL_errors_z01",
+        "panel": "z=0.1",
+        "checksumSha256": "8ad418583f768fcdb8d7e92048650ff7a2d95d0ebd4fdc7a127b0d12d4ef48f6",
+        "sourceMember": "QF_Cent_ALL_errors_z01.pdf (TNG300-1 line with Poisson band)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; both asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng100.quenched-cent.z0.1",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (centrals)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.095,
+        "xMax": 11.897
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.095,
+            "y": 0.0367,
+            "yLow": 0.0324,
+            "yHigh": 0.041
+          },
+          {
+            "x": 9.298,
+            "y": 0.0273,
+            "yLow": 0.0233,
+            "yHigh": 0.0313
+          },
+          {
+            "x": 9.497,
+            "y": 0.0186,
+            "yLow": 0.015,
+            "yHigh": 0.0222
+          },
+          {
+            "x": 9.694,
+            "y": 0.0176,
+            "yLow": 0.0138,
+            "yHigh": 0.0214
+          },
+          {
+            "x": 9.895,
+            "y": 0.0324,
+            "yLow": 0.0268,
+            "yHigh": 0.0381
+          },
+          {
+            "x": 10.098,
+            "y": 0.1203,
+            "yLow": 0.108,
+            "yHigh": 0.1325
+          },
+          {
+            "x": 10.296,
+            "y": 0.3064,
+            "yLow": 0.2838,
+            "yHigh": 0.3291
+          },
+          {
+            "x": 10.49,
+            "y": 0.509,
+            "yLow": 0.4751,
+            "yHigh": 0.5428
+          },
+          {
+            "x": 10.689,
+            "y": 0.6533,
+            "yLow": 0.6043,
+            "yHigh": 0.7023
+          },
+          {
+            "x": 10.887,
+            "y": 0.7778,
+            "yLow": 0.7096,
+            "yHigh": 0.846
+          },
+          {
+            "x": 11.088,
+            "y": 0.8049,
+            "yLow": 0.7108,
+            "yHigh": 0.899
+          },
+          {
+            "x": 11.285,
+            "y": 0.7089,
+            "yLow": 0.585,
+            "yHigh": 0.8327
+          },
+          {
+            "x": 11.488,
+            "y": 0.6604,
+            "yLow": 0.5165,
+            "yHigh": 0.8042
+          },
+          {
+            "x": 11.643,
+            "y": 0.6923,
+            "yLow": 0.48,
+            "yHigh": 0.9046
+          },
+          {
+            "x": 11.897,
+            "y": 0.8824,
+            "yLow": 0.5698,
+            "yHigh": 1.1949
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Curve and shaded Poisson band read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), nominal-comparison figure, centrals at z=0.1; no table exists. The figure legend notes mock observational uncertainties of 0.2 dex in M* and 0.6 dex in SFR, so these are not raw catalogue fractions. Cosmic-variance hatching around TNG100 is not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas cells within 2 R_half)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, quenched fractions vs observations (QF_Cent_ALL_errors_z01), z=0.1",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_Cent_ALL_errors_z01",
+        "panel": "z=0.1",
+        "checksumSha256": "8ad418583f768fcdb8d7e92048650ff7a2d95d0ebd4fdc7a127b0d12d4ef48f6",
+        "sourceMember": "QF_Cent_ALL_errors_z01.pdf (TNG100-1 line with Poisson band)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; both asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng50.quenched-cent.z0.1",
+      "source": "IllustrisTNG",
+      "run": "TNG50-1 (centrals)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.097,
+        "xMax": 11.293
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.097,
+            "y": 0.0117,
+            "yLow": 0.0058,
+            "yHigh": 0.0176
+          },
+          {
+            "x": 9.29,
+            "y": 0.0077,
+            "yLow": 0.0022,
+            "yHigh": 0.0131
+          },
+          {
+            "x": 9.491,
+            "y": 0.0144,
+            "yLow": 0.006,
+            "yHigh": 0.0228
+          },
+          {
+            "x": 9.699,
+            "y": 0.0182,
+            "yLow": 0.0076,
+            "yHigh": 0.0288
+          },
+          {
+            "x": 9.886,
+            "y": 0.0482,
+            "yLow": 0.0308,
+            "yHigh": 0.0656
+          },
+          {
+            "x": 10.093,
+            "y": 0.0775,
+            "yLow": 0.0532,
+            "yHigh": 0.1017
+          },
+          {
+            "x": 10.289,
+            "y": 0.2083,
+            "yLow": 0.1571,
+            "yHigh": 0.2595
+          },
+          {
+            "x": 10.493,
+            "y": 0.2222,
+            "yLow": 0.1673,
+            "yHigh": 0.2772
+          },
+          {
+            "x": 10.689,
+            "y": 0.3934,
+            "yLow": 0.2986,
+            "yHigh": 0.4883
+          },
+          {
+            "x": 10.897,
+            "y": 0.4314,
+            "yLow": 0.3213,
+            "yHigh": 0.5414
+          },
+          {
+            "x": 11.092,
+            "y": 0.3846,
+            "yLow": 0.2415,
+            "yHigh": 0.5277
+          },
+          {
+            "x": 11.293,
+            "y": 0.0667,
+            "yLow": -0.0022,
+            "yHigh": 0.1355
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Curve and shaded Poisson band read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), nominal-comparison figure, centrals at z=0.1; no table exists. The figure legend notes mock observational uncertainties of 0.2 dex in M* and 0.6 dex in SFR, so these are not raw catalogue fractions. Cosmic-variance hatching around TNG100 is not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas cells within 2 R_half)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, quenched fractions vs observations (QF_Cent_ALL_errors_z01), z=0.1",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_Cent_ALL_errors_z01",
+        "panel": "z=0.1",
+        "checksumSha256": "8ad418583f768fcdb8d7e92048650ff7a2d95d0ebd4fdc7a127b0d12d4ef48f6",
+        "sourceMember": "QF_Cent_ALL_errors_z01.pdf (TNG50-1 line with Poisson band)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; both asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng300.quenched-sat.z0.1",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (satellites)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.1,
+        "xMax": 11.454
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.1,
+            "y": 0.8045,
+            "yLow": 0.8043,
+            "yHigh": 0.8047
+          },
+          {
+            "x": 9.297,
+            "y": 0.7643,
+            "yLow": 0.7641,
+            "yHigh": 0.7645
+          },
+          {
+            "x": 9.499,
+            "y": 0.7142,
+            "yLow": 0.714,
+            "yHigh": 0.7144
+          },
+          {
+            "x": 9.696,
+            "y": 0.6708,
+            "yLow": 0.6706,
+            "yHigh": 0.671
+          },
+          {
+            "x": 9.894,
+            "y": 0.651,
+            "yLow": 0.6507,
+            "yHigh": 0.6512
+          },
+          {
+            "x": 10.098,
+            "y": 0.6704,
+            "yLow": 0.6702,
+            "yHigh": 0.6707
+          },
+          {
+            "x": 10.299,
+            "y": 0.7221,
+            "yLow": 0.7218,
+            "yHigh": 0.7224
+          },
+          {
+            "x": 10.494,
+            "y": 0.7991,
+            "yLow": 0.7988,
+            "yHigh": 0.7995
+          },
+          {
+            "x": 10.689,
+            "y": 0.86,
+            "yLow": 0.8595,
+            "yHigh": 0.8606
+          },
+          {
+            "x": 10.88,
+            "y": 0.915,
+            "yLow": 0.9138,
+            "yHigh": 0.9161
+          },
+          {
+            "x": 11.085,
+            "y": 0.938,
+            "yLow": 0.9352,
+            "yHigh": 0.9408
+          },
+          {
+            "x": 11.275,
+            "y": 0.9285,
+            "yLow": 0.9211,
+            "yHigh": 0.9359
+          },
+          {
+            "x": 11.454,
+            "y": 0.893,
+            "yLow": 0.877,
+            "yHigh": 0.9091
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "satellite galaxies in massive hosts",
+        "warning": "Curve and shaded Poisson band read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), nominal-comparison figure, satellites at z=0.1; no table exists. The figure legend notes mock observational uncertainties of 0.2 dex in M* and 0.6 dex in SFR, so these are not raw catalogue fractions. Cosmic-variance hatching around TNG100 is not extracted. Satellites in hosts with log10 M200c/Msun = 13-15.2 (as annotated in the figure)."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas cells within 2 R_half)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "satellites"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, quenched fractions vs observations (QF_Sat_ALL_errors_z01), z=0.1",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_Sat_ALL_errors_z01",
+        "panel": "z=0.1",
+        "checksumSha256": "86f5bca3f495b674c75f131d2ad68f5fc881d05765bd463ba61368e750c6dcc9",
+        "sourceMember": "QF_Sat_ALL_errors_z01.pdf (TNG300-1 line with Poisson band)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; both asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng100.quenched-sat.z0.1",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (satellites)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.097,
+        "xMax": 11.299
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.097,
+            "y": 0.7651,
+            "yLow": 0.7631,
+            "yHigh": 0.7671
+          },
+          {
+            "x": 9.298,
+            "y": 0.7428,
+            "yLow": 0.7403,
+            "yHigh": 0.7453
+          },
+          {
+            "x": 9.492,
+            "y": 0.6973,
+            "yLow": 0.6947,
+            "yHigh": 0.6999
+          },
+          {
+            "x": 9.707,
+            "y": 0.651,
+            "yLow": 0.6484,
+            "yHigh": 0.6536
+          },
+          {
+            "x": 9.889,
+            "y": 0.6197,
+            "yLow": 0.6168,
+            "yHigh": 0.6226
+          },
+          {
+            "x": 10.099,
+            "y": 0.6285,
+            "yLow": 0.6248,
+            "yHigh": 0.6321
+          },
+          {
+            "x": 10.293,
+            "y": 0.6886,
+            "yLow": 0.6842,
+            "yHigh": 0.693
+          },
+          {
+            "x": 10.491,
+            "y": 0.7688,
+            "yLow": 0.7634,
+            "yHigh": 0.7742
+          },
+          {
+            "x": 10.684,
+            "y": 0.8322,
+            "yLow": 0.8239,
+            "yHigh": 0.8404
+          },
+          {
+            "x": 10.894,
+            "y": 0.8649,
+            "yLow": 0.8459,
+            "yHigh": 0.8839
+          },
+          {
+            "x": 11.084,
+            "y": 0.865,
+            "yLow": 0.8379,
+            "yHigh": 0.892
+          },
+          {
+            "x": 11.299,
+            "y": 0.8336,
+            "yLow": 0.7895,
+            "yHigh": 0.8778
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "satellite galaxies in massive hosts",
+        "warning": "Curve and shaded Poisson band read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), nominal-comparison figure, satellites at z=0.1; no table exists. The figure legend notes mock observational uncertainties of 0.2 dex in M* and 0.6 dex in SFR, so these are not raw catalogue fractions. Cosmic-variance hatching around TNG100 is not extracted. Satellites in hosts with log10 M200c/Msun = 13-14.6 (as annotated in the figure)."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas cells within 2 R_half)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "satellites"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, quenched fractions vs observations (QF_Sat_ALL_errors_z01), z=0.1",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_Sat_ALL_errors_z01",
+        "panel": "z=0.1",
+        "checksumSha256": "86f5bca3f495b674c75f131d2ad68f5fc881d05765bd463ba61368e750c6dcc9",
+        "sourceMember": "QF_Sat_ALL_errors_z01.pdf (TNG100-1 line with Poisson band)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; both asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng50.quenched-sat.z0.1",
+      "source": "IllustrisTNG",
+      "run": "TNG50-1 (satellites)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.102,
+        "xMax": 10.906
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.102,
+            "y": 0.7354,
+            "yLow": 0.723,
+            "yHigh": 0.7479
+          },
+          {
+            "x": 9.324,
+            "y": 0.6788,
+            "yLow": 0.6669,
+            "yHigh": 0.6906
+          },
+          {
+            "x": 9.515,
+            "y": 0.6426,
+            "yLow": 0.6248,
+            "yHigh": 0.6603
+          },
+          {
+            "x": 9.701,
+            "y": 0.5715,
+            "yLow": 0.5509,
+            "yHigh": 0.5921
+          },
+          {
+            "x": 9.884,
+            "y": 0.5932,
+            "yLow": 0.5716,
+            "yHigh": 0.6149
+          },
+          {
+            "x": 10.091,
+            "y": 0.6417,
+            "yLow": 0.6179,
+            "yHigh": 0.6656
+          },
+          {
+            "x": 10.284,
+            "y": 0.6681,
+            "yLow": 0.6395,
+            "yHigh": 0.6966
+          },
+          {
+            "x": 10.51,
+            "y": 0.6323,
+            "yLow": 0.6033,
+            "yHigh": 0.6613
+          },
+          {
+            "x": 10.752,
+            "y": 0.561,
+            "yLow": 0.5059,
+            "yHigh": 0.616
+          },
+          {
+            "x": 10.906,
+            "y": 0.4685,
+            "yLow": 0.3856,
+            "yHigh": 0.5515
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "satellite galaxies in massive hosts",
+        "warning": "Curve and shaded Poisson band read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), nominal-comparison figure, satellites at z=0.1; no table exists. The figure legend notes mock observational uncertainties of 0.2 dex in M* and 0.6 dex in SFR, so these are not raw catalogue fractions. Cosmic-variance hatching around TNG100 is not extracted. Satellites in hosts with log10 M200c/Msun = 13-14.3 (as annotated in the figure)."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas cells within 2 R_half)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "satellites"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, quenched fractions vs observations (QF_Sat_ALL_errors_z01), z=0.1",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_Sat_ALL_errors_z01",
+        "panel": "z=0.1",
+        "checksumSha256": "86f5bca3f495b674c75f131d2ad68f5fc881d05765bd463ba61368e750c6dcc9",
+        "sourceMember": "QF_Sat_ALL_errors_z01.pdf (TNG50-1 line with Poisson band)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; both asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng300.quenched-cent.z0.35",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (centrals)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.35,
+        "zNominal": 0.35,
+        "zMin": 0.35,
+        "zMax": 0.35,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.096,
+        "xMax": 11.879
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.096,
+            "y": 0.0256,
+            "yLow": 0.0246,
+            "yHigh": 0.0266
+          },
+          {
+            "x": 9.296,
+            "y": 0.0214,
+            "yLow": 0.0204,
+            "yHigh": 0.0224
+          },
+          {
+            "x": 9.496,
+            "y": 0.0187,
+            "yLow": 0.0178,
+            "yHigh": 0.0197
+          },
+          {
+            "x": 9.698,
+            "y": 0.0185,
+            "yLow": 0.0175,
+            "yHigh": 0.0195
+          },
+          {
+            "x": 9.898,
+            "y": 0.0327,
+            "yLow": 0.0312,
+            "yHigh": 0.0341
+          },
+          {
+            "x": 10.097,
+            "y": 0.0938,
+            "yLow": 0.0911,
+            "yHigh": 0.0966
+          },
+          {
+            "x": 10.298,
+            "y": 0.261,
+            "yLow": 0.2558,
+            "yHigh": 0.2661
+          },
+          {
+            "x": 10.495,
+            "y": 0.4854,
+            "yLow": 0.4771,
+            "yHigh": 0.4937
+          },
+          {
+            "x": 10.687,
+            "y": 0.6822,
+            "yLow": 0.6697,
+            "yHigh": 0.6947
+          },
+          {
+            "x": 10.884,
+            "y": 0.8096,
+            "yLow": 0.7909,
+            "yHigh": 0.8283
+          },
+          {
+            "x": 11.082,
+            "y": 0.8783,
+            "yLow": 0.8502,
+            "yHigh": 0.9064
+          },
+          {
+            "x": 11.28,
+            "y": 0.8743,
+            "yLow": 0.8348,
+            "yHigh": 0.9138
+          },
+          {
+            "x": 11.484,
+            "y": 0.8608,
+            "yLow": 0.8069,
+            "yHigh": 0.9146
+          },
+          {
+            "x": 11.689,
+            "y": 0.8348,
+            "yLow": 0.7542,
+            "yHigh": 0.9153
+          },
+          {
+            "x": 11.879,
+            "y": 0.7928,
+            "yLow": 0.6796,
+            "yHigh": 0.906
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Curve and shaded Poisson band read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), nominal-comparison figure, centrals at z=0.35; no table exists. The figure legend notes mock observational uncertainties of 0.2 dex in M* and 0.6 dex in SFR, so these are not raw catalogue fractions. Cosmic-variance hatching around TNG100 is not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas cells within 2 R_half)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, quenched fractions vs observations (QF_Cent_ALL_errors_z035), z=0.35",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_Cent_ALL_errors_z035",
+        "panel": "z=0.35",
+        "checksumSha256": "b2adada5b43c4a6e2bcb96a6af65a28e9098ac074a5d51d57d0f5041cf0ac2e4",
+        "sourceMember": "QF_Cent_ALL_errors_z035.pdf (TNG300-1 line with Poisson band)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; both asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng100.quenched-cent.z0.35",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (centrals)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.35,
+        "zNominal": 0.35,
+        "zMin": 0.35,
+        "zMax": 0.35,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.097,
+        "xMax": 11.871
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.097,
+            "y": 0.0178,
+            "yLow": 0.0148,
+            "yHigh": 0.0208
+          },
+          {
+            "x": 9.29,
+            "y": 0.0148,
+            "yLow": 0.0119,
+            "yHigh": 0.0177
+          },
+          {
+            "x": 9.496,
+            "y": 0.0106,
+            "yLow": 0.0079,
+            "yHigh": 0.0133
+          },
+          {
+            "x": 9.697,
+            "y": 0.0058,
+            "yLow": 0.0036,
+            "yHigh": 0.008
+          },
+          {
+            "x": 9.901,
+            "y": 0.0216,
+            "yLow": 0.0171,
+            "yHigh": 0.0262
+          },
+          {
+            "x": 10.097,
+            "y": 0.0745,
+            "yLow": 0.0649,
+            "yHigh": 0.0842
+          },
+          {
+            "x": 10.299,
+            "y": 0.2231,
+            "yLow": 0.2044,
+            "yHigh": 0.2418
+          },
+          {
+            "x": 10.489,
+            "y": 0.4364,
+            "yLow": 0.4056,
+            "yHigh": 0.4672
+          },
+          {
+            "x": 10.69,
+            "y": 0.556,
+            "yLow": 0.5133,
+            "yHigh": 0.5988
+          },
+          {
+            "x": 10.881,
+            "y": 0.6782,
+            "yLow": 0.6155,
+            "yHigh": 0.741
+          },
+          {
+            "x": 11.088,
+            "y": 0.6471,
+            "yLow": 0.5679,
+            "yHigh": 0.7262
+          },
+          {
+            "x": 11.302,
+            "y": 0.6939,
+            "yLow": 0.5844,
+            "yHigh": 0.8034
+          },
+          {
+            "x": 11.516,
+            "y": 0.6571,
+            "yLow": 0.4808,
+            "yHigh": 0.8335
+          },
+          {
+            "x": 11.675,
+            "y": 0.6087,
+            "yLow": 0.4024,
+            "yHigh": 0.815
+          },
+          {
+            "x": 11.871,
+            "y": 0.6,
+            "yLow": 0.347,
+            "yHigh": 0.853
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Curve and shaded Poisson band read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), nominal-comparison figure, centrals at z=0.35; no table exists. The figure legend notes mock observational uncertainties of 0.2 dex in M* and 0.6 dex in SFR, so these are not raw catalogue fractions. Cosmic-variance hatching around TNG100 is not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas cells within 2 R_half)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, quenched fractions vs observations (QF_Cent_ALL_errors_z035), z=0.35",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_Cent_ALL_errors_z035",
+        "panel": "z=0.35",
+        "checksumSha256": "b2adada5b43c4a6e2bcb96a6af65a28e9098ac074a5d51d57d0f5041cf0ac2e4",
+        "sourceMember": "QF_Cent_ALL_errors_z035.pdf (TNG100-1 line with Poisson band)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; both asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng50.quenched-cent.z0.35",
+      "source": "IllustrisTNG",
+      "run": "TNG50-1 (centrals)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.35,
+        "zNominal": 0.35,
+        "zMin": 0.35,
+        "zMax": 0.35,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.093,
+        "xMax": 11.505
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.093,
+            "y": 0.017,
+            "yLow": 0.0093,
+            "yHigh": 0.0247
+          },
+          {
+            "x": 9.285,
+            "y": 0.0185,
+            "yLow": 0.0102,
+            "yHigh": 0.0269
+          },
+          {
+            "x": 9.489,
+            "y": 0.0101,
+            "yLow": 0.0029,
+            "yHigh": 0.0172
+          },
+          {
+            "x": 9.696,
+            "y": 0.0118,
+            "yLow": 0.0034,
+            "yHigh": 0.0201
+          },
+          {
+            "x": 9.889,
+            "y": 0.0298,
+            "yLow": 0.0163,
+            "yHigh": 0.0433
+          },
+          {
+            "x": 10.099,
+            "y": 0.0609,
+            "yLow": 0.0372,
+            "yHigh": 0.0846
+          },
+          {
+            "x": 10.291,
+            "y": 0.1488,
+            "yLow": 0.1112,
+            "yHigh": 0.1863
+          },
+          {
+            "x": 10.484,
+            "y": 0.2895,
+            "yLow": 0.2194,
+            "yHigh": 0.3596
+          },
+          {
+            "x": 10.686,
+            "y": 0.2857,
+            "yLow": 0.2047,
+            "yHigh": 0.3667
+          },
+          {
+            "x": 10.911,
+            "y": 0.2093,
+            "yLow": 0.1326,
+            "yHigh": 0.286
+          },
+          {
+            "x": 11.068,
+            "y": 0.3,
+            "yLow": 0.186,
+            "yHigh": 0.414
+          },
+          {
+            "x": 11.277,
+            "y": 0.5625,
+            "yLow": 0.3281,
+            "yHigh": 0.7969
+          },
+          {
+            "x": 11.505,
+            "y": 0.3,
+            "yLow": 0.1025,
+            "yHigh": 0.4975
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Curve and shaded Poisson band read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), nominal-comparison figure, centrals at z=0.35; no table exists. The figure legend notes mock observational uncertainties of 0.2 dex in M* and 0.6 dex in SFR, so these are not raw catalogue fractions. Cosmic-variance hatching around TNG100 is not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas cells within 2 R_half)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, quenched fractions vs observations (QF_Cent_ALL_errors_z035), z=0.35",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_Cent_ALL_errors_z035",
+        "panel": "z=0.35",
+        "checksumSha256": "b2adada5b43c4a6e2bcb96a6af65a28e9098ac074a5d51d57d0f5041cf0ac2e4",
+        "sourceMember": "QF_Cent_ALL_errors_z035.pdf (TNG50-1 line with Poisson band)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; both asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng300.quenched-sat.z0.35",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (satellites)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.35,
+        "zNominal": 0.35,
+        "zMin": 0.35,
+        "zMax": 0.35,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.098,
+        "xMax": 11.457
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.098,
+            "y": 0.7322,
+            "yLow": 0.732,
+            "yHigh": 0.7324
+          },
+          {
+            "x": 9.299,
+            "y": 0.6955,
+            "yLow": 0.6953,
+            "yHigh": 0.6957
+          },
+          {
+            "x": 9.495,
+            "y": 0.6422,
+            "yLow": 0.642,
+            "yHigh": 0.6424
+          },
+          {
+            "x": 9.697,
+            "y": 0.5878,
+            "yLow": 0.5876,
+            "yHigh": 0.588
+          },
+          {
+            "x": 9.894,
+            "y": 0.5576,
+            "yLow": 0.5574,
+            "yHigh": 0.5578
+          },
+          {
+            "x": 10.102,
+            "y": 0.5687,
+            "yLow": 0.5685,
+            "yHigh": 0.569
+          },
+          {
+            "x": 10.298,
+            "y": 0.6119,
+            "yLow": 0.6117,
+            "yHigh": 0.6122
+          },
+          {
+            "x": 10.492,
+            "y": 0.7055,
+            "yLow": 0.7051,
+            "yHigh": 0.7058
+          },
+          {
+            "x": 10.687,
+            "y": 0.795,
+            "yLow": 0.7945,
+            "yHigh": 0.7956
+          },
+          {
+            "x": 10.879,
+            "y": 0.8486,
+            "yLow": 0.8475,
+            "yHigh": 0.8498
+          },
+          {
+            "x": 11.081,
+            "y": 0.8734,
+            "yLow": 0.871,
+            "yHigh": 0.8759
+          },
+          {
+            "x": 11.284,
+            "y": 0.8826,
+            "yLow": 0.875,
+            "yHigh": 0.8902
+          },
+          {
+            "x": 11.457,
+            "y": 0.8927,
+            "yLow": 0.871,
+            "yHigh": 0.9143
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "satellite galaxies in massive hosts",
+        "warning": "Curve and shaded Poisson band read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), nominal-comparison figure, satellites at z=0.35; no table exists. The figure legend notes mock observational uncertainties of 0.2 dex in M* and 0.6 dex in SFR, so these are not raw catalogue fractions. Cosmic-variance hatching around TNG100 is not extracted. Host-mass selection for satellites is not annotated in this panel; see the paper text."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas cells within 2 R_half)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "satellites"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, quenched fractions vs observations (QF_Sat_ALL_errors_z035), z=0.35",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_Sat_ALL_errors_z035",
+        "panel": "z=0.35",
+        "checksumSha256": "32742a6902aed6005a66656c2855e9fe9865780418786f60c326d0dc86ebb18a",
+        "sourceMember": "QF_Sat_ALL_errors_z035.pdf (TNG300-1 line with Poisson band)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; both asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng100.quenched-sat.z0.35",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (satellites)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.35,
+        "zNominal": 0.35,
+        "zMin": 0.35,
+        "zMax": 0.35,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.092,
+        "xMax": 11.277
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.092,
+            "y": 0.7059,
+            "yLow": 0.7036,
+            "yHigh": 0.7082
+          },
+          {
+            "x": 9.299,
+            "y": 0.6571,
+            "yLow": 0.6549,
+            "yHigh": 0.6593
+          },
+          {
+            "x": 9.489,
+            "y": 0.5998,
+            "yLow": 0.5971,
+            "yHigh": 0.6026
+          },
+          {
+            "x": 9.7,
+            "y": 0.5551,
+            "yLow": 0.5525,
+            "yHigh": 0.5577
+          },
+          {
+            "x": 9.887,
+            "y": 0.5445,
+            "yLow": 0.5415,
+            "yHigh": 0.5475
+          },
+          {
+            "x": 10.089,
+            "y": 0.5507,
+            "yLow": 0.547,
+            "yHigh": 0.5545
+          },
+          {
+            "x": 10.302,
+            "y": 0.62,
+            "yLow": 0.6158,
+            "yHigh": 0.6242
+          },
+          {
+            "x": 10.504,
+            "y": 0.6933,
+            "yLow": 0.6876,
+            "yHigh": 0.699
+          },
+          {
+            "x": 10.694,
+            "y": 0.7449,
+            "yLow": 0.7353,
+            "yHigh": 0.7544
+          },
+          {
+            "x": 10.884,
+            "y": 0.7494,
+            "yLow": 0.7366,
+            "yHigh": 0.7623
+          },
+          {
+            "x": 11.101,
+            "y": 0.7269,
+            "yLow": 0.7008,
+            "yHigh": 0.753
+          },
+          {
+            "x": 11.277,
+            "y": 0.6722,
+            "yLow": 0.6099,
+            "yHigh": 0.7346
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "satellite galaxies in massive hosts",
+        "warning": "Curve and shaded Poisson band read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), nominal-comparison figure, satellites at z=0.35; no table exists. The figure legend notes mock observational uncertainties of 0.2 dex in M* and 0.6 dex in SFR, so these are not raw catalogue fractions. Cosmic-variance hatching around TNG100 is not extracted. Host-mass selection for satellites is not annotated in this panel; see the paper text."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas cells within 2 R_half)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "satellites"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, quenched fractions vs observations (QF_Sat_ALL_errors_z035), z=0.35",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_Sat_ALL_errors_z035",
+        "panel": "z=0.35",
+        "checksumSha256": "32742a6902aed6005a66656c2855e9fe9865780418786f60c326d0dc86ebb18a",
+        "sourceMember": "QF_Sat_ALL_errors_z035.pdf (TNG100-1 line with Poisson band)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; both asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng50.quenched-sat.z0.35",
+      "source": "IllustrisTNG",
+      "run": "TNG50-1 (satellites)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.35,
+        "zNominal": 0.35,
+        "zMin": 0.35,
+        "zMax": 0.35,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.083,
+        "xMax": 10.903
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.083,
+            "y": 0.6181,
+            "yLow": 0.6047,
+            "yHigh": 0.6314
+          },
+          {
+            "x": 9.295,
+            "y": 0.6081,
+            "yLow": 0.5891,
+            "yHigh": 0.6271
+          },
+          {
+            "x": 9.488,
+            "y": 0.5772,
+            "yLow": 0.5577,
+            "yHigh": 0.5967
+          },
+          {
+            "x": 9.708,
+            "y": 0.5606,
+            "yLow": 0.5426,
+            "yHigh": 0.5786
+          },
+          {
+            "x": 9.901,
+            "y": 0.5757,
+            "yLow": 0.5469,
+            "yHigh": 0.6046
+          },
+          {
+            "x": 10.09,
+            "y": 0.6007,
+            "yLow": 0.5785,
+            "yHigh": 0.623
+          },
+          {
+            "x": 10.289,
+            "y": 0.6192,
+            "yLow": 0.5757,
+            "yHigh": 0.6627
+          },
+          {
+            "x": 10.482,
+            "y": 0.6174,
+            "yLow": 0.5586,
+            "yHigh": 0.6762
+          },
+          {
+            "x": 10.671,
+            "y": 0.5923,
+            "yLow": 0.5384,
+            "yHigh": 0.6463
+          },
+          {
+            "x": 10.903,
+            "y": 0.5548,
+            "yLow": 0.4885,
+            "yHigh": 0.6211
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "satellite galaxies in massive hosts",
+        "warning": "Curve and shaded Poisson band read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), nominal-comparison figure, satellites at z=0.35; no table exists. The figure legend notes mock observational uncertainties of 0.2 dex in M* and 0.6 dex in SFR, so these are not raw catalogue fractions. Cosmic-variance hatching around TNG100 is not extracted. Host-mass selection for satellites is not annotated in this panel; see the paper text."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas cells within 2 R_half)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "satellites"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, quenched fractions vs observations (QF_Sat_ALL_errors_z035), z=0.35",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_Sat_ALL_errors_z035",
+        "panel": "z=0.35",
+        "checksumSha256": "32742a6902aed6005a66656c2855e9fe9865780418786f60c326d0dc86ebb18a",
+        "sourceMember": "QF_Sat_ALL_errors_z035.pdf (TNG50-1 line with Poisson band)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; both asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng300.quenched-cent.z0.65",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (centrals)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.65,
+        "zNominal": 0.65,
+        "zMin": 0.65,
+        "zMax": 0.65,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.097,
+        "xMax": 11.883
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.097,
+            "y": 0.0108,
+            "yLow": 0.0101,
+            "yHigh": 0.0114
+          },
+          {
+            "x": 9.294,
+            "y": 0.009,
+            "yLow": 0.0084,
+            "yHigh": 0.0096
+          },
+          {
+            "x": 9.498,
+            "y": 0.0067,
+            "yLow": 0.0062,
+            "yHigh": 0.0073
+          },
+          {
+            "x": 9.697,
+            "y": 0.0073,
+            "yLow": 0.0066,
+            "yHigh": 0.0079
+          },
+          {
+            "x": 9.897,
+            "y": 0.0148,
+            "yLow": 0.0138,
+            "yHigh": 0.0158
+          },
+          {
+            "x": 10.098,
+            "y": 0.0592,
+            "yLow": 0.057,
+            "yHigh": 0.0614
+          },
+          {
+            "x": 10.298,
+            "y": 0.1884,
+            "yLow": 0.1841,
+            "yHigh": 0.1927
+          },
+          {
+            "x": 10.494,
+            "y": 0.3865,
+            "yLow": 0.3792,
+            "yHigh": 0.3938
+          },
+          {
+            "x": 10.691,
+            "y": 0.5849,
+            "yLow": 0.5735,
+            "yHigh": 0.5964
+          },
+          {
+            "x": 10.884,
+            "y": 0.7382,
+            "yLow": 0.7202,
+            "yHigh": 0.7563
+          },
+          {
+            "x": 11.081,
+            "y": 0.8383,
+            "yLow": 0.8097,
+            "yHigh": 0.8669
+          },
+          {
+            "x": 11.281,
+            "y": 0.8462,
+            "yLow": 0.8037,
+            "yHigh": 0.8887
+          },
+          {
+            "x": 11.485,
+            "y": 0.8342,
+            "yLow": 0.7731,
+            "yHigh": 0.8952
+          },
+          {
+            "x": 11.688,
+            "y": 0.8351,
+            "yLow": 0.7448,
+            "yHigh": 0.9254
+          },
+          {
+            "x": 11.883,
+            "y": 0.8916,
+            "yLow": 0.749,
+            "yHigh": 1.0341
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Curve and shaded Poisson band read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), nominal-comparison figure, centrals at z=0.65; no table exists. The figure legend notes mock observational uncertainties of 0.2 dex in M* and 0.6 dex in SFR, so these are not raw catalogue fractions. Cosmic-variance hatching around TNG100 is not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas cells within 2 R_half)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, quenched fractions vs observations (QF_Cent_ALL_errors_z065), z=0.65",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_Cent_ALL_errors_z065",
+        "panel": "z=0.65",
+        "checksumSha256": "8a1cb3396bdebb005580f3fba7a54e92138fce8b235bf43a1e7edae5bff57e82",
+        "sourceMember": "QF_Cent_ALL_errors_z065.pdf (TNG300-1 line with Poisson band)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; both asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng100.quenched-cent.z0.65",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (centrals)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.65,
+        "zNominal": 0.65,
+        "zMin": 0.65,
+        "zMax": 0.65,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.101,
+        "xMax": 11.852
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.101,
+            "y": 0.007,
+            "yLow": 0.0052,
+            "yHigh": 0.0089
+          },
+          {
+            "x": 9.293,
+            "y": 0.0046,
+            "yLow": 0.003,
+            "yHigh": 0.0062
+          },
+          {
+            "x": 9.492,
+            "y": 0.0027,
+            "yLow": 0.0014,
+            "yHigh": 0.0041
+          },
+          {
+            "x": 9.697,
+            "y": 0.0071,
+            "yLow": 0.0047,
+            "yHigh": 0.0095
+          },
+          {
+            "x": 9.895,
+            "y": 0.0107,
+            "yLow": 0.0074,
+            "yHigh": 0.0139
+          },
+          {
+            "x": 10.101,
+            "y": 0.0548,
+            "yLow": 0.0467,
+            "yHigh": 0.0628
+          },
+          {
+            "x": 10.298,
+            "y": 0.1883,
+            "yLow": 0.1711,
+            "yHigh": 0.2056
+          },
+          {
+            "x": 10.495,
+            "y": 0.384,
+            "yLow": 0.3542,
+            "yHigh": 0.4138
+          },
+          {
+            "x": 10.683,
+            "y": 0.4762,
+            "yLow": 0.438,
+            "yHigh": 0.5143
+          },
+          {
+            "x": 10.882,
+            "y": 0.6065,
+            "yLow": 0.5472,
+            "yHigh": 0.6658
+          },
+          {
+            "x": 11.077,
+            "y": 0.6918,
+            "yLow": 0.6023,
+            "yHigh": 0.7813
+          },
+          {
+            "x": 11.286,
+            "y": 0.6506,
+            "yLow": 0.5369,
+            "yHigh": 0.7644
+          },
+          {
+            "x": 11.495,
+            "y": 0.5278,
+            "yLow": 0.3781,
+            "yHigh": 0.6774
+          },
+          {
+            "x": 11.667,
+            "y": 0.5,
+            "yLow": 0.25,
+            "yHigh": 0.75
+          },
+          {
+            "x": 11.852,
+            "y": 0.7273,
+            "yLow": 0.3893,
+            "yHigh": 1.0652
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Curve and shaded Poisson band read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), nominal-comparison figure, centrals at z=0.65; no table exists. The figure legend notes mock observational uncertainties of 0.2 dex in M* and 0.6 dex in SFR, so these are not raw catalogue fractions. Cosmic-variance hatching around TNG100 is not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas cells within 2 R_half)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, quenched fractions vs observations (QF_Cent_ALL_errors_z065), z=0.65",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_Cent_ALL_errors_z065",
+        "panel": "z=0.65",
+        "checksumSha256": "8a1cb3396bdebb005580f3fba7a54e92138fce8b235bf43a1e7edae5bff57e82",
+        "sourceMember": "QF_Cent_ALL_errors_z065.pdf (TNG100-1 line with Poisson band)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; both asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng50.quenched-cent.z0.65",
+      "source": "IllustrisTNG",
+      "run": "TNG50-1 (centrals)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.65,
+        "zNominal": 0.65,
+        "zMin": 0.65,
+        "zMax": 0.65,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.098,
+        "xMax": 11.7
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.098,
+            "y": 0.0036,
+            "yLow": 0,
+            "yHigh": 0.0072
+          },
+          {
+            "x": 9.297,
+            "y": 0.0091,
+            "yLow": 0.0026,
+            "yHigh": 0.0155
+          },
+          {
+            "x": 9.494,
+            "y": 0.0147,
+            "yLow": 0.0062,
+            "yHigh": 0.0233
+          },
+          {
+            "x": 9.7,
+            "y": 0.0111,
+            "yLow": 0.0032,
+            "yHigh": 0.019
+          },
+          {
+            "x": 9.888,
+            "y": 0.0282,
+            "yLow": 0.0139,
+            "yHigh": 0.0425
+          },
+          {
+            "x": 10.109,
+            "y": 0.036,
+            "yLow": 0.0177,
+            "yHigh": 0.0544
+          },
+          {
+            "x": 10.291,
+            "y": 0.0909,
+            "yLow": 0.0635,
+            "yHigh": 0.1183
+          },
+          {
+            "x": 10.505,
+            "y": 0.24,
+            "yLow": 0.177,
+            "yHigh": 0.303
+          },
+          {
+            "x": 10.706,
+            "y": 0.2857,
+            "yLow": 0.1991,
+            "yHigh": 0.3723
+          },
+          {
+            "x": 10.876,
+            "y": 0.2174,
+            "yLow": 0.1415,
+            "yHigh": 0.2932
+          },
+          {
+            "x": 11.077,
+            "y": 0.3871,
+            "yLow": 0.2555,
+            "yHigh": 0.5187
+          },
+          {
+            "x": 11.258,
+            "y": 0.3571,
+            "yLow": 0.1711,
+            "yHigh": 0.5432
+          },
+          {
+            "x": 11.7,
+            "y": 0.3125,
+            "yLow": 0.1524,
+            "yHigh": 0.4726
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Curve and shaded Poisson band read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), nominal-comparison figure, centrals at z=0.65; no table exists. The figure legend notes mock observational uncertainties of 0.2 dex in M* and 0.6 dex in SFR, so these are not raw catalogue fractions. Cosmic-variance hatching around TNG100 is not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas cells within 2 R_half)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, quenched fractions vs observations (QF_Cent_ALL_errors_z065), z=0.65",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_Cent_ALL_errors_z065",
+        "panel": "z=0.65",
+        "checksumSha256": "8a1cb3396bdebb005580f3fba7a54e92138fce8b235bf43a1e7edae5bff57e82",
+        "sourceMember": "QF_Cent_ALL_errors_z065.pdf (TNG50-1 line with Poisson band)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; both asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng300.quenched-sat.z0.65",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (satellites)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.65,
+        "zNominal": 0.65,
+        "zMin": 0.65,
+        "zMax": 0.65,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.097,
+        "xMax": 11.475
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.097,
+            "y": 0.6526,
+            "yLow": 0.6524,
+            "yHigh": 0.6528
+          },
+          {
+            "x": 9.296,
+            "y": 0.61,
+            "yLow": 0.6098,
+            "yHigh": 0.6102
+          },
+          {
+            "x": 9.501,
+            "y": 0.5492,
+            "yLow": 0.549,
+            "yHigh": 0.5494
+          },
+          {
+            "x": 9.698,
+            "y": 0.4861,
+            "yLow": 0.4859,
+            "yHigh": 0.4863
+          },
+          {
+            "x": 9.9,
+            "y": 0.4473,
+            "yLow": 0.4471,
+            "yHigh": 0.4475
+          },
+          {
+            "x": 10.098,
+            "y": 0.4511,
+            "yLow": 0.4508,
+            "yHigh": 0.4513
+          },
+          {
+            "x": 10.299,
+            "y": 0.5011,
+            "yLow": 0.5008,
+            "yHigh": 0.5014
+          },
+          {
+            "x": 10.494,
+            "y": 0.595,
+            "yLow": 0.5946,
+            "yHigh": 0.5954
+          },
+          {
+            "x": 10.688,
+            "y": 0.7135,
+            "yLow": 0.7129,
+            "yHigh": 0.7142
+          },
+          {
+            "x": 10.881,
+            "y": 0.7981,
+            "yLow": 0.7968,
+            "yHigh": 0.7994
+          },
+          {
+            "x": 11.089,
+            "y": 0.8481,
+            "yLow": 0.8448,
+            "yHigh": 0.8514
+          },
+          {
+            "x": 11.263,
+            "y": 0.8717,
+            "yLow": 0.8626,
+            "yHigh": 0.8807
+          },
+          {
+            "x": 11.475,
+            "y": 0.8892,
+            "yLow": 0.8568,
+            "yHigh": 0.9216
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "satellite galaxies in massive hosts",
+        "warning": "Curve and shaded Poisson band read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), nominal-comparison figure, satellites at z=0.65; no table exists. The figure legend notes mock observational uncertainties of 0.2 dex in M* and 0.6 dex in SFR, so these are not raw catalogue fractions. Cosmic-variance hatching around TNG100 is not extracted. Host-mass selection for satellites is not annotated in this panel; see the paper text."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas cells within 2 R_half)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "satellites"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, quenched fractions vs observations (QF_Sat_ALL_errors_z065), z=0.65",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_Sat_ALL_errors_z065",
+        "panel": "z=0.65",
+        "checksumSha256": "8164a0c400be9ffeb1e0b0ff60dd1ec3237f533783dd3756a64dd0d31ce0d34d",
+        "sourceMember": "QF_Sat_ALL_errors_z065.pdf (TNG300-1 line with Poisson band)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; both asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng100.quenched-sat.z0.65",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (satellites)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.65,
+        "zNominal": 0.65,
+        "zMin": 0.65,
+        "zMax": 0.65,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.1,
+        "xMax": 11.277
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.1,
+            "y": 0.5918,
+            "yLow": 0.5893,
+            "yHigh": 0.5942
+          },
+          {
+            "x": 9.299,
+            "y": 0.5492,
+            "yLow": 0.5465,
+            "yHigh": 0.5519
+          },
+          {
+            "x": 9.501,
+            "y": 0.496,
+            "yLow": 0.4931,
+            "yHigh": 0.4989
+          },
+          {
+            "x": 9.694,
+            "y": 0.4515,
+            "yLow": 0.4486,
+            "yHigh": 0.4544
+          },
+          {
+            "x": 9.9,
+            "y": 0.4294,
+            "yLow": 0.4262,
+            "yHigh": 0.4326
+          },
+          {
+            "x": 10.091,
+            "y": 0.4549,
+            "yLow": 0.4514,
+            "yHigh": 0.4585
+          },
+          {
+            "x": 10.302,
+            "y": 0.5394,
+            "yLow": 0.5346,
+            "yHigh": 0.5442
+          },
+          {
+            "x": 10.493,
+            "y": 0.628,
+            "yLow": 0.6208,
+            "yHigh": 0.6352
+          },
+          {
+            "x": 10.684,
+            "y": 0.6892,
+            "yLow": 0.6795,
+            "yHigh": 0.6989
+          },
+          {
+            "x": 10.877,
+            "y": 0.7143,
+            "yLow": 0.6998,
+            "yHigh": 0.7289
+          },
+          {
+            "x": 11.047,
+            "y": 0.6885,
+            "yLow": 0.6435,
+            "yHigh": 0.7334
+          },
+          {
+            "x": 11.277,
+            "y": 0.6256,
+            "yLow": 0.5696,
+            "yHigh": 0.6816
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "satellite galaxies in massive hosts",
+        "warning": "Curve and shaded Poisson band read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), nominal-comparison figure, satellites at z=0.65; no table exists. The figure legend notes mock observational uncertainties of 0.2 dex in M* and 0.6 dex in SFR, so these are not raw catalogue fractions. Cosmic-variance hatching around TNG100 is not extracted. Host-mass selection for satellites is not annotated in this panel; see the paper text."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas cells within 2 R_half)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "satellites"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, quenched fractions vs observations (QF_Sat_ALL_errors_z065), z=0.65",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_Sat_ALL_errors_z065",
+        "panel": "z=0.65",
+        "checksumSha256": "8164a0c400be9ffeb1e0b0ff60dd1ec3237f533783dd3756a64dd0d31ce0d34d",
+        "sourceMember": "QF_Sat_ALL_errors_z065.pdf (TNG100-1 line with Poisson band)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; both asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng50.quenched-sat.z0.65",
+      "source": "IllustrisTNG",
+      "run": "TNG50-1 (satellites)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.65,
+        "zNominal": 0.65,
+        "zMin": 0.65,
+        "zMax": 0.65,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.094,
+        "xMax": 11.2
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.094,
+            "y": 0.6097,
+            "yLow": 0.591,
+            "yHigh": 0.6284
+          },
+          {
+            "x": 9.29,
+            "y": 0.5433,
+            "yLow": 0.5247,
+            "yHigh": 0.562
+          },
+          {
+            "x": 9.504,
+            "y": 0.4693,
+            "yLow": 0.4475,
+            "yHigh": 0.4912
+          },
+          {
+            "x": 9.656,
+            "y": 0.4606,
+            "yLow": 0.4332,
+            "yHigh": 0.4879
+          },
+          {
+            "x": 9.888,
+            "y": 0.4864,
+            "yLow": 0.456,
+            "yHigh": 0.5167
+          },
+          {
+            "x": 10.107,
+            "y": 0.528,
+            "yLow": 0.5016,
+            "yHigh": 0.5544
+          },
+          {
+            "x": 10.28,
+            "y": 0.5635,
+            "yLow": 0.5274,
+            "yHigh": 0.5996
+          },
+          {
+            "x": 10.526,
+            "y": 0.5636,
+            "yLow": 0.501,
+            "yHigh": 0.6262
+          },
+          {
+            "x": 10.664,
+            "y": 0.5343,
+            "yLow": 0.4588,
+            "yHigh": 0.6097
+          },
+          {
+            "x": 11.2,
+            "y": 0.4659,
+            "yLow": 0.42,
+            "yHigh": 0.5118
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "satellite galaxies in massive hosts",
+        "warning": "Curve and shaded Poisson band read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), nominal-comparison figure, satellites at z=0.65; no table exists. The figure legend notes mock observational uncertainties of 0.2 dex in M* and 0.6 dex in SFR, so these are not raw catalogue fractions. Cosmic-variance hatching around TNG100 is not extracted. Host-mass selection for satellites is not annotated in this panel; see the paper text."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas cells within 2 R_half)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "satellites"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, quenched fractions vs observations (QF_Sat_ALL_errors_z065), z=0.65",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_Sat_ALL_errors_z065",
+        "panel": "z=0.65",
+        "checksumSha256": "8164a0c400be9ffeb1e0b0ff60dd1ec3237f533783dd3756a64dd0d31ce0d34d",
+        "sourceMember": "QF_Sat_ALL_errors_z065.pdf (TNG50-1 line with Poisson band)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; both asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

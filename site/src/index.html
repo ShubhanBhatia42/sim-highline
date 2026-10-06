@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sim-highline: galaxy scaling relations from simulations and observations</title>
+<meta name="description" content="Published simulation predictions and observations of galaxy scaling relations on one axis, with the definitions that decide whether curves can be compared, and a clean export for pandas.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>/*__CSS__*/</style>
+</head>
+<body>
+<div class="wrap">
+{{nav}}
+
+<header class="hero">
+<p class="eyebrow">GALAXY SCALING RELATIONS · BETA {{version}}</p>
+<h1>Every published simulation prediction for a scaling relation, on one axis.</h1>
+<p class="lede">sim-highline collects {{records}} curves from {{suites}} simulations and {{obsSources}} observational sources, keeps the definitions that decide whether two curves can be compared, and exports them as tidy tables you can load into pandas.</p>
+<div class="cta"><a class="btn main" href="../highline.html">Open the beta</a><a class="btn" href="../data/export/sim-highline-records.csv">Download the data</a><a class="btn" href="use-cases.html">What it is for</a></div>
+</header>
+
+<section aria-labelledby="hero-h">
+<h2 id="hero-h">What it shows</h2>
+<figure class="chart">
+{{hero}}
+<div class="key">{{heroKey}}</div>
+<figcaption>{{heroCaption}}</figcaption>
+</figure>
+</section>
+
+<section aria-labelledby="why">
+<h2 id="why">The problem it removes</h2>
+<p class="lede" style="font-size:18px">Comparing what different simulations predict means opening a dozen papers, reading values off figures, and guessing whether each uses the same stellar-mass aperture, IMF, population and cosmology. Those choices move curves by tenths of a dex, as much as the physics you are trying to compare. sim-highline records them for every curve and says when a comparison is not like with like.</p>
+<div class="nums">
+<div><b>{{massDefs}}</b><span>different stellar-mass definitions across the simulation curves</span></div>
+<div><b>0.21 dex</b><span>stellar-mass shift between a Salpeter and a Chabrier IMF, if not converted</span></div>
+<div><b>{{zHighRecords}}</b><span>simulation curves at z ≥ 6, from {{zHighSuites}} simulations</span></div>
+</div>
+</section>
+
+<section aria-labelledby="what">
+<h2 id="what">What you get</h2>
+<div class="grid">
+<div class="card"><h3>Compare</h3><p>One relation, one epoch, every simulation. Step through redshift, show each simulation's fiducial run or all its variants, pick a reference and see residuals, and read a ✓ / ~ / ✕ for whether two curves share definitions.</p></div>
+<div class="card"><h3>Understand</h3><p>Each relation has a short summary of how the literature describes it, what simulations and observations agree and disagree on, and what it means physically, with past and present reviews linked.</p></div>
+<div class="card"><h3>Download</h3><p>Exactly what you see, or all epochs, as tidy CSV or JSON with units, definitions, evidence tier and citation on every row; BibTeX; and <code>sim_highline.py</code> to load everything into pandas.</p></div>
+<div class="card"><h3>Trace</h3><p>Every curve opens to its source, how it was extracted, and a checksum of the file it came from. Nothing is interpolated: a simulation with no data at your redshift simply disappears.</p></div>
+</div>
+</section>
+
+<section aria-labelledby="honest">
+<h2 id="honest">How it stays honest</h2>
+<ul class="tick">
+<li><b>Evidence tiers on every curve.</b> Official tables, catalogue-derived, tabulated in a paper, published fit, or digitized from a figure. Digitized curves are never used for ranking.</li>
+<li><b>Exact extraction.</b> Figures are read from the vector paths of the paper's own source files, not traced from pixels, and every extraction script regenerates its records byte for byte.</li>
+<li><b>Automatic checks.</b> {{auditNote}}</li>
+<li><b>Definitions travel with the data.</b> Mass aperture, halo definition, IMF, cosmology, population, SFR timescale and the like are structured fields, so the comparison flags are computed, not asserted.</li>
+</ul>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it is not</h2>
+<div class="not"><ul class="tick" style="gap:8px">
+<li><b>Not a replacement for the original data.</b> {{digitizedShare}} of simulation curves are digitized from published figures. Where an author releases a table, use that.</li>
+<li><b>Not a leaderboard.</b> Many curves cannot be compared like for like, and sim-highline says so instead of scoring them.</li>
+<li><b>Not independently verified yet.</b> It is a beta from one maintainer; a sample of curves is waiting for review by people who know each simulation.</li>
+<li><b>Not complete.</b> Some relations, such as the Tully–Fisher and gas-fraction relations, still have only one or two simulations. UV luminosity functions (three simulations) and the cosmic SFR density (six) are recent additions.</li>
+</ul></div>
+</section>
+
+<section aria-labelledby="nums">
+<h2 id="nums">The data well today</h2>
+<div class="nums">
+<div><b>{{records}}</b><span>curves ({{simRecords}} simulation, {{obsRecords}} observational)</span></div>
+<div><b>{{suites}}</b><span>simulations</span></div>
+<div><b>{{relations}}</b><span>scaling relations</span></div>
+<div><b>{{citations}}</b><span>cited papers and data releases</span></div>
+<div><b>z 0 to {{zMax}}</b><span>redshift range</span></div>
+</div>
+</section>
+
+<footer>
+<p>sim-highline {{version}} · {{released}} · Shubhan Bhatia. Please cite the original papers (every record carries its citation and DOI) together with the dataset; see <code>CITATION.cff</code>. Licence to be decided by the maintainer.</p>
+<p><a href="../highline.html">Beta</a> · <a href="use-cases.html">Use cases</a> · <a href="../data/export/sim-highline-records.csv">Records (CSV)</a> · <a href="../data/export/sim-highline-points.csv">Points (CSV)</a> · <a href="../sim_highline.py">sim_highline.py</a> · <a href="../data/export/sim-highline-citations.bib">BibTeX</a></p>
+</footer>
+</div>
+</body>
+</html>

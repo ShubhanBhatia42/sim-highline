@@ -1,0 +1,329 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "nihao.stinson15.coldgas.z0.fig1.digitized",
+      "source": "NIHAO zoom suite",
+      "run": "NIHAO high-resolution sample",
+      "kind": "simulation",
+      "relation": "gas",
+      "epoch": {
+        "zRepresentative": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 cold hydrogen gas-to-stellar mass ratio, M(HI+H2)/Mstar",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 5.138,
+        "xMax": 11.343
+      },
+      "representation": {
+        "type": "points",
+        "points": [
+          {
+            "x": 5.138,
+            "y": 1.371
+          },
+          {
+            "x": 5.762,
+            "y": 0.6
+          },
+          {
+            "x": 6.27,
+            "y": 0.097
+          },
+          {
+            "x": 6.692,
+            "y": 0.655
+          },
+          {
+            "x": 7.481,
+            "y": -0.786
+          },
+          {
+            "x": 7.987,
+            "y": -1.468
+          },
+          {
+            "x": 8.104,
+            "y": -1.492
+          },
+          {
+            "x": 8.157,
+            "y": -0.236
+          },
+          {
+            "x": 8.162,
+            "y": -0.342
+          },
+          {
+            "x": 8.369,
+            "y": -0.934
+          },
+          {
+            "x": 8.492,
+            "y": -0.404
+          },
+          {
+            "x": 8.529,
+            "y": -0.633
+          },
+          {
+            "x": 8.549,
+            "y": -0.558
+          },
+          {
+            "x": 8.59,
+            "y": -0.211
+          },
+          {
+            "x": 8.767,
+            "y": 0.097
+          },
+          {
+            "x": 8.835,
+            "y": -0.915
+          },
+          {
+            "x": 8.875,
+            "y": -0.191
+          },
+          {
+            "x": 9.153,
+            "y": -0.423
+          },
+          {
+            "x": 9.23,
+            "y": -0.369
+          },
+          {
+            "x": 9.28,
+            "y": -0.595
+          },
+          {
+            "x": 9.314,
+            "y": -0.147
+          },
+          {
+            "x": 9.46,
+            "y": -0.038
+          },
+          {
+            "x": 9.467,
+            "y": -0.577
+          },
+          {
+            "x": 9.572,
+            "y": -0.486
+          },
+          {
+            "x": 9.84,
+            "y": -1.117
+          },
+          {
+            "x": 10.07,
+            "y": -0.515
+          },
+          {
+            "x": 10.139,
+            "y": -0.677
+          },
+          {
+            "x": 10.145,
+            "y": -0.564
+          },
+          {
+            "x": 10.153,
+            "y": -0.336
+          },
+          {
+            "x": 10.214,
+            "y": -0.564
+          },
+          {
+            "x": 10.321,
+            "y": -1.145
+          },
+          {
+            "x": 10.463,
+            "y": -0.717
+          },
+          {
+            "x": 10.496,
+            "y": -0.675
+          },
+          {
+            "x": 10.718,
+            "y": -1.118
+          },
+          {
+            "x": 10.761,
+            "y": -1.437
+          },
+          {
+            "x": 10.869,
+            "y": -1.225
+          },
+          {
+            "x": 10.913,
+            "y": -0.538
+          },
+          {
+            "x": 11.23,
+            "y": -1.209
+          },
+          {
+            "x": 11.334,
+            "y": -1.489
+          },
+          {
+            "x": 11.343,
+            "y": -1.718
+          }
+        ],
+        "intervalKind": "unspecified"
+      },
+      "scatter": null,
+      "selection": {
+        "population": "isolated NIHAO central galaxies",
+        "gas": "HI+H2 derived with the simulation non-equilibrium cooling calculation",
+        "aperture": "galactic disc; paper comparison sample at z=0",
+        "warning": "Zoom sample is not volume complete; marker centers were digitized from the rasterized paper figure."
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Stinson et al. 2015, MNRAS 454, 1105, Figure 1",
+        "doi": "10.1093/mnras/stv1985",
+        "url": "https://arxiv.org/abs/1506.08785",
+        "retrieved": "2026-10-02",
+        "figure": "Figure 1",
+        "panel": "single panel",
+        "extractionMethod": "HSV marker segmentation on 180 dpi raster; connected-component centroids transformed through calibrated log axes",
+        "axisCalibrationPixels": {
+          "xTicks": "x=210+60*(logMstar-5)",
+          "yTicks": "y=455-66*(logMgas-6)"
+        },
+        "digitizationUncertaintyDex": 0.05
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Figure extraction of individual colored simulation markers. Forty unblended marker centroids retained; points blended with other marks are intentionally omitted.",
+      "definitions": {
+        "gasDefinition": "HI+H2",
+        "population": "isolated-centrals",
+        "imf": "chabrier03"
+      }
+    },
+    {
+      "id": "bradford15.coldgas.z0.fig1.hybrid",
+      "source": "Bradford et al. 2015",
+      "run": null,
+      "kind": "observation",
+      "relation": "gas",
+      "epoch": {
+        "zRepresentative": 0,
+        "zMin": 0,
+        "zMax": 0.05,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass, Chabrier IMF",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 cold hydrogen gas-to-stellar mass ratio, M(HI+H2)/Mstar",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 6.5,
+        "xMax": 11.3
+      },
+      "representation": {
+        "type": "points",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.5,
+            "y": 0.021
+          },
+          {
+            "x": 7,
+            "y": 0.047
+          },
+          {
+            "x": 7.5,
+            "y": 0.073
+          },
+          {
+            "x": 8,
+            "y": 0.099
+          },
+          {
+            "x": 8.5,
+            "y": 0.125
+          },
+          {
+            "x": 8.6,
+            "y": 0.13
+          },
+          {
+            "x": 9,
+            "y": -0.086
+          },
+          {
+            "x": 9.5,
+            "y": -0.356
+          },
+          {
+            "x": 10,
+            "y": -0.625
+          },
+          {
+            "x": 10.5,
+            "y": -0.895
+          },
+          {
+            "x": 11,
+            "y": -1.164
+          },
+          {
+            "x": 11.3,
+            "y": -1.326
+          }
+        ],
+        "intervalKind": "unspecified"
+      },
+      "scatter": null,
+      "selection": {
+        "population": "isolated local galaxies in Bradford et al. 2015",
+        "gas": "HI plus H2 estimate",
+        "warning": "Flux-limited samples favor gas-rich systems; normalization is digitized while slopes and break are published in the paper text."
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Bradford et al. 2015 fit as reproduced in Stinson et al. 2015 Figure 1",
+        "doi": null,
+        "url": "https://arxiv.org/abs/1506.08785",
+        "retrieved": "2026-10-02",
+        "figure": "Figure 1",
+        "panel": "single panel",
+        "extractionMethod": "published broken-power-law slopes 1.052/0.461 and break logMstar=8.6; normalization digitized from plotted gray fit",
+        "digitizationUncertaintyDex": 0.08
+      },
+      "calibration": "validation",
+      "rankable": false,
+      "notes": "Hybrid published-fit/figure extraction. Stored as sampled points so the provenance of the digitized normalization remains visible.",
+      "definitions": {
+        "gasDefinition": "HI+H2",
+        "population": "isolated",
+        "imf": "chabrier03"
+      }
+    }
+  ]
+}

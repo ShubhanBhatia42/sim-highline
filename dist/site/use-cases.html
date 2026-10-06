@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What you can use sim-highline for</title>
+<meta name="description" content="Six concrete jobs for sim-highline: high-redshift predictions, checking your own simulation, building calibration sets, teaching, writing papers, and finding gaps.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>:root{--bg:#0b0e13;--bg2:#11161f;--bg3:#18202c;--line:#273142;--cream:#efe6d2;--cream2:#b8af9a;--cream3:#7a7465;--orange:#e8743b;--mustard:#e2b23a;--display:"Michroma","Eurostile","Arial Narrow",sans-serif;--ui:"Jost","Futura","Avenir Next",system-ui,sans-serif;--mono:ui-monospace,Menlo,Consolas,monospace}
+@media (prefers-color-scheme:light){:root{--bg:#f1ebdd;--bg2:#e8e0cd;--bg3:#ddd3bc;--line:#c9bea5;--cream:#1d2430;--cream2:#4c5464;--cream3:#6b7080}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--cream);font:17px/1.6 var(--ui)}
+a{color:var(--mustard)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+nav{display:flex;align-items:center;gap:22px;padding:18px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.mark{font:15px var(--display);letter-spacing:.07em;color:var(--cream);text-decoration:none}
+.mark i{font-style:normal;color:var(--orange)}
+nav .sp{flex:1}
+nav a.l{color:var(--cream2);text-decoration:none;font-size:15px}
+nav a.l:hover,nav a.l[aria-current]{color:var(--cream)}
+.btn{display:inline-block;padding:11px 20px;border-radius:999px;border:1px solid var(--line);color:var(--cream);text-decoration:none;font-size:15px}
+.btn.main{background:var(--orange);border-color:var(--orange);color:#0b0e13;font-weight:600}
+.btn:hover{filter:brightness(1.1)}
+header.hero{padding:64px 0 28px}
+.eyebrow{font:11px var(--display);letter-spacing:.12em;color:var(--orange);margin:0 0 14px}
+h1{font:clamp(26px,4.2vw,44px)/1.18 var(--display);letter-spacing:.01em;margin:0 0 22px;font-weight:400}
+h2{font:clamp(18px,2.4vw,24px)/1.3 var(--display);margin:0 0 14px;font-weight:400}
+h3{font:15px var(--display);margin:0 0 8px;font-weight:400;letter-spacing:.03em}
+.lede{font-size:20px;color:var(--cream2);max-width:46em;margin:0 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:46px 0;border-top:1px solid var(--line)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card p{margin:0;color:var(--cream2);font-size:16px}
+.nums{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.nums div{border-left:2px solid var(--orange);padding-left:14px}
+.nums b{display:block;font:26px var(--display);color:var(--cream)}
+.nums span{color:var(--cream3);font-size:14px}
+figure{margin:0}
+.chart{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:14px 14px 6px}
+.chart svg{width:100%;height:auto;display:block}
+.chart .axis text{fill:var(--cream3);font:12px var(--ui)}
+.chart .axis line{stroke:var(--line)}
+.chart .al{fill:var(--cream2);font:13px var(--ui)}
+figcaption{color:var(--cream3);font-size:14px;margin-top:10px}
+.key{display:flex;flex-wrap:wrap;gap:6px 16px;margin:10px 4px 4px;font-size:14px;color:var(--cream2)}
+.key i{display:inline-block;width:14px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
+ul.tick{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+ul.tick li{padding-left:26px;position:relative;color:var(--cream2)}
+ul.tick li::before{content:"";position:absolute;left:0;top:.62em;width:12px;height:2px;background:var(--orange)}
+ul.tick b{color:var(--cream)}
+.not{border:1px solid var(--line);border-left:3px solid var(--mustard);border-radius:10px;background:var(--bg2);padding:20px 24px}
+.not li{color:var(--cream2)}
+pre{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font:13.5px/1.55 var(--mono);color:var(--cream)}
+code{font-family:var(--mono);font-size:.92em}
+.case{display:grid;gap:22px;grid-template-columns:1fr;padding:30px 0;border-top:1px solid var(--line)}
+@media (min-width:860px){.case{grid-template-columns:5fr 7fr}}
+.case h2{margin-bottom:8px}
+.case .who{color:var(--cream3);font-size:14px;margin:0 0 12px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0 0 12px;display:grid;gap:8px}
+.steps li{counter-increment:s;padding-left:34px;position:relative;color:var(--cream2)}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font:11px var(--display);color:var(--orange)}
+.limit{color:var(--cream3);font-size:15px;border-left:2px solid var(--line);padding-left:12px;margin:0}
+footer{padding:36px 0 60px;border-top:1px solid var(--line);color:var(--cream3);font-size:14px}
+footer p{margin:6px 0}
+
+nav{row-gap:8px}
+.grp{font:13px var(--display);letter-spacing:.04em;margin:30px 0 8px;font-weight:400;color:var(--cream)}
+.yr{font:11px var(--ui);color:var(--cream3);letter-spacing:0;margin-left:6px}
+.blurb{color:var(--cream2);font-size:15.5px;max-width:52em;margin:0 0 14px}
+.cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.sim{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:18px 20px;scroll-margin-top:16px}
+.sim h4{font:14px var(--display);margin:0 0 10px;font-weight:400}
+.sim dl{display:grid;grid-template-columns:auto 1fr;gap:5px 14px;margin:0 0 10px;font-size:14.5px}
+.sim dt{color:var(--cream3)}
+.sim dd{margin:0;color:var(--cream2)}
+.inc{margin:0;font-size:13.5px;color:var(--cream3);border-top:1px solid var(--line);padding-top:9px}
+.inc b{color:var(--cream2)}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{font:10px var(--display);letter-spacing:.05em;text-align:left;color:var(--cream3);padding:10px 12px;background:var(--bg2);font-weight:400;white-space:nowrap}
+td{padding:9px 12px;border-top:1px solid var(--line);color:var(--cream2);vertical-align:top}
+td:first-child{color:var(--cream)}
+tr:target td{background:var(--bg3)}
+.dim{color:var(--cream3);font-style:italic}
+.flag{font:9px var(--display);color:var(--orange);border:1px solid var(--orange);border-radius:4px;padding:1px 4px;margin-left:6px}
+.figs{display:grid;gap:26px}
+.fig h3{margin-bottom:6px}
+.fig .why{color:var(--cream2);margin:0 0 10px;font-size:16px;max-width:50em}
+.pillars{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.pillars div{border-left:2px solid var(--orange);padding-left:14px}
+.pillars b{display:block;color:var(--cream);margin-bottom:2px}
+.pillars span{color:var(--cream2);font-size:15.5px}
+.q{font:clamp(20px,3vw,30px)/1.3 var(--display);margin:0 0 18px;font-weight:400}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Main"><a class="mark" href="about.html">CON<i>/</i>CORD</a><span class="sp"></span><a class="l" href="about.html">About</a><a class="l" href="sources.html">Simulations &amp; observations</a><a class="l" href="use-cases.html" aria-current="page">Use cases</a><a class="btn main" href="../highline.html">Open the app</a></nav>
+
+<header class="hero">
+<p class="eyebrow">USE CASES</p>
+<h1>Six jobs it does well, and where it stops.</h1>
+<p class="lede">sim-highline is a lookup of published predictions with the definitions attached. These are the situations where that saves time, what you will do, and the limit you should know about.</p>
+</header>
+
+<article>
+<div class="case"><div>
+<h2>1 · Plan a high-redshift proposal</h2>
+<p class="who">Observers, proposal writers, anyone who needs "what do simulations predict at z ≈ 6?"</p>
+<ol class="steps"><li>Open the stellar mass function and step to z = 6.</li><li>Read which simulations have an epoch there (13 simulations provide curves at z ≥ 6 across relations).</li><li>Check the ✓ / ~ / ✕ marks and each curve's mass definition before reading a spread as physics.</li><li>Download the CSV and the BibTeX for the predictions paragraph.</li></ol>
+<p class="limit">Limit: stellar-mass apertures differ between simulations, and the UV luminosity function and cosmic SFR density, which most JWST analyses use, are included but still thin (three and six simulations so far); match the dust treatment before comparing.</p>
+</div><div><div class="card"><h3>What you will see</h3><p>At z ≈ 6 the stellar mass function has curves from 8 simulations: official tables for COLIBRE and THESAN, a catalogue-derived curve for FLARES, a table from the FIRE-2 paper, and digitized curves for EAGLE, Horizon-AGN, Illustris and SIMBA, each tagged with its tier and mass definition. The snapshot below is from the Python loader.</p></div></div></div>
+
+<div class="case"><div>
+<h2>2 · Check your own simulation against the field</h2>
+<p class="who">Simulators tuning a model or writing a validation section.</p>
+<ol class="steps"><li>Paste or load a CSV of your relation into the Customise panel; it is drawn on the same axes, in your browser only.</li><li>Pick a reference (an observation or another simulation) and switch to residuals.</li><li>Export the figure as SVG or PNG; the footer lists the sources.</li></ol>
+<p class="limit">Limit: sim-highline flags definition mismatches but does not score fits, and digitized curves are as precise as the plotted line, not as the original data.</p>
+</div><div><div class="card"><h3>Why it helps</h3><p>You see at once whether an offset from another code is larger than the definition differences between the two (aperture, IMF, population, SFR timescale), which is the first question a referee asks.</p></div></div></div>
+
+<div class="case"><div>
+<h2>3 · Build calibration targets or training sets</h2>
+<p class="who">Modellers of semi-analytic, empirical and emulator-based models.</p>
+<ol class="steps"><li>Load the dataset with <code>sim_highline.load()</code>.</li><li>Select a relation, an epoch range and the evidence you trust (<code>rankable=True</code> keeps only curves with documented definitions and sampling).</li><li>Pull arrays with <code>sim_highline.curve()</code>; units are log₁₀, physical, h-free, with every conversion recorded.</li></ol>
+<p class="limit">Limit: observational references are thinner than simulation curves and uneven across relations; check coverage first.</p>
+</div><div><pre><code>import sim_highline
+df  = sim_highline.load()
+sel = sim_highline.select(df, relation="sfms", kind="simulation", rankable=True)
+one = sim_highline.nearest_epoch(sel, z=2.0)      # nearest published epoch; nothing interpolated
+x, y, lo, hi = sim_highline.curve(df, one.record_id.iloc[0])
+print(sim_highline.bibtex(one))</code></pre></div></div>
+
+<div class="case"><div>
+<h2>4 · Get oriented, or teach it</h2>
+<p class="who">New PhD students, readers outside the subfield, journal clubs.</p>
+<ol class="steps"><li>Open a relation and its About panel.</li><li>Read the paragraph: what the relation is, what observations show now and showed earlier, where simulations agree and disagree, what it means physically.</li><li>Follow the linked reviews and papers; every statement is attributed to one.</li></ol>
+<p class="limit">Limit: the summaries are condensed from the papers' abstracts and are context, not a substitute for reading them.</p>
+</div><div><div class="card"><h3>Sixteen relations</h3><p>Stellar mass function, main sequence, specific SFR, mass–metallicity (three tracers), stellar metallicity, size, stellar–halo mass, black hole–stellar mass and M–σ, angular momentum, quenched fraction, gas, HI and H₂ fractions, and the baryonic and stellar Tully–Fisher relations. Each has three or more references, including a review.</p></div></div></div>
+
+<div class="case"><div>
+<h2>5 · Write the paper</h2>
+<p class="who">Anyone making a comparison figure or a related-work table.</p>
+<ol class="steps"><li>Build the view; the page link stores it so a collaborator sees the same plot.</li><li>Export SVG or PNG with a citation footer, and the BibTeX.</li><li>Cite the original papers listed on each curve, together with the dataset.</li></ol>
+<p class="limit">Limit: digitized records carry the original author's plotting choices; each record's note says what was and was not extracted.</p>
+</div><div><div class="card"><h3>Provenance on every curve</h3><p>Citation, DOI, figure or table, extraction method, axis calibration, retrieval date and a SHA-256 of the source file are stored per record, so a reviewer can re-check any number.</p></div></div></div>
+
+<div class="case"><div>
+<h2>6 · Find what is missing</h2>
+<p class="who">Group leaders deciding what to run or digitize next.</p>
+<ol class="steps"><li>Open the Coverage view: simulation by relation by redshift.</li><li>Look for empty cells and for relations tagged sparse.</li><li>Decide where a new output or a request to the authors would add the most.</li></ol>
+<p class="limit">Limit: it shows the gaps in this data well, not necessarily gaps in the field.</p>
+</div><div><div class="card"><h3>Honest gaps</h3><p>Relations such as the Tully–Fisher and gas-fraction relations have one or two simulations so far, and the UV luminosity function and cosmic SFR density have only three and six simulations so far. The page says so on the relation itself.</p></div></div></div>
+</article>
+
+<section aria-labelledby="qs">
+<h2 id="qs">Quick start (Python)</h2>
+<pre><code>import sim_highline
+df  = sim_highline.load()                      # run from a folder containing data/export, or pass a URL
+sel = sim_highline.select(df, relation="gsmf", z=(5.5, 6.5), kind="simulation")
+g   = sel.groupby(["source", "run"]).agg(z=("z", "first"), points=("x", "size"),
+                                         mass_class=("mass_class", "first"), tier=("tier", "first"))
+print(g.reset_index().assign(run=lambda d: d.run.str.slice(0, 26)).to_string(index=False))
+print(f"{sel.record_id.nunique()} records from {sel.source.nunique()} simulations")</code></pre>
+<p style="color:var(--cream3);font-size:14px;margin:12px 0 6px">Output from dataset v0.8.0:</p>
+<pre><code>     source                        run   z  points    mass_class             tier
+    COLIBRE                  m5 (L025) 6.0      10   unspecified   official-table
+    COLIBRE                  m5 (L050) 6.0      12   unspecified   official-table
+    COLIBRE                  m5 (L100) 6.0      18   unspecified   official-table
+    COLIBRE                  m6 (L025) 6.0       5   unspecified   official-table
+    COLIBRE                  m6 (L200) 6.0      13   unspecified   official-table
+    COLIBRE                  m7 (L400) 6.0       9   unspecified   official-table
+    COLIBRE       m7 hybrid AGN (L200) 6.0      10   unspecified   official-table
+      EAGLE              Ref-L100N1504 6.0       8      aperture digitized-figure
+     FIRE-2 FIRE-2 high-z zoom sample  6.0      10         other  published-table
+     FLARES 40 resimulated regions (EA 6.0      15      aperture  catalog-derived
+Horizon-AGN                Horizon-AGN 6.0       3   unspecified digitized-figure
+Horizon-AGN              Horizon-noAGN 6.0       3   unspecified digitized-figure
+  Illustris Illustris-1 (full SUBFIND  6.0      12 total-subhalo digitized-figure
+  Illustris Illustris-1 (mass within 2 6.0      11      aperture digitized-figure
+      SIMBA   m100n1024 (all galaxies) 5.9      10 total-subhalo digitized-figure
+      SIMBA m100n1024 (central quenche 5.9       5 total-subhalo digitized-figure
+      SIMBA m100n1024 (central star-fo 5.9      11 total-subhalo digitized-figure
+   THESAN-1                   THESAN-1 6.0      18      aperture   official-table
+18 records from 8 simulations</code></pre>
+</section>
+
+<section aria-labelledby="fit">
+<h2 id="fit">Who it is for, and who it is not for</h2>
+<div class="grid">
+<div class="card"><h3>A good fit</h3><p>People who need predictions from several simulations on one page, with the comparison caveats visible and a citable export: observers, students, modellers, and authors writing comparison sections.</p></div>
+<div class="card"><h3>Use the originals instead</h3><p>If you need exact values, full distributions or a definition the papers did not plot, use the collaboration's own data release or catalogue; sim-highline links you to it through each record's citation.</p></div>
+</div>
+</section>
+
+<footer>
+<p>sim-highline 0.8.0 · 2026-10-07 · Shubhan Bhatia. Beta from one maintainer; a sample of curves is waiting for review by people who know each simulation. Please cite the original papers with the dataset (see <code>CITATION.cff</code>).</p>
+<p><a href="../highline.html">Open the beta</a> · <a href="index.html">Product</a> · <a href="../data/export/sim-highline-records.csv">Download the data</a></p>
+</footer>
+</div>
+</body>
+</html>

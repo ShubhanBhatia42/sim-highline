@@ -1,0 +1,133 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "sales17.eagle-apostle.btfr.max.z0",
+      "source": "EAGLE",
+      "run": "APOSTLE + EAGLE galaxies, V_max fit (Sales+17)",
+      "kind": "simulation",
+      "relation": "btfr",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 rotation velocity, maximum circular velocity V_max of the halo (the green curve in the paper's Fig. 6)",
+        "xUnit": "log10(km/s)",
+        "yDefinition": "log10 baryonic mass M_bar (stars plus 1.4 M_HI within r_gal)",
+        "yUnit": "log10(Msun)"
+      },
+      "domain": {
+        "xMin": 1.493,
+        "xMax": 2.419
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "M_bar/Msun = m0 nu^alpha exp(-nu^gamma), nu = V / (50 km/s)",
+        "expression": "log10(m0*Math.pow(Math.pow(10,x)/50,alpha)*Math.exp(-Math.pow(Math.pow(10,x)/50,gamma)))",
+        "parameters": {
+          "m0": 710000000,
+          "alpha": 3.08,
+          "gamma": -2.43
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "simulated galaxies of the EAGLE Ref-L100N1504 volume and the APOSTLE zoom volumes (Local Group analogues) at z=0, all morphologies",
+        "warning": "Fit of Sales et al. 2017 with a slope that steepens towards low velocity (V_max). The domain is the extent of the drawn curve in the paper's figure; the formula reproduces that curve to 0.008 dex at every vertex (checked in the script). M_bar uses gas = 1.4 M_HI (HI from the Rahmati+13 prescription). APOSTLE is a zoom sample, not volume complete."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "massDefinition": "baryonic, stars plus 1.4 M_HI within r_gal",
+        "population": "all galaxies (EAGLE Ref-L100N1504 and APOSTLE)",
+        "velocityDefinition": "maximum circular velocity V_max of the halo (the green curve in the paper's Fig. 6)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Sales et al. 2017, MNRAS 464, 2419 (arXiv:1602.02155), best-fit BTF parameters table",
+        "doi": "10.1093/mnras/stw2461",
+        "url": "https://arxiv.org/abs/1602.02155",
+        "retrieved": "2026-10-05",
+        "checksumSha256": "493667f0acb7d28749bbaf11eddb42ebacdf81ac8a5c977aa3dde1aa71d27b25",
+        "sourceMember": "ms.tex table:TabBestFitPar (arXiv source, transcribed); domain from figs/btf_rhbar_massive.pdf",
+        "extractionMethod": "transcribed from the arXiv LaTeX table; each fit evaluated against the vector path of the curve drawn in the paper's figure (max deviation under 0.05 dex) and the domain read from that path",
+        "figureSha256": "d9c7ef973edb72e2d705c4cb71364d745f5b32fdf36bd9e6f24a4eab05995b4b"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "APOSTLE is a zoom suite and the sample mixes it with EAGLE, so the record is not rankable. The IMF and cosmology follow the EAGLE runs."
+    },
+    {
+      "id": "sales17.eagle-apostle.btfr.out.z0",
+      "source": "EAGLE",
+      "run": "APOSTLE + EAGLE galaxies, V_out fit (Sales+17)",
+      "kind": "simulation",
+      "relation": "btfr",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 rotation velocity, V_out of the paper's table (the thick dashed fit in Fig. 6, drawn against the circular velocity at twice the baryonic half-mass radius)",
+        "xUnit": "log10(km/s)",
+        "yDefinition": "log10 baryonic mass M_bar (stars plus 1.4 M_HI within r_gal)",
+        "yUnit": "log10(Msun)"
+      },
+      "domain": {
+        "xMin": 1.421,
+        "xMax": 2.419
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "M_bar/Msun = m0 nu^alpha exp(-nu^gamma), nu = V / (50 km/s)",
+        "expression": "log10(m0*Math.pow(Math.pow(10,x)/50,alpha)*Math.exp(-Math.pow(Math.pow(10,x)/50,gamma)))",
+        "parameters": {
+          "m0": 1250000000,
+          "alpha": 2.5,
+          "gamma": -2
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "simulated galaxies of the EAGLE Ref-L100N1504 volume and the APOSTLE zoom volumes (Local Group analogues) at z=0, all morphologies",
+        "warning": "Fit of Sales et al. 2017 with a slope that steepens towards low velocity (V_out). The domain is the extent of the drawn curve in the paper's figure; the formula reproduces that curve to 0.010 dex at every vertex (checked in the script). M_bar uses gas = 1.4 M_HI (HI from the Rahmati+13 prescription). APOSTLE is a zoom sample, not volume complete."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "massDefinition": "baryonic, stars plus 1.4 M_HI within r_gal",
+        "population": "all galaxies (EAGLE Ref-L100N1504 and APOSTLE)",
+        "velocityDefinition": "V_out of the paper's table (the thick dashed fit in Fig. 6, drawn against the circular velocity at twice the baryonic half-mass radius)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Sales et al. 2017, MNRAS 464, 2419 (arXiv:1602.02155), best-fit BTF parameters table",
+        "doi": "10.1093/mnras/stw2461",
+        "url": "https://arxiv.org/abs/1602.02155",
+        "retrieved": "2026-10-05",
+        "checksumSha256": "493667f0acb7d28749bbaf11eddb42ebacdf81ac8a5c977aa3dde1aa71d27b25",
+        "sourceMember": "ms.tex table:TabBestFitPar (arXiv source, transcribed); domain from figs/btf_rhbar_massive.pdf",
+        "extractionMethod": "transcribed from the arXiv LaTeX table; each fit evaluated against the vector path of the curve drawn in the paper's figure (max deviation under 0.05 dex) and the domain read from that path",
+        "figureSha256": "d9c7ef973edb72e2d705c4cb71364d745f5b32fdf36bd9e6f24a4eab05995b4b"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "APOSTLE is a zoom suite and the sample mixes it with EAGLE, so the record is not rankable. The IMF and cosmology follow the EAGLE runs."
+    }
+  ]
+}

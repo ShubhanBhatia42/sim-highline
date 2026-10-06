@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About sim-highline: do galaxy simulations agree?</title>
+<meta name="description" content="Every published simulation prediction for a galaxy scaling relation next to the observations, on one axis, with the definitions that decide whether curves can be compared.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>/*__CSS__*/</style>
+</head>
+<body>
+<div class="wrap">
+{{nav}}
+
+<header class="hero">
+<p class="eyebrow">ABOUT · BETA {{version}}</p>
+<h1>Do galaxy simulations agree with each other, and with the sky?</h1>
+<p class="lede">sim-highline puts every published prediction for a galaxy scaling relation on one axis, next to the observations, and keeps the definitions that decide whether two curves can be compared. {{records}} curves, {{suites}} simulations, {{obsSources}} observational sources, {{relations}} relations, z = 0 to {{zMax}}.</p>
+<div class="cta"><a class="btn main" href="../highline.html">Open the app</a><a class="btn" href="sources.html">Where the curves come from</a></div>
+</header>
+
+<section aria-labelledby="four">
+<h2 id="four">Four places to look</h2>
+<div class="figs">
+
+<div class="fig"><h3>Early galaxies: the stellar mass function at z ≈ 6</h3>
+<p class="why">How many galaxies of a given mass exist a billion years after the Big Bang tests star-formation efficiency and feedback directly, and it is where JWST now provides data.</p>
+<figure class="chart">{{gsmfSvg}}<div class="key">{{gsmfKey}}</div><figcaption>{{gsmfCap}} <a href="../highline.html#r=gsmf&amp;z=6">Open in the app</a></figcaption></figure></div>
+
+<div class="fig"><h3>Cosmic noon: the star-forming main sequence at z ≈ 2</h3>
+<p class="why">The tight link between star-formation rate and stellar mass sets how fast galaxies grow. Published simulations have long been reported to differ from observations in normalisation here, and from one another, by amounts comparable to how star-forming galaxies and SFRs are defined.</p>
+<figure class="chart">{{sfmsSvg}}<div class="key">{{sfmsKey}}</div><figcaption>{{sfmsCap}} <a href="../highline.html#r=sfms&amp;z=2">Open in the app</a></figcaption></figure></div>
+
+<div class="fig"><h3>Metals: the gas-phase mass–metallicity relation at z ≈ 0</h3>
+<p class="why">Winds remove metals most efficiently from low-mass galaxies, so the relation records feedback. Its absolute scale also depends on the abundance calibration used by the observers, which can matter as much as the physics.</p>
+<figure class="chart">{{mzrSvg}}<div class="key">{{mzrKey}}</div><figcaption>{{mzrCap}} <a href="../highline.html#r=mzr&amp;z=0">Open in the app</a></figcaption></figure></div>
+
+<div class="fig"><h3>Black holes: black-hole mass against stellar mass at z ≈ 0</h3>
+<p class="why">Seeding, supernova and AGN feedback all leave a mark here. Published comparisons find tight relations in every simulation but differences in shape, normalisation and the number of low-mass black holes in massive galaxies.</p>
+<figure class="chart">{{bhSvg}}<div class="key">{{bhKey}}</div><figcaption>{{bhCap}} <a href="../highline.html#r=bh&amp;z=0">Open in the app</a></figcaption></figure></div>
+
+</div>
+</section>
+
+<section aria-labelledby="read">
+<h2 id="read">How to read it</h2>
+<div class="pillars">
+<div><b>Evidence tier</b><span>Official table, catalogue, paper table, published fit, or digitized from a figure. Digitized curves are never used for ranking.</span></div>
+<div><b>Source badge</b><span>A letter on every legend row says where the data come from; hover for the paper. Dotted lines are digitized figures.</span></div>
+<div><b>Definitions</b><span>Mass aperture, IMF, population, SFR timescale and more are stored per curve; ✓ / ~ / ✕ marks whether two curves are comparable.</span></div>
+<div><b>No interpolation</b><span>A simulation with no output near your redshift simply disappears; nothing is filled in.</span></div>
+</div>
+</section>
+
+<section aria-labelledby="do">
+<h2 id="do">What you can do</h2>
+<ul class="tick">
+<li><b>Compare.</b> Step through redshift, switch simulations on and off, pick a reference, read residuals.</li>
+<li><b>Understand.</b> A short note on every relation: what observations show, where simulations agree and differ, what it means physically, with reviews linked.</li>
+<li><b>Download.</b> Exactly what you see, or everything, as tidy tables for pandas; BibTeX; figures with a citation footer.</li>
+</ul>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it is not</h2>
+<div class="not"><ul class="tick" style="gap:8px">
+<li><b>Not a replacement for the original data.</b> {{digitizedShare}} of simulation curves are digitized from published figures; only {{rankableShare}} are marked rankable.</li>
+<li><b>Not a leaderboard.</b> Many curves cannot be compared like for like, and sim-highline says so.</li>
+<li><b>Not independently verified yet.</b> {{auditNote}}</li>
+<li><b>Not complete.</b> Some relations have one or two simulations so far; UV luminosity functions (three simulations) and the cosmic SFR density (six) are recent additions.</li>
+</ul></div>
+</section>
+
+<footer>
+<p>sim-highline {{version}} · {{released}} · built and maintained by Shubhan Bhatia. Cite the original papers (each record carries its citation and DOI) together with the dataset; see <code>CITATION.cff</code>. Licence to be decided by the maintainer.</p>
+<p><a href="../highline.html">App</a> · <a href="sources.html">Simulations &amp; observations</a> · <a href="use-cases.html">Use cases</a> · <a href="index.html">Product overview</a> · <a href="../data/export/sim-highline-records.csv">Data</a></p>
+</footer>
+</div>
+</body>
+</html>

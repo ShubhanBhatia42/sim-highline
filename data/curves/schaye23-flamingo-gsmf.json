@@ -1,0 +1,1297 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "schaye23.flamingo-l1_m9.gsmf.z0",
+      "source": "FLAMINGO",
+      "run": "L1_m9",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (3D 50 pkpc aperture, with 0.3 dex lognormal mock scatter)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dn/dlog10(M*)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 9.903,
+        "xMax": 12.537
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.903,
+            "y": -2.201
+          },
+          {
+            "x": 9.962,
+            "y": -2.1647
+          },
+          {
+            "x": 10.068,
+            "y": -2.1497
+          },
+          {
+            "x": 10.174,
+            "y": -2.1684
+          },
+          {
+            "x": 10.286,
+            "y": -2.2104
+          },
+          {
+            "x": 10.529,
+            "y": -2.3177
+          },
+          {
+            "x": 10.588,
+            "y": -2.3405
+          },
+          {
+            "x": 10.788,
+            "y": -2.415
+          },
+          {
+            "x": 10.865,
+            "y": -2.4571
+          },
+          {
+            "x": 10.93,
+            "y": -2.5055
+          },
+          {
+            "x": 10.989,
+            "y": -2.5618
+          },
+          {
+            "x": 11.036,
+            "y": -2.6194
+          },
+          {
+            "x": 11.137,
+            "y": -2.7654
+          },
+          {
+            "x": 11.166,
+            "y": -2.8143
+          },
+          {
+            "x": 11.208,
+            "y": -2.884
+          },
+          {
+            "x": 11.243,
+            "y": -2.9613
+          },
+          {
+            "x": 11.261,
+            "y": -2.9964
+          },
+          {
+            "x": 11.296,
+            "y": -3.0633
+          },
+          {
+            "x": 11.326,
+            "y": -3.1336
+          },
+          {
+            "x": 11.361,
+            "y": -3.225
+          },
+          {
+            "x": 11.397,
+            "y": -3.296
+          },
+          {
+            "x": 11.426,
+            "y": -3.3714
+          },
+          {
+            "x": 11.462,
+            "y": -3.469
+          },
+          {
+            "x": 11.497,
+            "y": -3.5431
+          },
+          {
+            "x": 11.527,
+            "y": -3.6225
+          },
+          {
+            "x": 11.562,
+            "y": -3.7256
+          },
+          {
+            "x": 11.598,
+            "y": -3.8054
+          },
+          {
+            "x": 11.627,
+            "y": -3.8921
+          },
+          {
+            "x": 11.662,
+            "y": -4.0055
+          },
+          {
+            "x": 11.692,
+            "y": -4.0778
+          },
+          {
+            "x": 11.722,
+            "y": -4.1715
+          },
+          {
+            "x": 11.745,
+            "y": -4.2709
+          },
+          {
+            "x": 11.757,
+            "y": -4.3116
+          },
+          {
+            "x": 11.787,
+            "y": -4.3931
+          },
+          {
+            "x": 11.81,
+            "y": -4.477
+          },
+          {
+            "x": 11.834,
+            "y": -4.5877
+          },
+          {
+            "x": 11.857,
+            "y": -4.7092
+          },
+          {
+            "x": 11.887,
+            "y": -4.8033
+          },
+          {
+            "x": 11.911,
+            "y": -4.9034
+          },
+          {
+            "x": 11.934,
+            "y": -5.0422
+          },
+          {
+            "x": 11.958,
+            "y": -5.1997
+          },
+          {
+            "x": 11.981,
+            "y": -5.287
+          },
+          {
+            "x": 12.005,
+            "y": -5.4034
+          },
+          {
+            "x": 12.023,
+            "y": -5.5236
+          },
+          {
+            "x": 12.04,
+            "y": -5.6988
+          },
+          {
+            "x": 12.052,
+            "y": -5.8455
+          },
+          {
+            "x": 12.082,
+            "y": -5.9481
+          },
+          {
+            "x": 12.105,
+            "y": -6.0598
+          },
+          {
+            "x": 12.123,
+            "y": -6.1737
+          },
+          {
+            "x": 12.141,
+            "y": -6.3363
+          },
+          {
+            "x": 12.153,
+            "y": -6.4647
+          },
+          {
+            "x": 12.176,
+            "y": -6.5528
+          },
+          {
+            "x": 12.2,
+            "y": -6.6707
+          },
+          {
+            "x": 12.218,
+            "y": -6.7928
+          },
+          {
+            "x": 12.235,
+            "y": -6.972
+          },
+          {
+            "x": 12.253,
+            "y": -7.23
+          },
+          {
+            "x": 12.283,
+            "y": -7.3193
+          },
+          {
+            "x": 12.306,
+            "y": -7.413
+          },
+          {
+            "x": 12.33,
+            "y": -7.5406
+          },
+          {
+            "x": 12.359,
+            "y": -7.7178
+          },
+          {
+            "x": 12.395,
+            "y": -7.8014
+          },
+          {
+            "x": 12.424,
+            "y": -7.8933
+          },
+          {
+            "x": 12.454,
+            "y": -8.0154
+          },
+          {
+            "x": 12.478,
+            "y": -8.1265
+          },
+          {
+            "x": 12.495,
+            "y": -8.2397
+          },
+          {
+            "x": 12.513,
+            "y": -8.4007
+          },
+          {
+            "x": 12.525,
+            "y": -8.5617
+          },
+          {
+            "x": 12.537,
+            "y": -8.8301
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Solid segment only of the curve in Schaye et al. 2023 (MNRAS 526, 4978) Fig. 8 left-top panel, above the resolution-dependent lower mass limit for calibration; the dotted low-mass part is omitted. L1_m9: box 1000 cMpc, fiducial galaxy formation model and cosmology. The curves include the 0.3 dex random lognormal stellar-mass scatter expected in observed data, so they are not raw catalogue values. The paper gives no table."
+      },
+      "definitions": {
+        "massDefinition": "aperture-50pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Schaye et al. 2023, MNRAS 526, 4978, Fig. 8 (arXiv source numbering) left-top panel",
+        "doi": "10.1093/mnras/stad2419",
+        "url": "https://arxiv.org/abs/2306.04024",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 8",
+        "panel": "left-top (resolutions and box sizes, z=0)",
+        "checksumSha256": "ac77fb5234d95bf20e9d479be19caa5ff8ba478ebacd9c3c3279686c4a366eef",
+        "sourceMember": "Images/SMF_2_Panel.pdf (solid L1_m9 line, 1.5 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^8-10^13 (uniform spacing asserted); y: labelled decades 10^-2..10^-8; both snapped to tick marks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "target",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "schaye23.flamingo-l2p8_m9.gsmf.z0",
+      "source": "FLAMINGO",
+      "run": "L2p8_m9",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (3D 50 pkpc aperture, with 0.3 dex lognormal mock scatter)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dn/dlog10(M*)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 9.903,
+        "xMax": 12.442
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.903,
+            "y": -2.204
+          },
+          {
+            "x": 9.962,
+            "y": -2.1674
+          },
+          {
+            "x": 10.068,
+            "y": -2.1528
+          },
+          {
+            "x": 10.174,
+            "y": -2.173
+          },
+          {
+            "x": 10.286,
+            "y": -2.2139
+          },
+          {
+            "x": 10.434,
+            "y": -2.2807
+          },
+          {
+            "x": 10.493,
+            "y": -2.3057
+          },
+          {
+            "x": 10.664,
+            "y": -2.3707
+          },
+          {
+            "x": 10.771,
+            "y": -2.4089
+          },
+          {
+            "x": 10.853,
+            "y": -2.4504
+          },
+          {
+            "x": 10.918,
+            "y": -2.4974
+          },
+          {
+            "x": 10.983,
+            "y": -2.5569
+          },
+          {
+            "x": 11.031,
+            "y": -2.6114
+          },
+          {
+            "x": 11.125,
+            "y": -2.742
+          },
+          {
+            "x": 11.237,
+            "y": -2.9444
+          },
+          {
+            "x": 11.261,
+            "y": -2.9937
+          },
+          {
+            "x": 11.296,
+            "y": -3.0594
+          },
+          {
+            "x": 11.332,
+            "y": -3.1442
+          },
+          {
+            "x": 11.361,
+            "y": -3.2183
+          },
+          {
+            "x": 11.397,
+            "y": -3.2903
+          },
+          {
+            "x": 11.426,
+            "y": -3.3671
+          },
+          {
+            "x": 11.462,
+            "y": -3.4665
+          },
+          {
+            "x": 11.497,
+            "y": -3.5415
+          },
+          {
+            "x": 11.527,
+            "y": -3.6222
+          },
+          {
+            "x": 11.562,
+            "y": -3.7265
+          },
+          {
+            "x": 11.598,
+            "y": -3.8056
+          },
+          {
+            "x": 11.627,
+            "y": -3.8914
+          },
+          {
+            "x": 11.662,
+            "y": -4.0037
+          },
+          {
+            "x": 11.692,
+            "y": -4.0759
+          },
+          {
+            "x": 11.722,
+            "y": -4.1692
+          },
+          {
+            "x": 11.745,
+            "y": -4.2683
+          },
+          {
+            "x": 11.757,
+            "y": -4.3089
+          },
+          {
+            "x": 11.787,
+            "y": -4.3905
+          },
+          {
+            "x": 11.81,
+            "y": -4.4745
+          },
+          {
+            "x": 11.834,
+            "y": -4.5853
+          },
+          {
+            "x": 11.857,
+            "y": -4.7074
+          },
+          {
+            "x": 11.887,
+            "y": -4.8036
+          },
+          {
+            "x": 11.911,
+            "y": -4.9066
+          },
+          {
+            "x": 11.928,
+            "y": -5.0092
+          },
+          {
+            "x": 11.964,
+            "y": -5.2339
+          },
+          {
+            "x": 11.987,
+            "y": -5.3242
+          },
+          {
+            "x": 12.011,
+            "y": -5.4455
+          },
+          {
+            "x": 12.029,
+            "y": -5.5725
+          },
+          {
+            "x": 12.046,
+            "y": -5.7622
+          },
+          {
+            "x": 12.052,
+            "y": -5.8218
+          },
+          {
+            "x": 12.082,
+            "y": -5.9267
+          },
+          {
+            "x": 12.105,
+            "y": -6.0415
+          },
+          {
+            "x": 12.123,
+            "y": -6.1595
+          },
+          {
+            "x": 12.141,
+            "y": -6.3303
+          },
+          {
+            "x": 12.153,
+            "y": -6.4669
+          },
+          {
+            "x": 12.176,
+            "y": -6.5515
+          },
+          {
+            "x": 12.2,
+            "y": -6.6635
+          },
+          {
+            "x": 12.218,
+            "y": -6.7778
+          },
+          {
+            "x": 12.235,
+            "y": -6.9413
+          },
+          {
+            "x": 12.253,
+            "y": -7.1663
+          },
+          {
+            "x": 12.277,
+            "y": -7.2487
+          },
+          {
+            "x": 12.3,
+            "y": -7.3569
+          },
+          {
+            "x": 12.318,
+            "y": -7.4663
+          },
+          {
+            "x": 12.336,
+            "y": -7.6203
+          },
+          {
+            "x": 12.353,
+            "y": -7.823
+          },
+          {
+            "x": 12.377,
+            "y": -7.926
+          },
+          {
+            "x": 12.395,
+            "y": -8.0286
+          },
+          {
+            "x": 12.413,
+            "y": -8.1698
+          },
+          {
+            "x": 12.424,
+            "y": -8.3035
+          },
+          {
+            "x": 12.436,
+            "y": -8.5045
+          },
+          {
+            "x": 12.442,
+            "y": -8.6596
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Solid segment only of the curve in Schaye et al. 2023 (MNRAS 526, 4978) Fig. 8 left-top panel, above the resolution-dependent lower mass limit for calibration; the dotted low-mass part is omitted. L2p8_m9: box 2800 cMpc, fiducial galaxy formation model and cosmology. The curves include the 0.3 dex random lognormal stellar-mass scatter expected in observed data, so they are not raw catalogue values. The paper gives no table."
+      },
+      "definitions": {
+        "massDefinition": "aperture-50pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Schaye et al. 2023, MNRAS 526, 4978, Fig. 8 (arXiv source numbering) left-top panel",
+        "doi": "10.1093/mnras/stad2419",
+        "url": "https://arxiv.org/abs/2306.04024",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 8",
+        "panel": "left-top (resolutions and box sizes, z=0)",
+        "checksumSha256": "ac77fb5234d95bf20e9d479be19caa5ff8ba478ebacd9c3c3279686c4a366eef",
+        "sourceMember": "Images/SMF_2_Panel.pdf (solid L2p8_m9 line, 1.5 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^8-10^13 (uniform spacing asserted); y: labelled decades 10^-2..10^-8; both snapped to tick marks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "target",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "schaye23.flamingo-l1_m10.gsmf.z0",
+      "source": "FLAMINGO",
+      "run": "L1_m10",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (3D 50 pkpc aperture, with 0.3 dex lognormal mock scatter)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dn/dlog10(M*)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 11.17,
+        "xMax": 12.141
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 11.17,
+            "y": -2.8915
+          },
+          {
+            "x": 11.233,
+            "y": -2.9432
+          },
+          {
+            "x": 11.261,
+            "y": -2.9759
+          },
+          {
+            "x": 11.3,
+            "y": -3.0407
+          },
+          {
+            "x": 11.335,
+            "y": -3.116
+          },
+          {
+            "x": 11.415,
+            "y": -3.3228
+          },
+          {
+            "x": 11.44,
+            "y": -3.4172
+          },
+          {
+            "x": 11.457,
+            "y": -3.483
+          },
+          {
+            "x": 11.486,
+            "y": -3.5638
+          },
+          {
+            "x": 11.51,
+            "y": -3.6554
+          },
+          {
+            "x": 11.531,
+            "y": -3.7588
+          },
+          {
+            "x": 11.563,
+            "y": -3.9224
+          },
+          {
+            "x": 11.591,
+            "y": -4.0222
+          },
+          {
+            "x": 11.615,
+            "y": -4.1415
+          },
+          {
+            "x": 11.633,
+            "y": -4.2589
+          },
+          {
+            "x": 11.661,
+            "y": -4.4603
+          },
+          {
+            "x": 11.685,
+            "y": -4.5552
+          },
+          {
+            "x": 11.706,
+            "y": -4.6634
+          },
+          {
+            "x": 11.724,
+            "y": -4.7863
+          },
+          {
+            "x": 11.741,
+            "y": -4.9672
+          },
+          {
+            "x": 11.755,
+            "y": -5.1181
+          },
+          {
+            "x": 11.78,
+            "y": -5.2124
+          },
+          {
+            "x": 11.801,
+            "y": -5.3199
+          },
+          {
+            "x": 11.818,
+            "y": -5.4416
+          },
+          {
+            "x": 11.836,
+            "y": -5.6201
+          },
+          {
+            "x": 11.857,
+            "y": -5.8856
+          },
+          {
+            "x": 11.881,
+            "y": -5.9949
+          },
+          {
+            "x": 11.902,
+            "y": -6.1247
+          },
+          {
+            "x": 11.92,
+            "y": -6.2819
+          },
+          {
+            "x": 11.934,
+            "y": -6.4768
+          },
+          {
+            "x": 11.944,
+            "y": -6.7264
+          },
+          {
+            "x": 11.951,
+            "y": -6.9639
+          },
+          {
+            "x": 11.976,
+            "y": -7.0648
+          },
+          {
+            "x": 11.997,
+            "y": -7.1817
+          },
+          {
+            "x": 12.015,
+            "y": -7.3179
+          },
+          {
+            "x": 12.029,
+            "y": -7.4763
+          },
+          {
+            "x": 12.039,
+            "y": -7.6564
+          },
+          {
+            "x": 12.057,
+            "y": -8.0265
+          },
+          {
+            "x": 12.078,
+            "y": -8.1271
+          },
+          {
+            "x": 12.099,
+            "y": -8.2659
+          },
+          {
+            "x": 12.116,
+            "y": -8.4384
+          },
+          {
+            "x": 12.13,
+            "y": -8.6638
+          },
+          {
+            "x": 12.141,
+            "y": -8.9867
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Solid segment only of the curve in Schaye et al. 2023 (MNRAS 526, 4978) Fig. 8 left-top panel, above the resolution-dependent lower mass limit for calibration; the dotted low-mass part is omitted. L1_m10: box 1000 cMpc, fiducial galaxy formation model and cosmology. The curves include the 0.3 dex random lognormal stellar-mass scatter expected in observed data, so they are not raw catalogue values. The paper gives no table."
+      },
+      "definitions": {
+        "massDefinition": "aperture-50pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Schaye et al. 2023, MNRAS 526, 4978, Fig. 8 (arXiv source numbering) left-top panel",
+        "doi": "10.1093/mnras/stad2419",
+        "url": "https://arxiv.org/abs/2306.04024",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 8",
+        "panel": "left-top (resolutions and box sizes, z=0)",
+        "checksumSha256": "ac77fb5234d95bf20e9d479be19caa5ff8ba478ebacd9c3c3279686c4a366eef",
+        "sourceMember": "Images/SMF_2_Panel.pdf (solid L1_m10 line, 1.5 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^8-10^13 (uniform spacing asserted); y: labelled decades 10^-2..10^-8; both snapped to tick marks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "target",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "schaye23.flamingo-l1_m8.gsmf.z0",
+      "source": "FLAMINGO",
+      "run": "L1_m8",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (3D 50 pkpc aperture, with 0.3 dex lognormal mock scatter)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dn/dlog10(M*)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.704,
+        "xMax": 12.548
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.704,
+            "y": -1.5051
+          },
+          {
+            "x": 8.792,
+            "y": -1.5478
+          },
+          {
+            "x": 8.893,
+            "y": -1.6103
+          },
+          {
+            "x": 9.023,
+            "y": -1.705
+          },
+          {
+            "x": 9.164,
+            "y": -1.8158
+          },
+          {
+            "x": 9.229,
+            "y": -1.8654
+          },
+          {
+            "x": 9.277,
+            "y": -1.9015
+          },
+          {
+            "x": 9.341,
+            "y": -1.9522
+          },
+          {
+            "x": 9.371,
+            "y": -1.9725
+          },
+          {
+            "x": 9.442,
+            "y": -2.0231
+          },
+          {
+            "x": 9.471,
+            "y": -2.0414
+          },
+          {
+            "x": 9.542,
+            "y": -2.0866
+          },
+          {
+            "x": 9.572,
+            "y": -2.103
+          },
+          {
+            "x": 9.832,
+            "y": -2.2308
+          },
+          {
+            "x": 9.885,
+            "y": -2.2496
+          },
+          {
+            "x": 10.05,
+            "y": -2.2953
+          },
+          {
+            "x": 10.204,
+            "y": -2.3071
+          },
+          {
+            "x": 10.286,
+            "y": -2.3011
+          },
+          {
+            "x": 10.399,
+            "y": -2.2783
+          },
+          {
+            "x": 10.664,
+            "y": -2.2117
+          },
+          {
+            "x": 10.759,
+            "y": -2.2231
+          },
+          {
+            "x": 10.836,
+            "y": -2.2691
+          },
+          {
+            "x": 10.865,
+            "y": -2.2945
+          },
+          {
+            "x": 10.912,
+            "y": -2.3495
+          },
+          {
+            "x": 10.983,
+            "y": -2.4501
+          },
+          {
+            "x": 11.025,
+            "y": -2.521
+          },
+          {
+            "x": 11.066,
+            "y": -2.5971
+          },
+          {
+            "x": 11.107,
+            "y": -2.6642
+          },
+          {
+            "x": 11.143,
+            "y": -2.738
+          },
+          {
+            "x": 11.155,
+            "y": -2.7618
+          },
+          {
+            "x": 11.196,
+            "y": -2.8257
+          },
+          {
+            "x": 11.231,
+            "y": -2.8956
+          },
+          {
+            "x": 11.261,
+            "y": -2.9547
+          },
+          {
+            "x": 11.302,
+            "y": -3.0187
+          },
+          {
+            "x": 11.338,
+            "y": -3.0886
+          },
+          {
+            "x": 11.355,
+            "y": -3.1242
+          },
+          {
+            "x": 11.397,
+            "y": -3.1837
+          },
+          {
+            "x": 11.432,
+            "y": -3.2478
+          },
+          {
+            "x": 11.462,
+            "y": -3.3016
+          },
+          {
+            "x": 11.503,
+            "y": -3.3636
+          },
+          {
+            "x": 11.538,
+            "y": -3.431
+          },
+          {
+            "x": 11.562,
+            "y": -3.4733
+          },
+          {
+            "x": 11.603,
+            "y": -3.5394
+          },
+          {
+            "x": 11.639,
+            "y": -3.6121
+          },
+          {
+            "x": 11.657,
+            "y": -3.6486
+          },
+          {
+            "x": 11.698,
+            "y": -3.7181
+          },
+          {
+            "x": 11.733,
+            "y": -3.7952
+          },
+          {
+            "x": 11.763,
+            "y": -3.8603
+          },
+          {
+            "x": 11.798,
+            "y": -3.928
+          },
+          {
+            "x": 11.828,
+            "y": -3.9992
+          },
+          {
+            "x": 11.863,
+            "y": -4.089
+          },
+          {
+            "x": 11.899,
+            "y": -4.1628
+          },
+          {
+            "x": 11.928,
+            "y": -4.2419
+          },
+          {
+            "x": 11.964,
+            "y": -4.3424
+          },
+          {
+            "x": 11.999,
+            "y": -4.4262
+          },
+          {
+            "x": 12.029,
+            "y": -4.5183
+          },
+          {
+            "x": 12.064,
+            "y": -4.6365
+          },
+          {
+            "x": 12.094,
+            "y": -4.7156
+          },
+          {
+            "x": 12.123,
+            "y": -4.8202
+          },
+          {
+            "x": 12.17,
+            "y": -5.0111
+          },
+          {
+            "x": 12.194,
+            "y": -5.0941
+          },
+          {
+            "x": 12.218,
+            "y": -5.2032
+          },
+          {
+            "x": 12.235,
+            "y": -5.3138
+          },
+          {
+            "x": 12.253,
+            "y": -5.4471
+          },
+          {
+            "x": 12.277,
+            "y": -5.5289
+          },
+          {
+            "x": 12.3,
+            "y": -5.6362
+          },
+          {
+            "x": 12.318,
+            "y": -5.7443
+          },
+          {
+            "x": 12.336,
+            "y": -5.8957
+          },
+          {
+            "x": 12.353,
+            "y": -6.0934
+          },
+          {
+            "x": 12.377,
+            "y": -6.1916
+          },
+          {
+            "x": 12.401,
+            "y": -6.327
+          },
+          {
+            "x": 12.418,
+            "y": -6.4745
+          },
+          {
+            "x": 12.43,
+            "y": -6.6164
+          },
+          {
+            "x": 12.442,
+            "y": -6.8363
+          },
+          {
+            "x": 12.454,
+            "y": -7.1123
+          },
+          {
+            "x": 12.478,
+            "y": -7.2234
+          },
+          {
+            "x": 12.495,
+            "y": -7.3366
+          },
+          {
+            "x": 12.513,
+            "y": -7.4976
+          },
+          {
+            "x": 12.525,
+            "y": -7.6586
+          },
+          {
+            "x": 12.537,
+            "y": -7.927
+          },
+          {
+            "x": 12.542,
+            "y": -8.1761
+          },
+          {
+            "x": 12.548,
+            "y": -8.8441
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Solid segment only of the curve in Schaye et al. 2023 (MNRAS 526, 4978) Fig. 8 left-top panel, above the resolution-dependent lower mass limit for calibration; the dotted low-mass part is omitted. L1_m8: box 1000 cMpc, fiducial galaxy formation model and cosmology. The curves include the 0.3 dex random lognormal stellar-mass scatter expected in observed data, so they are not raw catalogue values. The paper gives no table."
+      },
+      "definitions": {
+        "massDefinition": "aperture-50pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Schaye et al. 2023, MNRAS 526, 4978, Fig. 8 (arXiv source numbering) left-top panel",
+        "doi": "10.1093/mnras/stad2419",
+        "url": "https://arxiv.org/abs/2306.04024",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 8",
+        "panel": "left-top (resolutions and box sizes, z=0)",
+        "checksumSha256": "ac77fb5234d95bf20e9d479be19caa5ff8ba478ebacd9c3c3279686c4a366eef",
+        "sourceMember": "Images/SMF_2_Panel.pdf (solid L1_m8 line, 1.5 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^8-10^13 (uniform spacing asserted); y: labelled decades 10^-2..10^-8; both snapped to tick marks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "target",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

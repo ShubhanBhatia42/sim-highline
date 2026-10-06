@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What you can use sim-highline for</title>
+<meta name="description" content="Six concrete jobs for sim-highline: high-redshift predictions, checking your own simulation, building calibration sets, teaching, writing papers, and finding gaps.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>/*__CSS__*/</style>
+</head>
+<body>
+<div class="wrap">
+{{nav}}
+
+<header class="hero">
+<p class="eyebrow">USE CASES</p>
+<h1>Six jobs it does well, and where it stops.</h1>
+<p class="lede">sim-highline is a lookup of published predictions with the definitions attached. These are the situations where that saves time, what you will do, and the limit you should know about.</p>
+</header>
+
+<article>
+<div class="case"><div>
+<h2>1 · Plan a high-redshift proposal</h2>
+<p class="who">Observers, proposal writers, anyone who needs "what do simulations predict at z ≈ 6?"</p>
+<ol class="steps"><li>Open the stellar mass function and step to z = 6.</li><li>Read which simulations have an epoch there ({{zHighSuites}} simulations provide curves at z ≥ 6 across relations).</li><li>Check the ✓ / ~ / ✕ marks and each curve's mass definition before reading a spread as physics.</li><li>Download the CSV and the BibTeX for the predictions paragraph.</li></ol>
+<p class="limit">Limit: stellar-mass apertures differ between simulations, and the UV luminosity function and cosmic SFR density, which most JWST analyses use, are included but still thin (three and six simulations so far); match the dust treatment before comparing.</p>
+</div><div><div class="card"><h3>What you will see</h3><p>At z ≈ 6 the stellar mass function has curves from 8 simulations: official tables for COLIBRE and THESAN, a catalogue-derived curve for FLARES, a table from the FIRE-2 paper, and digitized curves for EAGLE, Horizon-AGN, Illustris and SIMBA, each tagged with its tier and mass definition. The snapshot below is from the Python loader.</p></div></div></div>
+
+<div class="case"><div>
+<h2>2 · Check your own simulation against the field</h2>
+<p class="who">Simulators tuning a model or writing a validation section.</p>
+<ol class="steps"><li>Paste or load a CSV of your relation into the Customise panel; it is drawn on the same axes, in your browser only.</li><li>Pick a reference (an observation or another simulation) and switch to residuals.</li><li>Export the figure as SVG or PNG; the footer lists the sources.</li></ol>
+<p class="limit">Limit: sim-highline flags definition mismatches but does not score fits, and digitized curves are as precise as the plotted line, not as the original data.</p>
+</div><div><div class="card"><h3>Why it helps</h3><p>You see at once whether an offset from another code is larger than the definition differences between the two (aperture, IMF, population, SFR timescale), which is the first question a referee asks.</p></div></div></div>
+
+<div class="case"><div>
+<h2>3 · Build calibration targets or training sets</h2>
+<p class="who">Modellers of semi-analytic, empirical and emulator-based models.</p>
+<ol class="steps"><li>Load the dataset with <code>sim_highline.load()</code>.</li><li>Select a relation, an epoch range and the evidence you trust (<code>rankable=True</code> keeps only curves with documented definitions and sampling).</li><li>Pull arrays with <code>sim_highline.curve()</code>; units are log₁₀, physical, h-free, with every conversion recorded.</li></ol>
+<p class="limit">Limit: observational references are thinner than simulation curves and uneven across relations; check coverage first.</p>
+</div><div><pre><code>import sim_highline
+df  = sim_highline.load()
+sel = sim_highline.select(df, relation="sfms", kind="simulation", rankable=True)
+one = sim_highline.nearest_epoch(sel, z=2.0)      # nearest published epoch; nothing interpolated
+x, y, lo, hi = sim_highline.curve(df, one.record_id.iloc[0])
+print(sim_highline.bibtex(one))</code></pre></div></div>
+
+<div class="case"><div>
+<h2>4 · Get oriented, or teach it</h2>
+<p class="who">New PhD students, readers outside the subfield, journal clubs.</p>
+<ol class="steps"><li>Open a relation and its About panel.</li><li>Read the paragraph: what the relation is, what observations show now and showed earlier, where simulations agree and disagree, what it means physically.</li><li>Follow the linked reviews and papers; every statement is attributed to one.</li></ol>
+<p class="limit">Limit: the summaries are condensed from the papers' abstracts and are context, not a substitute for reading them.</p>
+</div><div><div class="card"><h3>Sixteen relations</h3><p>Stellar mass function, main sequence, specific SFR, mass–metallicity (three tracers), stellar metallicity, size, stellar–halo mass, black hole–stellar mass and M–σ, angular momentum, quenched fraction, gas, HI and H₂ fractions, and the baryonic and stellar Tully–Fisher relations. Each has three or more references, including a review.</p></div></div></div>
+
+<div class="case"><div>
+<h2>5 · Write the paper</h2>
+<p class="who">Anyone making a comparison figure or a related-work table.</p>
+<ol class="steps"><li>Build the view; the page link stores it so a collaborator sees the same plot.</li><li>Export SVG or PNG with a citation footer, and the BibTeX.</li><li>Cite the original papers listed on each curve, together with the dataset.</li></ol>
+<p class="limit">Limit: digitized records carry the original author's plotting choices; each record's note says what was and was not extracted.</p>
+</div><div><div class="card"><h3>Provenance on every curve</h3><p>Citation, DOI, figure or table, extraction method, axis calibration, retrieval date and a SHA-256 of the source file are stored per record, so a reviewer can re-check any number.</p></div></div></div>
+
+<div class="case"><div>
+<h2>6 · Find what is missing</h2>
+<p class="who">Group leaders deciding what to run or digitize next.</p>
+<ol class="steps"><li>Open the Coverage view: simulation by relation by redshift.</li><li>Look for empty cells and for relations tagged sparse.</li><li>Decide where a new output or a request to the authors would add the most.</li></ol>
+<p class="limit">Limit: it shows the gaps in this data well, not necessarily gaps in the field.</p>
+</div><div><div class="card"><h3>Honest gaps</h3><p>Relations such as the Tully–Fisher and gas-fraction relations have one or two simulations so far, and the UV luminosity function and cosmic SFR density have only three and six simulations so far. The page says so on the relation itself.</p></div></div></div>
+</article>
+
+<section aria-labelledby="qs">
+<h2 id="qs">Quick start (Python)</h2>
+<pre><code>import sim_highline
+df  = sim_highline.load()                      # run from a folder containing data/export, or pass a URL
+sel = sim_highline.select(df, relation="gsmf", z=(5.5, 6.5), kind="simulation")
+g   = sel.groupby(["source", "run"]).agg(z=("z", "first"), points=("x", "size"),
+                                         mass_class=("mass_class", "first"), tier=("tier", "first"))
+print(g.reset_index().assign(run=lambda d: d.run.str.slice(0, 26)).to_string(index=False))
+print(f"{sel.record_id.nunique()} records from {sel.source.nunique()} simulations")</code></pre>
+<p style="color:var(--cream3);font-size:14px;margin:12px 0 6px">Output from dataset v{{version}}:</p>
+<pre><code>{{quickstart}}</code></pre>
+</section>
+
+<section aria-labelledby="fit">
+<h2 id="fit">Who it is for, and who it is not for</h2>
+<div class="grid">
+<div class="card"><h3>A good fit</h3><p>People who need predictions from several simulations on one page, with the comparison caveats visible and a citable export: observers, students, modellers, and authors writing comparison sections.</p></div>
+<div class="card"><h3>Use the originals instead</h3><p>If you need exact values, full distributions or a definition the papers did not plot, use the collaboration's own data release or catalogue; sim-highline links you to it through each record's citation.</p></div>
+</div>
+</section>
+
+<footer>
+<p>sim-highline {{version}} · {{released}} · Shubhan Bhatia. Beta from one maintainer; a sample of curves is waiting for review by people who know each simulation. Please cite the original papers with the dataset (see <code>CITATION.cff</code>).</p>
+<p><a href="../highline.html">Open the beta</a> · <a href="index.html">Product</a> · <a href="../data/export/sim-highline-records.csv">Download the data</a></p>
+</footer>
+</div>
+</body>
+</html>
