@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.0 (2026-10-07)
+
+- Data (published tables, transcribed): BlueTides galaxy properties at z 8-14 (Wilkins+17: stellar mass function, median sSFR, star-forming gas metallicity, stellar-to-DM mass ratio, intrinsic and attenuated UV functions with Schechter fits, median black hole mass; 46 records) and FLARES UV luminosity function at z 5-10 with Poisson errors and Schechter fits (Vijayan+21; 12 records).
+- Data (vector figures): FLARES SFR density (total, obscured, unobscured), Illustris SFR density and per-galaxy baryonic and stellar Tully-Fisher points, THESAN-ZOOM stellar mass function, UV function (two dust treatments) and SFR density (Kannan+25, 20 records), Horizon-AGN size-mass z 0-4 and mean sSFR with its no-AGN twin (Dubois+16).
+- Simulation redshift ranges for BlueTides (to z=15) and THESAN-ZOOM (to z=14.5) updated with their basis; audit plausible sSFR mass range widened to 10^14.
+
 ## 0.8.0 (2026-10-07)
 
 - Renamed the project from Concord to sim-highline everywhere. Export files are now `data/export/sim-highline-*.{csv,json,bib}`, the pandas loader is `sim_highline.py` (`import sim_highline`), and the page globals are `SimHighlineCompare`, `SimHighlineExport`, `SimHighlineLogic` and `SIMHIGHLINE_*`. Earlier entries below keep the text as it was after the rename. Downloaded file names from the page start with `sim-highline_`.

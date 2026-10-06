@@ -1,10 +1,10 @@
 {
-  "version": "0.8.0",
+  "version": "0.9.0",
   "released": "2026-10-07",
   "doi": null,
-  "nRecords": 1460,
-  "nPoints": 45905,
-  "nParametric": 79,
+  "nRecords": 1552,
+  "nPoints": 47301,
+  "nParametric": 91,
   "parametricSampling": "40 points over the record domain at zRepresentative; the published expression is evaluated, nothing else is generated",
   "columns": {
     "records": [
@@ -62,20 +62,20 @@
   },
   "files": {
     "sim-highline-records.csv": {
-      "sha256": "78e5fa241a9a0dbb5a446ce76de607f94bf7b1391fe979107e881c691c3692fc",
-      "bytes": 1158263
+      "sha256": "eaebf0f71fca3458a59727f61b01a9f46361b66603c817632067176e46a3ff01",
+      "bytes": 1235157
     },
     "sim-highline-points.csv": {
-      "sha256": "fd3f17a9e7a72f5feaa2b416955a9212261f1c485c23f66d1e69a1f0587b4251",
-      "bytes": 2857390
+      "sha256": "4bc4c722b18d8387e672e59f254e99859d3a9e45922c641d139539d2cd7566e1",
+      "bytes": 2948121
     },
     "sim-highline-records.json": {
-      "sha256": "990425a3708e5cc63548209d23f0e15d71334b6acabde86ccd5398a66cb5d2e1",
-      "bytes": 4191067
+      "sha256": "56e3173df80d60aa2d7ab13af45be663846a1dd06b6390e4f26e767ffa06b065",
+      "bytes": 4391244
     },
     "sim-highline-citations.bib": {
-      "sha256": "26f4f8b083b880190538a3c0569454b805513c89abb8b1fb25c1a7e8bb0271e3",
-      "bytes": 24839
+      "sha256": "d416fc39d326504e2846c656eb7c921f34c0b4313f2a5a640ecb4688ff91f2c0",
+      "bytes": 25915
     }
   }
 }

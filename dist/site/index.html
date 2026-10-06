@@ -102,9 +102,9 @@ tr:target td{background:var(--bg3)}
 <nav aria-label="Main"><a class="mark" href="about.html">CON<i>/</i>CORD</a><span class="sp"></span><a class="l" href="about.html">About</a><a class="l" href="sources.html">Simulations &amp; observations</a><a class="l" href="use-cases.html">Use cases</a><a class="btn main" href="../highline.html">Open the app</a></nav>
 
 <header class="hero">
-<p class="eyebrow">GALAXY SCALING RELATIONS · BETA 0.8.0</p>
+<p class="eyebrow">GALAXY SCALING RELATIONS · BETA 0.9.0</p>
 <h1>Every published simulation prediction for a scaling relation, on one axis.</h1>
-<p class="lede">sim-highline collects 1,460 curves from 19 simulations and 82 observational sources, keeps the definitions that decide whether two curves can be compared, and exports them as tidy tables you can load into pandas.</p>
+<p class="lede">sim-highline collects 1,552 curves from 19 simulations and 82 observational sources, keeps the definitions that decide whether two curves can be compared, and exports them as tidy tables you can load into pandas.</p>
 <div class="cta"><a class="btn main" href="../highline.html">Open the beta</a><a class="btn" href="../data/export/sim-highline-records.csv">Download the data</a><a class="btn" href="use-cases.html">What it is for</a></div>
 </header>
 
@@ -121,9 +121,9 @@ tr:target td{background:var(--bg3)}
 <h2 id="why">The problem it removes</h2>
 <p class="lede" style="font-size:18px">Comparing what different simulations predict means opening a dozen papers, reading values off figures, and guessing whether each uses the same stellar-mass aperture, IMF, population and cosmology. Those choices move curves by tenths of a dex, as much as the physics you are trying to compare. sim-highline records them for every curve and says when a comparison is not like with like.</p>
 <div class="nums">
-<div><b>25</b><span>different stellar-mass definitions across the simulation curves</span></div>
+<div><b>26</b><span>different stellar-mass definitions across the simulation curves</span></div>
 <div><b>0.21 dex</b><span>stellar-mass shift between a Salpeter and a Chabrier IMF, if not converted</span></div>
-<div><b>252</b><span>simulation curves at z ≥ 6, from 13 simulations</span></div>
+<div><b>327</b><span>simulation curves at z ≥ 6, from 13 simulations</span></div>
 </div>
 </section>
 
@@ -150,7 +150,7 @@ tr:target td{background:var(--bg3)}
 <section aria-labelledby="not">
 <h2 id="not">What it is not</h2>
 <div class="not"><ul class="tick" style="gap:8px">
-<li><b>Not a replacement for the original data.</b> 51% of simulation curves are digitized from published figures. Where an author releases a table, use that.</li>
+<li><b>Not a replacement for the original data.</b> 50% of simulation curves are digitized from published figures. Where an author releases a table, use that.</li>
 <li><b>Not a leaderboard.</b> Many curves cannot be compared like for like, and sim-highline says so instead of scoring them.</li>
 <li><b>Not independently verified yet.</b> It is a beta from one maintainer; a sample of curves is waiting for review by people who know each simulation.</li>
 <li><b>Not complete.</b> Some relations, such as the Tully–Fisher and gas-fraction relations, still have only one or two simulations. UV luminosity functions (three simulations) and the cosmic SFR density (six) are recent additions.</li>
@@ -160,16 +160,16 @@ tr:target td{background:var(--bg3)}
 <section aria-labelledby="nums">
 <h2 id="nums">The data well today</h2>
 <div class="nums">
-<div><b>1,460</b><span>curves (1,194 simulation, 266 observational)</span></div>
+<div><b>1,552</b><span>curves (1,286 simulation, 266 observational)</span></div>
 <div><b>19</b><span>simulations</span></div>
 <div><b>18</b><span>scaling relations</span></div>
-<div><b>127</b><span>cited papers and data releases</span></div>
+<div><b>132</b><span>cited papers and data releases</span></div>
 <div><b>z 0 to 17</b><span>redshift range</span></div>
 </div>
 </section>
 
 <footer>
-<p>sim-highline 0.8.0 · 2026-10-07 · Shubhan Bhatia. Please cite the original papers (every record carries its citation and DOI) together with the dataset; see <code>CITATION.cff</code>. Licence to be decided by the maintainer.</p>
+<p>sim-highline 0.9.0 · 2026-10-07 · Shubhan Bhatia. Please cite the original papers (every record carries its citation and DOI) together with the dataset; see <code>CITATION.cff</code>. Licence to be decided by the maintainer.</p>
 <p><a href="../highline.html">Beta</a> · <a href="use-cases.html">Use cases</a> · <a href="../data/export/sim-highline-records.csv">Records (CSV)</a> · <a href="../data/export/sim-highline-points.csv">Points (CSV)</a> · <a href="../sim_highline.py">sim_highline.py</a> · <a href="../data/export/sim-highline-citations.bib">BibTeX</a></p>
 </footer>
 </div>

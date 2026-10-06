@@ -1,0 +1,1194 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "vijayan21.flares.uvlf.binned.z5",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), dust attenuated, Vijayan+21 table",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (dust attenuated, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -24.286,
+        "xMax": -17.286
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": -24.286,
+            "y": -7.4413,
+            "yHigh": -7.1403
+          },
+          {
+            "x": -23.786,
+            "y": -6.5441,
+            "yHigh": -6.3881,
+            "yLow": -6.7899
+          },
+          {
+            "x": -23.286,
+            "y": -5.6889,
+            "yHigh": -5.4389,
+            "yLow": -6.3429
+          },
+          {
+            "x": -22.786,
+            "y": -5.0618,
+            "yHigh": -4.8765,
+            "yLow": -5.3917
+          },
+          {
+            "x": -22.286,
+            "y": -4.6139,
+            "yHigh": -4.5053,
+            "yLow": -4.759
+          },
+          {
+            "x": -21.786,
+            "y": -4.203,
+            "yHigh": -4.1277,
+            "yLow": -4.2941
+          },
+          {
+            "x": -21.286,
+            "y": -3.7582,
+            "yHigh": -3.7109,
+            "yLow": -3.8114
+          },
+          {
+            "x": -20.786,
+            "y": -3.3483,
+            "yHigh": -3.3167,
+            "yLow": -3.3825
+          },
+          {
+            "x": -20.286,
+            "y": -3.1471,
+            "yHigh": -3.1212,
+            "yLow": -3.1746
+          },
+          {
+            "x": -19.786,
+            "y": -2.9817,
+            "yHigh": -2.9602,
+            "yLow": -3.0044
+          },
+          {
+            "x": -19.286,
+            "y": -2.8063,
+            "yHigh": -2.7883,
+            "yLow": -2.8251
+          },
+          {
+            "x": -18.786,
+            "y": -2.5794,
+            "yHigh": -2.5653,
+            "yLow": -2.594
+          },
+          {
+            "x": -18.286,
+            "y": -2.3509,
+            "yHigh": -2.3398,
+            "yLow": -2.3622
+          },
+          {
+            "x": -17.786,
+            "y": -2.1133,
+            "yHigh": -2.1049,
+            "yLow": -2.122
+          },
+          {
+            "x": -17.286,
+            "y": -1.9485,
+            "yHigh": -1.9416,
+            "yLow": -1.9555
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies in the weighted combination of the resimulated regions",
+        "warning": "Binned UV luminosity function of FLARES at z=5 (0.5 mag bins) as tabulated in the appendix of Vijayan et al. 2021; the quoted uncertainty is the weighted 1-sigma Poisson error, converted to log10 (a lower bound is omitted where the error equals the value)."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "dust attenuated (the paper's 'observed' UV LF)",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Vijayan et al. 2021, MNRAS (doi 10.1093/mnras/staa3715), appendix table of binned UV luminosity functions",
+        "doi": "10.1093/mnras/staa3715",
+        "url": "https://arxiv.org/abs/2008.06057",
+        "retrieved": "2026-10-05",
+        "checksumSha256": "d4aed4b2788574c63ac2ad6f82cb478f6842f9ef0ec5d98added290395bb83bf",
+        "sourceMember": "appendix.tex binned UV LF table (arXiv source, transcribed)",
+        "extractionMethod": "transcribed from the arXiv LaTeX table and parsed by script; spot-checked against quoted values in the script"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Values as tabulated by the authors."
+    },
+    {
+      "id": "vijayan21.flares.uvlf.binned.z6",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), dust attenuated, Vijayan+21 table",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (dust attenuated, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -23.81,
+        "xMax": -17.31
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": -23.81,
+            "y": -8.8318,
+            "yHigh": -8.5308
+          },
+          {
+            "x": -23.31,
+            "y": -5.4543,
+            "yHigh": -5.1772,
+            "yLow": -6.4248
+          },
+          {
+            "x": -22.81,
+            "y": -5.9965,
+            "yHigh": -5.8798,
+            "yLow": -6.1568
+          },
+          {
+            "x": -22.31,
+            "y": -5.0773,
+            "yHigh": -4.9648,
+            "yLow": -5.2297
+          },
+          {
+            "x": -21.81,
+            "y": -4.5082,
+            "yHigh": -4.4169,
+            "yLow": -4.624
+          },
+          {
+            "x": -21.31,
+            "y": -4.0119,
+            "yHigh": -3.949,
+            "yLow": -4.0856
+          },
+          {
+            "x": -20.81,
+            "y": -3.7296,
+            "yHigh": -3.6832,
+            "yLow": -3.7815
+          },
+          {
+            "x": -20.31,
+            "y": -3.4892,
+            "yHigh": -3.4521,
+            "yLow": -3.5297
+          },
+          {
+            "x": -19.81,
+            "y": -3.2718,
+            "yHigh": -3.2425,
+            "yLow": -3.3032
+          },
+          {
+            "x": -19.31,
+            "y": -3.0242,
+            "yHigh": -3.0011,
+            "yLow": -3.0486
+          },
+          {
+            "x": -18.81,
+            "y": -2.776,
+            "yHigh": -2.7585,
+            "yLow": -2.7943
+          },
+          {
+            "x": -18.31,
+            "y": -2.4541,
+            "yHigh": -2.4418,
+            "yLow": -2.4667
+          },
+          {
+            "x": -17.81,
+            "y": -2.2007,
+            "yHigh": -2.1914,
+            "yLow": -2.2103
+          },
+          {
+            "x": -17.31,
+            "y": -2.0327,
+            "yHigh": -2.025,
+            "yLow": -2.0406
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies in the weighted combination of the resimulated regions",
+        "warning": "Binned UV luminosity function of FLARES at z=6 (0.5 mag bins) as tabulated in the appendix of Vijayan et al. 2021; the quoted uncertainty is the weighted 1-sigma Poisson error, converted to log10 (a lower bound is omitted where the error equals the value)."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "dust attenuated (the paper's 'observed' UV LF)",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Vijayan et al. 2021, MNRAS (doi 10.1093/mnras/staa3715), appendix table of binned UV luminosity functions",
+        "doi": "10.1093/mnras/staa3715",
+        "url": "https://arxiv.org/abs/2008.06057",
+        "retrieved": "2026-10-05",
+        "checksumSha256": "d4aed4b2788574c63ac2ad6f82cb478f6842f9ef0ec5d98added290395bb83bf",
+        "sourceMember": "appendix.tex binned UV LF table (arXiv source, transcribed)",
+        "extractionMethod": "transcribed from the arXiv LaTeX table and parsed by script; spot-checked against quoted values in the script"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Values as tabulated by the authors."
+    },
+    {
+      "id": "vijayan21.flares.uvlf.binned.z7",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), dust attenuated, Vijayan+21 table",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (dust attenuated, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -23.662,
+        "xMax": -17.662
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": -23.662,
+            "y": -8.8318,
+            "yHigh": -8.5308
+          },
+          {
+            "x": -23.162,
+            "y": -6.8877,
+            "yHigh": -6.6786,
+            "yLow": -7.3063
+          },
+          {
+            "x": -22.662,
+            "y": -6.056,
+            "yHigh": -5.9279,
+            "yLow": -6.2384
+          },
+          {
+            "x": -22.162,
+            "y": -5.3437,
+            "yHigh": -5.171,
+            "yLow": -5.6349
+          },
+          {
+            "x": -21.662,
+            "y": -4.6334,
+            "yHigh": -4.529,
+            "yLow": -4.7711
+          },
+          {
+            "x": -21.162,
+            "y": -4.2972,
+            "yHigh": -4.2106,
+            "yLow": -4.4056
+          },
+          {
+            "x": -20.662,
+            "y": -3.9326,
+            "yHigh": -3.8755,
+            "yLow": -3.9983
+          },
+          {
+            "x": -20.162,
+            "y": -3.7701,
+            "yHigh": -3.7206,
+            "yLow": -3.8259
+          },
+          {
+            "x": -19.662,
+            "y": -3.4265,
+            "yHigh": -3.3909,
+            "yLow": -3.4653
+          },
+          {
+            "x": -19.162,
+            "y": -3.2027,
+            "yHigh": -3.1755,
+            "yLow": -3.2318
+          },
+          {
+            "x": -18.662,
+            "y": -2.8598,
+            "yHigh": -2.8407,
+            "yLow": -2.8798
+          },
+          {
+            "x": -18.162,
+            "y": -2.4671,
+            "yHigh": -2.4547,
+            "yLow": -2.4799
+          },
+          {
+            "x": -17.662,
+            "y": -2.2293,
+            "yHigh": -2.2196,
+            "yLow": -2.2392
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies in the weighted combination of the resimulated regions",
+        "warning": "Binned UV luminosity function of FLARES at z=7 (0.5 mag bins) as tabulated in the appendix of Vijayan et al. 2021; the quoted uncertainty is the weighted 1-sigma Poisson error, converted to log10 (a lower bound is omitted where the error equals the value)."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "dust attenuated (the paper's 'observed' UV LF)",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Vijayan et al. 2021, MNRAS (doi 10.1093/mnras/staa3715), appendix table of binned UV luminosity functions",
+        "doi": "10.1093/mnras/staa3715",
+        "url": "https://arxiv.org/abs/2008.06057",
+        "retrieved": "2026-10-05",
+        "checksumSha256": "d4aed4b2788574c63ac2ad6f82cb478f6842f9ef0ec5d98added290395bb83bf",
+        "sourceMember": "appendix.tex binned UV LF table (arXiv source, transcribed)",
+        "extractionMethod": "transcribed from the arXiv LaTeX table and parsed by script; spot-checked against quoted values in the script"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Values as tabulated by the authors."
+    },
+    {
+      "id": "vijayan21.flares.uvlf.binned.z8",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), dust attenuated, Vijayan+21 table",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (dust attenuated, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.888,
+        "xMax": -17.888
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.888,
+            "y": -7.6185,
+            "yHigh": -7.3175
+          },
+          {
+            "x": -22.388,
+            "y": -5.6146,
+            "yHigh": -5.4008,
+            "yLow": -6.0535
+          },
+          {
+            "x": -21.888,
+            "y": -5.768,
+            "yHigh": -5.6916,
+            "yLow": -5.8608
+          },
+          {
+            "x": -21.388,
+            "y": -4.776,
+            "yHigh": -4.6657,
+            "yLow": -4.9241
+          },
+          {
+            "x": -20.888,
+            "y": -4.3556,
+            "yHigh": -4.2666,
+            "yLow": -4.4675
+          },
+          {
+            "x": -20.388,
+            "y": -4.1472,
+            "yHigh": -4.0704,
+            "yLow": -4.2406
+          },
+          {
+            "x": -19.888,
+            "y": -3.9259,
+            "yHigh": -3.8652,
+            "yLow": -3.9965
+          },
+          {
+            "x": -19.388,
+            "y": -3.6068,
+            "yHigh": -3.5643,
+            "yLow": -3.6538
+          },
+          {
+            "x": -18.888,
+            "y": -3.2088,
+            "yHigh": -3.181,
+            "yLow": -3.2385
+          },
+          {
+            "x": -18.388,
+            "y": -2.7615,
+            "yHigh": -2.7442,
+            "yLow": -2.7794
+          },
+          {
+            "x": -17.888,
+            "y": -2.4777,
+            "yHigh": -2.4651,
+            "yLow": -2.4907
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies in the weighted combination of the resimulated regions",
+        "warning": "Binned UV luminosity function of FLARES at z=8 (0.5 mag bins) as tabulated in the appendix of Vijayan et al. 2021; the quoted uncertainty is the weighted 1-sigma Poisson error, converted to log10 (a lower bound is omitted where the error equals the value)."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "dust attenuated (the paper's 'observed' UV LF)",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Vijayan et al. 2021, MNRAS (doi 10.1093/mnras/staa3715), appendix table of binned UV luminosity functions",
+        "doi": "10.1093/mnras/staa3715",
+        "url": "https://arxiv.org/abs/2008.06057",
+        "retrieved": "2026-10-05",
+        "checksumSha256": "d4aed4b2788574c63ac2ad6f82cb478f6842f9ef0ec5d98added290395bb83bf",
+        "sourceMember": "appendix.tex binned UV LF table (arXiv source, transcribed)",
+        "extractionMethod": "transcribed from the arXiv LaTeX table and parsed by script; spot-checked against quoted values in the script"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Values as tabulated by the authors."
+    },
+    {
+      "id": "vijayan21.flares.uvlf.binned.z9",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), dust attenuated, Vijayan+21 table",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 9,
+        "zNominal": 9,
+        "zMin": 9,
+        "zMax": 9,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (dust attenuated, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.662,
+        "xMax": -17.662
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.662,
+            "y": -6.7991,
+            "yHigh": -6.6297,
+            "yLow": -7.0809
+          },
+          {
+            "x": -22.162,
+            "y": -6.6423,
+            "yHigh": -6.4856,
+            "yLow": -6.8897
+          },
+          {
+            "x": -21.662,
+            "y": -5.5449,
+            "yHigh": -5.3491,
+            "yLow": -5.9108
+          },
+          {
+            "x": -21.162,
+            "y": -4.9594,
+            "yHigh": -4.8204,
+            "yLow": -5.1649
+          },
+          {
+            "x": -20.662,
+            "y": -4.5229,
+            "yHigh": -4.4112,
+            "yLow": -4.6737
+          },
+          {
+            "x": -20.162,
+            "y": -4.3497,
+            "yHigh": -4.2588,
+            "yLow": -4.4648
+          },
+          {
+            "x": -19.662,
+            "y": -4.0822,
+            "yHigh": -4.0135,
+            "yLow": -4.164
+          },
+          {
+            "x": -19.162,
+            "y": -3.6505,
+            "yHigh": -3.6055,
+            "yLow": -3.7007
+          },
+          {
+            "x": -18.662,
+            "y": -3.1497,
+            "yHigh": -3.1233,
+            "yLow": -3.1778
+          },
+          {
+            "x": -18.162,
+            "y": -2.7342,
+            "yHigh": -2.7174,
+            "yLow": -2.7518
+          },
+          {
+            "x": -17.662,
+            "y": -2.519,
+            "yHigh": -2.5057,
+            "yLow": -2.5327
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies in the weighted combination of the resimulated regions",
+        "warning": "Binned UV luminosity function of FLARES at z=9 (0.5 mag bins) as tabulated in the appendix of Vijayan et al. 2021; the quoted uncertainty is the weighted 1-sigma Poisson error, converted to log10 (a lower bound is omitted where the error equals the value)."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "dust attenuated (the paper's 'observed' UV LF)",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Vijayan et al. 2021, MNRAS (doi 10.1093/mnras/staa3715), appendix table of binned UV luminosity functions",
+        "doi": "10.1093/mnras/staa3715",
+        "url": "https://arxiv.org/abs/2008.06057",
+        "retrieved": "2026-10-05",
+        "checksumSha256": "d4aed4b2788574c63ac2ad6f82cb478f6842f9ef0ec5d98added290395bb83bf",
+        "sourceMember": "appendix.tex binned UV LF table (arXiv source, transcribed)",
+        "extractionMethod": "transcribed from the arXiv LaTeX table and parsed by script; spot-checked against quoted values in the script"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Values as tabulated by the authors."
+    },
+    {
+      "id": "vijayan21.flares.uvlf.binned.z10",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), dust attenuated, Vijayan+21 table",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (dust attenuated, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.567,
+        "xMax": -18.067
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.567,
+            "y": -7.6185,
+            "yHigh": -7.3175
+          },
+          {
+            "x": -22.067,
+            "y": -7.3465,
+            "yHigh": -7.1138,
+            "yLow": -7.8824
+          },
+          {
+            "x": -21.567,
+            "y": -6.683,
+            "yHigh": -6.4421,
+            "yLow": -7.27
+          },
+          {
+            "x": -21.067,
+            "y": -4.9469,
+            "yHigh": -4.7809,
+            "yLow": -5.219
+          },
+          {
+            "x": -20.567,
+            "y": -5.1829,
+            "yHigh": -5.0699,
+            "yLow": -5.3361
+          },
+          {
+            "x": -20.067,
+            "y": -4.9027,
+            "yHigh": -4.7762,
+            "yLow": -5.082
+          },
+          {
+            "x": -19.567,
+            "y": -4.223,
+            "yHigh": -4.1414,
+            "yLow": -4.3236
+          },
+          {
+            "x": -19.067,
+            "y": -3.7535,
+            "yHigh": -3.7038,
+            "yLow": -3.8097
+          },
+          {
+            "x": -18.567,
+            "y": -3.2662,
+            "yHigh": -3.2362,
+            "yLow": -3.2983
+          },
+          {
+            "x": -18.067,
+            "y": -2.8318,
+            "yHigh": -2.8133,
+            "yLow": -2.8511
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies in the weighted combination of the resimulated regions",
+        "warning": "Binned UV luminosity function of FLARES at z=10 (0.5 mag bins) as tabulated in the appendix of Vijayan et al. 2021; the quoted uncertainty is the weighted 1-sigma Poisson error, converted to log10 (a lower bound is omitted where the error equals the value)."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "dust attenuated (the paper's 'observed' UV LF)",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Vijayan et al. 2021, MNRAS (doi 10.1093/mnras/staa3715), appendix table of binned UV luminosity functions",
+        "doi": "10.1093/mnras/staa3715",
+        "url": "https://arxiv.org/abs/2008.06057",
+        "retrieved": "2026-10-05",
+        "checksumSha256": "d4aed4b2788574c63ac2ad6f82cb478f6842f9ef0ec5d98added290395bb83bf",
+        "sourceMember": "appendix.tex binned UV LF table (arXiv source, transcribed)",
+        "extractionMethod": "transcribed from the arXiv LaTeX table and parsed by script; spot-checked against quoted values in the script"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Values as tabulated by the authors."
+    },
+    {
+      "id": "vijayan21.flares.uvlf.schechter.z5",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), dust attenuated, Schechter fit",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (dust attenuated, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -24.286,
+        "xMax": -17.286
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "Phi(M) = 0.4 ln10 phi* 10^(-0.4 (M-M*)(alpha+1)) exp(-10^(-0.4 (M-M*))) per mag",
+        "expression": "log10(0.4*Math.LN10*phi*Math.pow(10,-0.4*(x-Ms)*(alpha+1))*Math.exp(-Math.pow(10,-0.4*(x-Ms))))",
+        "parameters": {
+          "phi": 0.0002177709772353159,
+          "Ms": -21.844,
+          "alpha": -1.984
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies in the weighted combination of the resimulated regions",
+        "warning": "Schechter fit (first row of the paper's parameter table) to the observed UV LF at z=5: M*=-21.844, log phi*=-3.662, alpha=-1.984. The double power-law row is not used. The domain is the span of the tabulated bins because the paper does not state the fitted range."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "dust attenuated (the paper's 'observed' UV LF)",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Vijayan et al. 2021, MNRAS (doi 10.1093/mnras/staa3715), best-fitting Schechter and double power-law parameters",
+        "doi": "10.1093/mnras/staa3715",
+        "url": "https://arxiv.org/abs/2008.06057",
+        "retrieved": "2026-10-05",
+        "checksumSha256": "d4aed4b2788574c63ac2ad6f82cb478f6842f9ef0ec5d98added290395bb83bf",
+        "sourceMember": "appendix.tex fit-parameter table (arXiv source, transcribed)",
+        "extractionMethod": "transcribed from the arXiv LaTeX table"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Fit, not the simulation curve itself."
+    },
+    {
+      "id": "vijayan21.flares.uvlf.schechter.z6",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), dust attenuated, Schechter fit",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (dust attenuated, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -23.81,
+        "xMax": -17.31
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "Phi(M) = 0.4 ln10 phi* 10^(-0.4 (M-M*)(alpha+1)) exp(-10^(-0.4 (M-M*))) per mag",
+        "expression": "log10(0.4*Math.LN10*phi*Math.pow(10,-0.4*(x-Ms)*(alpha+1))*Math.exp(-Math.pow(10,-0.4*(x-Ms))))",
+        "parameters": {
+          "phi": 0.00011324003632355566,
+          "Ms": -21.666,
+          "alpha": -2.151
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies in the weighted combination of the resimulated regions",
+        "warning": "Schechter fit (first row of the paper's parameter table) to the observed UV LF at z=6: M*=-21.666, log phi*=-3.946, alpha=-2.151. The double power-law row is not used. The domain is the span of the tabulated bins because the paper does not state the fitted range."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "dust attenuated (the paper's 'observed' UV LF)",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Vijayan et al. 2021, MNRAS (doi 10.1093/mnras/staa3715), best-fitting Schechter and double power-law parameters",
+        "doi": "10.1093/mnras/staa3715",
+        "url": "https://arxiv.org/abs/2008.06057",
+        "retrieved": "2026-10-05",
+        "checksumSha256": "d4aed4b2788574c63ac2ad6f82cb478f6842f9ef0ec5d98added290395bb83bf",
+        "sourceMember": "appendix.tex fit-parameter table (arXiv source, transcribed)",
+        "extractionMethod": "transcribed from the arXiv LaTeX table"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Fit, not the simulation curve itself."
+    },
+    {
+      "id": "vijayan21.flares.uvlf.schechter.z7",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), dust attenuated, Schechter fit",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (dust attenuated, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -23.662,
+        "xMax": -17.662
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "Phi(M) = 0.4 ln10 phi* 10^(-0.4 (M-M*)(alpha+1)) exp(-10^(-0.4 (M-M*))) per mag",
+        "expression": "log10(0.4*Math.LN10*phi*Math.pow(10,-0.4*(x-Ms)*(alpha+1))*Math.exp(-Math.pow(10,-0.4*(x-Ms))))",
+        "parameters": {
+          "phi": 0.00001383566378971781,
+          "Ms": -22.226,
+          "alpha": -2.483
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies in the weighted combination of the resimulated regions",
+        "warning": "Schechter fit (first row of the paper's parameter table) to the observed UV LF at z=7: M*=-22.226, log phi*=-4.859, alpha=-2.483. The double power-law row is not used. The domain is the span of the tabulated bins because the paper does not state the fitted range."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "dust attenuated (the paper's 'observed' UV LF)",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Vijayan et al. 2021, MNRAS (doi 10.1093/mnras/staa3715), best-fitting Schechter and double power-law parameters",
+        "doi": "10.1093/mnras/staa3715",
+        "url": "https://arxiv.org/abs/2008.06057",
+        "retrieved": "2026-10-05",
+        "checksumSha256": "d4aed4b2788574c63ac2ad6f82cb478f6842f9ef0ec5d98added290395bb83bf",
+        "sourceMember": "appendix.tex fit-parameter table (arXiv source, transcribed)",
+        "extractionMethod": "transcribed from the arXiv LaTeX table"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Fit, not the simulation curve itself."
+    },
+    {
+      "id": "vijayan21.flares.uvlf.schechter.z8",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), dust attenuated, Schechter fit",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (dust attenuated, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.888,
+        "xMax": -17.888
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "Phi(M) = 0.4 ln10 phi* 10^(-0.4 (M-M*)(alpha+1)) exp(-10^(-0.4 (M-M*))) per mag",
+        "expression": "log10(0.4*Math.LN10*phi*Math.pow(10,-0.4*(x-Ms)*(alpha+1))*Math.exp(-Math.pow(10,-0.4*(x-Ms))))",
+        "parameters": {
+          "phi": 0.000004931738039549354,
+          "Ms": -22.082,
+          "alpha": -2.732
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies in the weighted combination of the resimulated regions",
+        "warning": "Schechter fit (first row of the paper's parameter table) to the observed UV LF at z=8: M*=-22.082, log phi*=-5.307, alpha=-2.732. The double power-law row is not used. The domain is the span of the tabulated bins because the paper does not state the fitted range."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "dust attenuated (the paper's 'observed' UV LF)",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Vijayan et al. 2021, MNRAS (doi 10.1093/mnras/staa3715), best-fitting Schechter and double power-law parameters",
+        "doi": "10.1093/mnras/staa3715",
+        "url": "https://arxiv.org/abs/2008.06057",
+        "retrieved": "2026-10-05",
+        "checksumSha256": "d4aed4b2788574c63ac2ad6f82cb478f6842f9ef0ec5d98added290395bb83bf",
+        "sourceMember": "appendix.tex fit-parameter table (arXiv source, transcribed)",
+        "extractionMethod": "transcribed from the arXiv LaTeX table"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Fit, not the simulation curve itself."
+    },
+    {
+      "id": "vijayan21.flares.uvlf.schechter.z9",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), dust attenuated, Schechter fit",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 9,
+        "zNominal": 9,
+        "zMin": 9,
+        "zMax": 9,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (dust attenuated, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.662,
+        "xMax": -17.662
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "Phi(M) = 0.4 ln10 phi* 10^(-0.4 (M-M*)(alpha+1)) exp(-10^(-0.4 (M-M*))) per mag",
+        "expression": "log10(0.4*Math.LN10*phi*Math.pow(10,-0.4*(x-Ms)*(alpha+1))*Math.exp(-Math.pow(10,-0.4*(x-Ms))))",
+        "parameters": {
+          "phi": 0.00001452111617587742,
+          "Ms": -21.224,
+          "alpha": -2.702
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies in the weighted combination of the resimulated regions",
+        "warning": "Schechter fit (first row of the paper's parameter table) to the observed UV LF at z=9: M*=-21.224, log phi*=-4.838, alpha=-2.702. The double power-law row is not used. The domain is the span of the tabulated bins because the paper does not state the fitted range."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "dust attenuated (the paper's 'observed' UV LF)",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Vijayan et al. 2021, MNRAS (doi 10.1093/mnras/staa3715), best-fitting Schechter and double power-law parameters",
+        "doi": "10.1093/mnras/staa3715",
+        "url": "https://arxiv.org/abs/2008.06057",
+        "retrieved": "2026-10-05",
+        "checksumSha256": "d4aed4b2788574c63ac2ad6f82cb478f6842f9ef0ec5d98added290395bb83bf",
+        "sourceMember": "appendix.tex fit-parameter table (arXiv source, transcribed)",
+        "extractionMethod": "transcribed from the arXiv LaTeX table"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Fit, not the simulation curve itself."
+    },
+    {
+      "id": "vijayan21.flares.uvlf.schechter.z10",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), dust attenuated, Schechter fit",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (dust attenuated, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.567,
+        "xMax": -18.067
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "Phi(M) = 0.4 ln10 phi* 10^(-0.4 (M-M*)(alpha+1)) exp(-10^(-0.4 (M-M*))) per mag",
+        "expression": "log10(0.4*Math.LN10*phi*Math.pow(10,-0.4*(x-Ms)*(alpha+1))*Math.exp(-Math.pow(10,-0.4*(x-Ms))))",
+        "parameters": {
+          "phi": 0.000017060823890031244,
+          "Ms": -20.453,
+          "alpha": -3.136
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies in the weighted combination of the resimulated regions",
+        "warning": "Schechter fit (first row of the paper's parameter table) to the observed UV LF at z=10: M*=-20.453, log phi*=-4.768, alpha=-3.136. The double power-law row is not used. The domain is the span of the tabulated bins because the paper does not state the fitted range."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "dust attenuated (the paper's 'observed' UV LF)",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Vijayan et al. 2021, MNRAS (doi 10.1093/mnras/staa3715), best-fitting Schechter and double power-law parameters",
+        "doi": "10.1093/mnras/staa3715",
+        "url": "https://arxiv.org/abs/2008.06057",
+        "retrieved": "2026-10-05",
+        "checksumSha256": "d4aed4b2788574c63ac2ad6f82cb478f6842f9ef0ec5d98added290395bb83bf",
+        "sourceMember": "appendix.tex fit-parameter table (arXiv source, transcribed)",
+        "extractionMethod": "transcribed from the arXiv LaTeX table"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Fit, not the simulation curve itself."
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "version": "0.8.0",
+  "version": "0.9.0",
   "released": "2026-10-07",
   "doi": null,
   "notes": "Version of the exported dataset (data/export/). Bump on any change to data/curves/ or the export format; record it in CHANGELOG.md."

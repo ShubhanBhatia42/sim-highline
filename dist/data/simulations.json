@@ -494,17 +494,21 @@
       "baryonMassMsun": [],
       "redshiftRange": [
         3,
-        12
+        14.5
       ],
       "access": "published-fit",
       "calibration": [
         "inherits TNG/THESAN model"
       ],
       "relations": [
-        "mzr"
+        "mzr",
+        "gsmf",
+        "uvlf",
+        "sfrd"
       ],
       "source": "https://github.com/psharda/colibre_mzr_sharda26",
-      "notes": "Only a best-fit MZR as transcribed in the Sharda et al. 2026 notebook."
+      "notes": "Only a best-fit MZR as transcribed in the Sharda et al. 2026 notebook.",
+      "redshiftRangeBasis": "Kannan et al. 2025 (arXiv:2502.20437) show UV luminosity functions of the zoom suite for 3.5 <= z < 14.5 and SFR density for z 3 to 14."
     },
     {
       "id": "fire2",
@@ -545,7 +549,8 @@
       "relations": [
         "gsmf",
         "sfms",
-        "uvlf"
+        "uvlf",
+        "sfrd"
       ],
       "source": "https://github.com/flaresimulations/flares",
       "notes": "Galaxy table from a public third-party redistribution; official region weights.",
@@ -561,18 +566,23 @@
       "baryonMassMsun": [],
       "redshiftRange": [
         8,
-        10
+        15
       ],
       "access": "published-fit",
       "calibration": [],
       "relations": [
         "bh",
-        "bhsigma"
+        "bhsigma",
+        "gsmf",
+        "ssfr",
+        "mzr",
+        "shmr",
+        "uvlf"
       ],
       "source": "https://github.com/kuanweih/paper-2018",
       "notes": "Black-hole relation fits at z=8-10 from the authors' public notebook. Box size corrected from 590 to 574 cMpc (400 Mpc/h at h=0.697).",
       "initialConditionsRedshift": 99,
-      "redshiftRangeBasis": "Feng et al. 2016 (arXiv:1504.06619): run from z=99 to z=8; ingested relations span z=8-10. Box 400 Mpc/h with h=0.697 (their cosmology table) = 573.9 cMpc."
+      "redshiftRangeBasis": "Feng et al. 2016 (arXiv:1504.06619): run from z=99 to z=8; ingested relations span z=8-10. Box 400 Mpc/h with h=0.697 (their cosmology table) = 573.9 cMpc. Wilkins et al. 2017 (arXiv:1704.00954) tabulate galaxy properties of the run at z=8 to 14 and intrinsic UV luminosity functions to z=15."
     },
     {
       "id": "sphinx20",
