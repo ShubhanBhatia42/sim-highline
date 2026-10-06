@@ -1,0 +1,3726 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "katz23.sphinx20.sfms.sfr-10-myr.z4.64",
+      "source": "SPHINX20",
+      "run": "sfr-10-myr",
+      "kind": "simulation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 4.64,
+        "zNominal": 4.64,
+        "zMin": 4.64,
+        "zMax": 4.64,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (integral of SFH)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 SFR averaged over 10 Myr",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 7.125,
+        "xMax": 9.625
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.125,
+            "y": -0.4202,
+            "yLow": -0.4801,
+            "yHigh": -0.1775,
+            "count": 17
+          },
+          {
+            "x": 7.375,
+            "y": -0.2218,
+            "yLow": -0.4164,
+            "yHigh": -0.0954,
+            "count": 9
+          },
+          {
+            "x": 7.625,
+            "y": -0.3565,
+            "yLow": -0.4949,
+            "yHigh": -0.1589,
+            "count": 28
+          },
+          {
+            "x": 7.875,
+            "y": -0.3054,
+            "yLow": -0.465,
+            "yHigh": 0.0596,
+            "count": 34
+          },
+          {
+            "x": 8.125,
+            "y": -0.3011,
+            "yLow": -0.4711,
+            "yHigh": 0,
+            "count": 56
+          },
+          {
+            "x": 8.375,
+            "y": -0.1487,
+            "yLow": -0.3864,
+            "yHigh": 0.1461,
+            "count": 64
+          },
+          {
+            "x": 8.625,
+            "y": -0.1111,
+            "yLow": -0.4284,
+            "yHigh": 0.2718,
+            "count": 60
+          },
+          {
+            "x": 8.875,
+            "y": 0.0789,
+            "yLow": -0.1699,
+            "yHigh": 0.6485,
+            "count": 34
+          },
+          {
+            "x": 9.125,
+            "y": 0.4324,
+            "yLow": 0.0947,
+            "yHigh": 0.8773,
+            "count": 22
+          },
+          {
+            "x": 9.375,
+            "y": 0.7482,
+            "yLow": 0.4192,
+            "yHigh": 1.1181,
+            "count": 15
+          },
+          {
+            "x": 9.625,
+            "y": 0.9576,
+            "yLow": 0.552,
+            "yHigh": 1.1061,
+            "count": 11
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Galaxies without star formation in the window are excluded from the median."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "population": "star-forming",
+        "sfrTimescaleMyr": 10,
+        "sfrStatistic": "median"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.sfms.sfr-100-myr.z4.64",
+      "source": "SPHINX20",
+      "run": "sfr-100-myr",
+      "kind": "simulation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 4.64,
+        "zNominal": 4.64,
+        "zMin": 4.64,
+        "zMax": 4.64,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (integral of SFH)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 SFR averaged over 100 Myr",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 7.125,
+        "xMax": 9.625
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.125,
+            "y": -1.2218,
+            "yLow": -1.301,
+            "yHigh": -0.8914,
+            "count": 17
+          },
+          {
+            "x": 7.375,
+            "y": -1.0458,
+            "yLow": -1.0826,
+            "yHigh": -0.7843,
+            "count": 9
+          },
+          {
+            "x": 7.625,
+            "y": -0.7959,
+            "yLow": -0.9586,
+            "yHigh": -0.6021,
+            "count": 28
+          },
+          {
+            "x": 7.875,
+            "y": -0.6677,
+            "yLow": -0.7959,
+            "yHigh": -0.4747,
+            "count": 34
+          },
+          {
+            "x": 8.125,
+            "y": -0.4815,
+            "yLow": -0.755,
+            "yHigh": -0.2709,
+            "count": 56
+          },
+          {
+            "x": 8.375,
+            "y": -0.3099,
+            "yLow": -0.5217,
+            "yHigh": -0.0727,
+            "count": 64
+          },
+          {
+            "x": 8.625,
+            "y": -0.0836,
+            "yLow": -0.2794,
+            "yHigh": 0.1533,
+            "count": 60
+          },
+          {
+            "x": 8.875,
+            "y": 0.2271,
+            "yLow": -0.0885,
+            "yHigh": 0.4093,
+            "count": 34
+          },
+          {
+            "x": 9.125,
+            "y": 0.5395,
+            "yLow": 0.2622,
+            "yHigh": 0.6812,
+            "count": 22
+          },
+          {
+            "x": 9.375,
+            "y": 0.6637,
+            "yLow": 0.528,
+            "yHigh": 0.9076,
+            "count": 15
+          },
+          {
+            "x": 9.625,
+            "y": 0.8331,
+            "yLow": 0.7753,
+            "yHigh": 1.1473,
+            "count": 11
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Galaxies without star formation in the window are excluded from the median."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "population": "star-forming",
+        "sfrTimescaleMyr": 100,
+        "sfrStatistic": "median"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.zstar.mass-weighted.z4.64",
+      "source": "SPHINX20",
+      "run": "mass-weighted",
+      "kind": "simulation",
+      "relation": "zstar",
+      "epoch": {
+        "zRepresentative": 4.64,
+        "zNominal": 4.64,
+        "zMin": 4.64,
+        "zMax": 4.64,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 mass-weighted stellar metallicity (Zsun)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 7.125,
+        "xMax": 9.625
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.125,
+            "y": -1.62,
+            "yLow": -1.9728,
+            "yHigh": -1.5356,
+            "count": 17
+          },
+          {
+            "x": 7.375,
+            "y": -1.67,
+            "yLow": -1.8904,
+            "yHigh": -1.5608,
+            "count": 9
+          },
+          {
+            "x": 7.625,
+            "y": -1.46,
+            "yLow": -1.6368,
+            "yHigh": -1.31,
+            "count": 28
+          },
+          {
+            "x": 7.875,
+            "y": -1.435,
+            "yLow": -1.5772,
+            "yHigh": -1.23,
+            "count": 34
+          },
+          {
+            "x": 8.125,
+            "y": -1.36,
+            "yLow": -1.452,
+            "yHigh": -1.188,
+            "count": 56
+          },
+          {
+            "x": 8.375,
+            "y": -1.255,
+            "yLow": -1.4192,
+            "yHigh": -0.9708,
+            "count": 64
+          },
+          {
+            "x": 8.625,
+            "y": -1.155,
+            "yLow": -1.29,
+            "yHigh": -0.8976,
+            "count": 60
+          },
+          {
+            "x": 8.875,
+            "y": -1.06,
+            "yLow": -1.1672,
+            "yHigh": -0.8484,
+            "count": 34
+          },
+          {
+            "x": 9.125,
+            "y": -0.805,
+            "yLow": -1.0156,
+            "yHigh": -0.5644,
+            "count": 22
+          },
+          {
+            "x": 9.375,
+            "y": -0.5,
+            "yLow": -0.7036,
+            "yHigh": -0.3148,
+            "count": 15
+          },
+          {
+            "x": 9.625,
+            "y": -0.47,
+            "yLow": -0.63,
+            "yHigh": -0.432,
+            "count": 11
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems)."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "metallicityQuantity": "stellar-Z",
+        "metallicityCalibration": "intrinsic mass-weighted (solar value per release)",
+        "population": "release-sample"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.shmr.virial.z4.64",
+      "source": "SPHINX20",
+      "run": "virial",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 4.64,
+        "zNominal": 4.64,
+        "zMin": 4.64,
+        "zMax": 4.64,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 halo virial mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 8.875,
+        "xMax": 10.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.875,
+            "y": -1.7727,
+            "yLow": -1.904,
+            "yHigh": -1.5136,
+            "count": 13
+          },
+          {
+            "x": 9.125,
+            "y": -1.858,
+            "yLow": -2.1124,
+            "yHigh": -1.3209,
+            "count": 14
+          },
+          {
+            "x": 9.375,
+            "y": -1.745,
+            "yLow": -1.9938,
+            "yHigh": -1.2502,
+            "count": 30
+          },
+          {
+            "x": 9.625,
+            "y": -1.6913,
+            "yLow": -1.9343,
+            "yHigh": -1.1555,
+            "count": 37
+          },
+          {
+            "x": 9.875,
+            "y": -1.7998,
+            "yLow": -2.0053,
+            "yHigh": -1.5317,
+            "count": 68
+          },
+          {
+            "x": 10.125,
+            "y": -1.7355,
+            "yLow": -1.9348,
+            "yHigh": -1.4942,
+            "count": 84
+          },
+          {
+            "x": 10.375,
+            "y": -1.6615,
+            "yLow": -1.8057,
+            "yHigh": -1.4337,
+            "count": 55
+          },
+          {
+            "x": 10.625,
+            "y": -1.4887,
+            "yLow": -1.7351,
+            "yHigh": -1.2151,
+            "count": 41
+          },
+          {
+            "x": 10.875,
+            "y": -1.2556,
+            "yLow": -1.4098,
+            "yHigh": -1.0781,
+            "count": 15
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Halo mass definition as provided in the release table (virial)."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "haloMassDefinition": "Mvir (release definition)",
+        "haloMassHistory": "current",
+        "population": "release-sample"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.sfms.sfr-10-myr.z5",
+      "source": "SPHINX20",
+      "run": "sfr-10-myr",
+      "kind": "simulation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (integral of SFH)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 SFR averaged over 10 Myr",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 7.125,
+        "xMax": 9.375
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.125,
+            "y": -0.3539,
+            "yLow": -0.4466,
+            "yHigh": -0.1559,
+            "count": 12
+          },
+          {
+            "x": 7.375,
+            "y": -0.3979,
+            "yLow": -0.4831,
+            "yHigh": -0.206,
+            "count": 19
+          },
+          {
+            "x": 7.625,
+            "y": -0.3188,
+            "yLow": -0.439,
+            "yHigh": -0.0615,
+            "count": 21
+          },
+          {
+            "x": 7.875,
+            "y": -0.2924,
+            "yLow": -0.4235,
+            "yHigh": 0.0354,
+            "count": 43
+          },
+          {
+            "x": 8.125,
+            "y": -0.2884,
+            "yLow": -0.4135,
+            "yHigh": 0.0755,
+            "count": 56
+          },
+          {
+            "x": 8.375,
+            "y": -0.119,
+            "yLow": -0.3924,
+            "yHigh": 0.2463,
+            "count": 48
+          },
+          {
+            "x": 8.625,
+            "y": -0.046,
+            "yLow": -0.2704,
+            "yHigh": 0.3238,
+            "count": 42
+          },
+          {
+            "x": 8.875,
+            "y": 0.2764,
+            "yLow": -0.2729,
+            "yHigh": 0.574,
+            "count": 24
+          },
+          {
+            "x": 9.125,
+            "y": 0.5537,
+            "yLow": 0.2209,
+            "yHigh": 0.8718,
+            "count": 16
+          },
+          {
+            "x": 9.375,
+            "y": 0.7892,
+            "yLow": 0.5793,
+            "yHigh": 1.0847,
+            "count": 16
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Galaxies without star formation in the window are excluded from the median."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "population": "star-forming",
+        "sfrTimescaleMyr": 10,
+        "sfrStatistic": "median"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.sfms.sfr-100-myr.z5",
+      "source": "SPHINX20",
+      "run": "sfr-100-myr",
+      "kind": "simulation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (integral of SFH)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 SFR averaged over 100 Myr",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 7.125,
+        "xMax": 9.375
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.125,
+            "y": -1.0713,
+            "yLow": -1.2409,
+            "yHigh": -0.9586,
+            "count": 12
+          },
+          {
+            "x": 7.375,
+            "y": -1,
+            "yLow": -1.1549,
+            "yHigh": -0.8786,
+            "count": 19
+          },
+          {
+            "x": 7.625,
+            "y": -0.7959,
+            "yLow": -0.9917,
+            "yHigh": -0.5593,
+            "count": 21
+          },
+          {
+            "x": 7.875,
+            "y": -0.6576,
+            "yLow": -0.8323,
+            "yHigh": -0.4815,
+            "count": 43
+          },
+          {
+            "x": 8.125,
+            "y": -0.4815,
+            "yLow": -0.7212,
+            "yHigh": -0.2397,
+            "count": 56
+          },
+          {
+            "x": 8.375,
+            "y": -0.2407,
+            "yLow": -0.4144,
+            "yHigh": -0.041,
+            "count": 48
+          },
+          {
+            "x": 8.625,
+            "y": -0.02,
+            "yLow": -0.266,
+            "yHigh": 0.2631,
+            "count": 42
+          },
+          {
+            "x": 8.875,
+            "y": 0.2316,
+            "yLow": -0.0671,
+            "yHigh": 0.4727,
+            "count": 24
+          },
+          {
+            "x": 9.125,
+            "y": 0.5808,
+            "yLow": 0.3081,
+            "yHigh": 0.8188,
+            "count": 16
+          },
+          {
+            "x": 9.375,
+            "y": 0.8922,
+            "yLow": 0.8054,
+            "yHigh": 0.9853,
+            "count": 16
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Galaxies without star formation in the window are excluded from the median."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "population": "star-forming",
+        "sfrTimescaleMyr": 100,
+        "sfrStatistic": "median"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.zstar.mass-weighted.z5",
+      "source": "SPHINX20",
+      "run": "mass-weighted",
+      "kind": "simulation",
+      "relation": "zstar",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 mass-weighted stellar metallicity (Zsun)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 7.125,
+        "xMax": 9.375
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.125,
+            "y": -1.765,
+            "yLow": -1.9284,
+            "yHigh": -1.6732,
+            "count": 12
+          },
+          {
+            "x": 7.375,
+            "y": -1.6,
+            "yLow": -1.7872,
+            "yHigh": -1.4416,
+            "count": 19
+          },
+          {
+            "x": 7.625,
+            "y": -1.54,
+            "yLow": -1.638,
+            "yHigh": -1.43,
+            "count": 21
+          },
+          {
+            "x": 7.875,
+            "y": -1.45,
+            "yLow": -1.61,
+            "yHigh": -1.3372,
+            "count": 43
+          },
+          {
+            "x": 8.125,
+            "y": -1.38,
+            "yLow": -1.52,
+            "yHigh": -1.106,
+            "count": 56
+          },
+          {
+            "x": 8.375,
+            "y": -1.255,
+            "yLow": -1.3948,
+            "yHigh": -1.02,
+            "count": 48
+          },
+          {
+            "x": 8.625,
+            "y": -1.17,
+            "yLow": -1.32,
+            "yHigh": -0.95,
+            "count": 42
+          },
+          {
+            "x": 8.875,
+            "y": -1.05,
+            "yLow": -1.2424,
+            "yHigh": -0.924,
+            "count": 24
+          },
+          {
+            "x": 9.125,
+            "y": -0.65,
+            "yLow": -0.914,
+            "yHigh": -0.526,
+            "count": 16
+          },
+          {
+            "x": 9.375,
+            "y": -0.575,
+            "yLow": -0.736,
+            "yHigh": -0.376,
+            "count": 16
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems)."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "metallicityQuantity": "stellar-Z",
+        "metallicityCalibration": "intrinsic mass-weighted (solar value per release)",
+        "population": "release-sample"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.shmr.virial.z5",
+      "source": "SPHINX20",
+      "run": "virial",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 halo virial mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 9.125,
+        "xMax": 10.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.125,
+            "y": -1.8525,
+            "yLow": -2.041,
+            "yHigh": -1.4111,
+            "count": 17
+          },
+          {
+            "x": 9.375,
+            "y": -1.8631,
+            "yLow": -2.1121,
+            "yHigh": -1.4113,
+            "count": 27
+          },
+          {
+            "x": 9.625,
+            "y": -1.7681,
+            "yLow": -2.0537,
+            "yHigh": -1.4236,
+            "count": 45
+          },
+          {
+            "x": 9.875,
+            "y": -1.7951,
+            "yLow": -2.0039,
+            "yHigh": -1.4877,
+            "count": 63
+          },
+          {
+            "x": 10.125,
+            "y": -1.7725,
+            "yLow": -1.9502,
+            "yHigh": -1.4828,
+            "count": 65
+          },
+          {
+            "x": 10.375,
+            "y": -1.6926,
+            "yLow": -1.8337,
+            "yHigh": -1.4788,
+            "count": 49
+          },
+          {
+            "x": 10.625,
+            "y": -1.4812,
+            "yLow": -1.6862,
+            "yHigh": -1.1796,
+            "count": 26
+          },
+          {
+            "x": 10.875,
+            "y": -1.2882,
+            "yLow": -1.4077,
+            "yHigh": -1.1285,
+            "count": 11
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Halo mass definition as provided in the release table (virial)."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "haloMassDefinition": "Mvir (release definition)",
+        "haloMassHistory": "current",
+        "population": "release-sample"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.size.uv-1500A.z5",
+      "source": "SPHINX20",
+      "run": "uv-1500A",
+      "kind": "simulation",
+      "relation": "size",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 circularised half-light radius at 1500 A (median over 10 sightlines)",
+        "yUnit": "log10(kpc)"
+      },
+      "domain": {
+        "xMin": 7.125,
+        "xMax": 9.375
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.125,
+            "y": -1.2468,
+            "yLow": -1.3857,
+            "yHigh": -0.8985,
+            "count": 12
+          },
+          {
+            "x": 7.375,
+            "y": -0.8386,
+            "yLow": -1.3266,
+            "yHigh": -0.6754,
+            "count": 19
+          },
+          {
+            "x": 7.625,
+            "y": -0.7831,
+            "yLow": -1.1065,
+            "yHigh": -0.5013,
+            "count": 21
+          },
+          {
+            "x": 7.875,
+            "y": -0.6971,
+            "yLow": -0.9305,
+            "yHigh": -0.472,
+            "count": 43
+          },
+          {
+            "x": 8.125,
+            "y": -0.531,
+            "yLow": -0.7554,
+            "yHigh": -0.3633,
+            "count": 56
+          },
+          {
+            "x": 8.375,
+            "y": -0.4853,
+            "yLow": -0.7083,
+            "yHigh": -0.3092,
+            "count": 48
+          },
+          {
+            "x": 8.625,
+            "y": -0.5048,
+            "yLow": -0.6767,
+            "yHigh": -0.262,
+            "count": 42
+          },
+          {
+            "x": 8.875,
+            "y": -0.4186,
+            "yLow": -0.5163,
+            "yHigh": -0.2343,
+            "count": 24
+          },
+          {
+            "x": 9.125,
+            "y": -0.4345,
+            "yLow": -0.723,
+            "yHigh": -0.2913,
+            "count": 16
+          },
+          {
+            "x": 9.375,
+            "y": -0.2861,
+            "yLow": -0.4241,
+            "yHigh": -0.1931,
+            "count": 16
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Sizes from the release's PHOTUTILS segmentation of mock 1500 A images."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "sizeDefinition": "uv-half-light-1500A-circularised",
+        "population": "release-sample"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/galaxy_sizes/morph_z5_1500A.json",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.sfms.sfr-10-myr.z6",
+      "source": "SPHINX20",
+      "run": "sfr-10-myr",
+      "kind": "simulation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (integral of SFH)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 SFR averaged over 10 Myr",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 7.125,
+        "xMax": 9.375
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.125,
+            "y": -0.4089,
+            "yLow": -0.5086,
+            "yHigh": -0.1668,
+            "count": 16
+          },
+          {
+            "x": 7.375,
+            "y": -0.3666,
+            "yLow": -0.464,
+            "yHigh": -0.1572,
+            "count": 22
+          },
+          {
+            "x": 7.625,
+            "y": -0.3372,
+            "yLow": -0.4949,
+            "yHigh": -0.1033,
+            "count": 45
+          },
+          {
+            "x": 7.875,
+            "y": -0.2521,
+            "yLow": -0.3672,
+            "yHigh": 0.1051,
+            "count": 28
+          },
+          {
+            "x": 8.125,
+            "y": -0.2076,
+            "yLow": -0.3665,
+            "yHigh": 0.0602,
+            "count": 61
+          },
+          {
+            "x": 8.375,
+            "y": -0.1744,
+            "yLow": -0.3979,
+            "yHigh": 0.2107,
+            "count": 30
+          },
+          {
+            "x": 8.625,
+            "y": 0.0607,
+            "yLow": -0.2676,
+            "yHigh": 0.2989,
+            "count": 25
+          },
+          {
+            "x": 8.875,
+            "y": 0.3962,
+            "yLow": -0.0503,
+            "yHigh": 0.9502,
+            "count": 17
+          },
+          {
+            "x": 9.125,
+            "y": 0.6853,
+            "yLow": 0.4452,
+            "yHigh": 0.759,
+            "count": 8
+          },
+          {
+            "x": 9.375,
+            "y": 0.7701,
+            "yLow": 0.6166,
+            "yHigh": 1.0011,
+            "count": 9
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Galaxies without star formation in the window are excluded from the median."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "population": "star-forming",
+        "sfrTimescaleMyr": 10,
+        "sfrStatistic": "median"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.sfms.sfr-100-myr.z6",
+      "source": "SPHINX20",
+      "run": "sfr-100-myr",
+      "kind": "simulation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (integral of SFH)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 SFR averaged over 100 Myr",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 7.125,
+        "xMax": 9.375
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.125,
+            "y": -1.0458,
+            "yLow": -1.1951,
+            "yHigh": -0.9586,
+            "count": 16
+          },
+          {
+            "x": 7.375,
+            "y": -0.9034,
+            "yLow": -1.0969,
+            "yHigh": -0.779,
+            "count": 22
+          },
+          {
+            "x": 7.625,
+            "y": -0.7447,
+            "yLow": -0.9208,
+            "yHigh": -0.5535,
+            "count": 45
+          },
+          {
+            "x": 7.875,
+            "y": -0.5625,
+            "yLow": -0.7875,
+            "yHigh": -0.3127,
+            "count": 28
+          },
+          {
+            "x": 8.125,
+            "y": -0.4089,
+            "yLow": -0.5657,
+            "yHigh": -0.1911,
+            "count": 61
+          },
+          {
+            "x": 8.375,
+            "y": -0.1308,
+            "yLow": -0.3468,
+            "yHigh": 0.0061,
+            "count": 30
+          },
+          {
+            "x": 8.625,
+            "y": 0.0864,
+            "yLow": -0.1426,
+            "yHigh": 0.333,
+            "count": 25
+          },
+          {
+            "x": 8.875,
+            "y": 0.5172,
+            "yLow": 0.2238,
+            "yHigh": 0.6285,
+            "count": 17
+          },
+          {
+            "x": 9.125,
+            "y": 0.7113,
+            "yLow": 0.5285,
+            "yHigh": 0.8552,
+            "count": 8
+          },
+          {
+            "x": 9.375,
+            "y": 0.9217,
+            "yLow": 0.7703,
+            "yHigh": 0.9614,
+            "count": 9
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Galaxies without star formation in the window are excluded from the median."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "population": "star-forming",
+        "sfrTimescaleMyr": 100,
+        "sfrStatistic": "median"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.zstar.mass-weighted.z6",
+      "source": "SPHINX20",
+      "run": "mass-weighted",
+      "kind": "simulation",
+      "relation": "zstar",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 mass-weighted stellar metallicity (Zsun)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 7.125,
+        "xMax": 9.375
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.125,
+            "y": -1.805,
+            "yLow": -1.908,
+            "yHigh": -1.7,
+            "count": 16
+          },
+          {
+            "x": 7.375,
+            "y": -1.61,
+            "yLow": -1.7528,
+            "yHigh": -1.49,
+            "count": 22
+          },
+          {
+            "x": 7.625,
+            "y": -1.6,
+            "yLow": -1.74,
+            "yHigh": -1.42,
+            "count": 45
+          },
+          {
+            "x": 7.875,
+            "y": -1.49,
+            "yLow": -1.5968,
+            "yHigh": -1.38,
+            "count": 28
+          },
+          {
+            "x": 8.125,
+            "y": -1.42,
+            "yLow": -1.56,
+            "yHigh": -1.226,
+            "count": 61
+          },
+          {
+            "x": 8.375,
+            "y": -1.315,
+            "yLow": -1.43,
+            "yHigh": -1.17,
+            "count": 30
+          },
+          {
+            "x": 8.625,
+            "y": -1.18,
+            "yLow": -1.2848,
+            "yHigh": -0.9736,
+            "count": 25
+          },
+          {
+            "x": 8.875,
+            "y": -0.97,
+            "yLow": -1.0832,
+            "yHigh": -0.8224,
+            "count": 17
+          },
+          {
+            "x": 9.125,
+            "y": -0.705,
+            "yLow": -0.9104,
+            "yHigh": -0.596,
+            "count": 8
+          },
+          {
+            "x": 9.375,
+            "y": -0.64,
+            "yLow": -0.8472,
+            "yHigh": -0.5628,
+            "count": 9
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems)."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "metallicityQuantity": "stellar-Z",
+        "metallicityCalibration": "intrinsic mass-weighted (solar value per release)",
+        "population": "release-sample"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.shmr.virial.z6",
+      "source": "SPHINX20",
+      "run": "virial",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 halo virial mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 8.875,
+        "xMax": 10.625
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.875,
+            "y": -1.7139,
+            "yLow": -1.93,
+            "yHigh": -1.4712,
+            "count": 12
+          },
+          {
+            "x": 9.125,
+            "y": -1.921,
+            "yLow": -2.0193,
+            "yHigh": -1.6012,
+            "count": 16
+          },
+          {
+            "x": 9.375,
+            "y": -1.8978,
+            "yLow": -2.0262,
+            "yHigh": -1.4447,
+            "count": 31
+          },
+          {
+            "x": 9.625,
+            "y": -1.9542,
+            "yLow": -2.0577,
+            "yHigh": -1.7347,
+            "count": 48
+          },
+          {
+            "x": 9.875,
+            "y": -1.8143,
+            "yLow": -1.9754,
+            "yHigh": -1.6151,
+            "count": 65
+          },
+          {
+            "x": 10.125,
+            "y": -1.7867,
+            "yLow": -1.9441,
+            "yHigh": -1.5409,
+            "count": 51
+          },
+          {
+            "x": 10.375,
+            "y": -1.6669,
+            "yLow": -1.8288,
+            "yHigh": -1.4895,
+            "count": 24
+          },
+          {
+            "x": 10.625,
+            "y": -1.3785,
+            "yLow": -1.5145,
+            "yHigh": -1.276,
+            "count": 16
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Halo mass definition as provided in the release table (virial)."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "haloMassDefinition": "Mvir (release definition)",
+        "haloMassHistory": "current",
+        "population": "release-sample"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.size.uv-1500A.z6",
+      "source": "SPHINX20",
+      "run": "uv-1500A",
+      "kind": "simulation",
+      "relation": "size",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 circularised half-light radius at 1500 A (median over 10 sightlines)",
+        "yUnit": "log10(kpc)"
+      },
+      "domain": {
+        "xMin": 7.125,
+        "xMax": 9.375
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.125,
+            "y": -1.1319,
+            "yLow": -1.7713,
+            "yHigh": -0.978,
+            "count": 16
+          },
+          {
+            "x": 7.375,
+            "y": -1.0401,
+            "yLow": -1.3621,
+            "yHigh": -0.8488,
+            "count": 22
+          },
+          {
+            "x": 7.625,
+            "y": -0.8442,
+            "yLow": -1.1319,
+            "yHigh": -0.5035,
+            "count": 45
+          },
+          {
+            "x": 7.875,
+            "y": -0.7387,
+            "yLow": -0.9062,
+            "yHigh": -0.4535,
+            "count": 28
+          },
+          {
+            "x": 8.125,
+            "y": -0.6958,
+            "yLow": -0.9037,
+            "yHigh": -0.4415,
+            "count": 61
+          },
+          {
+            "x": 8.375,
+            "y": -0.5234,
+            "yLow": -0.6783,
+            "yHigh": -0.3395,
+            "count": 30
+          },
+          {
+            "x": 8.625,
+            "y": -0.4858,
+            "yLow": -0.6038,
+            "yHigh": -0.3888,
+            "count": 25
+          },
+          {
+            "x": 8.875,
+            "y": -0.4809,
+            "yLow": -0.7419,
+            "yHigh": -0.3121,
+            "count": 17
+          },
+          {
+            "x": 9.125,
+            "y": -0.4408,
+            "yLow": -0.8227,
+            "yHigh": -0.1508,
+            "count": 8
+          },
+          {
+            "x": 9.375,
+            "y": -0.4533,
+            "yLow": -0.7739,
+            "yHigh": -0.3283,
+            "count": 9
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Sizes from the release's PHOTUTILS segmentation of mock 1500 A images."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "sizeDefinition": "uv-half-light-1500A-circularised",
+        "population": "release-sample"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/galaxy_sizes/morph_z6_1500A.json",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.sfms.sfr-10-myr.z7",
+      "source": "SPHINX20",
+      "run": "sfr-10-myr",
+      "kind": "simulation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (integral of SFH)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 SFR averaged over 10 Myr",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 7.125,
+        "xMax": 8.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.125,
+            "y": -0.3468,
+            "yLow": -0.4706,
+            "yHigh": -0.2191,
+            "count": 13
+          },
+          {
+            "x": 7.375,
+            "y": -0.3279,
+            "yLow": -0.4831,
+            "yHigh": -0.1575,
+            "count": 19
+          },
+          {
+            "x": 7.625,
+            "y": -0.2566,
+            "yLow": -0.4326,
+            "yHigh": -0.0756,
+            "count": 28
+          },
+          {
+            "x": 7.875,
+            "y": -0.1871,
+            "yLow": -0.3657,
+            "yHigh": -0.0322,
+            "count": 34
+          },
+          {
+            "x": 8.125,
+            "y": -0.2147,
+            "yLow": -0.4001,
+            "yHigh": 0.1601,
+            "count": 31
+          },
+          {
+            "x": 8.375,
+            "y": -0.0223,
+            "yLow": -0.3202,
+            "yHigh": 0.21,
+            "count": 17
+          },
+          {
+            "x": 8.625,
+            "y": 0.4511,
+            "yLow": 0.1027,
+            "yHigh": 0.5052,
+            "count": 10
+          },
+          {
+            "x": 8.875,
+            "y": 0.6513,
+            "yLow": 0.4755,
+            "yHigh": 1.0587,
+            "count": 9
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Galaxies without star formation in the window are excluded from the median."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "population": "star-forming",
+        "sfrTimescaleMyr": 10,
+        "sfrStatistic": "median"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.sfms.sfr-100-myr.z7",
+      "source": "SPHINX20",
+      "run": "sfr-100-myr",
+      "kind": "simulation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (integral of SFH)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 SFR averaged over 100 Myr",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 7.125,
+        "xMax": 8.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.125,
+            "y": -1.1549,
+            "yLow": -1.2282,
+            "yHigh": -1.0388,
+            "count": 13
+          },
+          {
+            "x": 7.375,
+            "y": -0.8861,
+            "yLow": -0.9636,
+            "yHigh": -0.7927,
+            "count": 19
+          },
+          {
+            "x": 7.625,
+            "y": -0.6387,
+            "yLow": -0.8353,
+            "yHigh": -0.5179,
+            "count": 28
+          },
+          {
+            "x": 7.875,
+            "y": -0.5302,
+            "yLow": -0.726,
+            "yHigh": -0.3468,
+            "count": 34
+          },
+          {
+            "x": 8.125,
+            "y": -0.301,
+            "yLow": -0.4685,
+            "yHigh": -0.097,
+            "count": 31
+          },
+          {
+            "x": 8.375,
+            "y": -0.0757,
+            "yLow": -0.2924,
+            "yHigh": 0.0294,
+            "count": 17
+          },
+          {
+            "x": 8.625,
+            "y": 0.197,
+            "yLow": 0.1349,
+            "yHigh": 0.367,
+            "count": 10
+          },
+          {
+            "x": 8.875,
+            "y": 0.4914,
+            "yLow": 0.364,
+            "yHigh": 0.6684,
+            "count": 9
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Galaxies without star formation in the window are excluded from the median."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "population": "star-forming",
+        "sfrTimescaleMyr": 100,
+        "sfrStatistic": "median"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.zstar.mass-weighted.z7",
+      "source": "SPHINX20",
+      "run": "mass-weighted",
+      "kind": "simulation",
+      "relation": "zstar",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 mass-weighted stellar metallicity (Zsun)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 7.125,
+        "xMax": 8.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.125,
+            "y": -1.82,
+            "yLow": -1.9012,
+            "yHigh": -1.7284,
+            "count": 13
+          },
+          {
+            "x": 7.375,
+            "y": -1.67,
+            "yLow": -1.7172,
+            "yHigh": -1.5232,
+            "count": 19
+          },
+          {
+            "x": 7.625,
+            "y": -1.525,
+            "yLow": -1.7168,
+            "yHigh": -1.3328,
+            "count": 28
+          },
+          {
+            "x": 7.875,
+            "y": -1.54,
+            "yLow": -1.65,
+            "yHigh": -1.2612,
+            "count": 34
+          },
+          {
+            "x": 8.125,
+            "y": -1.43,
+            "yLow": -1.55,
+            "yHigh": -1.29,
+            "count": 31
+          },
+          {
+            "x": 8.375,
+            "y": -1.31,
+            "yLow": -1.4132,
+            "yHigh": -1.2356,
+            "count": 17
+          },
+          {
+            "x": 8.625,
+            "y": -1.265,
+            "yLow": -1.3624,
+            "yHigh": -1.1288,
+            "count": 10
+          },
+          {
+            "x": 8.875,
+            "y": -0.96,
+            "yLow": -1.1924,
+            "yHigh": -0.7968,
+            "count": 9
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems)."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "metallicityQuantity": "stellar-Z",
+        "metallicityCalibration": "intrinsic mass-weighted (solar value per release)",
+        "population": "release-sample"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.shmr.virial.z7",
+      "source": "SPHINX20",
+      "run": "virial",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 halo virial mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 9.125,
+        "xMax": 10.375
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.125,
+            "y": -1.9639,
+            "yLow": -2.0862,
+            "yHigh": -1.765,
+            "count": 16
+          },
+          {
+            "x": 9.375,
+            "y": -1.7907,
+            "yLow": -2.0488,
+            "yHigh": -1.3531,
+            "count": 24
+          },
+          {
+            "x": 9.625,
+            "y": -1.8883,
+            "yLow": -2.0793,
+            "yHigh": -1.643,
+            "count": 38
+          },
+          {
+            "x": 9.875,
+            "y": -1.9266,
+            "yLow": -2.0467,
+            "yHigh": -1.7778,
+            "count": 38
+          },
+          {
+            "x": 10.125,
+            "y": -1.8293,
+            "yLow": -1.9684,
+            "yHigh": -1.6544,
+            "count": 27
+          },
+          {
+            "x": 10.375,
+            "y": -1.6761,
+            "yLow": -1.8679,
+            "yHigh": -1.4995,
+            "count": 13
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Halo mass definition as provided in the release table (virial)."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "haloMassDefinition": "Mvir (release definition)",
+        "haloMassHistory": "current",
+        "population": "release-sample"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.size.uv-1500A.z7",
+      "source": "SPHINX20",
+      "run": "uv-1500A",
+      "kind": "simulation",
+      "relation": "size",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 circularised half-light radius at 1500 A (median over 10 sightlines)",
+        "yUnit": "log10(kpc)"
+      },
+      "domain": {
+        "xMin": 7.125,
+        "xMax": 8.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.125,
+            "y": -1.2434,
+            "yLow": -1.5889,
+            "yHigh": -0.9202,
+            "count": 13
+          },
+          {
+            "x": 7.375,
+            "y": -1.0383,
+            "yLow": -1.1739,
+            "yHigh": -0.7663,
+            "count": 19
+          },
+          {
+            "x": 7.625,
+            "y": -0.8131,
+            "yLow": -1.0965,
+            "yHigh": -0.5609,
+            "count": 28
+          },
+          {
+            "x": 7.875,
+            "y": -0.7477,
+            "yLow": -0.8881,
+            "yHigh": -0.4605,
+            "count": 34
+          },
+          {
+            "x": 8.125,
+            "y": -0.737,
+            "yLow": -0.8834,
+            "yHigh": -0.441,
+            "count": 31
+          },
+          {
+            "x": 8.375,
+            "y": -0.5822,
+            "yLow": -0.8939,
+            "yHigh": -0.3585,
+            "count": 17
+          },
+          {
+            "x": 8.625,
+            "y": -0.5657,
+            "yLow": -0.7438,
+            "yHigh": -0.3807,
+            "count": 10
+          },
+          {
+            "x": 8.875,
+            "y": -0.5954,
+            "yLow": -0.6989,
+            "yHigh": -0.4053,
+            "count": 9
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Sizes from the release's PHOTUTILS segmentation of mock 1500 A images."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "sizeDefinition": "uv-half-light-1500A-circularised",
+        "population": "release-sample"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/galaxy_sizes/morph_z7_1500A.json",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.sfms.sfr-10-myr.z8",
+      "source": "SPHINX20",
+      "run": "sfr-10-myr",
+      "kind": "simulation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (integral of SFH)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 SFR averaged over 10 Myr",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 6.875,
+        "xMax": 8.375
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.875,
+            "y": -0.3539,
+            "yLow": -0.4982,
+            "yHigh": -0.2628,
+            "count": 12
+          },
+          {
+            "x": 7.125,
+            "y": -0.3098,
+            "yLow": -0.4546,
+            "yHigh": -0.153,
+            "count": 17
+          },
+          {
+            "x": 7.375,
+            "y": -0.3372,
+            "yLow": -0.4437,
+            "yHigh": -0.1062,
+            "count": 17
+          },
+          {
+            "x": 7.625,
+            "y": -0.3056,
+            "yLow": -0.4594,
+            "yHigh": 0.0689,
+            "count": 22
+          },
+          {
+            "x": 7.875,
+            "y": -0.2481,
+            "yLow": -0.468,
+            "yHigh": 0.1551,
+            "count": 20
+          },
+          {
+            "x": 8.125,
+            "y": -0.2147,
+            "yLow": -0.3337,
+            "yHigh": 0.1082,
+            "count": 15
+          },
+          {
+            "x": 8.375,
+            "y": 0.0414,
+            "yLow": -0.4318,
+            "yHigh": 0.3036,
+            "count": 9
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Galaxies without star formation in the window are excluded from the median."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "population": "star-forming",
+        "sfrTimescaleMyr": 10,
+        "sfrStatistic": "median"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.sfms.sfr-100-myr.z8",
+      "source": "SPHINX20",
+      "run": "sfr-100-myr",
+      "kind": "simulation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (integral of SFH)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 SFR averaged over 100 Myr",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 6.875,
+        "xMax": 8.375
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.875,
+            "y": -1.2614,
+            "yLow": -1.301,
+            "yHigh": -1.1549,
+            "count": 12
+          },
+          {
+            "x": 7.125,
+            "y": -0.9586,
+            "yLow": -1.1224,
+            "yHigh": -0.8407,
+            "count": 17
+          },
+          {
+            "x": 7.375,
+            "y": -0.8861,
+            "yLow": -0.9768,
+            "yHigh": -0.7734,
+            "count": 17
+          },
+          {
+            "x": 7.625,
+            "y": -0.6686,
+            "yLow": -0.7864,
+            "yHigh": -0.4913,
+            "count": 22
+          },
+          {
+            "x": 7.875,
+            "y": -0.4146,
+            "yLow": -0.6375,
+            "yHigh": -0.3191,
+            "count": 20
+          },
+          {
+            "x": 8.125,
+            "y": -0.1871,
+            "yLow": -0.3743,
+            "yHigh": -0.0022,
+            "count": 15
+          },
+          {
+            "x": 8.375,
+            "y": -0.0044,
+            "yLow": -0.1153,
+            "yHigh": 0.2652,
+            "count": 9
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Galaxies without star formation in the window are excluded from the median."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "population": "star-forming",
+        "sfrTimescaleMyr": 100,
+        "sfrStatistic": "median"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.zstar.mass-weighted.z8",
+      "source": "SPHINX20",
+      "run": "mass-weighted",
+      "kind": "simulation",
+      "relation": "zstar",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 mass-weighted stellar metallicity (Zsun)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 6.875,
+        "xMax": 8.375
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.875,
+            "y": -2.045,
+            "yLow": -2.188,
+            "yHigh": -1.9028,
+            "count": 12
+          },
+          {
+            "x": 7.125,
+            "y": -1.81,
+            "yLow": -1.9852,
+            "yHigh": -1.6668,
+            "count": 17
+          },
+          {
+            "x": 7.375,
+            "y": -1.72,
+            "yLow": -1.9076,
+            "yHigh": -1.5956,
+            "count": 17
+          },
+          {
+            "x": 7.625,
+            "y": -1.565,
+            "yLow": -1.71,
+            "yHigh": -1.4452,
+            "count": 22
+          },
+          {
+            "x": 7.875,
+            "y": -1.545,
+            "yLow": -1.6388,
+            "yHigh": -1.3644,
+            "count": 20
+          },
+          {
+            "x": 8.125,
+            "y": -1.46,
+            "yLow": -1.5476,
+            "yHigh": -1.3372,
+            "count": 15
+          },
+          {
+            "x": 8.375,
+            "y": -1.27,
+            "yLow": -1.3888,
+            "yHigh": -1.0956,
+            "count": 9
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems)."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "metallicityQuantity": "stellar-Z",
+        "metallicityCalibration": "intrinsic mass-weighted (solar value per release)",
+        "population": "release-sample"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.shmr.virial.z8",
+      "source": "SPHINX20",
+      "run": "virial",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 halo virial mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 8.625,
+        "xMax": 10.125
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.625,
+            "y": -1.848,
+            "yLow": -1.992,
+            "yHigh": -1.6891,
+            "count": 8
+          },
+          {
+            "x": 8.875,
+            "y": -2.0328,
+            "yLow": -2.2035,
+            "yHigh": -1.9448,
+            "count": 8
+          },
+          {
+            "x": 9.125,
+            "y": -1.9212,
+            "yLow": -2.0374,
+            "yHigh": -1.6958,
+            "count": 19
+          },
+          {
+            "x": 9.375,
+            "y": -2.0432,
+            "yLow": -2.1535,
+            "yHigh": -1.7714,
+            "count": 22
+          },
+          {
+            "x": 9.625,
+            "y": -1.9225,
+            "yLow": -2.0499,
+            "yHigh": -1.8095,
+            "count": 22
+          },
+          {
+            "x": 9.875,
+            "y": -1.9143,
+            "yLow": -2.0702,
+            "yHigh": -1.814,
+            "count": 23
+          },
+          {
+            "x": 10.125,
+            "y": -1.7914,
+            "yLow": -1.9372,
+            "yHigh": -1.638,
+            "count": 17
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Halo mass definition as provided in the release table (virial)."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "haloMassDefinition": "Mvir (release definition)",
+        "haloMassHistory": "current",
+        "population": "release-sample"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.size.uv-1500A.z8",
+      "source": "SPHINX20",
+      "run": "uv-1500A",
+      "kind": "simulation",
+      "relation": "size",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 circularised half-light radius at 1500 A (median over 10 sightlines)",
+        "yUnit": "log10(kpc)"
+      },
+      "domain": {
+        "xMin": 6.875,
+        "xMax": 8.375
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.875,
+            "y": -1.6607,
+            "yLow": -1.8873,
+            "yHigh": -1.4031,
+            "count": 12
+          },
+          {
+            "x": 7.125,
+            "y": -1.3375,
+            "yLow": -1.5795,
+            "yHigh": -1.0473,
+            "count": 17
+          },
+          {
+            "x": 7.375,
+            "y": -1.1164,
+            "yLow": -1.3698,
+            "yHigh": -0.6583,
+            "count": 17
+          },
+          {
+            "x": 7.625,
+            "y": -0.9549,
+            "yLow": -1.1592,
+            "yHigh": -0.604,
+            "count": 22
+          },
+          {
+            "x": 7.875,
+            "y": -0.8321,
+            "yLow": -1.0163,
+            "yHigh": -0.5635,
+            "count": 20
+          },
+          {
+            "x": 8.125,
+            "y": -0.7476,
+            "yLow": -0.8923,
+            "yHigh": -0.4308,
+            "count": 15
+          },
+          {
+            "x": 8.375,
+            "y": -0.7299,
+            "yLow": -0.7578,
+            "yHigh": -0.6174,
+            "count": 9
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Sizes from the release's PHOTUTILS segmentation of mock 1500 A images."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "sizeDefinition": "uv-half-light-1500A-circularised",
+        "population": "release-sample"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/galaxy_sizes/morph_z8_1500A.json",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.sfms.sfr-10-myr.z9",
+      "source": "SPHINX20",
+      "run": "sfr-10-myr",
+      "kind": "simulation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 9,
+        "zNominal": 9,
+        "zMin": 9,
+        "zMax": 9,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (integral of SFH)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 SFR averaged over 10 Myr",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 6.875,
+        "xMax": 7.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.875,
+            "y": -0.4089,
+            "yLow": -0.4685,
+            "yHigh": -0.2989,
+            "count": 9
+          },
+          {
+            "x": 7.375,
+            "y": -0.0915,
+            "yLow": -0.3627,
+            "yHigh": 0.1176,
+            "count": 14
+          },
+          {
+            "x": 7.625,
+            "y": -0.2007,
+            "yLow": -0.4149,
+            "yHigh": 0.0797,
+            "count": 15
+          },
+          {
+            "x": 7.875,
+            "y": -0.0038,
+            "yLow": -0.2657,
+            "yHigh": 0.1533,
+            "count": 8
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Galaxies without star formation in the window are excluded from the median."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "population": "star-forming",
+        "sfrTimescaleMyr": 10,
+        "sfrStatistic": "median"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.sfms.sfr-100-myr.z9",
+      "source": "SPHINX20",
+      "run": "sfr-100-myr",
+      "kind": "simulation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 9,
+        "zNominal": 9,
+        "zMin": 9,
+        "zMax": 9,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (integral of SFH)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 SFR averaged over 100 Myr",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 6.875,
+        "xMax": 7.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.875,
+            "y": -1.2218,
+            "yLow": -1.301,
+            "yHigh": -1.1131,
+            "count": 9
+          },
+          {
+            "x": 7.375,
+            "y": -0.733,
+            "yLow": -0.918,
+            "yHigh": -0.6414,
+            "count": 14
+          },
+          {
+            "x": 7.625,
+            "y": -0.6021,
+            "yLow": -0.8336,
+            "yHigh": -0.4982,
+            "count": 15
+          },
+          {
+            "x": 7.875,
+            "y": -0.3638,
+            "yLow": -0.5958,
+            "yHigh": -0.2347,
+            "count": 8
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Galaxies without star formation in the window are excluded from the median."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "population": "star-forming",
+        "sfrTimescaleMyr": 100,
+        "sfrStatistic": "median"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.zstar.mass-weighted.z9",
+      "source": "SPHINX20",
+      "run": "mass-weighted",
+      "kind": "simulation",
+      "relation": "zstar",
+      "epoch": {
+        "zRepresentative": 9,
+        "zNominal": 9,
+        "zMin": 9,
+        "zMax": 9,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 mass-weighted stellar metallicity (Zsun)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 6.875,
+        "xMax": 7.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.875,
+            "y": -2.03,
+            "yLow": -2.338,
+            "yHigh": -1.6956,
+            "count": 9
+          },
+          {
+            "x": 7.375,
+            "y": -1.66,
+            "yLow": -1.9244,
+            "yHigh": -1.3844,
+            "count": 14
+          },
+          {
+            "x": 7.625,
+            "y": -1.64,
+            "yLow": -1.8176,
+            "yHigh": -1.4744,
+            "count": 15
+          },
+          {
+            "x": 7.875,
+            "y": -1.545,
+            "yLow": -1.6968,
+            "yHigh": -1.4912,
+            "count": 8
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems)."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "metallicityQuantity": "stellar-Z",
+        "metallicityCalibration": "intrinsic mass-weighted (solar value per release)",
+        "population": "release-sample"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.shmr.virial.z9",
+      "source": "SPHINX20",
+      "run": "virial",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 9,
+        "zNominal": 9,
+        "zMin": 9,
+        "zMax": 9,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 halo virial mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 9.125,
+        "xMax": 9.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.125,
+            "y": -1.948,
+            "yLow": -2.1362,
+            "yHigh": -1.8366,
+            "count": 12
+          },
+          {
+            "x": 9.375,
+            "y": -1.8753,
+            "yLow": -1.9281,
+            "yHigh": -1.8128,
+            "count": 12
+          },
+          {
+            "x": 9.625,
+            "y": -1.9424,
+            "yLow": -2.0666,
+            "yHigh": -1.8016,
+            "count": 13
+          },
+          {
+            "x": 9.875,
+            "y": -1.8978,
+            "yLow": -2.0042,
+            "yHigh": -1.6965,
+            "count": 10
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Halo mass definition as provided in the release table (virial)."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "haloMassDefinition": "Mvir (release definition)",
+        "haloMassHistory": "current",
+        "population": "release-sample"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.size.uv-1500A.z9",
+      "source": "SPHINX20",
+      "run": "uv-1500A",
+      "kind": "simulation",
+      "relation": "size",
+      "epoch": {
+        "zRepresentative": 9,
+        "zNominal": 9,
+        "zMin": 9,
+        "zMax": 9,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 circularised half-light radius at 1500 A (median over 10 sightlines)",
+        "yUnit": "log10(kpc)"
+      },
+      "domain": {
+        "xMin": 6.875,
+        "xMax": 7.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.875,
+            "y": -1.3008,
+            "yLow": -1.9605,
+            "yHigh": -1.175,
+            "count": 9
+          },
+          {
+            "x": 7.375,
+            "y": -1.1215,
+            "yLow": -1.2498,
+            "yHigh": -0.8069,
+            "count": 14
+          },
+          {
+            "x": 7.625,
+            "y": -0.9532,
+            "yLow": -1.0884,
+            "yHigh": -0.5921,
+            "count": 15
+          },
+          {
+            "x": 7.875,
+            "y": -0.7501,
+            "yLow": -1.0327,
+            "yHigh": -0.4927,
+            "count": 8
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Sizes from the release's PHOTUTILS segmentation of mock 1500 A images."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "sizeDefinition": "uv-half-light-1500A-circularised",
+        "population": "release-sample"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/galaxy_sizes/morph_z9_1500A.json",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.sfms.sfr-10-myr.z10",
+      "source": "SPHINX20",
+      "run": "sfr-10-myr",
+      "kind": "simulation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (integral of SFH)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 SFR averaged over 10 Myr",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 7.125,
+        "xMax": 7.625
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.125,
+            "y": -0.3565,
+            "yLow": -0.4268,
+            "yHigh": -0.1987,
+            "count": 18
+          },
+          {
+            "x": 7.625,
+            "y": -0.1405,
+            "yLow": -0.2738,
+            "yHigh": 0.0473,
+            "count": 8
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Galaxies without star formation in the window are excluded from the median."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "population": "star-forming",
+        "sfrTimescaleMyr": 10,
+        "sfrStatistic": "median"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.sfms.sfr-100-myr.z10",
+      "source": "SPHINX20",
+      "run": "sfr-100-myr",
+      "kind": "simulation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (integral of SFH)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 SFR averaged over 100 Myr",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 7.125,
+        "xMax": 7.625
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.125,
+            "y": -0.9586,
+            "yLow": -1.0458,
+            "yHigh": -0.9208,
+            "count": 18
+          },
+          {
+            "x": 7.625,
+            "y": -0.5528,
+            "yLow": -0.6553,
+            "yHigh": -0.4733,
+            "count": 8
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Galaxies without star formation in the window are excluded from the median."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "population": "star-forming",
+        "sfrTimescaleMyr": 100,
+        "sfrStatistic": "median"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.zstar.mass-weighted.z10",
+      "source": "SPHINX20",
+      "run": "mass-weighted",
+      "kind": "simulation",
+      "relation": "zstar",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 mass-weighted stellar metallicity (Zsun)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 7.125,
+        "xMax": 7.625
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.125,
+            "y": -1.775,
+            "yLow": -1.9636,
+            "yHigh": -1.5504,
+            "count": 18
+          },
+          {
+            "x": 7.625,
+            "y": -1.685,
+            "yLow": -1.7476,
+            "yHigh": -1.512,
+            "count": 8
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems)."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "metallicityQuantity": "stellar-Z",
+        "metallicityCalibration": "intrinsic mass-weighted (solar value per release)",
+        "population": "release-sample"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.shmr.virial.z10",
+      "source": "SPHINX20",
+      "run": "virial",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 halo virial mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 9.125,
+        "xMax": 9.625
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.125,
+            "y": -1.9857,
+            "yLow": -2.1498,
+            "yHigh": -1.8782,
+            "count": 13
+          },
+          {
+            "x": 9.375,
+            "y": -2.0778,
+            "yLow": -2.11,
+            "yHigh": -1.9721,
+            "count": 8
+          },
+          {
+            "x": 9.625,
+            "y": -1.9511,
+            "yLow": -2.0108,
+            "yHigh": -1.8009,
+            "count": 12
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Halo mass definition as provided in the release table (virial)."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "haloMassDefinition": "Mvir (release definition)",
+        "haloMassHistory": "current",
+        "population": "release-sample"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    },
+    {
+      "id": "katz23.sphinx20.size.uv-1500A.z10",
+      "source": "SPHINX20",
+      "run": "uv-1500A",
+      "kind": "simulation",
+      "relation": "size",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 circularised half-light radius at 1500 A (median over 10 sightlines)",
+        "yUnit": "log10(kpc)"
+      },
+      "domain": {
+        "xMin": 7.125,
+        "xMax": 7.625
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.125,
+            "y": -1.2062,
+            "yLow": -1.423,
+            "yHigh": -0.9861,
+            "count": 18
+          },
+          {
+            "x": 7.625,
+            "y": -0.8916,
+            "yLow": -1.0167,
+            "yHigh": -0.7391,
+            "count": 8
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies",
+        "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Sizes from the release's PHOTUTILS segmentation of mock 1500 A images."
+      },
+      "definitions": {
+        "massDefinition": "integral-of-SFH",
+        "imf": "unspecified",
+        "sizeDefinition": "uv-half-light-1500A-circularised",
+        "population": "release-sample"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-03",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/galaxy_sizes/morph_z10_1500A.json",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation-hydrodynamics of reionization in a 20 cMpc box; binned medians computed by sim-highline from the public per-galaxy table."
+    }
+  ]
+}

@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sim-highline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0e13;--bg2:#11161f;--bg3:#18202c;--line:#273142;
+  --cream:#efe6d2;--cream2:#b8af9a;--cream3:#8d8777;--orange:#e8743b;--link:#e8743b;--mustard:#e2b23a;
+  --display:"Michroma","Eurostile","Arial Narrow",sans-serif;--ui:"Jost","Futura","Avenir Next",system-ui,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f1ebdd;--bg2:#e8e0cd;--bg3:#ddd3bc;--line:#c9bea5;--cream:#1d2430;--cream2:#3a4252;--cream3:#515867;--link:#9c3d0a}}
+:root[data-theme="light"]{--bg:#f1ebdd;--bg2:#e8e0cd;--bg3:#ddd3bc;--line:#c9bea5;--cream:#1d2430;--cream2:#4c5464;--cream3:#7c8292}
+*,*::before,*::after{box-sizing:inherit}
+[hidden]{display:none!important}
+html,body{height:100%;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--cream);font:15px/1.4 var(--ui);overflow:hidden}
+button,select,input,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+.skip{position:absolute;left:8px;top:-60px;z-index:50;background:var(--bg3);color:var(--cream);padding:8px 12px;border-radius:6px}.skip:focus{top:8px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+a:focus-visible,[tabindex]:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.app{display:grid;grid-template-rows:auto minmax(0,1fr) auto;grid-template-columns:minmax(0,1fr);height:100%}
+header{display:flex;align-items:center;gap:14px;padding:10px 18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.mark{font:15px var(--display);letter-spacing:.06em;white-space:nowrap}
+.mark i{font-style:normal;color:var(--orange)}
+.presets{display:flex;gap:4px;flex-wrap:wrap;flex:1 1 320px;min-width:min(320px,100%)}
+.presets button{font:10px var(--display);letter-spacing:.04em;padding:7px 10px;border:1px solid var(--line);border-radius:999px;color:var(--cream2)}
+.presets button[aria-pressed="true"]{background:var(--orange);border-color:var(--orange);color:#0b0e13}
+.presets button:disabled{opacity:.3;cursor:default}
+.seg{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.seg button{padding:6px 12px;font-size:13px;color:var(--cream2);white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--bg3);color:var(--cream)}
+.tools{display:flex;gap:6px;align-items:center}
+.tbtn{height:30px;padding:0 12px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--cream2)}
+.tbtn[aria-pressed="true"]{border-color:var(--orange);color:var(--cream)}
+.info{width:30px;height:30px;border:1px solid var(--line);border-radius:50%;font:13px var(--display)}
+main{position:relative;min-height:0;display:grid;grid-template-columns:1fr;overflow:hidden}
+#stage{width:100%;height:100%;display:block}
+.axis text{fill:var(--cream3);font:12px var(--ui)}
+.axis line{stroke:var(--line)}
+.alabel{fill:var(--cream2);font:13px var(--ui)}
+.curve{fill:none;stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round;transition:opacity .4s}
+.curve.thick{stroke-width:3.6}
+.band{transition:opacity .4s}
+.obs{fill:none;stroke:var(--cream3);stroke-width:1.2;stroke-dasharray:3 4}
+.obsdot{fill:var(--cream3)}
+.obs.anchor{stroke:var(--cream2);stroke-width:2.4;stroke-dasharray:none}.obsdot.anchor{fill:var(--cream2)}
+.off{font-size:10.5px;color:var(--cream3);width:36px;text-align:right;flex:none;font-variant-numeric:tabular-nums;margin-right:2px}
+.zline{stroke:var(--cream3);stroke-width:1;stroke-dasharray:2 4}
+.fit{fill:none;stroke:var(--cream);stroke-width:1.6;stroke-dasharray:6 4}
+.ftxt{fill:var(--cream);font:12px var(--ui)}
+.user{fill:none;stroke:var(--cream);stroke-width:1.6}
+.userdot{fill:var(--cream)}
+.dim{opacity:.12}
+.legend{position:absolute;left:14px;top:14px;display:flex;flex-direction:column;gap:1px;max-height:calc(100% - 28px);overflow:auto;padding:8px;background:color-mix(in srgb,var(--bg2) 88%,transparent);border:1px solid var(--line);border-radius:10px;max-width:260px}
+.legtog{font-size:12px;color:var(--cream2);padding:2px 6px;text-align:left;border-radius:6px}.legtog:hover{background:var(--bg3)}.legend.closed{padding:4px}
+.legend .row{display:flex;align-items:center}
+.legend .row>button.name{display:flex;align-items:center;gap:8px;padding:3px 6px;border-radius:6px;text-align:left;font-size:13px;color:var(--cream);flex:1;min-width:0}
+.legend .row>button.name:hover{background:var(--bg3)}
+.legend .row>button.name[aria-pressed="false"]{color:var(--cream3)}
+.legend .row>button.name[aria-pressed="false"] .sw{opacity:.25}
+.legend .sub{padding-left:22px}
+.legend .sub button.name{font-size:12px;color:var(--cream2)}
+.legend .mini{font-size:11px;color:var(--cream3);padding:2px 5px;border-radius:5px}
+.legend .mini:hover{background:var(--bg3);color:var(--cream)}
+.legend .mini[aria-pressed="true"]{color:var(--orange)}
+.legend .legctl{display:flex;justify-content:space-between;align-items:center;padding:2px 4px 6px;font-size:12px;color:var(--cream2);gap:8px}
+.pv{font:9px var(--display);padding:1px 4px;border-radius:4px;border:1px solid var(--line);color:var(--cream3);margin:0 3px;flex:none}
+.pv.tD{color:var(--orange);border-color:var(--orange)}.pv.tO,.pv.tC{color:#7fc47f;border-color:#7fc47f}
+.legend .keyline{font-size:11px;color:var(--cream3);padding:6px 6px 2px;border-top:1px solid var(--line);margin-top:4px}
+.sw{width:14px;height:3px;border-radius:2px;flex:none}
+.legend .obsrow .sw{background:repeating-linear-gradient(90deg,var(--cream3) 0 3px,transparent 3px 6px)}
+.v{font-size:11px;width:14px;text-align:center;flex:none}
+.v.ok{color:#7fc47f}.v.cav{color:var(--mustard)}.v.no{color:var(--orange)}
+.chip{position:absolute;left:50%;transform:translateX(-50%);top:10px;display:none;gap:8px;align-items:center;background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:4px 6px 4px 12px;font-size:12px;color:var(--cream2)}
+.chip.on{display:flex}
+.chip button{border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-size:12px;color:var(--cream)}
+.ramp{display:none;align-items:center;gap:6px;font-size:11px;color:var(--cream3);padding:6px 6px 2px}
+.ramp i{display:block;height:6px;width:90px;border-radius:3px;background:linear-gradient(90deg,#fde725,#7ad151,#22a884,#2a788e,#414487)}
+.empty{position:absolute;inset:0;display:grid;place-items:center;color:var(--cream3);font-size:14px;pointer-events:none;text-align:center;padding:20px}
+.panel{position:absolute;right:0;top:0;bottom:0;width:min(400px,94vw);background:var(--bg2);border-left:1px solid var(--line);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s ease;z-index:5}
+.panel.open{transform:none}
+.tabs{display:flex;border-bottom:1px solid var(--line);flex:none}
+.tabs button{flex:1;padding:12px 4px;font:9px var(--display);letter-spacing:.04em;color:var(--cream3);border-bottom:2px solid transparent}
+.tabs button[aria-selected="true"]{color:var(--cream);border-color:var(--orange)}
+.tabs .x{flex:none;width:40px;font-size:18px}
+.pbody{padding:16px 20px 24px;overflow:auto;flex:1}
+.pbody h3{font:12px var(--display);letter-spacing:.05em;margin:0 0 4px}
+.pbody h4{font:10px var(--display);letter-spacing:.06em;color:var(--cream3);margin:18px 0 8px;font-weight:400}
+.pbody .sub{color:var(--cream2);font-size:13px;margin-bottom:12px}
+.pbody dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px;margin:0 0 12px}
+.pbody dt{color:var(--cream3)}
+.pbody dd{margin:0;overflow-wrap:anywhere}
+.pbody a{color:var(--mustard)}
+.pbody .warn{font-size:12px;color:var(--cream2);border-left:2px solid var(--orange);padding-left:10px;margin:10px 0}
+.pbody .hint{font-size:12px;color:var(--cream3);margin:6px 0}
+.pbody label{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--cream2);margin:5px 0}
+.pbody label:has(>select),.pbody .two label{flex-direction:column;align-items:stretch;gap:3px}
+.pbody select,.pbody input[type=number],.pbody input[type=text],.pbody textarea{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:5px 8px;font-size:13px;color:var(--cream);width:100%;min-width:0}
+.pbody textarea{min-height:76px;font:12px ui-monospace,Menlo,monospace}
+.pbody .two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pbody .btns{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.btn{border:1px solid var(--line);border-radius:8px;padding:7px 12px;font-size:13px;color:var(--cream)}
+.btn:hover{background:var(--bg3)}
+.btn.main{background:var(--orange);border-color:var(--orange);color:#0b0e13}
+.btn.main:hover{filter:brightness(1.08)}
+.big{font:20px var(--display);margin:2px 0 2px}
+.tier{display:inline-block;font:9px var(--display);letter-spacing:.05em;padding:3px 7px;border:1px solid var(--line);border-radius:999px;color:var(--cream2);margin-right:4px}
+footer{display:flex;align-items:center;gap:14px;padding:10px 18px 12px;border-top:1px solid var(--line)}
+.play{width:36px;height:36px;border-radius:50%;background:var(--orange);color:#0b0e13;display:grid;place-items:center;flex:none}
+.play svg{width:14px;height:14px}
+.track{flex:1;position:relative;height:40px}
+.track input{width:100%;margin:0;position:absolute;top:6px;accent-color:var(--orange)}
+.ticks{position:absolute;left:0;right:0;top:26px;height:14px}
+.ticks span{position:absolute;transform:translateX(-50%);font-size:10px;color:var(--cream3)}
+.zread{font:22px var(--display);min-width:112px;text-align:right;letter-spacing:.02em}
+.zread small{display:block;font:11px var(--ui);color:var(--cream3);letter-spacing:0}
+.atlas{position:absolute;inset:0;overflow:auto;padding:20px 24px;display:none}
+.atlas.on{display:block}
+.atlas table{border-collapse:separate;border-spacing:4px;font-size:13px}
+.atlas th{font:10px var(--display);letter-spacing:.04em;color:var(--cream2);font-weight:400;padding:4px 6px;text-align:left;white-space:nowrap}
+.atlas td{background:var(--bg2);border-radius:6px;padding:6px 8px;min-width:104px;vertical-align:middle;cursor:pointer}
+.atlas td.none{background:transparent;border:1px dashed var(--line);cursor:default}
+.atlas td:hover:not(.none){background:var(--bg3)}
+.zdots{display:flex;gap:2px;align-items:flex-end;height:16px}
+.zdots i{width:5px;border-radius:1px;background:var(--line)}
+.zdots i.on{background:var(--c,var(--orange))}
+.atlas .n{font-size:11px;color:var(--cream3);margin-top:3px}
+.tzbar{font-size:12px;color:var(--cream2);margin-bottom:10px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.atlas td b{font-weight:600;font-variant-numeric:tabular-nums}
+.tnote{max-width:760px;font-size:12px;color:var(--cream3);line-height:1.5;margin-top:14px}
+.atlas th.obsh{color:var(--cream)}
+.recipes{padding-left:18px;margin:6px 0 12px;line-height:1.5}.recipes li{margin-bottom:8px}.recipes button{font-weight:600;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.atlas .zscale{display:flex;justify-content:space-between;font-size:10px;color:var(--cream3);width:95px}
+.about{position:absolute;inset:0;background:color-mix(in srgb,var(--bg) 92%,transparent);display:none;place-items:center;padding:20px;z-index:6}
+.about.on{display:grid}
+.about div{max-width:64ch;max-height:100%;overflow:auto;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:22px 26px;font-size:14px;color:var(--cream2)}
+.about h2{font:14px var(--display);color:var(--cream);margin:0 0 10px}
+.about b{color:var(--cream)}
+.tip{position:absolute;pointer-events:none;background:var(--cream);color:var(--bg);font-size:12px;padding:5px 8px;border-radius:6px;max-width:320px;display:none;z-index:4}
+.toast{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);background:var(--cream);color:var(--bg);padding:7px 14px;border-radius:8px;font-size:13px;display:none;z-index:9}
+@media (min-width:901px){.legend{left:auto;right:14px}}
+@media (max-width:700px){.legend{max-height:46%;font-size:12px;max-width:70vw}.zread{min-width:80px;font-size:17px}.panel{top:auto;height:62%;width:100%;border-left:0;border-top:1px solid var(--line);transform:translateY(100%)}.panel.open{transform:none}header{gap:8px;padding:8px 12px}.presets{order:5;flex:1 0 100%;flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}.presets button{flex:none}.tools{margin-left:auto}.mark{font-size:13px}}
+@media (prefers-reduced-motion:reduce){.panel,.curve,.band{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#stage">Skip to the chart</a>
+<div class="app">
+  <header>
+    <div class="mark">SIM<i>/</i>HIGHLINE</div>
+    <nav class="presets" id="presets" aria-label="Relation"></nav>
+    <div class="seg" role="group" aria-label="View">
+      <button id="mPlot" aria-pressed="true" title="One relation at one epoch, every suite">Relation</button>
+      <button id="mEvol" aria-pressed="false" title="Value at a fixed x versus redshift">vs redshift</button>
+      <button id="mAtlas" aria-pressed="false" title="What the data well holds">Coverage</button>
+      <button id="mTension" aria-pressed="false" title="Each simulation against the default observational anchor, every relation, at one epoch">Tension</button>
+    </div>
+    <div class="tools">
+      <button class="tbtn" id="bAbout" aria-pressed="false" title="Notes on this relation: what observations show, how simulations compare, what it means">Notes</button><button class="tbtn" id="bTune" aria-pressed="false">Customise</button>
+      <button class="tbtn" id="bData" aria-pressed="false">Get data</button>
+      <button class="info" id="infoBtn" aria-label="About and sources" title="About and sources">i</button>
+    </div>
+  </header>
+  <main>
+    <svg id="stage" role="img" tabindex="0" aria-describedby="stageDesc"></svg>
+    <p class="sr" id="stageDesc" aria-live="polite"></p>
+    <div class="legend" id="legend"></div>
+    <div class="chip" id="chip"></div>
+    <div class="empty" id="empty" hidden></div>
+    <div class="tip" id="tip"></div>
+    <aside class="panel" id="panel" aria-label="Details">
+      <div class="tabs" role="tablist"><button role="tab" data-t="evidence">EVIDENCE</button><button role="tab" data-t="about">NOTES</button><button role="tab" data-t="tune">CUSTOMISE</button><button role="tab" data-t="data">GET DATA</button><button class="x" id="pClose" aria-label="Close panel">×</button></div>
+      <div class="pbody" id="pbody" role="tabpanel"></div>
+    </aside>
+    <section class="atlas" id="atlas"></section>
+    <section class="atlas" id="tension" aria-label="Tension map"></section>
+    <section class="about" id="about" role="dialog" aria-modal="true" aria-labelledby="aboutTitle"><div>
+      <h2 id="aboutTitle">Sim-highline beta</h2>
+      <p>Galaxy scaling relations from cosmological simulations, at every redshift each suite provides, next to observations. Each curve opens to its evidence: source, extraction method, and the definitions that decide whether two curves can be compared (stellar-mass aperture, halo definition, population, IMF).</p>
+      <p><b>Nothing is synthesised.</b> A suite with no data at the chosen redshift disappears instead of being interpolated. The only arithmetic the page does is exact: unit-preserving transforms you ask for (per unit mass, times mass, physical axes), residuals against a reference you pick, and reading a published curve at a chosen x inside its plotted range for the vs-redshift view.</p>
+      <p><b>Evidence tiers.</b> Solid lines are catalogue-derived or tabulated values, dashed lines are published fits, dotted lines are values digitized from published figures (never used for ranking). <b>Context only</b> marks curves whose definitions are not rankable.</p>
+      <p><b>Get data</b> downloads exactly what is on screen (or all epochs) as a tidy CSV or JSON, with definitions and citations; <code>sim_highline.py</code> loads the full dataset into pandas.</p>
+      <p><b>Coverage</b> shows suite by relation by redshift. Empty cells are missing data, not missing physics.</p>
+      <p><b>Start here.</b> Three things people do with it:</p>
+      <ol class="recipes">
+        <li><button data-rc="hz">What do simulations predict at z≈8?</button> The stellar mass function at z≈8 for every suite that has it, with the Get data panel open to export values, definitions and citations.</li>
+        <li><button data-rc="cmp">Compare two simulations</button> Stellar-to-halo mass relation at z=0 as residuals against TNG; the ✓ ~ ✕ marks say whether the two definitions allow the comparison.</li>
+        <li><button data-rc="pd">Build a calibration set</button> Gas-phase O/H against stellar mass at z≈6 with observations, ready to download or load with <code>sim_highline.py</code> in pandas.</li>
+      </ol>
+      <p id="aboutCounts"></p>
+      <p><a href="site/about.html">About sim-highline</a> · <a href="site/sources.html">Simulations &amp; observations: code, method, instruments</a> · <a href="site/use-cases.html">Use cases</a></p>
+    </div></section>
+  </main>
+  <footer>
+    <button class="play" id="play" aria-label="Play through redshift"><svg viewBox="0 0 14 14"><path id="playIcon" d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg></button>
+    <div class="track"><input type="range" id="z" min="0" max="0" step="1" aria-label="Redshift"><div class="ticks" id="ticks"></div></div>
+    <div class="zread" id="zread"></div>
+  </footer>
+</div>
+<div class="toast" id="toast"></div>
+<script>/*__DATA__*/</script>
+<script>/*__COMPARE__*/</script>
+<script>/*__EXPORT__*/</script>
+<script>/*__LOGIC__*/</script>
+<script>window.SIMHIGHLINE_RELEASE=/*__RELEASE__*/;window.SIMHIGHLINE_NOTES=/*__NOTES__*/;</script>
+<script>
+const relKey=r=>{if(r.relation!=="mzr")return r.relation;const q=r.definitions?.metallicityQuantity;if(q==="gas-O/H")return"mzr";return /Zsun/.test(r.axes?.yDefinition||"")?"mzrz":"mzrraw"};
+const ALL=(window.SIMHIGHLINE_CURVES||[]).filter(r=>r.representation&&r.domain).map(r=>({...r,rel0:r.relation,relation:relKey(r)}));
+const MASS="log M★ [M☉]";
+const REL={
+  gsmf:{t:"Stellar mass function",c:"GSMF",x:MASS,y:"log Φ [cMpc⁻³ dex⁻¹]",yt:{timesx:"log M★ Φ [cMpc⁻³]"},anchor:"COSMOS-Web 2025|Baldry et al. 2012"},
+  sfms:{t:"Star-forming main sequence",c:"SFMS",x:MASS,y:"log SFR [M☉ yr⁻¹]",yt:{perx:"log sSFR [yr⁻¹]"},anchor:"Speagle"},
+  ssfr:{t:"Specific SFR",c:"sSFR",x:MASS,y:"log sSFR [yr⁻¹]",yt:{timesx:"log SFR [M☉ yr⁻¹]"},anchor:"Bauer"},
+  mzr:{t:"Gas-phase O/H",c:"MZR O/H",x:MASS,y:"12 + log (O/H)",yl:1,anchor:"Curti et al. 2020|JWST\\+ground MZR"},
+  mzrz:{t:"Gas metallicity, Z/Z☉",c:"MZR Z/Z☉",x:MASS,y:"log Z_gas / Z☉ (Z☉ = 0.0127)"},
+  mzrraw:{t:"Gas metal mass fraction",c:"MZR log Z",x:MASS,y:"log Z_gas (mass fraction)"},
+  zstar:{t:"Stellar metallicity",c:"MZR★",x:MASS,y:"log Z★ / Z☉",anchor:"Gallazzi"},
+  size:{t:"Mass–size",c:"R–M★",x:MASS,y:"log R½ [kpc]",anchor:"van der Wel|Lange et al. 2015"},
+  shmr:{t:"Stellar–halo mass",c:"SHMR",x:"log M_halo [M☉]",y:"log M★ / M_halo",yt:{timesx:"log M★ [M☉]"},anchor:"Behroozi et al. 2019"},
+  bh:{t:"Black hole–stellar mass",c:"M●–M★",x:MASS,y:"log M● [M☉]",yt:{perx:"log M● / M★"},anchor:"McConnell"},
+  bhsigma:{t:"Black hole–dispersion",c:"M●–σ",x:"log σ [km s⁻¹]",y:"log M● [M☉]",anchor:"Kormendy"},
+  jstar:{t:"Angular momentum",c:"j★",x:MASS,y:"log j★ [kpc km s⁻¹]"},
+  quenched:{t:"Quenched fraction",c:"fQ",x:MASS,y:"quenched fraction",yl:1,anchor:"Behroozi et al. 2019"},
+  gas:{t:"Cold gas fraction",c:"fgas",x:MASS,y:"log Mgas / M★",yt:{timesx:"log M_gas [M☉]"},anchor:"Bradford"},
+  "hi-fraction":{t:"HI gas fraction",c:"f_HI",x:MASS,y:"log M_HI / M★",yt:{timesx:"log M_HI [M☉]"},anchor:"Catinella"},
+  "h2-fraction":{t:"H₂ gas fraction",c:"f_H₂",x:MASS,y:"log M_H₂ / M★",yt:{timesx:"log M_H₂ [M☉]"},anchor:"Saintonge"},
+  btfr:{t:"Baryonic Tully–Fisher",c:"BTFR",x:"log V [km s⁻¹]",y:"log M_bar [M☉]",anchor:"SPARC"},
+  stfr:{t:"Stellar Tully–Fisher",c:"STFR",x:MASS,y:"log V [km s⁻¹]",anchor:"Reyes"},
+  uvlf:{t:"UV luminosity function",c:"UVLF",x:"M_UV [AB mag]",y:"log Φ [cMpc⁻³ mag⁻¹]",xrev:1,xlin:1,anchor:"Bouwens et al. 2021$"},
+  sfrd:{t:"Cosmic SFR density",c:"SFRD",x:"redshift z",y:"log ρ_SFR [M☉ yr⁻¹ cMpc⁻³]",xz:1,xlin:1,anchor:"Madau"}
+};
+const SUITE_COLOR={"IllustrisTNG":"#e8743b","EAGLE":"#3aa6a0","SIMBA":"#6fa8dc","COLIBRE":"#e2b23a","Magneticum Pathfinder":"#de5b52","NIHAO zoom suite":"#b07aa1","FLARES":"#a3b35b","THESAN-1":"#8fd0e8","THESAN-zoom":"#5f9ea0","Illustris":"#c9a27e","SPHINX20":"#b98a5e","BlueTides":"#d98ab0","FIRE-2":"#9fbf6a","FIREbox":"#7fc3a8","NewHorizon":"#c78f5c","Horizon-AGN":"#d4a05e","FLAMINGO":"#4f8fd1","ASTRID":"#8f6fd1","Romulus25":"#6fb0b0"};
+const SHORT={"Magneticum Pathfinder":"Magneticum","NIHAO zoom suite":"NIHAO","IllustrisTNG":"TNG"};
+const sims=ALL.filter(r=>r.kind==="simulation"&&REL[r.relation]);
+const obs=ALL.filter(r=>r.kind!=="simulation"&&REL[r.relation]);
+const unitOf=r=>`${r.source}|${r.run||""}`;
+const unitFirst=u=>{if(!unitRec.size)for(const r of sims.concat(obs))if(!unitRec.has(unitOf(r)))unitRec.set(unitOf(r),r);return unitRec.get(u)};
+const ulabel=u=>u.replace(/\|$/,"").replace("|"," · ");
+const label=r=>{const s=SHORT[r.source]||r.source;return r.run&&r.run!==r.source?`${s} · ${r.run}`:s};
+const PALETTE=["#e8743b","#3aa6a0","#6fa8dc","#e2b23a","#de5b52","#b07aa1","#a3b35b","#8fd0e8","#c9a27e","#d98ab0","#9fbf6a","#7fc3a8"];
+const colorOf=src=>SUITE_COLOR[src]||PALETTE[[...src].reduce((a,c)=>a+c.charCodeAt(0),0)%PALETTE.length];
+const runShade=(src,run)=>{const units=[...new Set(sims.filter(r=>r.source===src).map(unitOf))].sort();const i=units.indexOf(`${src}|${run||""}`);return i<=0?1:Math.max(.45,1-.18*i)};
+const fmtZ=z=>z>=1||z===0?(+z.toFixed(2)).toString():z.toFixed(2);
+const TIERS=["catalog-derived","official-table","published-table","published-fit","digitized-figure"];
+const TIER_NOTE={"catalog-derived":"computed from a public catalogue","official-table":"table released by the collaboration","published-table":"values transcribed from a paper table","published-fit":"a published fitting function or fit line","digitized-figure":"read from a published figure (not rankable)"};
+const TIER_GLYPH={"official-table":"O","catalog-derived":"C","published-table":"T","published-fit":"F","digitized-figure":"D"};
+const TIER_SHORT={"official-table":"official table","catalog-derived":"computed from a public catalogue","published-table":"table in the paper","published-fit":"published fit","digitized-figure":"digitized from a figure"};
+const citeShort=r=>String(r.provenance?.citation||"").replace(/\s*\[[^\]]*\]/g,"").replace(/,\s*(Fig\.|Figure|figure|Table).*$/,"").replace(/\s*\(arXiv source numbering\).*$/,"").slice(0,90);
+const provTip=(r,extra="")=>{const p=r.provenance||{};return`${label(r)}${extra} · ${TIER_SHORT[p.tier]||p.tier}${p.tier==="digitized-figure"&&p.figure?` (${p.figure})`:""} · ${citeShort(r)}`};
+const provBadge=r=>{const p=r?.provenance;if(!p)return"";const g=TIER_GLYPH[p.tier]||"?";return`<span class="pv t${g}" title="${esc((TIER_SHORT[p.tier]||p.tier)+": "+citeShort(r))}">${g}</span>`};
+const unitRec=new Map();
+const RAMP=[[0,"#fde725"],[.25,"#7ad151"],[.5,"#22a884"],[.75,"#2a788e"],[1,"#414487"]];
+const isTable=()=>state.mode==="atlas"||state.mode==="tension";
+const state={tz:0,legendOpen:innerWidth>900,rel:"sfms",z:null,offBy:{},runPref:new Map(),variants:false,showSparse:false,offTier:new Set(),rankOnly:false,showObs:true,obsOff:new Set(),mode:"plot",playing:null,sel:null,ref:null,resid:false,yt:"none",tf:"log",xr:null,yr:null,bands:true,scatter:true,evo:null,at:null,panel:null,tab:"evidence",user:null,fit:null,expand:new Set(),dl:{scope:"epoch",obs:true,z0:0,z1:10}};
+const $=id=>document.getElementById(id);
+const slugOf=s=>String(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const byId=new Map(ALL.map(r=>[r.id,r]));
+const num=v=>v===""||v==null||!Number.isFinite(+v)?null:+v;
+
+const offSet=(rel=state.rel)=>state.offBy[rel]||(state.offBy[rel]=new Set());
+const {VARIANT,FIDUCIAL,TIER_RANK,tol,nearest}=window.SimHighlineLogic;
+const primCache=new Map();
+function primaryUnits(rel){
+  if(!primCache.has(rel))primCache.set(rel,window.SimHighlineLogic.primaryUnits(sims.filter(r=>r.relation===rel)));
+  return primCache.get(rel);
+}
+const isPrimary=(u,rel=state.rel)=>primaryUnits(rel).has(u);
+function unitOn(u,rel=state.rel){return state.runPref.has(u)?state.runPref.get(u):(state.variants||isPrimary(u,rel))}
+function stops(rel){if(REL[rel]?.xz)return [0];return [...new Set(sims.filter(r=>r.relation===rel&&(state.variants||isPrimary(unitOf(r),rel)||state.runPref.get(unitOf(r)))).map(r=>+r.epoch.zRepresentative.toFixed(2)))].sort((a,b)=>a-b)}
+function nearestStop(rel,z){return nearest(stops(rel),z)}
+function currentZ(){if(state.z==null)state.z=stops(state.rel)[0]??0;return nearestStop(state.rel,state.z)}
+function pass(r){const p=r.provenance||{};if(state.offTier.has(p.tier)||(state.rankOnly&&!r.rankable))return false;if(r.kind==="simulation")return !offSet(r.relation).has(r.source)&&unitOn(unitOf(r),r.relation)&&(state.scatter||!(r.representation.type==="points"&&r.representation.connect===false));return state.showObs&&!state.obsOff.has(r.source)}
+function pick(rel,z){
+  const best=new Map();
+  if(REL[rel]?.xz){for(const r of sims)if(r.relation===rel&&!best.has(unitOf(r)))best.set(unitOf(r),{r});return [...best.values()].map(v=>v.r)}
+  for(const r of sims){if(r.relation!==rel)continue;const an=r.epoch.mode==="analytic-evolution",d=an?(z>=r.epoch.zMin&&z<=r.epoch.zMax?0:Infinity):Math.abs(r.epoch.zRepresentative-z);if(d>tol(z))continue;const k=unitOf(r);if(!best.has(k)||d<best.get(k).d)best.set(k,{r,d})}
+  return [...best.values()].map(v=>v.r);
+}
+function anchorRec(rel,z,raw){const a=REL[rel]?.anchor;if(!a||(!raw&&!state.showObs))return null;return window.SimHighlineLogic.pickAnchor(pickObs(rel,z).filter(r=>raw||(!state.offTier.has(r.provenance?.tier)&&!state.obsOff.has(r.source))),new RegExp(a),z)}
+function pickObs(rel,z){return obs.filter(r=>r.relation===rel&&(REL[rel]?.xz||r.epoch.mode==="analytic-evolution"?z<=r.epoch.zMax:(z>=r.epoch.zMin-.1&&z<=r.epoch.zMax+.1)||Math.abs(r.epoch.zRepresentative-z)<=tol(z)))}
+const evalCache=new Map();
+function rawPoints(r,z){
+  const rep=r.representation;
+  if(rep.type==="points")return rep.points.filter(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)).map(p=>({x:p.x,y:p.y,lo:p.yLow,hi:p.yHigh})).sort((a,b)=>a.x-b.x);
+  if(!evalCache.has(r.id)){try{evalCache.set(r.id,window.SimHighlineCompare.evaluator(r))}catch(e){evalCache.set(r.id,null)}}
+  const f=evalCache.get(r.id);if(!f)return[];
+  const out=[];for(let i=0;i<=40;i++){const x=r.domain.xMin+(r.domain.xMax-r.domain.xMin)*i/40;const y=f(x,z);if(Number.isFinite(y))out.push({x,y})}return out;
+}
+function effYt(){const m=REL[state.rel];return m&&m.yt&&m.yt[state.yt]?state.yt:"none"}
+function tx(pts){const t=effYt();if(t==="none")return pts;const s=t==="perx"?-1:1;return pts.map(p=>({x:p.x,y:p.y+s*p.x,lo:p.lo==null?p.lo:p.lo+s*p.x,hi:p.hi==null?p.hi:p.hi+s*p.x}))}
+const samples=(r,z)=>tx(rawPoints(r,z));
+function offsetOf(r,a,z,raw){if(!a||!r||r===a||isScatter(r))return null;const f=raw?rawPoints:samples;return window.SimHighlineLogic.medianOffset(f(a,z),f(r,z),window.SimHighlineCompare.interpolate)}
+const isScatter=r=>r.representation.type==="points"&&r.representation.connect===false;
+function niceTicks(lo,hi,n=6){const span=hi-lo||1,s0=span/n,m=Math.pow(10,Math.floor(Math.log10(s0)));const s=[1,2,2.5,5,10].map(k=>k*m).find(k=>k>=s0);const t=[];for(let v=Math.ceil(lo/s)*s;v<=hi+1e-9;v+=s)t.push(+v.toFixed(6));return t}
+const phys=t=>{const v=Math.pow(10,t);return v>=.01&&v<1e5?String(+v.toPrecision(2)):v.toExponential(0).replace("e+","e")};
+function ramp(u){u=Math.max(0,Math.min(1,u));let i=1;while(i<RAMP.length-1&&RAMP[i][0]<u)i++;const [a,ca]=RAMP[i-1],[b,cb]=RAMP[i],t=(u-a)/(b-a||1),h=c=>[1,3,5].map(k=>parseInt(c.slice(k,k+2),16));const A=h(ca),B=h(cb);return"#"+A.map((v,k)=>Math.round(v+(B[k]-v)*t).toString(16).padStart(2,"0")).join("")}
+const dashOf=r=>r.provenance?.tier==="published-fit"?' stroke-dasharray="7 4"':r.provenance?.tier==="digitized-figure"?' stroke-dasharray="2 3"':"";
+const copyTxt=async(t,msg)=>{try{await navigator.clipboard.writeText(t)}catch(e){const a=document.createElement("textarea");a.value=t;document.body.append(a);a.select();try{document.execCommand("copy")}catch(_){}a.remove()}toast(msg||"Copied")};
+function toast(m){const t=$("toast");t.textContent=m;t.style.display="block";clearTimeout(toast.h);toast.h=setTimeout(()=>t.style.display="none",1800)}
+
+/* ---------- state in the URL ---------- */
+function syncHash(){
+  const p=new URLSearchParams(),d={rel:"sfms",yt:"none",tf:"log"};
+  p.set("r",state.rel);p.set("z",currentZ());if(state.mode!=="plot")p.set("m",state.mode);if(state.mode==="tension")p.set("tz",state.tz);
+  const ob=Object.entries(state.offBy).filter(([,v])=>v.size).map(([k,v])=>k+":"+[...v].map(encodeURIComponent).join("~")).join(",");if(ob)p.set("off",ob);if(state.runPref.size)p.set("rp",[...state.runPref].map(([u,v])=>encodeURIComponent(u)+"*"+(v?1:0)).join("~"));if(state.variants)p.set("va","1");if(state.offTier.size)p.set("ot",[...state.offTier].join("~"));
+  if(state.rankOnly)p.set("rk","1");if(!state.showObs)p.set("obs","0");if(state.obsOff.size)p.set("oo",[...state.obsOff].join("~"));
+  if(effYt()!=="none")p.set("yt",effYt());if(state.tf!=="log")p.set("tf",state.tf);if(state.xr)p.set("xr",state.xr.join(","));if(state.yr)p.set("yr",state.yr.join(","));
+  if(!state.bands)p.set("bd","0");if(!state.scatter)p.set("sc","0");if(state.evo)p.set("ev",state.evo);if(state.ref)p.set("ref",state.ref);if(state.resid)p.set("res","1");if(state.at!=null)p.set("at",state.at);if(state.sel)p.set("sel",state.sel);
+  history.replaceState(null,"","#"+p.toString());
+}
+function readHash(){
+  const p=new URLSearchParams(location.hash.slice(1)),set=k=>new Set((p.get(k)||"").split("~").filter(Boolean));
+  if(p.get("r")&&REL[p.get("r")])state.rel=p.get("r");
+  state.z=num(p.get("z"));state.tz=num(p.get("tz"))??0;state.mode=["plot","evol","atlas","tension"].includes(p.get("m"))?p.get("m"):"plot";
+  state.offBy={};for(const part of (p.get("off")||"").split(",").filter(Boolean)){const i=part.indexOf(":");if(i>0)state.offBy[part.slice(0,i)]=new Set(part.slice(i+1).split("~").filter(Boolean).map(decodeURIComponent))}state.runPref=new Map((p.get("rp")||"").split("~").filter(Boolean).map(t=>{const [u,v]=t.split("*");return[decodeURIComponent(u),v==="1"]}));state.variants=p.get("va")==="1";state.offTier=set("ot");state.rankOnly=p.get("rk")==="1";state.showObs=p.get("obs")!=="0";state.obsOff=set("oo");
+  state.yt=p.get("yt")||"none";state.tf=p.get("tf")==="phys"?"phys":"log";
+  const rg=k=>{const v=(p.get(k)||"").split(",").map(Number);return v.length===2&&v.every(Number.isFinite)?v:null};
+  state.xr=rg("xr");state.yr=rg("yr");state.bands=p.get("bd")!=="0";state.scatter=p.get("sc")!=="0";state.evo=p.get("ev")||null;state.ref=p.get("ref")||null;state.resid=p.get("res")==="1"&&!!state.ref;state.at=num(p.get("at"));state.sel=byId.has(p.get("sel"))?p.get("sel"):null;
+}
+
+/* ---------- series builders ---------- */
+function refRecord(z){
+  if(!state.ref)return null;
+  const rel=state.rel,cands=[...pick(rel,z),...pickObs(rel,z)].filter(r=>unitOf(r)===state.ref);
+  return cands.sort((a,b)=>Math.abs(a.epoch.zRepresentative-z)-Math.abs(b.epoch.zRepresentative-z))[0]||null;
+}
+function verdict(ref,r){if(!ref||ref===r)return null;try{return window.SimHighlineCompare.compatible(ref,r)}catch(e){return null}}
+function relationSeries(z){
+  const rel=state.rel,out=[];
+  let recs;
+  if(state.evo){recs=sims.filter(r=>r.relation===rel&&unitOf(r)===state.evo&&pass(r))}
+  else recs=pick(rel,z).filter(pass);
+  const zs=recs.map(r=>r.epoch.zRepresentative),zlo=Math.min(...zs),zhi=Math.max(...zs);
+  const cz=state.evo&&recs.length?recs.reduce((b,r)=>Math.abs(r.epoch.zRepresentative-z)<Math.abs(b.epoch.zRepresentative-z)?r:b,recs[0]).epoch.zRepresentative:null;
+  for(const r of recs){
+    const s=samples(r,z);if(!s.length)continue;
+    const ev=state.evo?ramp((r.epoch.zRepresentative-zlo)/((zhi-zlo)||1)):null;
+    out.push({r,pts:s,color:ev||colorOf(r.source),op:state.evo?1:runShade(r.source,r.run),key:unitOf(r)+(state.evo?"|"+r.epoch.zRepresentative:""),scatter:isScatter(r),thick:state.evo&&r.epoch.zRepresentative===cz,
+      tip:state.evo?provTip(r,` · z = ${fmtZ(r.epoch.zRepresentative)}`):provTip(r)});
+  }
+  const anc=anchorRec(rel,z);
+  for(const r of (state.showObs?pickObs(rel,z):[]).filter(pass)){const s=samples(r,z);if(s.length>1||(s.length===1&&isScatter(r)))out.push({r,pts:s,obs:true,anchor:r===anc,scatter:isScatter(r),key:"obs|"+r.id,tip:`${r.source} (observation${r===anc?", anchor":""}) · ${TIER_SHORT[r.provenance?.tier]||""} · ${citeShort(r)}`})}
+  return out;
+}
+function residualSeries(z){
+  const ref=refRecord(z);if(!ref)return{series:[],ref:null};
+  const rp=rawPoints(ref,z),out=[];
+  for(const o of relationSeries(z)){
+    if(o.r===ref||o.scatter||o.pts.length<2)continue;
+    let res;try{res=window.SimHighlineCompare.residuals(rawPoints(o.r,z),rp,o.r.provenance?.tier==="digitized-figure"?"unspecified":"unspecified","unspecified")}catch(e){continue}
+    if(!res||res.length<2)continue;
+    const v=verdict(ref,o.r);
+    out.push({...o,pts:res.map(q=>({x:q.x,y:q.d})),tip:`${o.tip}${v?` · ${v.verdict.replace(/-/g," ")}`:""}`,verdict:v});
+  }
+  return{series:out,ref};
+}
+function atX(){
+  if(state.at!=null)return state.at;
+  const xs=sims.filter(r=>r.relation===state.rel&&r.representation.type==="points").flatMap(r=>r.representation.points.map(p=>p.x)).sort((a,b)=>a-b);
+  return xs.length?+xs[Math.floor(xs.length/2)].toFixed(2):0;
+}
+function evolutionSeries(){
+  const rel=state.rel,x0=atX(),by=new Map();
+  for(const r of sims){if(r.relation!==rel||r.representation.type!=="points"||r.representation.connect===false||!pass(r))continue;
+    const pts=samples(r,r.epoch.zRepresentative),y=window.SimHighlineCompare.interpolate(pts,x0);if(!Number.isFinite(y))continue;
+    const k=unitOf(r);(by.get(k)||by.set(k,[]).get(k)).push({r,x:r.epoch.zRepresentative,y})}
+  return [...by.entries()].map(([k,a])=>{a.sort((p,q)=>p.x-q.x);const r=a[0].r;return{r,pts:a.map(p=>({x:p.x,y:p.y})),color:colorOf(r.source),op:runShade(r.source,r.run),key:k,scatter:false,dots:true,tip:label(r)}});
+}
+
+/* ---------- chart ---------- */
+let lastPaths=new Map(),fitInfo=null;
+function chart(spec){
+  const svg=$("stage"),W=svg.clientWidth||900,H=svg.clientHeight||560,L=Math.min(78,W*.1),R=(state.legendOpen&&innerWidth>900)?290:24,T=24,B=58;
+  const {series}=spec;
+  if(!series.length){svg.innerHTML="";svg.removeAttribute("viewBox");lastPaths=new Map();return false}
+  let xs=[],ys=[];
+  const fitLike=o=>/\bfit\b/i.test(o.r.run||""),core=series.filter(o=>!o.obs&&!fitLike(o)),rs=core.length?core:series.filter(o=>!o.obs);
+  for(const o of rs)for(const p of o.pts){xs.push(p.x);ys.push(p.y);if(state.bands&&Number.isFinite(p.lo))ys.push(p.lo);if(state.bands&&Number.isFinite(p.hi))ys.push(p.hi)}
+  const xmin=Math.min(...xs),xmax=Math.max(...xs);
+  for(const o of series.filter(o=>o.obs))for(const p of o.pts)if(p.x>=xmin-.5&&p.x<=xmax+.5){xs.push(p.x);ys.push(p.y)}
+  ys.sort((a,b)=>a-b);const q=k=>ys[Math.floor(k*(ys.length-1))];
+  let x0=Math.min(...xs),x1=Math.max(...xs),y0=ys.length>40?q(.01):ys[0],y1=ys.length>40?q(.99):ys[ys.length-1];
+  const px=(x1-x0)*.04||.3,py=(y1-y0)*.08||.3;x0-=px;x1+=px;y0-=py;y1+=py;
+  if(spec.ymin!=null)y0=Math.min(y0,spec.ymin);if(spec.ymax!=null)y1=Math.max(y1,spec.ymax);
+  if(state.xr&&spec.userRange!==false){x0=state.xr[0];x1=state.xr[1]}
+  if(state.yr&&spec.userRange!==false){y0=state.yr[0];y1=state.yr[1]}
+  if(!(x1>x0))x1=x0+1;if(!(y1>y0))y1=y0+1;
+  const sx=spec.xrev?(x=>L+(x1-x)/(x1-x0)*(W-L-R)):(x=>L+(x-x0)/(x1-x0)*(W-L-R)),sy=y=>H-B-(y-y0)/(y1-y0)*(H-T-B);
+  const xf=spec.xfmt||(t=>t),yf=spec.yfmt||(t=>t);
+  let g=`<g class="axis">`;
+  for(const t of niceTicks(x0,x1,Math.max(3,Math.floor(W/110))))g+=`<line x1="${sx(t)}" x2="${sx(t)}" y1="${T}" y2="${H-B}" opacity=".5"/><text x="${sx(t)}" y="${H-B+18}" text-anchor="middle">${xf(t)}</text>`;
+  for(const t of niceTicks(y0,y1,Math.max(3,Math.floor(H/90))))g+=`<line x1="${L}" x2="${W-R}" y1="${sy(t)}" y2="${sy(t)}" opacity=".5"/><text x="${L-8}" y="${sy(t)+4}" text-anchor="end">${yf(t)}</text>`;
+  g+=`</g><text class="alabel" x="${(L+W-R)/2}" y="${H-14}" text-anchor="middle">${esc(spec.xlab)}</text><text class="alabel" transform="translate(16 ${(T+H-B)/2}) rotate(-90)" text-anchor="middle">${esc(spec.ylab)}</text>`;
+  g+=`<defs><clipPath id="clip"><rect x="${L}" y="${T}" width="${W-L-R}" height="${H-T-B}"/></clipPath></defs><g clip-path="url(#clip)">`;
+  if(spec.zero&&y0<0&&y1>0)g+=`<line class="zline" x1="${L}" x2="${W-R}" y1="${sy(0)}" y2="${sy(0)}"/>`;
+  const P=pts=>"M"+pts.map(p=>sx(p.x).toFixed(1)+","+sy(p.y).toFixed(1)).join("L");
+  const next=new Map(),sel=state.sel;
+  for(const o of series.filter(o=>o.obs)){
+    const dim=sel&&sel!==o.r.id?" dim":"";
+    if(o.scatter)g+=o.pts.map(p=>`<circle class="obsdot${dim}${o.anchor?" anchor":""}" cx="${sx(p.x)}" cy="${sy(p.y)}" r="2.2" data-id="${esc(o.r.id)}" data-tip="${esc(o.tip)}"/>`).join("");
+    else g+=`<path class="obs${dim}${o.anchor?" anchor":""}" d="${P(o.pts)}" data-id="${esc(o.r.id)}" data-tip="${esc(o.tip)}"/><path d="${P(o.pts)}" stroke="transparent" stroke-width="12" fill="none" data-id="${esc(o.r.id)}" data-tip="${esc(o.tip)}" style="cursor:pointer"/>`;
+  }
+  for(const o of [...series.filter(o=>!o.obs&&o.scatter),...series.filter(o=>!o.obs&&!o.scatter)]){
+    const dim=sel&&sel!==o.r.id?" dim":"",col=o.color,op=o.op;
+    const band=state.bands?o.pts.filter(p=>Number.isFinite(p.lo)&&Number.isFinite(p.hi)):[];
+    if(band.length>1)g+=`<path class="band${dim}" fill="${col}" opacity="${.13*op}" d="M${band.map(p=>sx(p.x).toFixed(1)+","+sy(p.hi).toFixed(1)).join("L")}L${band.slice().reverse().map(p=>sx(p.x).toFixed(1)+","+sy(p.lo).toFixed(1)).join("L")}Z"/>`;
+    const d=o.pts.map(p=>[sx(p.x),sy(p.y)]);next.set(o.key,d);
+    const rr=o.pts.length>2500?1.6:o.dots?4:2.8;
+    if(o.scatter)g+=o.pts.map(p=>`<circle cx="${sx(p.x).toFixed(1)}" cy="${sy(p.y).toFixed(1)}" r="${rr}" fill="${col}" opacity="${.5*op}" class="${dim}" data-id="${esc(o.r.id)}" data-tip="${esc(o.tip)}"/>`).join("");
+    else{
+      g+=`<path class="curve${o.thick?" thick":""}${dim}" stroke="${col}" opacity="${op}"${dashOf(o.r)} data-k="${esc(o.key)}" d="${P(o.pts)}"/><path d="${P(o.pts)}" stroke="transparent" stroke-width="14" fill="none" data-id="${esc(o.r.id)}" data-tip="${esc(o.tip)}" style="cursor:pointer"/>`;
+      if(o.dots)g+=o.pts.map(p=>`<circle cx="${sx(p.x)}" cy="${sy(p.y)}" r="${rr}" fill="${col}" opacity="${op}" data-id="${esc(o.r.id)}" data-tip="${esc(o.tip)} · z = ${fmtZ(p.x)}"/>`).join("");
+    }
+  }
+  fitInfo=null;
+  if(spec.fit&&state.fit){
+    const o=series.find(o=>o.r.id===state.fit);
+    if(o){const pts=o.pts.filter(p=>p.x>=x0&&p.x<=x1&&Number.isFinite(p.y));
+      if(pts.length>=3){const n=pts.length,mx=pts.reduce((a,p)=>a+p.x,0)/n,my=pts.reduce((a,p)=>a+p.y,0)/n,sxx=pts.reduce((a,p)=>a+(p.x-mx)**2,0),sxy=pts.reduce((a,p)=>a+(p.x-mx)*(p.y-my),0),b=sxy/sxx,a=my-b*mx;
+        const rss=pts.reduce((s,p)=>s+(p.y-(a+b*p.x))**2,0),se=Math.sqrt(rss/Math.max(1,n-2)/sxx),rms=Math.sqrt(rss/n);
+        const xa=Math.min(...pts.map(p=>p.x)),xb=Math.max(...pts.map(p=>p.x));
+        fitInfo={id:o.r.id,slope:b,se,intercept:a,xm:mx,ym:my+0,rms,n,xa,xb};
+        g+=`<path class="fit" d="M${sx(xa)},${sy(a+b*xa)}L${sx(xb)},${sy(a+b*xb)}"/><text class="ftxt" x="${sx((xa+xb)/2)+8}" y="${sy(a+b*(xa+xb)/2)-10}">slope ${b.toFixed(2)} ± ${se.toFixed(2)}</text>`}}
+  }
+  if(state.user&&state.user.pts.length&&spec.user!==false){const up=state.user.pts;g+=`<path class="user" d="${P(up)}"/>`+up.map(p=>`<circle class="userdot" cx="${sx(p.x)}" cy="${sy(p.y)}" r="3.2" data-tip="${esc(state.user.name)}"/>`).join("")}
+  g+="</g>";
+  svg.setAttribute("viewBox",`0 0 ${W} ${H}`);svg.innerHTML=g;
+  svg.querySelectorAll("[data-id],[data-tip]").forEach(el=>{if(el.dataset.id)el.onclick=()=>openRecord(el.dataset.id);el.onmousemove=e=>showTip(e,el.dataset.tip||"");el.onmouseleave=hideTip});
+  return {next,sx,sy};
+}
+function tween(next){
+  const els=[...$("stage").querySelectorAll("path.curve[data-k]")];const t0=performance.now(),dur=650;
+  const plan=els.map(el=>{const k=el.dataset.k,a=lastPaths.get(k),b=next.get(k);if(!a||!b||a.length<2)return null;
+    const res=(arr,n)=>Array.from({length:n},(_,i)=>{const f=i/(n-1)*(arr.length-1),j=Math.floor(f),u=f-j,p=arr[j],q=arr[Math.min(j+1,arr.length-1)];return[p[0]+(q[0]-p[0])*u,p[1]+(q[1]-p[1])*u]});
+    const n=Math.max(a.length,b.length);return{el,A:res(a,n),Bp:res(b,n),final:el.getAttribute("d")}}).filter(Boolean);
+  if(!plan.length)return;
+  const step=now=>{const u=Math.min(1,(now-t0)/dur),e=u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2;
+    for(const p of plan)p.el.setAttribute("d","M"+p.A.map((a,i)=>(a[0]+(p.Bp[i][0]-a[0])*e).toFixed(1)+","+(a[1]+(p.Bp[i][1]-a[1])*e).toFixed(1)).join("L"));
+    if(u<1)requestAnimationFrame(step);else for(const p of plan)p.el.setAttribute("d",p.final)};
+  requestAnimationFrame(step);
+}
+const axisFmt=(meta,axis)=>state.tf==="phys"&&!(axis==="y"&&meta.yl&&state.mode!=="evol")&&!(axis==="x"&&meta.xlin&&state.mode!=="evol")?phys:undefined;
+
+function renderPlot(animate){
+  const rel=state.rel,z=currentZ(),meta=REL[rel],svg=$("stage");
+  const cur=pick(rel,z);renderLegend(cur);renderChip();
+  let res=false,ok;
+  const ylab=effYt()!=="none"?meta.yt[effYt()]:meta.y,xlab=meta.x;
+  if(state.mode==="evol"){
+    const series=evolutionSeries();
+    $("empty").hidden=!!series.length;$("empty").textContent=`No curve of ${meta.t.toLowerCase()} plotted at ${meta.x.replace("log ","")} = ${atX()}.`;
+    ok=chart({series,xlab:"redshift z",ylab:`${ylab} at x = ${atX()}`,userRange:true,user:false,xfmt:undefined,yfmt:axisFmt(meta,"y")});
+    lastPaths=new Map();svg.setAttribute("aria-label",`${meta.t} versus redshift`);return;
+  }
+  let series,refRec=null;
+  if(state.resid&&state.ref){const rs=residualSeries(z);series=rs.series;refRec=rs.ref;res=true}
+  else series=relationSeries(z);
+  const hasSim=series.some(o=>!o.obs);
+  if(!hasSim){svg.innerHTML="";$("empty").hidden=false;$("empty").textContent=res?(refRec?"No overlapping curves to compare with the reference at this epoch.":"The reference has no data at this epoch."):cur.length?"Everything with data here is hidden by the current filters.":`No simulation data for ${meta.t.toLowerCase()} at z = ${fmtZ(z)}.`;lastPaths=new Map();return}
+  $("empty").hidden=true;
+  ok=chart({series,xrev:!!meta.xrev,xlab,ylab:res?`Δ ${ylab} (curve − reference)`:ylab,zero:res,fit:!res,xfmt:axisFmt(meta,"x"),yfmt:res?undefined:axisFmt(meta,"y")});
+  svg.setAttribute("aria-label",`${meta.t} at redshift ${fmtZ(z)}`);
+  $("stageDesc").textContent=`${meta.t}${REL[rel].xz?"":" at redshift "+fmtZ(z)}: ${series.filter(o=>!o.obs).length} simulation curves (${[...new Set(series.filter(o=>!o.obs).map(o=>SHORT[o.r.source]||o.r.source))].join(", ")}) and ${series.filter(o=>o.obs).length} observational curves. Use Get data for the numbers.`;
+  if(ok){if(animate&&!matchMedia("(prefers-reduced-motion: reduce)").matches)tween(ok.next);lastPaths=ok.next}
+  if(state.panel&&state.tab==="tune")updateFitReadout();
+}
+function renderChip(){
+  const c=$("chip");let t="";const ns=new Set(sims.filter(r=>r.relation===state.rel).map(r=>r.source)).size;
+  if(state.mode==="evol")t=`Value at fixed x; points are published epochs, lines only join consecutive ones`;
+  else if(state.resid&&state.ref)t=`Residuals vs ${esc(ulabel(state.ref))} <button id="chipX">exit</button>`;
+  else if(state.evo)t=`All epochs of ${esc(ulabel(state.evo))} <span class="ramp" style="display:inline-flex"><span>z low</span><i></i><span>high</span></span> <button id="chipX">exit</button>`;
+  else if(ns<3)t=`Sparse so far: ${ns} simulation${ns>1?"s":""} (see Coverage)`;
+  c.innerHTML=t;c.classList.toggle("on",!!t);const b=$("chipX");if(b)b.onclick=()=>{state.resid=false;state.evo=null;renderAll(true)};
+}
+function renderLegend(cur){
+  const rel=state.rel,z=currentZ(),ref=state.ref?refRecord(z):null,off=offSet();
+  const allRuns=sims.filter(r=>r.relation===rel),srcs=[...new Set(allRuns.map(r=>r.source))].sort();
+  const present=new Map(cur.map(r=>[unitOf(r),r]));
+  const anc=anchorRec(rel,z),rf=ref||anc;
+  const offTxt=r=>{const d=offsetOf(r,anc,z);return d==null?'<span class="off"></span>':`<span class="off" title="median offset from ${esc(anc.source)} over the overlapping x range, in y units">${d>=0?"+":"−"}${Math.abs(d).toFixed(2)}</span>`};
+  const vglyph=r=>{if(!rf||!r||rf===r)return'<span class="v"></span>';const v=verdict(rf,r);if(!v)return'<span class="v"></span>';const k=v.verdict;return`<span class="v ${k==="comparable"?"ok":k==="not-comparable"?"no":"cav"}" title="${esc(k.replace(/-/g," ")+(v.blockers.length?": "+v.blockers.join("; "):v.caveats.length?": "+v.caveats.join("; "):""))}">${k==="comparable"?"✓":k==="not-comparable"?"✕":"~"}</span>`};
+  const units=[...new Set(allRuns.map(unitOf))],nVar=units.filter(u=>!isPrimary(u)).length;
+  let h=`<div class="legctl"><span>${srcs.length} simulation${srcs.length>1?"s":""}</span><span><button class="mini" id="lgAll">all</button><button class="mini" id="lgNone">none</button>${nVar?`<button class="mini" id="lgVar" aria-pressed="${state.variants}" title="Each simulation shows its fiducial run; variants are other runs, resolutions, populations and model variations">variants ${state.variants?"on":"off"} (${nVar})</button>`:""}</span></div>`;
+  for(const s of srcs){
+    const runs=[...new Set(allRuns.filter(r=>r.source===s).map(unitOf))].sort((a,b)=>isPrimary(b)-isPrimary(a)||a.localeCompare(b)),prim=runs.filter(u=>isPrimary(u)),nv=runs.length-prim.length,open=state.expand.has(s),hasHere=runs.some(u=>present.has(u));
+    const anyOn=!off.has(s)&&runs.some(u=>unitOn(u));
+    h+=`<div class="row"><button class="name" data-s="${esc(s)}" aria-pressed="${anyOn}" title="${hasHere?"":"no data at this redshift; "}click to show or hide" style="${hasHere?"":"opacity:.45"}"><span class="sw" style="background:${colorOf(s)}"></span>${esc(SHORT[s]||s)}${nv?` <span style="color:var(--cream3);font-size:11px">+${nv}</span>`:""}</button>${provBadge(present.get(prim[0])||unitFirst(prim[0]))}${offTxt(present.get(prim[0]))}${rf?vglyph(present.get(prim[0])):""}<button class="mini" data-only="${esc(s)}" title="Show only this simulation">only</button><button class="mini" data-ev="${esc(prim[0])}" aria-pressed="${state.evo===prim[0]}" title="Plot every epoch of this run, coloured by redshift">z</button>${runs.length>1?`<button class="mini" data-x="${esc(s)}" aria-label="Show runs" aria-expanded="${open}">${open?"▾":"▸"}</button>`:""}</div>`;
+    if(open&&runs.length>1)for(const u of runs){const name=u.split("|")[1]||s,r=present.get(u),on=unitOn(u);h+=`<div class="row sub"><button class="name" data-u="${esc(u)}" aria-pressed="${on}" title="${esc(name)}${r?"":" (no data at this redshift)"}${isPrimary(u)?" (fiducial)":" (variant)"}" style="${r?"":"opacity:.45"}"><span style="width:8px;color:var(--cream3)">${isPrimary(u)?"●":"○"}</span>${esc(name.length>32?name.slice(0,31)+"…":name)}</button>${provBadge(r||unitFirst(u))}${offTxt(r)}${vglyph(r)}<button class="mini" data-ev="${esc(u)}" aria-pressed="${state.evo===u}" title="Plot every epoch of this run">z</button></div>`}
+  }
+  const oall=obs.filter(r=>r.relation===rel),osrc=[...new Set(oall.map(r=>r.source))].sort(),oopen=state.expand.has("__obs");
+  if(oall.length){h+=`<div class="row obsrow"><button class="name" id="obsBtn" aria-pressed="${state.showObs}"><span class="sw"></span>Observations <span style="color:var(--cream3);font-size:11px">${osrc.length}</span></button><button class="mini" data-x="__obs" aria-expanded="${oopen}">${oopen?"▾":"▸"}</button></div>`;
+    if(oopen)for(const s of osrc)h+=`<div class="row sub"><button class="name" data-o="${esc(s)}" aria-pressed="${!state.obsOff.has(s)}">${esc(s.length>34?s.slice(0,33)+"…":s)}</button>${provBadge(pickObs(rel,z).find(r=>r.source===s)||oall.find(r=>r.source===s))}${vglyph(pickObs(rel,z).find(r=>r.source===s))}<button class="mini" data-ref="${esc(unitOf(oall.find(r=>r.source===s)))}" aria-pressed="${state.ref===unitOf(oall.find(r=>r.source===s))}" title="Compare everything against this">ref</button></div>`}
+  h+=`<div class="keyline">badge = where the data come from: <b>O</b> official table · <b>C</b> catalogue · <b>T</b> paper table · <b>F</b> fit · <b>D</b> digitized figure<br>line: solid O/C/T · dashed F · dotted D${rf?`<br>✓ comparable · ~ caveats · ✕ not comparable (against ${ref?"the chosen reference":"the anchor"})`:""}${anc&&!ref?`<br>bold grey line = anchor, ${esc(anc.source)}; the number beside each simulation is its median offset from it over the overlap, in y units`:""}</div>`;
+  const L=$("legend");L.classList.toggle("closed",!state.legendOpen);L.innerHTML=`<button class="legtog" id="legTog" aria-expanded="${state.legendOpen}">Legend ${state.legendOpen?"▾":"▸"}</button>`+(state.legendOpen?h:"");const lt=$("legTog");lt.onclick=()=>{state.legendOpen=!state.legendOpen;renderLegend(cur)};
+  L.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{const s=b.dataset.s;off.has(s)?off.delete(s):off.add(s);renderAll(false)});
+  L.querySelectorAll("[data-only]").forEach(b=>b.onclick=()=>{state.offBy[rel]=new Set(srcs.filter(x=>x!==b.dataset.only));renderAll(false)});
+  L.querySelectorAll("[data-u]").forEach(b=>b.onclick=()=>{const u=b.dataset.u,want=!unitOn(u);want===(state.variants||isPrimary(u))?state.runPref.delete(u):state.runPref.set(u,want);renderAll(false)});
+  L.querySelectorAll("[data-o]").forEach(b=>b.onclick=()=>{const u=b.dataset.o;state.obsOff.has(u)?state.obsOff.delete(u):state.obsOff.add(u);renderAll(false)});
+  L.querySelectorAll("[data-x]").forEach(b=>b.onclick=()=>{const k=b.dataset.x;state.expand.has(k)?state.expand.delete(k):state.expand.add(k);renderLegend(cur)});
+  L.querySelectorAll("[data-ev]").forEach(b=>b.onclick=()=>{state.evo=state.evo===b.dataset.ev?null:b.dataset.ev;state.resid=false;if(state.mode!=="plot")setMode("plot");else renderAll(true)});
+  L.querySelectorAll("[data-ref]").forEach(b=>b.onclick=()=>{state.ref=state.ref===b.dataset.ref?null:b.dataset.ref;if(!state.ref)state.resid=false;renderAll(false)});
+  const ob=$("obsBtn");if(ob)ob.onclick=()=>{state.showObs=!state.showObs;renderAll(false)};
+  const la=$("lgAll"),ln=$("lgNone"),lv=$("lgVar");
+  if(la)la.onclick=()=>{state.offBy[rel]=new Set();renderAll(false)};
+  if(ln)ln.onclick=()=>{state.offBy[rel]=new Set(srcs);renderAll(false)};
+  if(lv)lv.onclick=()=>{state.variants=!state.variants;renderAll(true)};
+}
+function showTip(e,text){if(!text)return;const t=$("tip");t.textContent=text;t.style.display="block";const b=$("stage").getBoundingClientRect();t.style.left=Math.min(e.clientX-b.left+12,b.width-200)+"px";t.style.top=(e.clientY-b.top-30)+"px"}
+function hideTip(){$("tip").style.display="none"}
+
+/* ---------- panel ---------- */
+let panelOpener=null;
+function openPanel(tab){if(!state.panel)panelOpener=document.activeElement;state.panel=true;state.tab=tab;renderPanel();$("panel").classList.add("open");$("bTune").setAttribute("aria-pressed",tab==="tune");$("bData").setAttribute("aria-pressed",tab==="data");$("bAbout").setAttribute("aria-pressed",tab==="about")}
+function closePanel(){const was=state.panel;state.panel=false;if(was&&panelOpener&&document.contains(panelOpener)&&panelOpener!==document.body)panelOpener.focus();$("panel").classList.remove("open");$("bTune").setAttribute("aria-pressed","false");$("bData").setAttribute("aria-pressed","false");$("bAbout").setAttribute("aria-pressed","false")}
+$("bAbout").onclick=()=>state.panel&&state.tab==="about"?closePanel():openPanel("about");
+$("bTune").onclick=()=>state.panel&&state.tab==="tune"?closePanel():openPanel("tune");
+$("bData").onclick=()=>state.panel&&state.tab==="data"?closePanel():openPanel("data");
+$("pClose").onclick=closePanel;
+$("panel").querySelectorAll(".tabs [data-t]").forEach(b=>{b.onclick=()=>openPanel(b.dataset.t);b.onkeydown=e=>{const t=[...$("panel").querySelectorAll(".tabs [data-t]")],i=t.indexOf(b),n=e.key==="ArrowRight"?t[(i+1)%t.length]:e.key==="ArrowLeft"?t[(i-1+t.length)%t.length]:null;if(n){e.preventDefault();openPanel(n.dataset.t);n.focus()}}});
+function renderPanel(){
+  $("panel").querySelectorAll(".tabs [data-t]").forEach(b=>{b.setAttribute("aria-selected",b.dataset.t===state.tab);b.tabIndex=b.dataset.t===state.tab?0:-1});
+  const body=$("pbody");
+  if(state.tab==="evidence")body.innerHTML=evidenceHtml();else if(state.tab==="about")body.innerHTML=aboutHtml();else if(state.tab==="tune")body.innerHTML=tuneHtml();else body.innerHTML=dataHtml();
+  if(state.tab==="evidence")wireEvidence();else if(state.tab==="tune")wireTune();else if(state.tab==="data")wireData();
+}
+function evidenceHtml(){
+  const r=byId.get(state.sel);
+  if(!r)return`<h3>Evidence</h3><p class="hint">Click any curve to see where it comes from, how it was extracted, and which definitions it uses.</p><p class="hint">Tiers: ${TIERS.map(t=>`<b>${t.replace(/-/g," ")}</b> ${TIER_NOTE[t]}`).join("; ")}.</p>`;
+  const d=r.definitions||{},p=r.provenance||{};
+  const defs=Object.entries(d).filter(([k])=>!["cosmology"].includes(k)).map(([k,v])=>`<dt>${esc(k.replace(/([A-Z])/g," $1").toLowerCase())}</dt><dd>${esc(typeof v==="object"?JSON.stringify(v):v)}</dd>`).join("");
+  const ref=state.ref?refRecord(currentZ()):null,v=verdict(ref,r);
+  return`<h3>${esc(label(r))}</h3><div class="sub">${esc(REL[r.relation]?.t||r.relation)}, z = ${fmtZ(r.epoch.zRepresentative)}${r.epoch.snapshot!=null?`, snapshot ${r.epoch.snapshot}`:""}</div>
+  <span class="tier" title="${esc(TIER_NOTE[p.tier]||"")}">${esc((p.tier||"").replace(/-/g," "))}</span><span class="tier">${esc(r.calibration||"")}</span>${r.rankable?"":'<span class="tier" title="Definitions or sampling do not allow ranking">context only</span>'}
+  <div class="btns"><button class="btn" id="evRef">${state.ref===unitOf(r)?"Clear reference":"Use as reference"}</button><button class="btn" id="evFit">Fit line</button><button class="btn" id="evCsv">CSV</button><button class="btn" id="evBib">Cite</button></div>
+  ${v?`<div class="warn" style="border-color:${v.verdict==="comparable"?"#7fc47f":v.verdict==="not-comparable"?"var(--orange)":"var(--mustard)"}"><b>vs reference:</b> ${esc(v.verdict.replace(/-/g," "))}${v.blockers.length?`<br>${v.blockers.map(esc).join("<br>")}`:""}${v.caveats.length?`<br>${v.caveats.map(esc).join("<br>")}`:""}</div>`:""}
+  <dl><dt>source</dt><dd>${p.url?`<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.citation)}</a>`:esc(p.citation)}</dd>${p.doi?`<dt>doi</dt><dd><a href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">${esc(p.doi)}</a></dd>`:""}${p.sourceMember?`<dt>member</dt><dd>${esc(p.sourceMember)}</dd>`:""}${p.extractionMethod?`<dt>method</dt><dd>${esc(p.extractionMethod)}</dd>`:""}${p.axisCalibrationPixels?`<dt>axes</dt><dd>${esc(p.axisCalibrationPixels)}</dd>`:""}<dt>x</dt><dd>${esc(r.axes?.xDefinition)}</dd><dt>y</dt><dd>${esc(r.axes?.yDefinition)}</dd>${defs}${d.cosmology?`<dt>cosmology</dt><dd>H0 ${esc(d.cosmology.H0)}, Ωm ${esc(d.cosmology.Om)}</dd>`:""}<dt>retrieved</dt><dd>${esc(p.retrieved)}</dd>${p.checksumSha256?`<dt>sha-256</dt><dd style="font-size:11px">${esc(p.checksumSha256)}</dd>`:""}<dt>source</dt><dd><a href="site/sources.html#${slugOf(r.source)}">about ${esc(r.source)}: ${r.kind==="simulation"?"code, method, purpose":"survey and facility"}</a></dd><dt>record</dt><dd style="font-size:11px">${esc(r.id)}</dd></dl>
+  ${r.selection?.warning?`<div class="warn">${esc(r.selection.warning)}</div>`:""}${r.notes?`<div class="warn" style="border-color:var(--line)">${esc(r.notes)}</div>`:""}`;
+}
+function wireEvidence(){
+  const r=byId.get(state.sel);if(!r)return;
+  $("evRef").onclick=()=>{state.ref=state.ref===unitOf(r)?null:unitOf(r);if(!state.ref)state.resid=false;renderAll(false);renderPanel()};
+  $("evFit").onclick=()=>{state.fit=r.id;openPanel("tune");renderPlot(false);updateFitReadout()};
+  $("evCsv").onclick=()=>download(`${r.id}.csv`,"text/csv",csvOf([r],currentZ()));
+  $("evBib").onclick=()=>copyTxt(SimHighlineExport.bibtex([r]),"BibTeX copied");
+}
+function openRecord(id){if(!byId.has(id))return;state.sel=id;openPanel("evidence");renderPlot(false);syncHash()}
+function closeRecord(){state.sel=null;if(state.tab==="evidence")closePanel();renderPlot(false);syncHash()}
+
+function aboutHtml(){
+  const n=(window.SIMHIGHLINE_NOTES||{}).relations?.[state.rel];
+  if(!n)return`<h3>About</h3><p class="hint">No summary for this relation yet.</p>`;
+  const rs=sims.filter(r=>r.relation===state.rel),os=obs.filter(r=>r.relation===state.rel);
+  const names=[...new Set(rs.map(r=>SHORT[r.source]||r.source))].sort(),zs=rs.map(r=>r.epoch.zRepresentative),zlo=Math.min(...zs),zhi=Math.max(...zs);
+  const roleLabel=t=>({review:"review","simulation vs data":"simulation vs data",compilation:"compilation",observation:"observation"}[t]||t);
+  return`<h3>${esc(n.title)}</h3><div class="sub">${esc(REL[state.rel].t)} · what it is, what data say, what simulations do</div>
+  <p style="font-size:14px;line-height:1.55;color:var(--cream)">${esc(n.paragraph)}</p>${n.variantNote?`<p class="hint">${esc(n.variantNote)}</p>`:""}
+  <div class="warn" style="border-color:var(--mustard)"><b>In this data well:</b> ${rs.length} simulation records from ${names.length} simulation${names.length>1?"s":""} (${esc(names.join(", "))}), z = ${fmtZ(zlo)} to ${fmtZ(zhi)}; ${os.length} observational record${os.length===1?"":"s"}. ${names.length<3?"Coverage of this relation is still thin.":""}</div>
+  <h4>REFERENCES</h4>
+  <ul style="padding-left:18px;margin:0;font-size:13px">${n.refs.map(r=>`<li style="margin:5px 0"><span class="tier">${esc(roleLabel(r.role))}</span> ${esc(r.cite)} <a href="https://doi.org/${esc(r.doi)}" target="_blank" rel="noopener">doi</a> · <a href="https://arxiv.org/abs/${esc(r.arxiv)}" target="_blank" rel="noopener">arXiv</a></li>`).join("")}</ul>
+  <p class="hint" style="margin-top:14px">Written from the abstracts of these papers, with each result attributed to its source. This is context, not evidence: the curves in the plot carry their own definitions and provenance. Read the papers before quoting a claim.</p>`;
+}
+function tuneHtml(){
+  const rel=state.rel,meta=REL[rel],z=currentZ(),yts=Object.entries(meta.yt||{});
+  const units=[...new Set(sims.filter(r=>r.relation===rel).map(unitOf))].sort();
+  const refs=[...new Set([...pick(rel,z),...pickObs(rel,z)].map(unitOf))].sort();
+  const cnt=t=>sims.filter(r=>r.relation===rel&&r.provenance?.tier===t).length+obs.filter(r=>r.relation===rel&&r.provenance?.tier===t).length;
+  const opt=(v,t,cur)=>`<option value="${esc(v)}" ${v===cur?"selected":""}>${esc(t)}</option>`;
+  return`<h3>Customise</h3><div class="sub">Everything here is reversible and stored in the page link.</div>
+  <h4>AXES</h4>
+  <label>Tick labels <select id="tTf">${opt("log","log₁₀ values",state.tf)}${opt("phys","physical values (10ˣ)",state.tf)}</select></label>
+  ${yts.length?`<label>y shown as <select id="tYt">${opt("none",meta.y,effYt())}${yts.map(([k,t])=>opt(k,t+(k==="perx"?" (y − x)":" (y + x)"),effYt())).join("")}</select></label>`:""}
+  <div class="two"><label>x min <input type="number" step="any" id="tX0" value="${state.xr?state.xr[0]:""}" placeholder="auto"></label><label>x max <input type="number" step="any" id="tX1" value="${state.xr?state.xr[1]:""}" placeholder="auto"></label><label>y min <input type="number" step="any" id="tY0" value="${state.yr?state.yr[0]:""}" placeholder="auto"></label><label>y max <input type="number" step="any" id="tY1" value="${state.yr?state.yr[1]:""}" placeholder="auto"></label></div>
+  <div class="btns"><button class="btn" id="tAuto">Reset ranges</button></div><p class="hint">Ranges are in plotted log₁₀ units.</p>
+  <h4>WHAT IS SHOWN</h4>
+  <label><input type="checkbox" id="tBands" ${state.bands?"checked":""}> uncertainty / scatter bands</label>
+  <label><input type="checkbox" id="tSc" ${state.scatter?"checked":""}> individual galaxies (scatter records)</label>
+  <label><input type="checkbox" id="tRk" ${state.rankOnly?"checked":""}> only rankable evidence (hides digitized figures and context-only curves)</label>
+  ${TIERS.map(t=>`<label><input type="checkbox" data-tier="${t}" ${state.offTier.has(t)?"":"checked"}> ${t.replace(/-/g," ")} <span style="color:var(--cream3)">${cnt(t)}</span></label>`).join("")}
+  <h4>EVOLUTION</h4>
+  <label>All epochs of one run, coloured by z <select id="tEvo">${opt("","off",state.evo||"")}${units.map(u=>opt(u,ulabel(u),state.evo)).join("")}</select></label>
+  <h4>REFERENCE AND RESIDUALS</h4>
+  <label>Compare with <select id="tRef">${opt("","none",state.ref||"")}${refs.map(u=>opt(u,ulabel(u),state.ref)).join("")}</select></label>
+  <label><input type="checkbox" id="tRes" ${state.resid?"checked":""} ${state.ref?"":"disabled"}> plot residuals (curve − reference) at the shown epoch</label>
+  <p class="hint">Legend marks show ✓ / ~ / ✕ for definition compatibility with the reference; open a curve for the reasons.</p>
+  <h4>FIT</h4>
+  <div class="btns"><button class="btn" id="tFit" ${state.sel?"":"disabled"}>Least-squares line to selected curve</button><button class="btn" id="tFitX" ${state.fit?"":"disabled"}>Clear</button></div>
+  <p class="hint" id="fitOut">${state.sel?"Fits the plotted points inside the visible x-range.":"Select a curve first."}</p>
+  <h4>YOUR DATA</h4>
+  <input type="text" id="uName" placeholder="label" value="${esc(state.user?.name||"")}" style="margin-bottom:6px">
+  <textarea id="uText" placeholder="x,y per line (log₁₀ units of this relation)">${esc(state.user?.raw||"")}</textarea>
+  <div class="btns"><button class="btn" id="uPlot">Plot</button><button class="btn" id="uClear">Clear</button><label class="btn" style="margin:0;cursor:pointer">Load file<input type="file" id="uFile" accept=".csv,.txt,text/plain" hidden></label></div>
+  <p class="hint">Stays in this browser tab; nothing is uploaded.</p>`;
+}
+function updateFitReadout(){
+  const o=$("fitOut");if(!o)return;
+  if(!state.fit){o.textContent=state.sel?"Fits the plotted points inside the visible x-range.":"Select a curve first.";return}
+  const r=byId.get(state.fit);
+  o.innerHTML=fitInfo?`<b>${esc(label(r))}</b><br>y = ${fitInfo.intercept.toFixed(3)} + ${fitInfo.slope.toFixed(3)} x<br>slope ${fitInfo.slope.toFixed(3)} ± ${fitInfo.se.toFixed(3)}, rms ${fitInfo.rms.toFixed(3)} dex, ${fitInfo.n} points, x ${fitInfo.xa.toFixed(2)} to ${fitInfo.xb.toFixed(2)}<br>at x = ${fitInfo.xm.toFixed(2)}: y = ${fitInfo.ym.toFixed(3)}`:"This curve is not plotted in the current view, or has fewer than 3 points in range.";
+}
+function wireTune(){
+  const rd=()=>{const g=id=>num($(id).value),x0=g("tX0"),x1=g("tX1"),y0=g("tY0"),y1=g("tY1");state.xr=x0!=null&&x1!=null&&x1>x0?[x0,x1]:null;state.yr=y0!=null&&y1!=null&&y1>y0?[y0,y1]:null;renderAll(false)};
+  ["tX0","tX1","tY0","tY1"].forEach(id=>$(id).onchange=rd);
+  $("tAuto").onclick=()=>{state.xr=state.yr=null;renderAll(false);renderPanel()};
+  $("tTf").onchange=e=>{state.tf=e.target.value;renderAll(false)};
+  if($("tYt"))$("tYt").onchange=e=>{state.yt=e.target.value;state.xr=state.yr=null;renderAll(true);renderPanel()};
+  $("tBands").onchange=e=>{state.bands=e.target.checked;renderAll(false)};
+  $("tSc").onchange=e=>{state.scatter=e.target.checked;renderAll(false)};
+  $("tRk").onchange=e=>{state.rankOnly=e.target.checked;renderAll(false)};
+  $("pbody").querySelectorAll("[data-tier]").forEach(c=>c.onchange=()=>{c.checked?state.offTier.delete(c.dataset.tier):state.offTier.add(c.dataset.tier);renderAll(false)});
+  $("tEvo").onchange=e=>{state.evo=e.target.value||null;if(state.evo)state.resid=false;renderAll(true);renderPanel()};
+  $("tRef").onchange=e=>{state.ref=e.target.value||null;if(!state.ref)state.resid=false;renderAll(false);renderPanel()};
+  $("tRes").onchange=e=>{state.resid=e.target.checked;if(state.resid)state.evo=null;renderAll(false);renderPanel()};
+  $("tFit").onclick=()=>{state.fit=state.sel;renderPlot(false);updateFitReadout();renderPanel()};
+  $("tFitX").onclick=()=>{state.fit=null;renderPlot(false);renderPanel()};
+  const plotUser=txt=>{const pts=txt.split(/\r?\n/).map(l=>l.split(/[,\s;\t]+/).map(Number)).filter(a=>a.length>=2&&Number.isFinite(a[0])&&Number.isFinite(a[1])).map(a=>({x:a[0],y:a[1]})).sort((a,b)=>a.x-b.x);
+    state.user=pts.length?{name:$("uName").value||"your data",raw:txt,pts}:null;renderPlot(false);toast(pts.length?`${pts.length} points plotted`:"No numeric x,y rows found")};
+  $("uPlot").onclick=()=>plotUser($("uText").value);
+  $("uClear").onclick=()=>{state.user=null;renderPlot(false);renderPanel()};
+  $("uFile").onchange=async e=>{const f=e.target.files[0];if(!f)return;$("uText").value=await f.text();if(!$("uName").value)$("uName").value=f.name.replace(/\.[^.]+$/,"");plotUser($("uText").value)};
+}
+
+/* ---------- data export ---------- */
+function exportSet(){
+  const rel=state.rel,z=currentZ(),dl=state.dl;let recs=[];
+  const simsAll=sims.filter(r=>r.relation===rel&&pass(r)),obsAll=obs.filter(r=>r.relation===rel&&dl.obs&&!state.offTier.has(r.provenance?.tier)&&(!state.rankOnly||r.rankable)&&!state.obsOff.has(r.source));
+  if(dl.scope==="epoch"){recs=[...pick(rel,z).filter(pass),...(dl.obs?pickObs(rel,z).filter(r=>!state.offTier.has(r.provenance?.tier)&&(!state.rankOnly||r.rankable)&&!state.obsOff.has(r.source)):[])]}
+  else if(dl.scope==="all")recs=[...simsAll,...obsAll];
+  else recs=[...simsAll,...obsAll].filter(r=>r.epoch.zRepresentative>=dl.z0-1e-9&&r.epoch.zRepresentative<=dl.z1+1e-9);
+  return recs.map(r=>({...r,relation:r.rel0}));
+}
+const csvOf=(recs,z,note=[])=>{const rows=SimHighlineExport.joined(recs,z);return SimHighlineExport.toCsv(rows,SimHighlineExport.JOINED_COLS,[`sim-highline dataset v${SIMHIGHLINE_RELEASE.version} (${SIMHIGHLINE_RELEASE.released}); exported ${new Date().toISOString().slice(0,10)} from sim-highline`,"units: log10, physical, h-free as published; compare curves only where definitions agree (x_definition, y_definition, mass_definition, population, ...)","cite the original papers listed in the citation / doi columns; digitized-figure records are not rankable",...note])};
+function download(name,type,text){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;document.body.append(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
+function pySnippet(recs){
+  const rel0=[...new Set(recs.map(r=>r.relation))].join("|"),zs=recs.map(r=>r.epoch.zRepresentative),srcs=[...new Set(recs.filter(r=>r.kind==="simulation").map(r=>r.source))];
+  const lines=["import sim_highline","df = sim_highline.load()   # run from a folder containing data/export, or pass the folder / URL",`sel = sim_highline.select(df, relation="${rel0.split("|")[0]}"${zs.length?`, z=(${Math.min(...zs)}, ${Math.max(...zs)})`:""}${state.rankOnly?", rankable=True":""})`];
+  if(srcs.length)lines.push(`sel = sel[sel.source.isin(${JSON.stringify(srcs)}) | (sel.kind != "simulation")]`);
+  if(state.rel==="mzr"||state.rel==="mzrz"||state.rel==="mzrraw")lines.push(`sel = sel[sel.y_unit == "${recs[0]?.axes?.yUnit}"]   # one metallicity tracer per axis`);
+  lines.push("print(sel.groupby(['source','run','z']).size())","print(sim_highline.bibtex(sel))");
+  return lines.join("\n");
+}
+function dataHtml(){
+  const recs=exportSet(),dl=state.dl,pts=recs.reduce((a,r)=>a+(r.representation.type==="parametric"?SimHighlineExport.NSAMPLE:r.representation.points.length),0),ns=new Set(recs.map(r=>r.source)).size;
+  return`<h3>Get data</h3><div class="sub">${REL[state.rel].t}</div>
+  <h4>WHAT</h4>
+  <label><input type="radio" name="scope" value="epoch" ${dl.scope==="epoch"?"checked":""}> this epoch, z = ${fmtZ(currentZ())}</label>
+  <label><input type="radio" name="scope" value="all" ${dl.scope==="all"?"checked":""}> all epochs</label>
+  <label><input type="radio" name="scope" value="range" ${dl.scope==="range"?"checked":""}> z from <input type="number" step="any" id="dz0" value="${dl.z0}" style="width:70px"> to <input type="number" step="any" id="dz1" value="${dl.z1}" style="width:70px"></label>
+  <label><input type="checkbox" id="dObs" ${dl.obs?"checked":""}> include observations</label>
+  <p class="hint">Follows the legend: hidden suites, runs, tiers and the rankable filter are excluded.</p>
+  <div class="big">${recs.length} <span style="font:13px var(--ui);color:var(--cream3)">records · ${pts} points · ${ns} sources</span></div>
+  <div class="btns"><button class="btn main" id="dCsv" ${recs.length?"":"disabled"}>Download CSV</button><button class="btn" id="dJson" ${recs.length?"":"disabled"}>JSON</button><button class="btn" id="dPy" ${recs.length?"":"disabled"}>Copy Python</button><button class="btn" id="dBib" ${recs.length?"":"disabled"}>Copy BibTeX</button></div>
+  <p class="hint">CSV is tidy: one row per point with units, definitions, tier, rankable flag and citation. Parametric curves are the published expression sampled at ${SimHighlineExport.NSAMPLE} points. Nothing is interpolated or smoothed.</p>
+  <h4>FIGURE</h4>
+  <div class="btns"><button class="btn" id="fSvg">SVG</button><button class="btn" id="fPng">PNG</button><button class="btn" id="fLink">Copy link</button></div>
+  <p class="hint">Figures carry the relation, epoch and source citations in a footer.</p>
+  <h4>EVERYTHING</h4>
+  <p class="hint">Full dataset v${esc(SIMHIGHLINE_RELEASE.version)}: <a href="data/export/sim-highline-records.csv">records.csv</a> · <a href="data/export/sim-highline-points.csv">points.csv</a> · <a href="data/export/sim-highline-records.json">records.json</a> · <a href="data/export/sim-highline-citations.bib">citations.bib</a> · <a href="sim_highline.py">sim_highline.py</a> (pandas loader). Links work when this page is served from the sim-highline site.</p>`;
+}
+function wireData(){
+  $("pbody").querySelectorAll("[name=scope]").forEach(i=>i.onchange=()=>{state.dl.scope=i.value;renderPanel()});
+  $("dz0").onchange=e=>{state.dl.z0=num(e.target.value)??0;state.dl.scope="range";renderPanel()};$("dz1").onchange=e=>{state.dl.z1=num(e.target.value)??10;state.dl.scope="range";renderPanel()};
+  $("dObs").onchange=e=>{state.dl.obs=e.target.checked;renderPanel()};
+  const nm=()=>`sim-highline_${state.rel}_${state.dl.scope==="epoch"?"z"+fmtZ(currentZ()):state.dl.scope==="all"?"allz":"z"+state.dl.z0+"-"+state.dl.z1}`;
+  const note=()=>[`selection: relation ${state.rel}${state.rel!==state.rel?"":""}, scope ${state.dl.scope}${state.dl.scope==="epoch"?" z="+fmtZ(currentZ()):""}, rankable only: ${state.rankOnly}`];
+  $("dCsv").onclick=()=>download(nm()+".csv","text/csv",csvOf(exportSet(),state.dl.scope==="epoch"?currentZ():undefined,note()));
+  $("dJson").onclick=()=>download(nm()+".json","application/json",JSON.stringify({version:SIMHIGHLINE_RELEASE.version,released:SIMHIGHLINE_RELEASE.released,selection:note()[0],records:exportSet()},null,1));
+  $("dPy").onclick=()=>copyTxt(pySnippet(exportSet()),"Python snippet copied");
+  $("dBib").onclick=()=>copyTxt(SimHighlineExport.bibtex(exportSet()),"BibTeX copied");
+  $("fLink").onclick=()=>{syncHash();copyTxt(location.href,"Link copied")};
+  $("fSvg").onclick=()=>download(`sim-highline_${state.rel}_z${fmtZ(currentZ())}.svg`,"image/svg+xml",figureSvg().svg);
+  $("fPng").onclick=()=>{const f=figureSvg(),img=new Image();img.onload=()=>{const c=document.createElement("canvas");c.width=f.w*2;c.height=f.h*2;const x=c.getContext("2d");x.scale(2,2);x.drawImage(img,0,0);c.toBlob(b=>{const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=`sim-highline_${state.rel}_z${fmtZ(currentZ())}.png`;document.body.append(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)})};img.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(f.svg)};
+}
+function figureSvg(){
+  const svg=$("stage"),vb=svg.viewBox.baseVal,W=vb.width||svg.clientWidth,H=vb.height||svg.clientHeight,cs=getComputedStyle(document.documentElement),v=n=>cs.getPropertyValue(n).trim();
+  const css=[...document.styleSheets].flatMap(s=>{try{return[...s.cssRules]}catch(e){return[]}}).filter(r=>r.selectorText&&/^\.(axis|alabel|curve|band|obs|obsdot|dim|zline|fit|ftxt|user|userdot)/.test(r.selectorText)).map(r=>r.cssText).join("\n").replace(/var\((--[a-z0-9]+)\)/g,(m,n)=>v(n));
+  const z=currentZ(),cites=[...new Map($("stage").querySelectorAll("[data-id]")?[...svg.querySelectorAll("[data-id]")].map(e=>byId.get(e.dataset.id)).filter(Boolean).map(r=>[r.provenance?.doi||r.provenance?.url||r.id,(r.provenance?.citation||"").replace(/,\s*(Fig\.|Figure|figure|Table).*$/,"")]):[]).values()];
+  const lines=[`sim-highline v${SIMHIGHLINE_RELEASE.version} · ${REL[state.rel].t} · ${state.mode==="evol"?"vs redshift":"z = "+fmtZ(z)} · ${new Date().toISOString().slice(0,10)}`,...cites.slice(0,7).map(c=>c.length>150?c.slice(0,149)+"…":c),...(cites.length>7?[`+${cites.length-7} more sources`]:[])];
+  const FH=14+lines.length*15,inner=svg.innerHTML.replace(/var\((--[a-z0-9]+)\)/g,(m,n)=>v(n));
+  const out=`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H+FH}" viewBox="0 0 ${W} ${H+FH}"><style>${css}</style><rect width="100%" height="100%" fill="${v("--bg")}"/>${inner}<g font-family="sans-serif" font-size="11" fill="${v("--cream2")}">${lines.map((l,i)=>`<text x="16" y="${H+14+i*15}"${i?"":` font-weight="600" fill="${v("--cream")}"`}>${esc(l)}</text>`).join("")}</g></svg>`;
+  return{svg:out,w:W,h:H+FH};
+}
+
+/* ---------- presets, slider, atlas, modes ---------- */
+function renderPresets(){
+  const cnt=k=>new Set(sims.filter(r=>r.relation===k).map(r=>r.source)).size;
+  const keys=Object.keys(REL).filter(k=>cnt(k)),main=keys.filter(k=>cnt(k)>=3||k===state.rel),more=keys.filter(k=>!main.includes(k));
+  const chip=k=>`<button data-r="${k}" aria-pressed="${k===state.rel}" title="${esc(REL[k].t)}: ${cnt(k)} simulation${cnt(k)>1?"s":""}, ${sims.filter(r=>r.relation===k).length} records">${esc(REL[k].c)}<sup style="opacity:.6;font-size:8px;margin-left:3px">${cnt(k)}</sup></button>`;
+  $("presets").innerHTML=main.map(chip).join("")+(more.length?`<button id="moreRel" aria-expanded="${state.showSparse}" title="Relations with fewer than three simulations so far">${state.showSparse?"fewer":"+"+more.length+" sparse"}</button>`:"")+(state.showSparse?more.map(chip).join(""):"");
+  $("presets").querySelectorAll("button[data-r]").forEach(b=>b.onclick=()=>{const z=currentZ();state.rel=b.dataset.r;state.z=nearestStop(state.rel,z);state.sel=null;state.ref=null;state.resid=false;state.evo=null;state.fit=null;state.at=null;state.xr=state.yr=null;state.yt="none";renderAll(true);if(state.panel)renderPanel()});
+  const m=$("moreRel");if(m)m.onclick=()=>{state.showSparse=!state.showSparse;renderPresets()};
+}
+function renderSlider(){
+  const evol=state.mode==="evol",inp=$("z");
+  if(evol){
+    const xs=sims.filter(r=>r.relation===state.rel&&r.representation.type==="points").flatMap(r=>r.representation.points.map(p=>p.x)).sort((a,b)=>a-b);
+    inp.min=xs.length?xs[Math.floor(.03*xs.length)].toFixed(1):0;inp.max=xs.length?xs[Math.floor(.97*(xs.length-1))].toFixed(1):1;inp.step=.05;inp.value=atX();inp.setAttribute("aria-label","Evaluate at x");
+    $("ticks").innerHTML="";$("zread").innerHTML=`x = ${atX()}<small>${esc(REL[state.rel].x)}</small>`;return;
+  }
+  if(REL[state.rel].xz){inp.min=0;inp.max=0;inp.value=0;inp.disabled=true;$("ticks").innerHTML="";$("zread").innerHTML=`all redshifts<small>x is redshift</small>`;return}
+  inp.disabled=false;const st=stops(state.rel);inp.min=0;inp.step=1;inp.max=Math.max(st.length-1,0);inp.value=Math.max(0,st.indexOf(currentZ()));inp.setAttribute("aria-label","Redshift");
+  const tw=$("ticks").clientWidth||320,step=Math.max(1,Math.ceil(st.length/Math.max(2,Math.floor(tw/46))));
+  $("ticks").innerHTML=st.map((z,i)=>i%step===0||i===st.length-1&&(st.length-1-Math.floor((st.length-1)/step)*step)>=step*.6?`<span style="left:${st.length>1?i/(st.length-1)*100:0}%">${fmtZ(z)}</span>`:"").join("");
+  $("zread").innerHTML=`z = ${fmtZ(currentZ())}<small>${st.length} epochs</small>`;
+}
+$("z").oninput=e=>{if(state.mode==="evol"){state.at=+e.target.value;renderAll(false);return}state.z=stops(state.rel)[+e.target.value];renderAll(true)};
+function renderAtlas(){
+  const rels=Object.keys(REL).filter(k=>sims.some(r=>r.relation===k));
+  const srcs=[...new Set(sims.map(r=>r.source))].sort((a,b)=>sims.filter(r=>r.source===b).length-sims.filter(r=>r.source===a).length);
+  const ZB=[0,.5,1,1.5,2,3,4,5,6,7,8,9,10,12];
+  const zbin=z=>ZB.reduce((bi,v,i)=>Math.abs(v-z)<Math.abs(ZB[bi]-z)?i:bi,0);
+  let h=`<table><tr><th></th>${rels.map(k=>`<th title="${esc(REL[k].t)}">${esc(REL[k].c)}</th>`).join("")}</tr>`;
+  for(const s of srcs){
+    h+=`<tr><th><span class="sw" style="display:inline-block;vertical-align:middle;margin-right:6px;background:${colorOf(s)}"></span>${esc(SHORT[s]||s)}</th>`;
+    for(const k of rels){
+      const rs=sims.filter(r=>r.source===s&&r.relation===k);
+      if(!rs.length){h+=`<td class="none"></td>`;continue}
+      const on=new Set(rs.map(r=>zbin(r.epoch.zRepresentative)));
+      h+=`<td data-r="${k}" data-s="${esc(s)}" title="${esc(SHORT[s]||s)}, ${esc(REL[k].t)}: z = ${[...new Set(rs.map(r=>fmtZ(r.epoch.zRepresentative)))].join(", ")}"><div class="zdots" style="--c:${colorOf(s)}">${ZB.map((z,i)=>`<i class="${on.has(i)?"on":""}" style="height:${on.has(i)?14:5}px"></i>`).join("")}</div><div class="n">${rs.length} record${rs.length>1?"s":""}</div></td>`;
+    }
+    h+="</tr>";
+  }
+  h+=`<tr><th class="obsh">Observations</th>${rels.map(k=>{const os=obs.filter(r=>r.relation===k);if(!os.length)return`<td class="none"></td>`;const on=new Set(os.map(r=>zbin(r.epoch.zRepresentative))),ns=new Set(os.map(r=>r.source)).size;return`<td data-or="${k}" title="${esc(REL[k].t)}: ${ns} observational source${ns>1?"s":""}, ${os.length} records"><div class="zdots" style="--c:var(--cream2)">${ZB.map((z,i)=>`<i class="${on.has(i)?"on":""}" style="height:${on.has(i)?14:5}px"></i>`).join("")}</div><div class="n">${ns} source${ns>1?"s":""}</div></td>`}).join("")}</tr>`;
+  h+=`<tr><th></th><td colspan="${rels.length}" style="background:none;cursor:default"><div class="zscale" style="width:95px"><span>z=0</span><span>12</span></div></td></tr></table>`;
+  $("atlas").innerHTML=h;
+  $("atlas").querySelectorAll("td[data-or]").forEach(td=>td.onclick=()=>{state.rel=td.dataset.or;state.sel=state.ref=state.evo=null;state.resid=false;state.z=nearestStop(state.rel,currentZ());setMode("plot")});
+  $("atlas").querySelectorAll("td[data-r]").forEach(td=>td.onclick=()=>{state.rel=td.dataset.r;state.offBy[state.rel]=new Set([...new Set(sims.filter(r=>r.relation===state.rel).map(r=>r.source))].filter(x=>x!==td.dataset.s));state.sel=state.ref=state.evo=null;state.resid=false;const zs=sims.filter(r=>r.source===td.dataset.s&&r.relation===state.rel).map(r=>r.epoch.zRepresentative);state.z=nearestStop(state.rel,Math.min(...zs));setMode("plot")});
+}
+const TZ=[0,1,2,4,6,8];
+function renderTension(){
+  const zref=state.tz,rels=Object.keys(REL).filter(k=>REL[k].anchor&&!REL[k].xz&&sims.some(r=>r.relation===k));
+  const srcs=[...new Set(sims.filter(r=>rels.includes(r.relation)).map(r=>r.source))].sort((a,b)=>(SHORT[a]||a).localeCompare(SHORT[b]||b));
+  const cell=(s,k)=>{
+    const a=anchorRec(k,zref,true);if(!a||Math.abs(a.epoch.zRepresentative-zref)>tol(zref)&&a.epoch.mode!=="analytic-evolution"&&!(zref>=a.epoch.zMin-.1&&zref<=a.epoch.zMax+.1))return"";
+    const u=[...primaryUnits(k)].find(x=>x.split("|")[0]===s);if(!u)return"";
+    const r=pick(k,zref).find(x=>unitOf(x)===u);if(!r)return"";
+    const d=offsetOf(r,a,zref,true);if(d==null)return"";
+    const v=verdict(a,r),vk=v?v.verdict:"unknown",al=Math.min(.8,Math.abs(d)/.8*.8),bg=d>=0?`rgba(232,116,59,${al})`:`rgba(58,166,160,${al})`;
+    return`<td data-r="${k}" data-s="${esc(s)}" style="background:${bg};${vk==="not-comparable"?"outline:1px dashed var(--line)":""}" title="${esc(SHORT[s]||s)} · ${esc(label(r))} vs ${esc(a.source)}, z = ${fmtZ(zref)}: ${d>=0?"above":"below"} by ${Math.abs(d).toFixed(2)} in y units (${esc(vk.replace(/-/g," "))}${v&&v.blockers.length?": "+esc(v.blockers.join("; ")):""})"><b>${d>=0?"+":"−"}${Math.abs(d).toFixed(2)}</b> <span class="v ${vk==="comparable"?"ok":vk==="not-comparable"?"no":"cav"}">${vk==="comparable"?"✓":vk==="not-comparable"?"✕":"~"}</span></td>`};
+  let h=`<div class="tzbar" role="group" aria-label="Reference redshift">Reference redshift ${TZ.map(z=>`<button class="mini" data-tz="${z}" aria-pressed="${z===zref}">z = ${z}</button>`).join("")}</div><table><tr><th></th>${rels.map(k=>`<th title="${esc(REL[k].t)} against ${esc(REL[k].anchor.replace(/\$$/,""))}">${esc(REL[k].c)}</th>`).join("")}</tr>`;
+  for(const s of srcs){const cs=rels.map(k=>cell(s,k));if(!cs.some(Boolean))continue;h+=`<tr><th><span class="sw" style="display:inline-block;vertical-align:middle;margin-right:6px;background:${colorOf(s)}"></span>${esc(SHORT[s]||s)}</th>${cs.map(c=>c||`<td class="none"></td>`).join("")}</tr>`}
+  h+=`</table><p class="tnote">Each cell is the median offset of the simulation's fiducial run from the anchor observation of that relation (the bold grey line in the Relation view), over the x range they share, in the relation's y units: dex for logarithmic quantities, a fraction for the quenched fraction. Orange: above the anchor; teal: below. ✓ definitions comparable, ~ caveats, ✕ not comparable (dashed outline): an offset where definitions differ is not a verdict on the simulation. Blank: no data at this epoch. Click a cell to open that relation.</p>`;
+  $("tension").innerHTML=h;
+  $("tension").querySelectorAll("[data-tz]").forEach(b=>b.onclick=()=>{state.tz=+b.dataset.tz;renderTension();syncHash()});
+  $("tension").querySelectorAll("td[data-r]").forEach(td=>td.onclick=()=>{state.rel=td.dataset.r;state.sel=state.ref=state.evo=null;state.resid=false;state.z=nearestStop(state.rel,zref);setMode("plot")});
+}
+function setMode(m){state.mode=m;for(const [id,k] of [["mPlot","plot"],["mEvol","evol"],["mAtlas","atlas"],["mTension","tension"]])$(id).setAttribute("aria-pressed",m===k);$("atlas").classList.toggle("on",m==="atlas");$("tension").classList.toggle("on",m==="tension");$("legend").hidden=isTable();document.querySelector("footer").style.visibility=isTable()?"hidden":"";if(m==="atlas")renderAtlas();if(m==="tension")renderTension();renderAll(false)}
+$("mPlot").onclick=()=>setMode("plot");$("mEvol").onclick=()=>setMode("evol");$("mAtlas").onclick=()=>setMode("atlas");$("mTension").onclick=()=>setMode("tension");
+document.querySelectorAll(".recipes button").forEach(b=>b.onclick=()=>{
+  const k=b.dataset.rc;$("about").classList.remove("on");
+  Object.assign(state,{sel:null,ref:null,resid:false,evo:null,fit:null,at:null,xr:null,yr:null,yt:"none",variants:false,showObs:true});
+  if(k==="hz"){state.rel="gsmf";state.z=nearestStop("gsmf",8);state.dl.scope="epoch";state.dl.obs=true;setMode("plot");openPanel("data")}
+  if(k==="cmp"){if(state.panel)closePanel();state.rel="shmr";state.z=nearestStop("shmr",0);const u=[...primaryUnits("shmr")].find(x=>x.startsWith("IllustrisTNG|"));setMode("plot");if(u){state.ref=u;state.resid=true;renderAll(false);toast("Residuals against TNG: ✓ comparable, ~ caveats, ✕ not comparable")}}
+  if(k==="pd"){state.rel="mzr";state.z=nearestStop("mzr",6);state.dl.scope="epoch";state.dl.obs=true;setMode("plot");openPanel("data")}
+});
+$("infoBtn").onclick=()=>{const on=$("about").classList.toggle("on");if(on)$("about").querySelector("button,a")?.focus();else $("infoBtn").focus()};$("about").onclick=e=>{if(e.target.id==="about")$("about").classList.remove("on")};
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){$("about").classList.remove("on");if(state.panel)closePanel();else closeRecord()}if(["INPUT","TEXTAREA","SELECT"].includes(e.target.tagName))return;const n=stops(state.rel).length;if(state.mode==="evol")return;if(e.key==="ArrowRight"){state.z=stops(state.rel)[Math.min(stops(state.rel).indexOf(currentZ())+1,n-1)];renderAll(true)}if(e.key==="ArrowLeft"){state.z=stops(state.rel)[Math.max(stops(state.rel).indexOf(currentZ())-1,0)];renderAll(true)}});
+$("play").onclick=()=>{
+  if(state.playing){clearInterval(state.playing);state.playing=null;$("playIcon").setAttribute("d","M3 1.5v11l9-5.5z");return}
+  $("playIcon").setAttribute("d","M2.5 1.5h3.5v11h-3.5zM8 1.5h3.5v11h-3.5z");
+  state.playing=setInterval(()=>{const st=stops(state.rel);state.z=st[(st.indexOf(currentZ())+1)%st.length];renderAll(true)},1400);
+};
+function renderAll(animate){if(state.mode==="evol"&&REL[state.rel]?.xz){state.mode="plot";$("mPlot").setAttribute("aria-pressed",true);$("mEvol").setAttribute("aria-pressed",false)}renderPresets();renderSlider();if(!isTable())renderPlot(animate);if(state.panel&&state.tab==="data")renderPanel();syncHash()}
+const srcCount=new Set(sims.map(r=>r.source)).size;
+$("aboutCounts").innerHTML=`<b>${sims.length}</b> simulation records from <b>${srcCount}</b> suites, plus <b>${obs.length}</b> observational references. Dataset v${esc(SIMHIGHLINE_RELEASE.version)}.`;
+new ResizeObserver(()=>{if(isTable())return;renderPlot(false);if(state.mode!=="evol")renderSlider()}).observe($("stage"));
+readHash();$("mPlot").setAttribute("aria-pressed",state.mode==="plot");$("mEvol").setAttribute("aria-pressed",state.mode==="evol");$("mAtlas").setAttribute("aria-pressed",state.mode==="atlas");$("mTension").setAttribute("aria-pressed",state.mode==="tension");$("atlas").classList.toggle("on",state.mode==="atlas");$("tension").classList.toggle("on",state.mode==="tension");$("legend").hidden=isTable();document.querySelector("footer").style.visibility=isTable()?"hidden":"";
+if(state.mode==="atlas")renderAtlas();if(state.mode==="tension")renderTension();
+renderAll(false);
+if(state.sel)openRecord(state.sel);
+</script>
+</body>
+</html>

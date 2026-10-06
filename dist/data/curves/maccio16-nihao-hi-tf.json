@@ -1,0 +1,417 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "maccio16.nihao.stfr-hi-v50.galaxies.z0",
+      "source": "NIHAO zoom suite",
+      "run": "NIHAO zoom sample (per galaxy, HI-profile V50i)",
+      "kind": "simulation",
+      "relation": "stfr",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 inclination-corrected rotational velocity V50i from the mock HI line width at 50% (W50/2)",
+        "yUnit": "log10(km/s)"
+      },
+      "domain": {
+        "xMin": 4.734,
+        "xMax": 11.283
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": false,
+        "points": [
+          {
+            "x": 4.734,
+            "y": 0.9639
+          },
+          {
+            "x": 5.066,
+            "y": 0.6599
+          },
+          {
+            "x": 5.073,
+            "y": 0.8247
+          },
+          {
+            "x": 5.575,
+            "y": 0.7064
+          },
+          {
+            "x": 5.627,
+            "y": 0.6822
+          },
+          {
+            "x": 6.086,
+            "y": 0.6538
+          },
+          {
+            "x": 6.241,
+            "y": 1.0407
+          },
+          {
+            "x": 6.356,
+            "y": 0.8164
+          },
+          {
+            "x": 6.532,
+            "y": 1.0184
+          },
+          {
+            "x": 6.536,
+            "y": 1.0792
+          },
+          {
+            "x": 6.582,
+            "y": 1.059
+          },
+          {
+            "x": 6.725,
+            "y": 1.1809
+          },
+          {
+            "x": 6.795,
+            "y": 1.0564
+          },
+          {
+            "x": 6.818,
+            "y": 1.5369
+          },
+          {
+            "x": 6.826,
+            "y": 1.6821
+          },
+          {
+            "x": 6.951,
+            "y": 1.0276
+          },
+          {
+            "x": 6.954,
+            "y": 1.256
+          },
+          {
+            "x": 6.971,
+            "y": 0.9856
+          },
+          {
+            "x": 6.985,
+            "y": 1.2363
+          },
+          {
+            "x": 7.08,
+            "y": 1.1479
+          },
+          {
+            "x": 7.111,
+            "y": 1.4742
+          },
+          {
+            "x": 7.135,
+            "y": 1.1494
+          },
+          {
+            "x": 7.217,
+            "y": 1.4204
+          },
+          {
+            "x": 7.468,
+            "y": 1.7747
+          },
+          {
+            "x": 7.483,
+            "y": 1.7146
+          },
+          {
+            "x": 7.566,
+            "y": 1.3649
+          },
+          {
+            "x": 7.575,
+            "y": 1.5195
+          },
+          {
+            "x": 7.62,
+            "y": 1.5032
+          },
+          {
+            "x": 7.632,
+            "y": 1.1147
+          },
+          {
+            "x": 7.74,
+            "y": 1.1826
+          },
+          {
+            "x": 7.769,
+            "y": 1.067
+          },
+          {
+            "x": 7.795,
+            "y": 1.4052
+          },
+          {
+            "x": 7.802,
+            "y": 1.456
+          },
+          {
+            "x": 7.962,
+            "y": 1.5815
+          },
+          {
+            "x": 7.977,
+            "y": 1.3708
+          },
+          {
+            "x": 8.049,
+            "y": 1.5646
+          },
+          {
+            "x": 8.086,
+            "y": 1.8668
+          },
+          {
+            "x": 8.088,
+            "y": 1.6096
+          },
+          {
+            "x": 8.139,
+            "y": 1.4591
+          },
+          {
+            "x": 8.328,
+            "y": 1.837
+          },
+          {
+            "x": 8.398,
+            "y": 1.5861
+          },
+          {
+            "x": 8.443,
+            "y": 1.7722
+          },
+          {
+            "x": 8.558,
+            "y": 1.7953
+          },
+          {
+            "x": 8.564,
+            "y": 1.6617
+          },
+          {
+            "x": 8.604,
+            "y": 1.8818
+          },
+          {
+            "x": 8.685,
+            "y": 1.7397
+          },
+          {
+            "x": 8.755,
+            "y": 1.6643
+          },
+          {
+            "x": 8.811,
+            "y": 1.811
+          },
+          {
+            "x": 8.828,
+            "y": 1.9688
+          },
+          {
+            "x": 8.902,
+            "y": 1.9309
+          },
+          {
+            "x": 8.929,
+            "y": 1.9756
+          },
+          {
+            "x": 8.964,
+            "y": 1.8709
+          },
+          {
+            "x": 8.968,
+            "y": 1.6371
+          },
+          {
+            "x": 9.062,
+            "y": 1.7784
+          },
+          {
+            "x": 9.305,
+            "y": 1.8352
+          },
+          {
+            "x": 9.537,
+            "y": 2.1089
+          },
+          {
+            "x": 9.545,
+            "y": 1.9364
+          },
+          {
+            "x": 9.578,
+            "y": 2.1024
+          },
+          {
+            "x": 9.587,
+            "y": 2.036
+          },
+          {
+            "x": 9.599,
+            "y": 2.1273
+          },
+          {
+            "x": 9.614,
+            "y": 1.9478
+          },
+          {
+            "x": 9.633,
+            "y": 0.712
+          },
+          {
+            "x": 9.641,
+            "y": 1.9023
+          },
+          {
+            "x": 9.673,
+            "y": 1.8749
+          },
+          {
+            "x": 9.739,
+            "y": 2.03
+          },
+          {
+            "x": 9.764,
+            "y": 1.8942
+          },
+          {
+            "x": 9.87,
+            "y": 2.0739
+          },
+          {
+            "x": 10.036,
+            "y": 2.239
+          },
+          {
+            "x": 10.091,
+            "y": 2.152
+          },
+          {
+            "x": 10.17,
+            "y": 2.2286
+          },
+          {
+            "x": 10.209,
+            "y": 1.9575
+          },
+          {
+            "x": 10.216,
+            "y": 2.0946
+          },
+          {
+            "x": 10.236,
+            "y": 2.2099
+          },
+          {
+            "x": 10.237,
+            "y": 2.1317
+          },
+          {
+            "x": 10.267,
+            "y": 2.2251
+          },
+          {
+            "x": 10.323,
+            "y": 2.276
+          },
+          {
+            "x": 10.484,
+            "y": 2.3111
+          },
+          {
+            "x": 10.485,
+            "y": 2.3195
+          },
+          {
+            "x": 10.521,
+            "y": 2.17
+          },
+          {
+            "x": 10.632,
+            "y": 2.2178
+          },
+          {
+            "x": 10.664,
+            "y": 2.3861
+          },
+          {
+            "x": 10.767,
+            "y": 2.462
+          },
+          {
+            "x": 10.825,
+            "y": 2.4058
+          },
+          {
+            "x": 10.895,
+            "y": 2.4482
+          },
+          {
+            "x": 11.15,
+            "y": 2.5595
+          },
+          {
+            "x": 11.192,
+            "y": 2.6645
+          },
+          {
+            "x": 11.283,
+            "y": 2.5644
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "individual zoom galaxies (not volume complete)",
+        "warning": "Marker centres of the NIHAO galaxies (red squares) read from the vector paths of NIHAO X (Maccio et al. 2016, MNRAS 463, L69), Tully-Fisher panel of the HI-tests figure (4x4_new, upper left); no table is published. V50 is the velocity width of mock HI profiles at 50 per cent of the peak divided by two, evaluated for the sample's mock observations and inclination-corrected (V50i); not the same velocity as the V_HI of NIHAO XII. Zoom selections are not volume complete."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.1,
+          "Om": 0.3175
+        },
+        "massDefinition": "unspecified",
+        "velocityDefinition": "V50 = W50/2 of mock HI profile, inclination corrected",
+        "population": "zoom-centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Maccio et al. 2016 (NIHAO X), MNRAS 463, L69, HI-tests figure (4x4_new), Tully-Fisher panel",
+        "doi": "10.1093/mnrasl/slw147",
+        "url": "https://arxiv.org/abs/1607.01028",
+        "retrieved": "2026-10-05",
+        "figure": "4x4_new (fig:Hitest), upper left",
+        "panel": "Tully-Fisher panel",
+        "checksumSha256": "086e9f2893ac73ca354a85d194130aafb62747aeae90577d14d7f4cb99c6586e",
+        "sourceMember": "4x4_new.pdf (converted from 4x4_new.eps; red squares)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 4-12; y: labelled ticks 1.0-2.5; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "unknown",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

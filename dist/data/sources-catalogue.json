@@ -1,0 +1,1006 @@
+{
+  "schemaVersion": "1.0.0",
+  "reviewedAt": "2026-10-03",
+  "statusLegend": {
+    "ingested": "records are in data/curves/",
+    "run-locally": "a sim-highline script exists and has been tested on synthetic data; it needs a download or credentials only available on the maintainer's machine",
+    "discovered": "a public machine-readable product exists but no sim-highline adapter has been written yet",
+    "request-only": "authors state data are available on request; not public"
+  },
+  "sources": [
+    {
+      "id": "thesan-relation-files",
+      "suite": "THESAN-1",
+      "status": "ingested",
+      "access": "public files",
+      "url": "https://www.thesan-project.com/thesan/data.html",
+      "relations": [
+        "sfms",
+        "gsmf",
+        "mzr",
+        "shmr"
+      ],
+      "redshifts": "6-10"
+    },
+    {
+      "id": "magneticum-data-zip",
+      "suite": "Magneticum",
+      "status": "ingested",
+      "access": "public archive",
+      "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
+      "relations": [
+        "gsmf",
+        "sfms",
+        "bh",
+        "bhsigma",
+        "jstar",
+        "size",
+        "shmr",
+        "zstar"
+      ],
+      "redshifts": "0-4.2",
+      "note": "All boxes in the released multi-box tables (Box0/mr, Box2b/hr, Box2/hr, Box3/uhr, Box4/uhr), columns labelled in the file headers, no cross-box stitching. SHMR is M*(<0.1 rvir)/M200c converted from the released log M*. Not ingested: baryon conversion efficiency (duplicates SHMR), ages, colours, M_BH-sSFR, fgas-M500, T500-M500, halo/gas/BH mass functions, depletion times, Kennicutt-Schmidt, SFR densities (no matching relation or not galaxy scaling relations)."
+    },
+    {
+      "id": "swift-comparison-data-2021",
+      "suite": "observations, EAGLE",
+      "status": "ingested",
+      "access": "public git (2021 fork; upstream SWIFTSIM repository is not publicly cloneable)",
+      "url": "https://github.com/calvin-sykes/velociraptor-comparison-data",
+      "relations": [
+        "age",
+        "bh",
+        "bhsigma",
+        "dmf",
+        "dtg",
+        "fgas500",
+        "gsmf",
+        "h2-fraction",
+        "hi-fraction",
+        "himf",
+        "hmf",
+        "metald",
+        "mzr",
+        "quenched",
+        "sfms",
+        "sfrf",
+        "shmr",
+        "size",
+        "smd",
+        "ssfr",
+        "stfr",
+        "zstar"
+      ],
+      "redshifts": "0-10"
+    },
+    {
+      "id": "sharda26-mzr",
+      "suite": "COLIBRE, EAGLE, TNG, SIMBA, FIREbox, FIRE-2, THESAN-zoom",
+      "status": "ingested",
+      "access": "public git (GPL-2.0)",
+      "url": "https://github.com/psharda/colibre_mzr_sharda26",
+      "relations": [
+        "mzr"
+      ],
+      "redshifts": "0-10",
+      "note": "Also used: 16 individual-galaxy JWST/ground tables, binned by sim-highline into a z=1-10.5 MZR compilation."
+    },
+    {
+      "id": "colibre-gsmf-chaikin26",
+      "suite": "COLIBRE (8 published runs)",
+      "status": "ingested",
+      "access": "public YAML, CC-BY-4.0 website",
+      "url": "https://colibre.strw.leidenuniv.nl/paper_data/2509.07960.yml",
+      "relations": [
+        "gsmf"
+      ],
+      "redshifts": "0-15",
+      "adapter": "scripts/ingest_colibre_gsmf.py",
+      "note": "Full file ingested 2026-10-05: 99 official-table records, 18 epochs, SHA-256 recorded. Replaces the earlier small-box transcription."
+    },
+    {
+      "id": "pillepich18-figures",
+      "suite": "Illustris, IllustrisTNG (TNG100-1, rTNG300-1)",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDFs",
+      "url": "https://arxiv.org/abs/1707.03406",
+      "relations": [
+        "gsmf",
+        "shmr"
+      ],
+      "redshifts": "GSMF 0-4; SHMR 0-1",
+      "adapter": "scripts/digitize_tng_gsmf_pillepich18.py, scripts/digitize_tng_shmr_pillepich18.py",
+      "note": "No table published. Curve vertices read from vector PDF paths of the GSMF figure (z=0, 0.5, 1, 2, 3, 4); tier digitized-figure, not rankable. z=0 uses a 30 pkpc aperture, z>0 twice the stellar half-mass radius. SHMR (M*<30 pkpc / M200c, centrals) from Fig. 11: z=0 for Illustris, TNG100, rTNG300; z~0.5 and ~1 for TNG100 and rTNG300."
+    },
+    {
+      "id": "furlong15-schechter-table",
+      "suite": "EAGLE (Ref-L100N1504)",
+      "status": "ingested",
+      "access": "arXiv source, appendix table",
+      "url": "https://arxiv.org/abs/1410.3485",
+      "relations": [
+        "gsmf"
+      ],
+      "redshifts": "0.1-4",
+      "adapter": "scripts/transcribe_eagle_gsmf_schechter_furlong15.py",
+      "note": "Single and double Schechter fit parameters transcribed from the appendix table (published-fit). Figure 2 (GSMF z=0.1-7, Ref-L100N1504 and Recal-L025N0752) digitised from vector paths by scripts/digitize_eagle_gsmf_furlong15.py (solid segments only, not rankable)."
+    },
+    {
+      "id": "donnari19-quenched-fig",
+      "suite": "IllustrisTNG (TNG100, TNG300), Illustris",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1812.07584",
+      "relations": [
+        "quenched"
+      ],
+      "redshifts": "0.3, 0.75, 1.75",
+      "adapter": "scripts/digitize_tng_quenched_donnari19.py",
+      "note": "Quenched fraction vs stellar mass, SFR<MS-1dex and TNG UVJ criteria; curves include the paper's mock 0.2 dex M* and 0.3 dex SFR uncertainties. Digitized, not rankable."
+    },
+    {
+      "id": "donnari21-quenched-fig",
+      "suite": "IllustrisTNG (TNG50-1, TNG100-1, TNG300-1)",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDFs",
+      "url": "https://arxiv.org/abs/2008.00004",
+      "relations": [
+        "quenched"
+      ],
+      "redshifts": "0.1, 0.35, 0.65",
+      "adapter": "scripts/digitize_tng_quenched_donnari21.py, scripts/digitize_tng300_quenched_apertures_donnari21.py",
+      "note": "Centrals and satellites, SFR<MS-1dex quenched definition, Poisson bands; curves include mock 0.2 dex M* and 0.6 dex SFR uncertainties. Also the TNG300 all-galaxy apertures and definitions figure at z=0, 2, 3 (MS-1dex and sSFR<1e-11, SFR in 2 R_half or all bound gas). UVJ/2-sigma/lifetime definitions, SFR timescales, host-mass and radius dependence, mock-observation panels and resolution tests not extracted. Digitized, not rankable."
+    },
+    {
+      "id": "bird22-astrid-figs",
+      "suite": "ASTRID (250 Mpc/h)",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDFs",
+      "url": "https://arxiv.org/abs/2111.01160",
+      "relations": [
+        "shmr",
+        "zstar"
+      ],
+      "redshifts": "3, 4, 6, 8, 10",
+      "adapter": "scripts/digitize_astrid_bird22.py",
+      "note": "Median M*/Mh (converted from the plotted ratio normalised by Omega_m/Omega_b) and stellar O/H vs stellar mass; gas and baryon fractions, gas and stellar metallicity vs halo mass, percentile bands not extracted. Digitized, not rankable."
+    },
+    {
+      "id": "ma18-fire2-highz",
+      "suite": "FIRE-2 (high-redshift suite)",
+      "status": "ingested",
+      "access": "arXiv source, appendix table and text",
+      "url": "https://arxiv.org/abs/1706.06605",
+      "relations": [
+        "gsmf",
+        "shmr"
+      ],
+      "redshifts": "5-12",
+      "adapter": "scripts/transcribe_fire2_gsmf_ma18.py",
+      "note": "GSMF table (z=5-12, +-0.5 windows, volume-weighted zoom sample) transcribed with spot-checks and slope checks against the paper's faint-end slopes; SHMR power-law fit (alpha, beta, gamma, delta) = (1.58, 7.10, -0.14, -1.10) for z=5-12. UV luminosity function tables and SMHM scatter histograms not ingested."
+    },
+    {
+      "id": "genel14-illustris",
+      "suite": "Illustris-1",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDFs",
+      "url": "https://arxiv.org/abs/1405.3749",
+      "relations": [
+        "gsmf",
+        "shmr"
+      ],
+      "redshifts": "GSMF z~0-7; SHMR 0-4",
+      "adapter": "scripts/digitize_illustris_genel14.py",
+      "note": "Fig. 3 GSMF (full SUBFIND stellar mass and mass within 2 R_half) at z~0,1,...,7 and Fig. 6a SHMR (DMO-matched M200c, converted from the baryon conversion efficiency by log10(Ob/Om)) at z=0-4. The z>0 GSMF redshifts are labelled approximate (z~) in the paper. Digitized, not rankable."
+    },
+    {
+      "id": "sparre15-illustris-ms",
+      "suite": "Illustris-1 (and low resolution)",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1409.0009",
+      "relations": [
+        "sfms",
+        "ssfr"
+      ],
+      "redshifts": "0, 1, 2, 4",
+      "adapter": "scripts/digitize_illustris_sparre15.py",
+      "note": "Median instantaneous SFR and sSFR vs stellar mass of all galaxies with the 1-sigma error bars (Gaussian fits to the SFR distributions in narrow bins), from Fig. 8.1. Label centres are offset from ticks, so the helper's axis_fit_shifted was used. SFR scatter, SFR-indicator and PCA figures not ingested. Digitized, not rankable."
+    },
+    {
+      "id": "schaye15-eagle-z01",
+      "suite": "EAGLE (Ref-L100N1504, AGNdT9-L050N0752, Recal-L025N0752)",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDFs",
+      "url": "https://arxiv.org/abs/1407.7040",
+      "relations": [
+        "bh",
+        "ssfr",
+        "stfr"
+      ],
+      "redshifts": "0.1",
+      "adapter": "scripts/digitize_eagle_schaye15.py",
+      "note": "Median BH mass vs M*, median sSFR of star-forming galaxies (converted from /Gyr), and median Vmax vs M* for late-types, solid segments only. Outlined text: calibrated from major ticks and checked against the BH seed-mass floor, the sSFR limit line and the 100-particle resolution limits. GSMF, sizes, MZR, passive fraction in the same paper not re-ingested. Digitized, not rankable."
+    },
+    {
+      "id": "furlong15-passive-fig",
+      "suite": "EAGLE (Ref-L100N1504, Recal-L025N0752)",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDFs",
+      "url": "https://arxiv.org/abs/1410.3485",
+      "relations": [
+        "quenched"
+      ],
+      "redshifts": "0.1, 1, 2",
+      "adapter": "scripts/digitize_eagle_passive_furlong15.py",
+      "note": "Passive fraction; sSFR limits (0.01 and 0.1 /Gyr) read from the dotted lines of the paper's sSFR figure."
+    },
+    {
+      "id": "volonteri16-bh-fits",
+      "suite": "Horizon-AGN",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1602.01941",
+      "relations": [
+        "bh"
+      ],
+      "redshifts": "1, 2, 3, 5",
+      "adapter": "scripts/digitize_horizonagn_bh_volonteri16.py",
+      "note": "Best-fit BH mass vs galaxy stellar mass lines; axis labels are outlines so calibration uses tick marks and is verified by the figure's own M_BH=0.002 M_gal guide line. z=0 per-galaxy scatter plots not extracted."
+    },
+    {
+      "id": "dave19-simba-gsmf-fig",
+      "suite": "SIMBA (m100n1024)",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1901.10203",
+      "relations": [
+        "gsmf"
+      ],
+      "redshifts": "0.1-5.9",
+      "adapter": "scripts/digitize_simba_gsmf_dave19.py",
+      "note": "All-galaxy GSMF with jackknife band, plus SF and Q central GSMFs (sSFR cut 10^(-1.8+0.3z)/Gyr). Digitized, not rankable."
+    },
+    {
+      "id": "schaye23-flamingo-figs",
+      "suite": "FLAMINGO (L1_m8, L1_m9, L2p8_m9, L1_m10)",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2306.04024",
+      "relations": [
+        "gsmf",
+        "shmr",
+        "bh",
+        "ssfr",
+        "quenched",
+        "zstar",
+        "size"
+      ],
+      "redshifts": "0",
+      "adapter": "scripts/digitize_flamingo_gsmf_schaye23.py, scripts/digitize_flamingo_relations_schaye23.py, scripts/digitize_flamingo_galaxyprops_schaye23.py, scripts/digitize_flamingo_variations_schaye23.py",
+      "note": "z=0 GSMF (Fig. 8), SHMR vs M_BN98 (Fig. 9) and BH mass vs M* (Fig. 12): solid segments above the calibration mass limits, 4 resolution/box runs each. GSMF and BH-M* include the paper's 0.3 dex mock mass scatter. The 13 model/cosmology variations, percentile bands, fgas and galaxy-property panels are not yet extracted. Galaxy-properties figure (z=0.1; passive fraction z=0) ingested for the four fiducial-model runs: sSFR of active galaxies, passive fraction, stellar metallicity, projected half-mass radii of active/passive galaxies in 50 and 100 kpc 2D apertures; the 12 model and cosmology variations (right-hand panels) are ingested for every one of these figures, with each variant defined from the paper tables (feedback shifts, jets, cosmologies)."
+    },
+    {
+      "id": "blank19-nihao-xxii",
+      "suite": "NIHAO zoom suite (with black holes)",
+      "status": "ingested",
+      "access": "arXiv source, EPS figures converted to vector PDF",
+      "url": "https://arxiv.org/abs/1906.06955",
+      "relations": [
+        "shmr",
+        "bh"
+      ],
+      "redshifts": "0, 1, 2, 4",
+      "adapter": "scripts/digitize_nihao_blank19.py",
+      "note": "NIHAO XXII: per-galaxy marker centres and the black fit line for M*/M200 and M_BH-M* at z=0,1,2,4. Zoom selection, not volume complete; digitized, not rankable."
+    },
+    {
+      "id": "blank21-nihao-xxvi",
+      "suite": "NIHAO zoom suite",
+      "status": "ingested",
+      "access": "arXiv source, EPS figures converted to vector PDF",
+      "url": "https://arxiv.org/abs/2008.13379",
+      "relations": [
+        "sfms"
+      ],
+      "redshifts": "0, 1, 2, 4",
+      "adapter": "scripts/digitize_nihao_blank21_sfms.py",
+      "note": "NIHAO XXVI: SFR (200 Myr) vs stellar mass per galaxy with the linear fit at z=0,1,2,4; zero-SFR lower-limit arrows excluded. Digitized, not rankable."
+    },
+    {
+      "id": "dutton17-nihao-xii",
+      "suite": "NIHAO zoom suite",
+      "status": "ingested",
+      "access": "arXiv source, EPS figure converted to vector PDF",
+      "url": "https://arxiv.org/abs/1610.06375",
+      "relations": [
+        "btfr",
+        "stfr"
+      ],
+      "redshifts": "0",
+      "adapter": "scripts/digitize_nihao_tf_dutton17.py",
+      "note": "NIHAO XII Fig. 4: per-galaxy M_bar and M_gal (stars+neutral gas) vs V_HI, and M* vs V_HI (as stfr), with the fit lines. Text is outlined, so calibration is by tick marks and verified by the fit slopes against the paper's b and by the virial-relation dotted line. Neutral-gas panel not ingested. Digitized, not rankable."
+    },
+    {
+      "id": "maccio16-nihao-x",
+      "suite": "NIHAO zoom suite",
+      "status": "ingested",
+      "access": "arXiv source, EPS figure converted to vector PDF",
+      "url": "https://arxiv.org/abs/1607.01028",
+      "relations": [
+        "stfr"
+      ],
+      "redshifts": "0",
+      "adapter": "scripts/digitize_nihao_hi_tf_maccio16.py",
+      "note": "NIHAO X HI-tests figure, Tully-Fisher panel: per-galaxy log M* vs inclination-corrected V50i (mock HI width at 50%/2). HI size-mass panels and the W50/W20 ratio not ingested (no schema relation). Digitized, not rankable."
+    },
+    {
+      "id": "ricarte19-romulus25-sfms",
+      "suite": "Romulus25",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1904.10116",
+      "relations": [
+        "sfms",
+        "bh",
+        "bhsigma"
+      ],
+      "redshifts": "0.05, 1, 3",
+      "adapter": "scripts/digitize_romulus25_sfms_ricarte19.py, scripts/digitize_romulus25_bh_ricarte19.py",
+      "note": "Per-galaxy SFR (300 Myr average) vs stellar mass for the Romulus25 box; the three AGN-luminosity marker classes are merged, zero-SFR arrows excluded. RomulusC panels and the fitted main-sequence band not extracted. Digitized, not rankable. Also the per-galaxy SMBH mass (accreted, seed excluded) vs stellar mass and vs sigma_max(<R_eff) at z=0.05 (the paper calls these z=0 relations), ~530 host galaxies each; RomulusC and the BH-halo mass panel not extracted. The M-sigma x axis has a single labelled decade, so its log scale was fixed from the minor-tick pattern (axis_fit_log1)."
+    },
+    {
+      "id": "kaviraj17-horizonagn-mf",
+      "suite": "Horizon-AGN (and Horizon-noAGN)",
+      "status": "ingested",
+      "access": "arXiv source, PostScript figure converted to vector PDF",
+      "url": "https://arxiv.org/abs/1605.09379",
+      "relations": [
+        "gsmf"
+      ],
+      "redshifts": "0.1-6",
+      "adapter": "scripts/digitize_horizonagn_gsmf_kaviraj17.py",
+      "note": "Fig. 7: GSMF prediction with Poisson band at 8 epochs, plus the Horizon-noAGN twin simulation. Other figures (SFMS Hess diagram, colours, luminosity functions, calibrated MZR) not ingested: the MZR plot shows metallicities already corrected to observations."
+    },
+    {
+      "id": "furlong17-sizes",
+      "suite": "EAGLE (Ref-L100N1504), Illustris-1",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDFs",
+      "url": "https://arxiv.org/abs/1510.05645",
+      "relations": [
+        "size"
+      ],
+      "redshifts": "bins 0-0.5, 0.5-1, 1-1.5, 1.5-2",
+      "adapter": "scripts/digitize_eagle_sizes_furlong17.py, scripts/digitize_illustris_sizes_furlong17.py",
+      "note": "Size-mass medians for active and passive galaxies (sSFR cut log10 sSFR_lim/Gyr = 0.5z-2). EAGLE with 16-84% bands (R50 3D within 100 pkpc, M* in 30 pkpc); Illustris medians from the appendix comparison (public-catalogue half-mass radii, 2 x R_half aperture). Redshift bins, not snapshots; digitized, not rankable."
+    },
+    {
+      "id": "tng-group-catalogs",
+      "suite": "IllustrisTNG (TNG50-1, TNG100-1, TNG300-1)",
+      "status": "run-locally",
+      "access": "public download with free API key",
+      "url": "https://www.tng-project.org/data/",
+      "relations": [
+        "gsmf",
+        "sfms",
+        "ssfr",
+        "quenched",
+        "size",
+        "shmr",
+        "bh",
+        "mzr"
+      ],
+      "redshifts": "0-8 (13 full snapshots)",
+      "adapter": "scripts/derive_subfind_relations.py"
+    },
+    {
+      "id": "illustris-group-catalogs",
+      "suite": "Illustris-1",
+      "status": "run-locally",
+      "access": "public download with free API key",
+      "url": "https://www.illustris-project.org/data/",
+      "relations": [
+        "gsmf",
+        "sfms",
+        "ssfr",
+        "quenched",
+        "size",
+        "shmr",
+        "bh",
+        "mzr"
+      ],
+      "redshifts": "0-8",
+      "adapter": "scripts/derive_subfind_relations.py"
+    },
+    {
+      "id": "eagle-sql",
+      "suite": "EAGLE (Ref-L100N1504, Recal-L025N0752)",
+      "status": "run-locally",
+      "access": "public SQL database with free registration",
+      "url": "https://virgodb.dur.ac.uk/",
+      "relations": [
+        "gsmf",
+        "sfms",
+        "ssfr",
+        "quenched",
+        "size",
+        "shmr",
+        "bh"
+      ],
+      "redshifts": "0-9",
+      "adapter": "scripts/derive_eagle_relations.py",
+      "note": "Aperture table columns verified against McAlpine et al. 2016 Table B; SubHalo/Sizes/FOF column names should be confirmed on first run."
+    },
+    {
+      "id": "camels-subfind",
+      "suite": "CAMELS (TNG, SIMBA, Astrid model variations)",
+      "status": "run-locally",
+      "access": "public files",
+      "url": "https://camels.readthedocs.io/",
+      "relations": [
+        "gsmf",
+        "sfms",
+        "ssfr",
+        "quenched",
+        "size",
+        "shmr",
+        "bh",
+        "mzr"
+      ],
+      "redshifts": "0-6",
+      "adapter": "scripts/derive_subfind_relations.py --flat (custom run)",
+      "note": "25 Mpc/h boxes; useful for model-variation envelopes, not for massive-end statistics."
+    },
+    {
+      "id": "flamingo-dr",
+      "suite": "FLAMINGO (22 hydro runs)",
+      "status": "run-locally",
+      "access": "public data release, selective download web service and hdfstream remote reading via swiftsimio",
+      "url": "https://flamingo.strw.leidenuniv.nl/",
+      "relations": [
+        "gsmf",
+        "shmr",
+        "quenched",
+        "bh"
+      ],
+      "redshifts": "0-15",
+      "note": "Field names and unit attributes verified against the public SOAP repository (SWIFTSIM/SOAP @ bd8d329). Gas-phase O/H is not derived: the SOAP description of LinearMassWeightedOxygenOverHydrogenOfGas is ambiguous about normalisation.",
+      "adapter": "scripts/derive_soap_relations.py flamingo <run> <mbar> halo_properties_*.hdf5"
+    },
+    {
+      "id": "fire2-dr1",
+      "suite": "FIRE-2 zooms",
+      "status": "discovered",
+      "access": "public data release",
+      "url": "https://arxiv.org/abs/2202.06969",
+      "relations": [
+        "size",
+        "mzr",
+        "sfms"
+      ],
+      "redshifts": "0-several",
+      "note": "Zoom sample; not volume complete."
+    },
+    {
+      "id": "astrid-globus",
+      "suite": "ASTRID",
+      "status": "discovered",
+      "access": "Globus",
+      "url": "https://astrid.psc.edu/",
+      "relations": [
+        "gsmf",
+        "sfms",
+        "bh"
+      ],
+      "redshifts": "2-10"
+    },
+    {
+      "id": "tng-supplementary",
+      "suite": "IllustrisTNG",
+      "status": "discovered",
+      "access": "public with API key",
+      "url": "https://www.tng-project.org/data/docs/specifications/",
+      "relations": [
+        "hi-fraction",
+        "h2-fraction",
+        "size",
+        "sfms"
+      ],
+      "note": "HI/H2 contents, projected sizes and multi-aperture SFRs; would add gas fractions and observationally matched sizes."
+    },
+    {
+      "id": "colibre-other-papers",
+      "suite": "COLIBRE",
+      "status": "request-only",
+      "access": "data on reasonable request (sizes, quenched fractions, SFRs beyond the GSMF)",
+      "url": "https://colibre.strw.leidenuniv.nl/papers.html",
+      "relations": [
+        "size",
+        "jstar",
+        "quenched",
+        "sfms"
+      ]
+    },
+    {
+      "id": "flamingo-paper-plots",
+      "suite": "FLAMINGO",
+      "status": "request-only",
+      "access": "Schaye et al. 2023 plot data on request",
+      "url": "https://academic.oup.com/mnras/article/526/4/4978/7246074",
+      "relations": [
+        "gsmf",
+        "shmr"
+      ]
+    },
+    {
+      "id": "flares-galaxies",
+      "suite": "FLARES",
+      "status": "ingested",
+      "access": "public git (third-party redistribution) + official weights",
+      "url": "https://github.com/louisarts/Arts24LRD",
+      "relations": [
+        "gsmf",
+        "sfms"
+      ],
+      "redshifts": "5-10"
+    },
+    {
+      "id": "bluetides-notebooks",
+      "suite": "BlueTides",
+      "status": "ingested",
+      "access": "public git notebooks",
+      "url": "https://github.com/kuanweih/paper-2018",
+      "relations": [
+        "bh",
+        "bhsigma"
+      ],
+      "redshifts": "8-10"
+    },
+    {
+      "id": "cosmosweb-ms-fq",
+      "suite": "observations",
+      "status": "ingested",
+      "access": "public git",
+      "url": "https://github.com/maciejpkoprowski/COSMOS-Web-GSMF-MS-data",
+      "relations": [
+        "sfms",
+        "quenched"
+      ],
+      "redshifts": "0.5-8"
+    },
+    {
+      "id": "baker25-quiescent-smf",
+      "suite": "observations",
+      "status": "ingested",
+      "access": "public git / Zenodo",
+      "url": "https://github.com/Astro-William-Baker/Baker-2025d",
+      "relations": [
+        "gsmf (quiescent)"
+      ],
+      "redshifts": "2-5"
+    },
+    {
+      "id": "simba-caesar",
+      "suite": "SIMBA",
+      "status": "run-locally",
+      "access": "public CAESAR catalogues",
+      "url": "https://simba.roe.ac.uk/",
+      "relations": [
+        "gsmf",
+        "sfms",
+        "ssfr",
+        "quenched",
+        "size",
+        "shmr",
+        "bh",
+        "hi-fraction",
+        "h2-fraction"
+      ],
+      "adapter": "scripts/derive_caesar_relations.py",
+      "note": "File layout verified against the public caesar repository (dnarayanan/caesar @ 1eba224); halo-mass key is probed among m200c variants and the script stops with the available keys if none match."
+    },
+    {
+      "id": "astrid-metallicity",
+      "suite": "ASTRID",
+      "status": "discovered",
+      "access": "public git",
+      "url": "https://github.com/pentyum/astrid_metallicity",
+      "relations": [
+        "metallicity calibrations"
+      ],
+      "note": "Line-ratio calibrations from ASTRID, not a scaling relation; not ingested."
+    },
+    {
+      "id": "sphinx20-dr",
+      "suite": "SPHINX20",
+      "status": "ingested",
+      "access": "public git",
+      "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+      "relations": [
+        "sfms",
+        "zstar",
+        "shmr",
+        "size"
+      ],
+      "redshifts": "4.64-10"
+    },
+    {
+      "id": "garcia24-fmr-catalogues",
+      "suite": "IllustrisTNG (TNG100-1), EAGLE (Ref-L100N1504), SIMBA (m100n1024), Illustris-1",
+      "status": "ingested",
+      "access": "public git (no licence file; cite paper and repository)",
+      "url": "https://github.com/AlexGarcia623/does_the_fmr_evolve_simulations_2",
+      "relations": [
+        "sfms",
+        "mzr",
+        "zstar",
+        "size"
+      ],
+      "redshifts": "0-10",
+      "note": "Per-galaxy arrays for star-forming centrals released with Garcia et al. FMR paper II; medians derived by scripts/ingest_garcia_fmr.py with the standard sim-highline cuts. SIMBA stellar metallicities and radii are excluded because their arrays do not match the others in length."
+    },
+    {
+      "id": "colibre-gsmf-small-boxes",
+      "suite": "COLIBRE (L025m5/m6/m7, L050m5)",
+      "status": "ingested",
+      "access": "public YAML, transcribed counts",
+      "url": "https://colibre.strw.leidenuniv.nl/paper_data/2509.07960.yml",
+      "relations": [
+        "gsmf"
+      ],
+      "redshifts": "0-10",
+      "note": "scripts/transcribe_colibre_gsmf_small_boxes.py; superseded by ingest_colibre_gsmf.py on the full file (same ids)."
+    },
+    {
+      "id": "nihao-wang15-tables",
+      "suite": "NIHAO (88 main haloes)",
+      "status": "ingested",
+      "access": "paper appendix tables",
+      "url": "https://arxiv.org/abs/1503.04818",
+      "relations": [
+        "shmr",
+        "sfms"
+      ],
+      "redshifts": "0"
+    },
+    {
+      "id": "fire2-wetzel23-tables",
+      "suite": "FIRE-2 (Core, Massive Halo, High Redshift)",
+      "status": "ingested",
+      "access": "paper tables, CC-BY-4.0 data",
+      "url": "https://arxiv.org/abs/2202.06969",
+      "relations": [
+        "shmr"
+      ],
+      "redshifts": "0, 1, 5",
+      "note": "Full snapshots and Rockstar catalogues at z=0-10 on FlatHUB; catalogue route not yet written."
+    },
+    {
+      "id": "dubois21-newhorizon-figs",
+      "suite": "NewHorizon",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDFs",
+      "url": "https://arxiv.org/abs/2009.10578",
+      "relations": [
+        "ssfr",
+        "mzr",
+        "zstar",
+        "shmr",
+        "size",
+        "btfr",
+        "gas",
+        "bh"
+      ],
+      "redshifts": "0.25, 1, 2, 4",
+      "adapter": "scripts/digitize_newhorizon_dubois21.py, scripts/digitize_newhorizon_dubois21_extra.py",
+      "note": "Mean sSFR (stars younger than 100 Myr within R_eff), average cold-gas oxygen abundance, mass-weighted stellar and cold-gas metallicity (Z/Zsun, Zsun=0.01345) versus stellar mass with errors of the mean, and the mean stellar-to-halo mass ratio (with errors of the mean) plus per-galaxy points versus halo mass (BN98 overdensity), at z=0.25, 1, 2, 4. Oxygen is rescaled from the gas metallicity by the paper. Also (extra script): effective radius versus stellar mass (mean, dashed lines, per galaxy), baryonic Tully-Fisher (axes swapped to velocity on x), cold-gas fraction Mcd/(Mcd+Ms) for n>0.1 and n>10 cm^-3 converted exactly to log Mgas/Ms, and MBH versus stellar mass (primary, secondary and all MBHs at z=0.25, 1, 2, 4, plus the primary mean). Not extracted: V/sigma, elliptical fraction, clump fraction, KS and surface-density relations (no matching relation in the schema), the cosmic SFR and stellar densities (curves versus redshift, not epochs), and observational overlays. Digitized, not rankable."
+    },
+    {
+      "id": "diemer19-tng-gasfrac",
+      "suite": "IllustrisTNG",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDFs",
+      "url": "https://arxiv.org/abs/1902.10714",
+      "relations": [
+        "hi-fraction",
+        "h2-fraction"
+      ],
+      "redshifts": "0",
+      "adapter": "scripts/digitize_tng_gasfrac_diemer19.py",
+      "note": "TNG100-1 and TNG300-1 HI and H2 gas fractions versus stellar mass (median with the 68% scatter band and the plotted envelope band); one gas-mass definition variant per figure. Digitized, not rankable."
+    },
+    {
+      "id": "crain17-eagle-hi",
+      "suite": "EAGLE",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1604.06803",
+      "relations": [
+        "hi-fraction"
+      ],
+      "redshifts": "0, 1, 4",
+      "adapter": "scripts/digitize_eagle_hi_crain17.py",
+      "note": "Median M_HI (70 pkpc, BR06) of central galaxies versus stellar mass converted exactly to M_HI/M*, Ref-L100N1504 and Recal-L025N0752 at z=0, 1, 4 (outlined text; calibrated from the frame and validated by the unit-slope M_HI = M* guide line). Digitized, not rankable."
+    },
+    {
+      "id": "lagos15-eagle-h2",
+      "suite": "EAGLE",
+      "status": "ingested",
+      "access": "arXiv source, vector figure EPS",
+      "url": "https://arxiv.org/abs/1503.04807",
+      "relations": [
+        "h2-fraction"
+      ],
+      "redshifts": "0",
+      "adapter": "scripts/digitize_eagle_h2_lagos15.py",
+      "note": "Median H2 fraction MH2/(MH2+M*) converted exactly to MH2/M* for galaxies above the COLD GASS detection limit (M*>1e10), Ref-L100N1504 GK11 and K13 and Recal-L025N0752 GK11. Detection-selected subset. Percentile hatching and observations not extracted. Digitized, not rankable."
+    },
+    {
+      "id": "lagos17-eagle-jstar",
+      "suite": "EAGLE",
+      "status": "ingested",
+      "access": "arXiv source, vector figure EPS",
+      "url": "https://arxiv.org/abs/1609.01739",
+      "relations": [
+        "jstar"
+      ],
+      "redshifts": "0, 0.5, 1.2, 1.7, 3",
+      "adapter": "scripts/digitize_eagle_jstar_lagos17.py",
+      "note": "Median j_stars(r50) versus stellar mass of all galaxies with M*>1e9 and r50>1 pkpc at five redshifts. Percentile regions not extracted; the other j-M relations of the paper (baryons, neutral gas, active/passive, convergence) not yet extracted. Digitized, not rankable."
+    },
+    {
+      "id": "genel15-illustris-jstar",
+      "suite": "Illustris",
+      "status": "ingested",
+      "access": "arXiv source, vector figure EPS",
+      "url": "https://arxiv.org/abs/1503.01117",
+      "relations": [
+        "jstar"
+      ],
+      "redshifts": "0",
+      "adapter": "scripts/digitize_illustris_jstar_genel15.py",
+      "note": "Logarithmic mean stellar specific angular momentum versus stellar mass at z=0 for all galaxies and for extreme subsamples (axial ratio, morphology, sSFR). Halo-mass relations (f2, f3) and observations not extracted. Digitized, not rankable."
+    },
+    {
+      "id": "habouzit21-bh",
+      "suite": "Illustris, IllustrisTNG, Horizon-AGN, EAGLE, SIMBA",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2006.10094",
+      "relations": [
+        "bh"
+      ],
+      "redshifts": "0-5",
+      "adapter": "scripts/digitize_bh_habouzit21.py",
+      "note": "Median MBH-M* relation with 15-85th percentile bands for Illustris-1, TNG100-1, TNG300-1, Horizon-AGN, EAGLE Ref-L100N1504 and SIMBA m100n1024 at z=0 to 5 (outlined text; ticks calibrated and validated on the Haring+04 lower edge of the empirical band). EAGLE z=5 is skipped because the figure draws exactly the z=4 curve for it. Sparse-bin points, the other figures (number-density, accretion, mass functions) not extracted. Digitized, not rankable."
+    },
+    {
+      "id": "kannan22-thesan-uvlf-sfrd",
+      "suite": "THESAN-1",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2110.00584",
+      "relations": [
+        "uvlf",
+        "sfrd"
+      ],
+      "redshifts": "UVLF z 6-10; SFRD z 5.5-15",
+      "adapter": "scripts/digitize_thesan_kannan22_uvlf_sfrd.py",
+      "note": "Dust-attenuated rest-frame 1500 A UVLF for THESAN-1, THESAN-2 and THESAN-SDAO-2 (plus a THESAN-1 dust-model variant at z=6); the figure's -(z-8) offset is added back. Total cosmic SFR density of the three runs. Halo-mass-split SFRD contributions not extracted."
+    },
+    {
+      "id": "bird22-astrid-sfrd",
+      "suite": "ASTRID",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2111.01160",
+      "relations": [
+        "sfrd"
+      ],
+      "redshifts": "z 2.7-12",
+      "adapter": "scripts/digitize_astrid_bird22_sfrd.py",
+      "note": "Whole-box cosmic SFR density. The UVLF figure is a raster PNG and is not extracted (vector route only)."
+    },
+    {
+      "id": "furlong15-eagle-sfrd",
+      "suite": "EAGLE",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1410.3485",
+      "relations": [
+        "sfrd"
+      ],
+      "redshifts": "z 0-10",
+      "adapter": "scripts/digitize_eagle_sfrd_furlong15.py",
+      "note": "Ref-L100N1504 cosmic SFR density; the x axis is log(1+z) and is converted back to z."
+    },
+    {
+      "id": "ma18-fire2-uvlf",
+      "suite": "FIRE-2",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1706.06605",
+      "relations": [
+        "uvlf"
+      ],
+      "redshifts": "z 6, 8, 10, 12",
+      "adapter": "scripts/digitize_fire2_uvlf_ma18.py",
+      "note": "Intrinsic 1500 A luminosity function of the weighted zoom sample (open symbols); B and J band panels not extracted."
+    },
+    {
+      "id": "uvlf-sfrd-observations",
+      "suite": "observations",
+      "status": "ingested",
+      "access": "arXiv LaTeX tables",
+      "url": "https://arxiv.org/abs/2102.07775",
+      "relations": [
+        "uvlf",
+        "sfrd"
+      ],
+      "redshifts": "UVLF z 2-16; SFRD z 0-8 (fit), 9-16",
+      "adapter": "scripts/transcribe_uvlf_sfrd_obs.py",
+      "note": "Bouwens+21 stepwise LF and Schechter fits (z 2-10), Harikane+23 binned LF, Schechter fits and SFR densities (z 9-16), Donnan+24 binned LF (z 9-14.5), Madau & Dickinson 2014 Eq. 15 (Salpeter IMF)."
+    },
+    {
+      "id": "wilkins22-flares-uvlf",
+      "suite": "FLARES",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2204.09431",
+      "relations": [
+        "uvlf"
+      ],
+      "redshifts": "10, 11, 12, 13, 14, 15",
+      "adapter": "scripts/digitize_flares_wilkins22_uvlf.py",
+      "note": "Observed (dust attenuated) and intrinsic far-UV luminosity functions of FLARES at z=10-15; L_FUV converted exactly to M_UV and per dex to per magnitude. The paper's 0.2 dex space-density table is not used because it does not say whether it is attenuated or intrinsic."
+    },
+    {
+      "id": "dave20-gas-fractions",
+      "suite": "SIMBA, TNG100, EAGLE",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2002.07226",
+      "relations": [
+        "hi-fraction",
+        "h2-fraction"
+      ],
+      "redshifts": "0",
+      "adapter": "scripts/digitize_gas_dave20.py",
+      "note": "Running medians of HI and H2 to stellar mass ratio for SIMBA m100n1024, TNG100-1, EAGLE Ref-L100N1504 and Recal-L025N0752; code-specific apertures and HI/H2 models are recorded per run."
+    },
+    {
+      "id": "dave20-gsmf-ssfr",
+      "suite": "SIMBA, TNG100, EAGLE",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2002.07226",
+      "relations": [
+        "gsmf",
+        "ssfr"
+      ],
+      "redshifts": "0",
+      "adapter": "scripts/digitize_gsmf_ssfr_dave20.py",
+      "note": "z=0 stellar mass function and running-median sSFR (sSFR>10^-1.8 Gyr^-1; Gyr^-1 converted to yr^-1) of the three simulations."
+    },
+    {
+      "id": "dave19-simba-sfrd",
+      "suite": "SIMBA",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1901.10203",
+      "relations": [
+        "sfrd"
+      ],
+      "redshifts": "z 0-6.5",
+      "adapter": "scripts/digitize_simba_sfrd_dave19.py",
+      "note": "SFR density versus cosmic time, converted to redshift with the exact flat LCDM age relation validated against the figure's redshift axis."
+    },
+    {
+      "id": "glowacki20-simba-btfr",
+      "suite": "SIMBA",
+      "status": "ingested",
+      "access": "arXiv LaTeX table",
+      "url": "https://arxiv.org/abs/2003.03402",
+      "relations": [
+        "btfr"
+      ],
+      "redshifts": "0",
+      "adapter": "scripts/transcribe_btfr_glowacki20.py",
+      "note": "12 BTFR fits (combined, 100 Mpc/h box and high-resolution samples x four velocity definitions), transcribed from the LaTeX table; m, b and b200 cross-checked."
+    },
+    {
+      "id": "rodriguezgomez22-tng-jstar",
+      "suite": "IllustrisTNG",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2203.10098",
+      "relations": [
+        "jstar"
+      ],
+      "redshifts": "0",
+      "adapter": "scripts/digitize_jstar_tng_rodriguezgomez22.py",
+      "note": "TNG100 central galaxies, early and late type by kappa_rot and by P(Late), medians with 16-84% bands; whole-Subfind-object j_stars."
+    },
+    {
+      "id": "sales17-eagle-apostle-btfr",
+      "suite": "EAGLE",
+      "status": "ingested",
+      "access": "arXiv LaTeX table plus figure PDF",
+      "url": "https://arxiv.org/abs/1602.02155",
+      "relations": [
+        "btfr"
+      ],
+      "redshifts": "0",
+      "adapter": "scripts/transcribe_btfr_sales17.py",
+      "note": "Two fits M_bar = m0 nu^alpha exp(-nu^gamma) from the table, each validated against the drawn curve (under 0.05 dex) and with the domain read from it."
+    },
+    {
+      "id": "marszewski24-fire2-mzr-evolution",
+      "suite": "FIRE-2",
+      "status": "ingested",
+      "access": "arXiv LaTeX table",
+      "url": "https://arxiv.org/abs/2403.08853",
+      "relations": [
+        "mzr"
+      ],
+      "redshifts": "z 5-12 (analytic evolution)",
+      "adapter": "scripts/transcribe_mzr_fire2_marszewski24.py",
+      "note": "Redshift-evolving fits log(Z/Zsun) = A(z) log M* + B(z) for three models (slope and normalization evolving; normalization only; none), transcribed from the table."
+    },
+    {
+      "id": "kaviraj17-horizonagn-sfrd",
+      "suite": "Horizon-AGN",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1605.09379",
+      "relations": [
+        "sfrd"
+      ],
+      "redshifts": "z 0-6",
+      "adapter": "scripts/digitize_horizonagn_sfrd_kaviraj17.py",
+      "note": "Cosmic star formation history from the PostScript figure (axis log(1+z) converted exactly)."
+    },
+    {
+      "id": "dubois21-newhorizon-sfrd",
+      "suite": "NewHorizon",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2009.10578",
+      "relations": [
+        "sfrd"
+      ],
+      "redshifts": "z 0.4-9",
+      "adapter": "scripts/digitize_newhorizon_sfrd_dubois21.py",
+      "note": "Total cosmic SFR density of the zoom volume; the per-mass-bin curves are not extracted."
+    },
+    {
+      "id": "ludlow26-colibre-size-jstar",
+      "suite": "COLIBRE",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2603.26200",
+      "relations": [
+        "size",
+        "jstar"
+      ],
+      "redshifts": "0, 1, 2, 3",
+      "adapter": "scripts/digitize_colibre_ludlow26_size_jstar.py",
+      "note": "Medians of 3D stellar half-mass radius and stellar specific angular momentum versus stellar mass for star-forming and passive centrals and for all galaxies, combined over resolutions (preprint)."
+    },
+    {
+      "id": "chaikin26-colibre-highz",
+      "suite": "COLIBRE",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2608.19007",
+      "relations": [
+        "sfms",
+        "shmr"
+      ],
+      "redshifts": "0, 10, 17",
+      "adapter": "scripts/digitize_colibre_chaikin26_highz.py",
+      "note": "Reference SFR-M* (star-forming) and stellar-to-halo mass relations of L200m6 at z=0, 10 and 17 from the appendix figure (preprint)."
+    }
+  ]
+}

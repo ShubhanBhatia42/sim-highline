@@ -1,0 +1,1457 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "donnari21.tng300.quenched-all-ms1dex-2rhalf.z0",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (all galaxies; MS-1dex; 2 R_half)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of all galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.096,
+        "xMax": 11.866
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.096,
+            "y": 0.2536
+          },
+          {
+            "x": 9.297,
+            "y": 0.2468
+          },
+          {
+            "x": 9.498,
+            "y": 0.2341
+          },
+          {
+            "x": 9.697,
+            "y": 0.2193
+          },
+          {
+            "x": 9.896,
+            "y": 0.2065
+          },
+          {
+            "x": 10.097,
+            "y": 0.2588
+          },
+          {
+            "x": 10.301,
+            "y": 0.5252
+          },
+          {
+            "x": 10.489,
+            "y": 0.8092
+          },
+          {
+            "x": 10.68,
+            "y": 0.9323
+          },
+          {
+            "x": 10.882,
+            "y": 0.9661
+          },
+          {
+            "x": 11.082,
+            "y": 0.9542
+          },
+          {
+            "x": 11.281,
+            "y": 0.9085
+          },
+          {
+            "x": 11.478,
+            "y": 0.8648
+          },
+          {
+            "x": 11.684,
+            "y": 0.8693
+          },
+          {
+            "x": 11.866,
+            "y": 0.9143
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), different-apertures-and-definitions figure (QF_ALL_theory_apertures), TNG300 all galaxies at z=0; no table exists. Quenched definition: log10 SFR below the star-forming main sequence by 1 dex; star formation measured as SFR within 2 R_half (gas). The grey Poisson shading and the paper's other definitions (UVJ, 2-sigma, lifetime-average) are not extracted. No mock observational uncertainties are mentioned for this figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, apertures and quenched definitions (QF_ALL_theory_apertures), z=0",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_ALL_theory_apertures",
+        "panel": "z=0",
+        "checksumSha256": "9f61f55ca8d755209d29b890bbd1a3e60e5e327c8708544d23824e1628107a84",
+        "sourceMember": "QF_ALL_theory_apertures.pdf (ms1dex-2rhalf curve, 4 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng300.quenched-all-ms1dex-boundgas.z0",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (all galaxies; MS-1dex; all bound gas)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of all galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.096,
+        "xMax": 11.866
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.096,
+            "y": 0.2449
+          },
+          {
+            "x": 9.297,
+            "y": 0.2357
+          },
+          {
+            "x": 9.498,
+            "y": 0.2195
+          },
+          {
+            "x": 9.697,
+            "y": 0.2045
+          },
+          {
+            "x": 9.896,
+            "y": 0.1948
+          },
+          {
+            "x": 10.097,
+            "y": 0.2504
+          },
+          {
+            "x": 10.301,
+            "y": 0.5019
+          },
+          {
+            "x": 10.489,
+            "y": 0.7615
+          },
+          {
+            "x": 10.68,
+            "y": 0.88
+          },
+          {
+            "x": 10.882,
+            "y": 0.9242
+          },
+          {
+            "x": 11.082,
+            "y": 0.9278
+          },
+          {
+            "x": 11.281,
+            "y": 0.8983
+          },
+          {
+            "x": 11.478,
+            "y": 0.8587
+          },
+          {
+            "x": 11.684,
+            "y": 0.8657
+          },
+          {
+            "x": 11.866,
+            "y": 0.9286
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), different-apertures-and-definitions figure (QF_ALL_theory_apertures), TNG300 all galaxies at z=0; no table exists. Quenched definition: log10 SFR below the star-forming main sequence by 1 dex; star formation measured as SFR of all gravitationally bound gas. The grey Poisson shading and the paper's other definitions (UVJ, 2-sigma, lifetime-average) are not extracted. No mock observational uncertainties are mentioned for this figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, apertures and quenched definitions (QF_ALL_theory_apertures), z=0",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_ALL_theory_apertures",
+        "panel": "z=0",
+        "checksumSha256": "9f61f55ca8d755209d29b890bbd1a3e60e5e327c8708544d23824e1628107a84",
+        "sourceMember": "QF_ALL_theory_apertures.pdf (ms1dex-boundgas curve, 4 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng300.quenched-all-ssfr11-2rhalf.z0",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (all galaxies; sSFR<1e-11; 2 R_half)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of all galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.096,
+        "xMax": 11.866
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.096,
+            "y": 0.2504
+          },
+          {
+            "x": 9.297,
+            "y": 0.2456
+          },
+          {
+            "x": 9.498,
+            "y": 0.2351
+          },
+          {
+            "x": 9.697,
+            "y": 0.2231
+          },
+          {
+            "x": 9.896,
+            "y": 0.2146
+          },
+          {
+            "x": 10.097,
+            "y": 0.2691
+          },
+          {
+            "x": 10.301,
+            "y": 0.5339
+          },
+          {
+            "x": 10.489,
+            "y": 0.8155
+          },
+          {
+            "x": 10.68,
+            "y": 0.9421
+          },
+          {
+            "x": 10.882,
+            "y": 0.9768
+          },
+          {
+            "x": 11.082,
+            "y": 0.9748
+          },
+          {
+            "x": 11.281,
+            "y": 0.961
+          },
+          {
+            "x": 11.478,
+            "y": 0.9509
+          },
+          {
+            "x": 11.684,
+            "y": 0.9576
+          },
+          {
+            "x": 11.866,
+            "y": 0.9714
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), different-apertures-and-definitions figure (QF_ALL_theory_apertures), TNG300 all galaxies at z=0; no table exists. Quenched definition: sSFR < 1e-11 /yr; star formation measured as SFR within 2 R_half (gas). The grey Poisson shading and the paper's other definitions (UVJ, 2-sigma, lifetime-average) are not extracted. No mock observational uncertainties are mentioned for this figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas)",
+        "quenchingCriterion": "sSFR < 1e-11 /yr",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, apertures and quenched definitions (QF_ALL_theory_apertures), z=0",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_ALL_theory_apertures",
+        "panel": "z=0",
+        "checksumSha256": "9f61f55ca8d755209d29b890bbd1a3e60e5e327c8708544d23824e1628107a84",
+        "sourceMember": "QF_ALL_theory_apertures.pdf (ssfr11-2rhalf curve, 4 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng300.quenched-all-ssfr11-boundgas.z0",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (all galaxies; sSFR<1e-11; all bound gas)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of all galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.096,
+        "xMax": 11.866
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.096,
+            "y": 0.2384
+          },
+          {
+            "x": 9.297,
+            "y": 0.2306
+          },
+          {
+            "x": 9.498,
+            "y": 0.2161
+          },
+          {
+            "x": 9.697,
+            "y": 0.202
+          },
+          {
+            "x": 9.896,
+            "y": 0.1947
+          },
+          {
+            "x": 10.097,
+            "y": 0.2521
+          },
+          {
+            "x": 10.301,
+            "y": 0.506
+          },
+          {
+            "x": 10.489,
+            "y": 0.7692
+          },
+          {
+            "x": 10.68,
+            "y": 0.8888
+          },
+          {
+            "x": 10.882,
+            "y": 0.9406
+          },
+          {
+            "x": 11.082,
+            "y": 0.9458
+          },
+          {
+            "x": 11.281,
+            "y": 0.9398
+          },
+          {
+            "x": 11.478,
+            "y": 0.9232
+          },
+          {
+            "x": 11.684,
+            "y": 0.9505
+          },
+          {
+            "x": 11.866,
+            "y": 0.9643
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), different-apertures-and-definitions figure (QF_ALL_theory_apertures), TNG300 all galaxies at z=0; no table exists. Quenched definition: sSFR < 1e-11 /yr; star formation measured as SFR of all gravitationally bound gas. The grey Poisson shading and the paper's other definitions (UVJ, 2-sigma, lifetime-average) are not extracted. No mock observational uncertainties are mentioned for this figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas)",
+        "quenchingCriterion": "sSFR < 1e-11 /yr",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, apertures and quenched definitions (QF_ALL_theory_apertures), z=0",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_ALL_theory_apertures",
+        "panel": "z=0",
+        "checksumSha256": "9f61f55ca8d755209d29b890bbd1a3e60e5e327c8708544d23824e1628107a84",
+        "sourceMember": "QF_ALL_theory_apertures.pdf (ssfr11-boundgas curve, 4 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng300.quenched-all-ms1dex-2rhalf.z2",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (all galaxies; MS-1dex; 2 R_half)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 2,
+        "zMax": 2,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of all galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.093,
+        "xMax": 11.651
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.093,
+            "y": 0.0211
+          },
+          {
+            "x": 9.294,
+            "y": 0.0184
+          },
+          {
+            "x": 9.497,
+            "y": 0.0175
+          },
+          {
+            "x": 9.696,
+            "y": 0.0138
+          },
+          {
+            "x": 9.896,
+            "y": 0.0125
+          },
+          {
+            "x": 10.092,
+            "y": 0.0117
+          },
+          {
+            "x": 10.292,
+            "y": 0.0506
+          },
+          {
+            "x": 10.493,
+            "y": 0.3021
+          },
+          {
+            "x": 10.681,
+            "y": 0.6127
+          },
+          {
+            "x": 10.875,
+            "y": 0.7721
+          },
+          {
+            "x": 11.074,
+            "y": 0.8671
+          },
+          {
+            "x": 11.272,
+            "y": 0.9198
+          },
+          {
+            "x": 11.48,
+            "y": 0.8904
+          },
+          {
+            "x": 11.651,
+            "y": 0.9375
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), different-apertures-and-definitions figure (QF_ALL_theory_apertures), TNG300 all galaxies at z=2; no table exists. Quenched definition: log10 SFR below the star-forming main sequence by 1 dex; star formation measured as SFR within 2 R_half (gas). The grey Poisson shading and the paper's other definitions (UVJ, 2-sigma, lifetime-average) are not extracted. No mock observational uncertainties are mentioned for this figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, apertures and quenched definitions (QF_ALL_theory_apertures), z=2",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_ALL_theory_apertures_33",
+        "panel": "z=2",
+        "checksumSha256": "96357240578bf1cb0ccbe278d0aad647e8d9bf88757f4dae97280cd65673c4e5",
+        "sourceMember": "QF_ALL_theory_apertures_33.pdf (ms1dex-2rhalf curve, 4 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng300.quenched-all-ms1dex-boundgas.z2",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (all galaxies; MS-1dex; all bound gas)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 2,
+        "zMax": 2,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of all galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.093,
+        "xMax": 11.651
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.093,
+            "y": 0.0218
+          },
+          {
+            "x": 9.294,
+            "y": 0.0186
+          },
+          {
+            "x": 9.497,
+            "y": 0.0173
+          },
+          {
+            "x": 9.696,
+            "y": 0.0136
+          },
+          {
+            "x": 9.896,
+            "y": 0.0115
+          },
+          {
+            "x": 10.092,
+            "y": 0.0094
+          },
+          {
+            "x": 10.292,
+            "y": 0.0374
+          },
+          {
+            "x": 10.493,
+            "y": 0.2132
+          },
+          {
+            "x": 10.681,
+            "y": 0.3816
+          },
+          {
+            "x": 10.875,
+            "y": 0.4648
+          },
+          {
+            "x": 11.074,
+            "y": 0.5235
+          },
+          {
+            "x": 11.272,
+            "y": 0.5654
+          },
+          {
+            "x": 11.48,
+            "y": 0.4521
+          },
+          {
+            "x": 11.651,
+            "y": 0.3125
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), different-apertures-and-definitions figure (QF_ALL_theory_apertures), TNG300 all galaxies at z=2; no table exists. Quenched definition: log10 SFR below the star-forming main sequence by 1 dex; star formation measured as SFR of all gravitationally bound gas. The grey Poisson shading and the paper's other definitions (UVJ, 2-sigma, lifetime-average) are not extracted. No mock observational uncertainties are mentioned for this figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, apertures and quenched definitions (QF_ALL_theory_apertures), z=2",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_ALL_theory_apertures_33",
+        "panel": "z=2",
+        "checksumSha256": "96357240578bf1cb0ccbe278d0aad647e8d9bf88757f4dae97280cd65673c4e5",
+        "sourceMember": "QF_ALL_theory_apertures_33.pdf (ms1dex-boundgas curve, 4 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng300.quenched-all-ssfr11-2rhalf.z2",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (all galaxies; sSFR<1e-11; 2 R_half)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 2,
+        "zMax": 2,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of all galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.093,
+        "xMax": 11.651
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.093,
+            "y": 0.0184
+          },
+          {
+            "x": 9.294,
+            "y": 0.0156
+          },
+          {
+            "x": 9.497,
+            "y": 0.0138
+          },
+          {
+            "x": 9.696,
+            "y": 0.011
+          },
+          {
+            "x": 9.896,
+            "y": 0.0081
+          },
+          {
+            "x": 10.092,
+            "y": 0.0071
+          },
+          {
+            "x": 10.292,
+            "y": 0.0398
+          },
+          {
+            "x": 10.493,
+            "y": 0.2614
+          },
+          {
+            "x": 10.681,
+            "y": 0.4904
+          },
+          {
+            "x": 10.875,
+            "y": 0.5917
+          },
+          {
+            "x": 11.074,
+            "y": 0.6321
+          },
+          {
+            "x": 11.272,
+            "y": 0.7384
+          },
+          {
+            "x": 11.48,
+            "y": 0.6712
+          },
+          {
+            "x": 11.651,
+            "y": 0.625
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), different-apertures-and-definitions figure (QF_ALL_theory_apertures), TNG300 all galaxies at z=2; no table exists. Quenched definition: sSFR < 1e-11 /yr; star formation measured as SFR within 2 R_half (gas). The grey Poisson shading and the paper's other definitions (UVJ, 2-sigma, lifetime-average) are not extracted. No mock observational uncertainties are mentioned for this figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas)",
+        "quenchingCriterion": "sSFR < 1e-11 /yr",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, apertures and quenched definitions (QF_ALL_theory_apertures), z=2",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_ALL_theory_apertures_33",
+        "panel": "z=2",
+        "checksumSha256": "96357240578bf1cb0ccbe278d0aad647e8d9bf88757f4dae97280cd65673c4e5",
+        "sourceMember": "QF_ALL_theory_apertures_33.pdf (ssfr11-2rhalf curve, 4 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng300.quenched-all-ssfr11-boundgas.z2",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (all galaxies; sSFR<1e-11; all bound gas)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 2,
+        "zMax": 2,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of all galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.093,
+        "xMax": 11.651
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.093,
+            "y": 0.0174
+          },
+          {
+            "x": 9.294,
+            "y": 0.0141
+          },
+          {
+            "x": 9.497,
+            "y": 0.013
+          },
+          {
+            "x": 9.696,
+            "y": 0.0099
+          },
+          {
+            "x": 9.896,
+            "y": 0.0078
+          },
+          {
+            "x": 10.092,
+            "y": 0.0065
+          },
+          {
+            "x": 10.292,
+            "y": 0.023
+          },
+          {
+            "x": 10.493,
+            "y": 0.091
+          },
+          {
+            "x": 10.681,
+            "y": 0.1246
+          },
+          {
+            "x": 10.875,
+            "y": 0.1443
+          },
+          {
+            "x": 11.074,
+            "y": 0.1637
+          },
+          {
+            "x": 11.272,
+            "y": 0.1603
+          },
+          {
+            "x": 11.48,
+            "y": 0.0822
+          },
+          {
+            "x": 11.651,
+            "y": 0.0625
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), different-apertures-and-definitions figure (QF_ALL_theory_apertures), TNG300 all galaxies at z=2; no table exists. Quenched definition: sSFR < 1e-11 /yr; star formation measured as SFR of all gravitationally bound gas. The grey Poisson shading and the paper's other definitions (UVJ, 2-sigma, lifetime-average) are not extracted. No mock observational uncertainties are mentioned for this figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas)",
+        "quenchingCriterion": "sSFR < 1e-11 /yr",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, apertures and quenched definitions (QF_ALL_theory_apertures), z=2",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_ALL_theory_apertures_33",
+        "panel": "z=2",
+        "checksumSha256": "96357240578bf1cb0ccbe278d0aad647e8d9bf88757f4dae97280cd65673c4e5",
+        "sourceMember": "QF_ALL_theory_apertures_33.pdf (ssfr11-boundgas curve, 4 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng300.quenched-all-ms1dex-2rhalf.z3",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (all galaxies; MS-1dex; 2 R_half)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 3,
+        "zNominal": 3,
+        "zMin": 3,
+        "zMax": 3,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of all galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.093,
+        "xMax": 11.484
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.093,
+            "y": 0.0053
+          },
+          {
+            "x": 9.293,
+            "y": 0.0045
+          },
+          {
+            "x": 9.494,
+            "y": 0.0034
+          },
+          {
+            "x": 9.695,
+            "y": 0.0032
+          },
+          {
+            "x": 9.895,
+            "y": 0.0039
+          },
+          {
+            "x": 10.093,
+            "y": 0.0042
+          },
+          {
+            "x": 10.288,
+            "y": 0.0068
+          },
+          {
+            "x": 10.485,
+            "y": 0.0547
+          },
+          {
+            "x": 10.684,
+            "y": 0.2642
+          },
+          {
+            "x": 10.881,
+            "y": 0.4046
+          },
+          {
+            "x": 11.073,
+            "y": 0.4657
+          },
+          {
+            "x": 11.277,
+            "y": 0.6216
+          },
+          {
+            "x": 11.484,
+            "y": 0.8621
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), different-apertures-and-definitions figure (QF_ALL_theory_apertures), TNG300 all galaxies at z=3; no table exists. Quenched definition: log10 SFR below the star-forming main sequence by 1 dex; star formation measured as SFR within 2 R_half (gas). The grey Poisson shading and the paper's other definitions (UVJ, 2-sigma, lifetime-average) are not extracted. No mock observational uncertainties are mentioned for this figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, apertures and quenched definitions (QF_ALL_theory_apertures), z=3",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_ALL_theory_apertures_25",
+        "panel": "z=3",
+        "checksumSha256": "97835273f1b903e11964a256e41a33f3b184a1325e98310684b094a7dfebe4a2",
+        "sourceMember": "QF_ALL_theory_apertures_25.pdf (ms1dex-2rhalf curve, 4 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng300.quenched-all-ms1dex-boundgas.z3",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (all galaxies; MS-1dex; all bound gas)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 3,
+        "zNominal": 3,
+        "zMin": 3,
+        "zMax": 3,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of all galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.093,
+        "xMax": 11.484
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.093,
+            "y": 0.0049
+          },
+          {
+            "x": 9.293,
+            "y": 0.0041
+          },
+          {
+            "x": 9.494,
+            "y": 0.0033
+          },
+          {
+            "x": 9.695,
+            "y": 0.0032
+          },
+          {
+            "x": 9.895,
+            "y": 0.0035
+          },
+          {
+            "x": 10.093,
+            "y": 0.0027
+          },
+          {
+            "x": 10.288,
+            "y": 0.0034
+          },
+          {
+            "x": 10.485,
+            "y": 0.0331
+          },
+          {
+            "x": 10.684,
+            "y": 0.1642
+          },
+          {
+            "x": 10.881,
+            "y": 0.2646
+          },
+          {
+            "x": 11.073,
+            "y": 0.2977
+          },
+          {
+            "x": 11.277,
+            "y": 0.3964
+          },
+          {
+            "x": 11.484,
+            "y": 0.6552
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), different-apertures-and-definitions figure (QF_ALL_theory_apertures), TNG300 all galaxies at z=3; no table exists. Quenched definition: log10 SFR below the star-forming main sequence by 1 dex; star formation measured as SFR of all gravitationally bound gas. The grey Poisson shading and the paper's other definitions (UVJ, 2-sigma, lifetime-average) are not extracted. No mock observational uncertainties are mentioned for this figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas)",
+        "quenchingCriterion": "log10 SFR below the star-forming main sequence by 1 dex",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, apertures and quenched definitions (QF_ALL_theory_apertures), z=3",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_ALL_theory_apertures_25",
+        "panel": "z=3",
+        "checksumSha256": "97835273f1b903e11964a256e41a33f3b184a1325e98310684b094a7dfebe4a2",
+        "sourceMember": "QF_ALL_theory_apertures_25.pdf (ms1dex-boundgas curve, 4 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng300.quenched-all-ssfr11-2rhalf.z3",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (all galaxies; sSFR<1e-11; 2 R_half)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 3,
+        "zNominal": 3,
+        "zMin": 3,
+        "zMax": 3,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of all galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.093,
+        "xMax": 11.484
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.093,
+            "y": 0.0044
+          },
+          {
+            "x": 9.293,
+            "y": 0.0033
+          },
+          {
+            "x": 9.494,
+            "y": 0.0025
+          },
+          {
+            "x": 9.695,
+            "y": 0.0019
+          },
+          {
+            "x": 9.895,
+            "y": 0.0028
+          },
+          {
+            "x": 10.093,
+            "y": 0.0013
+          },
+          {
+            "x": 10.288,
+            "y": 0.0034
+          },
+          {
+            "x": 10.485,
+            "y": 0.0449
+          },
+          {
+            "x": 10.684,
+            "y": 0.2112
+          },
+          {
+            "x": 10.881,
+            "y": 0.3062
+          },
+          {
+            "x": 11.073,
+            "y": 0.3244
+          },
+          {
+            "x": 11.277,
+            "y": 0.4955
+          },
+          {
+            "x": 11.484,
+            "y": 0.7586
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), different-apertures-and-definitions figure (QF_ALL_theory_apertures), TNG300 all galaxies at z=3; no table exists. Quenched definition: sSFR < 1e-11 /yr; star formation measured as SFR within 2 R_half (gas). The grey Poisson shading and the paper's other definitions (UVJ, 2-sigma, lifetime-average) are not extracted. No mock observational uncertainties are mentioned for this figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas)",
+        "quenchingCriterion": "sSFR < 1e-11 /yr",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, apertures and quenched definitions (QF_ALL_theory_apertures), z=3",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_ALL_theory_apertures_25",
+        "panel": "z=3",
+        "checksumSha256": "97835273f1b903e11964a256e41a33f3b184a1325e98310684b094a7dfebe4a2",
+        "sourceMember": "QF_ALL_theory_apertures_25.pdf (ssfr11-2rhalf curve, 4 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "donnari21.tng300.quenched-all-ssfr11-boundgas.z3",
+      "source": "IllustrisTNG",
+      "run": "TNG300-1 (all galaxies; sSFR<1e-11; all bound gas)",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 3,
+        "zNominal": 3,
+        "zMin": 3,
+        "zMax": 3,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 2 R_half)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of all galaxies classified as quenched",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9.093,
+        "xMax": 11.484
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.093,
+            "y": 0.004
+          },
+          {
+            "x": 9.293,
+            "y": 0.0032
+          },
+          {
+            "x": 9.494,
+            "y": 0.0022
+          },
+          {
+            "x": 9.695,
+            "y": 0.0018
+          },
+          {
+            "x": 9.895,
+            "y": 0.0021
+          },
+          {
+            "x": 10.093,
+            "y": 0.001
+          },
+          {
+            "x": 10.288,
+            "y": 0.001
+          },
+          {
+            "x": 10.485,
+            "y": 0.007
+          },
+          {
+            "x": 10.684,
+            "y": 0.0097
+          },
+          {
+            "x": 10.881,
+            "y": 0.0231
+          },
+          {
+            "x": 11.073,
+            "y": 0.0229
+          },
+          {
+            "x": 11.277,
+            "y": 0.036
+          },
+          {
+            "x": 11.484,
+            "y": 0.069
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (centrals and satellites) with M* >= 10^9 Msun",
+        "warning": "Curve read from the vector paths of Donnari et al. 2021 (MNRAS 506, 4760), different-apertures-and-definitions figure (QF_ALL_theory_apertures), TNG300 all galaxies at z=3; no table exists. Quenched definition: sSFR < 1e-11 /yr; star formation measured as SFR of all gravitationally bound gas. The grey Poisson shading and the paper's other definitions (UVJ, 2-sigma, lifetime-average) are not extracted. No mock observational uncertainties are mentioned for this figure."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "aperture-2rhalf-stars",
+        "sfrTimescaleMyr": "instantaneous (gas)",
+        "quenchingCriterion": "sSFR < 1e-11 /yr",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Donnari et al. 2021, MNRAS 506, 4760, apertures and quenched definitions (QF_ALL_theory_apertures), z=3",
+        "doi": "10.1093/mnras/stab1950",
+        "url": "https://arxiv.org/abs/2008.00004",
+        "retrieved": "2026-10-05",
+        "figure": "QF_ALL_theory_apertures_25",
+        "panel": "z=3",
+        "checksumSha256": "97835273f1b903e11964a256e41a33f3b184a1325e98310684b094a7dfebe4a2",
+        "sourceMember": "QF_ALL_theory_apertures_25.pdf (ssfr11-boundgas curve, 4 pt stroke)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9-12; y: labelled ticks 0-1; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

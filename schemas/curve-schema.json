@@ -1,0 +1,335 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sim-highline.local/schemas/curve-evidence-1.0.0.json",
+  "title": "sim-highline scaling-relation evidence",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "records"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    }
+  },
+  "$defs": {
+    "record": {
+      "type": "object",
+      "required": [
+        "id",
+        "source",
+        "kind",
+        "relation",
+        "epoch",
+        "axes",
+        "domain",
+        "representation",
+        "provenance",
+        "selection",
+        "calibration",
+        "rankable"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._-]+$"
+        },
+        "source": {
+          "type": "string"
+        },
+        "run": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "kind": {
+          "enum": [
+            "observation",
+            "simulation",
+            "empirical-model"
+          ]
+        },
+        "relation": {
+          "enum": [
+            "sfms",
+            "ssfr",
+            "gsmf",
+            "quenched",
+            "mzr",
+            "gas",
+            "hi-fraction",
+            "h2-fraction",
+            "shmr",
+            "size",
+            "jstar",
+            "btfr",
+            "bh",
+            "bhsigma",
+            "smd",
+            "bhmd",
+            "zstar",
+            "age",
+            "himf",
+            "sfrf",
+            "fgas500",
+            "metald",
+            "dmf",
+            "dtg",
+            "stfr",
+            "hmf",
+            "uvlf",
+            "sfrd"
+          ]
+        },
+        "epoch": {
+          "type": "object",
+          "required": [
+            "zRepresentative",
+            "zMin",
+            "zMax",
+            "mode"
+          ],
+          "properties": {
+            "zRepresentative": {
+              "type": "number",
+              "minimum": 0
+            },
+            "zNominal": {
+              "type": "number",
+              "minimum": 0
+            },
+            "zMin": {
+              "type": "number",
+              "minimum": 0
+            },
+            "zMax": {
+              "type": "number",
+              "minimum": 0
+            },
+            "mode": {
+              "enum": [
+                "snapshot",
+                "published-epoch",
+                "observational-bin",
+                "analytic-evolution"
+              ]
+            },
+            "snapshot": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          }
+        },
+        "axes": {
+          "type": "object",
+          "required": [
+            "xDefinition",
+            "xUnit",
+            "yDefinition",
+            "yUnit"
+          ],
+          "properties": {
+            "xDefinition": {
+              "type": "string"
+            },
+            "xUnit": {
+              "type": "string"
+            },
+            "yDefinition": {
+              "type": "string"
+            },
+            "yUnit": {
+              "type": "string"
+            }
+          }
+        },
+        "domain": {
+          "type": "object",
+          "required": [
+            "xMin",
+            "xMax"
+          ],
+          "properties": {
+            "xMin": {
+              "type": "number"
+            },
+            "xMax": {
+              "type": "number"
+            }
+          }
+        },
+        "representation": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": [
+                "type",
+                "equation",
+                "expression",
+                "parameters"
+              ],
+              "properties": {
+                "type": {
+                  "const": "parametric"
+                },
+                "equation": {
+                  "type": "string"
+                },
+                "expression": {
+                  "type": "string"
+                },
+                "parameters": {
+                  "type": "object"
+                },
+                "ageCosmology": {
+                  "type": "object",
+                  "required": [
+                    "H0",
+                    "Om"
+                  ]
+                }
+              }
+            },
+            {
+              "type": "object",
+              "required": [
+                "type",
+                "intervalKind",
+                "points"
+              ],
+              "properties": {
+                "type": {
+                  "const": "points"
+                },
+                "intervalKind": {
+                  "enum": [
+                    "uncertainty",
+                    "scatter",
+                    "unspecified"
+                  ]
+                },
+                "connect": {
+                  "type": "boolean"
+                },
+                "points": {
+                  "type": "array",
+                  "minItems": 2,
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "x",
+                      "y"
+                    ],
+                    "properties": {
+                      "x": {
+                        "type": "number"
+                      },
+                      "y": {
+                        "type": "number"
+                      },
+                      "yLow": {
+                        "type": "number"
+                      },
+                      "yHigh": {
+                        "type": "number"
+                      },
+                      "xLow": {
+                        "type": "number"
+                      },
+                      "xHigh": {
+                        "type": "number"
+                      },
+                      "count": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "limit": {
+                        "enum": [
+                          "upper",
+                          "lower"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "scatter": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "selection": {
+          "type": "object"
+        },
+        "provenance": {
+          "type": "object",
+          "required": [
+            "tier",
+            "citation",
+            "url",
+            "retrieved"
+          ],
+          "properties": {
+            "tier": {
+              "enum": [
+                "catalog-derived",
+                "official-table",
+                "published-table",
+                "published-fit",
+                "digitized-figure"
+              ]
+            },
+            "citation": {
+              "type": "string"
+            },
+            "doi": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "url": {
+              "type": "string",
+              "pattern": "^https://"
+            },
+            "retrieved": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        },
+        "definitions": {
+          "type": "object"
+        },
+        "calibration": {
+          "enum": [
+            "target",
+            "calibration-adjacent",
+            "validation",
+            "prediction",
+            "unknown"
+          ]
+        },
+        "rankable": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

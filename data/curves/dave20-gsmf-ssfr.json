@@ -1,0 +1,788 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "dave20.simba.gsmf.m100n1024.z0",
+      "source": "SIMBA",
+      "run": "m100n1024 (all galaxies, Dave+20)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function (axis labelled Mpc^-3; per-dex normalisation and comoving frame not stated in the figure)",
+        "yUnit": "log10(Mpc^-3)"
+      },
+      "domain": {
+        "xMin": 9.046,
+        "xMax": 12.377
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.046,
+            "y": -2.084
+          },
+          {
+            "x": 9.278,
+            "y": -2.1613
+          },
+          {
+            "x": 9.511,
+            "y": -2.0843
+          },
+          {
+            "x": 9.743,
+            "y": -2.0403
+          },
+          {
+            "x": 9.975,
+            "y": -2.1882
+          },
+          {
+            "x": 10.208,
+            "y": -2.3425
+          },
+          {
+            "x": 10.44,
+            "y": -2.5608
+          },
+          {
+            "x": 10.672,
+            "y": -2.7276
+          },
+          {
+            "x": 10.905,
+            "y": -2.9409
+          },
+          {
+            "x": 11.137,
+            "y": -3.2496
+          },
+          {
+            "x": 11.37,
+            "y": -3.6646
+          },
+          {
+            "x": 11.602,
+            "y": -4.0979
+          },
+          {
+            "x": 11.834,
+            "y": -4.4374
+          },
+          {
+            "x": 12.067,
+            "y": -5.0236
+          },
+          {
+            "x": 12.299,
+            "y": -5.5677
+          },
+          {
+            "x": 12.377,
+            "y": -5.6679
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "z=0 stellar mass function of m100n1024 (all galaxies, Dave+20) read from the vector paths of Dave et al. 2020. The SIMBA shaded variance over 8 sub-octants and the Wright+17 points are not extracted."
+      },
+      "definitions": {
+        "massDefinition": "unspecified",
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 68,
+          "Om": 0.3
+        },
+        "densityFrame": "unspecified",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), stellar mass function at z=0",
+        "doi": "10.1093/mnras/staa1894",
+        "url": "https://arxiv.org/abs/2002.07226",
+        "retrieved": "2026-10-05",
+        "figure": "Galaxy stellar mass function (top) and sSFR versus stellar mass (bottom) at z=0",
+        "panel": "top panel",
+        "checksumSha256": "30b0015a61ad6278ea206555bf47d6ed1a3ff0c472c5b295309aa5963160ae87",
+        "sourceMember": "ms_sfr_m100n1024.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels snapped to ticks; y: positive tick words negated (minus glyphs are separate) and paired with ticks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "dave20.illustristng.gsmf.tng100-1.z0",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (all galaxies, Dave+20)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function (axis labelled Mpc^-3; per-dex normalisation and comoving frame not stated in the figure)",
+        "yUnit": "log10(Mpc^-3)"
+      },
+      "domain": {
+        "xMin": 9.082,
+        "xMax": 12.377
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.082,
+            "y": -1.8349
+          },
+          {
+            "x": 9.196,
+            "y": -1.8841
+          },
+          {
+            "x": 9.31,
+            "y": -1.919
+          },
+          {
+            "x": 9.424,
+            "y": -1.9474
+          },
+          {
+            "x": 9.538,
+            "y": -1.9714
+          },
+          {
+            "x": 9.652,
+            "y": -2.0487
+          },
+          {
+            "x": 9.766,
+            "y": -2.1281
+          },
+          {
+            "x": 9.88,
+            "y": -2.1177
+          },
+          {
+            "x": 9.994,
+            "y": -2.1647
+          },
+          {
+            "x": 10.108,
+            "y": -2.2138
+          },
+          {
+            "x": 10.222,
+            "y": -2.2807
+          },
+          {
+            "x": 10.336,
+            "y": -2.3343
+          },
+          {
+            "x": 10.45,
+            "y": -2.3247
+          },
+          {
+            "x": 10.564,
+            "y": -2.3599
+          },
+          {
+            "x": 10.678,
+            "y": -2.411
+          },
+          {
+            "x": 10.792,
+            "y": -2.5467
+          },
+          {
+            "x": 10.906,
+            "y": -2.6868
+          },
+          {
+            "x": 11.02,
+            "y": -2.7983
+          },
+          {
+            "x": 11.134,
+            "y": -2.9824
+          },
+          {
+            "x": 11.247,
+            "y": -3.1558
+          },
+          {
+            "x": 11.361,
+            "y": -3.2115
+          },
+          {
+            "x": 11.475,
+            "y": -3.441
+          },
+          {
+            "x": 11.589,
+            "y": -3.6329
+          },
+          {
+            "x": 11.703,
+            "y": -3.742
+          },
+          {
+            "x": 11.817,
+            "y": -3.9587
+          },
+          {
+            "x": 11.931,
+            "y": -3.8275
+          },
+          {
+            "x": 12.045,
+            "y": -4.5871
+          },
+          {
+            "x": 12.159,
+            "y": -4.411
+          },
+          {
+            "x": 12.273,
+            "y": -4.7121
+          },
+          {
+            "x": 12.377,
+            "y": -4.8721
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "z=0 stellar mass function of TNG100-1 (all galaxies, Dave+20) read from the vector paths of Dave et al. 2020. The SIMBA shaded variance over 8 sub-octants and the Wright+17 points are not extracted."
+      },
+      "definitions": {
+        "massDefinition": "unspecified",
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "densityFrame": "unspecified",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), stellar mass function at z=0",
+        "doi": "10.1093/mnras/staa1894",
+        "url": "https://arxiv.org/abs/2002.07226",
+        "retrieved": "2026-10-05",
+        "figure": "Galaxy stellar mass function (top) and sSFR versus stellar mass (bottom) at z=0",
+        "panel": "top panel",
+        "checksumSha256": "30b0015a61ad6278ea206555bf47d6ed1a3ff0c472c5b295309aa5963160ae87",
+        "sourceMember": "ms_sfr_m100n1024.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels snapped to ticks; y: positive tick words negated (minus glyphs are separate) and paired with ticks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "dave20.eagle.gsmf.ref-l100n1504.z0",
+      "source": "EAGLE",
+      "run": "Ref-L100N1504 (all galaxies, Dave+20)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function (axis labelled Mpc^-3; per-dex normalisation and comoving frame not stated in the figure)",
+        "yUnit": "log10(Mpc^-3)"
+      },
+      "domain": {
+        "xMin": 9.054,
+        "xMax": 11.621
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.054,
+            "y": -1.8467
+          },
+          {
+            "x": 9.146,
+            "y": -1.8956
+          },
+          {
+            "x": 9.238,
+            "y": -1.9092
+          },
+          {
+            "x": 9.329,
+            "y": -1.972
+          },
+          {
+            "x": 9.421,
+            "y": -1.9901
+          },
+          {
+            "x": 9.513,
+            "y": -2.0334
+          },
+          {
+            "x": 9.604,
+            "y": -2.0641
+          },
+          {
+            "x": 9.696,
+            "y": -2.1086
+          },
+          {
+            "x": 9.788,
+            "y": -2.1664
+          },
+          {
+            "x": 9.879,
+            "y": -2.1989
+          },
+          {
+            "x": 9.971,
+            "y": -2.2522
+          },
+          {
+            "x": 10.063,
+            "y": -2.2642
+          },
+          {
+            "x": 10.154,
+            "y": -2.2748
+          },
+          {
+            "x": 10.246,
+            "y": -2.3268
+          },
+          {
+            "x": 10.338,
+            "y": -2.3965
+          },
+          {
+            "x": 10.429,
+            "y": -2.4321
+          },
+          {
+            "x": 10.521,
+            "y": -2.4599
+          },
+          {
+            "x": 10.613,
+            "y": -2.5473
+          },
+          {
+            "x": 10.705,
+            "y": -2.6485
+          },
+          {
+            "x": 10.796,
+            "y": -2.7475
+          },
+          {
+            "x": 10.888,
+            "y": -2.8689
+          },
+          {
+            "x": 10.98,
+            "y": -2.9453
+          },
+          {
+            "x": 11.071,
+            "y": -3.105
+          },
+          {
+            "x": 11.163,
+            "y": -3.3289
+          },
+          {
+            "x": 11.255,
+            "y": -3.5152
+          },
+          {
+            "x": 11.346,
+            "y": -3.7319
+          },
+          {
+            "x": 11.438,
+            "y": -3.9623
+          },
+          {
+            "x": 11.53,
+            "y": -4.0592
+          },
+          {
+            "x": 11.621,
+            "y": -4.6613
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "z=0 stellar mass function of Ref-L100N1504 (all galaxies, Dave+20) read from the vector paths of Dave et al. 2020. The SIMBA shaded variance over 8 sub-octants and the Wright+17 points are not extracted."
+      },
+      "definitions": {
+        "massDefinition": "unspecified",
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "unspecified",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), stellar mass function at z=0",
+        "doi": "10.1093/mnras/staa1894",
+        "url": "https://arxiv.org/abs/2002.07226",
+        "retrieved": "2026-10-05",
+        "figure": "Galaxy stellar mass function (top) and sSFR versus stellar mass (bottom) at z=0",
+        "panel": "top panel",
+        "checksumSha256": "30b0015a61ad6278ea206555bf47d6ed1a3ff0c472c5b295309aa5963160ae87",
+        "sourceMember": "ms_sfr_m100n1024.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels snapped to ticks; y: positive tick words negated (minus glyphs are separate) and paired with ticks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "dave20.simba.ssfr.m100n1024.z0",
+      "source": "SIMBA",
+      "run": "m100n1024 (all galaxies, Dave+20)",
+      "kind": "simulation",
+      "relation": "ssfr",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 median specific star formation rate of galaxies above the sSFR cut",
+        "yUnit": "log10(yr^-1)"
+      },
+      "domain": {
+        "xMin": 9.394,
+        "xMax": 11.767
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": false,
+        "points": [
+          {
+            "x": 9.394,
+            "y": -9.5158
+          },
+          {
+            "x": 9.733,
+            "y": -9.9922
+          },
+          {
+            "x": 10.072,
+            "y": -10.2228
+          },
+          {
+            "x": 10.411,
+            "y": -10.2662
+          },
+          {
+            "x": 10.75,
+            "y": -10.2953
+          },
+          {
+            "x": 11.089,
+            "y": -10.329
+          },
+          {
+            "x": 11.428,
+            "y": -10.3361
+          },
+          {
+            "x": 11.767,
+            "y": -10.6865
+          }
+        ]
+      },
+      "scatter": true,
+      "selection": {
+        "population": "galaxies with sSFR > 10^-1.8 Gyr^-1 (running median)",
+        "warning": "Running median sSFR of m100n1024 (all galaxies, Dave+20) for galaxies above sSFR = 10^-1.8 Gyr^-1 at z=0, marker centres read from the vector paths of Dave et al. 2020 (axis in Gyr^-1, converted to yr^-1). The 1-sigma error bars and the xGASS points are not extracted."
+      },
+      "definitions": {
+        "massDefinition": "unspecified",
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 68,
+          "Om": 0.3
+        },
+        "population": "star-forming (sSFR cut)",
+        "sfrStatistic": "median",
+        "sfrTimescaleMyr": "unspecified"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), specific star formation rate versus stellar mass at z=0",
+        "doi": "10.1093/mnras/staa1894",
+        "url": "https://arxiv.org/abs/2002.07226",
+        "retrieved": "2026-10-05",
+        "figure": "Galaxy stellar mass function (top) and sSFR versus stellar mass (bottom) at z=0",
+        "panel": "bottom panel",
+        "checksumSha256": "30b0015a61ad6278ea206555bf47d6ed1a3ff0c472c5b295309aa5963160ae87",
+        "sourceMember": "ms_sfr_m100n1024.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels snapped to ticks; y: as the top panel; the axis is labelled in Gyr^-1 and converted exactly by subtracting 9 dex",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "dave20.illustristng.ssfr.tng100-1.z0",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (all galaxies, Dave+20)",
+      "kind": "simulation",
+      "relation": "ssfr",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 median specific star formation rate of galaxies above the sSFR cut",
+        "yUnit": "log10(yr^-1)"
+      },
+      "domain": {
+        "xMin": 9.715,
+        "xMax": 11.877
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": false,
+        "points": [
+          {
+            "x": 9.715,
+            "y": -9.9792
+          },
+          {
+            "x": 10.255,
+            "y": -10.0277
+          },
+          {
+            "x": 10.796,
+            "y": -10.247
+          },
+          {
+            "x": 11.337,
+            "y": -10.6038
+          },
+          {
+            "x": 11.877,
+            "y": -10.5385
+          }
+        ]
+      },
+      "scatter": true,
+      "selection": {
+        "population": "galaxies with sSFR > 10^-1.8 Gyr^-1 (running median)",
+        "warning": "Running median sSFR of TNG100-1 (all galaxies, Dave+20) for galaxies above sSFR = 10^-1.8 Gyr^-1 at z=0, marker centres read from the vector paths of Dave et al. 2020 (axis in Gyr^-1, converted to yr^-1). The 1-sigma error bars and the xGASS points are not extracted."
+      },
+      "definitions": {
+        "massDefinition": "unspecified",
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "star-forming (sSFR cut)",
+        "sfrStatistic": "median",
+        "sfrTimescaleMyr": "unspecified"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), specific star formation rate versus stellar mass at z=0",
+        "doi": "10.1093/mnras/staa1894",
+        "url": "https://arxiv.org/abs/2002.07226",
+        "retrieved": "2026-10-05",
+        "figure": "Galaxy stellar mass function (top) and sSFR versus stellar mass (bottom) at z=0",
+        "panel": "bottom panel",
+        "checksumSha256": "30b0015a61ad6278ea206555bf47d6ed1a3ff0c472c5b295309aa5963160ae87",
+        "sourceMember": "ms_sfr_m100n1024.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels snapped to ticks; y: as the top panel; the axis is labelled in Gyr^-1 and converted exactly by subtracting 9 dex",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "dave20.eagle.ssfr.ref-l100n1504.z0",
+      "source": "EAGLE",
+      "run": "Ref-L100N1504 (all galaxies, Dave+20)",
+      "kind": "simulation",
+      "relation": "ssfr",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 median specific star formation rate of galaxies above the sSFR cut",
+        "yUnit": "log10(yr^-1)"
+      },
+      "domain": {
+        "xMin": 9.328,
+        "xMax": 11.514
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": false,
+        "points": [
+          {
+            "x": 9.328,
+            "y": -10.1293
+          },
+          {
+            "x": 9.546,
+            "y": -10.1359
+          },
+          {
+            "x": 9.765,
+            "y": -10.1623
+          },
+          {
+            "x": 9.984,
+            "y": -10.1638
+          },
+          {
+            "x": 10.202,
+            "y": -10.2105
+          },
+          {
+            "x": 10.421,
+            "y": -10.272
+          },
+          {
+            "x": 10.639,
+            "y": -10.2752
+          },
+          {
+            "x": 10.858,
+            "y": -10.3867
+          },
+          {
+            "x": 11.076,
+            "y": -10.4295
+          },
+          {
+            "x": 11.295,
+            "y": -10.5522
+          },
+          {
+            "x": 11.514,
+            "y": -10.5593
+          }
+        ]
+      },
+      "scatter": true,
+      "selection": {
+        "population": "galaxies with sSFR > 10^-1.8 Gyr^-1 (running median)",
+        "warning": "Running median sSFR of Ref-L100N1504 (all galaxies, Dave+20) for galaxies above sSFR = 10^-1.8 Gyr^-1 at z=0, marker centres read from the vector paths of Dave et al. 2020 (axis in Gyr^-1, converted to yr^-1). The 1-sigma error bars and the xGASS points are not extracted."
+      },
+      "definitions": {
+        "massDefinition": "unspecified",
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "population": "star-forming (sSFR cut)",
+        "sfrStatistic": "median",
+        "sfrTimescaleMyr": "unspecified"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), specific star formation rate versus stellar mass at z=0",
+        "doi": "10.1093/mnras/staa1894",
+        "url": "https://arxiv.org/abs/2002.07226",
+        "retrieved": "2026-10-05",
+        "figure": "Galaxy stellar mass function (top) and sSFR versus stellar mass (bottom) at z=0",
+        "panel": "bottom panel",
+        "checksumSha256": "30b0015a61ad6278ea206555bf47d6ed1a3ff0c472c5b295309aa5963160ae87",
+        "sourceMember": "ms_sfr_m100n1024.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels snapped to ticks; y: as the top panel; the axis is labelled in Gyr^-1 and converted exactly by subtracting 9 dex",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

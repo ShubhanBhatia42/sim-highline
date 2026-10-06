@@ -1,0 +1,2762 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "bouwens21.uvlf.z2.1.stepwise",
+      "source": "Bouwens et al. 2021",
+      "run": "Bouwens et al. 2021",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 2.1,
+        "zNominal": 2.1,
+        "zMin": 2.1,
+        "zMax": 2.1,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -21.86,
+        "xMax": -16.61
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -21.86,
+            "y": -5.5229,
+            "yHigh": -4.9586
+          },
+          {
+            "x": -21.11,
+            "y": -3.5686,
+            "yLow": -3.7423,
+            "yHigh": -3.4449
+          },
+          {
+            "x": -20.61,
+            "y": -3.1798,
+            "yLow": -3.295,
+            "yHigh": -3.0888
+          },
+          {
+            "x": -20.11,
+            "y": -2.7455,
+            "yLow": -2.8052,
+            "yHigh": -2.6929
+          },
+          {
+            "x": -19.61,
+            "y": -2.5184,
+            "yLow": -2.5638,
+            "yHigh": -2.4773
+          },
+          {
+            "x": -19.11,
+            "y": -2.3315,
+            "yLow": -2.3657,
+            "yHigh": -2.2998
+          },
+          {
+            "x": -18.61,
+            "y": -2.2325,
+            "yLow": -2.2662,
+            "yHigh": -2.2012
+          },
+          {
+            "x": -18.11,
+            "y": -2.1099,
+            "yLow": -2.1458,
+            "yHigh": -2.0767
+          },
+          {
+            "x": -17.61,
+            "y": -1.9378,
+            "yLow": -1.9704,
+            "yHigh": -1.9074
+          },
+          {
+            "x": -17.11,
+            "y": -1.9668,
+            "yLow": -2.0561,
+            "yHigh": -1.8928
+          },
+          {
+            "x": -16.61,
+            "y": -1.7961,
+            "yLow": -1.9012,
+            "yHigh": -1.7115
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "dropout-selected galaxies at z~2",
+        "warning": "Stepwise (SWML) UV luminosity function at z~2 from the HUDF, HFF parallel fields and blank fields; errors are the quoted 1-sigma symmetric errors, converted to log10 (a lower bound is omitted where the error exceeds the value); upper limits are not included."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_1600,AB",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (HST legacy fields)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Bouwens et al. 2021, AJ 162, 47 (arXiv:2102.07775), stepwise LF table",
+        "doi": "10.3847/1538-3881/abf83e",
+        "url": "https://arxiv.org/abs/2102.07775",
+        "retrieved": "2026-10-05",
+        "figure": "Table: stepwise determination of the rest-frame UV LF",
+        "checksumSha256": "febb7dc0f948c3002ed4143071d8ed1a47d67e7e43b645ce1228608215e5c630",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens21.uvlf.z2.9.stepwise",
+      "source": "Bouwens et al. 2021",
+      "run": "Bouwens et al. 2021",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 2.9,
+        "zNominal": 2.9,
+        "zMin": 2.9,
+        "zMax": 2.9,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.52,
+        "xMax": -17.27
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -22.52,
+            "y": -5.2218,
+            "yLow": -6,
+            "yHigh": -4.9586
+          },
+          {
+            "x": -21.77,
+            "y": -4.1192,
+            "yLow": -4.4202,
+            "yHigh": -3.9431
+          },
+          {
+            "x": -21.27,
+            "y": -3.3958,
+            "yLow": -3.4895,
+            "yHigh": -3.3188
+          },
+          {
+            "x": -20.77,
+            "y": -3.1141,
+            "yLow": -3.1858,
+            "yHigh": -3.0526
+          },
+          {
+            "x": -20.27,
+            "y": -2.794,
+            "yLow": -2.8386,
+            "yHigh": -2.7535
+          },
+          {
+            "x": -19.77,
+            "y": -2.6566,
+            "yLow": -2.6955,
+            "yHigh": -2.6209
+          },
+          {
+            "x": -19.27,
+            "y": -2.4533,
+            "yLow": -2.4839,
+            "yHigh": -2.4248
+          },
+          {
+            "x": -18.77,
+            "y": -2.3413,
+            "yLow": -2.3706,
+            "yHigh": -2.3139
+          },
+          {
+            "x": -18.27,
+            "y": -2.2036,
+            "yLow": -2.235,
+            "yHigh": -2.1742
+          },
+          {
+            "x": -17.77,
+            "y": -1.9424,
+            "yLow": -1.9681,
+            "yHigh": -1.9182
+          },
+          {
+            "x": -17.27,
+            "y": -1.988,
+            "yLow": -2.05,
+            "yHigh": -1.9337
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "dropout-selected galaxies at z~3",
+        "warning": "Stepwise (SWML) UV luminosity function at z~3 from the HUDF, HFF parallel fields and blank fields; errors are the quoted 1-sigma symmetric errors, converted to log10 (a lower bound is omitted where the error exceeds the value); upper limits are not included."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_1600,AB",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (HST legacy fields)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Bouwens et al. 2021, AJ 162, 47 (arXiv:2102.07775), stepwise LF table",
+        "doi": "10.3847/1538-3881/abf83e",
+        "url": "https://arxiv.org/abs/2102.07775",
+        "retrieved": "2026-10-05",
+        "figure": "Table: stepwise determination of the rest-frame UV LF",
+        "checksumSha256": "febb7dc0f948c3002ed4143071d8ed1a47d67e7e43b645ce1228608215e5c630",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens21.uvlf.z3.8.stepwise",
+      "source": "Bouwens et al. 2021",
+      "run": "Bouwens et al. 2021",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 3.8,
+        "zNominal": 3.8,
+        "zMin": 3.8,
+        "zMax": 3.8,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.69,
+        "xMax": -15.94
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -22.69,
+            "y": -5.301,
+            "yLow": -6,
+            "yHigh": -5.0458
+          },
+          {
+            "x": -22.19,
+            "y": -4.8239,
+            "yLow": -5.2218,
+            "yHigh": -4.6198
+          },
+          {
+            "x": -21.69,
+            "y": -3.8416,
+            "yLow": -3.9136,
+            "yHigh": -3.7799
+          },
+          {
+            "x": -21.19,
+            "y": -3.4634,
+            "yLow": -3.5143,
+            "yHigh": -3.4179
+          },
+          {
+            "x": -20.69,
+            "y": -3.1561,
+            "yLow": -3.2007,
+            "yHigh": -3.1158
+          },
+          {
+            "x": -20.19,
+            "y": -2.7894,
+            "yLow": -2.8259,
+            "yHigh": -2.7557
+          },
+          {
+            "x": -19.69,
+            "y": -2.6428,
+            "yLow": -2.6826,
+            "yHigh": -2.6064
+          },
+          {
+            "x": -19.19,
+            "y": -2.5148,
+            "yLow": -2.5738,
+            "yHigh": -2.4629
+          },
+          {
+            "x": -18.69,
+            "y": -2.3594,
+            "yLow": -2.4339,
+            "yHigh": -2.2958
+          },
+          {
+            "x": -17.94,
+            "y": -1.9931,
+            "yLow": -2.0343,
+            "yHigh": -1.9555
+          },
+          {
+            "x": -16.94,
+            "y": -1.5619,
+            "yLow": -1.6202,
+            "yHigh": -1.5106
+          },
+          {
+            "x": -15.94,
+            "y": -1.5403,
+            "yLow": -1.6972,
+            "yHigh": -1.4253
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "dropout-selected galaxies at z~4",
+        "warning": "Stepwise (SWML) UV luminosity function at z~4 from the HUDF, HFF parallel fields and blank fields; errors are the quoted 1-sigma symmetric errors, converted to log10 (a lower bound is omitted where the error exceeds the value); upper limits are not included."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_1600,AB",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (HST legacy fields)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Bouwens et al. 2021, AJ 162, 47 (arXiv:2102.07775), stepwise LF table",
+        "doi": "10.3847/1538-3881/abf83e",
+        "url": "https://arxiv.org/abs/2102.07775",
+        "retrieved": "2026-10-05",
+        "figure": "Table: stepwise determination of the rest-frame UV LF",
+        "checksumSha256": "febb7dc0f948c3002ed4143071d8ed1a47d67e7e43b645ce1228608215e5c630",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens21.uvlf.z4.9.stepwise",
+      "source": "Bouwens et al. 2021",
+      "run": "Bouwens et al. 2021",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 4.9,
+        "zNominal": 4.9,
+        "zMin": 4.9,
+        "zMax": 4.9,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -23.11,
+        "xMax": -16.36
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -23.11,
+            "y": -6,
+            "yHigh": -5.699
+          },
+          {
+            "x": -22.61,
+            "y": -5.3979,
+            "yLow": -5.699,
+            "yHigh": -5.2218
+          },
+          {
+            "x": -22.11,
+            "y": -4.5528,
+            "yLow": -4.6778,
+            "yHigh": -4.4559
+          },
+          {
+            "x": -21.61,
+            "y": -4.0362,
+            "yLow": -4.1024,
+            "yHigh": -3.9788
+          },
+          {
+            "x": -21.11,
+            "y": -3.5817,
+            "yLow": -3.6234,
+            "yHigh": -3.5436
+          },
+          {
+            "x": -20.61,
+            "y": -3.2336,
+            "yLow": -3.2676,
+            "yHigh": -3.202
+          },
+          {
+            "x": -20.11,
+            "y": -3.056,
+            "yLow": -3.0904,
+            "yHigh": -3.0241
+          },
+          {
+            "x": -19.61,
+            "y": -2.7975,
+            "yLow": -2.8422,
+            "yHigh": -2.757
+          },
+          {
+            "x": -19.11,
+            "y": -2.6657,
+            "yLow": -2.7416,
+            "yHigh": -2.6012
+          },
+          {
+            "x": -18.36,
+            "y": -2.3354,
+            "yLow": -2.3872,
+            "yHigh": -2.289
+          },
+          {
+            "x": -17.36,
+            "y": -2.0565,
+            "yLow": -2.1403,
+            "yHigh": -1.9863
+          },
+          {
+            "x": -16.36,
+            "y": -1.6,
+            "yLow": -1.7501,
+            "yHigh": -1.4887
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "dropout-selected galaxies at z~5",
+        "warning": "Stepwise (SWML) UV luminosity function at z~5 from the HUDF, HFF parallel fields and blank fields; errors are the quoted 1-sigma symmetric errors, converted to log10 (a lower bound is omitted where the error exceeds the value); upper limits are not included."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_1600,AB",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (HST legacy fields)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Bouwens et al. 2021, AJ 162, 47 (arXiv:2102.07775), stepwise LF table",
+        "doi": "10.3847/1538-3881/abf83e",
+        "url": "https://arxiv.org/abs/2102.07775",
+        "retrieved": "2026-10-05",
+        "figure": "Table: stepwise determination of the rest-frame UV LF",
+        "checksumSha256": "febb7dc0f948c3002ed4143071d8ed1a47d67e7e43b645ce1228608215e5c630",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens21.uvlf.z5.9.stepwise",
+      "source": "Bouwens et al. 2021",
+      "run": "Bouwens et al. 2021",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 5.9,
+        "zNominal": 5.9,
+        "zMin": 5.9,
+        "zMax": 5.9,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.52,
+        "xMax": -16.77
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -22.52,
+            "y": -5.699,
+            "yHigh": -5.3979
+          },
+          {
+            "x": -22.02,
+            "y": -4.8539,
+            "yLow": -5.0458,
+            "yHigh": -4.7212
+          },
+          {
+            "x": -21.52,
+            "y": -4.2924,
+            "yLow": -4.3979,
+            "yHigh": -4.2076
+          },
+          {
+            "x": -21.02,
+            "y": -3.7721,
+            "yLow": -3.8386,
+            "yHigh": -3.7144
+          },
+          {
+            "x": -20.52,
+            "y": -3.4989,
+            "yLow": -3.5591,
+            "yHigh": -3.4461
+          },
+          {
+            "x": -20.02,
+            "y": -3.1403,
+            "yLow": -3.1959,
+            "yHigh": -3.091
+          },
+          {
+            "x": -19.52,
+            "y": -2.9404,
+            "yLow": -3.0044,
+            "yHigh": -2.8847
+          },
+          {
+            "x": -18.77,
+            "y": -2.5498,
+            "yLow": -2.6234,
+            "yHigh": -2.4868
+          },
+          {
+            "x": -17.77,
+            "y": -2.0778,
+            "yLow": -2.1739,
+            "yHigh": -1.9991
+          },
+          {
+            "x": -16.77,
+            "y": -1.767,
+            "yLow": -1.9266,
+            "yHigh": -1.6505
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "dropout-selected galaxies at z~6",
+        "warning": "Stepwise (SWML) UV luminosity function at z~6 from the HUDF, HFF parallel fields and blank fields; errors are the quoted 1-sigma symmetric errors, converted to log10 (a lower bound is omitted where the error exceeds the value); upper limits are not included."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_1600,AB",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (HST legacy fields)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Bouwens et al. 2021, AJ 162, 47 (arXiv:2102.07775), stepwise LF table",
+        "doi": "10.3847/1538-3881/abf83e",
+        "url": "https://arxiv.org/abs/2102.07775",
+        "retrieved": "2026-10-05",
+        "figure": "Table: stepwise determination of the rest-frame UV LF",
+        "checksumSha256": "febb7dc0f948c3002ed4143071d8ed1a47d67e7e43b645ce1228608215e5c630",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens21.uvlf.z6.8.stepwise",
+      "source": "Bouwens et al. 2021",
+      "run": "Bouwens et al. 2021",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 6.8,
+        "zNominal": 6.8,
+        "zMin": 6.8,
+        "zMax": 6.8,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.19,
+        "xMax": -16.94
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -22.19,
+            "y": -6,
+            "yHigh": -5.5229
+          },
+          {
+            "x": -21.69,
+            "y": -4.3872,
+            "yLow": -4.5229,
+            "yHigh": -4.284
+          },
+          {
+            "x": -21.19,
+            "y": -4.3279,
+            "yLow": -4.4949,
+            "yHigh": -4.2076
+          },
+          {
+            "x": -20.69,
+            "y": -3.7033,
+            "yLow": -3.7905,
+            "yHigh": -3.6308
+          },
+          {
+            "x": -20.19,
+            "y": -3.5482,
+            "yLow": -3.6635,
+            "yHigh": -3.4572
+          },
+          {
+            "x": -19.69,
+            "y": -3.2299,
+            "yLow": -3.3344,
+            "yHigh": -3.1457
+          },
+          {
+            "x": -19.19,
+            "y": -2.9311,
+            "yLow": -3.0778,
+            "yHigh": -2.8216
+          },
+          {
+            "x": -18.69,
+            "y": -2.8438,
+            "yLow": -2.994,
+            "yHigh": -2.7324
+          },
+          {
+            "x": -17.94,
+            "y": -2.2396,
+            "yLow": -2.3645,
+            "yHigh": -2.1427
+          },
+          {
+            "x": -16.94,
+            "y": -2.0799,
+            "yLow": -2.266,
+            "yHigh": -1.95
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "dropout-selected galaxies at z~7",
+        "warning": "Stepwise (SWML) UV luminosity function at z~7 from the HUDF, HFF parallel fields and blank fields; errors are the quoted 1-sigma symmetric errors, converted to log10 (a lower bound is omitted where the error exceeds the value); upper limits are not included."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_1600,AB",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (HST legacy fields)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Bouwens et al. 2021, AJ 162, 47 (arXiv:2102.07775), stepwise LF table",
+        "doi": "10.3847/1538-3881/abf83e",
+        "url": "https://arxiv.org/abs/2102.07775",
+        "retrieved": "2026-10-05",
+        "figure": "Table: stepwise determination of the rest-frame UV LF",
+        "checksumSha256": "febb7dc0f948c3002ed4143071d8ed1a47d67e7e43b645ce1228608215e5c630",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens21.uvlf.z7.9.stepwise",
+      "source": "Bouwens et al. 2021",
+      "run": "Bouwens et al. 2021",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 7.9,
+        "zNominal": 7.9,
+        "zMin": 7.9,
+        "zMax": 7.9,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -21.85,
+        "xMax": -17.6
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -21.85,
+            "y": -5.5229,
+            "yLow": -6,
+            "yHigh": -5.301
+          },
+          {
+            "x": -21.35,
+            "y": -4.9208,
+            "yLow": -5.0969,
+            "yHigh": -4.7959
+          },
+          {
+            "x": -20.85,
+            "y": -4.3872,
+            "yLow": -4.5229,
+            "yHigh": -4.284
+          },
+          {
+            "x": -20.1,
+            "y": -3.9208,
+            "yLow": -4.0969,
+            "yHigh": -3.7959
+          },
+          {
+            "x": -19.35,
+            "y": -3.1824,
+            "yLow": -3.3726,
+            "yHigh": -3.0506
+          },
+          {
+            "x": -18.6,
+            "y": -2.9586,
+            "yLow": -3.1192,
+            "yHigh": -2.8416
+          },
+          {
+            "x": -17.6,
+            "y": -2.52,
+            "yLow": -2.7258,
+            "yHigh": -2.3809
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "dropout-selected galaxies at z~8",
+        "warning": "Stepwise (SWML) UV luminosity function at z~8 from the HUDF, HFF parallel fields and blank fields; errors are the quoted 1-sigma symmetric errors, converted to log10 (a lower bound is omitted where the error exceeds the value); upper limits are not included."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_1600,AB",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (HST legacy fields)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Bouwens et al. 2021, AJ 162, 47 (arXiv:2102.07775), stepwise LF table",
+        "doi": "10.3847/1538-3881/abf83e",
+        "url": "https://arxiv.org/abs/2102.07775",
+        "retrieved": "2026-10-05",
+        "figure": "Table: stepwise determination of the rest-frame UV LF",
+        "checksumSha256": "febb7dc0f948c3002ed4143071d8ed1a47d67e7e43b645ce1228608215e5c630",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens21.uvlf.z8.9.stepwise",
+      "source": "Bouwens et al. 2021",
+      "run": "Bouwens et al. 2021",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 8.9,
+        "zNominal": 8.9,
+        "zMin": 8.9,
+        "zMax": 8.9,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -21.92,
+        "xMax": -17.92
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -21.92,
+            "y": -6,
+            "yHigh": -5.699
+          },
+          {
+            "x": -21.12,
+            "y": -5.1549,
+            "yLow": -5.3979,
+            "yHigh": -5
+          },
+          {
+            "x": -20.32,
+            "y": -4.585,
+            "yLow": -4.7696,
+            "yHigh": -4.4559
+          },
+          {
+            "x": -19.12,
+            "y": -3.7282,
+            "yLow": -4.4318,
+            "yHigh": -3.4724
+          },
+          {
+            "x": -17.92,
+            "y": -3.0348,
+            "yLow": -3.3747,
+            "yHigh": -2.8465
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "dropout-selected galaxies at z~9",
+        "warning": "Stepwise (SWML) UV luminosity function at z~9 from the HUDF, HFF parallel fields and blank fields; errors are the quoted 1-sigma symmetric errors, converted to log10 (a lower bound is omitted where the error exceeds the value); upper limits are not included."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_1600,AB",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (HST legacy fields)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Bouwens et al. 2021, AJ 162, 47 (arXiv:2102.07775), stepwise LF table",
+        "doi": "10.3847/1538-3881/abf83e",
+        "url": "https://arxiv.org/abs/2102.07775",
+        "retrieved": "2026-10-05",
+        "figure": "Table: stepwise determination of the rest-frame UV LF",
+        "checksumSha256": "febb7dc0f948c3002ed4143071d8ed1a47d67e7e43b645ce1228608215e5c630",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens21.uvlf.z10.2.stepwise",
+      "source": "Bouwens et al. 2021",
+      "run": "Bouwens et al. 2021",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 10.2,
+        "zNominal": 10.2,
+        "zMin": 10.2,
+        "zMax": 10.2,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -21.25,
+        "xMax": -17.25
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -21.25,
+            "y": -6,
+            "yHigh": -5.699
+          },
+          {
+            "x": -20.25,
+            "y": -5,
+            "yLow": -5.301,
+            "yHigh": -4.8239
+          },
+          {
+            "x": -19.25,
+            "y": -4.4685,
+            "yLow": -4.9208,
+            "yHigh": -4.2518
+          },
+          {
+            "x": -18.25,
+            "y": -3.7212,
+            "yLow": -4.1549,
+            "yHigh": -3.5086
+          },
+          {
+            "x": -17.25,
+            "y": -3.2007,
+            "yLow": -3.9586,
+            "yHigh": -2.9393
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "dropout-selected galaxies at z~10 (Oesch et al. 2018 sample)",
+        "warning": "Stepwise (SWML) UV luminosity function at z~10 from the HUDF, HFF parallel fields and blank fields; errors are the quoted 1-sigma symmetric errors, converted to log10 (a lower bound is omitted where the error exceeds the value); upper limits are not included."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_1600,AB",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (HST legacy fields)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Bouwens et al. 2021, AJ 162, 47 (arXiv:2102.07775), stepwise LF table",
+        "doi": "10.3847/1538-3881/abf83e",
+        "url": "https://arxiv.org/abs/2102.07775",
+        "retrieved": "2026-10-05",
+        "figure": "Table: stepwise determination of the rest-frame UV LF",
+        "checksumSha256": "febb7dc0f948c3002ed4143071d8ed1a47d67e7e43b645ce1228608215e5c630",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens21.uvlf.z2.1.schechter",
+      "source": "Bouwens et al. 2021 (Schechter fit)",
+      "run": "Bouwens et al. 2021 (Schechter fit)",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 2.1,
+        "zNominal": 2.1,
+        "zMin": 2.1,
+        "zMax": 2.1,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -21.86,
+        "xMax": -16.61
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "Phi(M) = 0.4 ln10 phi* 10^(-0.4 (M-M*)(alpha+1)) exp(-10^(-0.4 (M-M*))) per mag",
+        "expression": "log10(0.4*Math.LN10*phi*Math.pow(10,-0.4*(x-Ms)*(alpha+1))*Math.exp(-Math.pow(10,-0.4*(x-Ms))))",
+        "parameters": {
+          "phi": 0.004,
+          "Ms": -20.28,
+          "alpha": -1.52
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "dropout-selected galaxies at z~2",
+        "warning": "Schechter fit to the UV LF at <z>=2.1 over the magnitude range of the stepwise points (M*=-20.28, phi*=4.00e-03, alpha=-1.52)."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_1600,AB",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (HST legacy fields)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Bouwens et al. 2021, AJ 162, 47 (arXiv:2102.07775), Schechter parameters table",
+        "doi": "10.3847/1538-3881/abf83e",
+        "url": "https://arxiv.org/abs/2102.07775",
+        "retrieved": "2026-10-05",
+        "figure": "Table: Schechter parameters of the rest-frame UV LFs",
+        "checksumSha256": "febb7dc0f948c3002ed4143071d8ed1a47d67e7e43b645ce1228608215e5c630",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens21.uvlf.z2.9.schechter",
+      "source": "Bouwens et al. 2021 (Schechter fit)",
+      "run": "Bouwens et al. 2021 (Schechter fit)",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 2.9,
+        "zNominal": 2.9,
+        "zMin": 2.9,
+        "zMax": 2.9,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.52,
+        "xMax": -17.27
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "Phi(M) = 0.4 ln10 phi* 10^(-0.4 (M-M*)(alpha+1)) exp(-10^(-0.4 (M-M*))) per mag",
+        "expression": "log10(0.4*Math.LN10*phi*Math.pow(10,-0.4*(x-Ms)*(alpha+1))*Math.exp(-Math.pow(10,-0.4*(x-Ms))))",
+        "parameters": {
+          "phi": 0.0021000000000000003,
+          "Ms": -20.87,
+          "alpha": -1.61
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "dropout-selected galaxies at z~3",
+        "warning": "Schechter fit to the UV LF at <z>=2.9 over the magnitude range of the stepwise points (M*=-20.87, phi*=2.10e-03, alpha=-1.61)."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_1600,AB",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (HST legacy fields)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Bouwens et al. 2021, AJ 162, 47 (arXiv:2102.07775), Schechter parameters table",
+        "doi": "10.3847/1538-3881/abf83e",
+        "url": "https://arxiv.org/abs/2102.07775",
+        "retrieved": "2026-10-05",
+        "figure": "Table: Schechter parameters of the rest-frame UV LFs",
+        "checksumSha256": "febb7dc0f948c3002ed4143071d8ed1a47d67e7e43b645ce1228608215e5c630",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens21.uvlf.z3.8.schechter",
+      "source": "Bouwens et al. 2021 (Schechter fit)",
+      "run": "Bouwens et al. 2021 (Schechter fit)",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 3.8,
+        "zNominal": 3.8,
+        "zMin": 3.8,
+        "zMax": 3.8,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.69,
+        "xMax": -15.94
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "Phi(M) = 0.4 ln10 phi* 10^(-0.4 (M-M*)(alpha+1)) exp(-10^(-0.4 (M-M*))) per mag",
+        "expression": "log10(0.4*Math.LN10*phi*Math.pow(10,-0.4*(x-Ms)*(alpha+1))*Math.exp(-Math.pow(10,-0.4*(x-Ms))))",
+        "parameters": {
+          "phi": 0.0016899999999999999,
+          "Ms": -20.93,
+          "alpha": -1.69
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "dropout-selected galaxies at z~4",
+        "warning": "Schechter fit to the UV LF at <z>=3.8 over the magnitude range of the stepwise points (M*=-20.93, phi*=1.69e-03, alpha=-1.69)."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_1600,AB",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (HST legacy fields)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Bouwens et al. 2021, AJ 162, 47 (arXiv:2102.07775), Schechter parameters table",
+        "doi": "10.3847/1538-3881/abf83e",
+        "url": "https://arxiv.org/abs/2102.07775",
+        "retrieved": "2026-10-05",
+        "figure": "Table: Schechter parameters of the rest-frame UV LFs",
+        "checksumSha256": "febb7dc0f948c3002ed4143071d8ed1a47d67e7e43b645ce1228608215e5c630",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens21.uvlf.z4.9.schechter",
+      "source": "Bouwens et al. 2021 (Schechter fit)",
+      "run": "Bouwens et al. 2021 (Schechter fit)",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 4.9,
+        "zNominal": 4.9,
+        "zMin": 4.9,
+        "zMax": 4.9,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -23.11,
+        "xMax": -16.36
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "Phi(M) = 0.4 ln10 phi* 10^(-0.4 (M-M*)(alpha+1)) exp(-10^(-0.4 (M-M*))) per mag",
+        "expression": "log10(0.4*Math.LN10*phi*Math.pow(10,-0.4*(x-Ms)*(alpha+1))*Math.exp(-Math.pow(10,-0.4*(x-Ms))))",
+        "parameters": {
+          "phi": 0.00079,
+          "Ms": -21.1,
+          "alpha": -1.74
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "dropout-selected galaxies at z~5",
+        "warning": "Schechter fit to the UV LF at <z>=4.9 over the magnitude range of the stepwise points (M*=-21.1, phi*=7.90e-04, alpha=-1.74)."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_1600,AB",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (HST legacy fields)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Bouwens et al. 2021, AJ 162, 47 (arXiv:2102.07775), Schechter parameters table",
+        "doi": "10.3847/1538-3881/abf83e",
+        "url": "https://arxiv.org/abs/2102.07775",
+        "retrieved": "2026-10-05",
+        "figure": "Table: Schechter parameters of the rest-frame UV LFs",
+        "checksumSha256": "febb7dc0f948c3002ed4143071d8ed1a47d67e7e43b645ce1228608215e5c630",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens21.uvlf.z5.9.schechter",
+      "source": "Bouwens et al. 2021 (Schechter fit)",
+      "run": "Bouwens et al. 2021 (Schechter fit)",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 5.9,
+        "zNominal": 5.9,
+        "zMin": 5.9,
+        "zMax": 5.9,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.52,
+        "xMax": -16.77
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "Phi(M) = 0.4 ln10 phi* 10^(-0.4 (M-M*)(alpha+1)) exp(-10^(-0.4 (M-M*))) per mag",
+        "expression": "log10(0.4*Math.LN10*phi*Math.pow(10,-0.4*(x-Ms)*(alpha+1))*Math.exp(-Math.pow(10,-0.4*(x-Ms))))",
+        "parameters": {
+          "phi": 0.00051,
+          "Ms": -20.93,
+          "alpha": -1.93
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "dropout-selected galaxies at z~6",
+        "warning": "Schechter fit to the UV LF at <z>=5.9 over the magnitude range of the stepwise points (M*=-20.93, phi*=5.10e-04, alpha=-1.93)."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_1600,AB",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (HST legacy fields)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Bouwens et al. 2021, AJ 162, 47 (arXiv:2102.07775), Schechter parameters table",
+        "doi": "10.3847/1538-3881/abf83e",
+        "url": "https://arxiv.org/abs/2102.07775",
+        "retrieved": "2026-10-05",
+        "figure": "Table: Schechter parameters of the rest-frame UV LFs",
+        "checksumSha256": "febb7dc0f948c3002ed4143071d8ed1a47d67e7e43b645ce1228608215e5c630",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens21.uvlf.z6.8.schechter",
+      "source": "Bouwens et al. 2021 (Schechter fit)",
+      "run": "Bouwens et al. 2021 (Schechter fit)",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 6.8,
+        "zNominal": 6.8,
+        "zMin": 6.8,
+        "zMax": 6.8,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.19,
+        "xMax": -16.94
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "Phi(M) = 0.4 ln10 phi* 10^(-0.4 (M-M*)(alpha+1)) exp(-10^(-0.4 (M-M*))) per mag",
+        "expression": "log10(0.4*Math.LN10*phi*Math.pow(10,-0.4*(x-Ms)*(alpha+1))*Math.exp(-Math.pow(10,-0.4*(x-Ms))))",
+        "parameters": {
+          "phi": 0.00019,
+          "Ms": -21.15,
+          "alpha": -2.06
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "dropout-selected galaxies at z~7",
+        "warning": "Schechter fit to the UV LF at <z>=6.8 over the magnitude range of the stepwise points (M*=-21.15, phi*=1.90e-04, alpha=-2.06)."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_1600,AB",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (HST legacy fields)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Bouwens et al. 2021, AJ 162, 47 (arXiv:2102.07775), Schechter parameters table",
+        "doi": "10.3847/1538-3881/abf83e",
+        "url": "https://arxiv.org/abs/2102.07775",
+        "retrieved": "2026-10-05",
+        "figure": "Table: Schechter parameters of the rest-frame UV LFs",
+        "checksumSha256": "febb7dc0f948c3002ed4143071d8ed1a47d67e7e43b645ce1228608215e5c630",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens21.uvlf.z7.9.schechter",
+      "source": "Bouwens et al. 2021 (Schechter fit)",
+      "run": "Bouwens et al. 2021 (Schechter fit)",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 7.9,
+        "zNominal": 7.9,
+        "zMin": 7.9,
+        "zMax": 7.9,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -21.85,
+        "xMax": -17.6
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "Phi(M) = 0.4 ln10 phi* 10^(-0.4 (M-M*)(alpha+1)) exp(-10^(-0.4 (M-M*))) per mag",
+        "expression": "log10(0.4*Math.LN10*phi*Math.pow(10,-0.4*(x-Ms)*(alpha+1))*Math.exp(-Math.pow(10,-0.4*(x-Ms))))",
+        "parameters": {
+          "phi": 0.00008999999999999999,
+          "Ms": -20.93,
+          "alpha": -2.23
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "dropout-selected galaxies at z~8",
+        "warning": "Schechter fit to the UV LF at <z>=7.9 over the magnitude range of the stepwise points (M*=-20.93, phi*=9.00e-05, alpha=-2.23)."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_1600,AB",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (HST legacy fields)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Bouwens et al. 2021, AJ 162, 47 (arXiv:2102.07775), Schechter parameters table",
+        "doi": "10.3847/1538-3881/abf83e",
+        "url": "https://arxiv.org/abs/2102.07775",
+        "retrieved": "2026-10-05",
+        "figure": "Table: Schechter parameters of the rest-frame UV LFs",
+        "checksumSha256": "febb7dc0f948c3002ed4143071d8ed1a47d67e7e43b645ce1228608215e5c630",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens21.uvlf.z8.9.schechter",
+      "source": "Bouwens et al. 2021 (Schechter fit)",
+      "run": "Bouwens et al. 2021 (Schechter fit)",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 8.9,
+        "zNominal": 8.9,
+        "zMin": 8.9,
+        "zMax": 8.9,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -21.92,
+        "xMax": -17.92
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "Phi(M) = 0.4 ln10 phi* 10^(-0.4 (M-M*)(alpha+1)) exp(-10^(-0.4 (M-M*))) per mag",
+        "expression": "log10(0.4*Math.LN10*phi*Math.pow(10,-0.4*(x-Ms)*(alpha+1))*Math.exp(-Math.pow(10,-0.4*(x-Ms))))",
+        "parameters": {
+          "phi": 0.000021000000000000002,
+          "Ms": -21.15,
+          "alpha": -2.33
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "dropout-selected galaxies at z~9",
+        "warning": "Schechter fit to the UV LF at <z>=8.9 over the magnitude range of the stepwise points (M*=-21.15, phi*=2.10e-05, alpha=-2.33)."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_1600,AB",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (HST legacy fields)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Bouwens et al. 2021, AJ 162, 47 (arXiv:2102.07775), Schechter parameters table",
+        "doi": "10.3847/1538-3881/abf83e",
+        "url": "https://arxiv.org/abs/2102.07775",
+        "retrieved": "2026-10-05",
+        "figure": "Table: Schechter parameters of the rest-frame UV LFs",
+        "checksumSha256": "febb7dc0f948c3002ed4143071d8ed1a47d67e7e43b645ce1228608215e5c630",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens21.uvlf.z10.2.schechter",
+      "source": "Bouwens et al. 2021 (Schechter fit)",
+      "run": "Bouwens et al. 2021 (Schechter fit)",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 10.2,
+        "zNominal": 10.2,
+        "zMin": 10.2,
+        "zMax": 10.2,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -21.25,
+        "xMax": -17.25
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "Phi(M) = 0.4 ln10 phi* 10^(-0.4 (M-M*)(alpha+1)) exp(-10^(-0.4 (M-M*))) per mag",
+        "expression": "log10(0.4*Math.LN10*phi*Math.pow(10,-0.4*(x-Ms)*(alpha+1))*Math.exp(-Math.pow(10,-0.4*(x-Ms))))",
+        "parameters": {
+          "phi": 0.0000042,
+          "Ms": -21.19,
+          "alpha": -2.38
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "dropout-selected galaxies at z~10",
+        "warning": "Schechter fit to the UV LF at <z>=10.2 over the magnitude range of the stepwise points (M*=-21.19, phi*=4.20e-06, alpha=-2.38)."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_1600,AB",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (HST legacy fields)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Bouwens et al. 2021, AJ 162, 47 (arXiv:2102.07775), Schechter parameters table",
+        "doi": "10.3847/1538-3881/abf83e",
+        "url": "https://arxiv.org/abs/2102.07775",
+        "retrieved": "2026-10-05",
+        "figure": "Table: Schechter parameters of the rest-frame UV LFs",
+        "checksumSha256": "febb7dc0f948c3002ed4143071d8ed1a47d67e7e43b645ce1228608215e5c630",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "harikane23.uvlf.z9.binned",
+      "source": "Harikane et al. 2023",
+      "run": "Harikane et al. 2023",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 9,
+        "zNominal": 9,
+        "zMin": 9,
+        "zMax": 9,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -21.03,
+        "xMax": -18.03
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -21.03,
+            "y": -4.3979,
+            "yHigh": -3.8722,
+            "yLow": -5.8239
+          },
+          {
+            "x": -20.03,
+            "y": -4.3893,
+            "yHigh": -3.8639,
+            "yLow": -5.7959
+          },
+          {
+            "x": -19.03,
+            "y": -3.6498,
+            "yHigh": -3.3862,
+            "yLow": -4.1079
+          },
+          {
+            "x": -18.03,
+            "y": -2.9508,
+            "yHigh": -2.6676,
+            "yLow": -3.6576
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "F115W-dropout candidates at z~9",
+        "warning": "Binned UV luminosity function at z~9 from early JWST NIRCam data; asymmetric 1-sigma errors converted to log10; 2 upper limits not included."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_UV, JWST dropout galaxies",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 67.66,
+          "Om": 0.3111
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (early JWST data)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Harikane et al. 2023, ApJS 265, 5 (arXiv:2208.01612), binned UV LF table",
+        "doi": "10.3847/1538-4365/acaaa9",
+        "url": "https://arxiv.org/abs/2208.01612",
+        "retrieved": "2026-10-05",
+        "figure": "Table: obtained luminosity function at each redshift",
+        "checksumSha256": "ce13b93339cf39d0e30c8756fa9916b292cd4a079c274b225638687144f4d1ef",
+        "sourceMember": "ms_jwst_v3.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "harikane23.uvlf.z9.schechter",
+      "source": "Harikane et al. 2023 (Schechter fit)",
+      "run": "Harikane et al. 2023 (Schechter fit)",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 9,
+        "zNominal": 9,
+        "zMin": 9,
+        "zMax": 9,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -23,
+        "xMax": -18
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "Phi(M) = 0.4 ln10 phi* 10^(-0.4 (M-M*)(alpha+1)) exp(-10^(-0.4 (M-M*))) per mag",
+        "expression": "log10(0.4*Math.LN10*phi*Math.pow(10,-0.4*(x-Ms)*(alpha+1))*Math.exp(-Math.pow(10,-0.4*(x-Ms))))",
+        "parameters": {
+          "phi": 0.000014791083881682072,
+          "Ms": -21.24,
+          "alpha": -2.35
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "F115W-dropout candidates at z~9",
+        "warning": "Schechter fit (alpha fixed at -2.35) over the magnitude range of the binned data; M*=-21.24, log phi*=-4.83."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_UV, JWST dropout galaxies",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 67.66,
+          "Om": 0.3111
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (early JWST data)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Harikane et al. 2023, ApJS 265, 5 (arXiv:2208.01612), fit parameters table",
+        "doi": "10.3847/1538-4365/acaaa9",
+        "url": "https://arxiv.org/abs/2208.01612",
+        "retrieved": "2026-10-05",
+        "figure": "Table: fit parameters for luminosity functions",
+        "checksumSha256": "ce13b93339cf39d0e30c8756fa9916b292cd4a079c274b225638687144f4d1ef",
+        "sourceMember": "ms_jwst_v3.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "harikane23.uvlf.z12.binned",
+      "source": "Harikane et al. 2023",
+      "run": "Harikane et al. 2023",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 12,
+        "zNominal": 12,
+        "zMin": 12,
+        "zMax": 12,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -21.21,
+        "xMax": -18.21
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -21.21,
+            "y": -5.301,
+            "yHigh": -4.7809,
+            "yLow": -6.1367
+          },
+          {
+            "x": -20.21,
+            "y": -4.8827,
+            "yHigh": -4.5143,
+            "yLow": -5.3768
+          },
+          {
+            "x": -19.21,
+            "y": -4.6198,
+            "yHigh": -4.3206,
+            "yLow": -5
+          },
+          {
+            "x": -18.21,
+            "y": -3.8477,
+            "yHigh": -3.4698,
+            "yLow": -4.4949
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "F150W-dropout candidates at z~12",
+        "warning": "Binned UV luminosity function at z~12 from early JWST NIRCam data; asymmetric 1-sigma errors converted to log10; 2 upper limits not included."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_UV, JWST dropout galaxies",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 67.66,
+          "Om": 0.3111
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (early JWST data)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Harikane et al. 2023, ApJS 265, 5 (arXiv:2208.01612), binned UV LF table",
+        "doi": "10.3847/1538-4365/acaaa9",
+        "url": "https://arxiv.org/abs/2208.01612",
+        "retrieved": "2026-10-05",
+        "figure": "Table: obtained luminosity function at each redshift",
+        "checksumSha256": "ce13b93339cf39d0e30c8756fa9916b292cd4a079c274b225638687144f4d1ef",
+        "sourceMember": "ms_jwst_v3.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "harikane23.uvlf.z12.schechter",
+      "source": "Harikane et al. 2023 (Schechter fit)",
+      "run": "Harikane et al. 2023 (Schechter fit)",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 12,
+        "zNominal": 12,
+        "zMin": 12,
+        "zMax": 12,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -23,
+        "xMax": -18
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "Phi(M) = 0.4 ln10 phi* 10^(-0.4 (M-M*)(alpha+1)) exp(-10^(-0.4 (M-M*))) per mag",
+        "expression": "log10(0.4*Math.LN10*phi*Math.pow(10,-0.4*(x-Ms)*(alpha+1))*Math.exp(-Math.pow(10,-0.4*(x-Ms))))",
+        "parameters": {
+          "phi": 0.000008709635899560814,
+          "Ms": -20.47,
+          "alpha": -2.35
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "F150W-dropout candidates at z~12",
+        "warning": "Schechter fit (alpha fixed at -2.35) over the magnitude range of the binned data; M*=-20.47, log phi*=-5.06."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_UV, JWST dropout galaxies",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 67.66,
+          "Om": 0.3111
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (early JWST data)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Harikane et al. 2023, ApJS 265, 5 (arXiv:2208.01612), fit parameters table",
+        "doi": "10.3847/1538-4365/acaaa9",
+        "url": "https://arxiv.org/abs/2208.01612",
+        "retrieved": "2026-10-05",
+        "figure": "Table: fit parameters for luminosity functions",
+        "checksumSha256": "ce13b93339cf39d0e30c8756fa9916b292cd4a079c274b225638687144f4d1ef",
+        "sourceMember": "ms_jwst_v3.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "harikane23.uvlf.z16.binned",
+      "source": "Harikane et al. 2023",
+      "run": "Harikane et al. 2023",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 16,
+        "zNominal": 16,
+        "zMin": 16,
+        "zMax": 16,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -20.59,
+        "xMax": -20.59
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -20.59,
+            "y": -5.1791,
+            "yHigh": -4.8108,
+            "yLow": -5.6716
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "F200W-dropout candidates at z~16",
+        "warning": "Binned UV luminosity function at z~16 from early JWST NIRCam data; asymmetric 1-sigma errors converted to log10; 1 upper limit not included."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_UV, JWST dropout galaxies",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 67.66,
+          "Om": 0.3111
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (early JWST data)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Harikane et al. 2023, ApJS 265, 5 (arXiv:2208.01612), binned UV LF table",
+        "doi": "10.3847/1538-4365/acaaa9",
+        "url": "https://arxiv.org/abs/2208.01612",
+        "retrieved": "2026-10-05",
+        "figure": "Table: obtained luminosity function at each redshift",
+        "checksumSha256": "ce13b93339cf39d0e30c8756fa9916b292cd4a079c274b225638687144f4d1ef",
+        "sourceMember": "ms_jwst_v3.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "harikane23.uvlf.z16.schechter",
+      "source": "Harikane et al. 2023 (Schechter fit)",
+      "run": "Harikane et al. 2023 (Schechter fit)",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 16,
+        "zNominal": 16,
+        "zMin": 16,
+        "zMax": 16,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -23.6,
+        "xMax": -20.6
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "Phi(M) = 0.4 ln10 phi* 10^(-0.4 (M-M*)(alpha+1)) exp(-10^(-0.4 (M-M*))) per mag",
+        "expression": "log10(0.4*Math.LN10*phi*Math.pow(10,-0.4*(x-Ms)*(alpha+1))*Math.exp(-Math.pow(10,-0.4*(x-Ms))))",
+        "parameters": {
+          "phi": 0.000001445439770745928,
+          "Ms": -20.8,
+          "alpha": -2.35
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "F200W-dropout candidates at z~16",
+        "warning": "Schechter fit (alpha fixed at -2.35) over the magnitude range of the binned data; M*=-20.8 (fixed), log phi*=-5.84."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_UV, JWST dropout galaxies",
+        "dustCorrection": "none (observed LF)",
+        "cosmology": {
+          "H0": 67.66,
+          "Om": 0.3111
+        },
+        "densityFrame": "comoving",
+        "population": "dropout-selected galaxies (early JWST data)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Harikane et al. 2023, ApJS 265, 5 (arXiv:2208.01612), fit parameters table",
+        "doi": "10.3847/1538-4365/acaaa9",
+        "url": "https://arxiv.org/abs/2208.01612",
+        "retrieved": "2026-10-05",
+        "figure": "Table: fit parameters for luminosity functions",
+        "checksumSha256": "ce13b93339cf39d0e30c8756fa9916b292cd4a079c274b225638687144f4d1ef",
+        "sourceMember": "ms_jwst_v3.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "harikane23.sfrd.dustcorr",
+      "source": "Harikane et al. 2023",
+      "run": "Harikane et al. 2023",
+      "kind": "observation",
+      "relation": "sfrd",
+      "epoch": {
+        "zRepresentative": 12,
+        "zNominal": 12,
+        "zMin": 9,
+        "zMax": 16,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift",
+        "xUnit": "redshift",
+        "yDefinition": "log10 cosmic star-formation rate density",
+        "yUnit": "log10(Msun yr^-1 cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 9,
+        "xMax": 16
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": 9,
+            "y": -2.61,
+            "yLow": -2.77,
+            "yHigh": -2.43
+          },
+          {
+            "x": 12,
+            "y": -3.23,
+            "yLow": -3.5,
+            "yHigh": -2.94
+          },
+          {
+            "x": 16,
+            "y": -3.59,
+            "yLow": -6.42,
+            "yHigh": -3.26
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies brighter than M_UV = -17",
+        "warning": "Cosmic SFR density at z~9, 12 and 16 (dust-corrected) from integrating the double power-law UV LF to M_UV = -17; asymmetric 1-sigma errors converted to dex."
+      },
+      "definitions": {
+        "imf": "salpeter55",
+        "sfrIndicator": "UV luminosity, K_UV = 1.15e-28 Msun yr^-1 / (erg s^-1 Hz^-1) (Madau & Dickinson 2014)",
+        "sfrIntegrationLimit": "double power-law LF integrated to M_UV = -17",
+        "densityFrame": "comoving",
+        "cosmology": {
+          "H0": 67.66,
+          "Om": 0.3111
+        },
+        "population": "all galaxies brighter than M_UV = -17",
+        "dustCorrection": "dust-corrected (beta_UV relations)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Harikane et al. 2023, ApJS 265, 5 (arXiv:2208.01612), SFR density table",
+        "doi": "10.3847/1538-4365/acaaa9",
+        "url": "https://arxiv.org/abs/2208.01612",
+        "retrieved": "2026-10-05",
+        "figure": "Table: cosmic UV luminosity density and SFR density",
+        "checksumSha256": "ce13b93339cf39d0e30c8756fa9916b292cd4a079c274b225638687144f4d1ef",
+        "sourceMember": "ms_jwst_v3.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "harikane23.sfrd.uvonly",
+      "source": "Harikane et al. 2023 (UV only)",
+      "run": "Harikane et al. 2023 (UV only)",
+      "kind": "observation",
+      "relation": "sfrd",
+      "epoch": {
+        "zRepresentative": 12,
+        "zNominal": 12,
+        "zMin": 9,
+        "zMax": 16,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift",
+        "xUnit": "redshift",
+        "yDefinition": "log10 cosmic star-formation rate density",
+        "yUnit": "log10(Msun yr^-1 cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 9,
+        "xMax": 16
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": 9,
+            "y": -2.65,
+            "yLow": -2.81,
+            "yHigh": -2.46
+          },
+          {
+            "x": 12,
+            "y": -3.33,
+            "yLow": -3.59,
+            "yHigh": -3.07
+          },
+          {
+            "x": 16,
+            "y": -3.7,
+            "yLow": -6.53,
+            "yHigh": -3.37
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies brighter than M_UV = -17",
+        "warning": "Cosmic SFR density at z~9, 12 and 16 (uncorrected for dust) from integrating the double power-law UV LF to M_UV = -17; asymmetric 1-sigma errors converted to dex."
+      },
+      "definitions": {
+        "imf": "salpeter55",
+        "sfrIndicator": "UV luminosity, K_UV = 1.15e-28 Msun yr^-1 / (erg s^-1 Hz^-1) (Madau & Dickinson 2014)",
+        "sfrIntegrationLimit": "double power-law LF integrated to M_UV = -17",
+        "densityFrame": "comoving",
+        "cosmology": {
+          "H0": 67.66,
+          "Om": 0.3111
+        },
+        "population": "all galaxies brighter than M_UV = -17",
+        "dustCorrection": "none (UV only)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Harikane et al. 2023, ApJS 265, 5 (arXiv:2208.01612), SFR density table",
+        "doi": "10.3847/1538-4365/acaaa9",
+        "url": "https://arxiv.org/abs/2208.01612",
+        "retrieved": "2026-10-05",
+        "figure": "Table: cosmic UV luminosity density and SFR density",
+        "checksumSha256": "ce13b93339cf39d0e30c8756fa9916b292cd4a079c274b225638687144f4d1ef",
+        "sourceMember": "ms_jwst_v3.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "donnan24.uvlf.z9.binned",
+      "source": "Donnan et al. 2024",
+      "run": "Donnan et al. 2024",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 9,
+        "zNominal": 9,
+        "zMin": 9,
+        "zMax": 9,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -20.75,
+        "xMax": -17.55
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -20.75,
+            "y": -4.9208,
+            "yHigh": -4.699,
+            "yLow": -5.1549
+          },
+          {
+            "x": -20.25,
+            "y": -4.4949,
+            "yHigh": -4.3468,
+            "yLow": -4.6576
+          },
+          {
+            "x": -19.75,
+            "y": -3.8416,
+            "yHigh": -3.7595,
+            "yLow": -3.9355
+          },
+          {
+            "x": -19.25,
+            "y": -3.6289,
+            "yHigh": -3.5302,
+            "yLow": -3.7305
+          },
+          {
+            "x": -18.55,
+            "y": -3.3134,
+            "yHigh": -3.1918,
+            "yLow": -3.4597
+          },
+          {
+            "x": -18.05,
+            "y": -2.9547,
+            "yHigh": -2.8477,
+            "yLow": -3.0969
+          },
+          {
+            "x": -17.55,
+            "y": -2.7506,
+            "yHigh": -2.6282,
+            "yLow": -2.8976
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "photometric-redshift selected galaxies at z=9",
+        "warning": "Binned UV luminosity function at z=9 from combined JWST PRIMER, JADES and NGDEEP imaging; asymmetric 1-sigma errors converted to log10."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_UV, JWST PRIMER/JADES/NGDEEP",
+        "dustCorrection": "none (observed LF)",
+        "densityFrame": "comoving",
+        "population": "galaxies at 8.5<z<15.5 from JWST/NIRCam imaging"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Donnan et al. 2024, MNRAS 533, 3222 (arXiv:2403.03171), binned UV LF table",
+        "doi": "10.1093/mnras/stae2037",
+        "url": "https://arxiv.org/abs/2403.03171",
+        "retrieved": "2026-10-05",
+        "figure": "Table: computed UV LF data points",
+        "checksumSha256": "71d370530f0d3778904dd8830e8551ddde56e76b71c43e6a625d24bbf0620fe5",
+        "sourceMember": "primer_LF.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "donnan24.uvlf.z10.binned",
+      "source": "Donnan et al. 2024",
+      "run": "Donnan et al. 2024",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -20.75,
+        "xMax": -17.55
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -20.75,
+            "y": -5.3979,
+            "yHigh": -4.8539
+          },
+          {
+            "x": -20.25,
+            "y": -4.5686,
+            "yHigh": -4.3979,
+            "yLow": -4.7696
+          },
+          {
+            "x": -19.75,
+            "y": -4.0362,
+            "yHigh": -3.9318,
+            "yLow": -4.1427
+          },
+          {
+            "x": -19.25,
+            "y": -3.752,
+            "yHigh": -3.6383,
+            "yLow": -3.8794
+          },
+          {
+            "x": -18.55,
+            "y": -3.4935,
+            "yHigh": -3.3487,
+            "yLow": -3.6778
+          },
+          {
+            "x": -18.05,
+            "y": -3.1637,
+            "yHigh": -3.0311,
+            "yLow": -3.3344
+          },
+          {
+            "x": -17.55,
+            "y": -2.8935,
+            "yHigh": -2.7535,
+            "yLow": -3.0726
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "photometric-redshift selected galaxies at z=10",
+        "warning": "Binned UV luminosity function at z=10 from combined JWST PRIMER, JADES and NGDEEP imaging; asymmetric 1-sigma errors converted to log10."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_UV, JWST PRIMER/JADES/NGDEEP",
+        "dustCorrection": "none (observed LF)",
+        "densityFrame": "comoving",
+        "population": "galaxies at 8.5<z<15.5 from JWST/NIRCam imaging"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Donnan et al. 2024, MNRAS 533, 3222 (arXiv:2403.03171), binned UV LF table",
+        "doi": "10.1093/mnras/stae2037",
+        "url": "https://arxiv.org/abs/2403.03171",
+        "retrieved": "2026-10-05",
+        "figure": "Table: computed UV LF data points",
+        "checksumSha256": "71d370530f0d3778904dd8830e8551ddde56e76b71c43e6a625d24bbf0620fe5",
+        "sourceMember": "primer_LF.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "donnan24.uvlf.z11.binned",
+      "source": "Donnan et al. 2024",
+      "run": "Donnan et al. 2024",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 11,
+        "zNominal": 11,
+        "zMin": 11,
+        "zMax": 11,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -21.25,
+        "xMax": -18.25
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -21.25,
+            "y": -5.1549,
+            "yHigh": -4.7959,
+            "yLow": -5.699
+          },
+          {
+            "x": -20.75,
+            "y": -4.8539,
+            "yHigh": -4.6021,
+            "yLow": -5.1549
+          },
+          {
+            "x": -20.25,
+            "y": -4.4202,
+            "yHigh": -4.2676,
+            "yLow": -4.6021
+          },
+          {
+            "x": -19.75,
+            "y": -4,
+            "yHigh": -3.8633,
+            "yLow": -4.1549
+          },
+          {
+            "x": -19.25,
+            "y": -3.8416,
+            "yHigh": -3.6478,
+            "yLow": -4.0915
+          },
+          {
+            "x": -18.75,
+            "y": -3.6308,
+            "yHigh": -3.4535,
+            "yLow": -3.8601
+          },
+          {
+            "x": -18.25,
+            "y": -3.1931,
+            "yHigh": -2.9991,
+            "yLow": -3.4437
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "photometric-redshift selected galaxies at z=11",
+        "warning": "Binned UV luminosity function at z=11 from combined JWST PRIMER, JADES and NGDEEP imaging; asymmetric 1-sigma errors converted to log10."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_UV, JWST PRIMER/JADES/NGDEEP",
+        "dustCorrection": "none (observed LF)",
+        "densityFrame": "comoving",
+        "population": "galaxies at 8.5<z<15.5 from JWST/NIRCam imaging"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Donnan et al. 2024, MNRAS 533, 3222 (arXiv:2403.03171), binned UV LF table",
+        "doi": "10.1093/mnras/stae2037",
+        "url": "https://arxiv.org/abs/2403.03171",
+        "retrieved": "2026-10-05",
+        "figure": "Table: computed UV LF data points",
+        "checksumSha256": "71d370530f0d3778904dd8830e8551ddde56e76b71c43e6a625d24bbf0620fe5",
+        "sourceMember": "primer_LF.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "donnan24.uvlf.z12.5.binned",
+      "source": "Donnan et al. 2024",
+      "run": "Donnan et al. 2024",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 12.5,
+        "zNominal": 12.5,
+        "zMin": 12.5,
+        "zMax": 12.5,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -21.25,
+        "xMax": -18.25
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -21.25,
+            "y": -5.5229,
+            "yHigh": -5.1549,
+            "yLow": -6
+          },
+          {
+            "x": -20.75,
+            "y": -5.3979,
+            "yHigh": -5.0458,
+            "yLow": -6
+          },
+          {
+            "x": -20.25,
+            "y": -4.7959,
+            "yHigh": -4.6021,
+            "yLow": -5
+          },
+          {
+            "x": -19.75,
+            "y": -4.4685,
+            "yHigh": -4.2441,
+            "yLow": -4.7212
+          },
+          {
+            "x": -19.25,
+            "y": -4.3665,
+            "yHigh": -4.1079,
+            "yLow": -4.6778
+          },
+          {
+            "x": -18.75,
+            "y": -4.0969,
+            "yHigh": -3.8827,
+            "yLow": -4.3565
+          },
+          {
+            "x": -18.25,
+            "y": -3.6635,
+            "yHigh": -3.4318,
+            "yLow": -3.9469
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "photometric-redshift selected galaxies at z=12.5",
+        "warning": "Binned UV luminosity function at z=12.5 from combined JWST PRIMER, JADES and NGDEEP imaging; asymmetric 1-sigma errors converted to log10."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_UV, JWST PRIMER/JADES/NGDEEP",
+        "dustCorrection": "none (observed LF)",
+        "densityFrame": "comoving",
+        "population": "galaxies at 8.5<z<15.5 from JWST/NIRCam imaging"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Donnan et al. 2024, MNRAS 533, 3222 (arXiv:2403.03171), binned UV LF table",
+        "doi": "10.1093/mnras/stae2037",
+        "url": "https://arxiv.org/abs/2403.03171",
+        "retrieved": "2026-10-05",
+        "figure": "Table: computed UV LF data points",
+        "checksumSha256": "71d370530f0d3778904dd8830e8551ddde56e76b71c43e6a625d24bbf0620fe5",
+        "sourceMember": "primer_LF.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "donnan24.uvlf.z14.5.binned",
+      "source": "Donnan et al. 2024",
+      "run": "Donnan et al. 2024",
+      "kind": "observation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 14.5,
+        "zNominal": 14.5,
+        "zMin": 14.5,
+        "zMax": 14.5,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -20.25,
+        "xMax": -20.25
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -20.25,
+            "y": -5.5229,
+            "yHigh": -5.0458,
+            "yLow": -6
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "photometric-redshift selected galaxies at z=14.5",
+        "warning": "Binned UV luminosity function at z=14.5 from combined JWST PRIMER, JADES and NGDEEP imaging; asymmetric 1-sigma errors converted to log10."
+      },
+      "definitions": {
+        "uvBand": "rest-frame UV (~1500-1600 A), AB",
+        "uvBandNote": "M_UV, JWST PRIMER/JADES/NGDEEP",
+        "dustCorrection": "none (observed LF)",
+        "densityFrame": "comoving",
+        "population": "galaxies at 8.5<z<15.5 from JWST/NIRCam imaging"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Donnan et al. 2024, MNRAS 533, 3222 (arXiv:2403.03171), binned UV LF table",
+        "doi": "10.1093/mnras/stae2037",
+        "url": "https://arxiv.org/abs/2403.03171",
+        "retrieved": "2026-10-05",
+        "figure": "Table: computed UV LF data points",
+        "checksumSha256": "71d370530f0d3778904dd8830e8551ddde56e76b71c43e6a625d24bbf0620fe5",
+        "sourceMember": "primer_LF.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "madau14.sfrd.fit",
+      "source": "Madau & Dickinson 2014",
+      "run": "Madau & Dickinson 2014",
+      "kind": "observation",
+      "relation": "sfrd",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 0,
+        "zMax": 8,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift",
+        "xUnit": "redshift",
+        "yDefinition": "log10 cosmic star-formation rate density",
+        "yUnit": "log10(Msun yr^-1 cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 0,
+        "xMax": 8
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "psi(z) = 0.015 (1+z)^2.7 / (1 + ((1+z)/2.9)^5.6) Msun yr^-1 Mpc^-3 (their Eq. 15)",
+        "expression": "log10(0.015*Math.pow(1+x,2.7)/(1+Math.pow((1+x)/2.9,5.6)))",
+        "parameters": {}
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Best-fitting function to the compiled cosmic star-formation history; a Salpeter IMF (0.1-100 Msun) is the reference throughout the review, so divide by about 1.6 for a Chabrier-like IMF before comparing with simulations that adopt one."
+      },
+      "definitions": {
+        "imf": "salpeter55",
+        "sfrIndicator": "UV and IR compilation",
+        "sfrIntegrationLimit": "UV integrated to 0.03 L*(z=3); IR to the survey limits",
+        "dustCorrection": "dust-corrected",
+        "densityFrame": "comoving",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "population": "all galaxies"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Madau & Dickinson 2014, ARA&A 52, 415 (arXiv:1403.0007), Eq. 15",
+        "doi": "10.1146/annurev-astro-081811-125615",
+        "url": "https://arxiv.org/abs/1403.0007",
+        "retrieved": "2026-10-05",
+        "figure": "Equation 15",
+        "checksumSha256": "33ac9dedff700bfc5e52a6e67f9e0363072bcf308b5ce5107e6f32c16eca507a",
+        "sourceMember": "paper.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values spot-checked against quoted numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    }
+  ]
+}

@@ -1,0 +1,3123 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "genel14.illustris-1.gsmf-r2.z1",
+      "source": "Illustris",
+      "run": "Illustris-1 (mass within 2 R_half)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 1,
+        "zNominal": 1,
+        "zMin": 1,
+        "zMax": 1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function (Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.53,
+        "xMax": 11.749
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.53,
+            "y": -1.0007
+          },
+          {
+            "x": 7.55,
+            "y": -1.0058
+          },
+          {
+            "x": 7.849,
+            "y": -1.1166
+          },
+          {
+            "x": 8.151,
+            "y": -1.2342
+          },
+          {
+            "x": 8.45,
+            "y": -1.3737
+          },
+          {
+            "x": 8.75,
+            "y": -1.5097
+          },
+          {
+            "x": 9.049,
+            "y": -1.6374
+          },
+          {
+            "x": 9.351,
+            "y": -1.8373
+          },
+          {
+            "x": 9.65,
+            "y": -2.0305
+          },
+          {
+            "x": 9.95,
+            "y": -2.264
+          },
+          {
+            "x": 10.249,
+            "y": -2.5076
+          },
+          {
+            "x": 10.549,
+            "y": -2.6874
+          },
+          {
+            "x": 10.851,
+            "y": -2.8722
+          },
+          {
+            "x": 11.15,
+            "y": -3.2417
+          },
+          {
+            "x": 11.45,
+            "y": -3.6903
+          },
+          {
+            "x": 11.749,
+            "y": -4.3555
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Curve read from the vector paths of Genel et al. 2014 (MNRAS 445, 175), Fig. 3 (stellar mass function across cosmic time; arXiv source numbering); no table exists. The paper labels the redshifts approximately (z~1). Stellar mass: stellar mass within twice the stellar half-mass radius (fiducial galactic radius r*). The dotted curves repeated from the other panel are not extracted. Curve clipped to the plotted axis range."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 3 (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 3",
+        "panel": "z~1",
+        "checksumSha256": "fc0580c20a4b12fe8d04129e25d01b00dff8c6bfa65a2326531162afaa7de9c3",
+        "sourceMember": "f3.pdf (dashed z~1 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks per panel; y: labelled ticks of the left panel (shared); asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.gsmf-full.z1",
+      "source": "Illustris",
+      "run": "Illustris-1 (full SUBFIND mass)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 1,
+        "zNominal": 1,
+        "zMin": 1,
+        "zMax": 1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function (Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.576,
+        "xMax": 12.051
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.576,
+            "y": -1.0007
+          },
+          {
+            "x": 7.849,
+            "y": -1.1015
+          },
+          {
+            "x": 8.151,
+            "y": -1.2191
+          },
+          {
+            "x": 8.45,
+            "y": -1.3518
+          },
+          {
+            "x": 8.75,
+            "y": -1.4929
+          },
+          {
+            "x": 9.049,
+            "y": -1.6072
+          },
+          {
+            "x": 9.351,
+            "y": -1.7903
+          },
+          {
+            "x": 9.65,
+            "y": -1.9818
+          },
+          {
+            "x": 9.95,
+            "y": -2.217
+          },
+          {
+            "x": 10.249,
+            "y": -2.4303
+          },
+          {
+            "x": 10.549,
+            "y": -2.6386
+          },
+          {
+            "x": 10.851,
+            "y": -2.8218
+          },
+          {
+            "x": 11.15,
+            "y": -3.0805
+          },
+          {
+            "x": 11.45,
+            "y": -3.4517
+          },
+          {
+            "x": 11.749,
+            "y": -3.991
+          },
+          {
+            "x": 12.051,
+            "y": -4.7805
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Curve read from the vector paths of Genel et al. 2014 (MNRAS 445, 175), Fig. 3 (stellar mass function across cosmic time; arXiv source numbering); no table exists. The paper labels the redshifts approximately (z~1). Stellar mass: stellar mass of the full SUBFIND halo (bound mass out to roughly the virial radius for centrals, excluding satellites). The dotted curves repeated from the other panel are not extracted. Curve clipped to the plotted axis range."
+      },
+      "definitions": {
+        "massDefinition": "total-subhalo",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 3 (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 3",
+        "panel": "z~1",
+        "checksumSha256": "fc0580c20a4b12fe8d04129e25d01b00dff8c6bfa65a2326531162afaa7de9c3",
+        "sourceMember": "f3.pdf (solid z~1 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks per panel; y: labelled ticks of the left panel (shared); asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.gsmf-r2.z3",
+      "source": "Illustris",
+      "run": "Illustris-1 (mass within 2 R_half)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 3,
+        "zNominal": 3,
+        "zMin": 3,
+        "zMax": 3,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function (Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.55,
+        "xMax": 11.15
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.55,
+            "y": -1.0814
+          },
+          {
+            "x": 7.849,
+            "y": -1.2578
+          },
+          {
+            "x": 8.151,
+            "y": -1.4425
+          },
+          {
+            "x": 8.45,
+            "y": -1.6273
+          },
+          {
+            "x": 8.75,
+            "y": -1.839
+          },
+          {
+            "x": 9.049,
+            "y": -2.0759
+          },
+          {
+            "x": 9.351,
+            "y": -2.3211
+          },
+          {
+            "x": 9.65,
+            "y": -2.5799
+          },
+          {
+            "x": 9.95,
+            "y": -2.7982
+          },
+          {
+            "x": 10.249,
+            "y": -3.0939
+          },
+          {
+            "x": 10.549,
+            "y": -3.4954
+          },
+          {
+            "x": 10.851,
+            "y": -3.8431
+          },
+          {
+            "x": 11.15,
+            "y": -4.3555
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Curve read from the vector paths of Genel et al. 2014 (MNRAS 445, 175), Fig. 3 (stellar mass function across cosmic time; arXiv source numbering); no table exists. The paper labels the redshifts approximately (z~3). Stellar mass: stellar mass within twice the stellar half-mass radius (fiducial galactic radius r*). The dotted curves repeated from the other panel are not extracted. Curve clipped to the plotted axis range."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 3 (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 3",
+        "panel": "z~3",
+        "checksumSha256": "fc0580c20a4b12fe8d04129e25d01b00dff8c6bfa65a2326531162afaa7de9c3",
+        "sourceMember": "f3.pdf (dashed z~3 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks per panel; y: labelled ticks of the left panel (shared); asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.gsmf-full.z3",
+      "source": "Illustris",
+      "run": "Illustris-1 (full SUBFIND mass)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 3,
+        "zNominal": 3,
+        "zMin": 3,
+        "zMax": 3,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function (Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.464,
+        "xMax": 11.45
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.464,
+            "y": -1.0007
+          },
+          {
+            "x": 7.55,
+            "y": -1.0478
+          },
+          {
+            "x": 7.849,
+            "y": -1.2191
+          },
+          {
+            "x": 8.151,
+            "y": -1.3989
+          },
+          {
+            "x": 8.45,
+            "y": -1.5837
+          },
+          {
+            "x": 8.75,
+            "y": -1.7735
+          },
+          {
+            "x": 9.049,
+            "y": -2.002
+          },
+          {
+            "x": 9.351,
+            "y": -2.2556
+          },
+          {
+            "x": 9.65,
+            "y": -2.5009
+          },
+          {
+            "x": 9.95,
+            "y": -2.7277
+          },
+          {
+            "x": 10.249,
+            "y": -2.9494
+          },
+          {
+            "x": 10.549,
+            "y": -3.2972
+          },
+          {
+            "x": 10.851,
+            "y": -3.7138
+          },
+          {
+            "x": 11.15,
+            "y": -4.0817
+          },
+          {
+            "x": 11.45,
+            "y": -4.5588
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Curve read from the vector paths of Genel et al. 2014 (MNRAS 445, 175), Fig. 3 (stellar mass function across cosmic time; arXiv source numbering); no table exists. The paper labels the redshifts approximately (z~3). Stellar mass: stellar mass of the full SUBFIND halo (bound mass out to roughly the virial radius for centrals, excluding satellites). The dotted curves repeated from the other panel are not extracted. Curve clipped to the plotted axis range."
+      },
+      "definitions": {
+        "massDefinition": "total-subhalo",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 3 (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 3",
+        "panel": "z~3",
+        "checksumSha256": "fc0580c20a4b12fe8d04129e25d01b00dff8c6bfa65a2326531162afaa7de9c3",
+        "sourceMember": "f3.pdf (solid z~3 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks per panel; y: labelled ticks of the left panel (shared); asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.gsmf-r2.z5",
+      "source": "Illustris",
+      "run": "Illustris-1 (mass within 2 R_half)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function (Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.001,
+        "xMax": 10.549
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.001,
+            "y": -1.0259
+          },
+          {
+            "x": 7.25,
+            "y": -1.2124
+          },
+          {
+            "x": 7.55,
+            "y": -1.4392
+          },
+          {
+            "x": 7.849,
+            "y": -1.676
+          },
+          {
+            "x": 8.151,
+            "y": -1.9213
+          },
+          {
+            "x": 8.45,
+            "y": -2.1834
+          },
+          {
+            "x": 8.75,
+            "y": -2.469
+          },
+          {
+            "x": 9.049,
+            "y": -2.7814
+          },
+          {
+            "x": 9.351,
+            "y": -3.1325
+          },
+          {
+            "x": 9.65,
+            "y": -3.5374
+          },
+          {
+            "x": 9.95,
+            "y": -3.907
+          },
+          {
+            "x": 10.249,
+            "y": -4.4462
+          },
+          {
+            "x": 10.549,
+            "y": -4.9569
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Curve read from the vector paths of Genel et al. 2014 (MNRAS 445, 175), Fig. 3 (stellar mass function across cosmic time; arXiv source numbering); no table exists. The paper labels the redshifts approximately (z~5). Stellar mass: stellar mass within twice the stellar half-mass radius (fiducial galactic radius r*). The dotted curves repeated from the other panel are not extracted. Curve clipped to the plotted axis range."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 3 (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 3",
+        "panel": "z~5",
+        "checksumSha256": "fc0580c20a4b12fe8d04129e25d01b00dff8c6bfa65a2326531162afaa7de9c3",
+        "sourceMember": "f3.pdf (dashed z~5 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks per panel; y: labelled ticks of the left panel (shared); asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.gsmf-full.z5",
+      "source": "Illustris",
+      "run": "Illustris-1 (full SUBFIND mass)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function (Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.034,
+        "xMax": 10.549
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.034,
+            "y": -1.0007
+          },
+          {
+            "x": 7.25,
+            "y": -1.157
+          },
+          {
+            "x": 7.55,
+            "y": -1.3821
+          },
+          {
+            "x": 7.849,
+            "y": -1.6072
+          },
+          {
+            "x": 8.151,
+            "y": -1.8508
+          },
+          {
+            "x": 8.45,
+            "y": -2.1061
+          },
+          {
+            "x": 8.75,
+            "y": -2.3631
+          },
+          {
+            "x": 9.049,
+            "y": -2.6689
+          },
+          {
+            "x": 9.351,
+            "y": -2.9813
+          },
+          {
+            "x": 9.65,
+            "y": -3.3778
+          },
+          {
+            "x": 9.95,
+            "y": -3.6567
+          },
+          {
+            "x": 10.249,
+            "y": -4.2799
+          },
+          {
+            "x": 10.549,
+            "y": -4.6562
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Curve read from the vector paths of Genel et al. 2014 (MNRAS 445, 175), Fig. 3 (stellar mass function across cosmic time; arXiv source numbering); no table exists. The paper labels the redshifts approximately (z~5). Stellar mass: stellar mass of the full SUBFIND halo (bound mass out to roughly the virial radius for centrals, excluding satellites). The dotted curves repeated from the other panel are not extracted. Curve clipped to the plotted axis range."
+      },
+      "definitions": {
+        "massDefinition": "total-subhalo",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 3 (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 3",
+        "panel": "z~5",
+        "checksumSha256": "fc0580c20a4b12fe8d04129e25d01b00dff8c6bfa65a2326531162afaa7de9c3",
+        "sourceMember": "f3.pdf (solid z~5 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks per panel; y: labelled ticks of the left panel (shared); asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.gsmf-r2.z7",
+      "source": "Illustris",
+      "run": "Illustris-1 (mass within 2 R_half)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function (Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.001,
+        "xMax": 9.65
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.001,
+            "y": -1.4291
+          },
+          {
+            "x": 7.25,
+            "y": -1.6609
+          },
+          {
+            "x": 7.55,
+            "y": -1.9482
+          },
+          {
+            "x": 7.849,
+            "y": -2.2489
+          },
+          {
+            "x": 8.151,
+            "y": -2.5614
+          },
+          {
+            "x": 8.45,
+            "y": -2.9175
+          },
+          {
+            "x": 8.75,
+            "y": -3.2787
+          },
+          {
+            "x": 9.049,
+            "y": -3.702
+          },
+          {
+            "x": 9.351,
+            "y": -4.2379
+          },
+          {
+            "x": 9.65,
+            "y": -4.7805
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Curve read from the vector paths of Genel et al. 2014 (MNRAS 445, 175), Fig. 3 (stellar mass function across cosmic time; arXiv source numbering); no table exists. The paper labels the redshifts approximately (z~7). Stellar mass: stellar mass within twice the stellar half-mass radius (fiducial galactic radius r*). The dotted curves repeated from the other panel are not extracted. Curve clipped to the plotted axis range."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 3 (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 3",
+        "panel": "z~7",
+        "checksumSha256": "fc0580c20a4b12fe8d04129e25d01b00dff8c6bfa65a2326531162afaa7de9c3",
+        "sourceMember": "f3.pdf (dashed z~7 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks per panel; y: labelled ticks of the left panel (shared); asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.gsmf-full.z7",
+      "source": "Illustris",
+      "run": "Illustris-1 (full SUBFIND mass)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function (Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.001,
+        "xMax": 9.65
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.001,
+            "y": -1.3518
+          },
+          {
+            "x": 7.25,
+            "y": -1.5853
+          },
+          {
+            "x": 7.55,
+            "y": -1.8642
+          },
+          {
+            "x": 7.849,
+            "y": -2.1515
+          },
+          {
+            "x": 8.151,
+            "y": -2.4572
+          },
+          {
+            "x": 8.45,
+            "y": -2.7814
+          },
+          {
+            "x": 8.75,
+            "y": -3.1393
+          },
+          {
+            "x": 9.049,
+            "y": -3.4988
+          },
+          {
+            "x": 9.351,
+            "y": -4.0027
+          },
+          {
+            "x": 9.65,
+            "y": -4.5185
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Curve read from the vector paths of Genel et al. 2014 (MNRAS 445, 175), Fig. 3 (stellar mass function across cosmic time; arXiv source numbering); no table exists. The paper labels the redshifts approximately (z~7). Stellar mass: stellar mass of the full SUBFIND halo (bound mass out to roughly the virial radius for centrals, excluding satellites). The dotted curves repeated from the other panel are not extracted. Curve clipped to the plotted axis range."
+      },
+      "definitions": {
+        "massDefinition": "total-subhalo",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 3 (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 3",
+        "panel": "z~7",
+        "checksumSha256": "fc0580c20a4b12fe8d04129e25d01b00dff8c6bfa65a2326531162afaa7de9c3",
+        "sourceMember": "f3.pdf (solid z~7 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks per panel; y: labelled ticks of the left panel (shared); asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.gsmf-r2.z0",
+      "source": "Illustris",
+      "run": "Illustris-1 (mass within 2 R_half)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function (Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.002,
+        "xMax": 12.35
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.002,
+            "y": -1.0931
+          },
+          {
+            "x": 7.25,
+            "y": -1.1351
+          },
+          {
+            "x": 7.552,
+            "y": -1.1822
+          },
+          {
+            "x": 7.851,
+            "y": -1.2443
+          },
+          {
+            "x": 8.15,
+            "y": -1.3199
+          },
+          {
+            "x": 8.45,
+            "y": -1.4056
+          },
+          {
+            "x": 8.751,
+            "y": -1.4997
+          },
+          {
+            "x": 9.05,
+            "y": -1.5786
+          },
+          {
+            "x": 9.35,
+            "y": -1.6794
+          },
+          {
+            "x": 9.649,
+            "y": -1.8592
+          },
+          {
+            "x": 9.951,
+            "y": -2.0339
+          },
+          {
+            "x": 10.25,
+            "y": -2.2002
+          },
+          {
+            "x": 10.549,
+            "y": -2.3984
+          },
+          {
+            "x": 10.851,
+            "y": -2.6252
+          },
+          {
+            "x": 11.15,
+            "y": -2.9461
+          },
+          {
+            "x": 11.449,
+            "y": -3.3778
+          },
+          {
+            "x": 11.749,
+            "y": -3.907
+          },
+          {
+            "x": 12.05,
+            "y": -4.5588
+          },
+          {
+            "x": 12.35,
+            "y": -4.9569
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Curve read from the vector paths of Genel et al. 2014 (MNRAS 445, 175), Fig. 3 (stellar mass function across cosmic time; arXiv source numbering); no table exists. The paper labels the redshifts approximately (z~0). Stellar mass: stellar mass within twice the stellar half-mass radius (fiducial galactic radius r*). The dotted curves repeated from the other panel are not extracted. Curve clipped to the plotted axis range."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 3 (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 3",
+        "panel": "z~0",
+        "checksumSha256": "fc0580c20a4b12fe8d04129e25d01b00dff8c6bfa65a2326531162afaa7de9c3",
+        "sourceMember": "f3.pdf (dashed z~0 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks per panel; y: labelled ticks of the left panel (shared); asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "target",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.gsmf-full.z0",
+      "source": "Illustris",
+      "run": "Illustris-1 (full SUBFIND mass)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function (Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.002,
+        "xMax": 12.35
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.002,
+            "y": -1.0713
+          },
+          {
+            "x": 7.25,
+            "y": -1.1133
+          },
+          {
+            "x": 7.552,
+            "y": -1.167
+          },
+          {
+            "x": 7.851,
+            "y": -1.2342
+          },
+          {
+            "x": 8.15,
+            "y": -1.3031
+          },
+          {
+            "x": 8.45,
+            "y": -1.3972
+          },
+          {
+            "x": 8.751,
+            "y": -1.4862
+          },
+          {
+            "x": 9.05,
+            "y": -1.5685
+          },
+          {
+            "x": 9.35,
+            "y": -1.6593
+          },
+          {
+            "x": 9.649,
+            "y": -1.8289
+          },
+          {
+            "x": 9.951,
+            "y": -1.9936
+          },
+          {
+            "x": 10.25,
+            "y": -2.1699
+          },
+          {
+            "x": 10.549,
+            "y": -2.3749
+          },
+          {
+            "x": 10.851,
+            "y": -2.553
+          },
+          {
+            "x": 11.15,
+            "y": -2.8537
+          },
+          {
+            "x": 11.449,
+            "y": -3.2115
+          },
+          {
+            "x": 11.749,
+            "y": -3.6046
+          },
+          {
+            "x": 12.05,
+            "y": -4.1119
+          },
+          {
+            "x": 12.35,
+            "y": -4.715
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Curve read from the vector paths of Genel et al. 2014 (MNRAS 445, 175), Fig. 3 (stellar mass function across cosmic time; arXiv source numbering); no table exists. The paper labels the redshifts approximately (z~0). Stellar mass: stellar mass of the full SUBFIND halo (bound mass out to roughly the virial radius for centrals, excluding satellites). The dotted curves repeated from the other panel are not extracted. Curve clipped to the plotted axis range."
+      },
+      "definitions": {
+        "massDefinition": "total-subhalo",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 3 (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 3",
+        "panel": "z~0",
+        "checksumSha256": "fc0580c20a4b12fe8d04129e25d01b00dff8c6bfa65a2326531162afaa7de9c3",
+        "sourceMember": "f3.pdf (solid z~0 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks per panel; y: labelled ticks of the left panel (shared); asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "target",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.gsmf-r2.z2",
+      "source": "Illustris",
+      "run": "Illustris-1 (mass within 2 R_half)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 2,
+        "zMax": 2,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function (Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.554,
+        "xMax": 11.749
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.554,
+            "y": -1.0007
+          },
+          {
+            "x": 7.851,
+            "y": -1.1385
+          },
+          {
+            "x": 8.15,
+            "y": -1.293
+          },
+          {
+            "x": 8.45,
+            "y": -1.456
+          },
+          {
+            "x": 8.751,
+            "y": -1.5988
+          },
+          {
+            "x": 9.05,
+            "y": -1.8054
+          },
+          {
+            "x": 9.35,
+            "y": -2.0154
+          },
+          {
+            "x": 9.649,
+            "y": -2.2506
+          },
+          {
+            "x": 9.951,
+            "y": -2.4958
+          },
+          {
+            "x": 10.25,
+            "y": -2.679
+          },
+          {
+            "x": 10.549,
+            "y": -2.9343
+          },
+          {
+            "x": 10.851,
+            "y": -3.2182
+          },
+          {
+            "x": 11.15,
+            "y": -3.6516
+          },
+          {
+            "x": 11.449,
+            "y": -4.3555
+          },
+          {
+            "x": 11.749,
+            "y": -4.8612
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Curve read from the vector paths of Genel et al. 2014 (MNRAS 445, 175), Fig. 3 (stellar mass function across cosmic time; arXiv source numbering); no table exists. The paper labels the redshifts approximately (z~2). Stellar mass: stellar mass within twice the stellar half-mass radius (fiducial galactic radius r*). The dotted curves repeated from the other panel are not extracted. Curve clipped to the plotted axis range."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 3 (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 3",
+        "panel": "z~2",
+        "checksumSha256": "fc0580c20a4b12fe8d04129e25d01b00dff8c6bfa65a2326531162afaa7de9c3",
+        "sourceMember": "f3.pdf (dashed z~2 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks per panel; y: labelled ticks of the left panel (shared); asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.gsmf-full.z2",
+      "source": "Illustris",
+      "run": "Illustris-1 (full SUBFIND mass)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 2,
+        "zMax": 2,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function (Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.603,
+        "xMax": 11.749
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.603,
+            "y": -1.0007
+          },
+          {
+            "x": 7.851,
+            "y": -1.115
+          },
+          {
+            "x": 8.15,
+            "y": -1.2628
+          },
+          {
+            "x": 8.45,
+            "y": -1.4224
+          },
+          {
+            "x": 8.751,
+            "y": -1.5719
+          },
+          {
+            "x": 9.05,
+            "y": -1.7483
+          },
+          {
+            "x": 9.35,
+            "y": -1.96
+          },
+          {
+            "x": 9.649,
+            "y": -2.1884
+          },
+          {
+            "x": 9.951,
+            "y": -2.4135
+          },
+          {
+            "x": 10.25,
+            "y": -2.637
+          },
+          {
+            "x": 10.549,
+            "y": -2.8083
+          },
+          {
+            "x": 10.851,
+            "y": -3.1493
+          },
+          {
+            "x": 11.15,
+            "y": -3.4316
+          },
+          {
+            "x": 11.449,
+            "y": -3.8969
+          },
+          {
+            "x": 11.749,
+            "y": -4.4798
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Curve read from the vector paths of Genel et al. 2014 (MNRAS 445, 175), Fig. 3 (stellar mass function across cosmic time; arXiv source numbering); no table exists. The paper labels the redshifts approximately (z~2). Stellar mass: stellar mass of the full SUBFIND halo (bound mass out to roughly the virial radius for centrals, excluding satellites). The dotted curves repeated from the other panel are not extracted. Curve clipped to the plotted axis range."
+      },
+      "definitions": {
+        "massDefinition": "total-subhalo",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 3 (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 3",
+        "panel": "z~2",
+        "checksumSha256": "fc0580c20a4b12fe8d04129e25d01b00dff8c6bfa65a2326531162afaa7de9c3",
+        "sourceMember": "f3.pdf (solid z~2 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks per panel; y: labelled ticks of the left panel (shared); asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.gsmf-r2.z4",
+      "source": "Illustris",
+      "run": "Illustris-1 (mass within 2 R_half)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 4,
+        "zNominal": 4,
+        "zMin": 4,
+        "zMax": 4,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function (Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.19,
+        "xMax": 10.851
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.19,
+            "y": -1.0007
+          },
+          {
+            "x": 7.25,
+            "y": -1.0377
+          },
+          {
+            "x": 7.552,
+            "y": -1.2342
+          },
+          {
+            "x": 7.851,
+            "y": -1.4392
+          },
+          {
+            "x": 8.15,
+            "y": -1.6559
+          },
+          {
+            "x": 8.45,
+            "y": -1.8894
+          },
+          {
+            "x": 8.751,
+            "y": -2.1179
+          },
+          {
+            "x": 9.05,
+            "y": -2.3934
+          },
+          {
+            "x": 9.35,
+            "y": -2.6605
+          },
+          {
+            "x": 9.649,
+            "y": -2.9679
+          },
+          {
+            "x": 9.951,
+            "y": -3.3392
+          },
+          {
+            "x": 10.25,
+            "y": -3.7272
+          },
+          {
+            "x": 10.549,
+            "y": -4.1791
+          },
+          {
+            "x": 10.851,
+            "y": -4.5588
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Curve read from the vector paths of Genel et al. 2014 (MNRAS 445, 175), Fig. 3 (stellar mass function across cosmic time; arXiv source numbering); no table exists. The paper labels the redshifts approximately (z~4). Stellar mass: stellar mass within twice the stellar half-mass radius (fiducial galactic radius r*). The dotted curves repeated from the other panel are not extracted. Curve clipped to the plotted axis range."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 3 (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 3",
+        "panel": "z~4",
+        "checksumSha256": "fc0580c20a4b12fe8d04129e25d01b00dff8c6bfa65a2326531162afaa7de9c3",
+        "sourceMember": "f3.pdf (dashed z~4 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks per panel; y: labelled ticks of the left panel (shared); asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.gsmf-full.z4",
+      "source": "Illustris",
+      "run": "Illustris-1 (full SUBFIND mass)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 4,
+        "zNominal": 4,
+        "zMin": 4,
+        "zMax": 4,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function (Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.257,
+        "xMax": 11.15
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.257,
+            "y": -1.0007
+          },
+          {
+            "x": 7.552,
+            "y": -1.1855
+          },
+          {
+            "x": 7.851,
+            "y": -1.3922
+          },
+          {
+            "x": 8.15,
+            "y": -1.5971
+          },
+          {
+            "x": 8.45,
+            "y": -1.8239
+          },
+          {
+            "x": 8.751,
+            "y": -2.0406
+          },
+          {
+            "x": 9.05,
+            "y": -2.3077
+          },
+          {
+            "x": 9.35,
+            "y": -2.5765
+          },
+          {
+            "x": 9.649,
+            "y": -2.8285
+          },
+          {
+            "x": 9.951,
+            "y": -3.1577
+          },
+          {
+            "x": 10.25,
+            "y": -3.5962
+          },
+          {
+            "x": 10.549,
+            "y": -3.9473
+          },
+          {
+            "x": 10.851,
+            "y": -4.2581
+          },
+          {
+            "x": 11.15,
+            "y": -4.9569
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Curve read from the vector paths of Genel et al. 2014 (MNRAS 445, 175), Fig. 3 (stellar mass function across cosmic time; arXiv source numbering); no table exists. The paper labels the redshifts approximately (z~4). Stellar mass: stellar mass of the full SUBFIND halo (bound mass out to roughly the virial radius for centrals, excluding satellites). The dotted curves repeated from the other panel are not extracted. Curve clipped to the plotted axis range."
+      },
+      "definitions": {
+        "massDefinition": "total-subhalo",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 3 (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 3",
+        "panel": "z~4",
+        "checksumSha256": "fc0580c20a4b12fe8d04129e25d01b00dff8c6bfa65a2326531162afaa7de9c3",
+        "sourceMember": "f3.pdf (solid z~4 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks per panel; y: labelled ticks of the left panel (shared); asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.gsmf-r2.z6",
+      "source": "Illustris",
+      "run": "Illustris-1 (mass within 2 R_half)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function (Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.002,
+        "xMax": 9.951
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.002,
+            "y": -1.2191
+          },
+          {
+            "x": 7.25,
+            "y": -1.4291
+          },
+          {
+            "x": 7.552,
+            "y": -1.6845
+          },
+          {
+            "x": 7.851,
+            "y": -1.9566
+          },
+          {
+            "x": 8.15,
+            "y": -2.2455
+          },
+          {
+            "x": 8.45,
+            "y": -2.5479
+          },
+          {
+            "x": 8.751,
+            "y": -2.8772
+          },
+          {
+            "x": 9.05,
+            "y": -3.2451
+          },
+          {
+            "x": 9.35,
+            "y": -3.6903
+          },
+          {
+            "x": 9.649,
+            "y": -4.0968
+          },
+          {
+            "x": 9.951,
+            "y": -4.5588
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Curve read from the vector paths of Genel et al. 2014 (MNRAS 445, 175), Fig. 3 (stellar mass function across cosmic time; arXiv source numbering); no table exists. The paper labels the redshifts approximately (z~6). Stellar mass: stellar mass within twice the stellar half-mass radius (fiducial galactic radius r*). The dotted curves repeated from the other panel are not extracted. Curve clipped to the plotted axis range."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 3 (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 3",
+        "panel": "z~6",
+        "checksumSha256": "fc0580c20a4b12fe8d04129e25d01b00dff8c6bfa65a2326531162afaa7de9c3",
+        "sourceMember": "f3.pdf (dashed z~6 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks per panel; y: labelled ticks of the left panel (shared); asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.gsmf-full.z6",
+      "source": "Illustris",
+      "run": "Illustris-1 (full SUBFIND mass)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function (Mpc^-3 dex^-1)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.002,
+        "xMax": 10.25
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.002,
+            "y": -1.1536
+          },
+          {
+            "x": 7.25,
+            "y": -1.3653
+          },
+          {
+            "x": 7.552,
+            "y": -1.6122
+          },
+          {
+            "x": 7.851,
+            "y": -1.876
+          },
+          {
+            "x": 8.15,
+            "y": -2.1531
+          },
+          {
+            "x": 8.45,
+            "y": -2.4455
+          },
+          {
+            "x": 8.751,
+            "y": -2.7478
+          },
+          {
+            "x": 9.05,
+            "y": -3.0855
+          },
+          {
+            "x": 9.35,
+            "y": -3.5055
+          },
+          {
+            "x": 9.649,
+            "y": -3.8784
+          },
+          {
+            "x": 9.951,
+            "y": -4.5588
+          },
+          {
+            "x": 10.25,
+            "y": -4.7805
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Curve read from the vector paths of Genel et al. 2014 (MNRAS 445, 175), Fig. 3 (stellar mass function across cosmic time; arXiv source numbering); no table exists. The paper labels the redshifts approximately (z~6). Stellar mass: stellar mass of the full SUBFIND halo (bound mass out to roughly the virial radius for centrals, excluding satellites). The dotted curves repeated from the other panel are not extracted. Curve clipped to the plotted axis range."
+      },
+      "definitions": {
+        "massDefinition": "total-subhalo",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 3 (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 3",
+        "panel": "z~6",
+        "checksumSha256": "fc0580c20a4b12fe8d04129e25d01b00dff8c6bfa65a2326531162afaa7de9c3",
+        "sourceMember": "f3.pdf (solid z~6 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks per panel; y: labelled ticks of the left panel (shared); asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.shmr-r2.z0",
+      "source": "Illustris",
+      "run": "Illustris-1 (mass within 2 R_half, DMO-matched halo mass)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 halo mass M200c (matched Illustris-Dark halo)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio, M*/M200c (converted from the plotted ratio normalised by Omega_b/Omega_m)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 11,
+        "xMax": 14.381
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 11,
+            "y": -1.7513
+          },
+          {
+            "x": 11.078,
+            "y": -1.7085
+          },
+          {
+            "x": 11.314,
+            "y": -1.6004
+          },
+          {
+            "x": 11.55,
+            "y": -1.5248
+          },
+          {
+            "x": 11.786,
+            "y": -1.4825
+          },
+          {
+            "x": 12.022,
+            "y": -1.4856
+          },
+          {
+            "x": 12.258,
+            "y": -1.5109
+          },
+          {
+            "x": 12.494,
+            "y": -1.5732
+          },
+          {
+            "x": 12.73,
+            "y": -1.6627
+          },
+          {
+            "x": 12.966,
+            "y": -1.7379
+          },
+          {
+            "x": 13.202,
+            "y": -1.7822
+          },
+          {
+            "x": 13.438,
+            "y": -1.8681
+          },
+          {
+            "x": 13.673,
+            "y": -1.9577
+          },
+          {
+            "x": 13.909,
+            "y": -2.0421
+          },
+          {
+            "x": 14.145,
+            "y": -2.0859
+          },
+          {
+            "x": 14.381,
+            "y": -2.228
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Median-type curve read from the vector paths of Genel et al. 2014 Fig. 6 left panel (baryon conversion efficiency; arXiv source numbering); no table exists. The paper plots M*/(M200c Omega_b/Omega_m) with halo masses taken from individually matched Illustris-Dark halos (for a fair comparison with abundance matching); converted by adding log10(Omega_b/Omega_m) = -0.7766. Stellar mass: stellar mass within the fiducial galactic radius r* (twice the half-mass radius), excluding satellites."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "haloMassDefinition": "M200crit-DMO-matched",
+        "haloMassHistory": "current",
+        "population": "centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 6a (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 6 (left panel)",
+        "panel": "z=0",
+        "checksumSha256": "6ed5007a1d9a040905aef775f4c8007a163982273ecaf469b1437b86b41c0af5",
+        "sourceMember": "f6a.pdf (dashed z=0 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 11-14.5; y: log scale from labelled ticks 0.03-0.5; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.shmr-full.z0",
+      "source": "Illustris",
+      "run": "Illustris-1 (full mass inside R200c, DMO-matched halo mass)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 halo mass M200c (matched Illustris-Dark halo)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio, M*/M200c (converted from the plotted ratio normalised by Omega_b/Omega_m)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 11,
+        "xMax": 14.336
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 11,
+            "y": -1.7333
+          },
+          {
+            "x": 11.058,
+            "y": -1.6905
+          },
+          {
+            "x": 11.292,
+            "y": -1.5793
+          },
+          {
+            "x": 11.527,
+            "y": -1.4959
+          },
+          {
+            "x": 11.761,
+            "y": -1.4439
+          },
+          {
+            "x": 11.994,
+            "y": -1.4244
+          },
+          {
+            "x": 12.228,
+            "y": -1.4285
+          },
+          {
+            "x": 12.463,
+            "y": -1.4614
+          },
+          {
+            "x": 12.697,
+            "y": -1.5052
+          },
+          {
+            "x": 12.931,
+            "y": -1.5618
+          },
+          {
+            "x": 13.166,
+            "y": -1.6082
+          },
+          {
+            "x": 13.4,
+            "y": -1.6797
+          },
+          {
+            "x": 13.633,
+            "y": -1.7502
+          },
+          {
+            "x": 13.867,
+            "y": -1.8311
+          },
+          {
+            "x": 14.102,
+            "y": -1.8995
+          },
+          {
+            "x": 14.336,
+            "y": -2.0082
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Median-type curve read from the vector paths of Genel et al. 2014 Fig. 6 left panel (baryon conversion efficiency; arXiv source numbering); no table exists. The paper plots M*/(M200c Omega_b/Omega_m) with halo masses taken from individually matched Illustris-Dark halos (for a fair comparison with abundance matching); converted by adding log10(Omega_b/Omega_m) = -0.7766. Stellar mass: full stellar mass inside R200c excluding satellites."
+      },
+      "definitions": {
+        "massDefinition": "stars-within-R200c-excluding-satellites",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "haloMassDefinition": "M200crit-DMO-matched",
+        "haloMassHistory": "current",
+        "population": "centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 6a (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 6 (left panel)",
+        "panel": "z=0",
+        "checksumSha256": "6ed5007a1d9a040905aef775f4c8007a163982273ecaf469b1437b86b41c0af5",
+        "sourceMember": "f6a.pdf (solid z=0 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 11-14.5; y: log scale from labelled ticks 0.03-0.5; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.shmr-r2.z1",
+      "source": "Illustris",
+      "run": "Illustris-1 (mass within 2 R_half, DMO-matched halo mass)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 1,
+        "zNominal": 1,
+        "zMin": 1,
+        "zMax": 1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 halo mass M200c (matched Illustris-Dark halo)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio, M*/M200c (converted from the plotted ratio normalised by Omega_b/Omega_m)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 11,
+        "xMax": 14.028
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 11,
+            "y": -2.0143
+          },
+          {
+            "x": 11.116,
+            "y": -1.9613
+          },
+          {
+            "x": 11.339,
+            "y": -1.8728
+          },
+          {
+            "x": 11.564,
+            "y": -1.8115
+          },
+          {
+            "x": 11.787,
+            "y": -1.7539
+          },
+          {
+            "x": 12.012,
+            "y": -1.7127
+          },
+          {
+            "x": 12.236,
+            "y": -1.671
+          },
+          {
+            "x": 12.459,
+            "y": -1.673
+          },
+          {
+            "x": 12.684,
+            "y": -1.6823
+          },
+          {
+            "x": 12.908,
+            "y": -1.7379
+          },
+          {
+            "x": 13.133,
+            "y": -1.812
+          },
+          {
+            "x": 13.356,
+            "y": -1.9495
+          },
+          {
+            "x": 13.58,
+            "y": -1.9793
+          },
+          {
+            "x": 13.805,
+            "y": -2.0952
+          },
+          {
+            "x": 14.028,
+            "y": -2.0586
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Median-type curve read from the vector paths of Genel et al. 2014 Fig. 6 left panel (baryon conversion efficiency; arXiv source numbering); no table exists. The paper plots M*/(M200c Omega_b/Omega_m) with halo masses taken from individually matched Illustris-Dark halos (for a fair comparison with abundance matching); converted by adding log10(Omega_b/Omega_m) = -0.7766. Stellar mass: stellar mass within the fiducial galactic radius r* (twice the half-mass radius), excluding satellites."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "haloMassDefinition": "M200crit-DMO-matched",
+        "haloMassHistory": "current",
+        "population": "centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 6a (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 6 (left panel)",
+        "panel": "z=1",
+        "checksumSha256": "6ed5007a1d9a040905aef775f4c8007a163982273ecaf469b1437b86b41c0af5",
+        "sourceMember": "f6a.pdf (dashed z=1 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 11-14.5; y: log scale from labelled ticks 0.03-0.5; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.shmr-full.z1",
+      "source": "Illustris",
+      "run": "Illustris-1 (full mass inside R200c, DMO-matched halo mass)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 1,
+        "zNominal": 1,
+        "zMin": 1,
+        "zMax": 1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 halo mass M200c (matched Illustris-Dark halo)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio, M*/M200c (converted from the plotted ratio normalised by Omega_b/Omega_m)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 11,
+        "xMax": 14.003
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 11,
+            "y": -2.0277
+          },
+          {
+            "x": 11.106,
+            "y": -1.9196
+          },
+          {
+            "x": 11.33,
+            "y": -1.828
+          },
+          {
+            "x": 11.552,
+            "y": -1.7472
+          },
+          {
+            "x": 11.775,
+            "y": -1.6807
+          },
+          {
+            "x": 11.998,
+            "y": -1.6221
+          },
+          {
+            "x": 12.22,
+            "y": -1.5814
+          },
+          {
+            "x": 12.444,
+            "y": -1.5577
+          },
+          {
+            "x": 12.666,
+            "y": -1.5593
+          },
+          {
+            "x": 12.889,
+            "y": -1.5855
+          },
+          {
+            "x": 13.112,
+            "y": -1.6504
+          },
+          {
+            "x": 13.334,
+            "y": -1.7158
+          },
+          {
+            "x": 13.558,
+            "y": -1.8043
+          },
+          {
+            "x": 13.781,
+            "y": -1.8398
+          },
+          {
+            "x": 14.003,
+            "y": -1.865
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Median-type curve read from the vector paths of Genel et al. 2014 Fig. 6 left panel (baryon conversion efficiency; arXiv source numbering); no table exists. The paper plots M*/(M200c Omega_b/Omega_m) with halo masses taken from individually matched Illustris-Dark halos (for a fair comparison with abundance matching); converted by adding log10(Omega_b/Omega_m) = -0.7766. Stellar mass: full stellar mass inside R200c excluding satellites."
+      },
+      "definitions": {
+        "massDefinition": "stars-within-R200c-excluding-satellites",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "haloMassDefinition": "M200crit-DMO-matched",
+        "haloMassHistory": "current",
+        "population": "centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 6a (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 6 (left panel)",
+        "panel": "z=1",
+        "checksumSha256": "6ed5007a1d9a040905aef775f4c8007a163982273ecaf469b1437b86b41c0af5",
+        "sourceMember": "f6a.pdf (solid z=1 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 11-14.5; y: log scale from labelled ticks 0.03-0.5; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.shmr-r2.z2",
+      "source": "Illustris",
+      "run": "Illustris-1 (mass within 2 R_half, DMO-matched halo mass)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 2,
+        "zMax": 2,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 halo mass M200c (matched Illustris-Dark halo)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio, M*/M200c (converted from the plotted ratio normalised by Omega_b/Omega_m)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 11,
+        "xMax": 13.605
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 11,
+            "y": -2.1914
+          },
+          {
+            "x": 11.089,
+            "y": -2.1549
+          },
+          {
+            "x": 11.298,
+            "y": -2.0632
+          },
+          {
+            "x": 11.508,
+            "y": -1.9927
+          },
+          {
+            "x": 11.717,
+            "y": -1.9134
+          },
+          {
+            "x": 11.927,
+            "y": -1.8573
+          },
+          {
+            "x": 12.137,
+            "y": -1.8146
+          },
+          {
+            "x": 12.347,
+            "y": -1.8028
+          },
+          {
+            "x": 12.556,
+            "y": -1.7734
+          },
+          {
+            "x": 12.766,
+            "y": -1.7925
+          },
+          {
+            "x": 12.975,
+            "y": -1.83
+          },
+          {
+            "x": 13.186,
+            "y": -1.7909
+          },
+          {
+            "x": 13.395,
+            "y": -1.934
+          },
+          {
+            "x": 13.605,
+            "y": -1.9819
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Median-type curve read from the vector paths of Genel et al. 2014 Fig. 6 left panel (baryon conversion efficiency; arXiv source numbering); no table exists. The paper plots M*/(M200c Omega_b/Omega_m) with halo masses taken from individually matched Illustris-Dark halos (for a fair comparison with abundance matching); converted by adding log10(Omega_b/Omega_m) = -0.7766. Stellar mass: stellar mass within the fiducial galactic radius r* (twice the half-mass radius), excluding satellites."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "haloMassDefinition": "M200crit-DMO-matched",
+        "haloMassHistory": "current",
+        "population": "centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 6a (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 6 (left panel)",
+        "panel": "z=2",
+        "checksumSha256": "6ed5007a1d9a040905aef775f4c8007a163982273ecaf469b1437b86b41c0af5",
+        "sourceMember": "f6a.pdf (dashed z=2 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 11-14.5; y: log scale from labelled ticks 0.03-0.5; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.shmr-full.z2",
+      "source": "Illustris",
+      "run": "Illustris-1 (full mass inside R200c, DMO-matched halo mass)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 2,
+        "zMax": 2,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 halo mass M200c (matched Illustris-Dark halo)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio, M*/M200c (converted from the plotted ratio normalised by Omega_b/Omega_m)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 11,
+        "xMax": 13.592
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 11,
+            "y": -2.158
+          },
+          {
+            "x": 11.084,
+            "y": -2.0869
+          },
+          {
+            "x": 11.294,
+            "y": -1.9958
+          },
+          {
+            "x": 11.503,
+            "y": -1.9057
+          },
+          {
+            "x": 11.711,
+            "y": -1.8249
+          },
+          {
+            "x": 11.92,
+            "y": -1.7539
+          },
+          {
+            "x": 12.13,
+            "y": -1.7049
+          },
+          {
+            "x": 12.337,
+            "y": -1.6596
+          },
+          {
+            "x": 12.547,
+            "y": -1.638
+          },
+          {
+            "x": 12.756,
+            "y": -1.6313
+          },
+          {
+            "x": 12.966,
+            "y": -1.639
+          },
+          {
+            "x": 13.173,
+            "y": -1.6586
+          },
+          {
+            "x": 13.383,
+            "y": -1.6931
+          },
+          {
+            "x": 13.592,
+            "y": -1.7595
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Median-type curve read from the vector paths of Genel et al. 2014 Fig. 6 left panel (baryon conversion efficiency; arXiv source numbering); no table exists. The paper plots M*/(M200c Omega_b/Omega_m) with halo masses taken from individually matched Illustris-Dark halos (for a fair comparison with abundance matching); converted by adding log10(Omega_b/Omega_m) = -0.7766. Stellar mass: full stellar mass inside R200c excluding satellites."
+      },
+      "definitions": {
+        "massDefinition": "stars-within-R200c-excluding-satellites",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "haloMassDefinition": "M200crit-DMO-matched",
+        "haloMassHistory": "current",
+        "population": "centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 6a (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 6 (left panel)",
+        "panel": "z=2",
+        "checksumSha256": "6ed5007a1d9a040905aef775f4c8007a163982273ecaf469b1437b86b41c0af5",
+        "sourceMember": "f6a.pdf (solid z=2 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 11-14.5; y: log scale from labelled ticks 0.03-0.5; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.shmr-r2.z3",
+      "source": "Illustris",
+      "run": "Illustris-1 (mass within 2 R_half, DMO-matched halo mass)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 3,
+        "zNominal": 3,
+        "zMin": 3,
+        "zMax": 3,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 halo mass M200c (matched Illustris-Dark halo)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio, M*/M200c (converted from the plotted ratio normalised by Omega_b/Omega_m)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 11,
+        "xMax": 13.158
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 11,
+            "y": -2.2836
+          },
+          {
+            "x": 11.17,
+            "y": -2.2105
+          },
+          {
+            "x": 11.369,
+            "y": -2.1219
+          },
+          {
+            "x": 11.567,
+            "y": -2.0463
+          },
+          {
+            "x": 11.766,
+            "y": -1.9804
+          },
+          {
+            "x": 11.966,
+            "y": -1.9304
+          },
+          {
+            "x": 12.164,
+            "y": -1.8928
+          },
+          {
+            "x": 12.362,
+            "y": -1.8594
+          },
+          {
+            "x": 12.561,
+            "y": -1.8197
+          },
+          {
+            "x": 12.759,
+            "y": -1.8002
+          },
+          {
+            "x": 12.959,
+            "y": -1.8058
+          },
+          {
+            "x": 13.158,
+            "y": -1.9279
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Median-type curve read from the vector paths of Genel et al. 2014 Fig. 6 left panel (baryon conversion efficiency; arXiv source numbering); no table exists. The paper plots M*/(M200c Omega_b/Omega_m) with halo masses taken from individually matched Illustris-Dark halos (for a fair comparison with abundance matching); converted by adding log10(Omega_b/Omega_m) = -0.7766. Stellar mass: stellar mass within the fiducial galactic radius r* (twice the half-mass radius), excluding satellites."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "haloMassDefinition": "M200crit-DMO-matched",
+        "haloMassHistory": "current",
+        "population": "centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 6a (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 6 (left panel)",
+        "panel": "z=3",
+        "checksumSha256": "6ed5007a1d9a040905aef775f4c8007a163982273ecaf469b1437b86b41c0af5",
+        "sourceMember": "f6a.pdf (dashed z=3 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 11-14.5; y: log scale from labelled ticks 0.03-0.5; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.shmr-full.z3",
+      "source": "Illustris",
+      "run": "Illustris-1 (full mass inside R200c, DMO-matched halo mass)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 3,
+        "zNominal": 3,
+        "zMin": 3,
+        "zMax": 3,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 halo mass M200c (matched Illustris-Dark halo)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio, M*/M200c (converted from the plotted ratio normalised by Omega_b/Omega_m)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 11,
+        "xMax": 13.147
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 11,
+            "y": -2.2089
+          },
+          {
+            "x": 11.167,
+            "y": -2.1276
+          },
+          {
+            "x": 11.364,
+            "y": -2.0365
+          },
+          {
+            "x": 11.562,
+            "y": -1.9505
+          },
+          {
+            "x": 11.761,
+            "y": -1.8738
+          },
+          {
+            "x": 11.959,
+            "y": -1.8105
+          },
+          {
+            "x": 12.156,
+            "y": -1.7564
+          },
+          {
+            "x": 12.355,
+            "y": -1.7065
+          },
+          {
+            "x": 12.553,
+            "y": -1.6679
+          },
+          {
+            "x": 12.752,
+            "y": -1.6427
+          },
+          {
+            "x": 12.95,
+            "y": -1.6705
+          },
+          {
+            "x": 13.147,
+            "y": -1.6869
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Median-type curve read from the vector paths of Genel et al. 2014 Fig. 6 left panel (baryon conversion efficiency; arXiv source numbering); no table exists. The paper plots M*/(M200c Omega_b/Omega_m) with halo masses taken from individually matched Illustris-Dark halos (for a fair comparison with abundance matching); converted by adding log10(Omega_b/Omega_m) = -0.7766. Stellar mass: full stellar mass inside R200c excluding satellites."
+      },
+      "definitions": {
+        "massDefinition": "stars-within-R200c-excluding-satellites",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "haloMassDefinition": "M200crit-DMO-matched",
+        "haloMassHistory": "current",
+        "population": "centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 6a (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 6 (left panel)",
+        "panel": "z=3",
+        "checksumSha256": "6ed5007a1d9a040905aef775f4c8007a163982273ecaf469b1437b86b41c0af5",
+        "sourceMember": "f6a.pdf (solid z=3 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 11-14.5; y: log scale from labelled ticks 0.03-0.5; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.shmr-r2.z4",
+      "source": "Illustris",
+      "run": "Illustris-1 (mass within 2 R_half, DMO-matched halo mass)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 4,
+        "zNominal": 4,
+        "zMin": 4,
+        "zMax": 4,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 halo mass M200c (matched Illustris-Dark halo)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio, M*/M200c (converted from the plotted ratio normalised by Omega_b/Omega_m)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 11.03,
+        "xMax": 12.794
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 11.03,
+            "y": -2.3001
+          },
+          {
+            "x": 11.116,
+            "y": -2.2594
+          },
+          {
+            "x": 11.302,
+            "y": -2.1847
+          },
+          {
+            "x": 11.489,
+            "y": -2.1178
+          },
+          {
+            "x": 11.675,
+            "y": -2.0437
+          },
+          {
+            "x": 11.861,
+            "y": -2.0133
+          },
+          {
+            "x": 12.048,
+            "y": -1.949
+          },
+          {
+            "x": 12.234,
+            "y": -1.9026
+          },
+          {
+            "x": 12.42,
+            "y": -1.8378
+          },
+          {
+            "x": 12.606,
+            "y": -1.8414
+          },
+          {
+            "x": 12.794,
+            "y": -1.7111
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Median-type curve read from the vector paths of Genel et al. 2014 Fig. 6 left panel (baryon conversion efficiency; arXiv source numbering); no table exists. The paper plots M*/(M200c Omega_b/Omega_m) with halo masses taken from individually matched Illustris-Dark halos (for a fair comparison with abundance matching); converted by adding log10(Omega_b/Omega_m) = -0.7766. Stellar mass: stellar mass within the fiducial galactic radius r* (twice the half-mass radius), excluding satellites."
+      },
+      "definitions": {
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "haloMassDefinition": "M200crit-DMO-matched",
+        "haloMassHistory": "current",
+        "population": "centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 6a (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 6 (left panel)",
+        "panel": "z=4",
+        "checksumSha256": "6ed5007a1d9a040905aef775f4c8007a163982273ecaf469b1437b86b41c0af5",
+        "sourceMember": "f6a.pdf (dashed z=4 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 11-14.5; y: log scale from labelled ticks 0.03-0.5; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "genel14.illustris-1.shmr-full.z4",
+      "source": "Illustris",
+      "run": "Illustris-1 (full mass inside R200c, DMO-matched halo mass)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 4,
+        "zNominal": 4,
+        "zMin": 4,
+        "zMax": 4,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 halo mass M200c (matched Illustris-Dark halo)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio, M*/M200c (converted from the plotted ratio normalised by Omega_b/Omega_m)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 11,
+        "xMax": 12.789
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 11,
+            "y": -2.2316
+          },
+          {
+            "x": 11.116,
+            "y": -2.178
+          },
+          {
+            "x": 11.302,
+            "y": -2.0931
+          },
+          {
+            "x": 11.487,
+            "y": -2.0082
+          },
+          {
+            "x": 11.673,
+            "y": -1.9387
+          },
+          {
+            "x": 11.859,
+            "y": -1.8712
+          },
+          {
+            "x": 12.045,
+            "y": -1.8105
+          },
+          {
+            "x": 12.231,
+            "y": -1.7394
+          },
+          {
+            "x": 12.417,
+            "y": -1.6936
+          },
+          {
+            "x": 12.603,
+            "y": -1.6097
+          },
+          {
+            "x": 12.789,
+            "y": -1.5819
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Median-type curve read from the vector paths of Genel et al. 2014 Fig. 6 left panel (baryon conversion efficiency; arXiv source numbering); no table exists. The paper plots M*/(M200c Omega_b/Omega_m) with halo masses taken from individually matched Illustris-Dark halos (for a fair comparison with abundance matching); converted by adding log10(Omega_b/Omega_m) = -0.7766. Stellar mass: full stellar mass inside R200c excluding satellites."
+      },
+      "definitions": {
+        "massDefinition": "stars-within-R200c-excluding-satellites",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.2726
+        },
+        "haloMassDefinition": "M200crit-DMO-matched",
+        "haloMassHistory": "current",
+        "population": "centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Genel et al. 2014, MNRAS 445, 175, Fig. 6a (arXiv source numbering)",
+        "doi": "10.1093/mnras/stu1654",
+        "url": "https://arxiv.org/abs/1405.3749",
+        "retrieved": "2026-10-05",
+        "figure": "Figure 6 (left panel)",
+        "panel": "z=4",
+        "checksumSha256": "6ed5007a1d9a040905aef775f4c8007a163982273ecaf469b1437b86b41c0af5",
+        "sourceMember": "f6a.pdf (solid z=4 curve)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 11-14.5; y: log scale from labelled ticks 0.03-0.5; asserted",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

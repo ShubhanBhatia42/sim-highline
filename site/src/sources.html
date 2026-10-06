@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulations and observations in sim-highline</title>
+<meta name="description" content="Numerical method, code, set-up, purpose and team for each simulation, and survey or facility for each observational source in sim-highline.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>/*__CSS__*/</style>
+</head>
+<body>
+<div class="wrap">
+{{nav}}
+
+<header class="hero">
+<p class="eyebrow">SIMULATIONS &amp; OBSERVATIONS</p>
+<h1>What each curve is made of.</h1>
+<p class="lede">The {{suites}} simulations differ in numerical method, code, resolution and purpose; the {{obsSources}} observational sources differ in survey, facility and what they measure. Those differences are a large part of why curves disagree, so they are recorded here.</p>
+</header>
+
+<section aria-labelledby="sims">
+<h2 id="sims">Simulations</h2>
+<p class="blurb">Grouped by how the gas is evolved. Dates are the year the flagship paper was posted to arXiv. Set-up, physics and purpose follow the flagship abstracts; code names, box sizes and team names that an abstract does not state come from background knowledge and are not all checked against the full papers, so check the linked papers before quoting them. The "In sim-highline" line is computed from the data.</p>
+{{simHtml}}
+<h3 class="grp">Code papers</h3>
+<p class="blurb">{{codeLinks}}</p>
+</section>
+
+<section aria-labelledby="obs">
+<h2 id="obs">Observations</h2>
+<p class="blurb">{{nObsSources}} sources. Survey, facility and measurement are drafted for {{nProfiled}} of them from titles and abstracts and have not been checked against each paper; the rest are blank and marked, not guessed: open the cited paper. Empirical models (such as UniverseMachine) are constrained by observations but are not measurements.</p>
+{{obsHtml}}
+</section>
+
+<section aria-labelledby="issues">
+<h2 id="issues">Known metadata issues</h2>
+<p class="blurb">Some observational records come from a machine-readable compilation whose stored citation can name a different paper than the label (flagged above as "check"); four such upstream citations were corrected in v0.6.0 and the original is kept with the record. {{mismatchCount}} remaining mismatches found by the automatic check:</p>
+<p class="blurb">The survey and facility entries above are drafted from titles, abstracts and compilation labels and have not been checked with the authors. A source with no entry would read "not yet filled".</p>
+{{mismatchHtml}}
+</section>
+
+<section aria-labelledby="gaps">
+<h2 id="gaps">What is not here yet</h2>
+<p class="blurb">A search of the simulation literature (specialised dwarf-galaxy suites such as LYRA and EDGE, zoom suites such as Auriga and APOSTLE, reionization suites, cluster suites, and the 2026 COLIBRE papers) is in <code>docs/literature-candidates.md</code> in the repository; entries are marked ingested, queued or skipped (with the reason) in <code>data/literature-backlog.json</code>.</p>
+</section>
+
+<footer>
+<p>sim-highline {{version}} · {{released}} · built and maintained by Shubhan Bhatia.</p>
+<p><a href="../highline.html">App</a> · <a href="about.html">About</a> · <a href="use-cases.html">Use cases</a></p>
+</footer>
+</div>
+</body>
+</html>

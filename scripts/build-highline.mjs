@@ -1,0 +1,14 @@
+import { readFile, writeFile, mkdir } from "node:fs/promises";
+const root = new URL("../", import.meta.url);
+const tpl = await readFile(new URL("highline/index.html", root), "utf8");
+const data = await readFile(new URL("data/curve-index.js", root), "utf8");
+const compare = await readFile(new URL("compare.js", root), "utf8");
+const exportLib = await readFile(new URL("export-lib.js", root), "utf8");
+const logic = await readFile(new URL("highline/logic.js", root), "utf8");
+const release = await readFile(new URL("data/release.json", root), "utf8");
+const notes = await readFile(new URL("data/relation-notes.json", root), "utf8");
+const safe = s => s.replaceAll("</script", "<\\/script");
+const html = tpl.replace("/*__DATA__*/", () => safe(data)).replace("/*__COMPARE__*/", () => safe(compare)).replace("/*__EXPORT__*/", () => safe(exportLib)).replace("/*__LOGIC__*/", () => safe(logic)).replace("/*__RELEASE__*/", () => JSON.stringify(JSON.parse(release))).replace("/*__NOTES__*/", () => JSON.stringify(JSON.parse(notes)));
+await mkdir(new URL("dist/", root), { recursive: true });
+await writeFile(new URL("dist/highline.html", root), html);
+console.log(`Built dist/highline.html (${(html.length / 1e6).toFixed(2)} MB)`);

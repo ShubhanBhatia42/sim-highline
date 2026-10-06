@@ -1,0 +1,767 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "chaikin26.colibre.sfms.l200m6.z17",
+      "source": "COLIBRE",
+      "run": "L200m6 (Chaikin+26)",
+      "kind": "simulation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 17,
+        "zNominal": 17,
+        "zMin": 17,
+        "zMax": 17,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within 50 proper kpc (bound stellar particles)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 median SFR of star-forming galaxies",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 6.1,
+        "xMax": 7.7
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.1,
+            "y": -1.9376
+          },
+          {
+            "x": 6.3,
+            "y": -1.2653
+          },
+          {
+            "x": 6.5,
+            "y": -1.0097
+          },
+          {
+            "x": 6.7,
+            "y": -0.9802
+          },
+          {
+            "x": 6.9,
+            "y": -1.2419
+          },
+          {
+            "x": 7.1,
+            "y": -0.614
+          },
+          {
+            "x": 7.3,
+            "y": -0.0616
+          },
+          {
+            "x": 7.5,
+            "y": 0.2421
+          },
+          {
+            "x": 7.7,
+            "y": 0.2638
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming galaxies, sSFR > 0.2 / t_H(z)",
+        "warning": "Median SFR-M* relation of star-forming galaxies (sSFR > 0.2/t_H) of COLIBRE L200m6 at z=17, read from the black reference lines of the paper's appendix figure (the same line is repeated in every panel). The coloured main-progenitor tracks and error bars are not extracted. Cosmology, IMF and the halo-mass definition are not stated near the figure."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": "unspecified",
+        "massDefinition": "aperture-50pkpc",
+        "densityFrame": "comoving",
+        "population": "star-forming galaxies, sSFR > 0.2 / t_H(z)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, COLIBRE progenitors of z>10 JWST galaxies (arXiv:2608.19007), reference relations in the SFR-M* and SHMR appendix figure",
+        "doi": "10.48550/arXiv.2608.19007",
+        "url": "https://arxiv.org/abs/2608.19007",
+        "retrieved": "2026-10-05",
+        "figure": "Redshift evolution of the SFR-M* relation and the stellar-to-halo mass ratio of massive galaxies",
+        "panel": "upper row, black reference line at z=17",
+        "checksumSha256": "427b82d01b08e543d5f547a66e1c99917206346992640a5ebc372997182cb20b",
+        "sourceMember": "Figures/massive_galaxies_shmr.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: decade labels (10^n words, minus signs included) snapped to ticks and validated by the minor-tick pattern at log10(2..9); log axes; first column panel used",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.sfms.l200m6.z10",
+      "source": "COLIBRE",
+      "run": "L200m6 (Chaikin+26)",
+      "kind": "simulation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within 50 proper kpc (bound stellar particles)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 median SFR of star-forming galaxies",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 6.1,
+        "xMax": 9.7
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.1,
+            "y": -2.4225
+          },
+          {
+            "x": 6.3,
+            "y": -1.6262
+          },
+          {
+            "x": 6.5,
+            "y": -1.956
+          },
+          {
+            "x": 6.7,
+            "y": -1.844
+          },
+          {
+            "x": 6.9,
+            "y": -1.524
+          },
+          {
+            "x": 7.1,
+            "y": -1.2288
+          },
+          {
+            "x": 7.3,
+            "y": -0.9482
+          },
+          {
+            "x": 7.5,
+            "y": -0.6375
+          },
+          {
+            "x": 7.7,
+            "y": -0.4351
+          },
+          {
+            "x": 7.9,
+            "y": -0.192
+          },
+          {
+            "x": 8.1,
+            "y": -0.0445
+          },
+          {
+            "x": 8.3,
+            "y": 0.2734
+          },
+          {
+            "x": 8.5,
+            "y": 0.4623
+          },
+          {
+            "x": 8.7,
+            "y": 0.2528
+          },
+          {
+            "x": 8.9,
+            "y": 0.9995
+          },
+          {
+            "x": 9.1,
+            "y": 1.2548
+          },
+          {
+            "x": 9.3,
+            "y": 1.4261
+          },
+          {
+            "x": 9.5,
+            "y": 1.6353
+          },
+          {
+            "x": 9.7,
+            "y": 1.8
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming galaxies, sSFR > 0.2 / t_H(z)",
+        "warning": "Median SFR-M* relation of star-forming galaxies (sSFR > 0.2/t_H) of COLIBRE L200m6 at z=10, read from the black reference lines of the paper's appendix figure (the same line is repeated in every panel). The coloured main-progenitor tracks and error bars are not extracted. Cosmology, IMF and the halo-mass definition are not stated near the figure."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": "unspecified",
+        "massDefinition": "aperture-50pkpc",
+        "densityFrame": "comoving",
+        "population": "star-forming galaxies, sSFR > 0.2 / t_H(z)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, COLIBRE progenitors of z>10 JWST galaxies (arXiv:2608.19007), reference relations in the SFR-M* and SHMR appendix figure",
+        "doi": "10.48550/arXiv.2608.19007",
+        "url": "https://arxiv.org/abs/2608.19007",
+        "retrieved": "2026-10-05",
+        "figure": "Redshift evolution of the SFR-M* relation and the stellar-to-halo mass ratio of massive galaxies",
+        "panel": "upper row, black reference line at z=10",
+        "checksumSha256": "427b82d01b08e543d5f547a66e1c99917206346992640a5ebc372997182cb20b",
+        "sourceMember": "Figures/massive_galaxies_shmr.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: decade labels (10^n words, minus signs included) snapped to ticks and validated by the minor-tick pattern at log10(2..9); log axes; first column panel used",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.sfms.l200m6.z0",
+      "source": "COLIBRE",
+      "run": "L200m6 (Chaikin+26)",
+      "kind": "simulation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within 50 proper kpc (bound stellar particles)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 median SFR of star-forming galaxies",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 6.1,
+        "xMax": 11.9
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.1,
+            "y": -3.4608
+          },
+          {
+            "x": 6.3,
+            "y": -3.2376
+          },
+          {
+            "x": 6.5,
+            "y": -3.1328
+          },
+          {
+            "x": 6.7,
+            "y": -3.105
+          },
+          {
+            "x": 6.9,
+            "y": -3.0549
+          },
+          {
+            "x": 7.1,
+            "y": -2.8942
+          },
+          {
+            "x": 7.3,
+            "y": -2.7106
+          },
+          {
+            "x": 7.5,
+            "y": -2.5191
+          },
+          {
+            "x": 7.7,
+            "y": -2.328
+          },
+          {
+            "x": 7.9,
+            "y": -2.1432
+          },
+          {
+            "x": 8.1,
+            "y": -1.9444
+          },
+          {
+            "x": 8.3,
+            "y": -1.7255
+          },
+          {
+            "x": 8.5,
+            "y": -1.507
+          },
+          {
+            "x": 8.7,
+            "y": -1.2799
+          },
+          {
+            "x": 8.9,
+            "y": -1.0697
+          },
+          {
+            "x": 9.1,
+            "y": -0.8701
+          },
+          {
+            "x": 9.3,
+            "y": -0.6706
+          },
+          {
+            "x": 9.5,
+            "y": -0.4572
+          },
+          {
+            "x": 9.7,
+            "y": -0.2387
+          },
+          {
+            "x": 9.9,
+            "y": -0.0348
+          },
+          {
+            "x": 10.1,
+            "y": 0.1212
+          },
+          {
+            "x": 10.3,
+            "y": 0.218
+          },
+          {
+            "x": 10.5,
+            "y": 0.239
+          },
+          {
+            "x": 10.7,
+            "y": 0.2758
+          },
+          {
+            "x": 10.9,
+            "y": 0.3748
+          },
+          {
+            "x": 11.1,
+            "y": 0.517
+          },
+          {
+            "x": 11.3,
+            "y": 0.6901
+          },
+          {
+            "x": 11.5,
+            "y": 1.0052
+          },
+          {
+            "x": 11.7,
+            "y": 1.1067
+          },
+          {
+            "x": 11.9,
+            "y": 1.1509
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming galaxies, sSFR > 0.2 / t_H(z)",
+        "warning": "Median SFR-M* relation of star-forming galaxies (sSFR > 0.2/t_H) of COLIBRE L200m6 at z=0, read from the black reference lines of the paper's appendix figure (the same line is repeated in every panel). The coloured main-progenitor tracks and error bars are not extracted. Cosmology, IMF and the halo-mass definition are not stated near the figure."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": "unspecified",
+        "massDefinition": "aperture-50pkpc",
+        "densityFrame": "comoving",
+        "population": "star-forming galaxies, sSFR > 0.2 / t_H(z)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, COLIBRE progenitors of z>10 JWST galaxies (arXiv:2608.19007), reference relations in the SFR-M* and SHMR appendix figure",
+        "doi": "10.48550/arXiv.2608.19007",
+        "url": "https://arxiv.org/abs/2608.19007",
+        "retrieved": "2026-10-05",
+        "figure": "Redshift evolution of the SFR-M* relation and the stellar-to-halo mass ratio of massive galaxies",
+        "panel": "upper row, black reference line at z=0",
+        "checksumSha256": "427b82d01b08e543d5f547a66e1c99917206346992640a5ebc372997182cb20b",
+        "sourceMember": "Figures/massive_galaxies_shmr.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: decade labels (10^n words, minus signs included) snapped to ticks and validated by the minor-tick pattern at log10(2..9); log axes; first column panel used",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.shmr.l200m6.z17",
+      "source": "COLIBRE",
+      "run": "L200m6 (Chaikin+26)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 17,
+        "zNominal": 17,
+        "zMin": 17,
+        "zMax": 17,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 halo mass (subhalo; definition not stated in the figure)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 median stellar-to-halo mass ratio of central subhaloes",
+        "yUnit": "log10(1)"
+      },
+      "domain": {
+        "xMin": 9.3,
+        "xMax": 10.1
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.3,
+            "y": -2.9979
+          },
+          {
+            "x": 9.5,
+            "y": -2.7834
+          },
+          {
+            "x": 9.7,
+            "y": -2.7843
+          },
+          {
+            "x": 9.9,
+            "y": -2.3526
+          },
+          {
+            "x": 10.1,
+            "y": -2.2
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all central subhaloes",
+        "warning": "Median stellar-to-halo mass ratio of central subhaloes of COLIBRE L200m6 at z=17, read from the black reference lines of the paper's appendix figure (the same line is repeated in every panel). The coloured main-progenitor tracks and error bars are not extracted. Cosmology, IMF and the halo-mass definition are not stated near the figure."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": "unspecified",
+        "massDefinition": "aperture-50pkpc",
+        "densityFrame": "comoving",
+        "population": "all central subhaloes"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, COLIBRE progenitors of z>10 JWST galaxies (arXiv:2608.19007), reference relations in the SFR-M* and SHMR appendix figure",
+        "doi": "10.48550/arXiv.2608.19007",
+        "url": "https://arxiv.org/abs/2608.19007",
+        "retrieved": "2026-10-05",
+        "figure": "Redshift evolution of the SFR-M* relation and the stellar-to-halo mass ratio of massive galaxies",
+        "panel": "lower row, black reference line at z=17",
+        "checksumSha256": "427b82d01b08e543d5f547a66e1c99917206346992640a5ebc372997182cb20b",
+        "sourceMember": "Figures/massive_galaxies_shmr.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: decade labels (10^n words, minus signs included) snapped to ticks and validated by the minor-tick pattern at log10(2..9); log axes; first column panel used",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.shmr.l200m6.z10",
+      "source": "COLIBRE",
+      "run": "L200m6 (Chaikin+26)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 halo mass (subhalo; definition not stated in the figure)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 median stellar-to-halo mass ratio of central subhaloes",
+        "yUnit": "log10(1)"
+      },
+      "domain": {
+        "xMin": 8.9,
+        "xMax": 11.3
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.9,
+            "y": -2.7839
+          },
+          {
+            "x": 9.1,
+            "y": -2.8891
+          },
+          {
+            "x": 9.3,
+            "y": -2.9356
+          },
+          {
+            "x": 9.5,
+            "y": -2.9796
+          },
+          {
+            "x": 9.7,
+            "y": -2.9709
+          },
+          {
+            "x": 9.9,
+            "y": -2.9223
+          },
+          {
+            "x": 10.1,
+            "y": -2.8457
+          },
+          {
+            "x": 10.3,
+            "y": -2.7282
+          },
+          {
+            "x": 10.5,
+            "y": -2.5372
+          },
+          {
+            "x": 10.7,
+            "y": -2.36
+          },
+          {
+            "x": 10.9,
+            "y": -2.2452
+          },
+          {
+            "x": 11.1,
+            "y": -1.9793
+          },
+          {
+            "x": 11.3,
+            "y": -1.7953
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all central subhaloes",
+        "warning": "Median stellar-to-halo mass ratio of central subhaloes of COLIBRE L200m6 at z=10, read from the black reference lines of the paper's appendix figure (the same line is repeated in every panel). The coloured main-progenitor tracks and error bars are not extracted. Cosmology, IMF and the halo-mass definition are not stated near the figure."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": "unspecified",
+        "massDefinition": "aperture-50pkpc",
+        "densityFrame": "comoving",
+        "population": "all central subhaloes"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, COLIBRE progenitors of z>10 JWST galaxies (arXiv:2608.19007), reference relations in the SFR-M* and SHMR appendix figure",
+        "doi": "10.48550/arXiv.2608.19007",
+        "url": "https://arxiv.org/abs/2608.19007",
+        "retrieved": "2026-10-05",
+        "figure": "Redshift evolution of the SFR-M* relation and the stellar-to-halo mass ratio of massive galaxies",
+        "panel": "lower row, black reference line at z=10",
+        "checksumSha256": "427b82d01b08e543d5f547a66e1c99917206346992640a5ebc372997182cb20b",
+        "sourceMember": "Figures/massive_galaxies_shmr.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: decade labels (10^n words, minus signs included) snapped to ticks and validated by the minor-tick pattern at log10(2..9); log axes; first column panel used",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.shmr.l200m6.z0",
+      "source": "COLIBRE",
+      "run": "L200m6 (Chaikin+26)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 halo mass (subhalo; definition not stated in the figure)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 median stellar-to-halo mass ratio of central subhaloes",
+        "yUnit": "log10(1)"
+      },
+      "domain": {
+        "xMin": 7.754,
+        "xMax": 13.3
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.754,
+            "y": -0.7133
+          },
+          {
+            "x": 9.1,
+            "y": -3.1647
+          },
+          {
+            "x": 9.3,
+            "y": -3.2761
+          },
+          {
+            "x": 9.5,
+            "y": -3.3941
+          },
+          {
+            "x": 9.7,
+            "y": -3.3185
+          },
+          {
+            "x": 9.9,
+            "y": -3.3015
+          },
+          {
+            "x": 10.1,
+            "y": -3.2237
+          },
+          {
+            "x": 10.3,
+            "y": -3.1222
+          },
+          {
+            "x": 10.5,
+            "y": -2.9678
+          },
+          {
+            "x": 10.7,
+            "y": -2.7641
+          },
+          {
+            "x": 10.9,
+            "y": -2.5342
+          },
+          {
+            "x": 11.1,
+            "y": -2.2491
+          },
+          {
+            "x": 11.3,
+            "y": -1.9772
+          },
+          {
+            "x": 11.5,
+            "y": -1.7431
+          },
+          {
+            "x": 11.7,
+            "y": -1.6065
+          },
+          {
+            "x": 11.9,
+            "y": -1.5576
+          },
+          {
+            "x": 12.1,
+            "y": -1.5652
+          },
+          {
+            "x": 12.3,
+            "y": -1.6045
+          },
+          {
+            "x": 12.5,
+            "y": -1.6716
+          },
+          {
+            "x": 12.7,
+            "y": -1.7431
+          },
+          {
+            "x": 12.9,
+            "y": -1.8139
+          },
+          {
+            "x": 13.1,
+            "y": -1.9108
+          },
+          {
+            "x": 13.3,
+            "y": -2.0256
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all central subhaloes",
+        "warning": "Median stellar-to-halo mass ratio of central subhaloes of COLIBRE L200m6 at z=0, read from the black reference lines of the paper's appendix figure (the same line is repeated in every panel). The coloured main-progenitor tracks and error bars are not extracted. Cosmology, IMF and the halo-mass definition are not stated near the figure."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": "unspecified",
+        "massDefinition": "aperture-50pkpc",
+        "densityFrame": "comoving",
+        "population": "all central subhaloes"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, COLIBRE progenitors of z>10 JWST galaxies (arXiv:2608.19007), reference relations in the SFR-M* and SHMR appendix figure",
+        "doi": "10.48550/arXiv.2608.19007",
+        "url": "https://arxiv.org/abs/2608.19007",
+        "retrieved": "2026-10-05",
+        "figure": "Redshift evolution of the SFR-M* relation and the stellar-to-halo mass ratio of massive galaxies",
+        "panel": "lower row, black reference line at z=0",
+        "checksumSha256": "427b82d01b08e543d5f547a66e1c99917206346992640a5ebc372997182cb20b",
+        "sourceMember": "Figures/massive_galaxies_shmr.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: decade labels (10^n words, minus signs included) snapped to ticks and validated by the minor-tick pattern at log10(2..9); log axes; first column panel used",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}
