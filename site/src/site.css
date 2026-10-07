@@ -1,3 +1,6 @@
+@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.18s}
+@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}
 :root{--bg:#0b0e13;--bg2:#11161f;--bg3:#18202c;--line:#273142;--cream:#efe6d2;--cream2:#b8af9a;--cream3:#7a7465;--orange:#e8743b;--mustard:#e2b23a;--display:"Michroma","Eurostile","Arial Narrow",sans-serif;--ui:"Jost","Futura","Avenir Next",system-ui,sans-serif;--mono:ui-monospace,Menlo,Consolas,monospace}
 @media (prefers-color-scheme:light){:root{--bg:#f1ebdd;--bg2:#e8e0cd;--bg3:#ddd3bc;--line:#c9bea5;--cream:#1d2430;--cream2:#4c5464;--cream3:#6b7080}}
 *,*::before,*::after{box-sizing:border-box}
@@ -47,8 +50,10 @@ ul.tick b{color:var(--cream)}
 .not li{color:var(--cream2)}
 pre{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font:13.5px/1.55 var(--mono);color:var(--cream)}
 code{font-family:var(--mono);font-size:.92em}
-.case{display:grid;gap:22px;grid-template-columns:1fr;padding:30px 0;border-top:1px solid var(--line)}
-@media (min-width:860px){.case{grid-template-columns:5fr 7fr}}
+.case{display:grid;gap:22px;grid-template-columns:minmax(0,1fr);padding:30px 0;border-top:1px solid var(--line)}
+@media (min-width:860px){.case{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}}
+.case>*{min-width:0}
+.case pre{overflow-x:auto;max-width:100%}
 .case h2{margin-bottom:8px}
 .case .who{color:var(--cream3);font-size:14px;margin:0 0 12px}
 .steps{counter-reset:s;list-style:none;padding:0;margin:0 0 12px;display:grid;gap:8px}
@@ -59,6 +64,7 @@ footer{padding:36px 0 60px;border-top:1px solid var(--line);color:var(--cream3);
 footer p{margin:6px 0}
 
 nav{row-gap:8px}
+@media (max-width:700px){nav{gap:6px 16px;padding:14px 0}nav .sp{display:none}nav .l{font-size:15px}nav .btn{padding:7px 14px;font-size:14px;margin-left:auto}}
 .grp{font:13px var(--display);letter-spacing:.04em;margin:30px 0 8px;font-weight:400;color:var(--cream)}
 .yr{font:11px var(--ui);color:var(--cream3);letter-spacing:0;margin-left:6px}
 .blurb{color:var(--cream2);font-size:15.5px;max-width:52em;margin:0 0 14px}

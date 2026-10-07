@@ -20,6 +20,7 @@ const RULES={
   himf:{hard:["gasDefinition","densityFrame"],soft:["gasMethod"]},
   uvlf:{hard:["uvBand","densityFrame"],soft:["dustCorrection","cosmology"]},
   sfrd:{hard:["densityFrame"],soft:["imf","sfrIndicator","sfrIntegrationLimit","dustCorrection","cosmology"]},
+  smd:{hard:["densityFrame"],soft:["imf","massDefinition","cosmology"]},
   sfrf:{hard:["densityFrame"],soft:["sfrIndicator","imf","sfrTimescaleMyr"]},
   fgas500:{hard:["apertureDefinition","fgasNormalisation"],soft:["massMethod","population"]},
   metald:{hard:["densityFrame","metalPhase"],soft:[]},

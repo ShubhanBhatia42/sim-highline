@@ -1,12 +1,12 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-10-06",
+  "generatedAt": "2026-10-07",
   "totals": {
-    "records": 1552,
+    "records": 1575,
     "sources": 101,
     "relations": 27,
     "rankable": 731,
-    "contextOnly": 821
+    "contextOnly": 844
   },
   "byRelation": {
     "age": {
@@ -242,7 +242,7 @@
       ]
     },
     "gsmf": {
-      "records": 319,
+      "records": 325,
       "epochs": [
         0,
         0.03,
@@ -369,7 +369,7 @@
         "gsmf"
       ],
       "rankable": 202,
-      "contextOnly": 117,
+      "contextOnly": 123,
       "tiers": [
         "catalog-derived",
         "digitized-figure",
@@ -766,7 +766,7 @@
       ]
     },
     "sfrd": {
-      "records": 17,
+      "records": 19,
       "epochs": [
         2,
         3,
@@ -781,7 +781,9 @@
         "0.019:5.998",
         "0.045518435334064744:9.849197368776672",
         "0.406:8.999",
+        "0:10.396",
         "0:11.1",
+        "0:6.334",
         "0:8",
         "2.815287353744129:11.984527510362348",
         "3:14",
@@ -794,7 +796,7 @@
         "sfrd"
       ],
       "rankable": 3,
-      "contextOnly": 14,
+      "contextOnly": 16,
       "tiers": [
         "digitized-figure",
         "published-fit",
@@ -944,7 +946,7 @@
       ]
     },
     "size": {
-      "records": 191,
+      "records": 203,
       "epochs": [
         0,
         0.033,
@@ -1023,7 +1025,7 @@
         "size"
       ],
       "rankable": 67,
-      "contextOnly": 124,
+      "contextOnly": 136,
       "tiers": [
         "catalog-derived",
         "digitized-figure",
@@ -1033,21 +1035,26 @@
       ]
     },
     "smd": {
-      "records": 3,
+      "records": 6,
       "epochs": [
         1.8,
+        2,
         2.749
       ],
       "epochRanges": [
+        "0.399:8.999",
+        "0:10.396",
         "0:20",
-        "0:4"
+        "0:4",
+        "0:6.334"
       ],
       "relations": [
         "smd"
       ],
       "rankable": 3,
-      "contextOnly": 0,
+      "contextOnly": 3,
       "tiers": [
+        "digitized-figure",
         "published-table"
       ]
     },
@@ -2096,19 +2103,35 @@
       ]
     },
     "FIREbox": {
-      "records": 1,
+      "records": 11,
       "epochs": [
-        0
+        0,
+        2,
+        4,
+        6,
+        8,
+        10
       ],
       "epochRanges": [
-        "0:0"
+        "0:0",
+        "0:10.396",
+        "0:6.334",
+        "10:10",
+        "2:2",
+        "4:4",
+        "6:6",
+        "8:8"
       ],
       "relations": [
-        "mzr"
+        "gsmf",
+        "mzr",
+        "sfrd",
+        "smd"
       ],
       "rankable": 1,
-      "contextOnly": 0,
+      "contextOnly": 10,
       "tiers": [
+        "digitized-figure",
         "published-table"
       ]
     },
@@ -2551,7 +2574,7 @@
       ]
     },
     "IllustrisTNG": {
-      "records": 144,
+      "records": 156,
       "epochs": [
         0,
         0.1,
@@ -2607,7 +2630,7 @@
         "zstar"
       ],
       "rankable": 60,
-      "contextOnly": 84,
+      "contextOnly": 96,
       "tiers": [
         "catalog-derived",
         "digitized-figure",
@@ -3007,7 +3030,7 @@
       ]
     },
     "NewHorizon": {
-      "records": 52,
+      "records": 53,
       "epochs": [
         0.25,
         1,
@@ -3016,6 +3039,7 @@
       ],
       "epochRanges": [
         "0.25:0.25",
+        "0.399:8.999",
         "0.406:8.999",
         "1:1",
         "2:2",
@@ -3029,11 +3053,12 @@
         "sfrd",
         "shmr",
         "size",
+        "smd",
         "ssfr",
         "zstar"
       ],
       "rankable": 0,
-      "contextOnly": 52,
+      "contextOnly": 53,
       "tiers": [
         "digitized-figure"
       ]

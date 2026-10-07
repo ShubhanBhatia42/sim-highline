@@ -1089,6 +1089,47 @@
       "redshifts": "size z 0-4; sSFR z 0.3",
       "adapter": "scripts/digitize_horizonagn_size_dubois16.py, scripts/digitize_horizonagn_ssfr_dubois16.py",
       "note": "Size-mass relation at z 0, 0.5, 1, 2, 3, 4 and mean sSFR of Horizon-AGN and Horizon-noAGN at z 0.3 from IDL-style PDFs (major ticks as calibration)."
+    },
+    {
+      "id": "feldmann23-firebox",
+      "suite": "FIREbox",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2205.15325",
+      "relations": [
+        "gsmf",
+        "sfrd",
+        "smd"
+      ],
+      "redshifts": "gsmf z 0-10; histories z 0-10",
+      "adapter": "scripts/digitize_firebox_feldmann23.py",
+      "note": "Differential stellar mass function at z 0, 2, 4, 6, 8, 10, and cosmic SFR density and stellar mass density of all galaxies and of galaxies above 10^9.3 Msun; abundances re-weighted for cosmic variance (paper appendix)."
+    },
+    {
+      "id": "genel18-tng100-size",
+      "suite": "IllustrisTNG",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1707.05327",
+      "relations": [
+        "size"
+      ],
+      "redshifts": "z 0-3",
+      "adapter": "scripts/digitize_tng100_size_genel18.py",
+      "note": "TNG100 median 3D stellar half-mass radius versus stellar mass for main-sequence, quenched and all galaxies at z 0-3 (12 records)."
+    },
+    {
+      "id": "dubois21-newhorizon-smd",
+      "suite": "NewHorizon",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2009.10578",
+      "relations": [
+        "smd"
+      ],
+      "redshifts": "z 0.4-9",
+      "adapter": "scripts/digitize_newhorizon_smd_dubois21.py",
+      "note": "Total stellar mass density of the zoom volume."
     }
   ]
 }

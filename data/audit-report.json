@@ -1,5 +1,5 @@
 {
- "total": 1552,
+ "total": 1575,
  "known": 16,
  "errors": 0,
  "warnings": 0,
@@ -133,6 +133,7 @@
     "unspecified",
     "aperture-2rhalf-stars",
     "total-bound-subhalo",
+    "total-subhalo",
     "aperture-50pkpc",
     "integral-of-SFH"
    ]
@@ -147,10 +148,12 @@
   },
   "smd": {
    "yUnit": [
-    "log10(Msun cMpc^-3)"
+    "log10(Msun cMpc^-3)",
+    "log10(Msun Mpc^-3)"
    ],
    "massDefinitions": [
-    "all star particles"
+    "all star particles",
+    "-"
    ]
   },
   "hi-fraction": {

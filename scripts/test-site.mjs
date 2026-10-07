@@ -29,4 +29,9 @@ assert(/Known metadata issues/.test(sources) && /not yet filled/.test(sources), 
 assert((sources.match(/<article class="sim"/g) || []).length === Object.keys(profiles).length, "sources: one card per simulation");
 const app = await readFile(new URL("highline.html", root), "utf8");
 assert(app.includes("site/about.html") && app.includes("site/sources.html"), "app must link to the About and Sources pages");
+for (const page of ["index", "about", "sources", "use-cases"]) {
+  const h = await readFile(new URL(`../dist/site/${page}.html`, import.meta.url), "utf8");
+  assert.ok(h.includes('href="index.html" aria-label="sim-highline home">SIM<i>/</i>HIGHLINE</a>'), `${page}: wordmark links home`);
+  assert.ok(!/concord/i.test(h.replace(/concordance/gi, "")), `${page}: no old project name`);
+}
 console.log(`Marketing pages valid: ${manifest.nRecords} records, links resolve`);

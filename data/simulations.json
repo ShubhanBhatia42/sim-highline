@@ -121,7 +121,8 @@
         "hi-fraction",
         "h2-fraction",
         "gsmf",
-        "ssfr"
+        "ssfr",
+        "size"
       ],
       "source": "https://www.tng-project.org/data/"
     },
@@ -426,7 +427,8 @@
         "btfr",
         "gas",
         "bh",
-        "sfrd"
+        "sfrd",
+        "smd"
       ],
       "source": "https://arxiv.org/abs/2009.10578",
       "redshiftRangeBasis": "Dubois et al. 2021 (arXiv:2009.10578): the run reaches z=0.25 (Sect. 2.3); ingested relations span the published epochs z=0.25-4. The upper bound is the highest epoch shown in the ingested figures, not a documented output limit; initial-condition redshift not recorded."
@@ -443,7 +445,7 @@
       ],
       "redshiftRange": [
         0,
-        5
+        10
       ],
       "access": "published-fit",
       "calibration": [],
@@ -453,10 +455,12 @@
         "gsmf",
         "mzr",
         "gas",
-        "shmr"
+        "shmr",
+        "sfrd",
+        "smd"
       ],
       "source": "https://fire.northwestern.edu/data/",
-      "redshiftRangeBasis": "Feldmann et al. 2023 (arXiv:2205.15325): z=0 galaxy sample, cosmic HI evolution compared over z~0-5; ingested relations are z=0 only. Initial-condition redshift not verified."
+      "redshiftRangeBasis": "Feldmann et al. 2023 (arXiv:2205.15325): the stellar mass function, cosmic SFR density and stellar mass density are shown for z=0 to 10 (z_init=120). Other relations ingested are z=0 only."
     },
     {
       "id": "romulus25",

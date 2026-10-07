@@ -140,12 +140,14 @@ for (const [src, o] of [...byObs].sort((a, b) => a[0].localeCompare(b[0]))) {
 }
 for (const g of ["Surveys and measurements", "Compilations", "Empirical models (constrained by data, not measurements)", "Simulation-calibrated theory curves (not observations)", "Not yet profiled"]) if (og.has(g)) obsHtml += `<h3 class="grp">${esc(g)} <span class="yr">${og.get(g).length}</span></h3><div class="tw"><table><thead><tr><th>Source</th><th>Survey / facility</th><th>What it measures</th><th>Relations</th><th>z</th><th>Evidence</th><th>Citation</th></tr></thead><tbody>${og.get(g).join("")}</tbody></table></div>`;
 stats.simHtml = simHtml; stats.obsHtml = obsHtml; stats.codeLinks = codes;
+const nSuites = (rel) => new Set(all.filter((r) => r.kind === "simulation" && r.relation === rel).map((r) => r.source)).size;
+stats.nUvlf = nSuites("uvlf"); stats.nSfrd = nSuites("sfrd");
 stats.nProfiled = Object.keys(obsProf).length; stats.nObsSources = byObs.size;
 stats.mismatchHtml = mismatched.length ? `<ul class="tick">${mismatched.map(m => `<li><b>${esc(m.src)}</b>: the record's citation reads "${esc(m.cite.slice(0, 110))}".</li>`).join("")}</ul>` : "<p>None found by the automatic check.</p>";
 stats.mismatchCount = mismatched.length;
 stats.quickstart = (await read("site/src/quickstart-output.txt")).trimEnd().replace(/&/g, "&amp;").replace(/</g, "&lt;");
 stats.css = await read("site/src/site.css");
-const NAV = (cur) => `<nav aria-label="Main"><a class="mark" href="about.html">CON<i>/</i>CORD</a><span class="sp"></span>${[["about.html", "About"], ["sources.html", "Simulations &amp; observations"], ["use-cases.html", "Use cases"]].map(([h, t]) => `<a class="l" href="${h}"${h === cur ? ' aria-current="page"' : ""}>${t}</a>`).join("")}<a class="btn main" href="../highline.html">Open the app</a></nav>`;
+const NAV = (cur) => `<nav aria-label="Main"><a class="mark" href="index.html" aria-label="sim-highline home">SIM<i>/</i>HIGHLINE</a><span class="sp"></span>${[["about.html", "About"], ["sources.html", "Simulations &amp; observations"], ["use-cases.html", "Use cases"]].map(([h, t]) => `<a class="l" href="${h}"${h === cur ? ' aria-current="page"' : ""}>${t}</a>`).join("")}<a class="btn main" href="../highline.html">Open the app</a></nav>`;
 await mkdir(new URL("dist/site/", root), { recursive: true });
 for (const page of ["index.html", "use-cases.html", "about.html", "sources.html"]) {
   let html = await read(`site/src/${page}`);

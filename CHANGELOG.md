@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.10.0 (2026-10-08)
+
+- Data (vector figures): FIREbox stellar mass function at z 0-10, cosmic SFR density and stellar mass density (Feldmann+23; 10 records), TNG100 3D half-mass size for main-sequence, quenched and all galaxies at z 0-3 (Genel+18; 12 records), NewHorizon stellar mass density (Dubois+21).
+- App: new relation Cosmic stellar mass density (SMD) with its own notes and comparison rules; the site wordmark now reads SIM/HIGHLINE and links home, the app wordmark links to the site, pages fade into each other (cross-document view transitions), the About overlay opens at its title, the Use cases page no longer overflows on phones, and counts on the site pages are generated from the data.
+- Literature backlog: 33 ingested; four more papers examined and skipped with reasons (luminosity Tully-Fisher in TNG50, another HI-fraction selection, TNG black hole feedback, arcsecond FIRE-2 sizes).
+
 ## 0.9.0 (2026-10-07)
 
 - Data (published tables, transcribed): BlueTides galaxy properties at z 8-14 (Wilkins+17: stellar mass function, median sSFR, star-forming gas metallicity, stellar-to-DM mass ratio, intrinsic and attenuated UV functions with Schechter fits, median black hole mass; 46 records) and FLARES UV luminosity function at z 5-10 with Poisson errors and Schechter fits (Vijayan+21; 12 records).
