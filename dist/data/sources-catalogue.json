@@ -1130,6 +1130,45 @@
       "redshifts": "z 0.4-9",
       "adapter": "scripts/digitize_newhorizon_smd_dubois21.py",
       "note": "Total stellar mass density of the zoom volume."
+    },
+    {
+      "id": "torrey19-tng100-gas",
+      "suite": "IllustrisTNG",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1711.05261",
+      "relations": [
+        "gas"
+      ],
+      "redshifts": "z 0, 1, 2, 4",
+      "adapter": "scripts/digitize_tng100_gasfraction_torrey19.py",
+      "note": "TNG100-1 median ISM gas-to-stellar mass ratio of centrals (gas above the star-formation density threshold, stellar mass within 2 R_half)."
+    },
+    {
+      "id": "crain15-eagle-smd",
+      "suite": "EAGLE",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1501.01311",
+      "relations": [
+        "smd"
+      ],
+      "redshifts": "z 0.1-6",
+      "adapter": "scripts/digitize_eagle_smd_crain15.py",
+      "note": "Comoving stellar mass density of the four calibrated L050N0752 models (Ref, FBZ, FBsigma, FBconst); calibration variants, not the production runs."
+    },
+    {
+      "id": "tremmel17-romulus25-sfrd",
+      "suite": "Romulus25",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1607.02151",
+      "relations": [
+        "sfrd"
+      ],
+      "redshifts": "z 0-10",
+      "adapter": "scripts/digitize_romulus25_sfrd_tremmel17.py",
+      "note": "Total cosmic SFR density of the 25 Mpc volume (the paper's corrected figure); axis labels are glyph paths, so calibration uses the verified log(1+z) tick geometry."
     }
   ]
 }

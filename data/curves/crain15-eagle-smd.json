@@ -1,0 +1,645 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "crain15.eagle.fbconst-l050n0752.smd",
+      "source": "EAGLE",
+      "run": "FBconst-L050N0752 (calibration model, Crain+15)",
+      "kind": "simulation",
+      "relation": "smd",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 0,
+        "zMax": 7.787,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift (axis is log10(1+z), converted exactly)",
+        "xUnit": "redshift",
+        "yDefinition": "log10 comoving stellar mass density of the simulated volume",
+        "yUnit": "log10(Msun cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 0,
+        "xMax": 7.787
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 0,
+            "y": 8.381
+          },
+          {
+            "x": 0.101,
+            "y": 8.3782
+          },
+          {
+            "x": 0.183,
+            "y": 8.375
+          },
+          {
+            "x": 0.271,
+            "y": 8.3702
+          },
+          {
+            "x": 0.366,
+            "y": 8.3639
+          },
+          {
+            "x": 0.503,
+            "y": 8.3541
+          },
+          {
+            "x": 0.615,
+            "y": 8.3437
+          },
+          {
+            "x": 0.736,
+            "y": 8.3312
+          },
+          {
+            "x": 0.865,
+            "y": 8.3159
+          },
+          {
+            "x": 1.004,
+            "y": 8.2966
+          },
+          {
+            "x": 1.259,
+            "y": 8.2602
+          },
+          {
+            "x": 1.487,
+            "y": 8.2211
+          },
+          {
+            "x": 1.737,
+            "y": 8.17
+          },
+          {
+            "x": 2.013,
+            "y": 8.1094
+          },
+          {
+            "x": 2.237,
+            "y": 8.0566
+          },
+          {
+            "x": 2.478,
+            "y": 7.9971
+          },
+          {
+            "x": 3.016,
+            "y": 7.8625
+          },
+          {
+            "x": 3.528,
+            "y": 7.7211
+          },
+          {
+            "x": 3.984,
+            "y": 7.5919
+          },
+          {
+            "x": 4.485,
+            "y": 7.4509
+          },
+          {
+            "x": 5.038,
+            "y": 7.2937
+          },
+          {
+            "x": 5.487,
+            "y": 7.173
+          },
+          {
+            "x": 5.971,
+            "y": 7.0398
+          },
+          {
+            "x": 7.049,
+            "y": 6.7237
+          },
+          {
+            "x": 7.787,
+            "y": 6.5
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all stars in the 50 cMpc simulation volume",
+        "warning": "Comoving stellar mass density of the FBconst calibration model of Crain et al. 2015 (50 cMpc, 752^3 particles), read from the vector path; the paper notes only the Ref model is broadly consistent with observations at z below about 2 and that FBconst forms too much stellar mass early. These are calibration variants, not the production runs of Schaye+15; the survey data points are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies in the volume"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Crain et al. 2015, MNRAS 450, 1937 (arXiv:1501.01311), evolution of the comoving stellar mass density of the calibrated models",
+        "doi": "10.1093/mnras/stv725",
+        "url": "https://arxiv.org/abs/1501.01311",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the comoving stellar mass density of the calibrated EAGLE models (L050N0752)",
+        "panel": "FBconst curve",
+        "checksumSha256": "d032baf562bbfcf55a69e9ccfe6b764d1463372369297b2fc764eb5a02b7dc8d",
+        "sourceMember": "Figs/rhostar_calibrated.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: major ticks z=0..9 assigned in order (verified: positions follow log10(1+z)) and converted exactly to z; y: five major ticks 8.5 to 6.5 assigned in order down the axis; labels are glyph paths so no text was read",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "crain15.eagle.fbsigma-l050n0752.smd",
+      "source": "EAGLE",
+      "run": "FBsigma-L050N0752 (calibration model, Crain+15)",
+      "kind": "simulation",
+      "relation": "smd",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 0.101,
+        "zMax": 7.288,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift (axis is log10(1+z), converted exactly)",
+        "xUnit": "redshift",
+        "yDefinition": "log10 comoving stellar mass density of the simulated volume",
+        "yUnit": "log10(Msun cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 0.101,
+        "xMax": 7.288
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 0.101,
+            "y": 8.3264
+          },
+          {
+            "x": 0.183,
+            "y": 8.3225
+          },
+          {
+            "x": 0.271,
+            "y": 8.3171
+          },
+          {
+            "x": 0.366,
+            "y": 8.3112
+          },
+          {
+            "x": 0.503,
+            "y": 8.2998
+          },
+          {
+            "x": 0.615,
+            "y": 8.2884
+          },
+          {
+            "x": 0.736,
+            "y": 8.2737
+          },
+          {
+            "x": 0.865,
+            "y": 8.2562
+          },
+          {
+            "x": 1.004,
+            "y": 8.2348
+          },
+          {
+            "x": 1.259,
+            "y": 8.1909
+          },
+          {
+            "x": 1.487,
+            "y": 8.1466
+          },
+          {
+            "x": 1.737,
+            "y": 8.0935
+          },
+          {
+            "x": 2.013,
+            "y": 8.0277
+          },
+          {
+            "x": 2.237,
+            "y": 7.9682
+          },
+          {
+            "x": 2.478,
+            "y": 7.9036
+          },
+          {
+            "x": 3.016,
+            "y": 7.7487
+          },
+          {
+            "x": 3.528,
+            "y": 7.5977
+          },
+          {
+            "x": 3.984,
+            "y": 7.4611
+          },
+          {
+            "x": 4.485,
+            "y": 7.305
+          },
+          {
+            "x": 5.038,
+            "y": 7.1303
+          },
+          {
+            "x": 5.487,
+            "y": 6.997
+          },
+          {
+            "x": 5.971,
+            "y": 6.8559
+          },
+          {
+            "x": 7.049,
+            "y": 6.5693
+          },
+          {
+            "x": 7.288,
+            "y": 6.5
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all stars in the 50 cMpc simulation volume",
+        "warning": "Comoving stellar mass density of the FBsigma calibration model of Crain et al. 2015 (50 cMpc, 752^3 particles), read from the vector path; the paper notes only the Ref model is broadly consistent with observations at z below about 2 and that FBconst forms too much stellar mass early. These are calibration variants, not the production runs of Schaye+15; the survey data points are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies in the volume"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Crain et al. 2015, MNRAS 450, 1937 (arXiv:1501.01311), evolution of the comoving stellar mass density of the calibrated models",
+        "doi": "10.1093/mnras/stv725",
+        "url": "https://arxiv.org/abs/1501.01311",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the comoving stellar mass density of the calibrated EAGLE models (L050N0752)",
+        "panel": "FBsigma curve",
+        "checksumSha256": "d032baf562bbfcf55a69e9ccfe6b764d1463372369297b2fc764eb5a02b7dc8d",
+        "sourceMember": "Figs/rhostar_calibrated.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: major ticks z=0..9 assigned in order (verified: positions follow log10(1+z)) and converted exactly to z; y: five major ticks 8.5 to 6.5 assigned in order down the axis; labels are glyph paths so no text was read",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "crain15.eagle.fbz-l050n0752.smd",
+      "source": "EAGLE",
+      "run": "FBZ-L050N0752 (calibration model, Crain+15)",
+      "kind": "simulation",
+      "relation": "smd",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 0,
+        "zMax": 6.729,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift (axis is log10(1+z), converted exactly)",
+        "xUnit": "redshift",
+        "yDefinition": "log10 comoving stellar mass density of the simulated volume",
+        "yUnit": "log10(Msun cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 0,
+        "xMax": 6.729
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 0,
+            "y": 8.3968
+          },
+          {
+            "x": 0.101,
+            "y": 8.3914
+          },
+          {
+            "x": 0.183,
+            "y": 8.386
+          },
+          {
+            "x": 0.271,
+            "y": 8.3793
+          },
+          {
+            "x": 0.366,
+            "y": 8.3705
+          },
+          {
+            "x": 0.503,
+            "y": 8.3548
+          },
+          {
+            "x": 0.615,
+            "y": 8.3393
+          },
+          {
+            "x": 0.736,
+            "y": 8.3207
+          },
+          {
+            "x": 0.865,
+            "y": 8.2982
+          },
+          {
+            "x": 1.004,
+            "y": 8.27
+          },
+          {
+            "x": 1.259,
+            "y": 8.2141
+          },
+          {
+            "x": 1.487,
+            "y": 8.155
+          },
+          {
+            "x": 1.737,
+            "y": 8.0836
+          },
+          {
+            "x": 2.013,
+            "y": 7.9984
+          },
+          {
+            "x": 2.237,
+            "y": 7.928
+          },
+          {
+            "x": 2.478,
+            "y": 7.85
+          },
+          {
+            "x": 3.016,
+            "y": 7.6675
+          },
+          {
+            "x": 3.528,
+            "y": 7.4864
+          },
+          {
+            "x": 3.984,
+            "y": 7.3291
+          },
+          {
+            "x": 4.485,
+            "y": 7.1632
+          },
+          {
+            "x": 5.038,
+            "y": 6.982
+          },
+          {
+            "x": 5.487,
+            "y": 6.8471
+          },
+          {
+            "x": 5.971,
+            "y": 6.7193
+          },
+          {
+            "x": 6.729,
+            "y": 6.5
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all stars in the 50 cMpc simulation volume",
+        "warning": "Comoving stellar mass density of the FBZ calibration model of Crain et al. 2015 (50 cMpc, 752^3 particles), read from the vector path; the paper notes only the Ref model is broadly consistent with observations at z below about 2 and that FBconst forms too much stellar mass early. These are calibration variants, not the production runs of Schaye+15; the survey data points are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies in the volume"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Crain et al. 2015, MNRAS 450, 1937 (arXiv:1501.01311), evolution of the comoving stellar mass density of the calibrated models",
+        "doi": "10.1093/mnras/stv725",
+        "url": "https://arxiv.org/abs/1501.01311",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the comoving stellar mass density of the calibrated EAGLE models (L050N0752)",
+        "panel": "FBZ curve",
+        "checksumSha256": "d032baf562bbfcf55a69e9ccfe6b764d1463372369297b2fc764eb5a02b7dc8d",
+        "sourceMember": "Figs/rhostar_calibrated.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: major ticks z=0..9 assigned in order (verified: positions follow log10(1+z)) and converted exactly to z; y: five major ticks 8.5 to 6.5 assigned in order down the axis; labels are glyph paths so no text was read",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "crain15.eagle.ref-l050n0752.smd",
+      "source": "EAGLE",
+      "run": "Ref-L050N0752 (calibration model, Crain+15)",
+      "kind": "simulation",
+      "relation": "smd",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 0,
+        "zMax": 6.346,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift (axis is log10(1+z), converted exactly)",
+        "xUnit": "redshift",
+        "yDefinition": "log10 comoving stellar mass density of the simulated volume",
+        "yUnit": "log10(Msun cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 0,
+        "xMax": 6.346
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 0,
+            "y": 8.3284
+          },
+          {
+            "x": 0.101,
+            "y": 8.3196
+          },
+          {
+            "x": 0.183,
+            "y": 8.3109
+          },
+          {
+            "x": 0.271,
+            "y": 8.3
+          },
+          {
+            "x": 0.366,
+            "y": 8.2873
+          },
+          {
+            "x": 0.503,
+            "y": 8.265
+          },
+          {
+            "x": 0.615,
+            "y": 8.2435
+          },
+          {
+            "x": 0.736,
+            "y": 8.2166
+          },
+          {
+            "x": 0.865,
+            "y": 8.1855
+          },
+          {
+            "x": 1.004,
+            "y": 8.1482
+          },
+          {
+            "x": 1.259,
+            "y": 8.068
+          },
+          {
+            "x": 1.487,
+            "y": 7.9925
+          },
+          {
+            "x": 1.737,
+            "y": 7.9071
+          },
+          {
+            "x": 2.013,
+            "y": 7.8023
+          },
+          {
+            "x": 2.237,
+            "y": 7.7218
+          },
+          {
+            "x": 2.478,
+            "y": 7.6387
+          },
+          {
+            "x": 3.016,
+            "y": 7.458
+          },
+          {
+            "x": 3.528,
+            "y": 7.2918
+          },
+          {
+            "x": 3.984,
+            "y": 7.1466
+          },
+          {
+            "x": 4.485,
+            "y": 6.9921
+          },
+          {
+            "x": 5.038,
+            "y": 6.8412
+          },
+          {
+            "x": 5.487,
+            "y": 6.717
+          },
+          {
+            "x": 5.971,
+            "y": 6.5948
+          },
+          {
+            "x": 6.346,
+            "y": 6.5
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all stars in the 50 cMpc simulation volume",
+        "warning": "Comoving stellar mass density of the Ref calibration model of Crain et al. 2015 (50 cMpc, 752^3 particles), read from the vector path; the paper notes only the Ref model is broadly consistent with observations at z below about 2 and that FBconst forms too much stellar mass early. These are calibration variants, not the production runs of Schaye+15; the survey data points are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "population": "all galaxies in the volume"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Crain et al. 2015, MNRAS 450, 1937 (arXiv:1501.01311), evolution of the comoving stellar mass density of the calibrated models",
+        "doi": "10.1093/mnras/stv725",
+        "url": "https://arxiv.org/abs/1501.01311",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the comoving stellar mass density of the calibrated EAGLE models (L050N0752)",
+        "panel": "Ref curve",
+        "checksumSha256": "d032baf562bbfcf55a69e9ccfe6b764d1463372369297b2fc764eb5a02b7dc8d",
+        "sourceMember": "Figs/rhostar_calibrated.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: major ticks z=0..9 assigned in order (verified: positions follow log10(1+z)) and converted exactly to z; y: five major ticks 8.5 to 6.5 assigned in order down the axis; labels are glyph paths so no text was read",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

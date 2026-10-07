@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.12.0 (2026-10-08)
+
+- Data (vector figures): TNG100-1 ISM gas fraction at z 0, 1, 2, 4 (Torrey+19; the gas-fraction relation gains a third simulation), EAGLE stellar mass density histories for the four calibrated L050N0752 models (Crain+15), Romulus25 cosmic SFR density (Tremmel+17).
+- Literature triage: all 139 untriaged papers were scanned (`data/literature-scan.json`); each backlog entry now says which relations its captions cover and in what format. 18 semi-analytic and method papers were marked out of scope; five more were skipped with reasons (quenched fraction against halo mass, test-box SFRD of unclear volume, MUFASA and FIRE-1 are not SIMBA and FIRE-2, Auriga needs a profile).
+
 ## 0.11.0 (2026-10-08)
 
 - Licence: code MIT (`LICENSE`), dataset CC BY 4.0 (`LICENSE-DATA.md`); third-party terms recorded in `docs/SOURCE-TERMS.md` (Sharda+26 is GPL-2.0, Garcia+24 has no licence file: both open). `CITATION.cff`, `.zenodo.json` and `data/release.json` carry the licence and repository; no DOI yet.

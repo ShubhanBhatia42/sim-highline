@@ -1,0 +1,149 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "tremmel17.romulus25.sfrd.total",
+      "source": "Romulus25",
+      "run": "Romulus25 (cosmic SFH, Tremmel+17)",
+      "kind": "simulation",
+      "relation": "sfrd",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 0,
+        "zMax": 10.435,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift (axis is log10(1+z), converted exactly)",
+        "xUnit": "redshift",
+        "yDefinition": "log10 cosmic star formation rate density of the 25 Mpc box",
+        "yUnit": "log10(Msun yr^-1 cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 0,
+        "xMax": 10.435
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 0,
+            "y": -1.3165
+          },
+          {
+            "x": 0.137,
+            "y": -1.2136
+          },
+          {
+            "x": 0.292,
+            "y": -1.1943
+          },
+          {
+            "x": 0.469,
+            "y": -1.1027
+          },
+          {
+            "x": 0.67,
+            "y": -1.0522
+          },
+          {
+            "x": 0.899,
+            "y": -1.023
+          },
+          {
+            "x": 1.159,
+            "y": -0.945
+          },
+          {
+            "x": 1.454,
+            "y": -0.9138
+          },
+          {
+            "x": 1.79,
+            "y": -0.844
+          },
+          {
+            "x": 2.172,
+            "y": -0.8132
+          },
+          {
+            "x": 2.606,
+            "y": -0.8367
+          },
+          {
+            "x": 3.099,
+            "y": -0.8529
+          },
+          {
+            "x": 3.66,
+            "y": -0.951
+          },
+          {
+            "x": 4.297,
+            "y": -1.0812
+          },
+          {
+            "x": 5.022,
+            "y": -1.2795
+          },
+          {
+            "x": 5.846,
+            "y": -1.4953
+          },
+          {
+            "x": 6.783,
+            "y": -1.7145
+          },
+          {
+            "x": 7.848,
+            "y": -1.8766
+          },
+          {
+            "x": 9.059,
+            "y": -2.0624
+          },
+          {
+            "x": 10.435,
+            "y": -2.1391
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all star formation in the Romulus25 volume",
+        "warning": "Total cosmic SFR density of the Romulus25 volume (25 Mpc per side), read from the vector path of Tremmel et al. 2017. The paper notes the overproduction of stars at low redshift comes from a handful of high-SFR systems in a small volume; the Behroozi+13, Duncan+14 and Kistler+13 comparison data are not extracted."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67,
+          "Om": 0.3086
+        },
+        "densityFrame": "comoving",
+        "sfrIndicator": "instantaneous SFR",
+        "population": "all galaxies in the volume"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Tremmel et al. 2017, MNRAS 470, 1121 (arXiv:1607.02151), cosmic star formation history of Romulus25",
+        "doi": "10.1093/mnras/stx1160",
+        "url": "https://arxiv.org/abs/1607.02151",
+        "retrieved": "2026-10-05",
+        "figure": "Cosmic star formation history (corrected version of the figure)",
+        "panel": "blue Romulus25 line",
+        "checksumSha256": "69498f9b4747537ace4447176ef6aae0294a41aca6e89e9e6d926dc0fdb5ef23",
+        "sourceMember": "plots/cosmic_SFH_R25_corrected.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: major ticks z=0..10 assigned in order (verified: positions follow log10(1+z)) and converted exactly to z; y: three major ticks 10^-1, 10^-2, 10^-3 assigned in order down the axis; labels are glyph paths so no text was read",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}
