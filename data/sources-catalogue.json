@@ -1169,6 +1169,47 @@
       "redshifts": "z 0-10",
       "adapter": "scripts/digitize_romulus25_sfrd_tremmel17.py",
       "note": "Total cosmic SFR density of the 25 Mpc volume (the paper's corrected figure); axis labels are glyph paths, so calibration uses the verified log(1+z) tick geometry."
+    },
+    {
+      "id": "schaye25-colibre-overview",
+      "suite": "COLIBRE",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2508.21126",
+      "relations": [
+        "sfrd",
+        "ssfr",
+        "shmr"
+      ],
+      "redshifts": "sfrd z 0-18; ssfr and shmr z 0",
+      "adapter": "scripts/digitize_colibre_schaye25.py",
+      "note": "Cosmic SFR density of five resolution runs, z=0 median sSFR of star-forming galaxies and z=0 stellar-to-halo mass ratio of centrals for L400m7, L200m6 and L025m5; resolved (solid) parts only."
+    },
+    {
+      "id": "katz23-sphinx20-uvlf",
+      "suite": "SPHINX20",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2309.03269",
+      "relations": [
+        "uvlf"
+      ],
+      "redshifts": "z 4.64-10",
+      "adapter": "scripts/digitize_sphinx20_uvlf_katz23.py",
+      "note": "Mean UV luminosity function over ten viewing angles at seven redshifts; dust treatment inferred from the paper's description."
+    },
+    {
+      "id": "pillepich19-tng50-size",
+      "suite": "IllustrisTNG",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1902.05553",
+      "relations": [
+        "size"
+      ],
+      "redshifts": "z 0.5, 2, 4",
+      "adapter": "scripts/digitize_tng50_size_pillepich19.py",
+      "note": "TNG50-1 median 3D stellar half-mass and 2D face-on V-band half-light radius of star-forming galaxies versus stellar mass within 30 pkpc."
     }
   ]
 }

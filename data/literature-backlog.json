@@ -76,8 +76,8 @@
       "title": "The COLIBRE project: cosmological hydrodynamical simulations of galaxy formation and evolution",
       "section": "suite in sim-highline",
       "couldSupply": "project overview",
-      "status": "candidate",
-      "statusNote": "Scanned 2026-10-08: captions mention gsmf, h2, sfms, sfrd, shmr, ssfr in vector figures or tables (7); not yet extracted."
+      "status": "ingested",
+      "statusNote": ""
     },
     {
       "arxiv": "2509.07960",
@@ -714,8 +714,8 @@
       "title": "First Results from the TNG50 Simulation: The evolution of stellar and gaseous disks across cosmic time",
       "section": "suite in sim-highline",
       "couldSupply": "TNG50 discs",
-      "status": "candidate",
-      "statusNote": "Scanned 2026-10-08: captions mention bhsigma, gas, sfms, size in vector figures or tables (5); not yet extracted."
+      "status": "ingested",
+      "statusNote": ""
     },
     {
       "arxiv": "1902.05554",
@@ -813,8 +813,8 @@
       "title": "Encyclopedia Magneticum: Scaling Relations from Cosmic Dawn to Present Day",
       "section": "suite in sim-highline",
       "couldSupply": "Encyclopedia Magneticum (28 relations; box-labelled tables already ingested for eight of them)",
-      "status": "candidate",
-      "statusNote": "Scanned 2026-10-08: captions mention bh, bhsigma, gsmf, jstar, mzr, sfms, sfrd, ssfr in vector figures or tables (8); not yet extracted."
+      "status": "skipped",
+      "statusNote": "The SFR density figure colours curves by resolution class and two boxes share the 'hr' colour (and two share 'uhr'), so a curve cannot be attributed to one named box; the other figures duplicate the released Magneticum tables."
     },
     {
       "arxiv": "1503.03501",
@@ -1132,8 +1132,8 @@
       "title": "The Sphinx Public Data Release: Forward Modelling High-Redshift JWST Observations with Cosmological Radiation ",
       "section": "suite in sim-highline",
       "couldSupply": "public data release for JWST forward modelling",
-      "status": "candidate",
-      "statusNote": "Scanned 2026-10-08: captions mention sfms, sfrd, shmr, uvlf, zstar in vector figures or tables (7); not yet extracted."
+      "status": "ingested",
+      "statusNote": "UV luminosity function extracted. Not extracted: the SFR density (progenitors of a galaxy selection at several snapshots, not a volume-wide SFR density)."
     },
     {
       "arxiv": "2207.03232",

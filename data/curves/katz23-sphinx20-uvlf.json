@@ -1,0 +1,1107 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "katz23.sphinx20.uvlf.z4.64",
+      "source": "SPHINX20",
+      "run": "SPHINX20 (UV luminosity function, mean over ten viewing angles, Katz+23)",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 4.64,
+        "zNominal": 4.64,
+        "zMin": 4.64,
+        "zMax": 4.64,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame 1500 A, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -21.3,
+        "xMax": -15.9
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -21.3,
+            "y": -3.359
+          },
+          {
+            "x": -21.1,
+            "y": -3.2499
+          },
+          {
+            "x": -20.9,
+            "y": -3.301
+          },
+          {
+            "x": -20.7,
+            "y": -3.359
+          },
+          {
+            "x": -20.5,
+            "y": -3.2499
+          },
+          {
+            "x": -20.3,
+            "y": -3.2041
+          },
+          {
+            "x": -20.1,
+            "y": -3.301
+          },
+          {
+            "x": -19.9,
+            "y": -3.9031
+          },
+          {
+            "x": -19.7,
+            "y": -3.0901
+          },
+          {
+            "x": -19.5,
+            "y": -3
+          },
+          {
+            "x": -19.3,
+            "y": -2.66
+          },
+          {
+            "x": -19.1,
+            "y": -2.6243
+          },
+          {
+            "x": -18.9,
+            "y": -2.3408
+          },
+          {
+            "x": -18.7,
+            "y": -2.245
+          },
+          {
+            "x": -18.5,
+            "y": -2.1396
+          },
+          {
+            "x": -18.3,
+            "y": -2.0309
+          },
+          {
+            "x": -18.1,
+            "y": -1.9322
+          },
+          {
+            "x": -17.9,
+            "y": -1.848
+          },
+          {
+            "x": -17.7,
+            "y": -1.886
+          },
+          {
+            "x": -17.5,
+            "y": -1.7743
+          },
+          {
+            "x": -17.3,
+            "y": -1.6949
+          },
+          {
+            "x": -17.1,
+            "y": -1.7743
+          },
+          {
+            "x": -16.9,
+            "y": -1.7432
+          },
+          {
+            "x": -16.7,
+            "y": -1.7891
+          },
+          {
+            "x": -16.5,
+            "y": -2
+          },
+          {
+            "x": -16.3,
+            "y": -1.923
+          },
+          {
+            "x": -16.1,
+            "y": -1.9866
+          },
+          {
+            "x": -15.9,
+            "y": -2.028
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "SPHINX20 galaxies with SFR_10 >= 0.3 Msun/yr (the data-release selection)",
+        "warning": "Mean UV luminosity function of SPHINX20 at z=4.64 (mean over ten viewing angles), read from the vector line of Katz et al. 2023; the standard-deviation bands and observational points are not extracted. The paper notes the bright cutoff reflects the finite box and the faint downturn the SFR threshold of 0.3 Msun/yr, so the faint end is incomplete by construction."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": "unspecified",
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "dust radiative transfer, mean over ten viewing angles (inferred from the paper's statement that all galaxy emission is dust-processed; the caption does not say attenuated)",
+        "population": "galaxies above the data-release SFR threshold"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Katz et al. 2023, OJAp 6 (arXiv:2309.03269), UV luminosity function of SPHINX20 galaxies",
+        "doi": "10.21105/astro.2309.03269",
+        "url": "https://arxiv.org/abs/2309.03269",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity function for SPHINX20 galaxies at different redshifts",
+        "panel": "z = 4.64 curve (upper panel)",
+        "checksumSha256": "5ce9ab9ca4ff57dc60bcd643884f896e934727089d01118891edc9dff24bd4b1",
+        "sourceMember": "figures/uvlf_sphinx20.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (minus glyphs included) from the lower panel snapped to ticks and shared by both panels; y: decade labels per panel validated by the minor-tick pattern (log10); curve colours matched to redshifts through the legend swatches",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "katz23.sphinx20.uvlf.z6",
+      "source": "SPHINX20",
+      "run": "SPHINX20 (UV luminosity function, mean over ten viewing angles, Katz+23)",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame 1500 A, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -20.7,
+        "xMax": -15.9
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -20.7,
+            "y": -3.602
+          },
+          {
+            "x": -20.5,
+            "y": -3.359
+          },
+          {
+            "x": -20.3,
+            "y": -3.4259
+          },
+          {
+            "x": -20.1,
+            "y": -3.2041
+          },
+          {
+            "x": -19.9,
+            "y": -2.9488
+          },
+          {
+            "x": -19.7,
+            "y": -2.9253
+          },
+          {
+            "x": -19.5,
+            "y": -2.9253
+          },
+          {
+            "x": -19.3,
+            "y": -3
+          },
+          {
+            "x": -19.1,
+            "y": -2.727
+          },
+          {
+            "x": -18.9,
+            "y": -2.66
+          },
+          {
+            "x": -18.7,
+            "y": -2.4117
+          },
+          {
+            "x": -18.5,
+            "y": -2.301
+          },
+          {
+            "x": -18.3,
+            "y": -2.3467
+          },
+          {
+            "x": -18.1,
+            "y": -2.0705
+          },
+          {
+            "x": -17.9,
+            "y": -1.9736
+          },
+          {
+            "x": -17.7,
+            "y": -1.9393
+          },
+          {
+            "x": -17.5,
+            "y": -1.914
+          },
+          {
+            "x": -17.3,
+            "y": -1.8423
+          },
+          {
+            "x": -17.1,
+            "y": -1.7958
+          },
+          {
+            "x": -16.9,
+            "y": -1.8558
+          },
+          {
+            "x": -16.7,
+            "y": -1.8656
+          },
+          {
+            "x": -16.5,
+            "y": -1.9488
+          },
+          {
+            "x": -16.3,
+            "y": -2.0611
+          },
+          {
+            "x": -16.1,
+            "y": -2.1249
+          },
+          {
+            "x": -15.9,
+            "y": -2.2646
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "SPHINX20 galaxies with SFR_10 >= 0.3 Msun/yr (the data-release selection)",
+        "warning": "Mean UV luminosity function of SPHINX20 at z=6 (mean over ten viewing angles), read from the vector line of Katz et al. 2023; the standard-deviation bands and observational points are not extracted. The paper notes the bright cutoff reflects the finite box and the faint downturn the SFR threshold of 0.3 Msun/yr, so the faint end is incomplete by construction."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": "unspecified",
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "dust radiative transfer, mean over ten viewing angles (inferred from the paper's statement that all galaxy emission is dust-processed; the caption does not say attenuated)",
+        "population": "galaxies above the data-release SFR threshold"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Katz et al. 2023, OJAp 6 (arXiv:2309.03269), UV luminosity function of SPHINX20 galaxies",
+        "doi": "10.21105/astro.2309.03269",
+        "url": "https://arxiv.org/abs/2309.03269",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity function for SPHINX20 galaxies at different redshifts",
+        "panel": "z = 6 curve (upper panel)",
+        "checksumSha256": "5ce9ab9ca4ff57dc60bcd643884f896e934727089d01118891edc9dff24bd4b1",
+        "sourceMember": "figures/uvlf_sphinx20.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (minus glyphs included) from the lower panel snapped to ticks and shared by both panels; y: decade labels per panel validated by the minor-tick pattern (log10); curve colours matched to redshifts through the legend swatches",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "katz23.sphinx20.uvlf.z8",
+      "source": "SPHINX20",
+      "run": "SPHINX20 (UV luminosity function, mean over ten viewing angles, Katz+23)",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame 1500 A, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -20.7,
+        "xMax": -15.9
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -20.7,
+            "y": -4.2041
+          },
+          {
+            "x": -20.5,
+            "y": -3.727
+          },
+          {
+            "x": -20.3,
+            "y": -3.9031
+          },
+          {
+            "x": -20.1,
+            "y": -3.5051
+          },
+          {
+            "x": -19.9,
+            "y": -3.5051
+          },
+          {
+            "x": -19.7,
+            "y": -3.602
+          },
+          {
+            "x": -19.5,
+            "y": -3.602
+          },
+          {
+            "x": -19.3,
+            "y": -3.4259
+          },
+          {
+            "x": -19.1,
+            "y": -3.727
+          },
+          {
+            "x": -18.9,
+            "y": -3.2041
+          },
+          {
+            "x": -18.7,
+            "y": -3.028
+          },
+          {
+            "x": -18.5,
+            "y": -2.602
+          },
+          {
+            "x": -18.3,
+            "y": -2.6726
+          },
+          {
+            "x": -18.1,
+            "y": -2.4965
+          },
+          {
+            "x": -17.9,
+            "y": -2.2747
+          },
+          {
+            "x": -17.7,
+            "y": -2.4881
+          },
+          {
+            "x": -17.5,
+            "y": -2.285
+          },
+          {
+            "x": -17.3,
+            "y": -2.2596
+          },
+          {
+            "x": -17.1,
+            "y": -2.1285
+          },
+          {
+            "x": -16.9,
+            "y": -2.1747
+          },
+          {
+            "x": -16.7,
+            "y": -2.187
+          },
+          {
+            "x": -16.5,
+            "y": -2.2498
+          },
+          {
+            "x": -16.3,
+            "y": -2.2747
+          },
+          {
+            "x": -16.1,
+            "y": -2.3408
+          },
+          {
+            "x": -15.9,
+            "y": -2.2747
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "SPHINX20 galaxies with SFR_10 >= 0.3 Msun/yr (the data-release selection)",
+        "warning": "Mean UV luminosity function of SPHINX20 at z=8 (mean over ten viewing angles), read from the vector line of Katz et al. 2023; the standard-deviation bands and observational points are not extracted. The paper notes the bright cutoff reflects the finite box and the faint downturn the SFR threshold of 0.3 Msun/yr, so the faint end is incomplete by construction."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": "unspecified",
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "dust radiative transfer, mean over ten viewing angles (inferred from the paper's statement that all galaxy emission is dust-processed; the caption does not say attenuated)",
+        "population": "galaxies above the data-release SFR threshold"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Katz et al. 2023, OJAp 6 (arXiv:2309.03269), UV luminosity function of SPHINX20 galaxies",
+        "doi": "10.21105/astro.2309.03269",
+        "url": "https://arxiv.org/abs/2309.03269",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity function for SPHINX20 galaxies at different redshifts",
+        "panel": "z = 8 curve (upper panel)",
+        "checksumSha256": "5ce9ab9ca4ff57dc60bcd643884f896e934727089d01118891edc9dff24bd4b1",
+        "sourceMember": "figures/uvlf_sphinx20.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (minus glyphs included) from the lower panel snapped to ticks and shared by both panels; y: decade labels per panel validated by the minor-tick pattern (log10); curve colours matched to redshifts through the legend swatches",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "katz23.sphinx20.uvlf.z10",
+      "source": "SPHINX20",
+      "run": "SPHINX20 (UV luminosity function, mean over ten viewing angles, Katz+23)",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame 1500 A, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -19.7,
+        "xMax": -15.9
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -19.7,
+            "y": -3.727
+          },
+          {
+            "x": -19.5,
+            "y": -3.5051
+          },
+          {
+            "x": -19.3,
+            "y": -3.4259
+          },
+          {
+            "x": -19.1,
+            "y": -4.2041
+          },
+          {
+            "x": -18.9,
+            "y": -3.9031
+          },
+          {
+            "x": -18.7,
+            "y": -3.4259
+          },
+          {
+            "x": -18.5,
+            "y": -3
+          },
+          {
+            "x": -18.3,
+            "y": -3.2499
+          },
+          {
+            "x": -18.1,
+            "y": -2.8617
+          },
+          {
+            "x": -17.9,
+            "y": -2.8617
+          },
+          {
+            "x": -17.7,
+            "y": -2.8239
+          },
+          {
+            "x": -17.5,
+            "y": -2.5913
+          },
+          {
+            "x": -17.3,
+            "y": -2.7127
+          },
+          {
+            "x": -17.1,
+            "y": -2.613
+          },
+          {
+            "x": -16.9,
+            "y": -2.613
+          },
+          {
+            "x": -16.7,
+            "y": -2.6856
+          },
+          {
+            "x": -16.5,
+            "y": -2.6856
+          },
+          {
+            "x": -16.3,
+            "y": -2.613
+          },
+          {
+            "x": -16.1,
+            "y": -2.8617
+          },
+          {
+            "x": -15.9,
+            "y": -3.028
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "SPHINX20 galaxies with SFR_10 >= 0.3 Msun/yr (the data-release selection)",
+        "warning": "Mean UV luminosity function of SPHINX20 at z=10 (mean over ten viewing angles), read from the vector line of Katz et al. 2023; the standard-deviation bands and observational points are not extracted. The paper notes the bright cutoff reflects the finite box and the faint downturn the SFR threshold of 0.3 Msun/yr, so the faint end is incomplete by construction."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": "unspecified",
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "dust radiative transfer, mean over ten viewing angles (inferred from the paper's statement that all galaxy emission is dust-processed; the caption does not say attenuated)",
+        "population": "galaxies above the data-release SFR threshold"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Katz et al. 2023, OJAp 6 (arXiv:2309.03269), UV luminosity function of SPHINX20 galaxies",
+        "doi": "10.21105/astro.2309.03269",
+        "url": "https://arxiv.org/abs/2309.03269",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity function for SPHINX20 galaxies at different redshifts",
+        "panel": "z = 10 curve (upper panel)",
+        "checksumSha256": "5ce9ab9ca4ff57dc60bcd643884f896e934727089d01118891edc9dff24bd4b1",
+        "sourceMember": "figures/uvlf_sphinx20.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (minus glyphs included) from the lower panel snapped to ticks and shared by both panels; y: decade labels per panel validated by the minor-tick pattern (log10); curve colours matched to redshifts through the legend swatches",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "katz23.sphinx20.uvlf.z5",
+      "source": "SPHINX20",
+      "run": "SPHINX20 (UV luminosity function, mean over ten viewing angles, Katz+23)",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame 1500 A, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.1,
+        "xMax": -15.9
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.1,
+            "y": -3.6019
+          },
+          {
+            "x": -21.9,
+            "y": -4.204
+          },
+          {
+            "x": -21.3,
+            "y": -3.903
+          },
+          {
+            "x": -21.1,
+            "y": -3.505
+          },
+          {
+            "x": -20.9,
+            "y": -3.6019
+          },
+          {
+            "x": -20.7,
+            "y": -3.1248
+          },
+          {
+            "x": -20.5,
+            "y": -3.3589
+          },
+          {
+            "x": -20.3,
+            "y": -3.4258
+          },
+          {
+            "x": -20.1,
+            "y": -3.0279
+          },
+          {
+            "x": -19.9,
+            "y": -3.204
+          },
+          {
+            "x": -19.7,
+            "y": -2.9999
+          },
+          {
+            "x": -19.5,
+            "y": -2.9999
+          },
+          {
+            "x": -19.3,
+            "y": -2.8423
+          },
+          {
+            "x": -19.1,
+            "y": -2.4797
+          },
+          {
+            "x": -18.9,
+            "y": -2.4186
+          },
+          {
+            "x": -18.7,
+            "y": -2.3347
+          },
+          {
+            "x": -18.5,
+            "y": -2.2449
+          },
+          {
+            "x": -18.3,
+            "y": -2.1706
+          },
+          {
+            "x": -18.1,
+            "y": -2.1358
+          },
+          {
+            "x": -17.9,
+            "y": -1.8441
+          },
+          {
+            "x": -17.7,
+            "y": -1.8166
+          },
+          {
+            "x": -17.5,
+            "y": -1.8274
+          },
+          {
+            "x": -17.3,
+            "y": -1.9321
+          },
+          {
+            "x": -17.1,
+            "y": -1.8901
+          },
+          {
+            "x": -16.9,
+            "y": -1.813
+          },
+          {
+            "x": -16.7,
+            "y": -1.8838
+          },
+          {
+            "x": -16.5,
+            "y": -1.8715
+          },
+          {
+            "x": -16.3,
+            "y": -1.9999
+          },
+          {
+            "x": -16.1,
+            "y": -2.0165
+          },
+          {
+            "x": -15.9,
+            "y": -2.0834
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "SPHINX20 galaxies with SFR_10 >= 0.3 Msun/yr (the data-release selection)",
+        "warning": "Mean UV luminosity function of SPHINX20 at z=5 (mean over ten viewing angles), read from the vector line of Katz et al. 2023; the standard-deviation bands and observational points are not extracted. The paper notes the bright cutoff reflects the finite box and the faint downturn the SFR threshold of 0.3 Msun/yr, so the faint end is incomplete by construction."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": "unspecified",
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "dust radiative transfer, mean over ten viewing angles (inferred from the paper's statement that all galaxy emission is dust-processed; the caption does not say attenuated)",
+        "population": "galaxies above the data-release SFR threshold"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Katz et al. 2023, OJAp 6 (arXiv:2309.03269), UV luminosity function of SPHINX20 galaxies",
+        "doi": "10.21105/astro.2309.03269",
+        "url": "https://arxiv.org/abs/2309.03269",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity function for SPHINX20 galaxies at different redshifts",
+        "panel": "z = 5 curve (lower panel)",
+        "checksumSha256": "5ce9ab9ca4ff57dc60bcd643884f896e934727089d01118891edc9dff24bd4b1",
+        "sourceMember": "figures/uvlf_sphinx20.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (minus glyphs included) from the lower panel snapped to ticks and shared by both panels; y: decade labels per panel validated by the minor-tick pattern (log10); curve colours matched to redshifts through the legend swatches",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "katz23.sphinx20.uvlf.z7",
+      "source": "SPHINX20",
+      "run": "SPHINX20 (UV luminosity function, mean over ten viewing angles, Katz+23)",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame 1500 A, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -19.9,
+        "xMax": -15.9
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -19.9,
+            "y": -3.903
+          },
+          {
+            "x": -19.7,
+            "y": -3.3589
+          },
+          {
+            "x": -19.5,
+            "y": -2.9487
+          },
+          {
+            "x": -19.3,
+            "y": -3.1626
+          },
+          {
+            "x": -19.1,
+            "y": -2.9252
+          },
+          {
+            "x": -18.9,
+            "y": -2.7126
+          },
+          {
+            "x": -18.7,
+            "y": -2.5605
+          },
+          {
+            "x": -18.5,
+            "y": -2.5227
+          },
+          {
+            "x": -18.3,
+            "y": -2.4636
+          },
+          {
+            "x": -18.1,
+            "y": -2.4186
+          },
+          {
+            "x": -17.9,
+            "y": -2.2797
+          },
+          {
+            "x": -17.7,
+            "y": -2.2083
+          },
+          {
+            "x": -17.5,
+            "y": -2.1176
+          },
+          {
+            "x": -17.3,
+            "y": -1.9971
+          },
+          {
+            "x": -17.1,
+            "y": -2.0396
+          },
+          {
+            "x": -16.9,
+            "y": -2.0548
+          },
+          {
+            "x": -16.7,
+            "y": -2.09
+          },
+          {
+            "x": -16.5,
+            "y": -2.2263
+          },
+          {
+            "x": -16.3,
+            "y": -2.2355
+          },
+          {
+            "x": -16.1,
+            "y": -2.2127
+          },
+          {
+            "x": -15.9,
+            "y": -2.3779
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "SPHINX20 galaxies with SFR_10 >= 0.3 Msun/yr (the data-release selection)",
+        "warning": "Mean UV luminosity function of SPHINX20 at z=7 (mean over ten viewing angles), read from the vector line of Katz et al. 2023; the standard-deviation bands and observational points are not extracted. The paper notes the bright cutoff reflects the finite box and the faint downturn the SFR threshold of 0.3 Msun/yr, so the faint end is incomplete by construction."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": "unspecified",
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "dust radiative transfer, mean over ten viewing angles (inferred from the paper's statement that all galaxy emission is dust-processed; the caption does not say attenuated)",
+        "population": "galaxies above the data-release SFR threshold"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Katz et al. 2023, OJAp 6 (arXiv:2309.03269), UV luminosity function of SPHINX20 galaxies",
+        "doi": "10.21105/astro.2309.03269",
+        "url": "https://arxiv.org/abs/2309.03269",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity function for SPHINX20 galaxies at different redshifts",
+        "panel": "z = 7 curve (lower panel)",
+        "checksumSha256": "5ce9ab9ca4ff57dc60bcd643884f896e934727089d01118891edc9dff24bd4b1",
+        "sourceMember": "figures/uvlf_sphinx20.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (minus glyphs included) from the lower panel snapped to ticks and shared by both panels; y: decade labels per panel validated by the minor-tick pattern (log10); curve colours matched to redshifts through the legend swatches",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "katz23.sphinx20.uvlf.z9",
+      "source": "SPHINX20",
+      "run": "SPHINX20 (UV luminosity function, mean over ten viewing angles, Katz+23)",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 9,
+        "zNominal": 9,
+        "zMin": 9,
+        "zMax": 9,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame 1500 A, AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -19.3,
+        "xMax": -15.9
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -19.3,
+            "y": -3.903
+          },
+          {
+            "x": -19.1,
+            "y": -3.2498
+          },
+          {
+            "x": -18.9,
+            "y": -3.1626
+          },
+          {
+            "x": -18.7,
+            "y": -3.1248
+          },
+          {
+            "x": -18.5,
+            "y": -2.9735
+          },
+          {
+            "x": -18.3,
+            "y": -2.8616
+          },
+          {
+            "x": -18.1,
+            "y": -2.7568
+          },
+          {
+            "x": -17.9,
+            "y": -2.5605
+          },
+          {
+            "x": -17.7,
+            "y": -2.6019
+          },
+          {
+            "x": -17.5,
+            "y": -2.5319
+          },
+          {
+            "x": -17.3,
+            "y": -2.5227
+          },
+          {
+            "x": -17.1,
+            "y": -2.5227
+          },
+          {
+            "x": -16.9,
+            "y": -2.4558
+          },
+          {
+            "x": -16.7,
+            "y": -2.7269
+          },
+          {
+            "x": -16.5,
+            "y": -2.6988
+          },
+          {
+            "x": -16.3,
+            "y": -2.8818
+          },
+          {
+            "x": -16.1,
+            "y": -2.6129
+          },
+          {
+            "x": -15.9,
+            "y": -2.6358
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "SPHINX20 galaxies with SFR_10 >= 0.3 Msun/yr (the data-release selection)",
+        "warning": "Mean UV luminosity function of SPHINX20 at z=9 (mean over ten viewing angles), read from the vector line of Katz et al. 2023; the standard-deviation bands and observational points are not extracted. The paper notes the bright cutoff reflects the finite box and the faint downturn the SFR threshold of 0.3 Msun/yr, so the faint end is incomplete by construction."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": "unspecified",
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1500 A, AB",
+        "dustCorrection": "dust radiative transfer, mean over ten viewing angles (inferred from the paper's statement that all galaxy emission is dust-processed; the caption does not say attenuated)",
+        "population": "galaxies above the data-release SFR threshold"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Katz et al. 2023, OJAp 6 (arXiv:2309.03269), UV luminosity function of SPHINX20 galaxies",
+        "doi": "10.21105/astro.2309.03269",
+        "url": "https://arxiv.org/abs/2309.03269",
+        "retrieved": "2026-10-05",
+        "figure": "UV luminosity function for SPHINX20 galaxies at different redshifts",
+        "panel": "z = 9 curve (lower panel)",
+        "checksumSha256": "5ce9ab9ca4ff57dc60bcd643884f896e934727089d01118891edc9dff24bd4b1",
+        "sourceMember": "figures/uvlf_sphinx20.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels (minus glyphs included) from the lower panel snapped to ticks and shared by both panels; y: decade labels per panel validated by the minor-tick pattern (log10); curve colours matched to redshifts through the legend swatches",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

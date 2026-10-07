@@ -38,8 +38,8 @@ For each record: open the cited figure or table, confirm (1) the curve is the on
 | Romulus25 | `ricarte19.romulus25.sfms-galaxies.z1` | sfms | 1 | digitized-figure | Ricarte et al. 2019, MNRAS 489, 802, SFMS figure (sfms; arXiv source numbering), Romulus25 panel z=1 |
 | SIMBA | `habouzit21.m100n1024.bh.z0` | bh | 0 | digitized-figure | Habouzit et al. 2021, MNRAS 503, 1940 (arXiv:2006.10094), median MBH-M* relation of all simulations, z=0 |
 | SIMBA | `dave19.simba-m100n1024.gsmf.z5.9` | gsmf | 5.9 | digitized-figure | Dave et al. 2019, MNRAS 486, 2827, Fig. 4 (arXiv source numbering), z=5.9 panel |
+| SPHINX20 | `katz23.sphinx20.uvlf.z10` | uvlf | 10 | digitized-figure | Katz et al. 2023, OJAp 6 (arXiv:2309.03269), UV luminosity function of SPHINX20 galaxies |
 | SPHINX20 | `katz23.sphinx20.size.uv-1500A.z10` | size | 10 | catalog-derived | SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline |
-| SPHINX20 | `katz23.sphinx20.shmr.virial.z8` | shmr | 8 | catalog-derived | SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline |
 | THESAN-1 | `kannan22.thesan.uvlf.t1.z7` | uvlf | 7 | digitized-figure | Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), UV luminosity functions at z=6-10, z=7 |
 | THESAN-1 | `kannan22.thesan.sfrd.t1` | sfrd | 10 | digitized-figure | Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), evolution of the star formation rate density |
 | THESAN-zoom | `kannan25.thesanzoom.gsmf.z8` | gsmf | 8 | digitized-figure | Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), galaxy stellar mass function, 7.5 <= z < 8.5 |
