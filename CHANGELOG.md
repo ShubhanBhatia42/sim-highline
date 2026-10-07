@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.11.0 (2026-10-08)
+
+- Licence: code MIT (`LICENSE`), dataset CC BY 4.0 (`LICENSE-DATA.md`); third-party terms recorded in `docs/SOURCE-TERMS.md` (Sharda+26 is GPL-2.0, Garcia+24 has no licence file: both open). `CITATION.cff`, `.zenodo.json` and `data/release.json` carry the licence and repository; no DOI yet.
+- Beta: dataset Cite box (text and BibTeX) in Get data; "Report an issue" on every curve (prefilled GitHub issue form); "rankable only" pill in the legend; per-relation anchor picker (also used by Tension); optional on-screen IMF conversion to Chabrier with standard offsets (downloads keep published values); embed mode (`&embed=1`) and "Copy embed code"; keyboard hint; landing page "Start with a question" deep links; fixed a first-paint flash of the side panel.
+- Python: installable package (`pyproject.toml`, wheel bundles the export tables), `notebooks/quickstart.ipynb`.
+- Tooling: `scripts/verify-all.sh` (one verification chain), GitHub issue forms, pull request template, `verify` workflow (pull requests) and weekly `watch-arxiv` workflow, `scripts/watch-arxiv.py`, `scripts/scan_literature.py`; `coverage-report.json` is stamped with the release date so regenerated files are deterministic.
+
 ## 0.10.0 (2026-10-08)
 
 - Data (vector figures): FIREbox stellar mass function at z 0-10, cosmic SFR density and stellar mass density (Feldmann+23; 10 records), TNG100 3D half-mass size for main-sequence, quenched and all galaxies at z 0-3 (Genel+18; 12 records), NewHorizon stellar mass density (Dubois+21).

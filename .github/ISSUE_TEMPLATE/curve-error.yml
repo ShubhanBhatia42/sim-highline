@@ -1,0 +1,29 @@
+name: Curve error
+description: A curve in sim-highline does not match its source, or its definitions are wrong
+title: "Curve error: "
+labels: ["curve-error"]
+body:
+  - type: input
+    id: record
+    attributes:
+      label: Record id
+      description: Shown in the Evidence panel of the beta (prefilled when you use "Report an issue").
+    validations:
+      required: true
+  - type: input
+    id: view
+    attributes:
+      label: Link to the view
+      description: The page link reproduces what you were looking at.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong
+      description: For example the values differ from the published figure or table, the epoch is wrong, the mass or IMF definition differs from the paper, or the citation is the wrong paper.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Figure, table or section of the paper, or the correct values. If you are an author of the source, please say so.

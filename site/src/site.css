@@ -29,6 +29,9 @@ section{padding:46px 0;border-top:1px solid var(--line)}
 .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
 .card{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:22px}
 .card p{margin:0;color:var(--cream2);font-size:16px}
+a.card{display:block;text-decoration:none;color:inherit;transition:border-color .15s}
+a.card:hover,a.card:focus-visible{border-color:var(--orange)}
+a.card h3{margin:0 0 8px}
 .nums{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
 .nums div{border-left:2px solid var(--orange);padding-left:14px}
 .nums b{display:block;font:26px var(--display);color:var(--cream)}

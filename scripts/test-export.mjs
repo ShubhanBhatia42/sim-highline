@@ -36,5 +36,7 @@ assert.ok(bib.includes("doi = {10.1/x}") && bib.includes("note = {Doe et al. 202
 const rel = JSON.parse(await readFile(new URL("../data/release.json", import.meta.url), "utf8"));
 const cff = await readFile(new URL("../CITATION.cff", import.meta.url), "utf8");
 assert.equal(cff.match(/^version: (\S+)/m)[1], rel.version, "CITATION.cff version must match data/release.json");
+assert.match(cff, /^cff-version: 1\.2\.0$/m, "CITATION.cff must start with cff-version 1.2.0");
+assert.equal((cff.match(/^version:/gm) || []).length, 1, "CITATION.cff must have exactly one version");
 assert.equal(cff.match(/^date-released: (\S+)/m)[1], rel.released, "CITATION.cff date-released must match data/release.json");
 console.log("Export library tests passed");

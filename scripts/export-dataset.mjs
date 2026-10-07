@@ -19,7 +19,7 @@ const outputs = {
   "sim-highline-records.json": JSON.stringify({ version: release.version, released: release.released, records }) + "\n",
   "sim-highline-citations.bib": X.bibtex(records)
 };
-const manifest = { version: release.version, released: release.released, doi: release.doi, nRecords: records.length, nPoints: ptRows.length, nParametric: records.filter(r => r.representation.type === "parametric").length,
+const manifest = { version: release.version, released: release.released, doi: release.doi, license: release.license, nRecords: records.length, nPoints: ptRows.length, nParametric: records.filter(r => r.representation.type === "parametric").length,
   parametricSampling: `${X.NSAMPLE} points over the record domain at zRepresentative; the published expression is evaluated, nothing else is generated`,
   columns: { records: X.RECORD_COLS, points: X.POINT_COLS }, files: {} };
 for (const [name, text] of Object.entries(outputs)) {

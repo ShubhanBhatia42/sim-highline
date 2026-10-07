@@ -1,6 +1,13 @@
 {
-  "version": "0.10.0",
+  "version": "0.11.0",
   "released": "2026-10-08",
   "doi": null,
+  "title": "sim-highline: curated galaxy scaling relations from cosmological simulations",
+  "author": "Shubhan Bhatia",
+  "repo": "https://github.com/ShubhanBhatia42/sim-highline",
+  "license": {
+    "code": "MIT",
+    "data": "CC-BY-4.0"
+  },
   "notes": "Version of the exported dataset (data/export/). Bump on any change to data/curves/ or the export format; record it in CHANGELOG.md."
 }

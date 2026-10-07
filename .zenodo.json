@@ -1,0 +1,27 @@
+{
+  "title": "sim-highline: curated galaxy scaling relations from cosmological simulations",
+  "upload_type": "dataset",
+  "description": "Curated galaxy scaling relations (stellar mass function, main sequence, mass-metallicity, size, halo and black hole relations, UV luminosity function, cosmic SFR density and others) from cosmological simulations and observations, with the definitions that decide whether two curves are comparable, a provenance tier and citation on every record, and tidy CSV and JSON exports.",
+  "creators": [
+    {
+      "name": "Bhatia, Shubhan"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "keywords": [
+    "galaxy formation",
+    "cosmological simulations",
+    "scaling relations",
+    "stellar mass function",
+    "mass-metallicity relation",
+    "reproducible data"
+  ],
+  "related_identifiers": [
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://github.com/ShubhanBhatia42/sim-highline",
+      "scheme": "url"
+    }
+  ]
+}

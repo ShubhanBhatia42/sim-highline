@@ -16,4 +16,4 @@
 
 **Versioning.** `data/release.json` holds the dataset version; `CHANGELOG.md` records changes. A DOI is not yet minted.
 
-**Licence and citation.** Not yet set by the maintainer. Records reproduce values from the cited papers and data releases: cite those (the `citation` and `doi` columns, `sim-highline-citations.bib`) together with this dataset (`CITATION.cff`).
+**Licence and citation.** Code MIT (`LICENSE`), dataset CC BY 4.0 (`LICENSE-DATA.md`); inputs from third-party data releases keep their own terms (`docs/SOURCE-TERMS.md`). Records reproduce values from the cited papers and data releases: cite those (the `citation` and `doi` columns, `sim-highline-citations.bib`) together with this dataset (`CITATION.cff`).

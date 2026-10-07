@@ -87,5 +87,5 @@ function evaluator(record){
   const fn=new Function(...Object.keys(params),"x","t","z","log10",`return ${rep.expression};`);
   return(x,z)=>fn(...Object.values(params),x,rep.ageCosmology?cosmicAgeGyr(z,rep.ageCosmology):NaN,z,Math.log10);
 }
-root.SimHighlineCompare={RULES,MIN_BINS,compatible,interpolate,residuals,summarize,cosmicAgeGyr,evaluator,sigmaOf};
+root.SimHighlineCompare={IMF_DEX,RULES,MIN_BINS,compatible,interpolate,residuals,summarize,cosmicAgeGyr,evaluator,sigmaOf};
 })(typeof globalThis!=="undefined"?globalThis:window);

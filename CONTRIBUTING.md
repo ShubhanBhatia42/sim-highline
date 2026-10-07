@@ -21,6 +21,8 @@ Tiers: `catalog-derived`, `official-table` (needs the SHA-256 of the released fi
 
 ## Check before you send
 
+`./scripts/verify-all.sh` runs the whole offline chain below in one go (it is what CI runs on pull requests; install `requirements-dev.txt` first). Commit the regenerated files it produces: CI fails when they differ.
+
 ```
 node scripts/annotate-definitions.mjs && node scripts/validate-curves.mjs && node scripts/validate-manifest.mjs \
  && node scripts/test-curves.mjs && node scripts/test-compare.mjs && node scripts/report-coverage.mjs \
@@ -34,6 +36,10 @@ python3 scripts/verify-dois.py   # network: every DOI resolves and matches the s
 ```
 
 The audit must end with 0 errors and 0 warnings; accepted findings go in `data/audit-known.json` with a reason. Add an entry to `data/sources-catalogue.json`, profile any new observational source in `data/observation-profiles.json`, bump `data/release.json` and add a line to `CHANGELOG.md`.
+
+## What happens to a submission
+
+Open a pull request using the template. CI runs `scripts/verify-all.sh` and checks that the package builds. A maintainer then checks the extraction against the paper (the spot checks in the script help) and, for digitized records, whether an author table exists. Curve errors and source suggestions go through the issue forms in `.github/ISSUE_TEMPLATE/`; the beta's "Report an issue" button on every curve opens a prefilled one.
 
 ## Style
 

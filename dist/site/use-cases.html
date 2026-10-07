@@ -38,6 +38,9 @@ section{padding:46px 0;border-top:1px solid var(--line)}
 .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
 .card{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:22px}
 .card p{margin:0;color:var(--cream2);font-size:16px}
+a.card{display:block;text-decoration:none;color:inherit;transition:border-color .15s}
+a.card:hover,a.card:focus-visible{border-color:var(--orange)}
+a.card h3{margin:0 0 8px}
 .nums{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
 .nums div{border-left:2px solid var(--orange);padding-left:14px}
 .nums b{display:block;font:26px var(--display);color:var(--cream)}
@@ -171,7 +174,7 @@ g   = sel.groupby(["source", "run"]).agg(z=("z", "first"), points=("x", "size"),
                                          mass_class=("mass_class", "first"), tier=("tier", "first"))
 print(g.reset_index().assign(run=lambda d: d.run.str.slice(0, 26)).to_string(index=False))
 print(f"{sel.record_id.nunique()} records from {sel.source.nunique()} simulations")</code></pre>
-<p style="color:var(--cream3);font-size:14px;margin:12px 0 6px">Output from dataset v0.10.0:</p>
+<p style="color:var(--cream3);font-size:14px;margin:12px 0 6px">Output from dataset v0.11.0:</p>
 <pre><code>     source                        run   z  points    mass_class             tier
     COLIBRE                  m5 (L025) 6.0      10   unspecified   official-table
     COLIBRE                  m5 (L050) 6.0      12   unspecified   official-table
@@ -203,7 +206,7 @@ Horizon-AGN              Horizon-noAGN 6.0       3   unspecified digitized-figur
 </section>
 
 <footer>
-<p>sim-highline 0.10.0 · 2026-10-08 · Shubhan Bhatia. Beta from one maintainer; a sample of curves is waiting for review by people who know each simulation. Please cite the original papers with the dataset (see <code>CITATION.cff</code>).</p>
+<p>sim-highline 0.11.0 · 2026-10-08 · Shubhan Bhatia. Beta from one maintainer; a sample of curves is waiting for review by people who know each simulation. Please cite the original papers with the dataset (see <code>CITATION.cff</code>).</p>
 <p><a href="../highline.html">Open the beta</a> · <a href="index.html">Product</a> · <a href="../data/export/sim-highline-records.csv">Download the data</a></p>
 </footer>
 </div>
