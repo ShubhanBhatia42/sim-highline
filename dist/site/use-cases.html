@@ -7,7 +7,10 @@
 <meta name="description" content="Six concrete jobs for sim-highline: high-redshift predictions, checking your own simulation, building calibration sets, teaching, writing papers, and finding gaps.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
-<style>:root{--bg:#0b0e13;--bg2:#11161f;--bg3:#18202c;--line:#273142;--cream:#efe6d2;--cream2:#b8af9a;--cream3:#7a7465;--orange:#e8743b;--mustard:#e2b23a;--display:"Michroma","Eurostile","Arial Narrow",sans-serif;--ui:"Jost","Futura","Avenir Next",system-ui,sans-serif;--mono:ui-monospace,Menlo,Consolas,monospace}
+<style>@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.18s}
+@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}
+:root{--bg:#0b0e13;--bg2:#11161f;--bg3:#18202c;--line:#273142;--cream:#efe6d2;--cream2:#b8af9a;--cream3:#7a7465;--orange:#e8743b;--mustard:#e2b23a;--display:"Michroma","Eurostile","Arial Narrow",sans-serif;--ui:"Jost","Futura","Avenir Next",system-ui,sans-serif;--mono:ui-monospace,Menlo,Consolas,monospace}
 @media (prefers-color-scheme:light){:root{--bg:#f1ebdd;--bg2:#e8e0cd;--bg3:#ddd3bc;--line:#c9bea5;--cream:#1d2430;--cream2:#4c5464;--cream3:#6b7080}}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -56,8 +59,10 @@ ul.tick b{color:var(--cream)}
 .not li{color:var(--cream2)}
 pre{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font:13.5px/1.55 var(--mono);color:var(--cream)}
 code{font-family:var(--mono);font-size:.92em}
-.case{display:grid;gap:22px;grid-template-columns:1fr;padding:30px 0;border-top:1px solid var(--line)}
-@media (min-width:860px){.case{grid-template-columns:5fr 7fr}}
+.case{display:grid;gap:22px;grid-template-columns:minmax(0,1fr);padding:30px 0;border-top:1px solid var(--line)}
+@media (min-width:860px){.case{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}}
+.case>*{min-width:0}
+.case pre{overflow-x:auto;max-width:100%}
 .case h2{margin-bottom:8px}
 .case .who{color:var(--cream3);font-size:14px;margin:0 0 12px}
 .steps{counter-reset:s;list-style:none;padding:0;margin:0 0 12px;display:grid;gap:8px}
@@ -68,6 +73,7 @@ footer{padding:36px 0 60px;border-top:1px solid var(--line);color:var(--cream3);
 footer p{margin:6px 0}
 
 nav{row-gap:8px}
+@media (max-width:700px){nav{gap:6px 16px;padding:14px 0}nav .sp{display:none}nav .l{font-size:15px}nav .btn{padding:7px 14px;font-size:14px;margin-left:auto}}
 .grp{font:13px var(--display);letter-spacing:.04em;margin:30px 0 8px;font-weight:400;color:var(--cream)}
 .yr{font:11px var(--ui);color:var(--cream3);letter-spacing:0;margin-left:6px}
 .blurb{color:var(--cream2);font-size:15.5px;max-width:52em;margin:0 0 14px}
@@ -99,7 +105,7 @@ tr:target td{background:var(--bg3)}
 </head>
 <body>
 <div class="wrap">
-<nav aria-label="Main"><a class="mark" href="about.html">CON<i>/</i>CORD</a><span class="sp"></span><a class="l" href="about.html">About</a><a class="l" href="sources.html">Simulations &amp; observations</a><a class="l" href="use-cases.html" aria-current="page">Use cases</a><a class="btn main" href="../highline.html">Open the app</a></nav>
+<nav aria-label="Main"><a class="mark" href="index.html" aria-label="sim-highline home">SIM<i>/</i>HIGHLINE</a><span class="sp"></span><a class="l" href="about.html">About</a><a class="l" href="sources.html">Simulations &amp; observations</a><a class="l" href="use-cases.html" aria-current="page">Use cases</a><a class="btn main" href="../highline.html">Open the app</a></nav>
 
 <header class="hero">
 <p class="eyebrow">USE CASES</p>
@@ -111,7 +117,7 @@ tr:target td{background:var(--bg3)}
 <div class="case"><div>
 <h2>1 · Plan a high-redshift proposal</h2>
 <p class="who">Observers, proposal writers, anyone who needs "what do simulations predict at z ≈ 6?"</p>
-<ol class="steps"><li>Open the stellar mass function and step to z = 6.</li><li>Read which simulations have an epoch there (13 simulations provide curves at z ≥ 6 across relations).</li><li>Check the ✓ / ~ / ✕ marks and each curve's mass definition before reading a spread as physics.</li><li>Download the CSV and the BibTeX for the predictions paragraph.</li></ol>
+<ol class="steps"><li>Open the stellar mass function and step to z = 6.</li><li>Read which simulations have an epoch there (14 simulations provide curves at z ≥ 6 across relations).</li><li>Check the ✓ / ~ / ✕ marks and each curve's mass definition before reading a spread as physics.</li><li>Download the CSV and the BibTeX for the predictions paragraph.</li></ol>
 <p class="limit">Limit: stellar-mass apertures differ between simulations, and the UV luminosity function and cosmic SFR density, which most JWST analyses use, are included but still thin (three and six simulations so far); match the dust treatment before comparing.</p>
 </div><div><div class="card"><h3>What you will see</h3><p>At z ≈ 6 the stellar mass function has curves from 8 simulations: official tables for COLIBRE and THESAN, a catalogue-derived curve for FLARES, a table from the FIRE-2 paper, and digitized curves for EAGLE, Horizon-AGN, Illustris and SIMBA, each tagged with its tier and mass definition. The snapshot below is from the Python loader.</p></div></div></div>
 
@@ -153,7 +159,7 @@ print(sim_highline.bibtex(one))</code></pre></div></div>
 <p class="who">Group leaders deciding what to run or digitize next.</p>
 <ol class="steps"><li>Open the Coverage view: simulation by relation by redshift.</li><li>Look for empty cells and for relations tagged sparse.</li><li>Decide where a new output or a request to the authors would add the most.</li></ol>
 <p class="limit">Limit: it shows the gaps in this data well, not necessarily gaps in the field.</p>
-</div><div><div class="card"><h3>Honest gaps</h3><p>Relations such as the Tully–Fisher and gas-fraction relations have one or two simulations so far, and the UV luminosity function and cosmic SFR density have only three and six simulations so far. The page says so on the relation itself.</p></div></div></div>
+</div><div><div class="card"><h3>Honest gaps</h3><p>Total gas fraction has two simulations and stellar Tully–Fisher, HI and H<sub>2</sub> fractions and the black hole mass–dispersion relation have three; the UV luminosity function (5) and cosmic SFR density (10) are recent additions. The page says so on the relation itself.</p></div></div></div>
 </article>
 
 <section aria-labelledby="qs">
@@ -165,7 +171,7 @@ g   = sel.groupby(["source", "run"]).agg(z=("z", "first"), points=("x", "size"),
                                          mass_class=("mass_class", "first"), tier=("tier", "first"))
 print(g.reset_index().assign(run=lambda d: d.run.str.slice(0, 26)).to_string(index=False))
 print(f"{sel.record_id.nunique()} records from {sel.source.nunique()} simulations")</code></pre>
-<p style="color:var(--cream3);font-size:14px;margin:12px 0 6px">Output from dataset v0.9.0:</p>
+<p style="color:var(--cream3);font-size:14px;margin:12px 0 6px">Output from dataset v0.10.0:</p>
 <pre><code>     source                        run   z  points    mass_class             tier
     COLIBRE                  m5 (L025) 6.0      10   unspecified   official-table
     COLIBRE                  m5 (L050) 6.0      12   unspecified   official-table
@@ -197,7 +203,7 @@ Horizon-AGN              Horizon-noAGN 6.0       3   unspecified digitized-figur
 </section>
 
 <footer>
-<p>sim-highline 0.9.0 · 2026-10-07 · Shubhan Bhatia. Beta from one maintainer; a sample of curves is waiting for review by people who know each simulation. Please cite the original papers with the dataset (see <code>CITATION.cff</code>).</p>
+<p>sim-highline 0.10.0 · 2026-10-08 · Shubhan Bhatia. Beta from one maintainer; a sample of curves is waiting for review by people who know each simulation. Please cite the original papers with the dataset (see <code>CITATION.cff</code>).</p>
 <p><a href="../highline.html">Open the beta</a> · <a href="index.html">Product</a> · <a href="../data/export/sim-highline-records.csv">Download the data</a></p>
 </footer>
 </div>

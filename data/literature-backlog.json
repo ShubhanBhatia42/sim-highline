@@ -362,8 +362,8 @@
       "title": "Simulating galaxies in the reionization era with FIRE-2: morphologies and sizes",
       "section": "suite in sim-highline",
       "couldSupply": "Ma+18 sizes and morphologies at high z",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "FIRE-2 size-mass at z 6-10 is plotted in arcseconds, not physical units, and per galaxy; would need a cosmology conversion and new definitions."
     },
     {
       "arxiv": "2403.08853",
@@ -395,7 +395,7 @@
       "title": "FIREbox: Simulating galaxies at high dynamic range in a cosmological volume",
       "section": "suite in sim-highline",
       "couldSupply": "overview",
-      "status": "candidate",
+      "status": "ingested",
       "statusNote": ""
     },
     {
@@ -736,7 +736,7 @@
       "title": "The Size Evolution of Star-forming and Quenched Galaxies in the IllustrisTNG simulation",
       "section": "suite in sim-highline",
       "couldSupply": "sizes (used in sim-highline notes; figures not yet extracted)",
-      "status": "candidate",
+      "status": "ingested",
       "statusNote": ""
     },
     {
@@ -758,8 +758,8 @@
       "title": "The relationship between black hole mass and galaxy properties: Examining the black hole feedback model in IllustrisTNG",
       "section": "suite in sim-highline",
       "couldSupply": "BH mass vs galaxy properties",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "TNG black hole feedback paper: M_BH-M_star only (already covered by Habouzit+21), no M_BH-sigma."
     },
     {
       "arxiv": "2203.10098",
@@ -780,8 +780,8 @@
       "title": "Exploring the Angular Momentum -- Atomic Gas Content Connection with EAGLE and IllustrisTNG",
       "section": "suite in sim-highline",
       "couldSupply": "angular momentum and atomic gas, EAGLE and TNG",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "HI fraction versus stellar mass for EAGLE and TNG with an xGASS-like selection; adds another selection definition to relations already covered by Dave+20, Crain+17 and Diemer+19, so left for later."
     },
     {
       "arxiv": "2007.10993",

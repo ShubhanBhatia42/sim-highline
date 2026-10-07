@@ -1,0 +1,2165 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "feldmann23.firebox.gsmf.z0",
+      "source": "FIREbox",
+      "run": "FIREbox (FB1024, 22.1 cMpc box)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass of the galaxy (bound stars within the galaxy radius R_g)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 differential stellar mass function dn/dlg M",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 6.125,
+        "xMax": 11.125
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.125,
+            "y": -0.744
+          },
+          {
+            "x": 6.375,
+            "y": -0.8415
+          },
+          {
+            "x": 6.625,
+            "y": -0.9375
+          },
+          {
+            "x": 6.875,
+            "y": -1.0116
+          },
+          {
+            "x": 7.125,
+            "y": -1.2058
+          },
+          {
+            "x": 7.375,
+            "y": -1.3445
+          },
+          {
+            "x": 7.625,
+            "y": -1.3728
+          },
+          {
+            "x": 7.875,
+            "y": -1.481
+          },
+          {
+            "x": 8.125,
+            "y": -1.5332
+          },
+          {
+            "x": 8.375,
+            "y": -1.5578
+          },
+          {
+            "x": 8.625,
+            "y": -1.622
+          },
+          {
+            "x": 8.875,
+            "y": -1.586
+          },
+          {
+            "x": 9.125,
+            "y": -1.6009
+          },
+          {
+            "x": 9.375,
+            "y": -1.5681
+          },
+          {
+            "x": 9.625,
+            "y": -1.6719
+          },
+          {
+            "x": 9.875,
+            "y": -1.7014
+          },
+          {
+            "x": 10.125,
+            "y": -1.8071
+          },
+          {
+            "x": 10.375,
+            "y": -2.0339
+          },
+          {
+            "x": 10.625,
+            "y": -2.1657
+          },
+          {
+            "x": 10.875,
+            "y": -2.5465
+          },
+          {
+            "x": 11.125,
+            "y": -2.5834
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies with M* > 1e6 Msun in the simulation volume",
+        "warning": "Differential stellar mass function of FIREbox at z=0, read from the vector line through the bin points of Feldmann et al. 2023 (error bars, the light bins with fewer than four galaxies and the observational estimates are not extracted). FIREbox abundances are re-weighted to account for cosmic variance of the halo mass function (paper appendix). The comoving or physical frame of the volume is not stated in the figure."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all galaxies",
+        "densityFrame": "unspecified",
+        "massDefinition": "unspecified"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), stellar mass function at z=0",
+        "doi": "10.1093/mnras/stad1205",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "retrieved": "2026-10-05",
+        "figure": "Stellar mass function for z=0-10 (left panel, differential)",
+        "panel": "z=0 line",
+        "checksumSha256": "c5a02ec352571e8ab64d19a9db1c3c4048e7aadad985816e20917a840ef8c6ea",
+        "sourceMember": "fig9a.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels 6-12 (label centres; no tick marks are drawn as separate paths); y: tick labels 1 to -5 (minus glyphs are drawn as paths, so signs assigned in order down the axis), label centres",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "feldmann23.firebox.gsmf.z2",
+      "source": "FIREbox",
+      "run": "FIREbox (FB1024, 22.1 cMpc box)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 2,
+        "zMax": 2,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass of the galaxy (bound stars within the galaxy radius R_g)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 differential stellar mass function dn/dlg M",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 6.125,
+        "xMax": 10.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.125,
+            "y": -0.5263
+          },
+          {
+            "x": 6.375,
+            "y": -0.6385
+          },
+          {
+            "x": 6.625,
+            "y": -0.7725
+          },
+          {
+            "x": 6.875,
+            "y": -0.837
+          },
+          {
+            "x": 7.125,
+            "y": -0.8916
+          },
+          {
+            "x": 7.375,
+            "y": -0.9903
+          },
+          {
+            "x": 7.625,
+            "y": -1.1185
+          },
+          {
+            "x": 7.875,
+            "y": -1.1354
+          },
+          {
+            "x": 8.125,
+            "y": -1.2096
+          },
+          {
+            "x": 8.375,
+            "y": -1.3066
+          },
+          {
+            "x": 8.625,
+            "y": -1.4277
+          },
+          {
+            "x": 8.875,
+            "y": -1.4704
+          },
+          {
+            "x": 9.125,
+            "y": -1.5449
+          },
+          {
+            "x": 9.375,
+            "y": -1.6172
+          },
+          {
+            "x": 9.625,
+            "y": -1.7576
+          },
+          {
+            "x": 9.875,
+            "y": -2.1866
+          },
+          {
+            "x": 10.125,
+            "y": -2.3748
+          },
+          {
+            "x": 10.375,
+            "y": -2.6249
+          },
+          {
+            "x": 10.625,
+            "y": -2.934
+          },
+          {
+            "x": 10.875,
+            "y": -2.8758
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies with M* > 1e6 Msun in the simulation volume",
+        "warning": "Differential stellar mass function of FIREbox at z=2, read from the vector line through the bin points of Feldmann et al. 2023 (error bars, the light bins with fewer than four galaxies and the observational estimates are not extracted). FIREbox abundances are re-weighted to account for cosmic variance of the halo mass function (paper appendix). The comoving or physical frame of the volume is not stated in the figure."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all galaxies",
+        "densityFrame": "unspecified",
+        "massDefinition": "unspecified"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), stellar mass function at z=2",
+        "doi": "10.1093/mnras/stad1205",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "retrieved": "2026-10-05",
+        "figure": "Stellar mass function for z=0-10 (left panel, differential)",
+        "panel": "z=2 line",
+        "checksumSha256": "c5a02ec352571e8ab64d19a9db1c3c4048e7aadad985816e20917a840ef8c6ea",
+        "sourceMember": "fig9a.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels 6-12 (label centres; no tick marks are drawn as separate paths); y: tick labels 1 to -5 (minus glyphs are drawn as paths, so signs assigned in order down the axis), label centres",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "feldmann23.firebox.gsmf.z4",
+      "source": "FIREbox",
+      "run": "FIREbox (FB1024, 22.1 cMpc box)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 4,
+        "zNominal": 4,
+        "zMin": 4,
+        "zMax": 4,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass of the galaxy (bound stars within the galaxy radius R_g)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 differential stellar mass function dn/dlg M",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 6.125,
+        "xMax": 9.625
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.125,
+            "y": -0.4493
+          },
+          {
+            "x": 6.375,
+            "y": -0.562
+          },
+          {
+            "x": 6.625,
+            "y": -0.732
+          },
+          {
+            "x": 6.875,
+            "y": -0.8721
+          },
+          {
+            "x": 7.125,
+            "y": -0.9842
+          },
+          {
+            "x": 7.375,
+            "y": -1.0326
+          },
+          {
+            "x": 7.625,
+            "y": -1.2173
+          },
+          {
+            "x": 7.875,
+            "y": -1.3642
+          },
+          {
+            "x": 8.125,
+            "y": -1.5124
+          },
+          {
+            "x": 8.375,
+            "y": -1.605
+          },
+          {
+            "x": 8.625,
+            "y": -1.6897
+          },
+          {
+            "x": 8.875,
+            "y": -1.7977
+          },
+          {
+            "x": 9.125,
+            "y": -2.2349
+          },
+          {
+            "x": 9.375,
+            "y": -2.2664
+          },
+          {
+            "x": 9.625,
+            "y": -2.2982
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies with M* > 1e6 Msun in the simulation volume",
+        "warning": "Differential stellar mass function of FIREbox at z=4, read from the vector line through the bin points of Feldmann et al. 2023 (error bars, the light bins with fewer than four galaxies and the observational estimates are not extracted). FIREbox abundances are re-weighted to account for cosmic variance of the halo mass function (paper appendix). The comoving or physical frame of the volume is not stated in the figure."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all galaxies",
+        "densityFrame": "unspecified",
+        "massDefinition": "unspecified"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), stellar mass function at z=4",
+        "doi": "10.1093/mnras/stad1205",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "retrieved": "2026-10-05",
+        "figure": "Stellar mass function for z=0-10 (left panel, differential)",
+        "panel": "z=4 line",
+        "checksumSha256": "c5a02ec352571e8ab64d19a9db1c3c4048e7aadad985816e20917a840ef8c6ea",
+        "sourceMember": "fig9a.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels 6-12 (label centres; no tick marks are drawn as separate paths); y: tick labels 1 to -5 (minus glyphs are drawn as paths, so signs assigned in order down the axis), label centres",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "feldmann23.firebox.gsmf.z6",
+      "source": "FIREbox",
+      "run": "FIREbox (FB1024, 22.1 cMpc box)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass of the galaxy (bound stars within the galaxy radius R_g)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 differential stellar mass function dn/dlg M",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 6.125,
+        "xMax": 8.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.125,
+            "y": -0.6665
+          },
+          {
+            "x": 6.375,
+            "y": -0.825
+          },
+          {
+            "x": 6.625,
+            "y": -1.0193
+          },
+          {
+            "x": 6.875,
+            "y": -1.2231
+          },
+          {
+            "x": 7.125,
+            "y": -1.3332
+          },
+          {
+            "x": 7.375,
+            "y": -1.5025
+          },
+          {
+            "x": 7.625,
+            "y": -1.6891
+          },
+          {
+            "x": 7.875,
+            "y": -1.8129
+          },
+          {
+            "x": 8.125,
+            "y": -2.0393
+          },
+          {
+            "x": 8.375,
+            "y": -1.998
+          },
+          {
+            "x": 8.625,
+            "y": -2.5946
+          },
+          {
+            "x": 8.875,
+            "y": -2.5042
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies with M* > 1e6 Msun in the simulation volume",
+        "warning": "Differential stellar mass function of FIREbox at z=6, read from the vector line through the bin points of Feldmann et al. 2023 (error bars, the light bins with fewer than four galaxies and the observational estimates are not extracted). FIREbox abundances are re-weighted to account for cosmic variance of the halo mass function (paper appendix). The comoving or physical frame of the volume is not stated in the figure."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all galaxies",
+        "densityFrame": "unspecified",
+        "massDefinition": "unspecified"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), stellar mass function at z=6",
+        "doi": "10.1093/mnras/stad1205",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "retrieved": "2026-10-05",
+        "figure": "Stellar mass function for z=0-10 (left panel, differential)",
+        "panel": "z=6 line",
+        "checksumSha256": "c5a02ec352571e8ab64d19a9db1c3c4048e7aadad985816e20917a840ef8c6ea",
+        "sourceMember": "fig9a.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels 6-12 (label centres; no tick marks are drawn as separate paths); y: tick labels 1 to -5 (minus glyphs are drawn as paths, so signs assigned in order down the axis), label centres",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "feldmann23.firebox.gsmf.z8",
+      "source": "FIREbox",
+      "run": "FIREbox (FB1024, 22.1 cMpc box)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass of the galaxy (bound stars within the galaxy radius R_g)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 differential stellar mass function dn/dlg M",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 6.125,
+        "xMax": 7.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.125,
+            "y": -1.081
+          },
+          {
+            "x": 6.375,
+            "y": -1.3159
+          },
+          {
+            "x": 6.625,
+            "y": -1.5531
+          },
+          {
+            "x": 6.875,
+            "y": -1.6815
+          },
+          {
+            "x": 7.125,
+            "y": -2.0308
+          },
+          {
+            "x": 7.375,
+            "y": -1.9285
+          },
+          {
+            "x": 7.625,
+            "y": -2.2549
+          },
+          {
+            "x": 7.875,
+            "y": -2.603
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies with M* > 1e6 Msun in the simulation volume",
+        "warning": "Differential stellar mass function of FIREbox at z=8, read from the vector line through the bin points of Feldmann et al. 2023 (error bars, the light bins with fewer than four galaxies and the observational estimates are not extracted). FIREbox abundances are re-weighted to account for cosmic variance of the halo mass function (paper appendix). The comoving or physical frame of the volume is not stated in the figure."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all galaxies",
+        "densityFrame": "unspecified",
+        "massDefinition": "unspecified"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), stellar mass function at z=8",
+        "doi": "10.1093/mnras/stad1205",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "retrieved": "2026-10-05",
+        "figure": "Stellar mass function for z=0-10 (left panel, differential)",
+        "panel": "z=8 line",
+        "checksumSha256": "c5a02ec352571e8ab64d19a9db1c3c4048e7aadad985816e20917a840ef8c6ea",
+        "sourceMember": "fig9a.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels 6-12 (label centres; no tick marks are drawn as separate paths); y: tick labels 1 to -5 (minus glyphs are drawn as paths, so signs assigned in order down the axis), label centres",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "feldmann23.firebox.gsmf.z10",
+      "source": "FIREbox",
+      "run": "FIREbox (FB1024, 22.1 cMpc box)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass of the galaxy (bound stars within the galaxy radius R_g)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 differential stellar mass function dn/dlg M",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 6.125,
+        "xMax": 7.375
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.125,
+            "y": -1.6558
+          },
+          {
+            "x": 6.375,
+            "y": -1.9766
+          },
+          {
+            "x": 6.625,
+            "y": -2.1271
+          },
+          {
+            "x": 6.875,
+            "y": -2.545
+          },
+          {
+            "x": 7.125,
+            "y": -2.8936
+          },
+          {
+            "x": 7.375,
+            "y": -2.7247
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies with M* > 1e6 Msun in the simulation volume",
+        "warning": "Differential stellar mass function of FIREbox at z=10, read from the vector line through the bin points of Feldmann et al. 2023 (error bars, the light bins with fewer than four galaxies and the observational estimates are not extracted). FIREbox abundances are re-weighted to account for cosmic variance of the halo mass function (paper appendix). The comoving or physical frame of the volume is not stated in the figure."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all galaxies",
+        "densityFrame": "unspecified",
+        "massDefinition": "unspecified"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), stellar mass function at z=10",
+        "doi": "10.1093/mnras/stad1205",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "retrieved": "2026-10-05",
+        "figure": "Stellar mass function for z=0-10 (left panel, differential)",
+        "panel": "z=10 line",
+        "checksumSha256": "c5a02ec352571e8ab64d19a9db1c3c4048e7aadad985816e20917a840ef8c6ea",
+        "sourceMember": "fig9a.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: numeric tick labels 6-12 (label centres; no tick marks are drawn as separate paths); y: tick labels 1 to -5 (minus glyphs are drawn as paths, so signs assigned in order down the axis), label centres",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "feldmann23.firebox.sfrd.massive",
+      "source": "FIREbox",
+      "run": "FIREbox (FB1024, 22.1 cMpc box), massive galaxies",
+      "kind": "simulation",
+      "relation": "sfrd",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 0,
+        "zMax": 6.334,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift (axis is log10(1+z), converted exactly)",
+        "xUnit": "redshift",
+        "yDefinition": "log10 cosmic star formation rate density of galaxies with M* > 10^9.3 Msun (the paper's black line)",
+        "yUnit": "log10(Msun yr^-1 cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 0,
+        "xMax": 6.334
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 0,
+            "y": -1.4583
+          },
+          {
+            "x": 0.015,
+            "y": -1.4481
+          },
+          {
+            "x": 0.055,
+            "y": -1.4202
+          },
+          {
+            "x": 0.1,
+            "y": -1.3909
+          },
+          {
+            "x": 0.148,
+            "y": -1.3604
+          },
+          {
+            "x": 0.201,
+            "y": -1.3286
+          },
+          {
+            "x": 0.239,
+            "y": -1.3041
+          },
+          {
+            "x": 0.3,
+            "y": -1.2706
+          },
+          {
+            "x": 0.322,
+            "y": -1.2591
+          },
+          {
+            "x": 0.368,
+            "y": -1.2413
+          },
+          {
+            "x": 0.399,
+            "y": -1.2333
+          },
+          {
+            "x": 0.418,
+            "y": -1.229
+          },
+          {
+            "x": 0.471,
+            "y": -1.2198
+          },
+          {
+            "x": 0.499,
+            "y": -1.2163
+          },
+          {
+            "x": 0.528,
+            "y": -1.2126
+          },
+          {
+            "x": 0.598,
+            "y": -1.2051
+          },
+          {
+            "x": 0.657,
+            "y": -1.2004
+          },
+          {
+            "x": 0.73,
+            "y": -1.1943
+          },
+          {
+            "x": 0.799,
+            "y": -1.18
+          },
+          {
+            "x": 0.897,
+            "y": -1.1544
+          },
+          {
+            "x": 1,
+            "y": -1.1314
+          },
+          {
+            "x": 1.086,
+            "y": -1.1142
+          },
+          {
+            "x": 1.143,
+            "y": -1.1023
+          },
+          {
+            "x": 1.203,
+            "y": -1.0891
+          },
+          {
+            "x": 1.25,
+            "y": -1.0783
+          },
+          {
+            "x": 1.405,
+            "y": -1.0561
+          },
+          {
+            "x": 1.5,
+            "y": -1.0488
+          },
+          {
+            "x": 1.561,
+            "y": -1.0442
+          },
+          {
+            "x": 1.647,
+            "y": -1.0384
+          },
+          {
+            "x": 1.739,
+            "y": -1.0338
+          },
+          {
+            "x": 1.788,
+            "y": -1.0326
+          },
+          {
+            "x": 1.864,
+            "y": -1.0364
+          },
+          {
+            "x": 2,
+            "y": -1.0557
+          },
+          {
+            "x": 2.089,
+            "y": -1.0778
+          },
+          {
+            "x": 2.217,
+            "y": -1.1065
+          },
+          {
+            "x": 2.355,
+            "y": -1.138
+          },
+          {
+            "x": 2.429,
+            "y": -1.1583
+          },
+          {
+            "x": 2.546,
+            "y": -1.1897
+          },
+          {
+            "x": 2.671,
+            "y": -1.2228
+          },
+          {
+            "x": 2.9,
+            "y": -1.2625
+          },
+          {
+            "x": 3,
+            "y": -1.277
+          },
+          {
+            "x": 3.103,
+            "y": -1.2896
+          },
+          {
+            "x": 3.211,
+            "y": -1.3025
+          },
+          {
+            "x": 3.324,
+            "y": -1.3153
+          },
+          {
+            "x": 3.445,
+            "y": -1.3333
+          },
+          {
+            "x": 3.507,
+            "y": -1.3416
+          },
+          {
+            "x": 3.572,
+            "y": -1.3514
+          },
+          {
+            "x": 3.706,
+            "y": -1.382
+          },
+          {
+            "x": 3.849,
+            "y": -1.4269
+          },
+          {
+            "x": 4,
+            "y": -1.4819
+          },
+          {
+            "x": 4.164,
+            "y": -1.541
+          },
+          {
+            "x": 4.339,
+            "y": -1.6114
+          },
+          {
+            "x": 4.526,
+            "y": -1.6885
+          },
+          {
+            "x": 4.727,
+            "y": -1.7759
+          },
+          {
+            "x": 4.944,
+            "y": -1.8652
+          },
+          {
+            "x": 5,
+            "y": -1.8883
+          },
+          {
+            "x": 5.058,
+            "y": -1.9099
+          },
+          {
+            "x": 5.177,
+            "y": -1.9555
+          },
+          {
+            "x": 5.3,
+            "y": -2.0036
+          },
+          {
+            "x": 5.429,
+            "y": -2.0456
+          },
+          {
+            "x": 5.563,
+            "y": -2.0853
+          },
+          {
+            "x": 5.702,
+            "y": -2.1257
+          },
+          {
+            "x": 5.848,
+            "y": -2.1674
+          },
+          {
+            "x": 6,
+            "y": -2.2091
+          },
+          {
+            "x": 6.163,
+            "y": -2.2519
+          },
+          {
+            "x": 6.334,
+            "y": -2.2953
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies with M* > 10^9.3 Msun (the paper's black line)",
+        "warning": "Cosmic star formation rate density of FIREbox for galaxies with M* > 10^9.3 Msun (the paper's black line), SFRs averaged over 20 Myr, read from the vector path of Feldmann et al. 2023 (stellar-mass-bin contributions and the observational compilation are not extracted). FIREbox abundances are re-weighted to account for cosmic variance of the halo mass function (paper appendix)."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all galaxies",
+        "densityFrame": "comoving",
+        "sfrIndicator": "SFR averaged over the past 20 Myr",
+        "sfrTimescaleMyr": 20
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), cosmic star formation history",
+        "doi": "10.1093/mnras/stad1205",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "retrieved": "2026-10-05",
+        "figure": "Cosmic star formation history",
+        "panel": "massive galaxies line",
+        "checksumSha256": "41104b707ae1a5b6b3e929bd5b95112cc8587823bc49f8ec7fc85b2d903fadb9",
+        "sourceMember": "fig11a.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labels 0-10 (label centres) in log10(1+z), converted exactly to z; y: tick labels (minus glyphs drawn as paths, so signs assigned where needed), label centres",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "feldmann23.firebox.sfrd.all",
+      "source": "FIREbox",
+      "run": "FIREbox (FB1024, 22.1 cMpc box), all galaxies",
+      "kind": "simulation",
+      "relation": "sfrd",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 0,
+        "zMax": 10.396,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift (axis is log10(1+z), converted exactly)",
+        "xUnit": "redshift",
+        "yDefinition": "log10 cosmic star formation rate density of all identified galaxies (the paper's blue dot-dashed line)",
+        "yUnit": "log10(Msun yr^-1 cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 0,
+        "xMax": 10.396
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 0,
+            "y": -1.4101
+          },
+          {
+            "x": 0.015,
+            "y": -1.3999
+          },
+          {
+            "x": 0.055,
+            "y": -1.3719
+          },
+          {
+            "x": 0.1,
+            "y": -1.3429
+          },
+          {
+            "x": 0.148,
+            "y": -1.3128
+          },
+          {
+            "x": 0.201,
+            "y": -1.2817
+          },
+          {
+            "x": 0.239,
+            "y": -1.2602
+          },
+          {
+            "x": 0.3,
+            "y": -1.2274
+          },
+          {
+            "x": 0.322,
+            "y": -1.2179
+          },
+          {
+            "x": 0.368,
+            "y": -1.1996
+          },
+          {
+            "x": 0.399,
+            "y": -1.1895
+          },
+          {
+            "x": 0.418,
+            "y": -1.1839
+          },
+          {
+            "x": 0.471,
+            "y": -1.1683
+          },
+          {
+            "x": 0.499,
+            "y": -1.1611
+          },
+          {
+            "x": 0.528,
+            "y": -1.1544
+          },
+          {
+            "x": 0.598,
+            "y": -1.1414
+          },
+          {
+            "x": 0.657,
+            "y": -1.1308
+          },
+          {
+            "x": 0.73,
+            "y": -1.1161
+          },
+          {
+            "x": 0.799,
+            "y": -1.0963
+          },
+          {
+            "x": 0.897,
+            "y": -1.0714
+          },
+          {
+            "x": 1,
+            "y": -1.0472
+          },
+          {
+            "x": 1.086,
+            "y": -1.0283
+          },
+          {
+            "x": 1.143,
+            "y": -1.0159
+          },
+          {
+            "x": 1.203,
+            "y": -1.0036
+          },
+          {
+            "x": 1.25,
+            "y": -0.9938
+          },
+          {
+            "x": 1.405,
+            "y": -0.9648
+          },
+          {
+            "x": 1.5,
+            "y": -0.9512
+          },
+          {
+            "x": 1.561,
+            "y": -0.9438
+          },
+          {
+            "x": 1.647,
+            "y": -0.9349
+          },
+          {
+            "x": 1.739,
+            "y": -0.9282
+          },
+          {
+            "x": 1.788,
+            "y": -0.9272
+          },
+          {
+            "x": 1.864,
+            "y": -0.9298
+          },
+          {
+            "x": 2,
+            "y": -0.9346
+          },
+          {
+            "x": 2.089,
+            "y": -0.9393
+          },
+          {
+            "x": 2.217,
+            "y": -0.9473
+          },
+          {
+            "x": 2.355,
+            "y": -0.9587
+          },
+          {
+            "x": 2.429,
+            "y": -0.965
+          },
+          {
+            "x": 2.546,
+            "y": -0.9767
+          },
+          {
+            "x": 2.671,
+            "y": -0.9906
+          },
+          {
+            "x": 2.9,
+            "y": -1.0096
+          },
+          {
+            "x": 3,
+            "y": -1.0162
+          },
+          {
+            "x": 3.103,
+            "y": -1.0224
+          },
+          {
+            "x": 3.211,
+            "y": -1.0302
+          },
+          {
+            "x": 3.324,
+            "y": -1.0421
+          },
+          {
+            "x": 3.445,
+            "y": -1.0578
+          },
+          {
+            "x": 3.507,
+            "y": -1.0648
+          },
+          {
+            "x": 3.572,
+            "y": -1.0764
+          },
+          {
+            "x": 3.706,
+            "y": -1.0967
+          },
+          {
+            "x": 3.849,
+            "y": -1.1188
+          },
+          {
+            "x": 4,
+            "y": -1.1477
+          },
+          {
+            "x": 4.164,
+            "y": -1.1808
+          },
+          {
+            "x": 4.339,
+            "y": -1.2163
+          },
+          {
+            "x": 4.526,
+            "y": -1.2561
+          },
+          {
+            "x": 4.727,
+            "y": -1.2994
+          },
+          {
+            "x": 4.944,
+            "y": -1.35
+          },
+          {
+            "x": 5,
+            "y": -1.3632
+          },
+          {
+            "x": 5.058,
+            "y": -1.3758
+          },
+          {
+            "x": 5.177,
+            "y": -1.4054
+          },
+          {
+            "x": 5.3,
+            "y": -1.4365
+          },
+          {
+            "x": 5.429,
+            "y": -1.4688
+          },
+          {
+            "x": 5.563,
+            "y": -1.5041
+          },
+          {
+            "x": 5.702,
+            "y": -1.5406
+          },
+          {
+            "x": 5.848,
+            "y": -1.5774
+          },
+          {
+            "x": 6,
+            "y": -1.6143
+          },
+          {
+            "x": 6.163,
+            "y": -1.6507
+          },
+          {
+            "x": 6.334,
+            "y": -1.6914
+          },
+          {
+            "x": 6.512,
+            "y": -1.7334
+          },
+          {
+            "x": 6.7,
+            "y": -1.7812
+          },
+          {
+            "x": 6.898,
+            "y": -1.8346
+          },
+          {
+            "x": 7,
+            "y": -1.8638
+          },
+          {
+            "x": 7.113,
+            "y": -1.8944
+          },
+          {
+            "x": 7.348,
+            "y": -1.9613
+          },
+          {
+            "x": 7.597,
+            "y": -2.0312
+          },
+          {
+            "x": 7.862,
+            "y": -2.1011
+          },
+          {
+            "x": 8,
+            "y": -2.1372
+          },
+          {
+            "x": 8.131,
+            "y": -2.168
+          },
+          {
+            "x": 8.403,
+            "y": -2.2348
+          },
+          {
+            "x": 8.693,
+            "y": -2.305
+          },
+          {
+            "x": 9,
+            "y": -2.3783
+          },
+          {
+            "x": 9.313,
+            "y": -2.4534
+          },
+          {
+            "x": 9.646,
+            "y": -2.5305
+          },
+          {
+            "x": 10,
+            "y": -2.6138
+          },
+          {
+            "x": 10.396,
+            "y": -2.704
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all identified galaxies (the paper's blue dot-dashed line)",
+        "warning": "Cosmic star formation rate density of FIREbox for all identified galaxies (the paper's blue dot-dashed line), SFRs averaged over 20 Myr, read from the vector path of Feldmann et al. 2023 (stellar-mass-bin contributions and the observational compilation are not extracted). FIREbox abundances are re-weighted to account for cosmic variance of the halo mass function (paper appendix)."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all galaxies",
+        "densityFrame": "comoving",
+        "sfrIndicator": "SFR averaged over the past 20 Myr",
+        "sfrTimescaleMyr": 20
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), cosmic star formation history",
+        "doi": "10.1093/mnras/stad1205",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "retrieved": "2026-10-05",
+        "figure": "Cosmic star formation history",
+        "panel": "all galaxies line",
+        "checksumSha256": "41104b707ae1a5b6b3e929bd5b95112cc8587823bc49f8ec7fc85b2d903fadb9",
+        "sourceMember": "fig11a.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labels 0-10 (label centres) in log10(1+z), converted exactly to z; y: tick labels (minus glyphs drawn as paths, so signs assigned where needed), label centres",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "feldmann23.firebox.smd.massive",
+      "source": "FIREbox",
+      "run": "FIREbox (FB1024, 22.1 cMpc box), massive galaxies",
+      "kind": "simulation",
+      "relation": "smd",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 0,
+        "zMax": 6.334,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift (axis is log10(1+z), converted exactly)",
+        "xUnit": "redshift",
+        "yDefinition": "log10 cosmic stellar mass density of galaxies with M* > 10^9.3 Msun (the paper's black line)",
+        "yUnit": "log10(Msun cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 0,
+        "xMax": 6.334
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 0,
+            "y": 8.6461
+          },
+          {
+            "x": 0.015,
+            "y": 8.6419
+          },
+          {
+            "x": 0.055,
+            "y": 8.6303
+          },
+          {
+            "x": 0.1,
+            "y": 8.6179
+          },
+          {
+            "x": 0.148,
+            "y": 8.6049
+          },
+          {
+            "x": 0.201,
+            "y": 8.5919
+          },
+          {
+            "x": 0.239,
+            "y": 8.5813
+          },
+          {
+            "x": 0.3,
+            "y": 8.5627
+          },
+          {
+            "x": 0.322,
+            "y": 8.5562
+          },
+          {
+            "x": 0.368,
+            "y": 8.5427
+          },
+          {
+            "x": 0.399,
+            "y": 8.5343
+          },
+          {
+            "x": 0.418,
+            "y": 8.5294
+          },
+          {
+            "x": 0.471,
+            "y": 8.5161
+          },
+          {
+            "x": 0.499,
+            "y": 8.5093
+          },
+          {
+            "x": 0.528,
+            "y": 8.502
+          },
+          {
+            "x": 0.598,
+            "y": 8.4846
+          },
+          {
+            "x": 0.657,
+            "y": 8.4692
+          },
+          {
+            "x": 0.73,
+            "y": 8.4506
+          },
+          {
+            "x": 0.799,
+            "y": 8.431
+          },
+          {
+            "x": 0.897,
+            "y": 8.4018
+          },
+          {
+            "x": 1,
+            "y": 8.3699
+          },
+          {
+            "x": 1.086,
+            "y": 8.3422
+          },
+          {
+            "x": 1.143,
+            "y": 8.3221
+          },
+          {
+            "x": 1.203,
+            "y": 8.3012
+          },
+          {
+            "x": 1.25,
+            "y": 8.2844
+          },
+          {
+            "x": 1.405,
+            "y": 8.2268
+          },
+          {
+            "x": 1.5,
+            "y": 8.1913
+          },
+          {
+            "x": 1.561,
+            "y": 8.1687
+          },
+          {
+            "x": 1.647,
+            "y": 8.1372
+          },
+          {
+            "x": 1.739,
+            "y": 8.1021
+          },
+          {
+            "x": 1.788,
+            "y": 8.0828
+          },
+          {
+            "x": 1.864,
+            "y": 8.0508
+          },
+          {
+            "x": 2,
+            "y": 7.9933
+          },
+          {
+            "x": 2.089,
+            "y": 7.9528
+          },
+          {
+            "x": 2.217,
+            "y": 7.895
+          },
+          {
+            "x": 2.355,
+            "y": 7.8342
+          },
+          {
+            "x": 2.429,
+            "y": 7.7997
+          },
+          {
+            "x": 2.546,
+            "y": 7.745
+          },
+          {
+            "x": 2.671,
+            "y": 7.6876
+          },
+          {
+            "x": 2.9,
+            "y": 7.5869
+          },
+          {
+            "x": 3,
+            "y": 7.5453
+          },
+          {
+            "x": 3.103,
+            "y": 7.5047
+          },
+          {
+            "x": 3.211,
+            "y": 7.4625
+          },
+          {
+            "x": 3.324,
+            "y": 7.4168
+          },
+          {
+            "x": 3.445,
+            "y": 7.3687
+          },
+          {
+            "x": 3.507,
+            "y": 7.3441
+          },
+          {
+            "x": 3.572,
+            "y": 7.3186
+          },
+          {
+            "x": 3.706,
+            "y": 7.2561
+          },
+          {
+            "x": 3.849,
+            "y": 7.1789
+          },
+          {
+            "x": 4,
+            "y": 7.1012
+          },
+          {
+            "x": 4.164,
+            "y": 7.02
+          },
+          {
+            "x": 4.339,
+            "y": 6.9287
+          },
+          {
+            "x": 4.526,
+            "y": 6.8345
+          },
+          {
+            "x": 4.727,
+            "y": 6.7294
+          },
+          {
+            "x": 4.944,
+            "y": 6.615
+          },
+          {
+            "x": 5,
+            "y": 6.5831
+          },
+          {
+            "x": 5.058,
+            "y": 6.5515
+          },
+          {
+            "x": 5.177,
+            "y": 6.4835
+          },
+          {
+            "x": 5.3,
+            "y": 6.4131
+          },
+          {
+            "x": 5.429,
+            "y": 6.3411
+          },
+          {
+            "x": 5.563,
+            "y": 6.2666
+          },
+          {
+            "x": 5.702,
+            "y": 6.1905
+          },
+          {
+            "x": 5.848,
+            "y": 6.1127
+          },
+          {
+            "x": 6,
+            "y": 6.033
+          },
+          {
+            "x": 6.163,
+            "y": 5.9495
+          },
+          {
+            "x": 6.334,
+            "y": 5.8641
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies with M* > 10^9.3 Msun (the paper's black line)",
+        "warning": "Cosmic stellar mass density of FIREbox for galaxies with M* > 10^9.3 Msun (the paper's black line), stellar mass of the identified galaxies, read from the vector path of Feldmann et al. 2023 (stellar-mass-bin contributions and the observational compilation are not extracted). FIREbox abundances are re-weighted to account for cosmic variance of the halo mass function (paper appendix)."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all galaxies",
+        "densityFrame": "comoving"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), cosmic stellar growth history",
+        "doi": "10.1093/mnras/stad1205",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "retrieved": "2026-10-05",
+        "figure": "Cosmic stellar growth history",
+        "panel": "massive galaxies line",
+        "checksumSha256": "1e8a061702ec36ef1ae6dde0d27ec2b68ab1265debce212ae8782507c7026531",
+        "sourceMember": "fig11b.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labels 0-10 (label centres) in log10(1+z), converted exactly to z; y: tick labels (minus glyphs drawn as paths, so signs assigned where needed), label centres",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "feldmann23.firebox.smd.all",
+      "source": "FIREbox",
+      "run": "FIREbox (FB1024, 22.1 cMpc box), all galaxies",
+      "kind": "simulation",
+      "relation": "smd",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 0,
+        "zMax": 10.396,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift (axis is log10(1+z), converted exactly)",
+        "xUnit": "redshift",
+        "yDefinition": "log10 cosmic stellar mass density of all identified galaxies (the paper's blue dot-dashed line)",
+        "yUnit": "log10(Msun cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 0,
+        "xMax": 10.396
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 0,
+            "y": 8.67
+          },
+          {
+            "x": 0.015,
+            "y": 8.6659
+          },
+          {
+            "x": 0.055,
+            "y": 8.6543
+          },
+          {
+            "x": 0.1,
+            "y": 8.6421
+          },
+          {
+            "x": 0.148,
+            "y": 8.6293
+          },
+          {
+            "x": 0.201,
+            "y": 8.6161
+          },
+          {
+            "x": 0.239,
+            "y": 8.607
+          },
+          {
+            "x": 0.3,
+            "y": 8.592
+          },
+          {
+            "x": 0.322,
+            "y": 8.5863
+          },
+          {
+            "x": 0.368,
+            "y": 8.5746
+          },
+          {
+            "x": 0.399,
+            "y": 8.5672
+          },
+          {
+            "x": 0.418,
+            "y": 8.5627
+          },
+          {
+            "x": 0.471,
+            "y": 8.5503
+          },
+          {
+            "x": 0.499,
+            "y": 8.5438
+          },
+          {
+            "x": 0.528,
+            "y": 8.5371
+          },
+          {
+            "x": 0.598,
+            "y": 8.5208
+          },
+          {
+            "x": 0.657,
+            "y": 8.5068
+          },
+          {
+            "x": 0.73,
+            "y": 8.4896
+          },
+          {
+            "x": 0.799,
+            "y": 8.4715
+          },
+          {
+            "x": 0.897,
+            "y": 8.4468
+          },
+          {
+            "x": 1,
+            "y": 8.4184
+          },
+          {
+            "x": 1.086,
+            "y": 8.3928
+          },
+          {
+            "x": 1.143,
+            "y": 8.3767
+          },
+          {
+            "x": 1.203,
+            "y": 8.3575
+          },
+          {
+            "x": 1.25,
+            "y": 8.3432
+          },
+          {
+            "x": 1.405,
+            "y": 8.2954
+          },
+          {
+            "x": 1.5,
+            "y": 8.2654
+          },
+          {
+            "x": 1.561,
+            "y": 8.2461
+          },
+          {
+            "x": 1.647,
+            "y": 8.2187
+          },
+          {
+            "x": 1.739,
+            "y": 8.1887
+          },
+          {
+            "x": 1.788,
+            "y": 8.172
+          },
+          {
+            "x": 1.864,
+            "y": 8.1447
+          },
+          {
+            "x": 2,
+            "y": 8.0974
+          },
+          {
+            "x": 2.089,
+            "y": 8.0668
+          },
+          {
+            "x": 2.217,
+            "y": 8.0238
+          },
+          {
+            "x": 2.355,
+            "y": 7.9758
+          },
+          {
+            "x": 2.429,
+            "y": 7.951
+          },
+          {
+            "x": 2.546,
+            "y": 7.9106
+          },
+          {
+            "x": 2.671,
+            "y": 7.8665
+          },
+          {
+            "x": 2.9,
+            "y": 7.787
+          },
+          {
+            "x": 3,
+            "y": 7.753
+          },
+          {
+            "x": 3.103,
+            "y": 7.7192
+          },
+          {
+            "x": 3.211,
+            "y": 7.6841
+          },
+          {
+            "x": 3.324,
+            "y": 7.646
+          },
+          {
+            "x": 3.445,
+            "y": 7.6049
+          },
+          {
+            "x": 3.507,
+            "y": 7.5841
+          },
+          {
+            "x": 3.572,
+            "y": 7.5609
+          },
+          {
+            "x": 3.706,
+            "y": 7.5144
+          },
+          {
+            "x": 3.849,
+            "y": 7.4658
+          },
+          {
+            "x": 4,
+            "y": 7.412
+          },
+          {
+            "x": 4.164,
+            "y": 7.3528
+          },
+          {
+            "x": 4.339,
+            "y": 7.2889
+          },
+          {
+            "x": 4.526,
+            "y": 7.2214
+          },
+          {
+            "x": 4.727,
+            "y": 7.1473
+          },
+          {
+            "x": 4.944,
+            "y": 7.0648
+          },
+          {
+            "x": 5,
+            "y": 7.0434
+          },
+          {
+            "x": 5.058,
+            "y": 7.022
+          },
+          {
+            "x": 5.177,
+            "y": 6.9753
+          },
+          {
+            "x": 5.3,
+            "y": 6.9265
+          },
+          {
+            "x": 5.429,
+            "y": 6.8759
+          },
+          {
+            "x": 5.563,
+            "y": 6.8229
+          },
+          {
+            "x": 5.702,
+            "y": 6.7685
+          },
+          {
+            "x": 5.848,
+            "y": 6.7127
+          },
+          {
+            "x": 6,
+            "y": 6.6541
+          },
+          {
+            "x": 6.163,
+            "y": 6.5878
+          },
+          {
+            "x": 6.334,
+            "y": 6.5195
+          },
+          {
+            "x": 6.512,
+            "y": 6.4509
+          },
+          {
+            "x": 6.7,
+            "y": 6.3783
+          },
+          {
+            "x": 6.898,
+            "y": 6.3014
+          },
+          {
+            "x": 7,
+            "y": 6.2609
+          },
+          {
+            "x": 7.113,
+            "y": 6.2178
+          },
+          {
+            "x": 7.348,
+            "y": 6.1265
+          },
+          {
+            "x": 7.597,
+            "y": 6.0311
+          },
+          {
+            "x": 7.862,
+            "y": 5.9336
+          },
+          {
+            "x": 8,
+            "y": 5.8835
+          },
+          {
+            "x": 8.131,
+            "y": 5.838
+          },
+          {
+            "x": 8.403,
+            "y": 5.744
+          },
+          {
+            "x": 8.693,
+            "y": 5.6475
+          },
+          {
+            "x": 9,
+            "y": 5.5488
+          },
+          {
+            "x": 9.313,
+            "y": 5.4519
+          },
+          {
+            "x": 9.646,
+            "y": 5.3517
+          },
+          {
+            "x": 10,
+            "y": 5.2479
+          },
+          {
+            "x": 10.396,
+            "y": 5.1353
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all identified galaxies (the paper's blue dot-dashed line)",
+        "warning": "Cosmic stellar mass density of FIREbox for all identified galaxies (the paper's blue dot-dashed line), stellar mass of the identified galaxies, read from the vector path of Feldmann et al. 2023 (stellar-mass-bin contributions and the observational compilation are not extracted). FIREbox abundances are re-weighted to account for cosmic variance of the halo mass function (paper appendix)."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "all galaxies",
+        "densityFrame": "comoving"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), cosmic stellar growth history",
+        "doi": "10.1093/mnras/stad1205",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "retrieved": "2026-10-05",
+        "figure": "Cosmic stellar growth history",
+        "panel": "all galaxies line",
+        "checksumSha256": "1e8a061702ec36ef1ae6dde0d27ec2b68ab1265debce212ae8782507c7026531",
+        "sourceMember": "fig11b.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labels 0-10 (label centres) in log10(1+z), converted exactly to z; y: tick labels (minus glyphs drawn as paths, so signs assigned where needed), label centres",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

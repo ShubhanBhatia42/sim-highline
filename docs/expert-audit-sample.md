@@ -1,6 +1,6 @@
 # Expert audit sample
 
-Records for an independent check by someone who knows each suite. Selection is deterministic (two records per simulation source, different relations, digitized figures first, ordered by a hash of the id), so the list is stable between releases of the same data. 37 records from 19 sources.
+Records for an independent check by someone who knows each suite. Selection is deterministic (two records per simulation source, different relations, digitized figures first, ordered by a hash of the id), so the list is stable between releases of the same data. 38 records from 19 sources.
 
 For each record: open the cited figure or table, confirm (1) the curve is the one named (run, population, panel), (2) the axis values at two labelled ticks, (3) the definitions block (mass aperture, IMF, SFR timescale, halo definition), and (4) that the epoch is the published one. Report disagreements with the record id.
 
@@ -16,7 +16,8 @@ For each record: open the cited figure or table, confirm (1) the curve is the on
 | EAGLE | `furlong15.eagle-recal.gsmf.z0.5` | gsmf | 0.5 | digitized-figure | Furlong et al. 2015, MNRAS 450, 4486, Fig. 2 (arXiv source numbering) panel 2 |
 | FIRE-2 | `ma18.fire2.uvlf.z12` | uvlf | 12 | digitized-figure | Ma et al. 2018, MNRAS 478, 1694 (arXiv:1706.06605), predicted luminosity functions at 1500 A, z=12 |
 | FIRE-2 | `ma18.fire2.gsmf.z5` | gsmf | 5 | published-table | Ma et al. 2018, MNRAS 478, 1694, Table of stellar mass functions (Appendix) |
-| FIREbox | `sharda26.firebox-firebox.mzr.z0` | mzr | 0 | published-table | Sharda et al. 2026, COLIBRE gas-phase MZR (data repository) |
+| FIREbox | `feldmann23.firebox.gsmf.z4` | gsmf | 4 | digitized-figure | Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), stellar mass function at z=4 |
+| FIREbox | `feldmann23.firebox.smd.all` | smd | 2 | digitized-figure | Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), cosmic stellar growth history |
 | FLAMINGO | `schaye23.flamingo-gsmf.planck-nu0p24var.z0` | gsmf | 0 | digitized-figure | Schaye et al. 2023, MNRAS 526, 4978, SMF_2_Panel right panel (model variations) |
 | FLAMINGO | `schaye23.flamingo-l1_m8.zstar.z0.1` | zstar | 0.1 | digitized-figure | Schaye et al. 2023, MNRAS 526, 4978, galaxy-properties figure (galaxy_props_z01), zstar |
 | FLARES | `wilkins22.flares.uvlf.intrinsic.z13` | uvlf | 13 | digitized-figure | Wilkins et al. 2023, MNRAS 519, 3118 (arXiv:2204.09431), far-UV luminosity function at z=15 to 10, intrinsic, z=13 |

@@ -893,6 +893,33 @@
           "key": "furlong15"
         }
       ]
+    },
+    "smd": {
+      "title": "Cosmic stellar mass density",
+      "paragraph": "The cosmic stellar mass density is the stellar mass summed over all galaxies per unit comoving volume, plotted against redshift. Because stars only accumulate, it is essentially the time integral of the cosmic star-formation rate density minus the mass returned by evolved stars, so it rises steadily from high redshift to today. The standard observational reference is the compilation of Madau & Dickinson 2014, who show that the integral of their star-formation history, reduced for stellar mass loss, matches the measured densities. In simulations the quantity depends on which galaxies are counted: FIREbox shows both all identified galaxies and only those above 10^9.3 solar masses, and the two differ most at high redshift where low-mass galaxies hold much of the mass (Feldmann et al. 2023). Zoom volumes such as NewHorizon give the density of the refined region, not a cosmic average (Dubois et al. 2021). Read offsets only after converting to a common IMF and checking whether the density is per comoving or physical volume.",
+      "refs": [
+        {
+          "arxiv": "1403.0007",
+          "doi": "10.1146/annurev-astro-081811-125615",
+          "role": "review",
+          "cite": "Madau & Dickinson 2014, ARA&A 52, 415",
+          "key": "madau14"
+        },
+        {
+          "arxiv": "2205.15325",
+          "doi": "10.1093/mnras/stad1205",
+          "role": "simulation vs data",
+          "cite": "Feldmann et al. 2023, MNRAS 522, 3831",
+          "key": "feldmann23"
+        },
+        {
+          "arxiv": "2009.10578",
+          "doi": "10.1051/0004-6361/202039429",
+          "role": "simulation vs data",
+          "cite": "Dubois et al. 2021, A&A 651, A109",
+          "key": "dubois21"
+        }
+      ]
     }
   }
 }

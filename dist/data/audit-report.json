@@ -1,8 +1,8 @@
 {
- "total": 1552,
+ "total": 1575,
  "known": 16,
  "errors": 0,
- "warnings": 0,
+ "warnings": 3,
  "info": 265,
  "byCode": {
   "info:no-cosmology": 186,
@@ -10,6 +10,7 @@
   "known:x-out-of-range": 1,
   "known:y-out-of-range": 6,
   "known:quenched-decreases": 2,
+  "warn:epoch-outside-sim-range": 3,
   "known:duplicate-data": 6,
   "known:cross-source-offset": 1
  },
@@ -133,6 +134,7 @@
     "unspecified",
     "aperture-2rhalf-stars",
     "total-bound-subhalo",
+    "total-subhalo",
     "aperture-50pkpc",
     "integral-of-SFH"
    ]
@@ -147,10 +149,12 @@
   },
   "smd": {
    "yUnit": [
-    "log10(Msun cMpc^-3)"
+    "log10(Msun cMpc^-3)",
+    "log10(Msun Mpc^-3)"
    ],
    "massDefinitions": [
-    "all star particles"
+    "all star particles",
+    "-"
    ]
   },
   "hi-fraction": {
@@ -2006,6 +2010,33 @@
    "source": "IllustrisTNG",
    "msg": "quenched fraction lower at high mass than low mass",
    "reason": "TNG50 satellite quenched fractions: hosts are limited to <10^14.3 Msun, so massive satellites are rare and their quenched fraction falls; as plotted."
+  },
+  {
+   "sev": "warn",
+   "code": "epoch-outside-sim-range",
+   "id": "feldmann23.firebox.gsmf.z6",
+   "file": "feldmann23-firebox.json",
+   "relation": "gsmf",
+   "source": "FIREbox",
+   "msg": "z 6 outside firebox range 0,5"
+  },
+  {
+   "sev": "warn",
+   "code": "epoch-outside-sim-range",
+   "id": "feldmann23.firebox.gsmf.z8",
+   "file": "feldmann23-firebox.json",
+   "relation": "gsmf",
+   "source": "FIREbox",
+   "msg": "z 8 outside firebox range 0,5"
+  },
+  {
+   "sev": "warn",
+   "code": "epoch-outside-sim-range",
+   "id": "feldmann23.firebox.gsmf.z10",
+   "file": "feldmann23-firebox.json",
+   "relation": "gsmf",
+   "source": "FIREbox",
+   "msg": "z 10 outside firebox range 0,5"
   },
   {
    "sev": "info",
