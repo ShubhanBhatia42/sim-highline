@@ -69,6 +69,11 @@ def select(df, relation=None, z=None, sources=None, runs=None, kind=None, tier=N
     return df[m]
 
 
+def open_terms(df):
+    """Keep only rows whose records carry no third-party terms (the CC BY 4.0 part of the dataset). Records with a `terms` value come from sources with their own licence or none; see docs/SOURCE-TERMS.md."""
+    return df[df["terms"].isna() | df["terms"].astype(str).str.contains("CC-BY-4.0")]
+
+
 def nearest_epoch(df, z, tol=None):
     """Per source/run series keep only the record closest to z, dropping series with no epoch within tol (default max(0.15, 0.1 (1+z)), as the website does)."""
     tol = max(0.15, 0.1 * (1 + z)) if tol is None else tol

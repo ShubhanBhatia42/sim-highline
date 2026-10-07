@@ -20,8 +20,12 @@ with tempfile.TemporaryDirectory() as tmp:
             bad.append((s.name, "failed: " + (r.stderr.strip().splitlines() or ["?"])[-1]))
     for out in sorted((tmp / "data" / "curves").glob("*.json")):
         ref = ROOT / "data" / "curves" / out.name
-        a = json.loads(out.read_text())["records"]
-        b = json.loads(ref.read_text())["records"] if ref.exists() else []
+        def norm(rs):
+            for r in rs:
+                r.get("provenance", {}).pop("terms", None)  # owned by scripts/annotate-definitions.mjs (data/source-terms.json)
+            return rs
+        a = norm(json.loads(out.read_text())["records"])
+        b = norm(json.loads(ref.read_text())["records"]) if ref.exists() else []
         if a != b:
             ia, ib = {r["id"]: r for r in a}, {r["id"]: r for r in b}
             bad.append((out.name, f"differs: {len(set(ia) - set(ib))} new, {len(set(ib) - set(ia))} missing, {sum(1 for k in ia.keys() & ib.keys() if ia[k] != ib[k])} changed"))

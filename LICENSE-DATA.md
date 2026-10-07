@@ -11,6 +11,8 @@ The code (everything else, including `scripts/`, `highline/`, `site/`, `sim_high
 
 ## What it does not cover
 
+Records whose `terms` field is set (a `terms` column in the exports) are the ones below; `sim_highline.open_terms(df)` filters them out.
+
 - records ingested from third-party data releases keep the terms of those releases. The ones with stated terms are listed in `docs/SOURCE-TERMS.md`; where none is stated the values are treated as published results to be cited, and the owners were not asked;
 - figures, text and images in the cited papers, which belong to their publishers and authors.
 

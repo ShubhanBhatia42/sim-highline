@@ -1,5 +1,9 @@
 # Terms of third-party inputs
 
+Records from sources with their own terms carry them in `provenance.terms` (a `terms` column in the exports; `data/source-terms.json` holds the rules and `scripts/annotate-definitions.mjs` applies them). A record with no `terms` is under the dataset licence (CC BY 4.0). In Python, `sim_highline.open_terms(df)` keeps only the records without third-party terms.
+
+Flagged today: 88 records from the Sharda+26 release (GPL-2.0), 142 binned from the Garcia+24 catalogues (no licence file), 99 from the COLIBRE plot-data YAML and 3 from the FIRE-2 tables (both CC BY 4.0, compatible).
+
 Sources whose terms are stated by their owners, as recorded in `data/sources-catalogue.json` and `data/ingestion-manifest.json`. For every other source no terms were found; the values reproduced are published results, cited per record.
 
 | Source (catalogue id) | Stated terms | Note |
