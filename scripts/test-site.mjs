@@ -24,7 +24,7 @@ const about = await readFile(new URL("site/about.html", root), "utf8");
 const profiles = JSON.parse(await readFile(new URL("../data/simulation-profiles.json", import.meta.url), "utf8")).profiles;
 const slug = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 for (const k of Object.keys(profiles)) assert(sources.includes(`id="${slug(k)}"`), `sources: missing simulation ${k}`);
-assert((about.match(/<svg viewBox/g) || []).length === 4, "about: four charts expected");
+assert((about.match(/<figure class="chart"/g) || []).length === 4, "about: four charts expected");
 assert(/Known metadata issues/.test(sources) && /not yet filled/.test(sources), "sources: must state what is unfilled");
 assert((sources.match(/<article class="sim"/g) || []).length === Object.keys(profiles).length, "sources: one card per simulation");
 const app = await readFile(new URL("highline.html", root), "utf8");

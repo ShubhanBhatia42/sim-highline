@@ -2,6 +2,7 @@ import { readdir, readFile, writeFile, mkdir } from "node:fs/promises";
 import vm from "node:vm";
 const root = new URL("../", import.meta.url);
 const read = async p => readFile(new URL(p, root), "utf8");
+const palette = await read("data/palette.css");
 const ctx = { globalThis: {} };
 vm.runInNewContext(await read("compare.js"), ctx);
 const { evaluator } = ctx.globalThis.SimHighlineCompare;
@@ -30,7 +31,9 @@ const stats = {
   rankableShare: `${Math.round(100 * sims.filter(r => r.rankable).length / sims.length)}%`,
   auditNote: `The audit script checks every record (epoch order, provenance, plausible ranges, band consistency, duplicate data, cross-source agreement) and currently reports ${audit.errors} errors and ${audit.warnings} warnings; accepted exceptions are listed with a reason each. That checks consistency, not that every curve is the right one.`
 };
-const COLORS = { IllustrisTNG: "#e8743b", EAGLE: "#3aa6a0", SIMBA: "#6fa8dc", COLIBRE: "#e2b23a", "Magneticum Pathfinder": "#de5b52", "NIHAO zoom suite": "#b07aa1", FLARES: "#a3b35b", "THESAN-1": "#8fd0e8", "THESAN-zoom": "#5f9ea0", Illustris: "#c9a27e", "FIRE-2": "#9fbf6a", FIREbox: "#7fc3a8", "Horizon-AGN": "#d4a05e", NewHorizon: "#c78f5c", FLAMINGO: "#4f8fd1", ASTRID: "#8f6fd1", Romulus25: "#6fb0b0", BlueTides: "#d98ab0", SPHINX20: "#b98a5e" };
+const cslug = n => n.toLowerCase().replace(/[^a-z0-9]+/g, "");
+const KNOWN = new Set(["simba", "astrid", "illustristng", "illustris", "eagle", "colibre", "flamingo", "fire2", "firebox", "nihaozoomsuite", "romulus25", "flares", "bluetides", "magneticumpathfinder", "thesan1", "thesanzoom", "sphinx20", "horizonagn", "newhorizon"]);
+const colorFor = s => `var(--c-${KNOWN.has(cslug(s)) ? cslug(s) : "other"})`;
 const ZOOM = new Set(["FIRE-2", "NIHAO zoom suite", "NewHorizon", "Romulus25", "THESAN-zoom"]);
 const VARIANT = /variation|low[- ]?res|double|single|per galaxy|hybrid|noAGN|full SUBFIND|2 R_half|rTNG|secondary|individual|Recal-|central|quenched|L025|L050|m5|m7|Box0|Box2b|Box3|Box4|\bfit\b/i;
 const FID = { FLAMINGO: /^L1_m9(?! variation)/, "Magneticum Pathfinder": /^Box2\/hr/, Illustris: /^Illustris-1$/, SPHINX20: /100-myr/ };
@@ -63,9 +66,9 @@ function chart(spec) {
   for (const t of ticks(y0, y1)) svg += `<line x1="${L}" x2="${W - R}" y1="${sy(t)}" y2="${sy(t)}" opacity=".5"/><text x="${L - 8}" y="${sy(t) + 4}" text-anchor="end">${t}</text>`;
   svg += `</g><text class="al" x="${(L + W - R) / 2}" y="${H - 10}" text-anchor="middle">${esc(xlab)}</text><text class="al" transform="translate(16 ${(T + H - B) / 2}) rotate(-90)" text-anchor="middle">${esc(ylab)}</text><defs><clipPath id="c${id}"><rect x="${L}" y="${T}" width="${W - L - R}" height="${H - T - B}"/></clipPath></defs><g clip-path="url(#c${id})" fill="none" stroke-linecap="round" stroke-linejoin="round">`;
   for (const o of refs) svg += o.dots ? o.pts.map(p => `<circle cx="${sx(p.x).toFixed(1)}" cy="${sy(p.y).toFixed(1)}" r="1.8" fill="var(--cream3)" opacity=".55"/>`).join("") : `<path d="${P(o.pts)}" stroke="var(--cream3)" stroke-width="1.3" stroke-dasharray="3 4"/>`;
-  for (const r of curves) svg += `<path d="${P(r.representation.points)}" stroke="${COLORS[r.source] || "#ccc"}" stroke-width="2.4"${r.provenance.tier === "digitized-figure" ? ' stroke-dasharray="2 3"' : r.provenance.tier === "published-fit" ? ' stroke-dasharray="7 4"' : ""}/>`;
+  for (const r of curves) svg += `<path d="${P(r.representation.points)}" stroke="${colorFor(r.source)}" stroke-width="2.4"${r.provenance.tier === "digitized-figure" ? ' stroke-dasharray="2 3"' : r.provenance.tier === "published-fit" ? ' stroke-dasharray="7 4"' : ""}/>`;
   svg += "</g></svg>";
-  const key = curves.map(r => `<span><i style="background:${COLORS[r.source] || "#ccc"}"></i>${esc(r.source)}</span>`).join("") + (refs.length ? `<span><i style="background:var(--cream3)"></i>observations (${uniq(refs.map(o => o.r.source)).length})</span>` : "");
+  const key = curves.map(r => `<span><i style="background:${colorFor(r.source)}"></i>${esc(r.source)}</span>`).join("") + (refs.length ? `<span><i style="background:var(--cream3)"></i>observations (${uniq(refs.map(o => o.r.source)).length})</span>` : "");
   const sv = curves.map(r => interp(r.representation.points, xref)).filter(v => v != null);
   const ov = refs.filter(o => !o.dots).map(o => interp(o.pts, xref)).filter(v => v != null);
   const spread = sv.length >= 3 ? Math.max(...sv) - Math.min(...sv) : null, off = sv.length >= 3 && ov.length ? median(sv) - median(ov) : null;
@@ -146,8 +149,10 @@ stats.nProfiled = Object.keys(obsProf).length; stats.nObsSources = byObs.size;
 stats.mismatchHtml = mismatched.length ? `<ul class="tick">${mismatched.map(m => `<li><b>${esc(m.src)}</b>: the record's citation reads "${esc(m.cite.slice(0, 110))}".</li>`).join("")}</ul>` : "<p>None found by the automatic check.</p>";
 stats.mismatchCount = mismatched.length;
 stats.quickstart = (await read("site/src/quickstart-output.txt")).trimEnd().replace(/&/g, "&amp;").replace(/</g, "&lt;");
-stats.css = await read("site/src/site.css");
-const NAV = (cur) => `<nav aria-label="Main"><a class="mark" href="index.html" aria-label="sim-highline home">SIM<i>/</i>HIGHLINE</a><span class="sp"></span>${[["about.html", "About"], ["sources.html", "Simulations &amp; observations"], ["use-cases.html", "Use cases"]].map(([h, t]) => `<a class="l" href="${h}"${h === cur ? ' aria-current="page"' : ""}>${t}</a>`).join("")}<a class="btn main" href="../highline.html">Open the app</a></nav>`;
+stats.css = (await read("site/src/site.css")).replace("/*__PALETTE__*/", () => palette);
+const SUN = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10" cy="10" r="3.6"/><path d="M10 2.5v1.8M10 15.7v1.8M2.5 10h1.8M15.7 10h1.8M4.7 4.7l1.3 1.3M14 14l1.3 1.3M4.7 15.3 6 14M14 6l1.3-1.3"/></svg>', MOON = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M16.5 11.8A6.8 6.8 0 0 1 8.2 3.5a6.8 6.8 0 1 0 8.3 8.3z"/></svg>';
+const THEME_JS = `<script>(function(){var b=document.getElementById("theme"),r=document.documentElement,S='${SUN}',M='${MOON}';function now(){return r.dataset.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}function paint(){var d=now()==="dark";b.innerHTML=d?S:M;b.setAttribute("aria-label",d?"Switch to the light theme":"Switch to the dark theme")}b.onclick=function(){var n=now()==="dark"?"light":"dark";r.dataset.theme=n;try{localStorage.setItem("sh-theme",n)}catch(e){}paint()};paint()})()</script>`;
+const NAV = (cur) => `<nav aria-label="Main"><a class="mark" href="index.html" aria-label="sim-highline home">SIM<i>/</i>HIGHLINE</a><span class="sp"></span>${[["about.html", "About"], ["sources.html", "Simulations &amp; observations"], ["use-cases.html", "Use cases"]].map(([h, t]) => `<a class="l" href="${h}"${h === cur ? ' aria-current="page"' : ""}>${t}</a>`).join("")}<button class="ico" id="theme" type="button" aria-label="Switch theme"></button><a class="btn main" href="../highline.html">Open the app</a></nav>${THEME_JS}`;
 await mkdir(new URL("dist/site/", root), { recursive: true });
 for (const page of ["index.html", "use-cases.html", "about.html", "sources.html"]) {
   let html = await read(`site/src/${page}`);
