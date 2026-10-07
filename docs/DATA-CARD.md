@@ -10,7 +10,7 @@
 
 **Not intended for.** Ranking simulations with digitized-figure records, treating zoom selections as volume complete, or merging curves with different definitions into one number without reading the compatibility notes.
 
-**Known biases and gaps.** Suites differ in resolution, volume, mass aperture, IMF and SFR timescale. Observations carry their own selection. Coverage is uneven: catalogue-level TNG and EAGLE runs, Magneticum boxes beyond Box4/uhr and several zoom suites remain open (`CLAUDE.md`, `data/literature-backlog.json`). UV luminosity functions (five simulations) and the cosmic SFR density (nine) are recent additions, and the UV functions of the simulations differ in dust treatment.
+**Known biases and gaps.** Suites differ in resolution, volume, mass aperture, IMF and SFR timescale. Observations carry their own selection. Coverage is uneven: catalogue-level TNG and EAGLE runs, Magneticum boxes beyond Box4/uhr and several zoom suites remain open (`data/literature-backlog.json`). UV luminosity functions (five simulations) and the cosmic SFR density (nine) are recent additions, and the UV functions of the simulations differ in dust treatment.
 
 **Quality control.** Calibration assertions in every digitizer, in-script spot checks against published numbers, a repository-wide audit with an accepted-issues file, deterministic regeneration of every digitized record, unit tests for the extraction helper, the exporter and the loader, and a stable expert-audit sample.
 

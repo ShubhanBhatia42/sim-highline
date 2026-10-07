@@ -139,4 +139,4 @@ In the beta, Get data > Figure > Copy embed code gives an `<iframe>` for the cur
 
 ## More
 
-`docs/REVIEW.md` (a candid assessment: who would use this, what it is not), `docs/METHODS.md` (how values get in and what they may mean), `docs/DATA-CARD.md`, `docs/expert-audit-sample.md`, `CHANGELOG.md`, `CITATION.cff`. Verify everything with the chain in `CLAUDE.md`; `python3 scripts/regress_digitizers.py` regenerates every digitized record from its source and diffs against the shipped data.
+`docs/REVIEW.md` (a candid assessment: who would use this, what it is not), `docs/METHODS.md` (how values get in and what they may mean), `docs/DATA-CARD.md`, `docs/expert-audit-sample.md`, `CHANGELOG.md`, `CITATION.cff`. Verify everything with `./scripts/verify-all.sh`; `python3 scripts/regress_digitizers.py` regenerates every digitized record from its source and diffs against the shipped data.
