@@ -1,5 +1,7 @@
 # sim-highline
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23217259.svg)](https://doi.org/10.5281/zenodo.23217259)
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="site/src/img/app-dark.png">
   <img alt="The sim-highline app showing the stellar mass function at z = 6 for nine simulations next to observations, with a relation list on the left and a legend with evidence-tier badges." src="site/src/img/app-light.png">
@@ -129,7 +131,7 @@ pip install .            # from a checkout: installs sim_highline with the datas
 
 A wheel built with `pip wheel .` contains `sim_highline.py` and the exported tables (`sim_highline_data/`), so `import sim_highline; sim_highline.load()` works from any folder. `notebooks/quickstart.ipynb` walks through loading, selecting an epoch, plotting against observations and getting BibTeX.
 
-Code is MIT (`LICENSE`), the dataset is CC BY 4.0 (`LICENSE-DATA.md`); inputs from third-party releases keep their own terms (`docs/SOURCE-TERMS.md`). Cite the dataset (`CITATION.cff`, or the Cite box in the beta's Get data panel) together with the original paper of every record you use.
+Code is MIT (`LICENSE`), the dataset is CC BY 4.0 (`LICENSE-DATA.md`); inputs from third-party releases keep their own terms (`docs/SOURCE-TERMS.md`). Cite the dataset (DOI [10.5281/zenodo.23217259](https://doi.org/10.5281/zenodo.23217259), always the latest version; `CITATION.cff`, or the Cite box in the beta's Get data panel) together with the original paper of every record you use.
 
 ## Embed a view
 
