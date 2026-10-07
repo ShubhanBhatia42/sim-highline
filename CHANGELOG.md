@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.12.1 (2026-10-08)
+
+- Export: sampled points of parametric curves are rounded to 6 decimals so the tables are byte-identical on every platform (CI on Linux/Node 22 differed from macOS/Node 25 in the last digit of 82 rows). `build-static` skips the local-only `.openai` folder when it is absent.
+
 ## 0.12.0 (2026-10-08)
 
 - Data (vector figures): TNG100-1 ISM gas fraction at z 0, 1, 2, 4 (Torrey+19; the gas-fraction relation gains a third simulation), EAGLE stellar mass density histories for the four calibrated L050N0752 models (Crain+15), Romulus25 cosmic SFR density (Tremmel+17).

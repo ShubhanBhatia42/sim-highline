@@ -17,7 +17,7 @@ function sampled(r,n=NSAMPLE,z){
   const {xMin,xMax}=r.domain||{};
   if(!ev||!Number.isFinite(xMin)||!Number.isFinite(xMax))return[];
   const out=[];
-  for(let i=0;i<n;i++){const x=xMin+(xMax-xMin)*i/(n-1),y=ev(x,z===undefined?r.epoch.zRepresentative:z);if(Number.isFinite(y))out.push({x,y});}
+  for(let i=0;i<n;i++){const x=xMin+(xMax-xMin)*i/(n-1),y=ev(x,z===undefined?r.epoch.zRepresentative:z);if(Number.isFinite(y))out.push({x:Math.round(x*1e6)/1e6,y:Math.round(y*1e6)/1e6});}
   return out;
 }
 function pointsOf(r,z){return r.representation.type==="parametric"?sampled(r,NSAMPLE,z):(r.representation.points||[]);}
