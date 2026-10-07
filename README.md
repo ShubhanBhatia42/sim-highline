@@ -110,6 +110,24 @@ print(sim_highline.bibtex(sel))
 
 Units are log10, physical and h-free as published; compare curves only where `x_definition`, `y_definition`, `mass_definition`, `population` and the other definition columns agree.
 
+## Install and cite
+
+```
+pip install .            # from a checkout: installs sim_highline with the dataset bundled
+```
+
+A wheel built with `pip wheel .` contains `sim_highline.py` and the exported tables (`sim_highline_data/`), so `import sim_highline; sim_highline.load()` works from any folder. `notebooks/quickstart.ipynb` walks through loading, selecting an epoch, plotting against observations and getting BibTeX.
+
+Code is MIT (`LICENSE`), the dataset is CC BY 4.0 (`LICENSE-DATA.md`); inputs from third-party releases keep their own terms (`docs/SOURCE-TERMS.md`). Cite the dataset (`CITATION.cff`, or the Cite box in the beta's Get data panel) together with the original paper of every record you use.
+
+## Embed a view
+
+In the beta, Get data > Figure > Copy embed code gives an `<iframe>` for the current view. Any link can also be turned into an embed by adding `&embed=1` to the page link: the page then shows only the chart, legend and epoch slider with a link back to the full app.
+
+## Contributing and checks
+
+`.github/` holds issue forms (curve error, suggest a source), a pull request checklist and two workflows: `verify` runs `scripts/verify-all.sh` on pull requests and fails if regenerated files were not committed; `watch-arxiv` runs weekly and opens an issue listing new papers that mention a tracked simulation suite (`scripts/watch-arxiv.py`, optional `--scan` to read their captions with `scripts/scan_literature.py`). See `CONTRIBUTING.md`.
+
 ## More
 
 `docs/REVIEW.md` (a candid assessment: who would use this, what it is not), `docs/METHODS.md` (how values get in and what they may mean), `docs/DATA-CARD.md`, `docs/expert-audit-sample.md`, `CHANGELOG.md`, `CITATION.cff`. Verify everything with the chain in `CLAUDE.md`; `python3 scripts/regress_digitizers.py` regenerates every digitized record from its source and diffs against the shipped data.

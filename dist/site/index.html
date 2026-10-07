@@ -38,6 +38,9 @@ section{padding:46px 0;border-top:1px solid var(--line)}
 .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
 .card{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:22px}
 .card p{margin:0;color:var(--cream2);font-size:16px}
+a.card{display:block;text-decoration:none;color:inherit;transition:border-color .15s}
+a.card:hover,a.card:focus-visible{border-color:var(--orange)}
+a.card h3{margin:0 0 8px}
 .nums{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
 .nums div{border-left:2px solid var(--orange);padding-left:14px}
 .nums b{display:block;font:26px var(--display);color:var(--cream)}
@@ -108,7 +111,7 @@ tr:target td{background:var(--bg3)}
 <nav aria-label="Main"><a class="mark" href="index.html" aria-label="sim-highline home">SIM<i>/</i>HIGHLINE</a><span class="sp"></span><a class="l" href="about.html">About</a><a class="l" href="sources.html">Simulations &amp; observations</a><a class="l" href="use-cases.html">Use cases</a><a class="btn main" href="../highline.html">Open the app</a></nav>
 
 <header class="hero">
-<p class="eyebrow">GALAXY SCALING RELATIONS · BETA 0.10.0</p>
+<p class="eyebrow">GALAXY SCALING RELATIONS · BETA 0.11.0</p>
 <h1>Every published simulation prediction for a scaling relation, on one axis.</h1>
 <p class="lede">sim-highline collects 1,575 curves from 19 simulations and 82 observational sources, keeps the definitions that decide whether two curves can be compared, and exports them as tidy tables you can load into pandas.</p>
 <div class="cta"><a class="btn main" href="../highline.html">Open the beta</a><a class="btn" href="../data/export/sim-highline-records.csv">Download the data</a><a class="btn" href="use-cases.html">What it is for</a></div>
@@ -121,6 +124,19 @@ tr:target td{background:var(--bg3)}
 <div class="key"><span><i style="background:#e2b23a"></i>COLIBRE</span><span><i style="background:#3aa6a0"></i>EAGLE</span><span><i style="background:#7fc3a8"></i>FIREbox</span><span><i style="background:#a3b35b"></i>FLARES</span><span><i style="background:#d4a05e"></i>Horizon-AGN</span><span><i style="background:#c9a27e"></i>Illustris</span><span><i style="background:#6fa8dc"></i>SIMBA</span><span><i style="background:#8fd0e8"></i>THESAN-1</span><span><i style="background:var(--cream3)"></i>observations (4)</span></div>
 <figcaption>Stellar mass function at z ≈ 6 from 8 simulations (one fiducial run each; zoom samples, which are not volume complete, are left out), straight from the dataset. 6 simulations reach log M★ = 9 and span <b>0.5 dex</b>; the median simulation lies 0.2 dex above the median of the 1 observational curve shown. Definitions differ between sources (mass aperture, IMF, SFR timescale, metallicity calibration), so part of any offset is not physics. Dotted lines are digitized from figures; solid lines are tables or catalogues.</figcaption>
 </figure>
+</section>
+
+<section aria-labelledby="try">
+<h2 id="try">Start with a question</h2>
+<p class="lede" style="font-size:18px">Each link opens the beta already set up, so there is nothing to configure.</p>
+<div class="grid">
+<a class="card" href="../highline.html#r=gsmf&amp;z=8"><h3>What do simulations predict at z = 8?</h3><p>The stellar mass function for every simulation that has an epoch there, next to JWST estimates.</p></a>
+<a class="card" href="../highline.html#r=uvlf&amp;z=10"><h3>How bright are the first galaxies?</h3><p>UV luminosity functions at z = 10, with the dust treatment of each simulation in the legend.</p></a>
+<a class="card" href="../highline.html#m=tension&amp;tz=0"><h3>Where do simulations disagree with data today?</h3><p>Every simulation against its observational anchor, for every relation, with a flag for whether the definitions allow the comparison.</p></a>
+<a class="card" href="../highline.html#r=sfrd"><h3>How did the Universe build its stars?</h3><p>The cosmic star formation rate density against redshift, for 10 simulations.</p></a>
+<a class="card" href="../highline.html#r=mzrz&amp;z=6"><h3>What do simulations say about metals at z = 6?</h3><p>Gas metallicity (Z/Z&#9737;) against stellar mass next to observations. Each metallicity tracer has its own view, so none is mixed.</p></a>
+<a class="card" href="../highline.html#r=shmr&amp;z=0"><h3>How efficiently do haloes make stars?</h3><p>The stellar-to-halo mass relation at z = 0 with the halo and stellar mass definitions of each curve.</p></a>
+</div>
 </section>
 
 <section aria-labelledby="why">
@@ -148,7 +164,7 @@ tr:target td{background:var(--bg3)}
 <ul class="tick">
 <li><b>Evidence tiers on every curve.</b> Official tables, catalogue-derived, tabulated in a paper, published fit, or digitized from a figure. Digitized curves are never used for ranking.</li>
 <li><b>Exact extraction.</b> Figures are read from the vector paths of the paper's own source files, not traced from pixels, and every extraction script regenerates its records byte for byte.</li>
-<li><b>Automatic checks.</b> The audit script checks every record (epoch order, provenance, plausible ranges, band consistency, duplicate data, cross-source agreement) and currently reports 0 errors and 3 warnings; accepted exceptions are listed with a reason each. That checks consistency, not that every curve is the right one.</li>
+<li><b>Automatic checks.</b> The audit script checks every record (epoch order, provenance, plausible ranges, band consistency, duplicate data, cross-source agreement) and currently reports 0 errors and 0 warnings; accepted exceptions are listed with a reason each. That checks consistency, not that every curve is the right one.</li>
 <li><b>Definitions travel with the data.</b> Mass aperture, halo definition, IMF, cosmology, population, SFR timescale and the like are structured fields, so the comparison flags are computed, not asserted.</li>
 </ul>
 </section>
@@ -175,7 +191,7 @@ tr:target td{background:var(--bg3)}
 </section>
 
 <footer>
-<p>sim-highline 0.10.0 · 2026-10-08 · Shubhan Bhatia. Please cite the original papers (every record carries its citation and DOI) together with the dataset; see <code>CITATION.cff</code>. Licence to be decided by the maintainer.</p>
+<p>sim-highline 0.11.0 · 2026-10-08 · Shubhan Bhatia. Please cite the original papers (every record carries its citation and DOI) together with the dataset; see <code>CITATION.cff</code>. Code MIT, data CC BY 4.0 (third-party inputs keep their own terms; see <code>docs/SOURCE-TERMS.md</code>).</p>
 <p><a href="../highline.html">Beta</a> · <a href="use-cases.html">Use cases</a> · <a href="../data/export/sim-highline-records.csv">Records (CSV)</a> · <a href="../data/export/sim-highline-points.csv">Points (CSV)</a> · <a href="../sim_highline.py">sim_highline.py</a> · <a href="../data/export/sim-highline-citations.bib">BibTeX</a></p>
 </footer>
 </div>

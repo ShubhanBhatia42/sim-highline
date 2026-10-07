@@ -23,10 +23,11 @@ KEYS = ["kind", "source", "run", "relation"]
 def _base(path):
     if path is not None:
         return str(path).rstrip("/")
-    for cand in (Path.cwd() / "data" / "export", Path(__file__).resolve().parent / "data" / "export"):
+    here = Path(__file__).resolve().parent
+    for cand in (Path.cwd() / "data" / "export", here / "sim_highline_data", here / "data" / "export"):
         if (cand / "sim-highline-records.csv").exists():
             return str(cand)
-    raise FileNotFoundError("data/export not found; pass the folder or base URL containing sim-highline-records.csv")
+    raise FileNotFoundError("data not found; install the wheel (data included), run from a checkout, or pass the folder or base URL containing sim-highline-records.csv")
 
 
 def load(path=None, points=True):

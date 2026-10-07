@@ -111,7 +111,14 @@ main{position:relative;min-height:0;display:grid;grid-template-columns:1fr;overf
 .pbody .two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .pbody .btns{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
 .btn{border:1px solid var(--line);border-radius:8px;padding:7px 12px;font-size:13px;color:var(--cream)}
+body.boot *,body.boot *::before,body.boot *::after{transition:none!important;animation:none!important}
 .btn:hover{background:var(--bg3)}
+a.btn{text-decoration:none;display:inline-block}
+.embedbar{display:none}
+body.embed header>*:not(.embedbar){display:none}
+body.embed .embedbar{display:flex;flex:1;justify-content:space-between;align-items:center;gap:12px;font-size:14px}
+.embedbar a{color:var(--link,var(--orange));text-decoration:none}
+body.embed footer .play{display:none}
 .btn.main{background:var(--orange);border-color:var(--orange);color:#0b0e13}
 .btn.main:hover{filter:brightness(1.08)}
 .big{font:20px var(--display);margin:2px 0 2px}
@@ -155,10 +162,11 @@ footer{display:flex;align-items:center;gap:14px;padding:10px 18px 12px;border-to
 @media (prefers-reduced-motion:reduce){.panel,.curve,.band{transition:none}}
 </style>
 </head>
-<body>
+<body class="boot">
 <a class="skip" href="#stage">Skip to the chart</a>
 <div class="app">
   <header>
+    <div class="embedbar" id="embedbar"><span id="embedTitle"></span><a id="embedOpen" target="_top" rel="noopener">Open in sim-highline ↗</a></div>
     <a class="mark" href="site/index.html" title="About sim-highline" aria-label="sim-highline: about the project">SIM<i>/</i>HIGHLINE</a>
     <nav class="presets" id="presets" aria-label="Relation"></nav>
     <div class="seg" role="group" aria-label="View">
@@ -205,7 +213,7 @@ footer{display:flex;align-items:center;gap:14px;padding:10px 18px 12px;border-to
   </main>
   <footer>
     <button class="play" id="play" aria-label="Play through redshift"><svg viewBox="0 0 14 14"><path id="playIcon" d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg></button>
-    <div class="track"><input type="range" id="z" min="0" max="0" step="1" aria-label="Redshift"><div class="ticks" id="ticks"></div></div>
+    <div class="track"><input type="range" id="z" min="0" max="0" step="1" aria-label="Redshift" title="Redshift: drag, or press ← → anywhere on the page"><div class="ticks" id="ticks"></div></div>
     <div class="zread" id="zread"></div>
   </footer>
 </div>
@@ -264,7 +272,7 @@ const provBadge=r=>{const p=r?.provenance;if(!p)return"";const g=TIER_GLYPH[p.ti
 const unitRec=new Map();
 const RAMP=[[0,"#fde725"],[.25,"#7ad151"],[.5,"#22a884"],[.75,"#2a788e"],[1,"#414487"]];
 const isTable=()=>state.mode==="atlas"||state.mode==="tension";
-const state={tz:0,legendOpen:innerWidth>900,rel:"sfms",z:null,offBy:{},runPref:new Map(),variants:false,showSparse:false,offTier:new Set(),rankOnly:false,showObs:true,obsOff:new Set(),mode:"plot",playing:null,sel:null,ref:null,resid:false,yt:"none",tf:"log",xr:null,yr:null,bands:true,scatter:true,evo:null,at:null,panel:null,tab:"evidence",user:null,fit:null,expand:new Set(),dl:{scope:"epoch",obs:true,z0:0,z1:10}};
+const state={tz:0,legendOpen:innerWidth>900,rel:"sfms",z:null,offBy:{},runPref:new Map(),variants:false,showSparse:false,anc:{},embed:false,imfc:false,offTier:new Set(),rankOnly:false,showObs:true,obsOff:new Set(),mode:"plot",playing:null,sel:null,ref:null,resid:false,yt:"none",tf:"log",xr:null,yr:null,bands:true,scatter:true,evo:null,at:null,panel:null,tab:"evidence",user:null,fit:null,expand:new Set(),dl:{scope:"epoch",obs:true,z0:0,z1:10}};
 const $=id=>document.getElementById(id);
 const slugOf=s=>String(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -290,10 +298,14 @@ function pick(rel,z){
   for(const r of sims){if(r.relation!==rel)continue;const an=r.epoch.mode==="analytic-evolution",d=an?(z>=r.epoch.zMin&&z<=r.epoch.zMax?0:Infinity):Math.abs(r.epoch.zRepresentative-z);if(d>tol(z))continue;const k=unitOf(r);if(!best.has(k)||d<best.get(k).d)best.set(k,{r,d})}
   return [...best.values()].map(v=>v.r);
 }
-function anchorRec(rel,z,raw){const a=REL[rel]?.anchor;if(!a||(!raw&&!state.showObs))return null;return window.SimHighlineLogic.pickAnchor(pickObs(rel,z).filter(r=>raw||(!state.offTier.has(r.provenance?.tier)&&!state.obsOff.has(r.source))),new RegExp(a),z)}
+const reEsc=t=>t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+function anchorRec(rel,z,raw){const a=REL[rel]?.anchor;if(!a||(!raw&&!state.showObs))return null;const L=pickObs(rel,z).filter(r=>raw||(!state.offTier.has(r.provenance?.tier)&&!state.obsOff.has(r.source))),o=state.anc[rel];return(o&&window.SimHighlineLogic.pickAnchor(L,new RegExp("^"+reEsc(o)+"$"),z))||window.SimHighlineLogic.pickAnchor(L,new RegExp(a),z)}
 function pickObs(rel,z){return obs.filter(r=>r.relation===rel&&(REL[rel]?.xz||r.epoch.mode==="analytic-evolution"?z<=r.epoch.zMax:(z>=r.epoch.zMin-.1&&z<=r.epoch.zMax+.1)||Math.abs(r.epoch.zRepresentative-z)<=tol(z)))}
 const evalCache=new Map();
-function rawPoints(r,z){
+const IMF_AXES={gsmf:"x",sfms:"xy",ssfr:"x",mzr:"x",mzrz:"x",mzrraw:"x",zstar:"x",size:"x",jstar:"x",quenched:"x",bh:"x",shmr:"y",sfrd:"y",smd:"y"};
+function imfShift(r){if(!state.imfc)return null;const D=window.SimHighlineCompare.IMF_DEX,t=r.definitions?.imf,ax=IMF_AXES[r.relation];if(!ax||!(t in D))return null;const d=D.chabrier03-D[t];return Math.abs(d)<1e-9?null:{d:Math.round(d*1000)/1000,ax,from:t}}
+function rawPoints(r,z){const pts=rawPointsNative(r,z),s=imfShift(r);if(!s)return pts;const X=s.ax.includes("x"),Y=s.ax.includes("y"),sh=(v,on)=>v!=null&&on?v+s.d:v;return pts.map(q=>({...q,x:sh(q.x,X),y:sh(q.y,Y),lo:sh(q.lo,Y),hi:sh(q.hi,Y)}))}
+function rawPointsNative(r,z){
   const rep=r.representation;
   if(rep.type==="points")return rep.points.filter(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)).map(p=>({x:p.x,y:p.y,lo:p.yLow,hi:p.yHigh})).sort((a,b)=>a.x-b.x);
   if(!evalCache.has(r.id)){try{evalCache.set(r.id,window.SimHighlineCompare.evaluator(r))}catch(e){evalCache.set(r.id,null)}}
@@ -317,11 +329,12 @@ function syncHash(){
   const p=new URLSearchParams(),d={rel:"sfms",yt:"none",tf:"log"};
   p.set("r",state.rel);p.set("z",currentZ());if(state.mode!=="plot")p.set("m",state.mode);if(state.mode==="tension")p.set("tz",state.tz);
   const ob=Object.entries(state.offBy).filter(([,v])=>v.size).map(([k,v])=>k+":"+[...v].map(encodeURIComponent).join("~")).join(",");if(ob)p.set("off",ob);if(state.runPref.size)p.set("rp",[...state.runPref].map(([u,v])=>encodeURIComponent(u)+"*"+(v?1:0)).join("~"));if(state.variants)p.set("va","1");if(state.offTier.size)p.set("ot",[...state.offTier].join("~"));
-  if(state.rankOnly)p.set("rk","1");if(!state.showObs)p.set("obs","0");if(state.obsOff.size)p.set("oo",[...state.obsOff].join("~"));
+  if(state.rankOnly)p.set("rk","1");if(state.imfc)p.set("imf","1");if(!state.showObs)p.set("obs","0");if(state.obsOff.size)p.set("oo",[...state.obsOff].join("~"));
   if(effYt()!=="none")p.set("yt",effYt());if(state.tf!=="log")p.set("tf",state.tf);if(state.xr)p.set("xr",state.xr.join(","));if(state.yr)p.set("yr",state.yr.join(","));
-  if(!state.bands)p.set("bd","0");if(!state.scatter)p.set("sc","0");if(state.evo)p.set("ev",state.evo);if(state.ref)p.set("ref",state.ref);if(state.resid)p.set("res","1");if(state.at!=null)p.set("at",state.at);if(state.sel)p.set("sel",state.sel);
-  history.replaceState(null,"","#"+p.toString());
+  if(!state.bands)p.set("bd","0");if(!state.scatter)p.set("sc","0");if(state.evo)p.set("ev",state.evo);if(state.ref)p.set("ref",state.ref);if(state.resid)p.set("res","1");if(state.at!=null)p.set("at",state.at);if(state.sel)p.set("sel",state.sel);if(Object.keys(state.anc).length)p.set("an",Object.entries(state.anc).map(([k,v])=>encodeURIComponent(k)+"*"+encodeURIComponent(v)).join("~"));if(state.embed)p.set("embed","1");
+  history.replaceState(null,"","#"+p.toString());if(state.embed)embedSync();
 }
+function embedSync(){$("embedTitle").textContent="sim-highline · "+REL[state.rel].t;const u=new URL(location.href),q=new URLSearchParams(u.hash.slice(1));q.delete("embed");u.hash=q.toString();$("embedOpen").href=u.href}
 function readHash(){
   const p=new URLSearchParams(location.hash.slice(1)),set=k=>new Set((p.get(k)||"").split("~").filter(Boolean));
   if(p.get("r")&&REL[p.get("r")])state.rel=p.get("r");
@@ -330,6 +343,8 @@ function readHash(){
   state.yt=p.get("yt")||"none";state.tf=p.get("tf")==="phys"?"phys":"log";
   const rg=k=>{const v=(p.get(k)||"").split(",").map(Number);return v.length===2&&v.every(Number.isFinite)?v:null};
   state.xr=rg("xr");state.yr=rg("yr");state.bands=p.get("bd")!=="0";state.scatter=p.get("sc")!=="0";state.evo=p.get("ev")||null;state.ref=p.get("ref")||null;state.resid=p.get("res")==="1"&&!!state.ref;state.at=num(p.get("at"));state.sel=byId.has(p.get("sel"))?p.get("sel"):null;
+  state.imfc=p.get("imf")==="1";state.anc={};for(const t of (p.get("an")||"").split("~").filter(Boolean)){const [k,v]=t.split("*");if(k&&v&&REL[decodeURIComponent(k)])state.anc[decodeURIComponent(k)]=decodeURIComponent(v)}
+  state.embed=p.get("embed")==="1";document.body.classList.toggle("embed",state.embed);
 }
 
 /* ---------- series builders ---------- */
@@ -494,7 +509,7 @@ function renderLegend(cur){
   const offTxt=r=>{const d=offsetOf(r,anc,z);return d==null?'<span class="off"></span>':`<span class="off" title="median offset from ${esc(anc.source)} over the overlapping x range, in y units">${d>=0?"+":"−"}${Math.abs(d).toFixed(2)}</span>`};
   const vglyph=r=>{if(!rf||!r||rf===r)return'<span class="v"></span>';const v=verdict(rf,r);if(!v)return'<span class="v"></span>';const k=v.verdict;return`<span class="v ${k==="comparable"?"ok":k==="not-comparable"?"no":"cav"}" title="${esc(k.replace(/-/g," ")+(v.blockers.length?": "+v.blockers.join("; "):v.caveats.length?": "+v.caveats.join("; "):""))}">${k==="comparable"?"✓":k==="not-comparable"?"✕":"~"}</span>`};
   const units=[...new Set(allRuns.map(unitOf))],nVar=units.filter(u=>!isPrimary(u)).length;
-  let h=`<div class="legctl"><span>${srcs.length} simulation${srcs.length>1?"s":""}</span><span><button class="mini" id="lgAll">all</button><button class="mini" id="lgNone">none</button>${nVar?`<button class="mini" id="lgVar" aria-pressed="${state.variants}" title="Each simulation shows its fiducial run; variants are other runs, resolutions, populations and model variations">variants ${state.variants?"on":"off"} (${nVar})</button>`:""}</span></div>`;
+  let h=`<div class="legctl"><span>${srcs.length} simulation${srcs.length>1?"s":""}</span><span><button class="mini" id="lgAll">all</button><button class="mini" id="lgNone">none</button><button class="mini" id="lgRk" aria-pressed="${state.rankOnly}" title="Hide digitized figures and context-only curves; keep evidence that can be ranked">rankable only</button>${nVar?`<button class="mini" id="lgVar" aria-pressed="${state.variants}" title="Each simulation shows its fiducial run; variants are other runs, resolutions, populations and model variations">variants ${state.variants?"on":"off"} (${nVar})</button>`:""}</span></div>`;
   for(const s of srcs){
     const runs=[...new Set(allRuns.filter(r=>r.source===s).map(unitOf))].sort((a,b)=>isPrimary(b)-isPrimary(a)||a.localeCompare(b)),prim=runs.filter(u=>isPrimary(u)),nv=runs.length-prim.length,open=state.expand.has(s),hasHere=runs.some(u=>present.has(u));
     const anyOn=!off.has(s)&&runs.some(u=>unitOn(u));
@@ -503,8 +518,8 @@ function renderLegend(cur){
   }
   const oall=obs.filter(r=>r.relation===rel),osrc=[...new Set(oall.map(r=>r.source))].sort(),oopen=state.expand.has("__obs");
   if(oall.length){h+=`<div class="row obsrow"><button class="name" id="obsBtn" aria-pressed="${state.showObs}"><span class="sw"></span>Observations <span style="color:var(--cream3);font-size:11px">${osrc.length}</span></button><button class="mini" data-x="__obs" aria-expanded="${oopen}">${oopen?"▾":"▸"}</button></div>`;
-    if(oopen)for(const s of osrc)h+=`<div class="row sub"><button class="name" data-o="${esc(s)}" aria-pressed="${!state.obsOff.has(s)}">${esc(s.length>34?s.slice(0,33)+"…":s)}</button>${provBadge(pickObs(rel,z).find(r=>r.source===s)||oall.find(r=>r.source===s))}${vglyph(pickObs(rel,z).find(r=>r.source===s))}<button class="mini" data-ref="${esc(unitOf(oall.find(r=>r.source===s)))}" aria-pressed="${state.ref===unitOf(oall.find(r=>r.source===s))}" title="Compare everything against this">ref</button></div>`}
-  h+=`<div class="keyline">badge = where the data come from: <b>O</b> official table · <b>C</b> catalogue · <b>T</b> paper table · <b>F</b> fit · <b>D</b> digitized figure<br>line: solid O/C/T · dashed F · dotted D${rf?`<br>✓ comparable · ~ caveats · ✕ not comparable (against ${ref?"the chosen reference":"the anchor"})`:""}${anc&&!ref?`<br>bold grey line = anchor, ${esc(anc.source)}; the number beside each simulation is its median offset from it over the overlap, in y units`:""}</div>`;
+    if(oopen)for(const s of osrc)h+=`<div class="row sub"><button class="name" data-o="${esc(s)}" aria-pressed="${!state.obsOff.has(s)}">${esc(s.length>34?s.slice(0,33)+"…":s)}</button>${provBadge(pickObs(rel,z).find(r=>r.source===s)||oall.find(r=>r.source===s))}${vglyph(pickObs(rel,z).find(r=>r.source===s))}<button class="mini" data-ref="${esc(unitOf(oall.find(r=>r.source===s)))}" aria-pressed="${state.ref===unitOf(oall.find(r=>r.source===s))}" title="Compare everything against this">ref</button><button class="mini" data-an="${esc(s)}" aria-pressed="${!!anc&&anc.source===s}" ${pickObs(rel,z).some(r=>r.source===s)?"":"disabled"} title="${pickObs(rel,z).some(r=>r.source===s)?"Use as the bold anchor line and the offsets (also used by the Tension view)":"No curve from this source at this epoch"}">anchor</button></div>`}
+  h+=`<div class="keyline">${state.imfc?"IMF converted to Chabrier: mass and SFR axes of Kroupa and Salpeter curves are shifted by the standard offsets (curves with an unstated IMF are unchanged)<br>":""}keys: ← → step the epoch · Esc closes panels<br>badge = where the data come from: <b>O</b> official table · <b>C</b> catalogue · <b>T</b> paper table · <b>F</b> fit · <b>D</b> digitized figure<br>line: solid O/C/T · dashed F · dotted D${rf?`<br>✓ comparable · ~ caveats · ✕ not comparable (against ${ref?"the chosen reference":"the anchor"})`:""}${anc&&!ref?`<br>bold grey line = anchor, ${esc(anc.source)}; the number beside each simulation is its median offset from it over the overlap, in y units`:""}</div>`;
   const L=$("legend");L.classList.toggle("closed",!state.legendOpen);L.innerHTML=`<button class="legtog" id="legTog" aria-expanded="${state.legendOpen}">Legend ${state.legendOpen?"▾":"▸"}</button>`+(state.legendOpen?h:"");const lt=$("legTog");lt.onclick=()=>{state.legendOpen=!state.legendOpen;renderLegend(cur)};
   L.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{const s=b.dataset.s;off.has(s)?off.delete(s):off.add(s);renderAll(false)});
   L.querySelectorAll("[data-only]").forEach(b=>b.onclick=()=>{state.offBy[rel]=new Set(srcs.filter(x=>x!==b.dataset.only));renderAll(false)});
@@ -514,7 +529,9 @@ function renderLegend(cur){
   L.querySelectorAll("[data-ev]").forEach(b=>b.onclick=()=>{state.evo=state.evo===b.dataset.ev?null:b.dataset.ev;state.resid=false;if(state.mode!=="plot")setMode("plot");else renderAll(true)});
   L.querySelectorAll("[data-ref]").forEach(b=>b.onclick=()=>{state.ref=state.ref===b.dataset.ref?null:b.dataset.ref;if(!state.ref)state.resid=false;renderAll(false)});
   const ob=$("obsBtn");if(ob)ob.onclick=()=>{state.showObs=!state.showObs;renderAll(false)};
-  const la=$("lgAll"),ln=$("lgNone"),lv=$("lgVar");
+  const la=$("lgAll"),ln=$("lgNone"),lv=$("lgVar"),lr=$("lgRk");
+  if(lr)lr.onclick=()=>{state.rankOnly=!state.rankOnly;renderAll(false)};
+  L.querySelectorAll("[data-an]").forEach(b=>b.onclick=()=>{const u=b.dataset.an;state.anc[rel]===u?delete state.anc[rel]:state.anc[rel]=u;renderAll(false)});
   if(la)la.onclick=()=>{state.offBy[rel]=new Set();renderAll(false)};
   if(ln)ln.onclick=()=>{state.offBy[rel]=new Set(srcs);renderAll(false)};
   if(lv)lv.onclick=()=>{state.variants=!state.variants;renderAll(true)};
@@ -537,6 +554,7 @@ function renderPanel(){
   if(state.tab==="evidence")body.innerHTML=evidenceHtml();else if(state.tab==="about")body.innerHTML=aboutHtml();else if(state.tab==="tune")body.innerHTML=tuneHtml();else body.innerHTML=dataHtml();
   if(state.tab==="evidence")wireEvidence();else if(state.tab==="tune")wireTune();else if(state.tab==="data")wireData();
 }
+const issueUrl=r=>`${SIMHIGHLINE_RELEASE.repo}/issues/new?template=curve-error.yml&title=${encodeURIComponent("Curve error: "+r.id)}&record=${encodeURIComponent(r.id)}&view=${encodeURIComponent(location.href)}`;
 function evidenceHtml(){
   const r=byId.get(state.sel);
   if(!r)return`<h3>Evidence</h3><p class="hint">Click any curve to see where it comes from, how it was extracted, and which definitions it uses.</p><p class="hint">Tiers: ${TIERS.map(t=>`<b>${t.replace(/-/g," ")}</b> ${TIER_NOTE[t]}`).join("; ")}.</p>`;
@@ -545,8 +563,9 @@ function evidenceHtml(){
   const ref=state.ref?refRecord(currentZ()):null,v=verdict(ref,r);
   return`<h3>${esc(label(r))}</h3><div class="sub">${esc(REL[r.relation]?.t||r.relation)}, z = ${fmtZ(r.epoch.zRepresentative)}${r.epoch.snapshot!=null?`, snapshot ${r.epoch.snapshot}`:""}</div>
   <span class="tier" title="${esc(TIER_NOTE[p.tier]||"")}">${esc((p.tier||"").replace(/-/g," "))}</span><span class="tier">${esc(r.calibration||"")}</span>${r.rankable?"":'<span class="tier" title="Definitions or sampling do not allow ranking">context only</span>'}
-  <div class="btns"><button class="btn" id="evRef">${state.ref===unitOf(r)?"Clear reference":"Use as reference"}</button><button class="btn" id="evFit">Fit line</button><button class="btn" id="evCsv">CSV</button><button class="btn" id="evBib">Cite</button></div>
+  <div class="btns"><button class="btn" id="evRef">${state.ref===unitOf(r)?"Clear reference":"Use as reference"}</button><button class="btn" id="evFit">Fit line</button><button class="btn" id="evCsv">CSV</button><button class="btn" id="evBib">Cite</button><a class="btn" id="evIssue" href="${esc(issueUrl(r))}" target="_blank" rel="noopener" title="Open a prefilled issue about this curve on GitHub">Report an issue</a></div>
   ${v?`<div class="warn" style="border-color:${v.verdict==="comparable"?"#7fc47f":v.verdict==="not-comparable"?"var(--orange)":"var(--mustard)"}"><b>vs reference:</b> ${esc(v.verdict.replace(/-/g," "))}${v.blockers.length?`<br>${v.blockers.map(esc).join("<br>")}`:""}${v.caveats.length?`<br>${v.caveats.map(esc).join("<br>")}`:""}</div>`:""}
+  ${(()=>{const s=imfShift(r);return s?`<div class="warn" style="border-color:var(--mustard)"><b>IMF converted:</b> plotted ${s.ax==="xy"?"x and y":s.ax} shifted by ${s.d>0?"+":"−"}${Math.abs(s.d).toFixed(3)} dex from ${esc(s.from)} to chabrier03 (standard offset). The downloadable record keeps the published values.</div>`:""})()}
   <dl><dt>source</dt><dd>${p.url?`<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.citation)}</a>`:esc(p.citation)}</dd>${p.doi?`<dt>doi</dt><dd><a href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener">${esc(p.doi)}</a></dd>`:""}${p.sourceMember?`<dt>member</dt><dd>${esc(p.sourceMember)}</dd>`:""}${p.extractionMethod?`<dt>method</dt><dd>${esc(p.extractionMethod)}</dd>`:""}${p.axisCalibrationPixels?`<dt>axes</dt><dd>${esc(p.axisCalibrationPixels)}</dd>`:""}<dt>x</dt><dd>${esc(r.axes?.xDefinition)}</dd><dt>y</dt><dd>${esc(r.axes?.yDefinition)}</dd>${defs}${d.cosmology?`<dt>cosmology</dt><dd>H0 ${esc(d.cosmology.H0)}, Ωm ${esc(d.cosmology.Om)}</dd>`:""}<dt>retrieved</dt><dd>${esc(p.retrieved)}</dd>${p.checksumSha256?`<dt>sha-256</dt><dd style="font-size:11px">${esc(p.checksumSha256)}</dd>`:""}<dt>source</dt><dd><a href="site/sources.html#${slugOf(r.source)}">about ${esc(r.source)}: ${r.kind==="simulation"?"code, method, purpose":"survey and facility"}</a></dd><dt>record</dt><dd style="font-size:11px">${esc(r.id)}</dd></dl>
   ${r.selection?.warning?`<div class="warn">${esc(r.selection.warning)}</div>`:""}${r.notes?`<div class="warn" style="border-color:var(--line)">${esc(r.notes)}</div>`:""}`;
 }
@@ -588,6 +607,7 @@ function tuneHtml(){
   <h4>WHAT IS SHOWN</h4>
   <label><input type="checkbox" id="tBands" ${state.bands?"checked":""}> uncertainty / scatter bands</label>
   <label><input type="checkbox" id="tSc" ${state.scatter?"checked":""}> individual galaxies (scatter records)</label>
+  <label><input type="checkbox" id="tImf" ${state.imfc?"checked":""}> convert stellar masses and SFRs to a Chabrier IMF (standard offsets: Kroupa −0.025 dex, Salpeter −0.235 dex; unstated IMFs stay as published; downloads always keep the published values)</label>
   <label><input type="checkbox" id="tRk" ${state.rankOnly?"checked":""}> only rankable evidence (hides digitized figures and context-only curves)</label>
   ${TIERS.map(t=>`<label><input type="checkbox" data-tier="${t}" ${state.offTier.has(t)?"":"checked"}> ${t.replace(/-/g," ")} <span style="color:var(--cream3)">${cnt(t)}</span></label>`).join("")}
   <h4>EVOLUTION</h4>
@@ -619,6 +639,7 @@ function wireTune(){
   if($("tYt"))$("tYt").onchange=e=>{state.yt=e.target.value;state.xr=state.yr=null;renderAll(true);renderPanel()};
   $("tBands").onchange=e=>{state.bands=e.target.checked;renderAll(false)};
   $("tSc").onchange=e=>{state.scatter=e.target.checked;renderAll(false)};
+  $("tImf").onchange=e=>{state.imfc=e.target.checked;renderAll(false)};
   $("tRk").onchange=e=>{state.rankOnly=e.target.checked;renderAll(false)};
   $("pbody").querySelectorAll("[data-tier]").forEach(c=>c.onchange=()=>{c.checked?state.offTier.delete(c.dataset.tier):state.offTier.add(c.dataset.tier);renderAll(false)});
   $("tEvo").onchange=e=>{state.evo=e.target.value||null;if(state.evo)state.resid=false;renderAll(true);renderPanel()};
@@ -652,6 +673,8 @@ function pySnippet(recs){
   lines.push("print(sel.groupby(['source','run','z']).size())","print(sim_highline.bibtex(sel))");
   return lines.join("\n");
 }
+const citeText=()=>{const R=SIMHIGHLINE_RELEASE;return`${R.author} (${R.released.slice(0,4)}). ${R.title} (v${R.version}) [Data set]. ${R.doi?"https://doi.org/"+R.doi:R.repo+" (DOI pending)"}`};
+const citeBib=()=>{const R=SIMHIGHLINE_RELEASE;return`@misc{simhighline_v${R.version.replace(/\./g,"_")},\n  author = {Bhatia, Shubhan},\n  title = {${R.title}},\n  year = {${R.released.slice(0,4)}},\n  version = {${R.version}},\n  howpublished = {Data set},\n  url = {${R.doi?"https://doi.org/"+R.doi:R.repo}},\n  note = {Code MIT, data CC BY 4.0; cite the original papers of the records used}\n}`};
 function dataHtml(){
   const recs=exportSet(),dl=state.dl,pts=recs.reduce((a,r)=>a+(r.representation.type==="parametric"?SimHighlineExport.NSAMPLE:r.representation.points.length),0),ns=new Set(recs.map(r=>r.source)).size;
   return`<h3>Get data</h3><div class="sub">${REL[state.rel].t}</div>
@@ -660,13 +683,17 @@ function dataHtml(){
   <label><input type="radio" name="scope" value="all" ${dl.scope==="all"?"checked":""}> all epochs</label>
   <label><input type="radio" name="scope" value="range" ${dl.scope==="range"?"checked":""}> z from <input type="number" step="any" id="dz0" value="${dl.z0}" style="width:70px"> to <input type="number" step="any" id="dz1" value="${dl.z1}" style="width:70px"></label>
   <label><input type="checkbox" id="dObs" ${dl.obs?"checked":""}> include observations</label>
-  <p class="hint">Follows the legend: hidden suites, runs, tiers and the rankable filter are excluded.</p>
+  <p class="hint">Follows the legend: hidden suites, runs, tiers and the rankable filter are excluded. Downloads always contain the published values, never IMF-converted ones.</p>
   <div class="big">${recs.length} <span style="font:13px var(--ui);color:var(--cream3)">records · ${pts} points · ${ns} sources</span></div>
   <div class="btns"><button class="btn main" id="dCsv" ${recs.length?"":"disabled"}>Download CSV</button><button class="btn" id="dJson" ${recs.length?"":"disabled"}>JSON</button><button class="btn" id="dPy" ${recs.length?"":"disabled"}>Copy Python</button><button class="btn" id="dBib" ${recs.length?"":"disabled"}>Copy BibTeX</button></div>
   <p class="hint">CSV is tidy: one row per point with units, definitions, tier, rankable flag and citation. Parametric curves are the published expression sampled at ${SimHighlineExport.NSAMPLE} points. Nothing is interpolated or smoothed.</p>
   <h4>FIGURE</h4>
-  <div class="btns"><button class="btn" id="fSvg">SVG</button><button class="btn" id="fPng">PNG</button><button class="btn" id="fLink">Copy link</button></div>
+  <div class="btns"><button class="btn" id="fSvg">SVG</button><button class="btn" id="fPng">PNG</button><button class="btn" id="fLink">Copy link</button><button class="btn" id="fEmb" title="HTML to paste into a web page or slides">Copy embed code</button></div>
   <p class="hint">Figures carry the relation, epoch and source citations in a footer.</p>
+  <h4>CITE THE DATASET</h4>
+  <p class="hint">${esc(citeText())}</p>
+  <div class="btns"><button class="btn" id="cTxt">Copy citation</button><button class="btn" id="cBibD">Copy BibTeX</button></div>
+  <p class="hint">Also cite the original paper of every record you use (the CSV and BibTeX above carry them). Code MIT, data CC BY 4.0.</p>
   <h4>EVERYTHING</h4>
   <p class="hint">Full dataset v${esc(SIMHIGHLINE_RELEASE.version)}: <a href="data/export/sim-highline-records.csv">records.csv</a> · <a href="data/export/sim-highline-points.csv">points.csv</a> · <a href="data/export/sim-highline-records.json">records.json</a> · <a href="data/export/sim-highline-citations.bib">citations.bib</a> · <a href="sim_highline.py">sim_highline.py</a> (pandas loader). Links work when this page is served from the sim-highline site.</p>`;
 }
@@ -681,6 +708,8 @@ function wireData(){
   $("dPy").onclick=()=>copyTxt(pySnippet(exportSet()),"Python snippet copied");
   $("dBib").onclick=()=>copyTxt(SimHighlineExport.bibtex(exportSet()),"BibTeX copied");
   $("fLink").onclick=()=>{syncHash();copyTxt(location.href,"Link copied")};
+  $("cTxt").onclick=()=>copyTxt(citeText(),"Citation copied");$("cBibD").onclick=()=>copyTxt(citeBib(),"BibTeX copied");
+  $("fEmb").onclick=()=>{syncHash();const u=new URL(location.href);const q=new URLSearchParams(u.hash.slice(1));q.set("embed","1");u.hash=q.toString();copyTxt(`<iframe src="${u.href}" width="820" height="560" style="border:1px solid #ccc;border-radius:8px" loading="lazy" title="sim-highline: ${REL[state.rel].t}"></iframe>`,"Embed code copied")};
   $("fSvg").onclick=()=>download(`sim-highline_${state.rel}_z${fmtZ(currentZ())}.svg`,"image/svg+xml",figureSvg().svg);
   $("fPng").onclick=()=>{const f=figureSvg(),img=new Image();img.onload=()=>{const c=document.createElement("canvas");c.width=f.w*2;c.height=f.h*2;const x=c.getContext("2d");x.scale(2,2);x.drawImage(img,0,0);c.toBlob(b=>{const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=`sim-highline_${state.rel}_z${fmtZ(currentZ())}.png`;document.body.append(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)})};img.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(f.svg)};
 }
@@ -688,7 +717,7 @@ function figureSvg(){
   const svg=$("stage"),vb=svg.viewBox.baseVal,W=vb.width||svg.clientWidth,H=vb.height||svg.clientHeight,cs=getComputedStyle(document.documentElement),v=n=>cs.getPropertyValue(n).trim();
   const css=[...document.styleSheets].flatMap(s=>{try{return[...s.cssRules]}catch(e){return[]}}).filter(r=>r.selectorText&&/^\.(axis|alabel|curve|band|obs|obsdot|dim|zline|fit|ftxt|user|userdot)/.test(r.selectorText)).map(r=>r.cssText).join("\n").replace(/var\((--[a-z0-9]+)\)/g,(m,n)=>v(n));
   const z=currentZ(),cites=[...new Map($("stage").querySelectorAll("[data-id]")?[...svg.querySelectorAll("[data-id]")].map(e=>byId.get(e.dataset.id)).filter(Boolean).map(r=>[r.provenance?.doi||r.provenance?.url||r.id,(r.provenance?.citation||"").replace(/,\s*(Fig\.|Figure|figure|Table).*$/,"")]):[]).values()];
-  const lines=[`sim-highline v${SIMHIGHLINE_RELEASE.version} · ${REL[state.rel].t} · ${state.mode==="evol"?"vs redshift":"z = "+fmtZ(z)} · ${new Date().toISOString().slice(0,10)}`,...cites.slice(0,7).map(c=>c.length>150?c.slice(0,149)+"…":c),...(cites.length>7?[`+${cites.length-7} more sources`]:[])];
+  const lines=[`sim-highline v${SIMHIGHLINE_RELEASE.version} · ${REL[state.rel].t} · ${state.mode==="evol"?"vs redshift":"z = "+fmtZ(z)} · ${new Date().toISOString().slice(0,10)}${state.imfc?' · IMF converted to Chabrier':''}`,...cites.slice(0,7).map(c=>c.length>150?c.slice(0,149)+"…":c),...(cites.length>7?[`+${cites.length-7} more sources`]:[])];
   const FH=14+lines.length*15,inner=svg.innerHTML.replace(/var\((--[a-z0-9]+)\)/g,(m,n)=>v(n));
   const out=`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H+FH}" viewBox="0 0 ${W} ${H+FH}"><style>${css}</style><rect width="100%" height="100%" fill="${v("--bg")}"/>${inner}<g font-family="sans-serif" font-size="11" fill="${v("--cream2")}">${lines.map((l,i)=>`<text x="16" y="${H+14+i*15}"${i?"":` font-weight="600" fill="${v("--cream")}"`}>${esc(l)}</text>`).join("")}</g></svg>`;
   return{svg:out,w:W,h:H+FH};
@@ -781,6 +810,7 @@ readHash();$("mPlot").setAttribute("aria-pressed",state.mode==="plot");$("mEvol"
 if(state.mode==="atlas")renderAtlas();if(state.mode==="tension")renderTension();
 renderAll(false);
 if(state.sel)openRecord(state.sel);
+{const go=()=>document.body.classList.remove("boot");requestAnimationFrame(()=>requestAnimationFrame(go));setTimeout(go,250)}
 </script>
 </body>
 </html>

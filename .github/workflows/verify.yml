@@ -1,0 +1,38 @@
+name: verify
+on:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      regress:
+        description: "Also regenerate every digitized record from its arXiv source (slow, needs network)"
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - run: pip install -r requirements-dev.txt
+      - name: Verification chain
+        run: ./scripts/verify-all.sh
+      - name: Generated files are up to date
+        run: |
+          git diff --exit-code --stat || { echo "::error::Generated files changed. Run ./scripts/verify-all.sh locally and commit the result."; exit 1; }
+      - name: Package builds and loads
+        run: |
+          pip wheel . --no-deps -w /tmp/wheel
+          pip install --no-deps --target /tmp/site /tmp/wheel/*.whl
+          cd /tmp && PYTHONPATH=/tmp/site python -c "import sim_highline as s; df = s.load(); print(df.attrs['version'], len(df))"
+      - name: Digitizer regression
+        if: github.event_name == 'workflow_dispatch' && inputs.regress
+        run: python3 scripts/regress_digitizers.py

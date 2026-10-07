@@ -1,0 +1,39 @@
+name: Suggest a source
+description: A paper or data release with a curve that is not in sim-highline yet
+title: "Source: "
+labels: ["source-suggestion"]
+body:
+  - type: input
+    id: paper
+    attributes:
+      label: Paper (arXiv id or DOI)
+    validations:
+      required: true
+  - type: input
+    id: suite
+    attributes:
+      label: Simulation suite or observational survey
+    validations:
+      required: true
+  - type: input
+    id: relation
+    attributes:
+      label: Relation and figure or table
+      description: For example "stellar mass function, Fig. 4" or "Table 2, sSFR at z=0 to 3".
+    validations:
+      required: true
+  - type: dropdown
+    id: format
+    attributes:
+      label: What the paper provides
+      options:
+        - A table in the paper or its LaTeX source
+        - A data release (files or an API)
+        - A vector figure (PDF)
+        - Only a raster figure
+        - Not sure
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything that decides comparability
+      description: Mass or aperture definition, IMF, cosmology, population, SFR timescale, metallicity tracer.

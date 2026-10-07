@@ -78,3 +78,7 @@ Each relation has a default observational anchor (`REL[...].anchor` in `highline
 - Observational mocks in simulations (for example Horizon-AGN GSMF, TNG quenched UVJ) are labelled by their definitions; intrinsic and mock quantities are not mixed.
 - Catalogue-level runs for TNG and EAGLE need user credentials and are provided as scripts, not data.
 - Suite-level redshift ranges record the verified run extent; initial-condition redshifts are separate.
+
+## Optional IMF conversion (beta)
+
+Customise > "convert stellar masses and SFRs to a Chabrier IMF" shifts, on screen only, the axes that carry stellar mass or SFR (x for mass functions, mass-metallicity, size, quenched fraction, black hole relations and sSFR; x and y for the main sequence; y for the stellar-to-halo ratio, SFR density and stellar mass density) by the standard offsets already used by the comparability check in `compare.js` (`IMF_DEX`: Kroupa 0, Chabrier -0.025, Salpeter +0.21 dex in stellar mass, so Kroupa to Chabrier is -0.025 and Salpeter to Chabrier is -0.235 dex). Curves with an unstated IMF are never shifted. The offsets are population-averaged conventions, not exact for any single galaxy, so the conversion is off by default, labelled in the legend, the Evidence panel and exported figures, and **downloads and the Python loader always contain the published values**.

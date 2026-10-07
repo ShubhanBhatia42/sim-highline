@@ -1,0 +1,28 @@
+name: watch-arxiv
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Find new papers from the last 7 days
+        run: python3 scripts/watch-arxiv.py --since "$(date -u -d '7 days ago' +%F)" --state "$RUNNER_TEMP/watch.json" --markdown watch.md
+      - name: Open an issue with the list
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if grep -q '^- ' watch.md; then
+            gh label create literature-watch --color 0E8A16 --description "New simulation papers found by the weekly watcher" 2>/dev/null || true
+            gh issue create --title "New simulation papers, week of $(date -u +%F)" --label literature-watch --body-file watch.md
+          else
+            echo "nothing new"
+          fi

@@ -29,6 +29,19 @@
 </figure>
 </section>
 
+<section aria-labelledby="try">
+<h2 id="try">Start with a question</h2>
+<p class="lede" style="font-size:18px">Each link opens the beta already set up, so there is nothing to configure.</p>
+<div class="grid">
+<a class="card" href="../highline.html#r=gsmf&amp;z=8"><h3>What do simulations predict at z = 8?</h3><p>The stellar mass function for every simulation that has an epoch there, next to JWST estimates.</p></a>
+<a class="card" href="../highline.html#r=uvlf&amp;z=10"><h3>How bright are the first galaxies?</h3><p>UV luminosity functions at z = 10, with the dust treatment of each simulation in the legend.</p></a>
+<a class="card" href="../highline.html#m=tension&amp;tz=0"><h3>Where do simulations disagree with data today?</h3><p>Every simulation against its observational anchor, for every relation, with a flag for whether the definitions allow the comparison.</p></a>
+<a class="card" href="../highline.html#r=sfrd"><h3>How did the Universe build its stars?</h3><p>The cosmic star formation rate density against redshift, for {{nSfrd}} simulations.</p></a>
+<a class="card" href="../highline.html#r=mzrz&amp;z=6"><h3>What do simulations say about metals at z = 6?</h3><p>Gas metallicity (Z/Z&#9737;) against stellar mass next to observations. Each metallicity tracer has its own view, so none is mixed.</p></a>
+<a class="card" href="../highline.html#r=shmr&amp;z=0"><h3>How efficiently do haloes make stars?</h3><p>The stellar-to-halo mass relation at z = 0 with the halo and stellar mass definitions of each curve.</p></a>
+</div>
+</section>
+
 <section aria-labelledby="why">
 <h2 id="why">The problem it removes</h2>
 <p class="lede" style="font-size:18px">Comparing what different simulations predict means opening a dozen papers, reading values off figures, and guessing whether each uses the same stellar-mass aperture, IMF, population and cosmology. Those choices move curves by tenths of a dex, as much as the physics you are trying to compare. sim-highline records them for every curve and says when a comparison is not like with like.</p>
@@ -81,7 +94,7 @@
 </section>
 
 <footer>
-<p>sim-highline {{version}} · {{released}} · Shubhan Bhatia. Please cite the original papers (every record carries its citation and DOI) together with the dataset; see <code>CITATION.cff</code>. Licence to be decided by the maintainer.</p>
+<p>sim-highline {{version}} · {{released}} · Shubhan Bhatia. Please cite the original papers (every record carries its citation and DOI) together with the dataset; see <code>CITATION.cff</code>. Code MIT, data CC BY 4.0 (third-party inputs keep their own terms; see <code>docs/SOURCE-TERMS.md</code>).</p>
 <p><a href="../highline.html">Beta</a> · <a href="use-cases.html">Use cases</a> · <a href="../data/export/sim-highline-records.csv">Records (CSV)</a> · <a href="../data/export/sim-highline-points.csv">Points (CSV)</a> · <a href="../sim_highline.py">sim_highline.py</a> · <a href="../data/export/sim-highline-citations.bib">BibTeX</a></p>
 </footer>
 </div>

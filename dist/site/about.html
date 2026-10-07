@@ -38,6 +38,9 @@ section{padding:46px 0;border-top:1px solid var(--line)}
 .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
 .card{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:22px}
 .card p{margin:0;color:var(--cream2);font-size:16px}
+a.card{display:block;text-decoration:none;color:inherit;transition:border-color .15s}
+a.card:hover,a.card:focus-visible{border-color:var(--orange)}
+a.card h3{margin:0 0 8px}
 .nums{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
 .nums div{border-left:2px solid var(--orange);padding-left:14px}
 .nums b{display:block;font:26px var(--display);color:var(--cream)}
@@ -108,7 +111,7 @@ tr:target td{background:var(--bg3)}
 <nav aria-label="Main"><a class="mark" href="index.html" aria-label="sim-highline home">SIM<i>/</i>HIGHLINE</a><span class="sp"></span><a class="l" href="about.html" aria-current="page">About</a><a class="l" href="sources.html">Simulations &amp; observations</a><a class="l" href="use-cases.html">Use cases</a><a class="btn main" href="../highline.html">Open the app</a></nav>
 
 <header class="hero">
-<p class="eyebrow">ABOUT · BETA 0.10.0</p>
+<p class="eyebrow">ABOUT · BETA 0.11.0</p>
 <h1>Do galaxy simulations agree with each other, and with the sky?</h1>
 <p class="lede">sim-highline puts every published prediction for a galaxy scaling relation on one axis, next to the observations, and keeps the definitions that decide whether two curves can be compared. 1,575 curves, 19 simulations, 82 observational sources, 19 relations, z = 0 to 17.</p>
 <div class="cta"><a class="btn main" href="../highline.html">Open the app</a><a class="btn" href="sources.html">Where the curves come from</a></div>
@@ -161,13 +164,13 @@ tr:target td{background:var(--bg3)}
 <div class="not"><ul class="tick" style="gap:8px">
 <li><b>Not a replacement for the original data.</b> 51% of simulation curves are digitized from published figures; only 36% are marked rankable.</li>
 <li><b>Not a leaderboard.</b> Many curves cannot be compared like for like, and sim-highline says so.</li>
-<li><b>Not independently verified yet.</b> The audit script checks every record (epoch order, provenance, plausible ranges, band consistency, duplicate data, cross-source agreement) and currently reports 0 errors and 3 warnings; accepted exceptions are listed with a reason each. That checks consistency, not that every curve is the right one.</li>
+<li><b>Not independently verified yet.</b> The audit script checks every record (epoch order, provenance, plausible ranges, band consistency, duplicate data, cross-source agreement) and currently reports 0 errors and 0 warnings; accepted exceptions are listed with a reason each. That checks consistency, not that every curve is the right one.</li>
 <li><b>Not complete.</b> Some relations have only two or three simulations so far (total gas fraction, stellar Tully–Fisher, HI and H<sub>2</sub> fractions, black hole mass–dispersion); UV luminosity functions (5 simulations) and the cosmic SFR density (10) are recent additions.</li>
 </ul></div>
 </section>
 
 <footer>
-<p>sim-highline 0.10.0 · 2026-10-08 · built and maintained by Shubhan Bhatia. Cite the original papers (each record carries its citation and DOI) together with the dataset; see <code>CITATION.cff</code>. Licence to be decided by the maintainer.</p>
+<p>sim-highline 0.11.0 · 2026-10-08 · built and maintained by Shubhan Bhatia. Cite the original papers (each record carries its citation and DOI) together with the dataset; see <code>CITATION.cff</code>. Code MIT, data CC BY 4.0 (third-party inputs keep their own terms; see <code>docs/SOURCE-TERMS.md</code>).</p>
 <p><a href="../highline.html">App</a> · <a href="sources.html">Simulations &amp; observations</a> · <a href="use-cases.html">Use cases</a> · <a href="index.html">Product overview</a> · <a href="../data/export/sim-highline-records.csv">Data</a></p>
 </footer>
 </div>

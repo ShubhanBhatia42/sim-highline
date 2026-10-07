@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sim-highline"
+dynamic = ["version"]
+description = "Curated galaxy scaling relations from cosmological simulations, with the definitions that decide whether two curves are comparable"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT AND CC-BY-4.0"
+license-files = ["LICENSE", "LICENSE-DATA.md"]
+authors = [{ name = "Shubhan Bhatia" }]
+keywords = ["astronomy", "galaxy formation", "cosmological simulations", "scaling relations"]
+classifiers = ["Intended Audience :: Science/Research", "Topic :: Scientific/Engineering :: Astronomy", "Programming Language :: Python :: 3"]
+dependencies = ["numpy", "pandas"]
+
+[project.urls]
+Repository = "https://github.com/ShubhanBhatia42/sim-highline"
+
+[tool.hatch.version]
+path = "data/release.json"
+pattern = '"version":\s*"(?P<version>[^"]+)"'
+
+[tool.hatch.build.targets.wheel]
+include = ["sim_highline.py"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"data/export" = "sim_highline_data"
+
+[tool.hatch.build.targets.sdist]
+include = ["sim_highline.py", "data/export", "data/release.json", "README.md", "LICENSE", "LICENSE-DATA.md", "CITATION.cff", "pyproject.toml"]

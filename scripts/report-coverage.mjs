@@ -18,7 +18,7 @@ const summarize = entries => Object.fromEntries(Object.entries(entries).sort(([a
 
 const report = {
   schemaVersion: "1.0.0",
-  generatedAt: new Date().toISOString().slice(0,10),
+  generatedAt: JSON.parse(await readFile(new URL("../data/release.json", import.meta.url), "utf8")).released,
   totals: {
     records: records.length,
     sources: Object.keys(bySource).length,
