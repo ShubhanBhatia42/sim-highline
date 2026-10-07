@@ -44,7 +44,7 @@
 <p class="who">Modellers of semi-analytic, empirical and emulator-based models.</p>
 <ol class="steps"><li>Load the dataset with <code>sim_highline.load()</code>.</li><li>Select a relation, an epoch range and the evidence you trust (<code>rankable=True</code> keeps only curves with documented definitions and sampling).</li><li>Pull arrays with <code>sim_highline.curve()</code>; units are log₁₀, physical, h-free, with every conversion recorded.</li></ol>
 <p class="limit">Limit: observational references are thinner than simulation curves and uneven across relations; check coverage first.</p>
-</div><div><pre><code>import sim_highline
+</div><div><pre tabindex="0"><code>import sim_highline
 df  = sim_highline.load()
 sel = sim_highline.select(df, relation="sfms", kind="simulation", rankable=True)
 one = sim_highline.nearest_epoch(sel, z=2.0)      # nearest published epoch; nothing interpolated
@@ -75,7 +75,7 @@ print(sim_highline.bibtex(one))</code></pre></div></div>
 
 <section aria-labelledby="qs">
 <h2 id="qs">Quick start (Python)</h2>
-<pre><code>import sim_highline
+<pre tabindex="0"><code>import sim_highline
 df  = sim_highline.load()                      # run from a folder containing data/export, or pass a URL
 sel = sim_highline.select(df, relation="gsmf", z=(5.5, 6.5), kind="simulation")
 g   = sel.groupby(["source", "run"]).agg(z=("z", "first"), points=("x", "size"),
@@ -83,7 +83,7 @@ g   = sel.groupby(["source", "run"]).agg(z=("z", "first"), points=("x", "size"),
 print(g.reset_index().assign(run=lambda d: d.run.str.slice(0, 26)).to_string(index=False))
 print(f"{sel.record_id.nunique()} records from {sel.source.nunique()} simulations")</code></pre>
 <p style="color:var(--cream3);font-size:14px;margin:12px 0 6px">Output from dataset v{{version}}:</p>
-<pre><code>{{quickstart}}</code></pre>
+<pre tabindex="0"><code>{{quickstart}}</code></pre>
 </section>
 
 <section aria-labelledby="fit">

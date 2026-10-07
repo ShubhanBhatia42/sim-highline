@@ -7,7 +7,7 @@ from pathlib import Path
 import numpy as np
 import yaml
 
-source_file = Path(sys.argv[1] if len(sys.argv) > 1 else "2509.07960.yml")
+source_file = Path(sys.argv[1] if len(sys.argv) > 1 else Path(__file__).resolve().parent.parent / "data" / "raw" / "2509.07960.yml")
 output = Path(sys.argv[2]) if len(sys.argv) > 2 else Path(__file__).resolve().parent.parent / "data" / "curves" / "colibre-gsmf.json"
 url = "https://colibre.strw.leidenuniv.nl/paper_data/2509.07960.yml"
 RUNS = {"COLIBRE_L025m5": ("m5 (L025)", 2.3e5), "COLIBRE_L025m6": ("m6 (L025)", 1.84e6), "COLIBRE_L025m7": ("m7 (L025)", 1.47e7), "COLIBRE_L050m5": ("m5 (L050)", 2.3e5), "COLIBRE_L100m5": ("m5 (L100)", 2.3e5), "COLIBRE_L200m6": ("m6 (L200)", 1.84e6), "COLIBRE_L400m7": ("m7 (L400)", 1.47e7), "COLIBRE_L200m7h": ("m7 hybrid AGN (L200)", 1.47e7)}

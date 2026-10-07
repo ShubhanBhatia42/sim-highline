@@ -34,8 +34,8 @@ Listing a suite in the source rail does not imply that a curve has been ingested
 
 ```bash
 # COLIBRE GSMF, 13 runs, z = 0-17 (Chaikin et al. 2026; public, CC-BY-4.0)
-curl -O https://colibre.strw.leidenuniv.nl/paper_data/2509.07960.yml
-python3 scripts/ingest_colibre_gsmf.py 2509.07960.yml
+curl -o data/raw/2509.07960.yml https://colibre.strw.leidenuniv.nl/paper_data/2509.07960.yml
+python3 scripts/ingest_colibre_gsmf.py data/raw/2509.07960.yml
 
 # IllustrisTNG: fetch only the needed group-catalog fields (documented API subset endpoint, free API key)
 TNG_API_KEY=... python3 scripts/fetch_tng.py TNG100-1 <root>
@@ -97,7 +97,7 @@ node scripts/test-static.mjs
 
 `test-curves.mjs` checks more than file shape: it guards against rigid-offset redshift evolution, reversed high-redshift abundance evolution, lost source hashes, and accidental ranking of incompatible native definitions.
 
-Open `index.html` directly or serve `dist/` with a static file server.
+Build with `./scripts/verify-all.sh` (or the three scripts `build-static.mjs`, `build-highline.mjs`, `build-site.mjs`), then serve `dist/` with any static file server, for example `python3 -m http.server -d dist`. `dist/site/index.html` is the landing page and `dist/highline.html` the app; `dist/` is generated and not committed.
 
 ## Getting the data
 
