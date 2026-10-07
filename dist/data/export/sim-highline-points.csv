@@ -1,4 +1,4 @@
-# sim-highline dataset v0.13.0 (2026-10-08); points table, one row per plotted point (parametric records sampled at 40 points over their domain)
+# sim-highline dataset v0.14.0 (2026-10-08); points table, one row per plotted point (parametric records sampled at 40 points over their domain)
 record_id,point_index,x,y,y_low,y_high,x_low,x_high,count
 bird22.astrid.sfrd.total,0,2.815,-1.0306,,,,,
 bird22.astrid.sfrd.total,1,2.877,-1.0406,,,,,

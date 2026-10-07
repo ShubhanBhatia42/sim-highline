@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.14.0 (2026-10-08)
+
+- App redesign (no data change): a left rail groups the 21 relations under six headings with full names and simulation counts (a native selector on phones) instead of a cloud of abbreviations; every view has a real title and subtitle; the wide display font is kept for the wordmark only; neutral UI chrome so the data colours carry the meaning.
+- Colour: eight validated categorical hues (dataviz method, `scripts/make-palette.py`, `data/palette.css`) assigned by code family with lightness steps inside a family (for example Illustris, TNG; EAGLE, COLIBRE, FLAMINGO; THESAN, THESAN-zoom, SPHINX), shared by the app and the site. Hovering a curve or a legend row emphasises it and dims the rest.
+- Fixed: the Tension and Coverage tables were transparent and the previous chart showed through them; embed mode collapsed the chart; the mobile header took most of the screen; SFR and stellar mass density showed a meaningless disabled slider; the hash in the URL was ignored after load (editing it or following a link now updates the view); minus signs on axes are real minus signs.
+- New: light and dark theme toggle shared by the app and the site (stored in the browser), loading state, favicon and social tags, sticky table headers.
+- Site: same tokens, Jost headings, ink buttons, sticky navigation, hero chart in the family colours.
+
 ## 0.13.0 (2026-10-08)
 
 - Records from sources with their own terms now carry `provenance.terms` and the exports a `terms` column: 88 Sharda+26 records (GPL-2.0, not CC BY) and 142 Garcia+24-derived records (no licence file) are flagged as third-party; CC BY sources are labelled. `sim_highline.open_terms(df)` keeps only records without third-party terms. The Evidence panel shows the terms.
