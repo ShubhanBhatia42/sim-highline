@@ -1,5 +1,10 @@
 # sim-highline
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="site/src/img/app-dark.png">
+  <img alt="The sim-highline app showing the stellar mass function at z = 6 for nine simulations next to observations, with a relation list on the left and a legend with evidence-tier badges." src="site/src/img/app-light.png">
+</picture>
+
 > **Beta, not yet independently reviewed.** About half of the simulation curves (51%) were digitized from published figures by one maintainer; every record carries its source, definitions and evidence tier, but **no record has been checked by an outside expert yet**. Where an author or collaboration publishes its own table, use that. Some records come from third-party releases with their own terms (the `terms` column; `docs/SOURCE-TERMS.md`).
 >
 > **Corrections and takedowns:** if you are an author or data owner and want a record corrected, attributed differently or removed, open an issue (the "Curve error" form) or use the contact in `CITATION.cff`. Requests are handled promptly and removal is not contested.

@@ -99,3 +99,10 @@ tr:target td{background:var(--bg3)}
 .pillars b{display:block;color:var(--cream);margin-bottom:2px}
 .pillars span{color:var(--cream2);font-size:15.5px}
 .q{font:500 clamp(21px,3vw,31px)/1.35 var(--ui);letter-spacing:-.01em;margin:0 0 18px}
+
+a.shot{display:block;margin:6px 0 10px;border:1px solid var(--line2);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);background:var(--bg2);line-height:0}
+a.shot img{width:100%;height:auto}
+a.shot:hover,a.shot:focus-visible{border-color:var(--orange)}
+.shot-dark{display:none}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])) .shot-light{display:none}:root:where(:not([data-theme="light"])) .shot-dark{display:block}}
+:root[data-theme="dark"] .shot-light{display:none}:root[data-theme="dark"] .shot-dark{display:block}
