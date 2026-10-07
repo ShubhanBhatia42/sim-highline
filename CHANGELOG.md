@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.15.0 (2026-10-08)
+
+- Data (vector figures): COLIBRE cosmic SFR density for five resolution runs, z=0 specific SFR of star-forming galaxies and z=0 stellar-to-halo mass ratio for three runs (Schaye+25 overview; 11 records); SPHINX20 UV luminosity function at seven redshifts (Katz+23); TNG50 sizes of star-forming galaxies, 3D stellar half-mass and 2D V-band (Pillepich+19; 6 records). Two figures were examined and skipped with reasons (Magneticum SFR density is by resolution class, SPHINX SFR density is a progenitor selection).
+- Repository: the superseded multi-view workbench was removed and the site root redirects to the landing page; the raw COLIBRE download moved to `data/raw/`; `dist/` is generated and no longer committed; GitHub Pages workflow added (inactive until `PAGES_ENABLED` is set); Playwright and axe browser tests (30 checks) added to CI, which found and fixed tab-list semantics, unreadable no-data legend rows, keyboard-unreachable scroll regions and a low-contrast label.
+
 ## 0.14.0 (2026-10-08)
 
 - App redesign (no data change): a left rail groups the 21 relations under six headings with full names and simulation counts (a native selector on phones) instead of a cloud of abbreviations; every view has a real title and subtitle; the wide display font is kept for the wordmark only; neutral UI chrome so the data colours carry the meaning.

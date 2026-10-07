@@ -1,0 +1,859 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "pillepich19.tng50.size.stellar3d.z4",
+      "source": "IllustrisTNG",
+      "run": "TNG50-1 (3D stellar half-mass radius, star-forming galaxies, Pillepich+19)",
+      "kind": "simulation",
+      "relation": "size",
+      "epoch": {
+        "zRepresentative": 4,
+        "zNominal": 4,
+        "zMin": 4,
+        "zMax": 4,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within 30 physical kpc",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 median three-dimensional stellar half-mass radius R_stars",
+        "yUnit": "log10(kpc)"
+      },
+      "domain": {
+        "xMin": 7.099,
+        "xMax": 10.283
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.099,
+            "y": 0.0555
+          },
+          {
+            "x": 7.308,
+            "y": 0.0724
+          },
+          {
+            "x": 7.515,
+            "y": 0.0905
+          },
+          {
+            "x": 7.724,
+            "y": 0.1094
+          },
+          {
+            "x": 7.936,
+            "y": 0.1254
+          },
+          {
+            "x": 8.149,
+            "y": 0.1479
+          },
+          {
+            "x": 8.359,
+            "y": 0.1739
+          },
+          {
+            "x": 8.568,
+            "y": 0.1988
+          },
+          {
+            "x": 8.781,
+            "y": 0.2309
+          },
+          {
+            "x": 8.979,
+            "y": 0.2391
+          },
+          {
+            "x": 9.202,
+            "y": 0.2221
+          },
+          {
+            "x": 9.401,
+            "y": 0.211
+          },
+          {
+            "x": 9.623,
+            "y": 0.1898
+          },
+          {
+            "x": 9.818,
+            "y": 0.1475
+          },
+          {
+            "x": 10.094,
+            "y": 0.0863
+          },
+          {
+            "x": 10.283,
+            "y": -0.0028
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming galaxies",
+        "warning": "Median 3D radius enclosing half of the stellar mass (aperture 30 pkpc) of TNG50-1 star-forming galaxies at z=4, read from the vector line of Pillepich et al. 2019 (the gas and H-alpha size lines, the shaded 16-84% bands, the softening markers and the Shibuya+15 points are not extracted). The paper notes sizes of galaxies at low mass approach the gravitational softening. The cosmology is the published TNG cosmology; it is not restated in this paper's text."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "star-forming",
+        "sizeDefinition": "3D radius enclosing half of the stellar mass (aperture 30 pkpc)",
+        "densityFrame": "unspecified"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Pillepich et al. 2019, MNRAS 490, 3196 (arXiv:1902.05553), median sizes of TNG50 star-forming galaxies",
+        "doi": "10.1093/mnras/stz2338",
+        "url": "https://arxiv.org/abs/1902.05553",
+        "retrieved": "2026-10-05",
+        "figure": "Median galaxy sizes of TNG50 star-forming galaxies as a function of stellar mass",
+        "panel": "z = 4 panel, stellar3d line",
+        "checksumSha256": "8dcb9e9d6bc83387d07222521c9c2b404fcbac2653d5a06c9b2840fd572e948c",
+        "sourceMember": "figures/TNG_L35n2160TNG_sizes_vs_Mstars_sfing_021.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: decade labels snapped to ticks and validated by the minor-tick pattern; log axes (sizes in physical kpc)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "pillepich19.tng50.size.vband2d.z4",
+      "source": "IllustrisTNG",
+      "run": "TNG50-1 (2D face-on V-band half-light radius, star-forming galaxies, Pillepich+19)",
+      "kind": "simulation",
+      "relation": "size",
+      "epoch": {
+        "zRepresentative": 4,
+        "zNominal": 4,
+        "zMin": 4,
+        "zMax": 4,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within 30 physical kpc",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 median two-dimensional face-on circularized V-band half-light radius",
+        "yUnit": "log10(kpc)"
+      },
+      "domain": {
+        "xMin": 7.099,
+        "xMax": 10.283
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.099,
+            "y": -0.0384
+          },
+          {
+            "x": 7.308,
+            "y": -0.0298
+          },
+          {
+            "x": 7.515,
+            "y": -0.0182
+          },
+          {
+            "x": 7.724,
+            "y": -0.0036
+          },
+          {
+            "x": 7.936,
+            "y": 0.008
+          },
+          {
+            "x": 8.149,
+            "y": 0.032
+          },
+          {
+            "x": 8.359,
+            "y": 0.063
+          },
+          {
+            "x": 8.568,
+            "y": 0.1016
+          },
+          {
+            "x": 8.781,
+            "y": 0.1396
+          },
+          {
+            "x": 8.979,
+            "y": 0.1355
+          },
+          {
+            "x": 9.202,
+            "y": 0.0932
+          },
+          {
+            "x": 9.401,
+            "y": 0.089
+          },
+          {
+            "x": 9.623,
+            "y": 0.0721
+          },
+          {
+            "x": 9.818,
+            "y": 0.0385
+          },
+          {
+            "x": 10.094,
+            "y": -0.0037
+          },
+          {
+            "x": 10.283,
+            "y": -0.0569
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming galaxies",
+        "warning": "Median face-on circularized 2D radius enclosing half of the V-band light (Johnson V, intrinsic, no dust) of TNG50-1 star-forming galaxies at z=4, read from the vector line of Pillepich et al. 2019 (the gas and H-alpha size lines, the shaded 16-84% bands, the softening markers and the Shibuya+15 points are not extracted). The paper notes sizes of galaxies at low mass approach the gravitational softening. The cosmology is the published TNG cosmology; it is not restated in this paper's text."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "star-forming",
+        "sizeDefinition": "face-on circularized 2D radius enclosing half of the V-band light (Johnson V, intrinsic, no dust)",
+        "densityFrame": "unspecified"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Pillepich et al. 2019, MNRAS 490, 3196 (arXiv:1902.05553), median sizes of TNG50 star-forming galaxies",
+        "doi": "10.1093/mnras/stz2338",
+        "url": "https://arxiv.org/abs/1902.05553",
+        "retrieved": "2026-10-05",
+        "figure": "Median galaxy sizes of TNG50 star-forming galaxies as a function of stellar mass",
+        "panel": "z = 4 panel, vband2d line",
+        "checksumSha256": "8dcb9e9d6bc83387d07222521c9c2b404fcbac2653d5a06c9b2840fd572e948c",
+        "sourceMember": "figures/TNG_L35n2160TNG_sizes_vs_Mstars_sfing_021.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: decade labels snapped to ticks and validated by the minor-tick pattern; log axes (sizes in physical kpc)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "pillepich19.tng50.size.stellar3d.z2",
+      "source": "IllustrisTNG",
+      "run": "TNG50-1 (3D stellar half-mass radius, star-forming galaxies, Pillepich+19)",
+      "kind": "simulation",
+      "relation": "size",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 2,
+        "zMax": 2,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within 30 physical kpc",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 median three-dimensional stellar half-mass radius R_stars",
+        "yUnit": "log10(kpc)"
+      },
+      "domain": {
+        "xMin": 7.099,
+        "xMax": 10.922
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.099,
+            "y": 0.0434
+          },
+          {
+            "x": 7.297,
+            "y": 0.0526
+          },
+          {
+            "x": 7.499,
+            "y": 0.0671
+          },
+          {
+            "x": 7.701,
+            "y": 0.0864
+          },
+          {
+            "x": 7.901,
+            "y": 0.1089
+          },
+          {
+            "x": 8.1,
+            "y": 0.1327
+          },
+          {
+            "x": 8.301,
+            "y": 0.1673
+          },
+          {
+            "x": 8.504,
+            "y": 0.2044
+          },
+          {
+            "x": 8.701,
+            "y": 0.242
+          },
+          {
+            "x": 8.901,
+            "y": 0.2876
+          },
+          {
+            "x": 9.099,
+            "y": 0.3183
+          },
+          {
+            "x": 9.31,
+            "y": 0.3428
+          },
+          {
+            "x": 9.516,
+            "y": 0.3561
+          },
+          {
+            "x": 9.718,
+            "y": 0.3476
+          },
+          {
+            "x": 9.913,
+            "y": 0.3126
+          },
+          {
+            "x": 10.116,
+            "y": 0.2908
+          },
+          {
+            "x": 10.31,
+            "y": 0.2707
+          },
+          {
+            "x": 10.548,
+            "y": 0.2835
+          },
+          {
+            "x": 10.716,
+            "y": 0.3183
+          },
+          {
+            "x": 10.922,
+            "y": 0.3701
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming galaxies",
+        "warning": "Median 3D radius enclosing half of the stellar mass (aperture 30 pkpc) of TNG50-1 star-forming galaxies at z=2, read from the vector line of Pillepich et al. 2019 (the gas and H-alpha size lines, the shaded 16-84% bands, the softening markers and the Shibuya+15 points are not extracted). The paper notes sizes of galaxies at low mass approach the gravitational softening. The cosmology is the published TNG cosmology; it is not restated in this paper's text."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "star-forming",
+        "sizeDefinition": "3D radius enclosing half of the stellar mass (aperture 30 pkpc)",
+        "densityFrame": "unspecified"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Pillepich et al. 2019, MNRAS 490, 3196 (arXiv:1902.05553), median sizes of TNG50 star-forming galaxies",
+        "doi": "10.1093/mnras/stz2338",
+        "url": "https://arxiv.org/abs/1902.05553",
+        "retrieved": "2026-10-05",
+        "figure": "Median galaxy sizes of TNG50 star-forming galaxies as a function of stellar mass",
+        "panel": "z = 2 panel, stellar3d line",
+        "checksumSha256": "f1e31071a078b6c543c4da3b05294ecb07618f3f0147b4a9058a568cc96d37de",
+        "sourceMember": "figures/TNG_L35n2160TNG_sizes_vs_Mstars_sfing_033.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: decade labels snapped to ticks and validated by the minor-tick pattern; log axes (sizes in physical kpc)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "pillepich19.tng50.size.vband2d.z2",
+      "source": "IllustrisTNG",
+      "run": "TNG50-1 (2D face-on V-band half-light radius, star-forming galaxies, Pillepich+19)",
+      "kind": "simulation",
+      "relation": "size",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 2,
+        "zMax": 2,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within 30 physical kpc",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 median two-dimensional face-on circularized V-band half-light radius",
+        "yUnit": "log10(kpc)"
+      },
+      "domain": {
+        "xMin": 7.099,
+        "xMax": 10.922
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.099,
+            "y": -0.0782
+          },
+          {
+            "x": 7.297,
+            "y": -0.071
+          },
+          {
+            "x": 7.499,
+            "y": -0.0525
+          },
+          {
+            "x": 7.701,
+            "y": -0.0243
+          },
+          {
+            "x": 7.901,
+            "y": 0.0092
+          },
+          {
+            "x": 8.1,
+            "y": 0.0467
+          },
+          {
+            "x": 8.301,
+            "y": 0.1089
+          },
+          {
+            "x": 8.504,
+            "y": 0.1697
+          },
+          {
+            "x": 8.701,
+            "y": 0.2168
+          },
+          {
+            "x": 8.901,
+            "y": 0.26
+          },
+          {
+            "x": 9.099,
+            "y": 0.2848
+          },
+          {
+            "x": 9.31,
+            "y": 0.3192
+          },
+          {
+            "x": 9.516,
+            "y": 0.343
+          },
+          {
+            "x": 9.718,
+            "y": 0.3465
+          },
+          {
+            "x": 9.913,
+            "y": 0.322
+          },
+          {
+            "x": 10.116,
+            "y": 0.303
+          },
+          {
+            "x": 10.31,
+            "y": 0.3058
+          },
+          {
+            "x": 10.548,
+            "y": 0.2917
+          },
+          {
+            "x": 10.716,
+            "y": 0.2794
+          },
+          {
+            "x": 10.922,
+            "y": 0.2689
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming galaxies",
+        "warning": "Median face-on circularized 2D radius enclosing half of the V-band light (Johnson V, intrinsic, no dust) of TNG50-1 star-forming galaxies at z=2, read from the vector line of Pillepich et al. 2019 (the gas and H-alpha size lines, the shaded 16-84% bands, the softening markers and the Shibuya+15 points are not extracted). The paper notes sizes of galaxies at low mass approach the gravitational softening. The cosmology is the published TNG cosmology; it is not restated in this paper's text."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "star-forming",
+        "sizeDefinition": "face-on circularized 2D radius enclosing half of the V-band light (Johnson V, intrinsic, no dust)",
+        "densityFrame": "unspecified"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Pillepich et al. 2019, MNRAS 490, 3196 (arXiv:1902.05553), median sizes of TNG50 star-forming galaxies",
+        "doi": "10.1093/mnras/stz2338",
+        "url": "https://arxiv.org/abs/1902.05553",
+        "retrieved": "2026-10-05",
+        "figure": "Median galaxy sizes of TNG50 star-forming galaxies as a function of stellar mass",
+        "panel": "z = 2 panel, vband2d line",
+        "checksumSha256": "f1e31071a078b6c543c4da3b05294ecb07618f3f0147b4a9058a568cc96d37de",
+        "sourceMember": "figures/TNG_L35n2160TNG_sizes_vs_Mstars_sfing_033.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: decade labels snapped to ticks and validated by the minor-tick pattern; log axes (sizes in physical kpc)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "pillepich19.tng50.size.stellar3d.z0.5",
+      "source": "IllustrisTNG",
+      "run": "TNG50-1 (3D stellar half-mass radius, star-forming galaxies, Pillepich+19)",
+      "kind": "simulation",
+      "relation": "size",
+      "epoch": {
+        "zRepresentative": 0.5,
+        "zNominal": 0.5,
+        "zMin": 0.5,
+        "zMax": 0.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within 30 physical kpc",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 median three-dimensional stellar half-mass radius R_stars",
+        "yUnit": "log10(kpc)"
+      },
+      "domain": {
+        "xMin": 7.107,
+        "xMax": 11.594
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.107,
+            "y": -0.0051
+          },
+          {
+            "x": 7.303,
+            "y": -0.0061
+          },
+          {
+            "x": 7.509,
+            "y": 0.0018
+          },
+          {
+            "x": 7.712,
+            "y": 0.0182
+          },
+          {
+            "x": 7.913,
+            "y": 0.0383
+          },
+          {
+            "x": 8.118,
+            "y": 0.0645
+          },
+          {
+            "x": 8.329,
+            "y": 0.109
+          },
+          {
+            "x": 8.526,
+            "y": 0.1785
+          },
+          {
+            "x": 8.73,
+            "y": 0.248
+          },
+          {
+            "x": 8.926,
+            "y": 0.311
+          },
+          {
+            "x": 9.127,
+            "y": 0.372
+          },
+          {
+            "x": 9.339,
+            "y": 0.4117
+          },
+          {
+            "x": 9.543,
+            "y": 0.464
+          },
+          {
+            "x": 9.74,
+            "y": 0.5189
+          },
+          {
+            "x": 9.951,
+            "y": 0.5568
+          },
+          {
+            "x": 10.136,
+            "y": 0.5702
+          },
+          {
+            "x": 10.341,
+            "y": 0.5962
+          },
+          {
+            "x": 10.546,
+            "y": 0.6495
+          },
+          {
+            "x": 10.734,
+            "y": 0.7032
+          },
+          {
+            "x": 10.924,
+            "y": 0.784
+          },
+          {
+            "x": 11.156,
+            "y": 0.8707
+          },
+          {
+            "x": 11.594,
+            "y": 0.958
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming galaxies",
+        "warning": "Median 3D radius enclosing half of the stellar mass (aperture 30 pkpc) of TNG50-1 star-forming galaxies at z=0.5, read from the vector line of Pillepich et al. 2019 (the gas and H-alpha size lines, the shaded 16-84% bands, the softening markers and the Shibuya+15 points are not extracted). The paper notes sizes of galaxies at low mass approach the gravitational softening. The cosmology is the published TNG cosmology; it is not restated in this paper's text."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "star-forming",
+        "sizeDefinition": "3D radius enclosing half of the stellar mass (aperture 30 pkpc)",
+        "densityFrame": "unspecified"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Pillepich et al. 2019, MNRAS 490, 3196 (arXiv:1902.05553), median sizes of TNG50 star-forming galaxies",
+        "doi": "10.1093/mnras/stz2338",
+        "url": "https://arxiv.org/abs/1902.05553",
+        "retrieved": "2026-10-05",
+        "figure": "Median galaxy sizes of TNG50 star-forming galaxies as a function of stellar mass",
+        "panel": "z = 0.5 panel, stellar3d line",
+        "checksumSha256": "905c132932a4eb1388f784326d98be9cfdd2a6c482faa02991e080db5201f5cd",
+        "sourceMember": "figures/TNG_L35n2160TNG_sizes_vs_Mstars_sfing_067.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: decade labels snapped to ticks and validated by the minor-tick pattern; log axes (sizes in physical kpc)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "pillepich19.tng50.size.vband2d.z0.5",
+      "source": "IllustrisTNG",
+      "run": "TNG50-1 (2D face-on V-band half-light radius, star-forming galaxies, Pillepich+19)",
+      "kind": "simulation",
+      "relation": "size",
+      "epoch": {
+        "zRepresentative": 0.5,
+        "zNominal": 0.5,
+        "zMin": 0.5,
+        "zMax": 0.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within 30 physical kpc",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 median two-dimensional face-on circularized V-band half-light radius",
+        "yUnit": "log10(kpc)"
+      },
+      "domain": {
+        "xMin": 7.107,
+        "xMax": 11.594
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.107,
+            "y": -0.2267
+          },
+          {
+            "x": 7.303,
+            "y": -0.2376
+          },
+          {
+            "x": 7.509,
+            "y": -0.2237
+          },
+          {
+            "x": 7.712,
+            "y": -0.1872
+          },
+          {
+            "x": 7.913,
+            "y": -0.1471
+          },
+          {
+            "x": 8.118,
+            "y": -0.0841
+          },
+          {
+            "x": 8.329,
+            "y": 0.0194
+          },
+          {
+            "x": 8.526,
+            "y": 0.1484
+          },
+          {
+            "x": 8.73,
+            "y": 0.2648
+          },
+          {
+            "x": 8.926,
+            "y": 0.3488
+          },
+          {
+            "x": 9.127,
+            "y": 0.4176
+          },
+          {
+            "x": 9.339,
+            "y": 0.4757
+          },
+          {
+            "x": 9.543,
+            "y": 0.5397
+          },
+          {
+            "x": 9.74,
+            "y": 0.6065
+          },
+          {
+            "x": 9.951,
+            "y": 0.6454
+          },
+          {
+            "x": 10.136,
+            "y": 0.6575
+          },
+          {
+            "x": 10.341,
+            "y": 0.6862
+          },
+          {
+            "x": 10.546,
+            "y": 0.7778
+          },
+          {
+            "x": 10.734,
+            "y": 0.8644
+          },
+          {
+            "x": 10.924,
+            "y": 0.9246
+          },
+          {
+            "x": 11.156,
+            "y": 0.9784
+          },
+          {
+            "x": 11.594,
+            "y": 1.0272
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming galaxies",
+        "warning": "Median face-on circularized 2D radius enclosing half of the V-band light (Johnson V, intrinsic, no dust) of TNG50-1 star-forming galaxies at z=0.5, read from the vector line of Pillepich et al. 2019 (the gas and H-alpha size lines, the shaded 16-84% bands, the softening markers and the Shibuya+15 points are not extracted). The paper notes sizes of galaxies at low mass approach the gravitational softening. The cosmology is the published TNG cosmology; it is not restated in this paper's text."
+      },
+      "definitions": {
+        "massDefinition": "aperture-30pkpc",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "star-forming",
+        "sizeDefinition": "face-on circularized 2D radius enclosing half of the V-band light (Johnson V, intrinsic, no dust)",
+        "densityFrame": "unspecified"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Pillepich et al. 2019, MNRAS 490, 3196 (arXiv:1902.05553), median sizes of TNG50 star-forming galaxies",
+        "doi": "10.1093/mnras/stz2338",
+        "url": "https://arxiv.org/abs/1902.05553",
+        "retrieved": "2026-10-05",
+        "figure": "Median galaxy sizes of TNG50 star-forming galaxies as a function of stellar mass",
+        "panel": "z = 0.5 panel, vband2d line",
+        "checksumSha256": "905c132932a4eb1388f784326d98be9cfdd2a6c482faa02991e080db5201f5cd",
+        "sourceMember": "figures/TNG_L35n2160TNG_sizes_vs_Mstars_sfing_067.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: decade labels snapped to ticks and validated by the minor-tick pattern; log axes (sizes in physical kpc)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

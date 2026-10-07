@@ -2,11 +2,11 @@
   "schemaVersion": "1.0.0",
   "generatedAt": "2026-10-08",
   "totals": {
-    "records": 1584,
+    "records": 1608,
     "sources": 101,
     "relations": 27,
     "rankable": 731,
-    "contextOnly": 853
+    "contextOnly": 877
   },
   "byRelation": {
     "age": {
@@ -766,10 +766,11 @@
       ]
     },
     "sfrd": {
-      "records": 20,
+      "records": 25,
       "epochs": [
         2,
         3,
+        5.692,
         7,
         7.5,
         8.5,
@@ -778,6 +779,9 @@
       ],
       "epochRanges": [
         "0.001:8.9",
+        "0.003:14.891",
+        "0.003:16.998",
+        "0.003:18.963",
         "0.019:5.998",
         "0.045518435334064744:9.849197368776672",
         "0.406:8.999",
@@ -786,10 +790,12 @@
         "0:11.1",
         "0:6.334",
         "0:8",
+        "1.103:18.963",
         "2.815287353744129:11.984527510362348",
         "3:14",
         "5.499961198556029:15.73765343666158",
         "5.592177484748817:15.154076265043987",
+        "5.692:18.963",
         "5:10",
         "9:16"
       ],
@@ -797,7 +803,7 @@
         "sfrd"
       ],
       "rankable": 3,
-      "contextOnly": 17,
+      "contextOnly": 22,
       "tiers": [
         "digitized-figure",
         "published-fit",
@@ -864,7 +870,7 @@
       ]
     },
     "shmr": {
-      "records": 130,
+      "records": 133,
       "epochs": [
         0,
         0.033,
@@ -937,7 +943,7 @@
         "shmr"
       ],
       "rankable": 45,
-      "contextOnly": 85,
+      "contextOnly": 88,
       "tiers": [
         "catalog-derived",
         "digitized-figure",
@@ -947,7 +953,7 @@
       ]
     },
     "size": {
-      "records": 203,
+      "records": 209,
       "epochs": [
         0,
         0.033,
@@ -1026,7 +1032,7 @@
         "size"
       ],
       "rankable": 67,
-      "contextOnly": 136,
+      "contextOnly": 142,
       "tiers": [
         "catalog-derived",
         "digitized-figure",
@@ -1064,7 +1070,7 @@
       ]
     },
     "ssfr": {
-      "records": 45,
+      "records": 48,
       "epochs": [
         0,
         0.1,
@@ -1102,7 +1108,7 @@
         "ssfr"
       ],
       "rankable": 9,
-      "contextOnly": 36,
+      "contextOnly": 39,
       "tiers": [
         "digitized-figure",
         "published-table"
@@ -1131,12 +1137,13 @@
       ]
     },
     "uvlf": {
-      "records": 103,
+      "records": 110,
       "epochs": [
         2.1,
         2.9,
         3.8,
         4,
+        4.64,
         4.9,
         5,
         5.9,
@@ -1175,6 +1182,7 @@
         "2.9:2.9",
         "3.5:4.5",
         "3.8:3.8",
+        "4.64:4.64",
         "4.9:4.9",
         "5.5:6.5",
         "5.9:5.9",
@@ -1193,7 +1201,7 @@
         "uvlf"
       ],
       "rankable": 47,
-      "contextOnly": 56,
+      "contextOnly": 63,
       "tiers": [
         "digitized-figure",
         "published-fit",
@@ -1719,7 +1727,7 @@
       ]
     },
     "COLIBRE": {
-      "records": 155,
+      "records": 166,
       "epochs": [
         0,
         0.1,
@@ -1729,6 +1737,7 @@
         3,
         4,
         5,
+        5.692,
         6,
         7,
         8,
@@ -1742,9 +1751,13 @@
         17
       ],
       "epochRanges": [
+        "0.003:14.891",
+        "0.003:16.998",
+        "0.003:18.963",
         "0.1:0.1",
         "0.5:0.5",
         "0:0",
+        "1.103:18.963",
         "10:10",
         "11:11",
         "12:12",
@@ -1756,6 +1769,7 @@
         "2:2",
         "3:3",
         "4:4",
+        "5.692:18.963",
         "5:5",
         "6:6",
         "7:7",
@@ -1767,11 +1781,13 @@
         "jstar",
         "mzr",
         "sfms",
+        "sfrd",
         "shmr",
-        "size"
+        "size",
+        "ssfr"
       ],
       "rankable": 117,
-      "contextOnly": 38,
+      "contextOnly": 49,
       "tiers": [
         "digitized-figure",
         "official-table",
@@ -2583,7 +2599,7 @@
       ]
     },
     "IllustrisTNG": {
-      "records": 160,
+      "records": 166,
       "epochs": [
         0,
         0.1,
@@ -2640,7 +2656,7 @@
         "zstar"
       ],
       "rankable": 60,
-      "contextOnly": 100,
+      "contextOnly": 106,
       "tiers": [
         "catalog-derived",
         "digitized-figure",
@@ -3420,7 +3436,7 @@
       ]
     },
     "SPHINX20": {
-      "records": 34,
+      "records": 41,
       "epochs": [
         4.64,
         5,
@@ -3443,12 +3459,14 @@
         "sfms",
         "shmr",
         "size",
+        "uvlf",
         "zstar"
       ],
       "rankable": 34,
-      "contextOnly": 0,
+      "contextOnly": 7,
       "tiers": [
-        "catalog-derived"
+        "catalog-derived",
+        "digitized-figure"
       ]
     },
     "Steidel et al. 2014 (KBSS)": {
