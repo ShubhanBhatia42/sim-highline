@@ -9,6 +9,8 @@
 >
 > **Corrections and takedowns:** if you are an author or data owner and want a record corrected, attributed differently or removed, open an issue (the "Curve error" form) or use the contact in `CITATION.cff`. Requests are handled promptly and removal is not contested.
 
+**Live:** the app is at <https://shubhanbhatia42.github.io/sim-highline/highline.html>, the landing page at <https://shubhanbhatia42.github.io/sim-highline/site/index.html> and the dataset files under <https://shubhanbhatia42.github.io/sim-highline/data/export/>.
+
 sim-highline is a researcher-facing workbench for comparing galaxy scaling relations across simulations and observational constraints. Its central rule is simple: the browser only draws ingested evidence. Missing epochs stay missing, incompatible definitions stay visible as mismatches, and no source-specific curve is synthesized from a generic template.
 
 ## Current evidence
