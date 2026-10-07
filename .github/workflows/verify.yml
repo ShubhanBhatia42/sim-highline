@@ -36,3 +36,16 @@ jobs:
       - name: Digitizer regression
         if: github.event_name == 'workflow_dispatch' && inputs.regress
         run: python3 scripts/regress_digitizers.py
+  ui:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: node scripts/build-static.mjs && node scripts/build-highline.mjs && node scripts/build-site.mjs
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Browser tests (layout, views, themes, embed, phone, links, accessibility)
+        run: node scripts/test-ui.mjs

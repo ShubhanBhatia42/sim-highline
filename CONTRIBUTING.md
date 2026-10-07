@@ -27,7 +27,7 @@ Tiers: `catalog-derived`, `official-table` (needs the SHA-256 of the released fi
 node scripts/annotate-definitions.mjs && node scripts/validate-curves.mjs && node scripts/validate-manifest.mjs \
  && node scripts/test-curves.mjs && node scripts/test-compare.mjs && node scripts/report-coverage.mjs \
  && node scripts/build-curve-index.mjs && node scripts/export-dataset.mjs && node scripts/test-export.mjs \
- && node scripts/build-static.mjs && node scripts/test-static.mjs && node scripts/build-highline.mjs \
+ && node scripts/build-static.mjs && node scripts/build-highline.mjs && node scripts/test-static.mjs \
  && node scripts/test-logic.mjs && node scripts/test-literature.mjs && node scripts/test-notes.mjs \
  && node scripts/test-profiles.mjs && node scripts/build-site.mjs && node scripts/test-site.mjs \
  && for t in scripts/test_*.py; do python3 $t; done && node scripts/audit-curves.mjs
@@ -36,6 +36,10 @@ python3 scripts/verify-dois.py   # network: every DOI resolves and matches the s
 ```
 
 The audit must end with 0 errors and 0 warnings; accepted findings go in `data/audit-known.json` with a reason. Add an entry to `data/sources-catalogue.json`, profile any new observational source in `data/observation-profiles.json`, bump `data/release.json` and add a line to `CHANGELOG.md`.
+
+## Browser tests
+
+`npm install && npx playwright install chromium && npm run test:ui` runs `scripts/test-ui.mjs` against the built `dist/` (build it first): layout in the desktop, embed and phone views, Coverage and Tension, hash navigation, theme toggle, links between the site and the app, and an accessibility audit (axe, serious and critical violations fail). CI runs it as the `ui` job. Change the app or site, then run it before sending.
 
 ## What happens to a submission
 

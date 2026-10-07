@@ -12,8 +12,8 @@ node scripts/build-curve-index.mjs
 node scripts/export-dataset.mjs
 node scripts/test-export.mjs
 node scripts/build-static.mjs
-node scripts/test-static.mjs
 node scripts/build-highline.mjs
+node scripts/test-static.mjs
 node scripts/test-logic.mjs
 python3 scripts/build-literature-backlog.py
 node scripts/test-literature.mjs

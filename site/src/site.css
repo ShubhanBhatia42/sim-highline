@@ -23,7 +23,7 @@ nav a.l:hover,nav a.l[aria-current]{color:var(--cream)}
 .btn.main{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
 .btn:hover{filter:brightness(.96)}.btn.main:hover{filter:brightness(1.18)}
 header.hero{padding:64px 0 28px}
-.eyebrow{font:600 12px var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin:0 0 14px}
+.eyebrow{font:600 12px var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--link);margin:0 0 14px}
 h1{font:600 clamp(32px,4.8vw,54px)/1.08 var(--ui);letter-spacing:-.022em;margin:0 0 22px}
 h2{font:600 clamp(23px,2.7vw,31px)/1.22 var(--ui);letter-spacing:-.012em;margin:0 0 14px}
 h3{font:600 18px/1.35 var(--ui);letter-spacing:-.005em;margin:0 0 8px}

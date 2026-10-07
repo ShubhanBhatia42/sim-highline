@@ -1,0 +1,12 @@
+{
+  "name": "sim-highline",
+  "private": true,
+  "description": "Browser tests for the sim-highline app and site (the dataset and build need only node and python)",
+  "scripts": {
+    "test:ui": "node scripts/test-ui.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "playwright": "^1.50.0"
+  }
+}
