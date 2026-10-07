@@ -1,0 +1,641 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "torrey19.tng100.gas.ism.z0",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (ISM gas fraction, centrals, Torrey+19)",
+      "kind": "simulation",
+      "relation": "gas",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within twice the stellar half-mass radius",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 gas-to-stellar mass ratio Mgas/M*, gas above the star-formation density threshold (ISM)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 8.58,
+        "xMax": 10.42
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.58,
+            "y": -0.1941
+          },
+          {
+            "x": 8.66,
+            "y": -0.2413
+          },
+          {
+            "x": 8.74,
+            "y": -0.2717
+          },
+          {
+            "x": 8.82,
+            "y": -0.3112
+          },
+          {
+            "x": 8.9,
+            "y": -0.3386
+          },
+          {
+            "x": 8.98,
+            "y": -0.3819
+          },
+          {
+            "x": 9.06,
+            "y": -0.406
+          },
+          {
+            "x": 9.14,
+            "y": -0.4356
+          },
+          {
+            "x": 9.22,
+            "y": -0.4734
+          },
+          {
+            "x": 9.3,
+            "y": -0.5299
+          },
+          {
+            "x": 9.38,
+            "y": -0.5763
+          },
+          {
+            "x": 9.46,
+            "y": -0.6007
+          },
+          {
+            "x": 9.54,
+            "y": -0.6106
+          },
+          {
+            "x": 9.62,
+            "y": -0.6167
+          },
+          {
+            "x": 9.7,
+            "y": -0.6136
+          },
+          {
+            "x": 9.78,
+            "y": -0.6318
+          },
+          {
+            "x": 9.86,
+            "y": -0.6504
+          },
+          {
+            "x": 9.94,
+            "y": -0.6806
+          },
+          {
+            "x": 10.02,
+            "y": -0.6948
+          },
+          {
+            "x": 10.1,
+            "y": -0.7271
+          },
+          {
+            "x": 10.18,
+            "y": -0.7514
+          },
+          {
+            "x": 10.26,
+            "y": -0.7422
+          },
+          {
+            "x": 10.34,
+            "y": -0.7559
+          },
+          {
+            "x": 10.42,
+            "y": -0.7974
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Median ISM gas-to-stellar mass ratio of TNG100-1 central galaxies at z=0, read from the solid vector line of Torrey et al. 2019 (the dashed power-law fits and their slopes are not extracted). Gas is that above the star-formation density threshold, so it is closer to cold neutral plus molecular gas than to all gas; compare with HI+H2 records only with that in mind."
+      },
+      "definitions": {
+        "gasDefinition": "gas above the star-formation density threshold (ISM)",
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "centrals",
+        "gasStatistic": "median"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Torrey et al. 2019, MNRAS (doi 10.1093/mnras/stz243; arXiv:1711.05261), gas fraction as a function of stellar mass",
+        "doi": "10.1093/mnras/stz243",
+        "url": "https://arxiv.org/abs/1711.05261",
+        "retrieved": "2026-10-05",
+        "figure": "Gas fractions as a function of stellar mass for four redshifts",
+        "panel": "z=0 solid line",
+        "checksumSha256": "1d14bfd8ff2a18f35c76a6bff0438897bf208f7163758daacade83770b3243bf",
+        "sourceMember": "interp_gf_relation_L75n1820TNG.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to ticks (the y labels carry no minus glyph, so signs were assigned in order down the axis, -1.0 to 1.0)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "torrey19.tng100.gas.ism.z1",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (ISM gas fraction, centrals, Torrey+19)",
+      "kind": "simulation",
+      "relation": "gas",
+      "epoch": {
+        "zRepresentative": 1,
+        "zNominal": 1,
+        "zMin": 1,
+        "zMax": 1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within twice the stellar half-mass radius",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 gas-to-stellar mass ratio Mgas/M*, gas above the star-formation density threshold (ISM)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 8.5,
+        "xMax": 10.42
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.5,
+            "y": 0.2073
+          },
+          {
+            "x": 8.58,
+            "y": 0.2092
+          },
+          {
+            "x": 8.66,
+            "y": 0.1617
+          },
+          {
+            "x": 8.74,
+            "y": 0.1222
+          },
+          {
+            "x": 8.82,
+            "y": 0.1117
+          },
+          {
+            "x": 8.9,
+            "y": 0.1044
+          },
+          {
+            "x": 8.98,
+            "y": 0.0755
+          },
+          {
+            "x": 9.06,
+            "y": 0.0431
+          },
+          {
+            "x": 9.14,
+            "y": 0.0159
+          },
+          {
+            "x": 9.22,
+            "y": -0.0163
+          },
+          {
+            "x": 9.3,
+            "y": -0.0329
+          },
+          {
+            "x": 9.38,
+            "y": -0.0614
+          },
+          {
+            "x": 9.46,
+            "y": -0.1048
+          },
+          {
+            "x": 9.54,
+            "y": -0.1266
+          },
+          {
+            "x": 9.62,
+            "y": -0.1433
+          },
+          {
+            "x": 9.7,
+            "y": -0.1702
+          },
+          {
+            "x": 9.78,
+            "y": -0.1953
+          },
+          {
+            "x": 9.86,
+            "y": -0.2207
+          },
+          {
+            "x": 9.94,
+            "y": -0.2462
+          },
+          {
+            "x": 10.02,
+            "y": -0.2648
+          },
+          {
+            "x": 10.1,
+            "y": -0.2814
+          },
+          {
+            "x": 10.18,
+            "y": -0.3187
+          },
+          {
+            "x": 10.26,
+            "y": -0.3426
+          },
+          {
+            "x": 10.34,
+            "y": -0.3601
+          },
+          {
+            "x": 10.42,
+            "y": -0.4025
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Median ISM gas-to-stellar mass ratio of TNG100-1 central galaxies at z=1, read from the solid vector line of Torrey et al. 2019 (the dashed power-law fits and their slopes are not extracted). Gas is that above the star-formation density threshold, so it is closer to cold neutral plus molecular gas than to all gas; compare with HI+H2 records only with that in mind."
+      },
+      "definitions": {
+        "gasDefinition": "gas above the star-formation density threshold (ISM)",
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "centrals",
+        "gasStatistic": "median"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Torrey et al. 2019, MNRAS (doi 10.1093/mnras/stz243; arXiv:1711.05261), gas fraction as a function of stellar mass",
+        "doi": "10.1093/mnras/stz243",
+        "url": "https://arxiv.org/abs/1711.05261",
+        "retrieved": "2026-10-05",
+        "figure": "Gas fractions as a function of stellar mass for four redshifts",
+        "panel": "z=1 solid line",
+        "checksumSha256": "1d14bfd8ff2a18f35c76a6bff0438897bf208f7163758daacade83770b3243bf",
+        "sourceMember": "interp_gf_relation_L75n1820TNG.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to ticks (the y labels carry no minus glyph, so signs were assigned in order down the axis, -1.0 to 1.0)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "torrey19.tng100.gas.ism.z2",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (ISM gas fraction, centrals, Torrey+19)",
+      "kind": "simulation",
+      "relation": "gas",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 2,
+        "zMax": 2,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within twice the stellar half-mass radius",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 gas-to-stellar mass ratio Mgas/M*, gas above the star-formation density threshold (ISM)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 8.58,
+        "xMax": 10.42
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.58,
+            "y": 0.5156
+          },
+          {
+            "x": 8.66,
+            "y": 0.4672
+          },
+          {
+            "x": 8.74,
+            "y": 0.424
+          },
+          {
+            "x": 8.82,
+            "y": 0.3919
+          },
+          {
+            "x": 8.9,
+            "y": 0.3724
+          },
+          {
+            "x": 8.98,
+            "y": 0.3412
+          },
+          {
+            "x": 9.06,
+            "y": 0.3253
+          },
+          {
+            "x": 9.14,
+            "y": 0.3106
+          },
+          {
+            "x": 9.22,
+            "y": 0.2905
+          },
+          {
+            "x": 9.3,
+            "y": 0.26
+          },
+          {
+            "x": 9.38,
+            "y": 0.2317
+          },
+          {
+            "x": 9.46,
+            "y": 0.1989
+          },
+          {
+            "x": 9.54,
+            "y": 0.1717
+          },
+          {
+            "x": 9.62,
+            "y": 0.1407
+          },
+          {
+            "x": 9.7,
+            "y": 0.0985
+          },
+          {
+            "x": 9.78,
+            "y": 0.057
+          },
+          {
+            "x": 9.86,
+            "y": 0.0109
+          },
+          {
+            "x": 9.94,
+            "y": -0.0426
+          },
+          {
+            "x": 10.02,
+            "y": -0.0901
+          },
+          {
+            "x": 10.1,
+            "y": -0.1246
+          },
+          {
+            "x": 10.18,
+            "y": -0.1278
+          },
+          {
+            "x": 10.26,
+            "y": -0.1461
+          },
+          {
+            "x": 10.34,
+            "y": -0.1902
+          },
+          {
+            "x": 10.42,
+            "y": -0.2282
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Median ISM gas-to-stellar mass ratio of TNG100-1 central galaxies at z=2, read from the solid vector line of Torrey et al. 2019 (the dashed power-law fits and their slopes are not extracted). Gas is that above the star-formation density threshold, so it is closer to cold neutral plus molecular gas than to all gas; compare with HI+H2 records only with that in mind."
+      },
+      "definitions": {
+        "gasDefinition": "gas above the star-formation density threshold (ISM)",
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "centrals",
+        "gasStatistic": "median"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Torrey et al. 2019, MNRAS (doi 10.1093/mnras/stz243; arXiv:1711.05261), gas fraction as a function of stellar mass",
+        "doi": "10.1093/mnras/stz243",
+        "url": "https://arxiv.org/abs/1711.05261",
+        "retrieved": "2026-10-05",
+        "figure": "Gas fractions as a function of stellar mass for four redshifts",
+        "panel": "z=2 solid line",
+        "checksumSha256": "1d14bfd8ff2a18f35c76a6bff0438897bf208f7163758daacade83770b3243bf",
+        "sourceMember": "interp_gf_relation_L75n1820TNG.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to ticks (the y labels carry no minus glyph, so signs were assigned in order down the axis, -1.0 to 1.0)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "torrey19.tng100.gas.ism.z4",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (ISM gas fraction, centrals, Torrey+19)",
+      "kind": "simulation",
+      "relation": "gas",
+      "epoch": {
+        "zRepresentative": 4,
+        "zNominal": 4,
+        "zMin": 4,
+        "zMax": 4,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within twice the stellar half-mass radius",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 gas-to-stellar mass ratio Mgas/M*, gas above the star-formation density threshold (ISM)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 8.66,
+        "xMax": 10.26
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.66,
+            "y": 0.7883
+          },
+          {
+            "x": 8.74,
+            "y": 0.7663
+          },
+          {
+            "x": 8.82,
+            "y": 0.6837
+          },
+          {
+            "x": 8.9,
+            "y": 0.6508
+          },
+          {
+            "x": 8.98,
+            "y": 0.6049
+          },
+          {
+            "x": 9.06,
+            "y": 0.5656
+          },
+          {
+            "x": 9.14,
+            "y": 0.5305
+          },
+          {
+            "x": 9.22,
+            "y": 0.51
+          },
+          {
+            "x": 9.3,
+            "y": 0.4941
+          },
+          {
+            "x": 9.38,
+            "y": 0.472
+          },
+          {
+            "x": 9.46,
+            "y": 0.4381
+          },
+          {
+            "x": 9.54,
+            "y": 0.4125
+          },
+          {
+            "x": 9.62,
+            "y": 0.3805
+          },
+          {
+            "x": 9.7,
+            "y": 0.3468
+          },
+          {
+            "x": 9.78,
+            "y": 0.2961
+          },
+          {
+            "x": 9.86,
+            "y": 0.2355
+          },
+          {
+            "x": 9.94,
+            "y": 0.1698
+          },
+          {
+            "x": 10.02,
+            "y": 0.1117
+          },
+          {
+            "x": 10.1,
+            "y": 0.0764
+          },
+          {
+            "x": 10.18,
+            "y": 0.0558
+          },
+          {
+            "x": 10.26,
+            "y": 0.027
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "Median ISM gas-to-stellar mass ratio of TNG100-1 central galaxies at z=4, read from the solid vector line of Torrey et al. 2019 (the dashed power-law fits and their slopes are not extracted). Gas is that above the star-formation density threshold, so it is closer to cold neutral plus molecular gas than to all gas; compare with HI+H2 records only with that in mind."
+      },
+      "definitions": {
+        "gasDefinition": "gas above the star-formation density threshold (ISM)",
+        "massDefinition": "aperture-2rhalf-stars",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "population": "centrals",
+        "gasStatistic": "median"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Torrey et al. 2019, MNRAS (doi 10.1093/mnras/stz243; arXiv:1711.05261), gas fraction as a function of stellar mass",
+        "doi": "10.1093/mnras/stz243",
+        "url": "https://arxiv.org/abs/1711.05261",
+        "retrieved": "2026-10-05",
+        "figure": "Gas fractions as a function of stellar mass for four redshifts",
+        "panel": "z=4 solid line",
+        "checksumSha256": "1d14bfd8ff2a18f35c76a6bff0438897bf208f7163758daacade83770b3243bf",
+        "sourceMember": "interp_gf_relation_L75n1820TNG.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to ticks (the y labels carry no minus glyph, so signs were assigned in order down the axis, -1.0 to 1.0)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

@@ -162,7 +162,7 @@ print(sim_highline.bibtex(one))</code></pre></div></div>
 <p class="who">Group leaders deciding what to run or digitize next.</p>
 <ol class="steps"><li>Open the Coverage view: simulation by relation by redshift.</li><li>Look for empty cells and for relations tagged sparse.</li><li>Decide where a new output or a request to the authors would add the most.</li></ol>
 <p class="limit">Limit: it shows the gaps in this data well, not necessarily gaps in the field.</p>
-</div><div><div class="card"><h3>Honest gaps</h3><p>Total gas fraction has two simulations and stellar Tully–Fisher, HI and H<sub>2</sub> fractions and the black hole mass–dispersion relation have three; the UV luminosity function (5) and cosmic SFR density (10) are recent additions. The page says so on the relation itself.</p></div></div></div>
+</div><div><div class="card"><h3>Honest gaps</h3><p>Stellar Tully–Fisher, total gas fraction, HI and H<sub>2</sub> fractions and the black hole mass–dispersion relation have only three simulations each; the UV luminosity function (5) and cosmic SFR density (11) are recent additions. The page says so on the relation itself.</p></div></div></div>
 </article>
 
 <section aria-labelledby="qs">
@@ -174,7 +174,7 @@ g   = sel.groupby(["source", "run"]).agg(z=("z", "first"), points=("x", "size"),
                                          mass_class=("mass_class", "first"), tier=("tier", "first"))
 print(g.reset_index().assign(run=lambda d: d.run.str.slice(0, 26)).to_string(index=False))
 print(f"{sel.record_id.nunique()} records from {sel.source.nunique()} simulations")</code></pre>
-<p style="color:var(--cream3);font-size:14px;margin:12px 0 6px">Output from dataset v0.11.0:</p>
+<p style="color:var(--cream3);font-size:14px;margin:12px 0 6px">Output from dataset v0.12.0:</p>
 <pre><code>     source                        run   z  points    mass_class             tier
     COLIBRE                  m5 (L025) 6.0      10   unspecified   official-table
     COLIBRE                  m5 (L050) 6.0      12   unspecified   official-table
@@ -206,7 +206,7 @@ Horizon-AGN              Horizon-noAGN 6.0       3   unspecified digitized-figur
 </section>
 
 <footer>
-<p>sim-highline 0.11.0 · 2026-10-08 · Shubhan Bhatia. Beta from one maintainer; a sample of curves is waiting for review by people who know each simulation. Please cite the original papers with the dataset (see <code>CITATION.cff</code>).</p>
+<p>sim-highline 0.12.0 · 2026-10-08 · Shubhan Bhatia. Beta from one maintainer; a sample of curves is waiting for review by people who know each simulation. Please cite the original papers with the dataset (see <code>CITATION.cff</code>).</p>
 <p><a href="../highline.html">Open the beta</a> · <a href="index.html">Product</a> · <a href="../data/export/sim-highline-records.csv">Download the data</a></p>
 </footer>
 </div>

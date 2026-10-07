@@ -1,5 +1,5 @@
 {
- "total": 1575,
+ "total": 1584,
  "known": 16,
  "errors": 0,
  "warnings": 0,
@@ -193,7 +193,8 @@
    ],
    "massDefinitions": [
     "-",
-    "aperture-2Reff-stars"
+    "aperture-2Reff-stars",
+    "aperture-2rhalf-stars"
    ]
   },
   "quenched": {

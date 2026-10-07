@@ -122,7 +122,8 @@
         "h2-fraction",
         "gsmf",
         "ssfr",
-        "size"
+        "size",
+        "gas"
       ],
       "source": "https://www.tng-project.org/data/"
     },
@@ -178,7 +179,8 @@
       "relations": [
         "all",
         "sfrd",
-        "btfr"
+        "btfr",
+        "smd"
       ],
       "source": "https://eagle.strw.leidenuniv.nl/"
     },
@@ -485,7 +487,8 @@
         "quenched",
         "shmr",
         "bh",
-        "bhsigma"
+        "bhsigma",
+        "sfrd"
       ],
       "source": "https://arxiv.org/abs/1607.02151",
       "redshiftRangeBasis": "Ricarte et al. 2019 (arXiv:1904.10116): z=0.05 is the latest available redshift slice; ingested relations span z=0.05-3 (SFMS). The upper bound is the highest epoch in the ingested figure, not a documented snapshot limit; the old value (19) was not verified."

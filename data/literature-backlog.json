@@ -22,7 +22,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "supermassive black holes; BH-galaxy relations",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for bh, uvlf; not extractable at this quality."
     },
     {
       "arxiv": "2409.10666",
@@ -33,7 +33,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "extension to lower redshift (z=0.5 and beyond); check for relations at z<3",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for bh, gsmf, size, ssfr, uvlf; not extractable at this quality."
     },
     {
       "arxiv": "1504.06619",
@@ -44,7 +44,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "overview",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention sfrd, uvlf in vector figures or tables (8); not yet extracted."
     },
     {
       "arxiv": "1801.04951",
@@ -77,7 +77,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "project overview",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention gsmf, h2, sfms, sfrd, shmr, ssfr in vector figures or tables (7); not yet extracted."
     },
     {
       "arxiv": "2509.07960",
@@ -99,7 +99,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "pre-supernova feedback (model paper)",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "2603.26200",
@@ -121,7 +121,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "dust scaling relations",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention mzr, ssfr in vector figures or tables (6); not yet extracted."
     },
     {
       "arxiv": "2609.11654",
@@ -143,7 +143,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "present-day morphologies",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention jstar in vector figures or tables (1); not yet extracted."
     },
     {
       "arxiv": "2607.27319",
@@ -154,7 +154,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "baryonic content of haloes (feedback)",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "2608.19007",
@@ -176,7 +176,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "galaxy interactions and SFR",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention gas, sfms in vector figures or tables (2); not yet extracted."
     },
     {
       "arxiv": "1407.7040",
@@ -197,7 +197,7 @@
       "title": "The EAGLE simulations of galaxy formation: calibration of subgrid physics and model variations",
       "section": "suite in sim-highline",
       "couldSupply": "calibration and model variations",
-      "status": "candidate",
+      "status": "ingested",
       "statusNote": ""
     },
     {
@@ -209,7 +209,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "public catalogue release",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention size in vector figures or tables (1); not yet extracted."
     },
     {
       "arxiv": "1706.09899",
@@ -220,7 +220,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "public particle data release",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "1509.05056",
@@ -231,7 +231,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "hydrodynamics scheme",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention gas, sfrd, ssfr in vector figures or tables (3); not yet extracted."
     },
     {
       "arxiv": "1504.04374",
@@ -242,7 +242,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "colours and luminosities at z=0.1",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention uvlf in vector figures or tables (2); not yet extracted."
     },
     {
       "arxiv": "1601.07907",
@@ -253,7 +253,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "colour evolution",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for zstar; not extractable at this quality."
     },
     {
       "arxiv": "1704.06283",
@@ -264,7 +264,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "morphology and colour",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "1810.07335",
@@ -275,7 +275,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "quenching timescales: quenched fractions",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for gas, quenched, sfms; not extractable at this quality."
     },
     {
       "arxiv": "1806.11120",
@@ -286,7 +286,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "mass and environment quenching",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention shmr in vector figures or tables (1); not yet extracted."
     },
     {
       "arxiv": "2203.16326",
@@ -297,7 +297,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "correlations among mass, metallicity and morphology: MZR",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for gas, mzr, ssfr; not extractable at this quality."
     },
     {
       "arxiv": "1311.2073",
@@ -308,7 +308,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "FIRE-1 (original)",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for mzr, sfms, shmr; not extractable at this quality."
     },
     {
       "arxiv": "1702.06148",
@@ -319,7 +319,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "FIRE-2 (ingested via Ma+18)",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention shmr in vector figures or tables (1); not yet extracted."
     },
     {
       "arxiv": "2203.00040",
@@ -330,7 +330,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "FIRE-3 physics update",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "1602.05957",
@@ -341,7 +341,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "Wetzel+16 satellites of a Milky Way-mass host",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "1706.06605",
@@ -384,8 +384,8 @@
       "title": "The Origin and Evolution of the Galaxy Mass-Metallicity Relation",
       "section": "suite in sim-highline",
       "couldSupply": "Ma+16 MZR (used in sim-highline notes)",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "FIRE-1 (Ma+16) simulations, not FIRE-2; the tracked FIRE-2 suite should not be mixed with them without a separate run label."
     },
     {
       "arxiv": "2205.15325",
@@ -418,7 +418,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "ML calibration (variations ingested)",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention gas, gsmf in vector figures or tables (8); not yet extracted."
     },
     {
       "arxiv": "2410.17109",
@@ -429,7 +429,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "baryon effects on the matter power spectrum",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention bhsigma, gas, gsmf in vector figures or tables (6); not yet extracted."
     },
     {
       "arxiv": "2312.08277",
@@ -440,7 +440,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "clusters vs X-ray observations",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention gas in vector figures or tables (1); not yet extracted."
     },
     {
       "arxiv": "2410.14773",
@@ -462,7 +462,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "hot gas and black holes in groups and clusters",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention gas in vector figures or tables (4); not yet extracted."
     },
     {
       "arxiv": "2004.07283",
@@ -473,7 +473,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "FLARES I (overview, environment dependence)",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention gsmf in vector figures or tables (2); not yet extracted."
     },
     {
       "arxiv": "2008.06057",
@@ -495,7 +495,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "FLARES III (massive dusty galaxies)",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention sfms, ssfr, uvlf in vector figures or tables (8); not yet extracted."
     },
     {
       "arxiv": "2211.07540",
@@ -506,7 +506,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "FLARES VIII (passive galaxies)",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention sfms, size in vector figures or tables (2); not yet extracted."
     },
     {
       "arxiv": "2204.09431",
@@ -528,7 +528,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "FLARES IX (compact galaxies: sizes)",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for size, ssfr; not extractable at this quality."
     },
     {
       "arxiv": "1402.1165",
@@ -539,7 +539,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "overview (spin alignment)",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for jstar, sfms; not extractable at this quality."
     },
     {
       "arxiv": "1605.09379",
@@ -583,7 +583,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "BH mergers, NewHorizon and Horizon-AGN",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "1405.2921",
@@ -616,7 +616,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "Nature paper",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scan failed (source could not be fetched); not triaged."
     },
     {
       "arxiv": "1703.02970",
@@ -627,7 +627,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "model description",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention gsmf, size in vector figures or tables (2); not yet extracted."
     },
     {
       "arxiv": "1607.03486",
@@ -637,8 +637,8 @@
       "title": "Simulating galaxy formation with black hole driven thermal and kinetic feedback",
       "section": "suite in sim-highline",
       "couldSupply": "black-hole feedback model",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "SFRD figure is for the test boxes of the model-development paper; the volume is not stated in the caption, so it cannot be labelled as TNG100 without checking the paper body."
     },
     {
       "arxiv": "1710.04659",
@@ -660,7 +660,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "colour bimodality",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention zstar in vector figures or tables (1); not yet extracted."
     },
     {
       "arxiv": "1707.03397",
@@ -671,7 +671,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "clustering",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "1707.03396",
@@ -682,7 +682,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "magnetic fields",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "1707.03401",
@@ -693,7 +693,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "chemical enrichment",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "1812.05609",
@@ -704,7 +704,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "public data release",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention mzr, smd in vector figures or tables (1); not yet extracted."
     },
     {
       "arxiv": "1902.05553",
@@ -715,7 +715,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "TNG50 discs",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention bhsigma, gas, sfms, size in vector figures or tables (5); not yet extracted."
     },
     {
       "arxiv": "1902.05554",
@@ -726,7 +726,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "TNG50 outflows",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention sfms, size in vector figures or tables (2); not yet extracted."
     },
     {
       "arxiv": "1707.05327",
@@ -747,7 +747,7 @@
       "title": "The evolution of the mass-metallicity relation in IllustrisTNG",
       "section": "suite in sim-highline",
       "couldSupply": "MZR (used in notes; figures not yet extracted)",
-      "status": "candidate",
+      "status": "ingested",
       "statusNote": ""
     },
     {
@@ -792,7 +792,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "TNG50 metallicity gradients",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention mzr in vector figures or tables (6); not yet extracted."
     },
     {
       "arxiv": "2311.06338",
@@ -803,7 +803,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "TNG-Cluster overview",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention gas in vector figures or tables (1); not yet extracted."
     },
     {
       "arxiv": "2504.01061",
@@ -814,7 +814,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "Encyclopedia Magneticum (28 relations; box-labelled tables already ingested for eight of them)",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention bh, bhsigma, gsmf, jstar, mzr, sfms, sfrd, ssfr in vector figures or tables (8); not yet extracted."
     },
     {
       "arxiv": "1503.03501",
@@ -825,7 +825,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "Teklu+15 angular momentum and morphology",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for gas, jstar; not extractable at this quality."
     },
     {
       "arxiv": "1709.02393",
@@ -836,7 +836,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "BCGs and diffuse stellar component",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "1708.00027",
@@ -847,7 +847,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "metals in Magneticum",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for mzr, zstar; not extractable at this quality."
     },
     {
       "arxiv": "2011.06602",
@@ -857,8 +857,8 @@
       "title": "Rise and fall of post-starburst galaxies in Magneticum Pathfinder",
       "section": "suite in sim-highline",
       "couldSupply": "post-starburst galaxies",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "Quenched fraction is plotted against halo mass in stellar-mass bins for massive galaxies, not against stellar mass like the quenched-fraction relation here; the Magneticum quenched relation would need that new x axis."
     },
     {
       "arxiv": "2009.10578",
@@ -924,7 +924,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "XIV: rotation curve diversity",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention bhsigma in vector figures or tables (1); not yet extracted."
     },
     {
       "arxiv": "1807.10518",
@@ -935,7 +935,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "XVII: HI velocity function",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "1902.06751",
@@ -946,7 +946,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "XVIII: MOND phenomenology and radial acceleration relation",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for size; not extractable at this quality."
     },
     {
       "arxiv": "1906.06955",
@@ -968,7 +968,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "XXVII: green valley",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for zstar; not extractable at this quality."
     },
     {
       "arxiv": "1909.05864",
@@ -979,7 +979,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "NIHAO-UHD",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention tf in vector figures or tables (1); not yet extracted."
     },
     {
       "arxiv": "1607.02151",
@@ -989,7 +989,7 @@
       "title": "The Romulus Cosmological Simulations: A Physical Approach to the Formation, Dynamics and Accretion Models of S",
       "section": "suite in sim-highline",
       "couldSupply": "overview",
-      "status": "candidate",
+      "status": "ingested",
       "statusNote": ""
     },
     {
@@ -1012,7 +1012,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "massive central galaxies of groups",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention bhsigma, sfms, shmr in vector figures or tables (5); not yet extracted."
     },
     {
       "arxiv": "1901.10203",
@@ -1033,8 +1033,8 @@
       "title": "MUFASA: Galaxy Formation Simulations With Meshless Hydrodynamics",
       "section": "suite in sim-highline",
       "couldSupply": "MUFASA predecessor",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "MUFASA is the predecessor of SIMBA with a different model; its curves are not SIMBA's."
     },
     {
       "arxiv": "2003.03402",
@@ -1078,7 +1078,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "HI mass-size relation in Simba",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for size; not extractable at this quality."
     },
     {
       "arxiv": "2308.03436",
@@ -1089,7 +1089,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "Simba-C chemical enrichment",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for gsmf, mzr, sfms; not extractable at this quality."
     },
     {
       "arxiv": "2105.12748",
@@ -1100,7 +1100,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "quenching and UVJ diagram",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention sfms in vector figures or tables (2); not yet extracted."
     },
     {
       "arxiv": "1801.07259",
@@ -1111,7 +1111,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "overview",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "2101.11624",
@@ -1122,7 +1122,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "SPHINX-MHD",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for bhsigma, sfrd, shmr, size, uvlf, zstar; not extractable at this quality."
     },
     {
       "arxiv": "2309.03269",
@@ -1133,7 +1133,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "public data release for JWST forward modelling",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention sfms, sfrd, shmr, uvlf, zstar in vector figures or tables (7); not yet extracted."
     },
     {
       "arxiv": "2207.03232",
@@ -1144,7 +1144,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "LyC escape",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "2110.00584",
@@ -1166,7 +1166,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "IGM properties",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention gsmf, sfrd, shmr in vector figures or tables (3); not yet extracted."
     },
     {
       "arxiv": "2110.02966",
@@ -1177,7 +1177,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "Lyman-alpha",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention gsmf, uvlf in vector figures or tables (2); not yet extracted."
     },
     {
       "arxiv": "2309.06475",
@@ -1188,7 +1188,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "public data release",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention mzr, sfms, sfrd in vector figures or tables (4); not yet extracted."
     },
     {
       "arxiv": "2402.08717",
@@ -1221,7 +1221,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "star-formation efficiencies at high z",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention h2, uvlf in vector figures or tables (2); not yet extracted."
     },
     {
       "arxiv": "2503.02927",
@@ -1232,7 +1232,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "external reionization imprints",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention size, zstar in vector figures or tables (2); not yet extracted."
     },
     {
       "arxiv": "1602.02155",
@@ -1287,7 +1287,7 @@
       "section": "suite in sim-highline",
       "couldSupply": "stellar Tully-Fisher medians for SIDM variants",
       "status": "candidate",
-      "statusNote": "Not examined beyond its caption (stellar Tully-Fisher medians for Reference and SIDM variants)."
+      "statusNote": "Scanned 2026-10-08: only raster figures for bhsigma, gsmf, shmr, size, tf; not extractable at this quality."
     },
     {
       "arxiv": "1511.01098",
@@ -1298,7 +1298,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "Local Group analogues; dwarf-galaxy relations (SHMR, HI, TF) to check",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for gsmf; not extractable at this quality."
     },
     {
       "arxiv": "1507.03643",
@@ -1309,7 +1309,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "selection of simulation candidates",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "2408.09784",
@@ -1320,7 +1320,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "angular momentum evolution, two feedback models",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention jstar in vector figures or tables (2); not yet extracted."
     },
     {
       "arxiv": "1610.01159",
@@ -1330,8 +1330,8 @@
       "title": "The Auriga Project: the properties and formation mechanisms of disc galaxies across cosmic time",
       "section": "suite not in sim-highline",
       "couldSupply": "disc galaxies of Milky Way mass: sizes, SFH, j*, MZR to check",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "Auriga is not a tracked suite; adding it needs a simulation profile (code, resolution, team) as well as the baryonic Tully-Fisher points."
     },
     {
       "arxiv": "2004.01914",
@@ -1342,7 +1342,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "stellar haloes of Milky Way-mass galaxies",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for mzr, smd, zstar; not extractable at this quality."
     },
     {
       "arxiv": "2008.04926",
@@ -1353,7 +1353,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "Local Group constrained simulations",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention gsmf, size, uvlf in vector figures or tables (3); not yet extracted."
     },
     {
       "arxiv": "1809.04622",
@@ -1364,7 +1364,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "cluster regions: group and cluster relations",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention gas, gsmf, shmr in vector figures or tables (3); not yet extracted."
     },
     {
       "arxiv": "1703.10610",
@@ -1375,7 +1375,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "clusters with EAGLE physics: cluster-galaxy relations",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention gsmf in vector figures or tables (3); not yet extracted."
     },
     {
       "arxiv": "1603.02702",
@@ -1386,7 +1386,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "calibrated to GSMF and gas fractions; large volumes",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for bhsigma, gsmf, sfrd, smd, uvlf; not extractable at this quality."
     },
     {
       "arxiv": "1607.04569",
@@ -1397,7 +1397,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "massive clusters",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "0909.5196",
@@ -1408,7 +1408,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "cosmic SFR history; OWLS suite",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for sfrd; not extractable at this quality."
     },
     {
       "arxiv": "2010.00619",
@@ -1419,7 +1419,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "thousands of small boxes, four codes (TNG, Simba, ASTRID, Magneticum variants): envelopes of relations",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention bhsigma, sfrd in vector figures or tables (7); not yet extracted."
     },
     {
       "arxiv": "2304.02096",
@@ -1430,7 +1430,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "CAMELS expansion with ASTRID and 28-parameter models",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for gsmf, sfms, sfrd; not extractable at this quality."
     },
     {
       "arxiv": "2109.10915",
@@ -1441,7 +1441,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "multifield dataset",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "2408.07258",
@@ -1452,7 +1452,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "cluster and group star formation at z~1 (only a first hit; check the overview paper)",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "2002.04045",
@@ -1463,7 +1463,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "protocluster simulation",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention gsmf, sfrd, shmr, uvlf in vector figures or tables (4); not yet extracted."
     },
     {
       "arxiv": "2408.12854",
@@ -1474,7 +1474,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "AGN and little red dots",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention size, uvlf in vector figures or tables (2); not yet extracted."
     },
     {
       "arxiv": "2402.17635",
@@ -1485,7 +1485,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "LAEs in reionization",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "1402.0888",
@@ -1496,7 +1496,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "MassiveBlack-II overview (precursor of BlueTides and ASTRID)",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for sfrd, uvlf; not extractable at this quality."
     },
     {
       "arxiv": "2006.13951",
@@ -1507,7 +1507,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "proto-clusters",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention gas, sfms, sfrd in vector figures or tables (8); not yet extracted."
     },
     {
       "arxiv": "2108.09670",
@@ -1518,7 +1518,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "shock waves in clusters",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "2102.12343",
@@ -1529,7 +1529,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "FirstLight IV (sub-L* galaxies at cosmic dawn)",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention sfms, size, ssfr in vector figures or tables (3); not yet extracted."
     },
     {
       "arxiv": "1910.11729",
@@ -1540,7 +1540,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "mass-metallicity relation at cosmic dawn: MZR at z>5",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for gas; not extractable at this quality."
     },
     {
       "arxiv": "2404.02537",
@@ -1551,7 +1551,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "galaxy formation efficiency at z=5-13: SHMR at high z",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention shmr, smd, uvlf in vector figures or tables (4); not yet extracted."
     },
     {
       "arxiv": "2210.15372",
@@ -1562,7 +1562,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "feedback effects in VELA",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention gas, size in vector figures or tables (2); not yet extracted."
     },
     {
       "arxiv": "1503.01110",
@@ -1573,7 +1573,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "UV luminosity function of the earliest galaxies",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention uvlf in vector figures or tables (1); not yet extracted."
     },
     {
       "arxiv": "1701.02749",
@@ -1584,7 +1584,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "spectra of high-z galaxies",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention ssfr in vector figures or tables (1); not yet extracted."
     },
     {
       "arxiv": "1804.06477",
@@ -1595,7 +1595,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "Pop III black-hole growth",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention bh in vector figures or tables (1); not yet extracted."
     },
     {
       "arxiv": "1511.00011",
@@ -1606,7 +1606,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "CoDa I",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for sfms, sfrd, uvlf; not extractable at this quality."
     },
     {
       "arxiv": "1811.11192",
@@ -1617,7 +1617,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "CoDa II",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention uvlf in vector figures or tables (1); not yet extracted."
     },
     {
       "arxiv": "1403.4245",
@@ -1628,7 +1628,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "CROC I",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention uvlf in vector figures or tables (3); not yet extracted."
     },
     {
       "arxiv": "1603.00034",
@@ -1639,7 +1639,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "Aurora radiation-hydro reionization simulations",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention sfrd in vector figures or tables (1); not yet extracted."
     },
     {
       "arxiv": "1904.02723",
@@ -1650,7 +1650,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "EDGE: mass-metallicity relation of ultra-faint dwarfs (a critical test)",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "1909.04664",
@@ -1661,7 +1661,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "scatter in ultra-faint stellar masses",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention size in vector figures or tables (1); not yet extracted."
     },
     {
       "arxiv": "2004.09530",
@@ -1672,7 +1672,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "gas-rich to quiescent dwarfs",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention size in vector figures or tables (1); not yet extracted."
     },
     {
       "arxiv": "1607.03127",
@@ -1683,7 +1683,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "Read+16 SHMR of isolated dwarfs (compares with observations)",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for gsmf, shmr; not extractable at this quality."
     },
     {
       "arxiv": "2010.07311",
@@ -1694,7 +1694,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "LYRA I: multi-phase ISM of a dwarf galaxy with variable-energy supernovae",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "2110.06233",
@@ -1705,7 +1705,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "LYRA II: cosmological dwarf galaxy formation with inhomogeneous Pop III enrichment: MZR and SHMR of dwarfs to check",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "2209.03366",
@@ -1716,7 +1716,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "LYRA III: smallest reionization survivors",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention jstar, mzr, size in vector figures or tables (5); not yet extracted."
     },
     {
       "arxiv": "2511.10582",
@@ -1727,7 +1727,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "co-evolution of baryons and dark matter in LYRA dwarfs",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention size, zstar in vector figures or tables (3); not yet extracted."
     },
     {
       "arxiv": "2511.21824",
@@ -1738,7 +1738,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "LYRA ultra-faints",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for h2, shmr; not extractable at this quality."
     },
     {
       "arxiv": "2609.38179",
@@ -1760,7 +1760,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "VINTERGATAN III",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention jstar in vector figures or tables (1); not yet extracted."
     },
     {
       "arxiv": "2006.06011",
@@ -1771,7 +1771,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "VINTERGATAN II",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "2206.08379",
@@ -1782,7 +1782,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "VINTERGATAN IV",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: captions mention bhsigma in vector figures or tables (1); not yet extracted."
     },
     {
       "arxiv": "1504.06261",
@@ -1793,7 +1793,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "Milky Way-sized galaxies",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "1208.0002",
@@ -1804,7 +1804,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "early stellar feedback",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "2008.11207",
@@ -1815,7 +1815,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "Mint-condition ultra-faint dwarfs in a Milky Way context",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: only raster figures for size, ssfr, uvlf; not extractable at this quality."
     },
     {
       "arxiv": "2512.04157",
@@ -1826,7 +1826,7 @@
       "section": "suite not in sim-highline",
       "couldSupply": "DREAMS: halo-to-halo variance",
       "status": "candidate",
-      "statusNote": ""
+      "statusNote": "Scanned 2026-10-08: no figure or table caption names a tracked relation."
     },
     {
       "arxiv": "1410.0365",
@@ -1836,8 +1836,8 @@
       "title": "Galaxy formation in the Planck Cosmology - I. Matching the observed evolution of star formation rates, colours",
       "section": "semi-analytic or empirical model",
       "couldSupply": "Planck-cosmology model: observed SF evolution",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "Out of scope: semi-analytic, empirical or method paper, not a cosmological hydrodynamical simulation suite. Revisit if the scope widens."
     },
     {
       "arxiv": "1611.02286",
@@ -1847,8 +1847,8 @@
       "title": "Galaxy formation in the Planck cosmology - IV. Mass and environmental quenching, conformity and clustering",
       "section": "semi-analytic or empirical model",
       "couldSupply": "mass and environmental quenching",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "Out of scope: semi-analytic, empirical or method paper, not a cosmological hydrodynamical simulation suite. Revisit if the scope widens."
     },
     {
       "arxiv": "1601.04709",
@@ -1858,8 +1858,8 @@
       "title": "Semi-Analytic Galaxy Evolution (SAGE): Model Calibration and Basic Results",
       "section": "semi-analytic or empirical model",
       "couldSupply": "SAGE model",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "Out of scope: semi-analytic, empirical or method paper, not a cosmological hydrodynamical simulation suite. Revisit if the scope widens."
     },
     {
       "arxiv": "1807.11180",
@@ -1869,8 +1869,8 @@
       "title": "Shark: introducing an open source, free and flexible semi-analytic model of galaxy formation",
       "section": "semi-analytic or empirical model",
       "couldSupply": "Shark SAM",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "Out of scope: semi-analytic, empirical or method paper, not a cosmological hydrodynamical simulation suite. Revisit if the scope widens."
     },
     {
       "arxiv": "1605.00647",
@@ -1880,8 +1880,8 @@
       "title": "Building disc structure and galaxy properties through angular momentum: The DARK SAGE semi-analytic model",
       "section": "semi-analytic or empirical model",
       "couldSupply": "angular momentum disc structure: j*",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "Out of scope: semi-analytic, empirical or method paper, not a cosmological hydrodynamical simulation suite. Revisit if the scope widens."
     },
     {
       "arxiv": "1008.1786",
@@ -1891,8 +1891,8 @@
       "title": "Galacticus: A Semi-Analytic Model of Galaxy Formation",
       "section": "semi-analytic or empirical model",
       "couldSupply": "Galacticus",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "Out of scope: semi-analytic, empirical or method paper, not a cosmological hydrodynamical simulation suite. Revisit if the scope widens."
     },
     {
       "arxiv": "1412.2712",
@@ -1902,8 +1902,8 @@
       "title": "Physical Models of Galaxy Formation in a Cosmological Framework",
       "section": "semi-analytic or empirical model",
       "couldSupply": "review (cited in sim-highline notes)",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "Out of scope: semi-analytic, empirical or method paper, not a cosmological hydrodynamical simulation suite. Revisit if the scope widens."
     },
     {
       "arxiv": "1705.05373",
@@ -1913,8 +1913,8 @@
       "title": "EMERGE - An empirical model for the formation of galaxies since $z\\sim10$",
       "section": "semi-analytic or empirical model",
       "couldSupply": "empirical model",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "Out of scope: semi-analytic, empirical or method paper, not a cosmological hydrodynamical simulation suite. Revisit if the scope widens."
     },
     {
       "arxiv": "2001.02687",
@@ -1924,8 +1924,8 @@
       "title": "EMERGE: Empirical predictions of galaxy merger rates since $z\\sim6$",
       "section": "semi-analytic or empirical model",
       "couldSupply": "merger rates",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "Out of scope: semi-analytic, empirical or method paper, not a cosmological hydrodynamical simulation suite. Revisit if the scope widens."
     },
     {
       "arxiv": "0901.4107",
@@ -1935,8 +1935,8 @@
       "title": "E pur si muove: Galiliean-invariant cosmological hydrodynamical simulations on a moving mesh",
       "section": "numerical method",
       "couldSupply": "Springel 2010 moving-mesh code",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "Out of scope: semi-analytic, empirical or method paper, not a cosmological hydrodynamical simulation suite. Revisit if the scope widens."
     },
     {
       "arxiv": "1804.01987",
@@ -1946,8 +1946,8 @@
       "title": "AREPO-RT: Radiation hydrodynamics on a moving mesh",
       "section": "numerical method",
       "couldSupply": "radiation hydrodynamics on a moving mesh",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "Out of scope: semi-analytic, empirical or method paper, not a cosmological hydrodynamical simulation suite. Revisit if the scope widens."
     },
     {
       "arxiv": "1409.7395",
@@ -1957,8 +1957,8 @@
       "title": "GIZMO: A New Class of Accurate, Mesh-Free Hydrodynamic Simulation Methods",
       "section": "numerical method",
       "couldSupply": "Hopkins 2015",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "Out of scope: semi-analytic, empirical or method paper, not a cosmological hydrodynamical simulation suite. Revisit if the scope widens."
     },
     {
       "arxiv": "1304.7126",
@@ -1968,8 +1968,8 @@
       "title": "RAMSES-RT: Radiation hydrodynamics in the cosmological context",
       "section": "numerical method",
       "couldSupply": "radiation hydrodynamics in RAMSES",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "Out of scope: semi-analytic, empirical or method paper, not a cosmological hydrodynamical simulation suite. Revisit if the scope widens."
     },
     {
       "arxiv": "2010.03567",
@@ -1979,8 +1979,8 @@
       "title": "Simulating cosmic structure formation with the GADGET-4 code",
       "section": "numerical method",
       "couldSupply": "Springel+21",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "Out of scope: semi-analytic, empirical or method paper, not a cosmological hydrodynamical simulation suite. Revisit if the scope widens."
     },
     {
       "arxiv": "1707.03824",
@@ -1990,8 +1990,8 @@
       "title": "Gasoline2: A Modern SPH Code",
       "section": "numerical method",
       "couldSupply": "Wadsley+17",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "Out of scope: semi-analytic, empirical or method paper, not a cosmological hydrodynamical simulation suite. Revisit if the scope widens."
     },
     {
       "arxiv": "1409.1929",
@@ -2001,8 +2001,8 @@
       "title": "Adaptive Techniques for Clustered N-Body Cosmological Simulations",
       "section": "numerical method",
       "couldSupply": "Menon+15",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "Out of scope: semi-analytic, empirical or method paper, not a cosmological hydrodynamical simulation suite. Revisit if the scope widens."
     },
     {
       "arxiv": "1707.05333",
@@ -2012,8 +2012,8 @@
       "title": "A Moving Mesh Hydrodynamic Solver for ChaNGa",
       "section": "numerical method",
       "couldSupply": "Chang+17",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "Out of scope: semi-analytic, empirical or method paper, not a cosmological hydrodynamical simulation suite. Revisit if the scope widens."
     },
     {
       "arxiv": "2305.13380",
@@ -2023,8 +2023,8 @@
       "title": "SWIFT: A modern highly-parallel gravity and smoothed particle hydrodynamics solver for astrophysical and cosmo",
       "section": "numerical method",
       "couldSupply": "Schaller+24 code paper",
-      "status": "candidate",
-      "statusNote": ""
+      "status": "skipped",
+      "statusNote": "Out of scope: semi-analytic, empirical or method paper, not a cosmological hydrodynamical simulation suite. Revisit if the scope widens."
     }
   ]
 }

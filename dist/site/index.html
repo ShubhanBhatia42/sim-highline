@@ -111,9 +111,9 @@ tr:target td{background:var(--bg3)}
 <nav aria-label="Main"><a class="mark" href="index.html" aria-label="sim-highline home">SIM<i>/</i>HIGHLINE</a><span class="sp"></span><a class="l" href="about.html">About</a><a class="l" href="sources.html">Simulations &amp; observations</a><a class="l" href="use-cases.html">Use cases</a><a class="btn main" href="../highline.html">Open the app</a></nav>
 
 <header class="hero">
-<p class="eyebrow">GALAXY SCALING RELATIONS · BETA 0.11.0</p>
+<p class="eyebrow">GALAXY SCALING RELATIONS · BETA 0.12.0</p>
 <h1>Every published simulation prediction for a scaling relation, on one axis.</h1>
-<p class="lede">sim-highline collects 1,575 curves from 19 simulations and 82 observational sources, keeps the definitions that decide whether two curves can be compared, and exports them as tidy tables you can load into pandas.</p>
+<p class="lede">sim-highline collects 1,584 curves from 19 simulations and 82 observational sources, keeps the definitions that decide whether two curves can be compared, and exports them as tidy tables you can load into pandas.</p>
 <div class="cta"><a class="btn main" href="../highline.html">Open the beta</a><a class="btn" href="../data/export/sim-highline-records.csv">Download the data</a><a class="btn" href="use-cases.html">What it is for</a></div>
 </header>
 
@@ -133,7 +133,7 @@ tr:target td{background:var(--bg3)}
 <a class="card" href="../highline.html#r=gsmf&amp;z=8"><h3>What do simulations predict at z = 8?</h3><p>The stellar mass function for every simulation that has an epoch there, next to JWST estimates.</p></a>
 <a class="card" href="../highline.html#r=uvlf&amp;z=10"><h3>How bright are the first galaxies?</h3><p>UV luminosity functions at z = 10, with the dust treatment of each simulation in the legend.</p></a>
 <a class="card" href="../highline.html#m=tension&amp;tz=0"><h3>Where do simulations disagree with data today?</h3><p>Every simulation against its observational anchor, for every relation, with a flag for whether the definitions allow the comparison.</p></a>
-<a class="card" href="../highline.html#r=sfrd"><h3>How did the Universe build its stars?</h3><p>The cosmic star formation rate density against redshift, for 10 simulations.</p></a>
+<a class="card" href="../highline.html#r=sfrd"><h3>How did the Universe build its stars?</h3><p>The cosmic star formation rate density against redshift, for 11 simulations.</p></a>
 <a class="card" href="../highline.html#r=mzrz&amp;z=6"><h3>What do simulations say about metals at z = 6?</h3><p>Gas metallicity (Z/Z&#9737;) against stellar mass next to observations. Each metallicity tracer has its own view, so none is mixed.</p></a>
 <a class="card" href="../highline.html#r=shmr&amp;z=0"><h3>How efficiently do haloes make stars?</h3><p>The stellar-to-halo mass relation at z = 0 with the halo and stellar mass definitions of each curve.</p></a>
 </div>
@@ -175,23 +175,23 @@ tr:target td{background:var(--bg3)}
 <li><b>Not a replacement for the original data.</b> 51% of simulation curves are digitized from published figures. Where an author releases a table, use that.</li>
 <li><b>Not a leaderboard.</b> Many curves cannot be compared like for like, and sim-highline says so instead of scoring them.</li>
 <li><b>Not independently verified yet.</b> It is a beta from one maintainer; a sample of curves is waiting for review by people who know each simulation.</li>
-<li><b>Not complete.</b> Some relations are thin: total gas fraction has two simulations, and stellar Tully–Fisher, HI and H<sub>2</sub> fractions and the black hole mass–dispersion relation have three. UV luminosity functions (5 simulations) and the cosmic SFR density (10) are recent additions.</li>
+<li><b>Not complete.</b> Some relations are thin: stellar Tully–Fisher, total gas fraction, HI and H<sub>2</sub> fractions and the black hole mass–dispersion relation have only three simulations each. UV luminosity functions (5 simulations) and the cosmic SFR density (11) are recent additions.</li>
 </ul></div>
 </section>
 
 <section aria-labelledby="nums">
 <h2 id="nums">The data well today</h2>
 <div class="nums">
-<div><b>1,575</b><span>curves (1,309 simulation, 266 observational)</span></div>
+<div><b>1,584</b><span>curves (1,318 simulation, 266 observational)</span></div>
 <div><b>19</b><span>simulations</span></div>
 <div><b>19</b><span>scaling relations</span></div>
-<div><b>134</b><span>cited papers and data releases</span></div>
+<div><b>137</b><span>cited papers and data releases</span></div>
 <div><b>z 0 to 17</b><span>redshift range</span></div>
 </div>
 </section>
 
 <footer>
-<p>sim-highline 0.11.0 · 2026-10-08 · Shubhan Bhatia. Please cite the original papers (every record carries its citation and DOI) together with the dataset; see <code>CITATION.cff</code>. Code MIT, data CC BY 4.0 (third-party inputs keep their own terms; see <code>docs/SOURCE-TERMS.md</code>).</p>
+<p>sim-highline 0.12.0 · 2026-10-08 · Shubhan Bhatia. Please cite the original papers (every record carries its citation and DOI) together with the dataset; see <code>CITATION.cff</code>. Code MIT, data CC BY 4.0 (third-party inputs keep their own terms; see <code>docs/SOURCE-TERMS.md</code>).</p>
 <p><a href="../highline.html">Beta</a> · <a href="use-cases.html">Use cases</a> · <a href="../data/export/sim-highline-records.csv">Records (CSV)</a> · <a href="../data/export/sim-highline-points.csv">Points (CSV)</a> · <a href="../sim_highline.py">sim_highline.py</a> · <a href="../data/export/sim-highline-citations.bib">BibTeX</a></p>
 </footer>
 </div>

@@ -13,5 +13,5 @@ for (const file of ["index.html", "styles.css", "compare.js", "app.js", "views.j
 }
 
 await cp(new URL("../data/", import.meta.url), new URL("../dist/data/", import.meta.url), { recursive: true });
-await cp(new URL("../.openai/", import.meta.url), new URL("../dist/.openai/", import.meta.url), { recursive: true });
+try { await cp(new URL("../.openai/", import.meta.url), new URL("../dist/.openai/", import.meta.url), { recursive: true }); } catch (e) { if (e.code !== "ENOENT") throw e; }
 console.log("Built sim-highline static output in dist/");

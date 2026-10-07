@@ -2,11 +2,11 @@
   "schemaVersion": "1.0.0",
   "generatedAt": "2026-10-08",
   "totals": {
-    "records": 1575,
+    "records": 1584,
     "sources": 101,
     "relations": 27,
     "rankable": 731,
-    "contextOnly": 844
+    "contextOnly": 853
   },
   "byRelation": {
     "age": {
@@ -216,7 +216,7 @@
       ]
     },
     "gas": {
-      "records": 10,
+      "records": 14,
       "epochs": [
         0,
         0.25,
@@ -236,7 +236,7 @@
         "gas"
       ],
       "rankable": 0,
-      "contextOnly": 10,
+      "contextOnly": 14,
       "tiers": [
         "digitized-figure"
       ]
@@ -766,7 +766,7 @@
       ]
     },
     "sfrd": {
-      "records": 19,
+      "records": 20,
       "epochs": [
         2,
         3,
@@ -782,6 +782,7 @@
         "0.045518435334064744:9.849197368776672",
         "0.406:8.999",
         "0:10.396",
+        "0:10.435",
         "0:11.1",
         "0:6.334",
         "0:8",
@@ -796,7 +797,7 @@
         "sfrd"
       ],
       "rankable": 3,
-      "contextOnly": 16,
+      "contextOnly": 17,
       "tiers": [
         "digitized-figure",
         "published-fit",
@@ -1035,24 +1036,28 @@
       ]
     },
     "smd": {
-      "records": 6,
+      "records": 10,
       "epochs": [
         1.8,
         2,
         2.749
       ],
       "epochRanges": [
+        "0.101:7.288",
         "0.399:8.999",
         "0:10.396",
         "0:20",
         "0:4",
-        "0:6.334"
+        "0:6.334",
+        "0:6.346",
+        "0:6.729",
+        "0:7.787"
       ],
       "relations": [
         "smd"
       ],
       "rankable": 3,
-      "contextOnly": 3,
+      "contextOnly": 7,
       "tiers": [
         "digitized-figure",
         "published-table"
@@ -1960,7 +1965,7 @@
       ]
     },
     "EAGLE": {
-      "records": 154,
+      "records": 158,
       "epochs": [
         0,
         0.1,
@@ -1988,6 +1993,7 @@
       "epochRanges": [
         "0.045518435334064744:9.849197368776672",
         "0.1006:0.1006",
+        "0.101:7.288",
         "0.1:0.1",
         "0.2:0.2",
         "0.5:0.5",
@@ -1995,6 +2001,9 @@
         "0:0",
         "0:0.5",
         "0:20",
+        "0:6.346",
+        "0:6.729",
+        "0:7.787",
         "1.2:1.2",
         "1.5:2",
         "1.7:1.7",
@@ -2030,7 +2039,7 @@
         "zstar"
       ],
       "rankable": 87,
-      "contextOnly": 67,
+      "contextOnly": 71,
       "tiers": [
         "catalog-derived",
         "digitized-figure",
@@ -2574,7 +2583,7 @@
       ]
     },
     "IllustrisTNG": {
-      "records": 156,
+      "records": 160,
       "epochs": [
         0,
         0.1,
@@ -2617,6 +2626,7 @@
       ],
       "relations": [
         "bh",
+        "gas",
         "gsmf",
         "h2-fraction",
         "hi-fraction",
@@ -2630,7 +2640,7 @@
         "zstar"
       ],
       "rankable": 60,
-      "contextOnly": 96,
+      "contextOnly": 100,
       "tiers": [
         "catalog-derived",
         "digitized-figure",
@@ -3219,25 +3229,28 @@
       ]
     },
     "Romulus25": {
-      "records": 5,
+      "records": 6,
       "epochs": [
         0.05,
         1,
+        2,
         3
       ],
       "epochRanges": [
         "0.05:0.05",
         "0:0.05",
+        "0:10.435",
         "1:1",
         "3:3"
       ],
       "relations": [
         "bh",
         "bhsigma",
-        "sfms"
+        "sfms",
+        "sfrd"
       ],
       "rankable": 0,
-      "contextOnly": 5,
+      "contextOnly": 6,
       "tiers": [
         "digitized-figure"
       ]
