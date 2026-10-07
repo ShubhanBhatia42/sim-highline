@@ -39,4 +39,8 @@ assert.equal(cff.match(/^version: (\S+)/m)[1], rel.version, "CITATION.cff versio
 assert.match(cff, /^cff-version: 1\.2\.0$/m, "CITATION.cff must start with cff-version 1.2.0");
 assert.equal((cff.match(/^version:/gm) || []).length, 1, "CITATION.cff must have exactly one version");
 assert.equal(cff.match(/^date-released: (\S+)/m)[1], rel.released, "CITATION.cff date-released must match data/release.json");
+const curveDir = new URL("../data/curves/", import.meta.url);
+let thirdParty = 0;
+for (const f of (await (await import("node:fs/promises")).readdir(curveDir)).filter(f => f.endsWith(".json"))) for (const r of JSON.parse(await readFile(new URL(f, curveDir), "utf8")).records) { const p = r.provenance; if (/sharda|garcia/i.test([p.citation, p.url, p.sourceMember].join(" "))) { assert.ok(p.terms, `${r.id}: third-party source without provenance.terms`); thirdParty++; } }
+assert.ok(thirdParty >= 200, "expected the Sharda and Garcia records to be flagged");
 console.log("Export library tests passed");

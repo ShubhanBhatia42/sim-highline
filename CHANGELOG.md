@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.13.0 (2026-10-08)
+
+- Records from sources with their own terms now carry `provenance.terms` and the exports a `terms` column: 88 Sharda+26 records (GPL-2.0, not CC BY) and 142 Garcia+24-derived records (no licence file) are flagged as third-party; CC BY sources are labelled. `sim_highline.open_terms(df)` keeps only records without third-party terms. The Evidence panel shows the terms.
+- README states that the dataset is an unreviewed beta and gives a corrections and takedown route.
+
 ## 0.12.1 (2026-10-08)
 
 - Export: sampled points of parametric curves are rounded to 6 decimals so the tables are byte-identical on every platform (CI on Linux/Node 22 differed from macOS/Node 25 in the last digit of 82 rows). `build-static` skips the local-only `.openai` folder when it is absent.

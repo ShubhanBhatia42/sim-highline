@@ -1,5 +1,9 @@
 # sim-highline
 
+> **Beta, not yet independently reviewed.** About half of the simulation curves (51%) were digitized from published figures by one maintainer; every record carries its source, definitions and evidence tier, but **no record has been checked by an outside expert yet**. Where an author or collaboration publishes its own table, use that. Some records come from third-party releases with their own terms (the `terms` column; `docs/SOURCE-TERMS.md`).
+>
+> **Corrections and takedowns:** if you are an author or data owner and want a record corrected, attributed differently or removed, open an issue (the "Curve error" form) or use the contact in `CITATION.cff`. Requests are handled promptly and removal is not contested.
+
 sim-highline is a researcher-facing workbench for comparing galaxy scaling relations across simulations and observational constraints. Its central rule is simple: the browser only draws ingested evidence. Missing epochs stay missing, incompatible definitions stay visible as mismatches, and no source-specific curve is synthesized from a generic template.
 
 ## Current evidence

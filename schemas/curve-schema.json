@@ -308,6 +308,9 @@
             "retrieved": {
               "type": "string",
               "format": "date"
+            },
+            "terms": {
+              "type": "string"
             }
           }
         },

@@ -2,6 +2,7 @@ import { readFile, readdir, writeFile } from "node:fs/promises";
 import { DEFINITIONS, definitionsFor } from "./definitions.mjs";
 
 const directory = new URL("../data/curves/", import.meta.url);
+const TERMS = JSON.parse(await readFile(new URL("../data/source-terms.json", import.meta.url), "utf8")).rules.map(r => ({ ...r, re: new RegExp(r.match, "i") }));
 function intervalKindFor(record){
   if(record.source==="COSMOS-Web 2025")return "uncertainty";
   if(record.source==="THESAN-1")return record.relation==="gsmf"?"uncertainty":"scatter";
@@ -18,6 +19,7 @@ for (const file of (await readdir(directory)).filter(file => file.endsWith(".jso
   for (const record of payload.records) {
     if(DEFINITIONS[record.source]?.[record.relation])record.definitions=definitionsFor(record.source,record.relation);
     else if(!record.definitions)throw new Error(`${record.id}: no structured definitions`);
+    {const p=record.provenance,hay=[p.citation,p.url,p.sourceMember,p.extractionMethod].join(" "),hit=TERMS.find(t=>t.re.test(hay));if(hit)p.terms=hit.terms;else delete p.terms}
     if(record.kind==="simulation"&&!record.definitions.imf&&SUITE_IMF[record.source])record.definitions.imf=SUITE_IMF[record.source];
     if(record.representation.type==="points"&&!record.representation.intervalKind)record.representation.intervalKind=intervalKindFor(record);
     if(record.representation.type==="parametric"&&!record.representation.expression){

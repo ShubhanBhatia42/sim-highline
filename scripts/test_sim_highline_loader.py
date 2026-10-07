@@ -43,6 +43,10 @@ assert one.groupby(sim_highline.KEYS + ["x_definition", "y_definition", "populat
 assert not sim_highline.nearest_epoch(sel, z=50.0).shape[0]
 rk = sim_highline.select(df, rankable=True)
 assert rk["tier"].ne("digitized-figure").all()
+third = df[df["terms"].astype(str).str.contains("GPL|no licence", na=False)]
+assert third.record_id.nunique() >= 200, third.record_id.nunique()
+opened = sim_highline.open_terms(df)
+assert not opened.record_id.isin(third.record_id).any() and len(opened) > 0.5 * len(df)
 bib = sim_highline.bibtex(sim_highline.select(df, sources="EAGLE"))
 assert bib.count("@misc") >= 5 and "10.1093/mnras/stu2058" in bib
 print(f"sim-highline loader test passed: {len(records)} records, {len(df)} points, v{man['version']}")

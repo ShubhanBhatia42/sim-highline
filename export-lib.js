@@ -1,6 +1,6 @@
 (function(root){
 const DEF_COLS=["imf","massDefinition","haloMassDefinition","population","sfrTimescaleMyr","sfrStatistic","quenchingCriterion","sizeDefinition","metallicityQuantity","gasPhase","densityFrame"];
-const RECORD_COLS=["record_id","kind","source","run","relation","z","z_min","z_max","representation","interval_kind","connect","x_unit","y_unit","x_definition","y_definition","tier","rankable","calibration","population_note","mass_class","cosmology_h0","cosmology_om",...DEF_COLS.map(k=>k==="population"?"population":k.replace(/[A-Z]/g,c=>"_"+c.toLowerCase())),"citation","doi","url","checksum_sha256","retrieved","definitions_json"];
+const RECORD_COLS=["record_id","kind","source","run","relation","z","z_min","z_max","representation","interval_kind","connect","x_unit","y_unit","x_definition","y_definition","tier","terms","rankable","calibration","population_note","mass_class","cosmology_h0","cosmology_om",...DEF_COLS.map(k=>k==="population"?"population":k.replace(/[A-Z]/g,c=>"_"+c.toLowerCase())),"citation","doi","url","checksum_sha256","retrieved","definitions_json"];
 const POINT_COLS=["record_id","point_index","x","y","y_low","y_high","x_low","x_high","count"];
 const NSAMPLE=40;
 function massClass(d){
@@ -26,7 +26,7 @@ function recordRow(r,zEval){
   const d=r.definitions||{},p=r.provenance||{},e=r.epoch||{},rep=r.representation||{},a=r.axes||{},c=d.cosmology||{};
   const row={record_id:r.id,kind:r.kind,source:r.source,run:r.run,relation:r.relation,z:rep.type==="parametric"&&zEval!==undefined?zEval:e.zRepresentative,z_min:e.zMin,z_max:e.zMax,
     representation:rep.type==="parametric"?"sampled-parametric":"points",interval_kind:rep.intervalKind,connect:rep.connect!==false,
-    x_unit:a.xUnit,y_unit:a.yUnit,x_definition:a.xDefinition,y_definition:a.yDefinition,tier:p.tier,rankable:!!r.rankable,calibration:r.calibration,
+    x_unit:a.xUnit,y_unit:a.yUnit,x_definition:a.xDefinition,y_definition:a.yDefinition,tier:p.tier,terms:p.terms,rankable:!!r.rankable,calibration:r.calibration,
     population_note:r.selection&&r.selection.population,mass_class:massClass(d),cosmology_h0:c.H0,cosmology_om:c.Om,
     citation:p.citation,doi:p.doi,url:p.url,checksum_sha256:p.checksumSha256,retrieved:p.retrieved,definitions_json:JSON.stringify(d)};
   for(const k of DEF_COLS)row[snake(k)]=d[k];

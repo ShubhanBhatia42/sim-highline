@@ -1,5 +1,5 @@
 {
-  "version": "0.12.1",
+  "version": "0.13.0",
   "released": "2026-10-08",
   "doi": null,
   "license": {
@@ -28,6 +28,7 @@
       "x_definition",
       "y_definition",
       "tier",
+      "terms",
       "rankable",
       "calibration",
       "population_note",
@@ -66,16 +67,16 @@
   },
   "files": {
     "sim-highline-records.csv": {
-      "sha256": "9d83b8614156532319e8e43ffadbd6de9bf5a18c8c6bc693085be70539264114",
-      "bytes": 1264326
+      "sha256": "a120cbd7f58e966e5768134733736d2bf250c9dd24b930c3881b4eb11e5e9586",
+      "bytes": 1297472
     },
     "sim-highline-points.csv": {
-      "sha256": "c96f026aff179c933bdfe39d633783b901f1cb3fcb24639bcbe6ad9c57ded490",
+      "sha256": "7250276acd772361fe81a71d61f013615429def3444dc768f9ddb7951b109d7e",
       "bytes": 2959809
     },
     "sim-highline-records.json": {
-      "sha256": "090393c05fa1df55810de0a24447e1c367ab3ffb2995297d80f34026cb469a57",
-      "bytes": 4498418
+      "sha256": "6a37fb680023568ea11df6baa36266db24b719757411b3ee00faf2bb7130b7b6",
+      "bytes": 4533342
     },
     "sim-highline-citations.bib": {
       "sha256": "7b5a6b017daa5755e5714395ec25fcd489bb59637ec4dbd5ddf86c7382869d7a",

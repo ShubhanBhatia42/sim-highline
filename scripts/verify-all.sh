@@ -21,6 +21,7 @@ node scripts/test-notes.mjs
 node scripts/test-profiles.mjs
 node scripts/make-audit-sample.mjs
 node scripts/make-author-requests.mjs
+node scripts/make-heads-up.mjs
 node scripts/build-site.mjs
 node scripts/test-site.mjs
 for t in scripts/test_*.py; do python3 "$t"; done

@@ -16,4 +16,6 @@
 
 **Versioning.** `data/release.json` holds the dataset version; `CHANGELOG.md` records changes. A DOI is not yet minted.
 
+**Third-party terms.** 230 records carry a `terms` value because their sources state a licence that is not CC BY (Sharda+26, GPL-2.0) or none (Garcia+24); see `docs/SOURCE-TERMS.md`.
+
 **Licence and citation.** Code MIT (`LICENSE`), dataset CC BY 4.0 (`LICENSE-DATA.md`); inputs from third-party data releases keep their own terms (`docs/SOURCE-TERMS.md`). Records reproduce values from the cited papers and data releases: cite those (the `citation` and `doi` columns, `sim-highline-citations.bib`) together with this dataset (`CITATION.cff`).
