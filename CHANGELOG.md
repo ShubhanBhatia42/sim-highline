@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.16.0 (2026-10-13)
+
+- New analysis: definition budget (`scripts/analyze_definition_budget.py`, `data/analysis/definition-budget.json`, `docs/ANALYSIS-definition-budget.md`). Cross-suite record pairs are classified from documented definitions alone (matched, differing, unknown, not comparable) and their offsets compared, with a label permutation test and a bootstrap over suites; no curve is corrected. On the present records 4% of 2255 pairs are fully matched and 33% cannot be classified because a definition is undocumented, and the two nominally significant epochs do not survive Bonferroni correction. Tested by `scripts/test_definition_budget.py`.
+- App: My run tab (replaces the "your data" box in Customise): optional error or low,high columns, linear or log values, declared definitions, a ranked table of median offsets against every published curve with definition-compatibility verdicts, CSV export, persistence in the browser; error bars on the plotted run.
+- App: Spread view (spread across simulations for every relation and epoch, computed only between suites that share the relation's hard definitions; most contested and most settled summary) and a command palette (`/` or Ctrl/Cmd+K) over relations, simulations, papers, views and actions.
+- Fixed: top-bar buttons wrapped at mid-range widths. Tests: user-curve parsing and spread logic, two browser checks (32 in all); `PW_CHANNEL=chrome` lets the browser tests use an installed Chrome.
+
 ## 0.15.0 (2026-10-08)
 
 - Data (vector figures): COLIBRE cosmic SFR density for five resolution runs, z=0 specific SFR of star-forming galaxies and z=0 stellar-to-halo mass ratio for three runs (Schaye+25 overview; 11 records); SPHINX20 UV luminosity function at seven redshifts (Katz+23); TNG50 sizes of star-forming galaxies, 3D stellar half-mass and 2D V-band (Pillepich+19; 6 records). Two figures were examined and skipped with reasons (Magneticum SFR density is by resolution class, SPHINX SFR density is a progenitor selection).

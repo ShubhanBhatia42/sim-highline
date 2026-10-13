@@ -11,7 +11,7 @@ const server = http.createServer(async (req, res) => { const p = decodeURICompon
 await new Promise(r => server.listen(0, "127.0.0.1", r));
 const BASE = `http://127.0.0.1:${server.address().port}`;
 await mkdir(OUT, { recursive: true });
-const browser = await chromium.launch();
+const browser = await chromium.launch(process.env.PW_CHANNEL ? { channel: process.env.PW_CHANNEL } : {});
 async function shot(name, url, { scheme = "light", w = 1440, h = 900, prep } = {}) {
   const ctx = await browser.newContext({ viewport: { width: w, height: h }, colorScheme: scheme, deviceScaleFactor: 1 });
   const page = await ctx.newPage();

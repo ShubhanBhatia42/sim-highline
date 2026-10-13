@@ -49,3 +49,21 @@ assert.ok([...L.primaryUnits(records.filter(r => r.relation === "gsmf"))].some(u
 const sz = L.primaryUnits(records.filter(r => r.relation === "size"));
 assert.ok([...sz].some(u => /^COLIBRE\|.*centrals, star-forming/.test(u)), "COLIBRE size defaults to star-forming centrals");
 console.log(`Logic tests passed: ${rels.length} relations, one fiducial run per source in each`);
+
+const pu = L.parseUserCurve("# my run\nx,y,err\n9,-2,0.1\n10,-3,0.2\nbad,row\n11,-4,0.3");
+assert.equal(pu.pts.length, 3); assert.equal(pu.skipped, 1);
+assert.ok(Math.abs(pu.pts[0].lo - -2.1) < 1e-12 && Math.abs(pu.pts[0].hi - -1.9) < 1e-12);
+const pl = L.parseUserCurve("1e9 1e-2\n1e10 1e-3\n0 5", { linear: true });
+assert.equal(pl.pts.length, 2); assert.equal(pl.skipped, 1); assert.ok(Math.abs(pl.pts[0].x - 9) < 1e-12 && Math.abs(pl.pts[1].y - -3) < 1e-12);
+const p4 = L.parseUserCurve("9\t-2\t-2.2\t-1.8\n8\t-1\t-1.1\t-0.9");
+assert.equal(p4.pts[0].x, 8); assert.equal(p4.pts[0].lo, -1.1); assert.equal(p4.pts[1].hi, -1.8);
+console.log("logic: user curve parsing OK");
+
+const par = (o, n = 8) => Array.from({ length: n }, (_, i) => ({ x: 8 + i * .5, y: -1 - i * .3 + o }));
+const sp = L.spread([par(0), par(.1), par(-.1)]);
+assert.ok(sp && Math.abs(sp.sigma - .1) < 1e-9 && sp.suites === 3, "three parallel curves 0.1 dex apart have spread 0.1");
+assert.equal(L.spread([par(0), par(.1)]), null, "fewer than three suites give no spread");
+assert.equal(L.spread([par(0), par(.1), [{ x: 20, y: 0 }, { x: 21, y: 0 }]]), null, "non-overlapping curves give no spread");
+const gap = par(0).filter((_, i) => i !== 3 && i !== 4);
+assert.ok(L.spread([gap, par(.1), par(-.1)]).grid < L.spread([par(0), par(.1), par(-.1)]).grid, "gaps wider than 0.6 dex are never interpolated");
+console.log("logic: spread OK");
