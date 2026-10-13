@@ -14,7 +14,7 @@ const server = http.createServer(async (req, res) => {
 });
 await new Promise(r => server.listen(0, "127.0.0.1", r));
 const BASE = `http://127.0.0.1:${server.address().port}`;
-const browser = await chromium.launch();
+const browser = await chromium.launch(process.env.PW_CHANNEL ? { channel: process.env.PW_CHANNEL } : {});
 const failures = [];
 let n = 0;
 const step = async (name, fn) => { n++; try { await fn(); } catch (e) { failures.push(`${name}: ${e.message.split("\n")[0]}`); console.log("FAIL", name, "-", e.message.split("\n")[0]); } };
@@ -91,6 +91,48 @@ await step("theme toggle switches and persists", async () => {
   assert.equal(await page.evaluate(() => document.documentElement.dataset.theme), "dark");
   await page.reload(); await settle(page);
   assert.equal(await page.evaluate(() => document.documentElement.dataset.theme), "dark");
+  await ctx.close();
+});
+
+await step("spread map and command palette", async () => {
+  const { page, ctx } = await open("/highline.html#m=spread");
+  assert.ok(await page.locator("#spread td[data-r]").count() >= 20, "spread map has cells");
+  const first = await page.locator("#spread td[data-r] b").first().innerText();
+  assert.ok(Number(first) > 0 && Number(first) < 3, "spread values are plausible dex");
+  await page.locator("#spread td[data-r]").first().click();
+  assert.ok(!(await page.evaluate(() => location.hash)).includes("m=spread"), "clicking a cell opens the relation");
+  await page.keyboard.press("/");
+  assert.ok(await page.locator("#pal.on").count() === 1, "palette opens with /");
+  await page.fill("#palQ", "tension");
+  await page.keyboard.press("Enter");
+  assert.ok((await page.evaluate(() => location.hash)).includes("m=tension"), "palette runs the first match");
+  await page.keyboard.press("Control+k");
+  await page.fill("#palQ", "pillepich");
+  assert.ok(await page.locator("#palL li[data-i]").count() >= 1, "palette finds records by citation");
+  await page.keyboard.press("Escape");
+  assert.equal(await page.locator("#pal.on").count(), 0);
+  await ctx.close();
+});
+
+await step("your run: plot, declare definitions, compare, export", async () => {
+  const { page, ctx } = await open("/highline.html#r=gsmf&z=0");
+  await page.click("#bMine");
+  await page.fill("#uName", "my run");
+  await page.fill("#uText", "x,y,err\n8,-1.5,0.05\n8.5,-1.7,0.05\n9,-1.9,0.05\n9.5,-2.1,0.06\n10,-2.3,0.07\n10.5,-2.7,0.1\n11,-3.5,0.2");
+  await page.click("#uPlot");
+  assert.equal(await page.locator("#stage .userdot").count(), 7, "seven user points drawn");
+  assert.ok(await page.locator("#mineTab tr[data-id]").count() >= 5, "comparison rows listed");
+  assert.equal(await page.locator("#mineTab .v.ok").count(), 0, "nothing comparable before definitions are declared");
+  for (const [k, v] of [["densityFrame", "comoving"], ["imf", "chabrier03"], ["massDefinition", "aperture-30pkpc"]]) await page.selectOption(`[data-def="${k}"]`, v);
+  const glyphs = await page.locator("#mineTab .v").allInnerTexts();
+  assert.ok(glyphs.some(g => g === "~" || g === "\u2713"), "declaring definitions makes at least one curve comparable");
+  const [dl] = await Promise.all([page.waitForEvent("download"), page.click("#uCsv")]);
+  assert.match(dl.suggestedFilename(), /^sim-highline-yourrun-gsmf-z/);
+  await page.reload(); await settle(page);
+  await page.click("#bMine");
+  assert.equal(await page.inputValue("#uName"), "my run", "run persists in this browser");
+  await page.click("#uClear");
+  assert.equal(await page.locator("#stage .userdot").count(), 0);
   await ctx.close();
 });
 

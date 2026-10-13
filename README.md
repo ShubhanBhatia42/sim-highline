@@ -30,12 +30,15 @@ Listing a suite in the source rail does not imply that a curve has been ingested
 
 ## Views
 
-- Relation: one relation at one epoch, with an explicit observational reference and pairwise definition checks.
-- Residuals: model minus reference, whiskers from reported uncertainties only.
-- Evidence: every source mapped for the relation, ingested or not.
-- Fingerprint: every relation of one simulation at one epoch, against every matching reference; badges give the median offset over compatible references and their range.
-- Atlas: offsets over relation x epoch for one simulation, or over simulation x epoch for one relation. Hatched cells mean the references disagree on the sign.
+- Relation: one relation at one epoch, with an observational anchor, pairwise definition checks and a per-curve evidence panel.
 - Evolution: a relation evaluated at fixed x across all epochs each source provides.
+- Coverage: simulation by relation by redshift; empty cells are missing data, not missing physics.
+- Tension: each simulation's fiducial run against the observational anchor of every relation at one epoch; offsets are only verdicts where definitions agree.
+- Spread: how much simulations disagree with each other, for every relation and epoch (at least three simulations that share the relation's hard definitions). A small spread is not accuracy.
+- My run: paste or load your own curve, declare its definitions, and get a ranked, definition-aware comparison with every published curve at the epoch; downloadable as CSV. Stays in the browser.
+- Search: press `/` or Ctrl/Cmd+K to jump to any relation, simulation, paper, view or action.
+
+The analysis behind the Spread view is in [`docs/ANALYSIS-definition-budget.md`](docs/ANALYSIS-definition-budget.md) (`scripts/analyze_definition_budget.py`): do simulations that share documented definitions agree better than those that do not? On the present records the answer is that documentation, not physics, is the binding constraint: only 4% of cross-suite pairs have fully matched documented definitions.
 
 ## Expanding coverage on your machine
 

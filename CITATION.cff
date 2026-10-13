@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this dataset, please cite it and the original papers listed in the records (citation and doi columns, sim-highline-citations.bib)."
 title: "sim-highline: curated galaxy scaling relations from cosmological simulations"
 doi: 10.5281/zenodo.23217259
-version: 0.15.0
-date-released: 2026-10-08
+version: 0.16.0
+date-released: 2026-10-13
 license:
   - MIT
   - CC-BY-4.0
