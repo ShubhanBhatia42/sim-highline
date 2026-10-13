@@ -8,6 +8,8 @@ node scripts/validate-manifest.mjs
 node scripts/test-curves.mjs
 node scripts/test-compare.mjs
 node scripts/report-coverage.mjs
+python3 scripts/analyze_definition_budget.py > /dev/null
+node scripts/report-undocumented.mjs
 node scripts/build-curve-index.mjs
 node scripts/export-dataset.mjs
 node scripts/test-export.mjs

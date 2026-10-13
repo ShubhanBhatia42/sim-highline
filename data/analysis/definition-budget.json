@@ -59,7 +59,7 @@
     "unknown": 0.2589,
     "mismatch": null
    },
-   "documented_fraction": 0.8,
+   "documented_fraction": 0.867,
    "excess_differing_minus_matched": -0.0289
   },
   {
@@ -85,7 +85,7 @@
     "unknown": 0.2406,
     "mismatch": null
    },
-   "documented_fraction": 0.758,
+   "documented_fraction": 0.818,
    "excess_differing_minus_matched": 0.0033
   },
   {
@@ -111,7 +111,7 @@
     "unknown": 0.3289,
     "mismatch": null
    },
-   "documented_fraction": 0.788,
+   "documented_fraction": 0.818,
    "excess_differing_minus_matched": 0.0259
   },
   {
@@ -138,7 +138,7 @@
     "unknown": 0.2374,
     "mismatch": null
    },
-   "documented_fraction": 0.722,
+   "documented_fraction": 0.806,
    "excess_differing_minus_matched": -0.0058
   },
   {
@@ -520,21 +520,21 @@
    "pairs": 235,
    "counts": {
     "matched": 8,
-    "differing": 37,
-    "unknown": 75,
+    "differing": 53,
+    "unknown": 59,
     "mismatch": 115
    },
    "median_abs_dy": {
     "matched": 0.1721,
-    "differing": 0.2518,
-    "unknown": 0.1511,
+    "differing": 0.2163,
+    "unknown": 0.1566,
     "mismatch": 0.2372
    },
-   "documented_fraction": 0.908,
-   "excess_differing_minus_matched": 0.0797,
-   "p_permutation": 0.0795,
+   "documented_fraction": 0.95,
+   "excess_differing_minus_matched": 0.0442,
+   "p_permutation": 0.2064,
    "ci95_excess": [
-    -0.1078,
+    -0.1377,
     0.1783
    ]
   },
@@ -554,18 +554,18 @@
    "pairs": 87,
    "counts": {
     "matched": 2,
-    "differing": 14,
-    "unknown": 12,
+    "differing": 26,
+    "unknown": 0,
     "mismatch": 59
    },
    "median_abs_dy": {
     "matched": 0.1171,
-    "differing": 0.3245,
-    "unknown": 0.205,
+    "differing": 0.293,
+    "unknown": null,
     "mismatch": 0.2391
    },
-   "documented_fraction": 0.973,
-   "excess_differing_minus_matched": 0.2074
+   "documented_fraction": 1.0,
+   "excess_differing_minus_matched": 0.1759
   },
   {
    "relation": "shmr",
@@ -581,17 +581,17 @@
    "pairs": 60,
    "counts": {
     "matched": 0,
-    "differing": 7,
-    "unknown": 10,
+    "differing": 17,
+    "unknown": 0,
     "mismatch": 43
    },
    "median_abs_dy": {
     "matched": null,
-    "differing": 0.4826,
-    "unknown": 0.2201,
+    "differing": 0.2769,
+    "unknown": null,
     "mismatch": 0.2795
    },
-   "documented_fraction": 0.969,
+   "documented_fraction": 1.0,
    "excess_differing_minus_matched": null
   },
   {
@@ -609,17 +609,17 @@
    "pairs": 56,
    "counts": {
     "matched": 0,
-    "differing": 6,
-    "unknown": 10,
+    "differing": 16,
+    "unknown": 0,
     "mismatch": 40
    },
    "median_abs_dy": {
     "matched": null,
-    "differing": 0.4345,
-    "unknown": 0.2837,
+    "differing": 0.3532,
+    "unknown": null,
     "mismatch": 0.2991
    },
-   "documented_fraction": 0.938,
+   "documented_fraction": 0.985,
    "excess_differing_minus_matched": null
   },
   {
@@ -644,7 +644,7 @@
     "unknown": 0.741,
     "mismatch": 1.5931
    },
-   "documented_fraction": 0.6,
+   "documented_fraction": 0.733,
    "excess_differing_minus_matched": null
   },
   {
@@ -673,7 +673,7 @@
     "unknown": null,
     "mismatch": 0.1818
    },
-   "documented_fraction": 0.967,
+   "documented_fraction": 0.975,
    "excess_differing_minus_matched": null
   },
   {
@@ -702,7 +702,7 @@
     "unknown": null,
     "mismatch": 0.1878
    },
-   "documented_fraction": 0.946,
+   "documented_fraction": 0.957,
    "excess_differing_minus_matched": null
   },
   {
@@ -731,7 +731,7 @@
     "unknown": null,
     "mismatch": 0.1914
    },
-   "documented_fraction": 0.932,
+   "documented_fraction": 0.943,
    "excess_differing_minus_matched": null
   },
   {
@@ -759,7 +759,7 @@
     "unknown": null,
     "mismatch": 0.2871
    },
-   "documented_fraction": 0.864,
+   "documented_fraction": 0.886,
    "excess_differing_minus_matched": null
   },
   {
@@ -908,7 +908,7 @@
     "unknown": null,
     "mismatch": 8.6674
    },
-   "documented_fraction": 0.956,
+   "documented_fraction": 0.978,
    "excess_differing_minus_matched": -0.023,
    "p_permutation": 0.4528,
    "ci95_excess": [
@@ -940,7 +940,7 @@
     "unknown": 0.3894,
     "mismatch": 8.6937
    },
-   "documented_fraction": 0.88,
+   "documented_fraction": 0.92,
    "excess_differing_minus_matched": null
   },
   {
@@ -961,17 +961,17 @@
    "pairs": 136,
    "counts": {
     "matched": 0,
-    "differing": 26,
-    "unknown": 110,
+    "differing": 42,
+    "unknown": 94,
     "mismatch": 0
    },
    "median_abs_dy": {
     "matched": null,
-    "differing": 0.4587,
-    "unknown": 0.5346,
+    "differing": 0.5094,
+    "unknown": 0.5232,
     "mismatch": null
    },
-   "documented_fraction": 0.803,
+   "documented_fraction": 0.842,
    "excess_differing_minus_matched": null
   },
   {
@@ -991,17 +991,17 @@
    "pairs": 59,
    "counts": {
     "matched": 0,
-    "differing": 0,
-    "unknown": 59,
+    "differing": 6,
+    "unknown": 53,
     "mismatch": 0
    },
    "median_abs_dy": {
     "matched": null,
-    "differing": null,
-    "unknown": 0.3006,
+    "differing": 0.1865,
+    "unknown": 0.3391,
     "mismatch": null
    },
-   "documented_fraction": 0.712,
+   "documented_fraction": 0.769,
    "excess_differing_minus_matched": null
   },
   {
@@ -1021,17 +1021,17 @@
    "pairs": 68,
    "counts": {
     "matched": 0,
-    "differing": 0,
-    "unknown": 68,
+    "differing": 8,
+    "unknown": 60,
     "mismatch": 0
    },
    "median_abs_dy": {
     "matched": null,
-    "differing": null,
-    "unknown": 0.6374,
+    "differing": 1.2523,
+    "unknown": 0.5506,
     "mismatch": null
    },
-   "documented_fraction": 0.732,
+   "documented_fraction": 0.786,
    "excess_differing_minus_matched": null
   },
   {
@@ -1051,17 +1051,17 @@
    "pairs": 58,
    "counts": {
     "matched": 0,
-    "differing": 0,
-    "unknown": 58,
+    "differing": 8,
+    "unknown": 50,
     "mismatch": 0
    },
    "median_abs_dy": {
     "matched": null,
-    "differing": null,
-    "unknown": 1.203,
+    "differing": 1.1572,
+    "unknown": 1.206,
     "mismatch": null
    },
-   "documented_fraction": 0.712,
+   "documented_fraction": 0.769,
    "excess_differing_minus_matched": null
   }
  ],
@@ -2823,8 +2823,8 @@
   "pairs": 2255,
   "byClass": {
    "matched": 87,
-   "differing": 257,
-   "unknown": 648,
+   "differing": 343,
+   "unknown": 562,
    "mismatch": 1263
   },
   "testsRun": 16,

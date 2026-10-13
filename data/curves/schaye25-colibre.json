@@ -353,7 +353,10 @@
         },
         "densityFrame": "comoving",
         "sfrIndicator": "instantaneous SFR",
-        "population": "all galaxies in the volume"
+        "population": "all galaxies in the volume",
+        "massDefinition": "aperture-50pkpc",
+        "sfrIntegrationLimit": "all gas particles in the box",
+        "dustCorrection": "none"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -367,7 +370,11 @@
         "sourceMember": "figures/sfh_z0p0_plot1.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labels 0-18 snapped to ticks in log10(1+z) and converted exactly to z; y: decade labels snapped to ticks (log10)",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "schaye26-colibre-aperture",
+          "schaye26-colibre-sfrd-box"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -525,7 +532,10 @@
         },
         "densityFrame": "comoving",
         "sfrIndicator": "instantaneous SFR",
-        "population": "all galaxies in the volume"
+        "population": "all galaxies in the volume",
+        "massDefinition": "aperture-50pkpc",
+        "sfrIntegrationLimit": "all gas particles in the box",
+        "dustCorrection": "none"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -539,7 +549,11 @@
         "sourceMember": "figures/sfh_z0p0_plot1.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labels 0-18 snapped to ticks in log10(1+z) and converted exactly to z; y: decade labels snapped to ticks (log10)",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "schaye26-colibre-aperture",
+          "schaye26-colibre-sfrd-box"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -637,7 +651,10 @@
         },
         "densityFrame": "comoving",
         "sfrIndicator": "instantaneous SFR",
-        "population": "all galaxies in the volume"
+        "population": "all galaxies in the volume",
+        "massDefinition": "aperture-50pkpc",
+        "sfrIntegrationLimit": "all gas particles in the box",
+        "dustCorrection": "none"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -651,7 +668,11 @@
         "sourceMember": "figures/sfh_z0p0_plot1.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labels 0-18 snapped to ticks in log10(1+z) and converted exactly to z; y: decade labels snapped to ticks (log10)",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "schaye26-colibre-aperture",
+          "schaye26-colibre-sfrd-box"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1005,7 +1026,10 @@
         },
         "densityFrame": "comoving",
         "sfrIndicator": "instantaneous SFR",
-        "population": "all galaxies in the volume"
+        "population": "all galaxies in the volume",
+        "massDefinition": "aperture-50pkpc",
+        "sfrIntegrationLimit": "all gas particles in the box",
+        "dustCorrection": "none"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -1019,7 +1043,11 @@
         "sourceMember": "figures/sfh_z0p0_plot1.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labels 0-18 snapped to ticks in log10(1+z) and converted exactly to z; y: decade labels snapped to ticks (log10)",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "schaye26-colibre-aperture",
+          "schaye26-colibre-sfrd-box"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1369,7 +1397,10 @@
         },
         "densityFrame": "comoving",
         "sfrIndicator": "instantaneous SFR",
-        "population": "all galaxies in the volume"
+        "population": "all galaxies in the volume",
+        "massDefinition": "aperture-50pkpc",
+        "sfrIntegrationLimit": "all gas particles in the box",
+        "dustCorrection": "none"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -1383,7 +1414,11 @@
         "sourceMember": "figures/sfh_z0p0_plot1.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labels 0-18 snapped to ticks in log10(1+z) and converted exactly to z; y: decade labels snapped to ticks (log10)",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "schaye26-colibre-aperture",
+          "schaye26-colibre-sfrd-box"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1501,9 +1536,9 @@
         },
         "densityFrame": "comoving",
         "population": "star-forming galaxies, sSFR > 1e-2 Gyr^-1",
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "sfrStatistic": "median",
-        "sfrTimescaleMyr": "unspecified"
+        "sfrTimescaleMyr": "instantaneous"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -1517,7 +1552,11 @@
         "sourceMember": "figures/ssfr_fixed_z0p0_plot1.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: decade labels snapped to ticks and validated by the minor-tick pattern; log axes; y converted from Gyr^-1 to yr^-1 by subtracting 9 dex",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "schaye26-colibre-aperture",
+          "schaye26-colibre-sfr"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1631,9 +1670,9 @@
         },
         "densityFrame": "comoving",
         "population": "star-forming galaxies, sSFR > 1e-2 Gyr^-1",
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "sfrStatistic": "median",
-        "sfrTimescaleMyr": "unspecified"
+        "sfrTimescaleMyr": "instantaneous"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -1647,7 +1686,11 @@
         "sourceMember": "figures/ssfr_fixed_z0p0_plot1.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: decade labels snapped to ticks and validated by the minor-tick pattern; log axes; y converted from Gyr^-1 to yr^-1 by subtracting 9 dex",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "schaye26-colibre-aperture",
+          "schaye26-colibre-sfr"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1773,9 +1816,9 @@
         },
         "densityFrame": "comoving",
         "population": "star-forming galaxies, sSFR > 1e-2 Gyr^-1",
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "sfrStatistic": "median",
-        "sfrTimescaleMyr": "unspecified"
+        "sfrTimescaleMyr": "instantaneous"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -1789,7 +1832,11 @@
         "sourceMember": "figures/ssfr_fixed_z0p0_plot1.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: decade labels snapped to ticks and validated by the minor-tick pattern; log axes; y converted from Gyr^-1 to yr^-1 by subtracting 9 dex",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "schaye26-colibre-aperture",
+          "schaye26-colibre-sfr"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1879,7 +1926,7 @@
         },
         "densityFrame": "comoving",
         "population": "central galaxies",
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "haloMassDefinition": "unspecified"
       },
       "provenance": {
@@ -1894,7 +1941,10 @@
         "sourceMember": "figures/smhm_z0p0_plot1.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: decade labels snapped to ticks and validated by the minor-tick pattern; log axes",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "schaye26-colibre-aperture"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -2028,7 +2078,7 @@
         },
         "densityFrame": "comoving",
         "population": "central galaxies",
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "haloMassDefinition": "unspecified"
       },
       "provenance": {
@@ -2043,7 +2093,10 @@
         "sourceMember": "figures/smhm_z0p0_plot1.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: decade labels snapped to ticks and validated by the minor-tick pattern; log axes",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "schaye26-colibre-aperture"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -2169,7 +2222,7 @@
         },
         "densityFrame": "comoving",
         "population": "central galaxies",
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "haloMassDefinition": "unspecified"
       },
       "provenance": {
@@ -2184,7 +2237,10 @@
         "sourceMember": "figures/smhm_z0p0_plot1.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: decade labels snapped to ticks and validated by the minor-tick pattern; log axes",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "schaye26-colibre-aperture"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

@@ -115,7 +115,7 @@
       },
       "definitions": {
         "massDefinition": "total-galaxy-finder",
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": "unspecified",
         "population": "all",
         "sizeDefinition": "effective radius r_eff (definition as in the paper)"
@@ -132,7 +132,10 @@
         "sourceMember": "rvsmvariousz-eps-converted-to.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: major ticks (longer strokes) assigned the labels read from the rendered figure (the labels are glyph paths): x 10^8 to 10^13 Msun, y 1, 10, 100 kpc, both logarithmic",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -248,7 +251,7 @@
       },
       "definitions": {
         "massDefinition": "total-galaxy-finder",
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": "unspecified",
         "population": "all",
         "sizeDefinition": "effective radius r_eff (definition as in the paper)"
@@ -265,7 +268,10 @@
         "sourceMember": "rvsmvariousz-eps-converted-to.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: major ticks (longer strokes) assigned the labels read from the rendered figure (the labels are glyph paths): x 10^8 to 10^13 Msun, y 1, 10, 100 kpc, both logarithmic",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -377,7 +383,7 @@
       },
       "definitions": {
         "massDefinition": "total-galaxy-finder",
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": "unspecified",
         "population": "all",
         "sizeDefinition": "effective radius r_eff (definition as in the paper)"
@@ -394,7 +400,10 @@
         "sourceMember": "rvsmvariousz-eps-converted-to.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: major ticks (longer strokes) assigned the labels read from the rendered figure (the labels are glyph paths): x 10^8 to 10^13 Msun, y 1, 10, 100 kpc, both logarithmic",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -498,7 +507,7 @@
       },
       "definitions": {
         "massDefinition": "total-galaxy-finder",
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": "unspecified",
         "population": "all",
         "sizeDefinition": "effective radius r_eff (definition as in the paper)"
@@ -515,7 +524,10 @@
         "sourceMember": "rvsmvariousz-eps-converted-to.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: major ticks (longer strokes) assigned the labels read from the rendered figure (the labels are glyph paths): x 10^8 to 10^13 Msun, y 1, 10, 100 kpc, both logarithmic",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -607,7 +619,7 @@
       },
       "definitions": {
         "massDefinition": "total-galaxy-finder",
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": "unspecified",
         "population": "all",
         "sizeDefinition": "effective radius r_eff (definition as in the paper)"
@@ -624,7 +636,10 @@
         "sourceMember": "rvsmvariousz-eps-converted-to.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: major ticks (longer strokes) assigned the labels read from the rendered figure (the labels are glyph paths): x 10^8 to 10^13 Msun, y 1, 10, 100 kpc, both logarithmic",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -712,7 +727,7 @@
       },
       "definitions": {
         "massDefinition": "total-galaxy-finder",
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": "unspecified",
         "population": "all",
         "sizeDefinition": "effective radius r_eff (definition as in the paper)"
@@ -729,7 +744,10 @@
         "sourceMember": "rvsmvariousz-eps-converted-to.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: major ticks (longer strokes) assigned the labels read from the rendered figure (the labels are glyph paths): x 10^8 to 10^13 Msun, y 1, 10, 100 kpc, both logarithmic",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

@@ -202,7 +202,7 @@
         "warning": "Median curve read from the vector paths of Bird et al. 2022 (MNRAS 512, 3703), figure smhm (arXiv source numbering); no table exists. The paper plots (M*/Mh)/(Omega_m/Omega_b); converted by adding log10(Omega_b/Omega_m) = -0.8032. Each halo mass bin has at least 10 halos. The 16th-84th percentile band shown only for z=3 and the THESAN comparison lines are not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 67.74,
           "Om": 0.3089
@@ -224,7 +224,10 @@
         "sourceMember": "plots/smhms.pdf (z=3 line)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "both axes from labelled ticks (halo and stellar mass decades, log; SHMR y decades from the split base/exponent labels)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "bird22-astrid-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -415,7 +418,7 @@
         "warning": "Median curve read from the vector paths of Bird et al. 2022 (MNRAS 512, 3703), figure smhm (arXiv source numbering); no table exists. The paper plots (M*/Mh)/(Omega_m/Omega_b); converted by adding log10(Omega_b/Omega_m) = -0.8032. Each halo mass bin has at least 10 halos. The 16th-84th percentile band shown only for z=3 and the THESAN comparison lines are not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 67.74,
           "Om": 0.3089
@@ -437,7 +440,10 @@
         "sourceMember": "plots/smhms.pdf (z=4 line)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "both axes from labelled ticks (halo and stellar mass decades, log; SHMR y decades from the split base/exponent labels)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "bird22-astrid-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -600,7 +606,7 @@
         "warning": "Median curve read from the vector paths of Bird et al. 2022 (MNRAS 512, 3703), figure smhm (arXiv source numbering); no table exists. The paper plots (M*/Mh)/(Omega_m/Omega_b); converted by adding log10(Omega_b/Omega_m) = -0.8032. Each halo mass bin has at least 10 halos. The 16th-84th percentile band shown only for z=3 and the THESAN comparison lines are not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 67.74,
           "Om": 0.3089
@@ -622,7 +628,10 @@
         "sourceMember": "plots/smhms.pdf (z=6 line)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "both axes from labelled ticks (halo and stellar mass decades, log; SHMR y decades from the split base/exponent labels)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "bird22-astrid-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -765,7 +774,7 @@
         "warning": "Median curve read from the vector paths of Bird et al. 2022 (MNRAS 512, 3703), figure smhm (arXiv source numbering); no table exists. The paper plots (M*/Mh)/(Omega_m/Omega_b); converted by adding log10(Omega_b/Omega_m) = -0.8032. Each halo mass bin has at least 10 halos. The 16th-84th percentile band shown only for z=3 and the THESAN comparison lines are not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 67.74,
           "Om": 0.3089
@@ -787,7 +796,10 @@
         "sourceMember": "plots/smhms.pdf (z=8 line)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "both axes from labelled ticks (halo and stellar mass decades, log; SHMR y decades from the split base/exponent labels)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "bird22-astrid-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -910,7 +922,7 @@
         "warning": "Median curve read from the vector paths of Bird et al. 2022 (MNRAS 512, 3703), figure smhm (arXiv source numbering); no table exists. The paper plots (M*/Mh)/(Omega_m/Omega_b); converted by adding log10(Omega_b/Omega_m) = -0.8032. Each halo mass bin has at least 10 halos. The 16th-84th percentile band shown only for z=3 and the THESAN comparison lines are not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 67.74,
           "Om": 0.3089
@@ -932,7 +944,10 @@
         "sourceMember": "plots/smhms.pdf (z=10 line)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "both axes from labelled ticks (halo and stellar mass decades, log; SHMR y decades from the split base/exponent labels)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "bird22-astrid-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1167,7 +1182,7 @@
         "warning": "Median curve read from the vector paths of Bird et al. 2022 (MNRAS 512, 3703), figure stellar_metal (arXiv source numbering); no table exists. Stellar oxygen abundance, hydrogen mass assumed 0.76 M*; the grey percentile band and the Sanders+21 observational band are not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 67.74,
           "Om": 0.3089
@@ -1189,7 +1204,10 @@
         "sourceMember": "plots/starmetal_oh.pdf (z=3 line)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "both axes from labelled ticks (halo and stellar mass decades, log; SHMR y decades from the split base/exponent labels)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "bird22-astrid-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1412,7 +1430,7 @@
         "warning": "Median curve read from the vector paths of Bird et al. 2022 (MNRAS 512, 3703), figure stellar_metal (arXiv source numbering); no table exists. Stellar oxygen abundance, hydrogen mass assumed 0.76 M*; the grey percentile band and the Sanders+21 observational band are not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 67.74,
           "Om": 0.3089
@@ -1434,7 +1452,10 @@
         "sourceMember": "plots/starmetal_oh.pdf (z=4 line)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "both axes from labelled ticks (halo and stellar mass decades, log; SHMR y decades from the split base/exponent labels)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "bird22-astrid-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1621,7 +1642,7 @@
         "warning": "Median curve read from the vector paths of Bird et al. 2022 (MNRAS 512, 3703), figure stellar_metal (arXiv source numbering); no table exists. Stellar oxygen abundance, hydrogen mass assumed 0.76 M*; the grey percentile band and the Sanders+21 observational band are not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 67.74,
           "Om": 0.3089
@@ -1643,7 +1664,10 @@
         "sourceMember": "plots/starmetal_oh.pdf (z=6 line)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "both axes from labelled ticks (halo and stellar mass decades, log; SHMR y decades from the split base/exponent labels)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "bird22-astrid-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1790,7 +1814,7 @@
         "warning": "Median curve read from the vector paths of Bird et al. 2022 (MNRAS 512, 3703), figure stellar_metal (arXiv source numbering); no table exists. Stellar oxygen abundance, hydrogen mass assumed 0.76 M*; the grey percentile band and the Sanders+21 observational band are not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 67.74,
           "Om": 0.3089
@@ -1812,7 +1836,10 @@
         "sourceMember": "plots/starmetal_oh.pdf (z=8 line)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "both axes from labelled ticks (halo and stellar mass decades, log; SHMR y decades from the split base/exponent labels)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "bird22-astrid-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1931,7 +1958,7 @@
         "warning": "Median curve read from the vector paths of Bird et al. 2022 (MNRAS 512, 3703), figure stellar_metal (arXiv source numbering); no table exists. Stellar oxygen abundance, hydrogen mass assumed 0.76 M*; the grey percentile band and the Sanders+21 observational band are not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 67.74,
           "Om": 0.3089
@@ -1953,7 +1980,10 @@
         "sourceMember": "plots/starmetal_oh.pdf (z=10 line)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "both axes from labelled ticks (halo and stellar mass decades, log; SHMR y decades from the split base/exponent labels)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "bird22-astrid-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

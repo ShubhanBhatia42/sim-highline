@@ -44,13 +44,14 @@
       "definitions": {
         "metallicityQuantity": "gas-metal-mass-fraction",
         "metallicityCalibration": "intrinsic-simulation (mass-weighted gas within 0.2 Rvir; Zsun = 0.02)",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "population": "all galaxies of the zoom suite",
         "cosmology": {
           "H0": 67.66,
           "Om": 0.3111
         },
-        "cosmologyNote": "Planck 2020 (flat LCDM), values as in the Planck 2018 release"
+        "cosmologyNote": "Planck 2020 (flat LCDM), values as in the Planck 2018 release",
+        "massDefinition": "aperture-0.2Rvir"
       },
       "provenance": {
         "tier": "published-fit",
@@ -60,7 +61,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "65a8fc01e8fb27f4d19e5efab387e673797356012f77d5e6647fda3e12781905",
         "sourceMember": "sample631.tex table:1 (arXiv source, transcribed)",
-        "extractionMethod": "transcribed from the arXiv LaTeX table; A(5), A(12) and B(12) checked against the per-redshift fits printed on the paper's figure"
+        "extractionMethod": "transcribed from the arXiv LaTeX table; A(5), A(12) and B(12) checked against the per-redshift fits printed on the paper's figure",
+        "definitionFills": [
+          "marszewski24-fire2-mzr"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -109,13 +113,14 @@
       "definitions": {
         "metallicityQuantity": "gas-metal-mass-fraction",
         "metallicityCalibration": "intrinsic-simulation (mass-weighted gas within 0.2 Rvir; Zsun = 0.02)",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "population": "all galaxies of the zoom suite",
         "cosmology": {
           "H0": 67.66,
           "Om": 0.3111
         },
-        "cosmologyNote": "Planck 2020 (flat LCDM), values as in the Planck 2018 release"
+        "cosmologyNote": "Planck 2020 (flat LCDM), values as in the Planck 2018 release",
+        "massDefinition": "aperture-0.2Rvir"
       },
       "provenance": {
         "tier": "published-fit",
@@ -125,7 +130,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "65a8fc01e8fb27f4d19e5efab387e673797356012f77d5e6647fda3e12781905",
         "sourceMember": "sample631.tex table:1 (arXiv source, transcribed)",
-        "extractionMethod": "transcribed from the arXiv LaTeX table; A(5), A(12) and B(12) checked against the per-redshift fits printed on the paper's figure"
+        "extractionMethod": "transcribed from the arXiv LaTeX table; A(5), A(12) and B(12) checked against the per-redshift fits printed on the paper's figure",
+        "definitionFills": [
+          "marszewski24-fire2-mzr"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -174,13 +182,14 @@
       "definitions": {
         "metallicityQuantity": "gas-metal-mass-fraction",
         "metallicityCalibration": "intrinsic-simulation (mass-weighted gas within 0.2 Rvir; Zsun = 0.02)",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "population": "all galaxies of the zoom suite",
         "cosmology": {
           "H0": 67.66,
           "Om": 0.3111
         },
-        "cosmologyNote": "Planck 2020 (flat LCDM), values as in the Planck 2018 release"
+        "cosmologyNote": "Planck 2020 (flat LCDM), values as in the Planck 2018 release",
+        "massDefinition": "aperture-0.2Rvir"
       },
       "provenance": {
         "tier": "published-fit",
@@ -190,7 +199,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "65a8fc01e8fb27f4d19e5efab387e673797356012f77d5e6647fda3e12781905",
         "sourceMember": "sample631.tex table:1 (arXiv source, transcribed)",
-        "extractionMethod": "transcribed from the arXiv LaTeX table; A(5), A(12) and B(12) checked against the per-redshift fits printed on the paper's figure"
+        "extractionMethod": "transcribed from the arXiv LaTeX table; A(5), A(12) and B(12) checked against the per-redshift fits printed on the paper's figure",
+        "definitionFills": [
+          "marszewski24-fire2-mzr"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

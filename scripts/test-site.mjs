@@ -3,7 +3,7 @@ import { readFile, access } from "node:fs/promises";
 import { dirname } from "node:path";
 const root = new URL("../dist/", import.meta.url);
 const manifest = JSON.parse(await readFile(new URL("../data/export/sim-highline-manifest.json", import.meta.url), "utf8"));
-for (const page of ["index.html", "use-cases.html", "about.html", "sources.html"]) {
+for (const page of ["index.html", "use-cases.html", "about.html", "sources.html", "findings.html"]) {
   const html = await readFile(new URL(`site/${page}`, root), "utf8");
   assert(!/\{\{|__CSS__/.test(html), `${page}: unreplaced placeholder`);
   assert(html.includes(`${manifest.version}`), `${page}: version missing`);

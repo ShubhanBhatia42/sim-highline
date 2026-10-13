@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Findings: how much of the disagreement is definitions?</title>
+<meta name="description" content="Measured, not assumed: how well documented are the definitions behind simulated galaxy scaling relations, and how much does changing one definition move a curve.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314120f'/%3E%3Cpath d='M6 22 L13 15 L18 19 L26 9' fill='none' stroke='%23ef7f3f' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#fcfcfb" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1a1a19" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website"><meta property="og:site_name" content="sim-highline">
+<script>try{var t=localStorage.getItem("sh-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<meta property="og:title" content="Findings: how much of the disagreement is definitions?"><meta property="og:description" content="Measured, not assumed: how well documented are the definitions behind simulated galaxy scaling relations, and how much does changing one definition move a curve.">
+<style>/*__CSS__*/</style>
+</head>
+<body>
+<div class="wrap">
+{{nav}}
+
+<header class="hero">
+<p class="eyebrow">FINDINGS · DATASET {{version}}</p>
+<h1>How much of the disagreement between simulations is just definitions?</h1>
+<p class="lede">Two simulations that plot the same relation often measure different things: a 30 kpc or a 50 kpc stellar mass, a Salpeter or a Chabrier IMF, a 10 or a 100 Myr star formation rate. sim-highline keeps each curve's definitions and asks, without correcting a single curve, what the published record can and cannot support.</p>
+<div class="cta"><a class="btn main" href="../highline.html#m=spread">See the Spread view</a><a class="btn" href="https://github.com/ShubhanBhatia42/sim-highline/blob/main/docs/ANALYSIS-definition-budget.md" target="_blank" rel="noopener">Full analysis and method</a></div>
+</header>
+
+<section aria-labelledby="nums">
+<h2 id="nums">The short version</h2>
+<div class="nums">
+<div><b>{{fMatchedPct}}</b><span>of {{fPairs}} cross-simulation curve pairs have every needed definition documented and equal</span></div>
+<div><b>{{fUnknownPct}}</b><span>cannot be classified because a definition is not stated</span></div>
+<div><b>{{fRecRecords}}</b><span>of {{fSimRecords}} simulation records had definitions recovered from the source paper, each with section and quote</span></div>
+<div><b>{{fBonf}} of {{fTests}}</b><span>epoch tests survive correction: the data neither show nor exclude a definitional contribution</span></div>
+</div>
+<p class="blurb" style="margin-top:18px">The honest conclusion is a limit, not a headline: the binding constraint on comparing simulations is not the physics but whether each source says what it measured.</p>
+</section>
+
+<section aria-labelledby="cls">
+<h2 id="cls">What the documented definitions allow</h2>
+<p class="blurb">Every pair of curves from different simulations, for seven relations at five epochs, is classified from the documented definitions alone: <b>matched</b> (all keys stated and equal), <b>differing</b> (a stated difference, for example 30 versus 50 kpc), <b>unknown</b> (a definition is missing in one of them) or <b>not comparable</b> (a defining quantity differs, for example two different size definitions).</p>
+<figure><div class="chart">{{fClasses}}</div><figcaption>{{fPairs}} usable pairs. Filling undocumented values from the papers moved {{fDifferingPct}} of pairs from “unknown” to “differing”; the share that is fully matched barely moves because simulations rarely use the same aperture.</figcaption></figure>
+</section>
+
+<section aria-labelledby="sens">
+<h2 id="sens">What one definition does to a curve</h2>
+<p class="blurb">The cleanest measurement of a definition is inside a single run that is published under two of them. Nothing else differs, so the offset is purely definitional. {{fSensN}} such pairs form {{fSensG}} groups; population splits (active versus passive) and model variations are excluded.</p>
+<figure><div class="chart">{{fForest}}</div><figcaption>Dot: median shift over the shared x range and epochs, in the relation's y units (dex for logarithmic quantities). Bar: range of the per-epoch medians. Largest local offsets are far bigger than the medians, mostly at the bright or massive end: see the full table.</figcaption></figure>
+<p class="blurb" style="margin-top:14px"><b>Reading it.</b> Stellar-mass apertures move the mass function by a few hundredths of a dex on average but by up to several tenths at the massive end; a halo-mass definition moves the stellar-to-halo relation by 0.02 to 0.10 dex; an SFR timescale moves the main sequence by 0.1 to 0.4 dex at high redshift; cold-gas density thresholds move the gas fraction by 0.3 to 0.6 dex. None of these is a physics difference.</p>
+</section>
+
+<section aria-labelledby="doc">
+<h2 id="doc">How well documented is each simulation?</h2>
+<p class="blurb">For each simulation, the share of definition values the comparison rules need that were stated in the original table or figure (dark), recovered from the source paper (orange), or are still open (hatched).</p>
+<figure><div class="chart">{{fCoverage}}</div><figcaption>{{fUndoc}} values remain open: {{fNotStated}} where the paper was read and does not state it, {{fNotRead}} where it has not yet been read for that key, {{fNoPaper}} where the source is a data release without a paper. The list, with the paper to read for each, is in <a href="https://github.com/ShubhanBhatia42/sim-highline/blob/main/docs/UNDOCUMENTED-DEFINITIONS.md" target="_blank" rel="noopener">UNDOCUMENTED-DEFINITIONS.md</a>.</figcaption></figure>
+</section>
+
+<section aria-labelledby="null">
+<h2 id="null">A result that went away</h2>
+<p class="blurb">Before the definitions were completed from the papers, one stellar-mass-function epoch (z about 6) looked significantly better matched for definition-matched pairs (p = 0.004). After {{fRecRecords}} records were completed it did not (p about 0.1): the apparent detection was produced by undocumented fields. Of {{fTests}} epoch tests, {{fBelow}} fall below p = 0.05 where {{fExpect}} would be expected by chance, and {{fBonf}} survive Bonferroni correction.</p>
+</section>
+
+<section aria-labelledby="led">
+<h2 id="led">Evidence ledger</h2>
+<p class="blurb">Every recovered definition is applied only where the record states none and never overwrites a stated value. Each cites the paper section, a short quote and the SHA-256 of the arXiv source archive that was read ({{fNFills}} rules).</p>
+<div class="tw"><table><thead><tr><th>Source</th><th>Sets</th><th>Records</th><th>Where it says so</th></tr></thead><tbody>{{fLedger}}</tbody></table></div>
+<h3 style="margin-top:26px">Read, and not stated</h3>
+<p class="blurb">These papers were searched for the listed definitions and do not state them, so the values stay unspecified instead of being inferred.</p>
+<ul class="tick">{{fRead}}</ul>
+</section>
+
+<section aria-labelledby="lim">
+<h2 id="lim">Limits</h2>
+<div class="not"><ul class="tick" style="gap:8px">
+<li><b>Digitized records are included.</b> About half of the simulation curves are digitized from figures and are never rankable; the rankable-only run in the data is the robustness check and is much smaller.</li>
+<li><b>Definition labels are coarse.</b> “Unspecified” hides everything, and two labels that read alike may differ in detail.</li>
+<li><b>Within-run pairs are few.</b> The sensitivity catalogue covers {{fSensG}} groups; absence of a measurement is not absence of an effect.</li>
+<li><b>No expert has verified these records yet.</b> A single author confirming a suite's definitions would change the status of its curves.</li>
+</ul></div>
+</section>
+
+<footer>
+<p>sim-highline {{version}} · {{released}} · built and maintained by Shubhan Bhatia. Method, code and data: <a href="https://github.com/ShubhanBhatia42/sim-highline" target="_blank" rel="noopener">github.com/ShubhanBhatia42/sim-highline</a>. Code MIT, data CC BY 4.0.</p>
+<p><a href="../highline.html">App</a> · <a href="about.html">About</a> · <a href="sources.html">Simulations &amp; observations</a> · <a href="use-cases.html">Use cases</a> · <a href="index.html">Product overview</a></p>
+</footer>
+</div>
+</body>
+</html>

@@ -518,7 +518,8 @@
         "imf": "unspecified",
         "haloMassDefinition": "Mvir (release definition)",
         "haloMassHistory": "current",
-        "population": "release-sample"
+        "population": "release-sample",
+        "massDefinition": "integral-of-SFH"
       },
       "provenance": {
         "tier": "catalog-derived",
@@ -528,7 +529,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1023,7 +1027,8 @@
         "imf": "unspecified",
         "haloMassDefinition": "Mvir (release definition)",
         "haloMassHistory": "current",
-        "population": "release-sample"
+        "population": "release-sample",
+        "massDefinition": "integral-of-SFH"
       },
       "provenance": {
         "tier": "catalog-derived",
@@ -1033,7 +1038,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1657,7 +1665,8 @@
         "imf": "unspecified",
         "haloMassDefinition": "Mvir (release definition)",
         "haloMassHistory": "current",
-        "population": "release-sample"
+        "population": "release-sample",
+        "massDefinition": "integral-of-SFH"
       },
       "provenance": {
         "tier": "catalog-derived",
@@ -1667,7 +1676,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -2235,7 +2247,8 @@
         "imf": "unspecified",
         "haloMassDefinition": "Mvir (release definition)",
         "haloMassHistory": "current",
-        "population": "release-sample"
+        "population": "release-sample",
+        "massDefinition": "integral-of-SFH"
       },
       "provenance": {
         "tier": "catalog-derived",
@@ -2245,7 +2258,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -2785,7 +2801,8 @@
         "imf": "unspecified",
         "haloMassDefinition": "Mvir (release definition)",
         "haloMassHistory": "current",
-        "population": "release-sample"
+        "population": "release-sample",
+        "massDefinition": "integral-of-SFH"
       },
       "provenance": {
         "tier": "catalog-derived",
@@ -2795,7 +2812,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -3244,7 +3264,8 @@
         "imf": "unspecified",
         "haloMassDefinition": "Mvir (release definition)",
         "haloMassHistory": "current",
-        "population": "release-sample"
+        "population": "release-sample",
+        "massDefinition": "integral-of-SFH"
       },
       "provenance": {
         "tier": "catalog-derived",
@@ -3254,7 +3275,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -3633,7 +3657,8 @@
         "imf": "unspecified",
         "haloMassDefinition": "Mvir (release definition)",
         "haloMassHistory": "current",
-        "population": "release-sample"
+        "population": "release-sample",
+        "massDefinition": "integral-of-SFH"
       },
       "provenance": {
         "tier": "catalog-derived",
@@ -3643,7 +3668,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
