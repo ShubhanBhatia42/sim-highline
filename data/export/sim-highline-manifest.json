@@ -1,5 +1,5 @@
 {
-  "version": "0.18.0",
+  "version": "0.19.0",
   "released": "2026-10-13",
   "doi": "10.5281/zenodo.23217259",
   "license": {
@@ -68,16 +68,16 @@
   },
   "files": {
     "sim-highline-records.csv": {
-      "sha256": "36e9fdec242651c3c356d1bb053df834c103c13f96ee1389d1a3cd7d910d0fb3",
-      "bytes": 1351487
+      "sha256": "cfbdeeb8e5441f1eb820cd774ad4204037d96ef66a6c7806709bf9af29224f87",
+      "bytes": 1355179
     },
     "sim-highline-points.csv": {
-      "sha256": "acec23296ad1e263dc6bb927e71eda43bd1ca74817ea0e8fca1700680873af02",
+      "sha256": "10e615b589ab13feea66d55da351750e129c97ce4b6a0f813d4ef80fd91bf730",
       "bytes": 2993441
     },
     "sim-highline-records.json": {
-      "sha256": "1dc85aef1a7abbadcd2dead2b29fca094db177113bc4f9dfdf77a9cfb70bf623",
-      "bytes": 4626266
+      "sha256": "b287fc28b49acc90cf8dbaf8ee661677aa02777c49bf0a876239de00d5e25bba",
+      "bytes": 4632901
     },
     "sim-highline-citations.bib": {
       "sha256": "254d6f4adddbba61c7c3b4bbb044bd5403982c377edd0d9cdb022f645540067c",

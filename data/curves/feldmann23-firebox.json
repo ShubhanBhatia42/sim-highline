@@ -1040,7 +1040,9 @@
         "population": "all galaxies",
         "densityFrame": "comoving",
         "sfrIndicator": "SFR averaged over the past 20 Myr",
-        "sfrTimescaleMyr": 20
+        "sfrTimescaleMyr": 20,
+        "sfrIntegrationLimit": "galaxies with M*>10^9.3 Msun",
+        "dustCorrection": "none"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -1054,7 +1056,10 @@
         "sourceMember": "fig11a.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labels 0-10 (label centres) in log10(1+z), converted exactly to z; y: tick labels (minus glyphs drawn as paths, so signs assigned where needed), label centres",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "feldmann23-firebox-sfrd-massive"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1437,7 +1442,9 @@
         "population": "all galaxies",
         "densityFrame": "comoving",
         "sfrIndicator": "SFR averaged over the past 20 Myr",
-        "sfrTimescaleMyr": 20
+        "sfrTimescaleMyr": 20,
+        "sfrIntegrationLimit": "all identified galaxies in the box",
+        "dustCorrection": "none"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -1451,7 +1458,10 @@
         "sourceMember": "fig11a.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labels 0-10 (label centres) in log10(1+z), converted exactly to z; y: tick labels (minus glyphs drawn as paths, so signs assigned where needed), label centres",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "feldmann23-firebox-sfrd-all"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1764,7 +1774,8 @@
           "Om": 0.3089
         },
         "population": "all galaxies",
-        "densityFrame": "comoving"
+        "densityFrame": "comoving",
+        "massDefinition": "stars in galaxies with M*>10^9.3 Msun"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -1778,7 +1789,10 @@
         "sourceMember": "fig11b.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labels 0-10 (label centres) in log10(1+z), converted exactly to z; y: tick labels (minus glyphs drawn as paths, so signs assigned where needed), label centres",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "feldmann23-firebox-smd-massive"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -2159,7 +2173,8 @@
           "Om": 0.3089
         },
         "population": "all galaxies",
-        "densityFrame": "comoving"
+        "densityFrame": "comoving",
+        "massDefinition": "stars in all identified galaxies"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -2173,7 +2188,10 @@
         "sourceMember": "fig11b.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labels 0-10 (label centres) in log10(1+z), converted exactly to z; y: tick labels (minus glyphs drawn as paths, so signs assigned where needed), label centres",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "feldmann23-firebox-smd-all"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

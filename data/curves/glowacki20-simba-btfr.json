@@ -42,7 +42,7 @@
         "warning": "Linear fit of Glowacki et al. 2020 over 100 < V < 300 km/s using the V_2Re (velocity at twice the effective radius); the stellar mass-to-light adjustment to Upsilon*=0.5 follows the SPARC comparison section. Velocity definitions differ between the four fits, so compare like with like. The figure itself (individual galaxies) is not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 68,
           "Om": 0.3
@@ -59,7 +59,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "8f712eee1964c3f68459ea94a04903f2e8fc4e40dc339ea9c641e346957533cc",
         "sourceMember": "main.tex table:btfr_fits (arXiv source, transcribed)",
-        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)"
+        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)",
+        "definitionFills": [
+          "dave20-simba-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -106,7 +109,7 @@
         "warning": "Linear fit of Glowacki et al. 2020 over 100 < V < 300 km/s using the V_max (peak of the rotation curve); the stellar mass-to-light adjustment to Upsilon*=0.5 follows the SPARC comparison section. Velocity definitions differ between the four fits, so compare like with like. The figure itself (individual galaxies) is not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 68,
           "Om": 0.3
@@ -123,7 +126,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "8f712eee1964c3f68459ea94a04903f2e8fc4e40dc339ea9c641e346957533cc",
         "sourceMember": "main.tex table:btfr_fits (arXiv source, transcribed)",
-        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)"
+        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)",
+        "definitionFills": [
+          "dave20-simba-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -170,7 +176,7 @@
         "warning": "Linear fit of Glowacki et al. 2020 over 100 < V < 300 km/s using the V_flat (flat part of the rotation curve); the stellar mass-to-light adjustment to Upsilon*=0.5 follows the SPARC comparison section. Velocity definitions differ between the four fits, so compare like with like. The figure itself (individual galaxies) is not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 68,
           "Om": 0.3
@@ -187,7 +193,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "8f712eee1964c3f68459ea94a04903f2e8fc4e40dc339ea9c641e346957533cc",
         "sourceMember": "main.tex table:btfr_fits (arXiv source, transcribed)",
-        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)"
+        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)",
+        "definitionFills": [
+          "dave20-simba-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -234,7 +243,7 @@
         "warning": "Linear fit of Glowacki et al. 2020 over 100 < V < 300 km/s using the V_polyex (polyex model velocity); the stellar mass-to-light adjustment to Upsilon*=0.5 follows the SPARC comparison section. Velocity definitions differ between the four fits, so compare like with like. The figure itself (individual galaxies) is not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 68,
           "Om": 0.3
@@ -251,7 +260,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "8f712eee1964c3f68459ea94a04903f2e8fc4e40dc339ea9c641e346957533cc",
         "sourceMember": "main.tex table:btfr_fits (arXiv source, transcribed)",
-        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)"
+        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)",
+        "definitionFills": [
+          "dave20-simba-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -298,7 +310,7 @@
         "warning": "Linear fit of Glowacki et al. 2020 over 140 < V < 300 km/s using the V_2Re (velocity at twice the effective radius); the stellar mass-to-light adjustment to Upsilon*=0.5 follows the SPARC comparison section. Velocity definitions differ between the four fits, so compare like with like. The figure itself (individual galaxies) is not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 68,
           "Om": 0.3
@@ -315,7 +327,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "8f712eee1964c3f68459ea94a04903f2e8fc4e40dc339ea9c641e346957533cc",
         "sourceMember": "main.tex table:btfr_fits (arXiv source, transcribed)",
-        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)"
+        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)",
+        "definitionFills": [
+          "dave20-simba-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -362,7 +377,7 @@
         "warning": "Linear fit of Glowacki et al. 2020 over 140 < V < 300 km/s using the V_max (peak of the rotation curve); the stellar mass-to-light adjustment to Upsilon*=0.5 follows the SPARC comparison section. Velocity definitions differ between the four fits, so compare like with like. The figure itself (individual galaxies) is not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 68,
           "Om": 0.3
@@ -379,7 +394,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "8f712eee1964c3f68459ea94a04903f2e8fc4e40dc339ea9c641e346957533cc",
         "sourceMember": "main.tex table:btfr_fits (arXiv source, transcribed)",
-        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)"
+        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)",
+        "definitionFills": [
+          "dave20-simba-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -426,7 +444,7 @@
         "warning": "Linear fit of Glowacki et al. 2020 over 140 < V < 300 km/s using the V_flat (flat part of the rotation curve); the stellar mass-to-light adjustment to Upsilon*=0.5 follows the SPARC comparison section. Velocity definitions differ between the four fits, so compare like with like. The figure itself (individual galaxies) is not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 68,
           "Om": 0.3
@@ -443,7 +461,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "8f712eee1964c3f68459ea94a04903f2e8fc4e40dc339ea9c641e346957533cc",
         "sourceMember": "main.tex table:btfr_fits (arXiv source, transcribed)",
-        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)"
+        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)",
+        "definitionFills": [
+          "dave20-simba-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -490,7 +511,7 @@
         "warning": "Linear fit of Glowacki et al. 2020 over 140 < V < 300 km/s using the V_polyex (polyex model velocity); the stellar mass-to-light adjustment to Upsilon*=0.5 follows the SPARC comparison section. Velocity definitions differ between the four fits, so compare like with like. The figure itself (individual galaxies) is not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 68,
           "Om": 0.3
@@ -507,7 +528,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "8f712eee1964c3f68459ea94a04903f2e8fc4e40dc339ea9c641e346957533cc",
         "sourceMember": "main.tex table:btfr_fits (arXiv source, transcribed)",
-        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)"
+        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)",
+        "definitionFills": [
+          "dave20-simba-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -554,7 +578,7 @@
         "warning": "Linear fit of Glowacki et al. 2020 over 100 < V < 300 km/s using the V_2Re (velocity at twice the effective radius); the stellar mass-to-light adjustment to Upsilon*=0.5 follows the SPARC comparison section. Velocity definitions differ between the four fits, so compare like with like. The figure itself (individual galaxies) is not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 68,
           "Om": 0.3
@@ -571,7 +595,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "8f712eee1964c3f68459ea94a04903f2e8fc4e40dc339ea9c641e346957533cc",
         "sourceMember": "main.tex table:btfr_fits (arXiv source, transcribed)",
-        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)"
+        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)",
+        "definitionFills": [
+          "dave20-simba-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -618,7 +645,7 @@
         "warning": "Linear fit of Glowacki et al. 2020 over 100 < V < 300 km/s using the V_max (peak of the rotation curve); the stellar mass-to-light adjustment to Upsilon*=0.5 follows the SPARC comparison section. Velocity definitions differ between the four fits, so compare like with like. The figure itself (individual galaxies) is not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 68,
           "Om": 0.3
@@ -635,7 +662,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "8f712eee1964c3f68459ea94a04903f2e8fc4e40dc339ea9c641e346957533cc",
         "sourceMember": "main.tex table:btfr_fits (arXiv source, transcribed)",
-        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)"
+        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)",
+        "definitionFills": [
+          "dave20-simba-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -682,7 +712,7 @@
         "warning": "Linear fit of Glowacki et al. 2020 over 100 < V < 300 km/s using the V_flat (flat part of the rotation curve); the stellar mass-to-light adjustment to Upsilon*=0.5 follows the SPARC comparison section. Velocity definitions differ between the four fits, so compare like with like. The figure itself (individual galaxies) is not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 68,
           "Om": 0.3
@@ -699,7 +729,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "8f712eee1964c3f68459ea94a04903f2e8fc4e40dc339ea9c641e346957533cc",
         "sourceMember": "main.tex table:btfr_fits (arXiv source, transcribed)",
-        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)"
+        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)",
+        "definitionFills": [
+          "dave20-simba-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -746,7 +779,7 @@
         "warning": "Linear fit of Glowacki et al. 2020 over 100 < V < 300 km/s using the V_polyex (polyex model velocity); the stellar mass-to-light adjustment to Upsilon*=0.5 follows the SPARC comparison section. Velocity definitions differ between the four fits, so compare like with like. The figure itself (individual galaxies) is not extracted."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 68,
           "Om": 0.3
@@ -763,7 +796,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "8f712eee1964c3f68459ea94a04903f2e8fc4e40dc339ea9c641e346957533cc",
         "sourceMember": "main.tex table:btfr_fits (arXiv source, transcribed)",
-        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)"
+        "extractionMethod": "transcribed from the arXiv LaTeX table; m, b and b200 cross-checked in the script (m log10(200) + b = log10 b200 within 0.03 dex)",
+        "definitionFills": [
+          "dave20-simba-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

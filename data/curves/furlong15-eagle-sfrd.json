@@ -441,7 +441,9 @@
         },
         "densityFrame": "comoving",
         "sfrIndicator": "instantaneous SFR of star-forming gas",
-        "population": "all galaxies"
+        "population": "all galaxies",
+        "sfrIntegrationLimit": "total cosmic SFR density of the box",
+        "dustCorrection": "none"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -455,7 +457,10 @@
         "sourceMember": "madau.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: axis is log10(1+z); numeric labels snapped to ticks in log10(1+z) and converted back to z; y: decade labels 0.001-1.0 snapped to ticks (log10)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "furlong15-eagle-sfrd"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

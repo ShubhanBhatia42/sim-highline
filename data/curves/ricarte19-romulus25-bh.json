@@ -2155,7 +2155,7 @@
       },
       "definitions": {
         "imf": "kroupa01",
-        "massDefinition": "unspecified",
+        "massDefinition": "sum of star particles x 0.6 (Munshi+13 correction)",
         "bhMassMethod": "accreted-excluding-seed",
         "population": "bh-hosts"
       },
@@ -2171,7 +2171,10 @@
         "sourceMember": "massRelations_fedd.pdf (open circles and stars)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labelled decades 10^8-10^12 (bottom frame, minor-tick validated); y: labelled decades 10^5-10^10 (minor-tick validated)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "ricarte19-romulus-mass"
+        ]
       },
       "calibration": "unknown",
       "rankable": false,
@@ -4327,7 +4330,7 @@
       },
       "definitions": {
         "imf": "kroupa01",
-        "massDefinition": "unspecified",
+        "massDefinition": "sum of star particles x 0.6 (Munshi+13 correction)",
         "bhMassMethod": "accreted-excluding-seed",
         "population": "bh-hosts",
         "sigmaDefinition": "maximum stellar velocity dispersion within R_eff"
@@ -4344,7 +4347,10 @@
         "sourceMember": "msigma_2panel.pdf (filled circles)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: one labelled decade (10^2) with the log scale (181.0 pt/dex) fixed by the minor-tick pattern; y: labelled decades 10^5-10^10 (minor-tick validated)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "ricarte19-romulus-mass"
+        ]
       },
       "calibration": "unknown",
       "rankable": false,

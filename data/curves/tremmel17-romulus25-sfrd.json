@@ -125,7 +125,9 @@
         },
         "densityFrame": "comoving",
         "sfrIndicator": "instantaneous SFR",
-        "population": "all galaxies in the volume"
+        "population": "all galaxies in the volume",
+        "sfrIntegrationLimit": "total over the simulation volume",
+        "dustCorrection": "none"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -139,7 +141,10 @@
         "sourceMember": "plots/cosmic_SFH_R25_corrected.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: major ticks z=0..10 assigned in order (verified: positions follow log10(1+z)) and converted exactly to z; y: three major ticks 10^-1, 10^-2, 10^-3 assigned in order down the axis; labels are glyph paths so no text was read",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "tremmel17-romulus-sfrd"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

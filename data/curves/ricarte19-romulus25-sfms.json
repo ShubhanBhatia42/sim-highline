@@ -3255,7 +3255,7 @@
       },
       "definitions": {
         "imf": "kroupa01",
-        "massDefinition": "unspecified",
+        "massDefinition": "sum of star particles x 0.6 (Munshi+13 correction)",
         "sfrTimescaleMyr": 300,
         "sfrStatistic": "per-galaxy",
         "population": "all"
@@ -3272,7 +3272,10 @@
         "sourceMember": "sfms.pdf (circle markers, top row)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: log decades 10^8-10^12 from the bottom-row labels (minor-tick validated); y: labels 10^-4..10^2 shifted onto ticks; asserted",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "ricarte19-romulus-mass"
+        ]
       },
       "calibration": "unknown",
       "rankable": false,
@@ -7660,7 +7663,7 @@
       },
       "definitions": {
         "imf": "kroupa01",
-        "massDefinition": "unspecified",
+        "massDefinition": "sum of star particles x 0.6 (Munshi+13 correction)",
         "sfrTimescaleMyr": 300,
         "sfrStatistic": "per-galaxy",
         "population": "all"
@@ -7677,7 +7680,10 @@
         "sourceMember": "sfms.pdf (circle markers, top row)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: log decades 10^8-10^12 from the bottom-row labels (minor-tick validated); y: labels 10^-4..10^2 shifted onto ticks; asserted",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "ricarte19-romulus-mass"
+        ]
       },
       "calibration": "unknown",
       "rankable": false,
@@ -10345,7 +10351,7 @@
       },
       "definitions": {
         "imf": "kroupa01",
-        "massDefinition": "unspecified",
+        "massDefinition": "sum of star particles x 0.6 (Munshi+13 correction)",
         "sfrTimescaleMyr": 300,
         "sfrStatistic": "per-galaxy",
         "population": "all"
@@ -10362,7 +10368,10 @@
         "sourceMember": "sfms.pdf (circle markers, top row)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: log decades 10^8-10^12 from the bottom-row labels (minor-tick validated); y: labels 10^-4..10^2 shifted onto ticks; asserted",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "ricarte19-romulus-mass"
+        ]
       },
       "calibration": "unknown",
       "rankable": false,

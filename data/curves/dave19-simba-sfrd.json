@@ -7914,14 +7914,16 @@
         "warning": "SFR density of the 100 Mpc/h SIMBA run, read from the vector paths of Dave et al. 2019 (about 1969 vertices of the plotted line). The x axis is cosmic time; each time is converted to redshift with the exact flat LCDM age relation (H0=68, Om=0.3, no radiation), validated against the figure's own redshift axis at z=0, 1, 2, 4 and 6 within 0.2 Gyr. The Madau & Dickinson points and fit overlaid in the figure are not extracted. IMF and the density frame (comoving) are not stated in the figure."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 68,
           "Om": 0.3
         },
         "densityFrame": "unspecified",
         "sfrIndicator": "instantaneous SFR",
-        "population": "all galaxies"
+        "population": "all galaxies",
+        "sfrIntegrationLimit": "all star formation in the volume",
+        "dustCorrection": "none"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -7935,7 +7937,11 @@
         "sourceMember": "madau_t.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: cosmic time labels snapped to ticks; y: positive tick words negated (minus glyphs are separate) and paired with ticks",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "dave20-simba-imf",
+          "dave19-simba-sfrd"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

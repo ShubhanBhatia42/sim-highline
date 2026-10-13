@@ -3,10 +3,10 @@
  "known": 16,
  "errors": 0,
  "warnings": 0,
- "info": 228,
+ "info": 203,
  "byCode": {
   "info:no-cosmology": 186,
-  "info:no-mass-definition": 42,
+  "info:no-mass-definition": 17,
   "known:x-out-of-range": 1,
   "known:y-out-of-range": 6,
   "known:quenched-decreases": 2,
@@ -68,6 +68,7 @@
     "total-subhalo",
     "unspecified",
     "aperture-0.1Rvir",
+    "sum of star particles x 0.6 (Munshi+13 correction)",
     "aperture-30pkpc",
     "aperture-50pkpc",
     "stellar mass within region above 178x mean total matter density"
@@ -84,6 +85,7 @@
     "total-bound-subhalo",
     "caesar-6dfof-galaxy-total",
     "sphere-0.2R200",
+    "sum of star particles x 0.6 (Munshi+13 correction)",
     "integral-of-SFH"
    ]
   },
@@ -93,7 +95,8 @@
    ],
    "massDefinitions": [
     "total-subhalo",
-    "unspecified"
+    "unspecified",
+    "sum of star particles x 0.6 (Munshi+13 correction)"
    ]
   },
   "gsmf": {
@@ -121,12 +124,13 @@
     "log10(mass fraction)"
    ],
    "massDefinitions": [
-    "-",
     "aperture-50pkpc",
     "total-bound-subhalo",
+    "-",
+    "bound-within-Rvir",
+    "aperture-0.2Rvir",
     "aperture-Reff-stars",
     "caesar-6dfof-galaxy-total",
-    "aperture-0.2Rvir",
     "aperture-30pkpc"
    ]
   },
@@ -160,7 +164,9 @@
    ],
    "massDefinitions": [
     "all star particles",
-    "-"
+    "-",
+    "stars in galaxies with M*>10^9.3 Msun",
+    "stars in all identified galaxies"
    ]
   },
   "hi-fraction": {
@@ -227,7 +233,7 @@
     "stars-plus-neutral-gas",
     "baryonic mass as defined in the paper",
     "baryonic, stars plus 1.4 M_HI within r_gal",
-    "unspecified"
+    "baryonic mass within r_star"
    ]
   },
   "stfr": {
@@ -503,30 +509,12 @@
   },
   {
    "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.colibre-m5--l025.mzr.z0",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "COLIBRE",
-   "msg": "massDefinition missing"
-  },
-  {
-   "sev": "info",
    "code": "no-cosmology",
    "id": "sharda26.colibre-m5--l025.mzr.z1",
    "file": "colibre-mzr.json",
    "relation": "mzr",
    "source": "COLIBRE",
    "msg": "definitions.cosmology missing"
-  },
-  {
-   "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.colibre-m5--l025.mzr.z1",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "COLIBRE",
-   "msg": "massDefinition missing"
   },
   {
    "sev": "info",
@@ -539,30 +527,12 @@
   },
   {
    "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.colibre-m5--l025.mzr.z3",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "COLIBRE",
-   "msg": "massDefinition missing"
-  },
-  {
-   "sev": "info",
    "code": "no-cosmology",
    "id": "sharda26.colibre-m5--l025.mzr.z5",
    "file": "colibre-mzr.json",
    "relation": "mzr",
    "source": "COLIBRE",
    "msg": "definitions.cosmology missing"
-  },
-  {
-   "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.colibre-m5--l025.mzr.z5",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "COLIBRE",
-   "msg": "massDefinition missing"
   },
   {
    "sev": "info",
@@ -575,30 +545,12 @@
   },
   {
    "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.colibre-m5--l025.mzr.z8",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "COLIBRE",
-   "msg": "massDefinition missing"
-  },
-  {
-   "sev": "info",
    "code": "no-cosmology",
    "id": "sharda26.colibre-m5--l025.mzr.z10",
    "file": "colibre-mzr.json",
    "relation": "mzr",
    "source": "COLIBRE",
    "msg": "definitions.cosmology missing"
-  },
-  {
-   "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.colibre-m5--l025.mzr.z10",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "COLIBRE",
-   "msg": "massDefinition missing"
   },
   {
    "sev": "info",
@@ -611,30 +563,12 @@
   },
   {
    "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.colibre-m6.mzr.z0",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "COLIBRE",
-   "msg": "massDefinition missing"
-  },
-  {
-   "sev": "info",
    "code": "no-cosmology",
    "id": "sharda26.colibre-m6.mzr.z1",
    "file": "colibre-mzr.json",
    "relation": "mzr",
    "source": "COLIBRE",
    "msg": "definitions.cosmology missing"
-  },
-  {
-   "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.colibre-m6.mzr.z1",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "COLIBRE",
-   "msg": "massDefinition missing"
   },
   {
    "sev": "info",
@@ -647,30 +581,12 @@
   },
   {
    "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.colibre-m6.mzr.z3",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "COLIBRE",
-   "msg": "massDefinition missing"
-  },
-  {
-   "sev": "info",
    "code": "no-cosmology",
    "id": "sharda26.colibre-m6.mzr.z5",
    "file": "colibre-mzr.json",
    "relation": "mzr",
    "source": "COLIBRE",
    "msg": "definitions.cosmology missing"
-  },
-  {
-   "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.colibre-m6.mzr.z5",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "COLIBRE",
-   "msg": "massDefinition missing"
   },
   {
    "sev": "info",
@@ -683,30 +599,12 @@
   },
   {
    "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.colibre-m6.mzr.z8",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "COLIBRE",
-   "msg": "massDefinition missing"
-  },
-  {
-   "sev": "info",
    "code": "no-cosmology",
    "id": "sharda26.colibre-m6.mzr.z10",
    "file": "colibre-mzr.json",
    "relation": "mzr",
    "source": "COLIBRE",
    "msg": "definitions.cosmology missing"
-  },
-  {
-   "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.colibre-m6.mzr.z10",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "COLIBRE",
-   "msg": "massDefinition missing"
   },
   {
    "sev": "info",
@@ -719,30 +617,12 @@
   },
   {
    "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.colibre-m7.mzr.z0",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "COLIBRE",
-   "msg": "massDefinition missing"
-  },
-  {
-   "sev": "info",
    "code": "no-cosmology",
    "id": "sharda26.colibre-m7.mzr.z1",
    "file": "colibre-mzr.json",
    "relation": "mzr",
    "source": "COLIBRE",
    "msg": "definitions.cosmology missing"
-  },
-  {
-   "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.colibre-m7.mzr.z1",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "COLIBRE",
-   "msg": "massDefinition missing"
   },
   {
    "sev": "info",
@@ -755,30 +635,12 @@
   },
   {
    "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.colibre-m7.mzr.z3",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "COLIBRE",
-   "msg": "massDefinition missing"
-  },
-  {
-   "sev": "info",
    "code": "no-cosmology",
    "id": "sharda26.colibre-m7.mzr.z5",
    "file": "colibre-mzr.json",
    "relation": "mzr",
    "source": "COLIBRE",
    "msg": "definitions.cosmology missing"
-  },
-  {
-   "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.colibre-m7.mzr.z5",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "COLIBRE",
-   "msg": "massDefinition missing"
   },
   {
    "sev": "info",
@@ -791,30 +653,12 @@
   },
   {
    "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.colibre-m7.mzr.z8",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "COLIBRE",
-   "msg": "massDefinition missing"
-  },
-  {
-   "sev": "info",
    "code": "no-cosmology",
    "id": "sharda26.colibre-m7.mzr.z10",
    "file": "colibre-mzr.json",
    "relation": "mzr",
    "source": "COLIBRE",
    "msg": "definitions.cosmology missing"
-  },
-  {
-   "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.colibre-m7.mzr.z10",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "COLIBRE",
-   "msg": "massDefinition missing"
   },
   {
    "sev": "info",
@@ -1313,30 +1157,12 @@
   },
   {
    "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.thesan-zoom-best-fit-relation.mzr.z3",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "THESAN-zoom",
-   "msg": "massDefinition missing"
-  },
-  {
-   "sev": "info",
    "code": "no-cosmology",
    "id": "sharda26.thesan-zoom-best-fit-relation.mzr.z5",
    "file": "colibre-mzr.json",
    "relation": "mzr",
    "source": "THESAN-zoom",
    "msg": "definitions.cosmology missing"
-  },
-  {
-   "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.thesan-zoom-best-fit-relation.mzr.z5",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "THESAN-zoom",
-   "msg": "massDefinition missing"
   },
   {
    "sev": "info",
@@ -1349,30 +1175,12 @@
   },
   {
    "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.thesan-zoom-best-fit-relation.mzr.z8",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "THESAN-zoom",
-   "msg": "massDefinition missing"
-  },
-  {
-   "sev": "info",
    "code": "no-cosmology",
    "id": "sharda26.thesan-zoom-best-fit-relation.mzr.z10",
    "file": "colibre-mzr.json",
    "relation": "mzr",
    "source": "THESAN-zoom",
    "msg": "definitions.cosmology missing"
-  },
-  {
-   "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.thesan-zoom-best-fit-relation.mzr.z10",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "THESAN-zoom",
-   "msg": "massDefinition missing"
   },
   {
    "sev": "info",
@@ -1385,15 +1193,6 @@
   },
   {
    "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.fire-2-high-z-zooms--marszewski-et-al--2024.mzr.z5",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "FIRE-2",
-   "msg": "massDefinition missing"
-  },
-  {
-   "sev": "info",
    "code": "no-cosmology",
    "id": "sharda26.fire-2-high-z-zooms--marszewski-et-al--2024.mzr.z8",
    "file": "colibre-mzr.json",
@@ -1403,30 +1202,12 @@
   },
   {
    "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.fire-2-high-z-zooms--marszewski-et-al--2024.mzr.z8",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "FIRE-2",
-   "msg": "massDefinition missing"
-  },
-  {
-   "sev": "info",
    "code": "no-cosmology",
    "id": "sharda26.fire-2-high-z-zooms--marszewski-et-al--2024.mzr.z10",
    "file": "colibre-mzr.json",
    "relation": "mzr",
    "source": "FIRE-2",
    "msg": "definitions.cosmology missing"
-  },
-  {
-   "sev": "info",
-   "code": "no-mass-definition",
-   "id": "sharda26.fire-2-high-z-zooms--marszewski-et-al--2024.mzr.z10",
-   "file": "colibre-mzr.json",
-   "relation": "mzr",
-   "source": "FIRE-2",
-   "msg": "massDefinition missing"
   },
   {
    "sev": "info",

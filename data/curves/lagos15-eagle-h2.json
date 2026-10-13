@@ -79,7 +79,8 @@
         "population": "galaxies-above-detection-threshold",
         "gasPhase": "H2",
         "gasMethod": "GK11",
-        "gasStatistic": "median"
+        "gasStatistic": "median",
+        "gasDefinition": "H2 within 30 pkpc"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -93,7 +94,10 @@
         "sourceMember": "EAGLE_H2MstellarScaling_COLDGASS2.eps (converted to PDF)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks (frame from the long axis strokes)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "lagos15-eagle-h2-def"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -165,7 +169,8 @@
         "population": "galaxies-above-detection-threshold",
         "gasPhase": "H2",
         "gasMethod": "GK11",
-        "gasStatistic": "median"
+        "gasStatistic": "median",
+        "gasDefinition": "H2 within 30 pkpc"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -179,7 +184,10 @@
         "sourceMember": "EAGLE_H2MstellarScaling_COLDGASS2.eps (converted to PDF)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks (frame from the long axis strokes)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "lagos15-eagle-h2-def"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -263,7 +271,8 @@
         "population": "galaxies-above-detection-threshold",
         "gasPhase": "H2",
         "gasMethod": "K13",
-        "gasStatistic": "median"
+        "gasStatistic": "median",
+        "gasDefinition": "H2 within 30 pkpc"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -277,7 +286,10 @@
         "sourceMember": "EAGLE_H2MstellarScaling_COLDGASS2.eps (converted to PDF)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks (frame from the long axis strokes)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "lagos15-eagle-h2-def"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

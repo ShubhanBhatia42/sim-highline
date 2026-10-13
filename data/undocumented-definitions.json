@@ -1,22 +1,13 @@
 {
  "summary": {
   "simulationRecords": 1342,
-  "recordsWithRecoveredDefinition": 316,
-  "undocumentedValues": 526,
-  "sourceReadNotStated": 339,
-  "sourceNotYetRead": 171,
+  "recordsWithRecoveredDefinition": 391,
+  "undocumentedValues": 432,
+  "sourceReadNotStated": 416,
+  "sourceNotYetRead": 0,
   "noPaperToRead": 16
  },
  "groups": [
-  {
-   "source": "COLIBRE",
-   "relation": "mzr",
-   "key": "massDefinition",
-   "arxiv": "2606.25995",
-   "citation": "Sharda et al. 2026, COLIBRE gas-phase MZR (data repository)",
-   "records": 18,
-   "status": "source not yet read for this key"
-  },
   {
    "source": "Magneticum Pathfinder",
    "relation": "jstar",
@@ -123,7 +114,7 @@
    "arxiv": "2606.25995",
    "citation": "Sharda et al. 2026, COLIBRE gas-phase MZR (data repository)",
    "records": 9,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "Illustris",
@@ -231,7 +222,7 @@
    "arxiv": "1704.00954",
    "citation": "Wilkins et al. 2017, MNRAS 469, 2517 (arXiv:1704.00954)",
    "records": 6,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "BlueTides",
@@ -258,7 +249,7 @@
    "arxiv": "1704.00954",
    "citation": "Wilkins et al. 2017, MNRAS 469, 2517 (arXiv:1704.00954)",
    "records": 6,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "BlueTides",
@@ -285,7 +276,7 @@
    "arxiv": "2205.15325",
    "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), stellar mass function at z=0",
    "records": 6,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "Horizon-AGN",
@@ -333,15 +324,6 @@
    "status": "source read, not stated"
   },
   {
-   "source": "SIMBA",
-   "relation": "bh",
-   "key": "imf",
-   "arxiv": "2006.10094",
-   "citation": "Habouzit et al. 2021, MNRAS 503, 1940 (arXiv:2006.10094), median MBH-M* relation of all si",
-   "records": 6,
-   "status": "source read, not stated"
-  },
-  {
    "source": "SPHINX20",
    "relation": "size",
    "key": "imf",
@@ -357,7 +339,7 @@
    "arxiv": "2111.01160",
    "citation": "Bird et al. 2022, MNRAS 512, 3703",
    "records": 5,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "ASTRID",
@@ -366,7 +348,7 @@
    "arxiv": "2111.01160",
    "citation": "Bird et al. 2022, MNRAS 512, 3703",
    "records": 5,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "EAGLE",
@@ -429,7 +411,7 @@
    "arxiv": "1704.00954",
    "citation": "Wilkins et al. 2017, MNRAS 469, 2517 (arXiv:1704.00954)",
    "records": 4,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "BlueTides",
@@ -456,25 +438,7 @@
    "arxiv": "1501.01311",
    "citation": "Crain et al. 2015, MNRAS 450, 1937 (arXiv:1501.01311), evolution of the comoving stellar m",
    "records": 4,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "NewHorizon",
-   "relation": "mzr",
-   "key": "metallicityCalibration",
-   "arxiv": "2009.10578",
-   "citation": "Dubois et al. 2021, A&A 651, A109 (arXiv:2009.10578), cold-gas oxygen abundance versus ste",
-   "records": 4,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "THESAN-zoom",
-   "relation": "mzr",
-   "key": "massDefinition",
-   "arxiv": "2606.25995",
-   "citation": "Sharda et al. 2026, COLIBRE gas-phase MZR (data repository)",
-   "records": 4,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "BlueTides",
@@ -483,61 +447,7 @@
    "arxiv": "1801.04951",
    "citation": "Huang, Di Matteo et al. 2018, BlueTides simulation: establishing black hole-galaxy relatio",
    "records": 3,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "COLIBRE",
-   "relation": "sfms",
-   "key": "imf",
-   "arxiv": "2608.19007",
-   "citation": "Chaikin et al. 2026, COLIBRE progenitors of z>10 JWST galaxies (arXiv:2608.19007), referen",
-   "records": 3,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "COLIBRE",
-   "relation": "sfms",
-   "key": "sfrTimescaleMyr",
-   "arxiv": "2608.19007",
-   "citation": "Chaikin et al. 2026, COLIBRE progenitors of z>10 JWST galaxies (arXiv:2608.19007), referen",
-   "records": 3,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "COLIBRE",
-   "relation": "sfms",
-   "key": "sfrStatistic",
-   "arxiv": "2608.19007",
-   "citation": "Chaikin et al. 2026, COLIBRE progenitors of z>10 JWST galaxies (arXiv:2608.19007), referen",
-   "records": 3,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "COLIBRE",
-   "relation": "shmr",
-   "key": "haloMassDefinition",
-   "arxiv": "2608.19007",
-   "citation": "Chaikin et al. 2026, COLIBRE progenitors of z>10 JWST galaxies (arXiv:2608.19007), referen",
-   "records": 3,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "COLIBRE",
-   "relation": "shmr",
-   "key": "haloMassHistory",
-   "arxiv": "2608.19007",
-   "citation": "Chaikin et al. 2026, COLIBRE progenitors of z>10 JWST galaxies (arXiv:2608.19007), referen",
-   "records": 3,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "COLIBRE",
-   "relation": "shmr",
-   "key": "imf",
-   "arxiv": "2608.19007",
-   "citation": "Chaikin et al. 2026, COLIBRE progenitors of z>10 JWST galaxies (arXiv:2608.19007), referen",
-   "records": 3,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "COLIBRE",
@@ -546,7 +456,7 @@
    "arxiv": "2508.21126",
    "citation": "Schaye et al. 2026, MNRAS 548, stag375 (arXiv:2508.21126), COLIBRE overview, median z=0 st",
    "records": 3,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "COLIBRE",
@@ -555,88 +465,7 @@
    "arxiv": "2508.21126",
    "citation": "Schaye et al. 2026, MNRAS 548, stag375 (arXiv:2508.21126), COLIBRE overview, median z=0 st",
    "records": 3,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "EAGLE",
-   "relation": "h2-fraction",
-   "key": "gasDefinition",
-   "arxiv": "1503.04807",
-   "citation": "Lagos et al. 2015, MNRAS 452, 3815 (arXiv:1503.04807), H2 fraction versus stellar mass com",
-   "records": 3,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "FIRE-2",
-   "relation": "mzr",
-   "key": "massDefinition",
-   "arxiv": "2606.25995",
-   "citation": "Sharda et al. 2026, COLIBRE gas-phase MZR (data repository)",
-   "records": 3,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "FLARES",
-   "relation": "sfrd",
-   "key": "sfrIntegrationLimit",
-   "arxiv": "2008.06057",
-   "citation": "Vijayan et al. 2021, MNRAS (doi 10.1093/mnras/staa3715; arXiv:2008.06057), composite star ",
-   "records": 3,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "Romulus25",
-   "relation": "sfms",
-   "key": "massDefinition",
-   "arxiv": "1904.10116",
-   "citation": "Ricarte et al. 2019, MNRAS 489, 802, SFMS figure (sfms; arXiv source numbering), Romulus25",
-   "records": 3,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "EAGLE",
-   "relation": "hi-fraction",
-   "key": "imf",
-   "arxiv": "2002.07226",
-   "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), gas fraction scaling relations at z=0",
-   "records": 2,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "EAGLE",
-   "relation": "h2-fraction",
-   "key": "imf",
-   "arxiv": "2002.07226",
-   "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), gas fraction scaling relations at z=0",
-   "records": 2,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "FIREbox",
-   "relation": "sfrd",
-   "key": "sfrIntegrationLimit",
-   "arxiv": "2205.15325",
-   "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), cosmic star formation history",
-   "records": 2,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "FIREbox",
-   "relation": "sfrd",
-   "key": "dustCorrection",
-   "arxiv": "2205.15325",
-   "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), cosmic star formation history",
-   "records": 2,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "FIREbox",
-   "relation": "smd",
-   "key": "massDefinition",
-   "arxiv": "2205.15325",
-   "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), cosmic stellar growth history",
-   "records": 2,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "IllustrisTNG",
@@ -645,7 +474,7 @@
    "arxiv": "1902.10714",
    "citation": "Diemer et al. 2019, MNRAS 487, 1529, HI and H2 gas fractions vs stellar mass (arXiv source",
    "records": 2,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "IllustrisTNG",
@@ -654,7 +483,7 @@
    "arxiv": "1902.10714",
    "citation": "Diemer et al. 2019, MNRAS 487, 1529, HI and H2 gas fractions vs stellar mass (arXiv source",
    "records": 2,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "IllustrisTNG",
@@ -663,7 +492,7 @@
    "arxiv": "1902.10714",
    "citation": "Diemer et al. 2019, MNRAS 487, 1529, HI and H2 gas fractions vs stellar mass (arXiv source",
    "records": 2,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "IllustrisTNG",
@@ -672,34 +501,7 @@
    "arxiv": "1902.10714",
    "citation": "Diemer et al. 2019, MNRAS 487, 1529, HI and H2 gas fractions vs stellar mass (arXiv source",
    "records": 2,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "ASTRID",
-   "relation": "sfrd",
-   "key": "imf",
-   "arxiv": "2111.01160",
-   "citation": "Bird et al. 2022, MNRAS 512, 3703 (arXiv:2111.01160), star formation rate density over tim",
-   "records": 1,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "ASTRID",
-   "relation": "sfrd",
-   "key": "sfrIntegrationLimit",
-   "arxiv": "2111.01160",
-   "citation": "Bird et al. 2022, MNRAS 512, 3703 (arXiv:2111.01160), star formation rate density over tim",
-   "records": 1,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "ASTRID",
-   "relation": "sfrd",
-   "key": "dustCorrection",
-   "arxiv": "2111.01160",
-   "citation": "Bird et al. 2022, MNRAS 512, 3703 (arXiv:2111.01160), star formation rate density over tim",
-   "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "EAGLE",
@@ -717,25 +519,7 @@
    "arxiv": "2002.07226",
    "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), stellar mass function at z=0",
    "records": 1,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "EAGLE",
-   "relation": "gsmf",
-   "key": "imf",
-   "arxiv": "2002.07226",
-   "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), stellar mass function at z=0",
-   "records": 1,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "EAGLE",
-   "relation": "ssfr",
-   "key": "imf",
-   "arxiv": "2002.07226",
-   "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), specific star formation rate versus s",
-   "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "EAGLE",
@@ -744,25 +528,7 @@
    "arxiv": "2002.07226",
    "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), specific star formation rate versus s",
    "records": 1,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "EAGLE",
-   "relation": "sfrd",
-   "key": "sfrIntegrationLimit",
-   "arxiv": "1410.3485",
-   "citation": "Furlong et al. 2015, MNRAS 450, 4486 (arXiv:1410.3485), evolution of the cosmic star forma",
-   "records": 1,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "EAGLE",
-   "relation": "sfrd",
-   "key": "dustCorrection",
-   "arxiv": "1410.3485",
-   "citation": "Furlong et al. 2015, MNRAS 450, 4486 (arXiv:1410.3485), evolution of the cosmic star forma",
-   "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "FIREbox",
@@ -771,7 +537,7 @@
    "arxiv": "2606.25995",
    "citation": "Sharda et al. 2026, COLIBRE gas-phase MZR (data repository)",
    "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "Horizon-AGN",
@@ -780,7 +546,7 @@
    "arxiv": "1605.09379",
    "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), cosmic star formation history",
    "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "Horizon-AGN",
@@ -789,7 +555,7 @@
    "arxiv": "1605.09379",
    "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), cosmic star formation history",
    "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "Horizon-AGN",
@@ -798,7 +564,7 @@
    "arxiv": "1605.09379",
    "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), cosmic star formation history",
    "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "Horizon-AGN",
@@ -807,34 +573,7 @@
    "arxiv": "1605.09379",
    "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), cosmic star formation history",
    "records": 1,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "Illustris",
-   "relation": "sfrd",
-   "key": "sfrIntegrationLimit",
-   "arxiv": "1405.2921",
-   "citation": "Vogelsberger et al. 2014, MNRAS 444, 1518 (arXiv:1405.2921), cosmic star formation rate de",
-   "records": 1,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "Illustris",
-   "relation": "sfrd",
-   "key": "dustCorrection",
-   "arxiv": "1405.2921",
-   "citation": "Vogelsberger et al. 2014, MNRAS 444, 1518 (arXiv:1405.2921), cosmic star formation rate de",
-   "records": 1,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "Illustris",
-   "relation": "btfr",
-   "key": "massDefinition",
-   "arxiv": "1405.2921",
-   "citation": "Vogelsberger et al. 2014, MNRAS 444, 1518 (arXiv:1405.2921), baryonic Tully-Fisher relatio",
-   "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "IllustrisTNG",
@@ -843,7 +582,7 @@
    "arxiv": "2002.07226",
    "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), gas fraction scaling relations at z=0",
    "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "IllustrisTNG",
@@ -852,7 +591,7 @@
    "arxiv": "2002.07226",
    "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), gas fraction scaling relations at z=0",
    "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "IllustrisTNG",
@@ -861,7 +600,7 @@
    "arxiv": "2002.07226",
    "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), gas fraction scaling relations at z=0",
    "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "IllustrisTNG",
@@ -870,7 +609,7 @@
    "arxiv": "2002.07226",
    "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), gas fraction scaling relations at z=0",
    "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "IllustrisTNG",
@@ -879,7 +618,7 @@
    "arxiv": "2002.07226",
    "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), stellar mass function at z=0",
    "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "IllustrisTNG",
@@ -888,7 +627,7 @@
    "arxiv": "2002.07226",
    "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), stellar mass function at z=0",
    "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "IllustrisTNG",
@@ -897,7 +636,7 @@
    "arxiv": "2002.07226",
    "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), stellar mass function at z=0",
    "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "IllustrisTNG",
@@ -906,7 +645,7 @@
    "arxiv": "2002.07226",
    "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), specific star formation rate versus s",
    "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "IllustrisTNG",
@@ -915,7 +654,7 @@
    "arxiv": "2002.07226",
    "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), specific star formation rate versus s",
    "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "IllustrisTNG",
@@ -924,7 +663,7 @@
    "arxiv": "2002.07226",
    "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), specific star formation rate versus s",
    "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "NewHorizon",
@@ -933,25 +672,7 @@
    "arxiv": "2009.10578",
    "citation": "Dubois et al. 2021, A&A 651, A109 (arXiv:2009.10578), cosmic SFR density",
    "records": 1,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "NewHorizon",
-   "relation": "sfrd",
-   "key": "sfrIntegrationLimit",
-   "arxiv": "2009.10578",
-   "citation": "Dubois et al. 2021, A&A 651, A109 (arXiv:2009.10578), cosmic SFR density",
-   "records": 1,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "NewHorizon",
-   "relation": "sfrd",
-   "key": "dustCorrection",
-   "arxiv": "2009.10578",
-   "citation": "Dubois et al. 2021, A&A 651, A109 (arXiv:2009.10578), cosmic SFR density",
-   "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "NewHorizon",
@@ -960,7 +681,7 @@
    "arxiv": "2009.10578",
    "citation": "Dubois et al. 2021, A&A 651, A109 (arXiv:2009.10578), cosmic stellar mass density",
    "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "NewHorizon",
@@ -970,33 +691,6 @@
    "citation": "Dubois et al. 2021, A&A 651, A109 (arXiv:2009.10578), cosmic stellar mass density",
    "records": 1,
    "status": "source read, not stated"
-  },
-  {
-   "source": "Romulus25",
-   "relation": "bh",
-   "key": "massDefinition",
-   "arxiv": "1904.10116",
-   "citation": "Ricarte et al. 2019, MNRAS 489, 802, SMBH mass vs stellar mass (massRelations_fedd; arXiv ",
-   "records": 1,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "Romulus25",
-   "relation": "sfrd",
-   "key": "sfrIntegrationLimit",
-   "arxiv": "1607.02151",
-   "citation": "Tremmel et al. 2017, MNRAS 470, 1121 (arXiv:1607.02151), cosmic star formation history of ",
-   "records": 1,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "Romulus25",
-   "relation": "sfrd",
-   "key": "dustCorrection",
-   "arxiv": "1607.02151",
-   "citation": "Tremmel et al. 2017, MNRAS 470, 1121 (arXiv:1607.02151), cosmic star formation history of ",
-   "records": 1,
-   "status": "source not yet read for this key"
   },
   {
    "source": "SIMBA",
@@ -1009,75 +703,12 @@
   },
   {
    "source": "SIMBA",
-   "relation": "sfrd",
-   "key": "imf",
-   "arxiv": "1901.10203",
-   "citation": "Dave et al. 2019, MNRAS 486, 2827 (arXiv:1901.10203), star formation rate density versus c",
-   "records": 1,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "SIMBA",
-   "relation": "sfrd",
-   "key": "sfrIntegrationLimit",
-   "arxiv": "1901.10203",
-   "citation": "Dave et al. 2019, MNRAS 486, 2827 (arXiv:1901.10203), star formation rate density versus c",
-   "records": 1,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "SIMBA",
-   "relation": "sfrd",
-   "key": "dustCorrection",
-   "arxiv": "1901.10203",
-   "citation": "Dave et al. 2019, MNRAS 486, 2827 (arXiv:1901.10203), star formation rate density versus c",
-   "records": 1,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "SIMBA",
-   "relation": "hi-fraction",
-   "key": "imf",
-   "arxiv": "2002.07226",
-   "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), gas fraction scaling relations at z=0",
-   "records": 1,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "SIMBA",
-   "relation": "h2-fraction",
-   "key": "imf",
-   "arxiv": "2002.07226",
-   "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), gas fraction scaling relations at z=0",
-   "records": 1,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "SIMBA",
    "relation": "gsmf",
    "key": "densityFrame",
    "arxiv": "2002.07226",
    "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), stellar mass function at z=0",
    "records": 1,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "SIMBA",
-   "relation": "gsmf",
-   "key": "imf",
-   "arxiv": "2002.07226",
-   "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), stellar mass function at z=0",
-   "records": 1,
-   "status": "source not yet read for this key"
-  },
-  {
-   "source": "SIMBA",
-   "relation": "ssfr",
-   "key": "imf",
-   "arxiv": "2002.07226",
-   "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), specific star formation rate versus s",
-   "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   },
   {
    "source": "SIMBA",
@@ -1086,7 +717,7 @@
    "arxiv": "2002.07226",
    "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), specific star formation rate versus s",
    "records": 1,
-   "status": "source not yet read for this key"
+   "status": "source read, not stated"
   }
  ]
 }
