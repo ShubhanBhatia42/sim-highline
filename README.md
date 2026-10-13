@@ -37,8 +37,10 @@ Listing a suite in the source rail does not imply that a curve has been ingested
 - Spread: how much simulations disagree with each other, for every relation and epoch (at least three simulations that share the relation's hard definitions). A small spread is not accuracy.
 - My run: paste or load your own curve, declare its definitions, and get a ranked, definition-aware comparison with every published curve at the epoch; downloadable as CSV. Stays in the browser.
 - Search: press `/` or Ctrl/Cmd+K to jump to any relation, simulation, paper, view or action.
+- Figure pack: Get data > Figure > Copy methods text / Download figure pack: a paragraph and a markdown pack (caption, definitions table, BibTeX) describing exactly the curves plotted, with their definitions, tiers and caveats against the anchor.
+- Notes: each relation lists the measured effect of changing a definition inside single runs (for example Illustris stellar mass within 2 R_half versus total subhalo).
 
-The analysis behind the Spread view is in [`docs/ANALYSIS-definition-budget.md`](docs/ANALYSIS-definition-budget.md) (`scripts/analyze_definition_budget.py`): do simulations that share documented definitions agree better than those that do not? On the present records the answer is that documentation, not physics, is the binding constraint: only 4% of cross-suite pairs have fully matched documented definitions.
+The analysis behind the Spread view is in [`docs/ANALYSIS-definition-budget.md`](docs/ANALYSIS-definition-budget.md) (`scripts/analyze_definition_budget.py`): do simulations that share documented definitions agree better than those that do not? On the present records the answer is that documentation, not physics, is the binding constraint: only 4% of cross-suite pairs have fully matched documented definitions, and 209 records were completed from the source papers (`data/definition-fills.json`, each fill with section, quote and archive checksum) before the analysis was rerun; the one nominally significant epoch before that completion disappeared. The same document lists definition effects measured inside single runs.
 
 ## Expanding coverage on your machine
 
@@ -125,6 +127,17 @@ print(sim_highline.bibtex(sel))
 ```
 
 Units are log10, physical and h-free as published; compare curves only where `x_definition`, `y_definition`, `mass_definition`, `population` and the other definition columns agree.
+
+### Compare your own curve in Python
+
+```python
+import sim_highline
+df = sim_highline.load()
+out = sim_highline.compare_run(x, y, "gsmf", z=0.1, sigma=err,
+        definitions={"imf": "chabrier03", "massDefinition": "aperture-50pkpc", "densityFrame": "comoving"}, df=df)
+```
+
+One row per published curve at that epoch: definition verdict and reasons (the same rules as the website, exported in `sim-highline-rules.json` and checked against the JavaScript by a parity test), and the median, mean and rms offset of your curve in the relation's y units. Undeclared definitions can never be called comparable.
 
 ## Install and cite
 

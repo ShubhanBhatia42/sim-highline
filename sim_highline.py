@@ -6,11 +6,14 @@
     one = sim_highline.nearest_epoch(sel, z=1.5)               # one record per source/run, nearest published epoch (nothing is interpolated)
     x, y, lo, hi = sim_highline.curve(df, "schaye15.eagle-refl0100n1504.sfms.z1")
     print(sim_highline.bibtex(sel))
+    me = sim_highline.compare_run(x, y, "gsmf", z=0.1, definitions={"imf": "chabrier03", "massDefinition": "aperture-50pkpc", "densityFrame": "comoving"})
+    # one row per published curve at that epoch: definition verdict (same rules as the website) and median offset of your run
 
 Units are log10, physical and h-free as published; x_unit, y_unit, x_definition, y_definition and the definition columns
 (imf, mass_definition, population, ...) say exactly what each curve is. Compare curves only when those agree.
 """
 import json
+import math
 import re
 from pathlib import Path
 
@@ -109,3 +112,174 @@ def bibtex(df):
         if key in keys:
             out.append(entry)
     return "\n\n".join(out) + "\n"
+
+
+def rules(path=None):
+    """The comparability rules the website uses (hard and soft definition keys per relation), generated from compare.js."""
+    base = _base(path)
+    if "://" in base:
+        import urllib.request
+        with urllib.request.urlopen(f"{base}/sim-highline-rules.json") as f:
+            return json.load(f)
+    return json.loads((Path(base) / "sim-highline-rules.json").read_text())
+
+
+def _unset(v):
+    return v is None or v in ("unspecified", "heterogeneous")
+
+
+def _same(a, b):
+    return json.dumps(a) == json.dumps(b)
+
+
+def compatible(a, b, rule_table=None):
+    """Definition compatibility of two records (dicts with relation, source, rankable, definitions, epoch), identical to the website.
+    Returns {"verdict": "comparable" | "comparable-with-caveats" | "not-comparable", "blockers": [...], "caveats": [...]}."""
+    R = rule_table or rules()
+    rule = R["rules"].get(a["relation"], {"hard": [], "soft": []})
+    blockers, caveats = [], []
+    if a["relation"] != b["relation"]:
+        return {"verdict": "not-comparable", "blockers": ["different relations"], "caveats": caveats}
+    for r in (a, b):
+        if not r.get("rankable"):
+            blockers.append(f"{r['source']}: {(r.get('selection') or {}).get('warning') or 'record marked context only'}")
+    da, db = a.get("definitions") or {}, b.get("definitions") or {}
+    if not a.get("definitions") or not b.get("definitions"):
+        blockers.append("structured definitions missing")
+    for key in rule["hard"]:
+        if _unset(da.get(key)) or _unset(db.get(key)):
+            blockers.append(f"{key} not documented")
+        elif not _same(da.get(key), db.get(key)):
+            blockers.append(f"{key}: {da.get(key)} vs {db.get(key)}")
+    imf = R["imfDex"]
+    for key in rule["soft"]:
+        if key == "imf" and da.get("imf") in imf and db.get("imf") in imf:
+            if da["imf"] != db["imf"]:
+                caveats.append(f"imf: {da['imf']} vs {db['imf']}: {abs(imf[da['imf']] - imf[db['imf']]):.3f} dex in stellar mass if not converted")
+            continue
+        if key == "cosmology":
+            ca, cb = da.get("cosmology"), db.get("cosmology")
+            if ca and cb and not _same(ca, cb):
+                h = lambda c: c.get("H0") if isinstance(c, dict) else None
+                ra = math.log10(h(ca) / h(cb)) if h(ca) and h(cb) else float("nan")
+                caveats.append(f"H0 {h(ca)} vs {h(cb)}: up to {abs((3 if a['relation'] == 'gsmf' else 2) * ra):.3f} dex if not converted")
+            continue
+        if _unset(da.get(key)) or _unset(db.get(key)):
+            caveats.append(f"{key} not documented for {a['source'] if _unset(da.get(key)) else b['source']}")
+        elif not _same(da.get(key), db.get(key)):
+            caveats.append(f"{key}: {da.get(key)} vs {db.get(key)}")
+    ea, eb = a.get("epoch") or {}, b.get("epoch") or {}
+    analytic = ea.get("mode") == "analytic-evolution" or eb.get("mode") == "analytic-evolution"
+    dz = abs((ea.get("zRepresentative") or 0) - (eb.get("zRepresentative") or 0))
+    if not analytic and dz > 0.5:
+        caveats.append(f"epoch: z={ea.get('zRepresentative')} vs z={eb.get('zRepresentative')}; evolution within the bin is not modelled")
+    return {"verdict": "not-comparable" if blockers else "comparable-with-caveats" if caveats else "comparable", "blockers": blockers, "caveats": caveats}
+
+
+def _interp(xs, ys, x):
+    for i in range(1, len(xs)):
+        if xs[i - 1] <= x <= xs[i]:
+            t = 0.0 if xs[i] == xs[i - 1] else (x - xs[i - 1]) / (xs[i] - xs[i - 1])
+            return ys[i - 1] + t * (ys[i] - ys[i - 1])
+    return float("nan")
+
+
+def _sigma(y, lo, hi, kind):
+    if kind != "uncertainty":
+        return np.full(len(y), np.nan)
+    up = np.where(np.isfinite(hi), hi - y, 0.0)
+    dn = np.where(np.isfinite(lo), y - lo, 0.0)
+    s = np.maximum(up, dn)
+    return np.where(s == 0, np.nan, s)
+
+
+def residuals(sim, ref, sim_kind="unspecified", ref_kind="unspecified"):
+    """Residual table of curve `sim` against `ref` (each a dict of arrays x, y, lo, hi), as the website computes them: evaluated at the x of the shorter curve, never extrapolated."""
+    sx, sy = np.asarray(sim["x"], float), np.asarray(sim["y"], float)
+    rx, ry = np.asarray(ref["x"], float), np.asarray(ref["y"], float)
+    ss = _sigma(sy, np.asarray(sim["lo"], float), np.asarray(sim["hi"], float), sim_kind)
+    sr = _sigma(ry, np.asarray(ref["lo"], float), np.asarray(ref["hi"], float), ref_kind)
+    out = []
+    if len(rx) < len(sx):
+        for i, x in enumerate(rx):
+            y = _interp(sx, sy, x)
+            if not math.isfinite(y):
+                continue
+            s_sim = _interp(sx, ss, x)
+            s_ref = sr[i]
+            sig = math.hypot(s_ref if math.isfinite(s_ref) else 0.0, s_sim if math.isfinite(s_sim) else 0.0)
+            out.append((x, y - ry[i], sig if math.isfinite(s_ref) and sig > 0 else float("nan"), math.isfinite(s_sim)))
+    else:
+        for i, x in enumerate(sx):
+            y = _interp(rx, ry, x)
+            if not math.isfinite(y):
+                continue
+            s_ref = _interp(rx, sr, x)
+            s_sim = ss[i]
+            sig = math.hypot(s_ref if math.isfinite(s_ref) else 0.0, s_sim if math.isfinite(s_sim) else 0.0)
+            out.append((x, sy[i] - y, sig if math.isfinite(s_ref) and sig > 0 else float("nan"), math.isfinite(s_sim)))
+    return out
+
+
+def summarize(res, min_bins=3):
+    if len(res) < min_bins:
+        return None
+    d = np.array([r[1] for r in res])
+    sig = np.array([r[2] for r in res])
+    weighted = np.isfinite(sig)
+    return {"n": len(d), "median": float(np.median(d)), "mean": float(d.mean()), "rms": float(np.sqrt((d ** 2).mean())),
+            "mean_abs_sigma": float((np.abs(d) / sig).mean()) if weighted.all() else float("nan")}
+
+
+def compare_run(x, y, relation, z, definitions=None, y_low=None, y_high=None, sigma=None, linear=False, df=None, rankable_only=False, include_observations=True, name="your run"):
+    """Compare your own curve with every published curve of one relation at one epoch, as the website's My run tab does.
+
+    x, y: your points (log10 as plotted, or plain values with linear=True); optional y_low/y_high or a symmetric 1-sigma `sigma`.
+    definitions: what your numbers mean, keyed like the dataset's definition columns (imf, massDefinition, densityFrame, population, ...).
+    Undeclared keys can never be matched, so with no definitions no curve is called comparable.
+    Returns a DataFrame, one row per published curve: verdict, blockers, caveats, median/mean/rms offset (yours minus the curve, in y units), n shared bins.
+    Nothing is interpolated beyond the range of either curve."""
+    x, y = np.asarray(x, float), np.asarray(y, float)
+    lo = np.full(len(y), np.nan) if y_low is None else np.asarray(y_low, float)
+    hi = np.full(len(y), np.nan) if y_high is None else np.asarray(y_high, float)
+    if sigma is not None:
+        sg = np.asarray(sigma, float)
+        lo, hi = y - sg, y + sg
+    if linear:
+        keep = (x > 0) & (y > 0)
+        x, y, lo, hi = x[keep], y[keep], lo[keep], hi[keep]
+        lg = lambda v: np.where(v > 0, np.log10(np.where(v > 0, v, 1.0)), np.nan)
+        x, y, lo, hi = np.log10(x), np.log10(y), lg(lo), lg(hi)
+    order = np.argsort(x)
+    mine = {"x": x[order], "y": y[order], "lo": lo[order], "hi": hi[order]}
+    my_kind = "uncertainty" if np.isfinite(mine["lo"]).any() and np.isfinite(mine["hi"]).any() else "unspecified"
+    df = load() if df is None else df
+    R = rules(df.attrs.get("base"))
+    sel = select(df, relation=relation)
+    if not include_observations:
+        sel = sel[sel["kind"] == "simulation"]
+    if rankable_only:
+        sel = sel[sel["rankable"]]
+    sel = nearest_epoch(sel, z)
+    me = {"relation": relation, "source": name, "rankable": True, "selection": {}, "epoch": {"zRepresentative": z, "zMin": z, "zMax": z},
+          "definitions": {k: v for k, v in (definitions or {}).items() if v not in (None, "unspecified")}}
+    rows = []
+    for rid, g in sel.groupby("record_id", sort=False):
+        g = g.sort_values("point_index")
+        first = g.iloc[0]
+        rec = {"relation": relation, "source": first["source"], "rankable": bool(first["rankable"]), "selection": {},
+               "definitions": json.loads(first["definitions_json"]),
+               "epoch": {"zRepresentative": float(first["z"]), "zMin": float(first["z_min"]), "zMax": float(first["z_max"]), "mode": None if pd.isna(first.get("epoch_mode")) else first["epoch_mode"]}}
+        v = compatible(me, rec, R)
+        ref = {"x": g["x"].to_numpy(float), "y": g["y"].to_numpy(float), "lo": g["y_low"].to_numpy(float), "hi": g["y_high"].to_numpy(float)}
+        m = np.isfinite(ref["x"]) & np.isfinite(ref["y"])
+        ref = {k: a[m] for k, a in ref.items()}
+        sm = summarize(residuals(mine, ref, my_kind, "uncertainty" if first["interval_kind"] == "uncertainty" else "unspecified"), R["minBins"]) if len(ref["x"]) else None
+        rows.append({"record_id": rid, "kind": first["kind"], "source": first["source"], "run": first["run"], "tier": first["tier"], "z": float(first["z"]),
+                     "verdict": v["verdict"], "blockers": "; ".join(v["blockers"]), "caveats": "; ".join(v["caveats"]),
+                     "median_dy": sm["median"] if sm else np.nan, "mean_dy": sm["mean"] if sm else np.nan, "rms_dy": sm["rms"] if sm else np.nan,
+                     "n_bins": sm["n"] if sm else 0, "mean_abs_sigma": sm["mean_abs_sigma"] if sm else np.nan})
+    out = pd.DataFrame(rows)
+    if out.empty:
+        return out
+    return out.assign(_has=out["n_bins"] > 0, _a=out["median_dy"].abs()).sort_values(["_has", "_a"], ascending=[False, True]).drop(columns=["_has", "_a"]).reset_index(drop=True)

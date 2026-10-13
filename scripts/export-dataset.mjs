@@ -4,7 +4,7 @@ import vm from "node:vm";
 const root = new URL("../", import.meta.url);
 const ctx = { globalThis: {} };
 for (const f of ["compare.js", "export-lib.js"]) vm.runInNewContext(await readFile(new URL(f, root), "utf8"), ctx);
-const X = ctx.globalThis.SimHighlineExport;
+const X = ctx.globalThis.SimHighlineExport, C = ctx.globalThis.SimHighlineCompare;
 const release = JSON.parse(await readFile(new URL("data/release.json", root), "utf8"));
 const files = (await readdir(new URL("data/curves/", root))).filter(f => f.endsWith(".json")).sort();
 const records = [];
@@ -17,7 +17,8 @@ const outputs = {
   "sim-highline-records.csv": X.toCsv(recRows, X.RECORD_COLS, head),
   "sim-highline-points.csv": X.toCsv(ptRows, X.POINT_COLS, [`sim-highline dataset v${release.version} (${release.released}); points table, one row per plotted point (parametric records sampled at ${X.NSAMPLE} points over their domain)`]),
   "sim-highline-records.json": JSON.stringify({ version: release.version, released: release.released, records }) + "\n",
-  "sim-highline-citations.bib": X.bibtex(records)
+  "sim-highline-citations.bib": X.bibtex(records),
+  "sim-highline-rules.json": JSON.stringify({ note: "Comparability rules used by the website and by sim_highline.compatible; generated from compare.js", unset: [null, "unspecified", "heterogeneous"], minBins: C.MIN_BINS, imfDex: C.IMF_DEX, rules: C.RULES }, null, 1) + "\n"
 };
 const manifest = { version: release.version, released: release.released, doi: release.doi, license: release.license, nRecords: records.length, nPoints: ptRows.length, nParametric: records.filter(r => r.representation.type === "parametric").length,
   parametricSampling: `${X.NSAMPLE} points over the record domain at zRepresentative; the published expression is evaluated, nothing else is generated`,

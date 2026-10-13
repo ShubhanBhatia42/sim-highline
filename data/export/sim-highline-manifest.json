@@ -1,5 +1,5 @@
 {
-  "version": "0.16.0",
+  "version": "0.17.0",
   "released": "2026-10-13",
   "doi": "10.5281/zenodo.23217259",
   "license": {
@@ -31,6 +31,7 @@
       "terms",
       "rankable",
       "calibration",
+      "epoch_mode",
       "population_note",
       "mass_class",
       "cosmology_h0",
@@ -67,20 +68,24 @@
   },
   "files": {
     "sim-highline-records.csv": {
-      "sha256": "0fb48151bd5ef0fc8a1f9437fcb497d51ddcd77a6e096a995f09fa66de69f601",
-      "bytes": 1320914
+      "sha256": "f40d920aaea32bdb4298248e1970df4baf997fe1615efedb3e2f415c5e7e3a0d",
+      "bytes": 1349619
     },
     "sim-highline-points.csv": {
-      "sha256": "a3f557d9d795a1de3cf3ef5dbf48aac9b9b7fc8d95980dcd6cfcd1dc647dc493",
+      "sha256": "fd3519513a5bd6a834898cfbee071432e6ed7f91710f7d1831707acf64cf4308",
       "bytes": 2993441
     },
     "sim-highline-records.json": {
-      "sha256": "b9dbfd2236a587280c6dd993976d9f9c2f08de49ae4160be4d11ceb87a66b9e4",
-      "bytes": 4606535
+      "sha256": "0c20bcfe268651558d7a9d748383863cf3d979093e348b38e3d3e05e75abfa9c",
+      "bytes": 4619581
     },
     "sim-highline-citations.bib": {
       "sha256": "254d6f4adddbba61c7c3b4bbb044bd5403982c377edd0d9cdb022f645540067c",
       "bytes": 27741
+    },
+    "sim-highline-rules.json": {
+      "sha256": "49b3d5c8eb0c18b4e531dec2f1364d36ddbca6033eae83bd25caa91775e43f10",
+      "bytes": 3768
     }
   }
 }

@@ -94,6 +94,18 @@ await step("theme toggle switches and persists", async () => {
   await ctx.close();
 });
 
+await step("notes show measured definition effects and the figure pack describes the plot", async () => {
+  const { page, ctx } = await open("/highline.html#r=gsmf&z=0");
+  await page.click("#bAbout");
+  assert.ok((await page.locator("#pbody").innerText()).includes("MEASURED DEFINITION EFFECTS"), "gsmf notes list measured effects");
+  await page.click("#bData");
+  const [dl] = await Promise.all([page.waitForEvent("download"), page.click("#fPack")]);
+  assert.match(dl.suggestedFilename(), /_pack\.md$/);
+  const text = await page.evaluate(() => methodsPack().methods);
+  assert.ok(text.includes("compiled from the sim-highline dataset") && text.includes("No curve was interpolated"), "methods text states provenance and the no-interpolation rule");
+  await ctx.close();
+});
+
 await step("spread map and command palette", async () => {
   const { page, ctx } = await open("/highline.html#m=spread");
   assert.ok(await page.locator("#spread td[data-r]").count() >= 20, "spread map has cells");

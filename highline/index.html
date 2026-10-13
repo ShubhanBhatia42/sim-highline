@@ -319,7 +319,7 @@ footer{grid-area:foot;display:flex;align-items:center;gap:16px;padding:10px 24px
 <script>/*__COMPARE__*/</script>
 <script>/*__EXPORT__*/</script>
 <script>/*__LOGIC__*/</script>
-<script>window.SIMHIGHLINE_RELEASE=/*__RELEASE__*/;window.SIMHIGHLINE_NOTES=/*__NOTES__*/;</script>
+<script>window.SIMHIGHLINE_RELEASE=/*__RELEASE__*/;window.SIMHIGHLINE_NOTES=/*__NOTES__*/;window.SIMHIGHLINE_SENS=/*__SENS__*/;</script>
 <script>
 const relKey=r=>{if(r.relation!=="mzr")return r.relation;const q=r.definitions?.metallicityQuantity;if(q==="gas-O/H")return"mzr";return /Zsun/.test(r.axes?.yDefinition||"")?"mzrz":"mzrraw"};
 const ALL=(window.SIMHIGHLINE_CURVES||[]).filter(r=>r.representation&&r.domain).map(r=>({...r,rel0:r.relation,relation:relKey(r)}));
@@ -686,10 +686,13 @@ function aboutHtml(){
   if(!n)return`<h3>About</h3><p class="hint">No summary for this relation yet.</p>`;
   const rs=sims.filter(r=>r.relation===state.rel),os=obs.filter(r=>r.relation===state.rel);
   const names=[...new Set(rs.map(r=>SHORT[r.source]||r.source))].sort(),zs=rs.map(r=>r.epoch.zRepresentative),zlo=Math.min(...zs),zhi=Math.max(...zs);
+  const sens=(window.SIMHIGHLINE_SENS||[]).filter(x=>x.relation===state.rel),fs=v=>(v>=0?"+":"−")+Math.abs(v).toFixed(2),short=v=>String(v).replace(/\s*\(.*$/,"").slice(0,44);
+  const sensHtml=sens.length?`<h4>MEASURED DEFINITION EFFECTS</h4><p class="hint" style="margin-top:0">Inside single runs published under two definitions, the curves differ by this much (y units, median over the shared x range; the largest local offset is in brackets). This is the part of any cross-simulation offset that definitions alone can cause.</p><ul style="padding-left:18px;margin:0;font-size:13px">${sens.map(x=>`<li style="margin:5px 0"><b>${esc(SHORT[x.source]||x.source)}</b>, ${esc(x.key)}: ${esc(short(x.from))} → ${esc(short(x.to))}: <b>${fs(x.median)}</b>${x.epochs>1?` (${fs(x.medianRange[0])} to ${fs(x.medianRange[1])} over ${x.epochs} epochs)`:""} [max ${x.max.toFixed(2)}]</li>`).join("")}</ul>`:"";
   const roleLabel=t=>({review:"review","simulation vs data":"simulation vs data",compilation:"compilation",observation:"observation"}[t]||t);
   return`<h3>${esc(n.title)}</h3><div class="sub">${esc(REL[state.rel].t)} · what it is, what data say, what simulations do</div>
   <p style="font-size:14px;line-height:1.55;color:var(--cream)">${esc(n.paragraph)}</p>${n.variantNote?`<p class="hint">${esc(n.variantNote)}</p>`:""}
   <div class="warn" style="border-color:var(--mustard)"><b>In this data well:</b> ${rs.length} simulation records from ${names.length} simulation${names.length>1?"s":""} (${esc(names.join(", "))}), z = ${fmtZ(zlo)} to ${fmtZ(zhi)}; ${os.length} observational record${os.length===1?"":"s"}. ${names.length<3?"Coverage of this relation is still thin.":""}</div>
+  ${sensHtml}
   <h4>REFERENCES</h4>
   <ul style="padding-left:18px;margin:0;font-size:13px">${n.refs.map(r=>`<li style="margin:5px 0"><span class="tier">${esc(roleLabel(r.role))}</span> ${esc(r.cite)} <a href="https://doi.org/${esc(r.doi)}" target="_blank" rel="noopener">doi</a> · <a href="https://arxiv.org/abs/${esc(r.arxiv)}" target="_blank" rel="noopener">arXiv</a></li>`).join("")}</ul>
   <p class="hint" style="margin-top:14px">Written from the abstracts of these papers, with each result attributed to its source. This is context, not evidence: the curves in the plot carry their own definitions and provenance. Read the papers before quoting a claim.</p>`;
@@ -848,7 +851,8 @@ function dataHtml(){
   <p class="hint">CSV is tidy: one row per point with units, definitions, tier, rankable flag and citation. Parametric curves are the published expression sampled at ${SimHighlineExport.NSAMPLE} points. Nothing is interpolated or smoothed.</p>
   <h4>FIGURE</h4>
   <div class="btns"><button class="btn" id="fSvg">SVG</button><button class="btn" id="fPng">PNG</button><button class="btn" id="fLink">Copy link</button><button class="btn" id="fEmb" title="HTML to paste into a web page or slides">Copy embed code</button></div>
-  <p class="hint">Figures carry the relation, epoch and source citations in a footer.</p>
+  <div class="btns"><button class="btn" id="fMeth" title="A paragraph describing exactly what is plotted, with sources and definitions">Copy methods text</button><button class="btn" id="fPack" title="Caption, methods, definitions table and BibTeX for the curves in the plot">Download figure pack (.md)</button></div>
+  <p class="hint">Figures carry the relation, epoch and source citations in a footer. The methods text and the pack describe the curves currently plotted, with their definitions, tiers and the caveats against the anchor.</p>
   <h4>CITE THE DATASET</h4>
   <p class="hint">${esc(citeText())}</p>
   <div class="btns"><button class="btn" id="cTxt">Copy citation</button><button class="btn" id="cBibD">Copy BibTeX</button></div>
@@ -869,8 +873,26 @@ function wireData(){
   $("fLink").onclick=()=>{syncHash();copyTxt(location.href,"Link copied")};
   $("cTxt").onclick=()=>copyTxt(citeText(),"Citation copied");$("cBibD").onclick=()=>copyTxt(citeBib(),"BibTeX copied");
   $("fEmb").onclick=()=>{syncHash();const u=new URL(location.href);const q=new URLSearchParams(u.hash.slice(1));q.set("embed","1");u.hash=q.toString();copyTxt(`<iframe src="${u.href}" width="820" height="560" style="border:1px solid #ccc;border-radius:8px" loading="lazy" title="sim-highline: ${REL[state.rel].t}"></iframe>`,"Embed code copied")};
+  $("fMeth").onclick=()=>copyTxt(methodsPack().methods,"Methods text copied");
+  $("fPack").onclick=()=>{const m=methodsPack();download(`sim-highline_${state.rel}_z${fmtZ(currentZ())}_pack.md`,"text/markdown",m.pack)};
   $("fSvg").onclick=()=>download(`sim-highline_${state.rel}_z${fmtZ(currentZ())}.svg`,"image/svg+xml",figureSvg().svg);
   $("fPng").onclick=()=>{const f=figureSvg(),img=new Image();img.onload=()=>{const c=document.createElement("canvas");c.width=f.w*2;c.height=f.h*2;const x=c.getContext("2d");x.scale(2,2);x.drawImage(img,0,0);c.toBlob(b=>{const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=`sim-highline_${state.rel}_z${fmtZ(currentZ())}.png`;document.body.append(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)})};img.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(f.svg)};
+}
+function methodsPack(){
+  const z=currentZ(),meta=REL[state.rel],R=window.SimHighlineCompare.RULES[state.rel]||{hard:[],soft:[]},keys=[...R.hard,...R.soft].filter(k=>k!=="cosmology");
+  const ser=relationSeries(z).filter(o=>!o.scatter),sim=ser.filter(o=>!o.obs).map(o=>o.r),ob=ser.filter(o=>o.obs).map(o=>o.r),anc=anchorRec(state.rel,z);
+  const val=(r,k)=>{const v=r.definitions?.[k];return v==null||v==="unspecified"||v==="heterogeneous"?"not stated":String(v)};
+  const tiers={};for(const r of sim)tiers[r.provenance.tier]=(tiers[r.provenance.tier]||0)+1;
+  const dig=sim.filter(r=>r.provenance.tier==="digitized-figure").length,tl=Object.entries(tiers).map(([t,n])=>`${n} ${t.replace(/-/g," ")}`).join(", ");
+  const names=[...new Set(sim.map(r=>SHORT[r.source]||r.source))];
+  const diffs=keys.map(k=>{const m=new Map();for(const r of sim){const v=val(r,k);(m.get(v)||m.set(v,new Set()).get(v)).add(SHORT[r.source]||r.source)}return[k,m]}).filter(([,m])=>m.size>1).map(([k,m])=>`${k}: ${[...m].map(([v,ss])=>`${v} (${[...ss].join(", ")})`).join("; ")}`);
+  let comp="";if(anc){let c=0,cv=0,nc=0;for(const r of sim){const v=verdict(anc,r);if(!v)continue;if(v.verdict==="comparable")c++;else if(v.verdict==="comparable-with-caveats")cv++;else nc++}comp=` Against the anchor observation (${anc.source}), ${c} curves have fully matching documented definitions, ${cv} are comparable with caveats and ${nc} are not comparable (including context-only digitized curves).`}
+  const sens=(window.SIMHIGHLINE_SENS||[]).filter(x=>x.relation===state.rel).map(x=>`${SHORT[x.source]||x.source}, ${x.key} (${String(x.from).replace(/\s*\(.*$/,"")} to ${String(x.to).replace(/\s*\(.*$/,"")}): ${x.median>=0?"+":"−"}${Math.abs(x.median).toFixed(2)}`);
+  const cites=[...new Map([...sim,...ob].map(r=>[r.provenance.doi||r.provenance.url||r.id,String(r.provenance.citation||"").replace(/,\s*(Fig\.|Figure|figure|Table).*$/,"")])).values()];
+  const methods=`The ${meta.t.toLowerCase()} at z = ${fmtZ(z)} was compiled from the sim-highline dataset (v${SIMHIGHLINE_RELEASE.version}; ${SIMHIGHLINE_RELEASE.doi?"https://doi.org/"+SIMHIGHLINE_RELEASE.doi:SIMHIGHLINE_RELEASE.repo}), which collects values as published or released by each simulation team together with the definitions each source states. The ${sim.length} simulation curves shown come from ${names.join(", ")} (${tl}); ${ob.length} observational curves are shown for reference${anc?`, with ${anc.source} as the anchor`:""}. Curves digitized from published figures (${dig}) are context only and are never used for ranking. No curve was interpolated across epochs, smoothed or extrapolated${state.imfc?"; stellar masses and star formation rates of Kroupa and Salpeter curves were converted to a Chabrier IMF with the standard offsets":"; no IMF conversion was applied"}. ${diffs.length?`The curves do not share all definitions: ${diffs.join(". ")}.`:"All plotted simulation curves state matching definitions."}${comp}${sens.length?` Measured inside single runs, changing the definition alone shifts the relation by: ${sens.join("; ")} (y units).`:""} Original sources: ${cites.join("; ")}.`;
+  const rows=sim.map(r=>`| ${label(r)} | ${r.provenance.tier} | ${r.rankable?"yes":"no"} | ${keys.map(k=>val(r,k)).join(" | ")} |`);
+  const pack=`# ${meta.t} at z = ${fmtZ(z)}\n\n_sim-highline v${SIMHIGHLINE_RELEASE.version}, ${new Date().toISOString().slice(0,10)}; ${location.origin==="null"?"":location.href}_\n\n## Caption\n\n${meta.t} at z = ${fmtZ(z)}: ${sim.length} simulation curves (${names.join(", ")}) and ${ob.length} observational curves. Solid lines are tabulated or catalogue-derived values, dashed lines published fits, dotted lines values digitized from published figures. Definitions differ between curves; see the table.\n\n## Methods\n\n${methods}\n\n## Definitions of the plotted simulation curves\n\n| curve | tier | rankable | ${keys.join(" | ")} |\n|---|---|---|${keys.map(()=>"---").join("|")}|\n${rows.join("\n")}\n\n## BibTeX\n\n\`\`\`bibtex\n${citeBib()}\n\n${SimHighlineExport.bibtex([...sim,...ob])}\n\`\`\`\n`;
+  return{methods,pack};
 }
 function figureSvg(){
   const svg=$("stage"),vb=svg.viewBox.baseVal,W=vb.width||svg.clientWidth,H=vb.height||svg.clientHeight,cs=getComputedStyle(document.documentElement),v=n=>cs.getPropertyValue(n).trim();

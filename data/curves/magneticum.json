@@ -70,7 +70,7 @@
         "warning": "Galaxy aperture and black-hole occupation selection require paper-level audit before ranking."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -87,7 +87,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_Mstar_z0.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "499bdb2eee6b72e833b2f1197c18b8fde245ff4b03263a045ba914b11040c9e1"
+        "checksumSha256": "499bdb2eee6b72e833b2f1197c18b8fde245ff4b03263a045ba914b11040c9e1",
+        "definitionFills": [
+          "dolag25-magneticum-bh-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -174,7 +177,7 @@
         "warning": "Galaxy aperture and black-hole occupation selection require paper-level audit before ranking."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -191,7 +194,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_Mstar_z0.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "499bdb2eee6b72e833b2f1197c18b8fde245ff4b03263a045ba914b11040c9e1"
+        "checksumSha256": "499bdb2eee6b72e833b2f1197c18b8fde245ff4b03263a045ba914b11040c9e1",
+        "definitionFills": [
+          "dolag25-magneticum-bh-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -272,7 +278,7 @@
         "warning": "Galaxy aperture and black-hole occupation selection require paper-level audit before ranking."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -289,7 +295,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_Mstar_z0.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "499bdb2eee6b72e833b2f1197c18b8fde245ff4b03263a045ba914b11040c9e1"
+        "checksumSha256": "499bdb2eee6b72e833b2f1197c18b8fde245ff4b03263a045ba914b11040c9e1",
+        "definitionFills": [
+          "dolag25-magneticum-bh-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -382,7 +391,7 @@
         "warning": "Galaxy aperture and black-hole occupation selection require paper-level audit before ranking."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -399,7 +408,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_Mstar_z0.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "499bdb2eee6b72e833b2f1197c18b8fde245ff4b03263a045ba914b11040c9e1"
+        "checksumSha256": "499bdb2eee6b72e833b2f1197c18b8fde245ff4b03263a045ba914b11040c9e1",
+        "definitionFills": [
+          "dolag25-magneticum-bh-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -468,7 +480,7 @@
         "warning": "Galaxy aperture and black-hole occupation selection require paper-level audit before ranking."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -485,7 +497,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_Mstar_z1.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "52b30abbf998341bd88c7b9de82cbb070758c90fa3903ae55de22b27acd1c11a"
+        "checksumSha256": "52b30abbf998341bd88c7b9de82cbb070758c90fa3903ae55de22b27acd1c11a",
+        "definitionFills": [
+          "dolag25-magneticum-bh-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -572,7 +587,7 @@
         "warning": "Galaxy aperture and black-hole occupation selection require paper-level audit before ranking."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -589,7 +604,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_Mstar_z1.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "52b30abbf998341bd88c7b9de82cbb070758c90fa3903ae55de22b27acd1c11a"
+        "checksumSha256": "52b30abbf998341bd88c7b9de82cbb070758c90fa3903ae55de22b27acd1c11a",
+        "definitionFills": [
+          "dolag25-magneticum-bh-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -676,7 +694,7 @@
         "warning": "Galaxy aperture and black-hole occupation selection require paper-level audit before ranking."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -693,7 +711,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_Mstar_z1.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "52b30abbf998341bd88c7b9de82cbb070758c90fa3903ae55de22b27acd1c11a"
+        "checksumSha256": "52b30abbf998341bd88c7b9de82cbb070758c90fa3903ae55de22b27acd1c11a",
+        "definitionFills": [
+          "dolag25-magneticum-bh-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -774,7 +795,7 @@
         "warning": "Galaxy aperture and black-hole occupation selection require paper-level audit before ranking."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -791,7 +812,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_Mstar_z1.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "52b30abbf998341bd88c7b9de82cbb070758c90fa3903ae55de22b27acd1c11a"
+        "checksumSha256": "52b30abbf998341bd88c7b9de82cbb070758c90fa3903ae55de22b27acd1c11a",
+        "definitionFills": [
+          "dolag25-magneticum-bh-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -860,7 +884,7 @@
         "warning": "Galaxy aperture and black-hole occupation selection require paper-level audit before ranking."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -877,7 +901,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_Mstar_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "2da2aafd945e87cfad279b1261aee64f9390316405a11923119304f9796ed17c"
+        "checksumSha256": "2da2aafd945e87cfad279b1261aee64f9390316405a11923119304f9796ed17c",
+        "definitionFills": [
+          "dolag25-magneticum-bh-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -958,7 +985,7 @@
         "warning": "Galaxy aperture and black-hole occupation selection require paper-level audit before ranking."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -975,7 +1002,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_Mstar_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "2da2aafd945e87cfad279b1261aee64f9390316405a11923119304f9796ed17c"
+        "checksumSha256": "2da2aafd945e87cfad279b1261aee64f9390316405a11923119304f9796ed17c",
+        "definitionFills": [
+          "dolag25-magneticum-bh-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1056,7 +1086,7 @@
         "warning": "Galaxy aperture and black-hole occupation selection require paper-level audit before ranking."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -1073,7 +1103,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_Mstar_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "2da2aafd945e87cfad279b1261aee64f9390316405a11923119304f9796ed17c"
+        "checksumSha256": "2da2aafd945e87cfad279b1261aee64f9390316405a11923119304f9796ed17c",
+        "definitionFills": [
+          "dolag25-magneticum-bh-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1154,7 +1187,7 @@
         "warning": "Galaxy aperture and black-hole occupation selection require paper-level audit before ranking."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -1171,7 +1204,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_Mstar_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "2da2aafd945e87cfad279b1261aee64f9390316405a11923119304f9796ed17c"
+        "checksumSha256": "2da2aafd945e87cfad279b1261aee64f9390316405a11923119304f9796ed17c",
+        "definitionFills": [
+          "dolag25-magneticum-bh-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1246,7 +1282,7 @@
         "warning": "Galaxy aperture and black-hole occupation selection require paper-level audit before ranking."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -1263,7 +1299,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_Mstar_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "2da2aafd945e87cfad279b1261aee64f9390316405a11923119304f9796ed17c"
+        "checksumSha256": "2da2aafd945e87cfad279b1261aee64f9390316405a11923119304f9796ed17c",
+        "definitionFills": [
+          "dolag25-magneticum-bh-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1320,7 +1359,7 @@
         "warning": "Galaxy aperture and black-hole occupation selection require paper-level audit before ranking."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -1337,7 +1376,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_Mstar_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "30614934fb6d2a0deeda6f163e207cfc3520e9649974d0ae3ebab59c780f103c"
+        "checksumSha256": "30614934fb6d2a0deeda6f163e207cfc3520e9649974d0ae3ebab59c780f103c",
+        "definitionFills": [
+          "dolag25-magneticum-bh-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1406,7 +1448,7 @@
         "warning": "Galaxy aperture and black-hole occupation selection require paper-level audit before ranking."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -1423,7 +1465,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_Mstar_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "30614934fb6d2a0deeda6f163e207cfc3520e9649974d0ae3ebab59c780f103c"
+        "checksumSha256": "30614934fb6d2a0deeda6f163e207cfc3520e9649974d0ae3ebab59c780f103c",
+        "definitionFills": [
+          "dolag25-magneticum-bh-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1492,7 +1537,7 @@
         "warning": "Galaxy aperture and black-hole occupation selection require paper-level audit before ranking."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -1509,7 +1554,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_Mstar_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "30614934fb6d2a0deeda6f163e207cfc3520e9649974d0ae3ebab59c780f103c"
+        "checksumSha256": "30614934fb6d2a0deeda6f163e207cfc3520e9649974d0ae3ebab59c780f103c",
+        "definitionFills": [
+          "dolag25-magneticum-bh-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1578,7 +1626,7 @@
         "warning": "Galaxy aperture and black-hole occupation selection require paper-level audit before ranking."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -1595,7 +1643,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_Mstar_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "30614934fb6d2a0deeda6f163e207cfc3520e9649974d0ae3ebab59c780f103c"
+        "checksumSha256": "30614934fb6d2a0deeda6f163e207cfc3520e9649974d0ae3ebab59c780f103c",
+        "definitionFills": [
+          "dolag25-magneticum-bh-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1658,7 +1709,7 @@
         "warning": "Galaxy aperture and black-hole occupation selection require paper-level audit before ranking."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -1675,7 +1726,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_Mstar_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "30614934fb6d2a0deeda6f163e207cfc3520e9649974d0ae3ebab59c780f103c"
+        "checksumSha256": "30614934fb6d2a0deeda6f163e207cfc3520e9649974d0ae3ebab59c780f103c",
+        "definitionFills": [
+          "dolag25-magneticum-bh-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1776,7 +1830,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sigmaDefinition": "unspecified",
+        "sigmaDefinition": "sigma-stellar-projected-within-half-mass-radius",
         "bhMassMethod": "intrinsic"
       },
       "provenance": {
@@ -1786,7 +1840,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_sigma_z0.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "16074832ab6ce53d3bb3b215b1fb4694bbf88a5bcbaf14d0292a401d2ba5e6d8"
+        "checksumSha256": "16074832ab6ce53d3bb3b215b1fb4694bbf88a5bcbaf14d0292a401d2ba5e6d8",
+        "definitionFills": [
+          "dolag25-magneticum-bhsigma-sigma"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1899,7 +1956,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sigmaDefinition": "unspecified",
+        "sigmaDefinition": "sigma-stellar-projected-within-half-mass-radius",
         "bhMassMethod": "intrinsic"
       },
       "provenance": {
@@ -1909,7 +1966,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_sigma_z0.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "16074832ab6ce53d3bb3b215b1fb4694bbf88a5bcbaf14d0292a401d2ba5e6d8"
+        "checksumSha256": "16074832ab6ce53d3bb3b215b1fb4694bbf88a5bcbaf14d0292a401d2ba5e6d8",
+        "definitionFills": [
+          "dolag25-magneticum-bhsigma-sigma"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -2010,7 +2070,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sigmaDefinition": "unspecified",
+        "sigmaDefinition": "sigma-stellar-projected-within-half-mass-radius",
         "bhMassMethod": "intrinsic"
       },
       "provenance": {
@@ -2020,7 +2080,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_sigma_z0.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "16074832ab6ce53d3bb3b215b1fb4694bbf88a5bcbaf14d0292a401d2ba5e6d8"
+        "checksumSha256": "16074832ab6ce53d3bb3b215b1fb4694bbf88a5bcbaf14d0292a401d2ba5e6d8",
+        "definitionFills": [
+          "dolag25-magneticum-bhsigma-sigma"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -2139,7 +2202,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sigmaDefinition": "unspecified",
+        "sigmaDefinition": "sigma-stellar-projected-within-half-mass-radius",
         "bhMassMethod": "intrinsic"
       },
       "provenance": {
@@ -2149,7 +2212,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_sigma_z0.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "16074832ab6ce53d3bb3b215b1fb4694bbf88a5bcbaf14d0292a401d2ba5e6d8"
+        "checksumSha256": "16074832ab6ce53d3bb3b215b1fb4694bbf88a5bcbaf14d0292a401d2ba5e6d8",
+        "definitionFills": [
+          "dolag25-magneticum-bhsigma-sigma"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -2244,7 +2310,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sigmaDefinition": "unspecified",
+        "sigmaDefinition": "sigma-stellar-projected-within-half-mass-radius",
         "bhMassMethod": "intrinsic"
       },
       "provenance": {
@@ -2254,7 +2320,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_sigma_z1.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "a0215000e7686d436c1cd2bdcd506841e043df8a3cdf91fef904c674085286a2"
+        "checksumSha256": "a0215000e7686d436c1cd2bdcd506841e043df8a3cdf91fef904c674085286a2",
+        "definitionFills": [
+          "dolag25-magneticum-bhsigma-sigma"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -2373,7 +2442,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sigmaDefinition": "unspecified",
+        "sigmaDefinition": "sigma-stellar-projected-within-half-mass-radius",
         "bhMassMethod": "intrinsic"
       },
       "provenance": {
@@ -2383,7 +2452,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_sigma_z1.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "a0215000e7686d436c1cd2bdcd506841e043df8a3cdf91fef904c674085286a2"
+        "checksumSha256": "a0215000e7686d436c1cd2bdcd506841e043df8a3cdf91fef904c674085286a2",
+        "definitionFills": [
+          "dolag25-magneticum-bhsigma-sigma"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -2496,7 +2568,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sigmaDefinition": "unspecified",
+        "sigmaDefinition": "sigma-stellar-projected-within-half-mass-radius",
         "bhMassMethod": "intrinsic"
       },
       "provenance": {
@@ -2506,7 +2578,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_sigma_z1.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "a0215000e7686d436c1cd2bdcd506841e043df8a3cdf91fef904c674085286a2"
+        "checksumSha256": "a0215000e7686d436c1cd2bdcd506841e043df8a3cdf91fef904c674085286a2",
+        "definitionFills": [
+          "dolag25-magneticum-bhsigma-sigma"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -2613,7 +2688,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sigmaDefinition": "unspecified",
+        "sigmaDefinition": "sigma-stellar-projected-within-half-mass-radius",
         "bhMassMethod": "intrinsic"
       },
       "provenance": {
@@ -2623,7 +2698,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_sigma_z1.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "a0215000e7686d436c1cd2bdcd506841e043df8a3cdf91fef904c674085286a2"
+        "checksumSha256": "a0215000e7686d436c1cd2bdcd506841e043df8a3cdf91fef904c674085286a2",
+        "definitionFills": [
+          "dolag25-magneticum-bhsigma-sigma"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -2712,7 +2790,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sigmaDefinition": "unspecified",
+        "sigmaDefinition": "sigma-stellar-projected-within-half-mass-radius",
         "bhMassMethod": "intrinsic"
       },
       "provenance": {
@@ -2722,7 +2800,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_sigma_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "2b66d3b33e3cce7b59619a9f64fd9ca3bc4c7e5f6f0dd72cccd0c9b1b64be921"
+        "checksumSha256": "2b66d3b33e3cce7b59619a9f64fd9ca3bc4c7e5f6f0dd72cccd0c9b1b64be921",
+        "definitionFills": [
+          "dolag25-magneticum-bhsigma-sigma"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -2835,7 +2916,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sigmaDefinition": "unspecified",
+        "sigmaDefinition": "sigma-stellar-projected-within-half-mass-radius",
         "bhMassMethod": "intrinsic"
       },
       "provenance": {
@@ -2845,7 +2926,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_sigma_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "2b66d3b33e3cce7b59619a9f64fd9ca3bc4c7e5f6f0dd72cccd0c9b1b64be921"
+        "checksumSha256": "2b66d3b33e3cce7b59619a9f64fd9ca3bc4c7e5f6f0dd72cccd0c9b1b64be921",
+        "definitionFills": [
+          "dolag25-magneticum-bhsigma-sigma"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -2952,7 +3036,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sigmaDefinition": "unspecified",
+        "sigmaDefinition": "sigma-stellar-projected-within-half-mass-radius",
         "bhMassMethod": "intrinsic"
       },
       "provenance": {
@@ -2962,7 +3046,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_sigma_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "2b66d3b33e3cce7b59619a9f64fd9ca3bc4c7e5f6f0dd72cccd0c9b1b64be921"
+        "checksumSha256": "2b66d3b33e3cce7b59619a9f64fd9ca3bc4c7e5f6f0dd72cccd0c9b1b64be921",
+        "definitionFills": [
+          "dolag25-magneticum-bhsigma-sigma"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -3075,7 +3162,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sigmaDefinition": "unspecified",
+        "sigmaDefinition": "sigma-stellar-projected-within-half-mass-radius",
         "bhMassMethod": "intrinsic"
       },
       "provenance": {
@@ -3085,7 +3172,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_sigma_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "2b66d3b33e3cce7b59619a9f64fd9ca3bc4c7e5f6f0dd72cccd0c9b1b64be921"
+        "checksumSha256": "2b66d3b33e3cce7b59619a9f64fd9ca3bc4c7e5f6f0dd72cccd0c9b1b64be921",
+        "definitionFills": [
+          "dolag25-magneticum-bhsigma-sigma"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -3180,7 +3270,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sigmaDefinition": "unspecified",
+        "sigmaDefinition": "sigma-stellar-projected-within-half-mass-radius",
         "bhMassMethod": "intrinsic"
       },
       "provenance": {
@@ -3190,7 +3280,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_sigma_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "2b66d3b33e3cce7b59619a9f64fd9ca3bc4c7e5f6f0dd72cccd0c9b1b64be921"
+        "checksumSha256": "2b66d3b33e3cce7b59619a9f64fd9ca3bc4c7e5f6f0dd72cccd0c9b1b64be921",
+        "definitionFills": [
+          "dolag25-magneticum-bhsigma-sigma"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -3261,7 +3354,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sigmaDefinition": "unspecified",
+        "sigmaDefinition": "sigma-stellar-projected-within-half-mass-radius",
         "bhMassMethod": "intrinsic"
       },
       "provenance": {
@@ -3271,7 +3364,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_sigma_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "a62256e44429b936b1248c2764c87bf36995c6128728cdf779f21f444c2561e2"
+        "checksumSha256": "a62256e44429b936b1248c2764c87bf36995c6128728cdf779f21f444c2561e2",
+        "definitionFills": [
+          "dolag25-magneticum-bhsigma-sigma"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -3372,7 +3468,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sigmaDefinition": "unspecified",
+        "sigmaDefinition": "sigma-stellar-projected-within-half-mass-radius",
         "bhMassMethod": "intrinsic"
       },
       "provenance": {
@@ -3382,7 +3478,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_sigma_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "a62256e44429b936b1248c2764c87bf36995c6128728cdf779f21f444c2561e2"
+        "checksumSha256": "a62256e44429b936b1248c2764c87bf36995c6128728cdf779f21f444c2561e2",
+        "definitionFills": [
+          "dolag25-magneticum-bhsigma-sigma"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -3471,7 +3570,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sigmaDefinition": "unspecified",
+        "sigmaDefinition": "sigma-stellar-projected-within-half-mass-radius",
         "bhMassMethod": "intrinsic"
       },
       "provenance": {
@@ -3481,7 +3580,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_sigma_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "a62256e44429b936b1248c2764c87bf36995c6128728cdf779f21f444c2561e2"
+        "checksumSha256": "a62256e44429b936b1248c2764c87bf36995c6128728cdf779f21f444c2561e2",
+        "definitionFills": [
+          "dolag25-magneticum-bhsigma-sigma"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -3576,7 +3678,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sigmaDefinition": "unspecified",
+        "sigmaDefinition": "sigma-stellar-projected-within-half-mass-radius",
         "bhMassMethod": "intrinsic"
       },
       "provenance": {
@@ -3586,7 +3688,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_sigma_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "a62256e44429b936b1248c2764c87bf36995c6128728cdf779f21f444c2561e2"
+        "checksumSha256": "a62256e44429b936b1248c2764c87bf36995c6128728cdf779f21f444c2561e2",
+        "definitionFills": [
+          "dolag25-magneticum-bhsigma-sigma"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -3675,7 +3780,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sigmaDefinition": "unspecified",
+        "sigmaDefinition": "sigma-stellar-projected-within-half-mass-radius",
         "bhMassMethod": "intrinsic"
       },
       "provenance": {
@@ -3685,7 +3790,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mbh_sigma_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "a62256e44429b936b1248c2764c87bf36995c6128728cdf779f21f444c2561e2"
+        "checksumSha256": "a62256e44429b936b1248c2764c87bf36995c6128728cdf779f21f444c2561e2",
+        "definitionFills": [
+          "dolag25-magneticum-bhsigma-sigma"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -7528,7 +7636,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous",
         "sfrStatistic": "unspecified"
       },
       "provenance": {
@@ -7538,7 +7646,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_SFMS_z0.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "5b146f358b37e1582fd7c54166f22a846835948b6f177547be581e4082d387e6"
+        "checksumSha256": "5b146f358b37e1582fd7c54166f22a846835948b6f177547be581e4082d387e6",
+        "definitionFills": [
+          "dolag25-magneticum-sfr-timescale"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -7657,7 +7768,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous",
         "sfrStatistic": "unspecified"
       },
       "provenance": {
@@ -7667,7 +7778,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_SFMS_z0.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "5b146f358b37e1582fd7c54166f22a846835948b6f177547be581e4082d387e6"
+        "checksumSha256": "5b146f358b37e1582fd7c54166f22a846835948b6f177547be581e4082d387e6",
+        "definitionFills": [
+          "dolag25-magneticum-sfr-timescale"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -7780,7 +7894,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous",
         "sfrStatistic": "unspecified"
       },
       "provenance": {
@@ -7790,7 +7904,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_SFMS_z0.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "5b146f358b37e1582fd7c54166f22a846835948b6f177547be581e4082d387e6"
+        "checksumSha256": "5b146f358b37e1582fd7c54166f22a846835948b6f177547be581e4082d387e6",
+        "definitionFills": [
+          "dolag25-magneticum-sfr-timescale"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -7891,7 +8008,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous",
         "sfrStatistic": "unspecified"
       },
       "provenance": {
@@ -7901,7 +8018,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_SFMS_z0.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "5b146f358b37e1582fd7c54166f22a846835948b6f177547be581e4082d387e6"
+        "checksumSha256": "5b146f358b37e1582fd7c54166f22a846835948b6f177547be581e4082d387e6",
+        "definitionFills": [
+          "dolag25-magneticum-sfr-timescale"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -7984,7 +8104,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous",
         "sfrStatistic": "unspecified"
       },
       "provenance": {
@@ -7994,7 +8114,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_SFMS_z1.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "1236f2daea8271c470c8371eb240a8f325960118a2457e0ee81ff01061d2b6ba"
+        "checksumSha256": "1236f2daea8271c470c8371eb240a8f325960118a2457e0ee81ff01061d2b6ba",
+        "definitionFills": [
+          "dolag25-magneticum-sfr-timescale"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -8089,7 +8212,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous",
         "sfrStatistic": "unspecified"
       },
       "provenance": {
@@ -8099,7 +8222,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_SFMS_z1.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "1236f2daea8271c470c8371eb240a8f325960118a2457e0ee81ff01061d2b6ba"
+        "checksumSha256": "1236f2daea8271c470c8371eb240a8f325960118a2457e0ee81ff01061d2b6ba",
+        "definitionFills": [
+          "dolag25-magneticum-sfr-timescale"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -8206,7 +8332,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous",
         "sfrStatistic": "unspecified"
       },
       "provenance": {
@@ -8216,7 +8342,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_SFMS_z1.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "1236f2daea8271c470c8371eb240a8f325960118a2457e0ee81ff01061d2b6ba"
+        "checksumSha256": "1236f2daea8271c470c8371eb240a8f325960118a2457e0ee81ff01061d2b6ba",
+        "definitionFills": [
+          "dolag25-magneticum-sfr-timescale"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -8323,7 +8452,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous",
         "sfrStatistic": "unspecified"
       },
       "provenance": {
@@ -8333,7 +8462,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_SFMS_z1.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "1236f2daea8271c470c8371eb240a8f325960118a2457e0ee81ff01061d2b6ba"
+        "checksumSha256": "1236f2daea8271c470c8371eb240a8f325960118a2457e0ee81ff01061d2b6ba",
+        "definitionFills": [
+          "dolag25-magneticum-sfr-timescale"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -8410,7 +8542,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous",
         "sfrStatistic": "unspecified"
       },
       "provenance": {
@@ -8420,7 +8552,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_SFMS_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "5c3d9d46243bb19e3371a18af81c1948c8ce39603be4da156a4449cb74ebb733"
+        "checksumSha256": "5c3d9d46243bb19e3371a18af81c1948c8ce39603be4da156a4449cb74ebb733",
+        "definitionFills": [
+          "dolag25-magneticum-sfr-timescale"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -8509,7 +8644,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous",
         "sfrStatistic": "unspecified"
       },
       "provenance": {
@@ -8519,7 +8654,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_SFMS_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "5c3d9d46243bb19e3371a18af81c1948c8ce39603be4da156a4449cb74ebb733"
+        "checksumSha256": "5c3d9d46243bb19e3371a18af81c1948c8ce39603be4da156a4449cb74ebb733",
+        "definitionFills": [
+          "dolag25-magneticum-sfr-timescale"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -8626,7 +8764,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous",
         "sfrStatistic": "unspecified"
       },
       "provenance": {
@@ -8636,7 +8774,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_SFMS_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "5c3d9d46243bb19e3371a18af81c1948c8ce39603be4da156a4449cb74ebb733"
+        "checksumSha256": "5c3d9d46243bb19e3371a18af81c1948c8ce39603be4da156a4449cb74ebb733",
+        "definitionFills": [
+          "dolag25-magneticum-sfr-timescale"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -8743,7 +8884,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous",
         "sfrStatistic": "unspecified"
       },
       "provenance": {
@@ -8753,7 +8894,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_SFMS_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "5c3d9d46243bb19e3371a18af81c1948c8ce39603be4da156a4449cb74ebb733"
+        "checksumSha256": "5c3d9d46243bb19e3371a18af81c1948c8ce39603be4da156a4449cb74ebb733",
+        "definitionFills": [
+          "dolag25-magneticum-sfr-timescale"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -8854,7 +8998,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous",
         "sfrStatistic": "unspecified"
       },
       "provenance": {
@@ -8864,7 +9008,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_SFMS_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "5c3d9d46243bb19e3371a18af81c1948c8ce39603be4da156a4449cb74ebb733"
+        "checksumSha256": "5c3d9d46243bb19e3371a18af81c1948c8ce39603be4da156a4449cb74ebb733",
+        "definitionFills": [
+          "dolag25-magneticum-sfr-timescale"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -8929,7 +9076,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous",
         "sfrStatistic": "unspecified"
       },
       "provenance": {
@@ -8939,7 +9086,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_SFMS_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "d479581b73db2b61c79fca7f24aa64b4bd14eba07872896b34dc5c76ace2fcfe"
+        "checksumSha256": "d479581b73db2b61c79fca7f24aa64b4bd14eba07872896b34dc5c76ace2fcfe",
+        "definitionFills": [
+          "dolag25-magneticum-sfr-timescale"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -9022,7 +9172,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous",
         "sfrStatistic": "unspecified"
       },
       "provenance": {
@@ -9032,7 +9182,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_SFMS_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "d479581b73db2b61c79fca7f24aa64b4bd14eba07872896b34dc5c76ace2fcfe"
+        "checksumSha256": "d479581b73db2b61c79fca7f24aa64b4bd14eba07872896b34dc5c76ace2fcfe",
+        "definitionFills": [
+          "dolag25-magneticum-sfr-timescale"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -9127,7 +9280,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous",
         "sfrStatistic": "unspecified"
       },
       "provenance": {
@@ -9137,7 +9290,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_SFMS_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "d479581b73db2b61c79fca7f24aa64b4bd14eba07872896b34dc5c76ace2fcfe"
+        "checksumSha256": "d479581b73db2b61c79fca7f24aa64b4bd14eba07872896b34dc5c76ace2fcfe",
+        "definitionFills": [
+          "dolag25-magneticum-sfr-timescale"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -9232,7 +9388,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous",
         "sfrStatistic": "unspecified"
       },
       "provenance": {
@@ -9242,7 +9398,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_SFMS_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "d479581b73db2b61c79fca7f24aa64b4bd14eba07872896b34dc5c76ace2fcfe"
+        "checksumSha256": "d479581b73db2b61c79fca7f24aa64b4bd14eba07872896b34dc5c76ace2fcfe",
+        "definitionFills": [
+          "dolag25-magneticum-sfr-timescale"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -9337,7 +9496,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous",
         "sfrStatistic": "unspecified"
       },
       "provenance": {
@@ -9347,7 +9506,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_SFMS_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "d479581b73db2b61c79fca7f24aa64b4bd14eba07872896b34dc5c76ace2fcfe"
+        "checksumSha256": "d479581b73db2b61c79fca7f24aa64b4bd14eba07872896b34dc5c76ace2fcfe",
+        "definitionFills": [
+          "dolag25-magneticum-sfr-timescale"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -12286,7 +12448,7 @@
         "warning": "Weighting and aperture of the stellar metallicity are not stated in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -12304,7 +12466,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mstar_Zstar_z0.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "4886a17ba5c11edb9b747d416847a7072789a48a33c889179f9b6be565b0a773"
+        "checksumSha256": "4886a17ba5c11edb9b747d416847a7072789a48a33c889179f9b6be565b0a773",
+        "definitionFills": [
+          "dolag25-magneticum-zstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -12415,7 +12580,7 @@
         "warning": "Weighting and aperture of the stellar metallicity are not stated in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -12433,7 +12598,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mstar_Zstar_z0.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "4886a17ba5c11edb9b747d416847a7072789a48a33c889179f9b6be565b0a773"
+        "checksumSha256": "4886a17ba5c11edb9b747d416847a7072789a48a33c889179f9b6be565b0a773",
+        "definitionFills": [
+          "dolag25-magneticum-zstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -12538,7 +12706,7 @@
         "warning": "Weighting and aperture of the stellar metallicity are not stated in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -12556,7 +12724,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mstar_Zstar_z0.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "4886a17ba5c11edb9b747d416847a7072789a48a33c889179f9b6be565b0a773"
+        "checksumSha256": "4886a17ba5c11edb9b747d416847a7072789a48a33c889179f9b6be565b0a773",
+        "definitionFills": [
+          "dolag25-magneticum-zstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -12649,7 +12820,7 @@
         "warning": "Weighting and aperture of the stellar metallicity are not stated in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -12667,7 +12838,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mstar_Zstar_z0.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "4886a17ba5c11edb9b747d416847a7072789a48a33c889179f9b6be565b0a773"
+        "checksumSha256": "4886a17ba5c11edb9b747d416847a7072789a48a33c889179f9b6be565b0a773",
+        "definitionFills": [
+          "dolag25-magneticum-zstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -12742,7 +12916,7 @@
         "warning": "Weighting and aperture of the stellar metallicity are not stated in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -12760,7 +12934,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mstar_Zstar_z1.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "b0ceffca10b336f43c66adfe199610153083549a40417606a356d008178e2892"
+        "checksumSha256": "b0ceffca10b336f43c66adfe199610153083549a40417606a356d008178e2892",
+        "definitionFills": [
+          "dolag25-magneticum-zstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -12847,7 +13024,7 @@
         "warning": "Weighting and aperture of the stellar metallicity are not stated in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -12865,7 +13042,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mstar_Zstar_z1.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "b0ceffca10b336f43c66adfe199610153083549a40417606a356d008178e2892"
+        "checksumSha256": "b0ceffca10b336f43c66adfe199610153083549a40417606a356d008178e2892",
+        "definitionFills": [
+          "dolag25-magneticum-zstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -12964,7 +13144,7 @@
         "warning": "Weighting and aperture of the stellar metallicity are not stated in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -12982,7 +13162,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mstar_Zstar_z1.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "b0ceffca10b336f43c66adfe199610153083549a40417606a356d008178e2892"
+        "checksumSha256": "b0ceffca10b336f43c66adfe199610153083549a40417606a356d008178e2892",
+        "definitionFills": [
+          "dolag25-magneticum-zstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -13081,7 +13264,7 @@
         "warning": "Weighting and aperture of the stellar metallicity are not stated in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -13099,7 +13282,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mstar_Zstar_z1.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "b0ceffca10b336f43c66adfe199610153083549a40417606a356d008178e2892"
+        "checksumSha256": "b0ceffca10b336f43c66adfe199610153083549a40417606a356d008178e2892",
+        "definitionFills": [
+          "dolag25-magneticum-zstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -13168,7 +13354,7 @@
         "warning": "Weighting and aperture of the stellar metallicity are not stated in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -13186,7 +13372,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mstar_Zstar_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "7b689f7700ad32992182ef4c6af705c31cdea80bed61781557242e1474aaa759"
+        "checksumSha256": "7b689f7700ad32992182ef4c6af705c31cdea80bed61781557242e1474aaa759",
+        "definitionFills": [
+          "dolag25-magneticum-zstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -13267,7 +13456,7 @@
         "warning": "Weighting and aperture of the stellar metallicity are not stated in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -13285,7 +13474,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mstar_Zstar_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "7b689f7700ad32992182ef4c6af705c31cdea80bed61781557242e1474aaa759"
+        "checksumSha256": "7b689f7700ad32992182ef4c6af705c31cdea80bed61781557242e1474aaa759",
+        "definitionFills": [
+          "dolag25-magneticum-zstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -13384,7 +13576,7 @@
         "warning": "Weighting and aperture of the stellar metallicity are not stated in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -13402,7 +13594,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mstar_Zstar_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "7b689f7700ad32992182ef4c6af705c31cdea80bed61781557242e1474aaa759"
+        "checksumSha256": "7b689f7700ad32992182ef4c6af705c31cdea80bed61781557242e1474aaa759",
+        "definitionFills": [
+          "dolag25-magneticum-zstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -13501,7 +13696,7 @@
         "warning": "Weighting and aperture of the stellar metallicity are not stated in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -13519,7 +13714,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mstar_Zstar_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "7b689f7700ad32992182ef4c6af705c31cdea80bed61781557242e1474aaa759"
+        "checksumSha256": "7b689f7700ad32992182ef4c6af705c31cdea80bed61781557242e1474aaa759",
+        "definitionFills": [
+          "dolag25-magneticum-zstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -13612,7 +13810,7 @@
         "warning": "Weighting and aperture of the stellar metallicity are not stated in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -13630,7 +13828,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mstar_Zstar_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "7b689f7700ad32992182ef4c6af705c31cdea80bed61781557242e1474aaa759"
+        "checksumSha256": "7b689f7700ad32992182ef4c6af705c31cdea80bed61781557242e1474aaa759",
+        "definitionFills": [
+          "dolag25-magneticum-zstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -13687,7 +13888,7 @@
         "warning": "Weighting and aperture of the stellar metallicity are not stated in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -13705,7 +13906,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mstar_Zstar_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "3ec008ceb2fbbec6f394705b3618f870447f4aceae5934a4176c634f1663b440"
+        "checksumSha256": "3ec008ceb2fbbec6f394705b3618f870447f4aceae5934a4176c634f1663b440",
+        "definitionFills": [
+          "dolag25-magneticum-zstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -13780,7 +13984,7 @@
         "warning": "Weighting and aperture of the stellar metallicity are not stated in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -13798,7 +14002,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mstar_Zstar_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "3ec008ceb2fbbec6f394705b3618f870447f4aceae5934a4176c634f1663b440"
+        "checksumSha256": "3ec008ceb2fbbec6f394705b3618f870447f4aceae5934a4176c634f1663b440",
+        "definitionFills": [
+          "dolag25-magneticum-zstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -13885,7 +14092,7 @@
         "warning": "Weighting and aperture of the stellar metallicity are not stated in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -13903,7 +14110,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mstar_Zstar_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "3ec008ceb2fbbec6f394705b3618f870447f4aceae5934a4176c634f1663b440"
+        "checksumSha256": "3ec008ceb2fbbec6f394705b3618f870447f4aceae5934a4176c634f1663b440",
+        "definitionFills": [
+          "dolag25-magneticum-zstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -13990,7 +14200,7 @@
         "warning": "Weighting and aperture of the stellar metallicity are not stated in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -14008,7 +14218,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mstar_Zstar_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "3ec008ceb2fbbec6f394705b3618f870447f4aceae5934a4176c634f1663b440"
+        "checksumSha256": "3ec008ceb2fbbec6f394705b3618f870447f4aceae5934a4176c634f1663b440",
+        "definitionFills": [
+          "dolag25-magneticum-zstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -14095,7 +14308,7 @@
         "warning": "Weighting and aperture of the stellar metallicity are not stated in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1Rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -14113,7 +14326,10 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_Mstar_Zstar_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "3ec008ceb2fbbec6f394705b3618f870447f4aceae5934a4176c634f1663b440"
+        "checksumSha256": "3ec008ceb2fbbec6f394705b3618f870447f4aceae5934a4176c634f1663b440",
+        "definitionFills": [
+          "dolag25-magneticum-zstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
