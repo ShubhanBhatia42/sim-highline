@@ -573,7 +573,8 @@
         },
         "massDefinition": "aperture-Reff-stars",
         "population": "all",
-        "metallicityQuantity": "gas-O/H"
+        "metallicityQuantity": "gas-O/H",
+        "metallicityCalibration": "total metallicity rescaled by the solar oxygen fraction"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -587,7 +588,10 @@
         "sourceMember": "metgvsmgal_reff_nmin1d-1_tmax2d4-eps-converted-to.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labelled decades validated by the minor-tick pattern; y: labelled ticks",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dubois21-newhorizon-mzr-oxygen"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -683,7 +687,8 @@
         },
         "massDefinition": "aperture-Reff-stars",
         "population": "all",
-        "metallicityQuantity": "gas-O/H"
+        "metallicityQuantity": "gas-O/H",
+        "metallicityCalibration": "total metallicity rescaled by the solar oxygen fraction"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -697,7 +702,10 @@
         "sourceMember": "metgvsmgal_reff_nmin1d-1_tmax2d4-eps-converted-to.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labelled decades validated by the minor-tick pattern; y: labelled ticks",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dubois21-newhorizon-mzr-oxygen"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -789,7 +797,8 @@
         },
         "massDefinition": "aperture-Reff-stars",
         "population": "all",
-        "metallicityQuantity": "gas-O/H"
+        "metallicityQuantity": "gas-O/H",
+        "metallicityCalibration": "total metallicity rescaled by the solar oxygen fraction"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -803,7 +812,10 @@
         "sourceMember": "metgvsmgal_reff_nmin1d-1_tmax2d4-eps-converted-to.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labelled decades validated by the minor-tick pattern; y: labelled ticks",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dubois21-newhorizon-mzr-oxygen"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -877,7 +889,8 @@
         },
         "massDefinition": "aperture-Reff-stars",
         "population": "all",
-        "metallicityQuantity": "gas-O/H"
+        "metallicityQuantity": "gas-O/H",
+        "metallicityCalibration": "total metallicity rescaled by the solar oxygen fraction"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -891,7 +904,10 @@
         "sourceMember": "metgvsmgal_reff_nmin1d-1_tmax2d4-eps-converted-to.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labelled decades validated by the minor-tick pattern; y: labelled ticks",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dubois21-newhorizon-mzr-oxygen"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

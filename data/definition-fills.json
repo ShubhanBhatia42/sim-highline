@@ -247,7 +247,8 @@
         "source": "ASTRID",
         "relation": [
           "shmr",
-          "zstar"
+          "zstar",
+          "sfrd"
         ],
         "citationIncludes": "Bird et al. 2022"
       },
@@ -500,6 +501,491 @@
         "retrieved": "2026-10-13",
         "sourceSha256": "706911748979b6d0ab0c8c54f844e490c7b674c68453b75a8865309b482a331e"
       }
+    },
+    {
+      "id": "sharda26-colibre-mzr-mass",
+      "match": {
+        "source": "COLIBRE",
+        "relation": [
+          "mzr"
+        ],
+        "citationIncludes": "Sharda et al. 2026"
+      },
+      "set": {
+        "massDefinition": "aperture-50pkpc"
+      },
+      "evidence": {
+        "citation": "Sharda et al. 2026, COLIBRE gas-phase MZR",
+        "url": "https://arxiv.org/abs/2606.25995",
+        "where": "Sec. 2, Metallicity estimation",
+        "quote": "stellar mass and SFR from particles bound to the subhalo within a 50 kpc aperture",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "dfa69f978a972ca8ee8d054d34c33b62408f67e88f16eb8fcebe47d8b79aadc9"
+      }
+    },
+    {
+      "id": "sharda26-fire2-mzr-mass",
+      "match": {
+        "source": "FIRE-2",
+        "relation": [
+          "mzr"
+        ],
+        "citationIncludes": "Sharda et al. 2026"
+      },
+      "set": {
+        "massDefinition": "aperture-0.2Rvir"
+      },
+      "evidence": {
+        "citation": "Sharda et al. 2026, COLIBRE gas-phase MZR",
+        "url": "https://arxiv.org/abs/2606.25995",
+        "where": "Sec. Compilation of simulation data",
+        "quote": "FIRE-2: stellar masses and metallicities estimated using all particles within 20 per cent of the virial radius",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "dfa69f978a972ca8ee8d054d34c33b62408f67e88f16eb8fcebe47d8b79aadc9",
+        "note": "Sharda+26 summarises Marszewski+24."
+      }
+    },
+    {
+      "id": "sharda26-thesanzoom-mzr-mass",
+      "match": {
+        "source": "THESAN-zoom",
+        "relation": [
+          "mzr"
+        ],
+        "citationIncludes": "Sharda et al. 2026"
+      },
+      "set": {
+        "massDefinition": "bound-within-Rvir"
+      },
+      "evidence": {
+        "citation": "Sharda et al. 2026, COLIBRE gas-phase MZR",
+        "url": "https://arxiv.org/abs/2606.25995",
+        "where": "Sec. Compilation of simulation data",
+        "quote": "THESAN-Zoom: stellar masses computed from all bound particles within the virial radius",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "dfa69f978a972ca8ee8d054d34c33b62408f67e88f16eb8fcebe47d8b79aadc9"
+      }
+    },
+    {
+      "id": "dave20-eagle-imf",
+      "match": {
+        "source": "EAGLE",
+        "citationIncludes": "Dave et al. 2020"
+      },
+      "set": {
+        "imf": "chabrier03"
+      },
+      "evidence": {
+        "citation": "Dave et al. 2020, MNRAS 497, 146",
+        "url": "https://arxiv.org/abs/2002.07226",
+        "where": "Sec. EAGLE",
+        "quote": "The simulations assume the Chabrier IMF",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "80bafcb8f93a1772c86a04569b2f13571a770f6dbcfb143d30dd4ddd2045b774"
+      }
+    },
+    {
+      "id": "dave20-simba-imf",
+      "match": {
+        "source": "SIMBA"
+      },
+      "set": {
+        "imf": "chabrier03"
+      },
+      "evidence": {
+        "citation": "Dave et al. 2020, MNRAS 497, 146",
+        "url": "https://arxiv.org/abs/2002.07226",
+        "where": "Sec. SIMBA",
+        "quote": "A Chabrier stellar initial mass function is assumed in order to compute stellar evolution",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "80bafcb8f93a1772c86a04569b2f13571a770f6dbcfb143d30dd4ddd2045b774"
+      }
+    },
+    {
+      "id": "schaye26-colibre-imf",
+      "match": {
+        "source": "COLIBRE"
+      },
+      "set": {
+        "imf": "chabrier03"
+      },
+      "evidence": {
+        "citation": "Schaye et al. 2026, MNRAS 548, stag375",
+        "url": "https://arxiv.org/abs/2508.21126",
+        "where": "Sec. Stellar mass loss and chemical enrichment",
+        "quote": "ZAMS mass distribution follows the Chabrier IMF in the range 0.1-100 Msun",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "dc109cb57eff9ed465aa7d2128a9ec40f75d5369f01fc19ca5a0883403cc77f3"
+      }
+    },
+    {
+      "id": "chaikin26hz-colibre-halo",
+      "match": {
+        "source": "COLIBRE",
+        "relation": [
+          "shmr"
+        ],
+        "citationIncludes": "COLIBRE progenitors"
+      },
+      "set": {
+        "haloMassDefinition": "bound-all-particles",
+        "haloMassHistory": "current"
+      },
+      "evidence": {
+        "citation": "Chaikin et al. 2026, COLIBRE progenitors of z>10 JWST galaxies",
+        "url": "https://arxiv.org/abs/2608.19007",
+        "where": "Sec. Subhalo identification and properties",
+        "quote": "the halo mass includes all gravitationally bound particles of any type and at any distance",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "5d7c480a352b77a39da7683569aae8a03dc2faa5b1594c16046e08e3cbd6951b",
+        "note": "Medians per redshift, so the halo mass is the one at that redshift."
+      }
+    },
+    {
+      "id": "chaikin26hz-colibre-sfr",
+      "match": {
+        "source": "COLIBRE",
+        "relation": [
+          "sfms"
+        ],
+        "citationIncludes": "COLIBRE progenitors"
+      },
+      "set": {
+        "sfrTimescaleMyr": "instantaneous",
+        "sfrStatistic": "median"
+      },
+      "evidence": {
+        "citation": "Chaikin et al. 2026, COLIBRE progenitors of z>10 JWST galaxies",
+        "url": "https://arxiv.org/abs/2608.19007",
+        "where": "Sec. The evolution of star formation rates",
+        "quote": "The simulated SFRs are instantaneous; black curves indicate the median SFR-M* relation for star-forming galaxies",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "5d7c480a352b77a39da7683569aae8a03dc2faa5b1594c16046e08e3cbd6951b"
+      }
+    },
+    {
+      "id": "bird22-astrid-sfrd-box",
+      "match": {
+        "source": "ASTRID",
+        "relation": [
+          "sfrd"
+        ],
+        "citationIncludes": "Bird et al. 2022"
+      },
+      "set": {
+        "sfrIntegrationLimit": "whole simulation box",
+        "dustCorrection": "none"
+      },
+      "evidence": {
+        "citation": "Bird et al. 2022, MNRAS 512, 3703",
+        "url": "https://arxiv.org/abs/2111.01160",
+        "where": "Sec. UV Luminosity Function, SFRD figure",
+        "quote": "The solid black line shows the results from the whole ASTRID simulation box",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "f67e380d5540c98477a3af3845913a7037aa006114166790fcf83380a8c609c8",
+        "note": "Intrinsic simulated SFR; no dust model enters."
+      }
+    },
+    {
+      "id": "feldmann23-firebox-sfrd-all",
+      "match": {
+        "source": "FIREbox",
+        "relation": [
+          "sfrd"
+        ],
+        "idIncludes": ".all"
+      },
+      "set": {
+        "sfrIntegrationLimit": "all identified galaxies in the box",
+        "dustCorrection": "none"
+      },
+      "evidence": {
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "where": "Sec. Cosmic star formation history and stellar mass",
+        "quote": "CSFH of all identified galaxies in the simulation volume",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "f04b44f1059e3cb723b3306f4297fe833f36c5f4d1e16e9f6d27d47b6b036ebd"
+      }
+    },
+    {
+      "id": "feldmann23-firebox-sfrd-massive",
+      "match": {
+        "source": "FIREbox",
+        "relation": [
+          "sfrd"
+        ],
+        "idIncludes": ".massive"
+      },
+      "set": {
+        "sfrIntegrationLimit": "galaxies with M*>10^9.3 Msun",
+        "dustCorrection": "none"
+      },
+      "evidence": {
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "where": "Sec. Cosmic star formation history and stellar mass",
+        "quote": "low mass galaxies with lg M_star/M_sun<9.3 are excluded",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "f04b44f1059e3cb723b3306f4297fe833f36c5f4d1e16e9f6d27d47b6b036ebd"
+      }
+    },
+    {
+      "id": "feldmann23-firebox-smd-all",
+      "match": {
+        "source": "FIREbox",
+        "relation": [
+          "smd"
+        ],
+        "idIncludes": ".all"
+      },
+      "set": {
+        "massDefinition": "stars in all identified galaxies"
+      },
+      "evidence": {
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "where": "Sec. Cosmic star formation history and stellar mass",
+        "quote": "cosmic stellar growth history of all identified galaxies in the simulation volume",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "f04b44f1059e3cb723b3306f4297fe833f36c5f4d1e16e9f6d27d47b6b036ebd"
+      }
+    },
+    {
+      "id": "feldmann23-firebox-smd-massive",
+      "match": {
+        "source": "FIREbox",
+        "relation": [
+          "smd"
+        ],
+        "idIncludes": ".massive"
+      },
+      "set": {
+        "massDefinition": "stars in galaxies with M*>10^9.3 Msun"
+      },
+      "evidence": {
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "where": "Sec. Cosmic star formation history and stellar mass",
+        "quote": "low mass galaxies with lg M_star/M_sun<9.3 are excluded",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "f04b44f1059e3cb723b3306f4297fe833f36c5f4d1e16e9f6d27d47b6b036ebd"
+      }
+    },
+    {
+      "id": "dubois21-newhorizon-sfrd-volume",
+      "match": {
+        "source": "NewHorizon",
+        "relation": [
+          "sfrd"
+        ]
+      },
+      "set": {
+        "sfrIntegrationLimit": "all galaxy (sub)structures in the zoom volume",
+        "dustCorrection": "none"
+      },
+      "evidence": {
+        "citation": "Dubois et al. 2021, A&A 651, A109",
+        "url": "https://arxiv.org/abs/2009.10578",
+        "where": "Sec. Star formation rates",
+        "quote": "summing all star particles formed over the last 100 Myr within the entire volume of the simulation, associated with a galaxy (sub)structure",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "aa5e1c93e47c3a0740c0e107ace8a17a479a72349765e8c1737fe9b851f121d3"
+      }
+    },
+    {
+      "id": "dubois21-newhorizon-mzr-oxygen",
+      "match": {
+        "source": "NewHorizon",
+        "relation": [
+          "mzr"
+        ],
+        "idIncludes": ".mzr.z"
+      },
+      "set": {
+        "metallicityCalibration": "total metallicity rescaled by the solar oxygen fraction"
+      },
+      "evidence": {
+        "citation": "Dubois et al. 2021, A&A 651, A109",
+        "url": "https://arxiv.org/abs/2009.10578",
+        "where": "Sec. Stellar and gas metallicities",
+        "quote": "we rescale the gas metallicity values by a factor corresponding to the fractional abundance of oxygen in the solar atmosphere",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "aa5e1c93e47c3a0740c0e107ace8a17a479a72349765e8c1737fe9b851f121d3",
+        "note": "Oxygen is not followed self-consistently in NewHorizon."
+      }
+    },
+    {
+      "id": "ricarte19-romulus-mass",
+      "match": {
+        "source": "Romulus25",
+        "citationIncludes": "Ricarte et al. 2019"
+      },
+      "set": {
+        "massDefinition": "sum of star particles x 0.6 (Munshi+13 correction)"
+      },
+      "evidence": {
+        "citation": "Ricarte et al. 2019, MNRAS 489, 802",
+        "url": "https://arxiv.org/abs/1904.10116",
+        "where": "Sec. Halo Finding and Data Analysis",
+        "quote": "Throughout this paper, we multiply all stellar masses by 0.6, and divide all halo masses by 0.8",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "ee1646c7364bf742cb563780dccd7861c397b3e01b6bd16cbf445b61d312c012",
+        "note": "Stellar masses are sums of star particles scaled by 0.6, about -0.22 dex relative to the raw sum; halo masses are divided by 0.8."
+      }
+    },
+    {
+      "id": "lagos15-eagle-h2-def",
+      "match": {
+        "source": "EAGLE",
+        "relation": [
+          "h2-fraction"
+        ],
+        "citationIncludes": "Lagos et al. 2015"
+      },
+      "set": {
+        "gasDefinition": "H2 within 30 pkpc"
+      },
+      "evidence": {
+        "citation": "Lagos et al. 2015, MNRAS 452, 3815",
+        "url": "https://arxiv.org/abs/1503.04807",
+        "where": "Appendix, prescription of Krumholz",
+        "quote": "total H2 mass within 30 pkpc of the galaxy centre",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "9819c89affc9579bbd490ba103b62dbedc8d9e4a81daef43b469700de8743d6e"
+      }
+    },
+    {
+      "id": "vogelsberger14-illustris-sfrd",
+      "match": {
+        "source": "Illustris",
+        "relation": [
+          "sfrd"
+        ],
+        "citationIncludes": "Vogelsberger et al. 2014"
+      },
+      "set": {
+        "sfrIntegrationLimit": "total SFRD of all galaxies in the box",
+        "dustCorrection": "none"
+      },
+      "evidence": {
+        "citation": "Vogelsberger et al. 2014, MNRAS 444, 1518",
+        "url": "https://arxiv.org/abs/1405.2921",
+        "where": "Sec. Large-scale structure statistics, SFRD figure",
+        "quote": "The black solid line shows the total SFRD",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "12f3b58a22a856e920edcf9099e0fb2587ac3e12e6c37ce33f214badc0a2071f",
+        "note": "Simulated SFR is intrinsic."
+      }
+    },
+    {
+      "id": "vijayan21-flares-sfrd-limit",
+      "match": {
+        "source": "FLARES",
+        "relation": [
+          "sfrd"
+        ],
+        "citationIncludes": "Vijayan et al. 2021"
+      },
+      "set": {
+        "sfrIntegrationLimit": "galaxies with SFR >= 0.1 Msun/yr"
+      },
+      "evidence": {
+        "citation": "Vijayan et al. 2021, MNRAS 501, 3289",
+        "url": "https://arxiv.org/abs/2008.06057",
+        "where": "Sec. Star formation rate density",
+        "quote": "star formation rate density for galaxies with SFR >= 0.1 Msun/yr",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "7350296953bcbaad530165f20b772398676dac0cded4beafa8cef5a72af6eead"
+      }
+    },
+    {
+      "id": "dave19-simba-sfrd",
+      "match": {
+        "source": "SIMBA",
+        "relation": [
+          "sfrd"
+        ],
+        "citationIncludes": "Dave et al. 2019"
+      },
+      "set": {
+        "sfrIntegrationLimit": "all star formation in the volume",
+        "dustCorrection": "none"
+      },
+      "evidence": {
+        "citation": "Dave et al. 2019, MNRAS 486, 2827",
+        "url": "https://arxiv.org/abs/1901.10203",
+        "where": "Sec. Star formation history",
+        "quote": "The SIMBA SFRD values include all the star formation in the volume at each epoch",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "592fda461eb7915dda5add5069b6158bffa1ef5fcef17e9c9684f93be0634bd6"
+      }
+    },
+    {
+      "id": "tremmel17-romulus-sfrd",
+      "match": {
+        "source": "Romulus25",
+        "relation": [
+          "sfrd"
+        ],
+        "citationIncludes": "Tremmel et al. 2017"
+      },
+      "set": {
+        "sfrIntegrationLimit": "total over the simulation volume",
+        "dustCorrection": "none"
+      },
+      "evidence": {
+        "citation": "Tremmel et al. 2017, MNRAS 470, 1121",
+        "url": "https://arxiv.org/abs/1607.02151",
+        "where": "Sec. First Results from Romulus25",
+        "quote": "The solid blue line shows the total cosmic star formation history in Romulus25",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "3a83f0bb8d3f8ef70f5361ea5fa16d814c0ab511f070015bda5e160501ef1427"
+      }
+    },
+    {
+      "id": "furlong15-eagle-sfrd",
+      "match": {
+        "source": "EAGLE",
+        "relation": [
+          "sfrd"
+        ],
+        "citationIncludes": "Furlong et al. 2015"
+      },
+      "set": {
+        "sfrIntegrationLimit": "total cosmic SFR density of the box",
+        "dustCorrection": "none"
+      },
+      "evidence": {
+        "citation": "Furlong et al. 2015, MNRAS 450, 4486",
+        "url": "https://arxiv.org/abs/1410.3485",
+        "where": "Sec. Evolution of star formation rates",
+        "quote": "Evolution of the cosmic star formation rate density. The EAGLE simulation is plotted as a solid black curve",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "13333f07cceb795bbfc477f09b5bf52ea69c5a1e30d1cb6501f992130d57239a",
+        "note": "Whole-volume density by definition; the dust correction mentioned in the caption applies to observations."
+      }
+    },
+    {
+      "id": "vogelsberger14-illustris-btfr-mass",
+      "match": {
+        "source": "Illustris",
+        "relation": [
+          "btfr"
+        ],
+        "citationIncludes": "Vogelsberger et al. 2014"
+      },
+      "set": {
+        "massDefinition": "baryonic mass within r_star"
+      },
+      "evidence": {
+        "citation": "Vogelsberger et al. 2014, MNRAS 444, 1518",
+        "url": "https://arxiv.org/abs/1405.2921",
+        "where": "Sec. Characteristics of individual galaxies, Tully-Fisher relations",
+        "quote": "We measure the total baryonic mass within r_star",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "12f3b58a22a856e920edcf9099e0fb2587ac3e12e6c37ce33f214badc0a2071f"
+      }
     }
   ],
   "readWithoutResult": [
@@ -596,6 +1082,104 @@
       ],
       "note": "The stellar mass function, size, SFMS and angular-momentum sections do not state which of the paper's mass apertures the released tables use.",
       "source": "Magneticum Pathfinder"
+    },
+    {
+      "arxiv": "1605.09379",
+      "paper": "Kaviraj et al. 2017 (Horizon-AGN)",
+      "keys": [
+        "densityFrame",
+        "sfrIndicator",
+        "sfrIntegrationLimit",
+        "dustCorrection"
+      ],
+      "note": "The cosmic star formation history is shown without a statement of how it was integrated or of the SFR indicator."
+    },
+    {
+      "arxiv": "1704.00954",
+      "paper": "Wilkins et al. 2017 (BlueTides)",
+      "keys": [
+        "sfrTimescaleMyr",
+        "haloMassHistory",
+        "bhMassMethod"
+      ],
+      "note": "The SFR averaging timescale, the epoch of the halo mass and the black hole mass method are not stated for the tables."
+    },
+    {
+      "arxiv": "1902.10714",
+      "paper": "Diemer et al. 2019 (TNG HI and H2)",
+      "keys": [
+        "gasStatistic",
+        "gasMethod"
+      ],
+      "note": "Searched; the statistic and H2 model for the plotted medians are not stated where the records come from."
+    },
+    {
+      "arxiv": "1801.04951",
+      "paper": "Huang et al. 2018 (BlueTides)",
+      "keys": [
+        "imf"
+      ],
+      "note": "No IMF statement found."
+    },
+    {
+      "arxiv": "1501.01311",
+      "paper": "Crain et al. 2015 (EAGLE)",
+      "keys": [
+        "massDefinition"
+      ],
+      "note": "No mass-definition statement for the stellar mass density found; the IMF is stated."
+    },
+    {
+      "arxiv": "2002.07226",
+      "paper": "Dave et al. 2020",
+      "keys": [
+        "densityFrame",
+        "massDefinition",
+        "sfrTimescaleMyr",
+        "imf"
+      ],
+      "note": "Not stated for the TNG records and for the EAGLE mass function and sSFR records. The TNG IMF is not stated either."
+    },
+    {
+      "arxiv": "2508.21126",
+      "paper": "Schaye et al. 2026 (COLIBRE)",
+      "keys": [
+        "haloMassDefinition",
+        "haloMassHistory"
+      ],
+      "note": "The stellar-to-halo mass figure does not state the halo mass definition in the caption or nearby text."
+    },
+    {
+      "arxiv": "2606.25995",
+      "paper": "Sharda et al. 2026 (COLIBRE MZR)",
+      "keys": [
+        "massDefinition"
+      ],
+      "note": "Not stated for the SIMBA and FIREbox comparison curves."
+    },
+    {
+      "arxiv": "2205.15325",
+      "paper": "Feldmann et al. 2023 (FIREbox)",
+      "keys": [
+        "densityFrame"
+      ],
+      "note": "Comoving versus physical density of the mass function is not stated."
+    },
+    {
+      "arxiv": "2009.10578",
+      "paper": "Dubois et al. 2021 (NewHorizon)",
+      "keys": [
+        "densityFrame"
+      ],
+      "note": "The zoom volume is given in Mpc without saying comoving or physical."
+    },
+    {
+      "arxiv": "2111.01160",
+      "paper": "Bird et al. 2022 (ASTRID)",
+      "keys": [
+        "massDefinition"
+      ],
+      "note": "FOF and SUBFIND stellar masses are both shown; which one the digitized relations use is not stated."
     }
   ]
 }

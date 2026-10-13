@@ -3572,7 +3572,7 @@
         "warning": "Median M_BH in stellar-mass bins with more than 5 galaxies (coloured line, m100n1024) and the 15th-85th percentile band (offsets read from the lower panel and added to the median) at z=0, read from the vector paths of Habouzit et al. 2021; no table exists. Bins with 5 or fewer galaxies are drawn in the paper as individual points and are not extracted. Galaxies with M* below 5e8 Msun are excluded. Stellar mass is the total stellar mass of the galaxy as defined by each simulation's galaxy finder."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "massDefinition": "unspecified",
         "bhMassMethod": "intrinsic",
         "population": "all"
@@ -3589,7 +3589,10 @@
         "sourceMember": "analysis/allsimu_scaling_mean_2_secondrow_medianonly.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "outlined text: the equally spaced major ticks of each panel (x: 10, 11; y: 10 to 6; lower panel: 1, 0, -1) were assigned the values read from the rendered figure and validated against the lower edge of the grey empirical band (Haring+04: 7.08 and 8.2 at M* = 1e10 and 1e11, matched to 0.05 dex)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dave20-simba-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -3704,7 +3707,7 @@
         "warning": "Median M_BH in stellar-mass bins with more than 5 galaxies (coloured line, m100n1024) and the 15th-85th percentile band (offsets read from the lower panel and added to the median) at z=1, read from the vector paths of Habouzit et al. 2021; no table exists. Bins with 5 or fewer galaxies are drawn in the paper as individual points and are not extracted. Galaxies with M* below 5e8 Msun are excluded. Stellar mass is the total stellar mass of the galaxy as defined by each simulation's galaxy finder."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "massDefinition": "unspecified",
         "bhMassMethod": "intrinsic",
         "population": "all"
@@ -3721,7 +3724,10 @@
         "sourceMember": "analysis/allsimu_scaling_mean_2_secondrow_medianonly.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "outlined text: the equally spaced major ticks of each panel (x: 10, 11; y: 10 to 6; lower panel: 1, 0, -1) were assigned the values read from the rendered figure and validated against the lower edge of the grey empirical band (Haring+04: 7.08 and 8.2 at M* = 1e10 and 1e11, matched to 0.05 dex)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dave20-simba-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -3836,7 +3842,7 @@
         "warning": "Median M_BH in stellar-mass bins with more than 5 galaxies (coloured line, m100n1024) and the 15th-85th percentile band (offsets read from the lower panel and added to the median) at z=2, read from the vector paths of Habouzit et al. 2021; no table exists. Bins with 5 or fewer galaxies are drawn in the paper as individual points and are not extracted. Galaxies with M* below 5e8 Msun are excluded. Stellar mass is the total stellar mass of the galaxy as defined by each simulation's galaxy finder."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "massDefinition": "unspecified",
         "bhMassMethod": "intrinsic",
         "population": "all"
@@ -3853,7 +3859,10 @@
         "sourceMember": "analysis/allsimu_scaling_mean_2_secondrow_medianonly.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "outlined text: the equally spaced major ticks of each panel (x: 10, 11; y: 10 to 6; lower panel: 1, 0, -1) were assigned the values read from the rendered figure and validated against the lower edge of the grey empirical band (Haring+04: 7.08 and 8.2 at M* = 1e10 and 1e11, matched to 0.05 dex)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dave20-simba-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -3962,7 +3971,7 @@
         "warning": "Median M_BH in stellar-mass bins with more than 5 galaxies (coloured line, m100n1024) and the 15th-85th percentile band (offsets read from the lower panel and added to the median) at z=3, read from the vector paths of Habouzit et al. 2021; no table exists. Bins with 5 or fewer galaxies are drawn in the paper as individual points and are not extracted. Galaxies with M* below 5e8 Msun are excluded. Stellar mass is the total stellar mass of the galaxy as defined by each simulation's galaxy finder."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "massDefinition": "unspecified",
         "bhMassMethod": "intrinsic",
         "population": "all"
@@ -3979,7 +3988,10 @@
         "sourceMember": "analysis/allsimu_scaling_mean_2_secondrow_medianonly.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "outlined text: the equally spaced major ticks of each panel (x: 10, 11; y: 10 to 6; lower panel: 1, 0, -1) were assigned the values read from the rendered figure and validated against the lower edge of the grey empirical band (Haring+04: 7.08 and 8.2 at M* = 1e10 and 1e11, matched to 0.05 dex)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dave20-simba-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -4082,7 +4094,7 @@
         "warning": "Median M_BH in stellar-mass bins with more than 5 galaxies (coloured line, m100n1024) and the 15th-85th percentile band (offsets read from the lower panel and added to the median) at z=4, read from the vector paths of Habouzit et al. 2021; no table exists. Bins with 5 or fewer galaxies are drawn in the paper as individual points and are not extracted. Galaxies with M* below 5e8 Msun are excluded. Stellar mass is the total stellar mass of the galaxy as defined by each simulation's galaxy finder."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "massDefinition": "unspecified",
         "bhMassMethod": "intrinsic",
         "population": "all"
@@ -4099,7 +4111,10 @@
         "sourceMember": "analysis/allsimu_scaling_mean_2_secondrow_medianonly.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "outlined text: the equally spaced major ticks of each panel (x: 10, 11; y: 10 to 6; lower panel: 1, 0, -1) were assigned the values read from the rendered figure and validated against the lower edge of the grey empirical band (Haring+04: 7.08 and 8.2 at M* = 1e10 and 1e11, matched to 0.05 dex)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dave20-simba-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -4190,7 +4205,7 @@
         "warning": "Median M_BH in stellar-mass bins with more than 5 galaxies (coloured line, m100n1024) and the 15th-85th percentile band (offsets read from the lower panel and added to the median) at z=5, read from the vector paths of Habouzit et al. 2021; no table exists. Bins with 5 or fewer galaxies are drawn in the paper as individual points and are not extracted. Galaxies with M* below 5e8 Msun are excluded. Stellar mass is the total stellar mass of the galaxy as defined by each simulation's galaxy finder."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "massDefinition": "unspecified",
         "bhMassMethod": "intrinsic",
         "population": "all"
@@ -4207,7 +4222,10 @@
         "sourceMember": "analysis/allsimu_scaling_mean_2_secondrow_medianonly.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "outlined text: the equally spaced major ticks of each panel (x: 10, 11; y: 10 to 6; lower panel: 1, 0, -1) were assigned the values read from the rendered figure and validated against the lower edge of the grey empirical band (Haring+04: 7.08 and 8.2 at M* = 1e10 and 1e11, matched to 0.05 dex)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dave20-simba-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

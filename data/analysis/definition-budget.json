@@ -187,23 +187,23 @@
    "records": 14,
    "pairs": 74,
    "counts": {
-    "matched": 3,
-    "differing": 9,
-    "unknown": 30,
+    "matched": 9,
+    "differing": 18,
+    "unknown": 15,
     "mismatch": 32
    },
    "median_abs_dy": {
     "matched": 0.327,
-    "differing": 0.3249,
-    "unknown": 0.276,
+    "differing": 0.2144,
+    "unknown": 0.3183,
     "mismatch": 8.7878
    },
-   "documented_fraction": 0.929,
-   "excess_differing_minus_matched": -0.0021,
-   "p_permutation": 0.4403,
+   "documented_fraction": 0.971,
+   "excess_differing_minus_matched": -0.1127,
+   "p_permutation": 0.5537,
    "ci95_excess": [
-    -0.0709,
-    0.2845
+    -0.2242,
+    0.3105
    ]
   },
   {
@@ -220,22 +220,22 @@
    "records": 14,
    "pairs": 76,
    "counts": {
-    "matched": 3,
-    "differing": 13,
-    "unknown": 22,
+    "matched": 9,
+    "differing": 22,
+    "unknown": 7,
     "mismatch": 38
    },
    "median_abs_dy": {
     "matched": 0.206,
-    "differing": 0.2191,
-    "unknown": 0.2163,
+    "differing": 0.1182,
+    "unknown": 0.4641,
     "mismatch": 8.7482
    },
-   "documented_fraction": 0.943,
-   "excess_differing_minus_matched": 0.0132,
-   "p_permutation": 0.4708,
+   "documented_fraction": 0.986,
+   "excess_differing_minus_matched": -0.0878,
+   "p_permutation": 0.4943,
    "ci95_excess": [
-    -0.1469,
+    -0.1247,
     0.361
    ]
   },
@@ -361,7 +361,7 @@
     "unknown": 0.3594,
     "mismatch": 0.2259
    },
-   "documented_fraction": 0.813,
+   "documented_fraction": 0.867,
    "excess_differing_minus_matched": -0.073,
    "p_permutation": 0.6812,
    "ci95_excess": [
@@ -395,7 +395,7 @@
     "unknown": 0.3615,
     "mismatch": 0.1948
    },
-   "documented_fraction": 0.8,
+   "documented_fraction": 0.815,
    "excess_differing_minus_matched": 0.2245,
    "p_permutation": 0.089,
    "ci95_excess": [
@@ -961,17 +961,17 @@
    "pairs": 136,
    "counts": {
     "matched": 0,
-    "differing": 42,
-    "unknown": 94,
+    "differing": 53,
+    "unknown": 83,
     "mismatch": 0
    },
    "median_abs_dy": {
     "matched": null,
-    "differing": 0.5094,
-    "unknown": 0.5232,
+    "differing": 0.514,
+    "unknown": 0.5218,
     "mismatch": null
    },
-   "documented_fraction": 0.842,
+   "documented_fraction": 0.868,
    "excess_differing_minus_matched": null
   },
   {
@@ -1001,7 +1001,7 @@
     "unknown": 0.3391,
     "mismatch": null
    },
-   "documented_fraction": 0.769,
+   "documented_fraction": 0.788,
    "excess_differing_minus_matched": null
   },
   {
@@ -1031,7 +1031,7 @@
     "unknown": 0.5506,
     "mismatch": null
    },
-   "documented_fraction": 0.786,
+   "documented_fraction": 0.804,
    "excess_differing_minus_matched": null
   },
   {
@@ -1061,7 +1061,7 @@
     "unknown": 1.206,
     "mismatch": null
    },
-   "documented_fraction": 0.769,
+   "documented_fraction": 0.788,
    "excess_differing_minus_matched": null
   }
  ],
@@ -1105,23 +1105,23 @@
    "records": 14,
    "pairs": 74,
    "counts": {
-    "matched": 3,
-    "differing": 9,
-    "unknown": 30,
+    "matched": 9,
+    "differing": 18,
+    "unknown": 15,
     "mismatch": 32
    },
    "median_abs_dy": {
     "matched": 0.327,
-    "differing": 0.3249,
-    "unknown": 0.276,
+    "differing": 0.2144,
+    "unknown": 0.3183,
     "mismatch": 8.7878
    },
-   "documented_fraction": 0.929,
-   "excess_differing_minus_matched": -0.0021,
-   "p_permutation": 0.4588,
+   "documented_fraction": 0.971,
+   "excess_differing_minus_matched": -0.1127,
+   "p_permutation": 0.5612,
    "ci95_excess": [
-    -0.0709,
-    0.2845
+    -0.2249,
+    0.3105
    ]
   },
   {
@@ -1137,23 +1137,23 @@
    "records": 13,
    "pairs": 63,
    "counts": {
-    "matched": 3,
-    "differing": 9,
-    "unknown": 22,
+    "matched": 9,
+    "differing": 18,
+    "unknown": 7,
     "mismatch": 29
    },
    "median_abs_dy": {
     "matched": 0.206,
-    "differing": 0.2191,
-    "unknown": 0.2163,
+    "differing": 0.1182,
+    "unknown": 0.4641,
     "mismatch": 8.7343
    },
-   "documented_fraction": 0.938,
-   "excess_differing_minus_matched": 0.0132,
-   "p_permutation": 0.4543,
+   "documented_fraction": 0.985,
+   "excess_differing_minus_matched": -0.0878,
+   "p_permutation": 0.5192,
    "ci95_excess": [
-    -0.0497,
-    0.361
+    -0.1084,
+    0.3725
    ]
   },
   {
@@ -2327,6 +2327,23 @@
     ]
    },
    {
+    "source": "FIREbox",
+    "relation": "smd",
+    "z": 2,
+    "key": "massDefinition",
+    "from": "stars in all identified galaxies",
+    "to": "stars in galaxies with M*>10^9.3 Msun",
+    "idFrom": "feldmann23.firebox.smd.all",
+    "idTo": "feldmann23.firebox.smd.massive",
+    "median_dy": -0.2176,
+    "max_abs_dy": 0.652,
+    "bins": 64,
+    "xRange": [
+     0,
+     6.33
+    ]
+   },
+   {
     "source": "BlueTides",
     "relation": "uvlf",
     "z": 8,
@@ -2620,6 +2637,24 @@
     "max_abs_dy": 0.4476
    },
    {
+    "source": "FIREbox",
+    "relation": "smd",
+    "key": "massDefinition",
+    "from": "stars in all identified galaxies",
+    "to": "stars in galaxies with M*>10^9.3 Msun",
+    "epochs": 1,
+    "zRange": [
+     2,
+     2
+    ],
+    "median_dy": -0.2176,
+    "medianRange": [
+     -0.2176,
+     -0.2176
+    ],
+    "max_abs_dy": 0.652
+   },
+   {
     "source": "FLARES",
     "relation": "uvlf",
     "key": "dustCorrection",
@@ -2822,9 +2857,9 @@
  "summary": {
   "pairs": 2255,
   "byClass": {
-   "matched": 87,
-   "differing": 343,
-   "unknown": 562,
+   "matched": 99,
+   "differing": 372,
+   "unknown": 521,
    "mismatch": 1263
   },
   "testsRun": 16,

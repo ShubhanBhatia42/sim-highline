@@ -70,7 +70,8 @@
         "densityFrame": "comoving",
         "sfrIndicator": "intrinsic SFR split by the dust model: total star formation",
         "dustCorrection": "none",
-        "population": "all galaxies"
+        "population": "all galaxies",
+        "sfrIntegrationLimit": "galaxies with SFR >= 0.1 Msun/yr"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -84,7 +85,10 @@
         "sourceMember": "figures/sfrd.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: numeric tick labels snapped to ticks; y: numeric tick labels (with minus glyphs) snapped to ticks",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "vijayan21-flares-sfrd-limit"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -159,7 +163,8 @@
         "densityFrame": "comoving",
         "sfrIndicator": "intrinsic SFR split by the dust model: unobscured (UV) star formation",
         "dustCorrection": "unobscured (UV-visible) fraction only",
-        "population": "all galaxies"
+        "population": "all galaxies",
+        "sfrIntegrationLimit": "galaxies with SFR >= 0.1 Msun/yr"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -173,7 +178,10 @@
         "sourceMember": "figures/sfrd.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: numeric tick labels snapped to ticks; y: numeric tick labels (with minus glyphs) snapped to ticks",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "vijayan21-flares-sfrd-limit"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -248,7 +256,8 @@
         "densityFrame": "comoving",
         "sfrIndicator": "intrinsic SFR split by the dust model: obscured (IR) star formation",
         "dustCorrection": "none",
-        "population": "all galaxies"
+        "population": "all galaxies",
+        "sfrIntegrationLimit": "galaxies with SFR >= 0.1 Msun/yr"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -262,7 +271,10 @@
         "sourceMember": "figures/sfrd.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: numeric tick labels snapped to ticks; y: numeric tick labels (with minus glyphs) snapped to ticks",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "vijayan21-flares-sfrd-limit"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

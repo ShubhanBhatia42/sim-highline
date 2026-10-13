@@ -103,7 +103,7 @@
       },
       "definitions": {
         "massDefinition": "caesar-6dfof-galaxy-total",
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 68,
           "Om": 0.3
@@ -125,7 +125,8 @@
         "axisCalibrationPixels": "x: numeric tick labels snapped to ticks; y: positive tick words negated (minus glyphs are separate) and paired with ticks",
         "digitizationUncertaintyDex": 0.01,
         "definitionFills": [
-          "dave20-simba-galaxy-mass"
+          "dave20-simba-galaxy-mass",
+          "dave20-simba-imf"
         ]
       },
       "calibration": "prediction",
@@ -470,7 +471,7 @@
       },
       "definitions": {
         "massDefinition": "aperture-30pkpc",
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 67.77,
           "Om": 0.307
@@ -492,7 +493,8 @@
         "axisCalibrationPixels": "x: numeric tick labels snapped to ticks; y: positive tick words negated (minus glyphs are separate) and paired with ticks",
         "digitizationUncertaintyDex": 0.01,
         "definitionFills": [
-          "dave20-eagle-aperture"
+          "dave20-eagle-aperture",
+          "dave20-eagle-imf"
         ]
       },
       "calibration": "prediction",
@@ -569,7 +571,7 @@
       },
       "definitions": {
         "massDefinition": "caesar-6dfof-galaxy-total",
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 68,
           "Om": 0.3
@@ -592,7 +594,8 @@
         "axisCalibrationPixels": "x: numeric tick labels snapped to ticks; y: as the top panel; the axis is labelled in Gyr^-1 and converted exactly by subtracting 9 dex",
         "digitizationUncertaintyDex": 0.01,
         "definitionFills": [
-          "dave20-simba-galaxy-mass"
+          "dave20-simba-galaxy-mass",
+          "dave20-simba-imf"
         ]
       },
       "calibration": "prediction",
@@ -766,7 +769,7 @@
       },
       "definitions": {
         "massDefinition": "aperture-30pkpc",
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 67.77,
           "Om": 0.307
@@ -789,7 +792,8 @@
         "axisCalibrationPixels": "x: numeric tick labels snapped to ticks; y: as the top panel; the axis is labelled in Gyr^-1 and converted exactly by subtracting 9 dex",
         "digitizationUncertaintyDex": 0.01,
         "definitionFills": [
-          "dave20-eagle-aperture"
+          "dave20-eagle-aperture",
+          "dave20-eagle-imf"
         ]
       },
       "calibration": "prediction",

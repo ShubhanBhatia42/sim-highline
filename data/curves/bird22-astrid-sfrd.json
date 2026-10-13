@@ -850,14 +850,16 @@
         "warning": "Total cosmic SFR density of the ASTRID box versus redshift (z about 2.7 to 12), read from the vector paths of Bird et al. 2022. The grey dashed line (halos with SFR above 0.3 Msun/yr only) is not extracted. The cosmology and IMF follow the existing ASTRID records and have not been re-verified against the paper's parameter table."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": {
           "H0": 67.74,
           "Om": 0.3089
         },
         "densityFrame": "comoving",
         "sfrIndicator": "instantaneous SFR of star-forming gas",
-        "population": "all galaxies"
+        "population": "all galaxies",
+        "sfrIntegrationLimit": "whole simulation box",
+        "dustCorrection": "none"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -871,7 +873,11 @@
         "sourceMember": "plots/sfrd.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: numeric tick labels snapped to tick marks; y: positive tick words negated (the minus signs are drawn as paths) and paired with the tick marks in order",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "bird22-astrid-imf",
+          "bird22-astrid-sfrd-box"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

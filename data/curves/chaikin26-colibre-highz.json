@@ -74,11 +74,13 @@
         "warning": "Median SFR-M* relation of star-forming galaxies (sSFR > 0.2/t_H) of COLIBRE L200m6 at z=17, read from the black reference lines of the paper's appendix figure (the same line is repeated in every panel). The coloured main-progenitor tracks and error bars are not extracted. Cosmology, IMF and the halo-mass definition are not stated near the figure."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": "unspecified",
         "massDefinition": "aperture-50pkpc",
         "densityFrame": "comoving",
-        "population": "star-forming galaxies, sSFR > 0.2 / t_H(z)"
+        "population": "star-forming galaxies, sSFR > 0.2 / t_H(z)",
+        "sfrTimescaleMyr": "instantaneous",
+        "sfrStatistic": "median"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -92,7 +94,11 @@
         "sourceMember": "Figures/massive_galaxies_shmr.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: decade labels (10^n words, minus signs included) snapped to ticks and validated by the minor-tick pattern at log10(2..9); log axes; first column panel used",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "schaye26-colibre-imf",
+          "chaikin26hz-colibre-sfr"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -211,11 +217,13 @@
         "warning": "Median SFR-M* relation of star-forming galaxies (sSFR > 0.2/t_H) of COLIBRE L200m6 at z=10, read from the black reference lines of the paper's appendix figure (the same line is repeated in every panel). The coloured main-progenitor tracks and error bars are not extracted. Cosmology, IMF and the halo-mass definition are not stated near the figure."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": "unspecified",
         "massDefinition": "aperture-50pkpc",
         "densityFrame": "comoving",
-        "population": "star-forming galaxies, sSFR > 0.2 / t_H(z)"
+        "population": "star-forming galaxies, sSFR > 0.2 / t_H(z)",
+        "sfrTimescaleMyr": "instantaneous",
+        "sfrStatistic": "median"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -229,7 +237,11 @@
         "sourceMember": "Figures/massive_galaxies_shmr.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: decade labels (10^n words, minus signs included) snapped to ticks and validated by the minor-tick pattern at log10(2..9); log axes; first column panel used",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "schaye26-colibre-imf",
+          "chaikin26hz-colibre-sfr"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -392,11 +404,13 @@
         "warning": "Median SFR-M* relation of star-forming galaxies (sSFR > 0.2/t_H) of COLIBRE L200m6 at z=0, read from the black reference lines of the paper's appendix figure (the same line is repeated in every panel). The coloured main-progenitor tracks and error bars are not extracted. Cosmology, IMF and the halo-mass definition are not stated near the figure."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": "unspecified",
         "massDefinition": "aperture-50pkpc",
         "densityFrame": "comoving",
-        "population": "star-forming galaxies, sSFR > 0.2 / t_H(z)"
+        "population": "star-forming galaxies, sSFR > 0.2 / t_H(z)",
+        "sfrTimescaleMyr": "instantaneous",
+        "sfrStatistic": "median"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -410,7 +424,11 @@
         "sourceMember": "Figures/massive_galaxies_shmr.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: decade labels (10^n words, minus signs included) snapped to ticks and validated by the minor-tick pattern at log10(2..9); log axes; first column panel used",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "schaye26-colibre-imf",
+          "chaikin26hz-colibre-sfr"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -473,11 +491,13 @@
         "warning": "Median stellar-to-halo mass ratio of central subhaloes of COLIBRE L200m6 at z=17, read from the black reference lines of the paper's appendix figure (the same line is repeated in every panel). The coloured main-progenitor tracks and error bars are not extracted. Cosmology, IMF and the halo-mass definition are not stated near the figure."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": "unspecified",
         "massDefinition": "aperture-50pkpc",
         "densityFrame": "comoving",
-        "population": "all central subhaloes"
+        "population": "all central subhaloes",
+        "haloMassDefinition": "bound-all-particles",
+        "haloMassHistory": "current"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -491,7 +511,11 @@
         "sourceMember": "Figures/massive_galaxies_shmr.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: decade labels (10^n words, minus signs included) snapped to ticks and validated by the minor-tick pattern at log10(2..9); log axes; first column panel used",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "schaye26-colibre-imf",
+          "chaikin26hz-colibre-halo"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -586,11 +610,13 @@
         "warning": "Median stellar-to-halo mass ratio of central subhaloes of COLIBRE L200m6 at z=10, read from the black reference lines of the paper's appendix figure (the same line is repeated in every panel). The coloured main-progenitor tracks and error bars are not extracted. Cosmology, IMF and the halo-mass definition are not stated near the figure."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": "unspecified",
         "massDefinition": "aperture-50pkpc",
         "densityFrame": "comoving",
-        "population": "all central subhaloes"
+        "population": "all central subhaloes",
+        "haloMassDefinition": "bound-all-particles",
+        "haloMassHistory": "current"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -604,7 +630,11 @@
         "sourceMember": "Figures/massive_galaxies_shmr.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: decade labels (10^n words, minus signs included) snapped to ticks and validated by the minor-tick pattern at log10(2..9); log axes; first column panel used",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "schaye26-colibre-imf",
+          "chaikin26hz-colibre-halo"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -739,11 +769,13 @@
         "warning": "Median stellar-to-halo mass ratio of central subhaloes of COLIBRE L200m6 at z=0, read from the black reference lines of the paper's appendix figure (the same line is repeated in every panel). The coloured main-progenitor tracks and error bars are not extracted. Cosmology, IMF and the halo-mass definition are not stated near the figure."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "cosmology": "unspecified",
         "massDefinition": "aperture-50pkpc",
         "densityFrame": "comoving",
-        "population": "all central subhaloes"
+        "population": "all central subhaloes",
+        "haloMassDefinition": "bound-all-particles",
+        "haloMassHistory": "current"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -757,7 +789,11 @@
         "sourceMember": "Figures/massive_galaxies_shmr.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: decade labels (10^n words, minus signs included) snapped to ticks and validated by the minor-tick pattern at log10(2..9); log axes; first column panel used",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "schaye26-colibre-imf",
+          "chaikin26hz-colibre-halo"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

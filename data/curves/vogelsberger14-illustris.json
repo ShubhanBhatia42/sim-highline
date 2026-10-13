@@ -445,7 +445,9 @@
         },
         "densityFrame": "comoving",
         "population": "all",
-        "sfrIndicator": "instantaneous SFR"
+        "sfrIndicator": "instantaneous SFR",
+        "sfrIntegrationLimit": "total SFRD of all galaxies in the box",
+        "dustCorrection": "none"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -459,7 +461,10 @@
         "sourceMember": "figures/sfrd.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labels 0-10 snapped to ticks in log10(1+z) and converted exactly to z; y: decade labels snapped to ticks (log10)",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "vogelsberger14-illustris-sfrd"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -678,7 +683,7 @@
         "densityFrame": "comoving",
         "population": "disc galaxies (42, selected)",
         "velocityDefinition": "circular velocity V_circ as defined in the paper",
-        "massDefinition": "unspecified"
+        "massDefinition": "baryonic mass within r_star"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -692,7 +697,10 @@
         "sourceMember": "figures/TF_baryon.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "log axes: labelled values (velocities 140-400, decades of mass) snapped to ticks; marker centres read from the vector paths",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "vogelsberger14-illustris-btfr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

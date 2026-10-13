@@ -16,7 +16,7 @@ function fillDefinitions(record){
   const ids=[],prior=record.provenance.definitionFills||[];
   for(const f of FILLS){
     const m=f.match;
-    if(m.source!==record.source||(m.relation&&![].concat(m.relation).includes(record.relation))||(m.citationIncludes&&!String(record.provenance.citation).includes(m.citationIncludes)))continue;
+    if(m.source!==record.source||(m.relation&&![].concat(m.relation).includes(record.relation))||(m.citationIncludes&&!String(record.provenance.citation).includes(m.citationIncludes))||(m.idIncludes&&!record.id.includes(m.idIncludes)))continue;
     let used=false;
     for(const [k,v] of Object.entries(f.set)){
       const cur=record.definitions[k];
