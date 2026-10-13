@@ -83,6 +83,51 @@ def stat(pairs, label_of=None):
     d = [d for s, t, d_, c in pairs for d in [d_] if (label_of(s, t) if label_of else c) == "differing"]
     return (med(d) - med(m)) if m and d else None
 
+SENS_KEYS = {"massDefinition", "haloMassDefinition", "sfrTimescaleMyr", "sizeDefinition", "dustCorrection", "gasDefinition", "jDefinition", "sigmaDefinition"}
+SENS_SKIP_RELATIONS = {"quenched"}
+IGN_DEF = {"cosmology", "imfBasis"}
+
+def run_base(run):
+    return re.split(r"[\s(,]", run.strip(), maxsplit=1)[0]
+
+def sensitivity(recs):
+    sim = [r for r in recs if r["kind"] == "simulation" and r["representation"].get("type") == "points" and len(r["representation"]["points"]) >= 5]
+    groups = {}
+    for r in sim:
+        groups.setdefault((r["source"], r["relation"], round(r["epoch"]["zRepresentative"], 2)), []).append(r)
+    rows = []
+    for (src, rel, z), rs in groups.items():
+        for a, b in itertools.combinations(rs, 2):
+            A = {k: v for k, v in a["definitions"].items() if k not in IGN_DEF}
+            B = {k: v for k, v in b["definitions"].items() if k not in IGN_DEF}
+            diff = [k for k in set(A) | set(B) if A.get(k) != B.get(k)]
+            if rel in SENS_SKIP_RELATIONS or len(diff) != 1 or diff[0] not in SENS_KEYS: continue
+            key = diff[0]
+            if a["axes"]["xUnit"] != b["axes"]["xUnit"] or a["axes"]["yUnit"] != b["axes"]["yUnit"]: continue
+            if key != "sfrTimescaleMyr" and run_base(a["run"]) != run_base(b["run"]): continue
+            ca, cb = curve(a), curve(b)
+            lo, hi = max(ca[0][0], cb[0][0]), min(ca[-1][0], cb[-1][0])
+            ds, x = [], lo
+            while x <= hi + 1e-9:
+                ya, yb = at(ca, x), at(cb, x)
+                if ya is not None and yb is not None: ds.append(yb - ya)
+                x += STEP
+            if len(ds) < MIN_PTS: continue
+            va, vb, sign = str(A.get(key)), str(B.get(key)), 1
+            if va > vb: a, b, va, vb, sign = b, a, vb, va, -1
+            rows.append({"source": src, "relation": rel, "z": z, "key": key, "from": A.get(key) if sign == 1 else B.get(key), "to": B.get(key) if sign == 1 else A.get(key),
+                         "idFrom": a["id"], "idTo": b["id"], "median_dy": sign * med(ds), "max_abs_dy": max(abs(d) for d in ds), "bins": len(ds),
+                         "xRange": [round(lo, 2), round(hi, 2)]})
+    rows.sort(key=lambda r: (r["relation"], r["key"], r["source"], str(r["from"]), r["z"]))
+    agg = {}
+    for r in rows:
+        agg.setdefault((r["source"], r["relation"], r["key"], str(r["from"]), str(r["to"])), []).append(r)
+    summary = [{"source": k[0], "relation": k[1], "key": k[2], "from": k[3], "to": k[4], "epochs": len(v),
+                "zRange": [min(x["z"] for x in v), max(x["z"] for x in v)], "median_dy": med([x["median_dy"] for x in v]),
+                "medianRange": [min(x["median_dy"] for x in v), max(x["median_dy"] for x in v)], "max_abs_dy": max(x["max_abs_dy"] for x in v)}
+               for k, v in sorted(agg.items())]
+    return {"pairs": rows, "summary": summary}
+
 def analyse(recs, rules_by_rel, rankable_only):
     rng = random.Random(SEED)
     out = []
@@ -145,7 +190,7 @@ def main():
     recs, rb = load(), rules()
     result = {"method": __doc__.strip(), "parameters": {"seed": SEED, "permutations": NPERM, "bootstrap": NBOOT,
               "gridStepDex": STEP, "maxGapDex": MAX_GAP, "minGridPoints": MIN_PTS, "epochs": EPOCHS, "ignoredSoftKeys": sorted(IGNORE_SOFT)},
-              "allRecords": analyse(recs, rb, False), "rankableOnly": analyse(recs, rb, True)}
+              "allRecords": analyse(recs, rb, False), "rankableOnly": analyse(recs, rb, True), "sensitivity": sensitivity(recs)}
     def rnd(o):
         if isinstance(o, float): return round(o, 4)
         if isinstance(o, dict): return {k: rnd(v) for k, v in o.items()}
@@ -161,6 +206,8 @@ def main():
     path.parent.mkdir(exist_ok=True)
     path.write_text(json.dumps(rnd(result), indent=1) + "\n")
     report(result)
+    print('== definition sensitivity:', len(result['sensitivity']['pairs']), 'within-run pairs,', len(result['sensitivity']['summary']), 'groups')
+    for r in result['sensitivity']['summary']: print(f"{r['source']:13} {r['relation']:6} {r['key']:17} {str(r['from'])[:26]:26} -> {str(r['to'])[:26]:26} epochs={r['epochs']:2} median={r['median_dy']:+.2f} range=[{r['medianRange'][0]:+.2f},{r['medianRange'][1]:+.2f}] max={r['max_abs_dy']:.2f}")
     for key in ("allRecords", "rankableOnly"):
         print("==", key)
         for r in result[key]:
@@ -187,10 +234,16 @@ def report(result):
         k, m = r["counts"], r["median_abs_dy"]
         lines.append(f"| {r['relation']} | {r['z']} | {len(r['suites'])} | {r['pairs']} ({k['matched']} / {k['differing']} / {k['unknown']} / {k['mismatch']}) | {f(m['matched'])} | {f(m['differing'])} | {f(m['unknown'])} | {f(r['excess_differing_minus_matched'])} | {r.get('p_permutation', '-')} |")
     lines += ["", "Units: dex in the relation's y axis (log10). excess = median(differing) - median(matched).", "",
-              "## Method", "", result["method"], "",
+              "## Definition sensitivity measured inside single runs", "",
+             "Where one simulation run is published under two definitions of one quantity (and nothing else differs in the record), the offset between the two curves is a purely definitional effect. Population splits (active versus passive) and model variations are excluded. Offsets are median (to minus from) over the shared x range, in y units; the range is over epochs.", "",
+             "| simulation | relation | what changes | from | to | epochs | median | range of medians | largest local offset |", "|---|---|---|---|---|---|---|---|---|"]
+    for r in result["sensitivity"]["summary"]:
+        lines.append(f"| {r['source']} | {r['relation']} | {r['key']} | {str(r['from'])[:48]} | {str(r['to'])[:48]} | {r['epochs']} (z {r['zRange'][0]:g}-{r['zRange'][1]:g}) | {r['median_dy']:+.2f} | {r['medianRange'][0]:+.2f} to {r['medianRange'][1]:+.2f} | {r['max_abs_dy']:.2f} |")
+    lines += ["",
+             "## Method", "", result["method"], "",
               "## Limits", "",
               "- Records within one suite are not independent; pairs are formed between different suites only, and the permutation shuffles definitions across records.",
-              "- Digitized records are included (they are never rankable); the rankable-only run in the JSON is the sensitivity check and is far smaller.",
+              "- Digitized records are included (they are never rankable); the rankable-only run in the JSON is the robustness check and is far smaller.",
               "- Cosmology differences are ignored: values are h-free as published.",
               "- Only documented keys count. An undocumented definition is not assumed equal to anything.",
               "- Choosing the matched class from the repository's own comparability rules (`compare.js`) means the answer depends on those rules; they are conventions, not measurements.",

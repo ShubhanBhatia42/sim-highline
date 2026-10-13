@@ -84,3 +84,12 @@ Each relation has a default observational anchor (`REL[...].anchor` in `highline
 Customise > "convert stellar masses and SFRs to a Chabrier IMF" shifts, on screen only, the axes that carry stellar mass or SFR (x for mass functions, mass-metallicity, size, quenched fraction, black hole relations and sSFR; x and y for the main sequence; y for the stellar-to-halo ratio, SFR density and stellar mass density) by the standard offsets already used by the comparability check in `compare.js` (`IMF_DEX`: Kroupa 0, Chabrier -0.025, Salpeter +0.21 dex in stellar mass, so Kroupa to Chabrier is -0.025 and Salpeter to Chabrier is -0.235 dex). Curves with an unstated IMF are never shifted. The offsets are population-averaged conventions, not exact for any single galaxy, so the conversion is off by default, labelled in the legend, the Evidence panel and exported figures, and **downloads and the Python loader always contain the published values**.
 
 Exported sample points of parametric curves are rounded to 6 decimals so that the exported tables are identical on every platform (last-digit floating-point differences otherwise change a few dozen rows between Node builds).
+
+## Definitions recovered from sources
+
+Some tables and figures do not state a definition (for example the aperture of the stellar mass) that the source paper does. `data/definition-fills.json` records each such value with the paper, section, a short quote and the SHA-256 of the arXiv source archive read. `scripts/annotate-definitions.mjs` applies a fill only where the record's value is undocumented, never overwrites a stated value (a conflict stops the build) and lists the applied fills in `provenance.definitionFills`. A definition that cannot be quoted from the source stays `unspecified`.
+
+## Definition budget and sensitivity
+
+`scripts/analyze_definition_budget.py` classifies cross-suite record pairs from documented definitions alone and measures the definitional shift inside single runs published under two definitions; see `docs/ANALYSIS-definition-budget.md`. No curve is corrected anywhere.
+

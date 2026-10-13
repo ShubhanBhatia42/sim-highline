@@ -113,7 +113,7 @@
         "gasDefinition": "HI",
         "gasMethod": "on-the-fly Rahmati+13 self-shielding and Krumholz & Gnedin 2011 H2; all halo cold gas assigned to the most dynamically important galaxy (6D FOF galaxies)",
         "gasStatistic": "median",
-        "massDefinition": "unspecified",
+        "massDefinition": "caesar-6dfof-galaxy-total",
         "haloMassDefinition": "FOF",
         "population": "all",
         "imf": "unspecified",
@@ -134,7 +134,10 @@
         "sourceMember": "gass_median_m100n1024.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: numeric tick labels (bottom row) snapped to ticks; y: tick labels with signs assigned from the 0.0 label (minus signs are separate glyphs), per panel",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dave20-simba-galaxy-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -685,7 +688,7 @@
         "gasDefinition": "H2",
         "gasMethod": "on-the-fly Rahmati+13 self-shielding and Krumholz & Gnedin 2011 H2; all halo cold gas assigned to the most dynamically important galaxy (6D FOF galaxies)",
         "gasStatistic": "median",
-        "massDefinition": "unspecified",
+        "massDefinition": "caesar-6dfof-galaxy-total",
         "haloMassDefinition": "FOF",
         "population": "all",
         "imf": "unspecified",
@@ -706,7 +709,10 @@
         "sourceMember": "gass_median_m100n1024.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: numeric tick labels (bottom row) snapped to ticks; y: tick labels with signs assigned from the 0.0 label (minus signs are separate glyphs), per panel",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dave20-simba-galaxy-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

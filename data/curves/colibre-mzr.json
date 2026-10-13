@@ -4507,7 +4507,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "aperture-50pkpc"
       },
       "provenance": {
         "tier": "published-table",
@@ -4518,7 +4519,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_eagle_m5_0.npz",
         "checksumSha256": "ff13dcdb9dfbbb23e0bb7f198660caa96fbf7f7613be0a5972cf38860363337c",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-eagle-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -4709,7 +4713,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "aperture-50pkpc"
       },
       "provenance": {
         "tier": "published-table",
@@ -4720,7 +4725,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_eagle_m5_1.npz",
         "checksumSha256": "f14d1b7c4ca80cd460d49fa23f55b510eec95f549aac632ff419eb9fbb692de6",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-eagle-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -4881,7 +4889,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "aperture-50pkpc"
       },
       "provenance": {
         "tier": "published-table",
@@ -4892,7 +4901,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_eagle_m5_2.npz",
         "checksumSha256": "b5f17a5d17a45a14d629c418be27f252e9d792b8ef59ce6d376d34a5caad901c",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-eagle-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -5058,7 +5070,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "aperture-50pkpc"
       },
       "provenance": {
         "tier": "published-table",
@@ -5069,7 +5082,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_eagle_m5_3.npz",
         "checksumSha256": "6623e016a7100d059b82edff8f4cce4ce5a3ceba4c071fa8943131d1cd839d11",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-eagle-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -5205,7 +5221,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "aperture-50pkpc"
       },
       "provenance": {
         "tier": "published-table",
@@ -5216,7 +5233,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_eagle_m5_5.npz",
         "checksumSha256": "75d422fa28d9eb9c37bdf63cf71e2b7a14de78640a02d958cea2c1643c769323",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-eagle-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -5312,7 +5332,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "aperture-50pkpc"
       },
       "provenance": {
         "tier": "published-table",
@@ -5323,7 +5344,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_eagle_m5_8.npz",
         "checksumSha256": "bbb24a172ab4ee7731ec29db278273dcd74ee184352719eaedcdd46615ae4c9f",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-eagle-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -5399,7 +5423,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "aperture-50pkpc"
       },
       "provenance": {
         "tier": "published-table",
@@ -5410,7 +5435,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_eagle_m5_10.npz",
         "checksumSha256": "5678b15dc634f3f8fbf4ef23cebf0f22544e672a41b75b7845df0328e31cf57f",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-eagle-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -5651,7 +5679,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "aperture-50pkpc"
       },
       "provenance": {
         "tier": "published-table",
@@ -5662,7 +5691,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_eagle_m6_0.npz",
         "checksumSha256": "9da76e4d44443ed06243efbc23e04c5e0083c21522507fcd0b2b20b0bcb6ab22",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-eagle-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -5913,7 +5945,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "aperture-50pkpc"
       },
       "provenance": {
         "tier": "published-table",
@@ -5924,7 +5957,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_eagle_m6_1.npz",
         "checksumSha256": "906924453fdecf7e039f87dc07168bbdf0afc4fd35bbbe3539c851b76c05d7c0",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-eagle-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -6160,7 +6196,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "aperture-50pkpc"
       },
       "provenance": {
         "tier": "published-table",
@@ -6171,7 +6208,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_eagle_m6_2.npz",
         "checksumSha256": "56681c8def69eefcf73a3ece5837b97c594038ccf740eb12d89f0556c7b06d8b",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-eagle-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -6402,7 +6442,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "aperture-50pkpc"
       },
       "provenance": {
         "tier": "published-table",
@@ -6413,7 +6454,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_eagle_m6_3.npz",
         "checksumSha256": "c89850a31b853b2e1af16032c9826ef14d55beabfe1e9243d86a78b5126e9d04",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-eagle-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -6604,7 +6648,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "aperture-50pkpc"
       },
       "provenance": {
         "tier": "published-table",
@@ -6615,7 +6660,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_eagle_m6_5.npz",
         "checksumSha256": "dacd09f976d2f6cd281648604d00efc7742a2152c2d82d33288772cf5541427d",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-eagle-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -6741,7 +6789,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "aperture-50pkpc"
       },
       "provenance": {
         "tier": "published-table",
@@ -6752,7 +6801,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_eagle_m6_8.npz",
         "checksumSha256": "3c18334edee3ecc656ac9d2957d5f70c6bc0b56b859ebb85c7cfd495ebd562a0",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-eagle-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -6853,7 +6905,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "aperture-50pkpc"
       },
       "provenance": {
         "tier": "published-table",
@@ -6864,7 +6917,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_eagle_m6_10.npz",
         "checksumSha256": "9336485873c1458c23d7344c8dae27d4af41ff615d8a735a544ef7c85be8904d",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-eagle-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -7165,7 +7221,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "total-bound-subhalo"
       },
       "provenance": {
         "tier": "published-table",
@@ -7176,7 +7233,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_tng_50_0.npz",
         "checksumSha256": "1ab10fd4d2e3fcd6b2779ca4228022e44b8a77174c377889e29b4028029d5d6c",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-tng-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -7477,7 +7537,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "total-bound-subhalo"
       },
       "provenance": {
         "tier": "published-table",
@@ -7488,7 +7549,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_tng_50_1.npz",
         "checksumSha256": "8a824ff1c4beb3f0c48cb617a77f5afd3b09ed335b375c83b2ef4ad578bc9fc2",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-tng-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -7784,7 +7848,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "total-bound-subhalo"
       },
       "provenance": {
         "tier": "published-table",
@@ -7795,7 +7860,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_tng_50_2.npz",
         "checksumSha256": "3fcdc4ee4f35f5f936eedb6db69e3b18623b26896f0ecb89a9dafdf4ed8f4342",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-tng-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -8061,7 +8129,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "total-bound-subhalo"
       },
       "provenance": {
         "tier": "published-table",
@@ -8072,7 +8141,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_tng_50_3.npz",
         "checksumSha256": "efa486f008dbd6a7a8bd606058368231c1c1173034f73f9d06804d134362e7fd",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-tng-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -8283,7 +8355,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "total-bound-subhalo"
       },
       "provenance": {
         "tier": "published-table",
@@ -8294,7 +8367,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_tng_50_5.npz",
         "checksumSha256": "c1749673f0d486185e0cf3901371f426ecc725c3cd29a35fa4f72df1b1036493",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-tng-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -8450,7 +8526,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "total-bound-subhalo"
       },
       "provenance": {
         "tier": "published-table",
@@ -8461,7 +8538,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_tng_50_8.npz",
         "checksumSha256": "9e03c7461a51ded57b6e9a4a4c4c244099871a7023f0f2c4221079ee40b4c343",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-tng-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -8587,7 +8667,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "total-bound-subhalo"
       },
       "provenance": {
         "tier": "published-table",
@@ -8598,7 +8679,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_tng_50_10.npz",
         "checksumSha256": "6dbbbddfd149652e2ba92b062b315b895b7afb2aa6101a1ce7ccd4d0ea3a8d7f",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-tng-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -8844,7 +8928,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "total-bound-subhalo"
       },
       "provenance": {
         "tier": "published-table",
@@ -8855,7 +8940,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_tng_100_0.npz",
         "checksumSha256": "6674ea1f230c1c769528198025721a7acf4856039c3d1bf571edd49a7a0698e3",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-tng-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -9116,7 +9204,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "total-bound-subhalo"
       },
       "provenance": {
         "tier": "published-table",
@@ -9127,7 +9216,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_tng_100_1.npz",
         "checksumSha256": "b9c82fad63a0cd0740273de2609363c28a8f745d372e89ebcf7106b3ed22b302",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-tng-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -9393,7 +9485,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "total-bound-subhalo"
       },
       "provenance": {
         "tier": "published-table",
@@ -9404,7 +9497,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_tng_100_2.npz",
         "checksumSha256": "c4d41bf1c24f12932232d94d5c5f137a4abdd20b96e72936fafe441091077cef",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-tng-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -9655,7 +9751,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "total-bound-subhalo"
       },
       "provenance": {
         "tier": "published-table",
@@ -9666,7 +9763,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_tng_100_3.npz",
         "checksumSha256": "118437aaf6660c7689060cb4bef9248457395dcf7f5af5b70e89c43dfb68b408",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-tng-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -9867,7 +9967,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "total-bound-subhalo"
       },
       "provenance": {
         "tier": "published-table",
@@ -9878,7 +9979,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_tng_100_5.npz",
         "checksumSha256": "5538856e729f33fbf34633bac831570cfb70ef28f6096980b50447da5d3f50a7",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-tng-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -10009,7 +10113,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "total-bound-subhalo"
       },
       "provenance": {
         "tier": "published-table",
@@ -10020,7 +10125,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_tng_100_8.npz",
         "checksumSha256": "f54a4d7353f24bca5af734f8ae6f94a3dccdf372843109bbbc645d3f00135ebe",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-tng-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -10116,7 +10224,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "total-bound-subhalo"
       },
       "provenance": {
         "tier": "published-table",
@@ -10127,7 +10236,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_tng_100_10.npz",
         "checksumSha256": "fa48cc8743d0fac56fc16b1d31204d1337c6a8a97b05394e1d9fd1d7fef25414",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-tng-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -10338,7 +10450,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "total-bound-subhalo"
       },
       "provenance": {
         "tier": "published-table",
@@ -10349,7 +10462,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_tng_300_0.npz",
         "checksumSha256": "c0a4d7702b38e51624b1ff787626d6f07e53232adf2cfcffda5ac56291406898",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-tng-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -10585,7 +10701,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "total-bound-subhalo"
       },
       "provenance": {
         "tier": "published-table",
@@ -10596,7 +10713,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_tng_300_1.npz",
         "checksumSha256": "592fdef29fe9f97ef08e54e75617dd5e8e2ee51e2d0fdf1cd74221b2a614e53a",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-tng-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -10827,7 +10947,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "total-bound-subhalo"
       },
       "provenance": {
         "tier": "published-table",
@@ -10838,7 +10959,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_tng_300_3.npz",
         "checksumSha256": "3ac1744f45a1af19a01a377356fa7d836945ee8de63d140a830530bc1a2c43d2",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-tng-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -11034,7 +11158,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "total-bound-subhalo"
       },
       "provenance": {
         "tier": "published-table",
@@ -11045,7 +11170,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_tng_300_5.npz",
         "checksumSha256": "756fe56bc45ad5973d4720b8abdebd6e60f0936d78fe47c6a307f612b97cd3a2",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-tng-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -11171,7 +11299,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "total-bound-subhalo"
       },
       "provenance": {
         "tier": "published-table",
@@ -11182,7 +11311,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_tng_300_8.npz",
         "checksumSha256": "ad05131272af3d26050babc76eee1b173bf05adf21b7853720b62fb0c7c8470c",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-tng-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -11268,7 +11400,8 @@
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "intrinsic-simulation",
         "imf": "chabrier03",
-        "population": "star-forming"
+        "population": "star-forming",
+        "massDefinition": "total-bound-subhalo"
       },
       "provenance": {
         "tier": "published-table",
@@ -11279,7 +11412,10 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/plot_mzr_sims_data_tng_300_10.npz",
         "checksumSha256": "0ea5100378ea7f04c5d201e07882304ed233282154d79b19509a13b85bfdcc69",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "definitionFills": [
+          "sharda26-tng-mzr-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,

@@ -185,7 +185,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -202,7 +202,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m5/gsmf_raw/z0.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "target",
       "rankable": true,
@@ -392,7 +395,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -409,7 +412,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m5/gsmf_raw/z0.1",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "target",
       "rankable": true,
@@ -592,7 +598,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -609,7 +615,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m5/gsmf_raw/z0.5",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -792,7 +801,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -809,7 +818,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m5/gsmf_raw/z1.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -978,7 +990,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -995,7 +1007,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m5/gsmf_raw/z2.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1157,7 +1172,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -1174,7 +1189,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m5/gsmf_raw/z3.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1329,7 +1347,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -1346,7 +1364,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m5/gsmf_raw/z4.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1473,7 +1494,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -1490,7 +1511,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m5/gsmf_raw/z5.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1603,7 +1627,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -1620,7 +1644,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m5/gsmf_raw/z6.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1712,7 +1739,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -1729,7 +1756,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m5/gsmf_raw/z7.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1814,7 +1844,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -1831,7 +1861,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m5/gsmf_raw/z8.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1895,7 +1928,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -1912,7 +1945,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m5/gsmf_raw/z9.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1969,7 +2005,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -1986,7 +2022,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m5/gsmf_raw/z10.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -2134,7 +2173,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -2151,7 +2190,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m6/gsmf_raw/z0.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "target",
       "rankable": true,
@@ -2299,7 +2341,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -2316,7 +2358,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m6/gsmf_raw/z0.1",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "target",
       "rankable": true,
@@ -2464,7 +2509,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -2481,7 +2526,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m6/gsmf_raw/z0.5",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -2622,7 +2670,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -2639,7 +2687,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m6/gsmf_raw/z1.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -2773,7 +2824,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -2790,7 +2841,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m6/gsmf_raw/z2.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -2917,7 +2971,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -2934,7 +2988,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m6/gsmf_raw/z3.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -3054,7 +3111,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -3071,7 +3128,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m6/gsmf_raw/z4.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -3170,7 +3230,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -3187,7 +3247,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m6/gsmf_raw/z5.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -3265,7 +3328,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -3282,7 +3345,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m6/gsmf_raw/z6.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -3339,7 +3405,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -3356,7 +3422,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m6/gsmf_raw/z7.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -3476,7 +3545,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -3493,7 +3562,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m7/gsmf_raw/z0.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "target",
       "rankable": true,
@@ -3613,7 +3685,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -3630,7 +3702,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m7/gsmf_raw/z0.1",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "target",
       "rankable": true,
@@ -3750,7 +3825,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -3767,7 +3842,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m7/gsmf_raw/z0.5",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -3880,7 +3958,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -3897,7 +3975,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m7/gsmf_raw/z1.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -4003,7 +4084,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -4020,7 +4101,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m7/gsmf_raw/z2.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -4119,7 +4203,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -4136,7 +4220,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m7/gsmf_raw/z3.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -4228,7 +4315,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -4245,7 +4332,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m7/gsmf_raw/z4.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -4316,7 +4406,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -4333,7 +4423,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L025m7/gsmf_raw/z5.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -4523,7 +4616,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -4540,7 +4633,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L050m5/gsmf_raw/z1.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -4723,7 +4819,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -4740,7 +4836,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L050m5/gsmf_raw/z2.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -4916,7 +5015,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -4933,7 +5032,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L050m5/gsmf_raw/z3.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -5095,7 +5197,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -5112,7 +5214,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L050m5/gsmf_raw/z4.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -5260,7 +5365,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -5277,7 +5382,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L050m5/gsmf_raw/z5.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -5404,7 +5512,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -5421,7 +5529,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L050m5/gsmf_raw/z6.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -5541,7 +5652,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -5558,7 +5669,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L050m5/gsmf_raw/z7.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -5671,7 +5785,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -5688,7 +5802,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L050m5/gsmf_raw/z8.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -5794,7 +5911,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -5811,7 +5928,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L050m5/gsmf_raw/z9.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -5903,7 +6023,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -5920,7 +6040,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L050m5/gsmf_raw/z10.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -5984,7 +6107,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -6001,7 +6124,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L050m5/gsmf_raw/z11.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -6058,7 +6184,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -6075,7 +6201,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L050m5/gsmf_raw/z12.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -6251,7 +6380,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -6268,7 +6397,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L100m5/gsmf_raw/z5.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -6437,7 +6569,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -6454,7 +6586,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L100m5/gsmf_raw/z6.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -6616,7 +6751,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -6633,7 +6768,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L100m5/gsmf_raw/z7.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -6781,7 +6919,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -6798,7 +6936,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L100m5/gsmf_raw/z8.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -6932,7 +7073,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -6949,7 +7090,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L100m5/gsmf_raw/z9.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -7062,7 +7206,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -7079,7 +7223,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L100m5/gsmf_raw/z10.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -7185,7 +7332,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -7202,7 +7349,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L100m5/gsmf_raw/z11.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -7301,7 +7451,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -7318,7 +7468,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L100m5/gsmf_raw/z12.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -7396,7 +7549,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -7413,7 +7566,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L100m5/gsmf_raw/z13.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -7477,7 +7633,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -7494,7 +7650,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L100m5/gsmf_raw/z14.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -7551,7 +7710,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -7568,7 +7727,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L100m5/gsmf_raw/z15.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -7744,7 +7906,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -7761,7 +7923,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m6/gsmf_raw/z0.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "target",
       "rankable": true,
@@ -7930,7 +8095,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -7947,7 +8112,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m6/gsmf_raw/z0.1",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "target",
       "rankable": true,
@@ -8116,7 +8284,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -8133,7 +8301,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m6/gsmf_raw/z0.5",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -8295,7 +8466,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -8312,7 +8483,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m6/gsmf_raw/z1.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -8474,7 +8648,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -8491,7 +8665,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m6/gsmf_raw/z2.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -8646,7 +8823,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -8663,7 +8840,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m6/gsmf_raw/z3.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -8811,7 +8991,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -8828,7 +9008,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m6/gsmf_raw/z4.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -8969,7 +9152,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -8986,7 +9169,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m6/gsmf_raw/z5.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -9120,7 +9306,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -9137,7 +9323,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m6/gsmf_raw/z6.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -9264,7 +9453,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -9281,7 +9470,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m6/gsmf_raw/z7.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -9394,7 +9586,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -9411,7 +9603,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m6/gsmf_raw/z8.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -9510,7 +9705,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -9527,7 +9722,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m6/gsmf_raw/z9.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -9619,7 +9817,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -9636,7 +9834,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m6/gsmf_raw/z10.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -9714,7 +9915,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -9731,7 +9932,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m6/gsmf_raw/z11.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -9802,7 +10006,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -9819,7 +10023,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m6/gsmf_raw/z12.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -9876,7 +10083,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -9893,7 +10100,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m6/gsmf_raw/z13.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -9950,7 +10160,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -9967,7 +10177,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m6/gsmf_raw/z14.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -10024,7 +10237,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -10041,7 +10254,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m6/gsmf_raw/z15.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -10189,7 +10405,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -10206,7 +10422,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L400m7/gsmf_raw/z0.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "target",
       "rankable": true,
@@ -10354,7 +10573,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -10371,7 +10590,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L400m7/gsmf_raw/z0.1",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "target",
       "rankable": true,
@@ -10519,7 +10741,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -10536,7 +10758,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L400m7/gsmf_raw/z0.5",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -10677,7 +10902,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -10694,7 +10919,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L400m7/gsmf_raw/z1.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -10835,7 +11063,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -10852,7 +11080,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L400m7/gsmf_raw/z2.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -10972,7 +11203,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -10989,7 +11220,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L400m7/gsmf_raw/z3.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -11109,7 +11343,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -11126,7 +11360,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L400m7/gsmf_raw/z4.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -11239,7 +11476,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -11256,7 +11493,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L400m7/gsmf_raw/z5.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -11362,7 +11602,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -11379,7 +11619,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L400m7/gsmf_raw/z6.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -11478,7 +11721,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -11495,7 +11738,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L400m7/gsmf_raw/z7.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -11594,7 +11840,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -11611,7 +11857,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L400m7/gsmf_raw/z8.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -11703,7 +11952,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -11720,7 +11969,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L400m7/gsmf_raw/z9.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -11798,7 +12050,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -11815,7 +12067,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L400m7/gsmf_raw/z10.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -11879,7 +12134,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -11896,7 +12151,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L400m7/gsmf_raw/z11.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12044,7 +12302,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -12061,7 +12319,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m7h/gsmf_raw/z0.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "target",
       "rankable": true,
@@ -12209,7 +12470,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -12226,7 +12487,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m7h/gsmf_raw/z0.1",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "target",
       "rankable": true,
@@ -12367,7 +12631,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -12384,7 +12648,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m7h/gsmf_raw/z0.5",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12525,7 +12792,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -12542,7 +12809,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m7h/gsmf_raw/z1.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12676,7 +12946,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -12693,7 +12963,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m7h/gsmf_raw/z2.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12827,7 +13100,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -12844,7 +13117,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m7h/gsmf_raw/z3.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12971,7 +13247,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -12988,7 +13264,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m7h/gsmf_raw/z4.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -13108,7 +13387,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -13125,7 +13404,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m7h/gsmf_raw/z5.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -13238,7 +13520,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -13255,7 +13537,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m7h/gsmf_raw/z6.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -13354,7 +13639,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -13371,7 +13656,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m7h/gsmf_raw/z7.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -13456,7 +13744,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -13473,7 +13761,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m7h/gsmf_raw/z8.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -13544,7 +13835,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -13561,7 +13852,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m7h/gsmf_raw/z9.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -13625,7 +13919,7 @@
         "warning": "Chaikin et al. 2026 published GSMF (gsmf_raw, 0.2 dex bins). sim-highline keeps bins whose lower edge exceeds 100 baryonic particle masses and attaches Poisson errors from the published bin counts; box-to-box cosmic variance is not included. The Eddington-bias-convolved variant in the same file is not ingested."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-50pkpc",
         "imf": "chabrier03",
         "cosmology": {
           "H0": 68.1,
@@ -13642,7 +13936,10 @@
         "retrieved": "2026-10-05",
         "checksumSha256": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2",
         "sourceMember": "COLIBRE_L200m7h/gsmf_raw/z10.0",
-        "terms": "source release: CC-BY-4.0"
+        "terms": "source release: CC-BY-4.0",
+        "definitionFills": [
+          "chaikin26-colibre-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,

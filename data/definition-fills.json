@@ -1,0 +1,156 @@
+{
+  "description": "Definition values recovered from the source papers for records whose table or figure does not state them. Applied by scripts/annotate-definitions.mjs only where the record's value is undocumented; a stated value is never overwritten (the script fails on a conflict). Every fill cites the arXiv source, the section, a short quote and the SHA-256 of the arXiv source archive read.",
+  "fills": [
+    {
+      "id": "chaikin26-colibre-gsmf-mass",
+      "match": {
+        "source": "COLIBRE",
+        "relation": "gsmf",
+        "citationIncludes": "Chaikin et al. 2026"
+      },
+      "set": {
+        "massDefinition": "aperture-50pkpc"
+      },
+      "evidence": {
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "where": "Sec. 2, Halo finding and calculation of galaxy properties",
+        "quote": "stellar particles bound to the subhalo within 3D spherical apertures of radius 50 pkpc",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "e2904b06b9890dd6da163e3808371610bda049eaefe17a2b0f7535561854b345"
+      }
+    },
+    {
+      "id": "dolag25-magneticum-bh-mass",
+      "match": {
+        "source": "Magneticum Pathfinder",
+        "relation": "bh"
+      },
+      "set": {
+        "massDefinition": "aperture-0.1Rvir"
+      },
+      "evidence": {
+        "citation": "Dolag et al. 2025, Encyclopedia Magneticum",
+        "url": "https://arxiv.org/abs/2504.01061",
+        "where": "Sec. The Magorrian Relation",
+        "quote": "galaxy stellar mass M*_{R0.1}",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "2a3c25cc9dc4c32147a9d2e769bc33be6103be402cc474dbdc835f37f4b2aa79",
+        "note": "Paper-level definition: the released table header does not state it."
+      }
+    },
+    {
+      "id": "dolag25-magneticum-zstar-mass",
+      "match": {
+        "source": "Magneticum Pathfinder",
+        "relation": "zstar"
+      },
+      "set": {
+        "massDefinition": "aperture-0.1Rvir"
+      },
+      "evidence": {
+        "citation": "Dolag et al. 2025, Encyclopedia Magneticum",
+        "url": "https://arxiv.org/abs/2504.01061",
+        "where": "Sec. Stellar Mass-Metallicity Relation",
+        "quote": "stellar mass log10(M*_{R0.1}/Msun)",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "2a3c25cc9dc4c32147a9d2e769bc33be6103be402cc474dbdc835f37f4b2aa79",
+        "note": "Paper-level definition: the released table header does not state it."
+      }
+    },
+    {
+      "id": "dolag25-magneticum-bhsigma-sigma",
+      "match": {
+        "source": "Magneticum Pathfinder",
+        "relation": "bhsigma"
+      },
+      "set": {
+        "sigmaDefinition": "sigma-stellar-projected-within-half-mass-radius"
+      },
+      "evidence": {
+        "citation": "Dolag et al. 2025, Encyclopedia Magneticum",
+        "url": "https://arxiv.org/abs/2504.01061",
+        "where": "Sec. Black-Hole-Mass-sigma Relation",
+        "quote": "velocity dispersion determined in projection within 1 stellar half-mass radius",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "2a3c25cc9dc4c32147a9d2e769bc33be6103be402cc474dbdc835f37f4b2aa79",
+        "note": "Paper-level definition: the released table header does not state it."
+      }
+    },
+    {
+      "id": "dolag25-magneticum-sfr-timescale",
+      "match": {
+        "source": "Magneticum Pathfinder",
+        "relation": "sfms"
+      },
+      "set": {
+        "sfrTimescaleMyr": "instantaneous"
+      },
+      "evidence": {
+        "citation": "Dolag et al. 2025, Encyclopedia Magneticum",
+        "url": "https://arxiv.org/abs/2504.01061",
+        "where": "Sec. Post-Processing, local properties",
+        "quote": "current star formation rates of all gas particles within the respective radius are summed",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "2a3c25cc9dc4c32147a9d2e769bc33be6103be402cc474dbdc835f37f4b2aa79",
+        "note": "Paper-level definition: the released table header does not state it."
+      }
+    },
+    {
+      "id": "sharda26-eagle-mzr-mass",
+      "match": {
+        "source": "EAGLE",
+        "relation": "mzr",
+        "citationIncludes": "Sharda et al. 2026"
+      },
+      "set": {
+        "massDefinition": "aperture-50pkpc"
+      },
+      "evidence": {
+        "citation": "Sharda et al. 2026, COLIBRE gas-phase MZR",
+        "url": "https://arxiv.org/abs/2606.25995",
+        "where": "Sec. Compilation of simulation data",
+        "quote": "For EAGLE, stellar masses measured within a 50 kpc aperture",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "dfa69f978a972ca8ee8d054d34c33b62408f67e88f16eb8fcebe47d8b79aadc9"
+      }
+    },
+    {
+      "id": "sharda26-tng-mzr-mass",
+      "match": {
+        "source": "IllustrisTNG",
+        "relation": "mzr",
+        "citationIncludes": "Sharda et al. 2026"
+      },
+      "set": {
+        "massDefinition": "total-bound-subhalo"
+      },
+      "evidence": {
+        "citation": "Sharda et al. 2026, COLIBRE gas-phase MZR",
+        "url": "https://arxiv.org/abs/2606.25995",
+        "where": "Sec. Compilation of simulation data",
+        "quote": "For TNG, stellar masses from all star particles bound to the subhalo",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "dfa69f978a972ca8ee8d054d34c33b62408f67e88f16eb8fcebe47d8b79aadc9"
+      }
+    },
+    {
+      "id": "dave20-simba-galaxy-mass",
+      "match": {
+        "source": "SIMBA",
+        "citationIncludes": "Dave et al. 2020"
+      },
+      "set": {
+        "massDefinition": "caesar-6dfof-galaxy-total"
+      },
+      "evidence": {
+        "citation": "Dave et al. 2020, MNRAS 497, 146",
+        "url": "https://arxiv.org/abs/2002.07226",
+        "where": "Sec. SIMBA",
+        "quote": "galaxies identified using a 6DFOF and used to compute properties such as the SFR and M*",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "80bafcb8f93a1772c86a04569b2f13571a770f6dbcfb143d30dd4ddd2045b774"
+      }
+    }
+  ]
+}

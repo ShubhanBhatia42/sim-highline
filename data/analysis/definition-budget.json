@@ -155,22 +155,22 @@
    "pairs": 32,
    "counts": {
     "matched": 3,
-    "differing": 3,
-    "unknown": 26,
+    "differing": 29,
+    "unknown": 0,
     "mismatch": 0
    },
    "median_abs_dy": {
     "matched": 0.1347,
-    "differing": 0.573,
-    "unknown": 0.2131,
+    "differing": 0.2273,
+    "unknown": null,
     "mismatch": null
    },
-   "documented_fraction": 0.788,
-   "excess_differing_minus_matched": 0.4383,
-   "p_permutation": 0.004,
+   "documented_fraction": 1.0,
+   "excess_differing_minus_matched": 0.0926,
+   "p_permutation": 0.1019,
    "ci95_excess": [
-    0.2724,
-    0.5457
+    -0.0159,
+    0.5418
    ]
   },
   {
@@ -188,19 +188,19 @@
    "pairs": 74,
    "counts": {
     "matched": 3,
-    "differing": 3,
-    "unknown": 36,
+    "differing": 9,
+    "unknown": 30,
     "mismatch": 32
    },
    "median_abs_dy": {
     "matched": 0.327,
-    "differing": 0.379,
-    "unknown": 0.2912,
+    "differing": 0.3249,
+    "unknown": 0.276,
     "mismatch": 8.7878
    },
-   "documented_fraction": 0.857,
-   "excess_differing_minus_matched": 0.052,
-   "p_permutation": 0.3393,
+   "documented_fraction": 0.929,
+   "excess_differing_minus_matched": -0.0021,
+   "p_permutation": 0.4403,
    "ci95_excess": [
     -0.0709,
     0.2845
@@ -221,22 +221,22 @@
    "pairs": 76,
    "counts": {
     "matched": 3,
-    "differing": 7,
-    "unknown": 28,
+    "differing": 13,
+    "unknown": 22,
     "mismatch": 38
    },
    "median_abs_dy": {
     "matched": 0.206,
-    "differing": 0.4433,
-    "unknown": 0.1964,
+    "differing": 0.2191,
+    "unknown": 0.2163,
     "mismatch": 8.7482
    },
-   "documented_fraction": 0.871,
-   "excess_differing_minus_matched": 0.2373,
-   "p_permutation": 0.3303,
+   "documented_fraction": 0.943,
+   "excess_differing_minus_matched": 0.0132,
+   "p_permutation": 0.4708,
    "ci95_excess": [
     -0.1469,
-    0.3827
+    0.361
    ]
   },
   {
@@ -253,22 +253,22 @@
    "pairs": 36,
    "counts": {
     "matched": 3,
-    "differing": 7,
-    "unknown": 7,
+    "differing": 11,
+    "unknown": 3,
     "mismatch": 19
    },
    "median_abs_dy": {
     "matched": 0.1433,
-    "differing": 0.423,
-    "unknown": 0.192,
+    "differing": 0.1539,
+    "unknown": 0.4709,
     "mismatch": 8.7509
    },
-   "documented_fraction": 0.9,
-   "excess_differing_minus_matched": 0.2797,
-   "p_permutation": 0.3298,
+   "documented_fraction": 0.98,
+   "excess_differing_minus_matched": 0.0107,
+   "p_permutation": 0.4298,
    "ci95_excess": [
     -0.1208,
-    0.4506
+    0.3987
    ]
   },
   {
@@ -361,7 +361,7 @@
     "unknown": 0.3594,
     "mismatch": 0.2259
    },
-   "documented_fraction": 0.773,
+   "documented_fraction": 0.813,
    "excess_differing_minus_matched": -0.073,
    "p_permutation": 0.6812,
    "ci95_excess": [
@@ -395,7 +395,7 @@
     "unknown": 0.3615,
     "mismatch": 0.1948
    },
-   "documented_fraction": 0.738,
+   "documented_fraction": 0.8,
    "excess_differing_minus_matched": 0.2245,
    "p_permutation": 0.089,
    "ci95_excess": [
@@ -428,7 +428,7 @@
     "unknown": 0.2766,
     "mismatch": 0.1368
    },
-   "documented_fraction": 0.708,
+   "documented_fraction": 0.785,
    "excess_differing_minus_matched": 0.1291,
    "p_permutation": 0.1179,
    "ci95_excess": [
@@ -461,7 +461,7 @@
     "unknown": 0.0862,
     "mismatch": 0.1282
    },
-   "documented_fraction": 0.733,
+   "documented_fraction": 0.8,
    "excess_differing_minus_matched": 0.1262,
    "p_permutation": 0.1519,
    "ci95_excess": [
@@ -801,18 +801,23 @@
    "pairs": 9,
    "counts": {
     "matched": 3,
-    "differing": 0,
-    "unknown": 6,
+    "differing": 6,
+    "unknown": 0,
     "mismatch": 0
    },
    "median_abs_dy": {
     "matched": 0.2302,
-    "differing": null,
-    "unknown": 0.1711,
+    "differing": 0.1711,
+    "unknown": null,
     "mismatch": null
    },
-   "documented_fraction": 0.9,
-   "excess_differing_minus_matched": null
+   "documented_fraction": 1.0,
+   "excess_differing_minus_matched": -0.0591,
+   "p_permutation": 0.8081,
+   "ci95_excess": [
+    -0.0818,
+    0.123
+   ]
   },
   {
    "relation": "zstar",
@@ -828,22 +833,22 @@
    "pairs": 17,
    "counts": {
     "matched": 3,
-    "differing": 3,
-    "unknown": 11,
+    "differing": 14,
+    "unknown": 0,
     "mismatch": 0
    },
    "median_abs_dy": {
     "matched": 0.2031,
-    "differing": 0.233,
-    "unknown": 0.1077,
+    "differing": 0.1163,
+    "unknown": null,
     "mismatch": null
    },
-   "documented_fraction": 0.9,
-   "excess_differing_minus_matched": 0.0299,
-   "p_permutation": 0.3053,
+   "documented_fraction": 1.0,
+   "excess_differing_minus_matched": -0.0868,
+   "p_permutation": 0.9415,
    "ci95_excess": [
-    -0.197,
-    0.1743
+    -0.1564,
+    0.147
    ]
   },
   {
@@ -860,22 +865,22 @@
    "pairs": 21,
    "counts": {
     "matched": 3,
-    "differing": 3,
-    "unknown": 15,
+    "differing": 18,
+    "unknown": 0,
     "mismatch": 0
    },
    "median_abs_dy": {
     "matched": 0.1948,
-    "differing": 0.1487,
-    "unknown": 0.1105,
+    "differing": 0.113,
+    "unknown": null,
     "mismatch": null
    },
-   "documented_fraction": 0.889,
-   "excess_differing_minus_matched": -0.0461,
-   "p_permutation": 0.5187,
+   "documented_fraction": 1.0,
+   "excess_differing_minus_matched": -0.0818,
+   "p_permutation": 0.942,
    "ci95_excess": [
-    -0.1648,
-    0.1496
+    -0.1209,
+    0.1138
    ]
   },
   {
@@ -893,21 +898,21 @@
    "pairs": 24,
    "counts": {
     "matched": 3,
-    "differing": 3,
-    "unknown": 10,
+    "differing": 13,
+    "unknown": 0,
     "mismatch": 8
    },
    "median_abs_dy": {
     "matched": 0.1867,
-    "differing": 0.1313,
-    "unknown": 0.1951,
+    "differing": 0.1637,
+    "unknown": null,
     "mismatch": 8.6674
    },
-   "documented_fraction": 0.867,
-   "excess_differing_minus_matched": -0.0554,
-   "p_permutation": 0.3863,
+   "documented_fraction": 0.956,
+   "excess_differing_minus_matched": -0.023,
+   "p_permutation": 0.4528,
    "ci95_excess": [
-    -0.2536,
+    -0.1873,
     0.2085
    ]
   },
@@ -956,17 +961,17 @@
    "pairs": 136,
    "counts": {
     "matched": 0,
-    "differing": 10,
-    "unknown": 126,
+    "differing": 26,
+    "unknown": 110,
     "mismatch": 0
    },
    "median_abs_dy": {
     "matched": null,
-    "differing": 0.5304,
-    "unknown": 0.5178,
+    "differing": 0.4587,
+    "unknown": 0.5346,
     "mismatch": null
    },
-   "documented_fraction": 0.763,
+   "documented_fraction": 0.803,
    "excess_differing_minus_matched": null
   },
   {
@@ -996,7 +1001,7 @@
     "unknown": 0.3006,
     "mismatch": null
    },
-   "documented_fraction": 0.635,
+   "documented_fraction": 0.712,
    "excess_differing_minus_matched": null
   },
   {
@@ -1026,7 +1031,7 @@
     "unknown": 0.6374,
     "mismatch": null
    },
-   "documented_fraction": 0.643,
+   "documented_fraction": 0.732,
    "excess_differing_minus_matched": null
   },
   {
@@ -1056,7 +1061,7 @@
     "unknown": 1.203,
     "mismatch": null
    },
-   "documented_fraction": 0.635,
+   "documented_fraction": 0.712,
    "excess_differing_minus_matched": null
   }
  ],
@@ -1073,18 +1078,18 @@
    "pairs": 15,
    "counts": {
     "matched": 1,
-    "differing": 0,
-    "unknown": 14,
+    "differing": 14,
+    "unknown": 0,
     "mismatch": 0
    },
    "median_abs_dy": {
     "matched": 0.1347,
-    "differing": null,
-    "unknown": 0.1461,
+    "differing": 0.1461,
+    "unknown": null,
     "mismatch": null
    },
-   "documented_fraction": 0.741,
-   "excess_differing_minus_matched": null
+   "documented_fraction": 1.0,
+   "excess_differing_minus_matched": 0.0114
   },
   {
    "relation": "mzr",
@@ -1101,19 +1106,19 @@
    "pairs": 74,
    "counts": {
     "matched": 3,
-    "differing": 3,
-    "unknown": 36,
+    "differing": 9,
+    "unknown": 30,
     "mismatch": 32
    },
    "median_abs_dy": {
     "matched": 0.327,
-    "differing": 0.379,
-    "unknown": 0.2912,
+    "differing": 0.3249,
+    "unknown": 0.276,
     "mismatch": 8.7878
    },
-   "documented_fraction": 0.857,
-   "excess_differing_minus_matched": 0.052,
-   "p_permutation": 0.3478,
+   "documented_fraction": 0.929,
+   "excess_differing_minus_matched": -0.0021,
+   "p_permutation": 0.4588,
    "ci95_excess": [
     -0.0709,
     0.2845
@@ -1133,22 +1138,22 @@
    "pairs": 63,
    "counts": {
     "matched": 3,
-    "differing": 3,
-    "unknown": 28,
+    "differing": 9,
+    "unknown": 22,
     "mismatch": 29
    },
    "median_abs_dy": {
     "matched": 0.206,
-    "differing": 0.4709,
-    "unknown": 0.1964,
+    "differing": 0.2191,
+    "unknown": 0.2163,
     "mismatch": 8.7343
    },
-   "documented_fraction": 0.862,
-   "excess_differing_minus_matched": 0.2649,
-   "p_permutation": 0.2619,
+   "documented_fraction": 0.938,
+   "excess_differing_minus_matched": 0.0132,
+   "p_permutation": 0.4543,
    "ci95_excess": [
-    0.2373,
-    0.3939
+    -0.0497,
+    0.361
    ]
   },
   {
@@ -1164,22 +1169,22 @@
    "pairs": 27,
    "counts": {
     "matched": 3,
-    "differing": 3,
-    "unknown": 7,
+    "differing": 7,
+    "unknown": 3,
     "mismatch": 14
    },
    "median_abs_dy": {
     "matched": 0.1433,
-    "differing": 0.507,
-    "unknown": 0.192,
+    "differing": 0.192,
+    "unknown": 0.4709,
     "mismatch": 8.7516
    },
-   "documented_fraction": 0.889,
-   "excess_differing_minus_matched": 0.3637,
-   "p_permutation": 0.3258,
+   "documented_fraction": 0.978,
+   "excess_differing_minus_matched": 0.0488,
+   "p_permutation": 0.4268,
    "ci95_excess": [
-    0.2569,
-    0.4795
+    -0.0446,
+    0.3987
    ]
   },
   {
@@ -1656,17 +1661,1175 @@
    "excess_differing_minus_matched": null
   }
  ],
+ "sensitivity": {
+  "pairs": [
+   {
+    "source": "NIHAO zoom suite",
+    "relation": "btfr",
+    "z": 0,
+    "key": "massDefinition",
+    "from": "all-baryons-within-virial-radius",
+    "to": "stars-plus-neutral-gas",
+    "idFrom": "dutton17.nihao.btfr-all-baryons.galaxies.z0",
+    "idTo": "dutton17.nihao.btfr-stars-neutral-gas.galaxies.z0",
+    "median_dy": -0.3568,
+    "max_abs_dy": 1.6238,
+    "bins": 11,
+    "xRange": [
+     1.31,
+     2.37
+    ]
+   },
+   {
+    "source": "NewHorizon",
+    "relation": "gas",
+    "z": 0.25,
+    "key": "gasDefinition",
+    "from": "cold gas n > 0.1 cm^-3 and T < 2e4 K within 2 R_eff",
+    "to": "cold gas n > 10 cm^-3 and T < 2e4 K within 2 R_eff",
+    "idFrom": "dubois21.newhorizon.gas-n0p1.z0.25",
+    "idTo": "dubois21.newhorizon.gas-n10.z0.25",
+    "median_dy": -0.5932,
+    "max_abs_dy": 1.05,
+    "bins": 20,
+    "xRange": [
+     8.6,
+     11.38
+    ]
+   },
+   {
+    "source": "NewHorizon",
+    "relation": "gas",
+    "z": 1,
+    "key": "gasDefinition",
+    "from": "cold gas n > 0.1 cm^-3 and T < 2e4 K within 2 R_eff",
+    "to": "cold gas n > 10 cm^-3 and T < 2e4 K within 2 R_eff",
+    "idFrom": "dubois21.newhorizon.gas-n0p1.z1",
+    "idTo": "dubois21.newhorizon.gas-n10.z1",
+    "median_dy": -0.4398,
+    "max_abs_dy": 1.056,
+    "bins": 28,
+    "xRange": [
+     8.2,
+     10.98
+    ]
+   },
+   {
+    "source": "NewHorizon",
+    "relation": "gas",
+    "z": 2,
+    "key": "gasDefinition",
+    "from": "cold gas n > 0.1 cm^-3 and T < 2e4 K within 2 R_eff",
+    "to": "cold gas n > 10 cm^-3 and T < 2e4 K within 2 R_eff",
+    "idFrom": "dubois21.newhorizon.gas-n0p1.z2",
+    "idTo": "dubois21.newhorizon.gas-n10.z2",
+    "median_dy": -0.3313,
+    "max_abs_dy": 0.577,
+    "bins": 24,
+    "xRange": [
+     8.2,
+     10.59
+    ]
+   },
+   {
+    "source": "Illustris",
+    "relation": "gsmf",
+    "z": 0,
+    "key": "massDefinition",
+    "from": "aperture-2rhalf-stars",
+    "to": "total-subhalo",
+    "idFrom": "genel14.illustris-1.gsmf-r2.z0",
+    "idTo": "genel14.illustris-1.gsmf-full.z0",
+    "median_dy": 0.0261,
+    "max_abs_dy": 0.4239,
+    "bins": 54,
+    "xRange": [
+     7.0,
+     12.35
+    ]
+   },
+   {
+    "source": "Illustris",
+    "relation": "gsmf",
+    "z": 0,
+    "key": "massDefinition",
+    "from": "aperture-2rhalf-stars",
+    "to": "aperture-30pkpc",
+    "idFrom": "genel14.illustris-1.gsmf-r2.z0",
+    "idTo": "pillepich18.illustris.gsmf.z0",
+    "median_dy": 0.0503,
+    "max_abs_dy": 0.3489,
+    "bins": 37,
+    "xRange": [
+     8.35,
+     11.99
+    ]
+   },
+   {
+    "source": "Illustris",
+    "relation": "gsmf",
+    "z": 1,
+    "key": "massDefinition",
+    "from": "aperture-2rhalf-stars",
+    "to": "total-subhalo",
+    "idFrom": "genel14.illustris-1.gsmf-r2.z1",
+    "idTo": "genel14.illustris-1.gsmf-full.z1",
+    "median_dy": 0.0478,
+    "max_abs_dy": 0.3338,
+    "bins": 42,
+    "xRange": [
+     7.58,
+     11.75
+    ]
+   },
+   {
+    "source": "Illustris",
+    "relation": "gsmf",
+    "z": 1,
+    "key": "massDefinition",
+    "from": "aperture-2rhalf-stars",
+    "to": "total-subhalo",
+    "idFrom": "pillepich18.illustris.gsmf.z1",
+    "idTo": "genel14.illustris-1.gsmf-full.z1",
+    "median_dy": -0.012,
+    "max_abs_dy": 0.2202,
+    "bins": 34,
+    "xRange": [
+     8.35,
+     11.72
+    ]
+   },
+   {
+    "source": "Illustris",
+    "relation": "gsmf",
+    "z": 2,
+    "key": "massDefinition",
+    "from": "aperture-2rhalf-stars",
+    "to": "total-subhalo",
+    "idFrom": "genel14.illustris-1.gsmf-r2.z2",
+    "idTo": "genel14.illustris-1.gsmf-full.z2",
+    "median_dy": 0.0579,
+    "max_abs_dy": 0.4447,
+    "bins": 42,
+    "xRange": [
+     7.6,
+     11.75
+    ]
+   },
+   {
+    "source": "Illustris",
+    "relation": "gsmf",
+    "z": 2,
+    "key": "massDefinition",
+    "from": "aperture-2rhalf-stars",
+    "to": "total-subhalo",
+    "idFrom": "pillepich18.illustris.gsmf.z2",
+    "idTo": "genel14.illustris-1.gsmf-full.z2",
+    "median_dy": 0.0387,
+    "max_abs_dy": 0.2366,
+    "bins": 33,
+    "xRange": [
+     8.35,
+     11.61
+    ]
+   },
+   {
+    "source": "Illustris",
+    "relation": "gsmf",
+    "z": 3,
+    "key": "massDefinition",
+    "from": "aperture-2rhalf-stars",
+    "to": "total-subhalo",
+    "idFrom": "genel14.illustris-1.gsmf-r2.z3",
+    "idTo": "genel14.illustris-1.gsmf-full.z3",
+    "median_dy": 0.0711,
+    "max_abs_dy": 0.2738,
+    "bins": 37,
+    "xRange": [
+     7.55,
+     11.15
+    ]
+   },
+   {
+    "source": "Illustris",
+    "relation": "gsmf",
+    "z": 3,
+    "key": "massDefinition",
+    "from": "aperture-2rhalf-stars",
+    "to": "total-subhalo",
+    "idFrom": "pillepich18.illustris.gsmf.z3",
+    "idTo": "genel14.illustris-1.gsmf-full.z3",
+    "median_dy": 0.0446,
+    "max_abs_dy": 0.348,
+    "bins": 28,
+    "xRange": [
+     8.35,
+     11.08
+    ]
+   },
+   {
+    "source": "Illustris",
+    "relation": "gsmf",
+    "z": 4,
+    "key": "massDefinition",
+    "from": "aperture-2rhalf-stars",
+    "to": "total-subhalo",
+    "idFrom": "genel14.illustris-1.gsmf-r2.z4",
+    "idTo": "genel14.illustris-1.gsmf-full.z4",
+    "median_dy": 0.0838,
+    "max_abs_dy": 0.2793,
+    "bins": 36,
+    "xRange": [
+     7.26,
+     10.85
+    ]
+   },
+   {
+    "source": "Illustris",
+    "relation": "gsmf",
+    "z": 4,
+    "key": "massDefinition",
+    "from": "aperture-2rhalf-stars",
+    "to": "total-subhalo",
+    "idFrom": "pillepich18.illustris.gsmf.z4",
+    "idTo": "genel14.illustris-1.gsmf-full.z4",
+    "median_dy": 0.0739,
+    "max_abs_dy": 0.1843,
+    "bins": 26,
+    "xRange": [
+     8.35,
+     10.88
+    ]
+   },
+   {
+    "source": "Illustris",
+    "relation": "gsmf",
+    "z": 5,
+    "key": "massDefinition",
+    "from": "aperture-2rhalf-stars",
+    "to": "total-subhalo",
+    "idFrom": "genel14.illustris-1.gsmf-r2.z5",
+    "idTo": "genel14.illustris-1.gsmf-full.z5",
+    "median_dy": 0.1061,
+    "max_abs_dy": 0.294,
+    "bins": 36,
+    "xRange": [
+     7.03,
+     10.55
+    ]
+   },
+   {
+    "source": "Illustris",
+    "relation": "gsmf",
+    "z": 6,
+    "key": "massDefinition",
+    "from": "aperture-2rhalf-stars",
+    "to": "total-subhalo",
+    "idFrom": "genel14.illustris-1.gsmf-r2.z6",
+    "idTo": "genel14.illustris-1.gsmf-full.z6",
+    "median_dy": 0.0991,
+    "max_abs_dy": 0.2131,
+    "bins": 30,
+    "xRange": [
+     7.0,
+     9.95
+    ]
+   },
+   {
+    "source": "Illustris",
+    "relation": "gsmf",
+    "z": 7,
+    "key": "massDefinition",
+    "from": "aperture-2rhalf-stars",
+    "to": "total-subhalo",
+    "idFrom": "genel14.illustris-1.gsmf-r2.z7",
+    "idTo": "genel14.illustris-1.gsmf-full.z7",
+    "median_dy": 0.1202,
+    "max_abs_dy": 0.2576,
+    "bins": 27,
+    "xRange": [
+     7.0,
+     9.65
+    ]
+   },
+   {
+    "source": "Illustris",
+    "relation": "gsmf",
+    "z": 0,
+    "key": "massDefinition",
+    "from": "aperture-30pkpc",
+    "to": "total-subhalo",
+    "idFrom": "pillepich18.illustris.gsmf.z0",
+    "idTo": "genel14.illustris-1.gsmf-full.z0",
+    "median_dy": -0.0129,
+    "max_abs_dy": 0.7497,
+    "bins": 37,
+    "xRange": [
+     8.35,
+     11.99
+    ]
+   },
+   {
+    "source": "SPHINX20",
+    "relation": "sfms",
+    "z": 4.64,
+    "key": "sfrTimescaleMyr",
+    "from": 10,
+    "to": 100,
+    "idFrom": "katz23.sphinx20.sfms.sfr-10-myr.z4.64",
+    "idTo": "katz23.sphinx20.sfms.sfr-100-myr.z4.64",
+    "median_dy": -0.1448,
+    "max_abs_dy": 0.8195,
+    "bins": 26,
+    "xRange": [
+     7.12,
+     9.62
+    ]
+   },
+   {
+    "source": "SPHINX20",
+    "relation": "sfms",
+    "z": 5,
+    "key": "sfrTimescaleMyr",
+    "from": 10,
+    "to": 100,
+    "idFrom": "katz23.sphinx20.sfms.sfr-10-myr.z5",
+    "idTo": "katz23.sphinx20.sfms.sfr-100-myr.z5",
+    "median_dy": -0.1645,
+    "max_abs_dy": 0.7174,
+    "bins": 23,
+    "xRange": [
+     7.12,
+     9.38
+    ]
+   },
+   {
+    "source": "SPHINX20",
+    "relation": "sfms",
+    "z": 6,
+    "key": "sfrTimescaleMyr",
+    "from": 10,
+    "to": 100,
+    "idFrom": "katz23.sphinx20.sfms.sfr-10-myr.z6",
+    "idTo": "katz23.sphinx20.sfms.sfr-100-myr.z6",
+    "median_dy": -0.1033,
+    "max_abs_dy": 0.6369,
+    "bins": 23,
+    "xRange": [
+     7.12,
+     9.38
+    ]
+   },
+   {
+    "source": "SPHINX20",
+    "relation": "sfms",
+    "z": 7,
+    "key": "sfrTimescaleMyr",
+    "from": 10,
+    "to": 100,
+    "idFrom": "katz23.sphinx20.sfms.sfr-10-myr.z7",
+    "idTo": "katz23.sphinx20.sfms.sfr-100-myr.z7",
+    "median_dy": -0.2729,
+    "max_abs_dy": 0.8081,
+    "bins": 18,
+    "xRange": [
+     7.12,
+     8.88
+    ]
+   },
+   {
+    "source": "SPHINX20",
+    "relation": "sfms",
+    "z": 8,
+    "key": "sfrTimescaleMyr",
+    "from": 10,
+    "to": 100,
+    "idFrom": "katz23.sphinx20.sfms.sfr-10-myr.z8",
+    "idTo": "katz23.sphinx20.sfms.sfr-100-myr.z8",
+    "median_dy": -0.3619,
+    "max_abs_dy": 0.9075,
+    "bins": 16,
+    "xRange": [
+     6.88,
+     8.38
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "shmr",
+    "z": 0,
+    "key": "haloMassDefinition",
+    "from": "BN98",
+    "to": "M200crit",
+    "idFrom": "vcd.eagle.ref-l100n1504-bn98.shmr.z0",
+    "idTo": "vcd.eagle.ref-l100n1504-m200crit.shmr.z0",
+    "median_dy": 0.1001,
+    "max_abs_dy": 0.4476,
+    "bins": 49,
+    "xRange": [
+     9.8,
+     14.6
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "shmr",
+    "z": 0.2,
+    "key": "haloMassDefinition",
+    "from": "BN98",
+    "to": "M200crit",
+    "idFrom": "vcd.eagle.ref-l100n1504-bn98.shmr.z0.2",
+    "idTo": "vcd.eagle.ref-l100n1504-m200crit.shmr.z0.2",
+    "median_dy": 0.0762,
+    "max_abs_dy": 0.1865,
+    "bins": 49,
+    "xRange": [
+     9.8,
+     14.6
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "shmr",
+    "z": 0.5,
+    "key": "haloMassDefinition",
+    "from": "BN98",
+    "to": "M200crit",
+    "idFrom": "vcd.eagle.ref-l100n1504-bn98.shmr.z0.5",
+    "idTo": "vcd.eagle.ref-l100n1504-m200crit.shmr.z0.5",
+    "median_dy": 0.0661,
+    "max_abs_dy": 0.1148,
+    "bins": 47,
+    "xRange": [
+     9.8,
+     14.4
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "shmr",
+    "z": 1,
+    "key": "haloMassDefinition",
+    "from": "BN98",
+    "to": "M200crit",
+    "idFrom": "vcd.eagle.ref-l100n1504-bn98.shmr.z1",
+    "idTo": "vcd.eagle.ref-l100n1504-m200crit.shmr.z1",
+    "median_dy": 0.047,
+    "max_abs_dy": 0.0633,
+    "bins": 45,
+    "xRange": [
+     9.8,
+     14.2
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "shmr",
+    "z": 2,
+    "key": "haloMassDefinition",
+    "from": "BN98",
+    "to": "M200crit",
+    "idFrom": "vcd.eagle.ref-l100n1504-bn98.shmr.z2",
+    "idTo": "vcd.eagle.ref-l100n1504-m200crit.shmr.z2",
+    "median_dy": 0.0382,
+    "max_abs_dy": 0.2204,
+    "bins": 39,
+    "xRange": [
+     9.6,
+     13.4
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "shmr",
+    "z": 3,
+    "key": "haloMassDefinition",
+    "from": "BN98",
+    "to": "M200crit",
+    "idFrom": "vcd.eagle.ref-l100n1504-bn98.shmr.z3",
+    "idTo": "vcd.eagle.ref-l100n1504-m200crit.shmr.z3",
+    "median_dy": 0.0325,
+    "max_abs_dy": 0.1532,
+    "bins": 37,
+    "xRange": [
+     9.6,
+     13.2
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "shmr",
+    "z": 4,
+    "key": "haloMassDefinition",
+    "from": "BN98",
+    "to": "M200crit",
+    "idFrom": "vcd.eagle.ref-l100n1504-bn98.shmr.z4",
+    "idTo": "vcd.eagle.ref-l100n1504-m200crit.shmr.z4",
+    "median_dy": 0.0301,
+    "max_abs_dy": 0.0438,
+    "bins": 31,
+    "xRange": [
+     9.6,
+     12.6
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "shmr",
+    "z": 5,
+    "key": "haloMassDefinition",
+    "from": "BN98",
+    "to": "M200crit",
+    "idFrom": "vcd.eagle.ref-l100n1504-bn98.shmr.z5",
+    "idTo": "vcd.eagle.ref-l100n1504-m200crit.shmr.z5",
+    "median_dy": 0.0207,
+    "max_abs_dy": 0.303,
+    "bins": 21,
+    "xRange": [
+     9.4,
+     11.4
+    ]
+   },
+   {
+    "source": "Illustris",
+    "relation": "shmr",
+    "z": 0,
+    "key": "massDefinition",
+    "from": "aperture-2rhalf-stars",
+    "to": "stars-within-R200c-excluding-satellites",
+    "idFrom": "genel14.illustris-1.shmr-r2.z0",
+    "idTo": "genel14.illustris-1.shmr-full.z0",
+    "median_dy": 0.1359,
+    "max_abs_dy": 0.1982,
+    "bins": 34,
+    "xRange": [
+     11,
+     14.34
+    ]
+   },
+   {
+    "source": "Illustris",
+    "relation": "shmr",
+    "z": 1,
+    "key": "massDefinition",
+    "from": "aperture-2rhalf-stars",
+    "to": "stars-within-R200c-excluding-satellites",
+    "idFrom": "genel14.illustris-1.shmr-r2.z1",
+    "idTo": "genel14.illustris-1.shmr-full.z1",
+    "median_dy": 0.1166,
+    "max_abs_dy": 0.2507,
+    "bins": 31,
+    "xRange": [
+     11,
+     14.0
+    ]
+   },
+   {
+    "source": "Illustris",
+    "relation": "shmr",
+    "z": 2,
+    "key": "massDefinition",
+    "from": "aperture-2rhalf-stars",
+    "to": "stars-within-R200c-excluding-satellites",
+    "idFrom": "genel14.illustris-1.shmr-r2.z2",
+    "idTo": "genel14.illustris-1.shmr-full.z2",
+    "median_dy": 0.1295,
+    "max_abs_dy": 0.2366,
+    "bins": 26,
+    "xRange": [
+     11,
+     13.59
+    ]
+   },
+   {
+    "source": "Illustris",
+    "relation": "shmr",
+    "z": 3,
+    "key": "massDefinition",
+    "from": "aperture-2rhalf-stars",
+    "to": "stars-within-R200c-excluding-satellites",
+    "idFrom": "genel14.illustris-1.shmr-r2.z3",
+    "idTo": "genel14.illustris-1.shmr-full.z3",
+    "median_dy": 0.1289,
+    "max_abs_dy": 0.2093,
+    "bins": 22,
+    "xRange": [
+     11,
+     13.15
+    ]
+   },
+   {
+    "source": "Illustris",
+    "relation": "shmr",
+    "z": 4,
+    "key": "massDefinition",
+    "from": "aperture-2rhalf-stars",
+    "to": "stars-within-R200c-excluding-satellites",
+    "idFrom": "genel14.illustris-1.shmr-r2.z4",
+    "idTo": "genel14.illustris-1.shmr-full.z4",
+    "median_dy": 0.1382,
+    "max_abs_dy": 0.2191,
+    "bins": 18,
+    "xRange": [
+     11.03,
+     12.79
+    ]
+   },
+   {
+    "source": "IllustrisTNG",
+    "relation": "size",
+    "z": 0.5,
+    "key": "sizeDefinition",
+    "from": "3D radius enclosing half of the stellar mass (aperture 30 pkpc)",
+    "to": "face-on circularized 2D radius enclosing half of the V-band light (Johnson V, intrinsic, no dust)",
+    "idFrom": "pillepich19.tng50.size.stellar3d.z0.5",
+    "idTo": "pillepich19.tng50.size.vband2d.z0.5",
+    "median_dy": 0.0612,
+    "max_abs_dy": 0.2314,
+    "bins": 45,
+    "xRange": [
+     7.11,
+     11.59
+    ]
+   },
+   {
+    "source": "IllustrisTNG",
+    "relation": "size",
+    "z": 2,
+    "key": "sizeDefinition",
+    "from": "3D radius enclosing half of the stellar mass (aperture 30 pkpc)",
+    "to": "face-on circularized 2D radius enclosing half of the V-band light (Johnson V, intrinsic, no dust)",
+    "idFrom": "pillepich19.tng50.size.stellar3d.z2",
+    "idTo": "pillepich19.tng50.size.vband2d.z2",
+    "median_dy": -0.0305,
+    "max_abs_dy": 0.1236,
+    "bins": 39,
+    "xRange": [
+     7.1,
+     10.92
+    ]
+   },
+   {
+    "source": "IllustrisTNG",
+    "relation": "size",
+    "z": 4,
+    "key": "sizeDefinition",
+    "from": "3D radius enclosing half of the stellar mass (aperture 30 pkpc)",
+    "to": "face-on circularized 2D radius enclosing half of the V-band light (Johnson V, intrinsic, no dust)",
+    "idFrom": "pillepich19.tng50.size.stellar3d.z4",
+    "idTo": "pillepich19.tng50.size.vband2d.z4",
+    "median_dy": -0.1091,
+    "max_abs_dy": 0.1286,
+    "bins": 32,
+    "xRange": [
+     7.1,
+     10.28
+    ]
+   },
+   {
+    "source": "BlueTides",
+    "relation": "uvlf",
+    "z": 8,
+    "key": "dustCorrection",
+    "from": "dust attenuated (the paper's 'observed'; the table heading says dust-corrected, the figure caption and text say attenuated)",
+    "to": "none (intrinsic)",
+    "idFrom": "wilkins17.bluetides.uvlf.observed.z8",
+    "idTo": "wilkins17.bluetides.uvlf.intrinsic.z8",
+    "median_dy": 0.088,
+    "max_abs_dy": 1.76,
+    "bins": 55,
+    "xRange": [
+     -22.75,
+     -17.25
+    ]
+   },
+   {
+    "source": "BlueTides",
+    "relation": "uvlf",
+    "z": 9,
+    "key": "dustCorrection",
+    "from": "dust attenuated (the paper's 'observed'; the table heading says dust-corrected, the figure caption and text say attenuated)",
+    "to": "none (intrinsic)",
+    "idFrom": "wilkins17.bluetides.uvlf.observed.z9",
+    "idTo": "wilkins17.bluetides.uvlf.intrinsic.z9",
+    "median_dy": 0.03,
+    "max_abs_dy": 1.25,
+    "bins": 50,
+    "xRange": [
+     -22.25,
+     -17.25
+    ]
+   },
+   {
+    "source": "BlueTides",
+    "relation": "uvlf",
+    "z": 10,
+    "key": "dustCorrection",
+    "from": "dust attenuated (the paper's 'observed'; the table heading says dust-corrected, the figure caption and text say attenuated)",
+    "to": "none (intrinsic)",
+    "idFrom": "wilkins17.bluetides.uvlf.observed.z10",
+    "idTo": "wilkins17.bluetides.uvlf.intrinsic.z10",
+    "median_dy": 0.012,
+    "max_abs_dy": 0.93,
+    "bins": 45,
+    "xRange": [
+     -21.75,
+     -17.25
+    ]
+   },
+   {
+    "source": "BlueTides",
+    "relation": "uvlf",
+    "z": 11,
+    "key": "dustCorrection",
+    "from": "dust attenuated (the paper's 'observed'; the table heading says dust-corrected, the figure caption and text say attenuated)",
+    "to": "none (intrinsic)",
+    "idFrom": "wilkins17.bluetides.uvlf.observed.z11",
+    "idTo": "wilkins17.bluetides.uvlf.intrinsic.z11",
+    "median_dy": -0.0,
+    "max_abs_dy": 0.6,
+    "bins": 40,
+    "xRange": [
+     -21.25,
+     -17.25
+    ]
+   },
+   {
+    "source": "BlueTides",
+    "relation": "uvlf",
+    "z": 12,
+    "key": "dustCorrection",
+    "from": "dust attenuated (the paper's 'observed'; the table heading says dust-corrected, the figure caption and text say attenuated)",
+    "to": "none (intrinsic)",
+    "idFrom": "wilkins17.bluetides.uvlf.observed.z12",
+    "idTo": "wilkins17.bluetides.uvlf.intrinsic.z12",
+    "median_dy": -0.0,
+    "max_abs_dy": 0.34,
+    "bins": 35,
+    "xRange": [
+     -20.75,
+     -17.25
+    ]
+   },
+   {
+    "source": "BlueTides",
+    "relation": "uvlf",
+    "z": 13,
+    "key": "dustCorrection",
+    "from": "dust attenuated (the paper's 'observed'; the table heading says dust-corrected, the figure caption and text say attenuated)",
+    "to": "none (intrinsic)",
+    "idFrom": "wilkins17.bluetides.uvlf.observed.z13",
+    "idTo": "wilkins17.bluetides.uvlf.intrinsic.z13",
+    "median_dy": -0.002,
+    "max_abs_dy": 0.16,
+    "bins": 30,
+    "xRange": [
+     -20.25,
+     -17.25
+    ]
+   },
+   {
+    "source": "FLARES",
+    "relation": "uvlf",
+    "z": 10,
+    "key": "dustCorrection",
+    "from": "dust attenuated (SED modelling with a line-of-sight dust model)",
+    "to": "none (intrinsic)",
+    "idFrom": "wilkins22.flares.uvlf.observed.z10",
+    "idTo": "wilkins22.flares.uvlf.intrinsic.z10",
+    "median_dy": 0.0136,
+    "max_abs_dy": 1.3149,
+    "bins": 38,
+    "xRange": [
+     -21.66,
+     -17.91
+    ]
+   },
+   {
+    "source": "FLARES",
+    "relation": "uvlf",
+    "z": 11,
+    "key": "dustCorrection",
+    "from": "dust attenuated (SED modelling with a line-of-sight dust model)",
+    "to": "none (intrinsic)",
+    "idFrom": "wilkins22.flares.uvlf.observed.z11",
+    "idTo": "wilkins22.flares.uvlf.intrinsic.z11",
+    "median_dy": 0.0495,
+    "max_abs_dy": 1.7695,
+    "bins": 35,
+    "xRange": [
+     -21.41,
+     -17.91
+    ]
+   },
+   {
+    "source": "FLARES",
+    "relation": "uvlf",
+    "z": 12,
+    "key": "dustCorrection",
+    "from": "dust attenuated (SED modelling with a line-of-sight dust model)",
+    "to": "none (intrinsic)",
+    "idFrom": "wilkins22.flares.uvlf.observed.z12",
+    "idTo": "wilkins22.flares.uvlf.intrinsic.z12",
+    "median_dy": 0.0482,
+    "max_abs_dy": 1.1341,
+    "bins": 30,
+    "xRange": [
+     -20.91,
+     -17.91
+    ]
+   },
+   {
+    "source": "FLARES",
+    "relation": "uvlf",
+    "z": 13,
+    "key": "dustCorrection",
+    "from": "dust attenuated (SED modelling with a line-of-sight dust model)",
+    "to": "none (intrinsic)",
+    "idFrom": "wilkins22.flares.uvlf.observed.z13",
+    "idTo": "wilkins22.flares.uvlf.intrinsic.z13",
+    "median_dy": 0.0416,
+    "max_abs_dy": 0.5786,
+    "bins": 25,
+    "xRange": [
+     -20.41,
+     -17.91
+    ]
+   },
+   {
+    "source": "FLARES",
+    "relation": "uvlf",
+    "z": 14,
+    "key": "dustCorrection",
+    "from": "dust attenuated (SED modelling with a line-of-sight dust model)",
+    "to": "none (intrinsic)",
+    "idFrom": "wilkins22.flares.uvlf.observed.z14",
+    "idTo": "wilkins22.flares.uvlf.intrinsic.z14",
+    "median_dy": 0.0227,
+    "max_abs_dy": 0.9556,
+    "bins": 23,
+    "xRange": [
+     -20.16,
+     -17.91
+    ]
+   },
+   {
+    "source": "FLARES",
+    "relation": "uvlf",
+    "z": 15,
+    "key": "dustCorrection",
+    "from": "dust attenuated (SED modelling with a line-of-sight dust model)",
+    "to": "none (intrinsic)",
+    "idFrom": "wilkins22.flares.uvlf.observed.z15",
+    "idTo": "wilkins22.flares.uvlf.intrinsic.z15",
+    "median_dy": -0.0704,
+    "max_abs_dy": 0.831,
+    "bins": 18,
+    "xRange": [
+     -19.66,
+     -17.91
+    ]
+   },
+   {
+    "source": "THESAN-1",
+    "relation": "uvlf",
+    "z": 6,
+    "key": "dustCorrection",
+    "from": "dust attenuated (Vogelsberger+20 dust-to-metal scaling of the Gnedin 2014 attenuation)",
+    "to": "dust attenuated (dust mass from the THESAN empirical dust model)",
+    "idFrom": "kannan22.thesan.uvlf.t1.z6",
+    "idTo": "kannan22.thesan.uvlf.t1dust.z6",
+    "median_dy": 0.0014,
+    "max_abs_dy": 0.9822,
+    "bins": 109,
+    "xRange": [
+     -22.05,
+     -11.22
+    ]
+   },
+   {
+    "source": "THESAN-zoom",
+    "relation": "uvlf",
+    "z": 12,
+    "key": "dustCorrection",
+    "from": "Bouwens+16 empirical attenuation relation applied to the intrinsic luminosities",
+    "to": "fiducial THESAN-ZOOM dust model (attenuated)",
+    "idFrom": "kannan25.thesanzoom.uvlf.bouwens16.z12",
+    "idTo": "kannan25.thesanzoom.uvlf.fiducial.z12",
+    "median_dy": -0.0061,
+    "max_abs_dy": 0.1944,
+    "bins": 62,
+    "xRange": [
+     -18.41,
+     -12.27
+    ]
+   },
+   {
+    "source": "THESAN-zoom",
+    "relation": "uvlf",
+    "z": 14,
+    "key": "dustCorrection",
+    "from": "Bouwens+16 empirical attenuation relation applied to the intrinsic luminosities",
+    "to": "fiducial THESAN-ZOOM dust model (attenuated)",
+    "idFrom": "kannan25.thesanzoom.uvlf.bouwens16.z14",
+    "idTo": "kannan25.thesanzoom.uvlf.fiducial.z14",
+    "median_dy": 0.0054,
+    "max_abs_dy": 0.2047,
+    "bins": 60,
+    "xRange": [
+     -18.26,
+     -12.29
+    ]
+   }
+  ],
+  "summary": [
+   {
+    "source": "BlueTides",
+    "relation": "uvlf",
+    "key": "dustCorrection",
+    "from": "dust attenuated (the paper's 'observed'; the table heading says dust-corrected, the figure caption and text say attenuated)",
+    "to": "none (intrinsic)",
+    "epochs": 6,
+    "zRange": [
+     8,
+     13
+    ],
+    "median_dy": 0.006,
+    "medianRange": [
+     -0.002,
+     0.088
+    ],
+    "max_abs_dy": 1.76
+   },
+   {
+    "source": "EAGLE",
+    "relation": "shmr",
+    "key": "haloMassDefinition",
+    "from": "BN98",
+    "to": "M200crit",
+    "epochs": 8,
+    "zRange": [
+     0,
+     5
+    ],
+    "median_dy": 0.0426,
+    "medianRange": [
+     0.0207,
+     0.1001
+    ],
+    "max_abs_dy": 0.4476
+   },
+   {
+    "source": "FLARES",
+    "relation": "uvlf",
+    "key": "dustCorrection",
+    "from": "dust attenuated (SED modelling with a line-of-sight dust model)",
+    "to": "none (intrinsic)",
+    "epochs": 6,
+    "zRange": [
+     10,
+     15
+    ],
+    "median_dy": 0.0321,
+    "medianRange": [
+     -0.0704,
+     0.0495
+    ],
+    "max_abs_dy": 1.7695
+   },
+   {
+    "source": "Illustris",
+    "relation": "gsmf",
+    "key": "massDefinition",
+    "from": "aperture-2rhalf-stars",
+    "to": "aperture-30pkpc",
+    "epochs": 1,
+    "zRange": [
+     0,
+     0
+    ],
+    "median_dy": 0.0503,
+    "medianRange": [
+     0.0503,
+     0.0503
+    ],
+    "max_abs_dy": 0.3489
+   },
+   {
+    "source": "Illustris",
+    "relation": "gsmf",
+    "key": "massDefinition",
+    "from": "aperture-2rhalf-stars",
+    "to": "total-subhalo",
+    "epochs": 12,
+    "zRange": [
+     0,
+     7
+    ],
+    "median_dy": 0.0645,
+    "medianRange": [
+     -0.012,
+     0.1202
+    ],
+    "max_abs_dy": 0.4447
+   },
+   {
+    "source": "Illustris",
+    "relation": "gsmf",
+    "key": "massDefinition",
+    "from": "aperture-30pkpc",
+    "to": "total-subhalo",
+    "epochs": 1,
+    "zRange": [
+     0,
+     0
+    ],
+    "median_dy": -0.0129,
+    "medianRange": [
+     -0.0129,
+     -0.0129
+    ],
+    "max_abs_dy": 0.7497
+   },
+   {
+    "source": "Illustris",
+    "relation": "shmr",
+    "key": "massDefinition",
+    "from": "aperture-2rhalf-stars",
+    "to": "stars-within-R200c-excluding-satellites",
+    "epochs": 5,
+    "zRange": [
+     0,
+     4
+    ],
+    "median_dy": 0.1295,
+    "medianRange": [
+     0.1166,
+     0.1382
+    ],
+    "max_abs_dy": 0.2507
+   },
+   {
+    "source": "IllustrisTNG",
+    "relation": "size",
+    "key": "sizeDefinition",
+    "from": "3D radius enclosing half of the stellar mass (aperture 30 pkpc)",
+    "to": "face-on circularized 2D radius enclosing half of the V-band light (Johnson V, intrinsic, no dust)",
+    "epochs": 3,
+    "zRange": [
+     0.5,
+     4
+    ],
+    "median_dy": -0.0305,
+    "medianRange": [
+     -0.1091,
+     0.0612
+    ],
+    "max_abs_dy": 0.2314
+   },
+   {
+    "source": "NIHAO zoom suite",
+    "relation": "btfr",
+    "key": "massDefinition",
+    "from": "all-baryons-within-virial-radius",
+    "to": "stars-plus-neutral-gas",
+    "epochs": 1,
+    "zRange": [
+     0,
+     0
+    ],
+    "median_dy": -0.3568,
+    "medianRange": [
+     -0.3568,
+     -0.3568
+    ],
+    "max_abs_dy": 1.6238
+   },
+   {
+    "source": "NewHorizon",
+    "relation": "gas",
+    "key": "gasDefinition",
+    "from": "cold gas n > 0.1 cm^-3 and T < 2e4 K within 2 R_eff",
+    "to": "cold gas n > 10 cm^-3 and T < 2e4 K within 2 R_eff",
+    "epochs": 3,
+    "zRange": [
+     0.25,
+     2
+    ],
+    "median_dy": -0.4398,
+    "medianRange": [
+     -0.5932,
+     -0.3313
+    ],
+    "max_abs_dy": 1.056
+   },
+   {
+    "source": "SPHINX20",
+    "relation": "sfms",
+    "key": "sfrTimescaleMyr",
+    "from": "10",
+    "to": "100",
+    "epochs": 5,
+    "zRange": [
+     4.64,
+     8
+    ],
+    "median_dy": -0.1645,
+    "medianRange": [
+     -0.3619,
+     -0.1033
+    ],
+    "max_abs_dy": 0.9075
+   },
+   {
+    "source": "THESAN-1",
+    "relation": "uvlf",
+    "key": "dustCorrection",
+    "from": "dust attenuated (Vogelsberger+20 dust-to-metal scaling of the Gnedin 2014 attenuation)",
+    "to": "dust attenuated (dust mass from the THESAN empirical dust model)",
+    "epochs": 1,
+    "zRange": [
+     6,
+     6
+    ],
+    "median_dy": 0.0014,
+    "medianRange": [
+     0.0014,
+     0.0014
+    ],
+    "max_abs_dy": 0.9822
+   },
+   {
+    "source": "THESAN-zoom",
+    "relation": "uvlf",
+    "key": "dustCorrection",
+    "from": "Bouwens+16 empirical attenuation relation applied to the intrinsic luminosities",
+    "to": "fiducial THESAN-ZOOM dust model (attenuated)",
+    "epochs": 2,
+    "zRange": [
+     12,
+     14
+    ],
+    "median_dy": -0.0004,
+    "medianRange": [
+     -0.0061,
+     0.0054
+    ],
+    "max_abs_dy": 0.2047
+   }
+  ]
+ },
  "summary": {
   "pairs": 2255,
   "byClass": {
    "matched": 87,
-   "differing": 157,
-   "unknown": 748,
+   "differing": 257,
+   "unknown": 648,
    "mismatch": 1263
   },
-  "testsRun": 15,
-  "testsBelow0.05": 2,
-  "expectedBelow0.05UnderNull": 0.75,
+  "testsRun": 16,
+  "testsBelow0.05": 1,
+  "expectedBelow0.05UnderNull": 0.8,
   "bonferroniSignificant": 0
  }
 }

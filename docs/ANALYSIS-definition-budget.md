@@ -8,9 +8,9 @@ How much of the disagreement between simulations at fixed stellar mass (or halo 
 
 ## What the data allow
 
-Of 2255 usable cross-suite record pairs (7 relations, 5 epochs), 4% have every documented key equal (matched), 7% differ in a documented soft key, 33% cannot be classified because a definition is undocumented in at least one record, and 56% differ in a hard key (for example different size definitions) and are not comparable at all.
+Of 2255 usable cross-suite record pairs (7 relations, 5 epochs), 4% have every documented key equal (matched), 11% differ in a documented soft key, 29% cannot be classified because a definition is undocumented in at least one record, and 56% differ in a hard key (for example different size definitions) and are not comparable at all.
 
-Of 15 epoch-by-relation permutation tests with enough matched and differing pairs, 2 have p < 0.05; 0.75 would be expected by chance alone. After Bonferroni correction 0 remain. The honest reading is that the present records neither show nor rule out a definitional contribution; the binding constraint is documentation, not physics.
+Of 16 epoch-by-relation permutation tests with enough matched and differing pairs, 1 have p < 0.05; 0.8 would be expected by chance alone. After Bonferroni correction 0 remain. The honest reading is that the present records neither show nor rule out a definitional contribution; the binding constraint is documentation, not physics.
 
 ## By relation and epoch (all simulation records)
 
@@ -20,10 +20,10 @@ Of 15 epoch-by-relation permutation tests with enough matched and differing pair
 | gsmf | 1 | 4 | 38 (4 / 2 / 32 / 0) | 0.16 | 0.16 | 0.24 | 0.00 | - |
 | gsmf | 2 | 4 | 33 (4 / 2 / 27 / 0) | 0.11 | 0.14 | 0.33 | 0.03 | - |
 | gsmf | 4 | 5 | 44 (4 / 2 / 38 / 0) | 0.14 | 0.13 | 0.24 | -0.01 | - |
-| gsmf | 6 | 5 | 32 (3 / 3 / 26 / 0) | 0.13 | 0.57 | 0.21 | 0.44 | 0.004 |
-| mzr | 0 | 6 | 74 (3 / 3 / 36 / 32) | 0.33 | 0.38 | 0.29 | 0.05 | 0.3393 |
-| mzr | 1 | 6 | 76 (3 / 7 / 28 / 38) | 0.21 | 0.44 | 0.20 | 0.24 | 0.3303 |
-| mzr | 2 | 5 | 36 (3 / 7 / 7 / 19) | 0.14 | 0.42 | 0.19 | 0.28 | 0.3298 |
+| gsmf | 6 | 5 | 32 (3 / 29 / 0 / 0) | 0.13 | 0.23 | - | 0.09 | 0.1019 |
+| mzr | 0 | 6 | 74 (3 / 9 / 30 / 32) | 0.33 | 0.32 | 0.28 | -0.00 | 0.4403 |
+| mzr | 1 | 6 | 76 (3 / 13 / 22 / 38) | 0.21 | 0.22 | 0.22 | 0.01 | 0.4708 |
+| mzr | 2 | 5 | 36 (3 / 11 / 3 / 19) | 0.14 | 0.15 | 0.47 | 0.01 | 0.4298 |
 | mzr | 4 | 5 | 12 (3 / 6 / 0 / 3) | 0.11 | 0.19 | - | 0.09 | 0.3598 |
 | mzr | 6 | 4 | 9 (3 / 3 / 0 / 3) | 0.09 | 0.17 | - | 0.08 | 0.2514 |
 | sfms | 0 | 8 | 81 (3 / 3 / 8 / 67) | 0.22 | 0.15 | 0.36 | -0.07 | 0.6812 |
@@ -41,17 +41,37 @@ Of 15 epoch-by-relation permutation tests with enough matched and differing pair
 | size | 2 | 7 | 187 (3 / 0 / 0 / 184) | 0.24 | - | - | - | - |
 | size | 4 | 6 | 32 (3 / 0 / 0 / 29) | 0.14 | - | - | - | - |
 | size | 6 | 4 | 6 (3 / 0 / 0 / 3) | 0.11 | - | - | - | - |
-| zstar | 0 | 4 | 9 (3 / 0 / 6 / 0) | 0.23 | - | 0.17 | - | - |
-| zstar | 1 | 5 | 17 (3 / 3 / 11 / 0) | 0.20 | 0.23 | 0.11 | 0.03 | 0.3053 |
-| zstar | 2 | 5 | 21 (3 / 3 / 15 / 0) | 0.19 | 0.15 | 0.11 | -0.05 | 0.5187 |
-| zstar | 4 | 6 | 24 (3 / 3 / 10 / 8) | 0.19 | 0.13 | 0.20 | -0.06 | 0.3863 |
+| zstar | 0 | 4 | 9 (3 / 6 / 0 / 0) | 0.23 | 0.17 | - | -0.06 | 0.8081 |
+| zstar | 1 | 5 | 17 (3 / 14 / 0 / 0) | 0.20 | 0.12 | - | -0.09 | 0.9415 |
+| zstar | 2 | 5 | 21 (3 / 18 / 0 / 0) | 0.19 | 0.11 | - | -0.08 | 0.942 |
+| zstar | 4 | 6 | 24 (3 / 13 / 0 / 8) | 0.19 | 0.16 | - | -0.02 | 0.4528 |
 | zstar | 6 | 5 | 10 (3 / 0 / 3 / 4) | 0.21 | - | 0.39 | - | - |
-| bh | 0 | 9 | 136 (0 / 10 / 126 / 0) | - | 0.53 | 0.52 | - | - |
+| bh | 0 | 9 | 136 (0 / 26 / 110 / 0) | - | 0.46 | 0.53 | - | - |
 | bh | 1 | 8 | 59 (0 / 0 / 59 / 0) | - | - | 0.30 | - | - |
 | bh | 2 | 8 | 68 (0 / 0 / 68 / 0) | - | - | 0.64 | - | - |
 | bh | 4 | 8 | 58 (0 / 0 / 58 / 0) | - | - | 1.20 | - | - |
 
 Units: dex in the relation's y axis (log10). excess = median(differing) - median(matched).
+
+## Definition sensitivity measured inside single runs
+
+Where one simulation run is published under two definitions of one quantity (and nothing else differs in the record), the offset between the two curves is a purely definitional effect. Population splits (active versus passive) and model variations are excluded. Offsets are median (to minus from) over the shared x range, in y units; the range is over epochs.
+
+| simulation | relation | what changes | from | to | epochs | median | range of medians | largest local offset |
+|---|---|---|---|---|---|---|---|---|
+| BlueTides | uvlf | dustCorrection | dust attenuated (the paper's 'observed'; the tab | none (intrinsic) | 6 (z 8-13) | +0.01 | -0.00 to +0.09 | 1.76 |
+| EAGLE | shmr | haloMassDefinition | BN98 | M200crit | 8 (z 0-5) | +0.04 | +0.02 to +0.10 | 0.45 |
+| FLARES | uvlf | dustCorrection | dust attenuated (SED modelling with a line-of-si | none (intrinsic) | 6 (z 10-15) | +0.03 | -0.07 to +0.05 | 1.77 |
+| Illustris | gsmf | massDefinition | aperture-2rhalf-stars | aperture-30pkpc | 1 (z 0-0) | +0.05 | +0.05 to +0.05 | 0.35 |
+| Illustris | gsmf | massDefinition | aperture-2rhalf-stars | total-subhalo | 12 (z 0-7) | +0.06 | -0.01 to +0.12 | 0.44 |
+| Illustris | gsmf | massDefinition | aperture-30pkpc | total-subhalo | 1 (z 0-0) | -0.01 | -0.01 to -0.01 | 0.75 |
+| Illustris | shmr | massDefinition | aperture-2rhalf-stars | stars-within-R200c-excluding-satellites | 5 (z 0-4) | +0.13 | +0.12 to +0.14 | 0.25 |
+| IllustrisTNG | size | sizeDefinition | 3D radius enclosing half of the stellar mass (ap | face-on circularized 2D radius enclosing half of | 3 (z 0.5-4) | -0.03 | -0.11 to +0.06 | 0.23 |
+| NIHAO zoom suite | btfr | massDefinition | all-baryons-within-virial-radius | stars-plus-neutral-gas | 1 (z 0-0) | -0.36 | -0.36 to -0.36 | 1.62 |
+| NewHorizon | gas | gasDefinition | cold gas n > 0.1 cm^-3 and T < 2e4 K within 2 R_ | cold gas n > 10 cm^-3 and T < 2e4 K within 2 R_e | 3 (z 0.25-2) | -0.44 | -0.59 to -0.33 | 1.06 |
+| SPHINX20 | sfms | sfrTimescaleMyr | 10 | 100 | 5 (z 4.64-8) | -0.16 | -0.36 to -0.10 | 0.91 |
+| THESAN-1 | uvlf | dustCorrection | dust attenuated (Vogelsberger+20 dust-to-metal s | dust attenuated (dust mass from the THESAN empir | 1 (z 6-6) | +0.00 | +0.00 to +0.00 | 0.98 |
+| THESAN-zoom | uvlf | dustCorrection | Bouwens+16 empirical attenuation relation applie | fiducial THESAN-ZOOM dust model (attenuated) | 2 (z 12-14) | -0.00 | -0.01 to +0.01 | 0.20 |
 
 ## Method
 
@@ -69,7 +89,7 @@ Significance: suite-level label permutation. Uncertainty: bootstrap over suites.
 ## Limits
 
 - Records within one suite are not independent; pairs are formed between different suites only, and the permutation shuffles definitions across records.
-- Digitized records are included (they are never rankable); the rankable-only run in the JSON is the sensitivity check and is far smaller.
+- Digitized records are included (they are never rankable); the rankable-only run in the JSON is the robustness check and is far smaller.
 - Cosmology differences are ignored: values are h-free as published.
 - Only documented keys count. An undocumented definition is not assumed equal to anything.
 - Choosing the matched class from the repository's own comparability rules (`compare.js`) means the answer depends on those rules; they are conventions, not measurements.
