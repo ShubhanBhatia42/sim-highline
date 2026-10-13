@@ -115,7 +115,8 @@
         "population": "centrals",
         "gasPhase": "HI",
         "gasMethod": "BR06 (70 pkpc aperture)",
-        "gasStatistic": "median"
+        "gasStatistic": "median",
+        "gasDefinition": "HI within a 70 pkpc aperture"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -129,7 +130,10 @@
         "sourceMember": "M_HI_weak_convergence_BR06_evolution.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "outlined text: the frame edges are 7 to 12 (x) and 7 to 11 (y) in the rendered figure; validated by the major ticks falling on integers and by the dotted M_HI = M* guide line having unit slope through the origin",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "crain17-eagle-hi-aperture"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -245,7 +249,8 @@
         "population": "centrals",
         "gasPhase": "HI",
         "gasMethod": "BR06 (70 pkpc aperture)",
-        "gasStatistic": "median"
+        "gasStatistic": "median",
+        "gasDefinition": "HI within a 70 pkpc aperture"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -259,7 +264,10 @@
         "sourceMember": "M_HI_weak_convergence_BR06_evolution.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "outlined text: the frame edges are 7 to 12 (x) and 7 to 11 (y) in the rendered figure; validated by the major ticks falling on integers and by the dotted M_HI = M* guide line having unit slope through the origin",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "crain17-eagle-hi-aperture"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -363,7 +371,8 @@
         "population": "centrals",
         "gasPhase": "HI",
         "gasMethod": "BR06 (70 pkpc aperture)",
-        "gasStatistic": "median"
+        "gasStatistic": "median",
+        "gasDefinition": "HI within a 70 pkpc aperture"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -377,7 +386,10 @@
         "sourceMember": "M_HI_weak_convergence_BR06_evolution.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "outlined text: the frame edges are 7 to 12 (x) and 7 to 11 (y) in the rendered figure; validated by the major ticks falling on integers and by the dotted M_HI = M* guide line having unit slope through the origin",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "crain17-eagle-hi-aperture"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -477,7 +489,8 @@
         "population": "centrals",
         "gasPhase": "HI",
         "gasMethod": "BR06 (70 pkpc aperture)",
-        "gasStatistic": "median"
+        "gasStatistic": "median",
+        "gasDefinition": "HI within a 70 pkpc aperture"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -491,7 +504,10 @@
         "sourceMember": "M_HI_weak_convergence_BR06_evolution.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "outlined text: the frame edges are 7 to 12 (x) and 7 to 11 (y) in the rendered figure; validated by the major ticks falling on integers and by the dotted M_HI = M* guide line having unit slope through the origin",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "crain17-eagle-hi-aperture"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -607,7 +623,8 @@
         "population": "centrals",
         "gasPhase": "HI",
         "gasMethod": "BR06 (70 pkpc aperture)",
-        "gasStatistic": "median"
+        "gasStatistic": "median",
+        "gasDefinition": "HI within a 70 pkpc aperture"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -621,7 +638,10 @@
         "sourceMember": "M_HI_weak_convergence_BR06_evolution.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "outlined text: the frame edges are 7 to 12 (x) and 7 to 11 (y) in the rendered figure; validated by the major ticks falling on integers and by the dotted M_HI = M* guide line having unit slope through the origin",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "crain17-eagle-hi-aperture"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -701,7 +721,8 @@
         "population": "centrals",
         "gasPhase": "HI",
         "gasMethod": "BR06 (70 pkpc aperture)",
-        "gasStatistic": "median"
+        "gasStatistic": "median",
+        "gasDefinition": "HI within a 70 pkpc aperture"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -715,7 +736,10 @@
         "sourceMember": "M_HI_weak_convergence_BR06_evolution.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "outlined text: the frame edges are 7 to 12 (x) and 7 to 11 (y) in the rendered figure; validated by the major ticks falling on integers and by the dotted M_HI = M* guide line having unit slope through the origin",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "crain17-eagle-hi-aperture"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

@@ -104,7 +104,7 @@
         "warning": "Prediction (thick grey line) and Poisson-uncertainty band read from the vector paths of Kaviraj et al. 2017 Fig. 7 (z=0.1 panel); no table exists. The paper states the band width indicates Poisson uncertainties."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": {
           "H0": 70.4,
           "Om": 0.272
@@ -125,7 +125,10 @@
         "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -224,7 +227,7 @@
         "warning": "Pink dashed Horizon-noAGN prediction (a twin simulation without black-hole feedback) of Kaviraj et al. 2017 Fig. 7 (z=0.1 panel); no table exists. A different physical model from Horizon-AGN, kept as its own run."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": {
           "H0": 70.4,
           "Om": 0.272
@@ -245,7 +248,10 @@
         "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -354,7 +360,7 @@
         "warning": "Prediction (thick grey line) and Poisson-uncertainty band read from the vector paths of Kaviraj et al. 2017 Fig. 7 (z=0.4 panel); no table exists. The paper states the band width indicates Poisson uncertainties."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": {
           "H0": 70.4,
           "Om": 0.272
@@ -375,7 +381,10 @@
         "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -470,7 +479,7 @@
         "warning": "Pink dashed Horizon-noAGN prediction (a twin simulation without black-hole feedback) of Kaviraj et al. 2017 Fig. 7 (z=0.4 panel); no table exists. A different physical model from Horizon-AGN, kept as its own run."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": {
           "H0": 70.4,
           "Om": 0.272
@@ -491,7 +500,10 @@
         "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -594,7 +606,7 @@
         "warning": "Prediction (thick grey line) and Poisson-uncertainty band read from the vector paths of Kaviraj et al. 2017 Fig. 7 (z=0.8 panel); no table exists. The paper states the band width indicates Poisson uncertainties."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": {
           "H0": 70.4,
           "Om": 0.272
@@ -615,7 +627,10 @@
         "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -706,7 +721,7 @@
         "warning": "Pink dashed Horizon-noAGN prediction (a twin simulation without black-hole feedback) of Kaviraj et al. 2017 Fig. 7 (z=0.8 panel); no table exists. A different physical model from Horizon-AGN, kept as its own run."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": {
           "H0": 70.4,
           "Om": 0.272
@@ -727,7 +742,10 @@
         "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -824,7 +842,7 @@
         "warning": "Prediction (thick grey line) and Poisson-uncertainty band read from the vector paths of Kaviraj et al. 2017 Fig. 7 (z=1.6 panel); no table exists. The paper states the band width indicates Poisson uncertainties."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": {
           "H0": 70.4,
           "Om": 0.272
@@ -845,7 +863,10 @@
         "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -932,7 +953,7 @@
         "warning": "Pink dashed Horizon-noAGN prediction (a twin simulation without black-hole feedback) of Kaviraj et al. 2017 Fig. 7 (z=1.6 panel); no table exists. A different physical model from Horizon-AGN, kept as its own run."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": {
           "H0": 70.4,
           "Om": 0.272
@@ -953,7 +974,10 @@
         "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1026,7 +1050,7 @@
         "warning": "Prediction (thick grey line) and Poisson-uncertainty band read from the vector paths of Kaviraj et al. 2017 Fig. 7 (z=2.7 panel); no table exists. The paper states the band width indicates Poisson uncertainties."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": {
           "H0": 70.4,
           "Om": 0.272
@@ -1047,7 +1071,10 @@
         "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1114,7 +1141,7 @@
         "warning": "Pink dashed Horizon-noAGN prediction (a twin simulation without black-hole feedback) of Kaviraj et al. 2017 Fig. 7 (z=2.7 panel); no table exists. A different physical model from Horizon-AGN, kept as its own run."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": {
           "H0": 70.4,
           "Om": 0.272
@@ -1135,7 +1162,10 @@
         "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1202,7 +1232,7 @@
         "warning": "Prediction (thick grey line) and Poisson-uncertainty band read from the vector paths of Kaviraj et al. 2017 Fig. 7 (z=4 panel); no table exists. The paper states the band width indicates Poisson uncertainties."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": {
           "H0": 70.4,
           "Om": 0.272
@@ -1223,7 +1253,10 @@
         "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1286,7 +1319,7 @@
         "warning": "Pink dashed Horizon-noAGN prediction (a twin simulation without black-hole feedback) of Kaviraj et al. 2017 Fig. 7 (z=4 panel); no table exists. A different physical model from Horizon-AGN, kept as its own run."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": {
           "H0": 70.4,
           "Om": 0.272
@@ -1307,7 +1340,10 @@
         "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1368,7 +1404,7 @@
         "warning": "Prediction (thick grey line) and Poisson-uncertainty band read from the vector paths of Kaviraj et al. 2017 Fig. 7 (z=5 panel); no table exists. The paper states the band width indicates Poisson uncertainties."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": {
           "H0": 70.4,
           "Om": 0.272
@@ -1389,7 +1425,10 @@
         "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1448,7 +1487,7 @@
         "warning": "Pink dashed Horizon-noAGN prediction (a twin simulation without black-hole feedback) of Kaviraj et al. 2017 Fig. 7 (z=5 panel); no table exists. A different physical model from Horizon-AGN, kept as its own run."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": {
           "H0": 70.4,
           "Om": 0.272
@@ -1469,7 +1508,10 @@
         "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1530,7 +1572,7 @@
         "warning": "Prediction (thick grey line) and Poisson-uncertainty band read from the vector paths of Kaviraj et al. 2017 Fig. 7 (z=6 panel); no table exists. The paper states the band width indicates Poisson uncertainties."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": {
           "H0": 70.4,
           "Om": 0.272
@@ -1551,7 +1593,10 @@
         "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1606,7 +1651,7 @@
         "warning": "Pink dashed Horizon-noAGN prediction (a twin simulation without black-hole feedback) of Kaviraj et al. 2017 Fig. 7 (z=6 panel); no table exists. A different physical model from Horizon-AGN, kept as its own run."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": {
           "H0": 70.4,
           "Om": 0.272
@@ -1627,7 +1672,10 @@
         "sourceMember": "mf.ps (converted to PDF with the PostScript bounding box)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "ticks: x 9-12 (59.41 pt/dex), y 0 to -8 (23.485 pt/dex); asserted against the drawn tick marks; panel offsets from the frame lines",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

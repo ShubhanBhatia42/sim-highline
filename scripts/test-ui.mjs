@@ -178,7 +178,7 @@ await step("hovering a legend row emphasises one curve and dims the rest", async
   await ctx.close();
 });
 
-for (const w of [375, 1280]) for (const f of ["index", "about", "sources", "use-cases"]) await step(`site ${f} at ${w}px: one h1, no horizontal overflow`, async () => {
+for (const w of [375, 1280]) for (const f of ["index", "about", "findings", "sources", "use-cases"]) await step(`site ${f} at ${w}px: one h1, no horizontal overflow`, async () => {
   const { page, ctx, errors } = await open(`/site/${f}.html`, { w, h: 800 });
   const r = await page.evaluate(() => ({ h1: document.querySelectorAll("h1").length, sw: document.documentElement.scrollWidth, iw: innerWidth }));
   assert.equal(r.h1, 1); assert(r.sw <= r.iw + 1, `overflow ${r.sw} > ${r.iw}`);
@@ -214,7 +214,7 @@ await axeRun("app, relation view, dark", "/highline.html#r=gsmf&z=6", { scheme: 
 await axeRun("app, tension view", "/highline.html#m=tension&tz=0");
 await axeRun("app, coverage view", "/highline.html#m=atlas");
 await axeRun("app, evidence panel", "/highline.html#r=gsmf&z=0&sel=chaikin26.colibre.l400m7.gsmf.z0");
-for (const f of ["index", "about", "sources", "use-cases"]) { await axeRun(`site ${f}, light`, `/site/${f}.html`); await axeRun(`site ${f}, dark`, `/site/${f}.html`, { scheme: "dark" }); }
+for (const f of ["index", "about", "findings", "sources", "use-cases"]) { await axeRun(`site ${f}, light`, `/site/${f}.html`); await axeRun(`site ${f}, dark`, `/site/${f}.html`, { scheme: "dark" }); }
 
 await browser.close(); server.close();
 if (failures.length) { console.log(`\n${failures.length} of ${n} UI checks failed`); process.exit(1); }

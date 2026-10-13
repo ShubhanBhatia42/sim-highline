@@ -151,6 +151,451 @@
         "retrieved": "2026-10-13",
         "sourceSha256": "80bafcb8f93a1772c86a04569b2f13571a770f6dbcfb143d30dd4ddd2045b774"
       }
+    },
+    {
+      "id": "schaye26-colibre-aperture",
+      "match": {
+        "source": "COLIBRE",
+        "relation": [
+          "shmr",
+          "ssfr",
+          "sfrd"
+        ],
+        "citationIncludes": "Schaye et al. 2026"
+      },
+      "set": {
+        "massDefinition": "aperture-50pkpc"
+      },
+      "evidence": {
+        "citation": "Schaye et al. 2026, MNRAS 548, stag375",
+        "url": "https://arxiv.org/abs/2508.21126",
+        "where": "Sec. 2, Structure finding",
+        "quote": "galaxy properties computed using the bound particles within 3D apertures of radius 50 proper kpc",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "dc109cb57eff9ed465aa7d2128a9ec40f75d5369f01fc19ca5a0883403cc77f3"
+      }
+    },
+    {
+      "id": "schaye26-colibre-sfr",
+      "match": {
+        "source": "COLIBRE",
+        "relation": [
+          "ssfr"
+        ],
+        "citationIncludes": "Schaye et al. 2026"
+      },
+      "set": {
+        "sfrTimescaleMyr": "instantaneous"
+      },
+      "evidence": {
+        "citation": "Schaye et al. 2026, MNRAS 548, stag375",
+        "url": "https://arxiv.org/abs/2508.21126",
+        "where": "Sec. 5, The cosmic star formation history",
+        "quote": "summing the instantaneous SFRs of all gas particles",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "dc109cb57eff9ed465aa7d2128a9ec40f75d5369f01fc19ca5a0883403cc77f3"
+      }
+    },
+    {
+      "id": "schaye26-colibre-sfrd-box",
+      "match": {
+        "source": "COLIBRE",
+        "relation": [
+          "sfrd"
+        ],
+        "citationIncludes": "Schaye et al. 2026"
+      },
+      "set": {
+        "sfrIntegrationLimit": "all gas particles in the box",
+        "dustCorrection": "none"
+      },
+      "evidence": {
+        "citation": "Schaye et al. 2026, MNRAS 548, stag375",
+        "url": "https://arxiv.org/abs/2508.21126",
+        "where": "Sec. 5, The cosmic star formation history",
+        "quote": "SFR density calculated by summing the instantaneous SFRs of all gas particles",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "dc109cb57eff9ed465aa7d2128a9ec40f75d5369f01fc19ca5a0883403cc77f3",
+        "note": "Intrinsic gas SFR, no dust model involved."
+      }
+    },
+    {
+      "id": "feldmann23-firebox-gsmf-mass",
+      "match": {
+        "source": "FIREbox",
+        "relation": [
+          "gsmf"
+        ],
+        "citationIncludes": "Feldmann et al. 2023"
+      },
+      "set": {
+        "massDefinition": "aperture-Rg"
+      },
+      "evidence": {
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "where": "Sec. 2, Halo and galaxy catalogs",
+        "quote": "stellar masses, SFRs, and other properties of galaxies refer to integrated properties within R_g",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "f04b44f1059e3cb723b3306f4297fe833f36c5f4d1e16e9f6d27d47b6b036ebd",
+        "note": "R_g is defined by two iterative or R_vir-based recipes in the paper; the record does not say which was used for the SMF."
+      }
+    },
+    {
+      "id": "bird22-astrid-imf",
+      "match": {
+        "source": "ASTRID",
+        "relation": [
+          "shmr",
+          "zstar"
+        ],
+        "citationIncludes": "Bird et al. 2022"
+      },
+      "set": {
+        "imf": "chabrier03"
+      },
+      "evidence": {
+        "citation": "Bird et al. 2022, MNRAS 512, 3703",
+        "url": "https://arxiv.org/abs/2111.01160",
+        "where": "Sec. Metal Return",
+        "quote": "proportion of massive stars set by a Chabrier initial mass function",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "f67e380d5540c98477a3af3845913a7037aa006114166790fcf83380a8c609c8"
+      }
+    },
+    {
+      "id": "blank19-nihao-mass",
+      "match": {
+        "source": "NIHAO zoom suite",
+        "relation": [
+          "shmr",
+          "bh"
+        ],
+        "citationIncludes": "Blank et al. 2019"
+      },
+      "set": {
+        "massDefinition": "sphere-0.2R200"
+      },
+      "evidence": {
+        "citation": "Blank et al. 2019, MNRAS 487, 5476",
+        "url": "https://arxiv.org/abs/1906.06955",
+        "where": "Sec. 2, Initial conditions, galaxy properties",
+        "quote": "combined mass of all stellar particles within a radius of 0.2 R200",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "c4b35e2551f472d4c27085219b6e1e618c0c2ca5139ed82baa353d9f68bf4afd"
+      }
+    },
+    {
+      "id": "katz23-sphinx-mass",
+      "match": {
+        "source": "SPHINX20",
+        "relation": [
+          "shmr",
+          "size",
+          "sfms",
+          "zstar"
+        ]
+      },
+      "set": {
+        "massDefinition": "integral-of-SFH"
+      },
+      "evidence": {
+        "citation": "Katz et al. 2023, SPHINX-20 data release",
+        "url": "https://arxiv.org/abs/2309.03269",
+        "where": "Sec. Available Data, table of quantities",
+        "quote": "total stellar mass formed, the integral of the star formation history, not adjusted for mass loss",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "8ea5a5afa2aa12f53a25282414a0435bd4b170fece157e2aa58f38b6bf4239c7"
+      }
+    },
+    {
+      "id": "marszewski24-fire2-mzr",
+      "match": {
+        "source": "FIRE-2",
+        "relation": [
+          "mzr"
+        ],
+        "citationIncludes": "Marszewski et al. 2024"
+      },
+      "set": {
+        "imf": "kroupa01",
+        "massDefinition": "aperture-0.2Rvir"
+      },
+      "evidence": {
+        "citation": "Marszewski et al. 2024, ApJL 967, L41",
+        "url": "https://arxiv.org/abs/2403.08853",
+        "where": "Sec. Simulations and Analysis",
+        "quote": "Kroupa IMF; stellar mass as the total mass of all star particles within 0.2 R_vir",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "328c52cbbe5d3633c32eb8450e24e5e01dc0b6071e0d8bcf82180f2aa317110a"
+      }
+    },
+    {
+      "id": "dubois16-hagn-ssfr-timescale",
+      "match": {
+        "source": "Horizon-AGN",
+        "relation": [
+          "ssfr"
+        ],
+        "citationIncludes": "Dubois et al. 2016"
+      },
+      "set": {
+        "sfrTimescaleMyr": 100
+      },
+      "evidence": {
+        "citation": "Dubois et al. 2016, MNRAS 463, 3948",
+        "url": "https://arxiv.org/abs/1606.03086",
+        "where": "Sec. Impact of AGN feedback on star formation",
+        "quote": "sSFR with the amount of stars formed over the last 100 Myr at z=0.3",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "0c0be93809562e8d29416c547567eb4d74ef65d1e5f3c031d42e64f1a7dfc65e"
+      }
+    },
+    {
+      "id": "diemer19-tng-mass",
+      "match": {
+        "source": "IllustrisTNG",
+        "relation": [
+          "hi-fraction",
+          "h2-fraction"
+        ],
+        "citationIncludes": "Diemer et al. 2019"
+      },
+      "set": {
+        "massDefinition": "aperture-30pkpc"
+      },
+      "evidence": {
+        "citation": "Diemer et al. 2019, MNRAS 487, 1529",
+        "url": "https://arxiv.org/abs/1902.10714",
+        "where": "Sec. 2, Mock-observing masses, Stellar masses and sizes",
+        "quote": "we define M* as the stellar mass within a fixed aperture of 30 kpc",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "706911748979b6d0ab0c8c54f844e490c7b674c68453b75a8865309b482a331e"
+      }
+    },
+    {
+      "id": "dave20-eagle-aperture",
+      "match": {
+        "source": "EAGLE",
+        "relation": [
+          "hi-fraction",
+          "h2-fraction",
+          "gsmf",
+          "ssfr"
+        ],
+        "citationIncludes": "Dave et al. 2020"
+      },
+      "set": {
+        "massDefinition": "aperture-30pkpc"
+      },
+      "evidence": {
+        "citation": "Dave et al. 2020, MNRAS 497, 146",
+        "url": "https://arxiv.org/abs/2002.07226",
+        "where": "Sec. EAGLE",
+        "quote": "properties of galaxies by aggregating the particles residing within 30 kpc of their most-bound particle",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "80bafcb8f93a1772c86a04569b2f13571a770f6dbcfb143d30dd4ddd2045b774"
+      }
+    },
+    {
+      "id": "dubois14-horizonagn-imf",
+      "match": {
+        "source": "Horizon-AGN"
+      },
+      "set": {
+        "imf": "salpeter55"
+      },
+      "evidence": {
+        "citation": "Dubois et al. 2014, Dancing in the dark (Horizon-AGN), arXiv:1402.1165",
+        "url": "https://arxiv.org/abs/1402.1165",
+        "where": "Sec. Star formation and stellar feedback",
+        "quote": "Feedback from stars assuming a Salpeter initial mass function",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "a85e7f92ccde7cf8f48fc8d49c7841abb1a87c2e7a0c10a40798607281fbfd62",
+        "note": "The simulation's own IMF: stellar masses and SFRs of Horizon-AGN are Salpeter-based, about 0.2 dex above Chabrier or Kroupa."
+      }
+    },
+    {
+      "id": "kannan22-thesan-sfrd",
+      "match": {
+        "source": "THESAN-1",
+        "relation": [
+          "sfrd"
+        ],
+        "citationIncludes": "Kannan et al. 2022"
+      },
+      "set": {
+        "sfrIntegrationLimit": "total over all halos in the box",
+        "dustCorrection": "none"
+      },
+      "evidence": {
+        "citation": "Kannan et al. 2022, MNRAS 511, 4005",
+        "url": "https://arxiv.org/abs/2110.00584",
+        "where": "Sec. Stellar properties, SFRD figure",
+        "quote": "Contribution from low, medium and high mass halos to the total star formation rate",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "c19a1d90db944b45d03aff1cf40157fef68a78dd5cb0f1f1d70b1524cb6044eb",
+        "note": "The simulated SFR is intrinsic (no dust model enters); the dust treatment of the luminosity functions in the same section does not apply."
+      }
+    },
+    {
+      "id": "crain17-eagle-hi-aperture",
+      "match": {
+        "source": "EAGLE",
+        "relation": [
+          "hi-fraction"
+        ],
+        "citationIncludes": "Crain et al. 2017"
+      },
+      "set": {
+        "gasDefinition": "HI within a 70 pkpc aperture"
+      },
+      "evidence": {
+        "citation": "Crain et al. 2017, MNRAS 464, 4204",
+        "url": "https://arxiv.org/abs/1604.06803",
+        "where": "Sec. The HI mass of galaxies",
+        "quote": "HI mass within the 70 pkpc aperture that we adopt",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "a3ced5187ccbe1e7e7ec0952757b153cb2422e7b54ecb36d0a79e32bb0b51821"
+      }
+    },
+    {
+      "id": "diemer19-tng-hi-def",
+      "match": {
+        "source": "IllustrisTNG",
+        "relation": [
+          "hi-fraction"
+        ],
+        "citationIncludes": "Diemer et al. 2019"
+      },
+      "set": {
+        "gasDefinition": "HI"
+      },
+      "evidence": {
+        "citation": "Diemer et al. 2019, MNRAS 487, 1529",
+        "url": "https://arxiv.org/abs/1902.10714",
+        "where": "Sec. Gas Fractions",
+        "quote": "gas fractions: the ratio of the mass in HI or H2 divided by stellar mass",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "706911748979b6d0ab0c8c54f844e490c7b674c68453b75a8865309b482a331e"
+      }
+    },
+    {
+      "id": "diemer19-tng-h2-def",
+      "match": {
+        "source": "IllustrisTNG",
+        "relation": [
+          "h2-fraction"
+        ],
+        "citationIncludes": "Diemer et al. 2019"
+      },
+      "set": {
+        "gasDefinition": "H2"
+      },
+      "evidence": {
+        "citation": "Diemer et al. 2019, MNRAS 487, 1529",
+        "url": "https://arxiv.org/abs/1902.10714",
+        "where": "Sec. Gas Fractions",
+        "quote": "gas fractions: the ratio of the mass in HI or H2 divided by stellar mass",
+        "retrieved": "2026-10-13",
+        "sourceSha256": "706911748979b6d0ab0c8c54f844e490c7b674c68453b75a8865309b482a331e"
+      }
+    }
+  ],
+  "readWithoutResult": [
+    {
+      "arxiv": "1704.00954",
+      "paper": "Wilkins et al. 2017 (BlueTides)",
+      "keys": [
+        "imf",
+        "massDefinition"
+      ],
+      "note": "Chabrier IMF is stated for the SPS photometry and for the observations compared with, not for the simulation stellar mass; no aperture stated."
+    },
+    {
+      "arxiv": "1605.09379",
+      "paper": "Kaviraj et al. 2017 (Horizon-AGN)",
+      "keys": [
+        "massDefinition"
+      ],
+      "note": "The source text has no statement of the stellar-mass definition behind the plotted mass function."
+    },
+    {
+      "arxiv": "2006.10094",
+      "paper": "Habouzit et al. 2021",
+      "keys": [
+        "massDefinition",
+        "imf"
+      ],
+      "note": "Uses total stellar mass of each simulation, and states the computations may differ between simulations; no per-simulation aperture or IMF."
+    },
+    {
+      "arxiv": "1409.0009",
+      "paper": "Sparre et al. 2015 (Illustris)",
+      "keys": [
+        "massDefinition"
+      ],
+      "note": "No stellar-mass aperture stated for the main-sequence figures."
+    },
+    {
+      "arxiv": "1503.01117",
+      "paper": "Genel et al. 2015 (Illustris)",
+      "keys": [
+        "massDefinition"
+      ],
+      "note": "No radius restriction for j; stellar-mass definition not stated."
+    },
+    {
+      "arxiv": "2009.10578",
+      "paper": "Dubois et al. 2021 (NewHorizon)",
+      "keys": [
+        "massDefinition"
+      ],
+      "note": "Stellar-mass definition for sizes and black-hole relations not stated in the sections searched."
+    },
+    {
+      "arxiv": "2008.13379",
+      "paper": "Blank et al. 2021 (NIHAO XXVI)",
+      "keys": [
+        "massDefinition"
+      ],
+      "note": "SFR is stars formed in the last 200 Myr within 0.2 R_vir; the stellar-mass definition is not restated."
+    },
+    {
+      "arxiv": "1901.10203",
+      "paper": "Dave et al. 2019 (SIMBA)",
+      "keys": [
+        "densityFrame"
+      ],
+      "note": "Comoving versus physical density is not stated for the mass function."
+    },
+    {
+      "arxiv": "2309.03269",
+      "paper": "Katz et al. 2023 (SPHINX-20)",
+      "keys": [
+        "imf"
+      ],
+      "note": "IMF of the simulation stellar populations not stated in the data-release paper.",
+      "source": "SPHINX20"
+    },
+    {
+      "arxiv": "1609.01739",
+      "paper": "Lagos et al. 2017 (EAGLE)",
+      "keys": [
+        "massDefinition"
+      ],
+      "note": "j measured within r50 or 5 r50; stellar-mass definition not restated."
+    },
+    {
+      "arxiv": "2504.01061",
+      "paper": "Dolag et al. 2025 (Magneticum)",
+      "keys": [
+        "massDefinition",
+        "jDefinition",
+        "sfrStatistic"
+      ],
+      "note": "The stellar mass function, size, SFMS and angular-momentum sections do not state which of the paper's mass apertures the released tables use.",
+      "source": "Magneticum Pathfinder"
     }
   ]
 }

@@ -235,7 +235,7 @@
           "H0": 67.1,
           "Om": 0.3175
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "sphere-0.2R200",
         "haloMassDefinition": "M200crit",
         "haloMassHistory": "current",
         "population": "zoom-centrals"
@@ -252,7 +252,10 @@
         "sourceMember": "plot_msmhx4.pdf (converted from plot_msmhx4.eps)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labelled decades from the bottom-row panels (shared by column); y: labelled decades from the left-column panels (shared by row); both snapped to tick marks",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "blank19-nihao-mass"
+        ]
       },
       "calibration": "unknown",
       "rankable": false,
@@ -680,7 +683,7 @@
           "H0": 67.1,
           "Om": 0.3175
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "sphere-0.2R200",
         "haloMassDefinition": "M200crit",
         "haloMassHistory": "current",
         "population": "zoom-centrals"
@@ -697,7 +700,10 @@
         "sourceMember": "plot_msmhx4.pdf (converted from plot_msmhx4.eps)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labelled decades from the bottom-row panels (shared by column); y: labelled decades from the left-column panels (shared by row); both snapped to tick marks",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "blank19-nihao-mass"
+        ]
       },
       "calibration": "unknown",
       "rankable": false,
@@ -945,7 +951,7 @@
           "H0": 67.1,
           "Om": 0.3175
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "sphere-0.2R200",
         "haloMassDefinition": "M200crit",
         "haloMassHistory": "current",
         "population": "zoom-centrals"
@@ -962,7 +968,10 @@
         "sourceMember": "plot_msmhx4.pdf (converted from plot_msmhx4.eps)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labelled decades from the bottom-row panels (shared by column); y: labelled decades from the left-column panels (shared by row); both snapped to tick marks",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "blank19-nihao-mass"
+        ]
       },
       "calibration": "unknown",
       "rankable": false,
@@ -1410,7 +1419,7 @@
           "H0": 67.1,
           "Om": 0.3175
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "sphere-0.2R200",
         "haloMassDefinition": "M200crit",
         "haloMassHistory": "current",
         "population": "zoom-centrals"
@@ -1427,7 +1436,10 @@
         "sourceMember": "plot_msmhx4.pdf (converted from plot_msmhx4.eps)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labelled decades from the bottom-row panels (shared by column); y: labelled decades from the left-column panels (shared by row); both snapped to tick marks",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "blank19-nihao-mass"
+        ]
       },
       "calibration": "unknown",
       "rankable": false,
@@ -1671,7 +1683,7 @@
           "H0": 67.1,
           "Om": 0.3175
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "sphere-0.2R200",
         "haloMassDefinition": "M200crit",
         "haloMassHistory": "current",
         "population": "zoom-centrals"
@@ -1688,7 +1700,10 @@
         "sourceMember": "plot_msmhx4.pdf (converted from plot_msmhx4.eps)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labelled decades from the bottom-row panels (shared by column); y: labelled decades from the left-column panels (shared by row); both snapped to tick marks",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "blank19-nihao-mass"
+        ]
       },
       "calibration": "unknown",
       "rankable": false,
@@ -2136,7 +2151,7 @@
           "H0": 67.1,
           "Om": 0.3175
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "sphere-0.2R200",
         "haloMassDefinition": "M200crit",
         "haloMassHistory": "current",
         "population": "zoom-centrals"
@@ -2153,7 +2168,10 @@
         "sourceMember": "plot_msmhx4.pdf (converted from plot_msmhx4.eps)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labelled decades from the bottom-row panels (shared by column); y: labelled decades from the left-column panels (shared by row); both snapped to tick marks",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "blank19-nihao-mass"
+        ]
       },
       "calibration": "unknown",
       "rankable": false,
@@ -2357,7 +2375,7 @@
           "H0": 67.1,
           "Om": 0.3175
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "sphere-0.2R200",
         "haloMassDefinition": "M200crit",
         "haloMassHistory": "current",
         "population": "zoom-centrals"
@@ -2374,7 +2392,10 @@
         "sourceMember": "plot_msmhx4.pdf (converted from plot_msmhx4.eps)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labelled decades from the bottom-row panels (shared by column); y: labelled decades from the left-column panels (shared by row); both snapped to tick marks",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "blank19-nihao-mass"
+        ]
       },
       "calibration": "unknown",
       "rankable": false,
@@ -2822,7 +2843,7 @@
           "H0": 67.1,
           "Om": 0.3175
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "sphere-0.2R200",
         "haloMassDefinition": "M200crit",
         "haloMassHistory": "current",
         "population": "zoom-centrals"
@@ -2839,7 +2860,10 @@
         "sourceMember": "plot_msmhx4.pdf (converted from plot_msmhx4.eps)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labelled decades from the bottom-row panels (shared by column); y: labelled decades from the left-column panels (shared by row); both snapped to tick marks",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "blank19-nihao-mass"
+        ]
       },
       "calibration": "unknown",
       "rankable": false,
@@ -3087,7 +3111,7 @@
           "H0": 67.1,
           "Om": 0.3175
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "sphere-0.2R200",
         "bhMassMethod": "intrinsic",
         "population": "zoom-centrals"
       },
@@ -3103,7 +3127,10 @@
         "sourceMember": "plot_mbhmsx4.pdf (converted from plot_mbhmsx4.eps)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labelled decades from the bottom-row panels (shared by column); y: labelled decades from the left-column panels (shared by row); both snapped to tick marks",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "blank19-nihao-mass"
+        ]
       },
       "calibration": "unknown",
       "rankable": false,
@@ -3551,7 +3578,7 @@
           "H0": 67.1,
           "Om": 0.3175
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "sphere-0.2R200",
         "bhMassMethod": "intrinsic",
         "population": "zoom-centrals"
       },
@@ -3567,7 +3594,10 @@
         "sourceMember": "plot_mbhmsx4.pdf (converted from plot_mbhmsx4.eps)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labelled decades from the bottom-row panels (shared by column); y: labelled decades from the left-column panels (shared by row); both snapped to tick marks",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "blank19-nihao-mass"
+        ]
       },
       "calibration": "unknown",
       "rankable": false,
@@ -3815,7 +3845,7 @@
           "H0": 67.1,
           "Om": 0.3175
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "sphere-0.2R200",
         "bhMassMethod": "intrinsic",
         "population": "zoom-centrals"
       },
@@ -3831,7 +3861,10 @@
         "sourceMember": "plot_mbhmsx4.pdf (converted from plot_mbhmsx4.eps)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labelled decades from the bottom-row panels (shared by column); y: labelled decades from the left-column panels (shared by row); both snapped to tick marks",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "blank19-nihao-mass"
+        ]
       },
       "calibration": "unknown",
       "rankable": false,
@@ -4279,7 +4312,7 @@
           "H0": 67.1,
           "Om": 0.3175
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "sphere-0.2R200",
         "bhMassMethod": "intrinsic",
         "population": "zoom-centrals"
       },
@@ -4295,7 +4328,10 @@
         "sourceMember": "plot_mbhmsx4.pdf (converted from plot_mbhmsx4.eps)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labelled decades from the bottom-row panels (shared by column); y: labelled decades from the left-column panels (shared by row); both snapped to tick marks",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "blank19-nihao-mass"
+        ]
       },
       "calibration": "unknown",
       "rankable": false,
@@ -4539,7 +4575,7 @@
           "H0": 67.1,
           "Om": 0.3175
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "sphere-0.2R200",
         "bhMassMethod": "intrinsic",
         "population": "zoom-centrals"
       },
@@ -4555,7 +4591,10 @@
         "sourceMember": "plot_mbhmsx4.pdf (converted from plot_mbhmsx4.eps)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labelled decades from the bottom-row panels (shared by column); y: labelled decades from the left-column panels (shared by row); both snapped to tick marks",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "blank19-nihao-mass"
+        ]
       },
       "calibration": "unknown",
       "rankable": false,
@@ -5003,7 +5042,7 @@
           "H0": 67.1,
           "Om": 0.3175
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "sphere-0.2R200",
         "bhMassMethod": "intrinsic",
         "population": "zoom-centrals"
       },
@@ -5019,7 +5058,10 @@
         "sourceMember": "plot_mbhmsx4.pdf (converted from plot_mbhmsx4.eps)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labelled decades from the bottom-row panels (shared by column); y: labelled decades from the left-column panels (shared by row); both snapped to tick marks",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "blank19-nihao-mass"
+        ]
       },
       "calibration": "unknown",
       "rankable": false,
@@ -5223,7 +5265,7 @@
           "H0": 67.1,
           "Om": 0.3175
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "sphere-0.2R200",
         "bhMassMethod": "intrinsic",
         "population": "zoom-centrals"
       },
@@ -5239,7 +5281,10 @@
         "sourceMember": "plot_mbhmsx4.pdf (converted from plot_mbhmsx4.eps)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labelled decades from the bottom-row panels (shared by column); y: labelled decades from the left-column panels (shared by row); both snapped to tick marks",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "blank19-nihao-mass"
+        ]
       },
       "calibration": "unknown",
       "rankable": false,
@@ -5687,7 +5732,7 @@
           "H0": 67.1,
           "Om": 0.3175
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "sphere-0.2R200",
         "bhMassMethod": "intrinsic",
         "population": "zoom-centrals"
       },
@@ -5703,7 +5748,10 @@
         "sourceMember": "plot_mbhmsx4.pdf (converted from plot_mbhmsx4.eps)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labelled decades from the bottom-row panels (shared by column); y: labelled decades from the left-column panels (shared by row); both snapped to tick marks",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "blank19-nihao-mass"
+        ]
       },
       "calibration": "unknown",
       "rankable": false,

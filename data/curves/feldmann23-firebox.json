@@ -129,7 +129,7 @@
         },
         "population": "all galaxies",
         "densityFrame": "unspecified",
-        "massDefinition": "unspecified"
+        "massDefinition": "aperture-Rg"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -143,7 +143,10 @@
         "sourceMember": "fig9a.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: numeric tick labels 6-12 (label centres; no tick marks are drawn as separate paths); y: tick labels 1 to -5 (minus glyphs are drawn as paths, so signs assigned in order down the axis), label centres",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "feldmann23-firebox-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -273,7 +276,7 @@
         },
         "population": "all galaxies",
         "densityFrame": "unspecified",
-        "massDefinition": "unspecified"
+        "massDefinition": "aperture-Rg"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -287,7 +290,10 @@
         "sourceMember": "fig9a.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: numeric tick labels 6-12 (label centres; no tick marks are drawn as separate paths); y: tick labels 1 to -5 (minus glyphs are drawn as paths, so signs assigned in order down the axis), label centres",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "feldmann23-firebox-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -397,7 +403,7 @@
         },
         "population": "all galaxies",
         "densityFrame": "unspecified",
-        "massDefinition": "unspecified"
+        "massDefinition": "aperture-Rg"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -411,7 +417,10 @@
         "sourceMember": "fig9a.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: numeric tick labels 6-12 (label centres; no tick marks are drawn as separate paths); y: tick labels 1 to -5 (minus glyphs are drawn as paths, so signs assigned in order down the axis), label centres",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "feldmann23-firebox-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -509,7 +518,7 @@
         },
         "population": "all galaxies",
         "densityFrame": "unspecified",
-        "massDefinition": "unspecified"
+        "massDefinition": "aperture-Rg"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -523,7 +532,10 @@
         "sourceMember": "fig9a.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: numeric tick labels 6-12 (label centres; no tick marks are drawn as separate paths); y: tick labels 1 to -5 (minus glyphs are drawn as paths, so signs assigned in order down the axis), label centres",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "feldmann23-firebox-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -605,7 +617,7 @@
         },
         "population": "all galaxies",
         "densityFrame": "unspecified",
-        "massDefinition": "unspecified"
+        "massDefinition": "aperture-Rg"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -619,7 +631,10 @@
         "sourceMember": "fig9a.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: numeric tick labels 6-12 (label centres; no tick marks are drawn as separate paths); y: tick labels 1 to -5 (minus glyphs are drawn as paths, so signs assigned in order down the axis), label centres",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "feldmann23-firebox-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -693,7 +708,7 @@
         },
         "population": "all galaxies",
         "densityFrame": "unspecified",
-        "massDefinition": "unspecified"
+        "massDefinition": "aperture-Rg"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -707,7 +722,10 @@
         "sourceMember": "fig9a.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: numeric tick labels 6-12 (label centres; no tick marks are drawn as separate paths); y: tick labels 1 to -5 (minus glyphs are drawn as paths, so signs assigned in order down the axis), label centres",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "feldmann23-firebox-gsmf-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

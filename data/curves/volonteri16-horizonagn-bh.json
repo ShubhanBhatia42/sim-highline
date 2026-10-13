@@ -47,7 +47,7 @@
       },
       "definitions": {
         "massDefinition": "stellar mass within region above 178x mean total matter density",
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": {
           "H0": 70.4,
           "Om": 0.272
@@ -67,7 +67,10 @@
         "sourceMember": "mbh_mgal_z-eps-converted-to.pdf (black best-fit line)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: major ticks 9-12 (58.4 pt/dex); y: major ticks 7-9 (59.9 pt/dex) by panel; labels are outlines so tick values taken from the render; guide line M_BH=0.002 M_gal asserted",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -119,7 +122,7 @@
       },
       "definitions": {
         "massDefinition": "stellar mass within region above 178x mean total matter density",
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": {
           "H0": 70.4,
           "Om": 0.272
@@ -139,7 +142,10 @@
         "sourceMember": "mbh_mgal_z-eps-converted-to.pdf (black best-fit line)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: major ticks 9-12 (58.4 pt/dex); y: major ticks 7-9 (59.9 pt/dex) by panel; labels are outlines so tick values taken from the render; guide line M_BH=0.002 M_gal asserted",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -191,7 +197,7 @@
       },
       "definitions": {
         "massDefinition": "stellar mass within region above 178x mean total matter density",
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": {
           "H0": 70.4,
           "Om": 0.272
@@ -211,7 +217,10 @@
         "sourceMember": "mbh_mgal_z-eps-converted-to.pdf (black best-fit line)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: major ticks 9-12 (58.4 pt/dex); y: major ticks 7-9 (59.9 pt/dex) by panel; labels are outlines so tick values taken from the render; guide line M_BH=0.002 M_gal asserted",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -263,7 +272,7 @@
       },
       "definitions": {
         "massDefinition": "stellar mass within region above 178x mean total matter density",
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": {
           "H0": 70.4,
           "Om": 0.272
@@ -283,7 +292,10 @@
         "sourceMember": "mbh_mgal_z-eps-converted-to.pdf (black best-fit line)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: major ticks 9-12 (58.4 pt/dex); y: major ticks 7-9 (59.9 pt/dex) by panel; labels are outlines so tick values taken from the render; guide line M_BH=0.002 M_gal asserted",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

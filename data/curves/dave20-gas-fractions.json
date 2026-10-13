@@ -402,7 +402,7 @@
         "gasDefinition": "HI",
         "gasMethod": "post-processed Rahmati+13 and Gnedin & Kravtsov 2011 H2 following Crain+17; fixed 70 kpc aperture, bound gas only",
         "gasStatistic": "median",
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-30pkpc",
         "haloMassDefinition": "Subfind",
         "population": "all",
         "imf": "unspecified",
@@ -423,7 +423,10 @@
         "sourceMember": "gass_median_m100n1024.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: numeric tick labels (bottom row) snapped to ticks; y: tick labels with signs assigned from the 0.0 label (minus signs are separate glyphs), per panel",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dave20-eagle-aperture"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -549,7 +552,7 @@
         "gasDefinition": "HI",
         "gasMethod": "post-processed Rahmati+13 and Gnedin & Kravtsov 2011 H2 following Crain+17; fixed 70 kpc aperture, bound gas only; 8x better mass resolution",
         "gasStatistic": "median",
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-30pkpc",
         "haloMassDefinition": "Subfind",
         "population": "all",
         "imf": "unspecified",
@@ -570,7 +573,10 @@
         "sourceMember": "gass_median_m100n1024.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: numeric tick labels (bottom row) snapped to ticks; y: tick labels with signs assigned from the 0.0 label (minus signs are separate glyphs), per panel",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dave20-eagle-aperture"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -977,7 +983,7 @@
         "gasDefinition": "H2",
         "gasMethod": "post-processed Rahmati+13 and Gnedin & Kravtsov 2011 H2 following Crain+17; fixed 70 kpc aperture, bound gas only",
         "gasStatistic": "median",
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-30pkpc",
         "haloMassDefinition": "Subfind",
         "population": "all",
         "imf": "unspecified",
@@ -998,7 +1004,10 @@
         "sourceMember": "gass_median_m100n1024.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: numeric tick labels (bottom row) snapped to ticks; y: tick labels with signs assigned from the 0.0 label (minus signs are separate glyphs), per panel",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dave20-eagle-aperture"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1124,7 +1133,7 @@
         "gasDefinition": "H2",
         "gasMethod": "post-processed Rahmati+13 and Gnedin & Kravtsov 2011 H2 following Crain+17; fixed 70 kpc aperture, bound gas only; 8x better mass resolution",
         "gasStatistic": "median",
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-30pkpc",
         "haloMassDefinition": "Subfind",
         "population": "all",
         "imf": "unspecified",
@@ -1145,7 +1154,10 @@
         "sourceMember": "gass_median_m100n1024.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: numeric tick labels (bottom row) snapped to ticks; y: tick labels with signs assigned from the 0.0 label (minus signs are separate glyphs), per panel",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dave20-eagle-aperture"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

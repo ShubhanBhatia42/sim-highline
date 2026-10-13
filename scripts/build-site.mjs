@@ -150,15 +150,67 @@ stats.mismatchHtml = mismatched.length ? `<ul class="tick">${mismatched.map(m =>
 stats.mismatchCount = mismatched.length;
 stats.quickstart = (await read("site/src/quickstart-output.txt")).trimEnd().replace(/&/g, "&amp;").replace(/</g, "&lt;");
 stats.css = (await read("site/src/site.css")).replace("/*__PALETTE__*/", () => palette);
+// ---- findings page ----
+{
+  const vmCtx = { globalThis: {} }; (await import("node:vm")).runInNewContext(await read("compare.js"), vmCtx);
+  const RULES = vmCtx.globalThis.SimHighlineCompare.RULES, UNSET = new Set([undefined, null, "unspecified", "heterogeneous"]);
+  const A = JSON.parse(await read("data/analysis/definition-budget.json")), FL = JSON.parse(await read("data/definition-fills.json")), UD = JSON.parse(await read("data/undocumented-definitions.json"));
+  const S = A.summary, pc = v => `${Math.round(100 * v / S.pairs)}%`;
+  const fillSet = new Map(FL.fills.map(f => [f.id, Object.keys(f.set).length]));
+  const per = new Map();
+  for (const r of sims) {
+    const rule = RULES[r.relation]; if (!rule) continue;
+    const e = per.get(r.source) || per.set(r.source, { slots: 0, un: 0, rec: 0 }).get(r.source);
+    for (const k of [...rule.hard, ...rule.soft].filter(k => k !== "cosmology")) {
+      e.slots++;
+      if (UNSET.has(r.definitions[k])) e.un++;
+    }
+    for (const id of r.provenance.definitionFills || []) for (const k of Object.keys(FL.fills.find(f => f.id === id).set)) if (!UNSET.has(r.definitions[k]) && [...rule.hard, ...rule.soft].includes(k)) e.rec++;
+  }
+  const rows = [...per].map(([src, e]) => ({ src, ...e, doc: e.slots - e.un - e.rec })).filter(e => e.slots >= 8).sort((a, b) => (b.un / b.slots) - (a.un / a.slots));
+  const W = 860, LBL = 150, BAR = W - LBL - 90, RH = 26, H1 = rows.length * RH + 34;
+  let cov = `<svg viewBox="0 0 ${W} ${H1}" role="img" aria-labelledby="covT covD"><title id="covT">Documentation of the definitions each comparison needs, by simulation</title><desc id="covD">Stacked bars: stated in the original table or figure, recovered from the source paper, still undocumented.</desc><defs><pattern id="hat" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="var(--bg2)"/><line x1="0" y1="0" x2="0" y2="6" stroke="var(--cream3)" stroke-width="2"/></pattern></defs>`;
+  rows.forEach((e, i) => {
+    const y = 8 + i * RH, w = v => v / e.slots * BAR;
+    cov += `<text class="al" x="${LBL - 10}" y="${y + 15}" text-anchor="end">${esc(e.src.length > 22 ? e.src.slice(0, 21) + "…" : e.src)}</text><rect x="${LBL}" y="${y + 3}" width="${w(e.doc).toFixed(1)}" height="16" fill="var(--ink)" opacity=".85"/><rect x="${(LBL + w(e.doc)).toFixed(1)}" y="${y + 3}" width="${w(e.rec).toFixed(1)}" height="16" fill="var(--orange)"/><rect x="${(LBL + w(e.doc) + w(e.rec)).toFixed(1)}" y="${y + 3}" width="${w(e.un).toFixed(1)}" height="16" fill="url(#hat)" stroke="var(--line2)"/><text class="al" x="${LBL + BAR + 8}" y="${y + 15}">${Math.round(100 * e.un / e.slots)}% open</text>`;
+  });
+  cov += `</svg>`;
+  stats.fCoverage = cov;
+  const forestRows = A.sensitivity.summary.filter(g => g.relation !== "quenched");
+  const nice = v => String(v).replace(/\s*\(.*$/, "").replace(/^aperture-/, "").replace(/rhalf/, "R_half").replace(/pkpc/, " pkpc").replace(/-/g, " "), cut = t => t.length > 22 ? t.slice(0, 21) + "…" : t;
+  const RN = { gsmf: "stellar mass function", shmr: "stellar-to-halo mass", sfms: "main sequence", uvlf: "UV luminosity function", size: "size", gas: "cold gas fraction", btfr: "baryonic Tully-Fisher" };
+  const lo = Math.min(-0.7, ...forestRows.map(g => g.medianRange[0])) - 0.05, hi = Math.max(0.3, ...forestRows.map(g => g.medianRange[1])) + 0.05, FL2 = 300, FW = W - FL2 - 70, RH2 = 40, H2 = forestRows.length * RH2 + 46;
+  const fx = v => FL2 + (v - lo) / (hi - lo) * FW;
+  let fs = `<svg viewBox="0 0 ${W} ${H2}" role="img" aria-labelledby="fsT fsD"><title id="fsT">Measured shift in the relation when only one definition changes inside a single simulation run</title><desc id="fsD">Dot: median over epochs; bar: range of the per-epoch medians. Zero means the definition does not matter.</desc><g class="axis">`;
+  for (let v = Math.ceil(lo * 4) / 4; v <= hi; v += 0.25) fs += `<line x1="${fx(v).toFixed(1)}" x2="${fx(v).toFixed(1)}" y1="6" y2="${H2 - 30}"/><text x="${fx(v).toFixed(1)}" y="${H2 - 12}" text-anchor="middle">${v.toFixed(2)}</text>`;
+  fs += `<line x1="${fx(0).toFixed(1)}" x2="${fx(0).toFixed(1)}" y1="6" y2="${H2 - 30}" style="stroke:var(--cream3);stroke-width:1.4"/></g>`;
+  forestRows.forEach((g, i) => {
+    const y = 20 + i * RH2, c = colorFor(g.source), m = g.median_dy;
+    fs += `<text class="al" x="${FL2 - 14}" y="${y - 2}" text-anchor="end" style="font-weight:600">${esc(g.source)} · ${esc(RN[g.relation] || g.relation)}</text><text class="al" x="${FL2 - 14}" y="${y + 14}" text-anchor="end" style="fill:var(--cream3);font-size:12px">${esc(cut(nice(g.from)))} → ${esc(cut(nice(g.to)))}</text><line x1="${fx(g.medianRange[0]).toFixed(1)}" x2="${fx(g.medianRange[1]).toFixed(1)}" y1="${y + 4}" y2="${y + 4}" stroke="${c}" stroke-width="6" stroke-linecap="round" opacity=".5"/><circle cx="${fx(m).toFixed(1)}" cy="${y + 4}" r="6.5" fill="${c}" stroke="var(--bg2)" stroke-width="2"/><text class="al" x="${W - 62}" y="${y + 9}">${m >= 0 ? "+" : "−"}${Math.abs(m).toFixed(2)}</text>`;
+  });
+  fs += `</svg>`;
+  stats.fForest = fs;
+  const cls = [["matched", S.byClass.matched, "var(--ink)"], ["differing", S.byClass.differing, "var(--orange)"], ["unknown", S.byClass.unknown, "var(--mustard)"], ["not comparable", S.byClass.mismatch, "var(--line2)"]];
+  let x = 0, cb = `<svg viewBox="0 0 ${W} 86" role="img" aria-labelledby="clT"><title id="clT">Cross-simulation record pairs by what the documented definitions allow</title>`;
+  for (const [n, v, c] of cls) { const w = v / S.pairs * W; cb += `<rect x="${x.toFixed(1)}" y="8" width="${Math.max(w - 2, 1).toFixed(1)}" height="30" fill="${c}"/><text class="al" x="${(x + 2).toFixed(1)}" y="62">${esc(n)}</text><text class="al" x="${(x + 2).toFixed(1)}" y="80" style="font-weight:600">${Math.round(100 * v / S.pairs)}% · ${v}</text>`; x += w; }
+  cb += `</svg>`;
+  stats.fClasses = cb;
+  stats.fLedger = FL.fills.map(f => { const n = sims.filter(r => (r.provenance.definitionFills || []).includes(f.id)).length; return `<tr><td>${esc(f.evidence.citation)}<br><a href="${esc(f.evidence.url)}" target="_blank" rel="noopener">arXiv:${esc(f.evidence.url.split("/").pop())}</a></td><td>${esc(Object.entries(f.set).map(([k, v]) => `${k} = ${v}`).join("; "))}</td><td>${n}</td><td>${esc(f.evidence.where)}<br><span class="dim">“${esc(f.evidence.quote)}”</span></td></tr>`; }).join("");
+  stats.fRead = FL.readWithoutResult.map(r => `<li><b>${esc(r.paper)}</b> (<a href="https://arxiv.org/abs/${esc(r.arxiv)}" target="_blank" rel="noopener">arXiv:${esc(r.arxiv)}</a>): ${esc(r.note)}</li>`).join("");
+  stats.fPairs = n(S.pairs); stats.fMatchedPct = pc(S.byClass.matched); stats.fUnknownPct = pc(S.byClass.unknown); stats.fMismatchPct = pc(S.byClass.mismatch); stats.fDifferingPct = pc(S.byClass.differing);
+  stats.fRecRecords = UD.summary.recordsWithRecoveredDefinition; stats.fSimRecords = UD.summary.simulationRecords; stats.fUndoc = UD.summary.undocumentedValues; stats.fNotStated = UD.summary.sourceReadNotStated; stats.fNotRead = UD.summary.sourceNotYetRead; stats.fNoPaper = UD.summary.noPaperToRead;
+  stats.fTests = S.testsRun; stats.fBelow = S.testsBelow0 || S["testsBelow0.05"]; stats.fExpect = S["expectedBelow0.05UnderNull"]; stats.fBonf = S.bonferroniSignificant;
+  stats.fNFills = FL.fills.length; stats.fSensN = A.sensitivity.pairs.length; stats.fSensG = A.sensitivity.summary.length;
+}
 const SUN = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10" cy="10" r="3.6"/><path d="M10 2.5v1.8M10 15.7v1.8M2.5 10h1.8M15.7 10h1.8M4.7 4.7l1.3 1.3M14 14l1.3 1.3M4.7 15.3 6 14M14 6l1.3-1.3"/></svg>', MOON = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M16.5 11.8A6.8 6.8 0 0 1 8.2 3.5a6.8 6.8 0 1 0 8.3 8.3z"/></svg>';
 const THEME_JS = `<script>(function(){var b=document.getElementById("theme"),r=document.documentElement,S='${SUN}',M='${MOON}';function now(){return r.dataset.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}function paint(){var d=now()==="dark";b.innerHTML=d?S:M;b.setAttribute("aria-label",d?"Switch to the light theme":"Switch to the dark theme")}b.onclick=function(){var n=now()==="dark"?"light":"dark";r.dataset.theme=n;try{localStorage.setItem("sh-theme",n)}catch(e){}paint()};paint()})()</script>`;
-const NAV = (cur) => `<nav aria-label="Main"><a class="mark" href="index.html" aria-label="sim-highline home">SIM<i>/</i>HIGHLINE</a><span class="sp"></span>${[["about.html", "About"], ["sources.html", "Simulations &amp; observations"], ["use-cases.html", "Use cases"]].map(([h, t]) => `<a class="l" href="${h}"${h === cur ? ' aria-current="page"' : ""}>${t}</a>`).join("")}<button class="ico" id="theme" type="button" aria-label="Switch theme"></button><a class="btn main" href="../highline.html">Open the app</a></nav>${THEME_JS}`;
+const NAV = (cur) => `<nav aria-label="Main"><a class="mark" href="index.html" aria-label="sim-highline home">SIM<i>/</i>HIGHLINE</a><span class="sp"></span>${[["about.html", "About"], ["findings.html", "Findings"], ["sources.html", "Simulations &amp; observations"], ["use-cases.html", "Use cases"]].map(([h, t]) => `<a class="l" href="${h}"${h === cur ? ' aria-current="page"' : ""}>${t}</a>`).join("")}<button class="ico" id="theme" type="button" aria-label="Switch theme"></button><a class="btn main" href="../highline.html">Open the app</a></nav>${THEME_JS}`;
 await mkdir(new URL("dist/site/", root), { recursive: true });
 await cp(new URL("site/src/img/", root), new URL("dist/site/img/", root), { recursive: true });
-for (const page of ["index.html", "use-cases.html", "about.html", "sources.html"]) {
+for (const page of ["index.html", "use-cases.html", "about.html", "sources.html", "findings.html"]) {
   let html = await read(`site/src/${page}`);
   stats.nav = NAV(page);
   html = html.replace("/*__CSS__*/", () => stats.css).replace(/\{\{(\w+)\}\}/g, (m, k) => { if (!(k in stats)) throw new Error(`unknown placeholder ${m} in ${page}`); return String(stats[k]); });
   await writeFile(new URL(`dist/site/${page}`, root), html);
 }
-console.log(`Built dist/site/{index,use-cases,about,sources}.html (${all.length} records; charts: ${Object.entries(CH).map(([k, c]) => `${k} ${c.curves} sims`).join(", ")}; ${mismatched.length} obs citation mismatches flagged)`);
+console.log(`Built dist/site/{index,use-cases,about,sources,findings}.html (${all.length} records; charts: ${Object.entries(CH).map(([k, c]) => `${k} ${c.curves} sims`).join(", ")}; ${mismatched.length} obs citation mismatches flagged)`);

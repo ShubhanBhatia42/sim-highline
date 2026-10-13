@@ -3,10 +3,10 @@
  "known": 16,
  "errors": 0,
  "warnings": 0,
- "info": 231,
+ "info": 228,
  "byCode": {
   "info:no-cosmology": 186,
-  "info:no-mass-definition": 45,
+  "info:no-mass-definition": 42,
   "known:x-out-of-range": 1,
   "known:y-out-of-range": 6,
   "known:quenched-decreases": 2,
@@ -20,7 +20,8 @@
     "log10(Msun yr^-1 Mpc^-3)"
    ],
    "massDefinitions": [
-    "-"
+    "-",
+    "aperture-50pkpc"
    ]
   },
   "shmr": {
@@ -30,6 +31,7 @@
    ],
    "massDefinitions": [
     "unspecified",
+    "sphere-0.2R200",
     "aperture-50pkpc",
     "aperture-30pkpc",
     "aperture-Reff-stars",
@@ -40,8 +42,7 @@
     "stars-within-R200c-excluding-satellites",
     "stars-within-third-Rmax-masked",
     "aperture-0.1rvir",
-    "sphere-0.2R200",
-    "-"
+    "integral-of-SFH"
    ]
   },
   "zstar": {
@@ -63,8 +64,9 @@
     "log10(Msun)"
    ],
    "massDefinitions": [
-    "unspecified",
+    "sphere-0.2R200",
     "total-subhalo",
+    "unspecified",
     "aperture-0.1Rvir",
     "aperture-30pkpc",
     "aperture-50pkpc",
@@ -105,6 +107,7 @@
     "caesar-6dfof-galaxy-total",
     "unspecified",
     "aperture-30pkpc",
+    "aperture-Rg",
     "aperture-2rhalf-stars",
     "total-subhalo",
     "stars-within-third-Rmax-masked"
@@ -123,6 +126,7 @@
     "total-bound-subhalo",
     "aperture-Reff-stars",
     "caesar-6dfof-galaxy-total",
+    "aperture-0.2Rvir",
     "aperture-30pkpc"
    ]
   },
@@ -187,9 +191,9 @@
    "massDefinitions": [
     "caesar-6dfof-galaxy-total",
     "unspecified",
+    "aperture-30pkpc",
     "total-galaxy-finder",
     "aperture-Reff-stars",
-    "aperture-30pkpc",
     "aperture-50pkpc"
    ]
   },
@@ -2052,33 +2056,6 @@
    "relation": "bh",
    "source": "SIMBA",
    "msg": "definitions.cosmology missing"
-  },
-  {
-   "sev": "info",
-   "code": "no-mass-definition",
-   "id": "marszewski24.fire2.mzrz.evolution.ab",
-   "file": "marszewski24-fire2-mzr-evolution.json",
-   "relation": "mzr",
-   "source": "FIRE-2",
-   "msg": "massDefinition missing"
-  },
-  {
-   "sev": "info",
-   "code": "no-mass-definition",
-   "id": "marszewski24.fire2.mzrz.evolution.b",
-   "file": "marszewski24-fire2-mzr-evolution.json",
-   "relation": "mzr",
-   "source": "FIRE-2",
-   "msg": "massDefinition missing"
-  },
-  {
-   "sev": "info",
-   "code": "no-mass-definition",
-   "id": "marszewski24.fire2.mzrz.evolution.none",
-   "file": "marszewski24-fire2-mzr-evolution.json",
-   "relation": "mzr",
-   "source": "FIRE-2",
-   "msg": "massDefinition missing"
   },
   {
    "sev": "info",

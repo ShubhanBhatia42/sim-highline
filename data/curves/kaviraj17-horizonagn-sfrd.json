@@ -262,7 +262,7 @@
         "warning": "Cosmic star formation history of Horizon-AGN (z 0 to 6), read from the PostScript vector paths of Kaviraj et al. 2017. The grey band is the observational range of Hopkins 2006 and is not extracted. IMF, cosmology and the density frame are not stated in the figure."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "salpeter55",
         "cosmology": "unspecified",
         "densityFrame": "unspecified",
         "sfrIndicator": "unspecified",
@@ -280,7 +280,10 @@
         "sourceMember": "cosmicsfh.ps (converted to PDF with the PostScript bounding box)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: major ticks (longer strokes) assigned the labels read from the rendered figure (the labels are glyph paths): x 0.0-0.8 in log10(1+z), y -1.0 to -2.5; x converted exactly to z",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "dubois14-horizonagn-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

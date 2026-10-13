@@ -3905,7 +3905,9 @@
         },
         "densityFrame": "comoving",
         "sfrIndicator": "instantaneous SFR of star-forming gas",
-        "population": "all galaxies"
+        "population": "all galaxies",
+        "sfrIntegrationLimit": "total over all halos in the box",
+        "dustCorrection": "none"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -3919,7 +3921,10 @@
         "sourceMember": "figures/sfrbin.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks (frame from the long axis strokes)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "kannan22-thesan-sfrd"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -4269,7 +4274,9 @@
         },
         "densityFrame": "comoving",
         "sfrIndicator": "instantaneous SFR of star-forming gas",
-        "population": "all galaxies"
+        "population": "all galaxies",
+        "sfrIntegrationLimit": "total over all halos in the box",
+        "dustCorrection": "none"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -4283,7 +4290,10 @@
         "sourceMember": "figures/sfrbin.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks (frame from the long axis strokes)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "kannan22-thesan-sfrd"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -4633,7 +4643,9 @@
         },
         "densityFrame": "comoving",
         "sfrIndicator": "instantaneous SFR of star-forming gas",
-        "population": "all galaxies"
+        "population": "all galaxies",
+        "sfrIntegrationLimit": "total over all halos in the box",
+        "dustCorrection": "none"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -4647,7 +4659,10 @@
         "sourceMember": "figures/sfrbin.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks (frame from the long axis strokes)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "kannan22-thesan-sfrd"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

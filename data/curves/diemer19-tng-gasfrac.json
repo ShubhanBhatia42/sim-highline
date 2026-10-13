@@ -190,9 +190,10 @@
           "H0": 67.74,
           "Om": 0.3089
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-30pkpc",
         "population": "galaxies-above-detection-threshold",
-        "gasPhase": "HI"
+        "gasPhase": "HI",
+        "gasDefinition": "HI"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -206,7 +207,11 @@
         "sourceMember": "mstar_fstar_split_hi_nosplit.pdf (dark envelope band centre, light 68% band)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: log decades 10^9-10^12 from the bottom panel; y: log decades 10^-4..10^0 from the top panel; minor-tick validated",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "diemer19-tng-mass",
+          "diemer19-tng-hi-def"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -357,9 +362,10 @@
           "H0": 67.74,
           "Om": 0.3089
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-30pkpc",
         "population": "galaxies-above-detection-threshold",
-        "gasPhase": "HI"
+        "gasPhase": "HI",
+        "gasDefinition": "HI"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -373,7 +379,11 @@
         "sourceMember": "mstar_fstar_split_hi_nosplit.pdf (dark envelope band centre, light 68% band)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: log decades 10^9-10^12 from the bottom panel; y: log decades 10^-4..10^0 from the top panel; minor-tick validated",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "diemer19-tng-mass",
+          "diemer19-tng-hi-def"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -568,9 +578,10 @@
           "H0": 67.74,
           "Om": 0.3089
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-30pkpc",
         "population": "galaxies-above-detection-threshold",
-        "gasPhase": "H2"
+        "gasPhase": "H2",
+        "gasDefinition": "H2"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -584,7 +595,11 @@
         "sourceMember": "mstar_fstar_split_h2_nosplit.pdf (dark envelope band centre, light 68% band)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: log decades 10^9-10^12 from the bottom panel; y: log decades 10^-4..10^0 from the top panel; minor-tick validated",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "diemer19-tng-mass",
+          "diemer19-tng-h2-def"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -735,9 +750,10 @@
           "H0": 67.74,
           "Om": 0.3089
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-30pkpc",
         "population": "galaxies-above-detection-threshold",
-        "gasPhase": "H2"
+        "gasPhase": "H2",
+        "gasDefinition": "H2"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -751,7 +767,11 @@
         "sourceMember": "mstar_fstar_split_h2_nosplit.pdf (dark envelope band centre, light 68% band)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: log decades 10^9-10^12 from the bottom panel; y: log decades 10^-4..10^0 from the top panel; minor-tick validated",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "diemer19-tng-mass",
+          "diemer19-tng-h2-def"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
