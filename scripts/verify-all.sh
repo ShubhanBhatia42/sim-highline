@@ -10,6 +10,7 @@ node scripts/test-compare.mjs
 node scripts/report-coverage.mjs
 python3 scripts/analyze_definition_budget.py > /dev/null
 python3 scripts/analyze_harmonization.py > /dev/null
+python3 scripts/analyze_model_form.py > /dev/null
 python3 scripts/screen_outliers.py
 node scripts/report-undocumented.mjs
 node scripts/build-curve-index.mjs
