@@ -295,6 +295,19 @@
       "note": "Global star formation rate density versus redshift of the TNG model method paper: the fiducial TNG and Illustris models on the same 25 Mpc/h box (L25n512), the resolution series L25n128 and L25n256 of both, and 12 single-change variations of the TNG model (wind energy, velocity, floor, directionality, thermal fraction, metallicity scaling, Illustris winds, magnetic fields, black holes). 18 records, 6 figures; the curves that appear in several figures agree between copies to a median below 0.01 dex. 'No galactic winds' leaves the plotted range between z = 1.4 and 7 and is not extracted. Comoving density inferred (the overlaid comoving observational compilations coincide with the curves). The same paper's galaxy stellar mass function and stellar-to-halo mass relation panels for these variants are not yet extracted."
     },
     {
+      "id": "camels-sfr-logs",
+      "suite": "CAMELS IllustrisTNG and SIMBA (first generation, 25 Mpc/h, 256^3)",
+      "status": "ingested",
+      "access": "public HTTP files (users.flatironinstitute.org/~camels), star formation logs read by script",
+      "url": "https://arxiv.org/abs/2010.00619",
+      "relations": [
+        "sfrd"
+      ],
+      "redshifts": "0 to 14 (bins of 0.2)",
+      "adapter": "scripts/ingest_camels_sfrd.py, scripts/validate_camels_closure.py",
+      "note": "Ensembles, not curves: data/ensembles/camels-sfrd.json holds the time-averaged cosmic SFR density of 1000 Latin-hypercube simulations (Omega_m, sigma_8 and four feedback factors varied) and 27 cosmic-variance seeds per code, with the SHA-256 of every log read. Used by the parametric-versus-structural analysis (docs/PROTOCOL-model-form.md) and kept out of data/curves and the exports, because a thousand curves of one suite would swamp the suite-level comparisons. The SFRD is the logged total SFR (code column 3, Msun/yr) divided by the comoving volume of the box ((25/h)^3, h = 0.6711); the stellar mass of the z = 0 subhalo catalogues accounts for 0.5 to 0.7 of the time integral (validation V1). Astrid and SWIFT-EAGLE runs exist in CAMELS but no star formation log was found for them; Magneticum, RAMSES, Enzo and CROCODILE are not read."
+    },
+    {
       "id": "blank19-nihao-xxii",
       "suite": "NIHAO zoom suite (with black holes)",
       "status": "ingested",
