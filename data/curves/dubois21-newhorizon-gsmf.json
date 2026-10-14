@@ -1,0 +1,986 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "dubois21.newhorizon.gsmf-raw.z0.25",
+      "source": "NewHorizon",
+      "run": "NewHorizon (all galaxies)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0.25,
+        "zNominal": 0.25,
+        "zMin": 0.25,
+        "zMax": 0.25,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label phi in cMpc^-3 dex^-1)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.227,
+        "xMax": 11.045
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.227,
+            "y": -1.1551,
+            "yHigh": -1.1147,
+            "yLow": -1.1858
+          },
+          {
+            "x": 7.864,
+            "y": -1.2439,
+            "yHigh": -1.2168,
+            "yLow": -1.2729
+          },
+          {
+            "x": 8.5,
+            "y": -1.3727,
+            "yHigh": -1.3404,
+            "yLow": -1.4182
+          },
+          {
+            "x": 9.136,
+            "y": -1.4301,
+            "yHigh": -1.3879,
+            "yLow": -1.4599
+          },
+          {
+            "x": 9.773,
+            "y": -1.6196,
+            "yHigh": -1.5533,
+            "yLow": -1.6485
+          },
+          {
+            "x": 10.409,
+            "y": -2.1247,
+            "yHigh": -2.0182,
+            "yLow": -2.2497
+          },
+          {
+            "x": 11.045,
+            "y": -2.9487,
+            "yHigh": -2.639,
+            "yLow": -2.9487
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies in the zoom region, including those in halos contaminated by low-resolution particles",
+        "warning": "Galaxy stellar mass function at z=0.25 read from the marker and error-bar vector paths of Dubois et al. 2021 (figure of the mass function; the caption describes z=0.25 only, the file has four panels); no table exists. Light blue squares (all galaxies, Poisson errors). The figure draws them offset by 0.15 dex in mass for legibility; the offset is removed here, which puts every square on the bin centre of the circle of the same bin. Normalised by the initial zoom-in volume, (16 Mpc)^3; the paper states that volume-integrated quantities are therefore lower limits that could be a few tens of per cent higher. Poisson error bars as plotted: where a bar runs off the bottom of the axis its lower end is not recorded, and where the recorded lower end equals the value the figure draws no lower error. Observational overlays (HSC-SSP, literature compilations) are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Dubois et al. 2021, A&A 651, A109 (arXiv:2009.10578), galaxy stellar mass function, z=0.25",
+        "doi": "10.1051/0004-6361/202039429",
+        "url": "https://arxiv.org/abs/2009.10578",
+        "retrieved": "2026-10-14",
+        "figure": "galaxy stellar mass function (hsc-nh_mass_function)",
+        "panel": "z=0.25",
+        "checksumSha256": "331e7503378d45d4dc07f1b58bc36f6d211235d6bfaf3294782dd3f3d4771b7e",
+        "sourceMember": "hsc-nh_mass_function.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^11 of the bottom frame of the panel column; y: labelled decades 10^-5 to 10^-1 of the left frame of the panel row; both validated by the minor-tick pattern",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "dubois21.newhorizon.gsmf-uncontaminated.z0.25",
+      "source": "NewHorizon",
+      "run": "NewHorizon (uncontaminated halos)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0.25,
+        "zNominal": 0.25,
+        "zMin": 0.25,
+        "zMax": 0.25,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label phi in cMpc^-3 dex^-1)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.227,
+        "xMax": 11.045
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.227,
+            "y": -1.1267,
+            "yHigh": -1.1009,
+            "yLow": -1.1448
+          },
+          {
+            "x": 7.864,
+            "y": -1.1697,
+            "yHigh": -1.1326,
+            "yLow": -1.225
+          },
+          {
+            "x": 8.5,
+            "y": -1.3299,
+            "yHigh": -1.3017,
+            "yLow": -1.3589
+          },
+          {
+            "x": 9.136,
+            "y": -1.3741,
+            "yHigh": -1.3415,
+            "yLow": -1.3906
+          },
+          {
+            "x": 9.773,
+            "y": -1.6263,
+            "yHigh": -1.5841,
+            "yLow": -1.6706
+          },
+          {
+            "x": 10.409,
+            "y": -2.1223,
+            "yHigh": -2.027,
+            "yLow": -2.17
+          },
+          {
+            "x": 11.045,
+            "y": -2.5994,
+            "yHigh": -2.5203,
+            "yLow": -2.7618
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies in halos not contaminated by low-resolution particles; mass function divided by the fraction of uncontaminated galaxies",
+        "warning": "Galaxy stellar mass function at z=0.25 read from the marker and error-bar vector paths of Dubois et al. 2021 (figure of the mass function; the caption describes z=0.25 only, the file has four panels); no table exists. Purple circles (only galaxies whose halos are not contaminated by low-resolution particles; the mass function is divided by the fraction of uncontaminated galaxies to account for the smaller effective volume). Normalised by the initial zoom-in volume, (16 Mpc)^3; the paper states that volume-integrated quantities are therefore lower limits that could be a few tens of per cent higher. Poisson error bars as plotted: where a bar runs off the bottom of the axis its lower end is not recorded, and where the recorded lower end equals the value the figure draws no lower error. Observational overlays (HSC-SSP, literature compilations) are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Dubois et al. 2021, A&A 651, A109 (arXiv:2009.10578), galaxy stellar mass function, z=0.25",
+        "doi": "10.1051/0004-6361/202039429",
+        "url": "https://arxiv.org/abs/2009.10578",
+        "retrieved": "2026-10-14",
+        "figure": "galaxy stellar mass function (hsc-nh_mass_function)",
+        "panel": "z=0.25",
+        "checksumSha256": "331e7503378d45d4dc07f1b58bc36f6d211235d6bfaf3294782dd3f3d4771b7e",
+        "sourceMember": "hsc-nh_mass_function.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^11 of the bottom frame of the panel column; y: labelled decades 10^-5 to 10^-1 of the left frame of the panel row; both validated by the minor-tick pattern",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "dubois21.newhorizon.gsmf-sty-hsc.z0.25",
+      "source": "NewHorizon",
+      "run": "NewHorizon (STY, HSC-like selection)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0.25,
+        "zNominal": 0.25,
+        "zMin": 0.25,
+        "zMax": 0.25,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label phi in cMpc^-3 dex^-1)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.3,
+        "xMax": 11.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.3,
+            "y": -1.3832
+          },
+          {
+            "x": 8.8,
+            "y": -1.5828
+          },
+          {
+            "x": 9.1,
+            "y": -1.705
+          },
+          {
+            "x": 9.3,
+            "y": -1.7887
+          },
+          {
+            "x": 9.5,
+            "y": -1.8754
+          },
+          {
+            "x": 9.7,
+            "y": -1.9667
+          },
+          {
+            "x": 9.8,
+            "y": -2.015
+          },
+          {
+            "x": 9.9,
+            "y": -2.0655
+          },
+          {
+            "x": 10,
+            "y": -2.119
+          },
+          {
+            "x": 10.1,
+            "y": -2.1761
+          },
+          {
+            "x": 10.2,
+            "y": -2.2379
+          },
+          {
+            "x": 10.3,
+            "y": -2.3054
+          },
+          {
+            "x": 10.4,
+            "y": -2.3803
+          },
+          {
+            "x": 10.5,
+            "y": -2.4644
+          },
+          {
+            "x": 10.6,
+            "y": -2.56
+          },
+          {
+            "x": 10.7,
+            "y": -2.6703
+          },
+          {
+            "x": 10.8,
+            "y": -2.7989
+          },
+          {
+            "x": 10.9,
+            "y": -2.9507
+          },
+          {
+            "x": 11,
+            "y": -3.1316
+          },
+          {
+            "x": 11.1,
+            "y": -3.3491
+          },
+          {
+            "x": 11.2,
+            "y": -3.6128
+          },
+          {
+            "x": 11.3,
+            "y": -3.9346
+          },
+          {
+            "x": 11.4,
+            "y": -4.3295
+          },
+          {
+            "x": 11.5,
+            "y": -4.8165
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "mock-observed galaxies: selected by effective surface brightness with the HSC-SSP completeness and an r-band cut of 26 mag, Sandage-Tammann-Yahil estimator",
+        "warning": "Thick purple dotted line of Dubois et al. 2021 (z=0.25 panel): the NewHorizon mass function constructed with the Sandage-Tammann-Yahil (STY) method after applying a surface-brightness selection that mimics the HSC-SSP deep layer and an r < 26 cut (masses from LePhare SED fits of dust-attenuated mock g, r, i, z magnitudes of HOP galaxies, with the knee fixed). It is a mock-observed estimator, not the binned count of the raw simulation, so it is kept as its own run and should be compared with survey mass functions rather than with the binned curves. No table exists. The line is a coarse polyline whose vertices sit on a 0.1 dex grid (24 inside the plotted range); its first vertex lies left of the plot (log M about 5.95), so the stretch from the left edge of the plot to log M = 8.3 is not recorded. The HSC-SSP curve it is compared with is not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Dubois et al. 2021, A&A 651, A109 (arXiv:2009.10578), galaxy stellar mass function, z=0.25",
+        "doi": "10.1051/0004-6361/202039429",
+        "url": "https://arxiv.org/abs/2009.10578",
+        "retrieved": "2026-10-14",
+        "figure": "galaxy stellar mass function (hsc-nh_mass_function)",
+        "panel": "z=0.25",
+        "checksumSha256": "331e7503378d45d4dc07f1b58bc36f6d211235d6bfaf3294782dd3f3d4771b7e",
+        "sourceMember": "hsc-nh_mass_function.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^11 of the bottom frame of the panel column; y: labelled decades 10^-5 to 10^-1 of the left frame of the panel row; both validated by the minor-tick pattern",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "dubois21.newhorizon.gsmf-raw.z1",
+      "source": "NewHorizon",
+      "run": "NewHorizon (all galaxies)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 1,
+        "zNominal": 1,
+        "zMin": 1,
+        "zMax": 1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label phi in cMpc^-3 dex^-1)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.227,
+        "xMax": 11.045
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.227,
+            "y": -0.9817,
+            "yHigh": -0.9475,
+            "yLow": -0.9946
+          },
+          {
+            "x": 7.864,
+            "y": -1.0883,
+            "yHigh": -1.0751,
+            "yLow": -1.112
+          },
+          {
+            "x": 8.5,
+            "y": -1.1877,
+            "yHigh": -1.1315,
+            "yLow": -1.2005
+          },
+          {
+            "x": 9.136,
+            "y": -1.3689,
+            "yHigh": -1.3571,
+            "yLow": -1.4111
+          },
+          {
+            "x": 9.773,
+            "y": -1.6699,
+            "yHigh": -1.6508,
+            "yLow": -1.7155
+          },
+          {
+            "x": 10.409,
+            "y": -2.1357,
+            "yHigh": -2.0434,
+            "yLow": -2.2872
+          },
+          {
+            "x": 11.045,
+            "y": -2.7726,
+            "yHigh": -2.7268,
+            "yLow": -2.9487
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies in the zoom region, including those in halos contaminated by low-resolution particles",
+        "warning": "Galaxy stellar mass function at z=1 read from the marker and error-bar vector paths of Dubois et al. 2021 (figure of the mass function; the caption describes z=0.25 only, the file has four panels); no table exists. Light blue squares (all galaxies, Poisson errors). The figure draws them offset by 0.15 dex in mass for legibility; the offset is removed here, which puts every square on the bin centre of the circle of the same bin. Normalised by the initial zoom-in volume, (16 Mpc)^3; the paper states that volume-integrated quantities are therefore lower limits that could be a few tens of per cent higher. Poisson error bars as plotted: where a bar runs off the bottom of the axis its lower end is not recorded, and where the recorded lower end equals the value the figure draws no lower error. Observational overlays (HSC-SSP, literature compilations) are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Dubois et al. 2021, A&A 651, A109 (arXiv:2009.10578), galaxy stellar mass function, z=1",
+        "doi": "10.1051/0004-6361/202039429",
+        "url": "https://arxiv.org/abs/2009.10578",
+        "retrieved": "2026-10-14",
+        "figure": "galaxy stellar mass function (hsc-nh_mass_function)",
+        "panel": "z=1",
+        "checksumSha256": "331e7503378d45d4dc07f1b58bc36f6d211235d6bfaf3294782dd3f3d4771b7e",
+        "sourceMember": "hsc-nh_mass_function.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^11 of the bottom frame of the panel column; y: labelled decades 10^-5 to 10^-1 of the left frame of the panel row; both validated by the minor-tick pattern",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "dubois21.newhorizon.gsmf-uncontaminated.z1",
+      "source": "NewHorizon",
+      "run": "NewHorizon (uncontaminated halos)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 1,
+        "zNominal": 1,
+        "zMin": 1,
+        "zMax": 1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label phi in cMpc^-3 dex^-1)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.227,
+        "xMax": 11.045
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.227,
+            "y": -0.9579,
+            "yHigh": -0.9421,
+            "yLow": -0.9718
+          },
+          {
+            "x": 7.864,
+            "y": -1.0834,
+            "yHigh": -1.0563,
+            "yLow": -1.0933
+          },
+          {
+            "x": 8.5,
+            "y": -1.1732,
+            "yHigh": -1.1405,
+            "yLow": -1.1838
+          },
+          {
+            "x": 9.136,
+            "y": -1.3456,
+            "yHigh": -1.3264,
+            "yLow": -1.3776
+          },
+          {
+            "x": 9.773,
+            "y": -1.6903,
+            "yHigh": -1.6301,
+            "yLow": -1.7056
+          },
+          {
+            "x": 10.409,
+            "y": -2.0763,
+            "yHigh": -2.0163,
+            "yLow": -2.1616
+          },
+          {
+            "x": 11.045,
+            "y": -3.0424,
+            "yHigh": -2.792,
+            "yLow": -3.3435
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies in halos not contaminated by low-resolution particles; mass function divided by the fraction of uncontaminated galaxies",
+        "warning": "Galaxy stellar mass function at z=1 read from the marker and error-bar vector paths of Dubois et al. 2021 (figure of the mass function; the caption describes z=0.25 only, the file has four panels); no table exists. Purple circles (only galaxies whose halos are not contaminated by low-resolution particles; the mass function is divided by the fraction of uncontaminated galaxies to account for the smaller effective volume). Normalised by the initial zoom-in volume, (16 Mpc)^3; the paper states that volume-integrated quantities are therefore lower limits that could be a few tens of per cent higher. Poisson error bars as plotted: where a bar runs off the bottom of the axis its lower end is not recorded, and where the recorded lower end equals the value the figure draws no lower error. Observational overlays (HSC-SSP, literature compilations) are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Dubois et al. 2021, A&A 651, A109 (arXiv:2009.10578), galaxy stellar mass function, z=1",
+        "doi": "10.1051/0004-6361/202039429",
+        "url": "https://arxiv.org/abs/2009.10578",
+        "retrieved": "2026-10-14",
+        "figure": "galaxy stellar mass function (hsc-nh_mass_function)",
+        "panel": "z=1",
+        "checksumSha256": "331e7503378d45d4dc07f1b58bc36f6d211235d6bfaf3294782dd3f3d4771b7e",
+        "sourceMember": "hsc-nh_mass_function.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^11 of the bottom frame of the panel column; y: labelled decades 10^-5 to 10^-1 of the left frame of the panel row; both validated by the minor-tick pattern",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "dubois21.newhorizon.gsmf-raw.z2",
+      "source": "NewHorizon",
+      "run": "NewHorizon (all galaxies)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 2,
+        "zMax": 2,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label phi in cMpc^-3 dex^-1)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.227,
+        "xMax": 11.045
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.227,
+            "y": -0.7597,
+            "yHigh": -0.7466,
+            "yLow": -0.7776
+          },
+          {
+            "x": 7.864,
+            "y": -0.9073,
+            "yHigh": -0.8819,
+            "yLow": -0.9163
+          },
+          {
+            "x": 8.5,
+            "y": -1.1516,
+            "yHigh": -1.0868,
+            "yLow": -1.1808
+          },
+          {
+            "x": 9.136,
+            "y": -1.3824,
+            "yHigh": -1.353,
+            "yLow": -1.4214
+          },
+          {
+            "x": 9.773,
+            "y": -1.956,
+            "yHigh": -1.9057,
+            "yLow": -2.0299
+          },
+          {
+            "x": 10.409,
+            "y": -3.0278,
+            "yHigh": -2.6807,
+            "yLow": -3.4258
+          },
+          {
+            "x": 11.045,
+            "y": -3.1248,
+            "yHigh": -2.9487,
+            "yLow": -3.4258
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies in the zoom region, including those in halos contaminated by low-resolution particles",
+        "warning": "Galaxy stellar mass function at z=2 read from the marker and error-bar vector paths of Dubois et al. 2021 (figure of the mass function; the caption describes z=0.25 only, the file has four panels); no table exists. Light blue squares (all galaxies, Poisson errors). The figure draws them offset by 0.15 dex in mass for legibility; the offset is removed here, which puts every square on the bin centre of the circle of the same bin. Normalised by the initial zoom-in volume, (16 Mpc)^3; the paper states that volume-integrated quantities are therefore lower limits that could be a few tens of per cent higher. Poisson error bars as plotted: where a bar runs off the bottom of the axis its lower end is not recorded, and where the recorded lower end equals the value the figure draws no lower error. Observational overlays (HSC-SSP, literature compilations) are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Dubois et al. 2021, A&A 651, A109 (arXiv:2009.10578), galaxy stellar mass function, z=2",
+        "doi": "10.1051/0004-6361/202039429",
+        "url": "https://arxiv.org/abs/2009.10578",
+        "retrieved": "2026-10-14",
+        "figure": "galaxy stellar mass function (hsc-nh_mass_function)",
+        "panel": "z=2",
+        "checksumSha256": "331e7503378d45d4dc07f1b58bc36f6d211235d6bfaf3294782dd3f3d4771b7e",
+        "sourceMember": "hsc-nh_mass_function.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^11 of the bottom frame of the panel column; y: labelled decades 10^-5 to 10^-1 of the left frame of the panel row; both validated by the minor-tick pattern",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "dubois21.newhorizon.gsmf-uncontaminated.z2",
+      "source": "NewHorizon",
+      "run": "NewHorizon (uncontaminated halos)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 2,
+        "zMax": 2,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label phi in cMpc^-3 dex^-1)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.227,
+        "xMax": 11.045
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.227,
+            "y": -0.7527,
+            "yHigh": -0.7347,
+            "yLow": -0.7658
+          },
+          {
+            "x": 7.864,
+            "y": -0.9014,
+            "yHigh": -0.8851,
+            "yLow": -0.9166
+          },
+          {
+            "x": 8.5,
+            "y": -1.1397,
+            "yHigh": -1.1096,
+            "yLow": -1.1763
+          },
+          {
+            "x": 9.136,
+            "y": -1.3611,
+            "yHigh": -1.3372,
+            "yLow": -1.3996
+          },
+          {
+            "x": 9.773,
+            "y": -1.9965,
+            "yHigh": -1.8951,
+            "yLow": -2.0571
+          },
+          {
+            "x": 10.409,
+            "y": -3.0665,
+            "yHigh": -2.7655
+          },
+          {
+            "x": 11.045,
+            "y": -3.3676,
+            "yHigh": -3.1745
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies in halos not contaminated by low-resolution particles; mass function divided by the fraction of uncontaminated galaxies",
+        "warning": "Galaxy stellar mass function at z=2 read from the marker and error-bar vector paths of Dubois et al. 2021 (figure of the mass function; the caption describes z=0.25 only, the file has four panels); no table exists. Purple circles (only galaxies whose halos are not contaminated by low-resolution particles; the mass function is divided by the fraction of uncontaminated galaxies to account for the smaller effective volume). Normalised by the initial zoom-in volume, (16 Mpc)^3; the paper states that volume-integrated quantities are therefore lower limits that could be a few tens of per cent higher. Poisson error bars as plotted: where a bar runs off the bottom of the axis its lower end is not recorded, and where the recorded lower end equals the value the figure draws no lower error. Observational overlays (HSC-SSP, literature compilations) are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Dubois et al. 2021, A&A 651, A109 (arXiv:2009.10578), galaxy stellar mass function, z=2",
+        "doi": "10.1051/0004-6361/202039429",
+        "url": "https://arxiv.org/abs/2009.10578",
+        "retrieved": "2026-10-14",
+        "figure": "galaxy stellar mass function (hsc-nh_mass_function)",
+        "panel": "z=2",
+        "checksumSha256": "331e7503378d45d4dc07f1b58bc36f6d211235d6bfaf3294782dd3f3d4771b7e",
+        "sourceMember": "hsc-nh_mass_function.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^11 of the bottom frame of the panel column; y: labelled decades 10^-5 to 10^-1 of the left frame of the panel row; both validated by the minor-tick pattern",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "dubois21.newhorizon.gsmf-raw.z4",
+      "source": "NewHorizon",
+      "run": "NewHorizon (all galaxies)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 4,
+        "zNominal": 4,
+        "zMin": 4,
+        "zMax": 4,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label phi in cMpc^-3 dex^-1)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.227,
+        "xMax": 9.773
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.227,
+            "y": -0.7277,
+            "yHigh": -0.7206,
+            "yLow": -0.7383
+          },
+          {
+            "x": 7.864,
+            "y": -1.0296,
+            "yHigh": -0.9896,
+            "yLow": -1.0597
+          },
+          {
+            "x": 8.5,
+            "y": -1.4503,
+            "yHigh": -1.4026,
+            "yLow": -1.4605
+          },
+          {
+            "x": 9.136,
+            "y": -2.0192,
+            "yHigh": -1.9768,
+            "yLow": -2.0558
+          },
+          {
+            "x": 9.773,
+            "y": -3.1248,
+            "yHigh": -2.9316,
+            "yLow": -3.4258
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies in the zoom region, including those in halos contaminated by low-resolution particles",
+        "warning": "Galaxy stellar mass function at z=4 read from the marker and error-bar vector paths of Dubois et al. 2021 (figure of the mass function; the caption describes z=0.25 only, the file has four panels); no table exists. Light blue squares (all galaxies, Poisson errors). The figure draws them offset by 0.15 dex in mass for legibility; the offset is removed here, which puts every square on the bin centre of the circle of the same bin. Normalised by the initial zoom-in volume, (16 Mpc)^3; the paper states that volume-integrated quantities are therefore lower limits that could be a few tens of per cent higher. Poisson error bars as plotted: where a bar runs off the bottom of the axis its lower end is not recorded, and where the recorded lower end equals the value the figure draws no lower error. Observational overlays (HSC-SSP, literature compilations) are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Dubois et al. 2021, A&A 651, A109 (arXiv:2009.10578), galaxy stellar mass function, z=4",
+        "doi": "10.1051/0004-6361/202039429",
+        "url": "https://arxiv.org/abs/2009.10578",
+        "retrieved": "2026-10-14",
+        "figure": "galaxy stellar mass function (hsc-nh_mass_function)",
+        "panel": "z=4",
+        "checksumSha256": "331e7503378d45d4dc07f1b58bc36f6d211235d6bfaf3294782dd3f3d4771b7e",
+        "sourceMember": "hsc-nh_mass_function.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^11 of the bottom frame of the panel column; y: labelled decades 10^-5 to 10^-1 of the left frame of the panel row; both validated by the minor-tick pattern",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "dubois21.newhorizon.gsmf-uncontaminated.z4",
+      "source": "NewHorizon",
+      "run": "NewHorizon (uncontaminated halos)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 4,
+        "zNominal": 4,
+        "zMin": 4,
+        "zMax": 4,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dN/dlog10(M) (axis label phi in cMpc^-3 dex^-1)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.227,
+        "xMax": 9.773
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.227,
+            "y": -0.7329,
+            "yHigh": -0.7098,
+            "yLow": -0.743
+          },
+          {
+            "x": 7.864,
+            "y": -1.0056,
+            "yHigh": -0.9883,
+            "yLow": -1.0374
+          },
+          {
+            "x": 8.5,
+            "y": -1.4672,
+            "yHigh": -1.4004,
+            "yLow": -1.4881
+          },
+          {
+            "x": 9.136,
+            "y": -2.0074,
+            "yHigh": -1.9408,
+            "yLow": -2.0982
+          },
+          {
+            "x": 9.773,
+            "y": -3.0956,
+            "yHigh": -2.9024
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies in halos not contaminated by low-resolution particles; mass function divided by the fraction of uncontaminated galaxies",
+        "warning": "Galaxy stellar mass function at z=4 read from the marker and error-bar vector paths of Dubois et al. 2021 (figure of the mass function; the caption describes z=0.25 only, the file has four panels); no table exists. Purple circles (only galaxies whose halos are not contaminated by low-resolution particles; the mass function is divided by the fraction of uncontaminated galaxies to account for the smaller effective volume). Normalised by the initial zoom-in volume, (16 Mpc)^3; the paper states that volume-integrated quantities are therefore lower limits that could be a few tens of per cent higher. Poisson error bars as plotted: where a bar runs off the bottom of the axis its lower end is not recorded, and where the recorded lower end equals the value the figure draws no lower error. Observational overlays (HSC-SSP, literature compilations) are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70.4,
+          "Om": 0.272
+        },
+        "massDefinition": "unspecified",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Dubois et al. 2021, A&A 651, A109 (arXiv:2009.10578), galaxy stellar mass function, z=4",
+        "doi": "10.1051/0004-6361/202039429",
+        "url": "https://arxiv.org/abs/2009.10578",
+        "retrieved": "2026-10-14",
+        "figure": "galaxy stellar mass function (hsc-nh_mass_function)",
+        "panel": "z=4",
+        "checksumSha256": "331e7503378d45d4dc07f1b58bc36f6d211235d6bfaf3294782dd3f3d4771b7e",
+        "sourceMember": "hsc-nh_mass_function.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^11 of the bottom frame of the panel column; y: labelled decades 10^-5 to 10^-1 of the left frame of the panel row; both validated by the minor-tick pattern",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

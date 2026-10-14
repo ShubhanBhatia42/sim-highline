@@ -1,9 +1,9 @@
 {
  "summary": {
-  "simulationRecords": 1342,
+  "simulationRecords": 1351,
   "recordsWithRecoveredDefinition": 391,
-  "undocumentedValues": 432,
-  "sourceReadNotStated": 416,
+  "undocumentedValues": 441,
+  "sourceReadNotStated": 425,
   "sourceNotYetRead": 0,
   "noPaperToRead": 16
  },
@@ -105,6 +105,15 @@
    "arxiv": null,
    "citation": "Dolag et al. 2025, Encyclopedia Magneticum",
    "records": 10,
+   "status": "source read, not stated"
+  },
+  {
+   "source": "NewHorizon",
+   "relation": "gsmf",
+   "key": "massDefinition",
+   "arxiv": "2009.10578",
+   "citation": "Dubois et al. 2021, A&A 651, A109 (arXiv:2009.10578), galaxy stellar mass function, z=0.25",
+   "records": 9,
    "status": "source read, not stated"
   },
   {

@@ -4,7 +4,7 @@
 
 It is a screen, not a check. It reads no source paper, so it cannot tell a transcription error from a real simulation difference or from a definition difference. Nothing is corrected or removed. A flag is a lead for someone who has the paper open.
 
-## What it found (v0.20.0 data, 775 curves screened, 9 flagged)
+## What it found (v0.20.0 data, 787 curves screened, 9 flagged)
 
 | Record | Offset (dex) | What the record itself says |
 |---|---|---|
