@@ -11,11 +11,12 @@ export function jointStats(R, repo) {
   const out = {};
   if (!R) {
     const pend = "Pending: the protocol is committed and the analysis has not been run.";
-    Object.assign(out, { jrStatus: "Pre-registered · pending", jrAbs: pend, jrHead: "pending", jrJ1: `<p>${pend}</p>`, jrFig1: "", jrFamRows: "", jrJ2: "", jrJ3: "", jrJ4: "", jrFig2: "", jrPathRows: "", jrDropRows: "", jrZRows: "", jrRespRows: "", jrValRows: "", jrSensRows: "", jrDev: "<li>none yet</li>", jrElig: "The eligible outputs are counted in the protocol", jrNoise: "not yet computed", jrNote: "", jrVal: "Pending.", jrD: "–", jrDfid: "–", jrVerdict: "pending", jrDials: "" });
+    Object.assign(out, { jrStatus: "Pre-registered · pending", jrAbs: pend, jrHead: "pending", jrJ1: `<p>${pend}</p>`, jrFig1: "", jrFamRows: "", jrJ2: "", jrJ3: "", jrJ4: "", jrFig2: "", jrPathRows: "", jrDropRows: "", jrDecompRows: "", jrZRows: "", jrRespRows: "", jrValRows: "", jrSensRows: "", jrDev: "<li>none yet</li>", jrElig: "The eligible outputs are counted in the protocol", jrNoise: "not yet computed", jrNote: "", jrVal: "Pending.", jrD: "–", jrDfid: "–", jrVerdict: "pending", jrDials: "" });
     return out;
   }
   const P = R.point, S = R.splits, fams = R.meta.families.filter(f => f !== "hmf"), A = P.all, SA = S.all;
-  const famRows = fams.filter(f => S["fam:" + f]).map(f => ({ f, d: P["fam:" + f].D, d0: P["fam:" + f].D_fiducial, s: S["fam:" + f], nb: P["fam:" + f].n_blocks })).sort((a, b) => b.d - a.d);
+  const dc = x => (x.D_corrected ?? x.D);
+  const famRows = fams.filter(f => S["fam:" + f]).map(f => ({ f, d: dc(P["fam:" + f]), d0: P["fam:" + f].D_fiducial, s: S["fam:" + f], nb: P["fam:" + f].n_blocks, red: (S["fam:" + f + "@" + R.meta.reduced_range] || {}).verdict })).sort((a, b) => b.d - a.d);
   const nStruct = famRows.filter(r => r.s.verdict === "structural").length;
   const J3 = R.J3 || {};
   out.jrStatus = "Pre-registered · result";
@@ -47,10 +48,11 @@ export function jointStats(R, repo) {
     });
     return g + "</svg>";
   };
-  const rows1 = [{ label: "All observables", d: A.D, d0: A.D_fiducial, lo: SA.between.p5, hi: SA.between.p95, verdict: SA.verdict }, ...famRows.map(r => ({ label: FAMILY[r.f], d: r.d, d0: r.d0, lo: r.s.between.p5, hi: r.s.between.p95, verdict: r.s.verdict }))];
-  out.jrFig1 = rowsSvg(rows1, "jr1", "Distance between IllustrisTNG and SIMBA after retuning, by observable family", "Bars: minimum distance over both codes' four parameters, all simulations (dark; vermilion where structural alone); light bar: distance at the fiducial parameters; grey whisker: 5th to 95th percentile over half-sample emulators.", 210);
-  out.jrFamRows = rows1.slice(1).map((r, i) => { const fr = famRows[i], s = fr.s; return `<tr><td>${esc(FAMILY[fr.f])}</td><td class="n">${fr.nb}</td><td class="n">${f2(fr.d0)}</td><td class="n">${f2(fr.d)}</td><td class="n">${f2(s.between.p5)} – ${f2(s.between.p95)}</td><td class="n">${f2(s.control.p95)}</td><td>${esc(s.verdict)}</td></tr>`; }).join("")
-    + `<tr><td><b>All observables</b></td><td class="n">${A.n_blocks}</td><td class="n">${f2(A.D_fiducial)}</td><td class="n">${f2(A.D)}</td><td class="n">${f2(SA.between.p5)} – ${f2(SA.between.p95)}</td><td class="n">${f2(SA.control.p95)}</td><td><b>${esc(SA.verdict)}</b></td></tr>`;
+  const rows1 = [{ label: "All observables", d: dc(A), d0: A.D_fiducial, lo: SA.between.p5, hi: SA.between.p95, verdict: SA.verdict }, ...famRows.map(r => ({ label: FAMILY[r.f], d: r.d, d0: r.d0, lo: r.s.between.p5, hi: r.s.between.p95, verdict: r.s.verdict }))];
+  out.jrFig1 = rowsSvg(rows1, "jr1", "Distance between IllustrisTNG and SIMBA after retuning, by observable family", "Bars: minimum distance over both codes' four parameters, all simulations, with the emulators' variance at the minimiser removed (dark; vermilion where structural alone); light bar: distance at the fiducial parameters; grey whisker: 5th to 95th percentile over half-sample emulators.", 210);
+  out.jrFamRows = famRows.map(fr => { const s = fr.s; return `<tr><td>${esc(FAMILY[fr.f])}</td><td class="n">${fr.nb}</td><td class="n">${f2(fr.d0)}</td><td class="n">${f2(fr.d)}</td><td class="n">${f2(s.between.p5)} – ${f2(s.between.p95)}</td><td class="n">${f2(s.control.p95)}</td><td>${esc(s.verdict)}</td><td>${esc(fr.red || "–")}</td></tr>`; }).join("")
+    + `<tr><td><b>All observables</b></td><td class="n">${A.n_blocks}</td><td class="n">${f2(A.D_fiducial)}</td><td class="n">${f2(dc(A))}</td><td class="n">${f2(SA.between.p5)} – ${f2(SA.between.p95)}</td><td class="n">${f2(SA.control.p95)}</td><td><b>${esc(SA.verdict)}</b></td><td>${esc((S["all@" + R.meta.reduced_range] || {}).verdict || "–")}</td></tr>`;
+  out.jrDecompRows = (R.decomposition || []).slice(0, 10).map(x => `<tr><td>${esc(FAMILY[x.family])} at z = ${R.meta.z[x.snapshot]}</td><td class="n">${x.n_outputs}</td><td class="n">${(100 * x.share).toFixed(1)} %</td><td class="n">${f2(x.rms_noise_units)}</td></tr>`).join("");
   // ---- Fig 2: forward selection
   const path = (R.greedy_path || []).map((s, j) => ({ label: `+ ${FAMILY[s.family]}`, d: s.D, d0: null, lo: S[`path:${j + 1}`]?.between.p5 ?? s.D, hi: S[`path:${j + 1}`]?.between.p95 ?? s.D, verdict: S[`path:${j + 1}`]?.verdict ?? "–" }));
   out.jrFig2 = path.length ? rowsSvg(path, "jr2", "Joint distance as observable families are added one at a time", "Each row adds the family that raises the joint distance most; bars are the point estimate on all simulations, whiskers the 5th to 95th percentile over half-sample emulators (50 splits).", 250) : "";

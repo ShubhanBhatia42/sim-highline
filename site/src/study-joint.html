@@ -45,7 +45,7 @@
 <section class="sec" id="question" aria-labelledby="question-h">
 <h2 id="question-h"><span class="sn">§1</span>Question</h2>
 <p>Study <a href="study-sfh.html">S3</a> found that the cosmic star formation history alone cannot separate IllustrisTNG from SIMBA: retuning four feedback parameters brings the two within the scatter between seeds. One observable constrains few combinations of four parameters. Real calibrations use many observables at once, and two models that agree on one can disagree on another.</p>
-<p>For a code, the <em>reachable set</em> is every galaxy-population summary its four parameters can produce. The <em>structural distance</em> between two codes is the distance between their reachable sets, in units of the noise that is left when everything else is fixed (1 is the standard deviation of the difference between one run of each). Because both codes were run in the same boxes at the same resolution and read with the same Subfind catalogue definitions, no aperture, IMF or resolution difference enters: what remains is the model.</p>
+<p>For a code, the <em>reachable set</em> is every galaxy-population summary its four parameters can produce. The <em>structural distance</em> between two codes is the distance between their reachable sets, in units of the noise that is left when everything else is fixed (1 is the standard deviation of the difference between one run of each). Both codes were run in the same boxes at the same resolution and are read from catalogues made by the same Subfind code with the same field definitions, so no aperture, IMF or resolution difference enters. What remains is the difference between the codes: their subgrid models, and also their hydrodynamic solvers, star formation algorithms, yields and wind treatment.</p>
 <p>Five questions, each with a rule fixed in advance: is the distance for all observables with one parameter pair per code structural (J1); which observables are structural even when fitted alone (J2); how much does insisting on one parameter pair cost (J3); which observables carry the separation (J4); and does it change with redshift (J5).</p>
 </section>
 
@@ -67,12 +67,15 @@
 {{jrJ1}}
 <figure class="fig wide">
 <div class="chart">{{jrFig1}}</div>
-<figcaption><span class="fl">Fig. 1</span><span>Distance between the two codes after retuning, by observable family, in noise units. Dark bar: minimum over both codes' four parameters, all simulations (vermilion where the family is structural alone); light bar: at the fiducial parameters; grey whisker: 5th to 95th percentile over half-sample emulators. Dashed line: the margin of 1.</span></figcaption>
+<figcaption><span class="fl">Fig. 1</span><span>Distance between the two codes after retuning, by observable family, in noise units. Dark bar: minimum over both codes' four parameters, all simulations, with the emulators' variance at the minimiser removed (vermilion where the family is structural alone); light bar: at the fiducial parameters; grey whisker: 5th to 95th percentile over half-sample emulators. Dashed line: the margin of 1.</span></figcaption>
 </figure>
+
+<p class="dim" style="font-size:15px">Where the squared joint distance comes from (at the minimising pair; share of the weighted sum of squares, and the rms difference of the block in noise units). The joint distance is a root mean over blocks, so one block far off can leave it small:</p>
+<div class="tw sm"><table class="dense"><thead><tr><th>Block</th><th class="n">outputs</th><th class="n">share</th><th class="n">rms difference</th></tr></thead><tbody>{{jrDecompRows}}</tbody></table></div>
 
 <h3>J2 · Each observable alone</h3>
 {{jrJ2}}
-<div class="tw"><table class="dense"><thead><tr><th>Observable</th><th class="n">blocks</th><th class="n">at fiducial</th><th class="n">retuned</th><th class="n">half-sample 5–95 %</th><th class="n">control p95</th><th>verdict</th></tr></thead><tbody>{{jrFamRows}}</tbody></table></div>
+<div class="tw"><table class="dense"><thead><tr><th>Observable</th><th class="n">blocks</th><th class="n">at fiducial</th><th class="n">retuned</th><th class="n">half-sample 5–95 %</th><th class="n">control p95</th><th>verdict</th><th>at 75 % range</th></tr></thead><tbody>{{jrFamRows}}</tbody></table></div>
 
 <h3>J3 · The cost of agreeing</h3>
 {{jrJ3}}
@@ -108,9 +111,9 @@
 <section class="sec" id="limits" aria-labelledby="limits-h">
 <h2 id="limits-h"><span class="sn">§5</span>Limits</h2>
 <ul class="flat">
-<li><b>Two codes.</b> The result is about this pair, not about structural uncertainty in general.</li>
+<li><b>Two codes, and more than subgrid form.</b> The result is about this pair, not about structural uncertainty in general; what separates them includes the hydrodynamic solver, the star formation algorithm and the yields, not only the feedback prescriptions. Black hole occupation and mass compare seeding prescriptions (a discrete model choice that no dial changes), so a structural verdict there is expected by construction; the sensitivity analyses give the result without them.</li>
 <li><b>CAMELS resolution.</b> 25 Mpc/h boxes, 256³ elements: few galaxies above 10<sup>11</sup> M<sub>☉</sub>, a mass limit of 10<sup>9</sup> M<sub>☉</sub>, almost nothing at z ≥ 3; star formation and black hole growth depend on resolution in both codes.</li>
-<li><b>The reachable set depends on the prior.</b> The four factors span the ranges the CAMELS team chose, not the ranges the code authors would accept; the search reaches the corners of the design, where emulators are least constrained. The controls share that search.</li>
+<li><b>The reachable set depends on the prior, and the minimiser sits at its edge.</b> The four factors span the ranges the CAMELS team chose, not the ranges the code authors would accept; the search reaches the corners of the design, where the emulators are least constrained and noisier than their cross-validation error says. The distances are therefore corrected for the emulators' variance at the minimiser (estimated in every split), and the verdicts with the range cut to 75 % are reported.</li>
 <li><b>The distance depends on the observables and weights.</b> Equal weight per block; the margin of 1 is the scatter between two seeds, a unit and not a physical tolerance. Per-family distances are in the table so that other weights can be read off.</li>
 <li><b>Subfind subhaloes are not galaxies on the sky.</b> No aperture, selection or survey effect is modelled; that is what makes the comparison clean and also what keeps it from being an observational test.</li>
 </ul>
