@@ -10,8 +10,8 @@ except ImportError:
     raise SystemExit(0)
 import ingest_camels_sfrd as I
 
-# the age of a flat LCDM universe with Om = 0.3 and h = 0.6711 today: 13.9 Gyr
-assert abs(I.time_of_a(1.0, 0.3) / 1e9 - 13.9) < 0.15, I.time_of_a(1.0, 0.3) / 1e9
+# the age of a flat LCDM universe with Om = 0.3 and h = 0.6711 today: 14.05 Gyr (977.792 / (100 h) Gyr = 14.57 Gyr times 2 / (3 sqrt(0.7)) asinh(sqrt(0.7 / 0.3)))
+assert abs(I.time_of_a(1.0, 0.3) / 1e9 - 14.05) < 0.02, I.time_of_a(1.0, 0.3) / 1e9
 # time is increasing in a and the matter-dominated limit goes as a^1.5
 assert I.time_of_a(0.5, 0.3) < I.time_of_a(0.6, 0.3) and abs(I.time_of_a(0.02, 1.0 - 1e-9) / I.time_of_a(0.01, 1.0 - 1e-9) - 2 ** 1.5) < 0.01
 
