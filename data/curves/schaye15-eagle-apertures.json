@@ -1,0 +1,665 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "schaye15.eagle-ref-l100n1504.gsmf-ap-10pkpc.z0.1",
+      "source": "EAGLE",
+      "run": "Ref-L100N1504 (3D spherical aperture of 10 pkpc, figure)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dn/dlog10(M*) (axis label cMpc^-3)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.3,
+        "xMax": 11.3
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.3,
+            "y": -1.5052
+          },
+          {
+            "x": 8.5,
+            "y": -1.6184
+          },
+          {
+            "x": 8.7,
+            "y": -1.7198
+          },
+          {
+            "x": 8.9,
+            "y": -1.7918
+          },
+          {
+            "x": 9.1,
+            "y": -1.8538
+          },
+          {
+            "x": 9.3,
+            "y": -1.9425
+          },
+          {
+            "x": 9.5,
+            "y": -2.0125
+          },
+          {
+            "x": 9.7,
+            "y": -2.138
+          },
+          {
+            "x": 9.9,
+            "y": -2.2181
+          },
+          {
+            "x": 10.1,
+            "y": -2.284
+          },
+          {
+            "x": 10.3,
+            "y": -2.3597
+          },
+          {
+            "x": 10.5,
+            "y": -2.5214
+          },
+          {
+            "x": 10.7,
+            "y": -2.7156
+          },
+          {
+            "x": 10.9,
+            "y": -3.1137
+          },
+          {
+            "x": 11.1,
+            "y": -3.5767
+          },
+          {
+            "x": 11.3,
+            "y": -4.097
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "z=0.1 stellar mass function of EAGLE Ref-L100N1504 with stellar mass bound to the subhalo measured within a 3D spherical aperture of 10 pkpc, read from the vector paths of Schaye et al. 2015 (figure on the aperture). The legend of the figure lists 10, 30 and 100 pkpc spherical apertures, a circular Petrosian aperture and no aperture; the caption in the arXiv source says 30, 50 and 100 pkpc, and the legend, which is what is drawn, is used here. Solid segment only (the dotted low-mass end, fewer than 100 stellar particles, and the dashed high-mass end, fewer than 10 galaxies per bin, are not extracted). Within-run aperture comparison: the records of this figure differ only in the mass definition. Observational points not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "massDefinition": "aperture-10pkpc",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Schaye et al. 2015, MNRAS 446, 521 (doi:10.1093/mnras/stu2058; arXiv:1407.7040), the EAGLE simulations, effect of the aperture on the stellar mass function (3D spherical aperture of 10 pkpc)",
+        "doi": "10.1093/mnras/stu2058",
+        "url": "https://arxiv.org/abs/1407.7040",
+        "retrieved": "2026-10-14",
+        "figure": "The effect of the choice of aperture on the GSMF",
+        "panel": "Ref-L100N1504, z=0.1, 3D spherical aperture of 10 pkpc",
+        "checksumSha256": "103318b014eaee7368a3d5789c97be0e615022d9b3df3e11680130299a647a9d",
+        "sourceMember": "mf_ref100_only_apertures.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: the six and five major tick marks, whose values follow from the axis ranges (7 to 12.5 and -5 to -0.5) and the regular spacing; the text is outlined",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "schaye15.eagle-ref-l100n1504.gsmf-ap-30pkpc.z0.1",
+      "source": "EAGLE",
+      "run": "Ref-L100N1504 (3D spherical aperture of 30 pkpc, figure)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dn/dlog10(M*) (axis label cMpc^-3)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.3,
+        "xMax": 11.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.3,
+            "y": -1.4875
+          },
+          {
+            "x": 8.5,
+            "y": -1.6007
+          },
+          {
+            "x": 8.7,
+            "y": -1.7058
+          },
+          {
+            "x": 8.9,
+            "y": -1.7788
+          },
+          {
+            "x": 9.1,
+            "y": -1.8561
+          },
+          {
+            "x": 9.3,
+            "y": -1.9392
+          },
+          {
+            "x": 9.5,
+            "y": -2.0178
+          },
+          {
+            "x": 9.7,
+            "y": -2.1189
+          },
+          {
+            "x": 9.9,
+            "y": -2.2073
+          },
+          {
+            "x": 10.1,
+            "y": -2.2602
+          },
+          {
+            "x": 10.3,
+            "y": -2.361
+          },
+          {
+            "x": 10.5,
+            "y": -2.4524
+          },
+          {
+            "x": 10.7,
+            "y": -2.6245
+          },
+          {
+            "x": 10.9,
+            "y": -2.8478
+          },
+          {
+            "x": 11.1,
+            "y": -3.2111
+          },
+          {
+            "x": 11.3,
+            "y": -3.6383
+          },
+          {
+            "x": 11.5,
+            "y": -4.0458
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "z=0.1 stellar mass function of EAGLE Ref-L100N1504 with stellar mass bound to the subhalo measured within a 3D spherical aperture of 30 pkpc, read from the vector paths of Schaye et al. 2015 (figure on the aperture). The legend of the figure lists 10, 30 and 100 pkpc spherical apertures, a circular Petrosian aperture and no aperture; the caption in the arXiv source says 30, 50 and 100 pkpc, and the legend, which is what is drawn, is used here. Solid segment only (the dotted low-mass end, fewer than 100 stellar particles, and the dashed high-mass end, fewer than 10 galaxies per bin, are not extracted). Within-run aperture comparison: the records of this figure differ only in the mass definition. Observational points not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "massDefinition": "aperture-30pkpc",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Schaye et al. 2015, MNRAS 446, 521 (doi:10.1093/mnras/stu2058; arXiv:1407.7040), the EAGLE simulations, effect of the aperture on the stellar mass function (3D spherical aperture of 30 pkpc)",
+        "doi": "10.1093/mnras/stu2058",
+        "url": "https://arxiv.org/abs/1407.7040",
+        "retrieved": "2026-10-14",
+        "figure": "The effect of the choice of aperture on the GSMF",
+        "panel": "Ref-L100N1504, z=0.1, 3D spherical aperture of 30 pkpc",
+        "checksumSha256": "103318b014eaee7368a3d5789c97be0e615022d9b3df3e11680130299a647a9d",
+        "sourceMember": "mf_ref100_only_apertures.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: the six and five major tick marks, whose values follow from the axis ranges (7 to 12.5 and -5 to -0.5) and the regular spacing; the text is outlined",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "schaye15.eagle-ref-l100n1504.gsmf-ap-100pkpc.z0.1",
+      "source": "EAGLE",
+      "run": "Ref-L100N1504 (3D spherical aperture of 100 pkpc, figure)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dn/dlog10(M*) (axis label cMpc^-3)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.3,
+        "xMax": 11.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.3,
+            "y": -1.4848
+          },
+          {
+            "x": 8.5,
+            "y": -1.5997
+          },
+          {
+            "x": 8.7,
+            "y": -1.7018
+          },
+          {
+            "x": 8.9,
+            "y": -1.7761
+          },
+          {
+            "x": 9.1,
+            "y": -1.8555
+          },
+          {
+            "x": 9.3,
+            "y": -1.9392
+          },
+          {
+            "x": 9.5,
+            "y": -2.0135
+          },
+          {
+            "x": 9.7,
+            "y": -2.1169
+          },
+          {
+            "x": 9.9,
+            "y": -2.2114
+          },
+          {
+            "x": 10.1,
+            "y": -2.2686
+          },
+          {
+            "x": 10.3,
+            "y": -2.3617
+          },
+          {
+            "x": 10.5,
+            "y": -2.4621
+          },
+          {
+            "x": 10.7,
+            "y": -2.6188
+          },
+          {
+            "x": 10.9,
+            "y": -2.8555
+          },
+          {
+            "x": 11.1,
+            "y": -3.0631
+          },
+          {
+            "x": 11.3,
+            "y": -3.4559
+          },
+          {
+            "x": 11.5,
+            "y": -3.9032
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "z=0.1 stellar mass function of EAGLE Ref-L100N1504 with stellar mass bound to the subhalo measured within a 3D spherical aperture of 100 pkpc, read from the vector paths of Schaye et al. 2015 (figure on the aperture). The legend of the figure lists 10, 30 and 100 pkpc spherical apertures, a circular Petrosian aperture and no aperture; the caption in the arXiv source says 30, 50 and 100 pkpc, and the legend, which is what is drawn, is used here. Solid segment only (the dotted low-mass end, fewer than 100 stellar particles, and the dashed high-mass end, fewer than 10 galaxies per bin, are not extracted). Within-run aperture comparison: the records of this figure differ only in the mass definition. Observational points not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "massDefinition": "aperture-100pkpc",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Schaye et al. 2015, MNRAS 446, 521 (doi:10.1093/mnras/stu2058; arXiv:1407.7040), the EAGLE simulations, effect of the aperture on the stellar mass function (3D spherical aperture of 100 pkpc)",
+        "doi": "10.1093/mnras/stu2058",
+        "url": "https://arxiv.org/abs/1407.7040",
+        "retrieved": "2026-10-14",
+        "figure": "The effect of the choice of aperture on the GSMF",
+        "panel": "Ref-L100N1504, z=0.1, 3D spherical aperture of 100 pkpc",
+        "checksumSha256": "103318b014eaee7368a3d5789c97be0e615022d9b3df3e11680130299a647a9d",
+        "sourceMember": "mf_ref100_only_apertures.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: the six and five major tick marks, whose values follow from the axis ranges (7 to 12.5 and -5 to -0.5) and the regular spacing; the text is outlined",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "schaye15.eagle-ref-l100n1504.gsmf-ap-petrosian.z0.1",
+      "source": "EAGLE",
+      "run": "Ref-L100N1504 (2D circular Petrosian aperture, figure)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dn/dlog10(M*) (axis label cMpc^-3)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.3,
+        "xMax": 11.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.3,
+            "y": -1.4989
+          },
+          {
+            "x": 8.5,
+            "y": -1.6144
+          },
+          {
+            "x": 8.7,
+            "y": -1.7158
+          },
+          {
+            "x": 8.9,
+            "y": -1.7905
+          },
+          {
+            "x": 9.1,
+            "y": -1.8601
+          },
+          {
+            "x": 9.3,
+            "y": -1.9505
+          },
+          {
+            "x": 9.5,
+            "y": -2.0232
+          },
+          {
+            "x": 9.7,
+            "y": -2.1233
+          },
+          {
+            "x": 9.9,
+            "y": -2.2063
+          },
+          {
+            "x": 10.1,
+            "y": -2.2649
+          },
+          {
+            "x": 10.3,
+            "y": -2.3731
+          },
+          {
+            "x": 10.5,
+            "y": -2.4561
+          },
+          {
+            "x": 10.7,
+            "y": -2.6687
+          },
+          {
+            "x": 10.9,
+            "y": -2.9339
+          },
+          {
+            "x": 11.1,
+            "y": -3.2292
+          },
+          {
+            "x": 11.3,
+            "y": -3.6109
+          },
+          {
+            "x": 11.5,
+            "y": -4.1248
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "z=0.1 stellar mass function of EAGLE Ref-L100N1504 with stellar mass bound to the subhalo measured within a 2D circular Petrosian aperture (R_P), read from the vector paths of Schaye et al. 2015 (figure on the aperture). The legend of the figure lists 10, 30 and 100 pkpc spherical apertures, a circular Petrosian aperture and no aperture; the caption in the arXiv source says 30, 50 and 100 pkpc, and the legend, which is what is drawn, is used here. Solid segment only (the dotted low-mass end, fewer than 100 stellar particles, and the dashed high-mass end, fewer than 10 galaxies per bin, are not extracted). Within-run aperture comparison: the records of this figure differ only in the mass definition. Observational points not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "massDefinition": "petrosian-2D",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Schaye et al. 2015, MNRAS 446, 521 (doi:10.1093/mnras/stu2058; arXiv:1407.7040), the EAGLE simulations, effect of the aperture on the stellar mass function (2D circular Petrosian aperture (R_P))",
+        "doi": "10.1093/mnras/stu2058",
+        "url": "https://arxiv.org/abs/1407.7040",
+        "retrieved": "2026-10-14",
+        "figure": "The effect of the choice of aperture on the GSMF",
+        "panel": "Ref-L100N1504, z=0.1, 2D circular Petrosian aperture (R_P)",
+        "checksumSha256": "103318b014eaee7368a3d5789c97be0e615022d9b3df3e11680130299a647a9d",
+        "sourceMember": "mf_ref100_only_apertures.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: the six and five major tick marks, whose values follow from the axis ranges (7 to 12.5 and -5 to -0.5) and the regular spacing; the text is outlined",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "schaye15.eagle-ref-l100n1504.gsmf-ap-all-bound.z0.1",
+      "source": "EAGLE",
+      "run": "Ref-L100N1504 (no aperture, figure)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dn/dlog10(M*) (axis label cMpc^-3)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 8.3,
+        "xMax": 11.7
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.3,
+            "y": -1.4841
+          },
+          {
+            "x": 8.5,
+            "y": -1.5997
+          },
+          {
+            "x": 8.7,
+            "y": -1.7024
+          },
+          {
+            "x": 8.9,
+            "y": -1.7751
+          },
+          {
+            "x": 9.1,
+            "y": -1.8555
+          },
+          {
+            "x": 9.3,
+            "y": -1.9392
+          },
+          {
+            "x": 9.5,
+            "y": -2.0135
+          },
+          {
+            "x": 9.7,
+            "y": -2.1163
+          },
+          {
+            "x": 9.9,
+            "y": -2.213
+          },
+          {
+            "x": 10.1,
+            "y": -2.2693
+          },
+          {
+            "x": 10.3,
+            "y": -2.362
+          },
+          {
+            "x": 10.5,
+            "y": -2.4668
+          },
+          {
+            "x": 10.7,
+            "y": -2.6252
+          },
+          {
+            "x": 10.9,
+            "y": -2.8462
+          },
+          {
+            "x": 11.1,
+            "y": -3.1023
+          },
+          {
+            "x": 11.3,
+            "y": -3.409
+          },
+          {
+            "x": 11.5,
+            "y": -3.7569
+          },
+          {
+            "x": 11.7,
+            "y": -4.0458
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "z=0.1 stellar mass function of EAGLE Ref-L100N1504 with stellar mass bound to the subhalo measured within a no aperture (all stellar mass bound to the subhalo), read from the vector paths of Schaye et al. 2015 (figure on the aperture). The legend of the figure lists 10, 30 and 100 pkpc spherical apertures, a circular Petrosian aperture and no aperture; the caption in the arXiv source says 30, 50 and 100 pkpc, and the legend, which is what is drawn, is used here. Solid segment only (the dotted low-mass end, fewer than 100 stellar particles, and the dashed high-mass end, fewer than 10 galaxies per bin, are not extracted). Within-run aperture comparison: the records of this figure differ only in the mass definition. Observational points not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "massDefinition": "total-bound-subhalo",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Schaye et al. 2015, MNRAS 446, 521 (doi:10.1093/mnras/stu2058; arXiv:1407.7040), the EAGLE simulations, effect of the aperture on the stellar mass function (no aperture (all stellar mass bound to the subhalo))",
+        "doi": "10.1093/mnras/stu2058",
+        "url": "https://arxiv.org/abs/1407.7040",
+        "retrieved": "2026-10-14",
+        "figure": "The effect of the choice of aperture on the GSMF",
+        "panel": "Ref-L100N1504, z=0.1, no aperture (all stellar mass bound to the subhalo)",
+        "checksumSha256": "103318b014eaee7368a3d5789c97be0e615022d9b3df3e11680130299a647a9d",
+        "sourceMember": "mf_ref100_only_apertures.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: the six and five major tick marks, whose values follow from the axis ranges (7 to 12.5 and -5 to -0.5) and the regular spacing; the text is outlined",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

@@ -90,6 +90,10 @@ IGN_DEF = {"cosmology", "imfBasis"}
 def run_base(run):
     return re.split(r"[\s(,]", run.strip(), maxsplit=1)[0]
 
+def box_tags(run):
+    """Box and size tags in a run name (L200, L100N1504): two records are the same run only if these agree, so that m6 (L200) is not paired with m6 (L025)."""
+    return set(re.findall(r"L\d+\w*", run))
+
 def sensitivity(recs):
     sim = [r for r in recs if r["kind"] == "simulation" and r["representation"].get("type") == "points" and len(r["representation"]["points"]) >= 5]
     groups = {}
@@ -104,7 +108,7 @@ def sensitivity(recs):
             if rel in SENS_SKIP_RELATIONS or len(diff) != 1 or diff[0] not in SENS_KEYS: continue
             key = diff[0]
             if a["axes"]["xUnit"] != b["axes"]["xUnit"] or a["axes"]["yUnit"] != b["axes"]["yUnit"]: continue
-            if key != "sfrTimescaleMyr" and run_base(a["run"]) != run_base(b["run"]): continue
+            if key != "sfrTimescaleMyr" and (run_base(a["run"]) != run_base(b["run"]) or box_tags(a["run"]) != box_tags(b["run"])): continue
             ca, cb = curve(a), curve(b)
             lo, hi = max(ca[0][0], cb[0][0]), min(ca[-1][0], cb[-1][0])
             ds, x = [], lo

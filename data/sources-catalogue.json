@@ -1224,6 +1224,19 @@
       "note": "Comoving stellar mass density of the four calibrated L050N0752 models (Ref, FBZ, FBsigma, FBconst); calibration variants, not the production runs."
     },
     {
+      "id": "schaye15-eagle-apertures",
+      "suite": "EAGLE",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1407.7040",
+      "relations": [
+        "gsmf"
+      ],
+      "redshifts": "0.1",
+      "adapter": "scripts/digitize_eagle_apertures_schaye15.py",
+      "note": "Within-run aperture comparison: the z=0.1 stellar mass function of Ref-L100N1504 within 3D apertures of 10, 30 and 100 pkpc, a 2D circular Petrosian aperture, and with no aperture, solid segments only. The figure's legend lists 10, 30 and 100 pkpc while the caption in the arXiv source says 30, 50 and 100; the drawn legend is used. The 30 pkpc curve agrees with the Furlong+15 record to 0.011 dex. Used as the aperture library of docs/PROTOCOL-harmonization.md. Digitized, not rankable."
+    },
+    {
       "id": "tremmel17-romulus25-sfrd",
       "suite": "Romulus25",
       "status": "ingested",
@@ -1276,6 +1289,19 @@
       "redshifts": "0.1, 1, 2, 3, 5, 7",
       "adapter": "scripts/digitize_colibre_chaikin26_quenched.py",
       "note": "Quenched fraction (sSFR < 0.2 / t_H(z), instantaneous SFR and stellar mass within 50 pkpc) versus stellar mass for L400m7, L200m6 and the m5 line, with the plotted 68 per cent Clopper-Pearson band as yLow/yHigh; solid (resolved, at least 10 galaxies per bin) segments only. Satellite/central split at z=0, the convergence and thermal-versus-hybrid variants, and the observational and EMERGE/UniverseMachine overlays not extracted. Digitized, not rankable."
+    },
+    {
+      "id": "chaikin26-colibre-apertures",
+      "suite": "COLIBRE",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2509.07960",
+      "relations": [
+        "gsmf"
+      ],
+      "redshifts": "0",
+      "adapter": "scripts/digitize_colibre_chaikin26_apertures.py",
+      "note": "Within-run aperture comparison: the z=0 stellar mass function of L200m6 with stellar mass within 3D apertures of 30, 50 and 100 pkpc and for all bound particles (no Eddington scatter), solid segments only. The 50 pkpc curve reproduces the collaboration's released table (gsmf_raw) to 0.000 dex over 24 bins. Used as the aperture library of docs/PROTOCOL-harmonization.md. Digitized, not rankable."
     },
     {
       "id": "katz23-sphinx20-uvlf",

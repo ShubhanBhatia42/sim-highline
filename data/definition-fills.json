@@ -6,7 +6,8 @@
       "match": {
         "source": "COLIBRE",
         "relation": "gsmf",
-        "citationIncludes": "Chaikin et al. 2026"
+        "citationIncludes": "Chaikin et al. 2026",
+        "idIncludes": ".gsmf.z"
       },
       "set": {
         "massDefinition": "aperture-50pkpc"

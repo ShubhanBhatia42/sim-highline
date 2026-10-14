@@ -2,11 +2,11 @@
   "schemaVersion": "1.0.0",
   "generatedAt": "2026-10-13",
   "totals": {
-    "records": 1656,
+    "records": 1665,
     "sources": 101,
     "relations": 27,
     "rankable": 731,
-    "contextOnly": 925
+    "contextOnly": 934
   },
   "byRelation": {
     "age": {
@@ -250,7 +250,7 @@
       ]
     },
     "gsmf": {
-      "records": 334,
+      "records": 343,
       "epochs": [
         0,
         0.03,
@@ -379,7 +379,7 @@
         "gsmf"
       ],
       "rankable": 202,
-      "contextOnly": 132,
+      "contextOnly": 141,
       "tiers": [
         "catalog-derived",
         "digitized-figure",
@@ -1752,7 +1752,7 @@
       ]
     },
     "COLIBRE": {
-      "records": 190,
+      "records": 194,
       "epochs": [
         0,
         0.1,
@@ -1821,7 +1821,7 @@
         "ssfr"
       ],
       "rankable": 117,
-      "contextOnly": 73,
+      "contextOnly": 77,
       "tiers": [
         "digitized-figure",
         "official-table",
@@ -2015,7 +2015,7 @@
       ]
     },
     "EAGLE": {
-      "records": 158,
+      "records": 163,
       "epochs": [
         0,
         0.1,
@@ -2089,7 +2089,7 @@
         "zstar"
       ],
       "rankable": 87,
-      "contextOnly": 71,
+      "contextOnly": 76,
       "tiers": [
         "catalog-derived",
         "digitized-figure",
