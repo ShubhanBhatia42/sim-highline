@@ -511,6 +511,7 @@ def assemble(nsplit=200, nsmall=100, npath=50, nstarts=4, data=None, sens=True, 
     res["parameters"] = {"seed": SEED, "nsplit": nsplit, "nsmall": nsmall, "npath": npath, "nstarts": nstarts, "margin": MARGIN, "floor": FLOOR, "kernel": A.KERNEL_H, "ridge": A.RIDGE}
     res["verdicts"] = verdicts(res)
     res["deviations"] = deviations(res)
+    res["headline"] = headline(res)
     return res
 
 

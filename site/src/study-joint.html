@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>S4 Joint reachability: in preparation</title>
-<meta name="description" content="In preparation: whether retuning can make two feedback models agree on several galaxy observables at once, over the CAMELS ensemble.">
+<title>S4 Joint reachability: which observables separate two feedback models</title>
+<meta name="description" content="Whether retuning four parameters per code can make IllustrisTNG and SIMBA agree on many galaxy observables at once in the CAMELS experiment, and which observables carry the separation.">
 {{head}}
 </head>
 <body>
@@ -14,22 +14,116 @@
 <nav class="idx" aria-label="On this page">
 <p class="lab">Contents</p>
 <ol>
-<li><a href="#status"><span>§1</span>Status</a></li>
+<li><a href="#question"><span>§1</span>Question</a></li>
+<li><a href="#data"><span>§2</span>Data</a></li>
+<li><a href="#result"><span>§3</span>Result</a></li>
+<li><a href="#validation"><span>§4</span>Validation</a></li>
+<li><a href="#limits"><span>§5</span>Limits</a></li>
+<li><a href="#reproduce"><span>§6</span>Reproduce</a></li>
 </ol>
-<p class="back"><a href="studies.html">All studies</a></p>
+<p class="back"><a href="studies.html">All studies</a> · <a href="retune.html">Retune</a></p>
 </nav>
 <div class="c">
 
 <div class="title">
-<p class="lab kicker">Study S4 · in preparation</p>
-<h1>Joint reachability</h1>
+<p class="lab kicker">Study S4 · IllustrisTNG and SIMBA in CAMELS</p>
+<h1>Can retuning make two feedback models agree on every galaxy observable at once?</h1>
+<div class="abstract">
+<p class="lab">Abstract</p>
+<p>{{jrAbs}}</p>
+</div>
+<dl class="facts">
+<div><dt>Status</dt><dd>{{jrStatus}}</dd></div>
+<div><dt>Protocol</dt><dd><a href="{{repo}}/blob/main/docs/PROTOCOL-joint-reachability.md">PROTOCOL-joint-reachability.md</a></dd></div>
+<div><dt>Analysis</dt><dd><a href="{{repo}}/blob/main/docs/ANALYSIS-joint-reachability.md">ANALYSIS-joint-reachability.md</a></dd></div>
+<div><dt>Calibration</dt><dd><a href="{{repo}}/blob/main/docs/POWER-joint-reachability.md">POWER-joint-reachability.md</a></dd></div>
+<div><dt>Instrument</dt><dd><a href="retune.html">Retune</a></dd></div>
+<div><dt>Dataset</dt><dd>v{{version}}</dd></div>
+</dl>
 </div>
 
-<section class="sec" id="status" aria-labelledby="status-h">
-<h2 id="status-h"><span class="sn">§1</span>Status</h2>
-<!-- CONTENT -->
-<p>In preparation. This study extends <a href="study-sfh.html">S3</a> from the cosmic star formation history alone to several galaxy observables at once, over the same CAMELS ensemble.</p>
-<!-- /CONTENT -->
+<section class="sec" id="question" aria-labelledby="question-h">
+<h2 id="question-h"><span class="sn">§1</span>Question</h2>
+<p>Study <a href="study-sfh.html">S3</a> found that the cosmic star formation history alone cannot separate IllustrisTNG from SIMBA: retuning four feedback parameters brings the two within the scatter between seeds. One observable constrains few combinations of four parameters. Real calibrations use many observables at once, and two models that agree on one can disagree on another.</p>
+<p>For a code, the <em>reachable set</em> is every galaxy-population summary its four parameters can produce. The <em>structural distance</em> between two codes is the distance between their reachable sets, in units of the noise that is left when everything else is fixed (1 is the standard deviation of the difference between one run of each). Because both codes were run in the same boxes at the same resolution and read with the same Subfind catalogue definitions, no aperture, IMF or resolution difference enters: what remains is the model.</p>
+<p>Five questions, each with a rule fixed in advance: is the distance for all observables with one parameter pair per code structural (J1); which observables are structural even when fitted alone (J2); how much does insisting on one parameter pair cost (J3); which observables carry the separation (J4); and does it change with redshift (J5).</p>
+</section>
+
+<section class="sec" id="data" aria-labelledby="data-h">
+<h2 id="data-h"><span class="sn">§2</span>Data</h2>
+<aside class="note"><span class="lab">Registration</span><p>The protocol, the analysis code, and its calibration on synthetic worlds were committed before the real outcomes existed; an independent review preceded the run. Only the eligibility of the outputs had been looked at (<a href="{{repo}}/blob/main/docs/PROTOCOL-joint-reachability.md">section 8</a>).</p></aside>
+<dl class="kv">
+<dt>Simulations</dt><dd>{{camelsN}} CAMELS simulations in 25 Mpc/h boxes (256³ dark matter particles plus 256³ gas elements): per code, {{camelsLH}} Latin-hypercube simulations (four feedback factors and two cosmological parameters, a different seed each) and {{camelsCV}} seeds at the fiducial parameters. The feedback factors of the two codes are not the same physical quantities.</dd>
+<dt>Observables</dt><dd>Binned summaries of each simulation's Subfind catalogue at z = 0, 0.95, 2.15, 3 and 4 (<code>data/ensembles/camels-galaxies.json</code>): the stellar mass function, quenched fraction, specific SFR of star-forming galaxies, black hole mass and occupation, gas and stellar metallicity, half-mass radius and gas fraction in bins of 0.25 dex in stellar mass from 10<sup>9</sup> M<sub>☉</sub>, the stellar-to-halo mass ratio of centrals, the halo mass function (a negative control) and the stellar mass and SFR densities. {{jrElig}}; few bins survive at z ≥ 3.</dd>
+<dt>Noise</dt><dd>The standard deviation of the 27 cosmic-variance seeds of each code plus the emulators' cross-validation error ({{jrNoise}}); every output is divided by it, and every block of outputs gets the same weight.</dd>
+</dl>
+</section>
+
+<section class="sec" id="result" aria-labelledby="result-h">
+<h2 id="result-h"><span class="sn">§3</span>Result</h2>
+
+<h3>J1 · All observables at once</h3>
+<aside class="note"><span class="lab">J1 in numbers</span>{{jrNote}}</aside>
+{{jrJ1}}
+<figure class="fig wide">
+<div class="chart">{{jrFig1}}</div>
+<figcaption><span class="fl">Fig. 1</span><span>Distance between the two codes after retuning, by observable family, in noise units. Dark bar: minimum over both codes' four parameters, all simulations (vermilion where the family is structural alone); light bar: at the fiducial parameters; grey whisker: 5th to 95th percentile over half-sample emulators. Dashed line: the margin of 1.</span></figcaption>
+</figure>
+
+<h3>J2 · Each observable alone</h3>
+{{jrJ2}}
+<div class="tw"><table class="dense"><thead><tr><th>Observable</th><th class="n">blocks</th><th class="n">at fiducial</th><th class="n">retuned</th><th class="n">half-sample 5–95 %</th><th class="n">control p95</th><th>verdict</th></tr></thead><tbody>{{jrFamRows}}</tbody></table></div>
+
+<h3>J3 · The cost of agreeing</h3>
+{{jrJ3}}
+
+<h3>J4 · What separates the codes</h3>
+{{jrJ4}}
+<figure class="fig wide">
+<div class="chart">{{jrFig2}}</div>
+<figcaption><span class="fl">Fig. 2</span><span>Joint distance as families are added in forward selection (each step adds the family that raises the point distance most; order chosen on all simulations, so the verdicts of the nested sets are descriptive). Whiskers: 5th to 95th percentile over 50 half-sample splits.</span></figcaption>
+</figure>
+<div class="tw"><table class="dense"><thead><tr><th class="n">step</th><th>added</th><th class="n">D</th><th class="n">half-sample 5–95 %</th><th>verdict</th></tr></thead><tbody>{{jrPathRows}}</tbody></table></div>
+<p class="dim" style="font-size:15px">Joint distance without each family (point estimate, half-sample median, verdict):</p>
+<div class="tw"><table class="dense"><thead><tr><th>Left out</th><th class="n">D</th><th class="n">median</th><th>verdict</th></tr></thead><tbody>{{jrDropRows}}</tbody></table></div>
+
+<h3>J5 · Redshift</h3>
+<div class="tw sm"><table class="dense"><thead><tr><th class="n">z</th><th class="n">outputs</th><th class="n">at fiducial</th><th class="n">retuned</th><th class="n">half-sample 5–95 %</th><th>verdict</th></tr></thead><tbody>{{jrZRows}}</tbody></table></div>
+
+<h3>What the dials do</h3>
+<p>Change of each family's outputs (rms over the family's blocks, in noise units) when one dial moves across its whole range at the others' fiducial values. Descriptive; the dials of the two codes are not the same physical quantity.</p>
+<div class="tw"><table class="dense resp"><thead><tr><th rowspan="2">Observable</th><th colspan="4">IllustrisTNG</th><th colspan="4">SIMBA</th></tr><tr><th>A_SN1</th><th>A_AGN1</th><th>A_SN2</th><th>A_AGN2</th><th>A_SN1</th><th>A_AGN1</th><th>A_SN2</th><th>A_AGN2</th></tr></thead><tbody>{{jrRespRows}}</tbody></table></div>
+</section>
+
+<section class="sec" id="validation" aria-labelledby="validation-h">
+<h2 id="validation-h"><span class="sn">§4</span>Validation</h2>
+<p>{{jrVal}}</p>
+<div class="tw"><table class="dense"><thead><tr><th>Check</th><th>Result</th><th>Required</th><th>Holds</th></tr></thead><tbody>{{jrValRows}}</tbody></table></div>
+<p>Sensitivity analyses (point distance of all observables; none was used to choose):</p>
+<div class="tw sm"><table class="dense"><thead><tr><th>Analysis</th><th class="n">D</th><th>verdict</th></tr></thead><tbody>{{jrSensRows}}</tbody></table></div>
+<p>Deviations from the protocol:</p>
+<ul class="flat">{{jrDev}}</ul>
+</section>
+
+<section class="sec" id="limits" aria-labelledby="limits-h">
+<h2 id="limits-h"><span class="sn">§5</span>Limits</h2>
+<ul class="flat">
+<li><b>Two codes.</b> The result is about this pair, not about structural uncertainty in general.</li>
+<li><b>CAMELS resolution.</b> 25 Mpc/h boxes, 256³ elements: few galaxies above 10<sup>11</sup> M<sub>☉</sub>, a mass limit of 10<sup>9</sup> M<sub>☉</sub>, almost nothing at z ≥ 3; star formation and black hole growth depend on resolution in both codes.</li>
+<li><b>The reachable set depends on the prior.</b> The four factors span the ranges the CAMELS team chose, not the ranges the code authors would accept; the search reaches the corners of the design, where emulators are least constrained. The controls share that search.</li>
+<li><b>The distance depends on the observables and weights.</b> Equal weight per block; the margin of 1 is the scatter between two seeds, a unit and not a physical tolerance. Per-family distances are in the table so that other weights can be read off.</li>
+<li><b>Subfind subhaloes are not galaxies on the sky.</b> No aperture, selection or survey effect is modelled; that is what makes the comparison clean and also what keeps it from being an observational test.</li>
+</ul>
+</section>
+
+<section class="sec" id="reproduce" aria-labelledby="reproduce-h">
+<h2 id="reproduce-h"><span class="sn">§6</span>Reproduce</h2>
+<pre>python3 scripts/ingest_camels_galaxies.py        # about 35 minutes; range reads of the public catalogues (needs fsspec, aiohttp)
+python3 scripts/analyze_joint_reachability.py    # about 15 minutes; writes data/analysis/joint-reachability.json and the report
+python3 scripts/power_joint_reachability.py      # calibration on synthetic worlds
+python3 scripts/test_joint_reachability.py       # machinery tests and the stale-output check
+python3 scripts/export_retune_data.py            # the emulators of the Retune page
+node scripts/build-site.mjs                      # regenerates this page from the JSON</pre>
 </section>
 
 </div>

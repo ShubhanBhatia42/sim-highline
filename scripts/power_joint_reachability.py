@@ -52,7 +52,7 @@ def world(kind, seed, n_lh=1000, n_cv=27, snaps=("090", "062"), shift=0.0, shift
             Y = base[None, :] + o[None, :] + a @ R.T + (a ** 2) @ QT.T + 0.05 * X[:, :1] + rr.normal(0, noise, (n, P))
             return {"X": X, "Y": Y, "names": [f"S_{i}" for i in range(n)]}
         suites[code] = {"LH": sims(n_lh, False), "CV": sims(n_cv, True)}
-    return {"meta": {"snapshots": list(snaps), "z": {"090": 0.0, "062": 0.95}, "columns": cols, "families": J.FAMILIES}, "suites": suites}
+    return {"meta": {"snapshots": list(snaps), "z": {"090": 0.0, "062": 0.95, "042": 2.15, "032": 3.0, "024": 4.0}, "columns": cols, "families": J.FAMILIES}, "suites": suites}
 
 
 def one(args):

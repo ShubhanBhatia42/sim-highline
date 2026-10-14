@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Retune: what retuning a simulation can change</title>
-<meta name="description" content="In preparation: an instrument for asking what retuning the feedback parameters of a simulation can and cannot change, built on the CAMELS ensemble.">
+<title>Retune: two feedback models, four dials each</title>
+<meta name="description" content="An instrument for asking what retuning the four feedback parameters of IllustrisTNG and SIMBA can and cannot change across galaxy observables, built on the CAMELS ensemble of 2,054 simulations.">
 {{head}}
 </head>
 <body>
@@ -14,22 +14,49 @@
 <nav class="idx" aria-label="On this page">
 <p class="lab">Contents</p>
 <ol>
-<li><a href="#status"><span>§1</span>Status</a></li>
+<li><a href="#instrument"><span>§1</span>Instrument</a></li>
+<li><a href="#reading"><span>§2</span>Reading it</a></li>
+<li><a href="#basis"><span>§3</span>Basis and limits</a></li>
 </ol>
-<p class="back"><a href="studies.html">Studies</a></p>
+<p class="back"><a href="study-joint.html">Study S4</a></p>
 </nav>
 <div class="c">
 
 <div class="title">
-<p class="lab kicker">Instrument · in preparation</p>
+<p class="lab kicker">Instrument · CAMELS · IllustrisTNG and SIMBA</p>
 <h1>Retune</h1>
+<p class="lede">Each model has four feedback dials. Move them, watch every galaxy observable respond, and ask whether the other model can be made to match.</p>
 </div>
 
-<section class="sec" id="status" aria-labelledby="status-h">
-<h2 id="status-h"><span class="sn">§1</span>Status</h2>
+<section class="sec" id="instrument" aria-labelledby="instrument-h">
+<h2 id="instrument-h"><span class="sn">§1</span>Instrument</h2>
 <!-- CONTENT -->
-<p>In preparation. This instrument will ask what retuning feedback parameters can and cannot change, over the CAMELS ensemble of {{camelsN}} simulations of IllustrisTNG and SIMBA. The published scaling relations it starts from are in the <a href="../highline.html">Explorer</a>; the first experiment on the ensemble is <a href="study-sfh.html">study S3</a>.</p>
+<noscript><p>This instrument evaluates emulators in the browser and needs JavaScript. The same numbers are in the <a href="study-joint.html">study</a>.</p></noscript>
+<div id="retune" class="wide" data-src="../data/retune/retune.json"><p class="dim">Loading the emulators…</p></div>
+<script src="retune.js"></script>
 <!-- /CONTENT -->
+</section>
+
+<section class="sec" id="reading" aria-labelledby="reading-h">
+<h2 id="reading-h"><span class="sn">§2</span>Reading it</h2>
+<dl class="kv">
+<dt>Dials</dt><dd>The four feedback factors CAMELS varies in both codes, each over the same range (a factor 4 or 2 either way), shown as the multiplier on the fiducial value. The dials of the two codes are not the same physical quantity: A_SN1 is the wind energy per unit star formation in IllustrisTNG and the wind mass loading in SIMBA, and so on. Cosmology is fixed at the fiducial values.</dd>
+<dt>D</dt><dd>Distance between the two codes' curves, in noise units: 1 is the standard deviation of the difference between one run of each code (their seed-to-seed scatter in a 25 Mpc/h box plus the emulators' error). Panels with D of 1 or more are marked.</dd>
+<dt>Bands</dt><dd>Narrow band: plus or minus the seed-to-seed scatter at the current dials. Wide pale band: the 5th to 95th percentile over the whole dial box, that is, what retuning can reach for that observable alone.</dd>
+<dt>Match</dt><dd>Searches the dials of one code (or both) for the smallest joint distance over the chosen observables, from the current point and fourteen random starts. A match that is good for one observable and poor for others is the point of the exercise: see <a href="study-joint.html">study S4</a>.</dd>
+<dt>Published curves</dt><dd>Grey lines are curves of the dataset for the same relation and epoch, one per source, without zoom samples or variants. Their definitions differ from the CAMELS catalogues (apertures, mass definitions, IMF, population cuts); they are context, not a test. Hover for the source and definitions; dotted lines are digitized from figures.</dd>
+</dl>
+</section>
+
+<section class="sec" id="basis" aria-labelledby="basis-h">
+<h2 id="basis-h"><span class="sn">§3</span>Basis and limits</h2>
+<p>Each curve is a polynomial emulator (degree 2 or 3, ridge-regularised, weighted towards the fiducial cosmology) fitted to 1,000 Latin-hypercube simulations per code and checked against 27 cosmic-variance seeds; the coefficients are in <a href="../data/retune/retune.json">retune.json</a> and nothing is fitted in the page. The observables are binned summaries of the Subfind catalogues of {{camelsN}} CAMELS simulations at z = 0, 0.95, 2.15, 3 and 4 (<code>data/ensembles/camels-galaxies.json</code>); both codes use the same catalogue definitions, so no aperture or IMF difference separates them.</p>
+<ul class="flat">
+<li>CAMELS boxes are 25 Mpc/h with 256³ dark matter particles plus 256³ gas elements: few galaxies above 10<sup>11</sup> M<sub>☉</sub>, a lower mass limit of 10<sup>9</sup> M<sub>☉</sub> (about 60 star particles), and almost nothing usable at z ≥ 3. Everything here is for that resolution.</li>
+<li>The dials reach the corners of the design, where an emulator trained on a Latin hypercube is least constrained; the study's controls share that search.</li>
+<li>Two codes only. What separates these two says nothing yet about other models.</li>
+</ul>
+<p>Protocol, analysis and calibration on synthetic worlds: <a href="https://github.com/ShubhanBhatia42/sim-highline/blob/main/docs/PROTOCOL-joint-reachability.md">PROTOCOL-joint-reachability.md</a>. The page state is in the address (dials and redshift), so a setting can be shared as a link.</p>
 </section>
 
 </div>

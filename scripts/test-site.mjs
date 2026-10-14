@@ -36,7 +36,7 @@ assert(/<svg viewBox/.test(index) && (index.match(/<path d="M/g) || []).length >
 assert(/Not independently reviewed/.test(index), "index must state limits");
 assert(/Fig\. 1/.test(index) && /Records by relation/.test(index), "index: figure and data table expected");
 for (const id of ["S1", "S2", "S3", "S4"]) assert(index.includes(`<td class="sid">${id}</td>`), `index: study ${id} missing from the table`);
-assert(/<tr class="todo"><td class="sid">S4<\/td>[\s\S]*?In preparation/.test(index), "index: S4 row must say in preparation");
+assert(/<td class="sid">S4<\/td>[\s\S]*?Pre-registered · (pending|result)/.test(index), "index: S4 row must say pending or result");
 assert(!/hero|What you get|What it is not|Start with a question|problem it removes/i.test(index), "index: marketing sections must be gone");
 
 const studies = html.studies;
@@ -49,10 +49,11 @@ for (const [p, n] of [["study-definitions", 3], ["study-harmonization", 1], ["st
 }
 assert(html["study-harmonization"].includes("PROTOCOL-harmonization.md") && html["study-harmonization"].includes("ANALYSIS-harmonization.md"), "S2 links protocol and analysis");
 assert(["PROTOCOL-model-form.md", "ANALYSIS-model-form.md", "POWER-model-form.md"].every(f => html["study-sfh"].includes(f)), "S3 links protocol, analysis and power study");
-for (const p of ["study-joint", "retune"]) assert(/In preparation/.test(html[p]) && html[p].includes("<!-- CONTENT -->"), `${p}: stub with a content marker`);
+assert(["PROTOCOL-joint-reachability.md", "ANALYSIS-joint-reachability.md", "POWER-joint-reachability.md"].every(f => html["study-joint"].includes(f)) && /Pre-registered · (pending|result)/.test(html["study-joint"]), "S4 links protocol, analysis and calibration and states its status");
+assert(html.retune.includes('id="retune"') && html.retune.includes('data-src="../data/retune/retune.json"') && html.retune.includes('src="retune.js"') && /<noscript>/.test(html.retune), "retune: instrument container, data source, script and a no-script note");
 
 const data = html.data;
-assert(/camels-sfrd\.json/.test(data) && /CAMELS galaxy summaries \(in preparation\)/.test(data) && !/camels-galaxies/.test(data), "data: ensembles listed, galaxy summaries unlinked");
+assert(/camels-sfrd\.json/.test(data) && /camels-galaxies\.json/.test(data), "data: both CAMELS ensembles listed");
 assert(data.includes("sim-highline-records.csv") && data.includes("sim_highline.py") && data.includes("sim-highline-citations.bib") && data.includes("CITATION.cff") && data.includes(release.doi), "data: downloads, loader and citation");
 assert(data.includes('href="sources.html"') && /id="tiers"/.test(data) && /id="relations"/.test(data), "data: relation table, tiers and the sources page");
 const methods = html.methods;
