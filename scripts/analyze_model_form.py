@@ -224,9 +224,6 @@ def tier_rms(recs, variants, grid, bands=BANDS, by_family=True):
 
 def tier_rms_bootstrap(recs, variants, grid, rng, nboot=2000, bands=BANDS):
     """Percentile intervals of the class RMS values from resampling variants within each class."""
-    out = {}
-    for v in variants["variants"]:
-        pass
     items = {}
     for v in variants["variants"]:
         if v["id"] in recs and v["base"] in recs:
@@ -767,7 +764,7 @@ def headline(res):
                f"Interval widths grow with redshift by a factor {_f(k['width_ratio_high_over_low']['IllustrisTNG'], 1)} (IllustrisTNG) and {_f(k['width_ratio_high_over_low']['SIMBA'], 1)} (SIMBA) from the lower to the upper half of that range.")
     val = v["validations"]
     bad = [n for n, ok in (("V1", val["V1"]), ("V2", val["V2"]), ("V3", val["V3"]), ("V4 IllustrisTNG", val["V4"]["IllustrisTNG"]), ("V4 SIMBA", val["V4"]["SIMBA"]), ("V5", val["V5"])) if ok is False]
-    out.append("**Validations.** " + ("All five hold." if not bad and None not in val.values() else f"Not all hold: {', '.join(bad) if bad else 'some could not be evaluated'}; the conclusions that depend on them are qualified in section 5."))
+    out.append("**Validations.** " + ("All five hold." if not bad and None not in val.values() else f"Not all hold: {', '.join(bad) if bad else 'some could not be evaluated'}; see the validation table in section 3 and read the corresponding conclusions with that qualification."))
     return out
 
 
@@ -836,10 +833,12 @@ def render(res):
           "**Seed noise, parametric spread and structural offset by redshift** (dex; parametric = standard deviation of the emulated SFRD over the four-parameter prior, cosmology fixed):", ""]
     zs = c["meta"]["grid"]
     rows = []
-    for k, z in enumerate(zs):
-        if abs(z * 5 - round(z * 5)) < 1e-6 and round(z * 5) % 5 == 1 and c["structural_fiducial"]["delta"][k] is not None:
-            rows.append([f"{z:.1f}", _f(c["codes"]["IllustrisTNG"]["seed_noise"][k], 2), _f(c["codes"]["IllustrisTNG"]["parametric"]["sd"][k], 2), _f(c["codes"]["SIMBA"]["seed_noise"][k], 2), _f(c["codes"]["SIMBA"]["parametric"]["sd"][k], 2),
-                         f"{_f(c['structural_fiducial']['delta'][k], 2, True)} +- {_f(c['structural_fiducial']['se'][k], 2)}"])
+    for zt in (0.1, 0.5, 1.1, 1.9, 2.9, 3.9, 4.9, 5.9, 6.9, 7.9):
+        k = int(np.argmin(np.abs(np.array(zs) - zt)))
+        if c["structural_fiducial"]["delta"][k] is None:
+            continue
+        rows.append([f"{zs[k]:.1f}", _f(c["codes"]["IllustrisTNG"]["seed_noise"][k], 2), _f(c["codes"]["IllustrisTNG"]["parametric"]["sd"][k], 2), _f(c["codes"]["SIMBA"]["seed_noise"][k], 2), _f(c["codes"]["SIMBA"]["parametric"]["sd"][k], 2),
+                     f"{_f(c['structural_fiducial']['delta'][k], 2, True)} +- {_f(c['structural_fiducial']['se'][k], 2)}"])
     L += [_table(["z", "TNG seed noise", "TNG parametric", "SIMBA seed noise", "SIMBA parametric", "TNG - SIMBA at the fiducial parameters"], rows), "",
           f"Rms over the bands: structural offset at the fiducial parameters {_f(c['structural_fiducial']['rms_low'], 2)} (z < 3.1) and {_f(c['structural_fiducial']['rms_high'], 2)} (z > 3.1) dex; parametric spread of IllustrisTNG {_f(c['codes']['IllustrisTNG']['parametric']['rms_low'], 2)} and {_f(c['codes']['IllustrisTNG']['parametric']['rms_high'], 2)}, of SIMBA {_f(c['codes']['SIMBA']['parametric']['rms_low'], 2)} and {_f(c['codes']['SIMBA']['parametric']['rms_high'], 2)}.", "",
           "**Reachability.** Minimum rms difference of the two emulated curves over the four feedback coordinates of each code:", ""]
