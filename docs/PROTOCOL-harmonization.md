@@ -30,11 +30,15 @@ Aperture library: every set of GSMF records from the **same run** at the same ep
 
 A suite curve in definition A is harmonized to 30 pkpc by m'(phi) = m(phi) + delta_A->30(m(phi)), with delta the mean of the available library suites' maps for that pair (the **universal map**); where the map is not defined at that mass the level is left uncorrected and flagged. Pairs with no measured map (2 R_half outside Illustris, `aperture-Rg`, `caesar-6dfof-galaxy-total`, `unspecified`) are not corrected.
 
+**Mass scatter (amendment A1, see the end).** A record that states a lognormal scatter of sigma dex added to its stellar masses (at z about 0 only the FLAMINGO mass functions: "include the 0.3 dex random lognormal stellar-mass scatter expected in observed data") is brought to sigma = 0 by Richardson-Lucy deconvolution with a Gaussian kernel of that width in log mass: the curve is interpolated on a 0.02 dex grid, extended beyond its ends by its end slopes, and 10 iterations are run (the count is fixed; more iterations amplify noise). m(phi) is read from the deconvolved curve and kept only where the level lies at least 3 sigma above the lower end of the curve. The aperture map is applied after this step (the scatter is added to the aperture mass). Nothing is done to curves without a stated scatter, so no suite is smoothed that does not need it.
+
+**Validation gate V1.** The released COLIBRE tables hold the same runs without (`gsmf_raw`) and with (`gsmf_with_edd_bias`, sigma(z) = min(0.1 + 0.1 z, 0.3) dex) Eddington scatter. The operator is used only if deconvolving `gsmf_with_edd_bias` of L200m6 at z = 2, 3, 4 (sigma = 0.3) reproduces `gsmf_raw` to within 0.05 dex in m(phi) at every level where both are defined; the same check is reported for the forward convolution and for z = 0 and 1. If the gate fails the scatter is not corrected, FLAMINGO is "uncorrectable", and E2 lets it take any sigma in {0, 0.1, 0.2, 0.3}.
+
 ## 5. Estimands and decision rules
 
 For the set of suites and levels above, V(phi) is the unbiased sample variance of m_s(phi) across suites, and V is its mean over phi.
 
-**E1 - documented definitions (primary).** R_doc = 1 - V_harmonized / V_raw, harmonizing IMF and every aperture that has a measured map. Reported for all levels and for the body (phi from -2.0 to -3.0) and tail (-3.25 to -4.5) separately. *Success* requires all three: the lower end of the 95 % percentile interval of a cluster bootstrap over suites is above 0; the p-value of the label-permutation test (E1 uses the correction of another correctable suite) is below 0.05; and the sign of R_doc is the same in sensitivity analyses S1 and S2. Otherwise the conclusion is "not detected", with the power analysis E4 stating what could have been detected.
+**E1 - documented definitions (primary).** R_doc = 1 - V_harmonized / V_raw, harmonizing IMF, mass scatter (A1) and every aperture that has a measured map. At each level only suites for which both the raw and the harmonized mass are defined are used (complete cases), so the two variances always describe the same suites. R is also reported for each operator alone (IMF, scatter, aperture) and with each operator left out. Reported for all levels and for the body (phi from -2.0 to -3.0) and tail (-3.25 to -4.5) separately. *Success* requires all three: the lower end of the 95 % percentile interval of a cluster bootstrap over suites is above 0; the p-value of the label-permutation test (E1 uses the correction of another correctable suite) is below 0.05; and the sign of R_doc is the same in sensitivity analyses S1 and S2. Otherwise the conclusion is "not detected", with the power analysis E4 stating what could have been detected.
 
 **E2 - upper bound from undocumented definitions.** Suites whose aperture class has no measured map (unspecified, `aperture-Rg`, `caesar-6dfof-galaxy-total`) are allowed any aperture class of the library. R_ub is the largest variance reduction over all assignments (exhaustive; the number of classes to the power of the number of such suites, at most a few hundred). It is the most that aperture alone could explain. Because a maximum over assignments is optimistic, it is compared with two null distributions: the same maximisation with every library map reflected in mass (delta(M_lo + M_hi - M)), and with every map sign-flipped. R_ub is reported as exceeding the null only if it is above the 95th percentile of both.
 
@@ -51,6 +55,8 @@ For the set of suites and levels above, V(phi) is the unbiased sample variance o
 - **S5** One random eligible record per suite (the unit chosen at random among non-variant units), 200 draws, instead of the website's rule.
 - **S6** Leave each suite out in turn (influence).
 - **S7** Include the records whose per-dex normalisation is not stated (SIMBA), assuming per dex and comoving.
+- **S8** Convolve every suite to sigma = 0.3 dex instead of deconvolving FLAMINGO (reference sigma = 0.3; a placebo for the smoothing artefact is reported with it).
+- **S9** Add a random error of 0.03 dex (the validated accuracy) to the deconvolved masses, 200 draws.
 
 ## 7. Limitations declared in advance
 
@@ -60,3 +66,7 @@ For the set of suites and levels above, V(phi) is the unbiased sample variance o
 4. Suites are not independent samples of a population of simulations; the bootstrap treats them as exchangeable.
 5. A result of "definitions explain little" at z about 0 does not say they explain little at other epochs or in other relations; those are untested.
 6. Nothing here corrects a stored record. All harmonized curves exist only inside the analysis.
+
+## 8. Amendments
+
+**A1 (2026-10-14, before any E1 to E4 statistic was computed).** The mass-scatter operator and gate V1 above were added. Reason: the FLAMINGO records state that their mass functions include 0.3 dex of random lognormal mass scatter, the existing plausibility screen flags FLAMINGO as the largest z about 0 outlier for that reason, and an analysis that left a documented, large definition difference out of "documented definitions" would understate them. What had been looked at when this was decided: the record text, and how well the operator reproduces the released COLIBRE tables (about 0.03 dex against needed corrections of 0.1 to 0.3 dex); no cross-suite variance, reduction or p-value. The primary reference is sigma = 0 (deconvolve the one suite that needs it) rather than convolving every other suite to 0.3 dex, because the latter smooths curves that need no correction and lowers the dispersion by itself; the convolve-all variant is sensitivity S8. S9 adds a 0.03 dex random error to the deconvolution (the validated accuracy).

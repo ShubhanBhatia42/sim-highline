@@ -55,7 +55,7 @@ for col, mdef, slug, what in LINES:
                 "The legend of the figure lists 10, 30 and 100 pkpc spherical apertures, a circular Petrosian aperture and no aperture; the caption in the arXiv source says 30, 50 and 100 pkpc, and the legend, which is what is drawn, is used here. "
                 "Solid segment only (the dotted low-mass end, fewer than 100 stellar particles, and the dashed high-mass end, fewer than 10 galaxies per bin, are not extracted). Within-run aperture comparison: the records of this figure differ only in the mass definition. Observational points not extracted."))
 # independent check: the 30 pkpc curve against the EAGLE Ref-L100N1504 z=0.1 record that comes from another paper (Furlong+15)
-ref = next(r for r in json.loads((ROOT / "data" / "curves" / "furlong15-eagle-gsmf.json").read_text())["records"] if r["id"] == "furlong15.eagle-ref.gsmf.z0.1")
+ref = next(r for r in json.loads((vf.reference_root() / "data" / "curves" / "furlong15-eagle-gsmf.json").read_text())["records"] if r["id"] == "furlong15.eagle-ref.gsmf.z0.1")
 rp = [(p["x"], p["y"]) for p in ref["representation"]["points"]]
 interp = lambda pts, x: next((y0 + (y1 - y0) * (x - x0) / (x1 - x0) for (x0, y0), (x1, y1) in zip(pts, pts[1:]) if x0 <= x <= x1), None)
 diffs = [(x, y - interp(rp, x)) for x, y in got["aperture-30pkpc"] if interp(rp, x) is not None]

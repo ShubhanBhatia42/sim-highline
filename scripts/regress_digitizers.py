@@ -1,4 +1,5 @@
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -16,7 +17,7 @@ with tempfile.TemporaryDirectory() as tmp:
     shutil.copytree(ROOT / "scripts", tmp / "scripts", ignore=shutil.ignore_patterns("__pycache__"))
     (tmp / "data" / "curves").mkdir(parents=True)
     for s in scripts:
-        r = subprocess.run([sys.executable, str(tmp / "scripts" / s.name)], capture_output=True, text=True, cwd=tmp / "scripts")
+        r = subprocess.run([sys.executable, str(tmp / "scripts" / s.name)], capture_output=True, text=True, cwd=tmp / "scripts", env={**os.environ, "SIMHIGHLINE_REFERENCE_ROOT": str(ROOT)})
         if r.returncode:
             bad.append((s.name, "failed: " + (r.stderr.strip().splitlines() or ["?"])[-1]))
     for out in sorted((tmp / "data" / "curves").glob("*.json")):
