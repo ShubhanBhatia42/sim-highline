@@ -776,8 +776,152 @@ def main():
     print(f"harmonization: E1 R={v['E1']['R']:.3f} (CI lower {v['E1']['ci95_lower']:.3f}, p={v['E1']['permutation_p']}) supported={v['E1']['supported']}; E2 R_ub={v['E2']['R_ub']:.3f} exceeds null={v['E2']['exceeds_null']}")
 
 
+def _f(v, d=3, sign=False):
+    return "n/a" if v is None or (isinstance(v, float) and not np.isfinite(v)) else (f"{v:+.{d}f}" if sign else f"{v:.{d}f}")
+
+
+def _pct(v):
+    return "n/a" if v is None or not np.isfinite(v) else f"{100 * v:.0f} %"
+
+
+def _ci(c):
+    return f"[{_f(c[0])}, {_f(c[1])}]"
+
+
+def _table(head, rows):
+    return "\n".join(["| " + " | ".join(head) + " |", "|" + "|".join("---" for _ in head) + "|"] + ["| " + " | ".join(str(c) for c in r) + " |" for r in rows])
+
+
+def headline(res):
+    """The result in words, assembled by fixed rules from the numbers (no judgement is added after the run)."""
+    v, e1, e2, e4 = res["verdicts"], res["E1"], res["E2"], res["E4"]
+    out = []
+    r, lo, hi = e1["R"]["all"], e1["ci95"]["all"][0], e1["ci95"]["all"][1]
+    if v["E1"]["supported"]:
+        out.append(f"**E1 - detected.** Documented definitions (IMF, stated mass scatter, stellar-mass aperture where measured in a single run) account for **{_pct(r)}** of the variance across suites of the stellar mass at fixed abundance "
+                   f"(R = {_f(r)}, 95 % interval {_ci(e1['ci95']['all'])}; label-permutation p = {_f(e1['permutation']['p_value'])}; same sign in S1 and S2). The rule fixed in advance is met.")
+    else:
+        why = []
+        if not lo > 0:
+            why.append(f"the lower end of the bootstrap interval ({_f(lo)}) is not above 0")
+        if not e1["permutation"]["p_value"] < 0.05:
+            why.append(f"the permutation p-value is {_f(e1['permutation']['p_value'])}, not below 0.05")
+        if not v["E1"]["sign_consistent_S1_S2"]:
+            why.append("the sign of R differs between the primary analysis and S1 or S2")
+        if not r > 0:
+            why.append(f"R is {_f(r)}, not positive: harmonizing increased the dispersion")
+        out.append(f"**E1 - not detected.** R = {_f(r)} (95 % interval {_ci(e1['ci95']['all'])}; permutation p = {_f(e1['permutation']['p_value'])}). By the rule fixed in advance this is not a detection because " + "; ".join(why) + ".")
+    out.append(f"**E2 - upper bound.** If every suite whose aperture is undocumented ({', '.join(e2['free_suites']) or 'none'}) took whichever aperture of the library suits it best, aperture could account for at most R = {_f(e2['R_ub'])}; "
+               f"the same search in {e2['null_n']} counterfactual worlds (maps mirrored or sign-flipped) gives a 95th percentile of {_f(e2['null_p95'])} (maximum {_f(e2['null_max'])}), so the bound {'exceeds' if e2['exceeds_null'] else 'does not exceed'} what a maximisation over meaningless maps reaches (null median {_f(e2['null_median'])}).")
+    tested = v["E3"]["tested_with_three_or_more_suites"]
+    if tested:
+        out.append("**E3 - universality.** " + "; ".join(f"{k}: {'universal' if u else 'suite dependent'}" for k, u in v["E3"]["universal"].items()) + ". "
+                   + ("Where a map is suite dependent, its between-suite spread is the uncertainty of applying it to another code." if not all(v["E3"]["universal"].values()) else "") + " Pairs measured in fewer than three suites cannot be called universal.")
+    else:
+        out.append("**E3 - universality.** No pair is measured in three or more library suites, so none can be called universal.")
+    p80 = v["E4"]["smallest_lambda_detected_in_80_percent"]
+    out.append(f"**E4 - power.** With the same suites, an injected effect of {'size lambda = ' + _f(p80, 1) + ' times the measured aperture maps' if p80 is not None else 'any tested size (up to twice the measured maps)'} "
+               f"{'is detected in at least 80 % of draws' if p80 is not None else 'is not detected in 80 % of draws'}; the false-positive rate with no effect is {_pct(v['E4']['false_positive_rate_at_lambda_0'])}.")
+    return out
+
+
+def reading(res):
+    """Plain statements generated from the numbers by fixed rules (what each operator did, how large the aperture is against the spread, what the power analysis allows to conclude)."""
+    out = []
+    ops = res["operators"]
+    for op, label in (("imf", "IMF"), ("scatter", "mass-scatter"), ("aperture", "aperture")):
+        x = ops[f"{op} only"]
+        lo, hi = x["ci95"]
+        effect = "lowers" if x["R"] > 0.02 else ("raises" if x["R"] < -0.02 else "leaves unchanged")
+        out.append(f"{label} correction alone {effect} the between-suite variance (R = {_f(x['R'])}, 95 % interval {_ci(x['ci95'])}{'; the interval excludes 0' if lo > 0 or hi < 0 else ''}).")
+    e1 = res["E1"]["R"]
+    out.append(f"By level range: R = {_f(e1['body'])} in the body (phi from -2.0 to -3.0) and {_f(e1['tail'])} in the tail (-3.25 to -4.5); the pre-specified test uses all levels.")
+    sd = [x["sd_raw_dex"] for x in res["levels"] if x["sd_raw_dex"] is not None]
+    shifts = [abs(x["mean_shift_aperture_dex"]) for x in res["suites"] if x["mean_shift_aperture_dex"] is not None]
+    moved = sum(1 for x in shifts if x > 5e-4)
+    lib = max(abs(v) for t in res["library"]["summary"] for d in t["shift_dex_at"].values() for v in d.values() if v is not None)
+    undoc = sum(1 for x in res["suites"] if x["aperture_class"] is None)
+    ref = sum(1 for x in res["suites"] if x["aperture_class"] == REF)
+    out.append(f"{moved} of {len(res['suites'])} suites receive an aperture correction (largest mean shift {_f(max(shifts))} dex); {ref} already use the {REF} pkpc reference and {undoc} do not document their aperture. "
+               f"The largest shift of any library map at the four probe masses is {_f(lib)} dex, against a between-suite standard deviation of m(phi) of {_f(float(np.median(sd)))} dex (median over levels).")
+    if res["verdicts"]["E4"]["smallest_lambda_detected_in_80_percent"] is None:
+        out.append("No tested size of injected aperture effect is detected in 80 % of draws, so with these suites a non-detection of aperture effects is uninformative about whether they exist; it only bounds what the E1 rule could see.")
+    return out
+
+
 def render(res):
-    raise NotImplementedError
+    v, e1, e2 = res["verdicts"], res["E1"], res["E2"]
+    L = ["# Analysis: how much of the disagreement between simulated z ~ 0 stellar mass functions do documented definitions explain?", "",
+         f"Generated by `scripts/analyze_harmonization.py` from release {res['version']}; do not edit by hand. The pre-specified protocol is [`PROTOCOL-harmonization.md`](PROTOCOL-harmonization.md) (with amendments A1 and A2, both written before any E1, E2 or E4 statistic existed); "
+         "this page reports what it gave, null results included. Seed " + str(res["parameters"]["seed"]) + ".", "", "## Result", ""]
+    L += [f"- {x}" for x in headline(res)]
+    L += ["", "### What each operator did", ""] + [f"- {x}" for x in reading(res)]
+    L += ["", "R is the fraction of the between-suite variance of m(phi), the stellar mass at fixed abundance, that disappears when each suite's curve is expressed in the reference definitions "
+          "(Chabrier IMF, no added mass scatter, 3D 30 pkpc aperture). It is a property of these suites at these levels, not of the physics: sampling noise, differences in the simulation models and everything not documented stay in the denominator.", "",
+          "## 1. Gate V1: does the scatter operator work?", "",
+          f"The released COLIBRE tables hold the same runs with and without Eddington scatter. Deconvolving the scattered table must reproduce the other to {res['gate_V1']['threshold_dex']} dex at z >= 2: **{'passed' if res['gate_V1']['passed'] else 'FAILED'}**.", "",
+          _table(["z", "sigma (dex)", "levels", "needed shift, median (dex)", "needed shift, max", "deconvolution error, max", "convolution error, max"],
+                 [[r["z"], r["sigma"], r["levels"], _f(r["needed_median"], 3), _f(r["needed_max"], 3), _f(r["deconvolution_max_error"], 3), _f(r["convolution_max_error"], 3)] for r in res["gate_V1"]["rows"]]), "",
+          f"Operators used: {', '.join(res['operators_used'])}.", "", "## 2. Suites", "",
+          "One curve per simulation suite, chosen by the website's own fiducial rule (the Python port is tested against the JavaScript). Mean shifts are those each operator applies to that suite's m(phi) alone.", "",
+          _table(["suite", "record", "z", "IMF", "mass definition", "class", "scatter", "levels", "IMF shift", "scatter shift", "aperture shift"],
+                 [[r["suite"], f"`{r['record']}`", r["z"], r["imf"], r["mass_definition"], r["aperture_class"] or "none", r["stated_scatter_dex"] or "-", r["levels_defined"], _f(r["mean_shift_imf_dex"], 3, True), _f(r["mean_shift_scatter_dex"], 3, True), _f(r["mean_shift_aperture_dex"], 3, True)] for r in res["suites"]]), ""]
+    if res["excluded_suites"]:
+        L += ["Suites with a z <= 0.2 mass function that are not used:", ""] + [f"- {k}: {why}" for k, why in sorted(res["excluded_suites"].items())] + [""]
+    L += ["## 3. The aperture library and E3", "",
+          "Maps are measured inside single runs (one run, two definitions, the same galaxies) by matching the number density above each mass. Each row gives the shift in log M that the map applies, "
+          "at four masses, for every library suite; '-' is outside the suite's range.", ""]
+    rows = []
+    for t in res["library"]["summary"]:
+        for sname in t["suites"]:
+            rows.append([t["pair"], sname, f"{t['range'][sname][0]}-{t['range'][sname][1]}"] + [_f(t["shift_dex_at"][m][sname], 3, True) if t["shift_dex_at"][m][sname] is not None else "-" for m in ("10.0", "10.5", "11.0", "11.5")])
+    L += [_table(["map", "library suite", "range (log M)", "at 10.0", "at 10.5", "at 11.0", "at 11.5"], rows), "",
+          "**E3, leave-one-suite-out.** Each library suite's map is predicted from the others; skill = 1 - MSE(model)/MSE(zero map). Universal = three or more suites, positive skill in every fold and mean absolute error below 0.05 dex.", ""]
+    rows = []
+    for t in res["E3"]:
+        if not t.get("testable"):
+            rows.append([t["pair"], ", ".join(t["suites"]), "-", "-", "-", t.get("reason", ""), "-"])
+            continue
+        rows.append([t["pair"], ", ".join(t["suites"]), f"{t['common_mass_range'][0]}-{t['common_mass_range'][1]}", "; ".join(f"{f['left_out']} {_f(f['skill'], 2)}" for f in t["folds"]),
+                     "; ".join(f"{f['mae_dex']:.3f}" for f in t["folds"]), _f(t["between_suite_sd_dex"], 3), "yes" if t["universal"] else ("no" if t["leave_one_out_with_three_or_more"] else "not testable (two suites)")])
+    L += [_table(["map", "suites", "common range", "skill by left-out suite", "MAE (dex)", "between-suite SD (dex)", "universal?"], rows), "", "## 4. E1: variance across suites before and after", "",
+          _table(["levels", "R", "95 % interval (cluster bootstrap over suites)", "share of resamples with R > 0"], [[k, _f(e1["R"][k]), _ci(e1["ci95"][k]), _pct(e1["boot_fraction_positive"][k])] for k in ("all", "body", "tail")]), "",
+          f"Label-permutation test: the labels (IMF, class, scatter) are shuffled among suites {e1['permutation']['n']} times; the null R has mean {_f(e1['permutation']['mean'])} and 95th percentile {_f(e1['permutation']['p95'])}; p = {_f(e1['permutation']['p_value'])}.", "",
+          "By operator (R and its bootstrap interval; 'only' applies one operator, 'without' leaves one out):", "",
+          _table(["variant", "R", "95 % interval"], [[k, _f(x["R"]), _ci(x["ci95"])] for k, x in res["operators"].items()]), "",
+          "Standard deviation across suites of m(phi) (dex), where at least four suites define the level:", "",
+          _table(["phi (log cMpc^-3 dex^-1)", "suites", "raw", "harmonized"], [[x["phi"], x["suites"], _f(x["sd_raw_dex"]), _f(x["sd_harmonized_dex"])] for x in res["levels"]]), "",
+          "## 5. E2: the most aperture could explain", "",
+          f"Suites with an undocumented aperture: {', '.join(e2['free_suites']) or 'none'}. Best assignment of library classes: {', '.join(f'{k} -> {c}' for k, c in e2['assignment'].items()) or 'none'}. "
+          f"R_ub = {_f(e2['R_ub'])}. Null (maps mirrored in mass and sign-flipped per class, {e2['null_n']} worlds): median {_f(e2['null_median'])}, 95th percentile {_f(e2['null_p95'])}, maximum {_f(e2['null_max'])}. "
+          "A maximum over assignments is optimistic by construction, which is why it is compared with the same maximum under meaningless maps.", "",
+          "## 6. E4: what these suites could have detected", "",
+          "Starting from the harmonized curves, each suite is given an aperture class from {30, 50, 100, total} and shown through the forward map of one random library suite scaled by lambda, with 0.02 dex noise in log Phi; "
+          f"the E1 pipeline is then run with the universal maps ({res['parameters']['injection_draws']} draws, {res['parameters']['injection_bootstrap']} bootstrap and permutation resamples each).", "",
+          _table(["lambda", "draws", "true R", "recovered R", "RMSE", "E1 rule met"], [[x["lambda"], x["draws"], _f(x["R_true_mean"]), _f(x["R_recovered_mean"]), _f(x["recovery_rmse"]), _pct(x["detection_rate"])] for x in res["E4"]]), "",
+          "At lambda = 0 nothing is injected and the pipeline applies maps that are not needed, so the rate in the last column is a false-positive rate. The recovered R falling short of the true R measures the cost of applying the average map of other codes (the transfer error).", "",
+          "## 7. Sensitivity analyses (reported, not used to choose)", ""]
+    sn = res["sensitivity"]
+    L += [_table(["analysis", "result"], [
+        ["S1 reference aperture 50 pkpc", _f(sn["S1_reference_50pkpc"])], ["S2 map applied by abundance (earlier design)", _f(sn["S2_map_applied_by_abundance"])], ["S3 levels phi >= -3.75", _f(sn["S3_levels_phi_ge_-3.75"])],
+        ["S4 IMF offsets +0.05 / -0.05 dex", f"{_f(sn['S4_imf_offsets_plus_0.05'])} / {_f(sn['S4_imf_offsets_minus_0.05'])}"],
+        [f"S5 random fiducial run, {sn['S5_random_fiducial_run']['draws']} draws", f"median {_f(sn['S5_random_fiducial_run']['median'])}, 95 % {_ci(sn['S5_random_fiducial_run']['ci95'])}, {_pct(sn['S5_random_fiducial_run']['fraction_positive'])} positive"],
+        ["S7 include unstated normalisation (" + ", ".join(sn["S7_include_unstated_normalisation"]["suites"]) + ")", f"{_f(sn['S7_include_unstated_normalisation']['R'])} {_ci(sn['S7_include_unstated_normalisation']['ci95'])}"],
+        ["S8 convolve all suites to 0.3 dex (placebo: smoothing alone)", f"{_f(sn['S8_convolve_all_to_sigma_0.3']['R'])} {_ci(sn['S8_convolve_all_to_sigma_0.3']['ci95'])} (placebo {_f(sn['S8_convolve_all_to_sigma_0.3']['placebo_smoothing_only_R'])})"],
+        ["S9 0.03 dex error on deconvolved masses", f"median {_f(sn['S9_deconvolution_error_0.03']['median'])}, 95 % {_ci(sn['S9_deconvolution_error_0.03']['ci95'])}"]]), "",
+          "S6, leaving each suite out in turn (R without that suite):", "", _table(["suite left out", "R"], [[k, _f(x)] for k, x in sn["S6_leave_one_suite_out"].items()]), "",
+          "## 8. Deviations from the protocol", ""] + [f"- {d}" for d in res["deviations"]] + [
+          "", "## 9. Limitations", "",
+          "- The library has three codes (Illustris/AREPO, EAGLE/GADGET-SPH, COLIBRE/SWIFT-SPH); the 30 to 50 pkpc map rests on COLIBRE alone and is applied to other codes on the assumption of transfer.",
+          "- 'Total' mass is a family (SUBFIND subhalo mass, all bound particles); the library treats it as one class.",
+          "- Curves are digitized from figures (stated uncertainty 0.01-0.02 dex); the EAGLE aperture figure's legend (10, 30, 100 pkpc) disagrees with its caption (30, 50, 100 pkpc) and the legend is used.",
+          "- Cubic remaps cannot follow a sharp bend in the true map; the accuracy on synthetic maps is stated in `scripts/test_harmonization.py`.",
+          "- Suites are not independent draws from a population of simulations; the cluster bootstrap treats them as exchangeable.",
+          "- Sampling noise in the tail is not modelled; it lowers the ceiling on R before and after harmonization alike.",
+          "- A result at z ~ 0 for the mass function says nothing about other epochs or relations, which are untested.",
+          "- Nothing here changes a stored record; harmonized curves exist only inside the analysis.", "",
+          "## 10. Reproduce", "", "`python3 scripts/analyze_harmonization.py` (about a few minutes; deterministic given the seed) rewrites this file and `data/analysis/harmonization.json`; `python3 scripts/test_harmonization.py` checks the machinery on synthetic data and that these outputs are not stale.", ""]
+    return "\n".join(L)
 
 
 if __name__ == "__main__":
