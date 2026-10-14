@@ -1,0 +1,360 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "marszewski24.fire2.gas.z5",
+      "source": "FIRE-2",
+      "run": "FIRE-2 high-z zooms (Marszewski+24 medians)",
+      "kind": "simulation",
+      "relation": "gas",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 0.2 Rvir)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 gas-to-stellar mass ratio Mgas/M* (total gas and stellar mass within 0.2 Rvir)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 6.387,
+        "xMax": 9.862
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.387,
+            "y": 0.7342,
+            "yHigh": 1.3394,
+            "yLow": -0.8396
+          },
+          {
+            "x": 7.25,
+            "y": 0.4843,
+            "yHigh": 1.1046,
+            "yLow": -1.2816
+          },
+          {
+            "x": 8.012,
+            "y": 0.3953,
+            "yHigh": 0.8284,
+            "yLow": -1.3921
+          },
+          {
+            "x": 9.026,
+            "y": 0.1226,
+            "yHigh": 0.4585,
+            "yLow": -0.2267
+          },
+          {
+            "x": 9.862,
+            "y": 0.3243,
+            "yHigh": 0.4192,
+            "yLow": -0.038
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies of the zoom suite",
+        "warning": "Median gas fraction Mgas/M* of the FIRE-2 high-redshift zoom galaxies at z=5 in stellar mass bins with at least five galaxies (solid squares, left panel), read from the vector paths of Marszewski et al. 2024; no table exists. Error bars are the plotted 16th-84th percentiles of the galaxies in the bin (a scatter, not an error of the median); where a bar runs off the plotted range its end is not recorded. Mass and gas are within 0.2 Rvir of central galaxies with M* > 1e6 Msun (satellites and halos contaminated by low-resolution particles excluded). The individual galaxies, the open squares (bins with fewer than five galaxies), the authors' best-fit lines and the Mgas/(M*+Mgas) panel are not extracted. Zoom-in sample, not a volume."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.66,
+          "Om": 0.3111
+        },
+        "massDefinition": "aperture-0.2Rvir",
+        "gasDefinition": "total gas mass within 0.2 Rvir",
+        "gasStatistic": "median",
+        "population": "central galaxies of the zoom suite, M* > 1e6 Msun"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Marszewski et al. 2024, ApJL 967, L41 (arXiv:2403.08853), gas fractions in stellar mass bins, z=5",
+        "doi": "10.3847/2041-8213/ad4cee",
+        "url": "https://arxiv.org/abs/2403.08853",
+        "retrieved": "2026-10-14",
+        "figure": "Gas fraction Mgas/M* in stellar mass bins (left panel)",
+        "panel": "z=5",
+        "checksumSha256": "9ca9a8009722b000262ab8c600d664759c4e0974c1a94a8861b2d1674653d875",
+        "sourceMember": "Gas_Fraction_z5_z12.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 6-10 snapped to ticks; y: labelled ticks -1.5 to 2.0 (signs set from the position of 0.0) snapped to ticks; both linear",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "marszewski24.fire2.gas.z7",
+      "source": "FIRE-2",
+      "run": "FIRE-2 high-z zooms (Marszewski+24 medians)",
+      "kind": "simulation",
+      "relation": "gas",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 0.2 Rvir)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 gas-to-stellar mass ratio Mgas/M* (total gas and stellar mass within 0.2 Rvir)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 6.35,
+        "xMax": 8.848
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.35,
+            "y": 0.9919,
+            "yHigh": 1.4657,
+            "yLow": -1.1577
+          },
+          {
+            "x": 7.24,
+            "y": 0.6916,
+            "yHigh": 1.1686,
+            "yLow": -0.9922
+          },
+          {
+            "x": 8.04,
+            "y": 0.1716,
+            "yHigh": 0.834,
+            "yLow": -1.1522
+          },
+          {
+            "x": 8.848,
+            "y": 0.4578,
+            "yHigh": 0.6717,
+            "yLow": 0.1972
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies of the zoom suite",
+        "warning": "Median gas fraction Mgas/M* of the FIRE-2 high-redshift zoom galaxies at z=7 in stellar mass bins with at least five galaxies (solid squares, left panel), read from the vector paths of Marszewski et al. 2024; no table exists. Error bars are the plotted 16th-84th percentiles of the galaxies in the bin (a scatter, not an error of the median); where a bar runs off the plotted range its end is not recorded. Mass and gas are within 0.2 Rvir of central galaxies with M* > 1e6 Msun (satellites and halos contaminated by low-resolution particles excluded). The individual galaxies, the open squares (bins with fewer than five galaxies), the authors' best-fit lines and the Mgas/(M*+Mgas) panel are not extracted. Zoom-in sample, not a volume."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.66,
+          "Om": 0.3111
+        },
+        "massDefinition": "aperture-0.2Rvir",
+        "gasDefinition": "total gas mass within 0.2 Rvir",
+        "gasStatistic": "median",
+        "population": "central galaxies of the zoom suite, M* > 1e6 Msun"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Marszewski et al. 2024, ApJL 967, L41 (arXiv:2403.08853), gas fractions in stellar mass bins, z=7",
+        "doi": "10.3847/2041-8213/ad4cee",
+        "url": "https://arxiv.org/abs/2403.08853",
+        "retrieved": "2026-10-14",
+        "figure": "Gas fraction Mgas/M* in stellar mass bins (left panel)",
+        "panel": "z=7",
+        "checksumSha256": "9ca9a8009722b000262ab8c600d664759c4e0974c1a94a8861b2d1674653d875",
+        "sourceMember": "Gas_Fraction_z5_z12.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 6-10 snapped to ticks; y: labelled ticks -1.5 to 2.0 (signs set from the position of 0.0) snapped to ticks; both linear",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "marszewski24.fire2.gas.z9",
+      "source": "FIRE-2",
+      "run": "FIRE-2 high-z zooms (Marszewski+24 medians)",
+      "kind": "simulation",
+      "relation": "gas",
+      "epoch": {
+        "zRepresentative": 9,
+        "zNominal": 9,
+        "zMin": 9,
+        "zMax": 9,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 0.2 Rvir)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 gas-to-stellar mass ratio Mgas/M* (total gas and stellar mass within 0.2 Rvir)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 6.362,
+        "xMax": 8.84
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.362,
+            "y": 0.8999,
+            "yHigh": 1.4934,
+            "yLow": -1.2715
+          },
+          {
+            "x": 7.127,
+            "y": 0.5858,
+            "yHigh": 1.1899,
+            "yLow": -1.1909
+          },
+          {
+            "x": 7.982,
+            "y": 0.1344,
+            "yHigh": 0.6943,
+            "yLow": -0.887
+          },
+          {
+            "x": 8.84,
+            "y": 0.1878,
+            "yHigh": 0.43,
+            "yLow": -1.2656
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies of the zoom suite",
+        "warning": "Median gas fraction Mgas/M* of the FIRE-2 high-redshift zoom galaxies at z=9 in stellar mass bins with at least five galaxies (solid squares, left panel), read from the vector paths of Marszewski et al. 2024; no table exists. Error bars are the plotted 16th-84th percentiles of the galaxies in the bin (a scatter, not an error of the median); where a bar runs off the plotted range its end is not recorded. Mass and gas are within 0.2 Rvir of central galaxies with M* > 1e6 Msun (satellites and halos contaminated by low-resolution particles excluded). The individual galaxies, the open squares (bins with fewer than five galaxies), the authors' best-fit lines and the Mgas/(M*+Mgas) panel are not extracted. Zoom-in sample, not a volume."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.66,
+          "Om": 0.3111
+        },
+        "massDefinition": "aperture-0.2Rvir",
+        "gasDefinition": "total gas mass within 0.2 Rvir",
+        "gasStatistic": "median",
+        "population": "central galaxies of the zoom suite, M* > 1e6 Msun"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Marszewski et al. 2024, ApJL 967, L41 (arXiv:2403.08853), gas fractions in stellar mass bins, z=9",
+        "doi": "10.3847/2041-8213/ad4cee",
+        "url": "https://arxiv.org/abs/2403.08853",
+        "retrieved": "2026-10-14",
+        "figure": "Gas fraction Mgas/M* in stellar mass bins (left panel)",
+        "panel": "z=9",
+        "checksumSha256": "9ca9a8009722b000262ab8c600d664759c4e0974c1a94a8861b2d1674653d875",
+        "sourceMember": "Gas_Fraction_z5_z12.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 6-10 snapped to ticks; y: labelled ticks -1.5 to 2.0 (signs set from the position of 0.0) snapped to ticks; both linear",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "marszewski24.fire2.gas.z12",
+      "source": "FIRE-2",
+      "run": "FIRE-2 high-z zooms (Marszewski+24 medians)",
+      "kind": "simulation",
+      "relation": "gas",
+      "epoch": {
+        "zRepresentative": 12,
+        "zNominal": 12,
+        "zMin": 12,
+        "zMax": 12,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (within 0.2 Rvir)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 gas-to-stellar mass ratio Mgas/M* (total gas and stellar mass within 0.2 Rvir)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 6.283,
+        "xMax": 7.471
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 6.283,
+            "y": 1.2466,
+            "yHigh": 1.5505,
+            "yLow": -1.1497
+          },
+          {
+            "x": 6.919,
+            "y": 0.5659,
+            "yHigh": 1.1758
+          },
+          {
+            "x": 7.471,
+            "y": 0.5498,
+            "yHigh": 0.9291,
+            "yLow": -0.5337
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies of the zoom suite",
+        "warning": "Median gas fraction Mgas/M* of the FIRE-2 high-redshift zoom galaxies at z=12 in stellar mass bins with at least five galaxies (solid squares, left panel), read from the vector paths of Marszewski et al. 2024; no table exists. Error bars are the plotted 16th-84th percentiles of the galaxies in the bin (a scatter, not an error of the median); where a bar runs off the plotted range its end is not recorded. Mass and gas are within 0.2 Rvir of central galaxies with M* > 1e6 Msun (satellites and halos contaminated by low-resolution particles excluded). The individual galaxies, the open squares (bins with fewer than five galaxies), the authors' best-fit lines and the Mgas/(M*+Mgas) panel are not extracted. Zoom-in sample, not a volume."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.66,
+          "Om": 0.3111
+        },
+        "massDefinition": "aperture-0.2Rvir",
+        "gasDefinition": "total gas mass within 0.2 Rvir",
+        "gasStatistic": "median",
+        "population": "central galaxies of the zoom suite, M* > 1e6 Msun"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Marszewski et al. 2024, ApJL 967, L41 (arXiv:2403.08853), gas fractions in stellar mass bins, z=12",
+        "doi": "10.3847/2041-8213/ad4cee",
+        "url": "https://arxiv.org/abs/2403.08853",
+        "retrieved": "2026-10-14",
+        "figure": "Gas fraction Mgas/M* in stellar mass bins (left panel)",
+        "panel": "z=12",
+        "checksumSha256": "9ca9a8009722b000262ab8c600d664759c4e0974c1a94a8861b2d1674653d875",
+        "sourceMember": "Gas_Fraction_z5_z12.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 6-10 snapped to ticks; y: labelled ticks -1.5 to 2.0 (signs set from the position of 0.0) snapped to ticks; both linear",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

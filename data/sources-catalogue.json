@@ -191,7 +191,7 @@
       ],
       "redshifts": "GSMF z~0-7; SHMR 0-4",
       "adapter": "scripts/digitize_illustris_genel14.py",
-      "note": "Fig. 3 GSMF (full SUBFIND stellar mass and mass within 2 R_half) at z~0,1,...,7 and Fig. 6a SHMR (DMO-matched M200c, converted from the baryon conversion efficiency by log10(Ob/Om)) at z=0-4. The z>0 GSMF redshifts are labelled approximate (z~) in the paper. Digitized, not rankable."
+      "note": "Fig. 3 GSMF (full SUBFIND stellar mass and mass within 2 R_half) at z~0,1,...,7 and Fig. 6a SHMR (DMO-matched M200c, converted from the baryon conversion efficiency by log10(Ob/Om)) at z=0-4. The z>0 GSMF redshifts are labelled approximate (z~) in the paper. Digitized, not rankable. Not extracted: the galactic molecular gas fractions (f12.pdf of the arXiv source, a raster image)."
     },
     {
       "id": "sparre15-illustris-ms",
@@ -333,6 +333,19 @@
       "redshifts": "0",
       "adapter": "scripts/digitize_nihao_hi_tf_maccio16.py",
       "note": "NIHAO X HI-tests figure, Tully-Fisher panel: per-galaxy log M* vs inclination-corrected V50i (mock HI width at 50%/2). HI size-mass panels and the W50/W20 ratio not ingested (no schema relation). Digitized, not rankable."
+    },
+    {
+      "id": "buck19-nihao-uhd-tf",
+      "suite": "NIHAO zoom suite",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1909.05864",
+      "relations": [
+        "stfr"
+      ],
+      "redshifts": "0",
+      "adapter": "scripts/digitize_nihao_buck19_tf.py",
+      "note": "Stellar Tully-Fisher points of the five NIHAO-UHD Milky Way-mass discs (g6.96e11, g7.08e11, g7.55e11, g8.26e11, g2.79e12): circular velocity at 2.2 R_d and the edge-on HI line-width velocity, versus total stellar mass. Five hand-picked zoom galaxies, not a population. Observational data, the HI-radius flat-velocity panel against SPARC and the fits not extracted. Digitized, not rankable."
     },
     {
       "id": "ricarte19-romulus25-sfms",
@@ -520,7 +533,8 @@
         "jstar",
         "quenched",
         "sfms"
-      ]
+      ],
+      "note": "Tables are on request only. The quenched fraction and cosmic stellar mass density of Chaikin et al. 2026 are extracted from vector figures instead (chaikin26-colibre-quenched, chaikin26-colibre-smd); sizes, angular momentum and SFRs beyond the figures remain request-only."
     },
     {
       "id": "flamingo-paper-plots",
@@ -962,6 +976,32 @@
       "note": "Redshift-evolving fits log(Z/Zsun) = A(z) log M* + B(z) for three models (slope and normalization evolving; normalization only; none), transcribed from the table."
     },
     {
+      "id": "ma18-fire2-smd",
+      "suite": "FIRE-2",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1706.06605",
+      "relations": [
+        "smd"
+      ],
+      "redshifts": "5-12",
+      "adapter": "scripts/digitize_fire2_smd_ma18.py",
+      "note": "Stellar mass density from z=5 to 12 from the authors' model stellar mass functions integrated above M* = 1e4, 1e6 and 1e8 Msun (one vertex per integer redshift). A model integral over a weighted zoom sample, not a volume count. Observational points not extracted. Digitized, not rankable."
+    },
+    {
+      "id": "marszewski24-fire2-gas",
+      "suite": "FIRE-2",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2403.08853",
+      "relations": [
+        "gas"
+      ],
+      "redshifts": "5, 7, 9, 12",
+      "adapter": "scripts/digitize_fire2_gas_marszewski24.py",
+      "note": "Median Mgas/M* (total gas and stars within 0.2 Rvir, central galaxies with M* > 1e6 Msun) in stellar mass bins with at least five galaxies, with the plotted 16-84 percentile bars, at z=5, 7, 9, 12 (left panel). Individual galaxies, open squares, best-fit lines and the Mgas/(M*+Mgas) panel not extracted. Digitized, not rankable."
+    },
+    {
       "id": "kaviraj17-horizonagn-sfrd",
       "suite": "Horizon-AGN",
       "status": "ingested",
@@ -1119,6 +1159,19 @@
       "note": "Differential stellar mass function at z 0, 2, 4, 6, 8, 10, and cosmic SFR density and stellar mass density of all galaxies and of galaxies above 10^9.3 Msun; abundances re-weighted for cosmic variance (paper appendix)."
     },
     {
+      "id": "feldmann23-firebox-quenched",
+      "suite": "FIREbox",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2205.15325",
+      "relations": [
+        "quenched"
+      ],
+      "redshifts": "0",
+      "adapter": "scripts/digitize_firebox_feldmann23_quenched.py",
+      "note": "z=0 quiescent fraction versus stellar mass for all, central and satellite galaxies: the markers and bootstrap 16-84 per cent error bars for sSFR < 10^-10.5 /yr (bins with at least four galaxies) and the dotted sSFR < 1e-11 /yr lines at the same bins (no error bars drawn). SFR averaged over 100 Myr. Leja+21 and Behroozi+19 overlays not extracted. Digitized, not rankable."
+    },
+    {
       "id": "genel18-tng100-size",
       "suite": "IllustrisTNG",
       "status": "ingested",
@@ -1197,6 +1250,32 @@
       "redshifts": "sfrd z 0-18; ssfr and shmr z 0",
       "adapter": "scripts/digitize_colibre_schaye25.py",
       "note": "Cosmic SFR density of five resolution runs, z=0 median sSFR of star-forming galaxies and z=0 stellar-to-halo mass ratio of centrals for L400m7, L200m6 and L025m5; resolved (solid) parts only."
+    },
+    {
+      "id": "chaikin26-colibre-smd",
+      "suite": "COLIBRE",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2509.07960",
+      "relations": [
+        "smd"
+      ],
+      "redshifts": "0-18",
+      "adapter": "scripts/digitize_colibre_chaikin26_smd.py",
+      "note": "Cosmic stellar mass density versus redshift (axis log10(1+z), converted exactly) for L400m7, L200m6 and the m5 line (L025, L050 or L100), each as all stars in the volume and as stars within 50 pkpc of galaxies with M* >= 1e8 Msun (top panel of the CSMD figure). L400m7 and m5 are truncated at z < 4 by the authors. Observational compilation, residual panel and the convergence, box-size, thermal-versus-hybrid and selection variants not extracted. Digitized, not rankable."
+    },
+    {
+      "id": "chaikin26-colibre-quenched",
+      "suite": "COLIBRE",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2509.07960",
+      "relations": [
+        "quenched"
+      ],
+      "redshifts": "0.1, 1, 2, 3, 5, 7",
+      "adapter": "scripts/digitize_colibre_chaikin26_quenched.py",
+      "note": "Quenched fraction (sSFR < 0.2 / t_H(z), instantaneous SFR and stellar mass within 50 pkpc) versus stellar mass for L400m7, L200m6 and the m5 line, with the plotted 68 per cent Clopper-Pearson band as yLow/yHigh; solid (resolved, at least 10 galaxies per bin) segments only. Satellite/central split at z=0, the convergence and thermal-versus-hybrid variants, and the observational and EMERGE/UniverseMachine overlays not extracted. Digitized, not rankable."
     },
     {
       "id": "katz23-sphinx20-uvlf",

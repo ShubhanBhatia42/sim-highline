@@ -1,0 +1,2705 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "chaikin26.colibre.quenched.m7.z0.1",
+      "source": "COLIBRE",
+      "run": "L400m7",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (bound stars within a 3D 50 pkpc aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies in the stellar mass bin that are quenched (sSFR < 0.2 / t_H(z)); band is the 68 per cent Clopper-Pearson interval",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9,
+        "xMax": 12.1
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9,
+            "y": 0.2271,
+            "yLow": 0.226,
+            "yHigh": 0.2282
+          },
+          {
+            "x": 9.1,
+            "y": 0.2164,
+            "yLow": 0.2152,
+            "yHigh": 0.2175
+          },
+          {
+            "x": 9.3,
+            "y": 0.2029,
+            "yLow": 0.2018,
+            "yHigh": 0.204
+          },
+          {
+            "x": 9.5,
+            "y": 0.2028,
+            "yLow": 0.2017,
+            "yHigh": 0.204
+          },
+          {
+            "x": 9.7,
+            "y": 0.2018,
+            "yLow": 0.2006,
+            "yHigh": 0.203
+          },
+          {
+            "x": 9.9,
+            "y": 0.2041,
+            "yLow": 0.2029,
+            "yHigh": 0.2053
+          },
+          {
+            "x": 10.1,
+            "y": 0.2265,
+            "yLow": 0.2252,
+            "yHigh": 0.2278
+          },
+          {
+            "x": 10.3,
+            "y": 0.2933,
+            "yLow": 0.2918,
+            "yHigh": 0.2949
+          },
+          {
+            "x": 10.5,
+            "y": 0.4042,
+            "yLow": 0.4024,
+            "yHigh": 0.406
+          },
+          {
+            "x": 10.7,
+            "y": 0.5374,
+            "yLow": 0.5353,
+            "yHigh": 0.5396
+          },
+          {
+            "x": 10.9,
+            "y": 0.6993,
+            "yLow": 0.6967,
+            "yHigh": 0.702
+          },
+          {
+            "x": 11.1,
+            "y": 0.8706,
+            "yLow": 0.8678,
+            "yHigh": 0.8735
+          },
+          {
+            "x": 11.3,
+            "y": 0.9253,
+            "yLow": 0.9217,
+            "yHigh": 0.9287
+          },
+          {
+            "x": 11.5,
+            "y": 0.8846,
+            "yLow": 0.878,
+            "yHigh": 0.891
+          },
+          {
+            "x": 11.7,
+            "y": 0.7952,
+            "yLow": 0.7805,
+            "yHigh": 0.8091
+          },
+          {
+            "x": 11.9,
+            "y": 0.7016,
+            "yLow": 0.6636,
+            "yHigh": 0.7371
+          },
+          {
+            "x": 12.1,
+            "y": 0.4172,
+            "yLow": 0.3029,
+            "yHigh": 0.5397
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Quenched fraction of COLIBRE L400m7 at z=0.1 (sSFR < 0.2 / t_H(z); the threshold moves with redshift, unlike the fixed 1e-11 / yr used elsewhere), read from the vector paths of Chaikin et al. 2026 (quenched fraction figure). Solid segment only: the paper draws the line dotted below about 1e9 Msun, where the rise in the quenched fraction may be a resolution artefact, and where fewer than 10 galaxies fall in a bin, and those parts are not extracted. yLow and yHigh are the plotted 68 per cent Clopper-Pearson interval. Stellar mass and SFR are measured within 50 pkpc 3D apertures of bound particles (SFR instantaneous). The legend names the m5 line (L025, L050 or L100)m5 without saying which box is used in each panel; the paper's mass function caption uses the largest box available, which by the redshift ranges of the data release would be L025 at z=0.1, L050 at z=1-3 and L100 at z=5-7, but that is an inference. Observational and semi-empirical overlays are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc",
+        "population": "all",
+        "quenchingCriterion": "ssfr<0.2/tH(z)",
+        "sfrTimescaleMyr": "instantaneous (gas SFR within 50 pkpc)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, quenched fraction, z=0.1",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the galaxy quenched fraction",
+        "panel": "z=0.1, L400m7 solid line",
+        "checksumSha256": "615d8d08891c155f5d4337c41d2a68ed89b697f40dbb2cf48faa431ab9198dec",
+        "sourceMember": "plots/qf.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^12 of the bottom frame of the panel column; y: labelled ticks 0.0 to 1.0 of the left frame of the panel row; both validated against the drawn ticks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.quenched.m6.z0.1",
+      "source": "COLIBRE",
+      "run": "L200m6",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (bound stars within a 3D 50 pkpc aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies in the stellar mass bin that are quenched (sSFR < 0.2 / t_H(z)); band is the 68 per cent Clopper-Pearson interval",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 8.699,
+        "xMax": 11.9
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.699,
+            "y": 0.267,
+            "yLow": 0.2642,
+            "yHigh": 0.2698
+          },
+          {
+            "x": 8.7,
+            "y": 0.2668,
+            "yLow": 0.264,
+            "yHigh": 0.2696
+          },
+          {
+            "x": 8.9,
+            "y": 0.2322,
+            "yLow": 0.2293,
+            "yHigh": 0.235
+          },
+          {
+            "x": 9.1,
+            "y": 0.2057,
+            "yLow": 0.2029,
+            "yHigh": 0.2086
+          },
+          {
+            "x": 9.3,
+            "y": 0.1859,
+            "yLow": 0.1831,
+            "yHigh": 0.1889
+          },
+          {
+            "x": 9.5,
+            "y": 0.1835,
+            "yLow": 0.1805,
+            "yHigh": 0.1865
+          },
+          {
+            "x": 9.7,
+            "y": 0.1814,
+            "yLow": 0.1783,
+            "yHigh": 0.1845
+          },
+          {
+            "x": 9.9,
+            "y": 0.1975,
+            "yLow": 0.1941,
+            "yHigh": 0.2008
+          },
+          {
+            "x": 10.1,
+            "y": 0.2478,
+            "yLow": 0.2441,
+            "yHigh": 0.2516
+          },
+          {
+            "x": 10.3,
+            "y": 0.327,
+            "yLow": 0.3226,
+            "yHigh": 0.3313
+          },
+          {
+            "x": 10.5,
+            "y": 0.4061,
+            "yLow": 0.4009,
+            "yHigh": 0.4114
+          },
+          {
+            "x": 10.7,
+            "y": 0.5006,
+            "yLow": 0.4939,
+            "yHigh": 0.5072
+          },
+          {
+            "x": 10.9,
+            "y": 0.6308,
+            "yLow": 0.6221,
+            "yHigh": 0.6395
+          },
+          {
+            "x": 11.1,
+            "y": 0.7255,
+            "yLow": 0.714,
+            "yHigh": 0.7367
+          },
+          {
+            "x": 11.3,
+            "y": 0.7599,
+            "yLow": 0.7427,
+            "yHigh": 0.7763
+          },
+          {
+            "x": 11.5,
+            "y": 0.7359,
+            "yLow": 0.708,
+            "yHigh": 0.7621
+          },
+          {
+            "x": 11.7,
+            "y": 0.6566,
+            "yLow": 0.5983,
+            "yHigh": 0.7109
+          },
+          {
+            "x": 11.9,
+            "y": 0.5247,
+            "yLow": 0.3945,
+            "yHigh": 0.6523
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Quenched fraction of COLIBRE L200m6 at z=0.1 (sSFR < 0.2 / t_H(z); the threshold moves with redshift, unlike the fixed 1e-11 / yr used elsewhere), read from the vector paths of Chaikin et al. 2026 (quenched fraction figure). Solid segment only: the paper draws the line dotted below about 1e9 Msun, where the rise in the quenched fraction may be a resolution artefact, and where fewer than 10 galaxies fall in a bin, and those parts are not extracted. yLow and yHigh are the plotted 68 per cent Clopper-Pearson interval. Stellar mass and SFR are measured within 50 pkpc 3D apertures of bound particles (SFR instantaneous). The legend names the m5 line (L025, L050 or L100)m5 without saying which box is used in each panel; the paper's mass function caption uses the largest box available, which by the redshift ranges of the data release would be L025 at z=0.1, L050 at z=1-3 and L100 at z=5-7, but that is an inference. Observational and semi-empirical overlays are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc",
+        "population": "all",
+        "quenchingCriterion": "ssfr<0.2/tH(z)",
+        "sfrTimescaleMyr": "instantaneous (gas SFR within 50 pkpc)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, quenched fraction, z=0.1",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the galaxy quenched fraction",
+        "panel": "z=0.1, L200m6 solid line",
+        "checksumSha256": "615d8d08891c155f5d4337c41d2a68ed89b697f40dbb2cf48faa431ab9198dec",
+        "sourceMember": "plots/qf.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^12 of the bottom frame of the panel column; y: labelled ticks 0.0 to 1.0 of the left frame of the panel row; both validated against the drawn ticks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.quenched.m5.z0.1",
+      "source": "COLIBRE",
+      "run": "(L025, L050 or L100)m5",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (bound stars within a 3D 50 pkpc aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies in the stellar mass bin that are quenched (sSFR < 0.2 / t_H(z)); band is the 68 per cent Clopper-Pearson interval",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 8.398,
+        "xMax": 10.3
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.398,
+            "y": 0.2216,
+            "yLow": 0.1759,
+            "yHigh": 0.2745
+          },
+          {
+            "x": 8.5,
+            "y": 0.1921,
+            "yLow": 0.1458,
+            "yHigh": 0.2472
+          },
+          {
+            "x": 8.7,
+            "y": 0.1424,
+            "yLow": 0.1034,
+            "yHigh": 0.1912
+          },
+          {
+            "x": 8.9,
+            "y": 0.0773,
+            "yLow": 0.0468,
+            "yHigh": 0.1208
+          },
+          {
+            "x": 9.1,
+            "y": -0.0009,
+            "yLow": -0.0009,
+            "yHigh": 0.0325
+          },
+          {
+            "x": 9.3,
+            "y": 0.0956,
+            "yLow": 0.0547,
+            "yHigh": 0.1553
+          },
+          {
+            "x": 9.5,
+            "y": -0.0009,
+            "yLow": -0.0009,
+            "yHigh": 0.0626
+          },
+          {
+            "x": 9.7,
+            "y": 0.0337,
+            "yLow": 0.0051,
+            "yHigh": 0.1085
+          },
+          {
+            "x": 9.9,
+            "y": 0.0734,
+            "yLow": 0.0257,
+            "yHigh": 0.1628
+          },
+          {
+            "x": 10.1,
+            "y": 0.2067,
+            "yLow": 0.1279,
+            "yHigh": 0.3096
+          },
+          {
+            "x": 10.3,
+            "y": 0.3045,
+            "yLow": 0.1998,
+            "yHigh": 0.4293
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Quenched fraction of COLIBRE (L025, L050 or L100)m5 at z=0.1 (sSFR < 0.2 / t_H(z); the threshold moves with redshift, unlike the fixed 1e-11 / yr used elsewhere), read from the vector paths of Chaikin et al. 2026 (quenched fraction figure). Solid segment only: the paper draws the line dotted below about 1e9 Msun, where the rise in the quenched fraction may be a resolution artefact, and where fewer than 10 galaxies fall in a bin, and those parts are not extracted. yLow and yHigh are the plotted 68 per cent Clopper-Pearson interval. Stellar mass and SFR are measured within 50 pkpc 3D apertures of bound particles (SFR instantaneous). The legend names the m5 line (L025, L050 or L100)m5 without saying which box is used in each panel; the paper's mass function caption uses the largest box available, which by the redshift ranges of the data release would be L025 at z=0.1, L050 at z=1-3 and L100 at z=5-7, but that is an inference. Observational and semi-empirical overlays are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc",
+        "population": "all",
+        "quenchingCriterion": "ssfr<0.2/tH(z)",
+        "sfrTimescaleMyr": "instantaneous (gas SFR within 50 pkpc)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, quenched fraction, z=0.1",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the galaxy quenched fraction",
+        "panel": "z=0.1, (L025, L050 or L100)m5 solid line",
+        "checksumSha256": "615d8d08891c155f5d4337c41d2a68ed89b697f40dbb2cf48faa431ab9198dec",
+        "sourceMember": "plots/qf.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^12 of the bottom frame of the panel column; y: labelled ticks 0.0 to 1.0 of the left frame of the panel row; both validated against the drawn ticks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.quenched.m7.z1",
+      "source": "COLIBRE",
+      "run": "L400m7",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 1,
+        "zNominal": 1,
+        "zMin": 1,
+        "zMax": 1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (bound stars within a 3D 50 pkpc aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies in the stellar mass bin that are quenched (sSFR < 0.2 / t_H(z)); band is the 68 per cent Clopper-Pearson interval",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9,
+        "xMax": 11.9
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9,
+            "y": 0.0683,
+            "yLow": 0.0676,
+            "yHigh": 0.0689
+          },
+          {
+            "x": 9.1,
+            "y": 0.0543,
+            "yLow": 0.0537,
+            "yHigh": 0.0549
+          },
+          {
+            "x": 9.3,
+            "y": 0.0405,
+            "yLow": 0.0399,
+            "yHigh": 0.0411
+          },
+          {
+            "x": 9.5,
+            "y": 0.0341,
+            "yLow": 0.0336,
+            "yHigh": 0.0347
+          },
+          {
+            "x": 9.7,
+            "y": 0.03,
+            "yLow": 0.0295,
+            "yHigh": 0.0306
+          },
+          {
+            "x": 9.9,
+            "y": 0.0335,
+            "yLow": 0.0329,
+            "yHigh": 0.0341
+          },
+          {
+            "x": 10.1,
+            "y": 0.065,
+            "yLow": 0.0641,
+            "yHigh": 0.0659
+          },
+          {
+            "x": 10.3,
+            "y": 0.1453,
+            "yLow": 0.1439,
+            "yHigh": 0.1466
+          },
+          {
+            "x": 10.5,
+            "y": 0.2602,
+            "yLow": 0.2584,
+            "yHigh": 0.2621
+          },
+          {
+            "x": 10.7,
+            "y": 0.3849,
+            "yLow": 0.3826,
+            "yHigh": 0.3873
+          },
+          {
+            "x": 10.9,
+            "y": 0.5077,
+            "yLow": 0.5044,
+            "yHigh": 0.5109
+          },
+          {
+            "x": 11.1,
+            "y": 0.6489,
+            "yLow": 0.6441,
+            "yHigh": 0.6535
+          },
+          {
+            "x": 11.3,
+            "y": 0.7398,
+            "yLow": 0.7322,
+            "yHigh": 0.7472
+          },
+          {
+            "x": 11.5,
+            "y": 0.7803,
+            "yLow": 0.7666,
+            "yHigh": 0.7934
+          },
+          {
+            "x": 11.7,
+            "y": 0.7377,
+            "yLow": 0.7069,
+            "yHigh": 0.7665
+          },
+          {
+            "x": 11.9,
+            "y": 0.6263,
+            "yLow": 0.535,
+            "yHigh": 0.7104
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Quenched fraction of COLIBRE L400m7 at z=1 (sSFR < 0.2 / t_H(z); the threshold moves with redshift, unlike the fixed 1e-11 / yr used elsewhere), read from the vector paths of Chaikin et al. 2026 (quenched fraction figure). Solid segment only: the paper draws the line dotted below about 1e9 Msun, where the rise in the quenched fraction may be a resolution artefact, and where fewer than 10 galaxies fall in a bin, and those parts are not extracted. yLow and yHigh are the plotted 68 per cent Clopper-Pearson interval. Stellar mass and SFR are measured within 50 pkpc 3D apertures of bound particles (SFR instantaneous). The legend names the m5 line (L025, L050 or L100)m5 without saying which box is used in each panel; the paper's mass function caption uses the largest box available, which by the redshift ranges of the data release would be L025 at z=0.1, L050 at z=1-3 and L100 at z=5-7, but that is an inference. Observational and semi-empirical overlays are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc",
+        "population": "all",
+        "quenchingCriterion": "ssfr<0.2/tH(z)",
+        "sfrTimescaleMyr": "instantaneous (gas SFR within 50 pkpc)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, quenched fraction, z=1",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the galaxy quenched fraction",
+        "panel": "z=1, L400m7 solid line",
+        "checksumSha256": "615d8d08891c155f5d4337c41d2a68ed89b697f40dbb2cf48faa431ab9198dec",
+        "sourceMember": "plots/qf.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^12 of the bottom frame of the panel column; y: labelled ticks 0.0 to 1.0 of the left frame of the panel row; both validated against the drawn ticks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.quenched.m6.z1",
+      "source": "COLIBRE",
+      "run": "L200m6",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 1,
+        "zNominal": 1,
+        "zMin": 1,
+        "zMax": 1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (bound stars within a 3D 50 pkpc aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies in the stellar mass bin that are quenched (sSFR < 0.2 / t_H(z)); band is the 68 per cent Clopper-Pearson interval",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 8.699,
+        "xMax": 11.7
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.699,
+            "y": 0.0696,
+            "yLow": 0.0681,
+            "yHigh": 0.0711
+          },
+          {
+            "x": 8.7,
+            "y": 0.0694,
+            "yLow": 0.0679,
+            "yHigh": 0.071
+          },
+          {
+            "x": 8.9,
+            "y": 0.0527,
+            "yLow": 0.0513,
+            "yHigh": 0.0542
+          },
+          {
+            "x": 9.1,
+            "y": 0.0401,
+            "yLow": 0.0388,
+            "yHigh": 0.0415
+          },
+          {
+            "x": 9.3,
+            "y": 0.0323,
+            "yLow": 0.031,
+            "yHigh": 0.0336
+          },
+          {
+            "x": 9.5,
+            "y": 0.0247,
+            "yLow": 0.0235,
+            "yHigh": 0.0259
+          },
+          {
+            "x": 9.7,
+            "y": 0.0226,
+            "yLow": 0.0214,
+            "yHigh": 0.0239
+          },
+          {
+            "x": 9.9,
+            "y": 0.0275,
+            "yLow": 0.026,
+            "yHigh": 0.029
+          },
+          {
+            "x": 10.1,
+            "y": 0.0497,
+            "yLow": 0.0476,
+            "yHigh": 0.0519
+          },
+          {
+            "x": 10.3,
+            "y": 0.1015,
+            "yLow": 0.0983,
+            "yHigh": 0.1048
+          },
+          {
+            "x": 10.5,
+            "y": 0.1564,
+            "yLow": 0.152,
+            "yHigh": 0.161
+          },
+          {
+            "x": 10.7,
+            "y": 0.262,
+            "yLow": 0.2554,
+            "yHigh": 0.2686
+          },
+          {
+            "x": 10.9,
+            "y": 0.3789,
+            "yLow": 0.369,
+            "yHigh": 0.3888
+          },
+          {
+            "x": 11.1,
+            "y": 0.4869,
+            "yLow": 0.4715,
+            "yHigh": 0.5023
+          },
+          {
+            "x": 11.3,
+            "y": 0.6041,
+            "yLow": 0.5788,
+            "yHigh": 0.6289
+          },
+          {
+            "x": 11.5,
+            "y": 0.6217,
+            "yLow": 0.5759,
+            "yHigh": 0.6656
+          },
+          {
+            "x": 11.7,
+            "y": 0.6299,
+            "yLow": 0.5313,
+            "yHigh": 0.72
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Quenched fraction of COLIBRE L200m6 at z=1 (sSFR < 0.2 / t_H(z); the threshold moves with redshift, unlike the fixed 1e-11 / yr used elsewhere), read from the vector paths of Chaikin et al. 2026 (quenched fraction figure). Solid segment only: the paper draws the line dotted below about 1e9 Msun, where the rise in the quenched fraction may be a resolution artefact, and where fewer than 10 galaxies fall in a bin, and those parts are not extracted. yLow and yHigh are the plotted 68 per cent Clopper-Pearson interval. Stellar mass and SFR are measured within 50 pkpc 3D apertures of bound particles (SFR instantaneous). The legend names the m5 line (L025, L050 or L100)m5 without saying which box is used in each panel; the paper's mass function caption uses the largest box available, which by the redshift ranges of the data release would be L025 at z=0.1, L050 at z=1-3 and L100 at z=5-7, but that is an inference. Observational and semi-empirical overlays are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc",
+        "population": "all",
+        "quenchingCriterion": "ssfr<0.2/tH(z)",
+        "sfrTimescaleMyr": "instantaneous (gas SFR within 50 pkpc)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, quenched fraction, z=1",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the galaxy quenched fraction",
+        "panel": "z=1, L200m6 solid line",
+        "checksumSha256": "615d8d08891c155f5d4337c41d2a68ed89b697f40dbb2cf48faa431ab9198dec",
+        "sourceMember": "plots/qf.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^12 of the bottom frame of the panel column; y: labelled ticks 0.0 to 1.0 of the left frame of the panel row; both validated against the drawn ticks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.quenched.m5.z1",
+      "source": "COLIBRE",
+      "run": "(L025, L050 or L100)m5",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 1,
+        "zNominal": 1,
+        "zMin": 1,
+        "zMax": 1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (bound stars within a 3D 50 pkpc aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies in the stellar mass bin that are quenched (sSFR < 0.2 / t_H(z)); band is the 68 per cent Clopper-Pearson interval",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 8.398,
+        "xMax": 11.1
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.398,
+            "y": 0.0675,
+            "yLow": 0.0594,
+            "yHigh": 0.0767
+          },
+          {
+            "x": 8.5,
+            "y": 0.0459,
+            "yLow": 0.0386,
+            "yHigh": 0.0543
+          },
+          {
+            "x": 8.7,
+            "y": 0.0527,
+            "yLow": 0.0443,
+            "yHigh": 0.0623
+          },
+          {
+            "x": 8.9,
+            "y": 0.029,
+            "yLow": 0.0221,
+            "yHigh": 0.0377
+          },
+          {
+            "x": 9.1,
+            "y": 0.0225,
+            "yLow": 0.0159,
+            "yHigh": 0.0312
+          },
+          {
+            "x": 9.3,
+            "y": 0.0094,
+            "yLow": 0.0045,
+            "yHigh": 0.0174
+          },
+          {
+            "x": 9.5,
+            "y": 0.0057,
+            "yLow": 0.0014,
+            "yHigh": 0.0144
+          },
+          {
+            "x": 9.7,
+            "y": 0.0035,
+            "yLow": -0.0002,
+            "yHigh": 0.0137
+          },
+          {
+            "x": 9.9,
+            "y": 0.005,
+            "yLow": 0.0001,
+            "yHigh": 0.0185
+          },
+          {
+            "x": 10.1,
+            "y": 0.0368,
+            "yLow": 0.0206,
+            "yHigh": 0.0614
+          },
+          {
+            "x": 10.3,
+            "y": 0.0542,
+            "yLow": 0.0307,
+            "yHigh": 0.0896
+          },
+          {
+            "x": 10.5,
+            "y": 0.1165,
+            "yLow": 0.0828,
+            "yHigh": 0.1595
+          },
+          {
+            "x": 10.7,
+            "y": 0.1316,
+            "yLow": 0.0842,
+            "yHigh": 0.1954
+          },
+          {
+            "x": 10.9,
+            "y": 0.1663,
+            "yLow": 0.0883,
+            "yHigh": 0.2785
+          },
+          {
+            "x": 11.1,
+            "y": 0.4005,
+            "yLow": 0.2551,
+            "yHigh": 0.5618
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Quenched fraction of COLIBRE (L025, L050 or L100)m5 at z=1 (sSFR < 0.2 / t_H(z); the threshold moves with redshift, unlike the fixed 1e-11 / yr used elsewhere), read from the vector paths of Chaikin et al. 2026 (quenched fraction figure). Solid segment only: the paper draws the line dotted below about 1e9 Msun, where the rise in the quenched fraction may be a resolution artefact, and where fewer than 10 galaxies fall in a bin, and those parts are not extracted. yLow and yHigh are the plotted 68 per cent Clopper-Pearson interval. Stellar mass and SFR are measured within 50 pkpc 3D apertures of bound particles (SFR instantaneous). The legend names the m5 line (L025, L050 or L100)m5 without saying which box is used in each panel; the paper's mass function caption uses the largest box available, which by the redshift ranges of the data release would be L025 at z=0.1, L050 at z=1-3 and L100 at z=5-7, but that is an inference. Observational and semi-empirical overlays are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc",
+        "population": "all",
+        "quenchingCriterion": "ssfr<0.2/tH(z)",
+        "sfrTimescaleMyr": "instantaneous (gas SFR within 50 pkpc)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, quenched fraction, z=1",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the galaxy quenched fraction",
+        "panel": "z=1, (L025, L050 or L100)m5 solid line",
+        "checksumSha256": "615d8d08891c155f5d4337c41d2a68ed89b697f40dbb2cf48faa431ab9198dec",
+        "sourceMember": "plots/qf.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^12 of the bottom frame of the panel column; y: labelled ticks 0.0 to 1.0 of the left frame of the panel row; both validated against the drawn ticks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.quenched.m7.z2",
+      "source": "COLIBRE",
+      "run": "L400m7",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 2,
+        "zMax": 2,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (bound stars within a 3D 50 pkpc aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies in the stellar mass bin that are quenched (sSFR < 0.2 / t_H(z)); band is the 68 per cent Clopper-Pearson interval",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9,
+        "xMax": 11.9
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9,
+            "y": 0.0615,
+            "yLow": 0.0608,
+            "yHigh": 0.0621
+          },
+          {
+            "x": 9.1,
+            "y": 0.0417,
+            "yLow": 0.0411,
+            "yHigh": 0.0423
+          },
+          {
+            "x": 9.3,
+            "y": 0.0238,
+            "yLow": 0.0233,
+            "yHigh": 0.0243
+          },
+          {
+            "x": 9.5,
+            "y": 0.0148,
+            "yLow": 0.0144,
+            "yHigh": 0.0153
+          },
+          {
+            "x": 9.7,
+            "y": 0.0135,
+            "yLow": 0.013,
+            "yHigh": 0.0139
+          },
+          {
+            "x": 9.9,
+            "y": 0.0224,
+            "yLow": 0.0218,
+            "yHigh": 0.023
+          },
+          {
+            "x": 10.1,
+            "y": 0.0528,
+            "yLow": 0.0518,
+            "yHigh": 0.0538
+          },
+          {
+            "x": 10.3,
+            "y": 0.1056,
+            "yLow": 0.1041,
+            "yHigh": 0.1071
+          },
+          {
+            "x": 10.5,
+            "y": 0.1827,
+            "yLow": 0.1806,
+            "yHigh": 0.1849
+          },
+          {
+            "x": 10.7,
+            "y": 0.2699,
+            "yLow": 0.2669,
+            "yHigh": 0.2728
+          },
+          {
+            "x": 10.9,
+            "y": 0.3802,
+            "yLow": 0.376,
+            "yHigh": 0.3845
+          },
+          {
+            "x": 11.1,
+            "y": 0.4712,
+            "yLow": 0.4647,
+            "yHigh": 0.4777
+          },
+          {
+            "x": 11.3,
+            "y": 0.5872,
+            "yLow": 0.5765,
+            "yHigh": 0.5979
+          },
+          {
+            "x": 11.5,
+            "y": 0.6746,
+            "yLow": 0.6556,
+            "yHigh": 0.6931
+          },
+          {
+            "x": 11.7,
+            "y": 0.7839,
+            "yLow": 0.7469,
+            "yHigh": 0.8172
+          },
+          {
+            "x": 11.9,
+            "y": 0.7838,
+            "yLow": 0.695,
+            "yHigh": 0.8546
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Quenched fraction of COLIBRE L400m7 at z=2 (sSFR < 0.2 / t_H(z); the threshold moves with redshift, unlike the fixed 1e-11 / yr used elsewhere), read from the vector paths of Chaikin et al. 2026 (quenched fraction figure). Solid segment only: the paper draws the line dotted below about 1e9 Msun, where the rise in the quenched fraction may be a resolution artefact, and where fewer than 10 galaxies fall in a bin, and those parts are not extracted. yLow and yHigh are the plotted 68 per cent Clopper-Pearson interval. Stellar mass and SFR are measured within 50 pkpc 3D apertures of bound particles (SFR instantaneous). The legend names the m5 line (L025, L050 or L100)m5 without saying which box is used in each panel; the paper's mass function caption uses the largest box available, which by the redshift ranges of the data release would be L025 at z=0.1, L050 at z=1-3 and L100 at z=5-7, but that is an inference. Observational and semi-empirical overlays are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc",
+        "population": "all",
+        "quenchingCriterion": "ssfr<0.2/tH(z)",
+        "sfrTimescaleMyr": "instantaneous (gas SFR within 50 pkpc)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, quenched fraction, z=2",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the galaxy quenched fraction",
+        "panel": "z=2, L400m7 solid line",
+        "checksumSha256": "615d8d08891c155f5d4337c41d2a68ed89b697f40dbb2cf48faa431ab9198dec",
+        "sourceMember": "plots/qf.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^12 of the bottom frame of the panel column; y: labelled ticks 0.0 to 1.0 of the left frame of the panel row; both validated against the drawn ticks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.quenched.m6.z2",
+      "source": "COLIBRE",
+      "run": "L200m6",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 2,
+        "zMax": 2,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (bound stars within a 3D 50 pkpc aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies in the stellar mass bin that are quenched (sSFR < 0.2 / t_H(z)); band is the 68 per cent Clopper-Pearson interval",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 8.699,
+        "xMax": 11.7
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.699,
+            "y": 0.042,
+            "yLow": 0.0408,
+            "yHigh": 0.0432
+          },
+          {
+            "x": 8.7,
+            "y": 0.0419,
+            "yLow": 0.0407,
+            "yHigh": 0.0431
+          },
+          {
+            "x": 8.9,
+            "y": 0.0234,
+            "yLow": 0.0225,
+            "yHigh": 0.0244
+          },
+          {
+            "x": 9.1,
+            "y": 0.0144,
+            "yLow": 0.0135,
+            "yHigh": 0.0152
+          },
+          {
+            "x": 9.3,
+            "y": 0.0101,
+            "yLow": 0.0093,
+            "yHigh": 0.0109
+          },
+          {
+            "x": 9.5,
+            "y": 0.0087,
+            "yLow": 0.0079,
+            "yHigh": 0.0095
+          },
+          {
+            "x": 9.7,
+            "y": 0.0101,
+            "yLow": 0.0092,
+            "yHigh": 0.0112
+          },
+          {
+            "x": 9.9,
+            "y": 0.0138,
+            "yLow": 0.0126,
+            "yHigh": 0.0152
+          },
+          {
+            "x": 10.1,
+            "y": 0.0201,
+            "yLow": 0.0184,
+            "yHigh": 0.022
+          },
+          {
+            "x": 10.3,
+            "y": 0.0411,
+            "yLow": 0.0383,
+            "yHigh": 0.0441
+          },
+          {
+            "x": 10.5,
+            "y": 0.0708,
+            "yLow": 0.0665,
+            "yHigh": 0.0753
+          },
+          {
+            "x": 10.7,
+            "y": 0.1246,
+            "yLow": 0.1176,
+            "yHigh": 0.1319
+          },
+          {
+            "x": 10.9,
+            "y": 0.1686,
+            "yLow": 0.1581,
+            "yHigh": 0.1796
+          },
+          {
+            "x": 11.1,
+            "y": 0.2651,
+            "yLow": 0.2467,
+            "yHigh": 0.2843
+          },
+          {
+            "x": 11.3,
+            "y": 0.412,
+            "yLow": 0.3795,
+            "yHigh": 0.4453
+          },
+          {
+            "x": 11.5,
+            "y": 0.5258,
+            "yLow": 0.4702,
+            "yHigh": 0.5807
+          },
+          {
+            "x": 11.7,
+            "y": 0.64,
+            "yLow": 0.5206,
+            "yHigh": 0.7463
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Quenched fraction of COLIBRE L200m6 at z=2 (sSFR < 0.2 / t_H(z); the threshold moves with redshift, unlike the fixed 1e-11 / yr used elsewhere), read from the vector paths of Chaikin et al. 2026 (quenched fraction figure). Solid segment only: the paper draws the line dotted below about 1e9 Msun, where the rise in the quenched fraction may be a resolution artefact, and where fewer than 10 galaxies fall in a bin, and those parts are not extracted. yLow and yHigh are the plotted 68 per cent Clopper-Pearson interval. Stellar mass and SFR are measured within 50 pkpc 3D apertures of bound particles (SFR instantaneous). The legend names the m5 line (L025, L050 or L100)m5 without saying which box is used in each panel; the paper's mass function caption uses the largest box available, which by the redshift ranges of the data release would be L025 at z=0.1, L050 at z=1-3 and L100 at z=5-7, but that is an inference. Observational and semi-empirical overlays are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc",
+        "population": "all",
+        "quenchingCriterion": "ssfr<0.2/tH(z)",
+        "sfrTimescaleMyr": "instantaneous (gas SFR within 50 pkpc)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, quenched fraction, z=2",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the galaxy quenched fraction",
+        "panel": "z=2, L200m6 solid line",
+        "checksumSha256": "615d8d08891c155f5d4337c41d2a68ed89b697f40dbb2cf48faa431ab9198dec",
+        "sourceMember": "plots/qf.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^12 of the bottom frame of the panel column; y: labelled ticks 0.0 to 1.0 of the left frame of the panel row; both validated against the drawn ticks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.quenched.m5.z2",
+      "source": "COLIBRE",
+      "run": "(L025, L050 or L100)m5",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 2,
+        "zMax": 2,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (bound stars within a 3D 50 pkpc aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies in the stellar mass bin that are quenched (sSFR < 0.2 / t_H(z)); band is the 68 per cent Clopper-Pearson interval",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 8.398,
+        "xMax": 10.9
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.398,
+            "y": 0.0448,
+            "yLow": 0.0382,
+            "yHigh": 0.0524
+          },
+          {
+            "x": 8.5,
+            "y": 0.03,
+            "yLow": 0.0242,
+            "yHigh": 0.0369
+          },
+          {
+            "x": 8.7,
+            "y": 0.0316,
+            "yLow": 0.025,
+            "yHigh": 0.0396
+          },
+          {
+            "x": 8.9,
+            "y": 0.0198,
+            "yLow": 0.014,
+            "yHigh": 0.0276
+          },
+          {
+            "x": 9.1,
+            "y": 0.0349,
+            "yLow": 0.0261,
+            "yHigh": 0.0461
+          },
+          {
+            "x": 9.3,
+            "y": 0.0081,
+            "yLow": 0.0037,
+            "yHigh": 0.0159
+          },
+          {
+            "x": 9.5,
+            "y": 0.0204,
+            "yLow": 0.0117,
+            "yHigh": 0.0339
+          },
+          {
+            "x": 9.7,
+            "y": 0.0197,
+            "yLow": 0.0091,
+            "yHigh": 0.0385
+          },
+          {
+            "x": 9.9,
+            "y": 0,
+            "yLow": 0,
+            "yHigh": 0.0143
+          },
+          {
+            "x": 10.1,
+            "y": 0.0152,
+            "yLow": 0.0026,
+            "yHigh": 0.049
+          },
+          {
+            "x": 10.3,
+            "y": 0.0182,
+            "yLow": 0.0032,
+            "yHigh": 0.0586
+          },
+          {
+            "x": 10.5,
+            "y": 0.0435,
+            "yLow": 0.0076,
+            "yHigh": 0.136
+          },
+          {
+            "x": 10.7,
+            "y": 0,
+            "yLow": 0,
+            "yHigh": 0.0876
+          },
+          {
+            "x": 10.9,
+            "y": 0.1177,
+            "yLow": 0.0423,
+            "yHigh": 0.2516
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Quenched fraction of COLIBRE (L025, L050 or L100)m5 at z=2 (sSFR < 0.2 / t_H(z); the threshold moves with redshift, unlike the fixed 1e-11 / yr used elsewhere), read from the vector paths of Chaikin et al. 2026 (quenched fraction figure). Solid segment only: the paper draws the line dotted below about 1e9 Msun, where the rise in the quenched fraction may be a resolution artefact, and where fewer than 10 galaxies fall in a bin, and those parts are not extracted. yLow and yHigh are the plotted 68 per cent Clopper-Pearson interval. Stellar mass and SFR are measured within 50 pkpc 3D apertures of bound particles (SFR instantaneous). The legend names the m5 line (L025, L050 or L100)m5 without saying which box is used in each panel; the paper's mass function caption uses the largest box available, which by the redshift ranges of the data release would be L025 at z=0.1, L050 at z=1-3 and L100 at z=5-7, but that is an inference. Observational and semi-empirical overlays are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc",
+        "population": "all",
+        "quenchingCriterion": "ssfr<0.2/tH(z)",
+        "sfrTimescaleMyr": "instantaneous (gas SFR within 50 pkpc)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, quenched fraction, z=2",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the galaxy quenched fraction",
+        "panel": "z=2, (L025, L050 or L100)m5 solid line",
+        "checksumSha256": "615d8d08891c155f5d4337c41d2a68ed89b697f40dbb2cf48faa431ab9198dec",
+        "sourceMember": "plots/qf.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^12 of the bottom frame of the panel column; y: labelled ticks 0.0 to 1.0 of the left frame of the panel row; both validated against the drawn ticks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.quenched.m7.z3",
+      "source": "COLIBRE",
+      "run": "L400m7",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 3,
+        "zNominal": 3,
+        "zMin": 3,
+        "zMax": 3,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (bound stars within a 3D 50 pkpc aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies in the stellar mass bin that are quenched (sSFR < 0.2 / t_H(z)); band is the 68 per cent Clopper-Pearson interval",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9,
+        "xMax": 11.7
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9,
+            "y": 0.0394,
+            "yLow": 0.0388,
+            "yHigh": 0.04
+          },
+          {
+            "x": 9.1,
+            "y": 0.0265,
+            "yLow": 0.0259,
+            "yHigh": 0.0271
+          },
+          {
+            "x": 9.3,
+            "y": 0.013,
+            "yLow": 0.0125,
+            "yHigh": 0.0135
+          },
+          {
+            "x": 9.5,
+            "y": 0.0079,
+            "yLow": 0.0075,
+            "yHigh": 0.0083
+          },
+          {
+            "x": 9.7,
+            "y": 0.0075,
+            "yLow": 0.0071,
+            "yHigh": 0.008
+          },
+          {
+            "x": 9.9,
+            "y": 0.0167,
+            "yLow": 0.016,
+            "yHigh": 0.0175
+          },
+          {
+            "x": 10.1,
+            "y": 0.0402,
+            "yLow": 0.039,
+            "yHigh": 0.0415
+          },
+          {
+            "x": 10.3,
+            "y": 0.0897,
+            "yLow": 0.0877,
+            "yHigh": 0.0917
+          },
+          {
+            "x": 10.5,
+            "y": 0.1575,
+            "yLow": 0.1545,
+            "yHigh": 0.1606
+          },
+          {
+            "x": 10.7,
+            "y": 0.2381,
+            "yLow": 0.2337,
+            "yHigh": 0.2425
+          },
+          {
+            "x": 10.9,
+            "y": 0.3297,
+            "yLow": 0.3231,
+            "yHigh": 0.3364
+          },
+          {
+            "x": 11.1,
+            "y": 0.446,
+            "yLow": 0.4347,
+            "yHigh": 0.4573
+          },
+          {
+            "x": 11.3,
+            "y": 0.5652,
+            "yLow": 0.5444,
+            "yHigh": 0.5857
+          },
+          {
+            "x": 11.5,
+            "y": 0.6101,
+            "yLow": 0.5679,
+            "yHigh": 0.6508
+          },
+          {
+            "x": 11.7,
+            "y": 0.6923,
+            "yLow": 0.5767,
+            "yHigh": 0.7906
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Quenched fraction of COLIBRE L400m7 at z=3 (sSFR < 0.2 / t_H(z); the threshold moves with redshift, unlike the fixed 1e-11 / yr used elsewhere), read from the vector paths of Chaikin et al. 2026 (quenched fraction figure). Solid segment only: the paper draws the line dotted below about 1e9 Msun, where the rise in the quenched fraction may be a resolution artefact, and where fewer than 10 galaxies fall in a bin, and those parts are not extracted. yLow and yHigh are the plotted 68 per cent Clopper-Pearson interval. Stellar mass and SFR are measured within 50 pkpc 3D apertures of bound particles (SFR instantaneous). The legend names the m5 line (L025, L050 or L100)m5 without saying which box is used in each panel; the paper's mass function caption uses the largest box available, which by the redshift ranges of the data release would be L025 at z=0.1, L050 at z=1-3 and L100 at z=5-7, but that is an inference. Observational and semi-empirical overlays are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc",
+        "population": "all",
+        "quenchingCriterion": "ssfr<0.2/tH(z)",
+        "sfrTimescaleMyr": "instantaneous (gas SFR within 50 pkpc)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, quenched fraction, z=3",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the galaxy quenched fraction",
+        "panel": "z=3, L400m7 solid line",
+        "checksumSha256": "615d8d08891c155f5d4337c41d2a68ed89b697f40dbb2cf48faa431ab9198dec",
+        "sourceMember": "plots/qf.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^12 of the bottom frame of the panel column; y: labelled ticks 0.0 to 1.0 of the left frame of the panel row; both validated against the drawn ticks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.quenched.m6.z3",
+      "source": "COLIBRE",
+      "run": "L200m6",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 3,
+        "zNominal": 3,
+        "zMin": 3,
+        "zMax": 3,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (bound stars within a 3D 50 pkpc aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies in the stellar mass bin that are quenched (sSFR < 0.2 / t_H(z)); band is the 68 per cent Clopper-Pearson interval",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 8.699,
+        "xMax": 11.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.699,
+            "y": 0.0201,
+            "yLow": 0.0192,
+            "yHigh": 0.0211
+          },
+          {
+            "x": 8.7,
+            "y": 0.02,
+            "yLow": 0.0191,
+            "yHigh": 0.021
+          },
+          {
+            "x": 8.9,
+            "y": 0.0123,
+            "yLow": 0.0115,
+            "yHigh": 0.0131
+          },
+          {
+            "x": 9.1,
+            "y": 0.0076,
+            "yLow": 0.0069,
+            "yHigh": 0.0084
+          },
+          {
+            "x": 9.3,
+            "y": 0.007,
+            "yLow": 0.0062,
+            "yHigh": 0.0079
+          },
+          {
+            "x": 9.5,
+            "y": 0.0067,
+            "yLow": 0.0058,
+            "yHigh": 0.0077
+          },
+          {
+            "x": 9.7,
+            "y": 0.0097,
+            "yLow": 0.0085,
+            "yHigh": 0.0112
+          },
+          {
+            "x": 9.9,
+            "y": 0.0119,
+            "yLow": 0.0103,
+            "yHigh": 0.0138
+          },
+          {
+            "x": 10.1,
+            "y": 0.0161,
+            "yLow": 0.0139,
+            "yHigh": 0.0187
+          },
+          {
+            "x": 10.3,
+            "y": 0.0248,
+            "yLow": 0.0215,
+            "yHigh": 0.0286
+          },
+          {
+            "x": 10.5,
+            "y": 0.0617,
+            "yLow": 0.0554,
+            "yHigh": 0.0687
+          },
+          {
+            "x": 10.7,
+            "y": 0.0861,
+            "yLow": 0.0762,
+            "yHigh": 0.097
+          },
+          {
+            "x": 10.9,
+            "y": 0.152,
+            "yLow": 0.1349,
+            "yHigh": 0.1706
+          },
+          {
+            "x": 11.1,
+            "y": 0.1658,
+            "yLow": 0.138,
+            "yHigh": 0.1974
+          },
+          {
+            "x": 11.3,
+            "y": 0.2727,
+            "yLow": 0.2149,
+            "yHigh": 0.3382
+          },
+          {
+            "x": 11.5,
+            "y": 0.4286,
+            "yLow": 0.305,
+            "yHigh": 0.5601
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Quenched fraction of COLIBRE L200m6 at z=3 (sSFR < 0.2 / t_H(z); the threshold moves with redshift, unlike the fixed 1e-11 / yr used elsewhere), read from the vector paths of Chaikin et al. 2026 (quenched fraction figure). Solid segment only: the paper draws the line dotted below about 1e9 Msun, where the rise in the quenched fraction may be a resolution artefact, and where fewer than 10 galaxies fall in a bin, and those parts are not extracted. yLow and yHigh are the plotted 68 per cent Clopper-Pearson interval. Stellar mass and SFR are measured within 50 pkpc 3D apertures of bound particles (SFR instantaneous). The legend names the m5 line (L025, L050 or L100)m5 without saying which box is used in each panel; the paper's mass function caption uses the largest box available, which by the redshift ranges of the data release would be L025 at z=0.1, L050 at z=1-3 and L100 at z=5-7, but that is an inference. Observational and semi-empirical overlays are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc",
+        "population": "all",
+        "quenchingCriterion": "ssfr<0.2/tH(z)",
+        "sfrTimescaleMyr": "instantaneous (gas SFR within 50 pkpc)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, quenched fraction, z=3",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the galaxy quenched fraction",
+        "panel": "z=3, L200m6 solid line",
+        "checksumSha256": "615d8d08891c155f5d4337c41d2a68ed89b697f40dbb2cf48faa431ab9198dec",
+        "sourceMember": "plots/qf.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^12 of the bottom frame of the panel column; y: labelled ticks 0.0 to 1.0 of the left frame of the panel row; both validated against the drawn ticks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.quenched.m5.z3",
+      "source": "COLIBRE",
+      "run": "(L025, L050 or L100)m5",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 3,
+        "zNominal": 3,
+        "zMin": 3,
+        "zMax": 3,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (bound stars within a 3D 50 pkpc aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies in the stellar mass bin that are quenched (sSFR < 0.2 / t_H(z)); band is the 68 per cent Clopper-Pearson interval",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 8.398,
+        "xMax": 10.7
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.398,
+            "y": 0.0431,
+            "yLow": 0.0357,
+            "yHigh": 0.0517
+          },
+          {
+            "x": 8.5,
+            "y": 0.0418,
+            "yLow": 0.0341,
+            "yHigh": 0.051
+          },
+          {
+            "x": 8.7,
+            "y": 0.03,
+            "yLow": 0.0224,
+            "yHigh": 0.0397
+          },
+          {
+            "x": 8.9,
+            "y": 0.0141,
+            "yLow": 0.0086,
+            "yHigh": 0.0225
+          },
+          {
+            "x": 9.1,
+            "y": 0.0442,
+            "yLow": 0.0313,
+            "yHigh": 0.0613
+          },
+          {
+            "x": 9.3,
+            "y": 0.0398,
+            "yLow": 0.027,
+            "yHigh": 0.0574
+          },
+          {
+            "x": 9.5,
+            "y": 0.0172,
+            "yLow": 0.0061,
+            "yHigh": 0.0394
+          },
+          {
+            "x": 9.7,
+            "y": 0,
+            "yLow": 0,
+            "yHigh": 0.0224
+          },
+          {
+            "x": 9.9,
+            "y": 0.0172,
+            "yLow": 0.003,
+            "yHigh": 0.0556
+          },
+          {
+            "x": 10.1,
+            "y": 0,
+            "yLow": 0,
+            "yHigh": 0.0427
+          },
+          {
+            "x": 10.3,
+            "y": 0.0476,
+            "yLow": 0.0083,
+            "yHigh": 0.1483
+          },
+          {
+            "x": 10.5,
+            "y": 0,
+            "yLow": 0,
+            "yHigh": 0.1674
+          },
+          {
+            "x": 10.7,
+            "y": 0.1,
+            "yLow": 0.0173,
+            "yHigh": 0.2933
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Quenched fraction of COLIBRE (L025, L050 or L100)m5 at z=3 (sSFR < 0.2 / t_H(z); the threshold moves with redshift, unlike the fixed 1e-11 / yr used elsewhere), read from the vector paths of Chaikin et al. 2026 (quenched fraction figure). Solid segment only: the paper draws the line dotted below about 1e9 Msun, where the rise in the quenched fraction may be a resolution artefact, and where fewer than 10 galaxies fall in a bin, and those parts are not extracted. yLow and yHigh are the plotted 68 per cent Clopper-Pearson interval. Stellar mass and SFR are measured within 50 pkpc 3D apertures of bound particles (SFR instantaneous). The legend names the m5 line (L025, L050 or L100)m5 without saying which box is used in each panel; the paper's mass function caption uses the largest box available, which by the redshift ranges of the data release would be L025 at z=0.1, L050 at z=1-3 and L100 at z=5-7, but that is an inference. Observational and semi-empirical overlays are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc",
+        "population": "all",
+        "quenchingCriterion": "ssfr<0.2/tH(z)",
+        "sfrTimescaleMyr": "instantaneous (gas SFR within 50 pkpc)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, quenched fraction, z=3",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the galaxy quenched fraction",
+        "panel": "z=3, (L025, L050 or L100)m5 solid line",
+        "checksumSha256": "615d8d08891c155f5d4337c41d2a68ed89b697f40dbb2cf48faa431ab9198dec",
+        "sourceMember": "plots/qf.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^12 of the bottom frame of the panel column; y: labelled ticks 0.0 to 1.0 of the left frame of the panel row; both validated against the drawn ticks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.quenched.m7.z5",
+      "source": "COLIBRE",
+      "run": "L400m7",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (bound stars within a 3D 50 pkpc aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies in the stellar mass bin that are quenched (sSFR < 0.2 / t_H(z)); band is the 68 per cent Clopper-Pearson interval",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9,
+        "xMax": 11.3
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9,
+            "y": 0.0303,
+            "yLow": 0.0293,
+            "yHigh": 0.0314
+          },
+          {
+            "x": 9.1,
+            "y": 0.0194,
+            "yLow": 0.0185,
+            "yHigh": 0.0204
+          },
+          {
+            "x": 9.3,
+            "y": 0.0105,
+            "yLow": 0.0096,
+            "yHigh": 0.0114
+          },
+          {
+            "x": 9.5,
+            "y": 0.0087,
+            "yLow": 0.0078,
+            "yHigh": 0.0097
+          },
+          {
+            "x": 9.7,
+            "y": 0.006,
+            "yLow": 0.0051,
+            "yHigh": 0.007
+          },
+          {
+            "x": 9.9,
+            "y": 0.016,
+            "yLow": 0.0143,
+            "yHigh": 0.0179
+          },
+          {
+            "x": 10.1,
+            "y": 0.0291,
+            "yLow": 0.0265,
+            "yHigh": 0.032
+          },
+          {
+            "x": 10.3,
+            "y": 0.0673,
+            "yLow": 0.0626,
+            "yHigh": 0.0723
+          },
+          {
+            "x": 10.5,
+            "y": 0.1289,
+            "yLow": 0.1206,
+            "yHigh": 0.1377
+          },
+          {
+            "x": 10.7,
+            "y": 0.1776,
+            "yLow": 0.1649,
+            "yHigh": 0.1911
+          },
+          {
+            "x": 10.9,
+            "y": 0.248,
+            "yLow": 0.2251,
+            "yHigh": 0.2723
+          },
+          {
+            "x": 11.1,
+            "y": 0.3833,
+            "yLow": 0.3363,
+            "yHigh": 0.4325
+          },
+          {
+            "x": 11.3,
+            "y": 0.5556,
+            "yLow": 0.4591,
+            "yHigh": 0.6485
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Quenched fraction of COLIBRE L400m7 at z=5 (sSFR < 0.2 / t_H(z); the threshold moves with redshift, unlike the fixed 1e-11 / yr used elsewhere), read from the vector paths of Chaikin et al. 2026 (quenched fraction figure). Solid segment only: the paper draws the line dotted below about 1e9 Msun, where the rise in the quenched fraction may be a resolution artefact, and where fewer than 10 galaxies fall in a bin, and those parts are not extracted. yLow and yHigh are the plotted 68 per cent Clopper-Pearson interval. Stellar mass and SFR are measured within 50 pkpc 3D apertures of bound particles (SFR instantaneous). The legend names the m5 line (L025, L050 or L100)m5 without saying which box is used in each panel; the paper's mass function caption uses the largest box available, which by the redshift ranges of the data release would be L025 at z=0.1, L050 at z=1-3 and L100 at z=5-7, but that is an inference. Observational and semi-empirical overlays are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc",
+        "population": "all",
+        "quenchingCriterion": "ssfr<0.2/tH(z)",
+        "sfrTimescaleMyr": "instantaneous (gas SFR within 50 pkpc)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, quenched fraction, z=5",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the galaxy quenched fraction",
+        "panel": "z=5, L400m7 solid line",
+        "checksumSha256": "615d8d08891c155f5d4337c41d2a68ed89b697f40dbb2cf48faa431ab9198dec",
+        "sourceMember": "plots/qf.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^12 of the bottom frame of the panel column; y: labelled ticks 0.0 to 1.0 of the left frame of the panel row; both validated against the drawn ticks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.quenched.m6.z5",
+      "source": "COLIBRE",
+      "run": "L200m6",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (bound stars within a 3D 50 pkpc aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies in the stellar mass bin that are quenched (sSFR < 0.2 / t_H(z)); band is the 68 per cent Clopper-Pearson interval",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 8.699,
+        "xMax": 11.1
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.699,
+            "y": 0.0202,
+            "yLow": 0.0186,
+            "yHigh": 0.0219
+          },
+          {
+            "x": 8.7,
+            "y": 0.0202,
+            "yLow": 0.0186,
+            "yHigh": 0.0219
+          },
+          {
+            "x": 8.9,
+            "y": 0.0195,
+            "yLow": 0.0176,
+            "yHigh": 0.0216
+          },
+          {
+            "x": 9.1,
+            "y": 0.0235,
+            "yLow": 0.021,
+            "yHigh": 0.0262
+          },
+          {
+            "x": 9.3,
+            "y": 0.0212,
+            "yLow": 0.0184,
+            "yHigh": 0.0245
+          },
+          {
+            "x": 9.5,
+            "y": 0.0286,
+            "yLow": 0.0245,
+            "yHigh": 0.0334
+          },
+          {
+            "x": 9.7,
+            "y": 0.0349,
+            "yLow": 0.0293,
+            "yHigh": 0.0414
+          },
+          {
+            "x": 9.9,
+            "y": 0.0221,
+            "yLow": 0.0165,
+            "yHigh": 0.0292
+          },
+          {
+            "x": 10.1,
+            "y": 0.0238,
+            "yLow": 0.0165,
+            "yHigh": 0.0337
+          },
+          {
+            "x": 10.3,
+            "y": 0.0109,
+            "yLow": 0.005,
+            "yHigh": 0.0213
+          },
+          {
+            "x": 10.5,
+            "y": 0.0129,
+            "yLow": 0.0046,
+            "yHigh": 0.0296
+          },
+          {
+            "x": 10.7,
+            "y": 0.0126,
+            "yLow": 0.0022,
+            "yHigh": 0.041
+          },
+          {
+            "x": 10.9,
+            "y": 0,
+            "yLow": 0,
+            "yHigh": 0.0525
+          },
+          {
+            "x": 11.1,
+            "y": 0.0476,
+            "yLow": 0.0083,
+            "yHigh": 0.1483
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Quenched fraction of COLIBRE L200m6 at z=5 (sSFR < 0.2 / t_H(z); the threshold moves with redshift, unlike the fixed 1e-11 / yr used elsewhere), read from the vector paths of Chaikin et al. 2026 (quenched fraction figure). Solid segment only: the paper draws the line dotted below about 1e9 Msun, where the rise in the quenched fraction may be a resolution artefact, and where fewer than 10 galaxies fall in a bin, and those parts are not extracted. yLow and yHigh are the plotted 68 per cent Clopper-Pearson interval. Stellar mass and SFR are measured within 50 pkpc 3D apertures of bound particles (SFR instantaneous). The legend names the m5 line (L025, L050 or L100)m5 without saying which box is used in each panel; the paper's mass function caption uses the largest box available, which by the redshift ranges of the data release would be L025 at z=0.1, L050 at z=1-3 and L100 at z=5-7, but that is an inference. Observational and semi-empirical overlays are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc",
+        "population": "all",
+        "quenchingCriterion": "ssfr<0.2/tH(z)",
+        "sfrTimescaleMyr": "instantaneous (gas SFR within 50 pkpc)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, quenched fraction, z=5",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the galaxy quenched fraction",
+        "panel": "z=5, L200m6 solid line",
+        "checksumSha256": "615d8d08891c155f5d4337c41d2a68ed89b697f40dbb2cf48faa431ab9198dec",
+        "sourceMember": "plots/qf.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^12 of the bottom frame of the panel column; y: labelled ticks 0.0 to 1.0 of the left frame of the panel row; both validated against the drawn ticks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.quenched.m5.z5",
+      "source": "COLIBRE",
+      "run": "(L025, L050 or L100)m5",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (bound stars within a 3D 50 pkpc aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies in the stellar mass bin that are quenched (sSFR < 0.2 / t_H(z)); band is the 68 per cent Clopper-Pearson interval",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 8.398,
+        "xMax": 10.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.398,
+            "y": 0.065,
+            "yLow": 0.0598,
+            "yHigh": 0.0707
+          },
+          {
+            "x": 8.5,
+            "y": 0.0588,
+            "yLow": 0.0533,
+            "yHigh": 0.0648
+          },
+          {
+            "x": 8.7,
+            "y": 0.0555,
+            "yLow": 0.0494,
+            "yHigh": 0.0623
+          },
+          {
+            "x": 8.9,
+            "y": 0.0645,
+            "yLow": 0.0565,
+            "yHigh": 0.0735
+          },
+          {
+            "x": 9.1,
+            "y": 0.0623,
+            "yLow": 0.0518,
+            "yHigh": 0.0745
+          },
+          {
+            "x": 9.3,
+            "y": 0.0761,
+            "yLow": 0.0622,
+            "yHigh": 0.0924
+          },
+          {
+            "x": 9.5,
+            "y": 0.0869,
+            "yLow": 0.0683,
+            "yHigh": 0.1096
+          },
+          {
+            "x": 9.7,
+            "y": 0.057,
+            "yLow": 0.0386,
+            "yHigh": 0.0818
+          },
+          {
+            "x": 9.9,
+            "y": 0.0454,
+            "yLow": 0.0239,
+            "yHigh": 0.0798
+          },
+          {
+            "x": 10.1,
+            "y": 0,
+            "yLow": 0,
+            "yHigh": 0.0448
+          },
+          {
+            "x": 10.3,
+            "y": 0.025,
+            "yLow": 0.0043,
+            "yHigh": 0.0799
+          },
+          {
+            "x": 10.5,
+            "y": 0.0526,
+            "yLow": 0.0091,
+            "yHigh": 0.163
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Quenched fraction of COLIBRE (L025, L050 or L100)m5 at z=5 (sSFR < 0.2 / t_H(z); the threshold moves with redshift, unlike the fixed 1e-11 / yr used elsewhere), read from the vector paths of Chaikin et al. 2026 (quenched fraction figure). Solid segment only: the paper draws the line dotted below about 1e9 Msun, where the rise in the quenched fraction may be a resolution artefact, and where fewer than 10 galaxies fall in a bin, and those parts are not extracted. yLow and yHigh are the plotted 68 per cent Clopper-Pearson interval. Stellar mass and SFR are measured within 50 pkpc 3D apertures of bound particles (SFR instantaneous). The legend names the m5 line (L025, L050 or L100)m5 without saying which box is used in each panel; the paper's mass function caption uses the largest box available, which by the redshift ranges of the data release would be L025 at z=0.1, L050 at z=1-3 and L100 at z=5-7, but that is an inference. Observational and semi-empirical overlays are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc",
+        "population": "all",
+        "quenchingCriterion": "ssfr<0.2/tH(z)",
+        "sfrTimescaleMyr": "instantaneous (gas SFR within 50 pkpc)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, quenched fraction, z=5",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the galaxy quenched fraction",
+        "panel": "z=5, (L025, L050 or L100)m5 solid line",
+        "checksumSha256": "615d8d08891c155f5d4337c41d2a68ed89b697f40dbb2cf48faa431ab9198dec",
+        "sourceMember": "plots/qf.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^12 of the bottom frame of the panel column; y: labelled ticks 0.0 to 1.0 of the left frame of the panel row; both validated against the drawn ticks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.quenched.m7.z7",
+      "source": "COLIBRE",
+      "run": "L400m7",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (bound stars within a 3D 50 pkpc aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies in the stellar mass bin that are quenched (sSFR < 0.2 / t_H(z)); band is the 68 per cent Clopper-Pearson interval",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 9,
+        "xMax": 10.9
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 9,
+            "y": 0.0333,
+            "yLow": 0.0307,
+            "yHigh": 0.0362
+          },
+          {
+            "x": 9.1,
+            "y": 0.022,
+            "yLow": 0.0195,
+            "yHigh": 0.0248
+          },
+          {
+            "x": 9.3,
+            "y": 0.0121,
+            "yLow": 0.0098,
+            "yHigh": 0.0151
+          },
+          {
+            "x": 9.5,
+            "y": 0.0029,
+            "yLow": 0.0015,
+            "yHigh": 0.0053
+          },
+          {
+            "x": 9.7,
+            "y": 0.0033,
+            "yLow": 0.0015,
+            "yHigh": 0.0064
+          },
+          {
+            "x": 9.9,
+            "y": 0,
+            "yLow": 0,
+            "yHigh": 0.0031
+          },
+          {
+            "x": 10.1,
+            "y": 0.0165,
+            "yLow": 0.01,
+            "yHigh": 0.0262
+          },
+          {
+            "x": 10.3,
+            "y": 0.0232,
+            "yLow": 0.0122,
+            "yHigh": 0.0412
+          },
+          {
+            "x": 10.5,
+            "y": 0.1477,
+            "yLow": 0.1091,
+            "yHigh": 0.1954
+          },
+          {
+            "x": 10.7,
+            "y": 0.1087,
+            "yLow": 0.0627,
+            "yHigh": 0.1752
+          },
+          {
+            "x": 10.9,
+            "y": 0.1667,
+            "yLow": 0.0601,
+            "yHigh": 0.3449
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Quenched fraction of COLIBRE L400m7 at z=7 (sSFR < 0.2 / t_H(z); the threshold moves with redshift, unlike the fixed 1e-11 / yr used elsewhere), read from the vector paths of Chaikin et al. 2026 (quenched fraction figure). Solid segment only: the paper draws the line dotted below about 1e9 Msun, where the rise in the quenched fraction may be a resolution artefact, and where fewer than 10 galaxies fall in a bin, and those parts are not extracted. yLow and yHigh are the plotted 68 per cent Clopper-Pearson interval. Stellar mass and SFR are measured within 50 pkpc 3D apertures of bound particles (SFR instantaneous). The legend names the m5 line (L025, L050 or L100)m5 without saying which box is used in each panel; the paper's mass function caption uses the largest box available, which by the redshift ranges of the data release would be L025 at z=0.1, L050 at z=1-3 and L100 at z=5-7, but that is an inference. Observational and semi-empirical overlays are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc",
+        "population": "all",
+        "quenchingCriterion": "ssfr<0.2/tH(z)",
+        "sfrTimescaleMyr": "instantaneous (gas SFR within 50 pkpc)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, quenched fraction, z=7",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the galaxy quenched fraction",
+        "panel": "z=7, L400m7 solid line",
+        "checksumSha256": "615d8d08891c155f5d4337c41d2a68ed89b697f40dbb2cf48faa431ab9198dec",
+        "sourceMember": "plots/qf.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^12 of the bottom frame of the panel column; y: labelled ticks 0.0 to 1.0 of the left frame of the panel row; both validated against the drawn ticks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.quenched.m6.z7",
+      "source": "COLIBRE",
+      "run": "L200m6",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (bound stars within a 3D 50 pkpc aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies in the stellar mass bin that are quenched (sSFR < 0.2 / t_H(z)); band is the 68 per cent Clopper-Pearson interval",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 8.699,
+        "xMax": 10.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.699,
+            "y": 0.0314,
+            "yLow": 0.0269,
+            "yHigh": 0.0365
+          },
+          {
+            "x": 8.7,
+            "y": 0.0314,
+            "yLow": 0.0269,
+            "yHigh": 0.0366
+          },
+          {
+            "x": 8.9,
+            "y": 0.0408,
+            "yLow": 0.0342,
+            "yHigh": 0.0484
+          },
+          {
+            "x": 9.1,
+            "y": 0.0504,
+            "yLow": 0.0413,
+            "yHigh": 0.0612
+          },
+          {
+            "x": 9.3,
+            "y": 0.0498,
+            "yLow": 0.0381,
+            "yHigh": 0.0645
+          },
+          {
+            "x": 9.5,
+            "y": 0.0773,
+            "yLow": 0.0581,
+            "yHigh": 0.1014
+          },
+          {
+            "x": 9.7,
+            "y": 0.0367,
+            "yLow": 0.0193,
+            "yHigh": 0.0646
+          },
+          {
+            "x": 9.9,
+            "y": 0.023,
+            "yLow": 0.0082,
+            "yHigh": 0.0524
+          },
+          {
+            "x": 10.1,
+            "y": 0.0555,
+            "yLow": 0.0198,
+            "yHigh": 0.1238
+          },
+          {
+            "x": 10.3,
+            "y": 0,
+            "yLow": 0,
+            "yHigh": 0.1022
+          },
+          {
+            "x": 10.5,
+            "y": 0,
+            "yLow": 0,
+            "yHigh": 0.1674
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Quenched fraction of COLIBRE L200m6 at z=7 (sSFR < 0.2 / t_H(z); the threshold moves with redshift, unlike the fixed 1e-11 / yr used elsewhere), read from the vector paths of Chaikin et al. 2026 (quenched fraction figure). Solid segment only: the paper draws the line dotted below about 1e9 Msun, where the rise in the quenched fraction may be a resolution artefact, and where fewer than 10 galaxies fall in a bin, and those parts are not extracted. yLow and yHigh are the plotted 68 per cent Clopper-Pearson interval. Stellar mass and SFR are measured within 50 pkpc 3D apertures of bound particles (SFR instantaneous). The legend names the m5 line (L025, L050 or L100)m5 without saying which box is used in each panel; the paper's mass function caption uses the largest box available, which by the redshift ranges of the data release would be L025 at z=0.1, L050 at z=1-3 and L100 at z=5-7, but that is an inference. Observational and semi-empirical overlays are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc",
+        "population": "all",
+        "quenchingCriterion": "ssfr<0.2/tH(z)",
+        "sfrTimescaleMyr": "instantaneous (gas SFR within 50 pkpc)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, quenched fraction, z=7",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the galaxy quenched fraction",
+        "panel": "z=7, L200m6 solid line",
+        "checksumSha256": "615d8d08891c155f5d4337c41d2a68ed89b697f40dbb2cf48faa431ab9198dec",
+        "sourceMember": "plots/qf.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^12 of the bottom frame of the panel column; y: labelled ticks 0.0 to 1.0 of the left frame of the panel row; both validated against the drawn ticks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.quenched.m5.z7",
+      "source": "COLIBRE",
+      "run": "(L025, L050 or L100)m5",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (bound stars within a 3D 50 pkpc aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of galaxies in the stellar mass bin that are quenched (sSFR < 0.2 / t_H(z)); band is the 68 per cent Clopper-Pearson interval",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 8.398,
+        "xMax": 9.9
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.398,
+            "y": 0.0739,
+            "yLow": 0.0622,
+            "yHigh": 0.0876
+          },
+          {
+            "x": 8.5,
+            "y": 0.0851,
+            "yLow": 0.0713,
+            "yHigh": 0.1012
+          },
+          {
+            "x": 8.7,
+            "y": 0.0781,
+            "yLow": 0.0617,
+            "yHigh": 0.0979
+          },
+          {
+            "x": 8.9,
+            "y": 0.1016,
+            "yLow": 0.0793,
+            "yHigh": 0.1286
+          },
+          {
+            "x": 9.1,
+            "y": 0.1154,
+            "yLow": 0.0837,
+            "yHigh": 0.1555
+          },
+          {
+            "x": 9.3,
+            "y": 0.1667,
+            "yLow": 0.1076,
+            "yHigh": 0.2445
+          },
+          {
+            "x": 9.5,
+            "y": 0.0571,
+            "yLow": 0.0204,
+            "yHigh": 0.1272
+          },
+          {
+            "x": 9.7,
+            "y": 0.1818,
+            "yLow": 0.0656,
+            "yHigh": 0.3724
+          },
+          {
+            "x": 9.9,
+            "y": 0,
+            "yLow": 0,
+            "yHigh": 0.1315
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "Quenched fraction of COLIBRE (L025, L050 or L100)m5 at z=7 (sSFR < 0.2 / t_H(z); the threshold moves with redshift, unlike the fixed 1e-11 / yr used elsewhere), read from the vector paths of Chaikin et al. 2026 (quenched fraction figure). Solid segment only: the paper draws the line dotted below about 1e9 Msun, where the rise in the quenched fraction may be a resolution artefact, and where fewer than 10 galaxies fall in a bin, and those parts are not extracted. yLow and yHigh are the plotted 68 per cent Clopper-Pearson interval. Stellar mass and SFR are measured within 50 pkpc 3D apertures of bound particles (SFR instantaneous). The legend names the m5 line (L025, L050 or L100)m5 without saying which box is used in each panel; the paper's mass function caption uses the largest box available, which by the redshift ranges of the data release would be L025 at z=0.1, L050 at z=1-3 and L100 at z=5-7, but that is an inference. Observational and semi-empirical overlays are not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc",
+        "population": "all",
+        "quenchingCriterion": "ssfr<0.2/tH(z)",
+        "sfrTimescaleMyr": "instantaneous (gas SFR within 50 pkpc)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, quenched fraction, z=7",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the galaxy quenched fraction",
+        "panel": "z=7, (L025, L050 or L100)m5 solid line",
+        "checksumSha256": "615d8d08891c155f5d4337c41d2a68ed89b697f40dbb2cf48faa431ab9198dec",
+        "sourceMember": "plots/qf.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^7 to 10^12 of the bottom frame of the panel column; y: labelled ticks 0.0 to 1.0 of the left frame of the panel row; both validated against the drawn ticks",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

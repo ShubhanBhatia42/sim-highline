@@ -1,0 +1,285 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "ma18.fire2.smd.mstar-gt-1e4",
+      "source": "FIRE-2",
+      "run": "FIRE-2 high-z zoom sample (model, M* > 1e4 Msun)",
+      "kind": "simulation",
+      "relation": "smd",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 5,
+        "zMax": 12,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift",
+        "xUnit": "redshift",
+        "yDefinition": "log10 stellar mass density, model stellar mass function integrated above the mass limit (axis label rho_* in Msun Mpc^-3)",
+        "yUnit": "log10(Msun Mpc^-3)"
+      },
+      "domain": {
+        "xMin": 5,
+        "xMax": 12
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 5,
+            "y": 7.073
+          },
+          {
+            "x": 6,
+            "y": 6.7339
+          },
+          {
+            "x": 7,
+            "y": 6.4075
+          },
+          {
+            "x": 8,
+            "y": 6.0977
+          },
+          {
+            "x": 9,
+            "y": 5.7988
+          },
+          {
+            "x": 10,
+            "y": 5.5057
+          },
+          {
+            "x": 11,
+            "y": 5.2114
+          },
+          {
+            "x": 12,
+            "y": 4.9094
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies in the weighted zoom sample, integrated above M* = 1e4 Msun",
+        "warning": "Stellar mass density derived by the authors by integrating their fitted model stellar mass functions above M* = 1e4 Msun, read from the vertices of the line in the stellar mass density figure of Ma et al. 2018 (one vertex per integer redshift); no table exists. It is a model integral, not a direct count in the simulations, and the FIRE-2 zoom sample is not a periodic volume; the axis label gives Mpc^-3 and the frame is taken to be comoving as for the paper's mass functions. Vertices below the lowest plotted density (4.0) are outside the plot and not recorded. Observational points are not extracted."
+      },
+      "definitions": {
+        "massDefinition": "stars-within-third-Rmax-masked",
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 68,
+          "Om": 0.31
+        },
+        "densityFrame": "comoving",
+        "population": "central galaxies, M* > 1e4 Msun"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Ma et al. 2018, MNRAS 478, 1694 (arXiv:1706.06605), stellar mass density from z=5 to 12",
+        "doi": "10.1093/mnras/sty1024",
+        "url": "https://arxiv.org/abs/1706.06605",
+        "retrieved": "2026-10-14",
+        "figure": "Stellar mass density from z=5-12",
+        "panel": "M* > 1e4 Msun line",
+        "checksumSha256": "99b10c862a3a32e2f888f5dacde8f5ecaaf45dc865c0b13e184469a896408f37",
+        "sourceMember": "plot/smd.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled redshifts 5-12 snapped to ticks (linear); y: labelled ticks 4.0-7.5 snapped to ticks (linear)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "ma18.fire2.smd.mstar-gt-1e6",
+      "source": "FIRE-2",
+      "run": "FIRE-2 high-z zoom sample (model, M* > 1e6 Msun)",
+      "kind": "simulation",
+      "relation": "smd",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 5,
+        "zMax": 12,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift",
+        "xUnit": "redshift",
+        "yDefinition": "log10 stellar mass density, model stellar mass function integrated above the mass limit (axis label rho_* in Msun Mpc^-3)",
+        "yUnit": "log10(Msun Mpc^-3)"
+      },
+      "domain": {
+        "xMin": 5,
+        "xMax": 12
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 5,
+            "y": 7.0436
+          },
+          {
+            "x": 6,
+            "y": 6.6827
+          },
+          {
+            "x": 7,
+            "y": 6.3196
+          },
+          {
+            "x": 8,
+            "y": 5.9575
+          },
+          {
+            "x": 9,
+            "y": 5.5969
+          },
+          {
+            "x": 10,
+            "y": 5.2207
+          },
+          {
+            "x": 11,
+            "y": 4.8266
+          },
+          {
+            "x": 12,
+            "y": 4.418
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies in the weighted zoom sample, integrated above M* = 1e6 Msun",
+        "warning": "Stellar mass density derived by the authors by integrating their fitted model stellar mass functions above M* = 1e6 Msun, read from the vertices of the line in the stellar mass density figure of Ma et al. 2018 (one vertex per integer redshift); no table exists. It is a model integral, not a direct count in the simulations, and the FIRE-2 zoom sample is not a periodic volume; the axis label gives Mpc^-3 and the frame is taken to be comoving as for the paper's mass functions. Vertices below the lowest plotted density (4.0) are outside the plot and not recorded. Observational points are not extracted."
+      },
+      "definitions": {
+        "massDefinition": "stars-within-third-Rmax-masked",
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 68,
+          "Om": 0.31
+        },
+        "densityFrame": "comoving",
+        "population": "central galaxies, M* > 1e6 Msun"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Ma et al. 2018, MNRAS 478, 1694 (arXiv:1706.06605), stellar mass density from z=5 to 12",
+        "doi": "10.1093/mnras/sty1024",
+        "url": "https://arxiv.org/abs/1706.06605",
+        "retrieved": "2026-10-14",
+        "figure": "Stellar mass density from z=5-12",
+        "panel": "M* > 1e6 Msun line",
+        "checksumSha256": "99b10c862a3a32e2f888f5dacde8f5ecaaf45dc865c0b13e184469a896408f37",
+        "sourceMember": "plot/smd.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled redshifts 5-12 snapped to ticks (linear); y: labelled ticks 4.0-7.5 snapped to ticks (linear)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "ma18.fire2.smd.mstar-gt-1e8",
+      "source": "FIRE-2",
+      "run": "FIRE-2 high-z zoom sample (model, M* > 1e8 Msun)",
+      "kind": "simulation",
+      "relation": "smd",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 5,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift",
+        "xUnit": "redshift",
+        "yDefinition": "log10 stellar mass density, model stellar mass function integrated above the mass limit (axis label rho_* in Msun Mpc^-3)",
+        "yUnit": "log10(Msun Mpc^-3)"
+      },
+      "domain": {
+        "xMin": 5,
+        "xMax": 10
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 5,
+            "y": 6.9056
+          },
+          {
+            "x": 6,
+            "y": 6.4441
+          },
+          {
+            "x": 7,
+            "y": 5.9549
+          },
+          {
+            "x": 8,
+            "y": 5.4602
+          },
+          {
+            "x": 9,
+            "y": 4.9315
+          },
+          {
+            "x": 10,
+            "y": 4.3592
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies in the weighted zoom sample, integrated above M* = 1e8 Msun",
+        "warning": "Stellar mass density derived by the authors by integrating their fitted model stellar mass functions above M* = 1e8 Msun, read from the vertices of the line in the stellar mass density figure of Ma et al. 2018 (one vertex per integer redshift); no table exists. It is a model integral, not a direct count in the simulations, and the FIRE-2 zoom sample is not a periodic volume; the axis label gives Mpc^-3 and the frame is taken to be comoving as for the paper's mass functions. Vertices below the lowest plotted density (4.0) are outside the plot and not recorded. Observational points are not extracted."
+      },
+      "definitions": {
+        "massDefinition": "stars-within-third-Rmax-masked",
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 68,
+          "Om": 0.31
+        },
+        "densityFrame": "comoving",
+        "population": "central galaxies, M* > 1e8 Msun"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Ma et al. 2018, MNRAS 478, 1694 (arXiv:1706.06605), stellar mass density from z=5 to 12",
+        "doi": "10.1093/mnras/sty1024",
+        "url": "https://arxiv.org/abs/1706.06605",
+        "retrieved": "2026-10-14",
+        "figure": "Stellar mass density from z=5-12",
+        "panel": "M* > 1e8 Msun line",
+        "checksumSha256": "99b10c862a3a32e2f888f5dacde8f5ecaaf45dc865c0b13e184469a896408f37",
+        "sourceMember": "plot/smd.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled redshifts 5-12 snapped to ticks (linear); y: labelled ticks 4.0-7.5 snapped to ticks (linear)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

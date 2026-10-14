@@ -1,0 +1,1449 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "chaikin26.colibre.smd.m5.all",
+      "source": "COLIBRE",
+      "run": "(L025, L050 or L100)m5 (all stars)",
+      "kind": "simulation",
+      "relation": "smd",
+      "epoch": {
+        "zRepresentative": 4.042,
+        "zNominal": 4.042,
+        "zMin": 4.042,
+        "zMax": 18.127,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift (axis is log10(1+z), converted exactly)",
+        "xUnit": "redshift",
+        "yDefinition": "log10 comoving cosmic stellar mass density",
+        "yUnit": "log10(Msun cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 4.042,
+        "xMax": 18.127
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 4.042,
+            "y": 7.2813
+          },
+          {
+            "x": 4.246,
+            "y": 7.2134
+          },
+          {
+            "x": 4.405,
+            "y": 7.1639
+          },
+          {
+            "x": 4.459,
+            "y": 7.2225
+          },
+          {
+            "x": 4.681,
+            "y": 7.1546
+          },
+          {
+            "x": 5.213,
+            "y": 6.9933
+          },
+          {
+            "x": 5.795,
+            "y": 6.8256
+          },
+          {
+            "x": 6.286,
+            "y": 6.6909
+          },
+          {
+            "x": 7.543,
+            "y": 6.3663
+          },
+          {
+            "x": 7.89,
+            "y": 6.2836
+          },
+          {
+            "x": 8.82,
+            "y": 6.0599
+          },
+          {
+            "x": 9.634,
+            "y": 5.8663
+          },
+          {
+            "x": 9.847,
+            "y": 5.8193
+          },
+          {
+            "x": 10.401,
+            "y": 5.6898
+          },
+          {
+            "x": 10.746,
+            "y": 5.6052
+          },
+          {
+            "x": 11.593,
+            "y": 5.4006
+          },
+          {
+            "x": 11.975,
+            "y": 5.3036
+          },
+          {
+            "x": 12.236,
+            "y": 5.2383
+          },
+          {
+            "x": 12.368,
+            "y": 5.2029
+          },
+          {
+            "x": 12.773,
+            "y": 5.096
+          },
+          {
+            "x": 13.05,
+            "y": 5.0227
+          },
+          {
+            "x": 13.476,
+            "y": 4.8986
+          },
+          {
+            "x": 14.366,
+            "y": 4.6388
+          },
+          {
+            "x": 14.52,
+            "y": 4.591
+          },
+          {
+            "x": 14.99,
+            "y": 4.441
+          },
+          {
+            "x": 15.15,
+            "y": 4.3947
+          },
+          {
+            "x": 15.974,
+            "y": 4.1242
+          },
+          {
+            "x": 16.315,
+            "y": 4.0056
+          },
+          {
+            "x": 16.663,
+            "y": 3.8822
+          },
+          {
+            "x": 16.84,
+            "y": 3.8254
+          },
+          {
+            "x": 17.018,
+            "y": 3.7622
+          },
+          {
+            "x": 18.127,
+            "y": 3.342
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all stars in the simulation volume",
+        "warning": "Cosmic stellar mass density of COLIBRE (L025, L050 or L100)m5, all stellar mass in the simulated volume (the paper's raw simulation value), read from the vector paths of Chaikin et al. 2026 (CSMD figure, top panel). The paper truncates the L400m7 and m5 lines at z < 4 for clarity because they overlap the L200m6 line; the m5 line is drawn from the L025, L050 or L100 box (the legend does not say which at each redshift). Observational compilation, residual panel and the black outline of each line are not extracted. Parts of the lines below the lowest labelled density are outside the plot and not recorded."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "densityFrame": "comoving",
+        "massDefinition": "all star particles",
+        "population": "all stars in the volume"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, cosmic stellar mass density",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the cosmic stellar mass density (CSMD)",
+        "panel": "(L025, L050 or L100)m5 solid line",
+        "checksumSha256": "17eecd1d4ee2d8c58be2557df03474d252cd96336a2728d09f6375da2411d2a5",
+        "sourceMember": "plots/SMD.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labels 0-18 snapped to ticks in log10(1+z) and converted exactly to z; y: decade labels snapped to ticks and validated by the minor-tick pattern (log)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.smd.m5.50pkpc-m8",
+      "source": "COLIBRE",
+      "run": "(L025, L050 or L100)m5 (50 pkpc, M* >= 1e8)",
+      "kind": "simulation",
+      "relation": "smd",
+      "epoch": {
+        "zRepresentative": 4,
+        "zNominal": 4,
+        "zMin": 4,
+        "zMax": 12,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift (axis is log10(1+z), converted exactly)",
+        "xUnit": "redshift",
+        "yDefinition": "log10 comoving cosmic stellar mass density",
+        "yUnit": "log10(Msun cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 4,
+        "xMax": 12
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 4,
+            "y": 7.168
+          },
+          {
+            "x": 4.5,
+            "y": 6.9657
+          },
+          {
+            "x": 5,
+            "y": 6.8747
+          },
+          {
+            "x": 6,
+            "y": 6.4832
+          },
+          {
+            "x": 7,
+            "y": 6.0657
+          },
+          {
+            "x": 7.5,
+            "y": 5.8529
+          },
+          {
+            "x": 8,
+            "y": 5.6307
+          },
+          {
+            "x": 8.5,
+            "y": 5.4142
+          },
+          {
+            "x": 9,
+            "y": 5.1629
+          },
+          {
+            "x": 9.5,
+            "y": 4.9083
+          },
+          {
+            "x": 10,
+            "y": 4.6896
+          },
+          {
+            "x": 11,
+            "y": 4.166
+          },
+          {
+            "x": 12,
+            "y": 3.6801
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "stars in galaxies with M* >= 1e8 Msun",
+        "warning": "Cosmic stellar mass density of COLIBRE (L025, L050 or L100)m5, stars within 50 pkpc 3D apertures of galaxies with M* >= 1e8 Msun (the paper's selection that can be compared with observations), read from the vector paths of Chaikin et al. 2026 (CSMD figure, top panel). The paper truncates the L400m7 and m5 lines at z < 4 for clarity because they overlap the L200m6 line; the m5 line is drawn from the L025, L050 or L100 box (the legend does not say which at each redshift). Observational compilation, residual panel and the black outline of each line are not extracted. Parts of the lines below the lowest labelled density are outside the plot and not recorded."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "densityFrame": "comoving",
+        "massDefinition": "bound stars within 50 pkpc 3D apertures of galaxies with M* >= 1e8 Msun",
+        "population": "galaxies with M* >= 1e8 Msun"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, cosmic stellar mass density",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the cosmic stellar mass density (CSMD)",
+        "panel": "(L025, L050 or L100)m5 dash-dotted line",
+        "checksumSha256": "17eecd1d4ee2d8c58be2557df03474d252cd96336a2728d09f6375da2411d2a5",
+        "sourceMember": "plots/SMD.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labels 0-18 snapped to ticks in log10(1+z) and converted exactly to z; y: decade labels snapped to ticks and validated by the minor-tick pattern (log)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.smd.l200m6.all",
+      "source": "COLIBRE",
+      "run": "L200m6 (all stars)",
+      "kind": "simulation",
+      "relation": "smd",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 0,
+        "zMax": 15.639,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift (axis is log10(1+z), converted exactly)",
+        "xUnit": "redshift",
+        "yDefinition": "log10 comoving cosmic stellar mass density",
+        "yUnit": "log10(Msun cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 0,
+        "xMax": 15.639
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 0,
+            "y": 8.4715
+          },
+          {
+            "x": 0.068,
+            "y": 8.4625
+          },
+          {
+            "x": 0.179,
+            "y": 8.4467
+          },
+          {
+            "x": 0.29,
+            "y": 8.4299
+          },
+          {
+            "x": 0.397,
+            "y": 8.4124
+          },
+          {
+            "x": 0.512,
+            "y": 8.3922
+          },
+          {
+            "x": 0.622,
+            "y": 8.3719
+          },
+          {
+            "x": 0.721,
+            "y": 8.352
+          },
+          {
+            "x": 0.827,
+            "y": 8.3297
+          },
+          {
+            "x": 0.94,
+            "y": 8.3048
+          },
+          {
+            "x": 1.059,
+            "y": 8.2773
+          },
+          {
+            "x": 1.164,
+            "y": 8.2516
+          },
+          {
+            "x": 1.274,
+            "y": 8.2233
+          },
+          {
+            "x": 1.39,
+            "y": 8.1924
+          },
+          {
+            "x": 1.512,
+            "y": 8.1587
+          },
+          {
+            "x": 1.667,
+            "y": 8.1156
+          },
+          {
+            "x": 1.803,
+            "y": 8.0767
+          },
+          {
+            "x": 1.946,
+            "y": 8.0348
+          },
+          {
+            "x": 2.096,
+            "y": 7.9896
+          },
+          {
+            "x": 2.222,
+            "y": 7.951
+          },
+          {
+            "x": 2.454,
+            "y": 7.8788
+          },
+          {
+            "x": 2.595,
+            "y": 7.8338
+          },
+          {
+            "x": 2.741,
+            "y": 7.7862
+          },
+          {
+            "x": 2.931,
+            "y": 7.7232
+          },
+          {
+            "x": 3.132,
+            "y": 7.6575
+          },
+          {
+            "x": 3.43,
+            "y": 7.5598
+          },
+          {
+            "x": 3.61,
+            "y": 7.5008
+          },
+          {
+            "x": 3.845,
+            "y": 7.4243
+          },
+          {
+            "x": 4.405,
+            "y": 7.2442
+          },
+          {
+            "x": 4.625,
+            "y": 7.1763
+          },
+          {
+            "x": 4.853,
+            "y": 7.1054
+          },
+          {
+            "x": 5.091,
+            "y": 7.0321
+          },
+          {
+            "x": 5.466,
+            "y": 6.9167
+          },
+          {
+            "x": 5.795,
+            "y": 6.8186
+          },
+          {
+            "x": 6.142,
+            "y": 6.7165
+          },
+          {
+            "x": 6.432,
+            "y": 6.6351
+          },
+          {
+            "x": 7.458,
+            "y": 6.351
+          },
+          {
+            "x": 7.715,
+            "y": 6.2805
+          },
+          {
+            "x": 7.89,
+            "y": 6.2361
+          },
+          {
+            "x": 7.979,
+            "y": 6.2109
+          },
+          {
+            "x": 8.343,
+            "y": 6.11
+          },
+          {
+            "x": 8.531,
+            "y": 6.0572
+          },
+          {
+            "x": 8.723,
+            "y": 6.0026
+          },
+          {
+            "x": 8.82,
+            "y": 5.9782
+          },
+          {
+            "x": 9.117,
+            "y": 5.8922
+          },
+          {
+            "x": 9.74,
+            "y": 5.7069
+          },
+          {
+            "x": 9.847,
+            "y": 5.6791
+          },
+          {
+            "x": 10.288,
+            "y": 5.5423
+          },
+          {
+            "x": 10.746,
+            "y": 5.395
+          },
+          {
+            "x": 10.863,
+            "y": 5.3544
+          },
+          {
+            "x": 10.982,
+            "y": 5.3209
+          },
+          {
+            "x": 11.345,
+            "y": 5.1986
+          },
+          {
+            "x": 11.469,
+            "y": 5.1539
+          },
+          {
+            "x": 11.593,
+            "y": 5.1129
+          },
+          {
+            "x": 12.105,
+            "y": 4.9297
+          },
+          {
+            "x": 12.236,
+            "y": 4.8886
+          },
+          {
+            "x": 12.368,
+            "y": 4.837
+          },
+          {
+            "x": 12.773,
+            "y": 4.6866
+          },
+          {
+            "x": 13.332,
+            "y": 4.4681
+          },
+          {
+            "x": 13.476,
+            "y": 4.4067
+          },
+          {
+            "x": 13.62,
+            "y": 4.3553
+          },
+          {
+            "x": 14.063,
+            "y": 4.1664
+          },
+          {
+            "x": 14.214,
+            "y": 4.0955
+          },
+          {
+            "x": 14.366,
+            "y": 4.0335
+          },
+          {
+            "x": 14.99,
+            "y": 3.7517
+          },
+          {
+            "x": 15.15,
+            "y": 3.6873
+          },
+          {
+            "x": 15.312,
+            "y": 3.6061
+          },
+          {
+            "x": 15.639,
+            "y": 3.4482
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all stars in the simulation volume",
+        "warning": "Cosmic stellar mass density of COLIBRE L200m6, all stellar mass in the simulated volume (the paper's raw simulation value), read from the vector paths of Chaikin et al. 2026 (CSMD figure, top panel). The paper truncates the L400m7 and m5 lines at z < 4 for clarity because they overlap the L200m6 line; the m5 line is drawn from the L025, L050 or L100 box (the legend does not say which at each redshift). Observational compilation, residual panel and the black outline of each line are not extracted. Parts of the lines below the lowest labelled density are outside the plot and not recorded."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "densityFrame": "comoving",
+        "massDefinition": "all star particles",
+        "population": "all stars in the volume"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, cosmic stellar mass density",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the cosmic stellar mass density (CSMD)",
+        "panel": "L200m6 solid line",
+        "checksumSha256": "17eecd1d4ee2d8c58be2557df03474d252cd96336a2728d09f6375da2411d2a5",
+        "sourceMember": "plots/SMD.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labels 0-18 snapped to ticks in log10(1+z) and converted exactly to z; y: decade labels snapped to ticks and validated by the minor-tick pattern (log)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.smd.l200m6.50pkpc-m8",
+      "source": "COLIBRE",
+      "run": "L200m6 (50 pkpc, M* >= 1e8)",
+      "kind": "simulation",
+      "relation": "smd",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 0,
+        "zMax": 11.5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift (axis is log10(1+z), converted exactly)",
+        "xUnit": "redshift",
+        "yDefinition": "log10 comoving cosmic stellar mass density",
+        "yUnit": "log10(Msun cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 0,
+        "xMax": 11.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 0,
+            "y": 8.4097
+          },
+          {
+            "x": 0.05,
+            "y": 8.4052
+          },
+          {
+            "x": 0.1,
+            "y": 8.4005
+          },
+          {
+            "x": 0.14,
+            "y": 8.3965
+          },
+          {
+            "x": 0.2,
+            "y": 8.3899
+          },
+          {
+            "x": 0.25,
+            "y": 8.3841
+          },
+          {
+            "x": 0.3,
+            "y": 8.378
+          },
+          {
+            "x": 0.35,
+            "y": 8.3716
+          },
+          {
+            "x": 0.4,
+            "y": 8.3649
+          },
+          {
+            "x": 0.45,
+            "y": 8.3577
+          },
+          {
+            "x": 0.5,
+            "y": 8.3503
+          },
+          {
+            "x": 0.55,
+            "y": 8.3425
+          },
+          {
+            "x": 0.6,
+            "y": 8.3343
+          },
+          {
+            "x": 0.65,
+            "y": 8.3256
+          },
+          {
+            "x": 0.7,
+            "y": 8.3166
+          },
+          {
+            "x": 0.75,
+            "y": 8.3072
+          },
+          {
+            "x": 0.8,
+            "y": 8.2976
+          },
+          {
+            "x": 0.85,
+            "y": 8.2873
+          },
+          {
+            "x": 0.9,
+            "y": 8.2768
+          },
+          {
+            "x": 0.95,
+            "y": 8.266
+          },
+          {
+            "x": 1,
+            "y": 8.255
+          },
+          {
+            "x": 1.25,
+            "y": 8.1949
+          },
+          {
+            "x": 1.5,
+            "y": 8.1268
+          },
+          {
+            "x": 1.75,
+            "y": 8.0544
+          },
+          {
+            "x": 2,
+            "y": 7.9773
+          },
+          {
+            "x": 2.25,
+            "y": 7.8954
+          },
+          {
+            "x": 2.5,
+            "y": 7.8099
+          },
+          {
+            "x": 2.75,
+            "y": 7.7191
+          },
+          {
+            "x": 3,
+            "y": 7.6247
+          },
+          {
+            "x": 3.25,
+            "y": 7.5287
+          },
+          {
+            "x": 3.5,
+            "y": 7.4308
+          },
+          {
+            "x": 3.75,
+            "y": 7.3312
+          },
+          {
+            "x": 4,
+            "y": 7.23
+          },
+          {
+            "x": 4.25,
+            "y": 7.1267
+          },
+          {
+            "x": 4.5,
+            "y": 7.0233
+          },
+          {
+            "x": 4.75,
+            "y": 6.9196
+          },
+          {
+            "x": 5,
+            "y": 6.8123
+          },
+          {
+            "x": 5.25,
+            "y": 6.7021
+          },
+          {
+            "x": 5.5,
+            "y": 6.5884
+          },
+          {
+            "x": 5.75,
+            "y": 6.4739
+          },
+          {
+            "x": 6,
+            "y": 6.3554
+          },
+          {
+            "x": 6.25,
+            "y": 6.2363
+          },
+          {
+            "x": 6.5,
+            "y": 6.1157
+          },
+          {
+            "x": 6.75,
+            "y": 5.9902
+          },
+          {
+            "x": 7,
+            "y": 5.8634
+          },
+          {
+            "x": 7.25,
+            "y": 5.7354
+          },
+          {
+            "x": 7.5,
+            "y": 5.6074
+          },
+          {
+            "x": 7.75,
+            "y": 5.4766
+          },
+          {
+            "x": 8,
+            "y": 5.3459
+          },
+          {
+            "x": 8.25,
+            "y": 5.2171
+          },
+          {
+            "x": 8.5,
+            "y": 5.0889
+          },
+          {
+            "x": 8.75,
+            "y": 4.9584
+          },
+          {
+            "x": 9,
+            "y": 4.8183
+          },
+          {
+            "x": 9.25,
+            "y": 4.6744
+          },
+          {
+            "x": 9.5,
+            "y": 4.5305
+          },
+          {
+            "x": 9.75,
+            "y": 4.3968
+          },
+          {
+            "x": 10,
+            "y": 4.2622
+          },
+          {
+            "x": 10.5,
+            "y": 3.9927
+          },
+          {
+            "x": 11,
+            "y": 3.701
+          },
+          {
+            "x": 11.5,
+            "y": 3.4356
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "stars in galaxies with M* >= 1e8 Msun",
+        "warning": "Cosmic stellar mass density of COLIBRE L200m6, stars within 50 pkpc 3D apertures of galaxies with M* >= 1e8 Msun (the paper's selection that can be compared with observations), read from the vector paths of Chaikin et al. 2026 (CSMD figure, top panel). The paper truncates the L400m7 and m5 lines at z < 4 for clarity because they overlap the L200m6 line; the m5 line is drawn from the L025, L050 or L100 box (the legend does not say which at each redshift). Observational compilation, residual panel and the black outline of each line are not extracted. Parts of the lines below the lowest labelled density are outside the plot and not recorded."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "densityFrame": "comoving",
+        "massDefinition": "bound stars within 50 pkpc 3D apertures of galaxies with M* >= 1e8 Msun",
+        "population": "galaxies with M* >= 1e8 Msun"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, cosmic stellar mass density",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the cosmic stellar mass density (CSMD)",
+        "panel": "L200m6 dash-dotted line",
+        "checksumSha256": "17eecd1d4ee2d8c58be2557df03474d252cd96336a2728d09f6375da2411d2a5",
+        "sourceMember": "plots/SMD.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labels 0-18 snapped to ticks in log10(1+z) and converted exactly to z; y: decade labels snapped to ticks and validated by the minor-tick pattern (log)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.smd.l400m7.all",
+      "source": "COLIBRE",
+      "run": "L400m7 (all stars)",
+      "kind": "simulation",
+      "relation": "smd",
+      "epoch": {
+        "zRepresentative": 4.042,
+        "zNominal": 4.042,
+        "zMin": 4.042,
+        "zMax": 13.62,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift (axis is log10(1+z), converted exactly)",
+        "xUnit": "redshift",
+        "yDefinition": "log10 comoving cosmic stellar mass density",
+        "yUnit": "log10(Msun cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 4.042,
+        "xMax": 13.62
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 4.042,
+            "y": 7.3981
+          },
+          {
+            "x": 4.092,
+            "y": 7.3815
+          },
+          {
+            "x": 4.246,
+            "y": 7.33
+          },
+          {
+            "x": 4.405,
+            "y": 7.2779
+          },
+          {
+            "x": 4.514,
+            "y": 7.2416
+          },
+          {
+            "x": 4.795,
+            "y": 7.1466
+          },
+          {
+            "x": 5.091,
+            "y": 7.0466
+          },
+          {
+            "x": 5.275,
+            "y": 6.9828
+          },
+          {
+            "x": 5.662,
+            "y": 6.8521
+          },
+          {
+            "x": 5.863,
+            "y": 6.7818
+          },
+          {
+            "x": 6.001,
+            "y": 6.7347
+          },
+          {
+            "x": 6.142,
+            "y": 6.686
+          },
+          {
+            "x": 6.286,
+            "y": 6.6403
+          },
+          {
+            "x": 6.889,
+            "y": 6.4285
+          },
+          {
+            "x": 7.292,
+            "y": 6.2894
+          },
+          {
+            "x": 7.375,
+            "y": 6.2584
+          },
+          {
+            "x": 7.628,
+            "y": 6.1687
+          },
+          {
+            "x": 7.715,
+            "y": 6.1358
+          },
+          {
+            "x": 7.89,
+            "y": 6.0781
+          },
+          {
+            "x": 7.979,
+            "y": 6.0428
+          },
+          {
+            "x": 8.068,
+            "y": 6.0105
+          },
+          {
+            "x": 8.159,
+            "y": 5.9743
+          },
+          {
+            "x": 8.437,
+            "y": 5.8688
+          },
+          {
+            "x": 8.531,
+            "y": 5.8299
+          },
+          {
+            "x": 8.626,
+            "y": 5.7942
+          },
+          {
+            "x": 8.723,
+            "y": 5.7537
+          },
+          {
+            "x": 8.82,
+            "y": 5.7208
+          },
+          {
+            "x": 9.117,
+            "y": 5.602
+          },
+          {
+            "x": 9.219,
+            "y": 5.5573
+          },
+          {
+            "x": 9.321,
+            "y": 5.5175
+          },
+          {
+            "x": 9.424,
+            "y": 5.4719
+          },
+          {
+            "x": 9.528,
+            "y": 5.4304
+          },
+          {
+            "x": 9.634,
+            "y": 5.3823
+          },
+          {
+            "x": 9.74,
+            "y": 5.3385
+          },
+          {
+            "x": 9.847,
+            "y": 5.2996
+          },
+          {
+            "x": 9.956,
+            "y": 5.2497
+          },
+          {
+            "x": 10.065,
+            "y": 5.2043
+          },
+          {
+            "x": 10.176,
+            "y": 5.1516
+          },
+          {
+            "x": 10.288,
+            "y": 5.1046
+          },
+          {
+            "x": 10.401,
+            "y": 5.0509
+          },
+          {
+            "x": 10.515,
+            "y": 5.0019
+          },
+          {
+            "x": 10.63,
+            "y": 4.9445
+          },
+          {
+            "x": 10.746,
+            "y": 4.8928
+          },
+          {
+            "x": 10.863,
+            "y": 4.8333
+          },
+          {
+            "x": 10.982,
+            "y": 4.7862
+          },
+          {
+            "x": 11.102,
+            "y": 4.7318
+          },
+          {
+            "x": 11.223,
+            "y": 4.6685
+          },
+          {
+            "x": 11.345,
+            "y": 4.6117
+          },
+          {
+            "x": 11.469,
+            "y": 4.5468
+          },
+          {
+            "x": 11.593,
+            "y": 4.4887
+          },
+          {
+            "x": 11.719,
+            "y": 4.4199
+          },
+          {
+            "x": 11.846,
+            "y": 4.3585
+          },
+          {
+            "x": 11.975,
+            "y": 4.2883
+          },
+          {
+            "x": 12.105,
+            "y": 4.2247
+          },
+          {
+            "x": 12.236,
+            "y": 4.1664
+          },
+          {
+            "x": 12.368,
+            "y": 4.0905
+          },
+          {
+            "x": 12.502,
+            "y": 4.0236
+          },
+          {
+            "x": 12.637,
+            "y": 3.9485
+          },
+          {
+            "x": 12.773,
+            "y": 3.8775
+          },
+          {
+            "x": 12.911,
+            "y": 3.7955
+          },
+          {
+            "x": 13.05,
+            "y": 3.7233
+          },
+          {
+            "x": 13.19,
+            "y": 3.6371
+          },
+          {
+            "x": 13.332,
+            "y": 3.5603
+          },
+          {
+            "x": 13.476,
+            "y": 3.4699
+          },
+          {
+            "x": 13.62,
+            "y": 3.4002
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all stars in the simulation volume",
+        "warning": "Cosmic stellar mass density of COLIBRE L400m7, all stellar mass in the simulated volume (the paper's raw simulation value), read from the vector paths of Chaikin et al. 2026 (CSMD figure, top panel). The paper truncates the L400m7 and m5 lines at z < 4 for clarity because they overlap the L200m6 line; the m5 line is drawn from the L025, L050 or L100 box (the legend does not say which at each redshift). Observational compilation, residual panel and the black outline of each line are not extracted. Parts of the lines below the lowest labelled density are outside the plot and not recorded."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "densityFrame": "comoving",
+        "massDefinition": "all star particles",
+        "population": "all stars in the volume"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, cosmic stellar mass density",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the cosmic stellar mass density (CSMD)",
+        "panel": "L400m7 solid line",
+        "checksumSha256": "17eecd1d4ee2d8c58be2557df03474d252cd96336a2728d09f6375da2411d2a5",
+        "sourceMember": "plots/SMD.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labels 0-18 snapped to ticks in log10(1+z) and converted exactly to z; y: decade labels snapped to ticks and validated by the minor-tick pattern (log)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.smd.l400m7.50pkpc-m8",
+      "source": "COLIBRE",
+      "run": "L400m7 (50 pkpc, M* >= 1e8)",
+      "kind": "simulation",
+      "relation": "smd",
+      "epoch": {
+        "zRepresentative": 4,
+        "zNominal": 4,
+        "zMin": 4,
+        "zMax": 11,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift (axis is log10(1+z), converted exactly)",
+        "xUnit": "redshift",
+        "yDefinition": "log10 comoving cosmic stellar mass density",
+        "yUnit": "log10(Msun cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 4,
+        "xMax": 11
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 4,
+            "y": 7.2415
+          },
+          {
+            "x": 4.25,
+            "y": 7.1355
+          },
+          {
+            "x": 4.5,
+            "y": 7.0282
+          },
+          {
+            "x": 4.75,
+            "y": 6.9178
+          },
+          {
+            "x": 5,
+            "y": 6.8041
+          },
+          {
+            "x": 5.25,
+            "y": 6.6882
+          },
+          {
+            "x": 5.5,
+            "y": 6.5698
+          },
+          {
+            "x": 5.75,
+            "y": 6.4501
+          },
+          {
+            "x": 6,
+            "y": 6.3292
+          },
+          {
+            "x": 6.25,
+            "y": 6.2056
+          },
+          {
+            "x": 6.5,
+            "y": 6.0806
+          },
+          {
+            "x": 6.75,
+            "y": 5.954
+          },
+          {
+            "x": 7,
+            "y": 5.8264
+          },
+          {
+            "x": 7.25,
+            "y": 5.6965
+          },
+          {
+            "x": 7.5,
+            "y": 5.5657
+          },
+          {
+            "x": 7.75,
+            "y": 5.4349
+          },
+          {
+            "x": 8,
+            "y": 5.3016
+          },
+          {
+            "x": 8.25,
+            "y": 5.1675
+          },
+          {
+            "x": 8.5,
+            "y": 5.0286
+          },
+          {
+            "x": 8.75,
+            "y": 4.8919
+          },
+          {
+            "x": 9,
+            "y": 4.7544
+          },
+          {
+            "x": 9.25,
+            "y": 4.6109
+          },
+          {
+            "x": 9.5,
+            "y": 4.47
+          },
+          {
+            "x": 9.75,
+            "y": 4.3266
+          },
+          {
+            "x": 10,
+            "y": 4.1794
+          },
+          {
+            "x": 10.5,
+            "y": 3.8895
+          },
+          {
+            "x": 11,
+            "y": 3.5936
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "stars in galaxies with M* >= 1e8 Msun",
+        "warning": "Cosmic stellar mass density of COLIBRE L400m7, stars within 50 pkpc 3D apertures of galaxies with M* >= 1e8 Msun (the paper's selection that can be compared with observations), read from the vector paths of Chaikin et al. 2026 (CSMD figure, top panel). The paper truncates the L400m7 and m5 lines at z < 4 for clarity because they overlap the L200m6 line; the m5 line is drawn from the L025, L050 or L100 box (the legend does not say which at each redshift). Observational compilation, residual panel and the black outline of each line are not extracted. Parts of the lines below the lowest labelled density are outside the plot and not recorded."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "densityFrame": "comoving",
+        "massDefinition": "bound stars within 50 pkpc 3D apertures of galaxies with M* >= 1e8 Msun",
+        "population": "galaxies with M* >= 1e8 Msun"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, cosmic stellar mass density",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-05",
+        "figure": "Evolution of the cosmic stellar mass density (CSMD)",
+        "panel": "L400m7 dash-dotted line",
+        "checksumSha256": "17eecd1d4ee2d8c58be2557df03474d252cd96336a2728d09f6375da2411d2a5",
+        "sourceMember": "plots/SMD.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labels 0-18 snapped to ticks in log10(1+z) and converted exactly to z; y: decade labels snapped to ticks and validated by the minor-tick pattern (log)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

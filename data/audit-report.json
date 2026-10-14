@@ -1,5 +1,5 @@
 {
- "total": 1617,
+ "total": 1656,
  "known": 16,
  "errors": 0,
  "warnings": 0,
@@ -99,6 +99,41 @@
     "sum of star particles x 0.6 (Munshi+13 correction)"
    ]
   },
+  "stfr": {
+   "yUnit": [
+    "log10(km/s)"
+   ],
+   "massDefinitions": [
+    "unspecified",
+    "stellar mass",
+    "aperture-30pkpc"
+   ]
+  },
+  "quenched": {
+   "yUnit": [
+    "fraction"
+   ],
+   "massDefinitions": [
+    "aperture-50pkpc",
+    "aperture-2rhalf-stars",
+    "unspecified",
+    "aperture-30pkpc"
+   ]
+  },
+  "smd": {
+   "yUnit": [
+    "log10(Msun cMpc^-3)",
+    "log10(Msun Mpc^-3)"
+   ],
+   "massDefinitions": [
+    "all star particles",
+    "bound stars within 50 pkpc 3D apertures of galaxies with M* >= 1e8 Msun",
+    "-",
+    "stars in galaxies with M*>10^9.3 Msun",
+    "stars in all identified galaxies",
+    "stars-within-third-Rmax-masked"
+   ]
+  },
   "gsmf": {
    "yUnit": [
     "log10(cMpc^-3 dex^-1)",
@@ -157,18 +192,6 @@
     "-"
    ]
   },
-  "smd": {
-   "yUnit": [
-    "log10(Msun cMpc^-3)",
-    "log10(Msun Mpc^-3)"
-   ],
-   "massDefinitions": [
-    "all star particles",
-    "-",
-    "stars in galaxies with M*>10^9.3 Msun",
-    "stars in all identified galaxies"
-   ]
-  },
   "hi-fraction": {
    "yUnit": [
     "dex"
@@ -210,17 +233,8 @@
    "massDefinitions": [
     "-",
     "aperture-2Reff-stars",
+    "aperture-0.2Rvir",
     "aperture-2rhalf-stars"
-   ]
-  },
-  "quenched": {
-   "yUnit": [
-    "fraction"
-   ],
-   "massDefinitions": [
-    "aperture-2rhalf-stars",
-    "aperture-30pkpc",
-    "aperture-50pkpc"
    ]
   },
   "btfr": {
@@ -234,16 +248,6 @@
     "baryonic mass as defined in the paper",
     "baryonic, stars plus 1.4 M_HI within r_gal",
     "baryonic mass within r_star"
-   ]
-  },
-  "stfr": {
-   "yUnit": [
-    "log10(km/s)"
-   ],
-   "massDefinitions": [
-    "stellar mass",
-    "unspecified",
-    "aperture-30pkpc"
    ]
   },
   "jstar": {

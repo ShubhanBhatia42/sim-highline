@@ -619,6 +619,17 @@
       "statusNote": "Scan failed (source could not be fetched); not triaged."
     },
     {
+      "arxiv": "1408.6842",
+      "project": "Illustris",
+      "year": 2014,
+      "firstAuthor": "Sijacki",
+      "title": "The Illustris simulation: the evolving population of black holes across cosmic time",
+      "section": "suite in sim-highline",
+      "couldSupply": "Sijacki+15 black holes: BH mass function, BH-galaxy relations",
+      "status": "skipped",
+      "statusNote": "Examined 2026-10-14: the black-hole mass function, SFR and BH accretion densities are vector figures, but the M_BH-sigma and M_BH-M_bulge relations are raster 2D histograms, and the fit table (slope and normalisation at z=0-4 for sigma_1D, z=0-1 for sigma_eff) states no sigma range, so no domain can be set honestly for a fit record."
+    },
+    {
       "arxiv": "1703.02970",
       "project": "IllustrisTNG",
       "year": 2017,
@@ -978,8 +989,8 @@
       "title": "NIHAO-UHD: The properties of MW-like stellar disks in high resolution cosmological simulations",
       "section": "suite in sim-highline",
       "couldSupply": "NIHAO-UHD",
-      "status": "candidate",
-      "statusNote": "Scanned 2026-10-08: captions mention tf in vector figures or tables (1); not yet extracted."
+      "status": "ingested",
+      "statusNote": "Extracted 2026-10-14: left-panel stellar Tully-Fisher points of the five galaxies (circular velocity at 2.2 R_d and HI line-width velocity). The right panel (flat velocity at the HI radius against SPARC) is not extracted."
     },
     {
       "arxiv": "1607.02151",

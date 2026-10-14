@@ -2,11 +2,11 @@
   "schemaVersion": "1.0.0",
   "generatedAt": "2026-10-13",
   "totals": {
-    "records": 1617,
+    "records": 1656,
     "sources": 101,
     "relations": 27,
     "rankable": 731,
-    "contextOnly": 886
+    "contextOnly": 925
   },
   "byRelation": {
     "age": {
@@ -216,27 +216,35 @@
       ]
     },
     "gas": {
-      "records": 14,
+      "records": 18,
       "epochs": [
         0,
         0.25,
         1,
         2,
-        4
+        4,
+        5,
+        7,
+        9,
+        12
       ],
       "epochRanges": [
         "0.25:0.25",
         "0:0",
         "0:0.05",
+        "12:12",
         "1:1",
         "2:2",
-        "4:4"
+        "4:4",
+        "5:5",
+        "7:7",
+        "9:9"
       ],
       "relations": [
         "gas"
       ],
       "rankable": 0,
-      "contextOnly": 14,
+      "contextOnly": 18,
       "tiers": [
         "digitized-figure"
       ]
@@ -620,7 +628,7 @@
       ]
     },
     "quenched": {
-      "records": 100,
+      "records": 124,
       "epochs": [
         0,
         0.1,
@@ -647,7 +655,9 @@
         3.9399,
         4.4889,
         4.5,
-        4.9881
+        4.9881,
+        5,
+        7
       ],
       "epochRanges": [
         "0.01:0.2",
@@ -678,13 +688,15 @@
         "3:4",
         "4.4889:4.4889",
         "4.9881:4.9881",
-        "4:5"
+        "4:5",
+        "5:5",
+        "7:7"
       ],
       "relations": [
         "quenched"
       ],
       "rankable": 33,
-      "contextOnly": 67,
+      "contextOnly": 91,
       "tiers": [
         "digitized-figure",
         "published-table"
@@ -1044,28 +1056,39 @@
       ]
     },
     "smd": {
-      "records": 10,
+      "records": 19,
       "epochs": [
         1.8,
         2,
-        2.749
+        2.749,
+        4,
+        4.042,
+        7
       ],
       "epochRanges": [
         "0.101:7.288",
         "0.399:8.999",
         "0:10.396",
+        "0:11.5",
+        "0:15.639",
         "0:20",
         "0:4",
         "0:6.334",
         "0:6.346",
         "0:6.729",
-        "0:7.787"
+        "0:7.787",
+        "4.042:13.62",
+        "4.042:18.127",
+        "4:11",
+        "4:12",
+        "5:10",
+        "5:12"
       ],
       "relations": [
         "smd"
       ],
       "rankable": 3,
-      "contextOnly": 7,
+      "contextOnly": 16,
       "tiers": [
         "digitized-figure",
         "published-table"
@@ -1117,7 +1140,7 @@
       ]
     },
     "stfr": {
-      "records": 9,
+      "records": 11,
       "epochs": [
         0,
         0.1
@@ -1132,7 +1155,7 @@
         "stfr"
       ],
       "rankable": 2,
-      "contextOnly": 7,
+      "contextOnly": 9,
       "tiers": [
         "digitized-figure",
         "published-table"
@@ -1729,7 +1752,7 @@
       ]
     },
     "COLIBRE": {
-      "records": 166,
+      "records": 190,
       "epochs": [
         0,
         0.1,
@@ -1738,6 +1761,7 @@
         2,
         3,
         4,
+        4.042,
         5,
         5.692,
         6,
@@ -1759,6 +1783,8 @@
         "0.1:0.1",
         "0.5:0.5",
         "0:0",
+        "0:11.5",
+        "0:15.639",
         "1.103:18.963",
         "10:10",
         "11:11",
@@ -1770,6 +1796,10 @@
         "1:1",
         "2:2",
         "3:3",
+        "4.042:13.62",
+        "4.042:18.127",
+        "4:11",
+        "4:12",
         "4:4",
         "5.692:18.963",
         "5:5",
@@ -1782,14 +1812,16 @@
         "gsmf",
         "jstar",
         "mzr",
+        "quenched",
         "sfms",
         "sfrd",
         "shmr",
         "size",
+        "smd",
         "ssfr"
       ],
       "rankable": 117,
-      "contextOnly": 49,
+      "contextOnly": 73,
       "tiers": [
         "digitized-figure",
         "official-table",
@@ -2083,7 +2115,7 @@
       ]
     },
     "FIRE-2": {
-      "records": 22,
+      "records": 29,
       "epochs": [
         0,
         1,
@@ -2106,23 +2138,28 @@
         "1:1",
         "4.5:5.5",
         "5.5:6.5",
+        "5:10",
         "5:12",
         "5:5",
         "6.5:7.5",
         "6:6",
         "7.5:8.5",
+        "7:7",
         "8.5:9.5",
         "8:8",
-        "9.5:10.5"
+        "9.5:10.5",
+        "9:9"
       ],
       "relations": [
+        "gas",
         "gsmf",
         "mzr",
         "shmr",
+        "smd",
         "uvlf"
       ],
       "rankable": 3,
-      "contextOnly": 19,
+      "contextOnly": 26,
       "tiers": [
         "digitized-figure",
         "published-fit",
@@ -2130,7 +2167,7 @@
       ]
     },
     "FIREbox": {
-      "records": 11,
+      "records": 17,
       "epochs": [
         0,
         2,
@@ -2152,11 +2189,12 @@
       "relations": [
         "gsmf",
         "mzr",
+        "quenched",
         "sfrd",
         "smd"
       ],
       "rankable": 1,
-      "contextOnly": 10,
+      "contextOnly": 16,
       "tiers": [
         "digitized-figure",
         "published-table"
@@ -3093,7 +3131,7 @@
       ]
     },
     "NIHAO zoom suite": {
-      "records": 36,
+      "records": 38,
       "epochs": [
         0,
         1,
@@ -3115,7 +3153,7 @@
         "stfr"
       ],
       "rankable": 2,
-      "contextOnly": 34,
+      "contextOnly": 36,
       "tiers": [
         "catalog-derived",
         "digitized-figure",

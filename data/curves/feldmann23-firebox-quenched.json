@@ -1,0 +1,645 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "feldmann23.firebox.quenched.all-ssfr10p5.z0",
+      "source": "FIREbox",
+      "run": "FIREbox (FB1024, 22.1 cMpc box), all galaxies, sSFR<10^-10.5",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 galaxy stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "quiescent fraction: fraction of galaxies in the stellar mass bin with sSFR below the threshold (sSFR averaged over the last 100 Myr)",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 8.013,
+        "xMax": 11.223
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.013,
+            "y": 0.5106,
+            "yLow": 0.4765,
+            "yHigh": 0.5481
+          },
+          {
+            "x": 8.437,
+            "y": 0.3836,
+            "yLow": 0.3434,
+            "yHigh": 0.4272
+          },
+          {
+            "x": 8.86,
+            "y": 0.1841,
+            "yLow": 0.1559,
+            "yHigh": 0.216
+          },
+          {
+            "x": 9.269,
+            "y": 0.12,
+            "yLow": 0.0902,
+            "yHigh": 0.1476
+          },
+          {
+            "x": 9.659,
+            "y": 0.0889,
+            "yLow": 0.0628,
+            "yHigh": 0.1178
+          },
+          {
+            "x": 10.048,
+            "y": 0.0991,
+            "yLow": 0.0767,
+            "yHigh": 0.1255
+          },
+          {
+            "x": 10.467,
+            "y": 0.1167,
+            "yLow": 0.0801,
+            "yHigh": 0.1574
+          },
+          {
+            "x": 10.88,
+            "y": 0.4375,
+            "yLow": 0.324,
+            "yHigh": 0.5657
+          },
+          {
+            "x": 11.223,
+            "y": 0.3,
+            "yLow": 0.1571,
+            "yHigh": 0.4454
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "FIREbox quiescent fraction at z=0 for all galaxies. Solid line and markers of the quiescent-fraction figure (threshold sSFR < 10^-10.5 /yr) with the plotted 16-84 per cent bootstrap error bars; bins with fewer than four galaxies (light shaded symbols without error bars) are not recorded. A galaxy is quiescent when its sSFR averaged over the last 100 Myr is below the threshold. The stellar-mass aperture is not restated for this figure (the paper defines galaxy stellar mass as the mass within R_g = 3 R_half elsewhere). The observational and empirical overlays (Leja+21, Behroozi+19) are not extracted."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "unspecified",
+        "population": "all galaxies",
+        "quenchingCriterion": "ssfr<10^-10.5",
+        "sfrTimescaleMyr": 100
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), FIREbox galaxy properties, quiescent fraction (all galaxies, sSFR<10^-10.5)",
+        "doi": "10.1093/mnras/stad1205",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "retrieved": "2026-10-14",
+        "figure": "Fraction of quiescent galaxies at z=0 (fig6.pdf)",
+        "panel": "all galaxies, sSFR<10^-10.5",
+        "checksumSha256": "bafa3d43318b7d90280410ba4b64ef3a196b0112808da160c20cd24cc5586997",
+        "sourceMember": "fig6.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to ticks (linear axes)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "feldmann23.firebox.quenched.all-ssfr11.z0",
+      "source": "FIREbox",
+      "run": "FIREbox (FB1024, 22.1 cMpc box), all galaxies, sSFR<1e-11",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 galaxy stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "quiescent fraction: fraction of galaxies in the stellar mass bin with sSFR below the threshold (sSFR averaged over the last 100 Myr)",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 8.013,
+        "xMax": 11.223
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.013,
+            "y": 0.4096
+          },
+          {
+            "x": 8.437,
+            "y": 0.2453
+          },
+          {
+            "x": 8.86,
+            "y": 0.1043
+          },
+          {
+            "x": 9.269,
+            "y": 0.0533
+          },
+          {
+            "x": 9.659,
+            "y": 0.0444
+          },
+          {
+            "x": 10.048,
+            "y": 0.018
+          },
+          {
+            "x": 10.467,
+            "y": 0.05
+          },
+          {
+            "x": 10.88,
+            "y": 0.1875
+          },
+          {
+            "x": 11.223,
+            "y": 0.1
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "FIREbox quiescent fraction at z=0 for all galaxies. Dotted line of the quiescent-fraction figure (threshold sSFR < 10^-11 /yr), no error bars drawn; only the bins that have at least four galaxies in the solid-marker series are recorded. A galaxy is quiescent when its sSFR averaged over the last 100 Myr is below the threshold. The stellar-mass aperture is not restated for this figure (the paper defines galaxy stellar mass as the mass within R_g = 3 R_half elsewhere). The observational and empirical overlays (Leja+21, Behroozi+19) are not extracted."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "unspecified",
+        "population": "all galaxies",
+        "quenchingCriterion": "ssfr<1e-11",
+        "sfrTimescaleMyr": 100
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), FIREbox galaxy properties, quiescent fraction (all galaxies, sSFR<1e-11)",
+        "doi": "10.1093/mnras/stad1205",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "retrieved": "2026-10-14",
+        "figure": "Fraction of quiescent galaxies at z=0 (fig6.pdf)",
+        "panel": "all galaxies, sSFR<1e-11",
+        "checksumSha256": "bafa3d43318b7d90280410ba4b64ef3a196b0112808da160c20cd24cc5586997",
+        "sourceMember": "fig6.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to ticks (linear axes)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "feldmann23.firebox.quenched.cen-ssfr10p5.z0",
+      "source": "FIREbox",
+      "run": "FIREbox (FB1024, 22.1 cMpc box), central galaxies, sSFR<10^-10.5",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 galaxy stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "quiescent fraction: fraction of galaxies in the stellar mass bin with sSFR below the threshold (sSFR averaged over the last 100 Myr)",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 8.015,
+        "xMax": 11.221
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.015,
+            "y": 0.4786,
+            "yLow": 0.4361,
+            "yHigh": 0.521
+          },
+          {
+            "x": 8.434,
+            "y": 0.3359,
+            "yLow": 0.3007,
+            "yHigh": 0.3777
+          },
+          {
+            "x": 8.86,
+            "y": 0.1339,
+            "yLow": 0.1081,
+            "yHigh": 0.1702
+          },
+          {
+            "x": 9.266,
+            "y": 0.0357,
+            "yLow": 0.0226,
+            "yHigh": 0.0587
+          },
+          {
+            "x": 9.671,
+            "y": 0.0196,
+            "yLow": 0.0101,
+            "yHigh": 0.0329
+          },
+          {
+            "x": 10.056,
+            "y": 0.0575,
+            "yLow": 0.0326,
+            "yHigh": 0.0825
+          },
+          {
+            "x": 10.496,
+            "y": 0.1277,
+            "yLow": 0.0812,
+            "yHigh": 0.1727
+          },
+          {
+            "x": 10.882,
+            "y": 0.4615,
+            "yLow": 0.3308,
+            "yHigh": 0.5974
+          },
+          {
+            "x": 11.221,
+            "y": 0.2222,
+            "yLow": 0.0222,
+            "yHigh": 0.4222
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "FIREbox quiescent fraction at z=0 for central galaxies. Solid line and markers of the quiescent-fraction figure (threshold sSFR < 10^-10.5 /yr) with the plotted 16-84 per cent bootstrap error bars; bins with fewer than four galaxies (light shaded symbols without error bars) are not recorded. A galaxy is quiescent when its sSFR averaged over the last 100 Myr is below the threshold. The stellar-mass aperture is not restated for this figure (the paper defines galaxy stellar mass as the mass within R_g = 3 R_half elsewhere). The observational and empirical overlays (Leja+21, Behroozi+19) are not extracted."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "unspecified",
+        "population": "central galaxies",
+        "quenchingCriterion": "ssfr<10^-10.5",
+        "sfrTimescaleMyr": 100
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), FIREbox galaxy properties, quiescent fraction (central galaxies, sSFR<10^-10.5)",
+        "doi": "10.1093/mnras/stad1205",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "retrieved": "2026-10-14",
+        "figure": "Fraction of quiescent galaxies at z=0 (fig6.pdf)",
+        "panel": "central galaxies, sSFR<10^-10.5",
+        "checksumSha256": "bafa3d43318b7d90280410ba4b64ef3a196b0112808da160c20cd24cc5586997",
+        "sourceMember": "fig6.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to ticks (linear axes)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "feldmann23.firebox.quenched.cen-ssfr11.z0",
+      "source": "FIREbox",
+      "run": "FIREbox (FB1024, 22.1 cMpc box), central galaxies, sSFR<1e-11",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 galaxy stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "quiescent fraction: fraction of galaxies in the stellar mass bin with sSFR below the threshold (sSFR averaged over the last 100 Myr)",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 8.015,
+        "xMax": 11.221
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.015,
+            "y": 0.3643
+          },
+          {
+            "x": 8.434,
+            "y": 0.1797
+          },
+          {
+            "x": 8.86,
+            "y": 0.0551
+          },
+          {
+            "x": 9.266,
+            "y": 0
+          },
+          {
+            "x": 9.671,
+            "y": 0
+          },
+          {
+            "x": 10.056,
+            "y": 0.0115
+          },
+          {
+            "x": 10.496,
+            "y": 0.0426
+          },
+          {
+            "x": 10.882,
+            "y": 0.1538
+          },
+          {
+            "x": 11.221,
+            "y": 0
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "central galaxies",
+        "warning": "FIREbox quiescent fraction at z=0 for central galaxies. Dotted line of the quiescent-fraction figure (threshold sSFR < 10^-11 /yr), no error bars drawn; only the bins that have at least four galaxies in the solid-marker series are recorded. A galaxy is quiescent when its sSFR averaged over the last 100 Myr is below the threshold. The stellar-mass aperture is not restated for this figure (the paper defines galaxy stellar mass as the mass within R_g = 3 R_half elsewhere). The observational and empirical overlays (Leja+21, Behroozi+19) are not extracted."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "unspecified",
+        "population": "central galaxies",
+        "quenchingCriterion": "ssfr<1e-11",
+        "sfrTimescaleMyr": 100
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), FIREbox galaxy properties, quiescent fraction (central galaxies, sSFR<1e-11)",
+        "doi": "10.1093/mnras/stad1205",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "retrieved": "2026-10-14",
+        "figure": "Fraction of quiescent galaxies at z=0 (fig6.pdf)",
+        "panel": "central galaxies, sSFR<1e-11",
+        "checksumSha256": "bafa3d43318b7d90280410ba4b64ef3a196b0112808da160c20cd24cc5586997",
+        "sourceMember": "fig6.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to ticks (linear axes)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "feldmann23.firebox.quenched.sat-ssfr10p5.z0",
+      "source": "FIREbox",
+      "run": "FIREbox (FB1024, 22.1 cMpc box), satellite galaxies, sSFR<10^-10.5",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 galaxy stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "quiescent fraction: fraction of galaxies in the stellar mass bin with sSFR below the threshold (sSFR averaged over the last 100 Myr)",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 8.007,
+        "xMax": 10.362
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.007,
+            "y": 0.6042,
+            "yLow": 0.5407,
+            "yHigh": 0.6823
+          },
+          {
+            "x": 8.448,
+            "y": 0.5806,
+            "yLow": 0.5033,
+            "yHigh": 0.67
+          },
+          {
+            "x": 8.86,
+            "y": 0.3611,
+            "yLow": 0.2754,
+            "yHigh": 0.4389
+          },
+          {
+            "x": 9.277,
+            "y": 0.3684,
+            "yLow": 0.2962,
+            "yHigh": 0.4534
+          },
+          {
+            "x": 9.623,
+            "y": 0.303,
+            "yLow": 0.2301,
+            "yHigh": 0.3904
+          },
+          {
+            "x": 10.02,
+            "y": 0.25,
+            "yLow": 0.1521,
+            "yHigh": 0.3578
+          },
+          {
+            "x": 10.362,
+            "y": 0.0769,
+            "yLow": 0.0144,
+            "yHigh": 0.1584
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "satellite galaxies",
+        "warning": "FIREbox quiescent fraction at z=0 for satellite galaxies. Solid line and markers of the quiescent-fraction figure (threshold sSFR < 10^-10.5 /yr) with the plotted 16-84 per cent bootstrap error bars; bins with fewer than four galaxies (light shaded symbols without error bars) are not recorded. A galaxy is quiescent when its sSFR averaged over the last 100 Myr is below the threshold. The stellar-mass aperture is not restated for this figure (the paper defines galaxy stellar mass as the mass within R_g = 3 R_half elsewhere). The observational and empirical overlays (Leja+21, Behroozi+19) are not extracted."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "unspecified",
+        "population": "satellite galaxies",
+        "quenchingCriterion": "ssfr<10^-10.5",
+        "sfrTimescaleMyr": 100
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), FIREbox galaxy properties, quiescent fraction (satellite galaxies, sSFR<10^-10.5)",
+        "doi": "10.1093/mnras/stad1205",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "retrieved": "2026-10-14",
+        "figure": "Fraction of quiescent galaxies at z=0 (fig6.pdf)",
+        "panel": "satellite galaxies, sSFR<10^-10.5",
+        "checksumSha256": "bafa3d43318b7d90280410ba4b64ef3a196b0112808da160c20cd24cc5586997",
+        "sourceMember": "fig6.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to ticks (linear axes)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "feldmann23.firebox.quenched.sat-ssfr11.z0",
+      "source": "FIREbox",
+      "run": "FIREbox (FB1024, 22.1 cMpc box), satellite galaxies, sSFR<1e-11",
+      "kind": "simulation",
+      "relation": "quenched",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 galaxy stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "quiescent fraction: fraction of galaxies in the stellar mass bin with sSFR below the threshold (sSFR averaged over the last 100 Myr)",
+        "yUnit": "fraction"
+      },
+      "domain": {
+        "xMin": 8.007,
+        "xMax": 10.362
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.007,
+            "y": 0.5417
+          },
+          {
+            "x": 8.448,
+            "y": 0.5161
+          },
+          {
+            "x": 8.86,
+            "y": 0.2778
+          },
+          {
+            "x": 9.277,
+            "y": 0.2105
+          },
+          {
+            "x": 9.623,
+            "y": 0.1818
+          },
+          {
+            "x": 10.02,
+            "y": 0.0417
+          },
+          {
+            "x": 10.362,
+            "y": 0.0769
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "satellite galaxies",
+        "warning": "FIREbox quiescent fraction at z=0 for satellite galaxies. Dotted line of the quiescent-fraction figure (threshold sSFR < 10^-11 /yr), no error bars drawn; only the bins that have at least four galaxies in the solid-marker series are recorded. A galaxy is quiescent when its sSFR averaged over the last 100 Myr is below the threshold. The stellar-mass aperture is not restated for this figure (the paper defines galaxy stellar mass as the mass within R_g = 3 R_half elsewhere). The observational and empirical overlays (Leja+21, Behroozi+19) are not extracted."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "massDefinition": "unspecified",
+        "population": "satellite galaxies",
+        "quenchingCriterion": "ssfr<1e-11",
+        "sfrTimescaleMyr": 100
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), FIREbox galaxy properties, quiescent fraction (satellite galaxies, sSFR<1e-11)",
+        "doi": "10.1093/mnras/stad1205",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "retrieved": "2026-10-14",
+        "figure": "Fraction of quiescent galaxies at z=0 (fig6.pdf)",
+        "panel": "satellite galaxies, sSFR<1e-11",
+        "checksumSha256": "bafa3d43318b7d90280410ba4b64ef3a196b0112808da160c20cd24cc5586997",
+        "sourceMember": "fig6.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: numeric tick labels snapped to ticks (linear axes)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

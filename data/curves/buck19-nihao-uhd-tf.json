@@ -1,0 +1,173 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "buck19.nihao-uhd.stfr-v22rd.z0",
+      "source": "NIHAO zoom suite",
+      "run": "NIHAO-UHD Milky Way-mass discs (per galaxy, circular velocity at 2.2 R_d)",
+      "kind": "simulation",
+      "relation": "stfr",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 total stellar mass",
+        "xUnit": "log10(Msun)",
+        "yUnit": "log10(km/s)",
+        "yDefinition": "log10 circular velocity at 2.2 disc scale lengths (2.2 R_d)"
+      },
+      "domain": {
+        "xMin": 10.199,
+        "xMax": 11.201
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": false,
+        "points": [
+          {
+            "x": 10.199,
+            "y": 2.146
+          },
+          {
+            "x": 10.301,
+            "y": 2.2492
+          },
+          {
+            "x": 10.435,
+            "y": 2.2842
+          },
+          {
+            "x": 10.531,
+            "y": 2.3337
+          },
+          {
+            "x": 11.201,
+            "y": 2.5682
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "5 NIHAO-UHD Milky Way-mass galaxies (zoom, not volume complete)",
+        "warning": "The solid coloured points (circular velocity at 2.2 R_d) of the five NIHAO-UHD galaxies g6.96e11, g7.08e11, g7.55e11, g8.26e11 and g2.79e12 (in order of increasing stellar mass), read from the marker paths of Buck et al. 2019; no table exists. The stellar mass is the total stellar mass of the galaxy as listed in the paper's galaxy table; its aperture is not stated. The paper notes that the simulated velocities lie on the high side of the observed relation. Five hand-picked Milky Way-mass zoom galaxies, not a population. Observational data and fits are not extracted. The right panel (flat rotation velocity at the HI radius against SPARC) is not extracted."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 67.1,
+          "Om": 0.3175
+        },
+        "massDefinition": "unspecified",
+        "velocityDefinition": "circular velocity at 2.2 R_d",
+        "population": "zoom-centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Buck et al. 2019, MNRAS, stz3241 (doi:10.1093/mnras/stz3241; arXiv:1909.05864), NIHAO-UHD Tully-Fisher relation",
+        "doi": "10.1093/mnras/stz3241",
+        "url": "https://arxiv.org/abs/1909.05864",
+        "retrieved": "2026-10-14",
+        "figure": "Tully-Fisher relation (left panel)",
+        "panel": "solid coloured points (circular velocity at 2.2 R_d)",
+        "checksumSha256": "3d321664a09e29408357de7b1b9c0a5516547b34fdecd5f9c27f0dc5ba547dc9",
+        "sourceMember": "plots/tully_fisher.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^10 to 10^12 snapped to ticks (log); y: labelled ticks 2.0 to 2.6 snapped to ticks (linear)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "buck19.nihao-uhd.stfr-hi-linewidth.z0",
+      "source": "NIHAO zoom suite",
+      "run": "NIHAO-UHD Milky Way-mass discs (per galaxy, rotation velocity from the edge-on HI line width)",
+      "kind": "simulation",
+      "relation": "stfr",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 total stellar mass",
+        "xUnit": "log10(Msun)",
+        "yUnit": "log10(km/s)",
+        "yDefinition": "log10 edge-on rotation velocity derived from the HI line width"
+      },
+      "domain": {
+        "xMin": 10.199,
+        "xMax": 11.201
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": false,
+        "points": [
+          {
+            "x": 10.199,
+            "y": 2.2175
+          },
+          {
+            "x": 10.301,
+            "y": 2.2406
+          },
+          {
+            "x": 10.435,
+            "y": 2.2588
+          },
+          {
+            "x": 10.531,
+            "y": 2.3032
+          },
+          {
+            "x": 11.201,
+            "y": 2.5106
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "5 NIHAO-UHD Milky Way-mass galaxies (zoom, not volume complete)",
+        "warning": "The shaded coloured points (rotation velocity from the edge-on HI line width) of the five NIHAO-UHD galaxies g6.96e11, g7.08e11, g7.55e11, g8.26e11 and g2.79e12 (in order of increasing stellar mass), read from the marker paths of Buck et al. 2019; no table exists. The stellar mass is the total stellar mass of the galaxy as listed in the paper's galaxy table; its aperture is not stated. The paper notes that the simulated velocities lie on the high side of the observed relation. Five hand-picked Milky Way-mass zoom galaxies, not a population. Observational data and fits are not extracted. The right panel (flat rotation velocity at the HI radius against SPARC) is not extracted."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 67.1,
+          "Om": 0.3175
+        },
+        "massDefinition": "unspecified",
+        "velocityDefinition": "rotation velocity from the edge-on HI line width (the paper does not say which width, W50 or W20)",
+        "population": "zoom-centrals"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Buck et al. 2019, MNRAS, stz3241 (doi:10.1093/mnras/stz3241; arXiv:1909.05864), NIHAO-UHD Tully-Fisher relation",
+        "doi": "10.1093/mnras/stz3241",
+        "url": "https://arxiv.org/abs/1909.05864",
+        "retrieved": "2026-10-14",
+        "figure": "Tully-Fisher relation (left panel)",
+        "panel": "shaded coloured points (rotation velocity from the edge-on HI line width)",
+        "checksumSha256": "3d321664a09e29408357de7b1b9c0a5516547b34fdecd5f9c27f0dc5ba547dc9",
+        "sourceMember": "plots/tully_fisher.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled decades 10^10 to 10^12 snapped to ticks (log); y: labelled ticks 2.0 to 2.6 snapped to ticks (linear)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}
