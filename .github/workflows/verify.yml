@@ -29,7 +29,7 @@ jobs:
         run: ./scripts/verify-all.sh
       - name: Generated files are up to date
         run: |
-          git diff --exit-code --stat || { echo "::error::Generated files changed. Run ./scripts/verify-all.sh locally and commit the result."; exit 1; }
+          git diff --exit-code --stat || { git --no-pager diff -U0 | head -80; echo "::error::Generated files changed. Run ./scripts/verify-all.sh locally and commit the result."; exit 1; }
       - name: Package builds and loads
         run: |
           pip wheel . --no-deps -w /tmp/wheel
