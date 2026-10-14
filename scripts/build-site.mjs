@@ -246,7 +246,7 @@ if (await read("data/analysis/model-form.json").then(() => true, () => false)) {
     const ymax = Math.ceil(Math.max(...ok.map(r => r[3])) * 10) / 10, { px, py, g } = frame([0, 8], [0, ymax], [0, 1, 2, 3, 4, 5, 6, 7, 8], Array.from({ length: Math.floor(ymax / 0.2) + 1 }, (_, i) => +(i * 0.2).toFixed(1)), "redshift", "spread between simulations (dex)");
     const bd = M.parameters.bands_published;
     let s = g;
-    for (const [k, c] of [["low", "var(--bg2)"], ["high", "var(--bg2)"]]) s += `<rect x="${px(bd[k][0]).toFixed(1)}" y="${T}" width="${(px(bd[k][1]) - px(bd[k][0])).toFixed(1)}" height="${HT - T - B}" fill="${c}" opacity=".9"/>`;
+    for (const k of ["low", "high"]) s += `<rect x="${px(bd[k][0]).toFixed(1)}" y="${T}" width="${(px(bd[k][1]) - px(bd[k][0])).toFixed(1)}" height="${HT - T - B}" fill="var(--line2)" opacity=".3"/>`;
     s += `<path d="${band(ok.map(r => [r[0], r[2]]), ok.map(r => [r[0], r[3]]), px, py)}" fill="var(--orange)" opacity=".22"/><path d="${path(ok.map(r => [r[0], r[1]]), px, py)}" fill="none" stroke="var(--orange)" stroke-width="2.6"/>`;
     s += `<text class="al" x="${px(1.75).toFixed(1)}" y="${T + 14}" text-anchor="middle" style="font-size:12px">low band</text><text class="al" x="${px(6.25).toFixed(1)}" y="${T + 14}" text-anchor="middle" style="font-size:12px">high band</text>`;
     stats.mfFunnel = svgOf("mfF", "Spread of the cosmic star formation rate density between simulations against redshift", "Standard deviation across simulation families of log10 SFRD at each redshift, with its bootstrap band; the two shaded bands are the ones compared.", s);
