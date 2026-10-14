@@ -1,0 +1,77 @@
+# Protocol: can retuning make two feedback models agree on every galaxy observable at once?
+
+Status: **pre-specified**. Written on 2026-10-14 after the data were ingested and their availability checked (section 8 lists exactly what had been looked at) and **before** any response of an observable to a parameter, any reachability distance, any verdict or any selection of observables was computed. The analysis code (`scripts/analyze_joint_reachability.py`) implements this text; every departure is listed under "Deviations" in `docs/ANALYSIS-joint-reachability.md`, which the code generates and which reports whatever comes out, including a null result. Amendments, if any, are in section 9, dated, with what had been seen when each was made.
+
+## 1. The question
+
+The previous study (`PROTOCOL-model-form.md`) found that the cosmic star formation history alone cannot separate IllustrisTNG from SIMBA in the CAMELS experiment: retuning four feedback parameters brings the two to within the scatter between seeds. A single observable is a poor test, because one observable constrains few combinations of four parameters. Real calibrations use many observables at once, and models that agree on one can disagree on another.
+
+Define, for a code c, the map y_c(a) from its four astrophysical parameters a (in [-1, 1]^4) to a vector of galaxy-population summaries y (section 3). The set of all y_c(a) is the code's *reachable set*. The **structural distance** between two codes is the distance between their reachable sets, in units of the noise that remains when everything is fixed:
+
+    D(S) = min over (a_TNG, a_SIMBA) of sqrt( mean over the outputs k in S of w_k ((y_TNG,k(a_TNG) - y_SIMBA,k(a_SIMBA)) / s_k)^2 ).
+
+The same two catalogues, the same halo finder, the same box and resolution and the same definitions are used for both codes, so no definition, aperture, IMF or resolution difference enters: what is left is the model.
+
+Questions:
+
+* **J1 (joint).** Is the distance for *all* observables together, with one parameter pair per code, above the noise margin (structural), below it (removable) or neither?
+* **J2 (each alone).** For which observables is the distance structural even when that observable alone is fitted? These cannot be absorbed by any retuning.
+* **J3 (the cost of agreeing).** How much larger is the squared joint distance than the weighted mean of the squared distances of the observables fitted one at a time? That excess is the retuning conflict: no single parameter pair serves all observables.
+* **J4 (what separates them).** Which observables carry the separation: the order in which adding observables raises the joint distance, the smallest set found by that order whose distance is structural, and the distance without each family.
+* **J5 (redshift).** Does the structural distance grow with redshift (the "funnel" of the previous study, now for the joint distance)?
+
+## 2. Data
+
+`data/ensembles/camels-galaxies.json`, written by `scripts/ingest_camels_galaxies.py` from the public CAMELS Subfind catalogues (`groups_NNN.hdf5`) by HTTP range reads of the needed arrays (the SHA-256 of the arrays' bytes is stored for every simulation and snapshot): IllustrisTNG and SIMBA, 1000 Latin-hypercube simulations each (LH; four astrophysical parameters and two cosmological; each with its own seed), and 27 cosmic-variance simulations each (CV; fiducial parameters, 27 seeds), at the snapshots z = 0, 0.95, 2.15, 3.0 and 4.0. The boxes are 25 Mpc/h with 256^3 dark matter particles plus 256^3 gas elements, h = 0.6711. The parameters of the two codes are not the same physical quantities (A_SN1 is the galactic wind energy per unit star formation in IllustrisTNG and the wind mass loading in SIMBA, and so on); the experiment compares what each code can do with four feedback dials of the same range.
+
+## 3. Observables
+
+At each snapshot, summaries of the galaxy population of the box (every Subfind subhalo with stars; M* is the total bound stellar mass; bins of 0.25 dex in M* from 10^9 to 10^11.5 Msun, about 60 star particles at the lower edge): the number density per dex (`gsmf`), the quenched fraction (specific SFR below 1e-11 per yr; `qf`), the median specific SFR of galaxies with SFR > 0 (`sfms`), the median black hole mass (`bhms`) and the fraction of galaxies with a black hole (`bhocc`), the median SFR-weighted gas metallicity (`mzr`) and stellar metallicity (`zstar`) over 0.0127, the median stellar half-mass radius (`size`), the median gas fraction inside twice the stellar half-mass radius (`fgas`); for centrals, in bins of 0.25 dex in M200c from 10^11 to 10^13, the median M*/M200c (`shmr`), and the halo mass function in bins of 0.5 dex from 10^10.5 to 10^13.5 (`hmf`); and two densities per snapshot (`rho`: stellar mass in subhaloes and the instantaneous SFR, per comoving volume). The exact definitions are in the header of `scripts/ingest_camels_galaxies.py`. A *block* is a family at one snapshot; an *output* is one bin of a block.
+
+**Eligibility.** An output enters if it is finite in at least 90 % of the LH simulations of each code and in at least 20 of the 27 CV simulations of each code. A block enters if it has at least 3 eligible outputs (all of them, for the two densities of `rho`). The `hmf` family is the negative control (section 5), not an observable of the joint distance. Eligibility is reported.
+
+## 4. Estimators
+
+* **Emulator.** For each code and each output, a weighted polynomial ridge regression of the output on the six parameter coordinates x = ((Omega_m - 0.3)/0.2, (sigma_8 - 0.8)/0.2, log A_SN1/log 4, log A_AGN1/log 4, log A_SN2/log 2, log A_AGN2/log 2), as in `PROTOCOL-model-form.md` section 4 (degree 2 or 3 chosen per code by 10-fold cross-validation over all eligible outputs, degree 3 only if its mean error is more than 2 % smaller; ridge 1e-3 of the mean diagonal; Gaussian weights of width 0.5 on the two cosmological coordinates; cosmology fixed at the fiducial values x1 = x2 = 0 everywhere below). Two code-specific facts: the fold assignments of the degree choice and of the validations differ.
+* **Noise scale** s_k of an output: s_k^2 = sigma_TNG,k^2 + sigma_SIMBA,k^2 + e_TNG,k^2 + e_SIMBA,k^2, with sigma the standard deviation of the 27 CV simulations and e the cross-validation error of the emulator in excess of the seed noise (zero if smaller), the latter over the simulations within 0.5 of the fiducial cosmology. A floor of 0.02 (in the unit of the output: dex or fraction) is applied to s_k. D = 1 means that the two codes' mean predictions differ, rms over the outputs, by the standard deviation of the difference between one run of each.
+* **Weights.** w_k gives every block the same total weight (1 / number of eligible outputs of its block, normalised so that the mean over outputs of w_k is 1 in the set used). A set S of outputs is always a union of blocks.
+* **Distance D(S)** as in section 1, minimised over both parameter vectors in [-1, 1]^4 by projected gradient descent with backtracking from the fiducial point and from random starts (the optimiser of `analyze_model_form.py`, tested against brute force there).
+* **Matched-size splits and verdict.** In each of 200 random splits both codes' LH sets are divided into two random halves A and B (500 simulations each, the degree chosen on the full sets) and three distances are computed with the same search effort: between = D(TNG A, SIMBA A) and controls D(TNG A, TNG B) and D(SIMBA A, SIMBA B). The margin is m = 1 (the unit of the noise scale). The verdict for a set is *structural* if the 5th percentile of its between distribution exceeds both the 95th percentile of the pooled controls and m; *removable* if its 95th percentile is below m; otherwise *unresolved*. The point estimate on all simulations and its full-size bootstrap are reported but do not decide. Distances for families alone and for single snapshots use the first 100 splits.
+* **J1** is the verdict for all eligible blocks except `hmf`. **J2** is the verdict for each family alone (all its snapshots). **J3** is the retuning conflict: with D_sep^2 = the sum over families of (blocks of the family / all blocks) x D(family alone)^2 (every family tuned with its own parameter pair), D(all)^2 is never smaller than D_sep^2, and J3 is the ratio D(all)^2 / D_sep^2 and the excess D(all)^2 - D_sep^2, each with the 5th, 50th and 95th percentile over the first 100 splits (the three distances are computed in the same splits). A ratio of 1 means that one parameter pair serves all families as well as separate pairs would; it is interpreted only where D_sep exceeds the 95th percentile of the controls (below that both numbers are at the noise floor and their ratio is not informative). A structural joint verdict is classed as *irreducible* (at least one family is structural alone) or *conflict* (no family is: only the requirement of one parameter pair separates the codes). **J4**: forward selection of families, starting from the empty set and adding at each step the family that gives the largest point estimate of D(S); at each step the verdict of the set from 50 splits; the *separating set* is the first set in that order that is structural. Also D without each family (point estimate and 50 splits). **J5**: the verdict and distance for all families at each snapshot that has at least 3 eligible blocks (no slope is fitted: at most three snapshots qualify at this resolution, see section 8).
+* **Response.** For each code and each parameter, the change of each output when that parameter moves from -1 to +1 at the others' fiducial values, in units of s_k (descriptive).
+
+## 5. Validations (must hold for a conclusion to be stated without qualification; failures are reported and the qualification stated)
+
+* **V1 (emulators).** The cross-validation error of the emulator is at most 1.5 times the seed noise for at least 80 % of the eligible outputs of each code.
+* **V2 (negative control).** The halo mass function, which depends on cosmology and little on feedback, is reachable: its joint distance over the snapshots at which it is eligible is below m with the verdict *removable* (the pipeline does not produce structural distances where there is none).
+* **V3 (units and volume).** The instantaneous SFR density from the catalogues at z = 0 agrees with the time-averaged SFR density of `camels-sfrd.json` in the bin 0 < z < 0.2 to within 0.2 dex in the median over simulations, for each code.
+* **V4 (stellar mass budget).** At z = 0, the stellar mass density in subhaloes divided by the time integral of the logged SFR density (from `camels-sfrd.json`, formed mass) lies in [0.45, 0.75] for the median simulation of each code (the passing range of V1 of `PROTOCOL-model-form.md`).
+* **V5 (numerical stability).** Rerunning the distance of J1 with 8 instead of 4 random starts changes it by less than 5 %.
+
+## 6. Calibration of the estimators on synthetic data
+
+`scripts/power_joint_reachability.py` (committed with the analysis; synthetic data only) builds two-code worlds with known structure and reports the verdicts of J1 to J3: (a) identical structure (all verdicts must be removable); (b) one observable shifted by an amount no parameter can absorb (J2 must flag that observable, J1 must be structural once the shift exceeds the stated multiple of the noise); (c) every family reachable alone but by a different parameter pair for each (J3 must be well above 1 while J2 flags no family); and the dependence of the verdicts on the size of the shift. The tests in `scripts/test_joint_reachability.py` check the same on small worlds.
+
+## 7. Sensitivity analyses (reported, not used to choose)
+
+S1 emulator degree 2 and 3; S2 kernel width 0.35 and 0.8; S3 the emulator error left out of s_k; S4 floor 0.01 and 0.05; S5 margin m = 2; S6 only the snapshots z = 0 and 0.95; S7 without `bhocc` (black hole seeding is a discrete model choice); S8 without the two lowest mass bins (lower resolution); S9 search range cut to 25, 50 and 75 % of the half-width (D only).
+
+## 8. What had been looked at before this was written
+
+* One IllustrisTNG and one SIMBA simulation (LH_0) at z = 0: the distribution of stellar masses and star particle numbers (about 1.3e7 Msun per star particle; 248 and 200 subhaloes with M* > 1e9 Msun), the fraction with SFR > 0, the black hole occupation among M* > 1e9 (0.88 in IllustrisTNG, 0.33 in SIMBA) and the printed summaries of both for all families (to check that the reduction gives sensible numbers); these are single simulations at different parameters and say nothing about the codes.
+* The counts of Subfind subhaloes per snapshot of LH_0, and the file sizes.
+* The ingest log (progress, errors: none) and the eligibility of the outputs (section 3: the share of simulations with a finite value, and the number of CV simulations with one): of 530 outputs, 186 are eligible, in 39 blocks. Eligible outputs per family at z = 0, 0.95, 2.15, 3.0, 4.0: gsmf 9, 8, 5, 4, -; qf 7, 6, 3, -, -; sfms 6, 6, 3, -, -; bhms 5, 4, -, -, -; bhocc 7, 6, 3, -, -; mzr 6, 6, 3, -, -; zstar 7, 6, 3, -, -; size 7, 6, 3, -, -; fgas 7, 6, 3, -, -; shmr 5, 5, 4, -, -; rho 2 at every snapshot; hmf 5, 5, 4, 3, -. At z = 3 and 4 only the stellar mass function (z = 3) and the two densities qualify, so the redshift question (J5) can only be asked at z = 0, 0.95 and 2.15, and the slope of D(z) was dropped for that reason. No emulator was fitted to the new data, and no seed noise, response or distance was computed, before this protocol was committed.
+* From the previous study: the SFR history of the same simulations (the cosmic SFR density), including its parametric spread, seed noise and the TNG-SIMBA reachability result of `ANALYSIS-model-form.md`. That result motivates the question and may colour expectations: the pre-specified expectation is that the joint distance exceeds the SFR-only distance (0.08 dex), that BH occupation is structural alone, and that the joint verdict is structural; this text does not depend on it and a different result will be reported as it comes out.
+
+## 9. Limitations declared in advance
+
+1. Two codes: the result is about this pair, not about "structural uncertainty" in general.
+2. CAMELS boxes are 25 Mpc/h with 256^3 elements: few galaxies above 10^11 Msun, resolution-limited galaxies at the lower end and above z about 3, and all statements are for CAMELS resolution; star formation and black hole growth are resolution-dependent in both codes.
+3. The four parameters per code span the factors the CAMELS team chose, not the factors the code authors consider acceptable; the reachable sets depend on that prior. The search reaches the corners of the design where emulators are least constrained; the controls share that search, which keeps the comparison fair, and the shrunken ranges are reported.
+4. The distance depends on the choice of observables and their weights (equal weight per block); the margin m = 1 is the scatter between two seeds, a conventional unit and not a physical tolerance. The report gives distances in these units and per family so that other weights can be read off.
+5. Medians of small bins are noisy; the noise scale includes that noise but not its non-Gaussian part.
+6. Subfind subhaloes are not galaxies observed on the sky; no aperture, selection or survey effect is modelled, which is the point of the comparison and also what keeps it from being an observational test.
+
+## 10. Amendments
+
+(none yet)
