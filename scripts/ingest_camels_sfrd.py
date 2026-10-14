@@ -1,7 +1,7 @@
 """Cosmic star formation rate density histories of the CAMELS IllustrisTNG and SIMBA simulations (Villaescusa-Navarro et al. 2021, arXiv:2010.00619; first generation: 25 Mpc/h boxes, 256^3 dark matter
 particles plus 256^3 gas elements), reduced to a fixed redshift grid.
 
-The inputs are the star formation logs the codes wrote while running (extra_files/sfr.txt of every simulation on https://users.flatironinstitute.org/~camels/), 44 MB for IllustrisTNG and 8 MB for SIMBA.
+The inputs are the star formation logs the codes wrote while running (extra_files/sfr.txt of every simulation on https://users.flatironinstitute.org/~camels/), about 44 MB per simulation for IllustrisTNG and 8 MB for SIMBA.
 Each file is streamed, hashed (SHA-256 of the original bytes) and reduced; nothing is stored but the result. The Latin-hypercube set LH (1000 simulations per code, 6 parameters: Omega_m, sigma_8 and four
 astrophysical factors, a different initial seed for each) and the cosmic-variance set CV (27 simulations at the fiducial parameters, 27 seeds) are read. Writes data/ensembles/camels-sfrd.json.
 

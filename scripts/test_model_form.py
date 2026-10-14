@@ -144,8 +144,43 @@ assert d_ctl < 0.03, d_ctl
 a_true = np.array([0.5, -0.3, 0.2, 0.6])
 truth = A.predict_astro(emu_t, a_true[None, :])[0]
 zi = np.array([int(np.argmin(np.abs(zc - z))) for z in (0.1, 0.9, 1.7, 2.5)])
-post, ess, _ = A.calibrate(emu_t, zi, truth[zi], np.full(len(zi), 0.03), np.random.default_rng(2), nprior=200000, chunk=50000)
-assert ess > 50 and np.all(np.abs(np.median(post, axis=0)) < 1.0)
+cov_ind = A.obs_covariance(0.03, 0.0, np.zeros(len(zi)), common=False)
+assert np.allclose(cov_ind, np.eye(len(zi)) * 0.03 ** 2)
+cov_com = A.obs_covariance(0.2, 0.15, np.array([0.0, 0.1, 0.0, 0.1]), common=True)
+assert np.allclose(np.diag(cov_com), [0.0625, 0.0725, 0.0625, 0.0725]) and np.allclose(cov_com[0, 1], 0.04) and np.all(np.linalg.eigvalsh(cov_com) > 0)
+post, ess, _, nused = A.calibrate(emu_t, zi, truth[zi], cov_ind, np.random.default_rng(2), nprior=200000, chunk=50000, min_ess=50)
+assert ess > 50 and nused == 200000 and np.all(np.abs(np.median(post, axis=0)) < 1.0)
+# a common systematic: data shifted by +0.15 at every redshift is fitted with a smaller shift in the model than data shifted at some redshifts only
+post_c, ess_c, _, _ = A.calibrate(emu_t, zi, truth[zi] + 0.15, A.obs_covariance(0.2, 0.05, np.zeros(len(zi)), True), np.random.default_rng(2), nprior=100000, chunk=50000, min_ess=50)
+sh_c = np.median(A.predict_coords(emu_t, post_c)[:, zi], axis=0) - truth[zi]
+assert np.all(np.abs(sh_c) < 0.2), sh_c  # the posterior is not forced to follow a normalisation offset that the covariance says is allowed
+# the effective sample size floor enlarges the draw
+_, _, _, nused2 = A.calibrate(emu_t, zi, truth[zi], cov_ind, np.random.default_rng(2), nprior=20000, chunk=20000, min_ess=1e9, max_rounds=2)
+assert nused2 == 20000 * 16, nused2
+e_nan = A.fit_emulator(Xt, Yt)
+e_nan.coef[:, zi[0]] = np.nan
+try:
+    A.calibrate(e_nan, zi, truth[zi], cov_ind, np.random.default_rng(2), nprior=1000, chunk=1000)
+    raise AssertionError("a NaN emulator column at a calibration redshift must stop the calibration")
+except ValueError:
+    pass
+# ridge: the penalty is the stated fraction of the mean diagonal of F'WF (intercept excluded)
+wk = A.kernel_weights(Xt)
+Fk = ms.quad_features(Xt)
+Awk = Fk.T @ (Fk * wk[:, None])
+pen_k = 1e-3 * np.mean(np.diag(Awk)[1:]) * np.eye(Fk.shape[1])
+pen_k[0, 0] = 0
+assert np.allclose(np.linalg.solve(Awk + pen_k, (Fk * wk[:, None]).T @ Yt[:, 5]), ms.Emulator(2, 1e-3).fit(Xt, Yt, wk).coef[:, 5])
+# the E3 rule
+assert A.e3_verdict(np.full(20, 0.2), np.full(20, 0.05), 0.1) == "structural"
+assert A.e3_verdict(np.full(20, 0.2), np.full(20, 0.05), 0.3) == "removable"
+assert A.e3_verdict(np.full(20, 0.2), np.full(20, 0.25), 0.1) == "unresolved"
+assert A.e3_verdict(np.linspace(0.05, 0.3, 40), np.full(40, 0.04), 0.15) == "unresolved"  # straddles the margin
+assert A.e3_verdict(np.full(20, 0.2), np.full(20, 0.05), 0.15) == "structural"  # above both the controls and the margin
+assert A.e3_verdict(np.r_[np.full(15, 0.2), np.full(5, 0.05)], np.full(20, 0.04), 0.1) == "unresolved"  # the lower tail of the between distribution reaches below the margin
+# S5 summary by balanced-set size
+sm = A.summarize_draws([(0.1, True, 7), (0.3, True, 7), (0.0, False, 6), (0.2, True, 6)])
+assert sm["by_n_balanced"]["7"]["draws"] == 2 and abs(sm["by_n_balanced"]["6"]["fraction_success"] - 0.5) < 1e-12 and abs(sm["fraction_success"] - 0.75) < 1e-12
 lo, med, hi = A.weighted_summary(emu_t, post, np.array([int(np.argmin(np.abs(zc - z))) for z in (4.1, 6.1)]))
 tt = truth[[int(np.argmin(np.abs(zc - z))) for z in (4.1, 6.1)]]
 assert np.all(lo - 0.05 <= tt) and np.all(tt <= hi + 0.05), (lo, tt, hi)
@@ -175,6 +210,17 @@ d30, _ = A.reachability(ec_t, ec_s, zsel, np.random.default_rng(2), nstarts=30)
 rs = np.random.default_rng(9)
 best_rs = min(np.sqrt(np.mean((A.predict_astro(ec_t, rs.uniform(-1, 1, (20000, 4))) - A.predict_astro(ec_s, rs.uniform(-1, 1, (20000, 4)))) ** 2, axis=1)).min() for _ in range(10))
 assert abs(d4 - d30) < 1e-4 and d30 <= best_rs, (d4, d30, best_rs)
+
+# ---- V5: curves that start slightly above z = 0 still give a z = 0 row; a requested redshift beyond a curve is listed, not dropped
+_smd = {}
+for f_ in sorted((ROOT / "data" / "curves").glob("*.json")):
+    for r_ in json.loads(f_.read_text())["records"]:
+        if r_["relation"] == "smd" and r_["kind"] == "simulation":
+            _smd[r_["id"]] = r_
+_all = {**A.load_sfrd(), **_smd}
+_ct = A.closure_table(_all, [("COLIBRE m6 L200", "schaye25.colibre.sfrd.m6-l200", "chaikin26.colibre.smd.l200m6.all"), ("EAGLE Ref-L100N1504", "furlong15.eagle.sfrd.refl100n1504", "vcd.eagle.ref-l100n1504-all-stars.smd.z2.749")])
+for row_ in _ct:
+    assert "0.0" in row_["R_eff"] and set(row_["R_eff"]) | {str(z) for z in row_["not_evaluated"]} == {str(z) for z in A.V5_Z}, row_
 
 # ---- the data: variants table is consistent with the records, families are eligible, CAMELS file (if present) has the stated schema
 recs_all = A.load_sfrd()
@@ -249,9 +295,9 @@ orig = (A.load_sfrd, A.load_camels)
 try:
     A.load_sfrd = lambda: twin
     A.load_camels = lambda path=None: twin_camels(1.5)
-    res = A.run(nboot=200, nrand=3, camels_kw=dict(nboot=8, ncontrol=6, nstarts=3))
+    res = A.run(nboot=200, nrand=3, camels_kw=dict(nboot=8, ncontrol=6, nstarts=3, sensitivity=True))
     A.load_camels = lambda path=None: twin_camels(0.0)
-    null_c = A.run_camels(twin, A.SEED, nboot=8, ncontrol=6, nstarts=3)
+    null_c = A.run_camels(twin, A.SEED, nboot=8, ncontrol=10, nstarts=3, sensitivity=False)
 finally:
     A.load_sfrd, A.load_camels = orig
 e1 = res["published"]["E1"]
@@ -263,6 +309,12 @@ assert rch["high"]["D_dex"] > 0.5 and rch["low"]["D_dex"] < 0.08, {k: rch[k] for
 assert rch["shrunk"]["0.25"] > rch["shrunk"]["0.5"] > rch["shrunk"]["1.0"], "a smaller parameter range reaches less"
 assert res["camels"]["codes"]["IllustrisTNG"]["parametric"]["rms_high"] > 0.1 and res["camels"]["structural_fiducial"]["rms_high"] > 1.0
 assert null_c["reachability"]["full"]["D_dex"] < 0.1, "with no offset the codes are reachable from each other"
+assert null_c["reachability"]["verdict"] == "removable", null_c["reachability"]  # identical structure: the distance is below the seed margin and not above the controls
+assert res["camels"]["reachability"]["between_full"]["p5"] > res["camels"]["reachability"]["margin_dex"]
+sens = res["camels"]["sensitivity"]
+assert set(sens) >= {"S8_degree2", "S8_degree3", "S8_kernel0.35", "S8_kernel0.8", "S8_ridge1e-2", "S8_ridge1e-4", "S8_obs_systematic_0.1", "S8_obs_systematic_0.4", "S8_independent_systematic", "S9_cosmology_free"}
+assert all(v["ess_min"] > 0 for v in sens.values()) and all(sens[k]["D_full_dex"] > 0.5 for k in ("S8_degree2", "S8_degree3", "S8_kernel0.35", "S8_kernel0.8"))  # the 1.5 dex step at z > 3.25 stays unreachable under every emulator choice
+assert res["camels"]["calibration"]["common_systematic"] is True and all(k["ess"] >= 50 for k in res["camels"]["calibration"]["codes"].values())
 doc = A.render(res)
 import os
 if os.environ.get("MODELFORM_DUMP"):  # a synthetic result, for looking at the report and the site charts without the real data

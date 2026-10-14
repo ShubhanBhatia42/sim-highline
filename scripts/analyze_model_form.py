@@ -178,12 +178,14 @@ def eligible_fiducials(recs, variants, extra=()):
     return out
 
 
-def random_fiducials(recs, variants, rng):
-    """Sensitivity S5: for every family one of its fiducial curve and its numerical variants, chosen at random."""
+def random_fiducials(recs, variants, rng, both_bands=False):
+    """Sensitivity S5: for every family one of its fiducial curve and its numerical variants, chosen at random (S5b: only among curves that reach both bands, so the balanced set keeps all its families)."""
     base = eligible_fiducials(recs, variants)
     out = {}
     for fam, fid in base.items():
         pool = [fid] + [v["id"] for v in variants["variants"] if v["base"] == fid and v["class"] == "numerical" and v["id"] in recs]
+        if both_bands:
+            pool = [r for r in pool if balanced_rows(family_matrix(recs, variants, [r], Z_PUB), Z_PUB)[0]] or [fid]
         out[fam] = pool[int(rng.integers(0, len(pool)))]
     return out
 
@@ -254,9 +256,13 @@ def lcdm_dt_dz(z, h, om):
     return 977.792e9 / (100.0 * h) / ((1 + np.asarray(z)) * ez)
 
 
-def closure_table(recs_all, runs, zs=(0.0, 1.0, 2.0, 3.0)):
+V5_Z = (0.0, 1.0, 2.0, 3.0)
+V5_START_TOLERANCE = 0.06  # a curve that starts at z = 0.046 (EAGLE) or 0.003 (COLIBRE) stands in for z = 0; the integral and the density are taken from the curve's own first point
+
+
+def closure_table(recs_all, runs, zs=V5_Z):
     """Effective return fraction R_eff(z) = 1 - rho_*(z) / integral of the SFR density above z, for the suites that have both curves of the same run.
-    runs: list of (label, sfrd record id, smd record id)."""
+    runs: list of (label, sfrd record id, smd record id). A requested redshift below a curve's first point by at most V5_START_TOLERANCE uses that first point; the table lists the redshifts it could not evaluate."""
     rows = []
     for label, sid, mid in runs:
         s, m = recs_all[sid], recs_all[mid]
@@ -264,9 +270,10 @@ def closure_table(recs_all, runs, zs=(0.0, 1.0, 2.0, 3.0)):
         zs_m, ys_m = curve_arrays(m)
         cosmo = s["definitions"].get("cosmology") or m["definitions"].get("cosmology") or {"H0": 70.0, "Om": 0.3}
         h, om = cosmo["H0"] / 100.0, cosmo["Om"]
-        row = {"run": label, "sfrd": sid, "smd": mid, "z_sfrd": [float(zs_s[0]), float(zs_s[-1])], "z_smd": [float(zs_m[0]), float(zs_m[-1])], "R_eff": {}}
+        row = {"run": label, "sfrd": sid, "smd": mid, "z_sfrd": [float(zs_s[0]), float(zs_s[-1])], "z_smd": [float(zs_m[0]), float(zs_m[-1])], "R_eff": {}, "not_evaluated": []}
         for z0 in zs:
-            if z0 < zs_s[0] - 0.01 or z0 < zs_m[0] - 0.01 or z0 > zs_m[-1]:
+            if z0 < zs_s[0] - V5_START_TOLERANCE or z0 < zs_m[0] - V5_START_TOLERANCE or z0 > zs_m[-1] or z0 > zs_s[-1]:
+                row["not_evaluated"].append(float(z0))
                 continue
             g = np.linspace(max(z0, zs_s[0]), zs_s[-1], 4000)
             integrand = 10.0 ** np.interp(g, zs_s, ys_s) * lcdm_dt_dz(g, h, om)
@@ -398,6 +405,7 @@ def _grad_pred(emu, a, eps=1e-5):
 def reachability(emu_t, emu_s, zsel, rng, lam=1.0, nstarts=24, iters=150):
     """Minimum over the astrophysical coordinates of both codes (each in [-lam, lam]) of the root mean square difference of their emulated curves over the grid points in zsel.
     Projected gradient descent with backtracking from the fiducial point and from nstarts random starts; returns the distance and the minimising coordinates."""
+    zsel = zsel & np.isfinite(emu_t.coef).all(axis=0) & np.isfinite(emu_s.coef).all(axis=0)  # an emulator fitted on half of the simulations can lack a column that the full one has
     starts = [np.zeros(8)] + [rng.uniform(-lam, lam, 8) for _ in range(nstarts)]
     best = (np.inf, None)
     for a0 in starts:
@@ -433,72 +441,209 @@ def split_halves(n, rng):
     return perm[: n // 2], perm[n // 2:]
 
 
-def calibrate(emu, z_idx, target, sigma, rng, nprior=400000, chunk=100000, free_cosmo=False):
-    """Importance sampling of the posterior of the four astrophysical coordinates: prior uniform on [-1, 1]^4, Gaussian likelihood of the target at the grid indices z_idx with standard deviations sigma.
-    Returns the prior draws kept (resampled by weight), the effective sample size and the log evidence-like maximum."""
-    As, lls = [], []
-    for _ in range(nprior // chunk):
-        A = rng.uniform(-1, 1, size=(chunk, 4))
-        P = predict_astro(emu, A)[:, z_idx]
-        ll = -0.5 * np.nansum(((P - target) / sigma) ** 2, axis=1)
-        As.append(A)
-        lls.append(ll)
-    A, ll = np.vstack(As), np.concatenate(lls)
-    w = np.exp(ll - ll.max())
-    w /= w.sum()
-    ess = float(1.0 / np.sum(w ** 2))
+def predict_coords(emu, A):
+    """Emulator at rows of four (cosmology fixed at the fiducial) or six (cosmology free) coordinates."""
+    A = np.atleast_2d(A)
+    return emu.predict(A) if A.shape[1] == 6 else predict_astro(emu, A)
+
+
+def obs_covariance(sig_sys, box, emu_err, common=True):
+    """Covariance of the target curve at the calibration redshifts: a systematic of sig_sys dex common to all of them (the normalisation, IMF and dust of the observed fit) or independent at each,
+    plus the box and resolution allowance and the emulator error at each."""
+    n = len(emu_err)
+    return np.diag(box ** 2 + np.asarray(emu_err) ** 2) + sig_sys ** 2 * (np.ones((n, n)) if common else np.eye(n))
+
+
+MIN_ESS = 5000
+
+
+def calibrate(emu, z_idx, target, cov, rng, nprior=400000, chunk=100000, free_cosmo=False, min_ess=MIN_ESS, max_rounds=3):
+    """Importance sampling of the posterior of the four astrophysical coordinates (six with cosmology free): prior uniform on [-1, 1], Gaussian likelihood of the target at the grid indices z_idx with covariance cov.
+    The number of prior draws is multiplied by 4 (at most max_rounds times) while the effective sample size is below min_ess. Returns the posterior draws (resampled by weight), the effective sample size,
+    the largest log-likelihood and the number of prior draws used. An emulator column that is undefined at a calibration redshift is an error, not a missing observation."""
+    cinv = np.linalg.inv(cov)
+    d = 6 if free_cosmo else 4
+    for rnd in range(max_rounds + 1):
+        As, lls = [], []
+        for _ in range(max(1, nprior // chunk)):
+            A = rng.uniform(-1, 1, size=(chunk, d))
+            P = predict_coords(emu, A)[:, z_idx]
+            if not np.isfinite(P).all():
+                raise ValueError("emulator undefined at a calibration redshift")
+            r = P - target
+            lls.append(-0.5 * np.sum((r @ cinv) * r, axis=1))
+            As.append(A)
+        A, ll = np.vstack(As), np.concatenate(lls)
+        w = np.exp(ll - ll.max())
+        w /= w.sum()
+        ess = float(1.0 / np.sum(w ** 2))
+        if ess >= min_ess or rnd == max_rounds:
+            break
+        nprior *= 4
     idx = rng.choice(len(A), size=20000, p=w)
-    return A[idx], ess, float(ll.max())
+    return A[idx], ess, float(ll.max()), int(len(A))
 
 
-def weighted_summary(emu, A, z_idx):
-    P = predict_astro(emu, A)[:, z_idx]
+def weighted_summary(emu, A, z_idx, noise=None, rng=None):
+    """5th, 50th and 95th percentiles of the emulated curve at z_idx over the posterior draws A, optionally with independent Gaussian emulator error (standard deviations `noise` per redshift) added to each draw."""
+    P = predict_coords(emu, A)[:, z_idx]
+    if noise is not None:
+        P = P + rng.normal(size=P.shape) * np.asarray(noise)
     return np.percentile(P, 5, axis=0), np.median(P, axis=0), np.percentile(P, 95, axis=0)
 
 
-def run_camels(recs, rng_seed, nboot=200, ncontrol=200, nstarts=4, fast=False):
-    """E3 and E4 and the validations V1 to V4 on the CAMELS ensembles. Each randomised component has its own stream, so changing one does not move the others."""
+V4_Z_MAX = 6.0  # the emulator-against-CV-mean clause of V4 is stated for z up to 6 (protocol)
+DEGREE_Z_MAX = 6.5  # degree choice: mean cross-validation error over z <= 6.5 (A1: set after the design check of section 8, where cross-validation errors were printed)
+Z_OBS = [0.1, 0.5, 0.9, 1.3, 1.7, 2.1, 2.5, 2.9]
+Z_TGT = [round(4.1 + 0.4 * k, 1) for k in range(10)]
+BOX_ALLOWANCE = 0.15  # dex, the small box and low resolution of CAMELS
+SIG_OBS = 0.2  # dex, the observational systematic
+SPLIT_SEED_STREAM = 34
+
+
+def emulator_error(info_suite):
+    """Cross-validation error in excess of the seed noise, per redshift (zero where it is smaller)."""
+    return np.sqrt(np.maximum(0.0, info_suite["cv_rmse"] ** 2 - info_suite["seed_noise"] ** 2))
+
+
+def build_emulators(arr, degrees=None, ridge=RIDGE, h=KERNEL_H):
+    """Emulators and their cross-validation summary per code; degrees: dict of fixed degrees, or None to choose per code (protocol E3)."""
+    emus, info = {}, {}
+    for suite, d in arr.items():
+        if degrees and degrees.get(suite):
+            deg, e2, e3 = degrees[suite], None, None
+        else:
+            deg, e2, e3 = choose_degree(d["X"], d["Y"], ridge, h, zmax=DEGREE_Z_MAX)
+        emus[suite] = fit_emulator(d["X"], d["Y"], deg, ridge, h)
+        cv, ncv = cv_errors(d["X"], d["Y"], deg, ridge, h, seed=1)  # a fold assignment different from the one that chose the degree
+        sn = seed_noise(d["Ycv"])
+        info[suite] = {"degree": deg, "cv_rmse": cv, "seed_noise": sn, "cv_mean": np.nanmean(d["Ycv"], axis=0), "cv_se": sn / np.sqrt(np.isfinite(d["Ycv"]).sum(axis=0)), "emulator_at_fiducial": predict_astro(emus[suite], np.zeros((1, 4)))[0],
+                       "n_cv_test": ncv, "cv_rmse_degree2_mean": None if e2 is None else float(np.nanmean(e2[CAMELS_Z <= DEGREE_Z_MAX + 1e-9])), "cv_rmse_degree3_mean": None if e3 is None else float(np.nanmean(e3[CAMELS_Z <= DEGREE_Z_MAX + 1e-9]))}
+    return emus, info
+
+
+def calibrate_codes(emus, info, arr, rng, sig_sys=SIG_OBS, common=True, free_cosmo=False):
+    """E4 for both codes. Returns the dictionary reported under 'calibration'."""
+    zi_obs = np.array([int(np.argmin(np.abs(CAMELS_Z - z))) for z in Z_OBS])
+    zi_tgt = np.array([int(np.argmin(np.abs(CAMELS_Z - z))) for z in Z_TGT])
+    target = madau_dickinson(CAMELS_Z[zi_obs])
+    out = {"z_obs": Z_OBS, "z_target": Z_TGT, "target": [float(v) for v in target], "systematic_dex": sig_sys, "common_systematic": bool(common), "cosmology_free": bool(free_cosmo), "codes": {}}
+    res = {}
+    for suite in arr:
+        err = emulator_error(info[suite])
+        cov = obs_covariance(sig_sys, BOX_ALLOWANCE, err[zi_obs], common)
+        post, ess, llmax, nused = calibrate(emus[suite], zi_obs, target, cov, rng, free_cosmo=free_cosmo)
+        lo, med, hi = weighted_summary(emus[suite], post, zi_tgt, noise=err[zi_tgt], rng=rng)
+        lo_o, med_o, hi_o = weighted_summary(emus[suite], post, zi_obs)
+        res[suite] = (lo, med, hi)
+        r = target - np.median(predict_coords(emus[suite], post)[:, zi_obs], axis=0)
+        out["codes"][suite] = {"ess": ess, "n_prior": nused, "chi2_min": float(-2 * llmax), "sigma_obs_total": [float(v) for v in np.sqrt(np.diag(cov))], "residual_median_fit": [float(v) for v in r],
+                               "posterior_median_coordinates": [float(v) for v in np.median(post, axis=0)], "posterior_p16_coordinates": [float(v) for v in np.percentile(post, 16, axis=0)], "posterior_p84_coordinates": [float(v) for v in np.percentile(post, 84, axis=0)],
+                               "predictive": {"p5": [float(v) for v in lo], "median": [float(v) for v in med], "p95": [float(v) for v in hi]},
+                               "fit_to_observed": {"p5": [float(v) for v in lo_o], "median": [float(v) for v in med_o], "p95": [float(v) for v in hi_o]}, "interval_width": [float(h_ - l_) for l_, h_ in zip(lo, hi)]}
+    lt, mt, ht = res["IllustrisTNG"]
+    ls, ms_, hs = res["SIMBA"]
+    disjoint = (ht < ls) | (hs < lt)
+    wt, ws = ht - lt, hs - ls
+    out["disjoint_fraction"] = float(disjoint.mean())
+    out["median_difference"] = [float(v) for v in (mt - ms_)]
+    out["verdict"] = "structural" if disjoint.mean() >= 0.5 else ("parametric" if disjoint.sum() == 0 else "mixed")
+    lowmask = np.array(Z_TGT) <= 4.9 + 1e-9  # the three lowest targets against the other seven
+    out["width_ratio_high_over_low"] = {"IllustrisTNG": float(wt[~lowmask].mean() / wt[lowmask].mean()), "SIMBA": float(ws[~lowmask].mean() / ws[lowmask].mean())}
+    return out
+
+
+def e3_verdict(between, control, margin):
+    """A1 rule. structural: the 5th percentile of the between-code distance (half-sized emulators of both codes, random splits) exceeds both the 95th percentile of the same-code controls built the same way and the margin;
+    removable: its 95th percentile is below the margin; otherwise unresolved. The margin is the root mean square difference between two seeds of the two codes: sqrt(seed_noise_TNG^2 + seed_noise_SIMBA^2)."""
+    if pct(between, 5) > max(pct(control, 95), margin):
+        return "structural"
+    if pct(between, 95) < margin:
+        return "removable"
+    return "unresolved"
+
+
+def reach_splits(arr, degrees, zsets, rng, nsplit, nstarts, bands_splits):
+    """Matched-size comparison. In each split both codes' LH sets are divided at random into two halves A and B; between = D(TNG A, SIMBA A); controls = D(TNG A, TNG B) and D(SIMBA A, SIMBA B). All three use emulators
+    trained on 500 simulations and the same search effort, so emulation noise enters between and control alike."""
+    out = {name: {"between": [], "control_IllustrisTNG": [], "control_SIMBA": []} for name in zsets}
+    for k in range(nsplit):
+        parts = {}
+        for suite, d in arr.items():
+            ia, ib = split_halves(len(d["X"]), rng)
+            parts[suite] = (fit_emulator(d["X"][ia], d["Y"][ia], degrees[suite]), fit_emulator(d["X"][ib], d["Y"][ib], degrees[suite]))
+        for name, zs in zsets.items():
+            if name != "full" and k >= bands_splits:
+                continue
+            out[name]["between"].append(reachability(parts["IllustrisTNG"][0], parts["SIMBA"][0], zs, rng, nstarts=nstarts)[0])
+            for suite in arr:
+                out[name]["control_" + suite].append(reachability(parts[suite][0], parts[suite][1], zs, rng, nstarts=nstarts)[0])
+    return out
+
+
+def camels_sensitivity(arr, degrees, rng_seed, nstarts):
+    """S8 and S9: the emulator and error choices of E3 (point distance) and E4, and cosmology free in E4 and in the parametric spread."""
+    out = {}
+    cfgs = [("S8_degree2", dict(degrees={s: 2 for s in arr})), ("S8_degree3", dict(degrees={s: 3 for s in arr})), ("S8_kernel0.35", dict(h=0.35)), ("S8_kernel0.8", dict(h=0.8)), ("S8_ridge1e-2", dict(ridge=1e-2)), ("S8_ridge1e-4", dict(ridge=1e-4))]
+    for k, (name, kw) in enumerate(cfgs):
+        kw = {"degrees": degrees, **kw}
+        emus, info = build_emulators(arr, **kw)
+        full = np.isfinite(emus["IllustrisTNG"].coef).all(axis=0) & np.isfinite(emus["SIMBA"].coef).all(axis=0)
+        d, _ = reachability(emus["IllustrisTNG"], emus["SIMBA"], full, np.random.default_rng([rng_seed, 37, k]), nstarts=nstarts * 2)
+        cal = calibrate_codes(emus, info, arr, np.random.default_rng([rng_seed, 38, k]))
+        out[name] = {"degree": {s: info[s]["degree"] for s in info}, "D_full_dex": d, "E4_verdict": cal["verdict"], "E4_disjoint_fraction": cal["disjoint_fraction"], "E4_width_ratio": cal["width_ratio_high_over_low"], "ess_min": min(c["ess"] for c in cal["codes"].values())}
+    emus, info = build_emulators(arr, degrees=degrees)
+    for k, (name, kw) in enumerate([("S8_obs_systematic_0.1", dict(sig_sys=0.1)), ("S8_obs_systematic_0.4", dict(sig_sys=0.4)), ("S8_independent_systematic", dict(common=False))]):
+        cal = calibrate_codes(emus, info, arr, np.random.default_rng([rng_seed, 39, k]), **kw)
+        out[name] = {"E4_verdict": cal["verdict"], "E4_disjoint_fraction": cal["disjoint_fraction"], "E4_width_ratio": cal["width_ratio_high_over_low"], "ess_min": min(c["ess"] for c in cal["codes"].values())}
+    emus9, info9 = build_emulators(arr, degrees={s: 2 for s in arr}, h=100.0)  # uniform weights: cosmology is free, so the emulator must not be concentrated at the fiducial one
+    cal = calibrate_codes(emus9, info9, arr, np.random.default_rng([rng_seed, 40]), free_cosmo=True)
+    sd = {s: parametric_spread(emus9[s], np.random.default_rng([rng_seed, 41]), free_cosmo=True)[0] for s in arr}
+    lo, hi = band_mask(CAMELS_Z, LOW_C), band_mask(CAMELS_Z, HIGH_C)
+    out["S9_cosmology_free"] = {"E4_verdict": cal["verdict"], "E4_disjoint_fraction": cal["disjoint_fraction"], "E4_width_ratio": cal["width_ratio_high_over_low"], "ess_min": min(c["ess"] for c in cal["codes"].values()),
+                                "parametric_rms": {s: {"low": float(np.sqrt(np.nanmean(sd[s][lo] ** 2))), "high": float(np.sqrt(np.nanmean(sd[s][hi] ** 2)))} for s in arr}}
+    return out
+
+
+def run_camels(recs, rng_seed, nboot=200, ncontrol=200, nstarts=4, fast=False, sensitivity=True):
+    """E3 and E4 and the validations V1 to V4 on the CAMELS ensembles, and S8 and S9. Each randomised component has its own stream, so changing one does not move the others."""
     data = load_camels()
-    out = {"codes": {}, "meta": {"zEdges": data["zEdges"], "grid": [float(z) for z in CAMELS_Z], "n_lh": 1000, "n_cv": 27}}
+    out = {"codes": {}, "meta": {"zEdges": data["zEdges"], "grid": [float(z) for z in CAMELS_Z], "n_lh": 1000, "n_cv": 27, "n_lh_found": {}, "n_cv_found": {}}}
     arr = {}
     for suite in ("IllustrisTNG", "SIMBA"):
         names, X, Y = camels_arrays(data, suite, "LH")
         _, Xc, Yc = camels_arrays(data, suite, "CV")
         arr[suite] = {"X": X, "Y": Y, "Ycv": Yc, "names": names}
+        out["meta"]["n_lh_found"][suite], out["meta"]["n_cv_found"][suite] = len(names), len(Yc)
     # emulators, degree, cross-validation (V4)
-    emus, info = {}, {}
+    emus, info = build_emulators(arr)
+    degrees = {s: info[s]["degree"] for s in info}
+    ok_z = CAMELS_Z <= V4_Z_MAX + 1e-9
     for suite, d in arr.items():
-        deg, e2, e3 = choose_degree(d["X"], d["Y"])
-        emus[suite] = fit_emulator(d["X"], d["Y"], deg)
-        cv, ncv = cv_errors(d["X"], d["Y"], deg)
-        sn = seed_noise(d["Ycv"])
-        mean_cv = np.nanmean(d["Ycv"], axis=0)
-        se_cv = sn / np.sqrt(np.isfinite(d["Ycv"]).sum(axis=0))
-        emu_fid = predict_astro(emus[suite], np.zeros((1, 4)))[0]
-        ok_z = CAMELS_Z <= 6.5 + 1e-9
-        ratio = cv / sn
-        info[suite] = {"degree": deg, "cv_rmse": cv, "seed_noise": sn, "cv_mean": mean_cv, "cv_se": se_cv, "emulator_at_fiducial": emu_fid, "n_cv_test": ncv, "cv_rmse_degree2_mean": float(np.nanmean(e2[ok_z])),
-                       "cv_rmse_degree3_mean": float(np.nanmean(e3[ok_z])), "nan_fraction_lh": [float(np.isnan(d["Y"][:, k]).mean()) for k in range(len(CAMELS_Z))]}
-        tol = np.maximum(0.05, 2 * se_cv)
-        out["codes"][suite] = {"degree": deg, "v4": {"max_cv_over_seed": float(np.nanmax(ratio)), "cv_over_seed_by_z": [None if not np.isfinite(v) else float(v) for v in ratio], "emulator_minus_cv_mean_max_abs_z_le_6": float(np.nanmax(np.abs(emu_fid - mean_cv)[ok_z])),
-                                           "within_tolerance": bool(np.all((np.abs(emu_fid - mean_cv) <= tol)[ok_z])), "ratio_ok": bool(np.all(ratio[np.isfinite(ratio)] <= 1.5)), "ratio_ok_z_le_6.5": bool(np.all(ratio[ok_z][np.isfinite(ratio[ok_z])] <= 1.5))},
-                               "seed_noise": [None if not np.isfinite(v) else float(v) for v in sn]}
+        inf = info[suite]
+        ratio = inf["cv_rmse"] / inf["seed_noise"]
+        tol = np.maximum(0.05, 2 * inf["cv_se"])
+        diff = np.abs(inf["emulator_at_fiducial"] - inf["cv_mean"])
+        inf["nan_fraction_lh"] = [float(np.isnan(d["Y"][:, k]).mean()) for k in range(len(CAMELS_Z))]
+        out["codes"][suite] = {"degree": inf["degree"], "cv_rmse_degree2_mean": inf["cv_rmse_degree2_mean"], "cv_rmse_degree3_mean": inf["cv_rmse_degree3_mean"], "nan_fraction_lh": inf["nan_fraction_lh"],
+                               "v4": {"max_cv_over_seed": float(np.nanmax(ratio)), "cv_over_seed_by_z": [None if not np.isfinite(v) else float(v) for v in ratio], "n_ratio_undefined": int((~np.isfinite(ratio)).sum()),
+                                      "emulator_minus_cv_mean_max_abs_z_le_6": float(np.nanmax(diff[ok_z])), "within_tolerance": bool(np.all((diff <= tol)[ok_z])), "ratio_ok": bool(np.all(ratio[np.isfinite(ratio)] <= 1.5))},
+                               "seed_noise": [None if not np.isfinite(v) else float(v) for v in inf["seed_noise"]]}
     # parametric spread
     rng = np.random.default_rng([rng_seed, 31])
+    lo, hi = band_mask(CAMELS_Z, LOW_C), band_mask(CAMELS_Z, HIGH_C)
     for suite in arr:
         sd, p16, p84 = parametric_spread(emus[suite], rng)
         sdc, _, _ = parametric_spread(emus[suite], rng, free_cosmo=True)
-        lo, hi = band_mask(CAMELS_Z, LOW_C), band_mask(CAMELS_Z, HIGH_C)
         out["codes"][suite]["parametric"] = {"sd": [float(v) for v in sd], "p16": [float(v) for v in p16], "p84": [float(v) for v in p84], "sd_cosmology_free": [float(v) for v in sdc],
                                               "rms_low": float(np.sqrt(np.nanmean(sd[lo] ** 2))), "rms_high": float(np.sqrt(np.nanmean(sd[hi] ** 2))), "ratio_high_over_low": float(np.sqrt(np.nanmean(sd[hi] ** 2) / np.nanmean(sd[lo] ** 2)))}
     # structural offset at the fiducial parameters
     t, s = info["IllustrisTNG"], info["SIMBA"]
     delta = t["cv_mean"] - s["cv_mean"]
-    se = np.sqrt(t["cv_se"] ** 2 + s["cv_se"] ** 2)
-    lo, hi = band_mask(CAMELS_Z, LOW_C), band_mask(CAMELS_Z, HIGH_C)
+    se = np.sqrt(t["cv_se"] ** 2 + s["cv_se"] ** 2)  # the CV seeds are shared between the codes, so this independent estimate is conservative
     out["structural_fiducial"] = {"delta": [None if not np.isfinite(v) else float(v) for v in delta], "se": [None if not np.isfinite(v) else float(v) for v in se],
                                   "rms_low": float(np.sqrt(np.nanmean(delta[lo] ** 2))), "rms_high": float(np.sqrt(np.nanmean(delta[hi] ** 2))), "rms_all": float(np.sqrt(np.nanmean(delta ** 2)))}
-    # reachability (E3), controls and bootstrap
+    # reachability (E3): point distances, full-size bootstrap (reported), matched-size splits (verdict)
     full = np.isfinite(emus["IllustrisTNG"].coef).all(axis=0) & np.isfinite(emus["SIMBA"].coef).all(axis=0)
     zsets = {"full": full, "low": full & lo, "high": full & hi}
     out["reachability"] = {"z_used": [float(z) for z in CAMELS_Z[full]]}
@@ -510,93 +655,68 @@ def run_camels(recs, rng_seed, nboot=200, ncontrol=200, nstarts=4, fast=False):
     for lam in (0.25, 0.5, 0.75, 1.0):
         d, _ = reachability(emus["IllustrisTNG"], emus["SIMBA"], zsets["full"], rr, lam=lam, nstarts=nstarts)
         out["reachability"]["shrunk"][str(lam)] = d
-    # bootstrap of D (full range) and the same-code controls
-    rb = np.random.default_rng([rng_seed, 33])
-    boot = []
-    for _ in range(nboot):
-        e = {}
-        for suite, d in arr.items():
-            ix = rb.integers(0, len(d["X"]), len(d["X"]))
-            e[suite] = fit_emulator(d["X"][ix], d["Y"][ix], out["codes"][suite]["degree"])
-        boot.append(reachability(e["IllustrisTNG"], e["SIMBA"], zsets["full"], rb, nstarts=nstarts)[0])
-    rc = np.random.default_rng([rng_seed, 34])
-    controls = {}
-    for suite, d in arr.items():
-        vals = []
-        for _ in range(ncontrol):
-            ia, ib = split_halves(len(d["X"]), rc)
-            ea, eb = fit_emulator(d["X"][ia], d["Y"][ia], out["codes"][suite]["degree"]), fit_emulator(d["X"][ib], d["Y"][ib], out["codes"][suite]["degree"])
-            vals.append(reachability(ea, eb, zsets["full"], rc, nstarts=max(4, nstarts // 2))[0])
-        controls[suite] = vals
-    allc = np.array(controls["IllustrisTNG"] + controls["SIMBA"])
-    boot = np.array(boot)
-    d_full = out["reachability"]["full"]["D_dex"]
-    out["reachability"]["bootstrap_full"] = {"n": int(boot.size), "p5": pct(boot, 5), "p50": pct(boot, 50), "p95": pct(boot, 95)}
-    out["reachability"]["controls_full"] = {"n_per_code": ncontrol, "median": pct(allc, 50), "p95": pct(allc, 95), "p95_tng": pct(np.array(controls["IllustrisTNG"]), 95), "p95_simba": pct(np.array(controls["SIMBA"]), 95), "median_tng": pct(np.array(controls["IllustrisTNG"]), 50), "median_simba": pct(np.array(controls["SIMBA"]), 50)}
-    out["reachability"]["verdict"] = "structural" if out["reachability"]["bootstrap_full"]["p5"] > out["reachability"]["controls_full"]["p95"] else ("removable" if out["reachability"]["bootstrap_full"]["p95"] < out["reachability"]["controls_full"]["median"] else "unresolved")
-    # the controls for the band distances (point estimates only)
-    out["reachability"]["controls_bands"] = {}
-    for name in ("low", "high"):
-        vals = []
-        for suite, d in arr.items():
-            for _ in range(max(20, ncontrol // 4)):
-                ia, ib = split_halves(len(d["X"]), rc)
-                ea, eb = fit_emulator(d["X"][ia], d["Y"][ia], out["codes"][suite]["degree"]), fit_emulator(d["X"][ib], d["Y"][ib], out["codes"][suite]["degree"])
-                vals.append(reachability(ea, eb, zsets[name], rc, nstarts=4)[0])
-        out["reachability"]["controls_bands"][name] = {"median": pct(np.array(vals), 50), "p95": pct(np.array(vals), 95), "n": len(vals)}
+    if nboot > 0:
+        rb = np.random.default_rng([rng_seed, 33])
+        boot = []
+        for _ in range(nboot):
+            e = {}
+            for suite, d in arr.items():
+                ix = rb.integers(0, len(d["X"]), len(d["X"]))
+                e[suite] = fit_emulator(d["X"][ix], d["Y"][ix], degrees[suite])
+            boot.append(reachability(e["IllustrisTNG"], e["SIMBA"], zsets["full"], rb, nstarts=nstarts)[0])
+        boot = np.array(boot)
+        out["reachability"]["bootstrap_full"] = {"n": int(boot.size), "p5": pct(boot, 5), "p50": pct(boot, 50), "p95": pct(boot, 95), "note": "full-size emulators on resampled simulations (duplicate rows make them noisier than the point fit); reported, not used for the verdict"}
+    else:
+        out["reachability"]["bootstrap_full"] = None
+    sp = reach_splits(arr, degrees, zsets, np.random.default_rng([rng_seed, SPLIT_SEED_STREAM]), ncontrol, nstarts, max(20, ncontrol // 2))
+    ctl = {name: np.array(v["control_IllustrisTNG"] + v["control_SIMBA"]) for name, v in sp.items()}
+    btw = {name: np.array(v["between"]) for name, v in sp.items()}
+    margin = float(np.sqrt(np.nanmean(t["seed_noise"][full] ** 2 + s["seed_noise"][full] ** 2)))
+    out["reachability"]["margin_dex"] = margin
+    out["reachability"]["between_full"] = {"n": int(btw["full"].size), "p5": pct(btw["full"], 5), "p50": pct(btw["full"], 50), "p95": pct(btw["full"], 95)}
+    out["reachability"]["controls_full"] = {"n_per_code": ncontrol, "emulator_training_size": 500, "median": pct(ctl["full"], 50), "p95": pct(ctl["full"], 95), "p95_tng": pct(np.array(sp["full"]["control_IllustrisTNG"]), 95), "p95_simba": pct(np.array(sp["full"]["control_SIMBA"]), 95),
+                                            "median_tng": pct(np.array(sp["full"]["control_IllustrisTNG"]), 50), "median_simba": pct(np.array(sp["full"]["control_SIMBA"]), 50)}
+    out["reachability"]["verdict"] = e3_verdict(btw["full"], ctl["full"], margin)
+    out["reachability"]["controls_bands"] = {nm: {"median": pct(ctl[nm], 50), "p95": pct(ctl[nm], 95), "n": int(ctl[nm].size)} for nm in ("low", "high")}
+    out["reachability"]["between_bands"] = {nm: {"p5": pct(btw[nm], 5), "p50": pct(btw[nm], 50), "p95": pct(btw[nm], 95), "n": int(btw[nm].size), "verdict": e3_verdict(btw[nm], ctl[nm], float(np.sqrt(np.nanmean(t["seed_noise"][zsets[nm]] ** 2 + s["seed_noise"][zsets[nm]] ** 2))))} for nm in ("low", "high")}
     # calibrate and extrapolate (E4)
-    z_obs = [0.1, 0.5, 0.9, 1.3, 1.7, 2.1, 2.5, 2.9]
-    z_tgt = [round(4.1 + 0.4 * k, 1) for k in range(10)]
-    zi_obs = np.array([int(np.argmin(np.abs(CAMELS_Z - z))) for z in z_obs])
-    zi_tgt = np.array([int(np.argmin(np.abs(CAMELS_Z - z))) for z in z_tgt])
-    target = madau_dickinson(CAMELS_Z[zi_obs])
-    re4 = np.random.default_rng([rng_seed, 35])
-    out["calibration"] = {"z_obs": z_obs, "z_target": z_tgt, "target": [float(v) for v in target], "codes": {}}
-    res = {}
-    for suite in arr:
-        emu_err = np.sqrt(np.maximum(0.0, info[suite]["cv_rmse"][zi_obs] ** 2 - info[suite]["seed_noise"][zi_obs] ** 2))
-        sigma = np.sqrt(0.2 ** 2 + 0.15 ** 2 + emu_err ** 2)
-        post, ess, llmax = calibrate(emus[suite], zi_obs, target, sigma, re4)
-        lo, med, hi = weighted_summary(emus[suite], post, zi_tgt)
-        lo_o, med_o, hi_o = weighted_summary(emus[suite], post, zi_obs)
-        res[suite] = (lo, med, hi)
-        out["calibration"]["codes"][suite] = {"ess": ess, "chi2_min": float(-2 * llmax), "sigma_obs_total": [float(v) for v in sigma], "posterior_median_coordinates": [float(v) for v in np.median(post, axis=0)],
-                                              "posterior_p16_coordinates": [float(v) for v in np.percentile(post, 16, axis=0)], "posterior_p84_coordinates": [float(v) for v in np.percentile(post, 84, axis=0)],
-                                              "predictive": {"p5": [float(v) for v in lo], "median": [float(v) for v in med], "p95": [float(v) for v in hi]},
-                                              "fit_to_observed": {"p5": [float(v) for v in lo_o], "median": [float(v) for v in med_o], "p95": [float(v) for v in hi_o]},
-                                              "interval_width": [float(h - l) for l, h in zip(lo, hi)]}
-    lt, mt, ht = res["IllustrisTNG"]
-    ls, ms_, hs = res["SIMBA"]
-    disjoint = (ht < ls) | (hs < lt)
-    wt, ws = ht - lt, hs - ls
-    out["calibration"]["disjoint_fraction"] = float(disjoint.mean())
-    out["calibration"]["median_difference"] = [float(v) for v in (mt - ms_)]
-    out["calibration"]["verdict"] = "structural" if disjoint.mean() >= 0.5 else ("parametric" if disjoint.sum() == 0 else "mixed")
-    lowmask = np.array(z_tgt) <= 5.2
-    out["calibration"]["width_ratio_high_over_low"] = {"IllustrisTNG": float(wt[~lowmask].mean() / wt[lowmask].mean()), "SIMBA": float(ws[~lowmask].mean() / ws[lowmask].mean())}
+    out["calibration"] = calibrate_codes(emus, info, arr, np.random.default_rng([rng_seed, 35]))
+    if sensitivity:
+        out["sensitivity"] = camels_sensitivity(arr, degrees, rng_seed, nstarts)
     # V2 and V3
-    tng_f = recs["pillepich18.tng-l25n512.fiducial.sfrd"]
-    sel = (CAMELS_Z >= 0.5 - 1e-9) & (CAMELS_Z <= 5.0 + 1e-9)
-    base = predict_astro(emus["IllustrisTNG"], np.zeros((1, 4)))[0]
-    v2 = {}
-    for key, rid, a in (("A_SN1=2", "pillepich18.tng-l25n512.var-stronger-winds-x2.sfrd", [0.5, 0, 0, 0]), ("A_SN2=2", "pillepich18.tng-l25n512.var-faster-winds-x2.sfrd", [0, 0, 1.0, 0])):
-        camels_shift = predict_astro(emus["IllustrisTNG"], np.array([a]))[0] - base
-        meth = on_grid(recs[rid], CAMELS_Z, 0.1) - on_grid(tng_f, CAMELS_Z, 0.1)
-        ok = sel & np.isfinite(meth) & np.isfinite(camels_shift)
-        v2[key] = {"rms_difference_dex": float(np.sqrt(np.mean((camels_shift - meth)[ok] ** 2))), "n_z": int(ok.sum()), "camels_shift_mean": float(camels_shift[ok].mean()), "methods_shift_mean": float(meth[ok].mean())}
-    out["v2"] = {**v2, "passed": bool(all(v["rms_difference_dex"] <= 0.15 for v in v2.values()))}
-    pub = on_grid(recs["dave19.simba.sfrd.m100n1024"], CAMELS_Z, 0.1)
-    sel3 = (CAMELS_Z >= 0.5 - 1e-9) & (CAMELS_Z <= 4.0 + 1e-9) & np.isfinite(pub) & np.isfinite(s["cv_mean"])
-    out["v3"] = {"mean_difference_dex": float(np.mean((s["cv_mean"] - pub)[sel3])), "max_abs_difference_dex": float(np.max(np.abs((s["cv_mean"] - pub)[sel3]))), "n_z": int(sel3.sum())}
-    out["v3"]["passed"] = bool(abs(out["v3"]["mean_difference_dex"]) <= 0.3)
+    if recs is None:
+        out["v2"] = out["v3"] = None
+    else:
+        tng_f = recs["pillepich18.tng-l25n512.fiducial.sfrd"]
+        sel = (CAMELS_Z >= 0.5 - 1e-9) & (CAMELS_Z <= 5.0 + 1e-9)
+        base = predict_astro(emus["IllustrisTNG"], np.zeros((1, 4)))[0]
+        v2 = {}
+        for key, rid, a in (("A_SN1=2", "pillepich18.tng-l25n512.var-stronger-winds-x2.sfrd", [0.5, 0, 0, 0]), ("A_SN2=2", "pillepich18.tng-l25n512.var-faster-winds-x2.sfrd", [0, 0, 1.0, 0])):
+            camels_shift = predict_astro(emus["IllustrisTNG"], np.array([a]))[0] - base
+            meth = on_grid(recs[rid], CAMELS_Z, 0.1) - on_grid(tng_f, CAMELS_Z, 0.1)
+            ok = sel & np.isfinite(meth) & np.isfinite(camels_shift)
+            v2[key] = {"rms_difference_dex": float(np.sqrt(np.mean((camels_shift - meth)[ok] ** 2))), "rms_shift_methods_dex": float(np.sqrt(np.mean(meth[ok] ** 2))), "n_z": int(ok.sum()), "camels_shift_mean": float(camels_shift[ok].mean()), "methods_shift_mean": float(meth[ok].mean())}
+        out["v2"] = {**v2, "passed": bool(all(v["rms_difference_dex"] <= 0.15 for v in v2.values()))}
+        pub = on_grid(recs["dave19.simba.sfrd.m100n1024"], CAMELS_Z, 0.1)
+        sel3 = (CAMELS_Z >= 0.5 - 1e-9) & (CAMELS_Z <= 4.0 + 1e-9) & np.isfinite(pub) & np.isfinite(s["cv_mean"])
+        out["v3"] = {"mean_difference_dex": float(np.mean((s["cv_mean"] - pub)[sel3])), "max_abs_difference_dex": float(np.max(np.abs((s["cv_mean"] - pub)[sel3]))), "n_z": int(sel3.sum())}
+        out["v3"]["passed"] = bool(abs(out["v3"]["mean_difference_dex"]) <= 0.3)
     cp = ROOT / "data" / "ensembles" / "camels-closure.json"
-    out["v1"] = json.loads(cp.read_text()) if cp.exists() else None
+    out["v1"] = json.loads(cp.read_text()) if cp.exists() and recs is not None else None
     out["v4"] = {k: v["v4"] for k, v in out["codes"].items()}
     out["_internal"] = {"emulators": emus, "arrays": arr, "info": info}
     return out
 
 
 # ---------------------------------------------------------------- the published ensemble (E1, E2, E5, V5 and sensitivities)
+def summarize_draws(draws):
+    """Median and 95 % range of phi over the S5 draws, the success rate, and both by the number of balanced families (a draw can remove a family from the balanced set by choosing a variant that does not reach both bands)."""
+    phis = np.array([d[0] for d in draws])
+    nb = np.array([d[2] for d in draws])
+    return {"draws": len(draws), "phi_median": float(np.median(phis)), "phi_p2.5": pct(phis, 2.5), "phi_p97.5": pct(phis, 97.5), "fraction_success": float(np.mean([d[1] for d in draws])),
+            "by_n_balanced": {str(int(n)): {"draws": int((nb == n).sum()), "phi_median": float(np.median(phis[nb == n])), "fraction_success": float(np.mean([d[1] for d, m in zip(draws, nb == n) if m]))} for n in sorted(set(nb.tolist()))}}
+
+
 def success(r):
     return bool(r.get("phi_ci90") and r["phi_ci90"][0] > 0 and r["pitman_morgan"]["p_one_sided"] < 0.05)
 
@@ -636,9 +756,18 @@ def run_pub(recs, variants, rng_seed, nboot=NBOOT, nrand=200):
         M = family_matrix(recs, variants, [fm[f] for f in names], grid)
         r = pub_funnel(M, grid, np.random.default_rng([rng_seed, 14, k]), 300)
         if "phi_ci90" in r:
-            draws.append((r["phi"], success(r)))
-    phis = np.array([d[0] for d in draws])
-    sens["S5_random_numerical_fiducial"] = {"draws": len(draws), "phi_median": float(np.median(phis)), "phi_p2.5": pct(phis, 2.5), "phi_p97.5": pct(phis, 97.5), "fraction_success": float(np.mean([d[1] for d in draws]))}
+            draws.append((r["phi"], success(r), r["n_balanced"]))
+    sens["S5_random_numerical_fiducial"] = summarize_draws(draws)
+    rr2 = np.random.default_rng([rng_seed, 16])
+    draws2 = []
+    for k in range(nrand):
+        fm = random_fiducials(recs, variants, rr2, both_bands=True)
+        names = sorted(fm)
+        M = family_matrix(recs, variants, [fm[f] for f in names], grid)
+        r = pub_funnel(M, grid, np.random.default_rng([rng_seed, 17, k]), 300)
+        if "phi_ci90" in r:
+            draws2.append((r["phi"], success(r), r["n_balanced"]))
+    sens["S5b_random_numerical_fiducial_both_bands"] = summarize_draws(draws2)
     out["sensitivity"] = sens
     # E2
     rb = np.random.default_rng([rng_seed, 15])
@@ -655,10 +784,10 @@ def run_pub(recs, variants, rng_seed, nboot=NBOOT, nrand=200):
             if r["relation"] == "smd" and r["kind"] == "simulation":
                 allrecs[r["id"]] = r
     ct = closure_table(allrecs, runs)
-    out["V5"] = {"runs": ct, "passed": bool(all(0.15 <= v["R_eff"] <= 0.60 for r in ct for v in r["R_eff"].values()))}
+    out["V5"] = {"runs": ct, "n_evaluated": int(sum(len(r["R_eff"]) for r in ct)), "n_requested": int(len(ct) * len(V5_Z)), "passed": bool(all(0.15 <= v["R_eff"] <= 0.60 for r in ct for v in r["R_eff"].values()))}
     Yc = family_matrix(recs, variants, [fids[f] for f in fams], grid, imf=True)
     out["E5"] = {"table": observational_table(Yc, grid, fams), "sigma_obs": 0.2, "note": "ensemble converted to a Chabrier IMF with the website's offsets; Madau and Dickinson (2014) divided by 1.6"}
-    gh = np.array([9.0, 10.0, 12.0])
+    gh = np.array([9.0, 12.0, 16.0])  # the redshifts of the Harikane et al. points (protocol section 2.3); a redshift reached by fewer than 5 families is skipped
     Yh = family_matrix(recs, variants, [fids[f] for f in fams], gh, imf=True)
     hz = harikane_rows()
     rows = []
@@ -703,16 +832,30 @@ def verdicts(res):
     e1 = res["published"]["E1"]
     c = res["camels"]
     return {"E1": {"success": e1["success"], "phi": e1.get("phi"), "phi_ci90": e1.get("phi_ci90"), "pitman_morgan_p": e1.get("pitman_morgan", {}).get("p_one_sided"), "sd_low": e1.get("sd_low"), "sd_high": e1.get("sd_high"), "n_balanced": e1.get("n_balanced")},
-            "E3": {"verdict": c["reachability"]["verdict"], "D_full": c["reachability"]["full"]["D_dex"], "D_bootstrap_p5": c["reachability"]["bootstrap_full"]["p5"], "control_p95": c["reachability"]["controls_full"]["p95"]},
+            "E3": {"verdict": c["reachability"]["verdict"], "D_full": c["reachability"]["full"]["D_dex"], "between_p5": c["reachability"]["between_full"]["p5"], "between_p95": c["reachability"]["between_full"]["p95"], "control_p95": c["reachability"]["controls_full"]["p95"], "margin": c["reachability"]["margin_dex"]},
             "E4": {"verdict": c["calibration"]["verdict"], "disjoint_fraction": c["calibration"]["disjoint_fraction"]},
             "validations": {"V1": None if c["v1"] is None else c["v1"]["passed"], "V2": c["v2"]["passed"], "V3": c["v3"]["passed"], "V4": {k: v for k, v in {s: (c["v4"][s]["ratio_ok"] and c["v4"][s]["within_tolerance"]) for s in c["v4"]}.items()}, "V5": res["published"]["V5"]["passed"]}}
 
 
 def deviations(res):
+    """What the code did that the protocol (with amendment A1) does not describe, or could not do."""
     d = []
     c = res["camels"]
     if c["v1"] is None:
         d.append("Validation V1 could not be evaluated: data/ensembles/camels-closure.json is missing (run scripts/validate_camels_closure.py).")
+    elif not c["v1"].get("volume_check"):
+        d.append("Validation V1 was evaluated without the volume check of amendment A1 (camels-closure.json predates it).")
+    for s_, n in c["meta"]["n_lh_found"].items():
+        if n != 1000 or c["meta"]["n_cv_found"][s_] != 27:
+            d.append(f"{s_}: {n} LH and {c['meta']['n_cv_found'][s_]} CV simulations were found, not 1000 and 27.")
+    for s_, k in c["calibration"]["codes"].items():
+        if k["ess"] < 5000:
+            d.append(f"E4 {s_}: the effective sample size stayed below 5000 ({k['ess']:.0f}) after {k['n_prior']} prior draws.")
+    v5 = res["published"]["V5"]
+    if v5["n_evaluated"] < v5["n_requested"]:
+        miss = [f"{r['run']} z = {', '.join(str(z) for z in r['not_evaluated'])}" for r in v5["runs"] if r["not_evaluated"]]
+        d.append(f"V5 was evaluated at {v5['n_evaluated']} of {v5['n_requested']} run-redshift pairs; not evaluated: {'; '.join(miss)}.")
+    d.append("Sensitivity S9 (cosmology free) was run for the parametric spread and E4 only: the reachability search over six coordinates per code was dropped (amendment A1).")
     return d
 
 
@@ -757,14 +900,15 @@ def headline(res):
     r = c["reachability"]
     rv = r["verdict"]
     out.append(f"**E3 - reachability.** Retuning the four feedback parameters of each code within the CAMELS ranges, IllustrisTNG and SIMBA come no closer than {_f(r['full']['D_dex'])} dex rms in the SFRD over z = {r['z_used'][0]} to {r['z_used'][-1]} "
-               f"(bootstrap 5th to 95th percentile {_f(r['bootstrap_full']['p5'])} to {_f(r['bootstrap_full']['p95'])}); the same code against itself with two emulators leaves {_f(r['controls_full']['median'])} (median) and at most {_f(r['controls_full']['p95'])} (95th percentile). "
-               f"At the fiducial parameters they are {_f(r['full']['D_fiducial_dex'])} dex apart. By the rule fixed in advance the difference is **{rv}**.")
+               f"(emulators on random halves of the simulations, 500 per code: 5th to 95th percentile {_f(r['between_full']['p5'])} to {_f(r['between_full']['p95'])}); the same code against its other half leaves {_f(r['controls_full']['median'])} (median) and at most {_f(r['controls_full']['p95'])} "
+               f"(95th percentile), and two seeds of these two codes differ by {_f(r['margin_dex'])} dex rms. At the fiducial parameters they are {_f(r['full']['D_fiducial_dex'])} dex apart. By the rule fixed in advance (amendment A1) the difference is **{rv}**.")
     k = c["calibration"]
-    out.append(f"**E4 - calibrate and extrapolate.** Tuned to the same observed SFRD at z <= 3, the two codes' 90 % predictive intervals for z = {k['z_target'][0]} to {k['z_target'][-1]} are disjoint at {100 * k['disjoint_fraction']:.0f} % of the redshifts: **{k['verdict']}** disagreement after calibration. "
-               f"Interval widths grow with redshift by a factor {_f(k['width_ratio_high_over_low']['IllustrisTNG'], 1)} (IllustrisTNG) and {_f(k['width_ratio_high_over_low']['SIMBA'], 1)} (SIMBA) from the lower to the upper half of that range.")
+    out.append(f"**E4 - calibrate and extrapolate.** Tuned to the same observed SFRD at z <= 3, the two codes' 90 % intervals for the response of the model at z = {k['z_target'][0]} to {k['z_target'][-1]} are disjoint at {100 * k['disjoint_fraction']:.0f} % of the redshifts: **{k['verdict']}** disagreement after calibration. "
+               f"Interval widths grow with redshift by a factor {_f(k['width_ratio_high_over_low']['IllustrisTNG'], 1)} (IllustrisTNG) and {_f(k['width_ratio_high_over_low']['SIMBA'], 1)} (SIMBA) from the three lowest targets (z <= 4.9) to the other seven.")
     val = v["validations"]
     bad = [n for n, ok in (("V1", val["V1"]), ("V2", val["V2"]), ("V3", val["V3"]), ("V4 IllustrisTNG", val["V4"]["IllustrisTNG"]), ("V4 SIMBA", val["V4"]["SIMBA"]), ("V5", val["V5"])) if ok is False]
     out.append("**Validations.** " + ("All five hold." if not bad and None not in val.values() else f"Not all hold: {', '.join(bad) if bad else 'some could not be evaluated'}; see the validation table in section 3 and read the corresponding conclusions with that qualification."))
+    out.append("**What E3 and E4 can see.** On synthetic twin codes (`scripts/power_model_form.py`, `docs/POWER-model-form.md`) a verdict of structural needs a step between the codes that the four parameters cannot absorb: about 0.6 dex above z = 3.5 when the parameters move the SFRD by a few tenths of a dex, about 1 dex when they move it three times as much; smaller steps are classed removable or parametric (E4 also mixed), and identical codes never came out structural.")
     return out
 
 
@@ -775,9 +919,9 @@ def reading(res):
     if v["E3"]["verdict"] == "structural" and v["E4"]["verdict"] in ("structural", "mixed"):
         out.append("The disagreement between the two codes is not removable by retuning their feedback parameters inside the CAMELS ranges: it is a difference of model form, at CAMELS resolution, and it persists when both are calibrated to the same observed star formation history.")
     elif v["E3"]["verdict"] == "removable":
-        out.append("Within the CAMELS ranges one code can be retuned to reproduce the other's star formation history to within the emulation noise: the difference between these two codes is parametric.")
+        out.append("Within the CAMELS ranges one code can be retuned to reproduce the other's star formation history to within the scatter between two seeds of the same codes: the difference between these two codes is parametric.")
     else:
-        out.append("The experiment does not separate parametric from structural for these two codes: the distance is neither clearly above nor clearly below what emulation and seed noise leave.")
+        out.append("The experiment does not separate parametric from structural for these two codes: the distance is neither clearly above the larger of the emulation noise and the seed-to-seed scatter, nor clearly below the seed-to-seed scatter.")
     p = c["codes"]
     out.append(f"The four feedback parameters move the SFRD of IllustrisTNG by {_f(p['IllustrisTNG']['parametric']['rms_low'])} dex rms at z < 3 and {_f(p['IllustrisTNG']['parametric']['rms_high'])} dex at z > 3, and that of SIMBA by {_f(p['SIMBA']['parametric']['rms_low'])} and {_f(p['SIMBA']['parametric']['rms_high'])} dex; the seed-to-seed scatter of a 25 Mpc/h box is "
                f"{_f(float(np.nanmedian([x for x in p['IllustrisTNG']['seed_noise'] if x is not None])), 2)} (IllustrisTNG) and {_f(float(np.nanmedian([x for x in p['SIMBA']['seed_noise'] if x is not None])), 2)} (SIMBA) dex at the median redshift.")
@@ -809,7 +953,9 @@ def render(res):
     srow = lambda k, x: [k, x["n_balanced"], _f(x["phi"]), _ci(x["phi_ci90"]), _f(x["pitman_morgan_p"], 4), _yn(x["success"])]
     L += [_table(["analysis", "balanced families", "phi", "90 % interval", "Pitman-Morgan p", "rule met"],
                  [srow(k, sn[k]) for k in ("S1_add_simba_horizon", "S2_exclude_small_boxes", "S3_alternative_bands", "S4_chabrier_equivalent", "S7_window_0.0625", "S7_window_0.25")] + [srow(f"S6 without {f}", x) for f, x in sn["S6_leave_one_family_out"].items()]), "",
-          f"S5: with a random one of each family's fiducial and numerical variants ({sn['S5_random_numerical_fiducial']['draws']} draws) phi has median {_f(sn['S5_random_numerical_fiducial']['phi_median'])} (95 % of draws {_f(sn['S5_random_numerical_fiducial']['phi_p2.5'])} to {_f(sn['S5_random_numerical_fiducial']['phi_p97.5'])}) and the rule is met in {100 * sn['S5_random_numerical_fiducial']['fraction_success']:.0f} % of them.", "",
+          f"S5: with a random one of each family's fiducial and numerical variants ({sn['S5_random_numerical_fiducial']['draws']} draws) phi has median {_f(sn['S5_random_numerical_fiducial']['phi_median'])} (95 % of draws {_f(sn['S5_random_numerical_fiducial']['phi_p2.5'])} to {_f(sn['S5_random_numerical_fiducial']['phi_p97.5'])}) and the rule is met in {100 * sn['S5_random_numerical_fiducial']['fraction_success']:.0f} % of them. "
+          "A draw can remove a family from the balanced set by choosing a variant that does not reach both bands, so the table gives the draws by balanced-set size; S5b restricts the draws to curves that reach both bands.", "",
+          _table(["analysis", "balanced families", "draws", "phi median", "rule met"], [[("S5" if k == "S5_random_numerical_fiducial" else "S5b"), n, x["draws"], _f(x["phi_median"]), f"{100 * x['fraction_success']:.0f} %"] for k in ("S5_random_numerical_fiducial", "S5b_random_numerical_fiducial_both_bands") for n, x in sn[k]["by_n_balanced"].items()]), "",
           "## 2. What the authors' own variants do (E2)", "",
           "Root mean square difference in log10 SFRD between each variant and its base run, averaged within families and then over families (pooled over variants in brackets; 90 % interval of the pooled value from resampling variants). Sizes are the authors' choices: read orders of magnitude, not ratios.", ""]
     rows = []
@@ -826,10 +972,11 @@ def render(res):
     v1, v2, v3 = c["v1"], c["v2"], c["v3"]
     L += [_table(["validation", "result", "required", "holds"], [
         ["V1 stellar mass in subhalos / time integral of the SFR (12 IllustrisTNG simulations)", "not evaluated" if v1 is None else f"{_f(v1['ratio_min'], 2)} to {_f(v1['ratio_max'], 2)} (median {_f(v1['ratio_median'], 2)})", "0.45 to 0.75", "n/a" if v1 is None else _yn(v1["passed"])],
+        ["V1 volume: stored volume against the catalogue's BoxSize / h; stored SFRD integral against the stored formed mass; all simulations present", "not evaluated" if v1 is None or not v1.get("volume_check") else f"volume ratio {_f(v1['volume_check']['volume_ratio'], 4)}; integral ratio {_f(v1['volume_check']['integral_over_formed_min'], 3)} to {_f(v1['volume_check']['integral_over_formed_max'], 3)}; {v1['volume_check']['n_lh']} LH and {v1['volume_check']['n_cv']} CV", "ratios within 0.5 % (volume) and 5 % (integral), 1000 and 27", "n/a" if v1 is None or not v1.get("volume_check") else _yn(v1["volume_check"]["passed"])],
         ["V2 response of the SFRD to A_SN1 = 2 against the TNG paper's 'stronger winds x2' (rms, dex)", _f(v2["A_SN1=2"]["rms_difference_dex"]), "<= 0.15", _yn(v2["A_SN1=2"]["rms_difference_dex"] <= 0.15)],
         ["V2 response to A_SN2 = 2 against 'faster winds x2' (rms, dex)", _f(v2["A_SN2=2"]["rms_difference_dex"]), "<= 0.15", _yn(v2["A_SN2=2"]["rms_difference_dex"] <= 0.15)],
         ["V3 CAMELS-SIMBA mean CV curve minus the published SIMBA curve, z = 0.5-4 (mean, dex)", _f(v3["mean_difference_dex"], 3, True), "|.| <= 0.3", _yn(v3["passed"])]] +
-        [[f"V4 {s}: cross-validation error over seed noise (max), emulator against CV mean (max, z <= 6)", f"{_f(c['v4'][s]['max_cv_over_seed'], 2)}; {_f(c['v4'][s]['emulator_minus_cv_mean_max_abs_z_le_6'], 3)}", "<= 1.5; <= max(0.05, 2 SE)", _yn(c["v4"][s]["ratio_ok"] and c["v4"][s]["within_tolerance"])] for s in c["v4"]]), "",
+        [[f"V4 {s}: cross-validation error over seed noise (max over the grid), emulator against CV mean (max, z <= 6)", f"{_f(c['v4'][s]['max_cv_over_seed'], 2)}; {_f(c['v4'][s]['emulator_minus_cv_mean_max_abs_z_le_6'], 3)}", "<= 1.5; <= max(0.05, 2 SE)", _yn(c["v4"][s]["ratio_ok"] and c["v4"][s]["within_tolerance"])] for s in c["v4"]]), "",
           "**Seed noise, parametric spread and structural offset by redshift** (dex; parametric = standard deviation of the emulated SFRD over the four-parameter prior, cosmology fixed):", ""]
     zs = c["meta"]["grid"]
     rows = []
@@ -843,15 +990,17 @@ def render(res):
           f"Rms over the bands: structural offset at the fiducial parameters {_f(c['structural_fiducial']['rms_low'], 2)} (z < 3.1) and {_f(c['structural_fiducial']['rms_high'], 2)} (z > 3.1) dex; parametric spread of IllustrisTNG {_f(c['codes']['IllustrisTNG']['parametric']['rms_low'], 2)} and {_f(c['codes']['IllustrisTNG']['parametric']['rms_high'], 2)}, of SIMBA {_f(c['codes']['SIMBA']['parametric']['rms_low'], 2)} and {_f(c['codes']['SIMBA']['parametric']['rms_high'], 2)}.", "",
           "**Reachability.** Minimum rms difference of the two emulated curves over the four feedback coordinates of each code:", ""]
     rr = c["reachability"]
-    L += [_table(["redshifts", "D at the fiducial parameters (dex)", "D after retuning (dex)", "same-code control median / 95th percentile"],
-                 [["full (" + f"{rr['z_used'][0]} - {rr['z_used'][-1]})", _f(rr["full"]["D_fiducial_dex"]), _f(rr["full"]["D_dex"]), f"{_f(rr['controls_full']['median'])} / {_f(rr['controls_full']['p95'])}"],
-                  ["low (0.1 - 3.1)", _f(rr["low"]["D_fiducial_dex"]), _f(rr["low"]["D_dex"]), f"{_f(rr['controls_bands']['low']['median'])} / {_f(rr['controls_bands']['low']['p95'])}"],
-                  ["high (3.1 - 8.1)", _f(rr["high"]["D_fiducial_dex"]), _f(rr["high"]["D_dex"]), f"{_f(rr['controls_bands']['high']['median'])} / {_f(rr['controls_bands']['high']['p95'])}"]]), "",
-          f"Bootstrap of the full-range distance ({rr['bootstrap_full']['n']} refits of both emulators): 5th / median / 95th percentile {_f(rr['bootstrap_full']['p5'])} / {_f(rr['bootstrap_full']['p50'])} / {_f(rr['bootstrap_full']['p95'])}; verdict by the rule of the protocol: **{rr['verdict']}**. "
-          "Reachable coordinates of the minimising pair (in units of the half-range): IllustrisTNG " + ", ".join(f"{x:+.2f}" for x in rr["full"]["a_tng"]) + "; SIMBA " + ", ".join(f"{x:+.2f}" for x in rr["full"]["a_simba"]) + " (a coordinate of 1 is the edge of the CAMELS range).", "",
+    L += [_table(["redshifts", "D at the fiducial parameters (dex)", "D after retuning, all simulations (dex)", "between codes, 500-simulation emulators: 5th / median / 95th", "same-code control (500 v 500): median / 95th"],
+                 [["full (" + f"{rr['z_used'][0]} - {rr['z_used'][-1]})", _f(rr["full"]["D_fiducial_dex"]), _f(rr["full"]["D_dex"]), f"{_f(rr['between_full']['p5'])} / {_f(rr['between_full']['p50'])} / {_f(rr['between_full']['p95'])}", f"{_f(rr['controls_full']['median'])} / {_f(rr['controls_full']['p95'])}"],
+                  ["low (0.1 - 3.1)", _f(rr["low"]["D_fiducial_dex"]), _f(rr["low"]["D_dex"]), f"{_f(rr['between_bands']['low']['p5'])} / {_f(rr['between_bands']['low']['p50'])} / {_f(rr['between_bands']['low']['p95'])}", f"{_f(rr['controls_bands']['low']['median'])} / {_f(rr['controls_bands']['low']['p95'])}"],
+                  ["high (3.1 - 8.1)", _f(rr["high"]["D_fiducial_dex"]), _f(rr["high"]["D_dex"]), f"{_f(rr['between_bands']['high']['p5'])} / {_f(rr['between_bands']['high']['p50'])} / {_f(rr['between_bands']['high']['p95'])}", f"{_f(rr['controls_bands']['high']['median'])} / {_f(rr['controls_bands']['high']['p95'])}"]]), "",
+          f"Rule (amendment A1): structural if the 5th percentile of the between-code distance exceeds both the 95th percentile of the controls and the seed margin ({_f(rr['margin_dex'])} dex, the rms difference between two seeds of the two codes); removable if its 95th percentile is below the margin; otherwise unresolved. "
+          f"Full range: **{rr['verdict']}**; low band {rr['between_bands']['low']['verdict']}; high band {rr['between_bands']['high']['verdict']}. For reference, resampling all 1000 simulations of each code (full-size emulators, {rr['bootstrap_full']['n']} refits; not used for the verdict) gives D = {_f(rr['bootstrap_full']['p5'])} / {_f(rr['bootstrap_full']['p50'])} / {_f(rr['bootstrap_full']['p95'])} (5th / median / 95th percentile). "
+          "Reachable coordinates of the minimising pair (in units of the half-range): IllustrisTNG " + ", ".join(f"{x:+.2f}" for x in rr["full"]["a_tng"]) + "; SIMBA " + ", ".join(f"{x:+.2f}" for x in rr["full"]["a_simba"]) + " (a coordinate of 1 is the edge of the CAMELS range, where the emulator is least constrained).", "",
           "Distance when the parameter ranges are shrunk to a fraction of their log half-width:", "", _table(["fraction of the range", "D (dex)"], [[k, _f(x)] for k, x in rr["shrunk"].items()]), "",
           "## 4. Calibrate on the same observations, then extrapolate (E4)", "",
-          f"Both codes are conditioned on the Madau and Dickinson (2014) SFRD (Chabrier) at z = {', '.join(str(z) for z in c['calibration']['z_obs'])} with total error 0.2 dex observational, 0.15 dex for CAMELS box size and resolution and the emulator error. Posterior predictive median and 90 % interval of log10 SFRD:", ""]
+          f"Both codes are conditioned on the Madau and Dickinson (2014) SFRD (Chabrier) at z = {', '.join(str(z) for z in c['calibration']['z_obs'])}. The error is a systematic of {c['calibration']['systematic_dex']} dex common to all eight points (a normalisation, IMF and dust uncertainty of the observed fit), plus {BOX_ALLOWANCE} dex for CAMELS box size and resolution and the emulator error at each point, independent between points. "
+          "The intervals are those of the model's **mean response** after calibration (posterior of the four coordinates, plus the emulator's cross-validation error in excess of the seed noise at each target redshift): they do not include seed-to-seed scatter or the box allowance, which belong to the comparison with the observed fit. Median and 90 % interval of log10 SFRD:", ""]
     k = c["calibration"]
     rows = []
     for i, z in enumerate(k["z_target"]):
@@ -860,6 +1009,9 @@ def render(res):
     L += [_table(["z", "IllustrisTNG", "SIMBA", "difference of medians"], rows), "",
           f"Disjoint intervals at {100 * k['disjoint_fraction']:.0f} % of these redshifts: **{k['verdict']}** (rule: structural at half or more, parametric if never). Effective sample sizes {k['codes']['IllustrisTNG']['ess']:.0f} and {k['codes']['SIMBA']['ess']:.0f}; minimum chi-square {_f(k['codes']['IllustrisTNG']['chi2_min'], 1)} and {_f(k['codes']['SIMBA']['chi2_min'], 1)} for 8 data points. "
           "Posterior median coordinates (A_SN1, A_AGN1, A_SN2, A_AGN2 in units of the half-range): IllustrisTNG " + ", ".join(f"{x:+.2f}" for x in k["codes"]["IllustrisTNG"]["posterior_median_coordinates"]) + "; SIMBA " + ", ".join(f"{x:+.2f}" for x in k["codes"]["SIMBA"]["posterior_median_coordinates"]) + ".", "",
+          "Sensitivity (S8, S9): the same quantities when the emulator, the error model or the cosmology are changed (E3 as the point distance D over all simulations, E4 as the verdict and the disjoint share):", "",
+          _table(["setting", "degree TNG / SIMBA", "D after retuning (dex)", "E4 verdict", "disjoint share", "min ESS"], [[k_, "-" if "degree" not in x else f"{x['degree']['IllustrisTNG']} / {x['degree']['SIMBA']}", _f(x.get("D_full_dex")), x["E4_verdict"], f"{100 * x['E4_disjoint_fraction']:.0f} %", f"{x['ess_min']:.0f}"] for k_, x in c["sensitivity"].items()]) if c.get("sensitivity") else "",
+          "", ("S9 parametric spread with cosmology free (rms, dex; low / high): " + "; ".join(f"{s_} {_f(x['low'], 2)} / {_f(x['high'], 2)}" for s_, x in c["sensitivity"]["S9_cosmology_free"]["parametric_rms"].items()) + ".") if c.get("sensitivity") else "", "",
           "## 5. Observations (E5) and the stellar mass budget (V5)", "",
           "Published fiducial curves (Chabrier-equivalent) against the Madau and Dickinson (2014) fit (Chabrier, error 0.2 dex assumed):", ""]
     rows = [[f"{x['z']:.1f}", x["n"], _f(x["ensemble_median"], 2), f"{_f(x['ensemble_min'], 2)} to {_f(x['ensemble_max'], 2)}", _f(x["observed"], 2), _f(x["offset_dex"], 2, True), _f(x["offset_in_sd"], 2, True) if x["offset_in_sd"] is not None else "-",
@@ -870,7 +1022,8 @@ def render(res):
               _table(["z", "families", "ensemble median", "envelope", "observed [1 sigma]", "median - observed", "inside"], [[f"{x['z']:.0f}", x["n"], _f(x["ensemble_median"], 2), f"{_f(x['ensemble_min'], 2)} to {_f(x['ensemble_max'], 2)}",
                                                                                         f"{_f(x['observed'], 2)} [{_f(x['observed_low'], 2)}, {_f(x['observed_high'], 2)}]", _f(x["offset_dex"], 2, True), _yn(x["inside_envelope"])] for x in p["E5"]["high_z"]]), ""]
     L += ["Stellar mass budget: effective return fraction R_eff(z) = 1 - rho_*(z) / integral of the SFRD above z, for runs with both curves (a plausible value for a Chabrier or Kroupa IMF is 0.3 to 0.45; required 0.15 to 0.60):", "",
-          _table(["run", "z", "log10 formed", "log10 rho_*", "R_eff"], [[r["run"], z, _f(x["formed_log10"], 2), _f(x["smd_log10"], 2), _f(x["R_eff"], 2)] for r in p["V5"]["runs"] for z, x in r["R_eff"].items()]), "",
+          _table(["run", "z", "log10 formed", "log10 rho_*", "R_eff"], [[r["run"], z, _f(x["formed_log10"], 2), _f(x["smd_log10"], 2), _f(x["R_eff"], 2)] for r in p["V5"]["runs"] for z, x in r["R_eff"].items()]),
+          "", f"Evaluated at {p['V5']['n_evaluated']} of {p['V5']['n_requested']} run-redshift pairs (a curve that starts within 0.06 of z = 0 stands in for z = 0)." + "".join(f" {r['run']}: not evaluated at z = {', '.join(str(z) for z in r['not_evaluated'])}." for r in p["V5"]["runs"] if r["not_evaluated"]), "",
           "## 6. Deviations from the protocol", ""] + ([f"- {d}" for d in res["deviations"]] or ["- none"]) + ["",
           "## 7. Limitations", "",
           "- Nine families, seven balanced: a funnel of modest size would not be detected (power table in the protocol).",
@@ -879,7 +1032,11 @@ def render(res):
           "- CAMELS boxes are 25 Mpc/h with 256^3 elements: E3 and E4 describe how the models respond at that resolution, not the absolute SFRD of the full-resolution simulations, and star formation above z about 6 is resolution-limited.",
           "- The reachable set depends on the CAMELS parameter ranges, which are not the ranges the code authors would accept; the parameters of the two codes are not the same physical quantities.",
           "- Two codes only: whether the IllustrisTNG-SIMBA distance is typical cannot be said.",
-          "- The observed SFRD is a fit with an assumed systematic error, not a likelihood.", "",
+          "- The observed SFRD is a fit with an assumed systematic error, not a likelihood; E4 treats the systematic as common to the eight calibration redshifts and the other errors as independent, and its power is limited (protocol section 5 and `docs/POWER-model-form.md`): steps between the codes smaller than a few tenths of a dex are classed parametric.",
+          "- A spread in dex is mechanically larger where the SFRD changes faster with redshift, so a funnel in dex does not by itself say that the models disagree more in timing or physics there; box size, resolution and the number of families that reach each redshift also change with z, and the all-family spread curve S(z) is descriptive for that reason.",
+          "- E2: variant classes are confounded with families and boxes (parametric, component and ablation variants are all IllustrisTNG; calibration and implementation variants are FLAMINGO); some variants exist in one band only; the interval ignores family clustering.",
+          "- E3: the minimiser seeks the corners of the parameter box, where an emulator trained on a Latin hypercube has the fewest simulations; the controls share that search, which keeps the comparison fair, but D is biased low by the search and high by emulator noise, and the shrunken ranges are the less extrapolated estimates. 63 % of the CAMELS grid points lie above z = 3.1.",
+          "- E5: the observed fit is converted to a Chabrier IMF by dividing by 1.6 (0.204 dex), the simulations by the website's offsets (0.235 dex from Salpeter), a difference of 0.03 dex; the observational SFRD is integrated down to a luminosity limit whereas the simulated one is a total.", "",
           "## 8. Reproduce", "", "`python3 scripts/ingest_camels_sfrd.py` rebuilds `data/ensembles/camels-sfrd.json` from the public CAMELS files (about 25 minutes; the hashes of the files read are stored) and `python3 scripts/validate_camels_closure.py` rebuilds V1; "
           "`python3 scripts/analyze_model_form.py` rewrites this file and `data/analysis/model-form.json` from them and from the committed curves; `python3 scripts/test_model_form.py` checks the machinery on synthetic ensembles and that these outputs are not stale.", ""]
     return "\n".join(L)

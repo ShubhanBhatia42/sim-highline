@@ -1,5 +1,5 @@
 {
- "description": "Validation V1 of docs/PROTOCOL-model-form.md: do the CAMELS star formation logs, read with the volume used in scripts/ingest_camels_sfrd.py, account for the stellar mass of the z = 0 catalogues?",
+ "description": "Validation V1 of docs/PROTOCOL-model-form.md (with amendment A1): do the CAMELS star formation logs, read with the volume used in scripts/ingest_camels_sfrd.py, account for the stellar mass of the z = 0 catalogues?",
  "seed": 20261015,
  "rows": [
   {
@@ -7,86 +7,194 @@
    "redshift": 0.0,
    "stellar_mass_in_subhalos_Msun": 29784000000000.0,
    "formed_mass_Msun": 50811000000000.0,
-   "ratio": 0.586
+   "ratio": 0.586,
+   "box_ckpc_h": 25000.0,
+   "h_catalogue": 0.6711,
+   "volume_catalogue_cMpc3": 51696.2,
+   "volume_stored_cMpc3": 51696.2,
+   "volume_ratio": 1.0,
+   "formed_from_stored_bins_Msun": 50807000000000.0,
+   "integral_over_formed": 0.9999
   },
   {
    "sim": "LH_70",
    "redshift": 0.0,
    "stellar_mass_in_subhalos_Msun": 11801000000000.0,
    "formed_mass_Msun": 20180000000000.0,
-   "ratio": 0.585
+   "ratio": 0.585,
+   "box_ckpc_h": 25000.0,
+   "h_catalogue": 0.6711,
+   "volume_catalogue_cMpc3": 51696.2,
+   "volume_stored_cMpc3": 51696.2,
+   "volume_ratio": 1.0,
+   "formed_from_stored_bins_Msun": 20179000000000.0,
+   "integral_over_formed": 1.0
   },
   {
    "sim": "LH_101",
    "redshift": 0.0,
    "stellar_mass_in_subhalos_Msun": 15695000000000.0,
    "formed_mass_Msun": 26570000000000.0,
-   "ratio": 0.591
+   "ratio": 0.591,
+   "box_ckpc_h": 25000.0,
+   "h_catalogue": 0.6711,
+   "volume_catalogue_cMpc3": 51696.2,
+   "volume_stored_cMpc3": 51696.2,
+   "volume_ratio": 1.0,
+   "formed_from_stored_bins_Msun": 26570000000000.0,
+   "integral_over_formed": 1.0
   },
   {
    "sim": "LH_349",
    "redshift": 0.0,
    "stellar_mass_in_subhalos_Msun": 23024000000000.0,
    "formed_mass_Msun": 39250000000000.0,
-   "ratio": 0.587
+   "ratio": 0.587,
+   "box_ckpc_h": 25000.0,
+   "h_catalogue": 0.6711,
+   "volume_catalogue_cMpc3": 51696.2,
+   "volume_stored_cMpc3": 51696.2,
+   "volume_ratio": 1.0,
+   "formed_from_stored_bins_Msun": 39249000000000.0,
+   "integral_over_formed": 1.0
   },
   {
    "sim": "LH_454",
    "redshift": 0.0,
    "stellar_mass_in_subhalos_Msun": 13049000000000.0,
    "formed_mass_Msun": 22438000000000.0,
-   "ratio": 0.582
+   "ratio": 0.582,
+   "box_ckpc_h": 25000.0,
+   "h_catalogue": 0.6711,
+   "volume_catalogue_cMpc3": 51696.2,
+   "volume_stored_cMpc3": 51696.2,
+   "volume_ratio": 1.0,
+   "formed_from_stored_bins_Msun": 22437000000000.0,
+   "integral_over_formed": 1.0
   },
   {
    "sim": "LH_469",
    "redshift": 0.0,
    "stellar_mass_in_subhalos_Msun": 10661000000000.0,
    "formed_mass_Msun": 17945000000000.0,
-   "ratio": 0.594
+   "ratio": 0.594,
+   "box_ckpc_h": 25000.0,
+   "h_catalogue": 0.6711,
+   "volume_catalogue_cMpc3": 51696.2,
+   "volume_stored_cMpc3": 51696.2,
+   "volume_ratio": 1.0,
+   "formed_from_stored_bins_Msun": 17945000000000.0,
+   "integral_over_formed": 1.0
   },
   {
    "sim": "LH_471",
    "redshift": 0.0,
    "stellar_mass_in_subhalos_Msun": 13671000000000.0,
    "formed_mass_Msun": 23318000000000.0,
-   "ratio": 0.586
+   "ratio": 0.586,
+   "box_ckpc_h": 25000.0,
+   "h_catalogue": 0.6711,
+   "volume_catalogue_cMpc3": 51696.2,
+   "volume_stored_cMpc3": 51696.2,
+   "volume_ratio": 1.0,
+   "formed_from_stored_bins_Msun": 23317000000000.0,
+   "integral_over_formed": 1.0
   },
   {
    "sim": "LH_523",
    "redshift": 0.0,
    "stellar_mass_in_subhalos_Msun": 12220000000000.0,
    "formed_mass_Msun": 20586000000000.0,
-   "ratio": 0.594
+   "ratio": 0.594,
+   "box_ckpc_h": 25000.0,
+   "h_catalogue": 0.6711,
+   "volume_catalogue_cMpc3": 51696.2,
+   "volume_stored_cMpc3": 51696.2,
+   "volume_ratio": 1.0,
+   "formed_from_stored_bins_Msun": 20586000000000.0,
+   "integral_over_formed": 1.0
   },
   {
    "sim": "LH_622",
    "redshift": 0.0,
    "stellar_mass_in_subhalos_Msun": 6117900000000.0,
    "formed_mass_Msun": 10408000000000.0,
-   "ratio": 0.588
+   "ratio": 0.588,
+   "box_ckpc_h": 25000.0,
+   "h_catalogue": 0.6711,
+   "volume_catalogue_cMpc3": 51696.2,
+   "volume_stored_cMpc3": 51696.2,
+   "volume_ratio": 1.0,
+   "formed_from_stored_bins_Msun": 10408000000000.0,
+   "integral_over_formed": 1.0
   },
   {
    "sim": "LH_726",
    "redshift": 0.0,
    "stellar_mass_in_subhalos_Msun": 7640500000000.0,
    "formed_mass_Msun": 12789000000000.0,
-   "ratio": 0.597
+   "ratio": 0.597,
+   "box_ckpc_h": 25000.0,
+   "h_catalogue": 0.6711,
+   "volume_catalogue_cMpc3": 51696.2,
+   "volume_stored_cMpc3": 51696.2,
+   "volume_ratio": 1.0,
+   "formed_from_stored_bins_Msun": 12788000000000.0,
+   "integral_over_formed": 1.0
   },
   {
    "sim": "LH_788",
    "redshift": 0.0,
    "stellar_mass_in_subhalos_Msun": 4687900000000.0,
    "formed_mass_Msun": 7895100000000.0,
-   "ratio": 0.594
+   "ratio": 0.594,
+   "box_ckpc_h": 25000.0,
+   "h_catalogue": 0.6711,
+   "volume_catalogue_cMpc3": 51696.2,
+   "volume_stored_cMpc3": 51696.2,
+   "volume_ratio": 1.0,
+   "formed_from_stored_bins_Msun": 7895300000000.0,
+   "integral_over_formed": 1.0
   },
   {
    "sim": "LH_809",
    "redshift": 0.0,
    "stellar_mass_in_subhalos_Msun": 10254000000000.0,
    "formed_mass_Msun": 17149000000000.0,
-   "ratio": 0.598
+   "ratio": 0.598,
+   "box_ckpc_h": 25000.0,
+   "h_catalogue": 0.6711,
+   "volume_catalogue_cMpc3": 51696.2,
+   "volume_stored_cMpc3": 51696.2,
+   "volume_ratio": 1.0,
+   "formed_from_stored_bins_Msun": 17150000000000.0,
+   "integral_over_formed": 1.0
   }
  ],
+ "volume_check": {
+  "volume_ratio": 1.0,
+  "volume_ratio_min": 1.0,
+  "volume_ratio_max": 1.0,
+  "integral_over_formed_min": 0.9999,
+  "integral_over_formed_max": 1.0,
+  "n_lh": 1000,
+  "n_cv": 27,
+  "max_header_redshift": 0.0,
+  "required": {
+   "volume_ratio": [
+    0.995,
+    1.005
+   ],
+   "integral_over_formed": [
+    0.95,
+    1.05
+   ],
+   "n_lh": 1000,
+   "n_cv": 27,
+   "max_header_redshift": 0.01
+  },
+  "passed": true
+ },
  "ratio_min": 0.582,
  "ratio_max": 0.598,
  "ratio_median": 0.5894999999999999,
@@ -94,5 +202,6 @@
   0.45,
   0.75
  ],
+ "mass_passed": true,
  "passed": true
 }

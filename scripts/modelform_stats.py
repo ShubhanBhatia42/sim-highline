@@ -121,14 +121,15 @@ class Emulator:
         w = np.ones(n) if weights is None else np.asarray(weights, float)
         Y = np.asarray(Y, float)
         self.coef = np.full((p, Y.shape[1]), np.nan)
-        pen = self.ridge * np.eye(p)
-        pen[0, 0] = 0.0
         for j in range(Y.shape[1]):
             ok = np.isfinite(Y[:, j]) & (w > 0)
             if ok.sum() < 2 * p:
                 continue
             Fw = F[ok] * w[ok, None]
-            self.coef[:, j] = np.linalg.solve(F[ok].T @ Fw + pen * w[ok].sum() / ok.sum(), Fw.T @ Y[ok, j])
+            A = F[ok].T @ Fw
+            pen = np.diag(np.full(p, self.ridge * float(np.mean(np.diag(A)[1:]))))  # ridge as a fraction of the mean diagonal of F'WF (intercept excluded), as the protocol states
+            pen[0, 0] = 0.0
+            self.coef[:, j] = np.linalg.solve(A + pen, Fw.T @ Y[ok, j])
         return self
 
     def predict(self, X):
