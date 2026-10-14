@@ -1,0 +1,362 @@
+{
+  "schemaVersion": "1.0.0",
+  "note": "Which curves are one simulation suite's fiducial run and which are variants of it, and what kind of variant (numerical, parametric, cosmology, component, ablation). Used by scripts/analyze_model_form.py (protocol docs/PROTOCOL-model-form.md). A variant differs from its base run by one documented change unless the change field says otherwise; the classes are the author's reading of the cited tables and are fixed before any analysis.",
+  "classes": {
+    "numerical": "same model, different resolution or volume; where the authors recalibrate the subgrid parameters to the same data at each resolution ('weak convergence') this is stated in the change field",
+    "parametric": "the same model with the numerical value of one or two subgrid parameters changed (the model's own parameter freedom)",
+    "calibration": "the same model recalibrated to a shifted calibration target (the authors' emulator-based recalibration of several parameters at once)",
+    "cosmology": "the same galaxy formation model in a different cosmology or dark matter model",
+    "component": "a feature of the model switched back to its older form or off (a change of functional form, not of a parameter value)",
+    "implementation": "a different implementation of one process (for example thermal versus jet AGN feedback)",
+    "ablation": "an entire physical process removed"
+  },
+  "families": {
+    "Illustris": {
+      "fiducial": "vogelsberger14.illustris.sfrd.total",
+      "evidence": "Illustris-1 (Vogelsberger+14, arXiv:1405.2921)"
+    },
+    "IllustrisTNG": {
+      "fiducial": "pillepich18.tng-l25n512.fiducial.sfrd",
+      "evidence": "TNG model on the 25 Mpc/h box L25n512 (Pillepich+18, arXiv:1703.02970); the TNG100 and TNG300 curves of the TNG papers are not in the dataset"
+    },
+    "EAGLE": {
+      "fiducial": "furlong15.eagle.sfrd.refl100n1504",
+      "evidence": "Ref-L100N1504 (Furlong+15, arXiv:1410.3485)"
+    },
+    "FLAMINGO": {
+      "fiducial": "schaye23.flamingo-l1_m9.sfrd",
+      "evidence": "L1_m9 (Schaye+23, arXiv:2306.04024), the website's fiducial run"
+    },
+    "COLIBRE": {
+      "fiducial": "schaye25.colibre.sfrd.m6-l200",
+      "evidence": "m6 (L200) (Schaye+26, arXiv:2508.21126), the intermediate resolution of the flagship"
+    },
+    "FIREbox": {
+      "fiducial": "feldmann23.firebox.sfrd.all",
+      "evidence": "FB1024, all identified galaxies (Feldmann+23, arXiv:2205.15325); the 'massive' curve counts only galaxies above 10^9.3 Msun and is not a total"
+    },
+    "ASTRID": {
+      "fiducial": "bird22.astrid.sfrd.total",
+      "evidence": "250 Mpc/h box (Bird+22, arXiv:2111.01160)"
+    },
+    "THESAN-1": {
+      "fiducial": "kannan22.thesan.sfrd.t1",
+      "evidence": "THESAN-1 (Kannan+22, arXiv:2110.00584)"
+    },
+    "Romulus25": {
+      "fiducial": "tremmel17.romulus25.sfrd.total",
+      "evidence": "25 Mpc box (Tremmel+17, arXiv:1607.02151)"
+    },
+    "SIMBA": {
+      "fiducial": "dave19.simba.sfrd.m100n1024",
+      "evidence": "m100n1024 (Dave+19, arXiv:1901.10203); the density frame is not stated (see the protocol, validation V3)"
+    },
+    "Horizon-AGN": {
+      "fiducial": "kaviraj17.horizon-agn.sfrd",
+      "evidence": "Kaviraj+17; the density frame, cosmology and SFR indicator are not stated"
+    }
+  },
+  "excludedFamilies": {
+    "FLARES": "galaxies with SFR >= 0.1 Msun/yr only (not a total) and a weighted combination of 40 zoom regions",
+    "THESAN-zoom": "galaxies brighter than M_UV = -17 of 14 zoom regions, dust attenuated (not a total)",
+    "NewHorizon": "a small zoom region that is not volume-complete, density frame not stated"
+  },
+  "variants": [
+    {
+      "id": "schaye23.flamingo-l2p8_m9.sfrd",
+      "family": "FLAMINGO",
+      "base": "schaye23.flamingo-l1_m9.sfrd",
+      "class": "numerical",
+      "change": "box 1 -> 2.8 cGpc at the same resolution",
+      "evidence": "Schaye+23, table of hydrodynamical simulations"
+    },
+    {
+      "id": "schaye23.flamingo-l1_m10.sfrd",
+      "family": "FLAMINGO",
+      "base": "schaye23.flamingo-l1_m9.sfrd",
+      "class": "numerical",
+      "change": "baryonic particle mass 1e9 -> 8.6e9 Msun (m10, subgrid parameters recalibrated by the authors to the same data)",
+      "evidence": "Schaye+23, table of hydrodynamical simulations"
+    },
+    {
+      "id": "schaye23.flamingo-l1_m8.sfrd",
+      "family": "FLAMINGO",
+      "base": "schaye23.flamingo-l1_m9.sfrd",
+      "class": "numerical",
+      "change": "baryonic particle mass 1e9 -> 1.3e8 Msun (m8, subgrid parameters recalibrated by the authors to the same data)",
+      "evidence": "Schaye+23, table of hydrodynamical simulations"
+    },
+    {
+      "id": "schaye23.flamingo-l1_m9-fgas+2s.sfrd",
+      "family": "FLAMINGO",
+      "base": "schaye23.flamingo-l1_m9.sfrd",
+      "class": "calibration",
+      "change": "cluster gas fractions shifted by +2 sigma before calibration",
+      "evidence": "Schaye+23, table of hydrodynamical simulations"
+    },
+    {
+      "id": "schaye23.flamingo-l1_m9-fgas-2s.sfrd",
+      "family": "FLAMINGO",
+      "base": "schaye23.flamingo-l1_m9.sfrd",
+      "class": "calibration",
+      "change": "cluster gas fractions shifted by -2 sigma before calibration",
+      "evidence": "Schaye+23, table of hydrodynamical simulations"
+    },
+    {
+      "id": "schaye23.flamingo-l1_m9-fgas-4s.sfrd",
+      "family": "FLAMINGO",
+      "base": "schaye23.flamingo-l1_m9.sfrd",
+      "class": "calibration",
+      "change": "cluster gas fractions shifted by -4 sigma before calibration",
+      "evidence": "Schaye+23, table of hydrodynamical simulations"
+    },
+    {
+      "id": "schaye23.flamingo-l1_m9-fgas-8s.sfrd",
+      "family": "FLAMINGO",
+      "base": "schaye23.flamingo-l1_m9.sfrd",
+      "class": "calibration",
+      "change": "cluster gas fractions shifted by -8 sigma before calibration",
+      "evidence": "Schaye+23, table of hydrodynamical simulations"
+    },
+    {
+      "id": "schaye23.flamingo-l1_m9-mstar-s.sfrd",
+      "family": "FLAMINGO",
+      "base": "schaye23.flamingo-l1_m9.sfrd",
+      "class": "calibration",
+      "change": "observed stellar masses lowered by 0.14 dex before calibration",
+      "evidence": "Schaye+23, table of hydrodynamical simulations"
+    },
+    {
+      "id": "schaye23.flamingo-l1_m9-mstar-s-fgas-4s.sfrd",
+      "family": "FLAMINGO",
+      "base": "schaye23.flamingo-l1_m9.sfrd",
+      "class": "calibration",
+      "change": "stellar masses -1 sigma and cluster gas fractions -4 sigma before calibration",
+      "evidence": "Schaye+23, table of hydrodynamical simulations"
+    },
+    {
+      "id": "schaye23.flamingo-l1_m9-jet.sfrd",
+      "family": "FLAMINGO",
+      "base": "schaye23.flamingo-l1_m9.sfrd",
+      "class": "implementation",
+      "change": "kinetic jet AGN feedback instead of thermal",
+      "evidence": "Schaye+23, table of hydrodynamical simulations"
+    },
+    {
+      "id": "schaye23.flamingo-l1_m9-jet-fgas-4s.sfrd",
+      "family": "FLAMINGO",
+      "base": "schaye23.flamingo-l1_m9.sfrd",
+      "class": "implementation",
+      "change": "kinetic jet AGN feedback with cluster gas fractions shifted by -4 sigma",
+      "evidence": "Schaye+23, table of hydrodynamical simulations"
+    },
+    {
+      "id": "schaye23.flamingo-l1_m9-planck.sfrd",
+      "family": "FLAMINGO",
+      "base": "schaye23.flamingo-l1_m9.sfrd",
+      "class": "cosmology",
+      "change": "Planck cosmology (sigma8 0.812, Om 0.316) instead of DES Y3 3x2pt+all (0.807, 0.306)",
+      "evidence": "Schaye+23, tables of simulations and cosmologies"
+    },
+    {
+      "id": "schaye23.flamingo-l1_m9-planck-nu0p24fix.sfrd",
+      "family": "FLAMINGO",
+      "base": "schaye23.flamingo-l1_m9.sfrd",
+      "class": "cosmology",
+      "change": "Planck with sum m_nu = 0.24 eV, other parameters fixed (sigma8 0.769)",
+      "evidence": "Schaye+23, tables of simulations and cosmologies"
+    },
+    {
+      "id": "schaye23.flamingo-l1_m9-planck-nu0p24var.sfrd",
+      "family": "FLAMINGO",
+      "base": "schaye23.flamingo-l1_m9.sfrd",
+      "class": "cosmology",
+      "change": "sum m_nu = 0.24 eV with the other parameters at their best-fit values (sigma8 0.772)",
+      "evidence": "Schaye+23, tables of simulations and cosmologies"
+    },
+    {
+      "id": "schaye23.flamingo-l1_m9-ls8.sfrd",
+      "family": "FLAMINGO",
+      "base": "schaye23.flamingo-l1_m9.sfrd",
+      "class": "cosmology",
+      "change": "lensing cosmology LS8 (sigma8 0.760, S8 0.766)",
+      "evidence": "Schaye+23, tables of simulations and cosmologies"
+    },
+    {
+      "id": "pillepich18.tng-l25n256.fiducial.sfrd",
+      "family": "IllustrisTNG",
+      "base": "pillepich18.tng-l25n512.fiducial.sfrd",
+      "class": "numerical",
+      "change": "L25n512 -> L25n256 (8 times fewer elements, same box and model)",
+      "evidence": "Pillepich+18, resolution table and figure"
+    },
+    {
+      "id": "pillepich18.tng-l25n128.fiducial.sfrd",
+      "family": "IllustrisTNG",
+      "base": "pillepich18.tng-l25n512.fiducial.sfrd",
+      "class": "numerical",
+      "change": "L25n512 -> L25n128 (64 times fewer elements)",
+      "evidence": "Pillepich+18, resolution table and figure"
+    },
+    {
+      "id": "pillepich18.illustris-model-l25n256.fiducial.sfrd",
+      "family": "Illustris",
+      "base": "pillepich18.illustris-model-l25n512.fiducial.sfrd",
+      "class": "numerical",
+      "change": "L25n512 -> L25n256, Illustris model",
+      "evidence": "Pillepich+18, resolution table and figure"
+    },
+    {
+      "id": "pillepich18.illustris-model-l25n128.fiducial.sfrd",
+      "family": "Illustris",
+      "base": "pillepich18.illustris-model-l25n512.fiducial.sfrd",
+      "class": "numerical",
+      "change": "L25n512 -> L25n128, Illustris model",
+      "evidence": "Pillepich+18, resolution table and figure"
+    },
+    {
+      "id": "pillepich18.tng-l25n512.var-stronger-winds-x2.sfrd",
+      "family": "IllustrisTNG",
+      "base": "pillepich18.tng-l25n512.fiducial.sfrd",
+      "class": "parametric",
+      "change": "wind energy factor 3.6 -> 7.2 (CAMELS A_SN1 = 2)",
+      "evidence": "Pillepich+18, variation table"
+    },
+    {
+      "id": "pillepich18.tng-l25n512.var-faster-winds-x2.sfrd",
+      "family": "IllustrisTNG",
+      "base": "pillepich18.tng-l25n512.fiducial.sfrd",
+      "class": "parametric",
+      "change": "wind velocity factor 7.4 -> 14.8 (CAMELS A_SN2 = 2)",
+      "evidence": "Pillepich+18, variation table"
+    },
+    {
+      "id": "pillepich18.tng-l25n512.var-faster-winds-fiducial-loading.sfrd",
+      "family": "IllustrisTNG",
+      "base": "pillepich18.tng-l25n512.fiducial.sfrd",
+      "class": "parametric",
+      "change": "wind velocity factor 7.4 -> 14.8 and wind energy factor 3.6 -> 14.4 (mass loading kept)",
+      "evidence": "Pillepich+18, variation table"
+    },
+    {
+      "id": "pillepich18.tng-l25n512.var-warmer-winds.sfrd",
+      "family": "IllustrisTNG",
+      "base": "pillepich18.tng-l25n512.fiducial.sfrd",
+      "class": "parametric",
+      "change": "wind thermal fraction 0.1 -> 0.5",
+      "evidence": "Pillepich+18, variation table"
+    },
+    {
+      "id": "pillepich18.tng-l25n512.var-cold-winds.sfrd",
+      "family": "IllustrisTNG",
+      "base": "pillepich18.tng-l25n512.fiducial.sfrd",
+      "class": "parametric",
+      "change": "wind thermal fraction 0.1 -> 0.0",
+      "evidence": "Pillepich+18, variation table"
+    },
+    {
+      "id": "pillepich18.tng-l25n512.var-noZ-wind-energy.sfrd",
+      "family": "IllustrisTNG",
+      "base": "pillepich18.tng-l25n512.fiducial.sfrd",
+      "class": "component",
+      "change": "no metallicity dependence of the wind energy",
+      "evidence": "Pillepich+18, variation table"
+    },
+    {
+      "id": "pillepich18.tng-l25n512.var-no-z-wind-velocity.sfrd",
+      "family": "IllustrisTNG",
+      "base": "pillepich18.tng-l25n512.fiducial.sfrd",
+      "class": "component",
+      "change": "no H(z) dependence of the wind velocity",
+      "evidence": "Pillepich+18, variation table"
+    },
+    {
+      "id": "pillepich18.tng-l25n512.var-no-wind-vel-floor.sfrd",
+      "family": "IllustrisTNG",
+      "base": "pillepich18.tng-l25n512.fiducial.sfrd",
+      "class": "component",
+      "change": "wind velocity floor 350 -> 0 km/s",
+      "evidence": "Pillepich+18, variation table"
+    },
+    {
+      "id": "pillepich18.tng-l25n512.var-not-isotropic-winds.sfrd",
+      "family": "IllustrisTNG",
+      "base": "pillepich18.tng-l25n512.fiducial.sfrd",
+      "class": "component",
+      "change": "wind particles injected along v x grad(Phi) instead of isotropically",
+      "evidence": "Pillepich+18, variation table"
+    },
+    {
+      "id": "pillepich18.tng-l25n512.var-illustris-winds.sfrd",
+      "family": "IllustrisTNG",
+      "base": "pillepich18.tng-l25n512.fiducial.sfrd",
+      "class": "component",
+      "change": "all wind features as in Illustris",
+      "evidence": "Pillepich+18, variation table"
+    },
+    {
+      "id": "pillepich18.tng-l25n512.var-no-B-fields.sfrd",
+      "family": "IllustrisTNG",
+      "base": "pillepich18.tng-l25n512.fiducial.sfrd",
+      "class": "ablation",
+      "change": "no magnetic fields",
+      "evidence": "Pillepich+18, variation table"
+    },
+    {
+      "id": "pillepich18.tng-l25n512.var-no-BH-feedback.sfrd",
+      "family": "IllustrisTNG",
+      "base": "pillepich18.tng-l25n512.fiducial.sfrd",
+      "class": "ablation",
+      "change": "no black holes and no black hole feedback",
+      "evidence": "Pillepich+18, variation table"
+    },
+    {
+      "id": "schaye25.colibre.sfrd.m5-l025",
+      "family": "COLIBRE",
+      "base": "schaye25.colibre.sfrd.m6-l200",
+      "class": "numerical",
+      "change": "m6 -> m5 resolution, L200 -> L025 box; subgrid parameters recalibrated to the same data at each resolution ('because we recalibrate after changing the resolution', weak convergence)",
+      "evidence": "Schaye+26 (arXiv:2508.21126), section on numerical convergence; the record names give the resolution and box"
+    },
+    {
+      "id": "schaye25.colibre.sfrd.m5-l050",
+      "family": "COLIBRE",
+      "base": "schaye25.colibre.sfrd.m6-l200",
+      "class": "numerical",
+      "change": "m6 -> m5 resolution, L200 -> L050 box; subgrid parameters recalibrated to the same data at each resolution ('because we recalibrate after changing the resolution', weak convergence)",
+      "evidence": "Schaye+26 (arXiv:2508.21126), section on numerical convergence; the record names give the resolution and box"
+    },
+    {
+      "id": "schaye25.colibre.sfrd.m5-l100",
+      "family": "COLIBRE",
+      "base": "schaye25.colibre.sfrd.m6-l200",
+      "class": "numerical",
+      "change": "m6 -> m5 resolution, L200 -> L100 box; subgrid parameters recalibrated to the same data at each resolution ('because we recalibrate after changing the resolution', weak convergence)",
+      "evidence": "Schaye+26 (arXiv:2508.21126), section on numerical convergence; the record names give the resolution and box"
+    },
+    {
+      "id": "schaye25.colibre.sfrd.m7-l400",
+      "family": "COLIBRE",
+      "base": "schaye25.colibre.sfrd.m6-l200",
+      "class": "numerical",
+      "change": "m6 -> m7 resolution, L200 -> L400 box; subgrid parameters recalibrated to the same data at each resolution ('because we recalibrate after changing the resolution', weak convergence)",
+      "evidence": "Schaye+26 (arXiv:2508.21126), section on numerical convergence; the record names give the resolution and box"
+    },
+    {
+      "id": "kannan22.thesan.sfrd.t2",
+      "family": "THESAN-1",
+      "base": "kannan22.thesan.sfrd.t1",
+      "class": "numerical",
+      "change": "THESAN-1 -> THESAN-2 (lower resolution)",
+      "evidence": "Kannan+22, run names"
+    },
+    {
+      "id": "kannan22.thesan.sfrd.sdao2",
+      "family": "THESAN-1",
+      "base": "kannan22.thesan.sfrd.t2",
+      "class": "cosmology",
+      "change": "dark acoustic oscillation dark matter model at THESAN-2 resolution (base is THESAN-2)",
+      "evidence": "Kannan+22, run names"
+    }
+  ]
+}

@@ -274,11 +274,25 @@
         "ssfr",
         "quenched",
         "zstar",
-        "size"
+        "size",
+        "sfrd"
       ],
       "redshifts": "0",
-      "adapter": "scripts/digitize_flamingo_gsmf_schaye23.py, scripts/digitize_flamingo_relations_schaye23.py, scripts/digitize_flamingo_galaxyprops_schaye23.py, scripts/digitize_flamingo_variations_schaye23.py",
-      "note": "z=0 GSMF (Fig. 8), SHMR vs M_BN98 (Fig. 9) and BH mass vs M* (Fig. 12): solid segments above the calibration mass limits, 4 resolution/box runs each. GSMF and BH-M* include the paper's 0.3 dex mock mass scatter. The 13 model/cosmology variations, percentile bands, fgas and galaxy-property panels are not yet extracted. Galaxy-properties figure (z=0.1; passive fraction z=0) ingested for the four fiducial-model runs: sSFR of active galaxies, passive fraction, stellar metallicity, projected half-mass radii of active/passive galaxies in 50 and 100 kpc 2D apertures; the 12 model and cosmology variations (right-hand panels) are ingested for every one of these figures, with each variant defined from the paper tables (feedback shifts, jets, cosmologies)."
+      "adapter": "scripts/digitize_flamingo_gsmf_schaye23.py, scripts/digitize_flamingo_relations_schaye23.py, scripts/digitize_flamingo_galaxyprops_schaye23.py, scripts/digitize_flamingo_variations_schaye23.py, scripts/digitize_flamingo_sfh_schaye23.py",
+      "note": "z=0 GSMF (Fig. 8), SHMR vs M_BN98 (Fig. 9) and BH mass vs M* (Fig. 12): solid segments above the calibration mass limits, 4 resolution/box runs each. GSMF and BH-M* include the paper's 0.3 dex mock mass scatter. The 13 model/cosmology variations, percentile bands, fgas and galaxy-property panels are not yet extracted. Galaxy-properties figure (z=0.1; passive fraction z=0) ingested for the four fiducial-model runs: sSFR of active galaxies, passive fraction, stellar metallicity, projected half-mass radii of active/passive galaxies in 50 and 100 kpc 2D apertures; the 12 model and cosmology variations (right-hand panels) are ingested for every one of these figures, with each variant defined from the paper tables (feedback shifts, jets, cosmologies). Cosmic star formation rate density versus redshift (the paper's star formation history figure, z 0 to about 11): the four fiducial-model runs and the 12 model and cosmology variations (16 records), solid lines resampled on 0.05 in z; the BAHAMAS and MillenniumTNG curves drawn for reference are not extracted. The density frame is not stated and is inferred comoving from the overlaid comoving data."
+    },
+    {
+      "id": "pillepich18-tng-methods-sfrd",
+      "suite": "IllustrisTNG model and Illustris model (L25n512 box, resolution series and parameter variations)",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDFs",
+      "url": "https://arxiv.org/abs/1703.02970",
+      "relations": [
+        "sfrd"
+      ],
+      "redshifts": "0 to 10",
+      "adapter": "scripts/digitize_tng_methods_pillepich18.py",
+      "note": "Global star formation rate density versus redshift of the TNG model method paper: the fiducial TNG and Illustris models on the same 25 Mpc/h box (L25n512), the resolution series L25n128 and L25n256 of both, and 12 single-change variations of the TNG model (wind energy, velocity, floor, directionality, thermal fraction, metallicity scaling, Illustris winds, magnetic fields, black holes). 18 records, 6 figures; the curves that appear in several figures agree between copies to a median below 0.01 dex. 'No galactic winds' leaves the plotted range between z = 1.4 and 7 and is not extracted. Comoving density inferred (the overlaid comoving observational compilations coincide with the curves). The same paper's galaxy stellar mass function and stellar-to-halo mass relation panels for these variants are not yet extracted."
     },
     {
       "id": "blank19-nihao-xxii",
