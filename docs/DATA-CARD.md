@@ -12,6 +12,8 @@
 
 **Known biases and gaps.** Suites differ in resolution, volume, mass aperture, IMF and SFR timescale. Observations carry their own selection. Coverage is uneven: catalogue-level TNG and EAGLE runs, Magneticum boxes beyond Box4/uhr and several zoom suites remain open (`data/literature-backlog.json`). UV luminosity functions (five simulations) and the cosmic SFR density (nine) are recent additions, and the UV functions of the simulations differ in dust treatment.
 
+**Ensembles.** `data/ensembles/` holds what is not a curve of one simulation: the cosmic star formation histories of the two thousand CAMELS simulations (`camels-sfrd.json`, reduced by `scripts/ingest_camels_sfrd.py` from public logs, each file hashed) and the stellar-mass closure check of the pipeline (`camels-closure.json`). They are not in the exports. `data/model-variants.json` records which published curves are a family's fiducial run and which are variants of it (numerical, parametric, calibration, cosmology, component, implementation, ablation). The analysis that uses them is `docs/PROTOCOL-model-form.md` (pre-specified) and `docs/ANALYSIS-model-form.md` (generated).
+
 **Quality control.** Calibration assertions in every digitizer, in-script spot checks against published numbers, a repository-wide audit with an accepted-issues file, deterministic regeneration of every digitized record, unit tests for the extraction helper, the exporter and the loader, and a stable expert-audit sample.
 
 **Versioning.** `data/release.json` holds the dataset version; `CHANGELOG.md` records changes. A DOI is not yet minted.

@@ -1,0 +1,98 @@
+{
+ "description": "Validation V1 of docs/PROTOCOL-model-form.md: do the CAMELS star formation logs, read with the volume used in scripts/ingest_camels_sfrd.py, account for the stellar mass of the z = 0 catalogues?",
+ "seed": 20261015,
+ "rows": [
+  {
+   "sim": "LH_28",
+   "redshift": 0.0,
+   "stellar_mass_in_subhalos_Msun": 29784000000000.0,
+   "formed_mass_Msun": 50811000000000.0,
+   "ratio": 0.586
+  },
+  {
+   "sim": "LH_70",
+   "redshift": 0.0,
+   "stellar_mass_in_subhalos_Msun": 11801000000000.0,
+   "formed_mass_Msun": 20180000000000.0,
+   "ratio": 0.585
+  },
+  {
+   "sim": "LH_101",
+   "redshift": 0.0,
+   "stellar_mass_in_subhalos_Msun": 15695000000000.0,
+   "formed_mass_Msun": 26570000000000.0,
+   "ratio": 0.591
+  },
+  {
+   "sim": "LH_349",
+   "redshift": 0.0,
+   "stellar_mass_in_subhalos_Msun": 23024000000000.0,
+   "formed_mass_Msun": 39250000000000.0,
+   "ratio": 0.587
+  },
+  {
+   "sim": "LH_454",
+   "redshift": 0.0,
+   "stellar_mass_in_subhalos_Msun": 13049000000000.0,
+   "formed_mass_Msun": 22438000000000.0,
+   "ratio": 0.582
+  },
+  {
+   "sim": "LH_469",
+   "redshift": 0.0,
+   "stellar_mass_in_subhalos_Msun": 10661000000000.0,
+   "formed_mass_Msun": 17945000000000.0,
+   "ratio": 0.594
+  },
+  {
+   "sim": "LH_471",
+   "redshift": 0.0,
+   "stellar_mass_in_subhalos_Msun": 13671000000000.0,
+   "formed_mass_Msun": 23318000000000.0,
+   "ratio": 0.586
+  },
+  {
+   "sim": "LH_523",
+   "redshift": 0.0,
+   "stellar_mass_in_subhalos_Msun": 12220000000000.0,
+   "formed_mass_Msun": 20586000000000.0,
+   "ratio": 0.594
+  },
+  {
+   "sim": "LH_622",
+   "redshift": 0.0,
+   "stellar_mass_in_subhalos_Msun": 6117900000000.0,
+   "formed_mass_Msun": 10408000000000.0,
+   "ratio": 0.588
+  },
+  {
+   "sim": "LH_726",
+   "redshift": 0.0,
+   "stellar_mass_in_subhalos_Msun": 7640500000000.0,
+   "formed_mass_Msun": 12789000000000.0,
+   "ratio": 0.597
+  },
+  {
+   "sim": "LH_788",
+   "redshift": 0.0,
+   "stellar_mass_in_subhalos_Msun": 4687900000000.0,
+   "formed_mass_Msun": 7895100000000.0,
+   "ratio": 0.594
+  },
+  {
+   "sim": "LH_809",
+   "redshift": 0.0,
+   "stellar_mass_in_subhalos_Msun": 10254000000000.0,
+   "formed_mass_Msun": 17149000000000.0,
+   "ratio": 0.598
+  }
+ ],
+ "ratio_min": 0.582,
+ "ratio_max": 0.598,
+ "ratio_median": 0.5894999999999999,
+ "range_required": [
+  0.45,
+  0.75
+ ],
+ "passed": true
+}
