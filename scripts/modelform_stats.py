@@ -116,20 +116,25 @@ class Emulator:
         self.coef = None
 
     def fit(self, X, Y, weights=None):
+        """Columns of Y that are finite in the same rows share one normal-equation matrix, so they are solved together (the result is identical to solving them one by one)."""
         F = quad_features(X, self.degree)
         n, p = F.shape
         w = np.ones(n) if weights is None else np.asarray(weights, float)
         Y = np.asarray(Y, float)
         self.coef = np.full((p, Y.shape[1]), np.nan)
-        for j in range(Y.shape[1]):
-            ok = np.isfinite(Y[:, j]) & (w > 0)
+        okm = np.isfinite(Y) & (w > 0)[:, None]
+        pats, inv = np.unique(okm, axis=1, return_inverse=True)
+        inv = np.asarray(inv).reshape(-1)
+        for g in range(pats.shape[1]):
+            ok = pats[:, g]
             if ok.sum() < 2 * p:
                 continue
+            cols = np.where(inv == g)[0]
             Fw = F[ok] * w[ok, None]
             A = F[ok].T @ Fw
             pen = np.diag(np.full(p, self.ridge * float(np.mean(np.diag(A)[1:]))))  # ridge as a fraction of the mean diagonal of F'WF (intercept excluded), as the protocol states
             pen[0, 0] = 0.0
-            self.coef[:, j] = np.linalg.solve(A + pen, Fw.T @ Y[ok, j])
+            self.coef[:, cols] = np.linalg.solve(A + pen, Fw.T @ Y[np.ix_(ok, cols)])
         return self
 
     def predict(self, X):

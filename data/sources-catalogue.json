@@ -308,6 +308,30 @@
       "note": "Ensembles, not curves: data/ensembles/camels-sfrd.json holds the time-averaged cosmic SFR density of 1000 Latin-hypercube simulations (Omega_m, sigma_8 and four feedback factors varied) and 27 cosmic-variance seeds per code, with the SHA-256 of every log read. Used by the parametric-versus-structural analysis (docs/PROTOCOL-model-form.md) and kept out of data/curves and the exports, because a thousand curves of one suite would swamp the suite-level comparisons. The SFRD is the logged total SFR (code column 3, Msun/yr) divided by the comoving volume of the box ((25/h)^3, h = 0.6711); the stellar mass of the z = 0 subhalo catalogues accounts for 0.5 to 0.7 of the time integral (validation V1). Astrid and SWIFT-EAGLE runs exist in CAMELS but no star formation log was found for them; Magneticum, RAMSES, Enzo and CROCODILE are not read."
     },
     {
+      "id": "camels-galaxy-summaries",
+      "suite": "CAMELS IllustrisTNG and SIMBA (first generation, 25 Mpc/h, 256^3)",
+      "status": "ingested",
+      "access": "public HTTP files (users.flatironinstitute.org/~camels), Subfind catalogues groups_NNN.hdf5 read by HTTP range requests (only the needed arrays)",
+      "url": "https://arxiv.org/abs/2010.00619",
+      "relations": [
+        "gsmf",
+        "quenched",
+        "sfms",
+        "bh",
+        "mzr",
+        "zstar",
+        "size",
+        "gas",
+        "shmr",
+        "hmf",
+        "smd",
+        "sfrd"
+      ],
+      "redshifts": "0, 0.95, 2.15, 3, 4",
+      "adapter": "scripts/ingest_camels_galaxies.py, scripts/test_camels_galaxies.py",
+      "note": "Ensembles, not curves: data/ensembles/camels-galaxies.json holds, for the same 2054 simulations as camels-sfr-logs and at five snapshots, binned summaries of the galaxy population (number density, quenched fraction, median specific SFR, black hole mass and occupation, gas and stellar metallicity, half-mass radius, gas fraction, stellar-to-halo mass ratio, halo mass function, stellar mass and SFR density), with the SHA-256 of the arrays read from every file. Used by the joint-reachability study (docs/PROTOCOL-joint-reachability.md) and the Retune page; kept out of data/curves and the exports. Both codes use the same Subfind catalogue definitions (total bound stellar mass, stellar half-mass radius, SFR-weighted gas metallicity), so no aperture or IMF difference enters a comparison of the two. Bins of 0.25 dex in M* from 1e9 to 10^11.5 Msun (about 60 star particles at the lower edge); at z >= 3 few bins have enough galaxies."
+    },
+    {
       "id": "blank19-nihao-xxii",
       "suite": "NIHAO zoom suite (with black holes)",
       "status": "ingested",
