@@ -5,55 +5,59 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Simulations and observations in sim-highline</title>
 <meta name="description" content="Numerical method, code, set-up, purpose and team for each simulation, and survey or facility for each observational source in sim-highline.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314120f'/%3E%3Cpath d='M6 22 L13 15 L18 19 L26 9' fill='none' stroke='%23ef7f3f' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<meta name="theme-color" content="#fcfcfb" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1a1a19" media="(prefers-color-scheme: dark)">
-<meta property="og:type" content="website"><meta property="og:site_name" content="sim-highline">
-<script>try{var t=localStorage.getItem("sh-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-<meta property="og:title" content="Simulations and observations in sim-highline"><meta property="og:description" content="Numerical method, code, set-up, purpose and team for each simulation, and survey or facility for each observational source in sim-highline.">
-<style>/*__CSS__*/</style>
+{{head}}
 </head>
 <body>
-<div class="wrap">
-{{nav}}
+{{header}}
+<main id="main" class="wrap page" tabindex="-1">
+<div class="doc">
+<nav class="idx" aria-label="On this page">
+<p class="lab">Contents</p>
+<ol>
+<li><a href="#sims"><span>§1</span>Simulations</a></li>
+<li><a href="#obs"><span>§2</span>Observations</a></li>
+<li><a href="#issues"><span>§3</span>Metadata issues</a></li>
+<li><a href="#gaps"><span>§4</span>Not here yet</a></li>
+</ol>
+<p class="back"><a href="data.html">Data</a></p>
+</nav>
+<div class="c">
 
-<header class="hero">
-<p class="eyebrow">SIMULATIONS &amp; OBSERVATIONS</p>
-<h1>What each curve is made of.</h1>
-<p class="lede">The {{suites}} simulations differ in numerical method, code, resolution and purpose; the {{obsSources}} observational sources differ in survey, facility and what they measure. Those differences are a large part of why curves disagree, so they are recorded here.</p>
-</header>
+<div class="title">
+<p class="lab kicker">Data · sources</p>
+<h1>Simulations and observations</h1>
+<p class="standfirst">The {{suites}} simulations differ in numerical method, code, resolution and purpose; the {{obsSources}} observational sources differ in survey, facility and what they measure. Those differences are a large part of why curves disagree, so they are recorded here.</p>
+</div>
 
-<section aria-labelledby="sims">
-<h2 id="sims">Simulations</h2>
-<p class="blurb">Grouped by how the gas is evolved. Dates are the year the flagship paper was posted to arXiv. Set-up, physics and purpose follow the flagship abstracts; code names, box sizes and team names that an abstract does not state come from background knowledge and are not all checked against the full papers, so check the linked papers before quoting them. The "In sim-highline" line is computed from the data.</p>
-{{simHtml}}
+<section class="sec" id="sims" aria-labelledby="sims-h">
+<h2 id="sims-h"><span class="sn">§1</span>Simulations</h2>
+<p class="blurb">Grouped by how the gas is evolved. Dates are the year the flagship paper was posted to arXiv. Set-up, physics and purpose follow the flagship abstracts; code names, box sizes and team names that an abstract does not state come from background knowledge and are not all checked against the full papers, so check the linked papers before quoting them. The “In sim-highline” line under each entry is computed from the data.</p>
+<div class="wide">{{simHtml}}</div>
 <h3 class="grp">Code papers</h3>
 <p class="blurb">{{codeLinks}}</p>
 </section>
 
-<section aria-labelledby="obs">
-<h2 id="obs">Observations</h2>
+<section class="sec" id="obs" aria-labelledby="obs-h">
+<h2 id="obs-h"><span class="sn">§2</span>Observations</h2>
 <p class="blurb">{{nObsSources}} sources. Survey, facility and measurement are drafted for {{nProfiled}} of them from titles and abstracts and have not been checked against each paper; the rest are blank and marked, not guessed: open the cited paper. Empirical models (such as UniverseMachine) are constrained by observations but are not measurements.</p>
-{{obsHtml}}
+<div class="wide">{{obsHtml}}</div>
 </section>
 
-<section aria-labelledby="issues">
-<h2 id="issues">Known metadata issues</h2>
-<p class="blurb">Some observational records come from a machine-readable compilation whose stored citation can name a different paper than the label (flagged above as "check"); four such upstream citations were corrected in v0.6.0 and the original is kept with the record. {{mismatchCount}} remaining mismatches found by the automatic check:</p>
-<p class="blurb">The survey and facility entries above are drafted from titles, abstracts and compilation labels and have not been checked with the authors. A source with no entry would read "not yet filled".</p>
+<section class="sec" id="issues" aria-labelledby="issues-h">
+<h2 id="issues-h"><span class="sn">§3</span>Known metadata issues</h2>
+<p>Some observational records come from a machine-readable compilation whose stored citation can name a different paper than the label (flagged above as “check”); four such upstream citations were corrected in v0.6.0 and the original is kept with the record. {{mismatchCount}} remaining mismatches found by the automatic check:</p>
 {{mismatchHtml}}
+<p>The survey and facility entries above are drafted from titles, abstracts and compilation labels and have not been checked with the authors. A source with no entry reads “not yet filled”.</p>
 </section>
 
-<section aria-labelledby="gaps">
-<h2 id="gaps">What is not here yet</h2>
-<p class="blurb">A search of the simulation literature (specialised dwarf-galaxy suites such as LYRA and EDGE, zoom suites such as Auriga and APOSTLE, reionization suites, cluster suites, and the 2026 COLIBRE papers) is in <code>docs/literature-candidates.md</code> in the repository; entries are marked ingested, queued or skipped (with the reason) in <code>data/literature-backlog.json</code>.</p>
+<section class="sec" id="gaps" aria-labelledby="gaps-h">
+<h2 id="gaps-h"><span class="sn">§4</span>What is not here yet</h2>
+<p>A search of the simulation literature (specialised dwarf-galaxy suites such as LYRA and EDGE, zoom suites such as Auriga and APOSTLE, reionization suites, cluster suites, and the 2026 COLIBRE papers) is in <a href="{{repo}}/blob/main/docs/literature-candidates.md"><code>docs/literature-candidates.md</code></a>; entries are marked ingested, queued or skipped (with the reason) in <a href="../data/literature-backlog.json"><code>data/literature-backlog.json</code></a>.</p>
 </section>
 
-<footer>
-<p>sim-highline {{version}} · {{released}} · built and maintained by Shubhan Bhatia.</p>
-<p><a href="../highline.html">App</a> · <a href="about.html">About</a> · <a href="use-cases.html">Use cases</a></p>
-</footer>
 </div>
+</div>
+</main>
+{{footer}}
 </body>
 </html>
