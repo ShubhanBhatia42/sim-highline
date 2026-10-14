@@ -1,10 +1,10 @@
 {
  "summary": {
-  "simulationRecords": 1399,
+  "simulationRecords": 1433,
   "recordsWithRecoveredDefinition": 391,
-  "undocumentedValues": 449,
+  "undocumentedValues": 467,
   "sourceReadNotStated": 425,
-  "sourceNotYetRead": 8,
+  "sourceNotYetRead": 26,
   "noPaperToRead": 16
  },
  "groups": [
@@ -70,6 +70,15 @@
    "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126)",
    "records": 16,
    "status": "source read, not stated"
+  },
+  {
+   "source": "IllustrisTNG",
+   "relation": "sfrd",
+   "key": "sfrIndicator",
+   "arxiv": "1703.02970",
+   "citation": "Pillepich et al. 2018, MNRAS 473, 4077 (doi:10.1093/mnras/stx2656; arXiv:1703.02970), the ",
+   "records": 15,
+   "status": "source not yet read for this key"
   },
   {
    "source": "SPHINX20",
@@ -484,6 +493,15 @@
    "citation": "Schaye et al. 2026, MNRAS 548, stag375 (arXiv:2508.21126), COLIBRE overview, median z=0 st",
    "records": 3,
    "status": "source read, not stated"
+  },
+  {
+   "source": "Illustris",
+   "relation": "sfrd",
+   "key": "sfrIndicator",
+   "arxiv": "1703.02970",
+   "citation": "Pillepich et al. 2018, MNRAS 473, 4077 (doi:10.1093/mnras/stx2656; arXiv:1703.02970), the ",
+   "records": 3,
+   "status": "source not yet read for this key"
   },
   {
    "source": "IllustrisTNG",
