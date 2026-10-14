@@ -137,7 +137,7 @@ def analyse(recs, rules_by_rel, rankable_only):
             rr = [r for r in recs if usable(r, rel, z0, tol) and (r["rankable"] or not rankable_only)]
             ax = {(r["axes"]["xUnit"], r["axes"]["yUnit"]) for r in rr}
             if len(ax) > 1:
-                top = max(ax, key=lambda a: sum((r["axes"]["xUnit"], r["axes"]["yUnit"]) == a for r in rr))
+                top = max(sorted(ax), key=lambda a: sum((r["axes"]["xUnit"], r["axes"]["yUnit"]) == a for r in rr))
                 rr = [r for r in rr if (r["axes"]["xUnit"], r["axes"]["yUnit"]) == top]
             suites = sorted({r["source"] for r in rr})
             if len(suites) < 3: continue

@@ -697,6 +697,19 @@
       "note": "Mean sSFR (stars younger than 100 Myr within R_eff), average cold-gas oxygen abundance, mass-weighted stellar and cold-gas metallicity (Z/Zsun, Zsun=0.01345) versus stellar mass with errors of the mean, and the mean stellar-to-halo mass ratio (with errors of the mean) plus per-galaxy points versus halo mass (BN98 overdensity), at z=0.25, 1, 2, 4. Oxygen is rescaled from the gas metallicity by the paper. Also (extra script): effective radius versus stellar mass (mean, dashed lines, per galaxy), baryonic Tully-Fisher (axes swapped to velocity on x), cold-gas fraction Mcd/(Mcd+Ms) for n>0.1 and n>10 cm^-3 converted exactly to log Mgas/Ms, and MBH versus stellar mass (primary, secondary and all MBHs at z=0.25, 1, 2, 4, plus the primary mean). Not extracted: V/sigma, elliptical fraction, clump fraction, KS and surface-density relations (no matching relation in the schema), the cosmic SFR and stellar densities (curves versus redshift, not epochs), and observational overlays. Digitized, not rankable."
     },
     {
+      "id": "dubois21-newhorizon-gsmf",
+      "suite": "NewHorizon",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2009.10578",
+      "relations": [
+        "gsmf"
+      ],
+      "redshifts": "0.25, 1, 2, 4",
+      "adapter": "scripts/digitize_newhorizon_gsmf_dubois21.py",
+      "note": "Galaxy stellar mass function of the zoom volume, (16 Mpc)^3: binned counts with Poisson error bars for all galaxies and for galaxies in uncontaminated halos (volume-corrected) at z=0.25, 1, 2, 4 (the caption describes z=0.25 only; the file has four panels), and the z=0.25 STY mass function with an HSC-like surface-brightness selection as its own run. The 0.15 dex plotting offset of the all-galaxy squares is removed. Bars that run off the axis have no recorded lower end. HSC-SSP and literature overlays not extracted. Digitized, not rankable."
+    },
+    {
       "id": "diemer19-tng-gasfrac",
       "suite": "IllustrisTNG",
       "status": "ingested",

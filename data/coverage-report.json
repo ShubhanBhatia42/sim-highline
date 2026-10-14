@@ -2,11 +2,11 @@
   "schemaVersion": "1.0.0",
   "generatedAt": "2026-10-13",
   "totals": {
-    "records": 1608,
+    "records": 1617,
     "sources": 101,
     "relations": 27,
     "rankable": 731,
-    "contextOnly": 877
+    "contextOnly": 886
   },
   "byRelation": {
     "age": {
@@ -242,7 +242,7 @@
       ]
     },
     "gsmf": {
-      "records": 325,
+      "records": 334,
       "epochs": [
         0,
         0.03,
@@ -252,6 +252,7 @@
         0.07,
         0.1,
         0.2,
+        0.25,
         0.252,
         0.35,
         0.4,
@@ -306,6 +307,7 @@
         "0.066:0.066",
         "0.1:0.1",
         "0.252:0.252",
+        "0.25:0.25",
         "0.2:0.5",
         "0.4:0.4",
         "0.5:0.5",
@@ -369,7 +371,7 @@
         "gsmf"
       ],
       "rankable": 202,
-      "contextOnly": 123,
+      "contextOnly": 132,
       "tiers": [
         "catalog-derived",
         "digitized-figure",
@@ -3056,7 +3058,7 @@
       ]
     },
     "NewHorizon": {
-      "records": 53,
+      "records": 62,
       "epochs": [
         0.25,
         1,
@@ -3075,6 +3077,7 @@
         "bh",
         "btfr",
         "gas",
+        "gsmf",
         "mzr",
         "sfrd",
         "shmr",
@@ -3084,7 +3087,7 @@
         "zstar"
       ],
       "rankable": 0,
-      "contextOnly": 53,
+      "contextOnly": 62,
       "tiers": [
         "digitized-figure"
       ]
