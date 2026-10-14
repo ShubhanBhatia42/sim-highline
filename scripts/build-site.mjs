@@ -225,6 +225,60 @@ stats.css = (await read("site/src/site.css")).replace("/*__PALETTE__*/", () => p
   stats.hOps = ["imf only", "scatter only", "aperture only"].map(k => `<tr><td>${esc(k.replace(" only", ""))}</td><td>${f2(on[k].R)}</td><td>${ci(on[k].ci95)}</td></tr>`).join("");
   stats.hPower = p80 === null ? `Injecting aperture effects of the measured size (and up to twice that) into the same suites is not detected in 80% of draws by the same rule (largest detection rate ${pct(Math.max(...Hm.E4.map(r => r.detection_rate)))}), so a non-detection of aperture effects here is uninformative about whether they exist.` : `An injected effect of ${p80} times the measured aperture maps is detected in at least 80% of draws.`;
 }
+// ---- model-form result on the findings page (everything, including the verdict words, comes from data/analysis/model-form.json)
+if (await read("data/analysis/model-form.json").then(() => true, () => false)) {
+  const M = JSON.parse(await read("data/analysis/model-form.json")), P = M.published, C = M.camels, E1 = P.E1, V = M.verdicts, W = 860, HT = 280, L = 58, R = 20, T = 16, B = 46;
+  const f2 = (x, d = 2) => (x >= -0.5 * 10 ** -d ? "" : "−") + Math.abs(x).toFixed(d);
+  const frame = (xr, yr, xt, yt, xl, yl) => {
+    const px = x => L + (x - xr[0]) / (xr[1] - xr[0]) * (W - L - R), py = y => T + (1 - (y - yr[0]) / (yr[1] - yr[0])) * (HT - T - B);
+    let g = `<g class="axis">`;
+    for (const y of yt) g += `<line x1="${L}" x2="${W - R}" y1="${py(y).toFixed(1)}" y2="${py(y).toFixed(1)}"/><text x="${L - 8}" y="${(py(y) + 4).toFixed(1)}" text-anchor="end">${f2(y, y % 1 ? 1 : 0)}</text>`;
+    for (const x of xt) g += `<text x="${px(x).toFixed(1)}" y="${HT - 24}" text-anchor="middle">${x}</text>`;
+    g += `<text x="${((L + W - R) / 2).toFixed(0)}" y="${HT - 5}" text-anchor="middle">${xl}</text><text x="14" y="${((T + HT - B) / 2).toFixed(0)}" transform="rotate(-90 14 ${((T + HT - B) / 2).toFixed(0)})" text-anchor="middle">${yl}</text></g>`;
+    return { px, py, g };
+  };
+  const path = (pts, px, py) => pts.map(([x, y], i) => `${i ? "L" : "M"}${px(x).toFixed(1)},${py(y).toFixed(1)}`).join("");
+  const band = (lo, hi, px, py) => `M${lo.map(([x, y]) => `${px(x).toFixed(1)},${py(y).toFixed(1)}`).join("L")}L${hi.slice().reverse().map(([x, y]) => `${px(x).toFixed(1)},${py(y).toFixed(1)}`).join("L")}Z`;
+  const svgOf = (id, title, desc, inner) => `<svg viewBox="0 0 ${W} ${HT}" role="img" aria-labelledby="${id}T ${id}D"><title id="${id}T">${esc(title)}</title><desc id="${id}D">${esc(desc)}</desc>${inner}</svg>`;
+  // funnel
+  {
+    const sp = E1.spread, ok = sp.z.map((z, i) => [z, sp.sd[i], sp.sd_p16[i], sp.sd_p84[i], sp.n[i]]).filter(r => r[1] != null && r[2] != null);
+    const ymax = Math.ceil(Math.max(...ok.map(r => r[3])) * 10) / 10, { px, py, g } = frame([0, 8], [0, ymax], [0, 1, 2, 3, 4, 5, 6, 7, 8], Array.from({ length: Math.floor(ymax / 0.2) + 1 }, (_, i) => +(i * 0.2).toFixed(1)), "redshift", "spread between simulations (dex)");
+    const bd = M.parameters.bands_published;
+    let s = g;
+    for (const [k, c] of [["low", "var(--bg2)"], ["high", "var(--bg2)"]]) s += `<rect x="${px(bd[k][0]).toFixed(1)}" y="${T}" width="${(px(bd[k][1]) - px(bd[k][0])).toFixed(1)}" height="${HT - T - B}" fill="${c}" opacity=".9"/>`;
+    s += `<path d="${band(ok.map(r => [r[0], r[2]]), ok.map(r => [r[0], r[3]]), px, py)}" fill="var(--orange)" opacity=".22"/><path d="${path(ok.map(r => [r[0], r[1]]), px, py)}" fill="none" stroke="var(--orange)" stroke-width="2.6"/>`;
+    s += `<text class="al" x="${px(1.75).toFixed(1)}" y="${T + 14}" text-anchor="middle" style="font-size:12px">low band</text><text class="al" x="${px(6.25).toFixed(1)}" y="${T + 14}" text-anchor="middle" style="font-size:12px">high band</text>`;
+    stats.mfFunnel = svgOf("mfF", "Spread of the cosmic star formation rate density between simulations against redshift", "Standard deviation across simulation families of log10 SFRD at each redshift, with its bootstrap band; the two shaded bands are the ones compared.", s);
+  }
+  // CAMELS
+  {
+    const z = C.meta.grid, cd = C.codes, sd = (a) => a.map((v, i) => [z[i], v]).filter(r => r[1] != null && r[0] <= 8.1);
+    const T1 = sd(cd.IllustrisTNG.parametric.sd), S1 = sd(cd.SIMBA.parametric.sd), N1 = sd(cd.IllustrisTNG.seed_noise), N2 = sd(cd.SIMBA.seed_noise), D = C.structural_fiducial.delta.map((v, i) => [z[i], v == null ? null : Math.abs(v)]).filter(r => r[1] != null && r[0] <= 8.1);
+    const ymax = Math.ceil(Math.max(...T1.map(r => r[1]), ...S1.map(r => r[1]), ...D.map(r => r[1])) * 5) / 5, { px, py, g } = frame([0, 8], [0, ymax], [0, 1, 2, 3, 4, 5, 6, 7, 8], Array.from({ length: Math.floor(ymax / 0.2) + 1 }, (_, i) => +(i * 0.2).toFixed(1)), "redshift", "dex");
+    let s = g;
+    for (const [pts, col, w, dash] of [[N1, "var(--orange)", 1.4, "4 3"], [N2, "var(--ink)", 1.4, "4 3"], [T1, "var(--orange)", 2.6, ""], [S1, "var(--ink)", 2.6, ""], [D, "var(--mustard)", 2.6, ""]]) s += `<path d="${path(pts, px, py)}" fill="none" stroke="${col}" stroke-width="${w}" ${dash ? `stroke-dasharray="${dash}"` : ""}/>`;
+    stats.mfCamels = svgOf("mfC", "What feedback parameters and what model form do to the star formation history in CAMELS", "Parametric spread of IllustrisTNG (orange) and SIMBA (dark), their seed noise (dashed) and the absolute difference between the codes at the fiducial parameters (yellow), against redshift.", s);
+  }
+  // calibration
+  {
+    const k = C.calibration, zt = k.z_target, zo = k.z_obs, rows = [["IllustrisTNG", "var(--orange)"], ["SIMBA", "var(--ink)"]];
+    const all = rows.flatMap(([c]) => [...k.codes[c].predictive.p5, ...k.codes[c].predictive.p95, ...k.codes[c].fit_to_observed.p5, ...k.codes[c].fit_to_observed.p95]), lo = Math.floor(Math.min(...all, ...k.target) * 2) / 2, hi = Math.ceil(Math.max(...all, ...k.target) * 2) / 2;
+    const { px, py, g } = frame([0, 8], [lo, hi], [0, 1, 2, 3, 4, 5, 6, 7, 8], Array.from({ length: Math.round((hi - lo) / 0.5) + 1 }, (_, i) => +(lo + 0.5 * i).toFixed(1)), "redshift", "log10 SFR density (Msun/yr/cMpc³)");
+    let s = g + `<path d="${path(zo.map((z, i) => [z, k.target[i]]), px, py)}" fill="none" stroke="var(--cream3)" stroke-width="2" stroke-dasharray="2 4"/>`;
+    for (const [c, col] of rows) {
+      const q = k.codes[c], a = q.fit_to_observed, b = q.predictive;
+      s += `<path d="${band(zo.map((z, i) => [z, a.p5[i]]), zo.map((z, i) => [z, a.p95[i]]), px, py)}" fill="${col}" opacity=".18"/><path d="${band(zt.map((z, i) => [z, b.p5[i]]), zt.map((z, i) => [z, b.p95[i]]), px, py)}" fill="${col}" opacity=".3"/>`;
+      s += `<path d="${path(zo.map((z, i) => [z, a.median[i]]), px, py)}" fill="none" stroke="${col}" stroke-width="2.2"/><path d="${path(zt.map((z, i) => [z, b.median[i]]), px, py)}" fill="none" stroke="${col}" stroke-width="2.2"/>`;
+    }
+    stats.mfCalib = svgOf("mfK", "Two simulation codes tuned to the same observed star formation history, and what each predicts beyond it", "Posterior predictive median and 90 percent interval of the cosmic star formation rate density for IllustrisTNG (orange) and SIMBA (dark) conditioned on the observed values at redshift 3 and below (dotted), at the redshifts used and beyond.", s);
+  }
+  const pct = x => `${Math.round(100 * x)}%`;
+  stats.mfSuccess = V.E1.success ? "detected" : "not detected";
+  stats.mfE1 = `The spread across ${E1.n_balanced} families is ${E1.sd_low.toFixed(2)} dex at z = 0.5 to 3 and ${E1.sd_high.toFixed(2)} dex at z = 5 to 7.5 (a factor ${(10 ** E1.phi).toFixed(1)}; 90% interval of the log ratio ${f2(E1.phi_ci90[0])} to ${f2(E1.phi_ci90[1])}, Pitman–Morgan p = ${E1.pitman_morgan.p_one_sided.toFixed(3)}): funnel ${stats.mfSuccess} by the rule fixed in advance.`;
+  const rr = C.reachability, kk = C.calibration;
+  stats.mfE3 = `Retuning four feedback parameters per code over the same factors, IllustrisTNG and SIMBA stay ${rr.full.D_dex.toFixed(2)} dex apart (the same code against itself leaves at most ${rr.controls_full.p95.toFixed(2)}): <b>${rr.verdict}</b>. Tuned to the same observed star formation history they disagree at z = ${kk.z_target[0]} to ${kk.z_target[kk.z_target.length - 1]} (intervals disjoint at ${pct(kk.disjoint_fraction)} of the redshifts): <b>${kk.verdict}</b>.`;
+}
 const SUN = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10" cy="10" r="3.6"/><path d="M10 2.5v1.8M10 15.7v1.8M2.5 10h1.8M15.7 10h1.8M4.7 4.7l1.3 1.3M14 14l1.3 1.3M4.7 15.3 6 14M14 6l1.3-1.3"/></svg>', MOON = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M16.5 11.8A6.8 6.8 0 0 1 8.2 3.5a6.8 6.8 0 1 0 8.3 8.3z"/></svg>';
 const THEME_JS = `<script>(function(){var b=document.getElementById("theme"),r=document.documentElement,S='${SUN}',M='${MOON}';function now(){return r.dataset.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}function paint(){var d=now()==="dark";b.innerHTML=d?S:M;b.setAttribute("aria-label",d?"Switch to the light theme":"Switch to the dark theme")}b.onclick=function(){var n=now()==="dark"?"light":"dark";r.dataset.theme=n;try{localStorage.setItem("sh-theme",n)}catch(e){}paint()};paint()})()</script>`;
 const NAV = (cur) => `<nav aria-label="Main"><a class="mark" href="index.html" aria-label="sim-highline home">SIM<i>/</i>HIGHLINE</a><span class="sp"></span>${[["about.html", "About"], ["findings.html", "Findings"], ["sources.html", "Simulations &amp; observations"], ["use-cases.html", "Use cases"]].map(([h, t]) => `<a class="l" href="${h}"${h === cur ? ' aria-current="page"' : ""}>${t}</a>`).join("")}<button class="ico" id="theme" type="button" aria-label="Switch theme"></button><a class="btn main" href="../highline.html">Open the app</a></nav>${THEME_JS}`;
