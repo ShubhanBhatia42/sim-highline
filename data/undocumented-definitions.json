@@ -1,10 +1,10 @@
 {
  "summary": {
-  "simulationRecords": 1351,
+  "simulationRecords": 1390,
   "recordsWithRecoveredDefinition": 391,
-  "undocumentedValues": 441,
+  "undocumentedValues": 449,
   "sourceReadNotStated": 425,
-  "sourceNotYetRead": 0,
+  "sourceNotYetRead": 8,
   "noPaperToRead": 16
  },
  "groups": [
@@ -280,6 +280,15 @@
   },
   {
    "source": "FIREbox",
+   "relation": "quenched",
+   "key": "massDefinition",
+   "arxiv": "2205.15325",
+   "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), FIREbox galaxy properties, quies",
+   "records": 6,
+   "status": "source not yet read for this key"
+  },
+  {
+   "source": "FIREbox",
    "relation": "gsmf",
    "key": "densityFrame",
    "arxiv": "2205.15325",
@@ -511,6 +520,15 @@
    "citation": "Diemer et al. 2019, MNRAS 487, 1529, HI and H2 gas fractions vs stellar mass (arXiv source",
    "records": 2,
    "status": "source read, not stated"
+  },
+  {
+   "source": "NIHAO zoom suite",
+   "relation": "stfr",
+   "key": "imf",
+   "arxiv": "1909.05864",
+   "citation": "Buck et al. 2019, MNRAS, stz3241 (doi:10.1093/mnras/stz3241; arXiv:1909.05864), NIHAO-UHD ",
+   "records": 2,
+   "status": "source not yet read for this key"
   },
   {
    "source": "EAGLE",

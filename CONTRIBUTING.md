@@ -4,7 +4,7 @@ sim-highline holds curves that someone published, with the definitions that deci
 
 ## Before you start
 
-1. Check `data/sources-catalogue.json` and `data/literature-backlog.json` (179 papers, with status) so the work is not duplicated. Open an issue or add a `queued` entry with a note if you take one.
+1. Check `data/sources-catalogue.json` and `data/literature-backlog.json` (185 papers, with status) so the work is not duplicated. Open an issue or add a `queued` entry with a note if you take one.
 2. Check the relation exists in `highline/index.html` (`REL`). A new relation needs a note in `data/relation-notes.json` (120 to 260 words, at least three references including a review or compilation and a simulation-versus-data paper; `scripts/test-notes.mjs` enforces it).
 
 ## What every record carries

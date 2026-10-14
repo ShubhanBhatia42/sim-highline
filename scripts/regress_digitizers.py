@@ -7,6 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 only = sys.argv[1:]
+FILLS = {f["id"]: set(f["set"]) for f in json.loads((ROOT / "data" / "definition-fills.json").read_text())["fills"]}
 SUPERSEDED = {"transcribe_colibre_gsmf_small_boxes.py"}
 scripts = sorted(p for p in (ROOT / "scripts").glob("*.py") if p.name.startswith(("digitize_", "transcribe_")) and p.name not in SUPERSEDED and (not only or any(o in p.name for o in only)))
 bad = []
@@ -20,12 +21,18 @@ with tempfile.TemporaryDirectory() as tmp:
             bad.append((s.name, "failed: " + (r.stderr.strip().splitlines() or ["?"])[-1]))
     for out in sorted((tmp / "data" / "curves").glob("*.json")):
         ref = ROOT / "data" / "curves" / out.name
+        b = json.loads(ref.read_text())["records"] if ref.exists() else []
+        # definition values recovered from source papers are owned by scripts/annotate-definitions.mjs (data/definition-fills.json), not by the digitizers
+        filled = {r["id"]: {k for fid in r.get("provenance", {}).get("definitionFills", []) for k in FILLS.get(fid, ())} for r in b}
+
         def norm(rs):
             for r in rs:
                 r.get("provenance", {}).pop("terms", None)  # owned by scripts/annotate-definitions.mjs (data/source-terms.json)
+                r.get("provenance", {}).pop("definitionFills", None)
+                for k in filled.get(r["id"], ()):
+                    r.get("definitions", {}).pop(k, None)
             return rs
-        a = norm(json.loads(out.read_text())["records"])
-        b = norm(json.loads(ref.read_text())["records"]) if ref.exists() else []
+        a, b = norm(json.loads(out.read_text())["records"]), norm(b)
         if a != b:
             ia, ib = {r["id"]: r for r in a}, {r["id"]: r for r in b}
             bad.append((out.name, f"differs: {len(set(ia) - set(ib))} new, {len(set(ib) - set(ia))} missing, {sum(1 for k in ia.keys() & ib.keys() if ia[k] != ib[k])} changed"))

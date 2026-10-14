@@ -66,6 +66,7 @@ The 111 are the distinct DOIs or URLs of papers and data releases that already s
 | Illustris | [1405.2921](https://arxiv.org/abs/1405.2921) | 2014 | Vogelsberger | Introducing the Illustris Project: Simulating the coevolution of dark and visible matter in the Universe | overview |
 | Illustris | [1405.3749](https://arxiv.org/abs/1405.3749) | 2014 | Genel | Introducing the Illustris Project: the evolution of galaxy populations across cosmic time | galaxy populations across cosmic time |
 | Illustris | [1405.1418](https://arxiv.org/abs/1405.1418) | 2014 | Vogelsberger | Properties of galaxies reproduced by a hydrodynamic simulation | Nature paper |
+| Illustris | [1408.6842](https://arxiv.org/abs/1408.6842) | 2014 | Sijacki | The Illustris simulation: the evolving population of black holes across cosmic time | Sijacki+15 black holes: BH mass function, BH-galaxy relations |
 | IllustrisTNG | [1703.02970](https://arxiv.org/abs/1703.02970) | 2017 | Pillepich | Simulating Galaxy Formation with the IllustrisTNG Model | model description |
 | IllustrisTNG | [1607.03486](https://arxiv.org/abs/1607.03486) | 2016 | Weinberger | Simulating galaxy formation with black hole driven thermal and kinetic feedback | black-hole feedback model |
 | IllustrisTNG | [1710.04659](https://arxiv.org/abs/1710.04659) | 2017 | Weinberger | Supermassive black holes and their feedback effects in the IllustrisTNG simulation | Weinberger+18 black holes and feedback: BH-galaxy relations |
