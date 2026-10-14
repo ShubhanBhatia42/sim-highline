@@ -1,5 +1,5 @@
 {
- "total": 1656,
+ "total": 1665,
  "known": 16,
  "errors": 0,
  "warnings": 0,
@@ -109,6 +109,27 @@
     "aperture-30pkpc"
    ]
   },
+  "gsmf": {
+   "yUnit": [
+    "log10(cMpc^-3 dex^-1)",
+    "log10(Mpc^-3)",
+    "log10(Mpc^-3 dex^-1)"
+   ],
+   "massDefinitions": [
+    "aperture-30pkpc",
+    "aperture-50pkpc",
+    "aperture-100pkpc",
+    "total-bound-subhalo",
+    "caesar-6dfof-galaxy-total",
+    "unspecified",
+    "aperture-Rg",
+    "aperture-2rhalf-stars",
+    "total-subhalo",
+    "stars-within-third-Rmax-masked",
+    "aperture-10pkpc",
+    "petrosian-2D"
+   ]
+  },
   "quenched": {
    "yUnit": [
     "fraction"
@@ -131,23 +152,6 @@
     "-",
     "stars in galaxies with M*>10^9.3 Msun",
     "stars in all identified galaxies",
-    "stars-within-third-Rmax-masked"
-   ]
-  },
-  "gsmf": {
-   "yUnit": [
-    "log10(cMpc^-3 dex^-1)",
-    "log10(Mpc^-3)",
-    "log10(Mpc^-3 dex^-1)"
-   ],
-   "massDefinitions": [
-    "aperture-50pkpc",
-    "caesar-6dfof-galaxy-total",
-    "unspecified",
-    "aperture-30pkpc",
-    "aperture-Rg",
-    "aperture-2rhalf-stars",
-    "total-subhalo",
     "stars-within-third-Rmax-masked"
    ]
   },
@@ -270,6 +274,30 @@
   }
  },
  "crossSource": [
+  {
+   "a": "chaikin26.colibre.l200m6.gsmf-ap-50pkpc.z0",
+   "b": "chaikin26.colibre.l025m6.gsmf.z0",
+   "relation": "gsmf",
+   "n": 15,
+   "medianOffset": -0.003,
+   "maxAbs": 0.561
+  },
+  {
+   "a": "chaikin26.colibre.l200m6.gsmf-ap-50pkpc.z0",
+   "b": "chaikin26.colibre.l200m6.gsmf.z0",
+   "relation": "gsmf",
+   "n": 18,
+   "medianOffset": 0,
+   "maxAbs": 0
+  },
+  {
+   "a": "furlong15.eagle-ref.gsmf.z0.1",
+   "b": "schaye15.eagle-ref-l100n1504.gsmf-ap-30pkpc.z0.1",
+   "relation": "gsmf",
+   "n": 16,
+   "medianOffset": 0.001,
+   "maxAbs": 0.011
+  },
   {
    "a": "genel14.illustris-1.gsmf-r2.z1",
    "b": "pillepich18.illustris.gsmf.z1",

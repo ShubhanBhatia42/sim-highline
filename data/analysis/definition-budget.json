@@ -36,34 +36,6 @@
  "allRecords": [
   {
    "relation": "gsmf",
-   "z": 0,
-   "suites": [
-    "FIREbox",
-    "FLAMINGO",
-    "Horizon-AGN",
-    "Illustris",
-    "IllustrisTNG",
-    "Magneticum Pathfinder"
-   ],
-   "records": 15,
-   "pairs": 81,
-   "counts": {
-    "matched": 2,
-    "differing": 24,
-    "unknown": 55,
-    "mismatch": 0
-   },
-   "median_abs_dy": {
-    "matched": 0.194,
-    "differing": 0.165,
-    "unknown": 0.2589,
-    "mismatch": null
-   },
-   "documented_fraction": 0.867,
-   "excess_differing_minus_matched": -0.0289
-  },
-  {
-   "relation": "gsmf",
    "z": 1,
    "suites": [
     "Horizon-AGN",
@@ -1732,6 +1704,397 @@
     ]
    },
    {
+    "source": "COLIBRE",
+    "relation": "gsmf",
+    "z": 0,
+    "key": "massDefinition",
+    "from": "aperture-100pkpc",
+    "to": "aperture-30pkpc",
+    "idFrom": "chaikin26.colibre.l200m6.gsmf-ap-100pkpc.z0",
+    "idTo": "chaikin26.colibre.l200m6.gsmf-ap-30pkpc.z0",
+    "median_dy": -0.0037,
+    "max_abs_dy": 0.5238,
+    "bins": 45,
+    "xRange": [
+     7.26,
+     11.7
+    ]
+   },
+   {
+    "source": "COLIBRE",
+    "relation": "gsmf",
+    "z": 0,
+    "key": "massDefinition",
+    "from": "aperture-100pkpc",
+    "to": "aperture-50pkpc",
+    "idFrom": "chaikin26.colibre.l200m6.gsmf-ap-100pkpc.z0",
+    "idTo": "chaikin26.colibre.l200m6.gsmf-ap-50pkpc.z0",
+    "median_dy": -0.0008,
+    "max_abs_dy": 0.3937,
+    "bins": 47,
+    "xRange": [
+     7.26,
+     11.9
+    ]
+   },
+   {
+    "source": "COLIBRE",
+    "relation": "gsmf",
+    "z": 0,
+    "key": "massDefinition",
+    "from": "aperture-100pkpc",
+    "to": "total-bound-subhalo",
+    "idFrom": "chaikin26.colibre.l200m6.gsmf-ap-100pkpc.z0",
+    "idTo": "chaikin26.colibre.l200m6.gsmf-ap-all-bound.z0",
+    "median_dy": 0.0001,
+    "max_abs_dy": 0.256,
+    "bins": 47,
+    "xRange": [
+     7.26,
+     11.9
+    ]
+   },
+   {
+    "source": "COLIBRE",
+    "relation": "gsmf",
+    "z": 0,
+    "key": "massDefinition",
+    "from": "aperture-100pkpc",
+    "to": "aperture-50pkpc",
+    "idFrom": "chaikin26.colibre.l200m6.gsmf-ap-100pkpc.z0",
+    "idTo": "chaikin26.colibre.l200m6.gsmf.z0",
+    "median_dy": -0.0006,
+    "max_abs_dy": 0.4228,
+    "bins": 35,
+    "xRange": [
+     8.5,
+     11.9
+    ]
+   },
+   {
+    "source": "COLIBRE",
+    "relation": "gsmf",
+    "z": 0,
+    "key": "massDefinition",
+    "from": "aperture-30pkpc",
+    "to": "aperture-50pkpc",
+    "idFrom": "chaikin26.colibre.l200m6.gsmf-ap-30pkpc.z0",
+    "idTo": "chaikin26.colibre.l200m6.gsmf-ap-50pkpc.z0",
+    "median_dy": 0.0026,
+    "max_abs_dy": 0.2929,
+    "bins": 45,
+    "xRange": [
+     7.26,
+     11.7
+    ]
+   },
+   {
+    "source": "COLIBRE",
+    "relation": "gsmf",
+    "z": 0,
+    "key": "massDefinition",
+    "from": "aperture-30pkpc",
+    "to": "total-bound-subhalo",
+    "idFrom": "chaikin26.colibre.l200m6.gsmf-ap-30pkpc.z0",
+    "idTo": "chaikin26.colibre.l200m6.gsmf-ap-all-bound.z0",
+    "median_dy": 0.0037,
+    "max_abs_dy": 0.6456,
+    "bins": 45,
+    "xRange": [
+     7.26,
+     11.7
+    ]
+   },
+   {
+    "source": "COLIBRE",
+    "relation": "gsmf",
+    "z": 0,
+    "key": "massDefinition",
+    "from": "aperture-30pkpc",
+    "to": "aperture-50pkpc",
+    "idFrom": "chaikin26.colibre.l200m6.gsmf-ap-30pkpc.z0",
+    "idTo": "chaikin26.colibre.l200m6.gsmf.z0",
+    "median_dy": 0.0016,
+    "max_abs_dy": 0.3218,
+    "bins": 33,
+    "xRange": [
+     8.5,
+     11.7
+    ]
+   },
+   {
+    "source": "COLIBRE",
+    "relation": "gsmf",
+    "z": 0,
+    "key": "massDefinition",
+    "from": "aperture-50pkpc",
+    "to": "total-bound-subhalo",
+    "idFrom": "chaikin26.colibre.l200m6.gsmf-ap-50pkpc.z0",
+    "idTo": "chaikin26.colibre.l200m6.gsmf-ap-all-bound.z0",
+    "median_dy": 0.0008,
+    "max_abs_dy": 0.6497,
+    "bins": 47,
+    "xRange": [
+     7.26,
+     11.9
+    ]
+   },
+   {
+    "source": "COLIBRE",
+    "relation": "gsmf",
+    "z": 0,
+    "key": "massDefinition",
+    "from": "aperture-50pkpc",
+    "to": "total-bound-subhalo",
+    "idFrom": "chaikin26.colibre.l200m6.gsmf.z0",
+    "idTo": "chaikin26.colibre.l200m6.gsmf-ap-all-bound.z0",
+    "median_dy": 0.0007,
+    "max_abs_dy": 1.301,
+    "bins": 37,
+    "xRange": [
+     8.5,
+     12.1
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "z": 0.1,
+    "key": "massDefinition",
+    "from": "aperture-100pkpc",
+    "to": "aperture-30pkpc",
+    "idFrom": "schaye15.eagle-ref-l100n1504.gsmf-ap-100pkpc.z0.1",
+    "idTo": "furlong15.eagle-ref.gsmf.z0.1",
+    "median_dy": -0.0012,
+    "max_abs_dy": 0.1711,
+    "bins": 31,
+    "xRange": [
+     8.5,
+     11.5
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "z": 0.1,
+    "key": "massDefinition",
+    "from": "aperture-100pkpc",
+    "to": "aperture-10pkpc",
+    "idFrom": "schaye15.eagle-ref-l100n1504.gsmf-ap-100pkpc.z0.1",
+    "idTo": "schaye15.eagle-ref-l100n1504.gsmf-ap-10pkpc.z0.1",
+    "median_dy": -0.018,
+    "max_abs_dy": 0.6411,
+    "bins": 31,
+    "xRange": [
+     8.3,
+     11.3
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "z": 0.1,
+    "key": "massDefinition",
+    "from": "aperture-100pkpc",
+    "to": "aperture-30pkpc",
+    "idFrom": "schaye15.eagle-ref-l100n1504.gsmf-ap-100pkpc.z0.1",
+    "idTo": "schaye15.eagle-ref-l100n1504.gsmf-ap-30pkpc.z0.1",
+    "median_dy": -0.0019,
+    "max_abs_dy": 0.1824,
+    "bins": 33,
+    "xRange": [
+     8.3,
+     11.5
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "z": 0.1,
+    "key": "massDefinition",
+    "from": "aperture-100pkpc",
+    "to": "petrosian-2D",
+    "idFrom": "schaye15.eagle-ref-l100n1504.gsmf-ap-100pkpc.z0.1",
+    "idTo": "schaye15.eagle-ref-l100n1504.gsmf-ap-petrosian.z0.1",
+    "median_dy": -0.014,
+    "max_abs_dy": 0.2216,
+    "bins": 33,
+    "xRange": [
+     8.3,
+     11.5
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "z": 0.1,
+    "key": "massDefinition",
+    "from": "aperture-100pkpc",
+    "to": "total-bound-subhalo",
+    "idFrom": "schaye15.eagle-ref-l100n1504.gsmf-ap-100pkpc.z0.1",
+    "idTo": "schaye15.eagle-ref-l100n1504.gsmf-ap-all-bound.z0.1",
+    "median_dy": 0.0,
+    "max_abs_dy": 0.1463,
+    "bins": 33,
+    "xRange": [
+     8.3,
+     11.5
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "z": 0.1,
+    "key": "massDefinition",
+    "from": "aperture-10pkpc",
+    "to": "aperture-30pkpc",
+    "idFrom": "schaye15.eagle-ref-l100n1504.gsmf-ap-10pkpc.z0.1",
+    "idTo": "furlong15.eagle-ref.gsmf.z0.1",
+    "median_dy": 0.0171,
+    "max_abs_dy": 0.47,
+    "bins": 29,
+    "xRange": [
+     8.5,
+     11.3
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "z": 0.1,
+    "key": "massDefinition",
+    "from": "aperture-10pkpc",
+    "to": "aperture-30pkpc",
+    "idFrom": "schaye15.eagle-ref-l100n1504.gsmf-ap-10pkpc.z0.1",
+    "idTo": "schaye15.eagle-ref-l100n1504.gsmf-ap-30pkpc.z0.1",
+    "median_dy": 0.0173,
+    "max_abs_dy": 0.4587,
+    "bins": 31,
+    "xRange": [
+     8.3,
+     11.3
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "z": 0.1,
+    "key": "massDefinition",
+    "from": "aperture-10pkpc",
+    "to": "petrosian-2D",
+    "idFrom": "schaye15.eagle-ref-l100n1504.gsmf-ap-10pkpc.z0.1",
+    "idTo": "schaye15.eagle-ref-l100n1504.gsmf-ap-petrosian.z0.1",
+    "median_dy": 0.0063,
+    "max_abs_dy": 0.4861,
+    "bins": 31,
+    "xRange": [
+     8.3,
+     11.3
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "z": 0.1,
+    "key": "massDefinition",
+    "from": "aperture-10pkpc",
+    "to": "total-bound-subhalo",
+    "idFrom": "schaye15.eagle-ref-l100n1504.gsmf-ap-10pkpc.z0.1",
+    "idTo": "schaye15.eagle-ref-l100n1504.gsmf-ap-all-bound.z0.1",
+    "median_dy": 0.0174,
+    "max_abs_dy": 0.688,
+    "bins": 31,
+    "xRange": [
+     8.3,
+     11.3
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "z": 0.1,
+    "key": "massDefinition",
+    "from": "aperture-30pkpc",
+    "to": "petrosian-2D",
+    "idFrom": "furlong15.eagle-ref.gsmf.z0.1",
+    "idTo": "schaye15.eagle-ref-l100n1504.gsmf-ap-petrosian.z0.1",
+    "median_dy": -0.0087,
+    "max_abs_dy": 0.0873,
+    "bins": 31,
+    "xRange": [
+     8.5,
+     11.5
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "z": 0.1,
+    "key": "massDefinition",
+    "from": "aperture-30pkpc",
+    "to": "total-bound-subhalo",
+    "idFrom": "furlong15.eagle-ref.gsmf.z0.1",
+    "idTo": "schaye15.eagle-ref-l100n1504.gsmf-ap-all-bound.z0.1",
+    "median_dy": 0.0004,
+    "max_abs_dy": 0.2818,
+    "bins": 31,
+    "xRange": [
+     8.5,
+     11.5
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "z": 0.1,
+    "key": "massDefinition",
+    "from": "aperture-30pkpc",
+    "to": "petrosian-2D",
+    "idFrom": "schaye15.eagle-ref-l100n1504.gsmf-ap-30pkpc.z0.1",
+    "idTo": "schaye15.eagle-ref-l100n1504.gsmf-ap-petrosian.z0.1",
+    "median_dy": -0.01,
+    "max_abs_dy": 0.0861,
+    "bins": 33,
+    "xRange": [
+     8.3,
+     11.5
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "z": 0.1,
+    "key": "massDefinition",
+    "from": "aperture-30pkpc",
+    "to": "total-bound-subhalo",
+    "idFrom": "schaye15.eagle-ref-l100n1504.gsmf-ap-30pkpc.z0.1",
+    "idTo": "schaye15.eagle-ref-l100n1504.gsmf-ap-all-bound.z0.1",
+    "median_dy": 0.0021,
+    "max_abs_dy": 0.2889,
+    "bins": 33,
+    "xRange": [
+     8.3,
+     11.5
+    ]
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "z": 0.1,
+    "key": "massDefinition",
+    "from": "petrosian-2D",
+    "to": "total-bound-subhalo",
+    "idFrom": "schaye15.eagle-ref-l100n1504.gsmf-ap-petrosian.z0.1",
+    "idTo": "schaye15.eagle-ref-l100n1504.gsmf-ap-all-bound.z0.1",
+    "median_dy": 0.0134,
+    "max_abs_dy": 0.3679,
+    "bins": 33,
+    "xRange": [
+     8.3,
+     11.5
+    ]
+   },
+   {
     "source": "Illustris",
     "relation": "gsmf",
     "z": 0,
@@ -2619,6 +2982,294 @@
     "max_abs_dy": 1.76
    },
    {
+    "source": "COLIBRE",
+    "relation": "gsmf",
+    "key": "massDefinition",
+    "from": "aperture-100pkpc",
+    "to": "aperture-30pkpc",
+    "epochs": 1,
+    "zRange": [
+     0,
+     0
+    ],
+    "median_dy": -0.0037,
+    "medianRange": [
+     -0.0037,
+     -0.0037
+    ],
+    "max_abs_dy": 0.5238
+   },
+   {
+    "source": "COLIBRE",
+    "relation": "gsmf",
+    "key": "massDefinition",
+    "from": "aperture-100pkpc",
+    "to": "aperture-50pkpc",
+    "epochs": 2,
+    "zRange": [
+     0,
+     0
+    ],
+    "median_dy": -0.0007,
+    "medianRange": [
+     -0.0008,
+     -0.0006
+    ],
+    "max_abs_dy": 0.4228
+   },
+   {
+    "source": "COLIBRE",
+    "relation": "gsmf",
+    "key": "massDefinition",
+    "from": "aperture-100pkpc",
+    "to": "total-bound-subhalo",
+    "epochs": 1,
+    "zRange": [
+     0,
+     0
+    ],
+    "median_dy": 0.0001,
+    "medianRange": [
+     0.0001,
+     0.0001
+    ],
+    "max_abs_dy": 0.256
+   },
+   {
+    "source": "COLIBRE",
+    "relation": "gsmf",
+    "key": "massDefinition",
+    "from": "aperture-30pkpc",
+    "to": "aperture-50pkpc",
+    "epochs": 2,
+    "zRange": [
+     0,
+     0
+    ],
+    "median_dy": 0.0021,
+    "medianRange": [
+     0.0016,
+     0.0026
+    ],
+    "max_abs_dy": 0.3218
+   },
+   {
+    "source": "COLIBRE",
+    "relation": "gsmf",
+    "key": "massDefinition",
+    "from": "aperture-30pkpc",
+    "to": "total-bound-subhalo",
+    "epochs": 1,
+    "zRange": [
+     0,
+     0
+    ],
+    "median_dy": 0.0037,
+    "medianRange": [
+     0.0037,
+     0.0037
+    ],
+    "max_abs_dy": 0.6456
+   },
+   {
+    "source": "COLIBRE",
+    "relation": "gsmf",
+    "key": "massDefinition",
+    "from": "aperture-50pkpc",
+    "to": "total-bound-subhalo",
+    "epochs": 2,
+    "zRange": [
+     0,
+     0
+    ],
+    "median_dy": 0.0008,
+    "medianRange": [
+     0.0007,
+     0.0008
+    ],
+    "max_abs_dy": 1.301
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "key": "massDefinition",
+    "from": "aperture-100pkpc",
+    "to": "aperture-10pkpc",
+    "epochs": 1,
+    "zRange": [
+     0.1,
+     0.1
+    ],
+    "median_dy": -0.018,
+    "medianRange": [
+     -0.018,
+     -0.018
+    ],
+    "max_abs_dy": 0.6411
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "key": "massDefinition",
+    "from": "aperture-100pkpc",
+    "to": "aperture-30pkpc",
+    "epochs": 2,
+    "zRange": [
+     0.1,
+     0.1
+    ],
+    "median_dy": -0.0015,
+    "medianRange": [
+     -0.0019,
+     -0.0012
+    ],
+    "max_abs_dy": 0.1824
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "key": "massDefinition",
+    "from": "aperture-100pkpc",
+    "to": "petrosian-2D",
+    "epochs": 1,
+    "zRange": [
+     0.1,
+     0.1
+    ],
+    "median_dy": -0.014,
+    "medianRange": [
+     -0.014,
+     -0.014
+    ],
+    "max_abs_dy": 0.2216
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "key": "massDefinition",
+    "from": "aperture-100pkpc",
+    "to": "total-bound-subhalo",
+    "epochs": 1,
+    "zRange": [
+     0.1,
+     0.1
+    ],
+    "median_dy": 0.0,
+    "medianRange": [
+     0.0,
+     0.0
+    ],
+    "max_abs_dy": 0.1463
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "key": "massDefinition",
+    "from": "aperture-10pkpc",
+    "to": "aperture-30pkpc",
+    "epochs": 2,
+    "zRange": [
+     0.1,
+     0.1
+    ],
+    "median_dy": 0.0172,
+    "medianRange": [
+     0.0171,
+     0.0173
+    ],
+    "max_abs_dy": 0.47
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "key": "massDefinition",
+    "from": "aperture-10pkpc",
+    "to": "petrosian-2D",
+    "epochs": 1,
+    "zRange": [
+     0.1,
+     0.1
+    ],
+    "median_dy": 0.0063,
+    "medianRange": [
+     0.0063,
+     0.0063
+    ],
+    "max_abs_dy": 0.4861
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "key": "massDefinition",
+    "from": "aperture-10pkpc",
+    "to": "total-bound-subhalo",
+    "epochs": 1,
+    "zRange": [
+     0.1,
+     0.1
+    ],
+    "median_dy": 0.0174,
+    "medianRange": [
+     0.0174,
+     0.0174
+    ],
+    "max_abs_dy": 0.688
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "key": "massDefinition",
+    "from": "aperture-30pkpc",
+    "to": "petrosian-2D",
+    "epochs": 2,
+    "zRange": [
+     0.1,
+     0.1
+    ],
+    "median_dy": -0.0093,
+    "medianRange": [
+     -0.01,
+     -0.0087
+    ],
+    "max_abs_dy": 0.0873
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "key": "massDefinition",
+    "from": "aperture-30pkpc",
+    "to": "total-bound-subhalo",
+    "epochs": 2,
+    "zRange": [
+     0.1,
+     0.1
+    ],
+    "median_dy": 0.0013,
+    "medianRange": [
+     0.0004,
+     0.0021
+    ],
+    "max_abs_dy": 0.2889
+   },
+   {
+    "source": "EAGLE",
+    "relation": "gsmf",
+    "key": "massDefinition",
+    "from": "petrosian-2D",
+    "to": "total-bound-subhalo",
+    "epochs": 1,
+    "zRange": [
+     0.1,
+     0.1
+    ],
+    "median_dy": 0.0134,
+    "medianRange": [
+     0.0134,
+     0.0134
+    ],
+    "max_abs_dy": 0.3679
+   },
+   {
     "source": "EAGLE",
     "relation": "shmr",
     "key": "haloMassDefinition",
@@ -2855,11 +3506,11 @@
   ]
  },
  "summary": {
-  "pairs": 2255,
+  "pairs": 2174,
   "byClass": {
-   "matched": 99,
-   "differing": 372,
-   "unknown": 521,
+   "matched": 97,
+   "differing": 348,
+   "unknown": 466,
    "mismatch": 1263
   },
   "testsRun": 16,

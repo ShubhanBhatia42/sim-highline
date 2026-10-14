@@ -8,7 +8,7 @@ How much of the disagreement between simulations at fixed stellar mass (or halo 
 
 ## What the data allow
 
-Of 2255 usable cross-suite record pairs (7 relations, 5 epochs), 4% have every documented key equal (matched), 16% differ in a documented soft key, 23% cannot be classified because a definition is undocumented in at least one record, and 56% differ in a hard key (for example different size definitions) and are not comparable at all.
+Of 2174 usable cross-suite record pairs (7 relations, 5 epochs), 4% have every documented key equal (matched), 16% differ in a documented soft key, 21% cannot be classified because a definition is undocumented in at least one record, and 58% differ in a hard key (for example different size definitions) and are not comparable at all.
 
 Of 16 epoch-by-relation permutation tests with enough matched and differing pairs, 1 have p < 0.05; 0.8 would be expected by chance alone. After Bonferroni correction 0 remain. The honest reading is that the present records neither show nor rule out a definitional contribution; the binding constraint is documentation, not physics.
 
@@ -16,7 +16,6 @@ Of 16 epoch-by-relation permutation tests with enough matched and differing pair
 
 | relation | z | suites | pairs (matched / differing / unknown / not comparable) | median abs dy: matched | differing | unknown | excess | p |
 |---|---|---|---|---|---|---|---|---|
-| gsmf | 0 | 6 | 81 (2 / 24 / 55 / 0) | 0.19 | 0.17 | 0.26 | -0.03 | - |
 | gsmf | 1 | 4 | 38 (4 / 2 / 32 / 0) | 0.16 | 0.16 | 0.24 | 0.00 | - |
 | gsmf | 2 | 4 | 33 (4 / 2 / 27 / 0) | 0.11 | 0.14 | 0.33 | 0.03 | - |
 | gsmf | 4 | 5 | 44 (4 / 2 / 38 / 0) | 0.14 | 0.13 | 0.24 | -0.01 | - |
@@ -60,6 +59,22 @@ Where one simulation run is published under two definitions of one quantity (and
 | simulation | relation | what changes | from | to | epochs | median | range of medians | largest local offset |
 |---|---|---|---|---|---|---|---|---|
 | BlueTides | uvlf | dustCorrection | dust attenuated (the paper's 'observed'; the tab | none (intrinsic) | 6 (z 8-13) | +0.01 | -0.00 to +0.09 | 1.76 |
+| COLIBRE | gsmf | massDefinition | aperture-100pkpc | aperture-30pkpc | 1 (z 0-0) | -0.00 | -0.00 to -0.00 | 0.52 |
+| COLIBRE | gsmf | massDefinition | aperture-100pkpc | aperture-50pkpc | 2 (z 0-0) | -0.00 | -0.00 to -0.00 | 0.42 |
+| COLIBRE | gsmf | massDefinition | aperture-100pkpc | total-bound-subhalo | 1 (z 0-0) | +0.00 | +0.00 to +0.00 | 0.26 |
+| COLIBRE | gsmf | massDefinition | aperture-30pkpc | aperture-50pkpc | 2 (z 0-0) | +0.00 | +0.00 to +0.00 | 0.32 |
+| COLIBRE | gsmf | massDefinition | aperture-30pkpc | total-bound-subhalo | 1 (z 0-0) | +0.00 | +0.00 to +0.00 | 0.65 |
+| COLIBRE | gsmf | massDefinition | aperture-50pkpc | total-bound-subhalo | 2 (z 0-0) | +0.00 | +0.00 to +0.00 | 1.30 |
+| EAGLE | gsmf | massDefinition | aperture-100pkpc | aperture-10pkpc | 1 (z 0.1-0.1) | -0.02 | -0.02 to -0.02 | 0.64 |
+| EAGLE | gsmf | massDefinition | aperture-100pkpc | aperture-30pkpc | 2 (z 0.1-0.1) | -0.00 | -0.00 to -0.00 | 0.18 |
+| EAGLE | gsmf | massDefinition | aperture-100pkpc | petrosian-2D | 1 (z 0.1-0.1) | -0.01 | -0.01 to -0.01 | 0.22 |
+| EAGLE | gsmf | massDefinition | aperture-100pkpc | total-bound-subhalo | 1 (z 0.1-0.1) | +0.00 | +0.00 to +0.00 | 0.15 |
+| EAGLE | gsmf | massDefinition | aperture-10pkpc | aperture-30pkpc | 2 (z 0.1-0.1) | +0.02 | +0.02 to +0.02 | 0.47 |
+| EAGLE | gsmf | massDefinition | aperture-10pkpc | petrosian-2D | 1 (z 0.1-0.1) | +0.01 | +0.01 to +0.01 | 0.49 |
+| EAGLE | gsmf | massDefinition | aperture-10pkpc | total-bound-subhalo | 1 (z 0.1-0.1) | +0.02 | +0.02 to +0.02 | 0.69 |
+| EAGLE | gsmf | massDefinition | aperture-30pkpc | petrosian-2D | 2 (z 0.1-0.1) | -0.01 | -0.01 to -0.01 | 0.09 |
+| EAGLE | gsmf | massDefinition | aperture-30pkpc | total-bound-subhalo | 2 (z 0.1-0.1) | +0.00 | +0.00 to +0.00 | 0.29 |
+| EAGLE | gsmf | massDefinition | petrosian-2D | total-bound-subhalo | 1 (z 0.1-0.1) | +0.01 | +0.01 to +0.01 | 0.37 |
 | EAGLE | shmr | haloMassDefinition | BN98 | M200crit | 8 (z 0-5) | +0.04 | +0.02 to +0.10 | 0.45 |
 | FIREbox | smd | massDefinition | stars in all identified galaxies | stars in galaxies with M*>10^9.3 Msun | 1 (z 2-2) | -0.22 | -0.22 to -0.22 | 0.65 |
 | FLARES | uvlf | dustCorrection | dust attenuated (SED modelling with a line-of-si | none (intrinsic) | 6 (z 10-15) | +0.03 | -0.07 to +0.05 | 1.77 |

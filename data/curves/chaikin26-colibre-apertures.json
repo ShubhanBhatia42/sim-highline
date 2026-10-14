@@ -1,0 +1,665 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "chaikin26.colibre.l200m6.gsmf-ap-30pkpc.z0",
+      "source": "COLIBRE",
+      "run": "m6 (L200, 30 pkpc aperture, figure)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dn/dlog10(M*) (axis label cMpc^-3), no Eddington-bias scatter added",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.264,
+        "xMax": 11.7
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.264,
+            "y": -1.0431
+          },
+          {
+            "x": 7.3,
+            "y": -1.0672
+          },
+          {
+            "x": 7.5,
+            "y": -1.2237
+          },
+          {
+            "x": 7.7,
+            "y": -1.3417
+          },
+          {
+            "x": 7.9,
+            "y": -1.4374
+          },
+          {
+            "x": 8.1,
+            "y": -1.5402
+          },
+          {
+            "x": 8.3,
+            "y": -1.642
+          },
+          {
+            "x": 8.5,
+            "y": -1.7273
+          },
+          {
+            "x": 8.7,
+            "y": -1.8077
+          },
+          {
+            "x": 8.9,
+            "y": -1.8684
+          },
+          {
+            "x": 9.1,
+            "y": -1.9092
+          },
+          {
+            "x": 9.3,
+            "y": -1.953
+          },
+          {
+            "x": 9.5,
+            "y": -1.9945
+          },
+          {
+            "x": 9.7,
+            "y": -2.0219
+          },
+          {
+            "x": 9.9,
+            "y": -2.0496
+          },
+          {
+            "x": 10.1,
+            "y": -2.0636
+          },
+          {
+            "x": 10.3,
+            "y": -2.1177
+          },
+          {
+            "x": 10.5,
+            "y": -2.2381
+          },
+          {
+            "x": 10.7,
+            "y": -2.442
+          },
+          {
+            "x": 10.9,
+            "y": -2.7296
+          },
+          {
+            "x": 11.1,
+            "y": -3.0467
+          },
+          {
+            "x": 11.3,
+            "y": -3.4318
+          },
+          {
+            "x": 11.5,
+            "y": -3.9119
+          },
+          {
+            "x": 11.7,
+            "y": -4.5914
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "z=0 stellar mass function of COLIBRE L200m6 with stellar mass summed over bound particles within a 3D spherical aperture of 30 pkpc, read from the vector paths of Chaikin et al. 2026 (appendix figure on the aperture); no Eddington-bias scatter is added in this figure. Solid (resolved, at least 10 galaxies per bin) segment only; the dotted ends are not extracted. Within-run aperture comparison: the four records of this figure differ only in the mass definition. Observational overlay not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-30pkpc",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, effect of the stellar-mass aperture on the z=0 stellar mass function (30 pkpc)",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-14",
+        "figure": "Effect of the aperture on the z=0 galaxy stellar mass function (appendix)",
+        "panel": "L200m6, 30 pkpc",
+        "checksumSha256": "6169f84d3dffaeb1841bec4c4d79cc7c845fc31a7a1e68ec6f2adcf78f5f3201",
+        "sourceMember": "plots/Appendix_apertures.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: decade labels snapped to ticks and validated by the minor-tick pattern (log axes)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.l200m6.gsmf-ap-50pkpc.z0",
+      "source": "COLIBRE",
+      "run": "m6 (L200, 50 pkpc aperture, figure)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dn/dlog10(M*) (axis label cMpc^-3), no Eddington-bias scatter added",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.264,
+        "xMax": 11.9
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.264,
+            "y": -1.0405
+          },
+          {
+            "x": 7.3,
+            "y": -1.0643
+          },
+          {
+            "x": 7.5,
+            "y": -1.2205
+          },
+          {
+            "x": 7.7,
+            "y": -1.3382
+          },
+          {
+            "x": 7.9,
+            "y": -1.4344
+          },
+          {
+            "x": 8.1,
+            "y": -1.5367
+          },
+          {
+            "x": 8.3,
+            "y": -1.6386
+          },
+          {
+            "x": 8.5,
+            "y": -1.7244
+          },
+          {
+            "x": 8.7,
+            "y": -1.8054
+          },
+          {
+            "x": 8.9,
+            "y": -1.8658
+          },
+          {
+            "x": 9.1,
+            "y": -1.9085
+          },
+          {
+            "x": 9.3,
+            "y": -1.9511
+          },
+          {
+            "x": 9.5,
+            "y": -1.9943
+          },
+          {
+            "x": 9.7,
+            "y": -2.0204
+          },
+          {
+            "x": 9.9,
+            "y": -2.0507
+          },
+          {
+            "x": 10.1,
+            "y": -2.0659
+          },
+          {
+            "x": 10.3,
+            "y": -2.1212
+          },
+          {
+            "x": 10.5,
+            "y": -2.2422
+          },
+          {
+            "x": 10.7,
+            "y": -2.4407
+          },
+          {
+            "x": 10.9,
+            "y": -2.7262
+          },
+          {
+            "x": 11.1,
+            "y": -3.0119
+          },
+          {
+            "x": 11.3,
+            "y": -3.3566
+          },
+          {
+            "x": 11.5,
+            "y": -3.7508
+          },
+          {
+            "x": 11.7,
+            "y": -4.2696
+          },
+          {
+            "x": 11.9,
+            "y": -4.9737
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "z=0 stellar mass function of COLIBRE L200m6 with stellar mass summed over bound particles within a 3D spherical aperture of 50 pkpc, read from the vector paths of Chaikin et al. 2026 (appendix figure on the aperture); no Eddington-bias scatter is added in this figure. Solid (resolved, at least 10 galaxies per bin) segment only; the dotted ends are not extracted. Within-run aperture comparison: the four records of this figure differ only in the mass definition. Observational overlay not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, effect of the stellar-mass aperture on the z=0 stellar mass function (50 pkpc)",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-14",
+        "figure": "Effect of the aperture on the z=0 galaxy stellar mass function (appendix)",
+        "panel": "L200m6, 50 pkpc",
+        "checksumSha256": "6169f84d3dffaeb1841bec4c4d79cc7c845fc31a7a1e68ec6f2adcf78f5f3201",
+        "sourceMember": "plots/Appendix_apertures.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: decade labels snapped to ticks and validated by the minor-tick pattern (log axes)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.l200m6.gsmf-ap-100pkpc.z0",
+      "source": "COLIBRE",
+      "run": "m6 (L200, 100 pkpc aperture, figure)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dn/dlog10(M*) (axis label cMpc^-3), no Eddington-bias scatter added",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.264,
+        "xMax": 11.9
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.264,
+            "y": -1.0402
+          },
+          {
+            "x": 7.3,
+            "y": -1.0639
+          },
+          {
+            "x": 7.5,
+            "y": -1.2196
+          },
+          {
+            "x": 7.7,
+            "y": -1.3374
+          },
+          {
+            "x": 7.9,
+            "y": -1.4335
+          },
+          {
+            "x": 8.1,
+            "y": -1.5354
+          },
+          {
+            "x": 8.3,
+            "y": -1.6374
+          },
+          {
+            "x": 8.5,
+            "y": -1.723
+          },
+          {
+            "x": 8.7,
+            "y": -1.8038
+          },
+          {
+            "x": 8.9,
+            "y": -1.8652
+          },
+          {
+            "x": 9.1,
+            "y": -1.9079
+          },
+          {
+            "x": 9.3,
+            "y": -1.9505
+          },
+          {
+            "x": 9.5,
+            "y": -1.9938
+          },
+          {
+            "x": 9.7,
+            "y": -2.0201
+          },
+          {
+            "x": 9.9,
+            "y": -2.051
+          },
+          {
+            "x": 10.1,
+            "y": -2.067
+          },
+          {
+            "x": 10.3,
+            "y": -2.1245
+          },
+          {
+            "x": 10.5,
+            "y": -2.2453
+          },
+          {
+            "x": 10.7,
+            "y": -2.4416
+          },
+          {
+            "x": 10.9,
+            "y": -2.7201
+          },
+          {
+            "x": 11.1,
+            "y": -3.0028
+          },
+          {
+            "x": 11.3,
+            "y": -3.3256
+          },
+          {
+            "x": 11.5,
+            "y": -3.6588
+          },
+          {
+            "x": 11.7,
+            "y": -4.0082
+          },
+          {
+            "x": 11.9,
+            "y": -4.5509
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "z=0 stellar mass function of COLIBRE L200m6 with stellar mass summed over bound particles within a 3D spherical aperture of 100 pkpc, read from the vector paths of Chaikin et al. 2026 (appendix figure on the aperture); no Eddington-bias scatter is added in this figure. Solid (resolved, at least 10 galaxies per bin) segment only; the dotted ends are not extracted. Within-run aperture comparison: the four records of this figure differ only in the mass definition. Observational overlay not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-100pkpc",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, effect of the stellar-mass aperture on the z=0 stellar mass function (100 pkpc)",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-14",
+        "figure": "Effect of the aperture on the z=0 galaxy stellar mass function (appendix)",
+        "panel": "L200m6, 100 pkpc",
+        "checksumSha256": "6169f84d3dffaeb1841bec4c4d79cc7c845fc31a7a1e68ec6f2adcf78f5f3201",
+        "sourceMember": "plots/Appendix_apertures.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: decade labels snapped to ticks and validated by the minor-tick pattern (log axes)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "chaikin26.colibre.l200m6.gsmf-ap-all-bound.z0",
+      "source": "COLIBRE",
+      "run": "m6 (L200, all bound particles aperture, figure)",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 galaxy stellar mass function, dn/dlog10(M*) (axis label cMpc^-3), no Eddington-bias scatter added",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 7.264,
+        "xMax": 12.3
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.264,
+            "y": -1.0403
+          },
+          {
+            "x": 7.3,
+            "y": -1.064
+          },
+          {
+            "x": 7.5,
+            "y": -1.2195
+          },
+          {
+            "x": 7.7,
+            "y": -1.3374
+          },
+          {
+            "x": 7.9,
+            "y": -1.4336
+          },
+          {
+            "x": 8.1,
+            "y": -1.535
+          },
+          {
+            "x": 8.3,
+            "y": -1.6374
+          },
+          {
+            "x": 8.5,
+            "y": -1.7228
+          },
+          {
+            "x": 8.7,
+            "y": -1.8038
+          },
+          {
+            "x": 8.9,
+            "y": -1.865
+          },
+          {
+            "x": 9.1,
+            "y": -1.9079
+          },
+          {
+            "x": 9.3,
+            "y": -1.9505
+          },
+          {
+            "x": 9.5,
+            "y": -1.9936
+          },
+          {
+            "x": 9.7,
+            "y": -2.0203
+          },
+          {
+            "x": 9.9,
+            "y": -2.0511
+          },
+          {
+            "x": 10.1,
+            "y": -2.0675
+          },
+          {
+            "x": 10.3,
+            "y": -2.1263
+          },
+          {
+            "x": 10.5,
+            "y": -2.2482
+          },
+          {
+            "x": 10.7,
+            "y": -2.4455
+          },
+          {
+            "x": 10.9,
+            "y": -2.7172
+          },
+          {
+            "x": 11.1,
+            "y": -3.0163
+          },
+          {
+            "x": 11.3,
+            "y": -3.2919
+          },
+          {
+            "x": 11.5,
+            "y": -3.6221
+          },
+          {
+            "x": 11.7,
+            "y": -3.8677
+          },
+          {
+            "x": 11.9,
+            "y": -4.2696
+          },
+          {
+            "x": 12.1,
+            "y": -4.6021
+          },
+          {
+            "x": 12.3,
+            "y": -5.1627
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies",
+        "warning": "z=0 stellar mass function of COLIBRE L200m6 with stellar mass summed over bound particles with no aperture cut, read from the vector paths of Chaikin et al. 2026 (appendix figure on the aperture); no Eddington-bias scatter is added in this figure. Solid (resolved, at least 10 galaxies per bin) segment only; the dotted ends are not extracted. Within-run aperture comparison: the four records of this figure differ only in the mass definition. Observational overlay not extracted."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "total-bound-subhalo",
+        "densityFrame": "comoving",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, effect of the stellar-mass aperture on the z=0 stellar mass function (all bound particles)",
+        "doi": "10.1093/mnras/stag740",
+        "url": "https://arxiv.org/abs/2509.07960",
+        "retrieved": "2026-10-14",
+        "figure": "Effect of the aperture on the z=0 galaxy stellar mass function (appendix)",
+        "panel": "L200m6, all bound particles",
+        "checksumSha256": "6169f84d3dffaeb1841bec4c4d79cc7c845fc31a7a1e68ec6f2adcf78f5f3201",
+        "sourceMember": "plots/Appendix_apertures.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x and y: decade labels snapped to ticks and validated by the minor-tick pattern (log axes)",
+        "digitizationUncertaintyDex": 0.02
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}
