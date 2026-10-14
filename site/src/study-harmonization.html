@@ -55,14 +55,16 @@
 
 <section class="sec" id="result" aria-labelledby="result-h">
 <h2 id="result-h"><span class="sn">§3</span>Result</h2>
+<aside class="note"><span class="lab">Reading R</span><p>R = 1: the spread across suites disappears. R = 0: harmonizing changes nothing. R &lt; 0: it increases the spread.</p></aside>
 <p>Result: <b>{{hVerdict}}</b>. R = {{hR}}, 95% interval {{hCI}}, permutation p = {{hP}}.</p>
 
 <figure class="fig">
 <div class="chart">{{hSvg}}</div>
-<figcaption><span class="fl">Fig. 1</span><span>Standard deviation across suites of the stellar mass at which each suite’s mass function reaches a given abundance: raw (dark) and harmonized (vermilion). Result: <b>{{hVerdict}}</b>. R = {{hR}} (95% interval {{hCI}}; permutation p = {{hP}}).</span></figcaption>
+<div class="key"><span><i style="background:var(--ink)"></i>raw</span><span><i style="background:var(--orange)"></i>harmonized</span></div>
+<figcaption><span class="fl">Fig. 1</span><span>Standard deviation across suites of the stellar mass at which each suite’s mass function reaches a given abundance, before and after harmonizing IMF, mass scatter and aperture. A fall of the harmonized curve below the raw one is the effect R measures.</span></figcaption>
 </figure>
 
-<div class="tw" role="region" aria-label="Table 1: operator alone" tabindex="0">
+<div class="tw sm" role="region" aria-label="Table 1: operator alone" tabindex="0">
 <table>
 <caption>Table 1 · Each operator applied alone</caption>
 <thead><tr><th>Operator alone</th><th class="n">R</th><th class="n">95% interval</th></tr></thead>

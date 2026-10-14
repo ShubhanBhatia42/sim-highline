@@ -11,7 +11,7 @@ The records are listed in `docs/expert-audit-sample.md` (two per simulation, det
 ## What to send
 
 - The two record ids and their links from `docs/expert-audit-sample.md`.
-- The one-page summary (`site/about.html`) and the data card (`docs/DATA-CARD.md`).
+- The methods page (`site/methods.html`, provenance, extraction and limits) and the data card (`docs/DATA-CARD.md`).
 - A statement of how the answer will be used: recorded in `data/audit-outcomes.json` with the reviewer's name only if they agree, and the record corrected or removed if wrong.
 
 ## Recording outcomes

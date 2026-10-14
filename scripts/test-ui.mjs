@@ -178,7 +178,8 @@ await step("hovering a legend row emphasises one curve and dims the rest", async
   await ctx.close();
 });
 
-for (const w of [375, 1280]) for (const f of ["index", "about", "findings", "sources", "use-cases"]) await step(`site ${f} at ${w}px: one h1, no horizontal overflow`, async () => {
+const SITE = ["index", "studies", "study-definitions", "study-harmonization", "study-sfh", "study-joint", "retune", "data", "methods", "sources"];
+for (const w of [375, 1280]) for (const f of SITE) await step(`site ${f} at ${w}px: one h1, no horizontal overflow`, async () => {
   const { page, ctx, errors } = await open(`/site/${f}.html`, { w, h: 800 });
   const r = await page.evaluate(() => ({ h1: document.querySelectorAll("h1").length, sw: document.documentElement.scrollWidth, iw: innerWidth }));
   assert.equal(r.h1, 1); assert(r.sw <= r.iw + 1, `overflow ${r.sw} > ${r.iw}`);
@@ -186,9 +187,31 @@ for (const w of [375, 1280]) for (const f of ["index", "about", "findings", "sou
   await ctx.close();
 });
 
+await step("site theme toggle switches and persists, text contrast stays at least 4.5", async () => {
+  const { page, ctx } = await open("/site/study-sfh.html", { scheme: "light" });
+  const lum = c => { const [r, g, b] = c.match(/\d+(\.\d+)?/g).slice(0, 3).map(Number).map(v => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; }); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
+  const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); };
+  const probe = () => page.evaluate(() => { const g = s => getComputedStyle(document.querySelector(s)); return { theme: document.documentElement.dataset.theme || null, bg: g("body").backgroundColor, ink: g("p").color, lab: g(".idx .lab").color, link: g("main a").color, status: g(".status").color, statusBg: g(".status").backgroundColor }; });
+  const light = await probe();
+  await page.click("#theme");
+  assert.equal(await page.evaluate(() => document.documentElement.dataset.theme), "dark");
+  await page.reload();
+  const dark = await probe();
+  assert.equal(dark.theme, "dark");
+  assert.notEqual(light.bg, dark.bg);
+  for (const [name, t] of [["light", light], ["dark", dark]]) for (const k of ["ink", "lab", "link"]) assert(ratio(t[k], t.bg) >= 4.5, `${name} ${k} contrast ${ratio(t[k], t.bg).toFixed(2)}`);
+  for (const [name, t] of [["light", light], ["dark", dark]]) assert(ratio(t.status, t.statusBg) >= 4.5, `${name} status bar contrast ${ratio(t.status, t.statusBg).toFixed(2)}`);
+  await ctx.close();
+});
+
 await step("links between the site and the app resolve", async () => {
   const { page, ctx } = await open("/site/index.html");
-  await page.click("nav a.btn.main");
+  await page.click('nav.menu a[href="../highline.html"]');
+  await page.waitForURL(/highline\.html/);
+  await settle(page);
+  await page.click('.sitenav a[href="site/retune.html"]');
+  await page.waitForURL(/site\/retune\.html/);
+  await page.click('nav.menu a[href="../highline.html"]');
   await page.waitForURL(/highline\.html/);
   await settle(page);
   await page.click("a.mark");
@@ -214,7 +237,9 @@ await axeRun("app, relation view, dark", "/highline.html#r=gsmf&z=6", { scheme: 
 await axeRun("app, tension view", "/highline.html#m=tension&tz=0");
 await axeRun("app, coverage view", "/highline.html#m=atlas");
 await axeRun("app, evidence panel", "/highline.html#r=gsmf&z=0&sel=chaikin26.colibre.l400m7.gsmf.z0");
-for (const f of ["index", "about", "findings", "sources", "use-cases"]) { await axeRun(`site ${f}, light`, `/site/${f}.html`); await axeRun(`site ${f}, dark`, `/site/${f}.html`, { scheme: "dark" }); }
+for (const f of SITE) { await axeRun(`site ${f}, light`, `/site/${f}.html`); await axeRun(`site ${f}, dark`, `/site/${f}.html`, { scheme: "dark" }); }
+for (const f of ["index", "study-definitions", "study-sfh", "data", "methods", "sources"]) await axeRun(`site ${f}, phone, light`, `/site/${f}.html`, { w: 375, h: 800 });
+await axeRun("app, phone", "/highline.html#r=gsmf&z=6", { w: 375, h: 812 });
 
 await browser.close(); server.close();
 if (failures.length) { console.log(`\n${failures.length} of ${n} UI checks failed`); process.exit(1); }

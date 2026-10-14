@@ -11,7 +11,7 @@
 >
 > **Corrections and takedowns:** if you are an author or data owner and want a record corrected, attributed differently or removed, open an issue (the "Curve error" form) or use the contact in `CITATION.cff`. Requests are handled promptly and removal is not contested.
 
-**Live:** the app is at <https://shubhanbhatia42.github.io/sim-highline/highline.html>, the landing page at <https://shubhanbhatia42.github.io/sim-highline/site/index.html> and the dataset files under <https://shubhanbhatia42.github.io/sim-highline/data/export/>.
+**Live:** the app is at <https://shubhanbhatia42.github.io/sim-highline/highline.html>, the project site (studies, data, methods) at <https://shubhanbhatia42.github.io/sim-highline/site/index.html> and the dataset files under <https://shubhanbhatia42.github.io/sim-highline/data/export/>.
 
 sim-highline is a researcher-facing workbench for comparing galaxy scaling relations across simulations and observational constraints. Its central rule is simple: the browser only draws ingested evidence. Missing epochs stay missing, incompatible definitions stay visible as mismatches, and no source-specific curve is synthesized from a generic template.
 
@@ -37,7 +37,7 @@ Listing a suite in the source rail does not imply that a curve has been ingested
 - Spread: how much simulations disagree with each other, for every relation and epoch (at least three simulations that share the relation's hard definitions). A small spread is not accuracy.
 - My run: paste or load your own curve, declare its definitions, and get a ranked, definition-aware comparison with every published curve at the epoch; downloadable as CSV. Stays in the browser.
 - Search: press `/` or Ctrl/Cmd+K to jump to any relation, simulation, paper, view or action.
-- Findings (site): the analysis presented with charts, the evidence ledger and the list of what remains undocumented.
+- Studies, Data and Methods (site): each analysis as a short paper with its figures, status and reproduction commands (`site/studies.html`); counts, files, loader and licences (`site/data.html`); provenance, extraction, definitions, limits, the evidence ledger and the list of what remains undocumented (`site/methods.html`).
 - Figure pack: Get data > Figure > Copy methods text / Download figure pack: a paragraph and a markdown pack (caption, definitions table, BibTeX) describing exactly the curves plotted, with their definitions, tiers and caveats against the anchor.
 - Notes: each relation lists the measured effect of changing a definition inside single runs (for example Illustris stellar mass within 2 R_half versus total subhalo).
 
@@ -116,7 +116,7 @@ node scripts/test-static.mjs
 
 `test-curves.mjs` checks more than file shape: it guards against rigid-offset redshift evolution, reversed high-redshift abundance evolution, lost source hashes, and accidental ranking of incompatible native definitions.
 
-Build with `./scripts/verify-all.sh` (or the three scripts `build-static.mjs`, `build-highline.mjs`, `build-site.mjs`), then serve `dist/` with any static file server, for example `python3 -m http.server -d dist`. `dist/site/index.html` is the landing page and `dist/highline.html` the app; `dist/` is generated and not committed.
+Build with `./scripts/verify-all.sh` (or the three scripts `build-static.mjs`, `build-highline.mjs`, `build-site.mjs`), then serve `dist/` with any static file server, for example `python3 -m http.server -d dist`. `dist/site/index.html` is the front page of the project site and `dist/highline.html` the Explorer app; `dist/` is generated and not committed.
 
 ## Getting the data
 
