@@ -10,6 +10,7 @@ except ImportError:
     print("joint reachability test skipped: numpy not installed")
     raise SystemExit(0)
 import analyze_joint_reachability as J
+import analyze_model_form as A
 import power_joint_reachability as P
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -60,11 +61,32 @@ assert r1["splits"]["path:1"]["verdict"] == "structural"
 r1b = go("shift", shift=0.15)
 assert r1b["splits"]["all"]["verdict"] == "removable", r1b["splits"]["all"]  # a small shift is within the margin
 
-# ---- every family reachable alone but by different parameter pairs: no family is structural alone, the joint distance is, and the cost of agreeing is large
+# ---- every family reachable alone but by different parameter pairs: no family is structural alone, the joint distance is, the ratio is far above the same-code null, and it is classed a conflict
 r2 = go("conflict")
 assert not any(r2["splits"]["fam:" + f]["verdict"] == "structural" for f in J.JOINT_FAMILIES), {f: r2["splits"]["fam:" + f]["verdict"] for f in J.JOINT_FAMILIES}
-assert r2["splits"]["all"]["verdict"] == "structural" and r2["J3"]["mechanism"] == "conflict" and r2["J3"]["ratio_point"] > 10 and r2["J3"]["ratio_interpretable"] is False or r2["J3"]["ratio_point"] > 10
+assert r2["splits"]["all"]["verdict"] == "structural", r2["splits"]["all"]
+assert r2["J3"]["above_null"] is True and r2["J3"]["ratio_point"] > 10 and r2["J3"]["ratio_between"]["p5"] > 5 * r2["J3"]["ratio_control"]["p95"], r2["J3"]
+assert r2["J3"]["mechanism"] == "conflict", r2["J3"]
 assert r2["point"]["all"]["D"] > 5 * r2["point"]["fam:gsmf"]["D"]
+# identical codes: the ratio of the squared distances is above 1 by construction (extra parameters absorb noise) but not above the same-code null
+assert r0["J3"]["above_null"] is False, r0["J3"]
+assert r0["J3"]["ratio_between"]["p50"] > 1.0 and r0["J3"]["ratio_control"]["p50"] > 1.0
+# the squared joint distance is never smaller than the weighted mean of the family distances (point estimate and every split)
+assert r2["J3"]["ratio_point"] >= 1.0 - 1e-6 and r1["J3"]["ratio_point"] >= 1.0 - 1e-6 and r0["J3"]["ratio_point"] >= 1.0 - 1e-6
+
+# ---- the emulator-error correction: the corrected distance of identical codes is below the raw one and the correction never goes below zero; the variance estimate is half the squared half-sample difference
+assert J.corrected(1.0, 0.36, 0.0) == 0.8 and J.corrected(0.3, 1.0) == 0.0
+assert r0["splits"]["all"]["between"]["p50"] <= r0["splits"]["all"]["between_raw"]["p50"] + 1e-12
+assert r0["point"]["all"]["D_corrected"] <= r0["point"]["all"]["D"] + 1e-12
+ia, ib = A.split_halves(300, np.random.default_rng(2))
+ea, eb = A.fit_emulator(d0["suites"]["SIMBA"]["LH"]["X"][ia], d0["suites"]["SIMBA"]["LH"]["Y"][ia]), A.fit_emulator(d0["suites"]["SIMBA"]["LH"]["X"][ib], d0["suites"]["SIMBA"]["LH"]["Y"][ib])
+idx_all, c_all = J.make_set(idx_by_block, [b for b in blocks if b[0] != "hmf"], scale)
+v_fid, v_corner = J.emu_var(ea, eb, np.zeros(4), idx_all, c_all), J.emu_var(ea, eb, np.ones(4), idx_all, c_all)
+assert 0 < v_fid < v_corner, (v_fid, v_corner)  # the emulators are noisier at the corner of the box than at the fiducial point
+
+# ---- decomposition: the shares add to 1 and the shifted family carries most of the distance
+dec = r1["decomposition"]
+assert abs(sum(x["share"] for x in dec) - 1.0) < 1e-9 and dec[0]["family"] == "bhocc" and dec[0]["share"] > 0.5, dec[:2]
 
 # ---- the report renders and the headline mentions the verdicts
 r1.update({"version": "x", "parameters": {"seed": J.SEED}})
