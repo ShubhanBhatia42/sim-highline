@@ -10,7 +10,8 @@ node scripts/test-compare.mjs
 node scripts/report-coverage.mjs
 python3 scripts/analyze_definition_budget.py > /dev/null
 python3 scripts/analyze_harmonization.py > /dev/null
-python3 scripts/analyze_model_form.py > /dev/null
+# the model-form analysis takes about 20 minutes: FULL=1 reruns it; scripts/test_model_form.py always checks that its saved output is not stale
+if [ "${FULL:-0}" = "1" ]; then python3 scripts/analyze_model_form.py > /dev/null; fi
 python3 scripts/screen_outliers.py
 node scripts/report-undocumented.mjs
 node scripts/build-curve-index.mjs
