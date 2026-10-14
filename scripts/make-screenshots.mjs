@@ -1,4 +1,4 @@
-// Regenerates the screenshots used on the landing page and in the README (site/src/img/*.png) from the built dist/.
+// Regenerates the screenshots used in the README (site/src/img/*.png) from the built dist/.
 // Run after the build: node scripts/make-screenshots.mjs   (needs `npm install` and `npx playwright install chromium`).
 import http from "node:http";
 import { readFile, mkdir } from "node:fs/promises";

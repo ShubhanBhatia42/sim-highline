@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>S3 Cosmic star formation history: parametric or structural?</title>
-<meta name="description" content="What retuning a simulation can and cannot change in the cosmic star formation history: published curves of nine model families and the CAMELS ensembles of IllustrisTNG and SIMBA.">
+<meta name="description" content="What retuning a simulation can and cannot change in the cosmic star formation history: published curves of the model families and the CAMELS ensembles of IllustrisTNG and SIMBA.">
 {{head}}
 </head>
 <body>
@@ -29,7 +29,7 @@
 <h1>Parametric or structural? What retuning a simulation can and cannot change</h1>
 <div class="abstract">
 <p class="lab">Abstract</p>
-<p>Simulations are tuned to a few observations at redshift about 0 and then asked what happens elsewhere. We separate what a model can still do by retuning its own parameters from what its form forces whatever the tuning, for the cosmic star formation history. Published curves of {{mfNFam}} model families do not show a detectable funnel of growing disagreement (spread {{mfSdLow}} dex at z = 0.5 to 3, {{mfSdHigh}} dex at z = 5 to 7.5: {{mfSuccess}}). In {{camelsN}} CAMELS simulations, retuning four feedback parameters per code brings IllustrisTNG and SIMBA from {{mfDfid}} to {{mfD}} dex rms (<b>{{mfReach}}</b>).</p>
+<p>Simulations are tuned to a few observations at redshift about 0 and then asked what happens elsewhere. We separate what a model can still do by retuning its own parameters from what its form forces whatever the tuning, for the cosmic star formation history. Published curves of {{mfNFamAll}} model families do not show a detectable funnel of growing disagreement (across the {{mfNFam}} families defined in both redshift bands, the spread is {{mfSdLow}} dex at z = 0.5 to 3 and {{mfSdHigh}} dex at z = 5 to 7.5: {{mfSuccess}}). In {{camelsN}} CAMELS simulations, retuning four feedback parameters per code brings IllustrisTNG and SIMBA from {{mfDfid}} to {{mfD}} dex rms (<b>{{mfReach}}</b>).</p>
 </div>
 <dl class="facts">
 <div><dt>Status</dt><dd>Pre-registered · result</dd></div>
@@ -50,7 +50,7 @@
 <h2 id="data-h"><span class="sn">§2</span>Data</h2>
 <aside class="note"><span class="lab">Registration</span><p>The protocol was written before any of these numbers existed and was amended once, before the run, after an independent review. Amendment A1 and what had been seen are in <a href="{{repo}}/blob/main/docs/PROTOCOL-model-form.md">PROTOCOL-model-form.md</a>.</p></aside>
 <dl class="kv">
-<dt>Published</dt><dd>Curves of the cosmic star formation rate density of nine model families, and the authors’ own resolution, parameter and cosmology variants (<code>data/model-variants.json</code>).</dd>
+<dt>Published</dt><dd>Curves of the cosmic star formation rate density of {{mfNFamAll}} model families, and the authors’ own resolution, parameter and cosmology variants (<code>data/model-variants.json</code>).</dd>
 <dt>CAMELS</dt><dd>{{camelsN}} simulations in {{camelsBox}} Mpc/h boxes with the IllustrisTNG and SIMBA codes at identical resolution: per code, {{camelsLH}} Latin-hypercube simulations (six parameters: Ω<sub>m</sub>, σ<sub>8</sub> and four feedback factors, a different seed each) and {{camelsCV}} seeds at the fiducial parameters. Star formation logs reduced to {{camelsBins}} redshift bins (<code>data/ensembles/camels-sfrd.json</code>).</dd>
 </dl>
 </section>
@@ -69,15 +69,18 @@
 <p>{{mfE2}}</p>
 
 <h3>E3 · Can retuning remove the difference between two codes?</h3>
+<aside class="note"><span class="lab">E3 in numbers</span><p class="mono" style="font-size:12.5px">fiducial parameters {{mfDfid}} dex<br>after retuning {{mfD}} dex<br>two seeds of the codes {{mfMargin}} dex<br>rms difference of the star formation histories</p></aside>
 <p>{{mfE3}}</p>
 <figure class="fig">
 <div class="chart">{{mfCamels}}</div>
+<div class="key"><span><i style="background:var(--orange)"></i>IllustrisTNG</span><span><i style="background:var(--ink)"></i>SIMBA</span><span><i style="background:var(--mustard)"></i>difference between the codes at fiducial parameters</span></div>
 <figcaption><span class="fl">Fig. 2</span><span>CAMELS, {{camelsBox}} Mpc/h boxes, the same four feedback factors varied in both codes: the spread the parameters produce in each code (solid), the seed-to-seed scatter of one box (dashed) and the difference between the two codes at their fiducial parameters (ochre). IllustrisTNG vermilion, SIMBA dark. All at CAMELS resolution.</span></figcaption>
 </figure>
 
 <h3>E4 · Tuned to the same history, do the predictions stay apart?</h3>
 <figure class="fig">
 <div class="chart">{{mfCalib}}</div>
+<div class="key"><span><i style="background:var(--orange)"></i>IllustrisTNG</span><span><i style="background:var(--ink)"></i>SIMBA</span><span><i style="background:var(--ink3)"></i>observed history</span></div>
 <figcaption><span class="fl">Fig. 3</span><span>Both codes conditioned on the observed star formation history (Madau and Dickinson 2014, dotted) at redshift 3 and below, with a 0.2 dex systematic common to all points and 0.15 dex for the small box, and what each then predicts beyond it: the model’s mean response, median and 90% interval. Verdict: <b>{{mfCalVerdict}}</b>.</span></figcaption>
 </figure>
 </section>
