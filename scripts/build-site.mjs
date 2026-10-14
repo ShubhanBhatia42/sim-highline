@@ -203,6 +203,28 @@ stats.css = (await read("site/src/site.css")).replace("/*__PALETTE__*/", () => p
   stats.fOpenBreakdown = `${UD.summary.sourceReadNotStated} where the paper was read and does not state it${UD.summary.sourceNotYetRead ? `, ${UD.summary.sourceNotYetRead} where it has not yet been read for that key` : "; every paper behind a record has now been read for every open key"}, and ${UD.summary.noPaperToRead} where the source is a data release without a paper`;
   stats.fNFills = FL.fills.length; stats.fSensN = A.sensitivity.pairs.length; stats.fSensG = A.sensitivity.summary.length;
 }
+// ---- harmonization result on the findings page (numbers and the verdict come from data/analysis/harmonization.json; nothing here is written by hand)
+{
+  const Hm = JSON.parse(await read("data/analysis/harmonization.json")), e1 = Hm.E1, v = Hm.verdicts, W = 860, HT = 250, L = 56, R = 20, T = 14, B = 44;
+  const lv = Hm.levels.filter(x => x.sd_raw_dex != null && x.sd_harmonized_dex != null), ymax = Math.ceil(Math.max(...lv.map(x => Math.max(x.sd_raw_dex, x.sd_harmonized_dex))) * 20) / 20;
+  const px = x => L + (-2 - x) / 2.5 * (W - L - R), py = y => T + (1 - y / ymax) * (HT - T - B);
+  let svg = `<svg viewBox="0 0 ${W} ${HT}" role="img" aria-labelledby="hzT hzD"><title id="hzT">Spread of the stellar mass at fixed abundance across simulations, before and after harmonizing definitions</title><desc id="hzD">Standard deviation across simulation suites of the stellar mass at which the mass function reaches a given abundance, raw and harmonized.</desc><g class="axis">`;
+  for (let y = 0; y <= ymax + 1e-9; y += 0.1) svg += `<line x1="${L}" x2="${W - R}" y1="${py(y).toFixed(1)}" y2="${py(y).toFixed(1)}"/><text x="${L - 8}" y="${(py(y) + 4).toFixed(1)}" text-anchor="end">${y.toFixed(1)}</text>`;
+  for (let x = -2; x >= -4.5; x -= 0.5) svg += `<text x="${px(x).toFixed(1)}" y="${HT - 22}" text-anchor="middle">${x.toFixed(1)}</text>`;
+  svg += `<text x="${((L + W - R) / 2).toFixed(0)}" y="${HT - 4}" text-anchor="middle">log abundance, Φ (cMpc⁻³ dex⁻¹)</text><text x="14" y="${((T + HT - B) / 2).toFixed(0)}" transform="rotate(-90 14 ${((T + HT - B) / 2).toFixed(0)})" text-anchor="middle">SD across suites (dex)</text></g>`;
+  for (const [key, col, dash] of [["sd_raw_dex", "var(--ink)", ""], ["sd_harmonized_dex", "var(--orange)", ""]]) {
+    svg += `<polyline fill="none" stroke="${col}" stroke-width="2.4" ${dash} points="${lv.map(x => `${px(x.phi).toFixed(1)},${py(x[key]).toFixed(1)}`).join(" ")}"/>` + lv.map(x => `<circle cx="${px(x.phi).toFixed(1)}" cy="${py(x[key]).toFixed(1)}" r="3.4" fill="${col}"/>`).join("");
+  }
+  svg += `</svg>`;
+  const pct = x => `${Math.round(100 * x)}%`, f2 = x => (x >= -0.005 ? "" : "−") + Math.abs(x).toFixed(2), ci = c => `${f2(c[0])} to ${f2(c[1])}`;
+  stats.hSvg = svg;
+  stats.hSuites = Hm.suites.length;
+  stats.hVerdict = v.E1.supported ? "detected" : "not detected";
+  stats.hR = f2(e1.R.all); stats.hCI = ci(e1.ci95.all); stats.hP = e1.permutation.p_value.toFixed(2);
+  const on = Hm.operators, p80 = v.E4.smallest_lambda_detected_in_80_percent;
+  stats.hOps = ["imf only", "scatter only", "aperture only"].map(k => `<tr><td>${esc(k.replace(" only", ""))}</td><td>${f2(on[k].R)}</td><td>${ci(on[k].ci95)}</td></tr>`).join("");
+  stats.hPower = p80 === null ? `Injecting aperture effects of the measured size (and up to twice that) into the same suites is not detected in 80% of draws by the same rule (largest detection rate ${pct(Math.max(...Hm.E4.map(r => r.detection_rate)))}), so a non-detection of aperture effects here is uninformative about whether they exist.` : `An injected effect of ${p80} times the measured aperture maps is detected in at least 80% of draws.`;
+}
 const SUN = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10" cy="10" r="3.6"/><path d="M10 2.5v1.8M10 15.7v1.8M2.5 10h1.8M15.7 10h1.8M4.7 4.7l1.3 1.3M14 14l1.3 1.3M4.7 15.3 6 14M14 6l1.3-1.3"/></svg>', MOON = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M16.5 11.8A6.8 6.8 0 0 1 8.2 3.5a6.8 6.8 0 1 0 8.3 8.3z"/></svg>';
 const THEME_JS = `<script>(function(){var b=document.getElementById("theme"),r=document.documentElement,S='${SUN}',M='${MOON}';function now(){return r.dataset.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}function paint(){var d=now()==="dark";b.innerHTML=d?S:M;b.setAttribute("aria-label",d?"Switch to the light theme":"Switch to the dark theme")}b.onclick=function(){var n=now()==="dark"?"light":"dark";r.dataset.theme=n;try{localStorage.setItem("sh-theme",n)}catch(e){}paint()};paint()})()</script>`;
 const NAV = (cur) => `<nav aria-label="Main"><a class="mark" href="index.html" aria-label="sim-highline home">SIM<i>/</i>HIGHLINE</a><span class="sp"></span>${[["about.html", "About"], ["findings.html", "Findings"], ["sources.html", "Simulations &amp; observations"], ["use-cases.html", "Use cases"]].map(([h, t]) => `<a class="l" href="${h}"${h === cur ? ' aria-current="page"' : ""}>${t}</a>`).join("")}<button class="ico" id="theme" type="button" aria-label="Switch theme"></button><a class="btn main" href="../highline.html">Open the app</a></nav>${THEME_JS}`;

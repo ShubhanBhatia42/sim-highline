@@ -60,6 +60,14 @@
 <p class="blurb">Before the definitions were completed from the papers, one stellar-mass-function epoch (z about 6) looked significantly better matched for definition-matched pairs (p = 0.004). After {{fRecRecords}} records were completed it did not (p about 0.1): the apparent detection was produced by undocumented fields. Of {{fTests}} epoch tests, {{fBelow}} fall below p = 0.05 where {{fExpect}} would be expected by chance, and {{fBonf}} survive Bonferroni correction.</p>
 </section>
 
+<section aria-labelledby="harm">
+<h2 id="harm">Can documented definitions close the gap in the z ≈ 0 mass function?</h2>
+<p class="blurb">A pre-specified test, written before the numbers existed: express each of {{hSuites}} simulation suites' z ≈ 0 stellar mass function in one IMF, without added mass scatter and in a 30 pkpc aperture, using only documented definitions and aperture maps measured inside single runs, and ask what fraction R of the spread across suites (in the stellar mass at fixed abundance) disappears. The rule: the bootstrap interval of R must exclude 0, a label-permutation test must give p &lt; 0.05, and the sign must agree in two sensitivity analyses.</p>
+<figure><div class="chart">{{hSvg}}</div><figcaption>Standard deviation across suites of the stellar mass at which each suite's mass function reaches a given abundance: raw (dark) and harmonized (orange). Result: <b>{{hVerdict}}</b>. R = {{hR}} (95% interval {{hCI}}; permutation p = {{hP}}).</figcaption></figure>
+<div class="tw"><table><thead><tr><th>Operator alone</th><th>R</th><th>95% interval</th></tr></thead><tbody>{{hOps}}</tbody></table></div>
+<p class="blurb" style="margin-top:14px">{{hPower}} The pre-specification, every amendment with what had been seen when it was made, the sensitivity analyses and the deviations are in <a href="https://github.com/ShubhanBhatia42/sim-highline/blob/main/docs/ANALYSIS-harmonization.md" target="_blank" rel="noopener">ANALYSIS-harmonization.md</a>.</p>
+</section>
+
 <section aria-labelledby="led">
 <h2 id="led">Evidence ledger</h2>
 <p class="blurb">Every recovered definition is applied only where the record states none and never overwrites a stated value. Each cites the paper section, a short quote and the SHA-256 of the arXiv source archive that was read ({{fNFills}} rules).</p>
