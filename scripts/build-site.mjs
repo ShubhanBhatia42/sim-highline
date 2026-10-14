@@ -1,5 +1,6 @@
 import { copyFile, readdir, readFile, writeFile, mkdir } from "node:fs/promises";
 import vm from "node:vm";
+import { jointStats } from "./site-joint.mjs";
 const root = new URL("../", import.meta.url);
 const read = async p => readFile(new URL(p, root), "utf8");
 const palette = await read("data/palette.css");
@@ -366,6 +367,11 @@ stats.camelsBox = camels.boxMpcPerH; stats.camelsBins = camels.zCentres.length;
   stats.columnList = (manifest.columns.records || []).map(c => `<code>${esc(c)}</code>`).join(", ");
 }
 
+// ---- joint reachability (S4): generated from data/analysis/joint-reachability.json when it exists
+const JR = await read("data/analysis/joint-reachability.json").then(t => JSON.parse(t), () => null);
+Object.assign(stats, jointStats(JR));
+stats.repo = stats.repo || "https://github.com/ShubhanBhatia42/sim-highline";
+
 // ---- studies (one list feeds the front page and the studies page)
 const STUDIES = [
   { id: "S1", href: "study-definitions.html", title: "Definition budget", q: "How much of the disagreement between simulations is just definitions?", status: "Result", head: `${stats.fMatchedPct} of ${stats.fPairs} cross-simulation pairs fully matched`,
@@ -374,7 +380,7 @@ const STUDIES = [
     abs: `Express ${stats.hSuites} suites' z ≈ 0 stellar mass functions in one IMF, without added scatter and in a 30 pkpc aperture, and ask what fraction R of the spread across suites disappears. R = ${stats.hR} (95% interval ${stats.hCI}; permutation p = ${stats.hP}): ${stats.hVerdict} by the rule fixed in advance.` },
   { id: "S3", href: "study-sfh.html", title: "Cosmic star formation history: funnel, reachability, calibration", q: "Do simulations disagree more in the early Universe, and can retuning remove the difference between two codes?", status: "Pre-registered · result", head: `Funnel ${stats.mfSuccess}, factor ${stats.mfFactor}; retuning: ${stats.mfDfid} to ${stats.mfD} dex (${stats.mfReach})`,
     abs: `Published curves of ${stats.mfNFamAll} model families, the authors' own variants and ${stats.camelsN} CAMELS simulations of IllustrisTNG and SIMBA. Across the ${stats.mfNFam} families defined in both redshift bands the spread is ${stats.mfSdLow} dex at z = 0.5 to 3 and ${stats.mfSdHigh} dex at z = 5 to 7.5 (funnel ${stats.mfSuccess}). Retuning four feedback parameters per code brings the two codes from ${stats.mfDfid} to ${stats.mfD} dex rms (${stats.mfReach}).` },
-  { id: "S4", href: "study-joint.html", title: "Joint reachability", q: "In preparation.", status: "In preparation", head: "—", todo: true, abs: "In preparation." }
+  { id: "S4", href: "study-joint.html", title: "Joint reachability: which observables separate two feedback models", q: "Can retuning make two feedback models agree on every galaxy observable at once?", status: stats.jrStatus, head: JR ? stats.jrHead : "—", todo: !JR, abs: stats.jrAbs }
 ];
 const studyRows = (withAbs) => STUDIES.map(s => `<tr${s.todo ? ' class="todo"' : ""}><td class="sid">${s.id}</td><td class="ttl" data-l="Study"><a href="${s.href}">${esc(s.title)}</a></td><td data-l="${withAbs ? "Abstract" : "Question"}">${esc(withAbs ? s.abs : s.q)}</td><td class="st" data-l="Status">${esc(s.status)}</td><td class="hd" data-l="Headline">${esc(s.head)}</td></tr>`).join("");
 stats.studiesCompact = `<table class="studies stack"><thead><tr><th>ID</th><th>Study</th><th>Question</th><th>Status</th><th>Headline</th></tr></thead><tbody>${studyRows(false)}</tbody></table>`;

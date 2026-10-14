@@ -7,6 +7,7 @@
   const CODES = ["IllustrisTNG", "SIMBA"], SHORT = { IllustrisTNG: "TNG", SIMBA: "SIMBA" }, COL = { IllustrisTNG: "var(--c-illustristng)", SIMBA: "var(--c-simba)" };
   let D;
   try { D = await (await fetch(root.dataset.src)).json(); } catch (e) { root.textContent = "The emulator file could not be loaded."; return; }
+  if (D.pending) { root.replaceChildren(Object.assign(document.createElement("p"), { className: "dim", textContent: "The emulators are published when the joint-reachability study has run (protocol committed, analysis pending)." })); return; }
   const NO = D.outputs.length, SCALE = Float64Array.from(D.scale), FAMS = Object.keys(D.families);
   const JOINT = FAMS.filter(f => D.families[f].joint);
   const el = (t, a = {}, ...kids) => { const e = document.createElementNS(a.ns || "http://www.w3.org/1999/xhtml", t); for (const [k, v] of Object.entries(a)) if (k !== "ns") (k.startsWith("on") ? e.addEventListener(k.slice(2), v) : e.setAttribute(k, v)); for (const c of kids.flat()) e.append(c); return e; };
@@ -157,6 +158,7 @@
     }
     const dall = fullDist(SETS.all), an = A && A.point.all, sp = A && A.splits.all;
     rows.push(el("tr", { class: "tot" }, el("td", {}, "All observables"), el("td", { class: "n" }, f2(dall)), el("td", { class: "n" }, an ? f2(an.D_fiducial) : "–"), el("td", { class: "n" }, an ? f2(an.D) : "–"), el("td", {}, sp ? sp.verdict : "–")));
+    table.setAttribute("tabindex", "0"); table.setAttribute("role", "region"); table.setAttribute("aria-label", "Distance per observable (scrolls sideways on narrow screens)");
     table.replaceChildren(el("table", {}, el("caption", {}, "Distance between the two codes, in noise units (1 = the standard deviation of the difference between one run of each), at the dials above and over all redshifts"),
       el("thead", {}, el("tr", {}, ["Observable", "now", "both at fiducial", "best reachable (study)", "verdict (study)"].map(t => el("th", { scope: "col" }, t)))), el("tbody", {}, rows)));
     header.replaceChildren(el("p", { class: "rt-sum", "aria-live": "polite" }, `Joint distance ${f2(dall)} noise units${an ? `; the study's minimum over both codes' dials is ${f2(an.D)} (${sp ? sp.verdict : "–"}), and ${f2(an.D_fiducial)} at the fiducial parameters` : ""}.`));
