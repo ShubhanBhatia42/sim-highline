@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methods: provenance, extraction, definitions and limits</title>
+<meta name="description" content="How a number gets into sim-highline and what it is allowed to mean: evidence routes and tiers, exact extraction from vector figures, definitions, comparison flags, audit and known limits.">
+{{head}}
+</head>
+<body>
+{{header}}
+<main id="main" class="wrap page" tabindex="-1">
+<div class="doc">
+<nav class="idx" aria-label="On this page">
+<p class="lab">Contents</p>
+<ol>
+<li><a href="#routes"><span>§1</span>Routes</a></li>
+<li><a href="#extraction"><span>§2</span>Extraction</a></li>
+<li><a href="#definitions"><span>§3</span>Definitions</a></li>
+<li><a href="#explorer"><span>§4</span>Computed</a></li>
+<li><a href="#audit"><span>§5</span>Audit</a></li>
+<li><a href="#limits"><span>§6</span>Limits</a></li>
+<li><a href="#ledger"><span>§7</span>Ledger</a></li>
+<li><a href="#undocumented"><span>§8</span>Undocumented</a></li>
+</ol>
+</nav>
+<div class="c">
+
+<div class="title">
+<p class="lab kicker">Methods</p>
+<h1>Methods</h1>
+<p class="standfirst">How a number gets into sim-highline, and what it is allowed to mean. The long form is <a href="{{repo}}/blob/main/docs/METHODS.md">docs/METHODS.md</a>.</p>
+</div>
+
+<section class="sec" id="routes" aria-labelledby="routes-h">
+<h2 id="routes-h"><span class="sn">§1</span>How values enter</h2>
+<p>Evidence enters through four routes, and every record carries the tier that says which. Counts per tier are on the <a href="data.html#tiers">Data</a> page.</p>
+<dl class="kv">
+<dt>Official tables</dt><dd>Tables released by a collaboration (for example THESAN-1 relation files, Magneticum Box4/uhr tables, the COSMOS-Web mass function). Tier <code>official-table</code>; the SHA-256 of the file is stored.</dd>
+<dt>Papers</dt><dd>Fits and tables transcribed from the papers. Tiers <code>published-table</code> (spot-checked against numbers the paper quotes) and <code>published-fit</code> (a fitting function evaluated, not refitted). Transcribed values are never labelled <code>official-table</code>.</dd>
+<dt>Compilations</dt><dd>Machine-readable compilations, pinned to a commit: the SWIFT/VELOCIraptor observational comparison collection and the Sharda et al. 2026 COLIBRE mass–metallicity data release.</dd>
+<dt>Catalogues</dt><dd>sim-highline-derived binning of individual-galaxy tables by script, with fixed cuts, bootstrap errors and a fixed seed. Tier <code>catalog-derived</code>.</dd>
+</dl>
+<p>Where none of these exists, a curve is read from a published figure (§2): tier <code>digitized-figure</code>, never rankable.</p>
+</section>
+
+<section class="sec" id="extraction" aria-labelledby="extraction-h">
+<h2 id="extraction-h"><span class="sn">§2</span>Exact extraction from vector figures</h2>
+<p>{{digitizedShare}} of simulation curves are digitized. No raster tracing is used. Figures are taken from the arXiv source of each paper, which almost always holds the figure as vector PDF, EPS or PS. The curves, markers and fill polygons are read from the drawing commands, so values are exact to the coordinate precision of the file.</p>
+<ul class="flat">
+<li><b>Axes</b> are calibrated from the labelled ticks of the same figure: a robust fit over numeric labels snapped to ticks for linear axes; decade labels matched to major ticks and validated against the minor-tick pattern for log axes; calibration translated between shared-axis panels.</li>
+<li><b>Assertions.</b> Every digitizer asserts its calibration and, where the paper quotes numbers, spot-checks against them. A record never contains a point the figure does not draw; bands come from fill polygons, and points with no drawn error bar have no band.</li>
+<li><b>Regeneration.</b> Digitizers are deterministic: the shipped records are regenerated exactly by <code>python3 scripts/regress_digitizers.py</code>. The stored checksum is that of the original figure file.</li>
+</ul>
+</section>
+
+<section class="sec" id="definitions" aria-labelledby="definitions-h">
+<h2 id="definitions-h"><span class="sn">§3</span>Definitions travel with the data</h2>
+<p>Mass aperture, halo definition, IMF, cosmology, population, SFR timescale and statistic, quenching criterion, size definition, metallicity tracer and the like are structured fields on every record, so the comparison flags are computed, not asserted. For each relation, <code>compare.js</code> lists the keys that must match (hard) and those that only warrant a caveat (soft). A pair of records is then one of:</p>
+<dl class="kv">
+<dt>✓ comparable</dt><dd>no blocker and no caveat: every hard and soft key documented and equal</dd>
+<dt>~ with caveats</dt><dd>hard keys documented and equal; a soft key differs or is undocumented, or the two epochs are more than 0.5 apart in z</dd>
+<dt>✕ not comparable</dt><dd>a hard key differs or is undocumented, a curve is marked context only, or structured definitions are missing</dd>
+</dl>
+<aside class="note"><span class="lab">Not converted</span><p>IMF and cosmology are stored, not converted. The Explorer can shift stellar masses to a Chabrier IMF on screen, labelled; downloads always hold the published values.</p></aside>
+<p>Some tables and figures do not state a definition that the source paper does. Each such value is recovered with the paper, section, a short quote and the SHA-256 of the arXiv source archive (§7); a definition that cannot be quoted stays <code>unspecified</code>. A fill never overwrites a stated value.</p>
+
+<figure class="fig sm">
+<div class="chart">{{gsmfSvg}}</div><div class="key">{{gsmfKey}}</div>
+<figcaption><span class="fl">Fig. 1</span><span><b>Stellar mass function at z ≈ 6.</b> {{gsmfCap}} <a href="../highline.html#r=gsmf&amp;z=6">Explorer</a></span></figcaption>
+</figure>
+<figure class="fig sm">
+<div class="chart">{{sfmsSvg}}</div><div class="key">{{sfmsKey}}</div>
+<figcaption><span class="fl">Fig. 2</span><span><b>Star-forming main sequence at z ≈ 2.</b> {{sfmsCap}} <a href="../highline.html#r=sfms&amp;z=2">Explorer</a></span></figcaption>
+</figure>
+<figure class="fig sm">
+<div class="chart">{{mzrSvg}}</div><div class="key">{{mzrKey}}</div>
+<figcaption><span class="fl">Fig. 3</span><span><b>Gas-phase mass–metallicity relation at z ≈ 0.</b> {{mzrCap}} <a href="../highline.html#r=mzr&amp;z=0">Explorer</a></span></figcaption>
+</figure>
+<figure class="fig sm">
+<div class="chart">{{bhSvg}}</div><div class="key">{{bhKey}}</div>
+<figcaption><span class="fl">Fig. 4</span><span><b>Black hole mass against stellar mass at z ≈ 0.</b> {{bhCap}} <a href="../highline.html#r=bh&amp;z=0">Explorer</a></span></figcaption>
+</figure>
+</section>
+
+<section class="sec" id="explorer" aria-labelledby="explorer-h">
+<h2 id="explorer-h"><span class="sn">§4</span>What the Explorer computes</h2>
+<p>Only exact operations: unit-preserving transforms the reader asks for (per unit mass, times mass, physical axes), residuals against a chosen reference using the plotted points only, and, in the evolution view, reading a published curve at one chosen x inside its plotted range. A simulation with no epoch near the chosen redshift disappears; nothing is interpolated in redshift and nothing is extrapolated.</p>
+<p>A simulation can carry dozens of records for one relation (resolutions, model variations, populations, fits). The default view shows one fiducial run per simulation and relation and keeps the rest one click away. The number beside each simulation in the legend is its median offset from a default observational anchor over the x range they share: a picture of where predictions and data differ, not a ranking.</p>
+</section>
+
+<section class="sec" id="audit" aria-labelledby="audit-h">
+<h2 id="audit-h"><span class="sn">§5</span>Audit</h2>
+<p>{{auditNote}}</p>
+<p>Accepted findings are kept with a reason each in <code>data/audit-known.json</code>; anything else fails the build. A stable sample of records for an independent check by people who know each suite is in <a href="{{repo}}/blob/main/docs/expert-audit-sample.md">expert-audit-sample.md</a>; no reply has been recorded yet.</p>
+</section>
+
+<section class="sec" id="limits" aria-labelledby="limits-h">
+<h2 id="limits-h"><span class="sn">§6</span>Limits</h2>
+<ul class="flat">
+<li><b>Not independently reviewed.</b> No record has been checked by an outside expert. A single author confirming a suite’s definitions would change the status of its curves.</li>
+<li><b>{{digitizedShare}} digitized.</b> Digitized curves carry the original authors’ plotting choices, are as precise as the plotted line, and are never rankable; {{rankableShare}} of simulation curves are rankable. Where an author or collaboration releases a table, use that.</li>
+<li><b>Not a leaderboard.</b> Many curves cannot be compared like for like, and sim-highline says so instead of scoring them.</li>
+<li><b>Thin relations.</b> Relations with three or fewer simulations (count in brackets): {{thinList}}. UV luminosity functions ({{nUvlf}} simulations) and the cosmic SFR density ({{nSfrd}}) are recent additions.</li>
+<li><b>Zoom samples</b> (NIHAO, FIRE-2, NewHorizon) are not volume complete.</li>
+<li><b>Definition labels are coarse.</b> “Unspecified” hides everything, and two labels that read alike may differ in detail. Observational mocks in simulations are labelled by their definitions; intrinsic and mock quantities are not mixed.</li>
+<li><b>Catalogue-level runs</b> for TNG and EAGLE need user credentials and are provided as scripts, not data.</li>
+</ul>
+<p>The measured size of the definition problem is in <a href="study-definitions.html">S1</a>.</p>
+</section>
+
+<section class="sec" id="ledger" aria-labelledby="ledger-h">
+<h2 id="ledger-h"><span class="sn">§7</span>Evidence ledger</h2>
+<p>Every recovered definition is applied only where the record states none, and never overwrites a stated value. Each cites the paper section, a short quote and the SHA-256 of the arXiv source archive that was read ({{fNFills}} rules).</p>
+<div class="tw" role="region" aria-label="Evidence ledger" tabindex="0">
+<table class="long dense">
+<thead><tr><th>Source</th><th>Sets</th><th class="n">Records</th><th>Where it says so</th></tr></thead>
+<tbody>{{fLedger}}</tbody>
+</table>
+</div>
+</section>
+
+<section class="sec" id="undocumented" aria-labelledby="undocumented-h">
+<h2 id="undocumented-h"><span class="sn">§8</span>Read, and not stated</h2>
+<p>{{fUndoc}} definition values remain open: {{fOpenBreakdown}}. The papers below were searched for the listed definitions and do not state them, so the values stay unspecified instead of being inferred. The full list, with the paper to read for each, is <a href="{{repo}}/blob/main/docs/UNDOCUMENTED-DEFINITIONS.md">UNDOCUMENTED-DEFINITIONS.md</a>.</p>
+<ul class="tick">{{fRead}}</ul>
+</section>
+
+</div>
+</div>
+</main>
+{{footer}}
+</body>
+</html>

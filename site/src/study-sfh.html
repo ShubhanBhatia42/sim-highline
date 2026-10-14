@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S3 Cosmic star formation history: parametric or structural?</title>
+<meta name="description" content="What retuning a simulation can and cannot change in the cosmic star formation history: published curves of nine model families and the CAMELS ensembles of IllustrisTNG and SIMBA.">
+{{head}}
+</head>
+<body>
+{{header}}
+<main id="main" class="wrap page" tabindex="-1">
+<div class="doc">
+<nav class="idx" aria-label="On this page">
+<p class="lab">Contents</p>
+<ol>
+<li><a href="#question"><span>§1</span>Question</a></li>
+<li><a href="#data"><span>§2</span>Data</a></li>
+<li><a href="#result"><span>§3</span>Result</a></li>
+<li><a href="#limits"><span>§4</span>Limits</a></li>
+<li><a href="#reproduce"><span>§5</span>Reproduce</a></li>
+</ol>
+<p class="back"><a href="studies.html">All studies</a></p>
+</nav>
+<div class="c">
+
+<div class="title">
+<p class="lab kicker">Study S3 · Cosmic star formation history</p>
+<h1>Parametric or structural? What retuning a simulation can and cannot change</h1>
+<div class="abstract">
+<p class="lab">Abstract</p>
+<p>Simulations are tuned to a few observations at redshift about 0 and then asked what happens elsewhere. We separate what a model can still do by retuning its own parameters from what its form forces whatever the tuning, for the cosmic star formation history. Published curves of {{mfNFam}} model families do not show a detectable funnel of growing disagreement (spread {{mfSdLow}} dex at z = 0.5 to 3, {{mfSdHigh}} dex at z = 5 to 7.5: {{mfSuccess}}). In {{camelsN}} CAMELS simulations, retuning four feedback parameters per code brings IllustrisTNG and SIMBA from {{mfDfid}} to {{mfD}} dex rms (<b>{{mfReach}}</b>).</p>
+</div>
+<dl class="facts">
+<div><dt>Status</dt><dd>Pre-registered · result</dd></div>
+<div><dt>Protocol</dt><dd><a href="{{repo}}/blob/main/docs/PROTOCOL-model-form.md">PROTOCOL-model-form.md</a></dd></div>
+<div><dt>Analysis</dt><dd><a href="{{repo}}/blob/main/docs/ANALYSIS-model-form.md">ANALYSIS-model-form.md</a></dd></div>
+<div><dt>Power</dt><dd><a href="{{repo}}/blob/main/docs/POWER-model-form.md">POWER-model-form.md</a></dd></div>
+<div><dt>Dataset</dt><dd>v{{version}}</dd></div>
+</dl>
+</div>
+
+<section class="sec" id="question" aria-labelledby="question-h">
+<h2 id="question-h"><span class="sn">§1</span>Question</h2>
+<p>Two things limit a simulation’s predictions away from the observations it was tuned to: what the model can still do by retuning its own parameters (<em>parametric</em>), and what its form forces whatever the tuning (<em>structural</em>). Climate science separates them with perturbed-physics and multi-model ensembles. Here the cosmic star formation history is the test case.</p>
+<p>Four questions, each with a rule fixed in advance: do published simulations disagree more in the early Universe (E1); how big are the authors’ own changes (E2); can retuning remove the difference between two codes (E3); and tuned to the same observed history, do their predictions beyond it stay apart (E4)?</p>
+</section>
+
+<section class="sec" id="data" aria-labelledby="data-h">
+<h2 id="data-h"><span class="sn">§2</span>Data</h2>
+<aside class="note"><span class="lab">Registration</span><p>The protocol was written before any of these numbers existed and was amended once, before the run, after an independent review. Amendment A1 and what had been seen are in <a href="{{repo}}/blob/main/docs/PROTOCOL-model-form.md">PROTOCOL-model-form.md</a>.</p></aside>
+<dl class="kv">
+<dt>Published</dt><dd>Curves of the cosmic star formation rate density of nine model families, and the authors’ own resolution, parameter and cosmology variants (<code>data/model-variants.json</code>).</dd>
+<dt>CAMELS</dt><dd>{{camelsN}} simulations in {{camelsBox}} Mpc/h boxes with the IllustrisTNG and SIMBA codes at identical resolution: per code, {{camelsLH}} Latin-hypercube simulations (six parameters: Ω<sub>m</sub>, σ<sub>8</sub> and four feedback factors, a different seed each) and {{camelsCV}} seeds at the fiducial parameters. Star formation logs reduced to {{camelsBins}} redshift bins (<code>data/ensembles/camels-sfrd.json</code>).</dd>
+</dl>
+</section>
+
+<section class="sec" id="result" aria-labelledby="result-h">
+<h2 id="result-h"><span class="sn">§3</span>Result</h2>
+
+<h3>E1 · Do published simulations disagree more in the early Universe?</h3>
+<p>{{mfE1}}</p>
+<figure class="fig">
+<div class="chart">{{mfFunnel}}</div>
+<figcaption><span class="fl">Fig. 1</span><span>Standard deviation across simulation families of the log star formation rate density at each redshift, with its bootstrap band (16th to 84th percentile of resamples of the families). The number of families changes with redshift; the fall above z = 7.5 is a change in which families are defined there (FLAMINGO’s curve ends at 7.8). The two shaded bands are the ones the pre-specified test compares. Its power was checked on synthetic data: with seven families a funnel of a factor three is detected about two times in three, a factor of two about one time in three, and with no funnel the rule fires in 2% of cases.</span></figcaption>
+</figure>
+
+<h3>E2 · How big are the authors’ own changes?</h3>
+<p>{{mfE2}}</p>
+
+<h3>E3 · Can retuning remove the difference between two codes?</h3>
+<p>{{mfE3}}</p>
+<figure class="fig">
+<div class="chart">{{mfCamels}}</div>
+<figcaption><span class="fl">Fig. 2</span><span>CAMELS, {{camelsBox}} Mpc/h boxes, the same four feedback factors varied in both codes: the spread the parameters produce in each code (solid), the seed-to-seed scatter of one box (dashed) and the difference between the two codes at their fiducial parameters (ochre). IllustrisTNG vermilion, SIMBA dark. All at CAMELS resolution.</span></figcaption>
+</figure>
+
+<h3>E4 · Tuned to the same history, do the predictions stay apart?</h3>
+<figure class="fig">
+<div class="chart">{{mfCalib}}</div>
+<figcaption><span class="fl">Fig. 3</span><span>Both codes conditioned on the observed star formation history (Madau and Dickinson 2014, dotted) at redshift 3 and below, with a 0.2 dex systematic common to all points and 0.15 dex for the small box, and what each then predicts beyond it: the model’s mean response, median and 90% interval. Verdict: <b>{{mfCalVerdict}}</b>.</span></figcaption>
+</figure>
+</section>
+
+<section class="sec" id="limits" aria-labelledby="limits-h">
+<h2 id="limits-h"><span class="sn">§4</span>Limits</h2>
+<ul class="flat">
+<li><b>Validations.</b> {{mfVal}}</li>
+<li><b>Scope.</b> Two codes, one observable and CAMELS resolution are all this can speak to, and the parameters of the two codes are not the same physical quantities.</li>
+<li><b>What the structural verdicts can see.</b> Calibrated on synthetic twin codes, they need a step between the codes that the four parameters cannot absorb: about 0.6 dex above z = 3.5 for weak parameter responses and about 1 dex for strong ones. Smaller steps are classed removable or parametric. See <a href="{{repo}}/blob/main/docs/POWER-model-form.md">POWER-model-form.md</a>.</li>
+<li><b>Resolution and code are confounded</b> in the published curves. The sizes of the authors’ own variants are their choices, so only the order of magnitude of E2 carries information.</li>
+</ul>
+<p>The validations, the sensitivity analyses and the full limits are in <a href="{{repo}}/blob/main/docs/ANALYSIS-model-form.md">ANALYSIS-model-form.md</a>; the pre-registration and its amendment are <a href="{{repo}}/blob/main/docs/PROTOCOL-model-form.md">PROTOCOL-model-form.md</a>.</p>
+</section>
+
+<section class="sec" id="reproduce" aria-labelledby="reproduce-h">
+<h2 id="reproduce-h"><span class="sn">§5</span>Reproduce</h2>
+<pre tabindex="0"><code>python3 scripts/ingest_camels_sfrd.py   # CAMELS star formation logs to data/ensembles/camels-sfrd.json (public, hashed)
+python3 scripts/analyze_model_form.py   # analysis document and data/analysis/model-form.json (about 20 minutes)
+python3 scripts/power_model_form.py     # power study, data/analysis/model-form-power.json
+python3 scripts/test_model_form.py      # the saved output is not stale
+node scripts/build-site.mjs             # regenerates this page from the JSON</code></pre>
+</section>
+
+</div>
+</div>
+</main>
+{{footer}}
+</body>
+</html>

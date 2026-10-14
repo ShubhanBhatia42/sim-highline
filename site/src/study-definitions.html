@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S1 Definition budget: how much disagreement is definitions?</title>
+<meta name="description" content="Cross-simulation curve pairs classified by documented definitions alone, and the shift one definition causes inside single runs: documentation, not physics, is the binding constraint.">
+{{head}}
+</head>
+<body>
+{{header}}
+<main id="main" class="wrap page" tabindex="-1">
+<div class="doc">
+<nav class="idx" aria-label="On this page">
+<p class="lab">Contents</p>
+<ol>
+<li><a href="#question"><span>§1</span>Question</a></li>
+<li><a href="#data"><span>§2</span>Data</a></li>
+<li><a href="#result"><span>§3</span>Result</a></li>
+<li><a href="#limits"><span>§4</span>Limits</a></li>
+<li><a href="#reproduce"><span>§5</span>Reproduce</a></li>
+</ol>
+<p class="back"><a href="studies.html">All studies</a></p>
+</nav>
+<div class="c">
+
+<div class="title">
+<p class="lab kicker">Study S1 · Definition budget</p>
+<h1>How much of the disagreement between simulations is just definitions?</h1>
+<div class="abstract">
+<p class="lab">Abstract</p>
+<p>Two simulations that plot the same relation often measure different things: a 30 or a 50 kpc stellar mass, a Salpeter or a Chabrier IMF, a 10 or a 100 Myr star formation rate. Without correcting any curve, {{fPairs}} cross-simulation curve pairs are classified by what their documented definitions allow, and the shift caused by one definition is measured inside single runs. {{fMatchedPct}} of pairs have every needed definition documented and equal; {{fUnknownPct}} cannot be classified because a source does not say what it measured. The binding constraint on comparing simulations is documentation, not physics.</p>
+</div>
+<dl class="facts">
+<div><dt>Status</dt><dd>Result · descriptive, no protocol</dd></div>
+<div><dt>Analysis</dt><dd><a href="{{repo}}/blob/main/docs/ANALYSIS-definition-budget.md">ANALYSIS-definition-budget.md</a></dd></div>
+<div><dt>Script</dt><dd>scripts/analyze_definition_budget.py</dd></div>
+<div><dt>Dataset</dt><dd>v{{version}}</dd></div>
+</dl>
+</div>
+
+<section class="sec" id="question" aria-labelledby="question-h">
+<h2 id="question-h"><span class="sn">§1</span>Question</h2>
+<p>How much of the disagreement between simulations at fixed stellar mass (or halo mass) can be attributed to differences in documented definitions, as opposed to physics or numerics? No curve is corrected: pairs of records from different simulations are classified from their documented definitions alone, and their offsets are compared.</p>
+<p>The cleanest measurement of a definition is inside a single run that is published under two of them. Nothing else differs there, so the offset is purely definitional.</p>
+</section>
+
+<section class="sec" id="data" aria-labelledby="data-h">
+<h2 id="data-h"><span class="sn">§2</span>Data</h2>
+<aside class="note"><span class="lab">Documentation</span><p>{{fUndoc}} definition values remain open. The list, with the paper to read for each, is <a href="{{repo}}/blob/main/docs/UNDOCUMENTED-DEFINITIONS.md">UNDOCUMENTED-DEFINITIONS.md</a>.</p></aside>
+<p>Every pair of curves from different simulations, for seven relations at five epochs, is classified from the documented definitions alone:</p>
+<dl class="kv">
+<dt>matched</dt><dd>every needed key is stated and equal</dd>
+<dt>differing</dt><dd>a stated difference, for example 30 versus 50 kpc</dd>
+<dt>unknown</dt><dd>a definition is missing in one of the two records</dd>
+<dt>not comparable</dt><dd>a defining quantity differs, for example two different size definitions</dd>
+</dl>
+<p>{{fRecRecords}} of {{fSimRecords}} simulation records had definitions recovered from the source papers, each with section, quote and the checksum of the archive read (<a href="methods.html#ledger">evidence ledger</a>). Inside single runs, {{fSensN}} pairs form {{fSensG}} groups; population splits (active versus passive) and model variations are excluded.</p>
+</section>
+
+<section class="sec" id="result" aria-labelledby="result-h">
+<h2 id="result-h"><span class="sn">§3</span>Result</h2>
+
+<figure class="fig">
+<div class="chart">{{fClasses}}</div>
+<figcaption><span class="fl">Fig. 1</span><span>Cross-simulation record pairs by what the documented definitions allow, {{fPairs}} usable pairs. Filling undocumented values from the papers moved {{fDifferingPct}} of pairs from “unknown” to “differing”; the share that is fully matched barely moves because simulations rarely use the same aperture.</span></figcaption>
+</figure>
+
+<figure class="fig">
+<div class="chart">{{fForest}}</div>
+<figcaption><span class="fl">Fig. 2</span><span>Shift of the relation when only one definition changes inside a single run. Dot: median over the shared x range and epochs, in the relation’s y units (dex for logarithmic quantities). Bar: range of the per-epoch medians. Zero means the definition does not matter. Largest local offsets are far bigger than the medians, mostly at the bright or massive end: see Table 1.</span></figcaption>
+</figure>
+
+<div class="tw" role="region" aria-label="Table 1: definition changes inside single runs" tabindex="0">
+<table class="long dense">
+<caption>Table 1 · Definition changes inside single runs ({{fSensG}} groups)</caption>
+<thead><tr><th>Simulation</th><th>Relation</th><th>Definition</th><th>From → to</th><th class="n">z</th><th class="n">Median</th><th class="n">Epoch medians</th><th class="n">Max |Δ|</th></tr></thead>
+<tbody>{{fSensRows}}</tbody>
+</table>
+</div>
+<p>Largest median shift: {{fSensTop}}. Largest local offset: {{fSensTopLocal}}. Median and range are in the relation’s y units (dex for logarithmic quantities), over the shared x range and the epochs listed; Max |Δ| is the largest offset at any single x. None of these is a physics difference.</p>
+
+<figure class="fig">
+<div class="chart">{{fCoverage}}</div>
+<figcaption><span class="fl">Fig. 3</span><span>For each simulation, the share of definition values the comparison rules need that were stated in the original table or figure (dark), recovered from the source paper (vermilion), or are still open (hatched). {{fUndoc}} values remain open: {{fOpenBreakdown}}.</span></figcaption>
+</figure>
+
+<h3 id="went-away">A result that went away</h3>
+<p>Before the definitions were completed from the papers, one stellar-mass-function epoch (z about 6) looked significantly better matched for definition-matched pairs (p = 0.004, recorded in the <a href="{{repo}}/blob/main/CHANGELOG.md">changelog</a> for 0.17.0). After {{fRecRecords}} records were completed it did not (p = {{fP6}}): the apparent detection was produced by undocumented fields. Of {{fTests}} epoch tests, {{fBelow}} fall below p = 0.05 where {{fExpect}} would be expected by chance, and {{fBonf}} survive Bonferroni correction. The data neither show nor exclude a definitional contribution.</p>
+</section>
+
+<section class="sec" id="limits" aria-labelledby="limits-h">
+<h2 id="limits-h"><span class="sn">§4</span>Limits</h2>
+<ul class="flat">
+<li><b>Digitized records are included.</b> {{digitizedShare}} of the simulation curves are digitized from figures and are never rankable; the rankable-only run in the data is the robustness check and is much smaller.</li>
+<li><b>Definition labels are coarse.</b> “Unspecified” hides everything, and two labels that read alike may differ in detail.</li>
+<li><b>Within-run pairs are few.</b> The sensitivity catalogue covers {{fSensG}} groups; absence of a measurement is not absence of an effect.</li>
+<li><b>Descriptive.</b> There is no protocol; each curve is reused in many pairs, so the tests are not independent. S2 asks a narrower question with a single pre-specified statistic.</li>
+<li><b>Not independently verified.</b> No expert has checked these records yet; a single author confirming a suite’s definitions would change the status of its curves.</li>
+</ul>
+</section>
+
+<section class="sec" id="reproduce" aria-labelledby="reproduce-h">
+<h2 id="reproduce-h"><span class="sn">§5</span>Reproduce</h2>
+<pre tabindex="0"><code>node scripts/annotate-definitions.mjs          # apply recovered definitions (data/definition-fills.json)
+python3 scripts/analyze_definition_budget.py   # writes the analysis document and data/analysis/definition-budget.json
+node scripts/build-site.mjs                    # regenerates this page from the JSON</code></pre>
+<p>Method, parameters, the per-epoch table and every sensitivity pair: <a href="{{repo}}/blob/main/docs/ANALYSIS-definition-budget.md">ANALYSIS-definition-budget.md</a>.</p>
+</section>
+
+</div>
+</div>
+</main>
+{{footer}}
+</body>
+</html>

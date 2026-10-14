@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studies: analyses of the sim-highline dataset</title>
+<meta name="description" content="The analyses run on the sim-highline dataset, each with a protocol, a generated analysis, a stated power and its limits; null results are reported.">
+{{head}}
+</head>
+<body>
+{{header}}
+<main id="main" class="wrap page" tabindex="-1">
+<div class="doc">
+<nav class="idx" aria-label="On this page">
+<p class="lab">Contents</p>
+<ol>
+<li><a href="#index"><span>§1</span>Index</a></li>
+<li><a href="#registration"><span>§2</span>Registration</a></li>
+</ol>
+</nav>
+<div class="c">
+
+<div class="title">
+<p class="lab kicker">Studies</p>
+<h1>Studies</h1>
+<p class="standfirst">Analyses that use the dataset to ask a question with an answer. Each has a protocol, a generated analysis document, a stated power and its limits; each is regenerated from the data by one script.</p>
+</div>
+
+<section class="sec" id="index" aria-labelledby="index-h">
+<h2 id="index-h"><span class="sn">§1</span>Index</h2>
+<div class="tw">{{studiesFull}}</div>
+<p class="dim" style="font-size:15px">Headline numbers are read from <code>data/analysis/*.json</code> when this page is built. Dataset v{{version}}.</p>
+</section>
+
+<section class="sec" id="registration" aria-labelledby="registration-h">
+<h2 id="registration-h"><span class="sn">§2</span>How studies are registered</h2>
+<ul class="flat">
+<li><b>Protocol first.</b> A pre-registered study has a protocol document committed to the repository before its outcome statistics are computed. It fixes the data, the statistic, the decision rule and the sensitivity analyses.</li>
+<li><b>What had been looked at.</b> The protocol says what had been examined when it was written (which curves existed, how each suite documents its definitions), so that the reader can judge what the rule could still have been tuned to.</li>
+<li><b>Amendments are dated.</b> A change after the protocol is committed is an amendment with its date and a statement of what had been seen when it was made. The protocol of S3 was amended once, before the run, after an independent review.</li>
+<li><b>Generated analysis.</b> The analysis document is written by the analysis script from the data, with every departure from the protocol listed as a deviation. The numbers on the study pages are read from the script’s JSON output, not typed.</li>
+<li><b>Power.</b> Where a decision rule can be calibrated, its false-positive rate and power are checked on synthetic data before the real data are read (S3), or reported with the result (S2).</li>
+<li><b>Null results are reported.</b> A rule that is not met is reported as not met, with the interval, and the page says what the test could and could not have seen.</li>
+<li><b>S1 has no protocol.</b> It is a descriptive analysis; its limits motivated S2.</li>
+</ul>
+<p>Protocols on the repository: <a href="{{repo}}/blob/main/docs/PROTOCOL-harmonization.md">PROTOCOL-harmonization.md</a> (S2), <a href="{{repo}}/blob/main/docs/PROTOCOL-model-form.md">PROTOCOL-model-form.md</a> (S3).</p>
+</section>
+
+</div>
+</div>
+</main>
+{{footer}}
+</body>
+</html>

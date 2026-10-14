@@ -1,4 +1,4 @@
-import { cp, readdir, readFile, writeFile, mkdir } from "node:fs/promises";
+import { copyFile, readdir, readFile, writeFile, mkdir } from "node:fs/promises";
 import vm from "node:vm";
 const root = new URL("../", import.meta.url);
 const read = async p => readFile(new URL(p, root), "utf8");
@@ -14,6 +14,9 @@ const audit = JSON.parse(await read("data/audit-report.json"));
 const notes = JSON.parse(await read("data/relation-notes.json")).relations;
 const simProf = JSON.parse(await read("data/simulation-profiles.json"));
 const obsProf = JSON.parse(await read("data/observation-profiles.json")).sources;
+const manifest = JSON.parse(await read("data/export/sim-highline-manifest.json"));
+const cov = JSON.parse(await read("data/coverage-report.json"));
+const camels = JSON.parse(await read("data/ensembles/camels-sfrd.json"));
 const sims = all.filter(r => r.kind === "simulation"), obs = all.filter(r => r.kind !== "simulation");
 const uniq = a => [...new Set(a)];
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -139,9 +142,9 @@ for (const [src, o] of [...byObs].sort((a, b) => a[0].localeCompare(b[0]))) {
   const z = o.rs.flatMap(r => [r.epoch.zMin, r.epoch.zMax]), cite = [...o.cites][0] || "";
   const rawCite = [...o.rs.map(r => r.provenance.citation || "")][0] || "", bad = mismatch(src, rawCite);
   if (bad) mismatched.push({ src, cite: rawCite });
-  (og.get(g) || og.set(g, []).get(g)).push(`<tr id="${slug(src)}"><td>${esc(src)}${bad ? ' <span class="flag" title="the citation stored with this record names a different paper than the label">check</span>' : ""}</td><td>${pr ? esc(pr.facility) : '<span class="dim">not yet filled: see the cited paper</span>'}</td><td>${pr ? esc(pr.measures) : ""}</td><td>${relOf(o.rs).join(", ")}</td><td>${(+Math.min(...z).toFixed(2))} to ${(+Math.max(...z).toFixed(2))}</td><td>${uniq(o.rs.map(r => (r.provenance.tier || "").replace(/-/g, " "))).join(", ")}</td><td>${[...o.links].slice(0, 1).map(l => `<a href="${esc(l)}" target="_blank" rel="noopener">${esc(cite.slice(0, 70))}</a>`).join("") || esc(cite.slice(0, 70))}</td></tr>`);
+  (og.get(g) || og.set(g, []).get(g)).push(`<tr id="${slug(src)}"><td>${esc(src)}${bad ? ' <span class="flag" title="the citation stored with this record names a different paper than the label">check</span>' : ""}</td><td>${pr ? esc(pr.facility) : '<span class="dim">not yet filled: see the cited paper</span>'}</td><td>${pr ? esc(pr.measures) : ""}</td><td class="id">${relOf(o.rs).join(", ")}</td><td class="mono">${(+Math.min(...z).toFixed(2))} to ${(+Math.max(...z).toFixed(2))}</td><td>${uniq(o.rs.map(r => (r.provenance.tier || "").replace(/-/g, " "))).join(", ")}</td><td>${[...o.links].slice(0, 1).map(l => `<a href="${esc(l)}" target="_blank" rel="noopener">${esc(cite.slice(0, 70))}</a>`).join("") || esc(cite.slice(0, 70))}</td></tr>`);
 }
-for (const g of ["Surveys and measurements", "Compilations", "Empirical models (constrained by data, not measurements)", "Simulation-calibrated theory curves (not observations)", "Not yet profiled"]) if (og.has(g)) obsHtml += `<h3 class="grp">${esc(g)} <span class="yr">${og.get(g).length}</span></h3><div class="tw"><table><thead><tr><th>Source</th><th>Survey / facility</th><th>What it measures</th><th>Relations</th><th>z</th><th>Evidence</th><th>Citation</th></tr></thead><tbody>${og.get(g).join("")}</tbody></table></div>`;
+for (const g of ["Surveys and measurements", "Compilations", "Empirical models (constrained by data, not measurements)", "Simulation-calibrated theory curves (not observations)", "Not yet profiled"]) if (og.has(g)) obsHtml += `<h3 class="grp">${esc(g)} <span class="yr">${og.get(g).length}</span></h3><div class="tw" role="region" aria-label="${esc(g)}" tabindex="0"><table class="long dense"><thead><tr><th>Source</th><th>Survey / facility</th><th>What it measures</th><th>Relations</th><th>z</th><th>Evidence</th><th>Citation</th></tr></thead><tbody>${og.get(g).join("")}</tbody></table></div>`;
 stats.simHtml = simHtml; stats.obsHtml = obsHtml; stats.codeLinks = codes;
 const nSuites = (rel) => new Set(all.filter((r) => r.kind === "simulation" && r.relation === rel).map((r) => r.source)).size;
 stats.nUvlf = nSuites("uvlf"); stats.nSfrd = nSuites("sfrd");
@@ -177,22 +180,25 @@ stats.css = (await read("site/src/site.css")).replace("/*__PALETTE__*/", () => p
   cov += `</svg>`;
   stats.fCoverage = cov;
   const forestRows = A.sensitivity.summary.filter(g => g.relation !== "quenched");
-  const nice = v => String(v).replace(/\s*\(.*$/, "").replace(/^aperture-/, "").replace(/rhalf/, "R_half").replace(/pkpc/, " pkpc").replace(/-/g, " "), cut = t => t.length > 22 ? t.slice(0, 21) + "…" : t;
+  const nice = v => String(v).replace(/\s*\(.*$/, "").replace(/^aperture-/, "").replace(/rhalf/, "R_half").replace(/pkpc/, " pkpc").replace(/-/g, " "), cut = t => t.length > 19 ? t.slice(0, 18) + "…" : t;
   const RN = { gsmf: "stellar mass function", shmr: "stellar-to-halo mass", sfms: "main sequence", uvlf: "UV luminosity function", size: "size", gas: "cold gas fraction", btfr: "baryonic Tully-Fisher" };
-  const lo = Math.min(-0.7, ...forestRows.map(g => g.medianRange[0])) - 0.05, hi = Math.max(0.3, ...forestRows.map(g => g.medianRange[1])) + 0.05, FL2 = 300, FW = W - FL2 - 70, RH2 = 40, H2 = forestRows.length * RH2 + 46;
+  const lo = Math.min(-0.7, ...forestRows.map(g => g.medianRange[0])) - 0.05, hi = Math.max(0.3, ...forestRows.map(g => g.medianRange[1])) + 0.05, FL2 = 300, FW = W - FL2 - 70, RH2 = 32, H2 = forestRows.length * RH2 + 46;
   const fx = v => FL2 + (v - lo) / (hi - lo) * FW;
   let fs = `<svg viewBox="0 0 ${W} ${H2}" role="img" aria-labelledby="fsT fsD"><title id="fsT">Measured shift in the relation when only one definition changes inside a single simulation run</title><desc id="fsD">Dot: median over epochs; bar: range of the per-epoch medians. Zero means the definition does not matter.</desc><g class="axis">`;
   for (let v = Math.ceil(lo * 4) / 4; v <= hi; v += 0.25) fs += `<line x1="${fx(v).toFixed(1)}" x2="${fx(v).toFixed(1)}" y1="6" y2="${H2 - 30}"/><text x="${fx(v).toFixed(1)}" y="${H2 - 12}" text-anchor="middle">${v.toFixed(2)}</text>`;
   fs += `<line x1="${fx(0).toFixed(1)}" x2="${fx(0).toFixed(1)}" y1="6" y2="${H2 - 30}" style="stroke:var(--cream3);stroke-width:1.4"/></g>`;
   forestRows.forEach((g, i) => {
     const y = 20 + i * RH2, c = colorFor(g.source), m = g.median_dy;
-    fs += `<text class="al" x="${FL2 - 14}" y="${y - 2}" text-anchor="end" style="font-weight:600">${esc(g.source)} · ${esc(RN[g.relation] || g.relation)}</text><text class="al" x="${FL2 - 14}" y="${y + 14}" text-anchor="end" style="fill:var(--cream3);font-size:12px">${esc(cut(nice(g.from)))} → ${esc(cut(nice(g.to)))}</text><line x1="${fx(g.medianRange[0]).toFixed(1)}" x2="${fx(g.medianRange[1]).toFixed(1)}" y1="${y + 4}" y2="${y + 4}" stroke="${c}" stroke-width="6" stroke-linecap="round" opacity=".5"/><circle cx="${fx(m).toFixed(1)}" cy="${y + 4}" r="6.5" fill="${c}" stroke="var(--bg2)" stroke-width="2"/><text class="al" x="${W - 62}" y="${y + 9}">${m >= 0 ? "+" : "−"}${Math.abs(m).toFixed(2)}</text>`;
+    fs += `<text class="al" x="${FL2 - 14}" y="${y - 2}" text-anchor="end" style="font-weight:600">${esc(g.source)} · ${esc(RN[g.relation] || g.relation)}</text><text class="al" x="${FL2 - 14}" y="${y + 14}" text-anchor="end" style="fill:var(--cream3);font-size:12px">${esc(cut(nice(g.from)))} → ${esc(cut(nice(g.to)))}</text><line x1="${fx(g.medianRange[0]).toFixed(1)}" x2="${fx(g.medianRange[1]).toFixed(1)}" y1="${y + 4}" y2="${y + 4}" stroke="${c}" stroke-width="6" stroke-linecap="round" opacity=".5"/><circle cx="${fx(m).toFixed(1)}" cy="${y + 4}" r="6.5" fill="${c}" stroke="var(--bg2)" stroke-width="2"/><text class="al" x="${W - 62}" y="${y + 9}">${Math.abs(m) < 0.005 ? "0.00" : (m >= 0 ? "+" : "−") + Math.abs(m).toFixed(2)}</text>`;
   });
   fs += `</svg>`;
   stats.fForest = fs;
   const cls = [["matched", S.byClass.matched, "var(--ink)"], ["differing", S.byClass.differing, "var(--orange)"], ["unknown", S.byClass.unknown, "var(--mustard)"], ["not comparable", S.byClass.mismatch, "var(--line2)"]];
-  let x = 0, cb = `<svg viewBox="0 0 ${W} 86" role="img" aria-labelledby="clT"><title id="clT">Cross-simulation record pairs by what the documented definitions allow</title>`;
-  for (const [n, v, c] of cls) { const w = v / S.pairs * W; cb += `<rect x="${x.toFixed(1)}" y="8" width="${Math.max(w - 2, 1).toFixed(1)}" height="30" fill="${c}"/><text class="al" x="${(x + 2).toFixed(1)}" y="62">${esc(n)}</text><text class="al" x="${(x + 2).toFixed(1)}" y="80" style="font-weight:600">${Math.round(100 * v / S.pairs)}% · ${v}</text>`; x += w; }
+  let x = 0, lastX = -1e9, lastRow = 1, cb = `<svg viewBox="0 0 ${W} 124" role="img" aria-labelledby="clT"><title id="clT">Cross-simulation record pairs by what the documented definitions allow</title>`;
+  for (const [n, v, c] of cls) {
+    const w = v / S.pairs * W, row = x - lastX < 130 ? 1 - lastRow : 0, dy = row * 38; lastX = x; lastRow = row;
+    cb += `<rect x="${x.toFixed(1)}" y="8" width="${Math.max(w - 2, 1).toFixed(1)}" height="30" fill="${c}"/>${row ? `<line x1="${(x + 2).toFixed(1)}" x2="${(x + 2).toFixed(1)}" y1="38" y2="${62 + dy - 14}" stroke="var(--line2)"/>` : ""}<text class="al" x="${(x + 2 + (row ? 6 : 0)).toFixed(1)}" y="${62 + dy}">${esc(n)}</text><text class="al" x="${(x + 2 + (row ? 6 : 0)).toFixed(1)}" y="${80 + dy}" style="font-weight:600">${Math.round(100 * v / S.pairs)}% · ${v}</text>`; x += w;
+  }
   cb += `</svg>`;
   stats.fClasses = cb;
   stats.fLedger = FL.fills.map(f => { const n = sims.filter(r => (r.provenance.definitionFills || []).includes(f.id)).length; return `<tr><td>${esc(f.evidence.citation)}<br><a href="${esc(f.evidence.url)}" target="_blank" rel="noopener">arXiv:${esc(f.evidence.url.split("/").pop())}</a></td><td>${esc(Object.entries(f.set).map(([k, v]) => `${k} = ${v}`).join("; "))}</td><td>${n}</td><td>${esc(f.evidence.where)}<br><span class="dim">“${esc(f.evidence.quote)}”</span></td></tr>`; }).join("");
@@ -202,6 +208,16 @@ stats.css = (await read("site/src/site.css")).replace("/*__PALETTE__*/", () => p
   stats.fTests = S.testsRun; stats.fBelow = S.testsBelow0 || S["testsBelow0.05"]; stats.fExpect = S["expectedBelow0.05UnderNull"]; stats.fBonf = S.bonferroniSignificant;
   stats.fOpenBreakdown = `${UD.summary.sourceReadNotStated} where the paper was read and does not state it${UD.summary.sourceNotYetRead ? `, ${UD.summary.sourceNotYetRead} where it has not yet been read for that key` : "; every paper behind a record has now been read for every open key"}, and ${UD.summary.noPaperToRead} where the source is a data release without a paper`;
   stats.fNFills = FL.fills.length; stats.fSensN = A.sensitivity.pairs.length; stats.fSensG = A.sensitivity.summary.length;
+  // definition changes inside single runs, one row per group (all from data/analysis/definition-budget.json)
+  const f3 = (v, d = 3) => (v >= 0 ? "+" : "−") + Math.abs(v).toFixed(d), KEYN = { massDefinition: "stellar mass", haloMassDefinition: "halo mass", sfrTimescaleMyr: "SFR timescale (Myr)", dustCorrection: "dust treatment", sizeDefinition: "size", gasDefinition: "gas" };
+  const short = (t, k = 42) => { const f = nice(t); return f.length > k ? `<span title="${esc(String(t))}">${esc(f.slice(0, k - 1))}…</span>` : esc(f); };
+  const zr = g => g.zRange[0] === g.zRange[1] ? `${g.zRange[0]}` : `${g.zRange[0]}–${g.zRange[1]}`;
+  stats.fSensRows = A.sensitivity.summary.map(g => `<tr><td>${esc(g.source)}</td><td class="id">${esc(g.relation)}</td><td class="nw">${esc(KEYN[g.key] || g.key)}</td><td>${short(g.from)} → ${short(g.to)}</td><td class="n">${zr(g)}</td><td class="n">${f3(g.median_dy)}</td><td class="n">${g.epochs > 1 ? `${f3(g.medianRange[0])} to ${f3(g.medianRange[1])}` : "–"}</td><td class="n">${g.max_abs_dy.toFixed(2)}</td></tr>`).join("");
+  const byMed = [...A.sensitivity.summary].sort((a, b) => Math.abs(b.median_dy) - Math.abs(a.median_dy))[0], byMax = [...A.sensitivity.summary].sort((a, b) => b.max_abs_dy - a.max_abs_dy)[0];
+  const lab = g => `${g.source}, ${RN[g.relation] || g.relation}, ${(KEYN[g.key] || g.key).replace(" (Myr)", "")}`;
+  stats.fSensTop = `${f3(byMed.median_dy, 2)} dex (${lab(byMed)})`; stats.fSensTopLocal = `${byMax.max_abs_dy.toFixed(2)} dex (${lab(byMax)})`;
+  stats.fSensMedAbs = n(A.sensitivity.summary.filter(g => Math.abs(g.median_dy) < 0.1).length);
+  stats.fP6 = A.allRecords.find(r => r.relation === "gsmf" && r.z === 6).p_permutation.toFixed(2);
 }
 // ---- harmonization result on the findings page (numbers and the verdict come from data/analysis/harmonization.json; nothing here is written by hand)
 {
@@ -275,6 +291,9 @@ if (await read("data/analysis/model-form.json").then(() => true, () => false)) {
   }
   const pct = x => `${Math.round(100 * x)}%`;
   stats.mfSuccess = V.E1.success ? "detected" : "not detected";
+  stats.mfFactor = (10 ** E1.phi).toFixed(1); stats.mfSdLow = E1.sd_low.toFixed(2); stats.mfSdHigh = E1.sd_high.toFixed(2); stats.mfNFam = E1.n_balanced;
+  stats.mfDfid = C.reachability.full.D_fiducial_dex.toFixed(2); stats.mfD = C.reachability.full.D_dex.toFixed(2); stats.mfMargin = C.reachability.margin_dex.toFixed(2);
+  stats.mfReach = C.reachability.verdict; stats.mfCalVerdict = C.calibration.verdict;
   const flips = Object.entries(P.sensitivity.S6_leave_one_family_out).filter(([, x]) => x.phi != null && x.phi < 0);
   stats.mfE1 = `The spread across ${E1.n_balanced} families is ${E1.sd_low.toFixed(2)} dex at z = 0.5 to 3 and ${E1.sd_high.toFixed(2)} dex at z = 5 to 7.5 (a factor ${(10 ** E1.phi).toFixed(1)}; 90% interval of the log ratio ${f2(E1.phi_ci90[0])} to ${f2(E1.phi_ci90[1])}, Pitman–Morgan p = ${E1.pitman_morgan.p_one_sided.toFixed(3)}): funnel ${stats.mfSuccess} by the rule fixed in advance.` +
     (flips.length ? ` It does not survive leaving one family out: without ${flips.map(([f]) => esc(f)).join(" or ")} the sign reverses (log ratio ${f2(flips[0][1].phi)}).` + (flips.some(([f]) => f === "FLAMINGO") ? " FLAMINGO's flagship-resolution run is the lowest curve above z = 5, and the same code's run at eight times the mass resolution lies roughly a dex higher at z = 6 to 7, so resolution within one code moves the early star formation history as much as the choice of code (a reading added after the result, not part of the test)." : "") : "");
@@ -285,15 +304,116 @@ if (await read("data/analysis/model-form.json").then(() => true, () => false)) {
   const val = V.validations, badV = [["V1", val.V1], ["V2", val.V2], ["V3", val.V3], ["V4 IllustrisTNG", val.V4.IllustrisTNG], ["V4 SIMBA", val.V4.SIMBA], ["V5", val.V5]].filter(([, ok]) => ok === false).map(([n]) => n);
   stats.mfVal = badV.length ? `Not every validation holds: ${badV.join(", ")}${badV.includes("V4 SIMBA") ? ` (the SIMBA emulator's cross-validation error is ${C.codes.SIMBA.v4.max_cv_over_seed.toFixed(2)} times the seed noise at its worst redshift, against a limit of 1.5)` : ""}; the analysis page says which conclusions to read with that qualification.` : "All five validations hold.";
 }
-const SUN = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10" cy="10" r="3.6"/><path d="M10 2.5v1.8M10 15.7v1.8M2.5 10h1.8M15.7 10h1.8M4.7 4.7l1.3 1.3M14 14l1.3 1.3M4.7 15.3 6 14M14 6l1.3-1.3"/></svg>', MOON = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M16.5 11.8A6.8 6.8 0 0 1 8.2 3.5a6.8 6.8 0 1 0 8.3 8.3z"/></svg>';
+// ---- derived values for the data page and the front page (all from the records, data/coverage-report.json and the export manifest)
+const zfmt = v => String(+v.toFixed(2));
+stats.repo = release.repo; stats.doi = release.doi; stats.points = n(manifest.nPoints); stats.relCodes = cov.totals.relations; stats.year = release.released.slice(0, 4);
+stats.zMin = zfmt(Math.min(...sims.map(r => r.epoch.zRepresentative))); stats.zMaxAll = zfmt(Math.max(...Object.values(cov.byRelation).flatMap(v => v.epochs)));
+stats.rankableAll = n(all.filter(r => r.rankable).length);
+stats.thirdParty = n(all.filter(r => /^third-party/.test(r.provenance.terms || "")).length);
+stats.bibtex = esc(`@dataset{bhatia${release.released.slice(0, 4)}simhighline,
+  author    = {${release.author.split(" ").slice(1).join(" ")}, ${release.author.split(" ")[0]}},
+  title     = {${release.title}},
+  year      = {${release.released.slice(0, 4)}},
+  version   = {${release.version}},
+  publisher = {Zenodo},
+  doi       = {${release.doi}},
+  url       = {https://doi.org/${release.doi}}
+}`);
+const camelsSims = Object.values(camels.suites).reduce((t, c) => t + Object.keys(c.LH).length + Object.keys(c.CV).length, 0);
+stats.camelsN = n(camelsSims); stats.camelsPerCode = n(camelsSims / Object.keys(camels.suites).length); stats.camelsLH = n(Object.keys(Object.values(camels.suites)[0].LH).length); stats.camelsCV = n(Object.keys(Object.values(camels.suites)[0].CV).length);
+stats.camelsBox = camels.boxMpcPerH; stats.camelsBins = camels.zCentres.length;
+{
+  const relRows = Object.entries(cov.byRelation).map(([k, v]) => {
+    const rs = all.filter(r => r.relation === k);
+    return { k, records: v.records, rankable: v.rankable, sims: uniq(rs.filter(r => r.kind === "simulation").map(r => r.source)), obs: uniq(rs.filter(r => r.kind !== "simulation").map(r => r.source)), z0: Math.min(...v.epochs), z1: Math.max(...v.epochs) };
+  }).sort((a, b) => b.records - a.records || a.k.localeCompare(b.k));
+  const nameCell = r => { const t = notes[r.k]?.title; return `${t ? `<a href="../highline.html#r=${esc(r.k)}">${esc(t)}</a> ` : ""}<span class="dim mono">${esc(r.k)}</span>`; };
+  const tr = r => `<tr><td>${nameCell(r)}</td><td class="n">${n(r.records)}</td><td class="n">${r.sims.length}</td><td class="n">${r.obs.length}</td><td class="n">${n(r.rankable)}</td><td class="n">${zfmt(r.z0)} – ${zfmt(r.z1)}</td></tr>`;
+  const head = `<thead><tr><th>Relation</th><th class="n">Records</th><th class="n" title="distinct simulations with a curve of this relation">Simulations</th><th class="n" title="distinct observational sources">Observations</th><th class="n">Rankable</th><th class="n">z-range</th></tr></thead>`;
+  const totalRow = `<tfoot><tr><td>All ${cov.totals.relations} relation codes</td><td class="n">${stats.records}</td><td class="n">${stats.suites}</td><td class="n">${stats.obsSources}</td><td class="n">${stats.rankableAll}</td><td class="n">${stats.zMin} – ${stats.zMaxAll}</td></tr></tfoot>`;
+  const TOP = 10, top = relRows.slice(0, TOP), rest = relRows.slice(TOP);
+  const restRow = rest.length ? `<tr><td>${rest.length} further relations <span class="dim">(<a href="data.html#relations">all</a>)</span></td><td class="n">${n(rest.reduce((t, r) => t + r.records, 0))}</td><td class="n">${uniq(rest.flatMap(r => r.sims)).length}</td><td class="n">${uniq(rest.flatMap(r => r.obs)).length}</td><td class="n">${n(rest.reduce((t, r) => t + r.rankable, 0))}</td><td class="n">${zfmt(Math.min(...rest.map(r => r.z0)))} – ${zfmt(Math.max(...rest.map(r => r.z1)))}</td></tr>` : "";
+  stats.dataTableCompact = `<table>${head}<tbody>${top.map(tr).join("")}${restRow}</tbody>${totalRow}</table>`;
+  stats.dataTableFull = `<table class="long dense">${head}<tbody>${relRows.map(tr).join("")}</tbody>${totalRow}</table>`;
+  stats.relOutside = n(relRows.filter(r => !notes[r.k]).length);
+  const thin = relRows.filter(r => notes[r.k] && !["mzrz", "mzrraw"].includes(r.k) && r.sims.length <= 3 && r.sims.length > 0).sort((a, b) => a.sims.length - b.sims.length || a.k.localeCompare(b.k));
+  stats.thinList = thin.map(r => `${esc(notes[r.k].title)} (${r.sims.length})`).join("; ");
+  stats.thinN = thin.length;
+}
+{
+  const TIER_INFO = [
+    ["official-table", "Table released by the collaboration; the SHA-256 of the file is stored."],
+    ["catalog-derived", "Computed by a sim-highline script from a public catalogue with fixed cuts and a fixed seed."],
+    ["published-table", "Values transcribed from a table in the paper, spot-checked against numbers the paper quotes."],
+    ["published-fit", "A published fitting function, fit line or parametric relation, evaluated and not refitted."],
+    ["digitized-figure", "Read from the vector paths of a published figure. Never rankable."]
+  ];
+  const cnt = t => ({ all: all.filter(r => r.provenance.tier === t).length, sim: sims.filter(r => r.provenance.tier === t).length, obs: obs.filter(r => r.provenance.tier === t).length, rk: all.filter(r => r.provenance.tier === t && r.rankable).length });
+  const rows = TIER_INFO.map(([t, m]) => { const c = cnt(t); return `<tr><td class="mono">${t}</td><td>${esc(m)}</td><td class="n">${n(c.all)}</td><td class="n">${n(c.sim)}</td><td class="n">${n(c.obs)}</td><td class="n">${n(c.rk)}</td></tr>`; }).join("");
+  const unknown = uniq(all.map(r => r.provenance.tier)).filter(t => !TIER_INFO.some(([k]) => k === t));
+  if (unknown.length) throw new Error(`tiers without a description: ${unknown.join(", ")}`);
+  stats.tierRows = rows;
+  stats.tierTotal = `<tr><td colspan="2">All records</td><td class="n">${stats.records}</td><td class="n">${stats.simRecords}</td><td class="n">${stats.obsRecords}</td><td class="n">${stats.rankableAll}</td></tr>`;
+  const FILEINFO = {
+    "sim-highline-records.csv": "One row per curve: source, run, relation, epoch, evidence tier, rankable flag, structured definitions, citation, DOI, checksum.",
+    "sim-highline-points.csv": "One row per plotted point: x, y, band, counts; keyed by record_id.",
+    "sim-highline-records.json": "Everything above as nested JSON, with the full provenance block.",
+    "sim-highline-citations.bib": "BibTeX for every paper and data release behind a record.",
+    "sim-highline-rules.json": "The comparison rules: hard and soft definition keys per relation."
+  };
+  const size = b => b > 1e6 ? `${(b / 1e6).toFixed(1)} MB` : `${Math.round(b / 1e3)} kB`;
+  stats.fileRows = Object.entries(manifest.files).map(([f, m]) => `<tr><td class="mono"><a href="../data/export/${esc(f)}">${esc(f)}</a></td><td>${esc(FILEINFO[f] || "")}</td><td class="n">${size(m.bytes)}</td><td class="mono"><span title="${m.sha256}">${m.sha256.slice(0, 10)}…</span></td></tr>`).join("");
+  stats.columnList = (manifest.columns.records || []).map(c => `<code>${esc(c)}</code>`).join(", ");
+}
+
+// ---- studies (one list feeds the front page and the studies page)
+const STUDIES = [
+  { id: "S1", href: "study-definitions.html", title: "Definition budget", q: "How much of the disagreement between simulations is just definitions?", status: "Result", head: `${stats.fMatchedPct} of ${stats.fPairs} cross-simulation pairs fully matched`,
+    abs: `${stats.fPairs} cross-simulation curve pairs are classified from their documented definitions alone: ${stats.fMatchedPct} are fully matched and ${stats.fUnknownPct} cannot be classified because a source does not state what it measured. ${stats.fBonf} of ${stats.fTests} epoch tests survive correction. Descriptive; no protocol.` },
+  { id: "S2", href: "study-harmonization.html", title: "Harmonization", q: "Can documented definitions close the gap between simulated z ≈ 0 mass functions?", status: "Pre-registered · result", head: `R = ${stats.hR} (95% CI ${stats.hCI}), p = ${stats.hP}: ${stats.hVerdict}`,
+    abs: `Express ${stats.hSuites} suites' z ≈ 0 stellar mass functions in one IMF, without added scatter and in a 30 pkpc aperture, and ask what fraction R of the spread across suites disappears. R = ${stats.hR} (95% interval ${stats.hCI}; permutation p = ${stats.hP}): ${stats.hVerdict} by the rule fixed in advance.` },
+  { id: "S3", href: "study-sfh.html", title: "Cosmic star formation history: funnel, reachability, calibration", q: "Do simulations disagree more in the early Universe, and can retuning remove the difference between two codes?", status: "Pre-registered · result", head: `Funnel ${stats.mfSuccess}, factor ${stats.mfFactor}; retuning: ${stats.mfDfid} to ${stats.mfD} dex (${stats.mfReach})`,
+    abs: `Published curves of ${stats.mfNFam} model families, the authors' own variants and ${stats.camelsN} CAMELS simulations of IllustrisTNG and SIMBA. The spread between families is ${stats.mfSdLow} dex at z = 0.5 to 3 and ${stats.mfSdHigh} dex at z = 5 to 7.5 (funnel ${stats.mfSuccess}). Retuning four feedback parameters per code brings the two codes from ${stats.mfDfid} to ${stats.mfD} dex rms (${stats.mfReach}).` },
+  { id: "S4", href: "study-joint.html", title: "Joint reachability", q: "In preparation.", status: "In preparation", head: "—", todo: true, abs: "In preparation." }
+];
+const studyRows = (withAbs) => STUDIES.map(s => `<tr${s.todo ? ' class="todo"' : ""}><td class="sid">${s.id}</td><td class="ttl" data-l="Study"><a href="${s.href}">${esc(s.title)}</a></td><td data-l="${withAbs ? "Abstract" : "Question"}">${esc(withAbs ? s.abs : s.q)}</td><td class="st" data-l="Status">${esc(s.status)}</td><td class="hd" data-l="Headline">${esc(s.head)}</td></tr>`).join("");
+stats.studiesCompact = `<table class="studies stack"><thead><tr><th>ID</th><th>Study</th><th>Question</th><th>Status</th><th>Headline</th></tr></thead><tbody>${studyRows(false)}</tbody></table>`;
+stats.studiesFull = `<table class="studies stack"><thead><tr><th>ID</th><th>Study</th><th>Abstract</th><th>Status</th><th>Headline</th></tr></thead><tbody>${studyRows(true)}</tbody></table>`;
+
+// ---- shared page parts: head, header (wordmark, section nav, version chip, status bar), footer
+const SUN = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="3.4"/><path d="M10 2.5v1.8M10 15.7v1.8M2.5 10h1.8M15.7 10h1.8M4.7 4.7l1.3 1.3M14 14l1.3 1.3M4.7 15.3 6 14M14 6l1.3-1.3"/></svg>', MOON = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M16.5 11.8A6.8 6.8 0 0 1 8.2 3.5a6.8 6.8 0 1 0 8.3 8.3z"/></svg>';
 const THEME_JS = `<script>(function(){var b=document.getElementById("theme"),r=document.documentElement,S='${SUN}',M='${MOON}';function now(){return r.dataset.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}function paint(){var d=now()==="dark";b.innerHTML=d?S:M;b.setAttribute("aria-label",d?"Switch to the light theme":"Switch to the dark theme")}b.onclick=function(){var n=now()==="dark"?"light":"dark";r.dataset.theme=n;try{localStorage.setItem("sh-theme",n)}catch(e){}paint()};paint()})()</script>`;
-const NAV = (cur) => `<nav aria-label="Main"><a class="mark" href="index.html" aria-label="sim-highline home">SIM<i>/</i>HIGHLINE</a><span class="sp"></span>${[["about.html", "About"], ["findings.html", "Findings"], ["sources.html", "Simulations &amp; observations"], ["use-cases.html", "Use cases"]].map(([h, t]) => `<a class="l" href="${h}"${h === cur ? ' aria-current="page"' : ""}>${t}</a>`).join("")}<button class="ico" id="theme" type="button" aria-label="Switch theme"></button><a class="btn main" href="../highline.html">Open the app</a></nav>${THEME_JS}`;
+const FONTS = "https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap";
+const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230c1016'/%3E%3Cpath d='M5 24H13V17H19V9H27' fill='none' stroke='%23ffffff' stroke-width='2.4' stroke-linejoin='miter'/%3E%3C/svg%3E";
+const HEAD = (title, desc) => `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="${FONTS}" rel="stylesheet">
+<link rel="icon" href="${FAVICON}">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0b0e12" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website"><meta property="og:site_name" content="sim-highline"><meta property="og:title" content="${title}"><meta property="og:description" content="${desc}">
+<script>try{var t=localStorage.getItem("sh-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<style>${stats.css}</style>`;
+const MENU = [["../highline.html", "Explorer", null], ["retune.html", "Retune", "retune"], ["studies.html", "Studies", "studies"], ["data.html", "Data", "data"], ["methods.html", "Methods", "methods"]];
+const SECTION = page => /^study-/.test(page) || page === "studies.html" ? "studies" : page === "retune.html" ? "retune" : ["data.html", "sources.html"].includes(page) ? "data" : page === "methods.html" ? "methods" : null;
+const HEADER = page => `<a class="skip" href="#main">Skip to the content</a>
+<header class="top"><div class="wrap bar"><a class="mark" href="index.html" aria-label="sim-highline home">sim-highline</a><nav class="menu" aria-label="Main">${MENU.map(([h, t, k]) => `<a href="${h}"${k && k === SECTION(page) ? ' aria-current="page"' : ""}>${t}</a>`).join("")}</nav><span class="sp"></span><a class="chip" href="https://doi.org/${release.doi}" title="dataset v${release.version}, doi:${release.doi}">v${release.version} · doi</a><button class="ico" id="theme" type="button" aria-label="Switch theme"></button></div>
+<div class="status"><div class="wrap"><span><b>${stats.records}</b> records</span><span><b>${stats.suites}</b> simulations</span><span><b>${stats.obsSources}</b> observational sources</span><span><b>${stats.relations}</b> relations</span><span>z <b>${stats.zMin}–${stats.zMax}</b></span><span class="opt">released <b>${release.released}</b></span></div></div></header>`;
+const [first, ...lastParts] = release.author.split(" ");
+const FOOTER = () => `<footer class="foot"><div class="wrap">
+<p>Cite as: ${esc(lastParts.join(" "))}, ${esc(first[0])}. (${stats.year}). <em>${esc(release.title)}</em> (v${release.version}). Zenodo. <a href="https://doi.org/${release.doi}">doi:${release.doi}</a>. Cite the original papers as well: every record carries its citation and DOI.</p>
+<p>Code ${esc(release.license.code)}; data ${esc(release.license.data.replace("CC-BY-4.0", "CC BY 4.0"))}, third-party inputs keep their own terms (<a href="${release.repo}/blob/main/docs/SOURCE-TERMS.md">SOURCE-TERMS.md</a>). Maintained by ${esc(release.author)}.</p>
+<p class="links"><a href="../highline.html">Explorer</a><a href="retune.html">Retune</a><a href="studies.html">Studies</a><a href="data.html">Data</a><a href="methods.html">Methods</a><a href="${release.repo}">Repository</a><a href="${release.repo}/blob/main/CHANGELOG.md">Changelog</a><a href="${release.repo}/blob/main/CITATION.cff">CITATION.cff</a><a href="${release.repo}/blob/main/LICENSE">LICENSE</a><a href="${release.repo}/blob/main/LICENSE-DATA.md">LICENSE-DATA</a></p>
+</div></footer>${THEME_JS}`;
+
 await mkdir(new URL("dist/site/", root), { recursive: true });
-await cp(new URL("site/src/img/", root), new URL("dist/site/img/", root), { recursive: true });
-for (const page of ["index.html", "use-cases.html", "about.html", "sources.html", "findings.html"]) {
+const PAGES = ["index.html", "studies.html", "study-definitions.html", "study-harmonization.html", "study-sfh.html", "study-joint.html", "retune.html", "data.html", "methods.html", "sources.html", "findings.html"];
+for (const page of PAGES) {
   let html = await read(`site/src/${page}`);
-  stats.nav = NAV(page);
-  html = html.replace("/*__CSS__*/", () => stats.css).replace(/\{\{(\w+)\}\}/g, (m, k) => { if (!(k in stats)) throw new Error(`unknown placeholder ${m} in ${page}`); return String(stats[k]); });
+  const title = (html.match(/<title>([^<]*)<\/title>/) || [])[1], desc = (html.match(/<meta name="description" content="([^"]*)"/) || [])[1];
+  if (!title || !desc) throw new Error(`${page}: <title> and <meta name="description"> are required`);
+  stats.head = HEAD(title, desc); stats.header = HEADER(page); stats.footer = FOOTER();
+  html = html.replace(/\{\{(\w+)\}\}/g, (m, k) => { if (!(k in stats)) throw new Error(`unknown placeholder ${m} in ${page}`); return String(stats[k]); });
   await writeFile(new URL(`dist/site/${page}`, root), html);
 }
-console.log(`Built dist/site/{index,use-cases,about,sources,findings}.html (${all.length} records; charts: ${Object.entries(CH).map(([k, c]) => `${k} ${c.curves} sims`).join(", ")}; ${mismatched.length} obs citation mismatches flagged)`);
+// supporting files that pages load (scripts, data, images placed next to the templates) are published beside them
+for (const f of await readdir(new URL("site/src/", root))) if (/\.(js|json|svg|png|webp|woff2)$/.test(f)) await copyFile(new URL(`site/src/${f}`, root), new URL(`dist/site/${f}`, root));
+console.log(`Built dist/site/{${PAGES.map(p => p.replace(".html", "")).join(",")}}.html (${all.length} records; charts: ${Object.entries(CH).map(([k, c]) => `${k} ${c.curves} sims`).join(", ")}; ${mismatched.length} obs citation mismatches flagged)`);
