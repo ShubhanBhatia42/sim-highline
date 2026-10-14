@@ -56,7 +56,7 @@ for (mdef, slug, label, kpc), col in zip(APERTURES, leg):
         warning=f"z=0 stellar mass function of COLIBRE L200m6 with stellar mass summed over bound particles {'within a 3D spherical aperture of ' + label if kpc else 'with no aperture cut'}, read from the vector paths of Chaikin et al. 2026 (appendix figure on the aperture); "
                 "no Eddington-bias scatter is added in this figure. Solid (resolved, at least 10 galaxies per bin) segment only; the dotted ends are not extracted. Within-run aperture comparison: the four records of this figure differ only in the mass definition. Observational overlay not extracted."))
 # ground truth: the collaboration's own table (gsmf_raw, L200m6, z=0.0, 0.2 dex bins) gives the 50 pkpc curve exactly
-tab = yaml.safe_load((ROOT / "data" / "raw" / "2509.07960.yml").read_text())["COLIBRE_L200m6"]["gsmf_raw"]["z0.0"]
+tab = yaml.safe_load((vf.reference_root() / "data" / "raw" / "2509.07960.yml").read_text())["COLIBRE_L200m6"]["gsmf_raw"]["z0.0"]
 tmap = {round(a, 1): b for a, b in zip(tab["log10_bin_centers"], tab["log10_gsmf_values"]) if b is not None and math.isfinite(b)}
 diffs = []
 for x, y in got["aperture-50pkpc"]:

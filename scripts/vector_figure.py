@@ -1,5 +1,6 @@
 import hashlib
 import io
+import os
 import re
 import tarfile
 import urllib.request
@@ -11,6 +12,11 @@ RETRIEVED = "2026-10-05"
 TICK_MAX = 40
 LABEL_MAX = 40
 SCRATCH = Path("/tmp/vector_figure_src")
+
+
+def reference_root():
+    """Root of the tree whose committed data a digitizer checks itself against. The regression harness runs digitizers in a scratch copy and points this at the real repository."""
+    return Path(os.environ.get("SIMHIGHLINE_REFERENCE_ROOT") or Path(__file__).resolve().parent.parent)
 
 
 def fetch_arxiv(arxiv_id):
