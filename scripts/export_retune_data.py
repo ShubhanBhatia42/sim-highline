@@ -88,7 +88,9 @@ def overlays(raw, snapshots):
             for (src, kind), r in sorted(best.items()):
                 pts = [(p["x"], p["y"]) for p in r["representation"]["points"]]
                 if fam == "sfms":
-                    if "SFR" in r["axes"].get("yDefinition", "") and "specific" not in r["axes"].get("yDefinition", "").lower() and "yr)" in (r["axes"].get("yUnit") or ""):
+                    # a star formation rate (log Msun/yr: every value above -6) becomes a specific rate by subtracting log M*; a specific rate (log 1/yr, every value below -6) is kept
+                    ys_ = sorted(y for _, y in pts)
+                    if ys_[len(ys_) // 2] > -6:
                         pts = [(x, y - x) for x, y in pts]
                 xs = [x for x, _ in pts]
                 if not xs or max(xs) < 9.0 or min(xs) > 11.6:

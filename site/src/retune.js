@@ -124,7 +124,6 @@
     const ovs = state.overlays ? (D.overlays || []).filter(o => o.family === fam && o.snapshot === state.snap) : [];
     let ys = [...yT, ...yS, ...ids.flatMap(i => [REACH.IllustrisTNG.lo[i], REACH.IllustrisTNG.hi[i], REACH.SIMBA.lo[i], REACH.SIMBA.hi[i]])];
     const xr = meta.kind === "points" ? [-0.5, ids.length - 0.5] : [Math.min(...xs) - 0.12, Math.max(...xs) + 0.12];
-    for (const o of ovs) for (let k = 0; k < o.x.length; k++) if (o.x[k] >= xr[0] && o.x[k] <= xr[1]) ys.push(o.y[k]);
     const finite = ys.filter(Number.isFinite), yr = nice(Math.min(...finite), Math.max(...finite));
     const sx = x => L + (x - xr[0]) / (xr[1] - xr[0]) * (W - L - R), sy = y => H - B - (y - yr.a) / (yr.b - yr.a) * (H - T - B);
     const path = (px, py) => px.map((x, i) => (Number.isFinite(py[i]) ? `${i && Number.isFinite(py[i - 1]) ? "L" : "M"}${sx(x).toFixed(1)},${sy(py[i]).toFixed(1)}` : "")).join("");
@@ -140,14 +139,17 @@
       ids.forEach((i, k) => { for (const c of CODES) g.append(svgEl("line", { x1: sx(k), x2: sx(k), y1: sy(REACH[c].lo[i]), y2: sy(REACH[c].hi[i]), stroke: COL[c], "stroke-width": 7, opacity: 0.18, transform: `translate(${c === "SIMBA" ? 6 : -6} 0)` })); });
       ids.forEach((i, k) => { g.append(svgEl("circle", { cx: sx(k) - 6, cy: sy(yT[k]), r: 4.5, fill: COL.IllustrisTNG }), svgEl("circle", { cx: sx(k) + 6, cy: sy(yS[k]), r: 4.5, fill: COL.SIMBA })); });
     } else {
-      for (const o of ovs) g.append(svgEl("path", { d: path(o.x.filter((x, k) => Number.isFinite(o.y[k])), o.y.filter(Number.isFinite)), class: "ov " + o.kind, "stroke-dasharray": o.tier === "digitized-figure" ? "2 3" : "", opacity: o.kind === "observation" ? 0.85 : 0.45 }, svgEl("title", {}, `${o.label} (${o.source}, ${o.kind}, ${o.tier}); x: ${o.xDef}; y: ${o.yDef}; mass: ${o.mass || "unspecified"}`)));
+      const cid = `rtc-${fam}-${state.snap}`, gov = svgEl("g", { "clip-path": `url(#${cid})` });
+      g.append(svgEl("defs", {}, svgEl("clipPath", { id: cid }, svgEl("rect", { x: L, y: T, width: W - L - R, height: H - T - B })))), g.append(gov);
+      for (const o of ovs) gov.append(svgEl("path", { d: path(o.x.filter((x, k) => Number.isFinite(o.y[k])), o.y.filter(Number.isFinite)), class: "ov " + o.kind, "stroke-dasharray": o.tier === "digitized-figure" ? "2 3" : "", opacity: o.kind === "observation" ? 0.85 : 0.45 }, svgEl("title", {}, `${o.label} (${o.source}, ${o.kind}, ${o.tier}); x: ${o.xDef}; y: ${o.yDef}; mass: ${o.mass || "unspecified"}`)));
       for (const c of CODES) g.append(svgEl("path", { d: band(xs, ids.map(i => REACH[c].lo[i]), ids.map(i => REACH[c].hi[i])), fill: COL[c], opacity: 0.1 }));
       for (const [c, y] of [["IllustrisTNG", yT], ["SIMBA", yS]]) {
         g.append(svgEl("path", { d: band(xs, ids.map((i, k) => y[k] - D.codes[c].seed[i]), ids.map((i, k) => y[k] + D.codes[c].seed[i])), fill: COL[c], opacity: 0.22 }), svgEl("path", { d: path(xs, Array.from(y)), fill: "none", stroke: COL[c], "stroke-width": 2.2 }));
       }
     }
     const d = dist(yT, yS, { idx: Int32Array.from(ids), w2: Float64Array.from(ids.map(i => 1 / (SCALE[i] ** 2))) });
-    return el("figure", { class: "rt-panel" + (d >= D.margin ? " far" : "") }, el("figcaption", { class: "rt-cap" }, el("b", {}, meta.title), el("span", { class: "rt-d", title: "distance between the two curves in noise units; 1 = the standard deviation of the difference between one run of each code" }, "D = " + f2(d))), g);
+    const nOut = meta.kind === "points" ? 0 : ovs.filter(o => !o.x.some((x, k) => x >= xr[0] && x <= xr[1] && o.y[k] >= yr.a && o.y[k] <= yr.b)).length;
+    return el("figure", { class: "rt-panel" + (d >= D.margin ? " far" : "") }, el("figcaption", { class: "rt-cap" }, el("b", {}, meta.title), nOut ? el("span", { class: "rt-n" }, `${nOut} published outside the frame`) : "", el("span", { class: "rt-d", title: "distance between the two curves in noise units; 1 = the standard deviation of the difference between one run of each code" }, "D = " + f2(d))), g);
   }
   function render() {
     panels.replaceChildren(...FAMS.filter(f => (f !== "hmf" || state.controls)).map(panel).filter(Boolean));

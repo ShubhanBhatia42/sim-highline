@@ -94,13 +94,19 @@ r1["verdicts"], r1["deviations"] = J.verdicts(r1), J.deviations(r1)
 doc = J.render(r1)
 assert "J1" in doc and "do not edit by hand" in doc and doc.count("|") > 150 and "irreducible" in doc
 
-# ---- the saved analysis, if present, is not stale
+# ---- the saved outputs, if present, are consistent with the data and with each other
 saved = ROOT / "data" / "analysis" / "joint-reachability.json"
 gal = ROOT / "data" / "ensembles" / "camels-galaxies.json"
 if saved.exists() and gal.exists():
     s = json.loads(saved.read_text())
-    assert s["version"] == json.loads((ROOT / "data" / "release.json").read_text())["version"], "analysis output is stale; rerun analyze_joint_reachability.py"
     g = J.load_galaxies()
     keepr, blocksr, _ = J.eligibility(g)
     assert s["meta"]["n_outputs_eligible"] == int(keepr.sum()) and s["meta"]["n_blocks"] == len(blocksr), "analysis output is stale; rerun analyze_joint_reachability.py"
+    assert (ROOT / "docs" / "ANALYSIS-joint-reachability.md").read_text() == J.render(s), "the report is not the rendering of the saved analysis"
+    rt = ROOT / "data" / "retune" / "retune.json"
+    if rt.exists():
+        r = json.loads(rt.read_text())
+        assert not r.get("pending"), "Retune data is a placeholder although the analysis exists; run export_retune_data.py"
+        assert r["version"] == json.loads((ROOT / "data" / "release.json").read_text())["version"], "Retune data is stale; run export_retune_data.py"
+        assert len(r["outputs"]) == int(keepr.sum()) and abs(r["analysis"]["point"]["all"]["D"] - s["point"]["all"]["D"]) < 1e-9, "Retune data does not match the saved analysis; run export_retune_data.py"
 print("joint reachability: OK")
