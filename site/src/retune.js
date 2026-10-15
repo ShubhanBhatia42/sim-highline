@@ -154,14 +154,14 @@
     const A = D.analysis, rows = [];
     for (const f of JOINT) {
       const dcur = fullDist(SETS[f]), an = A && A.point["fam:" + f], sp = A && A.splits["fam:" + f];
-      rows.push(el("tr", {}, el("td", {}, D.family_names[f]), el("td", { class: "n" }, f2(dcur)), el("td", { class: "n" }, an ? f2(an.D_fiducial) : "–"), el("td", { class: "n" }, an ? f2(an.D) : "–"), el("td", {}, sp ? sp.verdict : "–")));
+      rows.push(el("tr", {}, el("td", {}, D.family_names[f]), el("td", { class: "n" }, f2(dcur)), el("td", { class: "n" }, an ? f2(an.D_fiducial) : "–"), el("td", { class: "n" }, an ? f2(an.D_corrected != null ? an.D_corrected : an.D) : "–"), el("td", {}, sp ? sp.verdict : "–")));
     }
     const dall = fullDist(SETS.all), an = A && A.point.all, sp = A && A.splits.all;
-    rows.push(el("tr", { class: "tot" }, el("td", {}, "All observables"), el("td", { class: "n" }, f2(dall)), el("td", { class: "n" }, an ? f2(an.D_fiducial) : "–"), el("td", { class: "n" }, an ? f2(an.D) : "–"), el("td", {}, sp ? sp.verdict : "–")));
+    rows.push(el("tr", { class: "tot" }, el("td", {}, "All observables"), el("td", { class: "n" }, f2(dall)), el("td", { class: "n" }, an ? f2(an.D_fiducial) : "–"), el("td", { class: "n" }, an ? f2(an.D_corrected != null ? an.D_corrected : an.D) : "–"), el("td", {}, sp ? sp.verdict : "–")));
     table.setAttribute("tabindex", "0"); table.setAttribute("role", "region"); table.setAttribute("aria-label", "Distance per observable (scrolls sideways on narrow screens)");
     table.replaceChildren(el("table", {}, el("caption", {}, "Distance between the two codes, in noise units (1 = the standard deviation of the difference between one run of each), at the dials above and over all redshifts"),
-      el("thead", {}, el("tr", {}, ["Observable", "now", "both at fiducial", "best reachable (study)", "verdict (study)"].map(t => el("th", { scope: "col" }, t)))), el("tbody", {}, rows)));
-    header.replaceChildren(el("p", { class: "rt-sum", "aria-live": "polite" }, `Joint distance ${f2(dall)} noise units${an ? `; the study's minimum over both codes' dials is ${f2(an.D)} (${sp ? sp.verdict : "–"}), and ${f2(an.D_fiducial)} at the fiducial parameters` : ""}.`));
+      el("thead", {}, el("tr", {}, ["Observable", "now", "both at fiducial", "best reachable (study, corrected)", "verdict (study)"].map(t => el("th", { scope: "col" }, t)))), el("tbody", {}, rows)));
+    header.replaceChildren(el("p", { class: "rt-sum", "aria-live": "polite" }, `Joint distance ${f2(dall)} noise units${an ? `; the study's minimum over both codes' dials is ${f2(an.D_corrected != null ? an.D_corrected : an.D)} (emulator error removed) (${sp ? sp.verdict : "–"}), and ${f2(an.D_fiducial)} at the fiducial parameters` : ""}.`));
   }
   function update() { sync(); render(); }
   /* url state: #aT;aS@snap */
