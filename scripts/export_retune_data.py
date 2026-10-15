@@ -135,8 +135,10 @@ def analysis_summary():
     if not p.exists():
         return None
     r = json.loads(p.read_text())
-    return {"verdicts": r["verdicts"], "point": {k: {"D": v["D"], "D_fiducial": v["D_fiducial"], "a_tng": v["a_tng"], "a_simba": v["a_simba"]} for k, v in r["point"].items()},
-            "splits": {k: v for k, v in r["splits"].items() if k.startswith(("all", "fam:", "z:"))}, "greedy_path": r["greedy_path"], "separating_set": r["separating_set"]}
+    keep = ("D", "D_corrected", "D_fiducial", "a_tng", "a_simba", "n_outputs", "n_blocks")
+    return {"verdicts": r["verdicts"], "point": {k: {x: v.get(x) for x in keep} for k, v in r["point"].items()},
+            "splits": {k: {x: v.get(x) for x in ("verdict", "between", "between_raw", "control")} for k, v in r["splits"].items() if k.startswith(("all", "fam:", "z:"))},
+            "greedy_path": r["greedy_path"], "separating_set": r["separating_set"], "decomposition": r["decomposition"][:12], "J3": r.get("J3")}
 
 
 def main():

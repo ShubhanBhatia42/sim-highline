@@ -9,7 +9,7 @@ truth is known, the *true* distance of every world is computed from the noise-fr
   shift       one family of the second code is shifted by a fixed number of noise units
   conflict    every family is reachable alone, but by a different parameter pair for each family
 `world()` is the small one-snapshot world used by the unit tests. Writes data/analysis/joint-reachability-power.json and docs/POWER-joint-reachability.md.
-Usage: python3 scripts/power_joint_reachability.py [--quick]   (about an hour on four cores; --quick is a smoke test and writes nothing)."""
+Usage: python3 scripts/power_joint_reachability.py [--quick]   (about 1.75 hours on four cores; --quick is a smoke test and writes nothing; --render rewrites the markdown from the saved JSON)."""
 import argparse
 import itertools
 import json
@@ -217,14 +217,31 @@ def render(out):
                 st[f] = st.get(f, 0) + 1
         sh = f" ({np.median([r['true_D_fam'][rs[0]['family']] for r in rs]):.2f})" if kind == "shift" else ""
         L.append(f"| {kind} | {par if kind in ('offset', 'shift', 'corner') else ''} | {len(rs)} | {np.median([r['true_D_all'] for r in rs]):.2f} | {np.median([r['between_corrected']['p50'] for r in rs]):.2f} ({np.median([r['between_raw']['p50'] for r in rs]):.2f}) | {cnt('J1_corrected')} | {cnt('J1_raw')} | {cnt('J1_range75')} | {', '.join(f'{f} ({n}/{len(rs)})' for f, n in sorted(st.items())) or 'none'}{sh} | {cnt('J3')} | {cnt('V2')} |")
-    L += ["", "`python3 scripts/power_joint_reachability.py` rewrites this file and `data/analysis/joint-reachability-power.json`.", ""]
+    rows = out["rows"]
+    below = [r for r in rows if r["true_D_all"] < 0.95]
+    above = [r for r in rows if r["true_D_all"] > 1.1]
+    fp_c, fp_r = sum(r["J1_corrected"] == "structural" for r in below), sum(r["J1_raw"] == "structural" for r in below)
+    tp_c, tp_r = sum(r["J1_corrected"] == "structural" for r in above), sum(r["J1_raw"] == "structural" for r in above)
+    L += ["", "## Reading", "",
+          f"Among the {len(below)} runs whose true joint distance is below 0.95 (the codes agree, up to {max(r['true_D_all'] for r in below):.2f} noise units), {fp_c} receive a structural joint verdict with the emulator-corrected rule of the analysis and {fp_r} with the uncorrected one; "
+          f"among the {len(above)} runs above 1.1 (up to {max(r['true_D_all'] for r in above):.2f}), {tp_c} and {tp_r} do. The rule therefore separates worlds on the two sides of the margin in this design, including a single shifted family whose joint distance is only 1.16. "
+          "The uncorrected distances are biased upwards by 0.14 to 0.16 where the true distance is zero (the emulators' own error at the minimiser), which the verdict tolerates because the same-code controls carry the same bias; the corrected distances remove it and the 75 % range does not change a verdict in any world. "
+          "A world at the margin (true distance 0.98) is called removable and one at 1.48 structural: nothing in the design says what happens between, and a true distance close to 1 is a coin toss by construction. "
+          "*Families structural alone* are the J2 verdicts of the families fitted one at a time; in the offset worlds every output is off by the same number of noise units, but the dials absorb part of it in some families, so at 1.5 each run has two or three families that are unresolved or removable alone and are not listed. "
+          "J3 distinguishes *irreducible* (a family is structural alone) from *conflict* (every family is removable alone and the joint distance is structural, above the same ratio for two halves of one code) and is empty if the joint verdict is not structural. "
+          "V2 is the halo mass function negative control of the protocol: it is not shifted in the shift worlds (removable) and is offset like everything else in the offset worlds (structural at 1.5).",
+          "", "`python3 scripts/power_joint_reachability.py` rewrites this file and `data/analysis/joint-reachability-power.json` (about 1.75 hours on four cores; `--render` re-renders the file from the saved JSON).", ""]
     return "\n".join(L)
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--quick", action="store_true")
+    ap.add_argument("--render", action="store_true")
     args = ap.parse_args()
+    if args.render:
+        (ROOT / "docs" / "POWER-joint-reachability.md").write_text(render(json.loads((ROOT / "data" / "analysis" / "joint-reachability-power.json").read_text())))
+        return
     out = run(args.quick)
     if args.quick:
         print(render(out))
