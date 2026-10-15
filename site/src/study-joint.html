@@ -17,9 +17,10 @@
 <li><a href="#question"><span>§1</span>Question</a></li>
 <li><a href="#data"><span>§2</span>Data</a></li>
 <li><a href="#result"><span>§3</span>Result</a></li>
-<li><a href="#validation"><span>§4</span>Validation</a></li>
-<li><a href="#limits"><span>§5</span>Limits</a></li>
-<li><a href="#reproduce"><span>§6</span>Reproduce</a></li>
+<li><a href="#reading"><span>§4</span>Reading</a></li>
+<li><a href="#validation"><span>§5</span>Validation</a></li>
+<li><a href="#limits"><span>§6</span>Limits</a></li>
+<li><a href="#reproduce"><span>§7</span>Reproduce</a></li>
 </ol>
 <p class="back"><a href="studies.html">All studies</a> · <a href="retune.html">Retune</a></p>
 </nav>
@@ -98,8 +99,13 @@
 <div class="tw"><table class="dense resp"><thead><tr><th rowspan="2">Observable</th><th colspan="4">IllustrisTNG</th><th colspan="4">SIMBA</th></tr><tr><th>A_SN1</th><th>A_AGN1</th><th>A_SN2</th><th>A_AGN2</th><th>A_SN1</th><th>A_AGN1</th><th>A_SN2</th><th>A_AGN2</th></tr></thead><tbody>{{jrRespRows}}</tbody></table></div>
 </section>
 
+<section class="sec" id="reading" aria-labelledby="reading-h">
+<h2 id="reading-h"><span class="sn">§4</span>Reading</h2>
+{{jrReading}}
+</section>
+
 <section class="sec" id="validation" aria-labelledby="validation-h">
-<h2 id="validation-h"><span class="sn">§4</span>Validation</h2>
+<h2 id="validation-h"><span class="sn">§5</span>Validation</h2>
 <p>{{jrVal}}</p>
 <div class="tw"><table class="dense"><thead><tr><th>Check</th><th>Result</th><th>Required</th><th>Holds</th></tr></thead><tbody>{{jrValRows}}</tbody></table></div>
 <p>Sensitivity analyses (point distance of all observables; none was used to choose):</p>
@@ -109,7 +115,7 @@
 </section>
 
 <section class="sec" id="limits" aria-labelledby="limits-h">
-<h2 id="limits-h"><span class="sn">§5</span>Limits</h2>
+<h2 id="limits-h"><span class="sn">§6</span>Limits</h2>
 <ul class="flat">
 <li><b>Two codes, and more than subgrid form.</b> The result is about this pair, not about structural uncertainty in general; what separates them includes the hydrodynamic solver, the star formation algorithm and the yields, not only the feedback prescriptions. Black hole occupation and mass compare seeding prescriptions (a discrete model choice that no dial changes), so a structural verdict there is expected by construction; the sensitivity analyses give the result without them.</li>
 <li><b>CAMELS resolution.</b> 25 Mpc/h boxes, 256³ elements: few galaxies above 10<sup>11</sup> M<sub>☉</sub>, a mass limit of 10<sup>9</sup> M<sub>☉</sub>, almost nothing at z ≥ 3; star formation and black hole growth depend on resolution in both codes.</li>
@@ -120,8 +126,8 @@
 </section>
 
 <section class="sec" id="reproduce" aria-labelledby="reproduce-h">
-<h2 id="reproduce-h"><span class="sn">§6</span>Reproduce</h2>
-<pre>python3 scripts/ingest_camels_galaxies.py        # about 35 minutes; range reads of the public catalogues (needs fsspec, aiohttp)
+<h2 id="reproduce-h"><span class="sn">§7</span>Reproduce</h2>
+<pre tabindex="0" aria-label="Reproduction commands">python3 scripts/ingest_camels_galaxies.py        # about 35 minutes; range reads of the public catalogues (needs fsspec, aiohttp)
 python3 scripts/analyze_joint_reachability.py    # about 15 minutes; writes data/analysis/joint-reachability.json and the report
 python3 scripts/power_joint_reachability.py      # calibration on synthetic worlds
 python3 scripts/test_joint_reachability.py       # machinery tests and the stale-output check

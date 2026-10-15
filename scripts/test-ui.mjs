@@ -204,6 +204,29 @@ await step("site theme toggle switches and persists, text contrast stays at leas
   await ctx.close();
 });
 
+await step("Retune: emulators evaluate in the browser and the match agrees with study S4", async () => {
+  const { page, ctx, errors } = await open("/site/retune.html");
+  await page.waitForSelector(".rt-panel");
+  assert.ok((await page.locator(".rt-panel").count()) >= 10, "panels for every family");
+  const dist = async () => parseFloat(((await page.locator(".rt-sum").innerText()).match(/Joint distance ([0-9.]+)/) || [])[1]);
+  const fid = await dist();
+  assert.ok(Math.abs(fid - 6.35) < 0.05, `joint distance at the fiducial parameters ${fid} (study: 6.35)`);
+  await page.getByRole("button", { name: /best match, both free/i }).click();
+  await page.waitForFunction(() => !/Joint distance 6\.3/.test(document.querySelector(".rt-sum").innerText));
+  const best = await dist();
+  assert.ok(best > 4.5 && best < 5.3, `best match ${best} (study: 4.85)`);
+  assert.match(page.url(), /#-?\d/, "dial state in the address");
+  await page.getByRole("button", { name: /^fiducial$/i }).click();
+  assert.ok(Math.abs((await dist()) - fid) < 0.01);
+  assert.deepEqual(errors, []);
+  await ctx.close();
+  const h = await open("/site/retune.html#-0.88,1.00,-0.46,0.40;-1.00,-1.00,-1.00,-0.71@042");
+  await h.page.waitForSelector(".rt-panel");
+  const d2 = parseFloat(((await h.page.locator(".rt-sum").innerText()).match(/Joint distance ([0-9.]+)/) || [])[1]);
+  assert.ok(Math.abs(d2 - 4.85) < 0.05, `restored state ${d2}`);
+  await h.ctx.close();
+});
+
 await step("links between the site and the app resolve", async () => {
   const { page, ctx } = await open("/site/index.html");
   await page.click('nav.menu a[href="../highline.html"]');
