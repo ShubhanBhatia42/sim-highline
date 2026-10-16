@@ -11,7 +11,8 @@
 - Fixed: an invalid number (NaN) in `data/analysis/plausibility-screen.json`; the Explorer says in words when it cannot start; the legend key no longer clips.
 - Fixed: the Explorer wrote the address bar on every slider step, which Safari and Firefox cut off after 100 writes in 10 seconds; it now writes at most every 150 ms (latest value wins) and never fails the page if the browser refuses.
 - Fixed: `data/analysis/harmonization.json` differed in the 13th digit between machines and failed the "generated files are up to date" check in CI; floats are now written to 10 significant digits (no verdict or table changes).
-- Merged to `main` and live. Not yet: any outside use, outside checking of the data, a tagged release and a new archive deposit (the archived 0.23.0 files still have the redshift error above), a clean Firefox and WebKit run.
+- Merged to `main` and live. Not yet: any outside use, outside checking of the data, a tagged release and a new archive deposit (the archived 0.23.0 files still have the redshift error above).
+- Browsers: the full browser suites now pass in Firefox and WebKit as well as Chromium (the two small differences found, a 1 px overflow of the dials-page gap figure on a 320 px screen in Firefox and the address-bar rate limit, are fixed; the tests no longer assume Chromium-only clipboard, PDF and eval behaviour).
 
 ## 0.23.0 (2026-10-15)
 
