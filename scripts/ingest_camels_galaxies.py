@@ -140,13 +140,15 @@ def main():
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--workers", type=int, default=12)
     ap.add_argument("--snaps", default=",".join(SNAPS))
+    ap.add_argument("--suites", default="IllustrisTNG,SIMBA", help="comma separated: IllustrisTNG, SIMBA, Astrid (any suite of the CAMELS first generation that has Subfind catalogues under Sims/)")
     ap.add_argument("--out", default=str(ROOT / "data" / "ensembles" / "camels-galaxies.json"))
     args = ap.parse_args()
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     import ingest_camels_sfrd as I
     snaps = args.snaps.split(",")
     jobs, params = [], {}
-    for suite in ("IllustrisTNG", "SIMBA"):
+    for suite in args.suites.split(","):
+        I.SUITES.setdefault(suite, {"sfr_col": 2, "param_dir": suite})
         for sset in ("LH", "CV"):
             p = I.parameters(suite, sset)
             params[(suite, sset)] = p

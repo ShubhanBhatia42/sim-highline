@@ -581,7 +581,8 @@
   "tier": 3,
   "who": "C",
   "title": "Add 'which dials reproduce my curve?': paste a curve, find the best dials for both codes",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.02",
@@ -589,7 +590,8 @@
   "tier": 2,
   "who": "C",
   "title": "Show what each universe then predicts for everything else",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.03",
@@ -597,7 +599,8 @@
   "tier": 3,
   "who": "C",
   "title": "Add 'tune to observations': set the dials to best match a published observed curve",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.04",
@@ -605,7 +608,8 @@
   "tier": 2,
   "who": "C",
   "title": "Rank the side effects of any change: what moved most, in plain words",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.05",
@@ -613,7 +617,8 @@
   "tier": 2,
   "who": "C",
   "title": "Add a share button that copies a link with dials, redshift and the match",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.06",
@@ -621,7 +626,8 @@
   "tier": 2,
   "who": "C",
   "title": "Add 'hold this property fixed' so you can see what the rest does",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.07",
@@ -629,7 +635,8 @@
   "tier": 2,
   "who": "C",
   "title": "Animate changes when the dials move (respecting reduced motion)",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.08",
@@ -637,7 +644,8 @@
   "tier": 1,
   "who": "C",
   "title": "Add preset buttons: same dials in both, weak feedback, strong feedback",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.09",
@@ -645,7 +653,8 @@
   "tier": 2,
   "who": "C",
   "title": "Show, for each dial, how strongly it moves each property",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.10",
@@ -653,7 +662,8 @@
   "tier": 2,
   "who": "C",
   "title": "Add a one-sentence physical explanation to each panel",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.11",
@@ -661,7 +671,8 @@
   "tier": 3,
   "who": "C",
   "title": "Add a redshift control that steps through all five epochs with the story",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.12",
@@ -669,7 +680,8 @@
   "tier": 2,
   "who": "C",
   "title": "Make the dials page work well on a phone (sticky headline, collapsible panels)",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.13",
@@ -677,7 +689,8 @@
   "tier": 1,
   "who": "C",
   "title": "Control the dials from the keyboard and announce changes to screen readers",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.14",
@@ -685,7 +698,8 @@
   "tier": 2,
   "who": "C",
   "title": "Draw the emulator's own uncertainty, not just seed scatter",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.15",
@@ -693,7 +707,8 @@
   "tier": 2,
   "who": "C",
   "title": "Show how far a setting sits from the edge of the trusted range",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.16",
@@ -701,7 +716,8 @@
   "tier": 2,
   "who": "C",
   "title": "Export the current view as an image with captions",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.17",
@@ -709,7 +725,8 @@
   "tier": 2,
   "who": "C",
   "title": "Export the dials and predictions as CSV for a paper",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.18",
@@ -717,7 +734,8 @@
   "tier": 3,
   "who": "C",
   "title": "Test the emulators on simulations they have never seen and show the result on the page",
-  "status": "todo"
+  "note": "emulators predict simulations they never saw to 1.0 to 1.4 times the seed scatter; table on the dials page, computed from the 10-fold cross-validation (data/retune/retune.json validation)",
+  "status": "done"
  },
  {
   "id": "4.19",
@@ -725,7 +743,8 @@
   "tier": 1,
   "who": "C",
   "title": "Add a 30-second 'what am I looking at' card",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.20",
@@ -733,7 +752,8 @@
   "tier": 2,
   "who": "C",
   "title": "Add 'show me a surprise': a setting with a striking trade-off",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.21",
@@ -741,7 +761,8 @@
   "tier": 2,
   "who": "C",
   "title": "Show the exact numbers when hovering a panel",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.22",
@@ -749,7 +770,8 @@
   "tier": 2,
   "who": "C",
   "title": "Show gaps in dex and fractions beside the noise-unit gap",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.23",
@@ -757,7 +779,8 @@
   "tier": 1,
   "who": "C",
   "title": "Make Reset also clear the match choice and restore the story from a link",
-  "status": "todo"
+  "note": "dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)",
+  "status": "done"
  },
  {
   "id": "4.24",
@@ -765,7 +788,8 @@
   "tier": 3,
   "who": "C",
   "title": "Probe whether a third simulation code can be added so it is not 'two codes only'",
-  "status": "todo"
+  "note": "Astrid catalogues are public and readable with the same pipeline; ingestion is running; pairwise analysis still to do",
+  "status": "partial"
  },
  {
   "id": "5.01",

@@ -52,4 +52,4 @@ jobs:
       - name: Browser tests (layout, views, themes, embed, phone, links, accessibility)
         run: node scripts/test-ui.mjs
       - name: Walk-throughs and the check-your-run flow
-        run: node scripts/test-journeys.mjs && node scripts/test-yourrun.mjs
+        run: node scripts/test-journeys.mjs && node scripts/test-yourrun.mjs && node scripts/test-dials.mjs
