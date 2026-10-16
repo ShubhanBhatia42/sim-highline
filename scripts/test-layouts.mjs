@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import http from "node:http";
 import { readFile, mkdir } from "node:fs/promises";
 import path from "node:path";
-import { launchBrowser } from "./browser-options.mjs";
+import { launchBrowser, browserName } from "./browser-options.mjs";
 
 const DIST = new URL("../dist/", import.meta.url).pathname;
 const TYPES = { ".html": "text/html", ".js": "text/javascript", ".json": "application/json", ".css": "text/css", ".csv": "text/csv" };
@@ -16,6 +16,7 @@ const BASE = `http://127.0.0.1:${server.address().port}`;
 const browser = await launchBrowser();
 const PAGES = ["index.html", "highline.html#r=gsmf&z=0.1", "site/index.html", "site/retune.html", "site/studies.html", "site/study-joint.html", "site/study-definitions.html", "site/study-harmonization.html", "site/study-sfh.html", "site/findings.html", "site/data.html", "site/methods.html", "site/sources.html", "site/quality.html", "site/glossary.html", "site/faq.html", "site/changes.html", "site/summary.html"];
 const WIDTHS = [320, 390, 768, 1440, 2560];
+const CAN_PDF = browserName() === "chromium";  // page.pdf exists only in Chromium; elsewhere the sheet-width and colour checks still run
 const SHOTS = process.env.SHOTS; if (SHOTS) await mkdir(SHOTS, { recursive: true });
 const only = process.env.ONLY ? process.env.ONLY.split(",") : null;
 const problems = []; let n = 0;
@@ -60,8 +61,8 @@ for (const pg of ["site/study-joint.html", "site/study-definitions.html", "site/
   if (r.sw > r.iw + 1) problems.push(`${pg} on paper: wider than the sheet (${r.sw} > ${r.iw})`);
   if (r.bg !== "rgb(255, 255, 255)" || r.ink !== "rgb(0, 0, 0)") problems.push(`${pg} on paper: not black on white in a dark theme (${r.bg} ${r.ink})`);
   if (r.top !== "none" || r.status !== "none") problems.push(`${pg} on paper: navigation is printed`);
-  if (pg === "site/summary.html") { const pdf = (await page.pdf({ format: "A4" })).toString("latin1"); const pages = (pdf.match(/\/Type\s*\/Page[^s]/g) || []).length; if (pages !== 1) problems.push(`${pg} on paper: ${pages} pages, it is meant to be one`); }
-  if (SHOTS) { await page.pdf({ path: path.join(SHOTS, pg.replace(/[^a-z0-9]+/gi, "_") + "-print.pdf"), format: "A4" }); }
+  if (pg === "site/summary.html" && CAN_PDF) { const pdf = (await page.pdf({ format: "A4" })).toString("latin1"); const pages = (pdf.match(/\/Type\s*\/Page[^s]/g) || []).length; if (pages !== 1) problems.push(`${pg} on paper: ${pages} pages, it is meant to be one`); }
+  if (SHOTS && CAN_PDF) { await page.pdf({ path: path.join(SHOTS, pg.replace(/[^a-z0-9]+/gi, "_") + "-print.pdf"), format: "A4" }); }
   await ctx.close();
 }
 await browser.close(); server.close();

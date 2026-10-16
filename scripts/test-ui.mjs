@@ -25,7 +25,8 @@ async function open(url, { w = 1280, h = 800, scheme = "light", storage } = {}) 
   const page = await ctx.newPage();
   const errors = [];
   page.on("pageerror", e => errors.push(String(e)));
-  page.on("console", m => { if (m.type() === "error" && !/fonts\.(googleapis|gstatic)|ERR_(NAME|INTERNET|CONNECTION)|Failed to load resource/.test(m.text())) errors.push(m.text()); });
+  // Firefox reports Playwright's own page.evaluate as a blocked eval under the page's content security policy; the site has no eval (test-resilience checks the policy in Chromium, which does not exempt the page's own code).
+  page.on("console", m => { if (m.type() === "error" && !/fonts\.(googleapis|gstatic)|ERR_(NAME|INTERNET|CONNECTION)|Failed to load resource|blocked a JavaScript eval/.test(m.text())) errors.push(m.text()); });
   await page.goto(BASE + url, { waitUntil: "load" });
   return { page, ctx, errors };
 }
