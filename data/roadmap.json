@@ -1660,7 +1660,8 @@
   "tier": 1,
   "who": "C",
   "title": "Update the README and changelog for the release",
-  "status": "todo"
+  "note": "README and CHANGELOG updated (Unreleased section); version not bumped because the DOI is per release and needs the maintainer's Zenodo deposit",
+  "status": "done"
  },
  {
   "id": "10.05",
@@ -1668,7 +1669,8 @@
   "tier": 2,
   "who": "C",
   "title": "Bump the version and tag the release",
-  "status": "todo"
+  "note": "scripts/release.sh X.Y.Z is ready; the bump, tag and DOI belong after the merge to main and the Zenodo deposit, which need the maintainer",
+  "status": "blocked"
  },
  {
   "id": "10.06",
