@@ -176,8 +176,8 @@
   "tier": 1,
   "who": "C",
   "title": "Put this roadmap in the repository and on a private page",
-  "note": "roadmap is in the repo (docs/ROADMAP.md); private page to be published at the end",
-  "status": "partial"
+  "note": "In the repository (docs/ROADMAP.md) and on a private page (Artifact)",
+  "status": "done"
  },
  {
   "id": "2.01",
@@ -887,7 +887,8 @@
   "tier": 4,
   "who": "U",
   "title": "Ask a CAMELS team member to read the note",
-  "status": "todo"
+  "note": "Needs the maintainer; nothing here can do it",
+  "status": "blocked"
  },
  {
   "id": "5.12",
@@ -940,7 +941,8 @@
   "tier": 4,
   "who": "U",
   "title": "Deposit the analysis data with a DOI",
-  "status": "todo"
+  "note": "Needs the maintainer; nothing here can do it",
+  "status": "blocked"
  },
  {
   "id": "5.18",
@@ -1416,7 +1418,8 @@
   "tier": 4,
   "who": "U",
   "title": "Archive the new version on Zenodo",
-  "status": "todo"
+  "note": "Needs the maintainer; nothing here can do it",
+  "status": "blocked"
  },
  {
   "id": "8.13",
@@ -1550,7 +1553,8 @@
   "tier": 4,
   "who": "U",
   "title": "Send it to the three testers",
-  "status": "todo"
+  "note": "Needs the maintainer; nothing here can do it",
+  "status": "blocked"
  },
  {
   "id": "9.08",
@@ -1558,7 +1562,8 @@
   "tier": 4,
   "who": "U",
   "title": "Collect their feedback and log it",
-  "status": "todo"
+  "note": "Needs the maintainer; nothing here can do it",
+  "status": "blocked"
  },
  {
   "id": "9.09",
@@ -1584,7 +1589,8 @@
   "tier": 4,
   "who": "U",
   "title": "Present it to a research group",
-  "status": "todo"
+  "note": "Needs the maintainer; nothing here can do it",
+  "status": "blocked"
  },
  {
   "id": "9.12",
@@ -1610,7 +1616,8 @@
   "tier": 4,
   "who": "U",
   "title": "Submit the dataset to registries",
-  "status": "todo"
+  "note": "Needs the maintainer; nothing here can do it",
+  "status": "blocked"
  },
  {
   "id": "9.15",
@@ -1654,7 +1661,8 @@
   "tier": 2,
   "who": "C",
   "title": "Do a final check of the live site",
-  "status": "todo"
+  "note": "Same as 10.12: the live site is main, which does not yet have this work; check after the merge",
+  "status": "blocked"
  },
  {
   "id": "10.04",
@@ -1698,7 +1706,8 @@
   "tier": 2,
   "who": "C",
   "title": "Publish the roadmap with final status: done, not done, blocked",
-  "status": "todo"
+  "note": "docs/ROADMAP.md rendered with final status; the private page is the artifact below",
+  "status": "done"
  },
  {
   "id": "10.09",
@@ -1706,7 +1715,8 @@
   "tier": 4,
   "who": "U",
   "title": "On the review date, apply the kill criteria",
-  "status": "todo"
+  "note": "Needs the maintainer; nothing here can do it",
+  "status": "blocked"
  },
  {
   "id": "10.10",
@@ -1714,7 +1724,8 @@
   "tier": 2,
   "who": "C",
   "title": "Re-measure the front page: time to first meaningful action",
-  "status": "todo"
+  "note": "Slow phone profile (slow 4G, 4x slower processor): front page first paint with readable text and clickable links at 0.9 s (fonts finish at about 3 s); study page 1.1 s; dials page 0.9 s first paint, 3.2 s usable; Explorer 0.85 s loader, 5.4 s usable",
+  "status": "done"
  },
  {
   "id": "10.11",
@@ -1776,7 +1787,8 @@
   "tier": 1,
   "who": "C",
   "title": "Write the short message to the maintainer: what is done, what is not, what to decide",
-  "status": "todo"
+  "note": "docs/MESSAGE-TO-MAINTAINER.md",
+  "status": "done"
  },
  {
   "id": "10.18",
@@ -1784,6 +1796,7 @@
   "tier": 1,
   "who": "C",
   "title": "Update the private roadmap page one last time",
-  "status": "todo"
+  "note": "Private roadmap page published as an Artifact",
+  "status": "done"
  }
 ]
