@@ -282,6 +282,7 @@ pre[tabindex]:focus-visible{outline-offset:0}
 .rt-cap{display:flex;justify-content:space-between;gap:.5rem;font:500 12px/1.3 var(--mono);margin-bottom:.15rem}
 .rt-cap b{font-weight:500}
 .rt-d{font-variant-numeric:tabular-nums;color:var(--ink2);white-space:nowrap}
+@media(max-width:400px){.rt-d{white-space:normal}}
 .rt-panel.far .rt-d{color:var(--orange);font-weight:600}
 .rt-panel svg{width:100%;height:auto;display:block}
 .rt-panel .axis text{fill:var(--ink3);font:400 10.5px var(--mono)}
