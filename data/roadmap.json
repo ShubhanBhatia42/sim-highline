@@ -383,7 +383,8 @@
   "tier": 1,
   "who": "C",
   "title": "Explain every definition choice in a tooltip (density frame, IMF, mass definition and so on)",
-  "status": "todo"
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
  },
  {
   "id": "3.02",
@@ -391,7 +392,8 @@
   "tier": 2,
   "who": "C",
   "title": "Add 'declare like simulation X' presets that fill the definitions from a known simulation",
-  "status": "todo"
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
  },
  {
   "id": "3.03",
@@ -399,7 +401,8 @@
   "tier": 2,
   "who": "C",
   "title": "Write one plain-language verdict sentence above the comparison table",
-  "status": "todo"
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
  },
  {
   "id": "3.04",
@@ -407,7 +410,8 @@
   "tier": 2,
   "who": "C",
   "title": "Make the result shareable: put the curve and definitions in the link",
-  "status": "todo"
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
  },
  {
   "id": "3.05",
@@ -415,7 +419,8 @@
   "tier": 2,
   "who": "C",
   "title": "Let users export the comparison plot as an image with caption and methods text",
-  "status": "todo"
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
  },
  {
   "id": "3.06",
@@ -423,7 +428,8 @@
   "tier": 2,
   "who": "C",
   "title": "Accept more input formats (comments, semicolons, tabs) and show what was understood",
-  "status": "todo"
+  "note": "parser reads comma, semicolon (decimal comma), tab and space separated rows, BOM, CRLF, comments, header, units row, missing values; inspectUserCurve says what was understood and warns on linear/log mix-ups and ranges that do not overlap; tests/user-curves + scripts/test-user-curves.mjs",
+  "status": "done"
  },
  {
   "id": "3.07",
@@ -431,7 +437,8 @@
   "tier": 1,
   "who": "C",
   "title": "Warn when the values look linear but 'log' is ticked, and the other way round",
-  "status": "todo"
+  "note": "parser reads comma, semicolon (decimal comma), tab and space separated rows, BOM, CRLF, comments, header, units row, missing values; inspectUserCurve says what was understood and warns on linear/log mix-ups and ranges that do not overlap; tests/user-curves + scripts/test-user-curves.mjs",
+  "status": "done"
  },
  {
   "id": "3.08",
@@ -439,7 +446,8 @@
   "tier": 2,
   "who": "C",
   "title": "Show closest curves and comparable curves as two separate lists",
-  "status": "todo"
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
  },
  {
   "id": "3.09",
@@ -447,7 +455,8 @@
   "tier": 2,
   "who": "C",
   "title": "Add a plot of your run minus the comparable median",
-  "status": "todo"
+  "note": "residual plot of your run minus each comparable curve; command line (python3 sim_highline.py compare ... or sim-highline compare ...); notebooks/compare-your-run.ipynb, every cell run by scripts/test_cli.py",
+  "status": "done"
  },
  {
   "id": "3.10",
@@ -455,7 +464,8 @@
   "tier": 1,
   "who": "C",
   "title": "Offer a downloadable template CSV",
-  "status": "todo"
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
  },
  {
   "id": "3.11",
@@ -463,7 +473,8 @@
   "tier": 2,
   "who": "C",
   "title": "Let users compare two of their own runs at once",
-  "status": "todo"
+  "note": "comparing two of your own runs at once needs the single-run state turned into a list; not built. A shared link per run covers most of it.",
+  "status": "skipped"
  },
  {
   "id": "3.12",
@@ -471,7 +482,8 @@
   "tier": 2,
   "who": "C",
   "title": "Add a command line: sim-highline compare my.csv --relation gsmf --z 0.1",
-  "status": "todo"
+  "note": "residual plot of your run minus each comparable curve; command line (python3 sim_highline.py compare ... or sim-highline compare ...); notebooks/compare-your-run.ipynb, every cell run by scripts/test_cli.py",
+  "status": "done"
  },
  {
   "id": "3.13",
@@ -479,7 +491,8 @@
   "tier": 2,
   "who": "C",
   "title": "Add a notebook showing how to compare your run in Python",
-  "status": "todo"
+  "note": "residual plot of your run minus each comparable curve; command line (python3 sim_highline.py compare ... or sim-highline compare ...); notebooks/compare-your-run.ipynb, every cell run by scripts/test_cli.py",
+  "status": "done"
  },
  {
   "id": "3.14",
@@ -487,7 +500,8 @@
   "tier": 3,
   "who": "C",
   "title": "Try five realistic user inputs and fix everything that breaks",
-  "status": "todo"
+  "note": "five realistic messy inputs, found and fixed: decimal commas, BOM, units row, linear y with log x",
+  "status": "done"
  },
  {
   "id": "3.15",
@@ -495,7 +509,8 @@
   "tier": 2,
   "who": "C",
   "title": "Rank which simulation your curve most resembles",
-  "status": "todo"
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
  },
  {
   "id": "3.16",
@@ -503,7 +518,8 @@
   "tier": 1,
   "who": "C",
   "title": "Make the whole workflow usable from the keyboard",
-  "status": "todo"
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
  },
  {
   "id": "3.17",
@@ -511,7 +527,8 @@
   "tier": 2,
   "who": "C",
   "title": "Handle bad rows, empty input and wrong units with clear messages",
-  "status": "todo"
+  "note": "parser reads comma, semicolon (decimal comma), tab and space separated rows, BOM, CRLF, comments, header, units row, missing values; inspectUserCurve says what was understood and warns on linear/log mix-ups and ranges that do not overlap; tests/user-curves + scripts/test-user-curves.mjs",
+  "status": "done"
  },
  {
   "id": "3.18",
@@ -519,7 +536,8 @@
   "tier": 2,
   "who": "C",
   "title": "Keep the run in the browser with a clear and a restore",
-  "status": "todo"
+  "note": "already kept in the browser with a clear button; the shared link also restores it",
+  "status": "done"
  },
  {
   "id": "3.19",
@@ -527,7 +545,8 @@
   "tier": 3,
   "who": "C",
   "title": "Make the example flow work and be tested for more relations (star-forming sequence, metallicity)",
-  "status": "todo"
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
  },
  {
   "id": "3.20",
@@ -535,7 +554,8 @@
   "tier": 2,
   "who": "C",
   "title": "Explain per curve why it is or is not comparable",
-  "status": "todo"
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
  },
  {
   "id": "3.21",
@@ -543,7 +563,8 @@
   "tier": 1,
   "who": "C",
   "title": "Offer the example for every relation",
-  "status": "todo"
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
  },
  {
   "id": "3.22",

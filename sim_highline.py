@@ -283,3 +283,75 @@ def compare_run(x, y, relation, z, definitions=None, y_low=None, y_high=None, si
     if out.empty:
         return out
     return out.assign(_has=out["n_bins"] > 0, _a=out["median_dy"].abs()).sort_values(["_has", "_a"], ascending=[False, True]).drop(columns=["_has", "_a"]).reset_index(drop=True)
+
+
+def read_curve(path_or_text):
+    """Read a curve from a file or text: comma, semicolon (with decimal commas), tab or space separated rows; a byte-order mark; comment lines starting with #; an optional header; a units row; missing values.
+    Returns x, y and a 1-sigma error array (NaN where there is none)."""
+    p = Path(str(path_or_text))
+    text = p.read_text(encoding="utf-8-sig") if len(str(path_or_text)) < 400 and p.exists() else str(path_or_text).lstrip("﻿")
+    rows = [l.strip() for l in re.split(r"\r\n|\r|\n", text) if l.strip() and not l.strip().startswith("#")]
+    cells = lambda l: [c.strip().replace(",", ".") for c in l.split(";")] if ";" in l else [c for c in re.split(r"[,\t ]+", l) if c]
+    num = lambda c: float(c) if re.fullmatch(r"[-+]?(\d+\.?\d*|\.\d+)([eE][-+]?\d+)?", c or "") else float("nan")
+    head = None
+    if rows and math.isnan(num(cells(rows[0])[0])):
+        head = [re.sub(r"[^a-z]", "", h.lower()) for h in cells(rows.pop(0))]
+    pick = lambda names, default: next((i for i, h in enumerate(head or []) if h in names), default)
+    ix, iy, ie = pick(("x", "logm", "mass", "mstar", "logmstar", "z", "redshift"), 0), pick(("y", "logphi", "phi", "value", "sfr", "ssfr", "logsfr"), 1), pick(("err", "sigma", "yerr", "error", "dy"), 2 if head is None else -1)
+    xs, ys, es = [], [], []
+    for l in rows:
+        c = [num(v) for v in cells(l)]
+        if len(c) <= max(ix, iy) or math.isnan(c[ix]) or math.isnan(c[iy]):
+            continue
+        xs.append(c[ix]); ys.append(c[iy]); es.append(c[ie] if 0 <= ie < len(c) else float("nan"))
+    return np.array(xs), np.array(ys), np.array(es)
+
+
+def describe(res, relation, z):
+    """One plain sentence about a compare_run table, as the website writes it."""
+    if res.empty:
+        return f"No published curve of {relation} near z = {z:g}."
+    fair = res[(res["verdict"] != "not-comparable") & (res["n_bins"] > 0)]
+    ok = fair[fair["verdict"] == "comparable"]
+    if not len(fair):
+        return f"None of the {len(res)} published curves at this epoch is comparable with the definitions you declared (or shares enough x range), so there is no fair offset to report."
+    use = (ok if len(ok) else fair)["median_dy"]
+    best = fair.sort_values("rms_dy").iloc[0]
+    thin = " With fewer than three curves, treat this as indicative only." if len(use) < 3 else ""
+    return (f"Your run is {use.median():+.2f} from the {'comparable' if len(ok) else 'comparable-with-caveats'} curves (median; range {use.min():+.2f} to {use.max():+.2f}, {len(use)} curve{'s' if len(use) > 1 else ''}), in the y units of the relation. "
+            f"The closest is {best['source']} {best['run'] or ''} (rms {best['rms_dy']:.2f} over {int(best['n_bins'])} shared points).{thin}").replace("  ", " ")
+
+
+def main(argv=None):
+    """Command line: sim-highline compare my.csv --relation gsmf --z 0.1 --define imf=chabrier03 --define densityFrame=comoving"""
+    import argparse
+    ap = argparse.ArgumentParser(prog="sim-highline", description="Compare your own curve with every published curve of a relation, as the website does.")
+    sub = ap.add_subparsers(dest="cmd", required=True)
+    c = sub.add_parser("compare", help="compare a curve file with the published curves at one epoch")
+    c.add_argument("file", help="CSV or text file: x, y and an optional 1-sigma error per row (log10 values unless --linear)")
+    c.add_argument("--relation", required=True, help="relation code, for example gsmf, sfms, mzr, size, shmr, bh")
+    c.add_argument("--z", type=float, required=True, help="redshift of your curve")
+    c.add_argument("--define", action="append", default=[], metavar="KEY=VALUE", help="what your numbers mean, for example imf=chabrier03; repeat for each definition")
+    c.add_argument("--linear", action="store_true", help="the values are linear, not log10")
+    c.add_argument("--rankable-only", action="store_true", help="leave out curves that are context only")
+    c.add_argument("--name", default="your run")
+    c.add_argument("--csv", help="write the full table to this CSV file")
+    c.add_argument("--top", type=int, default=15, help="rows to print")
+    a = ap.parse_args(argv)
+    x, y, e = read_curve(a.file)
+    if len(x) < 3:
+        raise SystemExit(f"{a.file}: fewer than three numeric rows were read")
+    defs = dict(d.split("=", 1) for d in a.define)
+    res = compare_run(x, y, a.relation, a.z, definitions=defs, sigma=e if np.isfinite(e).any() else None, linear=a.linear, rankable_only=a.rankable_only, name=a.name)
+    print(f"{len(x)} points read from {a.file}; relation {a.relation}, z = {a.z:g}; definitions: {defs or 'none declared, so nothing can be called comparable'}")
+    print(describe(res, a.relation, a.z))
+    if not res.empty:
+        with pd.option_context("display.width", 200, "display.max_columns", 20, "display.max_colwidth", 38):
+            print(res[["source", "run", "tier", "verdict", "median_dy", "rms_dy", "n_bins"]].head(a.top).to_string(index=False, float_format=lambda v: f"{v:+.2f}" if abs(v) < 100 else f"{v:.0f}"))
+        if a.csv:
+            res.to_csv(a.csv, index=False)
+            print(f"full table written to {a.csv}")
+
+
+if __name__ == "__main__":
+    main()

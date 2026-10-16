@@ -21,6 +21,7 @@ node scripts/build-static.mjs
 node scripts/build-highline.mjs
 node scripts/test-static.mjs
 node scripts/test-logic.mjs
+node scripts/test-user-curves.mjs
 python3 scripts/build-literature-backlog.py
 node scripts/test-literature.mjs
 node scripts/test-notes.mjs

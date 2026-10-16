@@ -6,11 +6,11 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 | tier | tasks | done | partly | waiting for a person | not done |
 |---|---|---|---|---|---|
-| 1 Quick (under 15 min) | 46 | 10 | 1 | 2 | 33 |
-| 2 Solid (about an hour) | 121 | 25 | 2 | 0 | 94 |
-| 3 Big (several hours) | 23 | 4 | 0 | 0 | 19 |
+| 1 Quick (under 15 min) | 46 | 15 | 1 | 2 | 28 |
+| 2 Solid (about an hour) | 121 | 38 | 2 | 0 | 81 |
+| 3 Big (several hours) | 23 | 6 | 0 | 0 | 17 |
 | 4 Needs other people or days | 10 | 0 | 0 | 2 | 8 |
-| all | 200 | 39 | 3 | 4 | 154 |
+| all | 200 | 59 | 3 | 4 | 134 |
 
 ## Step 1. Say what great means, and how we will know
 
@@ -66,29 +66,29 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 ## Step 3. Make "check my run" excellent
 
-*The one job a researcher comes for: put my curve next to everyone else's and tell me what is fair to compare.* (1 of 22 done)
+*The one job a researcher comes for: put my curve next to everyone else's and tell me what is fair to compare.* (21 of 22 done)
 
-- [ ] **3.01** · tier 1 · Claude · Explain every definition choice in a tooltip (density frame, IMF, mass definition and so on)
-- [ ] **3.02** · tier 2 · Claude · Add 'declare like simulation X' presets that fill the definitions from a known simulation
-- [ ] **3.03** · tier 2 · Claude · Write one plain-language verdict sentence above the comparison table
-- [ ] **3.04** · tier 2 · Claude · Make the result shareable: put the curve and definitions in the link
-- [ ] **3.05** · tier 2 · Claude · Let users export the comparison plot as an image with caption and methods text
-- [ ] **3.06** · tier 2 · Claude · Accept more input formats (comments, semicolons, tabs) and show what was understood
-- [ ] **3.07** · tier 1 · Claude · Warn when the values look linear but 'log' is ticked, and the other way round
-- [ ] **3.08** · tier 2 · Claude · Show closest curves and comparable curves as two separate lists
-- [ ] **3.09** · tier 2 · Claude · Add a plot of your run minus the comparable median
-- [ ] **3.10** · tier 1 · Claude · Offer a downloadable template CSV
-- [ ] **3.11** · tier 2 · Claude · Let users compare two of their own runs at once
-- [ ] **3.12** · tier 2 · Claude · Add a command line: sim-highline compare my.csv --relation gsmf --z 0.1
-- [ ] **3.13** · tier 2 · Claude · Add a notebook showing how to compare your run in Python
-- [ ] **3.14** · tier 3 · Claude · Try five realistic user inputs and fix everything that breaks
-- [ ] **3.15** · tier 2 · Claude · Rank which simulation your curve most resembles
-- [ ] **3.16** · tier 1 · Claude · Make the whole workflow usable from the keyboard
-- [ ] **3.17** · tier 2 · Claude · Handle bad rows, empty input and wrong units with clear messages
-- [ ] **3.18** · tier 2 · Claude · Keep the run in the browser with a clear and a restore
-- [ ] **3.19** · tier 3 · Claude · Make the example flow work and be tested for more relations (star-forming sequence, metallicity)
-- [ ] **3.20** · tier 2 · Claude · Explain per curve why it is or is not comparable
-- [ ] **3.21** · tier 1 · Claude · Offer the example for every relation
+- [x] **3.01** · tier 1 · Claude · Explain every definition choice in a tooltip (density frame, IMF, mass definition and so on) — Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)
+- [x] **3.02** · tier 2 · Claude · Add 'declare like simulation X' presets that fill the definitions from a known simulation — Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)
+- [x] **3.03** · tier 2 · Claude · Write one plain-language verdict sentence above the comparison table — Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)
+- [x] **3.04** · tier 2 · Claude · Make the result shareable: put the curve and definitions in the link — Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)
+- [x] **3.05** · tier 2 · Claude · Let users export the comparison plot as an image with caption and methods text — Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)
+- [x] **3.06** · tier 2 · Claude · Accept more input formats (comments, semicolons, tabs) and show what was understood — parser reads comma, semicolon (decimal comma), tab and space separated rows, BOM, CRLF, comments, header, units row, missing values; inspectUserCurve says what was understood and warns on linear/log mix-ups and ranges that do not overlap; tests/user-curves + scripts/test-user-curves.mjs
+- [x] **3.07** · tier 1 · Claude · Warn when the values look linear but 'log' is ticked, and the other way round — parser reads comma, semicolon (decimal comma), tab and space separated rows, BOM, CRLF, comments, header, units row, missing values; inspectUserCurve says what was understood and warns on linear/log mix-ups and ranges that do not overlap; tests/user-curves + scripts/test-user-curves.mjs
+- [x] **3.08** · tier 2 · Claude · Show closest curves and comparable curves as two separate lists — Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)
+- [x] **3.09** · tier 2 · Claude · Add a plot of your run minus the comparable median — residual plot of your run minus each comparable curve; command line (python3 sim_highline.py compare ... or sim-highline compare ...); notebooks/compare-your-run.ipynb, every cell run by scripts/test_cli.py
+- [x] **3.10** · tier 1 · Claude · Offer a downloadable template CSV — Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)
+- [-] **3.11** · tier 2 · Claude · Let users compare two of their own runs at once — comparing two of your own runs at once needs the single-run state turned into a list; not built. A shared link per run covers most of it.
+- [x] **3.12** · tier 2 · Claude · Add a command line: sim-highline compare my.csv --relation gsmf --z 0.1 — residual plot of your run minus each comparable curve; command line (python3 sim_highline.py compare ... or sim-highline compare ...); notebooks/compare-your-run.ipynb, every cell run by scripts/test_cli.py
+- [x] **3.13** · tier 2 · Claude · Add a notebook showing how to compare your run in Python — residual plot of your run minus each comparable curve; command line (python3 sim_highline.py compare ... or sim-highline compare ...); notebooks/compare-your-run.ipynb, every cell run by scripts/test_cli.py
+- [x] **3.14** · tier 3 · Claude · Try five realistic user inputs and fix everything that breaks — five realistic messy inputs, found and fixed: decimal commas, BOM, units row, linear y with log x
+- [x] **3.15** · tier 2 · Claude · Rank which simulation your curve most resembles — Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)
+- [x] **3.16** · tier 1 · Claude · Make the whole workflow usable from the keyboard — Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)
+- [x] **3.17** · tier 2 · Claude · Handle bad rows, empty input and wrong units with clear messages — parser reads comma, semicolon (decimal comma), tab and space separated rows, BOM, CRLF, comments, header, units row, missing values; inspectUserCurve says what was understood and warns on linear/log mix-ups and ranges that do not overlap; tests/user-curves + scripts/test-user-curves.mjs
+- [x] **3.18** · tier 2 · Claude · Keep the run in the browser with a clear and a restore — already kept in the browser with a clear button; the shared link also restores it
+- [x] **3.19** · tier 3 · Claude · Make the example flow work and be tested for more relations (star-forming sequence, metallicity) — Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)
+- [x] **3.20** · tier 2 · Claude · Explain per curve why it is or is not comparable — Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)
+- [x] **3.21** · tier 1 · Claude · Offer the example for every relation — Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)
 - [x] **3.22** · tier 2 · Claude · Measure time to first result and keep it under 30 seconds in a test — scripts/test-journeys.mjs walks all ten in a browser; docs/QUESTIONS.md
 
 ## Step 4. Make the dials page magical
