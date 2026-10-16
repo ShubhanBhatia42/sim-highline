@@ -136,14 +136,22 @@ await journey(11, "Front page 'Try this' links each land where they say", async 
   return out.join(" | ");
 });
 await journey(12, "Copy the citation and the BibTeX from the data page", async ({ page, base }) => {
-  await page.context().grantPermissions(["clipboard-read", "clipboard-write"], { origin: base });
+  // Only Chromium lets a test read the clipboard; elsewhere the page's own confirmation and the text it offers are checked.
+  let canRead = true;
+  try { await page.context().grantPermissions(["clipboard-read", "clipboard-write"], { origin: base }); } catch (e) { canRead = false; }
   await page.goto(`${base}/site/data.html#cite`);
   await page.click("button[data-copy=cite-text]"); await page.waitForFunction(() => /Copied|Selected/.test(document.querySelector(".cpmsg").textContent));
-  const t = await page.evaluate(() => navigator.clipboard.readText());
-  assert.match(t, /Bhatia, S\. \(\d{4}\)\. sim-highline/); assert.match(t, /doi\.org\/10\.5281\/zenodo/);
-  await page.click("button[data-copy=cite-bib]"); await page.waitForTimeout(300);
-  assert.match(await page.evaluate(() => navigator.clipboard.readText()), /^@/);
-  return "citation and BibTeX copied";
+  const shown = await page.evaluate(() => document.getElementById("cite-text")?.textContent || document.querySelector(".citetext")?.textContent || "");
+  assert.match(shown, /Bhatia, S\. \(\d{4}\)\. sim-highline/); assert.match(shown, /doi\.org\/10\.5281\/zenodo/);
+  if (canRead) {
+    const t = await page.evaluate(() => navigator.clipboard.readText());
+    assert.match(t, /Bhatia, S\. \(\d{4}\)\. sim-highline/); assert.match(t, /doi\.org\/10\.5281\/zenodo/);
+    await page.click("button[data-copy=cite-bib]"); await page.waitForTimeout(300);
+    assert.match(await page.evaluate(() => navigator.clipboard.readText()), /^@/);
+  } else {
+    await page.click("button[data-copy=cite-bib]"); await page.waitForFunction(() => /Copied|Selected/.test(document.querySelector(".cpmsg").textContent));
+  }
+  return canRead ? "citation and BibTeX copied" : "citation and BibTeX copy buttons respond (clipboard not readable in this browser)";
 });
 await journey(13, "A returning visitor is told what changed; a first-time visitor is not", async ({ page, base }) => {
   await page.goto(`${base}/site/index.html`);

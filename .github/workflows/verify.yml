@@ -79,4 +79,7 @@ jobs:
       - name: Browser tests
         env:
           PW_BROWSER: ${{ matrix.browser }}
-        run: node scripts/test-ui.mjs && node scripts/test-journeys.mjs && node scripts/test-dials.mjs && node scripts/test-keyboard.mjs && node scripts/test-layouts.mjs
+        run: |
+          fail=0
+          for t in test-ui test-journeys test-dials test-keyboard test-layouts; do node scripts/$t.mjs || fail=1; done
+          exit $fail
