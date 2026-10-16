@@ -68,7 +68,8 @@
   "tier": 2,
   "who": "C",
   "title": "List every page and file a visitor can reach; mark keep, merge or cut",
-  "status": "todo"
+  "note": "docs/INVENTORY.md, docs/DECISIONS.md, docs/OVERVIEW.md, docs/DEMO-SCRIPT.md",
+  "status": "done"
  },
  {
   "id": "1.09",
@@ -112,7 +113,8 @@
   "tier": 2,
   "who": "C",
   "title": "Decide which studies stay on the front door and which move to a Research page",
-  "status": "todo"
+  "note": "docs/INVENTORY.md, docs/DECISIONS.md, docs/OVERVIEW.md, docs/DEMO-SCRIPT.md",
+  "status": "done"
  },
  {
   "id": "1.14",
@@ -120,7 +122,8 @@
   "tier": 2,
   "who": "C",
   "title": "Write a two-minute overview a colleague could read",
-  "status": "todo"
+  "note": "docs/INVENTORY.md, docs/DECISIONS.md, docs/OVERVIEW.md, docs/DEMO-SCRIPT.md",
+  "status": "done"
  },
  {
   "id": "1.15",
@@ -144,7 +147,8 @@
   "tier": 2,
   "who": "C",
   "title": "Write the 90-second demo script for the dials page",
-  "status": "todo"
+  "note": "docs/INVENTORY.md, docs/DECISIONS.md, docs/OVERVIEW.md, docs/DEMO-SCRIPT.md",
+  "status": "done"
  },
  {
   "id": "1.18",
@@ -161,7 +165,8 @@
   "tier": 2,
   "who": "C",
   "title": "Give the front page separate entry points for a simulator, an observer and a student",
-  "status": "todo"
+  "note": "front page: three entry points for simulator, observer, student",
+  "status": "done"
  },
  {
   "id": "1.20",
@@ -169,7 +174,8 @@
   "tier": 1,
   "who": "C",
   "title": "Put this roadmap in the repository and on a private page",
-  "status": "todo"
+  "note": "roadmap is in the repo (docs/ROADMAP.md); private page to be published at the end",
+  "status": "partial"
  },
  {
   "id": "2.01",

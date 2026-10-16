@@ -27,6 +27,10 @@
   "note": "scripts/test-journeys.mjs walks all ten in a browser; docs/QUESTIONS.md",
   "status": "done"
  },
+ "1.08": {
+  "note": "docs/INVENTORY.md, docs/DECISIONS.md, docs/OVERVIEW.md, docs/DEMO-SCRIPT.md",
+  "status": "done"
+ },
  "1.09": {
   "note": "docs/LANDSCAPE.md; from searches, labelled unverified",
   "status": "done"
@@ -43,9 +47,29 @@
   "note": "docs/PROJECT.md, docs/DECISIONS.md; name search found nothing with the same name (search tool only)",
   "status": "done"
  },
+ "1.13": {
+  "note": "docs/INVENTORY.md, docs/DECISIONS.md, docs/OVERVIEW.md, docs/DEMO-SCRIPT.md",
+  "status": "done"
+ },
+ "1.14": {
+  "note": "docs/INVENTORY.md, docs/DECISIONS.md, docs/OVERVIEW.md, docs/DEMO-SCRIPT.md",
+  "status": "done"
+ },
+ "1.17": {
+  "note": "docs/INVENTORY.md, docs/DECISIONS.md, docs/OVERVIEW.md, docs/DEMO-SCRIPT.md",
+  "status": "done"
+ },
  "1.18": {
   "note": "docs/PROJECT.md, docs/DECISIONS.md; name search found nothing with the same name (search tool only)",
   "status": "done"
+ },
+ "1.19": {
+  "note": "front page: three entry points for simulator, observer, student",
+  "status": "done"
+ },
+ "1.20": {
+  "note": "roadmap is in the repo (docs/ROADMAP.md); private page to be published at the end",
+  "status": "partial"
  },
  "2.05": {
   "note": "already present: evidence panel link opens a pre-filled curve-error issue (verified in code)",

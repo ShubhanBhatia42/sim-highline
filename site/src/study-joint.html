@@ -22,7 +22,7 @@
 <li><a href="#limits"><span>§6</span>Limits</a></li>
 <li><a href="#reproduce"><span>§7</span>Reproduce</a></li>
 </ol>
-<p class="back"><a href="studies.html">All studies</a> · <a href="retune.html">Retune</a></p>
+<p class="back"><a href="studies.html">All studies</a> · <a href="retune.html">Dials</a></p>
 </nav>
 <div class="c">
 
@@ -38,7 +38,7 @@
 <div><dt>Protocol</dt><dd><a href="{{repo}}/blob/main/docs/PROTOCOL-joint-reachability.md">PROTOCOL-joint-reachability.md</a></dd></div>
 <div><dt>Analysis</dt><dd><a href="{{repo}}/blob/main/docs/ANALYSIS-joint-reachability.md">ANALYSIS-joint-reachability.md</a></dd></div>
 <div><dt>Calibration</dt><dd><a href="{{repo}}/blob/main/docs/POWER-joint-reachability.md">POWER-joint-reachability.md</a></dd></div>
-<div><dt>Instrument</dt><dd><a href="retune.html">Retune</a></dd></div>
+<div><dt>Try it</dt><dd><a href="retune.html">The dials page</a></dd></div>
 <div><dt>Dataset</dt><dd>v{{version}}</dd></div>
 </dl>
 </div>
@@ -134,7 +134,7 @@
 python3 scripts/analyze_joint_reachability.py    # about 15 minutes; writes data/analysis/joint-reachability.json and the report
 python3 scripts/power_joint_reachability.py      # calibration on synthetic worlds
 python3 scripts/test_joint_reachability.py       # machinery tests and the stale-output check
-python3 scripts/export_retune_data.py            # the emulators of the Retune page
+python3 scripts/export_retune_data.py            # the emulators of the dials page
 node scripts/build-site.mjs                      # regenerates this page from the JSON</pre>
 </section>
 

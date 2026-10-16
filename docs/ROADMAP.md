@@ -6,15 +6,15 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 | tier | tasks | done | partly | waiting for a person | not done |
 |---|---|---|---|---|---|
-| 1 Quick (under 15 min) | 46 | 7 | 0 | 0 | 39 |
-| 2 Solid (about an hour) | 121 | 10 | 0 | 0 | 111 |
+| 1 Quick (under 15 min) | 46 | 7 | 1 | 0 | 38 |
+| 2 Solid (about an hour) | 121 | 15 | 0 | 0 | 106 |
 | 3 Big (several hours) | 23 | 0 | 0 | 0 | 23 |
 | 4 Needs other people or days | 10 | 0 | 0 | 0 | 10 |
-| all | 200 | 17 | 0 | 0 | 183 |
+| all | 200 | 22 | 1 | 0 | 177 |
 
 ## Step 1. Say what great means, and how we will know
 
-*Without a stated purpose, audience and stopping rule, every improvement is a guess.* (12 of 20 done)
+*Without a stated purpose, audience and stopping rule, every improvement is a guess.* (17 of 20 done)
 
 - [x] **1.01** · tier 1 · Claude · Write the purpose in one sentence and name the three kinds of user it serves — docs/PROJECT.md, docs/DECISIONS.md; name search found nothing with the same name (search tool only)
 - [x] **1.02** · tier 1 · Claude · Set five success measures, each with a number and a date — docs/PROJECT.md, docs/DECISIONS.md; name search found nothing with the same name (search tool only)
@@ -23,19 +23,19 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 - [x] **1.05** · tier 1 · Claude · Start a decisions log with today's decisions — docs/PROJECT.md, docs/DECISIONS.md; name search found nothing with the same name (search tool only)
 - [x] **1.06** · tier 2 · Claude · List the ten questions a simulation researcher would bring; check each can be answered in under a minute — scripts/test-journeys.mjs walks all ten in a browser; docs/QUESTIONS.md
 - [x] **1.07** · tier 2 · Claude · Write three user walk-throughs and run each one in a real browser — scripts/test-journeys.mjs walks all ten in a browser; docs/QUESTIONS.md
-- [ ] **1.08** · tier 2 · Claude · List every page and file a visitor can reach; mark keep, merge or cut
+- [x] **1.08** · tier 2 · Claude · List every page and file a visitor can reach; mark keep, merge or cut — docs/INVENTORY.md, docs/DECISIONS.md, docs/OVERVIEW.md, docs/DEMO-SCRIPT.md
 - [x] **1.09** · tier 2 · Claude · Find out what researchers use today for this job; say what we do better and what worse — docs/LANDSCAPE.md; from searches, labelled unverified
 - [x] **1.10** · tier 2 · Claude · Replace the study codes S1 to S4 with plain titles everywhere a visitor reads — site templates, tests and README
 - [x] **1.11** · tier 2 · Claude · Write a plain-language glossary page — glossary.html and faq.html on the site
 - [x] **1.12** · tier 1 · Claude · Write the 'what this is not' box for the front page — docs/PROJECT.md, docs/DECISIONS.md; name search found nothing with the same name (search tool only)
-- [ ] **1.13** · tier 2 · Claude · Decide which studies stay on the front door and which move to a Research page
-- [ ] **1.14** · tier 2 · Claude · Write a two-minute overview a colleague could read
+- [x] **1.13** · tier 2 · Claude · Decide which studies stay on the front door and which move to a Research page — docs/INVENTORY.md, docs/DECISIONS.md, docs/OVERVIEW.md, docs/DEMO-SCRIPT.md
+- [x] **1.14** · tier 2 · Claude · Write a two-minute overview a colleague could read — docs/INVENTORY.md, docs/DECISIONS.md, docs/OVERVIEW.md, docs/DEMO-SCRIPT.md
 - [ ] **1.15** · tier 1 · You · Name the three people who will test it
 - [ ] **1.16** · tier 1 · You · Pick the date of the go/no-go review
-- [ ] **1.17** · tier 2 · Claude · Write the 90-second demo script for the dials page
+- [x] **1.17** · tier 2 · Claude · Write the 90-second demo script for the dials page — docs/INVENTORY.md, docs/DECISIONS.md, docs/OVERVIEW.md, docs/DEMO-SCRIPT.md
 - [x] **1.18** · tier 1 · Claude · Check the name and tagline for clashes with existing projects — docs/PROJECT.md, docs/DECISIONS.md; name search found nothing with the same name (search tool only)
-- [ ] **1.19** · tier 2 · Claude · Give the front page separate entry points for a simulator, an observer and a student
-- [ ] **1.20** · tier 1 · Claude · Put this roadmap in the repository and on a private page
+- [x] **1.19** · tier 2 · Claude · Give the front page separate entry points for a simulator, an observer and a student — front page: three entry points for simulator, observer, student
+- [~] **1.20** · tier 1 · Claude · Put this roadmap in the repository and on a private page — roadmap is in the repo (docs/ROADMAP.md); private page to be published at the end
 
 ## Step 2. Make the data trustworthy
 
