@@ -80,6 +80,10 @@ def main():
                flagged=[{k: (round(v, 3) if isinstance(v, float) else v) for k, v in o.items()} for o in flagged])
     (ROOT / "data" / "analysis" / "plausibility-screen.json").write_text(json.dumps(doc, indent=1) + "\n")
     print(f"plausibility screen: {len(res)} curves screened, {len(flagged)} flagged, {len(systematic)} source/relation pairs systematic")
+    triaged = json.loads((ROOT / "data" / "screen-triaged.json").read_text())["triaged"]
+    new = [o["id"] for o in flagged if o["id"] not in triaged]
+    if new:
+        raise SystemExit("flagged by the plausibility screen and not yet triaged (add each to data/screen-triaged.json with a reason, or fix the record): " + ", ".join(new))
 
 
 if __name__ == "__main__":

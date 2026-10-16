@@ -362,5 +362,92 @@
     "8": 5
    }
   }
+ },
+ "vocabulary": {
+  "population": {
+   "distinct": 64,
+   "records": 1656,
+   "near_duplicates": [
+    {
+     "spellings": [
+      "all",
+      "all galaxies"
+     ],
+     "records": [
+      711,
+      119
+     ]
+    },
+    {
+     "spellings": [
+      "star-forming",
+      "all galaxies, star-forming"
+     ],
+     "records": [
+      143,
+      8
+     ]
+    },
+    {
+     "spellings": [
+      "passive",
+      "all galaxies, passive"
+     ],
+     "records": [
+      40,
+      8
+     ]
+    }
+   ]
+  },
+  "massDefinition": {
+   "distinct": 43,
+   "records": 1423,
+   "near_duplicates": [
+    {
+     "spellings": [
+      "aperture-0.1Rvir",
+      "aperture-0.1rvir"
+     ],
+     "records": [
+      36,
+      18
+     ]
+    }
+   ]
+  },
+  "imf": {
+   "distinct": 4,
+   "records": 1653,
+   "near_duplicates": []
+  },
+  "densityFrame": {
+   "distinct": 2,
+   "records": 618,
+   "near_duplicates": []
+  },
+  "sizeDefinition": {
+   "distinct": 17,
+   "records": 209,
+   "near_duplicates": []
+  },
+  "population_hard_key": {
+   "sfms": {
+    "pairs": 446,
+    "differ_only_in_spelling": 0
+   },
+   "ssfr": {
+    "pairs": 310,
+    "differ_only_in_spelling": 0
+   },
+   "size": {
+    "pairs": 2012,
+    "differ_only_in_spelling": 53
+   }
+  }
+ },
+ "checksums": {
+  "with_checksum": 1636,
+  "records": 1699
  }
 }
