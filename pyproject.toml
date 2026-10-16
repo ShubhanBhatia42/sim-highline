@@ -15,6 +15,9 @@ keywords = ["astronomy", "galaxy formation", "cosmological simulations", "scalin
 classifiers = ["Intended Audience :: Science/Research", "Topic :: Scientific/Engineering :: Astronomy", "Programming Language :: Python :: 3"]
 dependencies = ["numpy", "pandas"]
 
+[project.scripts]
+sim-highline = "sim_highline:main"
+
 [project.urls]
 Repository = "https://github.com/ShubhanBhatia42/sim-highline"
 

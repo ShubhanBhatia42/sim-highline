@@ -167,6 +167,90 @@
   "note": "docs/CORRECTIONS.md linked from the quality page",
   "status": "done"
  },
+ "3.01": {
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
+ },
+ "3.02": {
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
+ },
+ "3.03": {
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
+ },
+ "3.04": {
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
+ },
+ "3.05": {
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
+ },
+ "3.06": {
+  "note": "parser reads comma, semicolon (decimal comma), tab and space separated rows, BOM, CRLF, comments, header, units row, missing values; inspectUserCurve says what was understood and warns on linear/log mix-ups and ranges that do not overlap; tests/user-curves + scripts/test-user-curves.mjs",
+  "status": "done"
+ },
+ "3.07": {
+  "note": "parser reads comma, semicolon (decimal comma), tab and space separated rows, BOM, CRLF, comments, header, units row, missing values; inspectUserCurve says what was understood and warns on linear/log mix-ups and ranges that do not overlap; tests/user-curves + scripts/test-user-curves.mjs",
+  "status": "done"
+ },
+ "3.08": {
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
+ },
+ "3.09": {
+  "note": "residual plot of your run minus each comparable curve; command line (python3 sim_highline.py compare ... or sim-highline compare ...); notebooks/compare-your-run.ipynb, every cell run by scripts/test_cli.py",
+  "status": "done"
+ },
+ "3.10": {
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
+ },
+ "3.11": {
+  "note": "comparing two of your own runs at once needs the single-run state turned into a list; not built. A shared link per run covers most of it.",
+  "status": "skipped"
+ },
+ "3.12": {
+  "note": "residual plot of your run minus each comparable curve; command line (python3 sim_highline.py compare ... or sim-highline compare ...); notebooks/compare-your-run.ipynb, every cell run by scripts/test_cli.py",
+  "status": "done"
+ },
+ "3.13": {
+  "note": "residual plot of your run minus each comparable curve; command line (python3 sim_highline.py compare ... or sim-highline compare ...); notebooks/compare-your-run.ipynb, every cell run by scripts/test_cli.py",
+  "status": "done"
+ },
+ "3.14": {
+  "note": "five realistic messy inputs, found and fixed: decimal commas, BOM, units row, linear y with log x",
+  "status": "done"
+ },
+ "3.15": {
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
+ },
+ "3.16": {
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
+ },
+ "3.17": {
+  "note": "parser reads comma, semicolon (decimal comma), tab and space separated rows, BOM, CRLF, comments, header, units row, missing values; inspectUserCurve says what was understood and warns on linear/log mix-ups and ranges that do not overlap; tests/user-curves + scripts/test-user-curves.mjs",
+  "status": "done"
+ },
+ "3.18": {
+  "note": "already kept in the browser with a clear button; the shared link also restores it",
+  "status": "done"
+ },
+ "3.19": {
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
+ },
+ "3.20": {
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
+ },
+ "3.21": {
+  "note": "Your-run panel: definition help text, fill-in-like presets, plain verdict sentence with the closest comparable curve, two lists with reasons under each curve, share link, PNG and CSV export, template; scripts/test-yourrun.mjs (13 checks, all 21 relations, keyboard)",
+  "status": "done"
+ },
  "3.22": {
   "note": "scripts/test-journeys.mjs walks all ten in a browser; docs/QUESTIONS.md",
   "status": "done"

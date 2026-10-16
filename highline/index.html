@@ -172,6 +172,11 @@ main.table .stagehead,main.table .plot{display:none}
 .pbody .warn{font-size:13px;color:var(--ink2);border-left:2px solid var(--orange);padding-left:10px;margin:10px 0}
 .pbody .hint{font-size:12.5px;color:var(--ink3);margin:6px 0}
 .pbody .sure{font-size:13px;line-height:1.45;margin:8px 0;color:var(--ink2)}
+.pbody figure.resid{margin:6px 0 10px}.pbody figure.resid figcaption{font-size:11.5px;color:var(--ink3);margin-top:2px}
+.pbody .why{font-size:11.5px;color:var(--ink3);margin-top:2px;line-height:1.35}
+.pbody tr.grp th{text-align:left;font:600 11px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);padding:10px 0 4px;border-bottom:1px solid var(--line)}
+.pbody .defs small{display:block;font-weight:400;font-size:11.5px;line-height:1.35;color:var(--ink3);margin:1px 0 3px}
+.pbody label.like{display:block;margin:6px 0 10px}
 .pbody .sumline{font-size:13px;line-height:1.45;color:var(--ink);margin:8px 0;padding:8px 10px;border-left:3px solid var(--ink)}
 .pbody label{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink2);margin:6px 0}
 .pbody label:has(>select),.pbody .two label{flex-direction:column;align-items:stretch;gap:3px}
@@ -461,6 +466,7 @@ function readHash(){
   state.xr=rg("xr");state.yr=rg("yr");state.bands=p.get("bd")!=="0";state.scatter=p.get("sc")!=="0";state.evo=p.get("ev")||null;state.ref=p.get("ref")||null;state.resid=p.get("res")==="1"&&!!state.ref;state.at=num(p.get("at"));state.sel=byId.has(p.get("sel"))?p.get("sel"):null;
   state.imfc=p.get("imf")==="1";state.anc={};for(const t of (p.get("an")||"").split("~").filter(Boolean)){const [k,v]=t.split("*");if(k&&v&&REL[decodeURIComponent(k)])state.anc[decodeURIComponent(k)]=decodeURIComponent(v)}
   state.embed=p.get("embed")==="1";document.body.classList.toggle("embed",state.embed);
+  if(p.get("run")&&mineFromHash(p.get("run")))state.openMine=true;
 }
 
 /* ---------- series builders ---------- */
@@ -760,50 +766,85 @@ function mineRows(){
   for(const o of relationSeries(z)){
     if(o.scatter)continue;
     const ref=rawPoints(o.r,z).map(p=>({x:p.x,y:p.y,yLow:p.lo,yHigh:p.hi}));
-    let sm=null;try{sm=C.summarize(C.residuals(up,ref,kind,o.r.representation?.intervalKind==="uncertainty"?"uncertainty":"unspecified"))}catch(e){}
+    let sm=null,res=[];try{res=C.residuals(up,ref,kind,o.r.representation?.intervalKind==="uncertainty"?"uncertainty":"unspecified");sm=C.summarize(res)}catch(e){}
     let v=null;try{v=C.compatible(me,o.r)}catch(e){}
-    rows.push({r:o.r,sm,v});
+    rows.push({r:o.r,sm,v,res});
   }
   rows.sort((a,b)=>(a.sm?0:1)-(b.sm?0:1)||(a.sm?Math.abs(a.sm.median)-Math.abs(b.sm.median):0)||label(a.r).localeCompare(label(b.r)));
   return rows;
 }
+const MINE_HELP={imf:"Initial mass function assumed when turning light into stellar mass. Chabrier and Kroupa are close; Salpeter gives masses about 0.2 dex higher.",massDefinition:"Which stars count toward a galaxy's mass: inside a fixed radius (aperture), the whole subhalo, or from fitted light.",densityFrame:"Whether number densities are per comoving or per physical volume.",population:"Which galaxies are included: all, star-forming, quiescent, centrals only and so on.",sizeDefinition:"How galaxy size is measured: half-mass or half-light radius, in 2D or 3D.",metallicityQuantity:"Which metallicity: gas-phase oxygen abundance, total gas metal fraction, or stellar metallicity.",metallicityCalibration:"The calibration that turns emission lines into a metallicity.",haloMassDefinition:"How halo mass is defined, for example M200c or the virial mass.",haloMassHistory:"Whether halo mass is the current mass or the peak mass.",gasDefinition:"Which gas is counted: cold, neutral hydrogen, molecular hydrogen or all gas.",gasStatistic:"Mean or median of the gas fraction.",gasMethod:"How the gas content is measured or modelled.",sfrTimescaleMyr:"Time over which star formation is averaged, in Myr.",sfrStatistic:"Mean or median star formation rate.",apertureDefinition:"The region inside which the quantity is measured.",fgasNormalisation:"What the gas mass is divided by.",massMethod:"How the mass is estimated.",ageWeighting:"Whether ages are weighted by mass or by light.",bhMassMethod:"How black hole masses are measured or modelled.",sigmaDefinition:"How the velocity dispersion is defined."};
+function mineExpect(){const z=currentZ(),xs=[],ys=[];for(const o of relationSeries(z)){if(o.scatter)continue;for(const p of rawPoints(o.r,z))if(Number.isFinite(p.x)&&Number.isFinite(p.y)){xs.push(p.x);ys.push(p.y)}}return xs.length?{xlo:Math.min(...xs),xhi:Math.max(...xs),ylo:Math.min(...ys),yhi:Math.max(...ys)}:null}
+function mineInfo(u){if(!u)return"";const d=window.SimHighlineLogic.inspectUserCurve(u.raw,{linear:u.linear},mineExpect());return`${esc(d.summary)}${d.warnings.map(w=>`<br><b>Check:</b> ${esc(w)}`).join("")}`}
+function mineVerdict(rows,set){
+  const f=v=>v==null||!Number.isFinite(v)?"–":(v>=0?"+":"−")+Math.abs(v).toFixed(2),med=a=>a.length%2?a[(a.length-1)/2]:(a[a.length/2-1]+a[a.length/2])/2;
+  const ok=rows.filter(x=>x.v?.verdict==="comparable"),cav=rows.filter(x=>x.v&&x.v.verdict!=="comparable"&&x.v.verdict!=="not-comparable"),fair=[...ok,...cav].filter(x=>x.sm);
+  if(!set)return`<p class="sumline"><b>Say what your numbers mean first.</b> Until you declare your definitions below, no published curve can be called comparable, so there is no fair offset to report.</p>`;
+  if(!ok.length&&!cav.length)return`<p class="sumline"><b>No published curve at this epoch is comparable with yours.</b> Their definitions disagree with the ones you declared; the reason is under each curve. If you declared something that does not match what you did, change it above.</p>`;
+  if(!fair.length)return`<p class="sumline"><b>${ok.length+cav.length} curve${ok.length+cav.length>1?"s have":" has"} definitions that agree with yours,</b> but none shares enough x range with your run (at least three points) to give an offset.</p>`;
+  const offs=ok.filter(x=>x.sm).map(x=>x.sm.median).sort((a,b)=>a-b),use=offs.length?offs:fair.map(x=>x.sm.median).sort((a,b)=>a-b),best=fair.slice().sort((a,b)=>a.sm.rms-b.sm.rms)[0];
+  const thin=use.length<3?" With fewer than three comparable curves, treat this as indicative only.":"";
+  return`<p class="sumline"><b>Your run is ${f(med(use))} from the ${offs.length?"comparable":"comparable-with-caveats"} curves (median; range ${f(use[0])} to ${f(use[use.length-1])}, ${use.length} curve${use.length>1?"s":""}),</b> in the y units of the relation. The closest is ${esc(label(best.r))} (rms ${best.sm.rms.toFixed(2)} over ${best.sm.n} shared points).${thin}</p>`}
+function mineResidualSvg(rows){
+  const cs=rows.filter(x=>x.v?.verdict==="comparable"&&x.sm&&x.res.length>=3);if(!cs.length)return"";
+  const W=320,H=150,L=38,R=8,T=10,B=26,xs=cs.flatMap(c=>c.res.map(p=>p.x)),ds=cs.flatMap(c=>c.res.map(p=>p.d)),xlo=Math.min(...xs),xhi=Math.max(...xs),m=Math.max(0.2,Math.ceil(Math.max(...ds.map(Math.abs))*5)/5);
+  const sx=x=>L+(x-xlo)/((xhi-xlo)||1)*(W-L-R),sy=d=>T+(1-(d+m)/(2*m))*(H-T-B);
+  let g=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Your run minus each comparable curve, in the y units of the relation, against x" style="width:100%;max-width:${W}px;display:block"><g stroke="var(--line)" stroke-width="1"><line x1="${L}" x2="${W-R}" y1="${sy(0)}" y2="${sy(0)}" stroke="var(--ink2)"/><line x1="${L}" x2="${W-R}" y1="${sy(m)}" y2="${sy(m)}"/><line x1="${L}" x2="${W-R}" y1="${sy(-m)}" y2="${sy(-m)}"/></g><g font-family="var(--mono)" font-size="9" fill="var(--ink3)"><text x="${L-4}" y="${sy(m)+3}" text-anchor="end">+${m}</text><text x="${L-4}" y="${sy(0)+3}" text-anchor="end">0</text><text x="${L-4}" y="${sy(-m)+3}" text-anchor="end">−${m}</text><text x="${(L+W-R)/2}" y="${H-6}" text-anchor="middle">x of your run</text></g>`;
+  for(const c of cs)g+=`<path d="${c.res.map((p,i)=>`${i?"L":"M"}${sx(p.x).toFixed(1)},${sy(p.d).toFixed(1)}`).join("")}" fill="none" stroke="var(--ink)" stroke-width="1.4" opacity=".55"><title>${esc(label(c.r))}: median ${c.sm.median.toFixed(2)}</title></path>`;
+  return`<figure class="resid">${g}</svg><figcaption>Your run minus each comparable curve (y units). Above zero: your run is higher.</figcaption></figure>`}
 function mineTable(){
   if(!state.user)return`<p class="hint">Plot a curve to see how it compares with every published curve at this epoch.</p>`;
   const rows=mineRows();if(!rows.length)return`<p class="hint">No published curve for this relation at z = ${fmtZ(currentZ())} is currently shown.</p>`;
   const f=v=>v==null||!Number.isFinite(v)?"–":(v>=0?"+":"−")+Math.abs(v).toFixed(2);
   const set=Object.values(state.user.defs||{}).some(v=>v&&v!=="unspecified");
-  const comp=rows.filter(x=>x.v?.verdict==="comparable"&&x.sm).map(x=>x.sm.median).sort((a,b)=>a-b),med=comp.length?(comp.length%2?comp[(comp.length-1)/2]:(comp[comp.length/2-1]+comp[comp.length/2])/2):null;
-  let h=comp.length?`<p class="sumline"><b>Against ${comp.length} comparable curve${comp.length>1?"s":""}</b> (definitions agree): your run is ${f(comp[0])} to ${f(comp[comp.length-1])} from them, median ${f(med)}, in the y units of the relation.</p>`:"";
+  const row=({r,sm,v})=>{const k=v?.verdict,g=k==="comparable"?"✓":k==="not-comparable"?"✕":"~",c=k==="comparable"?"ok":k==="not-comparable"?"no":"cav",why=v?(v.blockers.length?v.blockers.join("; "):v.caveats.join("; ")):"";
+    return`<tr data-id="${esc(r.id)}" tabindex="0" title="${esc(why)}"><td>${esc(label(r))}${r.kind==="observation"?' <span class="tier">obs</span>':""}${why&&k!=="comparable"?`<div class="why">${esc(why.length>130?why.slice(0,127)+"…":why)}</div>`:""}</td><td><span class="v ${c}">${v?g:""}</span></td><td>${sm?f(sm.median):"–"}</td><td>${sm?sm.n:"–"}</td></tr>`};
+  const fair=rows.filter(x=>x.v&&x.v.verdict!=="not-comparable"),other=rows.filter(x=>!x.v||x.v.verdict==="not-comparable");
+  const head=t=>`<tr class="grp"><th colspan="4">${t}</th></tr>`;
+  let h=mineVerdict(rows,set)+mineResidualSvg(rows);
   h+=`<table class="mt"><thead><tr><th>Published curve</th><th title="definition compatibility with your declared definitions">defs</th><th title="median of (your run − curve) over the shared x range, in y units">Δ</th><th title="shared x bins">n</th></tr></thead><tbody>`;
-  for(const {r,sm,v} of rows){
-    const k=v?.verdict,g=k==="comparable"?"✓":k==="not-comparable"?"✕":"~",c=k==="comparable"?"ok":k==="not-comparable"?"no":"cav";
-    const why=v?(v.blockers.length?v.blockers.join("; "):v.caveats.join("; ")):"";
-    h+=`<tr data-id="${esc(r.id)}" tabindex="0" title="${esc(why)}"><td>${esc(label(r))}${r.kind==="observation"?' <span class="tier">obs</span>':""}</td><td><span class="v ${c}">${v?g:""}</span></td><td>${sm?f(sm.median):"–"}</td><td>${sm?sm.n:"–"}</td></tr>`;
-  }
-  h+=`</tbody></table><p class="hint">${set?"":"No definitions declared, so no curve can be called comparable. "}An offset is only a verdict where the definitions agree (✓); ~ means comparable with caveats, ✕ not comparable. Digitized curves are context only. Hover a row for the reasons; click to open the curve.</p>`;
+  if(fair.length)h+=head("Fair to compare: your definitions agree")+fair.map(row).join("");
+  if(other.length)h+=head(set?"Context only: definitions disagree or are missing":"Context only: nothing is comparable until you declare definitions")+other.map(row).join("");
+  h+=`</tbody></table><p class="hint">An offset is only a verdict where the definitions agree (✓); ~ means comparable with caveats, ✕ not comparable. Digitized curves are context only. Hover a row for the reasons; click to open the curve.</p>`;
   return h;
 }
 function mineHtml(){
   const rel=state.rel,u=state.user,keys=mineKeys(rel);
-  const sel=keys.map(k=>{const op=mineOptions(rel,k),cur=u?.defs?.[k]||"unspecified";return`<label>${esc(k)}<select data-def="${esc(k)}"><option value="unspecified"${cur==="unspecified"?" selected":""}>unspecified</option>${op.map(o=>`<option value="${esc(o)}"${cur===o?" selected":""}>${esc(o)}</option>`).join("")}</select></label>`}).join("");
+  const sel=keys.map(k=>{const op=mineOptions(rel,k),cur=u?.defs?.[k]||"unspecified";return`<label>${esc(k)}<small>${esc(MINE_HELP[k]||"")}</small><select data-def="${esc(k)}"><option value="unspecified"${cur==="unspecified"?" selected":""}>unspecified</option>${op.map(o=>`<option value="${esc(o)}"${cur===o?" selected":""}>${esc(o)}</option>`).join("")}</select></label>`}).join("");
+  const seen=new Set(),like=sims.filter(r=>r.relation===rel&&r.definitions&&mineKeys(rel).some(k=>typeof r.definitions[k]==="string")).filter(r=>{const k=unitOf(r);if(seen.has(k))return false;seen.add(k);return true}).sort((a,b)=>label(a).localeCompare(label(b)));
   return`<h4>YOUR RUN ON ${esc(REL[rel].t.toUpperCase())}</h4>
-  <p class="hint">Paste or load x,y rows (optional third column = 1σ error, or low,high columns; a header row is fine). Default units are log₁₀ as plotted; tick the box for plain values. Nothing leaves this browser tab.</p>
+  <p class="hint">Paste or load x,y rows (an optional third column is the 1σ error; low,high columns and a header row are fine; commas, semicolons, tabs or spaces). Values are log₁₀ as plotted unless you tick the box. Nothing leaves this browser tab.</p>
   <input type="text" id="uName" placeholder="label" value="${esc(u?.name||"")}" style="margin-bottom:6px">
   <textarea id="uText" placeholder="x,y per line">${esc(u?.raw||"")}</textarea>
   <label><input type="checkbox" id="uLin" ${u?.linear?"checked":""}> values are linear, not log₁₀</label>
-  <div class="btns"><button class="btn" id="uPlot">Plot</button><button class="btn" id="uEx" type="button" title="Fills the box with a published simulation curve shifted by +0.15, so you can see what the comparison does before pasting your own">Try an example</button><button class="btn" id="uClear">Clear</button><label class="btn" style="margin:0;cursor:pointer">Load file<input type="file" id="uFile" accept=".csv,.txt,text/plain" hidden></label></div>
+  <div class="btns"><button class="btn" id="uPlot">Plot</button><button class="btn" id="uEx" type="button" title="Fills the box with a published simulation curve shifted by +0.15, so you can see what the comparison does before pasting your own">Try an example</button><button class="btn" id="uClear">Clear</button><label class="btn" style="margin:0;cursor:pointer">Load file<input type="file" id="uFile" accept=".csv,.txt,text/plain" hidden></label><button class="btn" id="uTpl" type="button">Template</button></div>
+  <p class="hint" id="uInfo" aria-live="polite">${mineInfo(u)}</p>
   <h4>DEFINITIONS OF YOUR RUN</h4>
-  <p class="hint">Declare what your numbers mean; undeclared keys can never be matched. Options are the values used by the published records.</p>
+  <p class="hint">Say what your numbers mean; a definition you leave unspecified can never be matched. Options are the values used by the published records.</p>
+  <label class="like">Fill in like a published simulation<select id="uLike"><option value="">choose one…</option>${like.map(r=>`<option value="${esc(r.id)}">${esc(label(r))}</option>`).join("")}</select></label>
   <div class="defs">${sel||'<span class="hint">This relation has no comparability keys.</span>'}</div>
   <h4 id="mineH">AGAINST PUBLISHED CURVES AT z = ${esc(fmtZ(currentZ()))}</h4>
   <div id="mineTab">${mineTable()}</div>
-  <div class="btns"><button class="btn" id="uCsv" ${u?"":"disabled"}>Download comparison CSV</button></div>`;
+  <div class="btns"><button class="btn" id="uCsv" ${u?"":"disabled"}>Download comparison CSV</button><button class="btn" id="uPng" ${u?"":"disabled"}>Download figure (PNG)</button><button class="btn" id="uLink" ${u?"":"disabled"}>Copy link to this comparison</button></div>`;
 }
+function saveBlob(name,blob){const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
+function figurePng(name,caption){
+  const svg=$("stage"),r=svg.getBoundingClientRect(),w=Math.round(r.width),h=Math.round(r.height),clone=svg.cloneNode(true),P=["fill","stroke","stroke-width","stroke-dasharray","stroke-linecap","stroke-linejoin","opacity","fill-opacity","stroke-opacity","font-family","font-size","font-weight","text-anchor","display","visibility"];
+  const a=svg.querySelectorAll("*"),b=clone.querySelectorAll("*");a.forEach((el,i)=>{const cs=getComputedStyle(el),t=b[i];if(!t)return;let s="";for(const p of P)s+=`${p}:${cs.getPropertyValue(p)};`;t.setAttribute("style",s)});
+  const bg=getComputedStyle(document.body).backgroundColor,fg=getComputedStyle(document.body).color,pad=44,H=h+pad+28;
+  clone.setAttribute("xmlns","http://www.w3.org/2000/svg");clone.setAttribute("width",w);clone.setAttribute("height",h);clone.setAttribute("viewBox",`0 0 ${w} ${h}`);
+  const wrap=`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${H}" viewBox="0 0 ${w} ${H}"><rect width="${w}" height="${H}" fill="${bg}"/><text x="12" y="26" font-family="Georgia,serif" font-size="18" fill="${fg}">${esc($("shTitle").textContent)}</text><g transform="translate(0 ${pad})">${new XMLSerializer().serializeToString(clone)}</g><text x="12" y="${H-10}" font-family="monospace" font-size="11" fill="${fg}">${esc(caption)}</text></svg>`;
+  const img=new Image();img.onload=()=>{const c=document.createElement("canvas");c.width=w*2;c.height=H*2;const g=c.getContext("2d");g.scale(2,2);g.drawImage(img,0,0);c.toBlob(bl=>saveBlob(name,bl),"image/png")};img.onerror=()=>toast("The figure could not be rendered in this browser");
+  img.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(wrap)}
+function mineShareHash(){const u=state.user,q=new URLSearchParams(location.hash.slice(1)),r4=v=>Number.isFinite(v)?+v.toFixed(4):null;
+  q.set("run",btoa(unescape(encodeURIComponent(JSON.stringify({n:u.name,p:u.pts.map(p=>[r4(p.x),r4(p.y),r4(p.lo),r4(p.hi)]),d:u.defs||{}})))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""));q.set("pn","mine");return q.toString()}
+function mineFromHash(s){try{const j=JSON.parse(decodeURIComponent(escape(atob(s.replace(/-/g,"+").replace(/_/g,"/")))));const pts=(j.p||[]).filter(a=>Number.isFinite(a[0])&&Number.isFinite(a[1])).map(a=>({x:a[0],y:a[1],lo:Number.isFinite(a[2])?a[2]:undefined,hi:Number.isFinite(a[3])?a[3]:undefined}));if(!pts.length)return false;
+  const raw=pts.map(p=>[p.x,p.y,...(Number.isFinite(p.lo)&&Number.isFinite(p.hi)?[p.lo,p.hi]:[])].join(",")).join("\n");state.user={name:String(j.n||"shared run").slice(0,80),raw,linear:false,defs:j.d&&typeof j.d==="object"?j.d:{},pts};mineSave();return true}catch(e){return false}}
 function wireMine(){
-  const refresh=()=>{renderPlot(false);if(state.panel&&state.tab==="mine")$("mineTab").innerHTML=mineTable(),wireMineRows(),$("uCsv").disabled=!state.user};
+  const refresh=()=>{renderPlot(false);if(state.panel&&state.tab==="mine"){$("mineTab").innerHTML=mineTable();wireMineRows();for(const id of ["uCsv","uPng","uLink"])$(id).disabled=!state.user}};
   const plotUser=txt=>{const lin=$("uLin").checked,r=window.SimHighlineLogic.parseUserCurve(txt,{linear:lin}),old=state.user?.defs||{};
     state.user=r.pts.length?{name:$("uName").value||"your run",raw:txt,linear:lin,defs:old,pts:r.pts}:null;mineSave();
-    toast(r.pts.length?`${r.pts.length} points plotted${r.skipped?`, ${r.skipped} rows skipped`:""}`:"No numeric x,y rows found");renderPlot(false);renderPanel()};
+    renderPlot(false);renderPanel();const i=$("uInfo");if(i){i.innerHTML=state.user?mineInfo(state.user):esc(window.SimHighlineLogic.inspectUserCurve(txt,{linear:lin},mineExpect()).warnings.concat(window.SimHighlineLogic.inspectUserCurve(txt,{linear:lin}).summary).join(" "))}};
   $("uPlot").onclick=()=>plotUser($("uText").value);
   $("uEx").onclick=()=>{const z=currentZ(),o=relationSeries(z).find(s=>!s.scatter&&s.r.kind==="simulation"&&rawPoints(s.r,z).filter(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)).length>=5);
     if(!o){toast("No published simulation curve at this epoch to build an example from");return}
@@ -811,7 +852,13 @@ function wireMine(){
     $("uText").value=txt;$("uName").value=`example: ${label(o.r)} + 0.15`;plotUser(txt)};
   $("uClear").onclick=()=>{state.user=null;mineSave();renderPlot(false);renderPanel()};
   $("uFile").onchange=async e=>{const f=e.target.files[0];if(!f)return;$("uText").value=await f.text();if(!$("uName").value)$("uName").value=f.name.replace(/\.[^.]+$/,"");plotUser($("uText").value)};
+  $("uTpl").onclick=()=>download("sim-highline-template.csv","text/csv",`# One row per point: x, y, optional 1-sigma error. Values are log10 as plotted (stellar mass in Msun, number density per cMpc^3 per dex); tick "values are linear" for plain values.\n# Lines starting with # are ignored. A header row (x,y,err) is fine.\nx,y,err\n8.0,-1.20,0.05\n9.0,-1.65,0.05\n10.0,-2.30,0.08\n11.0,-3.60,0.20\n`);
+  $("uLike").onchange=e=>{const rec=byId.get(e.target.value);if(!rec)return;if(!state.user){toast("Plot a curve first");e.target.value="";return}
+    const d={};for(const k of mineKeys(state.rel)){const v=rec.definitions?.[k];if(typeof v==="string"&&mineOptions(state.rel,k).includes(v))d[k]=v}
+    state.user.defs=d;mineSave();renderPanel()};
   $("pbody").querySelectorAll("[data-def]").forEach(s=>s.onchange=()=>{if(!state.user){toast("Plot a curve first");s.value="unspecified";return}state.user.defs={...state.user.defs,[s.dataset.def]:s.value};mineSave();refresh()});
+  $("uPng").onclick=()=>{const rows=mineRows().filter(x=>x.v?.verdict==="comparable").length;figurePng(`sim-highline-yourrun-${state.rel}-z${fmtZ(currentZ())}.png`,`${state.user.name}; ${rows} comparable curve${rows===1?"":"s"}; sim-highline v${SIMHIGHLINE_RELEASE.version}; doi:${SIMHIGHLINE_RELEASE.doi}`)};
+  $("uLink").onclick=()=>{const u=location.href.split("#")[0]+"#"+mineShareHash();copyTxt(u,"Link copied")};
   $("uCsv").onclick=()=>{
     const q=v=>{v=String(v??"");return/[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v},z=currentZ();
     const out=[["relation","z","your_label","curve_id","source","run","tier","definitions_verdict","blockers","caveats","median_dy_yours_minus_curve","mean_dy","rms_dy","n_bins","mean_abs_sigma"].join(",")];
@@ -1095,7 +1142,7 @@ const wantMine=new URLSearchParams(location.hash.slice(1)).get("pn")==="mine";
 mineLoad();readHash();syncShell();
 if(state.mode==="atlas")renderAtlas();if(state.mode==="tension")renderTension();if(state.mode==="spread")renderSpread();
 renderAll(false);
-if(state.sel)openRecord(state.sel);else if(wantMine)openPanel("mine");
+if(state.sel)openRecord(state.sel);else if(wantMine||state.openMine)openPanel("mine");
 {const go=()=>{document.body.classList.remove("boot");const b=$("boot");if(b){b.classList.add("done");setTimeout(()=>b.remove(),400)}};requestAnimationFrame(()=>requestAnimationFrame(go));setTimeout(go,250)}
 </script>
 </body>
