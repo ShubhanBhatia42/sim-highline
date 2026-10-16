@@ -3,7 +3,7 @@ import { readFile, access } from "node:fs/promises";
 const root = new URL("../dist/", import.meta.url);
 const manifest = JSON.parse(await readFile(new URL("../data/export/sim-highline-manifest.json", import.meta.url), "utf8"));
 const release = JSON.parse(await readFile(new URL("../data/release.json", import.meta.url), "utf8"));
-const PAGES = ["index", "studies", "study-definitions", "study-harmonization", "study-sfh", "study-joint", "retune", "data", "methods", "sources"];
+const PAGES = ["index", "studies", "study-definitions", "study-harmonization", "study-sfh", "study-joint", "retune", "data", "methods", "sources", "glossary", "faq", "changes"];
 const html = {};
 for (const page of [...PAGES, "findings"]) {
   const h = html[page] = await readFile(new URL(`site/${page}.html`, root), "utf8");
@@ -35,8 +35,8 @@ assert(index.includes(manifest.nRecords.toLocaleString("en-US")), "index: record
 assert(/<svg viewBox/.test(index) && (index.match(/<path d="M/g) || []).length >= 5, "index: figure must contain curves");
 assert(/Not independently reviewed/.test(index), "index must state limits");
 assert(/Fig\. 1/.test(index) && /Records by relation/.test(index), "index: figure and data table expected");
-for (const id of ["S1", "S2", "S3", "S4"]) assert(index.includes(`<td class="sid">${id}</td>`), `index: study ${id} missing from the table`);
-assert(/<td class="sid">S4<\/td>[\s\S]*?Pre-registered · (pending|result)/.test(index), "index: S4 row must say pending or result");
+for (const f of ["study-definitions", "study-harmonization", "study-sfh", "study-joint"]) assert(index.includes(`href="${f}.html"`), `index: study ${f} missing from the table`);
+assert(/study-joint\.html[\s\S]*?Pre-registered · (pending|result)/.test(index), "index: the all-at-once study row must say pending or result");
 assert(!/hero|What you get|What it is not|Start with a question|problem it removes/i.test(index), "index: marketing sections must be gone");
 
 const studies = html.studies;
