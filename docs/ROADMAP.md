@@ -6,11 +6,11 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 | tier | tasks | done | partly | waiting for a person | not done |
 |---|---|---|---|---|---|
-| 1 Quick (under 15 min) | 46 | 34 | 1 | 2 | 9 |
-| 2 Solid (about an hour) | 121 | 96 | 4 | 1 | 20 |
+| 1 Quick (under 15 min) | 46 | 37 | 1 | 2 | 6 |
+| 2 Solid (about an hour) | 121 | 105 | 4 | 1 | 11 |
 | 3 Big (several hours) | 23 | 19 | 1 | 0 | 3 |
 | 4 Needs other people or days | 10 | 0 | 0 | 2 | 8 |
-| all | 200 | 149 | 6 | 5 | 40 |
+| all | 200 | 161 | 6 | 5 | 28 |
 
 ## Step 1. Say what great means, and how we will know
 
@@ -220,24 +220,24 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 ## Step 9. Get it in front of people
 
-*Nothing proves it is needed until someone outside uses it. Prepare everything so the maintainer only has to send.* (0 of 16 done)
+*Nothing proves it is needed until someone outside uses it. Prepare everything so the maintainer only has to send.* (12 of 16 done)
 
-- [ ] **9.01** · tier 2 · Claude · Write the announcement text, short and plain
-- [ ] **9.02** · tier 2 · Claude · Write the pilot script for three testers: tasks, questions, what to record
-- [ ] **9.03** · tier 1 · Claude · Add a feedback link on every page that opens a pre-filled issue
-- [ ] **9.04** · tier 2 · Claude · Draft the emails to the authors whose curves are included
-- [ ] **9.05** · tier 2 · Claude · Draft the post for the relevant research community forums
-- [ ] **9.06** · tier 1 · Claude · Make 'tell us what is wrong' easy to find
+- [x] **9.01** · tier 2 · Claude · Write the announcement text, short and plain — docs/outreach/: ANNOUNCEMENT, FORUM-POST, REGISTRIES, SOFTWARE-CATALOGUE, generated from the data (scripts/make-outreach.mjs); nothing sent
+- [x] **9.02** · tier 2 · Claude · Write the pilot script for three testers: tasks, questions, what to record — docs/outreach/PILOT.md: tasks, what to record, how to read the result
+- [x] **9.03** · tier 1 · Claude · Add a feedback link on every page that opens a pre-filled issue — Footer on every page: 'Tell us in two sentences' and 'Report a problem', prefilled with the page and the address; Explorer about dialog; tested
+- [x] **9.04** · tier 2 · Claude · Draft the emails to the authors whose curves are included — docs/author-heads-up.md and author-requests.md (generated per suite and per paper, with permission requests first); nothing sent
+- [x] **9.05** · tier 2 · Claude · Draft the post for the relevant research community forums — docs/outreach/: ANNOUNCEMENT, FORUM-POST, REGISTRIES, SOFTWARE-CATALOGUE, generated from the data (scripts/make-outreach.mjs); nothing sent
+- [x] **9.06** · tier 1 · Claude · Make 'tell us what is wrong' easy to find — Footer on every page: 'Tell us in two sentences' and 'Report a problem', prefilled with the page and the address; Explorer about dialog; tested
 - [ ] **9.07** · tier 4 · You · Send it to the three testers
 - [ ] **9.08** · tier 4 · You · Collect their feedback and log it
-- [ ] **9.09** · tier 2 · Claude · Write a one-page summary page suitable for printing or sharing
-- [ ] **9.10** · tier 2 · Claude · Outline a five-slide talk
+- [x] **9.09** · tier 2 · Claude · Write a one-page summary page suitable for printing or sharing — site/summary.html: the project on one printed A4 page; tested
+- [x] **9.10** · tier 2 · Claude · Outline a five-slide talk — docs/outreach/TALK-OUTLINE.md
 - [ ] **9.11** · tier 4 · You · Present it to a research group
-- [ ] **9.12** · tier 2 · Claude · Add structured dataset metadata so search engines understand it
-- [ ] **9.13** · tier 1 · Claude · Draft the text for dataset registries
+- [x] **9.12** · tier 2 · Claude · Add structured dataset metadata so search engines understand it — schema.org Dataset JSON-LD on front and data pages, validated in test-site
+- [x] **9.13** · tier 1 · Claude · Draft the text for dataset registries — docs/outreach/: ANNOUNCEMENT, FORUM-POST, REGISTRIES, SOFTWARE-CATALOGUE, generated from the data (scripts/make-outreach.mjs); nothing sent
 - [ ] **9.14** · tier 4 · You · Submit the dataset to registries
-- [ ] **9.15** · tier 2 · Claude · Draft the software-catalogue entry
-- [ ] **9.16** · tier 2 · Claude · Add a 'used in' section and how to be listed
+- [x] **9.15** · tier 2 · Claude · Draft the software-catalogue entry — docs/outreach/: ANNOUNCEMENT, FORUM-POST, REGISTRIES, SOFTWARE-CATALOGUE, generated from the data (scripts/make-outreach.mjs); nothing sent
+- [x] **9.16** · tier 2 · Claude · Add a 'used in' section and how to be listed — Data page 'Used in' (honestly empty), issue form used-in.yml, data/used-in.json
 
 ## Step 10. Review, measure and decide
 

@@ -154,6 +154,17 @@ await journey(13, "A returning visitor is told what changed; a first-time visito
   assert.ok(!(await page.locator("#whatsnew").isVisible()), "dismissed for good until the next version");
   return "what's-new note shown once";
 });
+await journey(14, "Feedback links on every page open a prefilled issue", async ({ page, base }) => {
+  for (const pg of ["site/index.html", "site/retune.html", "site/study-joint.html", "site/quality.html"]) {
+    await page.goto(`${base}/${pg}#some=setting`);
+    const href = await page.evaluate(() => { const a = document.getElementById("tellus"); a.addEventListener("click", e => e.preventDefault()); a.click(); return a.href; });
+    const u = new URL(href);
+    assert.match(u.pathname, /\/issues\/new$/); assert.equal(u.searchParams.get("template"), "feedback.yml");
+    assert.match(u.searchParams.get("title"), /^\[feedback\] .{5}/); assert.ok(u.searchParams.get("page").length > 5);
+    const link = u.searchParams.get("link"); assert.ok(link.endsWith("#some=setting") || (pg.includes("retune") && /#.*@\d+&m=/.test(link)), `the address with its settings is passed on (${pg}: ${link}); the dials page may have replaced the hash with its own state`);
+  }
+  return "prefilled with the page and the address";
+});
 console.log("journey | question | clicks | ms | answer");
 for (const r of rows) console.log(`${String(r[0]).padStart(2)} | ${r[1]} | ${r[2]} | ${r[3]} | ${r[4]}`);
 await browser.close(); server.close();

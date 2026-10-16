@@ -400,6 +400,7 @@ Object.assign(stats, Object.fromEntries(Object.entries(jointStats(JR, undefined,
   stats.jrAfterRows = rows.map(([a, b, d]) => `<tr><td>${esc(a)}</td><td>${esc(b)}</td><td><a href="${repo}${d}">${d.replace(/\.md$/, "")}</a></td></tr>`).join("");
 }
 stats.repo = stats.repo || "https://github.com/ShubhanBhatia42/sim-highline";
+stats.siteUrl = "shubhanbhatia42.github.io/sim-highline";
 
 // ---- data quality: generated from data/analysis/data-quality.json (scripts/analyze_data_quality.py)
 {
@@ -420,6 +421,13 @@ stats.repo = stats.repo || "https://github.com/ShubhanBhatia42/sim-highline";
   stats.qTerms = `${Q.terms.records_with_terms} records carry explicit third-party terms. ${Q.terms.permission_not_requested} of them are values this project binned from a repository with no licence file; permission has not yet been requested, and they should be treated as not cleared for reuse until it is.`;
 }
 
+// ---- where the dataset has been used (data/used-in.json, filled from the "used in" issue form); honest when empty
+{
+  const U = JSON.parse(await read("data/used-in.json")), form = `${release.repo}/issues/new?template=used-in.yml`;
+  stats.usedIn = U.length
+    ? `<p>${U.length} use${U.length > 1 ? "s" : ""} reported to us:</p><ul class="flat">${U.map(u => `<li>${u.url ? `<a href="${esc(u.url)}">${esc(u.what)}</a>` : esc(u.what)}${u.who ? ` (${esc(u.who)})` : ""}: ${esc(u.how)}</li>`).join("")}</ul><p>Used it? <a href="${form}">Tell us</a> and it will be listed here.</p>`
+    : `<p>Nobody has told us yet. If you used the data or a page in a paper, a talk, a course or code, <a href="${form}">tell us in two lines</a> and, with your agreement, it is listed here. Until then this list is empty, and the project's usefulness is unproven.</p>`;
+}
 // ---- the dated registration trail (data/registration-trail.json, from scripts/make_registration_trail.py)
 {
   const TR = JSON.parse(await read("data/registration-trail.json")), NAMES = { harmonization: "Can matching definitions close the gap?", "model-form": "What can retuning change in cosmic star formation?", "joint-reachability": "Can two universes agree on everything at once?" };
@@ -452,7 +460,7 @@ stats.studiesFull = `<table class="studies stack"><thead><tr><th>Study</th><th>A
 
 // ---- shared page parts: head, header (wordmark, section nav, version chip, status bar), footer
 const SUN = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="3.4"/><path d="M10 2.5v1.8M10 15.7v1.8M2.5 10h1.8M15.7 10h1.8M4.7 4.7l1.3 1.3M14 14l1.3 1.3M4.7 15.3 6 14M14 6l1.3-1.3"/></svg>', MOON = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M16.5 11.8A6.8 6.8 0 0 1 8.2 3.5a6.8 6.8 0 1 0 8.3 8.3z"/></svg>';
-const THEME_JS = `<script>(function(){var L=document.querySelectorAll(".idx a[href^='#']");if(L.length&&window.IntersectionObserver){var m={};L.forEach(function(a){m[a.getAttribute("href").slice(1)]=a});var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){L.forEach(function(a){a.removeAttribute("aria-current")});m[e.target.id].setAttribute("aria-current","location")}})},{rootMargin:"0px 0px -70% 0px"});Object.keys(m).forEach(function(i){var s=document.getElementById(i);if(s)o.observe(s)})}document.querySelectorAll(".chart").forEach(function(c){if(c.scrollWidth>c.clientWidth+1){c.tabIndex=0;c.setAttribute("role","group");c.setAttribute("aria-label","Chart, scrolls sideways")}});var b=document.getElementById("theme"),r=document.documentElement,S='${SUN}',M='${MOON}';function now(){return r.dataset.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}function paint(){var d=now()==="dark";b.innerHTML=d?S:M;b.setAttribute("aria-label",d?"Switch to the light theme":"Switch to the dark theme")}b.onclick=function(){var n=now()==="dark"?"light":"dark";r.dataset.theme=n;try{localStorage.setItem("sh-theme",n)}catch(e){}paint()};paint()})()</script>`;
+const THEME_JS = `<script>(function(){["reportlink","feedbacklink","tellus"].forEach(function(id){var a=document.getElementById(id);if(!a)return;a.addEventListener("click",function(){var u=a.href.split("&page=")[0];a.href=u+"&title="+encodeURIComponent("["+(id==="reportlink"?"site":"feedback")+"] "+document.title.slice(0,60))+"&page="+encodeURIComponent(document.title)+"&link="+encodeURIComponent(location.href)})});var L=document.querySelectorAll(".idx a[href^='#']");if(L.length&&window.IntersectionObserver){var m={};L.forEach(function(a){m[a.getAttribute("href").slice(1)]=a});var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){L.forEach(function(a){a.removeAttribute("aria-current")});m[e.target.id].setAttribute("aria-current","location")}})},{rootMargin:"0px 0px -70% 0px"});Object.keys(m).forEach(function(i){var s=document.getElementById(i);if(s)o.observe(s)})}document.querySelectorAll(".chart").forEach(function(c){if(c.scrollWidth>c.clientWidth+1){c.tabIndex=0;c.setAttribute("role","group");c.setAttribute("aria-label","Chart, scrolls sideways")}});var b=document.getElementById("theme"),r=document.documentElement,S='${SUN}',M='${MOON}';function now(){return r.dataset.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}function paint(){var d=now()==="dark";b.innerHTML=d?S:M;b.setAttribute("aria-label",d?"Switch to the light theme":"Switch to the dark theme")}b.onclick=function(){var n=now()==="dark"?"light":"dark";r.dataset.theme=n;try{localStorage.setItem("sh-theme",n)}catch(e){}paint()};paint()})()</script>`;
 const FONTS = "https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap";
 const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230c1016'/%3E%3Cpath d='M5 24H13V17H19V9H27' fill='none' stroke='%23ffffff' stroke-width='2.4' stroke-linejoin='miter'/%3E%3C/svg%3E";
 const SITE_URL = "https://shubhanbhatia42.github.io/sim-highline";
@@ -474,16 +482,26 @@ stats.citeText = `${esc(lastParts.join(" "))}, ${esc(first[0])}. (${stats.year})
 const FOOTER = () => `<footer class="foot"><div class="wrap">
 <p>Cite as: ${esc(lastParts.join(" "))}, ${esc(first[0])}. (${stats.year}). <em>${esc(release.title)}</em> (v${release.version}). Zenodo. <a href="https://doi.org/${release.doi}">doi:${release.doi}</a>. Cite the original papers as well: every record carries its citation and DOI.</p>
 <p>Code ${esc(release.license.code)}; data ${esc(release.license.data.replace("CC-BY-4.0", "CC BY 4.0"))}, third-party inputs keep their own terms (<a href="${release.repo}/blob/main/docs/SOURCE-TERMS.md">SOURCE-TERMS.md</a>). Maintained by ${esc(release.author)}.</p>
-<p class="links"><a href="../highline.html">Explorer</a><a href="retune.html">Dials</a><a href="studies.html">Studies</a><a href="data.html">Data</a><a href="methods.html">Methods</a><a href="glossary.html">Glossary</a><a href="faq.html">FAQ</a><a href="quality.html">Data quality</a><a href="changes.html">What is new</a><a href="${release.repo}/issues/new/choose">Report a problem</a><a href="${release.repo}">Repository</a><a href="${release.repo}/blob/main/CHANGELOG.md">Changelog</a><a href="${release.repo}/blob/main/CITATION.cff">CITATION.cff</a><a href="${release.repo}/blob/main/LICENSE">LICENSE</a><a href="${release.repo}/blob/main/LICENSE-DATA.md">LICENSE-DATA</a></p>
+<p class="tell"><b>Was something confusing, wrong or missing?</b> <a id="tellus" href="${release.repo}/issues/new?template=feedback.yml">Tell us in two sentences</a>. This needs a GitHub account; without one, write to the maintainer at the address in <a href="${release.repo}/blob/main/CITATION.cff">CITATION.cff</a>.</p>
+<p class="links"><a href="../highline.html">Explorer</a><a href="retune.html">Dials</a><a href="studies.html">Studies</a><a href="data.html">Data</a><a href="methods.html">Methods</a><a href="glossary.html">Glossary</a><a href="faq.html">FAQ</a><a href="quality.html">Data quality</a><a href="changes.html">What is new</a><a id="reportlink" href="${release.repo}/issues/new?template=bug.yml">Report a problem</a><a id="feedbacklink" href="${release.repo}/issues/new?template=feedback.yml">Give feedback</a><a href="${release.repo}">Repository</a><a href="${release.repo}/blob/main/CHANGELOG.md">Changelog</a><a href="${release.repo}/blob/main/CITATION.cff">CITATION.cff</a><a href="${release.repo}/blob/main/LICENSE">LICENSE</a><a href="${release.repo}/blob/main/LICENSE-DATA.md">LICENSE-DATA</a></p>
 </div></footer>${THEME_JS}`;
 
+// structured metadata so that dataset search understands what this is (schema.org Dataset), from the release and the export manifest
+const MIME = { ".csv": "text/csv", ".json": "application/json", ".bib": "application/x-bibtex", ".py": "text/x-python" };
+const DATASET_LD = `\n<script type="application/ld+json">${JSON.stringify({
+  "@context": "https://schema.org", "@type": "Dataset", name: release.title, description: "Galaxy scaling relations from cosmological simulations and observations: " + stats.records + " curves from " + stats.suites + " simulations and " + stats.obsSources + " observational sources, each with its definitions (mass aperture, IMF, population), source and a note on whether it can be compared fairly with the others.",
+  url: `${SITE_URL}/site/data.html`, sameAs: `https://doi.org/${release.doi}`, identifier: `https://doi.org/${release.doi}`, version: release.version, datePublished: release.released, license: "https://creativecommons.org/licenses/by/4.0/", isAccessibleForFree: true,
+  creator: { "@type": "Person", name: release.author }, keywords: ["galaxy formation", "cosmological simulations", "scaling relations", "stellar mass function", "star formation", "black holes", "IllustrisTNG", "SIMBA", "CAMELS"],
+  citation: `https://doi.org/${release.doi}`, isBasedOn: release.repo,
+  distribution: Object.entries(manifest.files).filter(([f]) => /\.(csv|json|bib)$/.test(f)).map(([f, m]) => ({ "@type": "DataDownload", name: f, contentUrl: `${SITE_URL}/data/export/${f}`, encodingFormat: MIME[f.slice(f.lastIndexOf("."))] || "application/octet-stream", contentSize: `${m.bytes} B`, sha256: m.sha256 }))
+}).replace(/</g, "\\u003c")}</script>`;
 await mkdir(new URL("dist/site/", root), { recursive: true });
-const PAGES = ["index.html", "studies.html", "study-definitions.html", "study-harmonization.html", "study-sfh.html", "study-joint.html", "retune.html", "data.html", "methods.html", "sources.html", "findings.html", "glossary.html", "faq.html", "changes.html", "quality.html"];
+const PAGES = ["index.html", "studies.html", "study-definitions.html", "study-harmonization.html", "study-sfh.html", "study-joint.html", "retune.html", "data.html", "methods.html", "sources.html", "findings.html", "glossary.html", "faq.html", "changes.html", "quality.html", "summary.html"];
 for (const page of PAGES) {
   let html = await read(`site/src/${page}`);
   const title = (html.match(/<title>([^<]*)<\/title>/) || [])[1], desc = (html.match(/<meta name="description" content="([^"]*)"/) || [])[1];
   if (!title || !desc) throw new Error(`${page}: <title> and <meta name="description"> are required`);
-  stats.head = HEAD(title, desc, OG[page]); stats.header = HEADER(page); stats.footer = FOOTER();
+  stats.head = HEAD(title, desc, OG[page]) + (page === "index.html" || page === "data.html" ? DATASET_LD : ""); stats.header = HEADER(page); stats.footer = FOOTER();
   html = html.replace(/\{\{(\w+)\}\}/g, (m, k) => { if (!(k in stats)) throw new Error(`unknown placeholder ${m} in ${page}`); return String(stats[k]); });
   await writeFile(new URL(`dist/site/${page}`, root), page === "findings.html" ? html : withCsp(html));
 }

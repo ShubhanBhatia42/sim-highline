@@ -340,6 +340,7 @@ b.classList.add("failed");b.setAttribute("role","alert");b.innerHTML='<div class
       <p><b>Nothing is synthesised.</b> A suite with no data at the chosen redshift disappears instead of being interpolated. The only arithmetic the page does is exact: unit-preserving transforms you ask for (per unit mass, times mass, physical axes), residuals against a reference you pick, and reading a published curve at a chosen x inside its plotted range for the vs-redshift view.</p>
       <p><b>Where the numbers come from.</b> Solid lines are catalogue-derived or tabulated values, dashed lines are published fits, dotted lines are values digitized from published figures (never used to score a comparison). <b>Context only</b> marks curves whose definitions do not allow a fair comparison with the others.</p>
       <p><b>Get data</b> downloads exactly what is on screen (or all epochs) as a tidy CSV or JSON, with definitions and citations; <code>sim_highline.py</code> loads the full dataset into pandas.</p>
+      <p><b>Something wrong or confusing?</b> <a href="https://github.com/ShubhanBhatia42/sim-highline/issues/new?template=feedback.yml" target="_blank" rel="noopener">Tell us</a> (a GitHub account is needed), or use <b>Report an issue</b> on any curve for a mistake in that curve.</p>
       <p><b>What exists</b> shows suite by relation by redshift. Empty cells are missing data, not missing physics.</p>
       <p><b>Start here.</b> Three things people do with it:</p>
       <ol class="recipes">
@@ -1168,7 +1169,7 @@ if(!seen&&!state.embed&&!/(^#|&)(sel|run|pn)=/.test(location.hash))h.hidden=fals
 $("helloOk").onclick=()=>{done();$("stage").focus({preventScroll:true})};$("helloMore").onclick=()=>{done();$("infoBtn").click()};
 h.addEventListener("keydown",e=>{if(e.key==="Escape"){done();e.stopPropagation()}});
 addEventListener("keydown",e=>{if(!h.hidden&&["ArrowLeft","ArrowRight"].includes(e.key))done()},true)}
-{const go=()=>{document.body.classList.remove("boot");const b=$("boot");if(b){b.classList.add("done");setTimeout(()=>b.remove(),400)}};requestAnimationFrame(()=>requestAnimationFrame(go));setTimeout(go,250)}
+{const go=()=>{const b=$("boot");if(b&&b.classList.contains("failed"))return;document.body.classList.remove("boot");if(b){b.classList.add("done");setTimeout(()=>b.remove(),400)}};requestAnimationFrame(()=>requestAnimationFrame(go));setTimeout(go,250)}
 </script>
 </body>
 </html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sim-highline on one page</title>
+<meta name="description" content="What sim-highline is, what it can do, what it has found and how far to trust it, on one page you can print or send to a colleague.">
+{{head}}
+</head>
+<body>
+{{header}}
+<main id="main" class="wrap page" tabindex="-1">
+<div class="doc"><div class="c onepage">
+<div class="title">
+<p class="lab kicker">One page · v{{version}} · {{released}}</p>
+<h1>sim-highline on one page</h1>
+<p class="standfirst">Put your simulated galaxy curve next to every published simulation and observation, and find out which comparisons are fair. Free, open, runs in your browser. <b>{{siteUrl}}</b></p>
+</div>
+
+<h2>What you can do</h2>
+<dl class="inst">
+<div><dt><a href="../highline.html#r=gsmf&amp;z=0.1">Look up a relation</a></dt><dd>{{records}} curves from {{suites}} simulations and {{obsSources}} observational sources on one plot, each with its source and its definitions.</dd></div>
+<div><dt><a href="../highline.html#r=gsmf&amp;z=0.1&amp;pn=mine">Check your own run</a></dt><dd>Paste your curve; get offsets against the published curves it can fairly be compared with. Nothing leaves your browser.</dd></div>
+<div><dt><a href="retune.html">Turn the physics dials</a></dt><dd>Four feedback dials each for IllustrisTNG and SIMBA, from {{camelsN}} CAMELS simulations: what moves, what refuses.</dd></div>
+<div><dt><a href="data.html">Take the data</a></dt><dd>CSV, JSON, BibTeX and a Python loader. CC BY 4.0.</dd></div>
+</dl>
+
+<h2>What it has found</h2>
+<ul class="flat">
+<li>{{plainDefsOne}}</li>
+<li>{{plainHarmOne}}</li>
+<li>{{plainSfhOne}}</li>
+<li>{{plainJointOne}}</li>
+</ul>
+<p>Each result was fixed by a rule written before the answer was computed, except the first, which is descriptive. <a href="studies.html">The studies</a> give the rules, the checks made afterwards and the limits.</p>
+
+<h2>How far to trust it</h2>
+<ul class="flat">
+<li>Not peer reviewed, one maintainer. {{digitizedShare}} of simulation curves were read from published figures and are never used to rank anything; where authors publish a table, use theirs.</li>
+<li>The dials results are for two codes at CAMELS resolution, not for simulations in general.</li>
+<li>Nobody outside the project is known to have used it yet. <a href="data.html#usedin">Used it? Say so.</a></li>
+</ul>
+
+<h2>Cite</h2>
+<p class="citetext">{{citeText}}. Please also cite the original paper of every curve you use.</p>
+<p class="tell"><b>Wrong or confusing?</b> <a href="{{repo}}/issues/new?template=feedback.yml">Tell us in two sentences</a>.</p>
+</div></div>
+</main>
+{{footer}}
+</body>
+</html>

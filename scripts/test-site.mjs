@@ -3,7 +3,7 @@ import { readFile, access } from "node:fs/promises";
 const root = new URL("../dist/", import.meta.url);
 const manifest = JSON.parse(await readFile(new URL("../data/export/sim-highline-manifest.json", import.meta.url), "utf8"));
 const release = JSON.parse(await readFile(new URL("../data/release.json", import.meta.url), "utf8"));
-const PAGES = ["index", "studies", "study-definitions", "study-harmonization", "study-sfh", "study-joint", "retune", "data", "methods", "sources", "glossary", "faq", "changes", "quality"];
+const PAGES = ["index", "studies", "study-definitions", "study-harmonization", "study-sfh", "study-joint", "retune", "data", "methods", "sources", "glossary", "faq", "changes", "quality", "summary"];
 const html = {};
 for (const page of [...PAGES, "findings"]) {
   const h = html[page] = await readFile(new URL(`site/${page}.html`, root), "utf8");
@@ -44,6 +44,14 @@ for (const f of ["default", "explorer", "retune", "study-joint"]) {
   assert.equal(by("removable").length, 6, "plain words say six are removable"); assert.equal(by("unresolved").length, 3, "plain words say three are borderline");
   const plain = html["study-joint"].match(/<div class="plain">([\s\S]*?)<\/div>/)[1];
   assert(plain.includes(`${R.point.all.D.toFixed(1)} noise units`), "plain words quote the joint distance");
+}
+// structured dataset metadata on the front and data pages: valid JSON, the fields dataset search needs, and every download it lists exists in the build
+for (const page of ["index", "data"]) {
+  const m = html[page].match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/); assert(m, `${page}: dataset metadata missing`);
+  const d = JSON.parse(m[1]);
+  assert(d["@type"] === "Dataset" && d.name && d.description.length > 80 && d.license && d.identifier.includes(release.doi) && d.creator.name && d.version === release.version, `${page}: dataset metadata fields`);
+  assert(d.distribution.length >= 5, `${page}: downloads listed`);
+  for (const x of d.distribution) await access(new URL(x.contentUrl.replace("https://shubhanbhatia42.github.io/sim-highline/", ""), root)).catch(() => assert.fail(`${page}: listed download ${x.contentUrl} is not in the build`));
 }
 // the old pages are gone and the old findings URL redirects
 for (const gone of ["about", "use-cases"]) await access(new URL(`site/${gone}.html`, root)).then(() => assert.fail(`${gone}.html must be removed`), () => {});
