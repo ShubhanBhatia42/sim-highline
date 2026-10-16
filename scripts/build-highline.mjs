@@ -1,7 +1,12 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 const root = new URL("../", import.meta.url);
 const tpl = await readFile(new URL("highline/index.html", root), "utf8");
-const data = await readFile(new URL("data/curve-index.js", root), "utf8");
+const dataJs = await readFile(new URL("data/curve-index.js", root), "utf8");
+// the data file is a few statements `window.NAME=<JSON>;`; they are embedded as one JSON text and parsed with JSON.parse, which is several times faster than the JavaScript parser on a 5 MB literal
+const parts = {};
+for (const st of dataJs.replace(/^window\./, "").split(/;\s*\nwindow\./)) { const i = st.indexOf("="); parts[st.slice(0, i)] = st.slice(i + 1).replace(/;\s*$/, ""); }
+const data = "{" + Object.entries(parts).map(([k, v]) => JSON.stringify(k) + ":" + v).join(",") + "}";
+JSON.parse(data);
 const compare = await readFile(new URL("compare.js", root), "utf8");
 const exportLib = await readFile(new URL("export-lib.js", root), "utf8");
 const logic = await readFile(new URL("highline/logic.js", root), "utf8");

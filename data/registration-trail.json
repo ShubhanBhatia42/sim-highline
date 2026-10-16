@@ -1,0 +1,80 @@
+{
+ "harmonization": {
+  "protocol_file": "docs/PROTOCOL-harmonization.md",
+  "result_file": "data/analysis/harmonization.json",
+  "protocol_commits": [
+   {
+    "hash": "f71cc5dcc63dab1eed582cefd94983682fce503a",
+    "date": "2026-10-14T10:46:14+00:00",
+    "subject": "Pre-specified protocol for the definition-harmonization analysis of the z~0 stellar mass functions",
+    "short": "f71cc5d"
+   },
+   {
+    "hash": "9c37903386f070389ff156d671e9c8af6b2f900e",
+    "date": "2026-10-14T10:57:58+00:00",
+    "subject": "Protocol amendment A1: mass-scatter operator with a validation gate, added before any E1-E4 statistic was computed",
+    "short": "9c37903"
+   },
+   {
+    "hash": "2c12e5b4875a8b9173c7ef8ee472da65b73eadb9",
+    "date": "2026-10-14T11:11:41+00:00",
+    "subject": "Protocol amendment A2 and its implementation: galaxy-level aperture remap with Jacobian replaces level-matched shifts; synthetic tests (committed before E1, E2, E4 or any sensitivity statistic was computed)",
+    "short": "2c12e5b"
+   }
+  ],
+  "result_first_commit": {
+   "hash": "0b6ae6c74d7619f9fd9eb10bb48e02102f9b854e",
+   "date": "2026-10-14T11:21:53+00:00",
+   "subject": "v0.21.0: confirmatory run of the pre-specified harmonization analysis (not detected), generated report, site Findings section, verification chain",
+   "short": "0b6ae6c"
+  }
+ },
+ "model-form": {
+  "protocol_file": "docs/PROTOCOL-model-form.md",
+  "result_file": "data/analysis/model-form.json",
+  "protocol_commits": [
+   {
+    "hash": "dd575304ab28a3adf7ebe88bae741ffc4309166f",
+    "date": "2026-10-14T12:17:34+00:00",
+    "subject": "Pre-registered protocol for the parametric-versus-structural analysis of the cosmic star formation history, with its analysis code and synthetic tests (committed before any real spread, variant deviation, emulator fit, reachability distance or posterior was computed)",
+    "short": "dd57530"
+   },
+   {
+    "hash": "1bb5b8dd9de4edb7143b4fe983365259f8d2a0c0",
+    "date": "2026-10-14T13:13:04+00:00",
+    "subject": "Protocol amendment A1 and referee fixes, committed before any outcome was computed: matched-size E3 verdict with a seed margin, common-systematic E4 with an effective-sample-size floor, V1 volume check, V4 and V5 corrections, S8 and S9, ridge as stated; power and calibration script with its output; design check kept for the record",
+    "short": "1bb5b8d"
+   }
+  ],
+  "result_first_commit": {
+   "hash": "fb278a69f11fd71b56c4dfc5c75e3953791b40c1",
+   "date": "2026-10-14T13:43:39+00:00",
+   "subject": "v0.22.0: confirmatory run of the pre-registered parametric-versus-structural analysis (E1 funnel not detected; E3 removable by the pre-specified rule; E4 parametric; V4 for SIMBA fails marginally at 1.51 against 1.5), generated report, Findings section, release notes",
+   "short": "fb278a6"
+  }
+ },
+ "joint-reachability": {
+  "protocol_file": "docs/PROTOCOL-joint-reachability.md",
+  "result_file": "data/analysis/joint-reachability.json",
+  "protocol_commits": [
+   {
+    "hash": "cdf3dd7f8240245a4fb10473bbf2c6fc663e641b",
+    "date": "2026-10-14T17:28:54+00:00",
+    "subject": "Joint-reachability study, draft before any outcome: protocol, analysis code, synthetic-world calibration, tests, CAMELS galaxy-population summaries (2054 simulations x 5 snapshots, 186 of 530 outputs eligible), Retune page script",
+    "short": "cdf3dd7"
+   },
+   {
+    "hash": "73817274c8ce0ac65ad968757a637437b945ddc4",
+    "date": "2026-10-14T22:42:09+00:00",
+    "subject": "Joint-reachability: Amendment A1 (emulator-error correction, null-calibrated J3, mechanism classes), calibration worlds with oracle truth, site pages updated for corrected distances",
+    "short": "7381727"
+   }
+  ],
+  "result_first_commit": {
+   "hash": "d2b314bd19400cd6a430dbb77d0ee11d2e90a6c9",
+   "date": "2026-10-15T01:36:17+00:00",
+   "subject": "Joint-reachability: confirmatory run (one run, protocol and A1 committed before it); joint verdict structural, D = 4.8 noise units; report and JSON",
+   "short": "d2b314b"
+  }
+ }
+}

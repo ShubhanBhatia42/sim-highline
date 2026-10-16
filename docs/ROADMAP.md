@@ -6,11 +6,11 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 | tier | tasks | done | partly | waiting for a person | not done |
 |---|---|---|---|---|---|
-| 1 Quick (under 15 min) | 46 | 19 | 1 | 2 | 24 |
-| 2 Solid (about an hour) | 121 | 53 | 2 | 0 | 66 |
+| 1 Quick (under 15 min) | 46 | 22 | 1 | 2 | 21 |
+| 2 Solid (about an hour) | 121 | 55 | 2 | 0 | 64 |
 | 3 Big (several hours) | 23 | 10 | 1 | 0 | 12 |
 | 4 Needs other people or days | 10 | 0 | 0 | 2 | 8 |
-| all | 200 | 82 | 4 | 4 | 110 |
+| all | 200 | 87 | 4 | 4 | 105 |
 
 ## Step 1. Say what great means, and how we will know
 
@@ -122,10 +122,10 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 ## Step 5. Strengthen the science
 
-*Check what is already known, test the result's robustness, and say only what survives.* (2 of 20 done)
+*Check what is already known, test the result's robustness, and say only what survives.* (5 of 20 done)
 
 - [x] **5.01** · tier 2 · Claude · Search the literature: has cross-code retuning been studied in CAMELS? Write the related-work note — docs/RELATED-WORK.md; summaries only, papers not read
-- [ ] **5.02** · tier 1 · Claude · Change the claims on the pages to match what the prior art shows
+- [x] **5.02** · tier 1 · Claude · Change the claims on the pages to match what the prior art shows — related-work note linked from the all-at-once study and the FAQ; limits in brief at the top of all four study pages
 - [ ] **5.03** · tier 3 · Claude · Test the result under other weightings and report it as exploratory
 - [ ] **5.04** · tier 3 · Claude · Reproduce the main numbers with a second, independent implementation of the distance
 - [ ] **5.05** · tier 2 · Claude · Write down every analysis choice that could have changed the result
@@ -137,9 +137,9 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 - [ ] **5.11** · tier 4 · You · Ask a CAMELS team member to read the note
 - [ ] **5.12** · tier 2 · Claude · Show how far each code is from observed curves after tuning (exploratory)
 - [ ] **5.13** · tier 3 · Claude · Rank which observables best tell the codes apart, with uncertainty
-- [ ] **5.14** · tier 2 · Claude · Show the dated commit trail that proves the rules were written before the results
+- [x] **5.14** · tier 2 · Claude · Show the dated commit trail that proves the rules were written before the results — data/registration-trail.json from git history; table on the studies page; scripts/test_registration.py checks protocol before result
 - [ ] **5.15** · tier 2 · Claude · Check the calibration document matches the final settings
-- [ ] **5.16** · tier 1 · Claude · Put the limits at the top of every study page
+- [x] **5.16** · tier 1 · Claude · Put the limits at the top of every study page — related-work note linked from the all-at-once study and the FAQ; limits in brief at the top of all four study pages
 - [ ] **5.17** · tier 4 · You · Deposit the analysis data with a DOI
 - [ ] **5.18** · tier 3 · Claude · Make every analysis run end to end with one command and a documented runtime
 - [ ] **5.19** · tier 2 · Claude · Add an environment file so others can reproduce the numbers
@@ -147,10 +147,10 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 ## Step 6. Make it fast, robust and accessible
 
-*Works on a phone, on a slow connection, with a keyboard, in dark mode.* (0 of 20 done)
+*Works on a phone, on a slow connection, with a keyboard, in dark mode.* (2 of 20 done)
 
-- [ ] **6.01** · tier 1 · Claude · Measure the real transfer size and load time of every page
-- [ ] **6.02** · tier 3 · Claude · Split the Explorer's data so the first view appears fast, if the measurement says it is needed
+- [x] **6.01** · tier 1 · Claude · Measure the real transfer size and load time of every page — scripts/test-performance.mjs: slow 4G plus 4x slower processor; Explorer 5.1 s, front page 2.9 s, dials page 3.3 s, a study page 1.3 s; budgets enforced in the test
+- [-] **6.02** · tier 3 · Claude · Split the Explorer's data so the first view appears fast, if the measurement says it is needed — Measured instead of assumed: the Explorer was 8.1 s on the throttled phone; embedding its data as JSON text brought that to 5.1 s, inside the budget, so splitting the data was not needed
 - [ ] **6.03** · tier 2 · Claude · Add a loading state and an error state to the Explorer
 - [ ] **6.04** · tier 2 · Claude · Audit speed, accessibility and best practice and enforce a budget in tests
 - [ ] **6.05** · tier 2 · Claude · Screenshot every page at 320, 390, 768 and 1440 pixels and review them
@@ -165,7 +165,7 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 - [ ] **6.14** · tier 1 · Claude · Fix the clipped legend footer in the Explorer
 - [ ] **6.15** · tier 2 · Claude · Run the browser tests in Firefox and WebKit as well
 - [ ] **6.16** · tier 2 · Claude · Check very wide screens
-- [ ] **6.17** · tier 2 · Claude · Throttle the network and measure time to first interaction
+- [x] **6.17** · tier 2 · Claude · Throttle the network and measure time to first interaction — scripts/test-performance.mjs: slow 4G plus 4x slower processor; Explorer 5.1 s, front page 2.9 s, dials page 3.3 s, a study page 1.3 s; budgets enforced in the test
 - [ ] **6.18** · tier 1 · Claude · Add a helpful 404 page
 - [ ] **6.19** · tier 2 · Claude · Check every link on the built site and external links
 - [ ] **6.20** · tier 2 · Claude · Add a content security policy to the site

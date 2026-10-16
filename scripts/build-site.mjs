@@ -397,6 +397,13 @@ stats.repo = stats.repo || "https://github.com/ShubhanBhatia42/sim-highline";
   stats.qTerms = `${Q.terms.records_with_terms} records carry explicit third-party terms. ${Q.terms.permission_not_requested} of them are values this project binned from a repository with no licence file; permission has not yet been requested, and they should be treated as not cleared for reuse until it is.`;
 }
 
+// ---- the dated registration trail (data/registration-trail.json, from scripts/make_registration_trail.py)
+{
+  const TR = JSON.parse(await read("data/registration-trail.json")), NAMES = { harmonization: "Can matching definitions close the gap?", "model-form": "What can retuning change in cosmic star formation?", "joint-reachability": "Can two universes agree on everything at once?" };
+  const d = x => x.slice(0, 10), link = c => `<a href="${release.repo}/commit/${c.hash}"><code>${c.short}</code></a>`;
+  stats.trailRows = Object.entries(TR).map(([k, t]) => { const p = t.protocol_commits, r = t.result_first_commit; return `<tr><td>${esc(NAMES[k] || k)}</td><td>${d(p[0].date)} ${link(p[0])}</td><td>${p.length > 1 ? p.slice(1).map(c => `${d(c.date)} ${link(c)}`).join(", ") : "none"}</td><td>${r ? `${d(r.date)} ${link(r)}` : "–"}</td></tr>`; }).join("");
+}
+
 // ---- studies (one list feeds the front page and the studies page)
 const STUDIES = [
   { id: "S1", href: "study-definitions.html", title: "How much is just definitions?", q: "How much of the disagreement between simulations is just definitions?", status: "Result", head: `${stats.fMatchedPct} of ${stats.fPairs} cross-simulation pairs fully matched`,

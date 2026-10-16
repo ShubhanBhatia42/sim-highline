@@ -4,6 +4,7 @@ import http from "node:http";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { chromium } from "playwright";
+import { launchOptions } from "./browser-options.mjs";
 import AxeBuilder from "@axe-core/playwright";
 
 const DIST = new URL("../dist/", import.meta.url).pathname;
@@ -14,7 +15,7 @@ const server = http.createServer(async (req, res) => {
 });
 await new Promise(r => server.listen(0, "127.0.0.1", r));
 const BASE = `http://127.0.0.1:${server.address().port}`;
-const browser = await chromium.launch(process.env.PW_CHANNEL ? { channel: process.env.PW_CHANNEL } : {});
+const browser = await chromium.launch(launchOptions());
 const failures = [];
 let n = 0;
 const step = async (name, fn) => { n++; try { await fn(); } catch (e) { failures.push(`${name}: ${e.message.split("\n")[0]}`); console.log("FAIL", name, "-", e.message.split("\n")[0]); } };

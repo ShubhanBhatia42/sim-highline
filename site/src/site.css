@@ -331,3 +331,5 @@ pre[tabindex]:focus-visible{outline-offset:0}
 @media (prefers-reduced-motion:reduce){.rt-btn,.rt-z{transition:none}}
 
 .rt-guide{margin:0 0 1.2rem;border:1px solid var(--rule-strong);padding:.6rem .9rem;max-width:46rem}.rt-guide summary{font:500 12.5px var(--mono);cursor:pointer}.rt-guide ol{margin:.6rem 0 .2rem;padding-left:1.2rem}.rt-guide li{font:400 15px/1.5 var(--serif);margin:.3rem 0;color:var(--ink2)}
+
+.limits-first{max-width:46rem;border-left:3px solid var(--orange);padding:.15rem 0 .15rem .9rem;margin:0 0 1.6rem;font:400 15.5px/1.5 var(--serif);color:var(--ink)}
