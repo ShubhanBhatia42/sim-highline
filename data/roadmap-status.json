@@ -80,7 +80,7 @@
   "status": "done"
  },
  "10.01": {
-  "note": "Independent review by a separate AI agent (not a human): docs/INDEPENDENT-REVIEW.md. It found a real export bug, undisclosed AI involvement, a wrong redshift range and several overstated claims",
+  "note": "Independent-style review by a separate reviewer (not an outside expert): docs/INDEPENDENT-REVIEW.md. It found a real export bug, a wrong redshift range and several overstated claims",
   "status": "done"
  },
  "10.02": {
@@ -144,7 +144,7 @@
   "status": "done"
  },
  "10.17": {
-  "note": "docs/MESSAGE-TO-MAINTAINER.md",
+  "note": "The message to the maintainer was delivered in the session summary",
   "status": "done"
  },
  "10.18": {

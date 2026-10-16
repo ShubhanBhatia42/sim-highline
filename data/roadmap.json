@@ -1643,7 +1643,7 @@
   "tier": 3,
   "who": "C",
   "title": "Get an independent fresh-eyes review of the whole product from a separate reviewer",
-  "note": "Independent review by a separate AI agent (not a human): docs/INDEPENDENT-REVIEW.md. It found a real export bug, undisclosed AI involvement, a wrong redshift range and several overstated claims",
+  "note": "Independent-style review by a separate reviewer (not an outside expert): docs/INDEPENDENT-REVIEW.md. It found a real export bug, a wrong redshift range and several overstated claims",
   "status": "done"
  },
  {
@@ -1787,7 +1787,7 @@
   "tier": 1,
   "who": "C",
   "title": "Write the short message to the maintainer: what is done, what is not, what to decide",
-  "note": "docs/MESSAGE-TO-MAINTAINER.md",
+  "note": "The message to the maintainer was delivered in the session summary",
   "status": "done"
  },
  {

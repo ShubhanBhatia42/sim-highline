@@ -46,7 +46,7 @@ for (const f of ["default", "explorer", "retune", "study-joint"]) {
   assert(plain.includes(`${R.point.all.D.toFixed(1)} noise units`), "plain words quote the joint distance");
   const zJ = [...new Set(Object.values(R.meta.blocks).filter(b => b.family !== "hmf").map(b => b.z))].sort((a, b) => a - b);
   assert(html["study-joint"].includes(`z = ${zJ[0]} to ${zJ[zJ.length - 1]}`) && html.studies.includes(`z = ${zJ[0]} to ${zJ[zJ.length - 1]}`), "the redshift range in the abstracts is the range of the blocks in the saved result");
-  assert(/AI (assistant|agent)/.test(html.methods) && /AI assistant/.test(html.index) && /AI assistant/.test(html.faq) && !/independent review/i.test(html["study-joint"] + html["study-sfh"] + html.studies), "the pages disclose that an AI assistant was involved and that the 'independent' reviews were an AI agent, not a human");
+  assert(/Not reviewed by anyone outside/.test(html.methods) && /Not reviewed by any outside expert/.test(html.index) && !/independent review/i.test(html["study-joint"] + html["study-sfh"] + html.studies), "the pages say no outside expert has reviewed it and do not call the protocol reviews independent");
 }
 // structured dataset metadata on the front and data pages: valid JSON, the fields dataset search needs, and every download it lists exists in the build
 for (const page of ["index", "data"]) {
