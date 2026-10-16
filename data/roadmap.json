@@ -788,8 +788,8 @@
   "tier": 3,
   "who": "C",
   "title": "Probe whether a third simulation code can be added so it is not 'two codes only'",
-  "note": "Astrid catalogues are public and readable with the same pipeline; ingestion is running; pairwise analysis still to do",
-  "status": "partial"
+  "note": "Astrid ingested; docs/ANALYSIS-third-code.md: 97 outputs usable in all three codes; SIMBA stands apart on black hole occupation. Not added to the dials page (Astrid has fewer usable outputs)",
+  "status": "done"
  },
  {
   "id": "5.01",
@@ -815,7 +815,8 @@
   "tier": 3,
   "who": "C",
   "title": "Test the result under other weightings and report it as exploratory",
-  "status": "todo"
+  "note": "docs/ROBUSTNESS-joint-reachability.md (other weightings 3.8-5.4, second implementation 4.85, kernel ridge 4.91); half-sample refits are the registered splits (200 halves, 4.64-4.86)",
+  "status": "done"
  },
  {
   "id": "5.04",
@@ -823,7 +824,8 @@
   "tier": 3,
   "who": "C",
   "title": "Reproduce the main numbers with a second, independent implementation of the distance",
-  "status": "todo"
+  "note": "docs/ROBUSTNESS-joint-reachability.md (other weightings 3.8-5.4, second implementation 4.85, kernel ridge 4.91); half-sample refits are the registered splits (200 halves, 4.64-4.86)",
+  "status": "done"
  },
  {
   "id": "5.05",
@@ -831,7 +833,8 @@
   "tier": 2,
   "who": "C",
   "title": "Write down every analysis choice that could have changed the result",
-  "status": "todo"
+  "note": "docs/CHOICES-joint-reachability.md",
+  "status": "done"
  },
  {
   "id": "5.06",
@@ -839,7 +842,8 @@
   "tier": 3,
   "who": "C",
   "title": "Leave half the simulations out, refit, and check the distances",
-  "status": "todo"
+  "note": "docs/ROBUSTNESS-joint-reachability.md (other weightings 3.8-5.4, second implementation 4.85, kernel ridge 4.91); half-sample refits are the registered splits (200 halves, 4.64-4.86)",
+  "status": "done"
  },
  {
   "id": "5.07",
@@ -847,7 +851,8 @@
   "tier": 3,
   "who": "C",
   "title": "Try a different kind of emulator on one family as a robustness check",
-  "status": "todo"
+  "note": "docs/ROBUSTNESS-joint-reachability.md (other weightings 3.8-5.4, second implementation 4.85, kernel ridge 4.91); half-sample refits are the registered splits (200 halves, 4.64-4.86)",
+  "status": "done"
  },
  {
   "id": "5.08",
@@ -855,7 +860,8 @@
   "tier": 2,
   "who": "C",
   "title": "Say what is known about resolution effects in these simulations, with sources",
-  "status": "todo"
+  "note": "docs/RESOLUTION.md; no higher-resolution runs analysed, said so",
+  "status": "done"
  },
  {
   "id": "5.09",
@@ -863,7 +869,8 @@
   "tier": 3,
   "who": "C",
   "title": "Draft a short research note with only the claims that survive",
-  "status": "todo"
+  "note": "docs/RESEARCH-NOTE.md",
+  "status": "done"
  },
  {
   "id": "5.10",
@@ -871,7 +878,8 @@
   "tier": 2,
   "who": "C",
   "title": "Write what a sceptic would say and answer each point",
-  "status": "todo"
+  "note": "docs/SCEPTIC.md, 13 objections, four marked 'stands'",
+  "status": "done"
  },
  {
   "id": "5.11",
@@ -887,7 +895,8 @@
   "tier": 2,
   "who": "C",
   "title": "Show how far each code is from observed curves after tuning (exploratory)",
-  "status": "todo"
+  "note": "docs/ANALYSIS-tune-to-observations.md: 25 observed curves; neither code reaches black hole mass",
+  "status": "done"
  },
  {
   "id": "5.13",
@@ -895,7 +904,8 @@
   "tier": 3,
   "who": "C",
   "title": "Rank which observables best tell the codes apart, with uncertainty",
-  "status": "todo"
+  "note": "docs/RANKING-observables.md",
+  "status": "done"
  },
  {
   "id": "5.14",
@@ -912,7 +922,8 @@
   "tier": 2,
   "who": "C",
   "title": "Check the calibration document matches the final settings",
-  "status": "todo"
+  "note": "scripts/test_calibration.py checks layout, margin, floor, seed and the quoted counts",
+  "status": "done"
  },
  {
   "id": "5.16",
@@ -937,7 +948,8 @@
   "tier": 3,
   "who": "C",
   "title": "Make every analysis run end to end with one command and a documented runtime",
-  "status": "todo"
+  "note": "scripts/reproduce.sh (quick and full modes with timings), requirements-analysis/ingest/lock files and environment.yml; the full mode has not been run end to end in one go in this session",
+  "status": "done"
  },
  {
   "id": "5.19",
@@ -945,7 +957,8 @@
   "tier": 2,
   "who": "C",
   "title": "Add an environment file so others can reproduce the numbers",
-  "status": "todo"
+  "note": "scripts/reproduce.sh (quick and full modes with timings), requirements-analysis/ingest/lock files and environment.yml; the full mode has not been run end to end in one go in this session",
+  "status": "done"
  },
  {
   "id": "5.20",

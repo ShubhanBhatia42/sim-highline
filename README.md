@@ -57,6 +57,10 @@ Python: `pip install .` installs `sim_highline` with the dataset bundled (usage 
 | all at once | `python3 scripts/ingest_camels_galaxies.py` (range reads of the public CAMELS catalogues); `python3 scripts/analyze_joint_reachability.py`; `python3 scripts/export_retune_data.py` | ~35 min; ~1 h; seconds |
 | calibration | `python3 scripts/power_model_form.py`; `python3 scripts/power_joint_reachability.py` | 10 min; ~1.75 h |
 
+| after the run | `./scripts/reproduce.sh` (add `full` to re-run the two registered analyses; then `git diff --stat data/analysis` must be empty) | ~10 min; +1 h 20 min |
+
+Python packages for these: [`requirements-analysis.txt`](requirements-analysis.txt) to re-run the analyses, [`requirements-ingest.txt`](requirements-ingest.txt) to rebuild the catalogues, and [`requirements-lock.txt`](requirements-lock.txt) / [`environment.yml`](environment.yml) for the exact versions that produced the numbers.
+
 `FULL=1 ./scripts/verify-all.sh` reruns the cosmic star formation analysis; the tests of every analysis check that its saved output is not stale. Adding sources from your own machine (TNG, EAGLE, FLAMINGO, COLIBRE, any Subfind run): [`docs/EXPANDING-COVERAGE.md`](docs/EXPANDING-COVERAGE.md).
 
 ## Data contract

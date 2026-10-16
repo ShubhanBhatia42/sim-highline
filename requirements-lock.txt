@@ -1,0 +1,12 @@
+# The versions installed when the numbers in this repository were last produced (Python 3.13, 2026-10-16). Install with: pip install -r requirements-lock.txt
+numpy==2.5.3
+scipy==1.18.1
+scikit-learn==1.9.1
+pandas==3.0.5
+h5py==3.16.0
+fsspec==2026.9.0
+aiohttp==3.14.5
+requests==2.34.2
+PyYAML==6.0.1
+pymupdf==1.28.2
+matplotlib==3.11.2

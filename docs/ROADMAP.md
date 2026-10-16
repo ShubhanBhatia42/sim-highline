@@ -7,10 +7,10 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 | tier | tasks | done | partly | waiting for a person | not done |
 |---|---|---|---|---|---|
 | 1 Quick (under 15 min) | 46 | 22 | 1 | 2 | 21 |
-| 2 Solid (about an hour) | 121 | 55 | 2 | 0 | 64 |
-| 3 Big (several hours) | 23 | 10 | 1 | 0 | 12 |
+| 2 Solid (about an hour) | 121 | 61 | 2 | 0 | 58 |
+| 3 Big (several hours) | 23 | 18 | 0 | 0 | 5 |
 | 4 Needs other people or days | 10 | 0 | 0 | 2 | 8 |
-| all | 200 | 87 | 4 | 4 | 105 |
+| all | 200 | 101 | 3 | 4 | 92 |
 
 ## Step 1. Say what great means, and how we will know
 
@@ -93,7 +93,7 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 ## Step 4. Make the dials page magical
 
-*Turn the physics of two simulated universes and watch galaxies change; bring your own curve and see which dials reproduce it.* (23 of 24 done)
+*Turn the physics of two simulated universes and watch galaxies change; bring your own curve and see which dials reproduce it.* (24 of 24 done)
 
 - [x] **4.01** · tier 3 · Claude · Add 'which dials reproduce my curve?': paste a curve, find the best dials for both codes — dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)
 - [x] **4.02** · tier 2 · Claude · Show what each universe then predicts for everything else — dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)
@@ -118,31 +118,31 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 - [x] **4.21** · tier 2 · Claude · Show the exact numbers when hovering a panel — dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)
 - [x] **4.22** · tier 2 · Claude · Show gaps in dex and fractions beside the noise-unit gap — dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)
 - [x] **4.23** · tier 1 · Claude · Make Reset also clear the match choice and restore the story from a link — dials page rewritten (site/src/retune.js): fit the dials to your own curve or to an observation, side effects in words, keep one property fixed, presets, surprise, redshift strip and play, sensitivity bars, edge warning, emulator-error lines, panel numbers on hover, gaps in dex, explain-each-panel, guide card, link that replays the story, CSV and PNG export, keyboard steps and spoken values, sticky headline on phones, animated moves; scripts/test-dials.mjs (14 checks incl. recovering a curve the emulator produced)
-- [~] **4.24** · tier 3 · Claude · Probe whether a third simulation code can be added so it is not 'two codes only' — Astrid catalogues are public and readable with the same pipeline; ingestion is running; pairwise analysis still to do
+- [x] **4.24** · tier 3 · Claude · Probe whether a third simulation code can be added so it is not 'two codes only' — Astrid ingested; docs/ANALYSIS-third-code.md: 97 outputs usable in all three codes; SIMBA stands apart on black hole occupation. Not added to the dials page (Astrid has fewer usable outputs)
 
 ## Step 5. Strengthen the science
 
-*Check what is already known, test the result's robustness, and say only what survives.* (5 of 20 done)
+*Check what is already known, test the result's robustness, and say only what survives.* (18 of 20 done)
 
 - [x] **5.01** · tier 2 · Claude · Search the literature: has cross-code retuning been studied in CAMELS? Write the related-work note — docs/RELATED-WORK.md; summaries only, papers not read
 - [x] **5.02** · tier 1 · Claude · Change the claims on the pages to match what the prior art shows — related-work note linked from the all-at-once study and the FAQ; limits in brief at the top of all four study pages
-- [ ] **5.03** · tier 3 · Claude · Test the result under other weightings and report it as exploratory
-- [ ] **5.04** · tier 3 · Claude · Reproduce the main numbers with a second, independent implementation of the distance
-- [ ] **5.05** · tier 2 · Claude · Write down every analysis choice that could have changed the result
-- [ ] **5.06** · tier 3 · Claude · Leave half the simulations out, refit, and check the distances
-- [ ] **5.07** · tier 3 · Claude · Try a different kind of emulator on one family as a robustness check
-- [ ] **5.08** · tier 2 · Claude · Say what is known about resolution effects in these simulations, with sources
-- [ ] **5.09** · tier 3 · Claude · Draft a short research note with only the claims that survive
-- [ ] **5.10** · tier 2 · Claude · Write what a sceptic would say and answer each point
+- [x] **5.03** · tier 3 · Claude · Test the result under other weightings and report it as exploratory — docs/ROBUSTNESS-joint-reachability.md (other weightings 3.8-5.4, second implementation 4.85, kernel ridge 4.91); half-sample refits are the registered splits (200 halves, 4.64-4.86)
+- [x] **5.04** · tier 3 · Claude · Reproduce the main numbers with a second, independent implementation of the distance — docs/ROBUSTNESS-joint-reachability.md (other weightings 3.8-5.4, second implementation 4.85, kernel ridge 4.91); half-sample refits are the registered splits (200 halves, 4.64-4.86)
+- [x] **5.05** · tier 2 · Claude · Write down every analysis choice that could have changed the result — docs/CHOICES-joint-reachability.md
+- [x] **5.06** · tier 3 · Claude · Leave half the simulations out, refit, and check the distances — docs/ROBUSTNESS-joint-reachability.md (other weightings 3.8-5.4, second implementation 4.85, kernel ridge 4.91); half-sample refits are the registered splits (200 halves, 4.64-4.86)
+- [x] **5.07** · tier 3 · Claude · Try a different kind of emulator on one family as a robustness check — docs/ROBUSTNESS-joint-reachability.md (other weightings 3.8-5.4, second implementation 4.85, kernel ridge 4.91); half-sample refits are the registered splits (200 halves, 4.64-4.86)
+- [x] **5.08** · tier 2 · Claude · Say what is known about resolution effects in these simulations, with sources — docs/RESOLUTION.md; no higher-resolution runs analysed, said so
+- [x] **5.09** · tier 3 · Claude · Draft a short research note with only the claims that survive — docs/RESEARCH-NOTE.md
+- [x] **5.10** · tier 2 · Claude · Write what a sceptic would say and answer each point — docs/SCEPTIC.md, 13 objections, four marked 'stands'
 - [ ] **5.11** · tier 4 · You · Ask a CAMELS team member to read the note
-- [ ] **5.12** · tier 2 · Claude · Show how far each code is from observed curves after tuning (exploratory)
-- [ ] **5.13** · tier 3 · Claude · Rank which observables best tell the codes apart, with uncertainty
+- [x] **5.12** · tier 2 · Claude · Show how far each code is from observed curves after tuning (exploratory) — docs/ANALYSIS-tune-to-observations.md: 25 observed curves; neither code reaches black hole mass
+- [x] **5.13** · tier 3 · Claude · Rank which observables best tell the codes apart, with uncertainty — docs/RANKING-observables.md
 - [x] **5.14** · tier 2 · Claude · Show the dated commit trail that proves the rules were written before the results — data/registration-trail.json from git history; table on the studies page; scripts/test_registration.py checks protocol before result
-- [ ] **5.15** · tier 2 · Claude · Check the calibration document matches the final settings
+- [x] **5.15** · tier 2 · Claude · Check the calibration document matches the final settings — scripts/test_calibration.py checks layout, margin, floor, seed and the quoted counts
 - [x] **5.16** · tier 1 · Claude · Put the limits at the top of every study page — related-work note linked from the all-at-once study and the FAQ; limits in brief at the top of all four study pages
 - [ ] **5.17** · tier 4 · You · Deposit the analysis data with a DOI
-- [ ] **5.18** · tier 3 · Claude · Make every analysis run end to end with one command and a documented runtime
-- [ ] **5.19** · tier 2 · Claude · Add an environment file so others can reproduce the numbers
+- [x] **5.18** · tier 3 · Claude · Make every analysis run end to end with one command and a documented runtime — scripts/reproduce.sh (quick and full modes with timings), requirements-analysis/ingest/lock files and environment.yml; the full mode has not been run end to end in one go in this session
+- [x] **5.19** · tier 2 · Claude · Add an environment file so others can reproduce the numbers — scripts/reproduce.sh (quick and full modes with timings), requirements-analysis/ingest/lock files and environment.yml; the full mode has not been run end to end in one go in this session
 - [x] **5.20** · tier 2 · Claude · Test that every number on the site and in the README matches the generated results — scripts/test_claims.py checks the README and overview numbers against the generated JSON (runs with the other test_*.py in verify-all)
 
 ## Step 6. Make it fast, robust and accessible

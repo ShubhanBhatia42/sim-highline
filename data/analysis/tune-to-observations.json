@@ -1,0 +1,430 @@
+{
+ "rows": [
+  {
+   "family": "gsmf",
+   "snapshot": "090",
+   "z": 0.0,
+   "source": "Baldry et al. 2012 (GAMA)",
+   "label": "binned table",
+   "tier": "published-table",
+   "bins": 9,
+   "IllustrisTNG": {
+    "gap": 0.14167735776118465,
+    "dex": 0.030274018706475156
+   },
+   "SIMBA": {
+    "gap": 0.46447941308829305,
+    "dex": 0.05366899506743768
+   }
+  },
+  {
+   "family": "gsmf",
+   "snapshot": "090",
+   "z": 0.0,
+   "source": "D'Souza et al. 2015",
+   "label": "D'Souza et al. 2015",
+   "tier": "published-table",
+   "bins": 6,
+   "IllustrisTNG": {
+    "gap": 0.29065963428742764,
+    "dex": 0.053021345444275135
+   },
+   "SIMBA": {
+    "gap": 0.3824407764114178,
+    "dex": 0.05014962209527339
+   }
+  },
+  {
+   "family": "gsmf",
+   "snapshot": "090",
+   "z": 0.0,
+   "source": "Ilbert et al. 2013",
+   "label": "Ilbert et al. 2013",
+   "tier": "published-table",
+   "bins": 9,
+   "IllustrisTNG": {
+    "gap": 0.2441167346540548,
+    "dex": 0.04163878947436386
+   },
+   "SIMBA": {
+    "gap": 0.4164554557303695,
+    "dex": 0.058279913120311846
+   }
+  },
+  {
+   "family": "gsmf",
+   "snapshot": "090",
+   "z": 0.0,
+   "source": "Li & White 2009",
+   "label": "Li & White 2009",
+   "tier": "published-table",
+   "bins": 9,
+   "IllustrisTNG": {
+    "gap": 0.11924618712616858,
+    "dex": 0.015224591150085658
+   },
+   "SIMBA": {
+    "gap": 0.48164982504705717,
+    "dex": 0.06871927411192755
+   }
+  },
+  {
+   "family": "gsmf",
+   "snapshot": "090",
+   "z": 0.0,
+   "source": "Wright et al. 2017 (GAMA-II)",
+   "label": "Wright et al. 2017 (GAMA-II)",
+   "tier": "published-table",
+   "bins": 9,
+   "IllustrisTNG": {
+    "gap": 0.164682177171431,
+    "dex": 0.03485969707271066
+   },
+   "SIMBA": {
+    "gap": 0.3554196464531968,
+    "dex": 0.041444423486791844
+   }
+  },
+  {
+   "family": "gsmf",
+   "snapshot": "062",
+   "z": 0.95,
+   "source": "COSMOS-Web 2025",
+   "label": "COSMOS-Web 2025",
+   "tier": "official-table",
+   "bins": 8,
+   "IllustrisTNG": {
+    "gap": 0.18829630765130814,
+    "dex": 0.033627473790861874
+   },
+   "SIMBA": {
+    "gap": 0.20025557734171306,
+    "dex": 0.020353444168872317
+   }
+  },
+  {
+   "family": "gsmf",
+   "snapshot": "062",
+   "z": 0.95,
+   "source": "Ilbert et al. 2013",
+   "label": "Ilbert et al. 2013",
+   "tier": "published-table",
+   "bins": 7,
+   "IllustrisTNG": {
+    "gap": 0.31359142114447275,
+    "dex": 0.051721346183444136
+   },
+   "SIMBA": {
+    "gap": 0.09648802681940587,
+    "dex": 0.010561321150886097
+   }
+  },
+  {
+   "family": "gsmf",
+   "snapshot": "062",
+   "z": 0.95,
+   "source": "Tomczak et al. 2014",
+   "label": "Tomczak et al. 2014",
+   "tier": "published-table",
+   "bins": 8,
+   "IllustrisTNG": {
+    "gap": 0.31490380935144485,
+    "dex": 0.049782068235840124
+   },
+   "SIMBA": {
+    "gap": 0.23197667491358268,
+    "dex": 0.02658986711958357
+   }
+  },
+  {
+   "family": "gsmf",
+   "snapshot": "042",
+   "z": 2.15,
+   "source": "Baker et al. 2025 (quiescent, JWST)",
+   "label": "Baker et al. 2025 (quiescent, JWST)",
+   "tier": "published-table",
+   "bins": 3,
+   "IllustrisTNG": {
+    "gap": 5.852823027282938,
+    "dex": 0.7946556689018234
+   },
+   "SIMBA": {
+    "gap": 3.8598432733943935,
+    "dex": 0.49644196597139933
+   }
+  },
+  {
+   "family": "gsmf",
+   "snapshot": "042",
+   "z": 2.15,
+   "source": "COSMOS-Web 2025",
+   "label": "COSMOS-Web 2025",
+   "tier": "official-table",
+   "bins": 5,
+   "IllustrisTNG": {
+    "gap": 0.0023175761451146777,
+    "dex": 0.0003131728050869791
+   },
+   "SIMBA": {
+    "gap": 0.39409496389917376,
+    "dex": 0.054195584999852914
+   }
+  },
+  {
+   "family": "gsmf",
+   "snapshot": "042",
+   "z": 2.15,
+   "source": "Deshmukh et al. 2018",
+   "label": "Deshmukh et al. 2018",
+   "tier": "published-table",
+   "bins": 5,
+   "IllustrisTNG": {
+    "gap": 0.4460363707129031,
+    "dex": 0.05004796552563539
+   },
+   "SIMBA": {
+    "gap": 0.7230148741586419,
+    "dex": 0.0755839250752601
+   }
+  },
+  {
+   "family": "gsmf",
+   "snapshot": "042",
+   "z": 2.15,
+   "source": "Ilbert et al. 2013",
+   "label": "Ilbert et al. 2013",
+   "tier": "published-table",
+   "bins": 3,
+   "IllustrisTNG": {
+    "gap": 0.11835072162698088,
+    "dex": 0.017541735471782016
+   },
+   "SIMBA": {
+    "gap": 0.3829183810293335,
+    "dex": 0.06572342465687615
+   }
+  },
+  {
+   "family": "gsmf",
+   "snapshot": "042",
+   "z": 2.15,
+   "source": "Tomczak et al. 2014",
+   "label": "Tomczak et al. 2014",
+   "tier": "published-table",
+   "bins": 4,
+   "IllustrisTNG": {
+    "gap": 0.0869037393443888,
+    "dex": 0.01289918290524978
+   },
+   "SIMBA": {
+    "gap": 0.4107620187925144,
+    "dex": 0.05679545972219426
+   }
+  },
+  {
+   "family": "gsmf",
+   "snapshot": "032",
+   "z": 3.0,
+   "source": "COSMOS-Web 2025",
+   "label": "COSMOS-Web 2025",
+   "tier": "official-table",
+   "bins": 4,
+   "IllustrisTNG": {
+    "gap": 0.12155732221687347,
+    "dex": 0.022766900072037556
+   },
+   "SIMBA": {
+    "gap": 0.315247136809933,
+    "dex": 0.05986817331182019
+   }
+  },
+  {
+   "family": "gsmf",
+   "snapshot": "032",
+   "z": 3.0,
+   "source": "Deshmukh et al. 2018",
+   "label": "Deshmukh et al. 2018",
+   "tier": "published-table",
+   "bins": 3,
+   "IllustrisTNG": {
+    "gap": 0.171333605914876,
+    "dex": 0.034622103824839164
+   },
+   "SIMBA": {
+    "gap": 0.23509406833867036,
+    "dex": 0.04733917409176688
+   }
+  },
+  {
+   "family": "qf",
+   "snapshot": "090",
+   "z": 0.0,
+   "source": "Gilbank et al. 2010 (SDSS)",
+   "label": "Gilbank et al. 2010 (SDSS)",
+   "tier": "published-table",
+   "bins": 7,
+   "IllustrisTNG": {
+    "gap": 0.4442024476151486,
+    "dex": 0.0506316675091297
+   },
+   "SIMBA": {
+    "gap": 0.21779750982029392,
+    "dex": 0.02211780810818609
+   }
+  },
+  {
+   "family": "qf",
+   "snapshot": "090",
+   "z": 0.0,
+   "source": "Moustakas et al. 2013 (SDSS)",
+   "label": "Moustakas et al. 2013 (SDSS)",
+   "tier": "published-table",
+   "bins": 7,
+   "IllustrisTNG": {
+    "gap": 0.5122879873422854,
+    "dex": 0.0548179776253308
+   },
+   "SIMBA": {
+    "gap": 0.11209950758403135,
+    "dex": 0.013006879624496004
+   }
+  },
+  {
+   "family": "qf",
+   "snapshot": "062",
+   "z": 0.95,
+   "source": "Koprowski et al. (COSMOS-Web MS)",
+   "label": "Koprowski et al. (COSMOS-Web MS)",
+   "tier": "published-table",
+   "bins": 6,
+   "IllustrisTNG": {
+    "gap": 0.8273960765665936,
+    "dex": 0.04863964325348029
+   },
+   "SIMBA": {
+    "gap": 0.49191344225418926,
+    "dex": 0.03302462064546532
+   }
+  },
+  {
+   "family": "qf",
+   "snapshot": "042",
+   "z": 2.15,
+   "source": "Koprowski et al. (COSMOS-Web MS)",
+   "label": "Koprowski et al. (COSMOS-Web MS)",
+   "tier": "published-table",
+   "bins": 3,
+   "IllustrisTNG": {
+    "gap": 2.7955029393425618e-09,
+    "dex": 7.169941406298094e-11
+   },
+   "SIMBA": {
+    "gap": 0.020043750620822594,
+    "dex": 0.0005157557664692468
+   }
+  },
+  {
+   "family": "sfms",
+   "snapshot": "090",
+   "z": 0.0,
+   "source": "Davies et al. 2016 (GAMA)",
+   "label": "Davies et al. 2016 (GAMA)",
+   "tier": "published-table",
+   "bins": 6,
+   "IllustrisTNG": {
+    "gap": 0.4208251230920765,
+    "dex": 0.061312258439070566
+   },
+   "SIMBA": {
+    "gap": 0.5683940257708541,
+    "dex": 0.05384019100967205
+   }
+  },
+  {
+   "family": "sfms",
+   "snapshot": "062",
+   "z": 0.95,
+   "source": "Koprowski et al. (COSMOS-Web MS)",
+   "label": "Koprowski et al. (COSMOS-Web MS)",
+   "tier": "published-table",
+   "bins": 6,
+   "IllustrisTNG": {
+    "gap": 0.15150830865491402,
+    "dex": 0.014793063358403033
+   },
+   "SIMBA": {
+    "gap": 0.14821978448075065,
+    "dex": 0.018694704417519897
+   }
+  },
+  {
+   "family": "sfms",
+   "snapshot": "042",
+   "z": 2.15,
+   "source": "Koprowski et al. (COSMOS-Web MS)",
+   "label": "Koprowski et al. (COSMOS-Web MS)",
+   "tier": "published-table",
+   "bins": 3,
+   "IllustrisTNG": {
+    "gap": 4.442341204070334,
+    "dex": 0.3103764393998889
+   },
+   "SIMBA": {
+    "gap": 5.8885779498678685,
+    "dex": 0.4074366647908646
+   }
+  },
+  {
+   "family": "bhms",
+   "snapshot": "090",
+   "z": 0.0,
+   "source": "McConnell & Ma 2013",
+   "label": "galaxies",
+   "tier": "published-table",
+   "bins": 5,
+   "IllustrisTNG": {
+    "gap": 2.4922630200321283,
+    "dex": 0.39275492053964495
+   },
+   "SIMBA": {
+    "gap": 4.524601884415264,
+    "dex": 0.6771283640646891
+   }
+  },
+  {
+   "family": "bhms",
+   "snapshot": "090",
+   "z": 0.0,
+   "source": "Sahu et al. 2019",
+   "label": "early-type",
+   "tier": "published-table",
+   "bins": 3,
+   "IllustrisTNG": {
+    "gap": 4.340527711125341,
+    "dex": 0.6166105612610401
+   },
+   "SIMBA": {
+    "gap": 3.5813851526666785,
+    "dex": 0.4435522586395437
+   }
+  },
+  {
+   "family": "zstar",
+   "snapshot": "090",
+   "z": 0.0,
+   "source": "Gallazzi et al. 2005 (SDSS)",
+   "label": "Gallazzi et al. 2005 (SDSS)",
+   "tier": "published-table",
+   "bins": 7,
+   "IllustrisTNG": {
+    "gap": 1.6021107574744606,
+    "dex": 0.061210571388496025
+   },
+   "SIMBA": {
+    "gap": 1.9940641805638002,
+    "dex": 0.07685154869068499
+   }
+  }
+ ],
+ "n": 25
+}
