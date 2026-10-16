@@ -79,6 +79,18 @@
   "note": "roadmap is in the repo (docs/ROADMAP.md); private page to be published at the end",
   "status": "partial"
  },
+ "10.06": {
+  "note": "docs/RETROSPECTIVE.md",
+  "status": "done"
+ },
+ "10.07": {
+  "note": "docs/REVIEW-DAY.md",
+  "status": "done"
+ },
+ "10.16": {
+  "note": "docs/NEXT.md",
+  "status": "done"
+ },
  "2.01": {
   "note": "generated data-quality page (site/quality.html, docs/DATA-QUALITY.md); plain 'how sure are we' in the evidence panel; thin-evidence note under the chart title",
   "status": "done"

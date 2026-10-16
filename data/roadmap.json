@@ -1676,7 +1676,8 @@
   "tier": 2,
   "who": "C",
   "title": "Write the honest retrospective",
-  "status": "todo"
+  "note": "docs/RETROSPECTIVE.md",
+  "status": "done"
  },
  {
   "id": "10.07",
@@ -1684,7 +1685,8 @@
   "tier": 1,
   "who": "C",
   "title": "List the numbers to look at on the review date",
-  "status": "todo"
+  "note": "docs/REVIEW-DAY.md",
+  "status": "done"
  },
  {
   "id": "10.08",
@@ -1756,7 +1758,8 @@
   "tier": 2,
   "who": "C",
   "title": "Write the list of what would make it great next",
-  "status": "todo"
+  "note": "docs/NEXT.md",
+  "status": "done"
  },
  {
   "id": "10.17",

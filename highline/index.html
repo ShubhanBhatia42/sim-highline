@@ -148,10 +148,12 @@ main.table .stagehead,main.table .plot{display:none}
 .v.ok{color:var(--ok)}.v.cav{color:var(--mustard)}.v.no{color:var(--orange)}
 .chip{position:absolute;left:50%;transform:translateX(-50%);top:6px;display:none;gap:8px;align-items:center;background:var(--bg);border:1px solid var(--rule-strong);padding:5px 8px 5px 14px;font-size:13px;color:var(--ink2);z-index:2}
 .chip.on{display:flex}
-.hello{position:absolute;left:16px;bottom:16px;max-width:min(370px,calc(100% - 32px));background:var(--bg);border:1px solid var(--ink);padding:12px 14px 12px;font-size:13.5px;line-height:1.5;color:var(--ink);box-shadow:0 6px 24px rgba(0,0,0,.14);z-index:5}
-.hello ol{margin:6px 0 10px;padding-left:20px}.hello li{margin:5px 0}
-.hello .hrow{display:flex;gap:8px;flex-wrap:wrap}.hello .hbtn{border:1px solid var(--rule-strong);padding:4px 12px;font:500 12px var(--mono);letter-spacing:.04em;color:var(--ink)}.hello .hbtn:hover{background:var(--panel2)}#helloOk{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-@media (max-width:640px){.hello{left:8px;right:8px;bottom:56px;max-width:none;font-size:13px}}
+.hello{margin:10px 0 4px;max-width:70rem;background:var(--panel);border:1px solid var(--rule-strong);border-left:3px solid var(--ink);padding:9px 14px 10px;font-size:13.5px;line-height:1.5;color:var(--ink)}
+.hello ol{margin:6px 0 8px;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px 22px;counter-reset:h}.hello li{counter-increment:h;margin:0}.hello li::before{content:counter(h) ". ";font:500 12px var(--mono);color:var(--ink3)}
+.hello .hrow{display:flex;gap:8px;flex-wrap:wrap}.hello .hbtn{border:1px solid var(--rule-strong);padding:3px 12px;font:500 12px var(--mono);letter-spacing:.04em;color:var(--ink);background:var(--bg)}.hello .hbtn:hover{background:var(--panel2)}#helloOk{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+@media (max-width:900px){.hello ol{grid-template-columns:1fr}}
+.hello .hshort{display:none}
+@media (max-width:640px){.hello{margin:6px 0 2px;padding:6px 10px;font-size:13px}.hello ol{display:none}.hello .hshort{display:inline}.hello .hrow{margin-top:4px}}
 .chip button{border:1px solid var(--rule-strong);padding:2px 10px;font-size:12.5px;color:var(--ink)}
 .ramp{display:none;align-items:center;gap:6px;font:11px var(--mono);color:var(--ink3);padding:6px 6px 2px}
 .ramp i{display:block;height:6px;width:90px;background:linear-gradient(90deg,#fde725,#7ad151,#22a884,#2a788e,#414487)}
@@ -304,7 +306,17 @@ b.classList.add("failed");b.setAttribute("role","alert");b.innerHTML='<div class
   <div class="relsel"><label class="sr" for="relSel">Relation</label><select id="relSel"></select></div>
   <nav class="rail" id="presets" aria-label="Relation"></nav>
   <main id="main">
-    <div class="stagehead" id="stagehead"><div><h1 id="shTitle"></h1><p id="shSub"></p></div><button class="shlink" id="shNotes">About this relation</button></div>
+    <div class="stagehead" id="stagehead"><div><h1 id="shTitle"></h1><p id="shSub"></p>
+<div class="hello" id="hello" role="note" aria-label="New here?" hidden>
+  <b>New here? Three things to know.</b><span class="hshort"> Pick a relation, point at a line to see its source, and drag the bar underneath to go back in time.</span>
+  <ol>
+    <li><b>Pick a relation</b> on the left: one galaxy property against another, such as how many galaxies there are of each mass.</li>
+    <li><b>Each line is one simulation</b> (solid, dashed or dotted depending on how its numbers were obtained); dots are observations. Point at a line to see where it came from. ✓ ~ ✕ say whether two curves can fairly be compared.</li>
+    <li><b>Go back in time</b> with the bar underneath, or the ← → keys. <b>Your run</b> checks your own curve against the rest.</li>
+  </ol>
+  <div class="hrow"><button class="hbtn" id="helloOk">Got it</button><button class="hbtn" id="helloMore">More about this</button></div>
+</div>
+</div><button class="shlink" id="shNotes">About this relation</button></div>
     <div class="plot" id="plot">
       <svg id="stage" role="img" tabindex="0" aria-describedby="stageDesc"></svg>
       <p class="sr" id="stageDesc" aria-live="polite"></p>
@@ -312,15 +324,6 @@ b.classList.add("failed");b.setAttribute("role","alert");b.innerHTML='<div class
       <div class="chip" id="chip"></div>
       <div class="empty" id="empty" hidden></div>
       <div class="tip" id="tip"></div>
-      <div class="hello" id="hello" role="note" aria-label="New here?" hidden>
-        <b>New here? Three things to know.</b>
-        <ol>
-          <li><b>Pick a relation</b> on the left: one galaxy property against another, such as how many galaxies there are of each mass.</li>
-          <li><b>Each line is one simulation</b> (solid, dashed or dotted depending on how its numbers were obtained); dots are observations. Point at a line to see where it came from. ✓ ~ ✕ say whether two curves can fairly be compared.</li>
-          <li><b>Go back in time</b> with the bar underneath, or the ← → keys. <b>Your run</b> checks your own curve against the rest.</li>
-        </ol>
-        <div class="hrow"><button class="hbtn" id="helloOk">Got it</button><button class="hbtn" id="helloMore">More about this</button></div>
-      </div>
     </div>
     <aside class="panel" id="panel" aria-label="Details">
       <div class="tabs"><div class="tl" role="tablist" aria-label="Details"><button role="tab" data-t="evidence">Evidence</button><button role="tab" data-t="about">Notes</button><button role="tab" data-t="mine">My run</button><button role="tab" data-t="tune">Customise</button><button role="tab" data-t="data">Get data</button></div><button class="x" id="pClose" aria-label="Close panel">×</button></div>

@@ -6,11 +6,11 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 | tier | tasks | done | partly | waiting for a person | not done |
 |---|---|---|---|---|---|
-| 1 Quick (under 15 min) | 46 | 37 | 1 | 2 | 6 |
-| 2 Solid (about an hour) | 121 | 105 | 4 | 1 | 11 |
+| 1 Quick (under 15 min) | 46 | 38 | 1 | 2 | 5 |
+| 2 Solid (about an hour) | 121 | 107 | 4 | 1 | 9 |
 | 3 Big (several hours) | 23 | 19 | 1 | 0 | 3 |
 | 4 Needs other people or days | 10 | 0 | 0 | 2 | 8 |
-| all | 200 | 161 | 6 | 5 | 28 |
+| all | 200 | 164 | 6 | 5 | 25 |
 
 ## Step 1. Say what great means, and how we will know
 
@@ -241,15 +241,15 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 ## Step 10. Review, measure and decide
 
-*Fresh eyes, a final check on the live site, and a dated decision using the criteria set in step 1.* (0 of 18 done)
+*Fresh eyes, a final check on the live site, and a dated decision using the criteria set in step 1.* (3 of 18 done)
 
 - [ ] **10.01** · tier 3 · Build · Get an independent fresh-eyes review of the whole product from a separate reviewer
 - [ ] **10.02** · tier 3 · Build · Fix everything the review marks as must-fix
 - [ ] **10.03** · tier 2 · Build · Do a final check of the live site
 - [ ] **10.04** · tier 1 · Build · Update the README and changelog for the release
 - [ ] **10.05** · tier 2 · Build · Bump the version and tag the release
-- [ ] **10.06** · tier 2 · Build · Write the honest retrospective
-- [ ] **10.07** · tier 1 · Build · List the numbers to look at on the review date
+- [x] **10.06** · tier 2 · Build · Write the honest retrospective — docs/RETROSPECTIVE.md
+- [x] **10.07** · tier 1 · Build · List the numbers to look at on the review date — docs/REVIEW-DAY.md
 - [ ] **10.08** · tier 2 · Build · Publish the roadmap with final status: done, not done, blocked
 - [ ] **10.09** · tier 4 · You · On the review date, apply the kill criteria
 - [ ] **10.10** · tier 2 · Build · Re-measure the front page: time to first meaningful action
@@ -258,6 +258,6 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 - [ ] **10.13** · tier 2 · Build · Check that nothing on the site claims more than the evidence
 - [ ] **10.14** · tier 2 · Build · Re-read every study page as a sceptic and tighten
 - [ ] **10.15** · tier 1 · Build · Archive scratch files and make the repository tidy
-- [ ] **10.16** · tier 2 · Build · Write the list of what would make it great next
+- [x] **10.16** · tier 2 · Build · Write the list of what would make it great next — docs/NEXT.md
 - [ ] **10.17** · tier 1 · Build · Write the short message to the maintainer: what is done, what is not, what to decide
 - [ ] **10.18** · tier 1 · Build · Update the private roadmap page one last time
