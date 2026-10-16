@@ -806,7 +806,8 @@
   "tier": 1,
   "who": "C",
   "title": "Change the claims on the pages to match what the prior art shows",
-  "status": "todo"
+  "note": "related-work note linked from the all-at-once study and the FAQ; limits in brief at the top of all four study pages",
+  "status": "done"
  },
  {
   "id": "5.03",
@@ -902,7 +903,8 @@
   "tier": 2,
   "who": "C",
   "title": "Show the dated commit trail that proves the rules were written before the results",
-  "status": "todo"
+  "note": "data/registration-trail.json from git history; table on the studies page; scripts/test_registration.py checks protocol before result",
+  "status": "done"
  },
  {
   "id": "5.15",
@@ -918,7 +920,8 @@
   "tier": 1,
   "who": "C",
   "title": "Put the limits at the top of every study page",
-  "status": "todo"
+  "note": "related-work note linked from the all-at-once study and the FAQ; limits in brief at the top of all four study pages",
+  "status": "done"
  },
  {
   "id": "5.17",
@@ -959,7 +962,8 @@
   "tier": 1,
   "who": "C",
   "title": "Measure the real transfer size and load time of every page",
-  "status": "todo"
+  "note": "scripts/test-performance.mjs: slow 4G plus 4x slower processor; Explorer 5.1 s, front page 2.9 s, dials page 3.3 s, a study page 1.3 s; budgets enforced in the test",
+  "status": "done"
  },
  {
   "id": "6.02",
@@ -967,7 +971,8 @@
   "tier": 3,
   "who": "C",
   "title": "Split the Explorer's data so the first view appears fast, if the measurement says it is needed",
-  "status": "todo"
+  "note": "Measured instead of assumed: the Explorer was 8.1 s on the throttled phone; embedding its data as JSON text brought that to 5.1 s, inside the budget, so splitting the data was not needed",
+  "status": "skipped"
  },
  {
   "id": "6.03",
@@ -1087,7 +1092,8 @@
   "tier": 2,
   "who": "C",
   "title": "Throttle the network and measure time to first interaction",
-  "status": "todo"
+  "note": "scripts/test-performance.mjs: slow 4G plus 4x slower processor; Explorer 5.1 s, front page 2.9 s, dials page 3.3 s, a study page 1.3 s; budgets enforced in the test",
+  "status": "done"
  },
  {
   "id": "6.18",

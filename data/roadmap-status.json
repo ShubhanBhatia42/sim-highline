@@ -355,8 +355,32 @@
   "note": "docs/RELATED-WORK.md; summaries only, papers not read",
   "status": "done"
  },
+ "5.02": {
+  "note": "related-work note linked from the all-at-once study and the FAQ; limits in brief at the top of all four study pages",
+  "status": "done"
+ },
+ "5.14": {
+  "note": "data/registration-trail.json from git history; table on the studies page; scripts/test_registration.py checks protocol before result",
+  "status": "done"
+ },
+ "5.16": {
+  "note": "related-work note linked from the all-at-once study and the FAQ; limits in brief at the top of all four study pages",
+  "status": "done"
+ },
  "5.20": {
   "note": "scripts/test_claims.py checks the README and overview numbers against the generated JSON (runs with the other test_*.py in verify-all)",
+  "status": "done"
+ },
+ "6.01": {
+  "note": "scripts/test-performance.mjs: slow 4G plus 4x slower processor; Explorer 5.1 s, front page 2.9 s, dials page 3.3 s, a study page 1.3 s; budgets enforced in the test",
+  "status": "done"
+ },
+ "6.02": {
+  "note": "Measured instead of assumed: the Explorer was 8.1 s on the throttled phone; embedding its data as JSON text brought that to 5.1 s, inside the budget, so splitting the data was not needed",
+  "status": "skipped"
+ },
+ "6.17": {
+  "note": "scripts/test-performance.mjs: slow 4G plus 4x slower processor; Explorer 5.1 s, front page 2.9 s, dials page 3.3 s, a study page 1.3 s; budgets enforced in the test",
   "status": "done"
  },
  "7.08": {
