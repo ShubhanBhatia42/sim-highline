@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Retune: two feedback models, four dials each</title>
-<meta name="description" content="An instrument for asking what retuning the four feedback parameters of IllustrisTNG and SIMBA can and cannot change across galaxy observables, built on the CAMELS ensemble of 2,054 simulations.">
+<title>Retune: turn the physics dials of two simulated universes</title>
+<meta name="description" content="Turn the four feedback dials of two simulated universes, IllustrisTNG and SIMBA, and watch the galaxy population reshape. Then ask whether one can be made to look like the other, and which properties refuse. Built on 2,054 CAMELS simulations.">
 {{head}}
 </head>
 <body>
@@ -15,17 +15,17 @@
 <p class="lab">Contents</p>
 <ol>
 <li><a href="#instrument"><span>§1</span>Instrument</a></li>
-<li><a href="#reading"><span>§2</span>Reading it</a></li>
+<li><a href="#reading"><span>§2</span>How to read it</a></li>
 <li><a href="#basis"><span>§3</span>Basis and limits</a></li>
 </ol>
-<p class="back"><a href="study-joint.html">Study S4</a></p>
+<p class="back"><a href="study-joint.html">The study behind it</a></p>
 </nav>
 <div class="c">
 
 <div class="title">
 <p class="lab kicker">Instrument · CAMELS · IllustrisTNG and SIMBA</p>
 <h1>Retune</h1>
-<p class="lede">Each model has four feedback dials. Move them, watch every galaxy observable respond, and ask whether the other model can be made to match.</p>
+<p class="lede">IllustrisTNG and SIMBA are two well-known simulated universes that disagree about how violently exploding stars and black holes push gas around. Each has four dials for it. Turn them, watch the galaxies change, and ask: can one universe be made to look like the other, and what refuses?</p>
 </div>
 
 <section class="sec" id="instrument" aria-labelledby="instrument-h">
@@ -38,13 +38,13 @@
 </section>
 
 <section class="sec" id="reading" aria-labelledby="reading-h">
-<h2 id="reading-h"><span class="sn">§2</span>Reading it</h2>
+<h2 id="reading-h"><span class="sn">§2</span>How to read it</h2>
 <dl class="kv">
-<dt>Dials</dt><dd>The four feedback factors CAMELS varies in both codes, each over the same range (a factor 4 or 2 either way), shown as the multiplier on the fiducial value. The dials of the two codes are not the same physical quantity: A_SN1 is the wind energy per unit star formation in IllustrisTNG and the wind mass loading in SIMBA, and so on. Cosmology is fixed at the fiducial values.</dd>
-<dt>D</dt><dd>Distance between the two codes' curves, in noise units: 1 is the standard deviation of the difference between one run of each code (their seed-to-seed scatter in a 25 Mpc/h box plus the emulators' error). Panels with D of 1 or more are marked.</dd>
-<dt>Bands</dt><dd>Narrow band: plus or minus the seed-to-seed scatter at the current dials. Wide pale band: the 5th to 95th percentile over the whole dial box, that is, what retuning can reach for that observable alone.</dd>
-<dt>Match</dt><dd>Searches the dials of one code (or both) for the smallest joint distance over the chosen observables, from the current point and fourteen random starts. A match that is good for one observable and poor for others is the point of the exercise: see <a href="study-joint.html">study S4</a>.</dd>
-<dt>Published curves</dt><dd>Grey lines are curves of the dataset for the same relation and epoch, one per source, without zoom samples or variants. Their definitions differ from the CAMELS catalogues (apertures, mass definitions, IMF, population cuts); they are context, not a test. Hover for the source and definitions; dotted lines are digitized from figures.</dd>
+<dt>Dials</dt><dd>The four feedback strengths that the CAMELS simulations vary in both codes, each over a factor of 4 or 2 either way, shown as a multiplier on the default. The dials of the two codes are not the same physical thing: the first, for example, is the wind energy per unit of star formation in IllustrisTNG and the wind mass loading in SIMBA. The smaller grey line under each dial gives the technical name and what it means in that code. The cosmology is held fixed.</dd>
+<dt>Gap</dt><dd>How far apart the two codes' curves are for one property, in units of the scatter you get between two runs of the same code that differ only in their random seed. Below 1 the codes agree as well as two seeds of one code would; a panel with a gap of 1 or more is shaded.</dd>
+<dt>Bands</dt><dd>Narrow band: the seed-to-seed scatter at the current dials. Wide pale band: everything that moving all four dials can reach for that property alone (5th to 95th percentile).</dd>
+<dt>The buttons</dt><dd>They search the dials for the smallest joint gap over the properties chosen in <i>Match on</i>, from the current setting and fourteen random starts, and then say in words what moved, what came into line, what was given up and what stayed apart. A setting that is good for one property and poor for others is the point: see <a href="study-joint.html">the study</a>.</dd>
+<dt>Grey lines</dt><dd>Published curves from the dataset for the same property and epoch, one per source, without zoom-in samples or variants. Their definitions differ from the CAMELS catalogues (apertures, mass definitions, IMF, population cuts), so they are context, not a test. Hover for the source and definitions; dotted lines are digitized from figures.</dd>
 </dl>
 </section>
 
@@ -56,7 +56,7 @@
 <li>The dials reach the corners of the design, where an emulator trained on a Latin hypercube is least constrained; the study's controls share that search.</li>
 <li>Two codes only. What separates these two says nothing yet about other models.</li>
 </ul>
-<p>Protocol, analysis and calibration on synthetic worlds: <a href="https://github.com/ShubhanBhatia42/sim-highline/blob/main/docs/PROTOCOL-joint-reachability.md">PROTOCOL-joint-reachability.md</a>. The page state is in the address (dials and redshift), so a setting can be shared as a link.</p>
+<p>The study behind it, with its protocol written before the result and a calibration on synthetic worlds: <a href="https://github.com/ShubhanBhatia42/sim-highline/blob/main/docs/PROTOCOL-joint-reachability.md">PROTOCOL-joint-reachability.md</a>. The page state is in the address (dials and redshift), so a setting can be shared as a link.</p>
 </section>
 
 </div>

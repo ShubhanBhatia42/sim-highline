@@ -8,6 +8,10 @@
   let D;
   try { D = await (await fetch(root.dataset.src)).json(); } catch (e) { root.textContent = "The emulator file could not be loaded."; return; }
   if (D.pending) { root.replaceChildren(Object.assign(document.createElement("p"), { className: "dim", textContent: "The emulators are published when the joint-reachability study has run (protocol committed, analysis pending)." })); return; }
+  const PLAIN = { ASN1: "Supernova wind strength", AAGN1: "Black hole feedback strength", ASN2: "Supernova wind speed", AAGN2: "Black hole jet speed" };
+  const FRIENDLY = { gsmf: "how many galaxies there are of each mass", qf: "how many have stopped forming stars", sfms: "how fast the star-forming ones make stars", bhms: "how heavy the central black holes are", bhocc: "which galaxies have a central black hole at all",
+    mzr: "how metal-rich the gas is", zstar: "how metal-rich the stars are", size: "how big the galaxies are", fgas: "how much gas they still hold", shmr: "how much of each halo has turned into stars", rho: "the total stars and star formation in the box", hmf: "how many halos there are of each mass (barely touched by feedback)" };
+  const VERD = { structural: "no dial setting closes it", removable: "can be closed", unresolved: "borderline" };
   const NO = D.outputs.length, SCALE = Float64Array.from(D.scale), FAMS = Object.keys(D.families);
   const JOINT = FAMS.filter(f => D.families[f].joint);
   const el = (t, a = {}, ...kids) => { const e = document.createElementNS(a.ns || "http://www.w3.org/1999/xhtml", t); for (const [k, v] of Object.entries(a)) if (k !== "ns") (k.startsWith("on") ? e.addEventListener(k.slice(2), v) : e.setAttribute(k, v)); for (const c of kids.flat()) e.append(c); return e; };
@@ -33,11 +37,13 @@
     const m = w.reduce((s, v) => s + v, 0) / w.length;
     return { idx: Int32Array.from(idx), w2: Float64Array.from(w.map((v, i) => v / m / (SCALE[idx[i]] ** 2))), keys };
   }
+  const STUCK = JOINT.filter(f => D.analysis && D.analysis.splits["fam:" + f] && D.analysis.splits["fam:" + f].verdict === "structural");
   const SETS = { all: prep(blockKeys.filter(k => k.split("|")[0] !== "hmf")) };
+  SETS.matchable = prep(blockKeys.filter(k => { const f = k.split("|")[0]; return f !== "hmf" && !STUCK.includes(f); }));
   for (const f of FAMS) SETS[f] = prep(blockKeys.filter(k => k.split("|")[0] === f));
   const snapKeys = s => blockKeys.filter(k => k.endsWith("|" + s) && k.split("|")[0] !== "hmf");
   function dist(yT, yS, set) { let s = 0; const n = set.idx.length; for (let i = 0; i < n; i++) { const d = yT[i] - yS[i]; s += set.w2[i] * d * d; } return Math.sqrt(s / n); }
-  const state = { a: { IllustrisTNG: [0, 0, 0, 0], SIMBA: [0, 0, 0, 0] }, snap: D.snapshots[0].id, overlays: true, controls: false, matchSet: "all" };
+  const state = { a: { IllustrisTNG: [0, 0, 0, 0], SIMBA: [0, 0, 0, 0] }, snap: D.snapshots[0].id, overlays: true, controls: false, matchSet: JOINT.includes("gsmf") ? "gsmf" : "all" };
   function fullDist(set) { return dist(predict("IllustrisTNG", state.a.IllustrisTNG, set.idx), predict("SIMBA", state.a.SIMBA, set.idx), set); }
   /* ---- search: projected gradient descent with backtracking from the current point and random starts */
   function optimise(free, set, nstarts = 14) {
@@ -88,25 +94,26 @@
     const box = el("fieldset", { class: "rt-code" }, el("legend", {}, el("i", { style: `background:${COL[c]}` }), c === "IllustrisTNG" ? "IllustrisTNG" : "SIMBA"));
     D.params.forEach((p, j) => {
       const out = el("output", { id: `o-${c}-${j}` }), id = `s-${c}-${j}`;
-      const input = el("input", { type: "range", id, min: -1, max: 1, step: 0.01, value: 0, "aria-describedby": `d-${c}-${j}`, oninput: e => { state.a[c][j] = +e.target.value; update(); } });
+      const input = el("input", { type: "range", id, min: -1, max: 1, step: 0.01, value: 0, "aria-describedby": `d-${c}-${j}`, oninput: e => { state.a[c][j] = +e.target.value; state.story = null; update(); } });
       ui[`${c}${j}`] = { input, out };
-      box.append(el("div", { class: "rt-dial" }, el("label", { for: id }, p.label, el("span", { class: "rt-fac" }, out)), input, el("small", { id: `d-${c}-${j}` }, p[c === "IllustrisTNG" ? "TNG" : "SIMBA"] + " · " + p.range)));
+      box.append(el("div", { class: "rt-dial" }, el("label", { for: id }, PLAIN[p.id] || p.label, el("span", { class: "rt-fac" }, out)), input, el("small", { id: `d-${c}-${j}` }, p.label + " · " + p[c === "IllustrisTNG" ? "TNG" : "SIMBA"] + " · " + p.range)));
     });
     ctrl.append(box);
   }
   const snapSel = el("select", { id: "rt-snap", "aria-label": "Redshift", onchange: e => { state.snap = e.target.value; update(); } }, D.snapshots.map(s => el("option", { value: s.id }, "z = " + f2(s.z))));
-  const matchSel = el("select", { id: "rt-match", "aria-label": "Observables to match", onchange: e => { state.matchSet = e.target.value; update(); } }, el("option", { value: "all" }, "all observables"), JOINT.map(f => el("option", { value: f }, D.family_names[f])));
+  const matchSel = el("select", { id: "rt-match", "aria-label": "Property to match", onchange: e => { state.matchSet = e.target.value; update(); } }, JOINT.map(f => el("option", { value: f }, D.family_names[f])), (STUCK.length ? [el("option", { value: "matchable" }, "everything that can be matched, together")] : []), el("option", { value: "all" }, "everything, even what cannot be matched"));
+  matchSel.value = state.matchSet;
   const ovl = el("input", { type: "checkbox", id: "rt-ov", checked: "", onchange: e => { state.overlays = e.target.checked; update(); } });
   const ctl = el("input", { type: "checkbox", id: "rt-ctl", onchange: e => { state.controls = e.target.checked; update(); } });
   const setA = (aT, aS) => { if (aT) state.a.IllustrisTNG = aT.slice(); if (aS) state.a.SIMBA = aS.slice(); sync(); update(); };
   const btn = (t, fn, cls = "") => el("button", { type: "button", class: "rt-btn " + cls, onclick: fn }, t);
   const actions = el("div", { class: "rt-actions" },
     el("label", { for: "rt-snap" }, "Redshift"), snapSel,
-    el("label", { for: "rt-match" }, "Match"), matchSel,
-    btn("Retune SIMBA to the TNG curve", () => { const a = optimise([false, true], SETS[state.matchSet]); setA(null, a.slice(4)); }),
-    btn("Retune TNG to the SIMBA curve", () => { const a = optimise([true, false], SETS[state.matchSet]); setA(a.slice(0, 4), null); }),
-    btn("Best match, both free", () => { const a = optimise([true, true], SETS[state.matchSet]); setA(a.slice(0, 4), a.slice(4)); }),
-    btn("Fiducial", () => setA([0, 0, 0, 0], [0, 0, 0, 0]), "plain"),
+    el("label", { for: "rt-match" }, "Match on"), matchSel,
+    btn("Make SIMBA look like TNG", () => { const b = gaps(); const a = optimise([false, true], SETS[state.matchSet]); setA(null, a.slice(4)); state.story = story("S", b); render(); }),
+    btn("Make TNG look like SIMBA", () => { const b = gaps(); const a = optimise([true, false], SETS[state.matchSet]); setA(a.slice(0, 4), null); state.story = story("T", b); render(); }),
+    btn("Closest the two can get", () => { const b = gaps(); const a = optimise([true, true], SETS[state.matchSet]); setA(a.slice(0, 4), a.slice(4)); state.story = story("B", b); render(); }),
+    btn("Reset", () => { state.story = null; setA([0, 0, 0, 0], [0, 0, 0, 0]); }, "plain"),
     el("label", { class: "rt-chk" }, ovl, "Published curves"), el("label", { class: "rt-chk" }, ctl, "Halo mass function (control)"));
   ctrl.append(actions);
   function sync() {
@@ -149,21 +156,38 @@
     }
     const d = dist(yT, yS, { idx: Int32Array.from(ids), w2: Float64Array.from(ids.map(i => 1 / (SCALE[i] ** 2))) });
     const nOut = meta.kind === "points" ? 0 : ovs.filter(o => !o.x.some((x, k) => x >= xr[0] && x <= xr[1] && o.y[k] >= yr.a && o.y[k] <= yr.b)).length;
-    return el("figure", { class: "rt-panel" + (d >= D.margin ? " far" : "") }, el("figcaption", { class: "rt-cap" }, el("b", {}, meta.title), nOut ? el("span", { class: "rt-n" }, `${nOut} published outside the frame`) : "", el("span", { class: "rt-d", title: "distance between the two curves in noise units; 1 = the standard deviation of the difference between one run of each code" }, "D = " + f2(d))), g);
+    return el("figure", { class: "rt-panel" + (d >= D.margin ? " far" : "") }, el("figcaption", { class: "rt-cap" }, el("b", {}, meta.title), nOut ? el("span", { class: "rt-n" }, `${nOut} published outside the frame`) : "", el("span", { class: "rt-d", title: "gap between the two curves; 1 = as far apart as two runs of the same code that differ only in their random seed" }, "gap " + f2(d))), el("p", { class: "rt-sub" }, FRIENDLY[fam] || ""), g);
   }
   function render() {
     panels.replaceChildren(...FAMS.filter(f => (f !== "hmf" || state.controls)).map(panel).filter(Boolean));
     const A = D.analysis, rows = [];
     for (const f of JOINT) {
       const dcur = fullDist(SETS[f]), an = A && A.point["fam:" + f], sp = A && A.splits["fam:" + f];
-      rows.push(el("tr", {}, el("td", {}, D.family_names[f]), el("td", { class: "n" }, f2(dcur)), el("td", { class: "n" }, an ? f2(an.D_fiducial) : "–"), el("td", { class: "n" }, an ? f2(an.D_corrected != null ? an.D_corrected : an.D) : "–"), el("td", {}, sp ? sp.verdict : "–")));
+      rows.push(el("tr", {}, el("td", {}, D.family_names[f]), el("td", { class: "n" }, f2(dcur)), el("td", { class: "n" }, an ? f2(an.D_fiducial) : "–"), el("td", { class: "n" }, an ? f2(an.D_corrected != null ? an.D_corrected : an.D) : "–"), el("td", {}, sp ? (VERD[sp.verdict] || sp.verdict) : "–")));
     }
     const dall = fullDist(SETS.all), an = A && A.point.all, sp = A && A.splits.all;
-    rows.push(el("tr", { class: "tot" }, el("td", {}, "All observables"), el("td", { class: "n" }, f2(dall)), el("td", { class: "n" }, an ? f2(an.D_fiducial) : "–"), el("td", { class: "n" }, an ? f2(an.D_corrected != null ? an.D_corrected : an.D) : "–"), el("td", {}, sp ? sp.verdict : "–")));
+    rows.push(el("tr", { class: "tot" }, el("td", {}, "All of them at once"), el("td", { class: "n" }, f2(dall)), el("td", { class: "n" }, an ? f2(an.D_fiducial) : "–"), el("td", { class: "n" }, an ? f2(an.D_corrected != null ? an.D_corrected : an.D) : "–"), el("td", {}, sp ? (VERD[sp.verdict] || sp.verdict) : "–")));
     table.setAttribute("tabindex", "0"); table.setAttribute("role", "region"); table.setAttribute("aria-label", "Distance per observable (scrolls sideways on narrow screens)");
-    table.replaceChildren(el("table", {}, el("caption", {}, "Distance between the two codes, in noise units (1 = the standard deviation of the difference between one run of each), at the dials above and over all redshifts"),
-      el("thead", {}, el("tr", {}, ["Observable", "now", "both at fiducial", "best reachable (study, corrected)", "verdict (study)"].map(t => el("th", { scope: "col" }, t)))), el("tbody", {}, rows)));
-    header.replaceChildren(el("p", { class: "rt-sum", "aria-live": "polite" }, `Joint distance ${f2(dall)} noise units${an ? `; the study's minimum over both codes' dials is ${f2(an.D_corrected != null ? an.D_corrected : an.D)} (emulator error removed) (${sp ? sp.verdict : "–"}), and ${f2(an.D_fiducial)} at the fiducial parameters` : ""}.`));
+    table.replaceChildren(el("table", {}, el("caption", {}, "Gap between the two codes at the dials above, over all redshifts. 1 = as far apart as two runs of the same code that differ only in random seed; below 1 they agree. The last two columns are the registered study\u2019s result."),
+      el("thead", {}, el("tr", {}, ["Property", "now", "default dials", "best any dials", "closable by retuning?"].map(t => el("th", { scope: "col" }, t)))), el("tbody", {}, rows)));
+    const gs = gaps(), agree = gs.filter(x => x.d < D.margin), worst = gs.filter(x => x.d >= D.margin).sort((x, y) => y.d - x.d).slice(0, 3);
+    const big = `At these dials the two universes agree on ${agree.length} of ${JOINT.length} things about galaxies.` + (worst.length ? ` They are furthest apart on ${list(worst.map(x => nameOf(x.f)))}.` : " Nothing is out of line.");
+    header.replaceChildren(el("p", { class: "rt-big", "aria-live": "polite" }, big),
+      el("p", { class: "rt-sum" }, `Joint gap ${f2(dall)} (1 = as far apart as two runs of one code that differ only in random seed)${an ? `; the smallest the study found with every dial free: ${f2(an.D_corrected != null ? an.D_corrected : an.D)}; with the default dials: ${f2(an.D_fiducial)}` : ""}.`),
+      state.story ? el("div", { class: "rt-story" }, state.story.map(t => el("p", {}, t))) : "");
+  }
+  const gaps = () => JOINT.map(f => ({ f, d: fullDist(SETS[f]) }));
+  const nameOf = f => D.family_names[f].toLowerCase().replace(" at fixed m*", "");
+  const list = a => (a.length < 2 ? a.join("") : a.slice(0, -1).join(", ") + " and " + a[a.length - 1]);
+  const mult = (c) => D.params.map((p, j) => `${PLAIN[p.id].toLowerCase()} \u00d7${f2(Math.pow(p.base, state.a[c][j]), 2)}`).join(", ");
+  function story(kind, before) {
+    const after = gaps(), ok = a => a.filter(x => x.d < D.margin).map(x => x.f), nb = ok(before), na = ok(after);
+    const closed = na.filter(f => !nb.includes(f)), lost = nb.filter(f => !na.includes(f)), stuck = after.filter(x => x.d >= D.margin).sort((a, b) => b.d - a.d);
+    const only = state.matchSet === "all" ? "" : state.matchSet === "matchable" ? ` (leaving aside ${list(STUCK.map(nameOf))}, which no dial setting closes)` : ` (matching only ${nameOf(state.matchSet)})`;
+    const head = kind === "S" ? `To look as much like TNG as it can${only}, SIMBA's dials went to: ${mult("SIMBA")}.` : kind === "T" ? `To look as much like SIMBA as it can${only}, TNG's dials went to: ${mult("IllustrisTNG")}.` : `Closest the two can get${only}: TNG with ${mult("IllustrisTNG")}; SIMBA with ${mult("SIMBA")}.`;
+    const one = JOINT.includes(state.matchSet) ? `The gap on ${nameOf(state.matchSet)} went from ${f2(before.find(x => x.f === state.matchSet).d, 1)} to ${f2(after.find(x => x.f === state.matchSet).d, 1)}. ` : "";
+    return [head, one + `Overall they now agree on ${na.length} of ${JOINT.length} things (before: ${nb.length}).` + (closed.length ? ` Brought into line: ${list(closed.map(nameOf))}.` : "") + (lost.length ? ` Knocked out of agreement by the change: ${list(lost.map(nameOf))}.` : ""),
+      stuck.length ? `Still apart: ${list(stuck.slice(0, 4).map(x => `${nameOf(x.f)} (${f2(x.d, 1)}\u00d7 run-to-run noise)`))}${stuck.length > 4 ? " and " + (stuck.length - 4) + " more" : ""}.` : "Nothing is left apart."];
   }
   function update() { sync(); render(); }
   /* url state: #aT;aS@snap */
