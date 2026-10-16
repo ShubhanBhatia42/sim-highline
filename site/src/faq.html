@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Questions and answers</title>
+<meta name="description" content="Short answers about what sim-highline is for, how far to trust it, what the dials do and how to cite or correct it.">
+{{head}}
+</head>
+<body>
+{{header}}
+<main id="main" class="wrap page" tabindex="-1">
+<div class="doc">
+<nav class="idx" aria-label="On this page">
+<p class="lab">Contents</p>
+<ol>
+<li><a href="#faq"><span>§1</span>Questions</a></li>
+</ol>
+</nav>
+<div class="c">
+
+<div class="title">
+<p class="lab kicker">FAQ</p>
+<h1>Questions people ask</h1>
+<p class="standfirst">Plain answers about what this is, how far to trust it and what it cannot do.</p>
+</div>
+
+<section class="sec" id="faq" aria-labelledby="faq-h">
+<h2 id="faq-h"><span class="sn">§1</span>Questions</h2>
+<dl class="kv">
+<dt>What is this for?</dt><dd>Putting a galaxy relation from your own simulation next to every published simulation and observation, and finding out which of those comparisons are fair. It also lets you turn the feedback dials of two simulated universes and watch the galaxies change.</dd>
+<dt>Can I trust the curves?</dt><dd>Not blindly. {{digitizedShare}} of the simulation curves were read from published figures by one person and have not been checked by anyone who knows the simulation. Every curve says how it was obtained, and curves read from figures are never used to rank. Where an author releases a table, use that. If you spot an error, the evidence panel has a link that opens a pre-filled report.</dd>
+<dt>Why does "Check your own run" often say a curve is not comparable?</dt><dd>Because most published curves do not state everything needed (the IMF, the aperture, the population cut). We do not guess. If you declare your definitions and a curve declares different ones, or none, the mark says so and gives the reason. The <a href="study-definitions.html">definitions study</a> measures how often this happens.</dd>
+<dt>Does my curve leave my computer?</dt><dd>No. Everything runs in your browser. The curve is stored only in your browser's local storage so it is still there when you return; the clear button removes it.</dd>
+<dt>What do the dials actually do?</dt><dd>They scale how hard supernova winds and black hole feedback push gas out of galaxies, in two simulation codes. The curves are emulators fitted to 2,054 small simulations, so they are approximate near the edges of the dial ranges.</dd>
+<dt>Can the two universes be made to agree?</dt><dd>On some properties, yes: you can match the stellar mass function, for example. On others, no setting of the dials closes the gap (black hole occupation and gas metallicity), and matching one property usually pushes others apart. The <a href="study-joint.html">all-at-once study</a> measures this.</dd>
+<dt>Is this new science?</dt><dd>The finding that these two codes differ structurally is consistent with what the CAMELS papers already report. What the study adds is a size for the difference in each observable's own units and a rule written before the result. See <a href="{{repo}}/blob/main/docs/RELATED-WORK.md">the related-work note</a>.</dd>
+<dt>How do I cite it?</dt><dd>Cite the dataset (DOI in the footer) and the original paper of every curve you use. The Explorer's <i>Get data</i> panel produces BibTeX for exactly what you plotted.</dd>
+<dt>How do I add a curve or fix one?</dt><dd>Open an issue with the form on the repository (curve error or source suggestion). Authors who want their own curves corrected, credited differently or removed can say so there; removal is not contested.</dd>
+<dt>Is it finished?</dt><dd>No. It is version {{version}}, it has no outside users yet, and the roadmap lists what is done and what is not.</dd>
+</dl>
+<p class="dim">The full plan, with what is done and what is not, is in the <a href="{{repo}}/blob/main/docs/ROADMAP.md">roadmap</a>.</p>
+</section>
+</div>
+</div>
+</main>
+{{footer}}
+</body>
+</html>

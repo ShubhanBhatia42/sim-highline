@@ -1,0 +1,1619 @@
+[
+ {
+  "id": "1.01",
+  "step": 1,
+  "tier": 1,
+  "who": "C",
+  "title": "Write the purpose in one sentence and name the three kinds of user it serves",
+  "note": "docs/PROJECT.md, docs/DECISIONS.md; name search found nothing with the same name (search tool only)",
+  "status": "done"
+ },
+ {
+  "id": "1.02",
+  "step": 1,
+  "tier": 1,
+  "who": "C",
+  "title": "Set five success measures, each with a number and a date",
+  "note": "docs/PROJECT.md, docs/DECISIONS.md; name search found nothing with the same name (search tool only)",
+  "status": "done"
+ },
+ {
+  "id": "1.03",
+  "step": 1,
+  "tier": 1,
+  "who": "C",
+  "title": "Write the kill criteria: what result by what date means stop",
+  "note": "docs/PROJECT.md, docs/DECISIONS.md; name search found nothing with the same name (search tool only)",
+  "status": "done"
+ },
+ {
+  "id": "1.04",
+  "step": 1,
+  "tier": 1,
+  "who": "C",
+  "title": "Write what the project will not do",
+  "note": "docs/PROJECT.md, docs/DECISIONS.md; name search found nothing with the same name (search tool only)",
+  "status": "done"
+ },
+ {
+  "id": "1.05",
+  "step": 1,
+  "tier": 1,
+  "who": "C",
+  "title": "Start a decisions log with today's decisions",
+  "note": "docs/PROJECT.md, docs/DECISIONS.md; name search found nothing with the same name (search tool only)",
+  "status": "done"
+ },
+ {
+  "id": "1.06",
+  "step": 1,
+  "tier": 2,
+  "who": "C",
+  "title": "List the ten questions a simulation researcher would bring; check each can be answered in under a minute",
+  "note": "scripts/test-journeys.mjs walks all ten in a browser; docs/QUESTIONS.md",
+  "status": "done"
+ },
+ {
+  "id": "1.07",
+  "step": 1,
+  "tier": 2,
+  "who": "C",
+  "title": "Write three user walk-throughs and run each one in a real browser",
+  "note": "scripts/test-journeys.mjs walks all ten in a browser; docs/QUESTIONS.md",
+  "status": "done"
+ },
+ {
+  "id": "1.08",
+  "step": 1,
+  "tier": 2,
+  "who": "C",
+  "title": "List every page and file a visitor can reach; mark keep, merge or cut",
+  "status": "todo"
+ },
+ {
+  "id": "1.09",
+  "step": 1,
+  "tier": 2,
+  "who": "C",
+  "title": "Find out what researchers use today for this job; say what we do better and what worse",
+  "note": "docs/LANDSCAPE.md; from searches, labelled unverified",
+  "status": "done"
+ },
+ {
+  "id": "1.10",
+  "step": 1,
+  "tier": 2,
+  "who": "C",
+  "title": "Replace the study codes S1 to S4 with plain titles everywhere a visitor reads",
+  "note": "site templates, tests and README",
+  "status": "done"
+ },
+ {
+  "id": "1.11",
+  "step": 1,
+  "tier": 2,
+  "who": "C",
+  "title": "Write a plain-language glossary page",
+  "note": "glossary.html and faq.html on the site",
+  "status": "done"
+ },
+ {
+  "id": "1.12",
+  "step": 1,
+  "tier": 1,
+  "who": "C",
+  "title": "Write the 'what this is not' box for the front page",
+  "note": "docs/PROJECT.md, docs/DECISIONS.md; name search found nothing with the same name (search tool only)",
+  "status": "done"
+ },
+ {
+  "id": "1.13",
+  "step": 1,
+  "tier": 2,
+  "who": "C",
+  "title": "Decide which studies stay on the front door and which move to a Research page",
+  "status": "todo"
+ },
+ {
+  "id": "1.14",
+  "step": 1,
+  "tier": 2,
+  "who": "C",
+  "title": "Write a two-minute overview a colleague could read",
+  "status": "todo"
+ },
+ {
+  "id": "1.15",
+  "step": 1,
+  "tier": 1,
+  "who": "U",
+  "title": "Name the three people who will test it",
+  "status": "todo"
+ },
+ {
+  "id": "1.16",
+  "step": 1,
+  "tier": 1,
+  "who": "U",
+  "title": "Pick the date of the go/no-go review",
+  "status": "todo"
+ },
+ {
+  "id": "1.17",
+  "step": 1,
+  "tier": 2,
+  "who": "C",
+  "title": "Write the 90-second demo script for the dials page",
+  "status": "todo"
+ },
+ {
+  "id": "1.18",
+  "step": 1,
+  "tier": 1,
+  "who": "C",
+  "title": "Check the name and tagline for clashes with existing projects",
+  "note": "docs/PROJECT.md, docs/DECISIONS.md; name search found nothing with the same name (search tool only)",
+  "status": "done"
+ },
+ {
+  "id": "1.19",
+  "step": 1,
+  "tier": 2,
+  "who": "C",
+  "title": "Give the front page separate entry points for a simulator, an observer and a student",
+  "status": "todo"
+ },
+ {
+  "id": "1.20",
+  "step": 1,
+  "tier": 1,
+  "who": "C",
+  "title": "Put this roadmap in the repository and on a private page",
+  "status": "todo"
+ },
+ {
+  "id": "2.01",
+  "step": 2,
+  "tier": 1,
+  "who": "C",
+  "title": "Count the curves by how they were obtained (official table, paper table, fit, digitized figure) and show the breakdown",
+  "status": "todo"
+ },
+ {
+  "id": "2.02",
+  "step": 2,
+  "tier": 2,
+  "who": "C",
+  "title": "Cross-check every digitized curve that has an independent table of the same thing; publish the deviations",
+  "status": "todo"
+ },
+ {
+  "id": "2.03",
+  "step": 2,
+  "tier": 2,
+  "who": "C",
+  "title": "Re-run the script that regenerates every digitized curve from its source and compare with what ships",
+  "status": "todo"
+ },
+ {
+  "id": "2.04",
+  "step": 2,
+  "tier": 2,
+  "who": "C",
+  "title": "Show a plain 'how sure are we' label with the reason on every curve in the Explorer",
+  "status": "todo"
+ },
+ {
+  "id": "2.05",
+  "step": 2,
+  "tier": 2,
+  "who": "C",
+  "title": "Add a 'report a problem with this curve' link on every curve that opens a pre-filled issue",
+  "note": "already present: evidence panel link opens a pre-filled curve-error issue (verified in code)",
+  "status": "done"
+ },
+ {
+  "id": "2.06",
+  "step": 2,
+  "tier": 2,
+  "who": "C",
+  "title": "Re-extract 30 random digitized points independently from the figure and record the error",
+  "status": "todo"
+ },
+ {
+  "id": "2.07",
+  "step": 2,
+  "tier": 3,
+  "who": "C",
+  "title": "Make the plausibility screen a gate that fails the build on new outliers",
+  "status": "todo"
+ },
+ {
+  "id": "2.08",
+  "step": 2,
+  "tier": 2,
+  "who": "C",
+  "title": "Check that every citation link resolves and fix broken ones",
+  "status": "todo"
+ },
+ {
+  "id": "2.09",
+  "step": 2,
+  "tier": 2,
+  "who": "C",
+  "title": "Check every record has licence or terms information; list the gaps",
+  "status": "todo"
+ },
+ {
+  "id": "2.10",
+  "step": 2,
+  "tier": 3,
+  "who": "C",
+  "title": "Prepare the expert-audit packet: 60 records sampled across sources, figure and data side by side",
+  "status": "todo"
+ },
+ {
+  "id": "2.11",
+  "step": 2,
+  "tier": 1,
+  "who": "C",
+  "title": "Write the cover note for the audit request in plain language",
+  "status": "todo"
+ },
+ {
+  "id": "2.12",
+  "step": 2,
+  "tier": 4,
+  "who": "U",
+  "title": "Send the audit packet to two outside experts",
+  "status": "todo"
+ },
+ {
+  "id": "2.13",
+  "step": 2,
+  "tier": 3,
+  "who": "C",
+  "title": "Add a 'checked by' field to the data and show it (empty until experts reply)",
+  "status": "todo"
+ },
+ {
+  "id": "2.14",
+  "step": 2,
+  "tier": 2,
+  "who": "C",
+  "title": "Give each of the accepted audit warnings a written reason",
+  "status": "todo"
+ },
+ {
+  "id": "2.15",
+  "step": 2,
+  "tier": 2,
+  "who": "C",
+  "title": "Mark the ten thinnest relation-epoch cells as 'thin evidence' in the Explorer",
+  "status": "todo"
+ },
+ {
+  "id": "2.16",
+  "step": 2,
+  "tier": 2,
+  "who": "C",
+  "title": "Compare curves where one simulation appears in two papers; list disagreements above 0.1 dex",
+  "status": "todo"
+ },
+ {
+  "id": "2.17",
+  "step": 2,
+  "tier": 3,
+  "who": "C",
+  "title": "Build a data-quality page on the site, generated from the data",
+  "status": "todo"
+ },
+ {
+  "id": "2.18",
+  "step": 2,
+  "tier": 1,
+  "who": "C",
+  "title": "Make sure the digitized share is computed everywhere, never typed",
+  "status": "todo"
+ },
+ {
+  "id": "2.19",
+  "step": 2,
+  "tier": 2,
+  "who": "C",
+  "title": "Record checksums of every raw source file used and add a script that verifies them",
+  "status": "todo"
+ },
+ {
+  "id": "2.20",
+  "step": 2,
+  "tier": 2,
+  "who": "C",
+  "title": "Test that every record's definitions validate against the schema, with clear errors",
+  "status": "todo"
+ },
+ {
+  "id": "2.21",
+  "step": 2,
+  "tier": 4,
+  "who": "U",
+  "title": "Ask three simulation authors to confirm their own curves (drafts exist)",
+  "status": "todo"
+ },
+ {
+  "id": "2.22",
+  "step": 2,
+  "tier": 2,
+  "who": "C",
+  "title": "Add a visible corrections log for data fixes",
+  "status": "todo"
+ },
+ {
+  "id": "3.01",
+  "step": 3,
+  "tier": 1,
+  "who": "C",
+  "title": "Explain every definition choice in a tooltip (density frame, IMF, mass definition and so on)",
+  "status": "todo"
+ },
+ {
+  "id": "3.02",
+  "step": 3,
+  "tier": 2,
+  "who": "C",
+  "title": "Add 'declare like simulation X' presets that fill the definitions from a known simulation",
+  "status": "todo"
+ },
+ {
+  "id": "3.03",
+  "step": 3,
+  "tier": 2,
+  "who": "C",
+  "title": "Write one plain-language verdict sentence above the comparison table",
+  "status": "todo"
+ },
+ {
+  "id": "3.04",
+  "step": 3,
+  "tier": 2,
+  "who": "C",
+  "title": "Make the result shareable: put the curve and definitions in the link",
+  "status": "todo"
+ },
+ {
+  "id": "3.05",
+  "step": 3,
+  "tier": 2,
+  "who": "C",
+  "title": "Let users export the comparison plot as an image with caption and methods text",
+  "status": "todo"
+ },
+ {
+  "id": "3.06",
+  "step": 3,
+  "tier": 2,
+  "who": "C",
+  "title": "Accept more input formats (comments, semicolons, tabs) and show what was understood",
+  "status": "todo"
+ },
+ {
+  "id": "3.07",
+  "step": 3,
+  "tier": 1,
+  "who": "C",
+  "title": "Warn when the values look linear but 'log' is ticked, and the other way round",
+  "status": "todo"
+ },
+ {
+  "id": "3.08",
+  "step": 3,
+  "tier": 2,
+  "who": "C",
+  "title": "Show closest curves and comparable curves as two separate lists",
+  "status": "todo"
+ },
+ {
+  "id": "3.09",
+  "step": 3,
+  "tier": 2,
+  "who": "C",
+  "title": "Add a plot of your run minus the comparable median",
+  "status": "todo"
+ },
+ {
+  "id": "3.10",
+  "step": 3,
+  "tier": 1,
+  "who": "C",
+  "title": "Offer a downloadable template CSV",
+  "status": "todo"
+ },
+ {
+  "id": "3.11",
+  "step": 3,
+  "tier": 2,
+  "who": "C",
+  "title": "Let users compare two of their own runs at once",
+  "status": "todo"
+ },
+ {
+  "id": "3.12",
+  "step": 3,
+  "tier": 2,
+  "who": "C",
+  "title": "Add a command line: sim-highline compare my.csv --relation gsmf --z 0.1",
+  "status": "todo"
+ },
+ {
+  "id": "3.13",
+  "step": 3,
+  "tier": 2,
+  "who": "C",
+  "title": "Add a notebook showing how to compare your run in Python",
+  "status": "todo"
+ },
+ {
+  "id": "3.14",
+  "step": 3,
+  "tier": 3,
+  "who": "C",
+  "title": "Try five realistic user inputs and fix everything that breaks",
+  "status": "todo"
+ },
+ {
+  "id": "3.15",
+  "step": 3,
+  "tier": 2,
+  "who": "C",
+  "title": "Rank which simulation your curve most resembles",
+  "status": "todo"
+ },
+ {
+  "id": "3.16",
+  "step": 3,
+  "tier": 1,
+  "who": "C",
+  "title": "Make the whole workflow usable from the keyboard",
+  "status": "todo"
+ },
+ {
+  "id": "3.17",
+  "step": 3,
+  "tier": 2,
+  "who": "C",
+  "title": "Handle bad rows, empty input and wrong units with clear messages",
+  "status": "todo"
+ },
+ {
+  "id": "3.18",
+  "step": 3,
+  "tier": 2,
+  "who": "C",
+  "title": "Keep the run in the browser with a clear and a restore",
+  "status": "todo"
+ },
+ {
+  "id": "3.19",
+  "step": 3,
+  "tier": 3,
+  "who": "C",
+  "title": "Make the example flow work and be tested for more relations (star-forming sequence, metallicity)",
+  "status": "todo"
+ },
+ {
+  "id": "3.20",
+  "step": 3,
+  "tier": 2,
+  "who": "C",
+  "title": "Explain per curve why it is or is not comparable",
+  "status": "todo"
+ },
+ {
+  "id": "3.21",
+  "step": 3,
+  "tier": 1,
+  "who": "C",
+  "title": "Offer the example for every relation",
+  "status": "todo"
+ },
+ {
+  "id": "3.22",
+  "step": 3,
+  "tier": 2,
+  "who": "C",
+  "title": "Measure time to first result and keep it under 30 seconds in a test",
+  "note": "scripts/test-journeys.mjs walks all ten in a browser; docs/QUESTIONS.md",
+  "status": "done"
+ },
+ {
+  "id": "4.01",
+  "step": 4,
+  "tier": 3,
+  "who": "C",
+  "title": "Add 'which dials reproduce my curve?': paste a curve, find the best dials for both codes",
+  "status": "todo"
+ },
+ {
+  "id": "4.02",
+  "step": 4,
+  "tier": 2,
+  "who": "C",
+  "title": "Show what each universe then predicts for everything else",
+  "status": "todo"
+ },
+ {
+  "id": "4.03",
+  "step": 4,
+  "tier": 3,
+  "who": "C",
+  "title": "Add 'tune to observations': set the dials to best match a published observed curve",
+  "status": "todo"
+ },
+ {
+  "id": "4.04",
+  "step": 4,
+  "tier": 2,
+  "who": "C",
+  "title": "Rank the side effects of any change: what moved most, in plain words",
+  "status": "todo"
+ },
+ {
+  "id": "4.05",
+  "step": 4,
+  "tier": 2,
+  "who": "C",
+  "title": "Add a share button that copies a link with dials, redshift and the match",
+  "status": "todo"
+ },
+ {
+  "id": "4.06",
+  "step": 4,
+  "tier": 2,
+  "who": "C",
+  "title": "Add 'hold this property fixed' so you can see what the rest does",
+  "status": "todo"
+ },
+ {
+  "id": "4.07",
+  "step": 4,
+  "tier": 2,
+  "who": "C",
+  "title": "Animate changes when the dials move (respecting reduced motion)",
+  "status": "todo"
+ },
+ {
+  "id": "4.08",
+  "step": 4,
+  "tier": 1,
+  "who": "C",
+  "title": "Add preset buttons: same dials in both, weak feedback, strong feedback",
+  "status": "todo"
+ },
+ {
+  "id": "4.09",
+  "step": 4,
+  "tier": 2,
+  "who": "C",
+  "title": "Show, for each dial, how strongly it moves each property",
+  "status": "todo"
+ },
+ {
+  "id": "4.10",
+  "step": 4,
+  "tier": 2,
+  "who": "C",
+  "title": "Add a one-sentence physical explanation to each panel",
+  "status": "todo"
+ },
+ {
+  "id": "4.11",
+  "step": 4,
+  "tier": 3,
+  "who": "C",
+  "title": "Add a redshift control that steps through all five epochs with the story",
+  "status": "todo"
+ },
+ {
+  "id": "4.12",
+  "step": 4,
+  "tier": 2,
+  "who": "C",
+  "title": "Make the dials page work well on a phone (sticky headline, collapsible panels)",
+  "status": "todo"
+ },
+ {
+  "id": "4.13",
+  "step": 4,
+  "tier": 1,
+  "who": "C",
+  "title": "Control the dials from the keyboard and announce changes to screen readers",
+  "status": "todo"
+ },
+ {
+  "id": "4.14",
+  "step": 4,
+  "tier": 2,
+  "who": "C",
+  "title": "Draw the emulator's own uncertainty, not just seed scatter",
+  "status": "todo"
+ },
+ {
+  "id": "4.15",
+  "step": 4,
+  "tier": 2,
+  "who": "C",
+  "title": "Show how far a setting sits from the edge of the trusted range",
+  "status": "todo"
+ },
+ {
+  "id": "4.16",
+  "step": 4,
+  "tier": 2,
+  "who": "C",
+  "title": "Export the current view as an image with captions",
+  "status": "todo"
+ },
+ {
+  "id": "4.17",
+  "step": 4,
+  "tier": 2,
+  "who": "C",
+  "title": "Export the dials and predictions as CSV for a paper",
+  "status": "todo"
+ },
+ {
+  "id": "4.18",
+  "step": 4,
+  "tier": 3,
+  "who": "C",
+  "title": "Test the emulators on simulations they have never seen and show the result on the page",
+  "status": "todo"
+ },
+ {
+  "id": "4.19",
+  "step": 4,
+  "tier": 1,
+  "who": "C",
+  "title": "Add a 30-second 'what am I looking at' card",
+  "status": "todo"
+ },
+ {
+  "id": "4.20",
+  "step": 4,
+  "tier": 2,
+  "who": "C",
+  "title": "Add 'show me a surprise': a setting with a striking trade-off",
+  "status": "todo"
+ },
+ {
+  "id": "4.21",
+  "step": 4,
+  "tier": 2,
+  "who": "C",
+  "title": "Show the exact numbers when hovering a panel",
+  "status": "todo"
+ },
+ {
+  "id": "4.22",
+  "step": 4,
+  "tier": 2,
+  "who": "C",
+  "title": "Show gaps in dex and fractions beside the noise-unit gap",
+  "status": "todo"
+ },
+ {
+  "id": "4.23",
+  "step": 4,
+  "tier": 1,
+  "who": "C",
+  "title": "Make Reset also clear the match choice and restore the story from a link",
+  "status": "todo"
+ },
+ {
+  "id": "4.24",
+  "step": 4,
+  "tier": 3,
+  "who": "C",
+  "title": "Probe whether a third simulation code can be added so it is not 'two codes only'",
+  "status": "todo"
+ },
+ {
+  "id": "5.01",
+  "step": 5,
+  "tier": 2,
+  "who": "C",
+  "title": "Search the literature: has cross-code retuning been studied in CAMELS? Write the related-work note",
+  "note": "docs/RELATED-WORK.md; summaries only, papers not read",
+  "status": "done"
+ },
+ {
+  "id": "5.02",
+  "step": 5,
+  "tier": 1,
+  "who": "C",
+  "title": "Change the claims on the pages to match what the prior art shows",
+  "status": "todo"
+ },
+ {
+  "id": "5.03",
+  "step": 5,
+  "tier": 3,
+  "who": "C",
+  "title": "Test the result under other weightings and report it as exploratory",
+  "status": "todo"
+ },
+ {
+  "id": "5.04",
+  "step": 5,
+  "tier": 3,
+  "who": "C",
+  "title": "Reproduce the main numbers with a second, independent implementation of the distance",
+  "status": "todo"
+ },
+ {
+  "id": "5.05",
+  "step": 5,
+  "tier": 2,
+  "who": "C",
+  "title": "Write down every analysis choice that could have changed the result",
+  "status": "todo"
+ },
+ {
+  "id": "5.06",
+  "step": 5,
+  "tier": 3,
+  "who": "C",
+  "title": "Leave half the simulations out, refit, and check the distances",
+  "status": "todo"
+ },
+ {
+  "id": "5.07",
+  "step": 5,
+  "tier": 3,
+  "who": "C",
+  "title": "Try a different kind of emulator on one family as a robustness check",
+  "status": "todo"
+ },
+ {
+  "id": "5.08",
+  "step": 5,
+  "tier": 2,
+  "who": "C",
+  "title": "Say what is known about resolution effects in these simulations, with sources",
+  "status": "todo"
+ },
+ {
+  "id": "5.09",
+  "step": 5,
+  "tier": 3,
+  "who": "C",
+  "title": "Draft a short research note with only the claims that survive",
+  "status": "todo"
+ },
+ {
+  "id": "5.10",
+  "step": 5,
+  "tier": 2,
+  "who": "C",
+  "title": "Write what a sceptic would say and answer each point",
+  "status": "todo"
+ },
+ {
+  "id": "5.11",
+  "step": 5,
+  "tier": 4,
+  "who": "U",
+  "title": "Ask a CAMELS team member to read the note",
+  "status": "todo"
+ },
+ {
+  "id": "5.12",
+  "step": 5,
+  "tier": 2,
+  "who": "C",
+  "title": "Show how far each code is from observed curves after tuning (exploratory)",
+  "status": "todo"
+ },
+ {
+  "id": "5.13",
+  "step": 5,
+  "tier": 3,
+  "who": "C",
+  "title": "Rank which observables best tell the codes apart, with uncertainty",
+  "status": "todo"
+ },
+ {
+  "id": "5.14",
+  "step": 5,
+  "tier": 2,
+  "who": "C",
+  "title": "Show the dated commit trail that proves the rules were written before the results",
+  "status": "todo"
+ },
+ {
+  "id": "5.15",
+  "step": 5,
+  "tier": 2,
+  "who": "C",
+  "title": "Check the calibration document matches the final settings",
+  "status": "todo"
+ },
+ {
+  "id": "5.16",
+  "step": 5,
+  "tier": 1,
+  "who": "C",
+  "title": "Put the limits at the top of every study page",
+  "status": "todo"
+ },
+ {
+  "id": "5.17",
+  "step": 5,
+  "tier": 4,
+  "who": "U",
+  "title": "Deposit the analysis data with a DOI",
+  "status": "todo"
+ },
+ {
+  "id": "5.18",
+  "step": 5,
+  "tier": 3,
+  "who": "C",
+  "title": "Make every analysis run end to end with one command and a documented runtime",
+  "status": "todo"
+ },
+ {
+  "id": "5.19",
+  "step": 5,
+  "tier": 2,
+  "who": "C",
+  "title": "Add an environment file so others can reproduce the numbers",
+  "status": "todo"
+ },
+ {
+  "id": "5.20",
+  "step": 5,
+  "tier": 2,
+  "who": "C",
+  "title": "Test that every number on the site and in the README matches the generated results",
+  "status": "todo"
+ },
+ {
+  "id": "6.01",
+  "step": 6,
+  "tier": 1,
+  "who": "C",
+  "title": "Measure the real transfer size and load time of every page",
+  "status": "todo"
+ },
+ {
+  "id": "6.02",
+  "step": 6,
+  "tier": 3,
+  "who": "C",
+  "title": "Split the Explorer's data so the first view appears fast, if the measurement says it is needed",
+  "status": "todo"
+ },
+ {
+  "id": "6.03",
+  "step": 6,
+  "tier": 2,
+  "who": "C",
+  "title": "Add a loading state and an error state to the Explorer",
+  "status": "todo"
+ },
+ {
+  "id": "6.04",
+  "step": 6,
+  "tier": 2,
+  "who": "C",
+  "title": "Audit speed, accessibility and best practice and enforce a budget in tests",
+  "status": "todo"
+ },
+ {
+  "id": "6.05",
+  "step": 6,
+  "tier": 2,
+  "who": "C",
+  "title": "Screenshot every page at 320, 390, 768 and 1440 pixels and review them",
+  "status": "todo"
+ },
+ {
+  "id": "6.06",
+  "step": 6,
+  "tier": 2,
+  "who": "C",
+  "title": "Review every page in dark mode",
+  "status": "todo"
+ },
+ {
+  "id": "6.07",
+  "step": 6,
+  "tier": 1,
+  "who": "C",
+  "title": "Respect reduced-motion everywhere",
+  "status": "todo"
+ },
+ {
+  "id": "6.08",
+  "step": 6,
+  "tier": 2,
+  "who": "C",
+  "title": "Walk every page with the keyboard only and fix traps",
+  "status": "todo"
+ },
+ {
+  "id": "6.09",
+  "step": 6,
+  "tier": 2,
+  "who": "C",
+  "title": "Give every chart a text summary for screen readers",
+  "status": "todo"
+ },
+ {
+  "id": "6.10",
+  "step": 6,
+  "tier": 2,
+  "who": "C",
+  "title": "Add a print stylesheet for the study pages",
+  "status": "todo"
+ },
+ {
+  "id": "6.11",
+  "step": 6,
+  "tier": 1,
+  "who": "C",
+  "title": "Give every page a proper share title and description",
+  "status": "todo"
+ },
+ {
+  "id": "6.12",
+  "step": 6,
+  "tier": 2,
+  "who": "C",
+  "title": "Generate share-preview images from the real charts at build time",
+  "status": "todo"
+ },
+ {
+  "id": "6.13",
+  "step": 6,
+  "tier": 2,
+  "who": "C",
+  "title": "Check the Explorer works offline once loaded",
+  "status": "todo"
+ },
+ {
+  "id": "6.14",
+  "step": 6,
+  "tier": 1,
+  "who": "C",
+  "title": "Fix the clipped legend footer in the Explorer",
+  "status": "todo"
+ },
+ {
+  "id": "6.15",
+  "step": 6,
+  "tier": 2,
+  "who": "C",
+  "title": "Run the browser tests in Firefox and WebKit as well",
+  "status": "todo"
+ },
+ {
+  "id": "6.16",
+  "step": 6,
+  "tier": 2,
+  "who": "C",
+  "title": "Check very wide screens",
+  "status": "todo"
+ },
+ {
+  "id": "6.17",
+  "step": 6,
+  "tier": 2,
+  "who": "C",
+  "title": "Throttle the network and measure time to first interaction",
+  "status": "todo"
+ },
+ {
+  "id": "6.18",
+  "step": 6,
+  "tier": 1,
+  "who": "C",
+  "title": "Add a helpful 404 page",
+  "status": "todo"
+ },
+ {
+  "id": "6.19",
+  "step": 6,
+  "tier": 2,
+  "who": "C",
+  "title": "Check every link on the built site and external links",
+  "status": "todo"
+ },
+ {
+  "id": "6.20",
+  "step": 6,
+  "tier": 2,
+  "who": "C",
+  "title": "Add a content security policy to the site",
+  "status": "todo"
+ },
+ {
+  "id": "7.01",
+  "step": 7,
+  "tier": 2,
+  "who": "C",
+  "title": "Add a three-step first-visit guide to the Explorer that can be dismissed",
+  "status": "todo"
+ },
+ {
+  "id": "7.02",
+  "step": 7,
+  "tier": 2,
+  "who": "C",
+  "title": "Add 'try this' example links on the front page",
+  "status": "todo"
+ },
+ {
+  "id": "7.03",
+  "step": 7,
+  "tier": 1,
+  "who": "C",
+  "title": "Rewrite every page title and heading in plain words",
+  "status": "todo"
+ },
+ {
+  "id": "7.04",
+  "step": 7,
+  "tier": 2,
+  "who": "C",
+  "title": "Give each study a plain summary above the technical abstract",
+  "status": "todo"
+ },
+ {
+  "id": "7.05",
+  "step": 7,
+  "tier": 2,
+  "who": "C",
+  "title": "Put the result in one sentence at the top of each study",
+  "status": "todo"
+ },
+ {
+  "id": "7.06",
+  "step": 7,
+  "tier": 1,
+  "who": "C",
+  "title": "Replace jargon in the interface (rankable, tier, tension, spread) with plain words and a tooltip",
+  "status": "todo"
+ },
+ {
+  "id": "7.07",
+  "step": 7,
+  "tier": 2,
+  "who": "C",
+  "title": "Describe each Explorer view in one line",
+  "status": "todo"
+ },
+ {
+  "id": "7.08",
+  "step": 7,
+  "tier": 2,
+  "who": "C",
+  "title": "Write a FAQ",
+  "note": "glossary.html and faq.html on the site",
+  "status": "done"
+ },
+ {
+  "id": "7.09",
+  "step": 7,
+  "tier": 2,
+  "who": "C",
+  "title": "Add a 'how to cite and credit the original authors' box with a copy button",
+  "status": "todo"
+ },
+ {
+  "id": "7.10",
+  "step": 7,
+  "tier": 1,
+  "who": "C",
+  "title": "Make the footer useful: contact, issues, licence, version",
+  "status": "todo"
+ },
+ {
+  "id": "7.11",
+  "step": 7,
+  "tier": 2,
+  "who": "C",
+  "title": "Write a user-facing 'what is new' page, not developer notes",
+  "note": "changes.html (what has changed), plain language",
+  "status": "done"
+ },
+ {
+  "id": "7.12",
+  "step": 7,
+  "tier": 2,
+  "who": "C",
+  "title": "Show a 'what is new' note to returning visitors",
+  "status": "todo"
+ },
+ {
+  "id": "7.13",
+  "step": 7,
+  "tier": 1,
+  "who": "C",
+  "title": "Make number formats and units consistent across pages",
+  "status": "todo"
+ },
+ {
+  "id": "7.14",
+  "step": 7,
+  "tier": 2,
+  "who": "C",
+  "title": "Edit every page for filler and repetition",
+  "status": "todo"
+ },
+ {
+  "id": "7.15",
+  "step": 7,
+  "tier": 2,
+  "who": "C",
+  "title": "Add a short scripted tour of the dials page",
+  "status": "todo"
+ },
+ {
+  "id": "7.16",
+  "step": 7,
+  "tier": 1,
+  "who": "C",
+  "title": "Run a spelling and consistency check",
+  "status": "todo"
+ },
+ {
+  "id": "7.17",
+  "step": 7,
+  "tier": 2,
+  "who": "C",
+  "title": "Check the reading level of the front page",
+  "status": "todo"
+ },
+ {
+  "id": "7.18",
+  "step": 7,
+  "tier": 2,
+  "who": "C",
+  "title": "Check every figure has alternative text",
+  "status": "todo"
+ },
+ {
+  "id": "8.01",
+  "step": 8,
+  "tier": 3,
+  "who": "C",
+  "title": "Cut the S4 test from seven minutes to under two without losing its checks",
+  "status": "todo"
+ },
+ {
+  "id": "8.02",
+  "step": 8,
+  "tier": 1,
+  "who": "C",
+  "title": "Pin tool versions and add lock files",
+  "status": "todo"
+ },
+ {
+  "id": "8.03",
+  "step": 8,
+  "tier": 2,
+  "who": "C",
+  "title": "Add pre-commit checks for formatting and JSON validity",
+  "status": "todo"
+ },
+ {
+  "id": "8.04",
+  "step": 8,
+  "tier": 2,
+  "who": "C",
+  "title": "Make the full check faster by caching what has not changed",
+  "status": "todo"
+ },
+ {
+  "id": "8.05",
+  "step": 8,
+  "tier": 2,
+  "who": "C",
+  "title": "Update CONTRIBUTING for the new parts",
+  "status": "todo"
+ },
+ {
+  "id": "8.06",
+  "step": 8,
+  "tier": 2,
+  "who": "C",
+  "title": "Unit-test the dials page's emulator code",
+  "status": "todo"
+ },
+ {
+  "id": "8.07",
+  "step": 8,
+  "tier": 2,
+  "who": "C",
+  "title": "Test that the browser emulator gives the same numbers as the Python one",
+  "status": "todo"
+ },
+ {
+  "id": "8.08",
+  "step": 8,
+  "tier": 2,
+  "who": "C",
+  "title": "Add a JavaScript and HTML lint to CI",
+  "status": "todo"
+ },
+ {
+  "id": "8.09",
+  "step": 8,
+  "tier": 1,
+  "who": "C",
+  "title": "Add issue labels and forms for feedback and new curves",
+  "status": "todo"
+ },
+ {
+  "id": "8.10",
+  "step": 8,
+  "tier": 2,
+  "who": "C",
+  "title": "Write a release script: bump, regenerate, tag, notes in one command",
+  "status": "todo"
+ },
+ {
+  "id": "8.11",
+  "step": 8,
+  "tier": 2,
+  "who": "C",
+  "title": "Tag the release and create GitHub release notes",
+  "status": "todo"
+ },
+ {
+  "id": "8.12",
+  "step": 8,
+  "tier": 4,
+  "who": "U",
+  "title": "Archive the new version on Zenodo",
+  "status": "todo"
+ },
+ {
+  "id": "8.13",
+  "step": 8,
+  "tier": 2,
+  "who": "C",
+  "title": "Remove dead code and dead pages",
+  "status": "todo"
+ },
+ {
+  "id": "8.14",
+  "step": 8,
+  "tier": 2,
+  "who": "C",
+  "title": "Check repository size and that no large raw files are tracked",
+  "status": "todo"
+ },
+ {
+  "id": "8.15",
+  "step": 8,
+  "tier": 2,
+  "who": "C",
+  "title": "Document the architecture on one page",
+  "status": "todo"
+ },
+ {
+  "id": "8.16",
+  "step": 8,
+  "tier": 1,
+  "who": "C",
+  "title": "Add short commands for common tasks",
+  "status": "todo"
+ },
+ {
+  "id": "8.17",
+  "step": 8,
+  "tier": 2,
+  "who": "C",
+  "title": "Review the static site for secrets and data leaks",
+  "status": "todo"
+ },
+ {
+  "id": "8.18",
+  "step": 8,
+  "tier": 2,
+  "who": "C",
+  "title": "Add a weekly scheduled check for broken links and data rot",
+  "status": "todo"
+ },
+ {
+  "id": "8.19",
+  "step": 8,
+  "tier": 3,
+  "who": "C",
+  "title": "Report test coverage for the Python and JavaScript",
+  "status": "todo"
+ },
+ {
+  "id": "8.20",
+  "step": 8,
+  "tier": 2,
+  "who": "C",
+  "title": "Check the build is deterministic: same input, same output twice",
+  "status": "todo"
+ },
+ {
+  "id": "9.01",
+  "step": 9,
+  "tier": 2,
+  "who": "C",
+  "title": "Write the announcement text, short and plain",
+  "status": "todo"
+ },
+ {
+  "id": "9.02",
+  "step": 9,
+  "tier": 2,
+  "who": "C",
+  "title": "Write the pilot script for three testers: tasks, questions, what to record",
+  "status": "todo"
+ },
+ {
+  "id": "9.03",
+  "step": 9,
+  "tier": 1,
+  "who": "C",
+  "title": "Add a feedback link on every page that opens a pre-filled issue",
+  "status": "todo"
+ },
+ {
+  "id": "9.04",
+  "step": 9,
+  "tier": 2,
+  "who": "C",
+  "title": "Draft the emails to the authors whose curves are included",
+  "status": "todo"
+ },
+ {
+  "id": "9.05",
+  "step": 9,
+  "tier": 2,
+  "who": "C",
+  "title": "Draft the post for the relevant research community forums",
+  "status": "todo"
+ },
+ {
+  "id": "9.06",
+  "step": 9,
+  "tier": 1,
+  "who": "C",
+  "title": "Make 'tell us what is wrong' easy to find",
+  "status": "todo"
+ },
+ {
+  "id": "9.07",
+  "step": 9,
+  "tier": 4,
+  "who": "U",
+  "title": "Send it to the three testers",
+  "status": "todo"
+ },
+ {
+  "id": "9.08",
+  "step": 9,
+  "tier": 4,
+  "who": "U",
+  "title": "Collect their feedback and log it",
+  "status": "todo"
+ },
+ {
+  "id": "9.09",
+  "step": 9,
+  "tier": 2,
+  "who": "C",
+  "title": "Write a one-page summary page suitable for printing or sharing",
+  "status": "todo"
+ },
+ {
+  "id": "9.10",
+  "step": 9,
+  "tier": 2,
+  "who": "C",
+  "title": "Outline a five-slide talk",
+  "status": "todo"
+ },
+ {
+  "id": "9.11",
+  "step": 9,
+  "tier": 4,
+  "who": "U",
+  "title": "Present it to a research group",
+  "status": "todo"
+ },
+ {
+  "id": "9.12",
+  "step": 9,
+  "tier": 2,
+  "who": "C",
+  "title": "Add structured dataset metadata so search engines understand it",
+  "status": "todo"
+ },
+ {
+  "id": "9.13",
+  "step": 9,
+  "tier": 1,
+  "who": "C",
+  "title": "Draft the text for dataset registries",
+  "status": "todo"
+ },
+ {
+  "id": "9.14",
+  "step": 9,
+  "tier": 4,
+  "who": "U",
+  "title": "Submit the dataset to registries",
+  "status": "todo"
+ },
+ {
+  "id": "9.15",
+  "step": 9,
+  "tier": 2,
+  "who": "C",
+  "title": "Draft the software-catalogue entry",
+  "status": "todo"
+ },
+ {
+  "id": "9.16",
+  "step": 9,
+  "tier": 2,
+  "who": "C",
+  "title": "Add a 'used in' section and how to be listed",
+  "status": "todo"
+ },
+ {
+  "id": "10.01",
+  "step": 10,
+  "tier": 3,
+  "who": "C",
+  "title": "Get an independent fresh-eyes review of the whole product from a separate reviewer",
+  "status": "todo"
+ },
+ {
+  "id": "10.02",
+  "step": 10,
+  "tier": 3,
+  "who": "C",
+  "title": "Fix everything the review marks as must-fix",
+  "status": "todo"
+ },
+ {
+  "id": "10.03",
+  "step": 10,
+  "tier": 2,
+  "who": "C",
+  "title": "Do a final check of the live site",
+  "status": "todo"
+ },
+ {
+  "id": "10.04",
+  "step": 10,
+  "tier": 1,
+  "who": "C",
+  "title": "Update the README and changelog for the release",
+  "status": "todo"
+ },
+ {
+  "id": "10.05",
+  "step": 10,
+  "tier": 2,
+  "who": "C",
+  "title": "Bump the version and tag the release",
+  "status": "todo"
+ },
+ {
+  "id": "10.06",
+  "step": 10,
+  "tier": 2,
+  "who": "C",
+  "title": "Write the honest retrospective",
+  "status": "todo"
+ },
+ {
+  "id": "10.07",
+  "step": 10,
+  "tier": 1,
+  "who": "C",
+  "title": "List the numbers to look at on the review date",
+  "status": "todo"
+ },
+ {
+  "id": "10.08",
+  "step": 10,
+  "tier": 2,
+  "who": "C",
+  "title": "Publish the roadmap with final status: done, not done, blocked",
+  "status": "todo"
+ },
+ {
+  "id": "10.09",
+  "step": 10,
+  "tier": 4,
+  "who": "U",
+  "title": "On the review date, apply the kill criteria",
+  "status": "todo"
+ },
+ {
+  "id": "10.10",
+  "step": 10,
+  "tier": 2,
+  "who": "C",
+  "title": "Re-measure the front page: time to first meaningful action",
+  "status": "todo"
+ },
+ {
+  "id": "10.11",
+  "step": 10,
+  "tier": 2,
+  "who": "C",
+  "title": "Re-run every test suite from a clean checkout",
+  "status": "todo"
+ },
+ {
+  "id": "10.12",
+  "step": 10,
+  "tier": 1,
+  "who": "C",
+  "title": "Confirm the live site matches the release",
+  "status": "todo"
+ },
+ {
+  "id": "10.13",
+  "step": 10,
+  "tier": 2,
+  "who": "C",
+  "title": "Check that nothing on the site claims more than the evidence",
+  "status": "todo"
+ },
+ {
+  "id": "10.14",
+  "step": 10,
+  "tier": 2,
+  "who": "C",
+  "title": "Re-read every study page as a sceptic and tighten",
+  "status": "todo"
+ },
+ {
+  "id": "10.15",
+  "step": 10,
+  "tier": 1,
+  "who": "C",
+  "title": "Archive scratch files and make the repository tidy",
+  "status": "todo"
+ },
+ {
+  "id": "10.16",
+  "step": 10,
+  "tier": 2,
+  "who": "C",
+  "title": "Write the list of what would make it great next",
+  "status": "todo"
+ },
+ {
+  "id": "10.17",
+  "step": 10,
+  "tier": 1,
+  "who": "C",
+  "title": "Write the short message to the maintainer: what is done, what is not, what to decide",
+  "status": "todo"
+ },
+ {
+  "id": "10.18",
+  "step": 10,
+  "tier": 1,
+  "who": "C",
+  "title": "Update the private roadmap page one last time",
+  "status": "todo"
+ }
+]

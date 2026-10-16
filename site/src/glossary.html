@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glossary of the words used here</title>
+<meta name="description" content="Plain-language meanings of the terms used on sim-highline: aperture, IMF, feedback, emulator, gap, tier and more.">
+{{head}}
+</head>
+<body>
+{{header}}
+<main id="main" class="wrap page" tabindex="-1">
+<div class="doc">
+<nav class="idx" aria-label="On this page">
+<p class="lab">Contents</p>
+<ol>
+<li><a href="#terms"><span>§1</span>Terms</a></li>
+</ol>
+</nav>
+<div class="c">
+
+<div class="title">
+<p class="lab kicker">Glossary</p>
+<h1>Words used here, in plain language</h1>
+<p class="standfirst">Short meanings of every term the site uses. If a word is missing or unclear, tell us on the <a href="{{repo}}/issues">issue tracker</a>.</p>
+</div>
+
+<section class="sec" id="terms" aria-labelledby="terms-h">
+<h2 id="terms-h"><span class="sn">§1</span>Terms</h2>
+<dl class="kv">
+<dt>Aperture</dt><dd>The region around a galaxy inside which stars are counted. A larger aperture gives a larger stellar mass, so two curves made with different apertures are not measuring the same thing.</dd>
+<dt>Black hole feedback</dt><dd>Energy released as gas falls onto the supermassive black hole at a galaxy's centre. It can heat gas or blow it out, and it is one of the two physics ingredients the dials page lets you turn.</dd>
+<dt>CAMELS</dt><dd>A set of thousands of small simulated universes (25 Mpc/h boxes) run with different physics settings, for two codes, IllustrisTNG and SIMBA. It is the experiment behind the dials page.</dd>
+<dt>Comparable</dt><dd>A tick on a curve in <i>Check your own run</i>: the definitions you declared agree with the curve's, so an offset against it is a fair comparison. A tilde means comparable with caveats; a cross means not comparable.</dd>
+<dt>Context only</dt><dd>A curve shown for context but never used to rank or to compute offsets, usually because it was read from a figure or its definitions are incomplete.</dd>
+<dt>Dial</dt><dd>One of four numbers that scale the strength or speed of supernova winds and black hole feedback in a simulation. The dials of the two codes are not the same physical thing.</dd>
+<dt>Digitized figure</dt><dd>A curve read from a published plot because no table exists. Marked with a dotted line. Its accuracy is limited by the figure.</dd>
+<dt>Emulator</dt><dd>A fast mathematical stand-in fitted to many simulations. It predicts what a simulation would give for any dial setting without running it. The dials page uses polynomial emulators fitted to 1,000 simulations per code.</dd>
+<dt>Epoch, redshift (z)</dt><dd>How long ago the light left a galaxy. z = 0 is today; z = 2 is about 10 billion years ago.</dd>
+<dt>Fiducial</dt><dd>The default setting of the dials, the one the simulation's authors chose.</dd>
+<dt>Gap</dt><dd>On the dials page: how far apart the two codes' curves are for a property, in units of the scatter between two runs of the same code that differ only in their random seed. Below 1 they agree as well as two seeds of one code would. Elsewhere called a noise unit.</dd>
+<dt>IMF (initial mass function)</dt><dd>How many stars of each mass form. Different IMFs give different stellar masses and star formation rates for the same light, so curves with different IMFs are not directly comparable.</dd>
+<dt>Metallicity</dt><dd>The share of a galaxy's gas or stars made of elements heavier than helium. Measures how much enrichment from earlier generations of stars has happened.</dd>
+<dt>Noise unit</dt><dd>See <i>Gap</i>.</dd>
+<dt>Quenched fraction</dt><dd>The share of galaxies that have stopped forming stars.</dd>
+<dt>Relation (scaling relation)</dt><dd>A curve linking two properties of galaxies, such as stellar mass and the number of galaxies of that mass.</dd>
+<dt>Seed scatter</dt><dd>The difference between two runs of the same simulation that differ only in their random starting conditions. It sets the scale below which two codes cannot be told apart.</dd>
+<dt>Star-forming main sequence</dt><dd>The tight relation between how many stars a star-forming galaxy has and how fast it is making new ones.</dd>
+<dt>Stellar mass function</dt><dd>How many galaxies there are of each stellar mass, per unit volume.</dd>
+<dt>Stellar-to-halo mass ratio</dt><dd>How much of a dark matter halo's mass has turned into stars.</dd>
+<dt>Subgrid physics</dt><dd>Processes too small to simulate directly (supernovae, black hole growth) that the code represents by rules with adjustable strengths.</dd>
+<dt>Supernova winds</dt><dd>Gas blown out of a galaxy by exploding stars. Their strength and speed are two of the four dials.</dd>
+<dt>Tier</dt><dd>How a curve was obtained: official table, paper table, published fit, catalogue-derived, or digitized figure. The Explorer shows it as a badge on every curve.</dd>
+</dl>
+</section>
+</div>
+</div>
+</main>
+{{footer}}
+</body>
+</html>

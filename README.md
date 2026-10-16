@@ -28,18 +28,18 @@
 
 | study | question | result |
 |---|---|---|
-| **S1** definitions | Do simulations that share documented definitions agree better? | Only 4 % of cross-suite pairs have fully matched documented definitions; documentation, not physics, is the binding constraint. [analysis](docs/ANALYSIS-definition-budget.md) |
-| **S2** harmonization | How much of the spread between simulated z ~ 0 stellar mass functions do documented definitions (IMF, scatter, aperture) explain? | Not detected (R = 0.15, interval -1.04 to 0.51, permutation p = 0.11); the power study shows aperture effects of the measured size could not have been seen with 8 suites. [protocol](docs/PROTOCOL-harmonization.md), [analysis](docs/ANALYSIS-harmonization.md) |
-| **S3** model form | What can retuning change in the cosmic star formation history, and what does model form force? | No funnel of disagreement at z = 5 to 7.5 in published runs; retuning four feedback parameters brings TNG and SIMBA within the seed-to-seed scatter (0.08 against 0.13 dex), best match at the parameter edge; one validation fails marginally. [protocol](docs/PROTOCOL-model-form.md), [analysis](docs/ANALYSIS-model-form.md), [power](docs/POWER-model-form.md) |
-| **S4** joint reachability | Can retuning make TNG and SIMBA agree on all galaxy observables at once? | **No: 4.8 noise units apart** (6.3 at the fiducial parameters; margin 1). Black hole occupation and gas metallicity stay structural even when fitted alone; the stellar mass function, quenched fraction, SFR density, gas fraction, sizes and black hole mass can each be matched alone, so the usual calibration targets do not tell the two codes apart. Not carried by one family: leaving out any one leaves 3.7 to 5.2. [protocol](docs/PROTOCOL-joint-reachability.md), [analysis](docs/ANALYSIS-joint-reachability.md), [calibration](docs/POWER-joint-reachability.md) |
+| **How much is just definitions?** | Do simulations that share documented definitions agree better? | Only 4 % of cross-suite pairs have fully matched documented definitions; documentation, not physics, is the binding constraint. [analysis](docs/ANALYSIS-definition-budget.md) |
+| **Can matching definitions close the gap?** | How much of the spread between simulated z ~ 0 stellar mass functions do documented definitions (IMF, scatter, aperture) explain? | Not detected (R = 0.15, interval -1.04 to 0.51, permutation p = 0.11); the power study shows aperture effects of the measured size could not have been seen with 8 suites. [protocol](docs/PROTOCOL-harmonization.md), [analysis](docs/ANALYSIS-harmonization.md) |
+| **What can retuning change in cosmic star formation?** | What can retuning change in the cosmic star formation history, and what does model form force? | No funnel of disagreement at z = 5 to 7.5 in published runs; retuning four feedback parameters brings TNG and SIMBA within the seed-to-seed scatter (0.08 against 0.13 dex), best match at the parameter edge; one validation fails marginally. [protocol](docs/PROTOCOL-model-form.md), [analysis](docs/ANALYSIS-model-form.md), [power](docs/POWER-model-form.md) |
+| **Can two universes agree on everything at once?** | Can retuning make TNG and SIMBA agree on all galaxy observables at once? | **No: 4.8 noise units apart** (6.3 at the fiducial parameters; margin 1). Black hole occupation and gas metallicity stay structural even when fitted alone; the stellar mass function, quenched fraction, SFR density, gas fraction, sizes and black hole mass can each be matched alone, so the usual calibration targets do not tell the two codes apart. Not carried by one family: leaving out any one leaves 3.7 to 5.2. [protocol](docs/PROTOCOL-joint-reachability.md), [analysis](docs/ANALYSIS-joint-reachability.md), [calibration](docs/POWER-joint-reachability.md) |
 
-S4's protocol, its code and its calibration on synthetic worlds with known truth (27 runs: 0 of 17 with a true distance below 0.95 were called structural, 8 of 8 above 1.1) were committed before the result existed; one amendment (A1), written after an independent review and before the run, replaced the distance estimator by one that removes the emulators' own error. Every study page states what was and was not tested.
+The all-at-once study's protocol, its code and its calibration on synthetic worlds with known truth (27 runs: 0 of 17 with a true distance below 0.95 were called structural, 8 of 8 above 1.1) were committed before the result existed; one amendment (A1), written after an independent review and before the run, replaced the distance estimator by one that removes the emulators' own error. Every study page states what was and was not tested.
 
 ## Quick start
 
 ```bash
 git clone https://github.com/ShubhanBhatia42/sim-highline && cd sim-highline
-./scripts/verify-all.sh                    # builds and tests everything (the S4 analysis itself is not rerun)
+./scripts/verify-all.sh                    # builds and tests everything (the all-at-once analysis itself is not rerun)
 python3 -m http.server -d dist             # then open http://localhost:8000/
 ```
 
@@ -49,15 +49,15 @@ Python: `pip install .` installs `sim_highline` with the dataset bundled (usage 
 
 ## Reproducing the studies
 
-| | command | time |
+| study | command | time |
 |---|---|---|
-| S1 | `python3 scripts/analyze_definition_budget.py` | seconds |
-| S2 | `python3 scripts/analyze_harmonization.py` | a minute |
-| S3 | `python3 scripts/ingest_camels_sfrd.py`; `python3 scripts/analyze_model_form.py` | ~20 min |
-| S4 | `python3 scripts/ingest_camels_galaxies.py` (range reads of the public CAMELS catalogues); `python3 scripts/analyze_joint_reachability.py`; `python3 scripts/export_retune_data.py` | ~35 min; ~1 h; seconds |
+| definitions | `python3 scripts/analyze_definition_budget.py` | seconds |
+| matching definitions | `python3 scripts/analyze_harmonization.py` | a minute |
+| cosmic star formation | `python3 scripts/ingest_camels_sfrd.py`; `python3 scripts/analyze_model_form.py` | ~20 min |
+| all at once | `python3 scripts/ingest_camels_galaxies.py` (range reads of the public CAMELS catalogues); `python3 scripts/analyze_joint_reachability.py`; `python3 scripts/export_retune_data.py` | ~35 min; ~1 h; seconds |
 | calibration | `python3 scripts/power_model_form.py`; `python3 scripts/power_joint_reachability.py` | 10 min; ~1.75 h |
 
-`FULL=1 ./scripts/verify-all.sh` reruns the S3 analysis; the tests of every analysis check that its saved output is not stale. Adding sources from your own machine (TNG, EAGLE, FLAMINGO, COLIBRE, any Subfind run): [`docs/EXPANDING-COVERAGE.md`](docs/EXPANDING-COVERAGE.md).
+`FULL=1 ./scripts/verify-all.sh` reruns the cosmic star formation analysis; the tests of every analysis check that its saved output is not stale. Adding sources from your own machine (TNG, EAGLE, FLAMINGO, COLIBRE, any Subfind run): [`docs/EXPANDING-COVERAGE.md`](docs/EXPANDING-COVERAGE.md).
 
 ## Data contract
 

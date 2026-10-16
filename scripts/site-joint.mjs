@@ -1,4 +1,4 @@
-// Generated parts of the joint-reachability study page (study S4): every number and verdict word comes from data/analysis/joint-reachability.json.
+// Generated parts of the joint-reachability study page (all-at-once study): every number and verdict word comes from data/analysis/joint-reachability.json.
 // When that file does not exist yet the page says the study is pending. Returns an object of placeholder values.
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const f2 = (v, d = 2) => (v == null || !Number.isFinite(v) ? "–" : v.toFixed(d));
