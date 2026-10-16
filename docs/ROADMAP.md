@@ -6,11 +6,11 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 | tier | tasks | done | partly | waiting for a person | not done |
 |---|---|---|---|---|---|
-| 1 Quick (under 15 min) | 46 | 7 | 1 | 0 | 38 |
-| 2 Solid (about an hour) | 121 | 15 | 0 | 0 | 106 |
-| 3 Big (several hours) | 23 | 0 | 0 | 0 | 23 |
-| 4 Needs other people or days | 10 | 0 | 0 | 0 | 10 |
-| all | 200 | 22 | 1 | 0 | 177 |
+| 1 Quick (under 15 min) | 46 | 9 | 1 | 2 | 34 |
+| 2 Solid (about an hour) | 121 | 22 | 1 | 0 | 98 |
+| 3 Big (several hours) | 23 | 3 | 0 | 0 | 20 |
+| 4 Needs other people or days | 10 | 0 | 0 | 2 | 8 |
+| all | 200 | 34 | 2 | 4 | 160 |
 
 ## Step 1. Say what great means, and how we will know
 
@@ -30,8 +30,8 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 - [x] **1.12** · tier 1 · Claude · Write the 'what this is not' box for the front page — docs/PROJECT.md, docs/DECISIONS.md; name search found nothing with the same name (search tool only)
 - [x] **1.13** · tier 2 · Claude · Decide which studies stay on the front door and which move to a Research page — docs/INVENTORY.md, docs/DECISIONS.md, docs/OVERVIEW.md, docs/DEMO-SCRIPT.md
 - [x] **1.14** · tier 2 · Claude · Write a two-minute overview a colleague could read — docs/INVENTORY.md, docs/DECISIONS.md, docs/OVERVIEW.md, docs/DEMO-SCRIPT.md
-- [ ] **1.15** · tier 1 · You · Name the three people who will test it
-- [ ] **1.16** · tier 1 · You · Pick the date of the go/no-go review
+- [!] **1.15** · tier 1 · You · Name the three people who will test it — needs you: names of three testers and the review date
+- [!] **1.16** · tier 1 · You · Pick the date of the go/no-go review — needs you: names of three testers and the review date
 - [x] **1.17** · tier 2 · Claude · Write the 90-second demo script for the dials page — docs/INVENTORY.md, docs/DECISIONS.md, docs/OVERVIEW.md, docs/DEMO-SCRIPT.md
 - [x] **1.18** · tier 1 · Claude · Check the name and tagline for clashes with existing projects — docs/PROJECT.md, docs/DECISIONS.md; name search found nothing with the same name (search tool only)
 - [x] **1.19** · tier 2 · Claude · Give the front page separate entry points for a simulator, an observer and a student — front page: three entry points for simulator, observer, student
@@ -39,29 +39,29 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 ## Step 2. Make the data trustworthy
 
-*The curves are the asset. Most were digitized by one person and nobody has checked them.* (1 of 22 done)
+*The curves are the asset. Most were digitized by one person and nobody has checked them.* (13 of 22 done)
 
-- [ ] **2.01** · tier 1 · Claude · Count the curves by how they were obtained (official table, paper table, fit, digitized figure) and show the breakdown
-- [ ] **2.02** · tier 2 · Claude · Cross-check every digitized curve that has an independent table of the same thing; publish the deviations
-- [ ] **2.03** · tier 2 · Claude · Re-run the script that regenerates every digitized curve from its source and compare with what ships
-- [ ] **2.04** · tier 2 · Claude · Show a plain 'how sure are we' label with the reason on every curve in the Explorer
+- [x] **2.01** · tier 1 · Claude · Count the curves by how they were obtained (official table, paper table, fit, digitized figure) and show the breakdown — generated data-quality page (site/quality.html, docs/DATA-QUALITY.md); plain 'how sure are we' in the evidence panel; thin-evidence note under the chart title
+- [x] **2.02** · tier 2 · Claude · Cross-check every digitized curve that has an independent table of the same thing; publish the deviations — only 1 of 792 figure curves has an independent counterpart in the data (COLIBRE m6 50 pkpc: 0.000); reported on the quality page
+- [x] **2.03** · tier 2 · Claude · Re-run the script that regenerates every digitized curve from its source and compare with what ships — scripts/regress_digitizers.py: 82 scripts, 82 outputs, 0 problems, regenerated from arXiv today
+- [x] **2.04** · tier 2 · Claude · Show a plain 'how sure are we' label with the reason on every curve in the Explorer — generated data-quality page (site/quality.html, docs/DATA-QUALITY.md); plain 'how sure are we' in the evidence panel; thin-evidence note under the chart title
 - [x] **2.05** · tier 2 · Claude · Add a 'report a problem with this curve' link on every curve that opens a pre-filled issue — already present: evidence panel link opens a pre-filled curve-error issue (verified in code)
 - [ ] **2.06** · tier 2 · Claude · Re-extract 30 random digitized points independently from the figure and record the error
 - [ ] **2.07** · tier 3 · Claude · Make the plausibility screen a gate that fails the build on new outliers
-- [ ] **2.08** · tier 2 · Claude · Check that every citation link resolves and fix broken ones
-- [ ] **2.09** · tier 2 · Claude · Check every record has licence or terms information; list the gaps
-- [ ] **2.10** · tier 3 · Claude · Prepare the expert-audit packet: 60 records sampled across sources, figure and data side by side
-- [ ] **2.11** · tier 1 · Claude · Write the cover note for the audit request in plain language
-- [ ] **2.12** · tier 4 · You · Send the audit packet to two outside experts
-- [ ] **2.13** · tier 3 · Claude · Add a 'checked by' field to the data and show it (empty until experts reply)
-- [ ] **2.14** · tier 2 · Claude · Give each of the accepted audit warnings a written reason
-- [ ] **2.15** · tier 2 · Claude · Mark the ten thinnest relation-epoch cells as 'thin evidence' in the Explorer
-- [ ] **2.16** · tier 2 · Claude · Compare curves where one simulation appears in two papers; list disagreements above 0.1 dex
-- [ ] **2.17** · tier 3 · Claude · Build a data-quality page on the site, generated from the data
+- [x] **2.08** · tier 2 · Claude · Check that every citation link resolves and fix broken ones — scripts/check_links.py: 210 links, 145 resolve, 65 refuse scripts (publishers, GitHub via the proxy), 0 broken; needs network so not part of verify-all
+- [x] **2.09** · tier 2 · Claude · Check every record has licence or terms information; list the gaps — 142 records are values we binned from a repository with no licence file, permission not yet requested: needs the maintainer
+- [x] **2.10** · tier 3 · Claude · Prepare the expert-audit packet: 60 records sampled across sources, figure and data side by side — scripts/make_audit_packet.py builds docs/audit-packet/packet.html (60 curves from 17 simulations); COVER-NOTE.md; the evidence panel shows who has checked a record (nobody yet)
+- [x] **2.11** · tier 1 · Claude · Write the cover note for the audit request in plain language — scripts/make_audit_packet.py builds docs/audit-packet/packet.html (60 curves from 17 simulations); COVER-NOTE.md; the evidence panel shows who has checked a record (nobody yet)
+- [!] **2.12** · tier 4 · You · Send the audit packet to two outside experts — needs you to send them
+- [x] **2.13** · tier 3 · Claude · Add a 'checked by' field to the data and show it (empty until experts reply) — scripts/make_audit_packet.py builds docs/audit-packet/packet.html (60 curves from 17 simulations); COVER-NOTE.md; the evidence panel shows who has checked a record (nobody yet)
+- [x] **2.14** · tier 2 · Claude · Give each of the accepted audit warnings a written reason — all 12 accepted patterns (16 records) carry a written reason in data/audit-known.json
+- [x] **2.15** · tier 2 · Claude · Mark the ten thinnest relation-epoch cells as 'thin evidence' in the Explorer — generated data-quality page (site/quality.html, docs/DATA-QUALITY.md); plain 'how sure are we' in the evidence panel; thin-evidence note under the chart title
+- [~] **2.16** · tier 2 · Claude · Compare curves where one simulation appears in two papers; list disagreements above 0.1 dex — only 1 pair of one simulation and run in two papers with identical axis definitions (agrees to 0.008 dex median); the matcher is strict, more pairs may exist
+- [x] **2.17** · tier 3 · Claude · Build a data-quality page on the site, generated from the data — generated data-quality page (site/quality.html, docs/DATA-QUALITY.md); plain 'how sure are we' in the evidence panel; thin-evidence note under the chart title
 - [ ] **2.18** · tier 1 · Claude · Make sure the digitized share is computed everywhere, never typed
 - [ ] **2.19** · tier 2 · Claude · Record checksums of every raw source file used and add a script that verifies them
 - [ ] **2.20** · tier 2 · Claude · Test that every record's definitions validate against the schema, with clear errors
-- [ ] **2.21** · tier 4 · You · Ask three simulation authors to confirm their own curves (drafts exist)
+- [!] **2.21** · tier 4 · You · Ask three simulation authors to confirm their own curves (drafts exist) — needs you to send them
 - [ ] **2.22** · tier 2 · Claude · Add a visible corrections log for data fixes
 
 ## Step 3. Make "check my run" excellent

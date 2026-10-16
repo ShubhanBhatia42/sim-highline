@@ -131,7 +131,8 @@
   "tier": 1,
   "who": "U",
   "title": "Name the three people who will test it",
-  "status": "todo"
+  "note": "needs you: names of three testers and the review date",
+  "status": "blocked"
  },
  {
   "id": "1.16",
@@ -139,7 +140,8 @@
   "tier": 1,
   "who": "U",
   "title": "Pick the date of the go/no-go review",
-  "status": "todo"
+  "note": "needs you: names of three testers and the review date",
+  "status": "blocked"
  },
  {
   "id": "1.17",
@@ -183,7 +185,8 @@
   "tier": 1,
   "who": "C",
   "title": "Count the curves by how they were obtained (official table, paper table, fit, digitized figure) and show the breakdown",
-  "status": "todo"
+  "note": "generated data-quality page (site/quality.html, docs/DATA-QUALITY.md); plain 'how sure are we' in the evidence panel; thin-evidence note under the chart title",
+  "status": "done"
  },
  {
   "id": "2.02",
@@ -191,7 +194,8 @@
   "tier": 2,
   "who": "C",
   "title": "Cross-check every digitized curve that has an independent table of the same thing; publish the deviations",
-  "status": "todo"
+  "note": "only 1 of 792 figure curves has an independent counterpart in the data (COLIBRE m6 50 pkpc: 0.000); reported on the quality page",
+  "status": "done"
  },
  {
   "id": "2.03",
@@ -199,7 +203,8 @@
   "tier": 2,
   "who": "C",
   "title": "Re-run the script that regenerates every digitized curve from its source and compare with what ships",
-  "status": "todo"
+  "note": "scripts/regress_digitizers.py: 82 scripts, 82 outputs, 0 problems, regenerated from arXiv today",
+  "status": "done"
  },
  {
   "id": "2.04",
@@ -207,7 +212,8 @@
   "tier": 2,
   "who": "C",
   "title": "Show a plain 'how sure are we' label with the reason on every curve in the Explorer",
-  "status": "todo"
+  "note": "generated data-quality page (site/quality.html, docs/DATA-QUALITY.md); plain 'how sure are we' in the evidence panel; thin-evidence note under the chart title",
+  "status": "done"
  },
  {
   "id": "2.05",
@@ -240,7 +246,8 @@
   "tier": 2,
   "who": "C",
   "title": "Check that every citation link resolves and fix broken ones",
-  "status": "todo"
+  "note": "scripts/check_links.py: 210 links, 145 resolve, 65 refuse scripts (publishers, GitHub via the proxy), 0 broken; needs network so not part of verify-all",
+  "status": "done"
  },
  {
   "id": "2.09",
@@ -248,7 +255,8 @@
   "tier": 2,
   "who": "C",
   "title": "Check every record has licence or terms information; list the gaps",
-  "status": "todo"
+  "note": "142 records are values we binned from a repository with no licence file, permission not yet requested: needs the maintainer",
+  "status": "done"
  },
  {
   "id": "2.10",
@@ -256,7 +264,8 @@
   "tier": 3,
   "who": "C",
   "title": "Prepare the expert-audit packet: 60 records sampled across sources, figure and data side by side",
-  "status": "todo"
+  "note": "scripts/make_audit_packet.py builds docs/audit-packet/packet.html (60 curves from 17 simulations); COVER-NOTE.md; the evidence panel shows who has checked a record (nobody yet)",
+  "status": "done"
  },
  {
   "id": "2.11",
@@ -264,7 +273,8 @@
   "tier": 1,
   "who": "C",
   "title": "Write the cover note for the audit request in plain language",
-  "status": "todo"
+  "note": "scripts/make_audit_packet.py builds docs/audit-packet/packet.html (60 curves from 17 simulations); COVER-NOTE.md; the evidence panel shows who has checked a record (nobody yet)",
+  "status": "done"
  },
  {
   "id": "2.12",
@@ -272,7 +282,8 @@
   "tier": 4,
   "who": "U",
   "title": "Send the audit packet to two outside experts",
-  "status": "todo"
+  "note": "needs you to send them",
+  "status": "blocked"
  },
  {
   "id": "2.13",
@@ -280,7 +291,8 @@
   "tier": 3,
   "who": "C",
   "title": "Add a 'checked by' field to the data and show it (empty until experts reply)",
-  "status": "todo"
+  "note": "scripts/make_audit_packet.py builds docs/audit-packet/packet.html (60 curves from 17 simulations); COVER-NOTE.md; the evidence panel shows who has checked a record (nobody yet)",
+  "status": "done"
  },
  {
   "id": "2.14",
@@ -288,7 +300,8 @@
   "tier": 2,
   "who": "C",
   "title": "Give each of the accepted audit warnings a written reason",
-  "status": "todo"
+  "note": "all 12 accepted patterns (16 records) carry a written reason in data/audit-known.json",
+  "status": "done"
  },
  {
   "id": "2.15",
@@ -296,7 +309,8 @@
   "tier": 2,
   "who": "C",
   "title": "Mark the ten thinnest relation-epoch cells as 'thin evidence' in the Explorer",
-  "status": "todo"
+  "note": "generated data-quality page (site/quality.html, docs/DATA-QUALITY.md); plain 'how sure are we' in the evidence panel; thin-evidence note under the chart title",
+  "status": "done"
  },
  {
   "id": "2.16",
@@ -304,7 +318,8 @@
   "tier": 2,
   "who": "C",
   "title": "Compare curves where one simulation appears in two papers; list disagreements above 0.1 dex",
-  "status": "todo"
+  "note": "only 1 pair of one simulation and run in two papers with identical axis definitions (agrees to 0.008 dex median); the matcher is strict, more pairs may exist",
+  "status": "partial"
  },
  {
   "id": "2.17",
@@ -312,7 +327,8 @@
   "tier": 3,
   "who": "C",
   "title": "Build a data-quality page on the site, generated from the data",
-  "status": "todo"
+  "note": "generated data-quality page (site/quality.html, docs/DATA-QUALITY.md); plain 'how sure are we' in the evidence panel; thin-evidence note under the chart title",
+  "status": "done"
  },
  {
   "id": "2.18",
@@ -344,7 +360,8 @@
   "tier": 4,
   "who": "U",
   "title": "Ask three simulation authors to confirm their own curves (drafts exist)",
-  "status": "todo"
+  "note": "needs you to send them",
+  "status": "blocked"
  },
  {
   "id": "2.22",

@@ -302,3 +302,5 @@ pre[tabindex]:focus-visible{outline-offset:0}
 .rt-story{border-left:3px solid var(--ink);padding:.1rem 0 .1rem .9rem;margin:.2rem 0 1rem;max-width:44rem}
 .rt-story p{font:400 15px/1.5 var(--serif);margin:.25rem 0;color:var(--ink)}
 .rt-sub{font:400 13px/1.35 var(--serif);color:var(--ink2);margin:0 0 .2rem}
+
+.qthin td.thin{background:color-mix(in srgb,var(--mustard) 22%,transparent)}.qthin td.none{color:var(--ink3)}

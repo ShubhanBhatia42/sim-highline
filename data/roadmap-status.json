@@ -55,6 +55,14 @@
   "note": "docs/INVENTORY.md, docs/DECISIONS.md, docs/OVERVIEW.md, docs/DEMO-SCRIPT.md",
   "status": "done"
  },
+ "1.15": {
+  "note": "needs you: names of three testers and the review date",
+  "status": "blocked"
+ },
+ "1.16": {
+  "note": "needs you: names of three testers and the review date",
+  "status": "blocked"
+ },
  "1.17": {
   "note": "docs/INVENTORY.md, docs/DECISIONS.md, docs/OVERVIEW.md, docs/DEMO-SCRIPT.md",
   "status": "done"
@@ -71,9 +79,69 @@
   "note": "roadmap is in the repo (docs/ROADMAP.md); private page to be published at the end",
   "status": "partial"
  },
+ "2.01": {
+  "note": "generated data-quality page (site/quality.html, docs/DATA-QUALITY.md); plain 'how sure are we' in the evidence panel; thin-evidence note under the chart title",
+  "status": "done"
+ },
+ "2.02": {
+  "note": "only 1 of 792 figure curves has an independent counterpart in the data (COLIBRE m6 50 pkpc: 0.000); reported on the quality page",
+  "status": "done"
+ },
+ "2.03": {
+  "note": "scripts/regress_digitizers.py: 82 scripts, 82 outputs, 0 problems, regenerated from arXiv today",
+  "status": "done"
+ },
+ "2.04": {
+  "note": "generated data-quality page (site/quality.html, docs/DATA-QUALITY.md); plain 'how sure are we' in the evidence panel; thin-evidence note under the chart title",
+  "status": "done"
+ },
  "2.05": {
   "note": "already present: evidence panel link opens a pre-filled curve-error issue (verified in code)",
   "status": "done"
+ },
+ "2.08": {
+  "note": "scripts/check_links.py: 210 links, 145 resolve, 65 refuse scripts (publishers, GitHub via the proxy), 0 broken; needs network so not part of verify-all",
+  "status": "done"
+ },
+ "2.09": {
+  "note": "142 records are values we binned from a repository with no licence file, permission not yet requested: needs the maintainer",
+  "status": "done"
+ },
+ "2.10": {
+  "note": "scripts/make_audit_packet.py builds docs/audit-packet/packet.html (60 curves from 17 simulations); COVER-NOTE.md; the evidence panel shows who has checked a record (nobody yet)",
+  "status": "done"
+ },
+ "2.11": {
+  "note": "scripts/make_audit_packet.py builds docs/audit-packet/packet.html (60 curves from 17 simulations); COVER-NOTE.md; the evidence panel shows who has checked a record (nobody yet)",
+  "status": "done"
+ },
+ "2.12": {
+  "note": "needs you to send them",
+  "status": "blocked"
+ },
+ "2.13": {
+  "note": "scripts/make_audit_packet.py builds docs/audit-packet/packet.html (60 curves from 17 simulations); COVER-NOTE.md; the evidence panel shows who has checked a record (nobody yet)",
+  "status": "done"
+ },
+ "2.14": {
+  "note": "all 12 accepted patterns (16 records) carry a written reason in data/audit-known.json",
+  "status": "done"
+ },
+ "2.15": {
+  "note": "generated data-quality page (site/quality.html, docs/DATA-QUALITY.md); plain 'how sure are we' in the evidence panel; thin-evidence note under the chart title",
+  "status": "done"
+ },
+ "2.16": {
+  "note": "only 1 pair of one simulation and run in two papers with identical axis definitions (agrees to 0.008 dex median); the matcher is strict, more pairs may exist",
+  "status": "partial"
+ },
+ "2.17": {
+  "note": "generated data-quality page (site/quality.html, docs/DATA-QUALITY.md); plain 'how sure are we' in the evidence panel; thin-evidence note under the chart title",
+  "status": "done"
+ },
+ "2.21": {
+  "note": "needs you to send them",
+  "status": "blocked"
  },
  "3.22": {
   "note": "scripts/test-journeys.mjs walks all ten in a browser; docs/QUESTIONS.md",
