@@ -117,7 +117,7 @@ await journey(10, "Can I load the data in a notebook?", async ({ page, base }) =
 await journey(11, "Front page 'Try this' links each land where they say", async ({ page, base }) => {
   await page.goto(`${base}/site/index.html`);
   const links = await page.$$eval(".try a", as => as.map(a => ({ t: a.textContent, h: a.getAttribute("href") })));
-  assert.equal(links.length, 4, "four try-this links");
+  assert.equal(links.length, 5, "five try-this links");
   const out = [];
   for (const l of links) {
     await page.goto(new URL(l.h, `${base}/site/index.html`).href);

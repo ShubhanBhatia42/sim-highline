@@ -3,7 +3,7 @@ import { readFile, writeFile } from "node:fs/promises";
 const R = p => readFile(new URL(`../${p}`, import.meta.url), "utf8");
 const release = JSON.parse(await R("data/release.json")), rec = JSON.parse(await R("data/export/sim-highline-records.json")).records;
 const J = JSON.parse(await R("data/analysis/joint-reachability.json")), Q = JSON.parse(await R("data/analysis/data-quality.json"));
-const sims = new Set(rec.filter(r => r.kind === "simulation").map(r => r.source)).size, obs = new Set(rec.filter(r => r.kind === "observation").map(r => r.source)).size;
+const sims = new Set(rec.filter(r => r.kind === "simulation").map(r => r.source)).size, obs = new Set(rec.filter(r => r.kind !== "simulation").map(r => r.source)).size; // observations and empirical models, counted the way the site counts them
 const n = x => x.toLocaleString("en-US"), D = J.point.all.D.toFixed(1), URL_ = "https://shubhanbhatia42.github.io/sim-highline", dig = Math.round(100 * Q.digitized.share_of_simulation_curves);
 const DB = JSON.parse(await R("data/analysis/definition-budget.json")).summary, matchedPct = Math.round(100 * DB.byClass.matched / DB.pairs);
 const nCamels = 2054, structural = Object.entries(J.verdicts.J2).filter(([, v]) => v === "structural").length, removable = Object.entries(J.verdicts.J2).filter(([, v]) => v === "removable").length;
@@ -16,7 +16,7 @@ sim-highline: put your simulated galaxy curve next to every published simulation
 
 ## Short (a post, a Slack message)
 
-I have built sim-highline, a free tool for comparing simulated galaxy scaling relations with each other and with observations. ${n(rec.length)} curves from ${sims} simulations and ${obs} observational sources, each with the definitions (mass aperture, IMF, population) that decide whether two curves can fairly be compared. You can paste your own simulation's curve and see which published curves it is comparable with, and turn the four feedback dials of IllustrisTNG and SIMBA (from ${n(nCamels)} CAMELS runs) to see what moves. Nothing leaves your browser. It is an unreviewed beta: ${dig}% of the simulation curves were read from published figures by one person, and I would like to hear where it is wrong. ${URL_}/
+I have built sim-highline, a free tool for comparing simulated galaxy scaling relations with each other and with observations. ${n(rec.length)} curves from ${sims} simulations and ${obs} observational and empirical sources, each with the definitions (mass aperture, IMF, population) that decide whether two curves can fairly be compared. You can paste your own simulation's curve and see which published curves it is comparable with, and turn the four feedback dials of IllustrisTNG and SIMBA (from ${n(nCamels)} CAMELS runs) to see what moves. Nothing leaves your browser. It is an unreviewed beta: ${dig}% of the simulation curves were read from published figures by one person, and I would like to hear where it is wrong. ${URL_}/
 
 ## Longer (an email to colleagues)
 
@@ -28,7 +28,7 @@ I maintain sim-highline (${URL_}/), an open dataset and browser tool for galaxy 
 
 1. **Look up a relation** (stellar mass function, size, metallicity, black hole mass and others) at any epoch: every published simulation and observation on one plot, each labelled with where it came from and whether its definitions allow a fair comparison with the rest.
 2. **Check your own run:** paste a curve, say what it measures, and get offsets against the published curves that are comparable with it, as a table and a CSV.
-3. **Turn the physics dials:** emulators of ${n(nCamels)} CAMELS simulations of IllustrisTNG and SIMBA, evaluated in the browser. It also answers a question I could not find answered: after the best possible retuning of each code's four feedback dials, the two codes are still ${D} noise units apart over all properties at once, with ${structural} properties that no setting brings together and ${removable} that can be matched. The rule for that was written before the result and is on the site, together with the checks I made afterwards.
+3. **Turn the physics dials:** emulators of ${n(nCamels)} CAMELS simulations of IllustrisTNG and SIMBA, evaluated in the browser. It also answers a question I could not find answered: after the best possible retuning of each code's four feedback dials, the two codes are still ${D} noise units apart over all properties at once, with ${structural} properties that stay apart at every setting tested (black hole occupation by a wide margin, gas metallicity by a small one) and ${removable} that can be matched. The rule for that was written before the result and is on the site, together with the checks I made afterwards.
 
 What it is not: peer reviewed, a leaderboard, or complete. ${dig}% of the simulation curves are read from published figures by one maintainer and are never used to rank anything; where an author or collaboration publishes a table, I would rather use that and will gladly swap it in. Nobody outside the project has used it yet that I know of, which is why I am writing: **where does it fail you?** A reply of two sentences, or an issue at ${release.repo}/issues/new?template=feedback.yml, is the most useful thing you could send.
 
@@ -75,7 +75,7 @@ files["FORUM-POST.md"] = HEAD("Post for research-community forums", "Adapt the f
 
 I have made a free, open tool and would like criticism from people who run or use these simulations. ${URL_}/
 
-- **${n(rec.length)} curves** of galaxy scaling relations from ${sims} simulations and ${obs} observational sources, each with the definitions that decide comparability (mass aperture, IMF, population, SFR timescale) and its source. CC BY 4.0, code MIT, DOI ${release.doi}.
+- **${n(rec.length)} curves** of galaxy scaling relations from ${sims} simulations and ${obs} observational and empirical sources, each with the definitions that decide comparability (mass aperture, IMF, population, SFR timescale) and its source. CC BY 4.0, code MIT, DOI ${release.doi}.
 - **Check your own run:** paste a curve, get offsets against the published curves that are fair to compare with, as a table and CSV. Runs in your browser.
 - **The dials page:** emulators of ${n(nCamels)} CAMELS runs (IllustrisTNG and SIMBA). One result there: after the best possible retuning of each code's four feedback dials, they stay ${D} noise units apart over all properties at once (a noise unit is the scatter between one run of each code), driven by black hole occupation and gas metallicity; ${removable} of 11 properties can be matched. The decision rule was committed before the result (see the registration trail on the studies page) and the checks made afterwards are listed as exploratory.
 
@@ -85,9 +85,9 @@ Caveats up front: unreviewed; ${dig}% of simulation curves are digitized from pu
 `;
 
 files["TALK-OUTLINE.md"] = HEAD("Five-slide talk outline", "Ten minutes plus questions, for a research group.") + `1. **The problem.** Two curves from two simulations differ. Is it physics or definitions? Show one real pair (a stellar mass function from the Explorer with the comparable / caveats / not comparable marks). Say: only ${matchedPct}% of ${n(DB.pairs)} cross-simulation curve pairs are measured alike on what the sources document.
-2. **The tool.** Live demo, 90 seconds: look up a relation at z about 8; paste a curve; read the offsets table. The data: ${n(rec.length)} curves, ${sims} simulations, ${obs} observational sources; what "digitized from a figure" means and why those are never ranked.
+2. **The tool.** Live demo, 90 seconds: look up a relation at z about 8; paste a curve; read the offsets table. The data: ${n(rec.length)} curves, ${sims} simulations, ${obs} observational and empirical sources; what "digitized from a figure" means and why those are never ranked.
 3. **The question it made possible.** Turn the four dials of TNG and SIMBA: can one be made to look like the other? Demo "Make SIMBA look like TNG" on the stellar mass function (it works) and then show what it breaks elsewhere.
-4. **The result.** All at once: ${D} noise units apart after the best retuning; ${structural} properties that no dial setting brings together (black hole occupation, gas metallicity), ${removable} that can be matched. Show the bar chart. Say what was written before the result and what was checked after (robustness: a second implementation, another emulator, other weightings: 3.8 to 5.4; a third code: SIMBA stands apart on black hole occupation).
+4. **The result.** All at once: ${D} noise units apart after the best retuning; ${structural} properties that stay apart at every dial setting tested (black hole occupation, gas metallicity), ${removable} that can be matched. Show the bar chart. Say what was written before the result and what was checked after (robustness: a second implementation, another emulator, other weightings: 3.8 to 5.4; a third code: SIMBA stands apart on black hole occupation).
 5. **Limits and ask.** CAMELS resolution (without the two lowest mass bins 4.8 becomes 2.5); two codes; the digitized fraction; unreviewed. Ask: where would you use it, what is missing, which author's table should replace which figure reading. Put the address and the feedback link on the last slide.
 
 Have ready: the data-quality page (how far to trust it), \`docs/SCEPTIC.md\` (the objections and answers), and the audit packet if the question is about extraction accuracy.
@@ -103,7 +103,7 @@ Galaxy scaling relations from cosmological simulations and observations, with th
 
 ## Description
 
-${n(rec.length)} curves from ${sims} simulations and ${obs} observational sources: stellar mass functions, star-forming main sequence, quenched fractions, sizes, metallicities, black hole scaling relations, cosmic star formation history and more, at the epochs each source provides. Every curve carries its axis definitions and units, the mass aperture, IMF, population and SFR timescale where they apply, its provenance (official table, paper table, published fit, catalogue-derived or digitized from a figure), a citation with DOI, and a flag for whether it can be used in a quantitative comparison. Also: binned galaxy-population summaries of ${n(nCamels)} CAMELS simulations (IllustrisTNG and SIMBA). Nothing is interpolated or synthesised. Beta; ${dig}% of simulation curves are digitized from published figures.
+${n(rec.length)} curves from ${sims} simulations and ${obs} observational and empirical sources: stellar mass functions, star-forming main sequence, quenched fractions, sizes, metallicities, black hole scaling relations, cosmic star formation history and more, at the epochs each source provides. Every curve carries its axis definitions and units, the mass aperture, IMF, population and SFR timescale where they apply, its provenance (official table, paper table, published fit, catalogue-derived or digitized from a figure), a citation with DOI, and a flag for whether it can be used in a quantitative comparison. Also: binned galaxy-population summaries of ${n(nCamels)} CAMELS simulations (IllustrisTNG and SIMBA). Nothing is interpolated or synthesised. Beta; ${dig}% of simulation curves are digitized from published figures.
 
 ## Metadata
 

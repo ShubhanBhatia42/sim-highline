@@ -26,3 +26,7 @@ The headline of the all-at-once study: after each code has had its four dials tu
 - The headline moves between 3.7 and 5.9 across everything that was varied except the mass-bin cut, which takes it to 2.5. It never falls below the margin of 1.
 - The two choices that move it most are about **which outputs** (the low-mass bins, the black hole occupation) and about **what the unit is** (with or without the emulator error). Neither is a bug; both are judgement calls and both are listed so that a reader can make a different one.
 - Choices that were never varied are listed above as *not tested*. They are the first place to look for a result that does not survive.
+
+## A note on "the best any dials can do"
+
+For three properties the registered search stopped slightly above the minimum that a second optimiser found: stellar-to-halo mass ratio 1.53 against 1.38, gas fraction 0.37 against 0.34, star-forming main sequence 1.11 against 1.06 (`docs/ROBUSTNESS-joint-reachability.md`). No verdict changes. The dials page shows the registered numbers, so for those three its "best any dials" is an upper bound on the true minimum.

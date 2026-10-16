@@ -36,7 +36,22 @@ Yes. Other weightings give 4.5 to 5.4 (`docs/CHOICES-joint-reachability.md`). *A
 Declared in the protocol. The comparison is simulation against simulation, deliberately without aperture or survey effects, so it cannot be used as an observational test. *Stands as a scope limit.*
 
 **12. "Tuned to observations, either code fits the mass function. So what?"**
-Agreed: a smooth curve is easy to fit with four dials, and the observation-tuning table (`docs/ANALYSIS-tune-to-observations.md`) says so. The informative outcome is where neither code can get near, such as black hole mass (2.5 to 4.5 noise units for both). It is not a test of either code, because observed and simulated curves are defined differently. *Answered.*
+Agreed: a smooth curve is easy to fit with four dials, and the observation-tuning table (`docs/ANALYSIS-tune-to-observations.md`) says so. The informative outcome is where neither code can get near: black hole mass (two curves; the better code is 2.5 to 3.6 noise units away), and single curves of specific star formation rate and the quiescent mass function at z = 2.15 and of stellar metallicity. These rest on few curves with few bins each. It is not a test of either code, because observed and simulated curves are defined differently. *Answered.*
 
 **13. "The digitised curves in the Explorer may be wrong."**
 Possible. 1,699 records, 55 % of simulation curves taken from vector paths in figures, and only one digitised curve has an independent table check (`docs/DATA-QUALITY.md`). The all-at-once study does not use them; it uses CAMELS catalogues. The Explorer's evidence panel says how sure we are for each curve. *Stands for the Explorer until more are checked; an audit packet is ready to send (task 1.15/1.16).*
+
+**14. "Was this made by an AI, and who reviewed it?"**
+Much of the code, the extraction scripts, the analyses and the text were written with Claude, an AI assistant, under the maintainer's direction (most commits in the repository carry its authorship). The reviews called independent in the protocols (before the model-form and all-at-once runs) were made by a separate AI agent, not by a human expert, and the pages now say so. No human expert outside the project has reviewed any record or any result. *Stands: this is a fact about the project, disclosed on the Methods, FAQ and front pages.*
+
+**15. "The best setting sits at the edge of the dials' range, where emulators are least tested."**
+True: at the minimum, 4 of the eight dial coordinates sit exactly on the bounds. The emulators are validated on simulations within 0.5 of the fiducial cosmology, which is not the same as validated at the corner of the dial box. The emulators' variance at the minimiser is removed from the distance (amendment A1), a different kind of emulator gives 4.91, and the verdict holds with the range cut to 75%. But no simulation has been run at the minimiser. *Stands: a direct check against the nearest simulations, or against CAMELS' extreme-parameter runs, would settle it and has not been made.*
+
+**16. "The structural and conflict split depends on the third decimal; the calibration injects into one family."**
+Both true. The ratio of the joint distance to the separate-families distance is 2.7442 against a same-code 95th percentile of 2.7443: the registered rule calls it "not above the null", and that is a knife edge, so no conflict between properties is claimed. All 27 synthetic calibration runs inject their difference into one family (black hole occupation) or offset all outputs equally, so the rule's behaviour on other structures is untested. *Stands.*
+
+**17. "Pre-registration within one day by one person."**
+The protocol for the harmonization study was committed at 10:46, an amendment at 11:11 and the result at 11:21 on the same day (git dates only). That is a rule written before the result, but not by a margin that independent timestamping would make convincing. *Stands until a third-party deposit exists.*
+
+**18. "The pages load Google Fonts."**
+They do, which sends the reader's address to Google. Your own curve in "Your run" never leaves the browser. Stated on the Methods page. Self-hosting the fonts would remove it. *Open.*

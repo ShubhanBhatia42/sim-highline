@@ -343,6 +343,7 @@ b.classList.add("failed");b.setAttribute("role","alert");b.innerHTML='<div class
       <p><b>Nothing is synthesised.</b> A suite with no data at the chosen redshift disappears instead of being interpolated. The only arithmetic the page does is exact: unit-preserving transforms you ask for (per unit mass, times mass, physical axes), residuals against a reference you pick, and reading a published curve at a chosen x inside its plotted range for the vs-redshift view.</p>
       <p><b>Where the numbers come from.</b> Solid lines are catalogue-derived or tabulated values, dashed lines are published fits, dotted lines are values digitized from published figures (never used to score a comparison). <b>Context only</b> marks curves whose definitions do not allow a fair comparison with the others.</p>
       <p><b>Get data</b> downloads exactly what is on screen (or all epochs) as a tidy CSV or JSON, with definitions and citations; <code>sim_highline.py</code> loads the full dataset into pandas.</p>
+      <p><b>Who made this.</b> One maintainer, with an AI assistant (Claude) that wrote much of the code and the extraction scripts. No outside expert has reviewed the records yet. <a href="site/methods.html#limits">Methods, limits</a>.</p>
       <p><b>Something wrong or confusing?</b> <a href="https://github.com/ShubhanBhatia42/sim-highline/issues/new?template=feedback.yml" target="_blank" rel="noopener">Tell us</a> (a GitHub account is needed), or use <b>Report an issue</b> on any curve for a mistake in that curve.</p>
       <p><b>What exists</b> shows suite by relation by redshift. Empty cells are missing data, not missing physics.</p>
       <p><b>Start here.</b> Three things people do with it:</p>
@@ -416,7 +417,7 @@ const provBadge=r=>{const p=r?.provenance;if(!p)return"";const g=TIER_GLYPH[p.ti
 const unitRec=new Map();
 const RAMP=[[0,"#fde725"],[.25,"#7ad151"],[.5,"#22a884"],[.75,"#2a788e"],[1,"#414487"]];
 const isTable=()=>state.mode==="atlas"||state.mode==="tension"||state.mode==="spread";
-const state={tz:0,legendOpen:innerWidth>=1180,rel:"sfms",z:null,offBy:{},runPref:new Map(),variants:false,showSparse:false,anc:{},embed:false,imfc:false,offTier:new Set(),rankOnly:false,showObs:true,obsOff:new Set(),mode:"plot",playing:null,sel:null,ref:null,resid:false,yt:"none",tf:"log",xr:null,yr:null,bands:true,scatter:true,evo:null,at:null,panel:null,tab:"evidence",user:null,fit:null,expand:new Set(),dl:{scope:"epoch",obs:true,z0:0,z1:10}};
+const state={tz:0,legendOpen:innerWidth>=1180,rel:"gsmf",z:null,offBy:{},runPref:new Map(),variants:false,showSparse:false,anc:{},embed:false,imfc:false,offTier:new Set(),rankOnly:false,showObs:true,obsOff:new Set(),mode:"plot",playing:null,sel:null,ref:null,resid:false,yt:"none",tf:"log",xr:null,yr:null,bands:true,scatter:true,evo:null,at:null,panel:null,tab:"evidence",user:null,fit:null,expand:new Set(),dl:{scope:"epoch",obs:true,z0:0,z1:10}};
 const $=id=>document.getElementById(id);
 const slugOf=s=>String(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -470,7 +471,7 @@ function toast(m){const t=$("toast");t.textContent=m;t.style.display="block";cle
 
 /* ---------- state in the URL ---------- */
 function syncHash(){
-  const p=new URLSearchParams(),d={rel:"sfms",yt:"none",tf:"log"};
+  const p=new URLSearchParams(),d={rel:"gsmf",yt:"none",tf:"log"};
   p.set("r",state.rel);p.set("z",currentZ());if(state.mode!=="plot")p.set("m",state.mode);if(state.mode==="tension")p.set("tz",state.tz);if(state.mode==="spread"&&state.spRk)p.set("sk","1");
   const ob=Object.entries(state.offBy).filter(([,v])=>v.size).map(([k,v])=>k+":"+[...v].map(encodeURIComponent).join("~")).join(",");if(ob)p.set("off",ob);if(state.runPref.size)p.set("rp",[...state.runPref].map(([u,v])=>encodeURIComponent(u)+"*"+(v?1:0)).join("~"));if(state.variants)p.set("va","1");if(state.offTier.size)p.set("ot",[...state.offTier].join("~"));
   if(state.rankOnly)p.set("rk","1");if(state.imfc)p.set("imf","1");if(!state.showObs)p.set("obs","0");if(state.obsOff.size)p.set("oo",[...state.obsOff].join("~"));
@@ -796,6 +797,10 @@ function mineRows(){
   rows.sort((a,b)=>(a.sm?0:1)-(b.sm?0:1)||(a.sm?Math.abs(a.sm.median)-Math.abs(b.sm.median):0)||label(a.r).localeCompare(label(b.r)));
   return rows;
 }
+const KEY_LABEL={imf:"Initial mass function (IMF)",massDefinition:"Which stars count toward the mass",haloMassDefinition:"Halo mass definition",population:"Which galaxies are included",sfrTimescaleMyr:"Star formation rate averaged over",sfrStatistic:"How the star formation rate is measured",quenchingCriterion:"What counts as quenched",sizeDefinition:"Size definition",metallicityQuantity:"What metallicity means",gasPhase:"Which gas",densityFrame:"Volume for densities"};
+const keyLabel=k=>KEY_LABEL[k]||k;
+const niceVal=v=>String(v).replace(/-/g," ").replace(/\bpkpc\b/,"pkpc").replace(/\b(\d+)Myr\b/,"$1 Myr");
+const niceWhy=t=>String(t).replace(/\b(imf|massDefinition|haloMassDefinition|population|sfrTimescaleMyr|sfrStatistic|quenchingCriterion|sizeDefinition|metallicityQuantity|gasPhase|densityFrame)\b/g,k=>keyLabel(k).toLowerCase());
 const MINE_HELP={imf:"Initial mass function assumed when turning light into stellar mass. Chabrier and Kroupa are close; Salpeter gives masses about 0.2 dex higher.",massDefinition:"Which stars count toward a galaxy's mass: inside a fixed radius (aperture), the whole subhalo, or from fitted light.",densityFrame:"Whether number densities are per comoving or per physical volume.",population:"Which galaxies are included: all, star-forming, quiescent, centrals only and so on.",sizeDefinition:"How galaxy size is measured: half-mass or half-light radius, in 2D or 3D.",metallicityQuantity:"Which metallicity: gas-phase oxygen abundance, total gas metal fraction, or stellar metallicity.",metallicityCalibration:"The calibration that turns emission lines into a metallicity.",haloMassDefinition:"How halo mass is defined, for example M200c or the virial mass.",haloMassHistory:"Whether halo mass is the current mass or the peak mass.",gasDefinition:"Which gas is counted: cold, neutral hydrogen, molecular hydrogen or all gas.",gasStatistic:"Mean or median of the gas fraction.",gasMethod:"How the gas content is measured or modelled.",sfrTimescaleMyr:"Time over which star formation is averaged, in Myr.",sfrStatistic:"Mean or median star formation rate.",apertureDefinition:"The region inside which the quantity is measured.",fgasNormalisation:"What the gas mass is divided by.",massMethod:"How the mass is estimated.",ageWeighting:"Whether ages are weighted by mass or by light.",bhMassMethod:"How black hole masses are measured or modelled.",sigmaDefinition:"How the velocity dispersion is defined."};
 function mineExpect(){const z=currentZ(),xs=[],ys=[];for(const o of relationSeries(z)){if(o.scatter)continue;for(const p of rawPoints(o.r,z))if(Number.isFinite(p.x)&&Number.isFinite(p.y)){xs.push(p.x);ys.push(p.y)}}return xs.length?{xlo:Math.min(...xs),xhi:Math.max(...xs),ylo:Math.min(...ys),yhi:Math.max(...ys)}:null}
 function mineInfo(u){if(!u)return"";const d=window.SimHighlineLogic.inspectUserCurve(u.raw,{linear:u.linear},mineExpect());return`${esc(d.summary)}${d.warnings.map(w=>`<br><b>Check:</b> ${esc(w)}`).join("")}`}
@@ -820,7 +825,7 @@ function mineTable(){
   const rows=mineRows();if(!rows.length)return`<p class="hint">No published curve for this relation at z = ${fmtZ(currentZ())} is currently shown.</p>`;
   const f=v=>v==null||!Number.isFinite(v)?"–":(v>=0?"+":"−")+Math.abs(v).toFixed(2);
   const set=Object.values(state.user.defs||{}).some(v=>v&&v!=="unspecified");
-  const row=({r,sm,v})=>{const k=v?.verdict,g=k==="comparable"?"✓":k==="not-comparable"?"✕":"~",c=k==="comparable"?"ok":k==="not-comparable"?"no":"cav",why=v?(v.blockers.length?v.blockers.join("; "):v.caveats.join("; ")):"";
+  const row=({r,sm,v})=>{const k=v?.verdict,g=k==="comparable"?"✓":k==="not-comparable"?"✕":"~",c=k==="comparable"?"ok":k==="not-comparable"?"no":"cav",why=v?niceWhy(v.blockers.length?v.blockers.join("; "):v.caveats.join("; ")):"";
     return`<tr data-id="${esc(r.id)}" tabindex="0" title="${esc(why)}"><td>${esc(label(r))}${r.kind==="observation"?' <span class="tier">obs</span>':""}${why&&k!=="comparable"?`<div class="why">${esc(why.length>130?why.slice(0,127)+"…":why)}</div>`:""}</td><td><span class="v ${c}">${v?g:""}</span></td><td>${sm?f(sm.median):"–"}</td><td>${sm?sm.n:"–"}</td></tr>`};
   const fair=rows.filter(x=>x.v&&x.v.verdict!=="not-comparable"),other=rows.filter(x=>!x.v||x.v.verdict==="not-comparable");
   const head=t=>`<tr class="grp"><th colspan="4">${t}</th></tr>`;
@@ -833,7 +838,7 @@ function mineTable(){
 }
 function mineHtml(){
   const rel=state.rel,u=state.user,keys=mineKeys(rel);
-  const sel=keys.map(k=>{const op=mineOptions(rel,k),cur=u?.defs?.[k]||"unspecified";return`<label>${esc(k)}<small>${esc(MINE_HELP[k]||"")}</small><select data-def="${esc(k)}"><option value="unspecified"${cur==="unspecified"?" selected":""}>unspecified</option>${op.map(o=>`<option value="${esc(o)}"${cur===o?" selected":""}>${esc(o)}</option>`).join("")}</select></label>`}).join("");
+  const sel=keys.map(k=>{const op=mineOptions(rel,k),cur=u?.defs?.[k]||"unspecified";return`<label>${esc(keyLabel(k))}<small>${esc(MINE_HELP[k]||"")}</small><select data-def="${esc(k)}"><option value="unspecified"${cur==="unspecified"?" selected":""}>I do not know / not stated</option>${op.map(o=>`<option value="${esc(o)}"${cur===o?" selected":""}>${esc(niceVal(o))}</option>`).join("")}</select></label>`}).join("");
   const seen=new Set(),like=sims.filter(r=>r.relation===rel&&r.definitions&&mineKeys(rel).some(k=>typeof r.definitions[k]==="string")).filter(r=>{const k=unitOf(r);if(seen.has(k))return false;seen.add(k);return true}).sort((a,b)=>label(a).localeCompare(label(b)));
   return`<h4>YOUR RUN ON ${esc(REL[rel].t.toUpperCase())}</h4>
   <p class="hint">Paste or load x,y rows (an optional third column is the 1σ error; low,high columns and a header row are fine; commas, semicolons, tabs or spaces). Values are log₁₀ as plotted unless you tick the box. Nothing leaves this browser tab.</p>

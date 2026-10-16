@@ -18,7 +18,7 @@
     mzr: "Winds carry metals out of galaxies, so the metal content depends on how much is lost and on the yields each code assumes, which no dial changes.", zstar: "Stars inherit the metals of the gas they formed from, so this follows the gas metallicity with a delay.",
     size: "Winds and feedback change how much gas settles into a disc and how far it spreads, which sets the stellar half-mass radius.", fgas: "Feedback ejects or heats gas; the gas that stays is what is left in the galaxy.", shmr: "How efficiently a halo turns its gas into stars is the net effect of cooling against feedback.",
     rho: "The total stars and star formation in the box add up what all galaxies do, so they move with every dial.", hmf: "Halo masses are set mostly by gravity, which is why this is a control." };
-  const VERD = { structural: "no dial setting closes it", removable: "can be closed", unresolved: "borderline" };
+  const VERD = { structural: "stays apart at every dial setting", removable: "can be closed", unresolved: "borderline" };
   const NO = D.outputs.length, SCALE = Float64Array.from(D.scale), FAMS = Object.keys(D.families);
   const JOINT = FAMS.filter(f => D.families[f].joint), LINE = JOINT.filter(f => D.families[f].kind === "line");
   const el = (t, a = {}, ...kids) => { const e = document.createElementNS(a.ns || "http://www.w3.org/1999/xhtml", t); for (const [k, v] of Object.entries(a)) if (k !== "ns") (k.startsWith("on") ? e.addEventListener(k.slice(2), v) : e.setAttribute(k, v)); for (const c of kids.flat()) e.append(c); return e; };
@@ -147,7 +147,7 @@
   function story(kind, before, prev, head) {
     const after = gaps(), ok = a => a.filter(x => x.d < D.margin).map(x => x.f), nb = ok(before), na = ok(after);
     const closed = na.filter(f => !nb.includes(f)), lost = nb.filter(f => !na.includes(f)), stuck = after.filter(x => x.d >= D.margin).sort((a, b) => b.d - a.d);
-    const only = state.matchSet === "all" ? "" : state.matchSet === "matchable" ? ` (leaving aside ${list(STUCK.map(nameOf))}, which no dial setting closes)` : ` (matching only ${nameOf(state.matchSet)})`;
+    const only = state.matchSet === "all" ? "" : state.matchSet === "matchable" ? ` (leaving aside ${list(STUCK.map(nameOf))}, which stay apart at every dial setting)` : ` (matching only ${nameOf(state.matchSet)})`;
     const hold = state.hold ? ` while keeping ${nameOf(state.hold)} as it was` : "";
     const h = head || (kind === "S" ? `To look as much like TNG as it can${only}${hold}, SIMBA's dials went to: ${mult("SIMBA")}.` : kind === "T" ? `To look as much like SIMBA as it can${only}${hold}, TNG's dials went to: ${mult("IllustrisTNG")}.` : `Closest the two can get${only}${hold}: TNG with ${mult("IllustrisTNG")}; SIMBA with ${mult("SIMBA")}.`);
     const one = !head && JOINT.includes(state.matchSet) ? `The gap on ${nameOf(state.matchSet)} went from ${f2(before.find(x => x.f === state.matchSet).d, 1)} to ${f2(after.find(x => x.f === state.matchSet).d, 1)}. ` : "";
@@ -369,7 +369,10 @@
     const gs = gaps(), agree = gs.filter(x => x.d < D.margin), worst = gs.filter(x => x.d >= D.margin).sort((x, y) => y.d - x.d).slice(0, 3);
     const big = `At these dials the two universes agree on ${agree.length} of ${JOINT.length} things about galaxies.` + (worst.length ? ` They are furthest apart on ${list(worst.map(x => nameOf(x.f)))}.` : " Nothing is out of line.");
     const strip = el("div", { class: "rt-strip", role: "group", "aria-label": "Agreement at each redshift" }, el("span", { class: "rt-striplab" }, "Agreement by redshift:"), D.snapshots.map(s => { const a = agreeAt(s.id); return el("button", { type: "button", class: "rt-z" + (s.id === state.snap ? " on" : ""), "aria-pressed": s.id === state.snap ? "true" : "false", onclick: () => { state.snap = s.id; snapSel.value = s.id; refreshObs(); update(); } }, `z = ${f2(s.z)}`, el("b", {}, ` ${a.ok}/${a.n}`)); }));
-    stick.replaceChildren(el("p", { class: "rt-big" }, big), strip);
+    /* on a narrow screen the panels are far below the dials: keep a small live copy of the property being matched in the pinned headline */
+    const miniSrc = panels.querySelector(`figure.rt-panel[data-family="${JOINT.includes(state.matchSet) ? state.matchSet : "gsmf"}"]`) || panels.querySelector("figure.rt-panel"), mini = miniSrc ? miniSrc.cloneNode(true) : null;
+    if (mini) { mini.className = "rt-mini"; mini.removeAttribute("data-family"); mini.removeAttribute("id"); for (const x of mini.querySelectorAll(".rt-expl, .rt-hold")) x.remove(); }
+    stick.replaceChildren(el("p", { class: "rt-big" }, big), strip, ...(mini ? [mini] : []));
     header.replaceChildren(
       el("p", { class: "rt-sum" }, `Joint gap ${f2(dall)} (1 = as far apart as two runs of one code that differ only in random seed)${an ? `; the smallest the study found with every dial free: ${f2(an.D_corrected != null ? an.D_corrected : an.D)}; with the default dials: ${f2(an.D_fiducial)}` : ""}.`),
       state.story ? el("div", { class: "rt-story" }, state.story.map(t => el("p", {}, t))) : "");

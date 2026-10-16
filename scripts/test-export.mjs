@@ -43,4 +43,30 @@ const curveDir = new URL("../data/curves/", import.meta.url);
 let thirdParty = 0;
 for (const f of (await (await import("node:fs/promises")).readdir(curveDir)).filter(f => f.endsWith(".json"))) for (const r of JSON.parse(await readFile(new URL(f, curveDir), "utf8")).records) { const p = r.provenance; if (/sharda|garcia/i.test([p.citation, p.url, p.sourceMember].join(" "))) { assert.ok(p.terms, `${r.id}: third-party source without provenance.terms`); thirdParty++; } }
 assert.ok(thirdParty >= 200, "expected the Sharda and Garcia records to be flagged");
+// the shipped files themselves: every sampled-parametric record is exported at its own representative redshift, and its points are the evaluator's values there (a redshift-dependent fit must not be evaluated at a row number: that happened once, see docs/CORRECTIONS.md)
+{
+  const C = ctx.globalThis.SimHighlineCompare, fs = await import("node:fs/promises");
+  const recs = JSON.parse(await readFile(new URL("../data/export/sim-highline-records.json", import.meta.url), "utf8")).records;
+  const parse = t => { const rows = []; let row = [], f = "", q = false; for (let i = 0; i < t.length; i++) { const c = t[i]; if (q) { if (c === '"' && t[i + 1] === '"') { f += '"'; i++; } else if (c === '"') q = false; else f += c; } else if (c === '"') q = true; else if (c === ",") { row.push(f); f = ""; } else if (c === "\n") { row.push(f); rows.push(row); row = []; f = ""; } else if (c !== "\r") f += c; } return rows; };
+  const csv = t => { const all = parse(t.split("\n").filter(l => !l.startsWith("# ")).join("\n")).filter(r => r.length > 1); return { h: all[0], rows: all.slice(1) }; };
+  const rc = csv(await readFile(new URL("../data/export/sim-highline-records.csv", import.meta.url), "utf8")), zi = rc.h.indexOf("z"), ri = rc.h.indexOf("representation");
+  const byId = new Map(recs.map(r => [r.id, r]));
+  let checked = 0;
+  for (const line of rc.rows) {
+    const cols = line; if (cols[ri] !== "sampled-parametric") continue;
+    const r = byId.get(cols[0]); assert.ok(r, `unknown record ${cols[0]}`);
+    assert.equal(Number(cols[zi]), r.epoch.zRepresentative, `${r.id}: exported z ${cols[zi]} is not its representative redshift ${r.epoch.zRepresentative}`);
+    checked++;
+  }
+  assert.ok(checked >= 80, `parametric records checked: ${checked}`);
+  const pts = csv(await readFile(new URL("../data/export/sim-highline-points.csv", import.meta.url), "utf8")), pid = pts.h.indexOf("record_id"), px = pts.h.indexOf("x"), py = pts.h.indexOf("y");
+  const zdep = recs.filter(r => r.representation.type === "parametric" && Number.isFinite(C.evaluator(r)?.(r.domain.xMin, r.epoch.zRepresentative)) && Math.abs(C.evaluator(r)(r.domain.xMin, r.epoch.zRepresentative) - C.evaluator(r)(r.domain.xMin, r.epoch.zRepresentative + 3)) > 1e-3);
+  assert.ok(zdep.length >= 3, "expected redshift-dependent fits (Speagle, Popesso, Marszewski)");
+  for (const r of zdep) {
+    const ev = C.evaluator(r), rows = pts.rows.filter(c => c[pid] === r.id);
+    assert.ok(rows.length >= 10, `${r.id}: points exported`);
+    for (const c of rows) assert.ok(Math.abs(Number(c[py]) - ev(Number(c[px]), r.epoch.zRepresentative)) < 2e-6, `${r.id}: point at x=${c[px]} is not the fit at z=${r.epoch.zRepresentative}`);
+  }
+  void fs;
+}
 console.log("Export library tests passed");

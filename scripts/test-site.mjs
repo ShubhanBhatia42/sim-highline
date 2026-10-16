@@ -44,6 +44,9 @@ for (const f of ["default", "explorer", "retune", "study-joint"]) {
   assert.equal(by("removable").length, 6, "plain words say six are removable"); assert.equal(by("unresolved").length, 3, "plain words say three are borderline");
   const plain = html["study-joint"].match(/<div class="plain">([\s\S]*?)<\/div>/)[1];
   assert(plain.includes(`${R.point.all.D.toFixed(1)} noise units`), "plain words quote the joint distance");
+  const zJ = [...new Set(Object.values(R.meta.blocks).filter(b => b.family !== "hmf").map(b => b.z))].sort((a, b) => a - b);
+  assert(html["study-joint"].includes(`z = ${zJ[0]} to ${zJ[zJ.length - 1]}`) && html.studies.includes(`z = ${zJ[0]} to ${zJ[zJ.length - 1]}`), "the redshift range in the abstracts is the range of the blocks in the saved result");
+  assert(/AI (assistant|agent)/.test(html.methods) && /AI assistant/.test(html.index) && /AI assistant/.test(html.faq) && !/independent review/i.test(html["study-joint"] + html["study-sfh"] + html.studies), "the pages disclose that an AI assistant was involved and that the 'independent' reviews were an AI agent, not a human");
 }
 // structured dataset metadata on the front and data pages: valid JSON, the fields dataset search needs, and every download it lists exists in the build
 for (const page of ["index", "data"]) {
@@ -61,7 +64,7 @@ for (const page of PAGES) assert(!/href="findings\.html"/.test(html[page]) && !/
 const index = html.index;
 assert(index.includes(manifest.nRecords.toLocaleString("en-US")), "index: record count must match the export manifest");
 assert(/<svg viewBox/.test(index) && (index.match(/<path d="M/g) || []).length >= 5, "index: figure must contain curves");
-assert(/Not independently reviewed/.test(index), "index must state limits");
+assert(/Not reviewed by any outside expert/.test(index), "index must state limits");
 assert(/Fig\. 1/.test(index) && /Records by relation/.test(index), "index: figure and data table expected");
 for (const f of ["study-definitions", "study-harmonization", "study-sfh", "study-joint"]) assert(index.includes(`href="${f}.html"`), `index: study ${f} missing from the table`);
 assert(/study-joint\.html[\s\S]*?Pre-registered · (pending|result)/.test(index), "index: the all-at-once study row must say pending or result");
@@ -86,7 +89,7 @@ assert(data.includes("sim-highline-records.csv") && data.includes("sim_highline.
 assert(data.includes('href="sources.html"') && /id="tiers"/.test(data) && /id="relations"/.test(data), "data: relation table, tiers and the sources page");
 const methods = html.methods;
 for (const id of ["routes", "extraction", "definitions", "audit", "limits", "ledger", "undocumented"]) assert(methods.includes(`id="${id}"`), `methods: section ${id}`);
-assert(/Not independently reviewed/.test(methods) && /Not a leaderboard/.test(methods) && /Thin relations/.test(methods), "methods: limits");
+assert(/Not reviewed by anyone outside/.test(methods) && /Not a leaderboard/.test(methods) && /Thin relations/.test(methods), "methods: limits");
 
 const sources = html.sources;
 const profiles = JSON.parse(await readFile(new URL("../data/simulation-profiles.json", import.meta.url), "utf8")).profiles;
