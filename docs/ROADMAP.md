@@ -6,15 +6,15 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 | tier | tasks | done | partly | waiting for a person | not done |
 |---|---|---|---|---|---|
-| 1 Quick (under 15 min) | 46 | 40 | 1 | 3 | 2 |
-| 2 Solid (about an hour) | 121 | 109 | 5 | 2 | 5 |
+| 1 Quick (under 15 min) | 46 | 43 | 0 | 3 | 0 |
+| 2 Solid (about an hour) | 121 | 111 | 5 | 3 | 2 |
 | 3 Big (several hours) | 23 | 21 | 1 | 0 | 1 |
-| 4 Needs other people or days | 10 | 0 | 0 | 2 | 8 |
-| all | 200 | 170 | 7 | 7 | 16 |
+| 4 Needs other people or days | 10 | 0 | 0 | 10 | 0 |
+| all | 200 | 175 | 6 | 16 | 3 |
 
 ## Step 1. Say what great means, and how we will know
 
-*Without a stated purpose, audience and stopping rule, every improvement is a guess.* (17 of 20 done)
+*Without a stated purpose, audience and stopping rule, every improvement is a guess.* (18 of 20 done)
 
 - [x] **1.01** · tier 1 · Claude · Write the purpose in one sentence and name the three kinds of user it serves — docs/PROJECT.md, docs/DECISIONS.md; name search found nothing with the same name (search tool only)
 - [x] **1.02** · tier 1 · Claude · Set five success measures, each with a number and a date — docs/PROJECT.md, docs/DECISIONS.md; name search found nothing with the same name (search tool only)
@@ -35,7 +35,7 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 - [x] **1.17** · tier 2 · Claude · Write the 90-second demo script for the dials page — docs/INVENTORY.md, docs/DECISIONS.md, docs/OVERVIEW.md, docs/DEMO-SCRIPT.md
 - [x] **1.18** · tier 1 · Claude · Check the name and tagline for clashes with existing projects — docs/PROJECT.md, docs/DECISIONS.md; name search found nothing with the same name (search tool only)
 - [x] **1.19** · tier 2 · Claude · Give the front page separate entry points for a simulator, an observer and a student — front page: three entry points for simulator, observer, student
-- [~] **1.20** · tier 1 · Claude · Put this roadmap in the repository and on a private page — roadmap is in the repo (docs/ROADMAP.md); private page to be published at the end
+- [x] **1.20** · tier 1 · Claude · Put this roadmap in the repository and on a private page — In the repository (docs/ROADMAP.md) and on a private page (Artifact)
 
 ## Step 2. Make the data trustworthy
 
@@ -134,13 +134,13 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 - [x] **5.08** · tier 2 · Claude · Say what is known about resolution effects in these simulations, with sources — docs/RESOLUTION.md; no higher-resolution runs analysed, said so
 - [x] **5.09** · tier 3 · Claude · Draft a short research note with only the claims that survive — docs/RESEARCH-NOTE.md
 - [x] **5.10** · tier 2 · Claude · Write what a sceptic would say and answer each point — docs/SCEPTIC.md, 13 objections, four marked 'stands'
-- [ ] **5.11** · tier 4 · You · Ask a CAMELS team member to read the note
+- [!] **5.11** · tier 4 · You · Ask a CAMELS team member to read the note — Needs the maintainer; nothing here can do it
 - [x] **5.12** · tier 2 · Claude · Show how far each code is from observed curves after tuning (exploratory) — docs/ANALYSIS-tune-to-observations.md: 25 observed curves; neither code reaches black hole mass
 - [x] **5.13** · tier 3 · Claude · Rank which observables best tell the codes apart, with uncertainty — docs/RANKING-observables.md
 - [x] **5.14** · tier 2 · Claude · Show the dated commit trail that proves the rules were written before the results — data/registration-trail.json from git history; table on the studies page; scripts/test_registration.py checks protocol before result
 - [x] **5.15** · tier 2 · Claude · Check the calibration document matches the final settings — scripts/test_calibration.py checks layout, margin, floor, seed and the quoted counts
 - [x] **5.16** · tier 1 · Claude · Put the limits at the top of every study page — related-work note linked from the all-at-once study and the FAQ; limits in brief at the top of all four study pages
-- [ ] **5.17** · tier 4 · You · Deposit the analysis data with a DOI
+- [!] **5.17** · tier 4 · You · Deposit the analysis data with a DOI — Needs the maintainer; nothing here can do it
 - [x] **5.18** · tier 3 · Claude · Make every analysis run end to end with one command and a documented runtime — scripts/reproduce.sh (quick and full modes with timings), requirements-analysis/ingest/lock files and environment.yml; the full mode has not been run end to end in one go in this session
 - [x] **5.19** · tier 2 · Claude · Add an environment file so others can reproduce the numbers — scripts/reproduce.sh (quick and full modes with timings), requirements-analysis/ingest/lock files and environment.yml; the full mode has not been run end to end in one go in this session
 - [x] **5.20** · tier 2 · Claude · Test that every number on the site and in the README matches the generated results — scripts/test_claims.py checks the README and overview numbers against the generated JSON (runs with the other test_*.py in verify-all)
@@ -208,7 +208,7 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 - [x] **8.09** · tier 1 · Claude · Add issue labels and forms for feedback and new curves — Issue forms: bug, feedback (added to curve-error, source-suggestion). Labels are created on first use by GitHub only if they exist; none created from here
 - [x] **8.10** · tier 2 · Claude · Write a release script: bump, regenerate, tag, notes in one command — scripts/release.sh: bump, changelog, rebuild, verify, prints commit/tag commands; never pushes. File edits dry-run tested, full run not executed
 - [!] **8.11** · tier 2 · Claude · Tag the release and create GitHub release notes — A tag belongs on main after the merge; the release script prints the commands. Needs the maintainer to merge
-- [ ] **8.12** · tier 4 · You · Archive the new version on Zenodo
+- [!] **8.12** · tier 4 · You · Archive the new version on Zenodo — Needs the maintainer; nothing here can do it
 - [x] **8.13** · tier 2 · Claude · Remove dead code and dead pages — Audit: no dead pages; 10 unreferenced scripts are tests (run by glob) or one-off ingestion scripts kept as provenance; screenshots script wired into npm
 - [x] **8.14** · tier 2 · Claude · Check repository size and that no large raw files are tracked — Packed repository 5.3 MiB; largest tracked file 9 MB; pre-commit refuses files over 12 MB
 - [x] **8.15** · tier 2 · Claude · Document the architecture on one page — docs/ARCHITECTURE.md
@@ -228,36 +228,36 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 - [x] **9.04** · tier 2 · Claude · Draft the emails to the authors whose curves are included — docs/author-heads-up.md and author-requests.md (generated per suite and per paper, with permission requests first); nothing sent
 - [x] **9.05** · tier 2 · Claude · Draft the post for the relevant research community forums — docs/outreach/: ANNOUNCEMENT, FORUM-POST, REGISTRIES, SOFTWARE-CATALOGUE, generated from the data (scripts/make-outreach.mjs); nothing sent
 - [x] **9.06** · tier 1 · Claude · Make 'tell us what is wrong' easy to find — Footer on every page: 'Tell us in two sentences' and 'Report a problem', prefilled with the page and the address; Explorer about dialog; tested
-- [ ] **9.07** · tier 4 · You · Send it to the three testers
-- [ ] **9.08** · tier 4 · You · Collect their feedback and log it
+- [!] **9.07** · tier 4 · You · Send it to the three testers — Needs the maintainer; nothing here can do it
+- [!] **9.08** · tier 4 · You · Collect their feedback and log it — Needs the maintainer; nothing here can do it
 - [x] **9.09** · tier 2 · Claude · Write a one-page summary page suitable for printing or sharing — site/summary.html: the project on one printed A4 page; tested
 - [x] **9.10** · tier 2 · Claude · Outline a five-slide talk — docs/outreach/TALK-OUTLINE.md
-- [ ] **9.11** · tier 4 · You · Present it to a research group
+- [!] **9.11** · tier 4 · You · Present it to a research group — Needs the maintainer; nothing here can do it
 - [x] **9.12** · tier 2 · Claude · Add structured dataset metadata so search engines understand it — schema.org Dataset JSON-LD on front and data pages, validated in test-site
 - [x] **9.13** · tier 1 · Claude · Draft the text for dataset registries — docs/outreach/: ANNOUNCEMENT, FORUM-POST, REGISTRIES, SOFTWARE-CATALOGUE, generated from the data (scripts/make-outreach.mjs); nothing sent
-- [ ] **9.14** · tier 4 · You · Submit the dataset to registries
+- [!] **9.14** · tier 4 · You · Submit the dataset to registries — Needs the maintainer; nothing here can do it
 - [x] **9.15** · tier 2 · Claude · Draft the software-catalogue entry — docs/outreach/: ANNOUNCEMENT, FORUM-POST, REGISTRIES, SOFTWARE-CATALOGUE, generated from the data (scripts/make-outreach.mjs); nothing sent
 - [x] **9.16** · tier 2 · Claude · Add a 'used in' section and how to be listed — Data page 'Used in' (honestly empty), issue form used-in.yml, data/used-in.json
 
 ## Step 10. Review, measure and decide
 
-*Fresh eyes, a final check on the live site, and a dated decision using the criteria set in step 1.* (9 of 18 done)
+*Fresh eyes, a final check on the live site, and a dated decision using the criteria set in step 1.* (13 of 18 done)
 
 - [x] **10.01** · tier 3 · Claude · Get an independent fresh-eyes review of the whole product from a separate reviewer — Independent review by a separate AI agent (not a human): docs/INDEPENDENT-REVIEW.md. It found a real export bug, undisclosed AI involvement, a wrong redshift range and several overstated claims
 - [x] **10.02** · tier 3 · Claude · Fix everything the review marks as must-fix — All 5 must-fix and 9 of 14 should-fix items fixed or disclosed (table in docs/INDEPENDENT-REVIEW.md); 5 not done and listed there
-- [ ] **10.03** · tier 2 · Claude · Do a final check of the live site
+- [!] **10.03** · tier 2 · Claude · Do a final check of the live site — Same as 10.12: the live site is main, which does not yet have this work; check after the merge
 - [x] **10.04** · tier 1 · Claude · Update the README and changelog for the release — README and CHANGELOG updated (Unreleased section); version not bumped because the DOI is per release and needs the maintainer's Zenodo deposit
 - [!] **10.05** · tier 2 · Claude · Bump the version and tag the release — scripts/release.sh X.Y.Z is ready; the bump, tag and DOI belong after the merge to main and the Zenodo deposit, which need the maintainer
 - [x] **10.06** · tier 2 · Claude · Write the honest retrospective — docs/RETROSPECTIVE.md
 - [x] **10.07** · tier 1 · Claude · List the numbers to look at on the review date — docs/REVIEW-DAY.md
-- [ ] **10.08** · tier 2 · Claude · Publish the roadmap with final status: done, not done, blocked
-- [ ] **10.09** · tier 4 · You · On the review date, apply the kill criteria
-- [ ] **10.10** · tier 2 · Claude · Re-measure the front page: time to first meaningful action
+- [x] **10.08** · tier 2 · Claude · Publish the roadmap with final status: done, not done, blocked — docs/ROADMAP.md rendered with final status; the private page is the artifact below
+- [!] **10.09** · tier 4 · You · On the review date, apply the kill criteria — Needs the maintainer; nothing here can do it
+- [x] **10.10** · tier 2 · Claude · Re-measure the front page: time to first meaningful action — Slow phone profile (slow 4G, 4x slower processor): front page first paint with readable text and clickable links at 0.9 s (fonts finish at about 3 s); study page 1.1 s; dials page 0.9 s first paint, 3.2 s usable; Explorer 0.85 s loader, 5.4 s usable
 - [x] **10.11** · tier 2 · Claude · Re-run every test suite from a clean checkout — Fresh clone of the pushed branch, npm ci, verify-all (4 min 18 s, generated files unchanged), all 10 browser suites and the determinism test passed. (This did not catch the export bug found by the independent review; see 10.01)
 - [!] **10.12** · tier 1 · Claude · Confirm the live site matches the release — The live site is still the old build of main (0.23.0 without the faq, summary, tests of this push: /site/summary.html and /site/faq.html return 404). It can be confirmed only after the merge to main
 - [x] **10.13** · tier 2 · Claude · Check that nothing on the site claims more than the evidence — Scanned pages, README, drafts and note for overclaiming words (novel, first, proves, definitive...): none left; novelty is explicitly not claimed. The independent review's claims audit is the second check
 - [~] **10.14** · tier 2 · Claude · Re-read every study page as a sceptic and tighten — The reviewer re-read the study pages as a sceptic; wording tightened (plain-words blocks, abstracts, glossary). A human sceptic has not read them
 - [x] **10.15** · tier 1 · Claude · Archive scratch files and make the repository tidy — Only ignored build and cache directories remain; scratch work lives outside the repository
 - [x] **10.16** · tier 2 · Claude · Write the list of what would make it great next — docs/NEXT.md
-- [ ] **10.17** · tier 1 · Claude · Write the short message to the maintainer: what is done, what is not, what to decide
-- [ ] **10.18** · tier 1 · Claude · Update the private roadmap page one last time
+- [x] **10.17** · tier 1 · Claude · Write the short message to the maintainer: what is done, what is not, what to decide — docs/MESSAGE-TO-MAINTAINER.md
+- [x] **10.18** · tier 1 · Claude · Update the private roadmap page one last time — Private roadmap page published as an Artifact
