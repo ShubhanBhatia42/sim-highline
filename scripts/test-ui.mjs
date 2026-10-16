@@ -155,7 +155,7 @@ await step("your run: opens from a link, and the example plots and compares with
   await page.click("#uEx");
   assert.ok((await page.locator("#stage .userdot").count()) >= 5, "example points drawn");
   assert.match(await page.inputValue("#uName"), /^example: /);
-  assert.equal(await page.locator("#mineTab .sumline").count(), 0, "no summary before definitions are declared");
+  assert.match(await page.locator("#mineTab .sumline").innerText(), /Say what your numbers mean/, "before definitions are declared the summary asks for them");
   const sel = (k) => page.locator(`[data-def="${k}"]`);
   for (const k of ["densityFrame", "imf", "massDefinition"]) { const opts = await sel(k).locator("option").allInnerTexts(); if (opts.length > 1) await sel(k).selectOption({ index: 1 }); }
   const verdicts = await page.locator("#mineTab .v").allInnerTexts();
