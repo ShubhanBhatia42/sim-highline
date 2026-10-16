@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Data: records, evidence tiers, files and licences</title>
+<title>Data: download every curve with its sources and definitions</title>
 <meta name="description" content="The sim-highline dataset: counts by relation and evidence tier, the CAMELS ensembles, downloads, the Python loader, schema, licences and how to cite.">
 {{head}}
 </head>
@@ -135,7 +135,11 @@ print(sim_highline.bibtex(one))</code></pre>
 <section class="sec" id="cite" aria-labelledby="cite-h">
 <h2 id="cite-h"><span class="sn">§9</span>How to cite</h2>
 <p>Cite the dataset and the original papers: every record carries its <code>citation</code> and <code>doi</code>, and <a href="../data/export/sim-highline-citations.bib">sim-highline-citations.bib</a> holds BibTeX for all of them. Machine-readable metadata: <a href="{{repo}}/blob/main/CITATION.cff">CITATION.cff</a>; DOI <a href="https://doi.org/{{doi}}">{{doi}}</a>.</p>
-<pre tabindex="0"><code>{{bibtex}}</code></pre>
+<p class="lab">In text</p>
+<p id="cite-text" class="citetext">{{citeText}}. Please also cite the original paper of every curve you use.</p>
+<p class="citebtns"><button type="button" class="cp" data-copy="cite-text">Copy the citation</button> <button type="button" class="cp" data-copy="cite-bib">Copy the BibTeX</button> <span class="cpmsg" role="status" aria-live="polite"></span></p>
+<pre tabindex="0" id="cite-bib"><code>{{bibtex}}</code></pre>
+<script>(function(){document.querySelectorAll(".cp").forEach(function(b){b.addEventListener("click",function(){var el=document.getElementById(b.dataset.copy),t=el.textContent.trim(),msg=b.parentNode.querySelector(".cpmsg");function ok(){msg.textContent="Copied."}function fail(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);msg.textContent="Selected: press Ctrl/Cmd+C."}try{navigator.clipboard.writeText(t).then(ok,fail)}catch(e){fail()}})})})()</script>
 </section>
 
 </div>

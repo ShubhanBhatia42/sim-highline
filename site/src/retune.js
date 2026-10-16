@@ -387,6 +387,32 @@
       if (q.k && "STB".includes(q.k)) { state.k = q.k; const now = { IllustrisTNG: state.a.IllustrisTNG.slice(), SIMBA: state.a.SIMBA.slice() }; state.a = { IllustrisTNG: [0, 0, 0, 0], SIMBA: [0, 0, 0, 0] }; const before = gaps(); state.a = now; state.story = story(q.k, before, { IllustrisTNG: [0, 0, 0, 0], SIMBA: [0, 0, 0, 0] }); }
     }
   } catch (e) { /* ignore a malformed hash */ }
+  /* ---- a five-step tour: each step lights one part of the page and says what it is for */
+  {
+    const go = document.getElementById("rt-tourbtn"); if (!go) { refreshObs(); update(); return; }
+    go.hidden = false;
+    const STEPS = [
+      { sel: ".rt-code", t: "These are the four dials of one universe, in plain words with the code's own name underneath. Drag one: the centre is the setting CAMELS treats as normal, the ends are a factor of two to four weaker and stronger." },
+      { sel: ".rt-big", t: "This sentence is the answer so far: on how many of the eleven galaxy properties the two universes agree at these settings, and which are furthest apart. It updates as you turn the dials." },
+      { sel: ".rt-panel", t: "Each panel is one property. Orange is IllustrisTNG, blue is SIMBA, the pale band is how far a universe moves when you turn all four dials. A shaded panel means the two are further apart than two runs of the same universe would be." },
+      { sel: ".rt-actions", t: "These buttons search the dials for you. Make SIMBA look like TNG matches the property you choose under Match on, then tells you what that did to everything else. Show me a surprise picks a setting with a striking trade-off." },
+      { sel: ".rt-fit", t: "Or bring your own curve, or pick a published observation, and see which dial settings of each universe reproduce it, and what that does to every other property." }
+    ];
+    let k = -1, spot = null; const card = el("div", { class: "rt-tour", role: "dialog", "aria-label": "Tour of the dials page", "aria-live": "polite", hidden: "" });
+    const txt = el("p", { class: "rt-tour-t" }), cnt = el("span", { class: "rt-tour-n" });
+    const back = btn("Back", () => show(k - 1), "rt-tour-b"), next = btn("Next", () => show(k + 1), "rt-tour-b"), close = btn("Close", () => end(), "rt-tour-b");
+    card.append(txt, el("div", { class: "rt-tour-r" }, cnt, back, next, close)); document.body.append(card);
+    function end() { if (spot) spot.classList.remove("rt-spot"); spot = null; card.hidden = true; k = -1; go.focus(); }
+    function show(i) {
+      if (i < 0) return; if (i >= STEPS.length) return end();
+      k = i; const st = STEPS[i], target = root.querySelector(st.sel) || document.querySelector(st.sel);
+      if (spot) spot.classList.remove("rt-spot"); spot = target || null;
+      if (spot) { spot.classList.add("rt-spot"); spot.scrollIntoView({ block: "center", behavior: REDUCED ? "auto" : "smooth" }); }
+      txt.textContent = st.t; cnt.textContent = `${i + 1} of ${STEPS.length}`; back.disabled = i === 0; next.textContent = i === STEPS.length - 1 ? "Done" : "Next"; card.hidden = false; next.focus({ preventScroll: true });
+    }
+    go.addEventListener("click", () => { const g = go.closest("details"); if (g) g.open = false; show(0); });
+    card.addEventListener("keydown", e => { if (e.key === "Escape") end(); });
+  }
   refreshObs();
   update();
 })();

@@ -36,6 +36,15 @@ for (const page of [...PAGES, "findings"]) {
 for (const f of ["default", "explorer", "retune", "study-joint"]) {
   const b = await readFile(new URL(`site/og-${f}.png`, root)); assert(b.subarray(1, 4).toString() === "PNG" && b.readUInt32BE(16) === 1200 && b.readUInt32BE(20) === 630, `og-${f}.png must be a 1200 x 630 PNG`);
 }
+// the plain-words paragraph of the joint study states which properties are structural alone and how many are removable or borderline: it must match the saved result
+{
+  const R = JSON.parse(await readFile(new URL("../data/analysis/joint-reachability.json", import.meta.url), "utf8")), J2 = R.verdicts.J2;
+  const by = v => Object.keys(J2).filter(f => J2[f] === v).sort();
+  assert.deepEqual(by("structural"), ["bhocc", "mzr"], "plain words name black hole occupation and gas metallicity as the structural ones");
+  assert.equal(by("removable").length, 6, "plain words say six are removable"); assert.equal(by("unresolved").length, 3, "plain words say three are borderline");
+  const plain = html["study-joint"].match(/<div class="plain">([\s\S]*?)<\/div>/)[1];
+  assert(plain.includes(`${R.point.all.D.toFixed(1)} noise units`), "plain words quote the joint distance");
+}
 // the old pages are gone and the old findings URL redirects
 for (const gone of ["about", "use-cases"]) await access(new URL(`site/${gone}.html`, root)).then(() => assert.fail(`${gone}.html must be removed`), () => {});
 assert(/http-equiv="refresh" content="0; url=studies.html"/.test(html.findings) && html.findings.includes('href="studies.html"'), "findings.html must redirect to studies.html");

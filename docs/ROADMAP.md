@@ -6,11 +6,11 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 | tier | tasks | done | partly | waiting for a person | not done |
 |---|---|---|---|---|---|
-| 1 Quick (under 15 min) | 46 | 26 | 1 | 2 | 17 |
-| 2 Solid (about an hour) | 121 | 73 | 3 | 0 | 45 |
+| 1 Quick (under 15 min) | 46 | 31 | 1 | 2 | 12 |
+| 2 Solid (about an hour) | 121 | 83 | 4 | 0 | 34 |
 | 3 Big (several hours) | 23 | 18 | 0 | 0 | 5 |
 | 4 Needs other people or days | 10 | 0 | 0 | 2 | 8 |
-| all | 200 | 117 | 4 | 4 | 75 |
+| all | 200 | 132 | 5 | 4 | 59 |
 
 ## Step 1. Say what great means, and how we will know
 
@@ -172,26 +172,26 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 ## Step 7. Make the first minute work, in plain language
 
-*A newcomer should know what to do within ten seconds and never meet a code they have to decode.* (2 of 18 done)
+*A newcomer should know what to do within ten seconds and never meet a code they have to decode.* (17 of 18 done)
 
-- [ ] **7.01** · tier 2 · Claude · Add a three-step first-visit guide to the Explorer that can be dismissed
-- [ ] **7.02** · tier 2 · Claude · Add 'try this' example links on the front page
-- [ ] **7.03** · tier 1 · Claude · Rewrite every page title and heading in plain words
-- [ ] **7.04** · tier 2 · Claude · Give each study a plain summary above the technical abstract
-- [ ] **7.05** · tier 2 · Claude · Put the result in one sentence at the top of each study
-- [ ] **7.06** · tier 1 · Claude · Replace jargon in the interface (rankable, tier, tension, spread) with plain words and a tooltip
-- [ ] **7.07** · tier 2 · Claude · Describe each Explorer view in one line
+- [x] **7.01** · tier 2 · Claude · Add a three-step first-visit guide to the Explorer that can be dismissed — Explorer: three-point guide on a first visit, dismissible, remembered, not shown in embeds; tested
+- [x] **7.02** · tier 2 · Claude · Add 'try this' example links on the front page — Four 'Try this' links on the front page, each tested to land where it says
+- [x] **7.03** · tier 1 · Claude · Rewrite every page title and heading in plain words — Page titles in plain words (front, data, methods, studies); Explorer views renamed: Curves, Over time, What exists, Vs observations, Disagreement (old names still found by search)
+- [x] **7.04** · tier 2 · Claude · Give each study a plain summary above the technical abstract — 'In plain words' block (one sentence + short paragraph, reading grade 7-9) on all four study pages; numbers from the same stats; test-site checks the joint one against the saved result
+- [x] **7.05** · tier 2 · Claude · Put the result in one sentence at the top of each study — 'In plain words' block (one sentence + short paragraph, reading grade 7-9) on all four study pages; numbers from the same stats; test-site checks the joint one against the saved result
+- [x] **7.06** · tier 1 · Claude · Replace jargon in the interface (rankable, tier, tension, spread) with plain words and a tooltip — Explorer: 'rankable' -> 'fair to compare', 'evidence tiers' -> 'where the numbers come from', view names; data field names unchanged
+- [x] **7.07** · tier 2 · Claude · Describe each Explorer view in one line — Each Explorer view has a one-line tooltip and a plain heading and description
 - [x] **7.08** · tier 2 · Claude · Write a FAQ — glossary.html and faq.html on the site
-- [ ] **7.09** · tier 2 · Claude · Add a 'how to cite and credit the original authors' box with a copy button
-- [ ] **7.10** · tier 1 · Claude · Make the footer useful: contact, issues, licence, version
+- [x] **7.09** · tier 2 · Claude · Add a 'how to cite and credit the original authors' box with a copy button — Data page: citation text and BibTeX with copy buttons; tested with the clipboard
+- [x] **7.10** · tier 1 · Claude · Make the footer useful: contact, issues, licence, version — Footer already carries cite, licences, maintainer, report a problem, repository, version chip
 - [x] **7.11** · tier 2 · Claude · Write a user-facing 'what is new' page, not developer notes — changes.html (what has changed), plain language
-- [ ] **7.12** · tier 2 · Claude · Show a 'what is new' note to returning visitors
-- [ ] **7.13** · tier 1 · Claude · Make number formats and units consistent across pages
-- [ ] **7.14** · tier 2 · Claude · Edit every page for filler and repetition
-- [ ] **7.15** · tier 2 · Claude · Add a short scripted tour of the dials page
-- [ ] **7.16** · tier 1 · Claude · Run a spelling and consistency check
-- [ ] **7.17** · tier 2 · Claude · Check the reading level of the front page
-- [ ] **7.18** · tier 2 · Claude · Check every figure has alternative text
+- [x] **7.12** · tier 2 · Claude · Show a 'what is new' note to returning visitors — Front page note for returning visitors when the version changed; tested
+- [x] **7.13** · tier 1 · Claude · Make number formats and units consistent across pages — scripts/check_prose.py: percent, spelling (catalogue), z format consistent across pages
+- [~] **7.14** · tier 2 · Claude · Edit every page for filler and repetition — Automated checks only (repeated words, long sentences listed: 9 over 55 words); no line edit by a person
+- [x] **7.15** · tier 2 · Claude · Add a short scripted tour of the dials page — Dials page: five-step tour, tested
+- [x] **7.16** · tier 1 · Claude · Run a spelling and consistency check — check_prose.py; front page Flesch-Kincaid grade 7.2
+- [x] **7.17** · tier 2 · Claude · Check the reading level of the front page — check_prose.py; front page Flesch-Kincaid grade 7.2
+- [x] **7.18** · tier 2 · Claude · Check every figure has alternative text — Every chart has a name and description (tested); README has only the DOI badge
 
 ## Step 8. Keep it healthy to maintain
 

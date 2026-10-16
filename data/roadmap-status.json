@@ -503,12 +503,76 @@
   "note": "Content-Security-Policy meta with script hashes on every built page; zero violations tested; a wrong hash is caught",
   "status": "done"
  },
+ "7.01": {
+  "note": "Explorer: three-point guide on a first visit, dismissible, remembered, not shown in embeds; tested",
+  "status": "done"
+ },
+ "7.02": {
+  "note": "Four 'Try this' links on the front page, each tested to land where it says",
+  "status": "done"
+ },
+ "7.03": {
+  "note": "Page titles in plain words (front, data, methods, studies); Explorer views renamed: Curves, Over time, What exists, Vs observations, Disagreement (old names still found by search)",
+  "status": "done"
+ },
+ "7.04": {
+  "note": "'In plain words' block (one sentence + short paragraph, reading grade 7-9) on all four study pages; numbers from the same stats; test-site checks the joint one against the saved result",
+  "status": "done"
+ },
+ "7.05": {
+  "note": "'In plain words' block (one sentence + short paragraph, reading grade 7-9) on all four study pages; numbers from the same stats; test-site checks the joint one against the saved result",
+  "status": "done"
+ },
+ "7.06": {
+  "note": "Explorer: 'rankable' -> 'fair to compare', 'evidence tiers' -> 'where the numbers come from', view names; data field names unchanged",
+  "status": "done"
+ },
+ "7.07": {
+  "note": "Each Explorer view has a one-line tooltip and a plain heading and description",
+  "status": "done"
+ },
  "7.08": {
   "note": "glossary.html and faq.html on the site",
   "status": "done"
  },
+ "7.09": {
+  "note": "Data page: citation text and BibTeX with copy buttons; tested with the clipboard",
+  "status": "done"
+ },
+ "7.10": {
+  "note": "Footer already carries cite, licences, maintainer, report a problem, repository, version chip",
+  "status": "done"
+ },
  "7.11": {
   "note": "changes.html (what has changed), plain language",
+  "status": "done"
+ },
+ "7.12": {
+  "note": "Front page note for returning visitors when the version changed; tested",
+  "status": "done"
+ },
+ "7.13": {
+  "note": "scripts/check_prose.py: percent, spelling (catalogue), z format consistent across pages",
+  "status": "done"
+ },
+ "7.14": {
+  "note": "Automated checks only (repeated words, long sentences listed: 9 over 55 words); no line edit by a person",
+  "status": "partial"
+ },
+ "7.15": {
+  "note": "Dials page: five-step tour, tested",
+  "status": "done"
+ },
+ "7.16": {
+  "note": "check_prose.py; front page Flesch-Kincaid grade 7.2",
+  "status": "done"
+ },
+ "7.17": {
+  "note": "check_prose.py; front page Flesch-Kincaid grade 7.2",
+  "status": "done"
+ },
+ "7.18": {
+  "note": "Every chart has a name and description (tested); README has only the DOI badge",
   "status": "done"
  }
 }
