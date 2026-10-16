@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>sim-highline: scaling relations from cosmological simulations</title>
-<meta name="description" content="Published galaxy scaling relations from cosmological simulations with the definitions that make them comparable, and a designed experiment for asking what retuning can change.">
+<meta name="description" content="Compare a simulated galaxy scaling relation with every published simulation and observation, and find out whether the comparison is legitimate: curated curves with their definitions, a definition-aware comparison of your own run, and the data to download.">
 {{head}}
 </head>
 <body>
@@ -14,9 +14,10 @@
 <nav class="idx" aria-label="On this page">
 <p class="lab">Contents</p>
 <ol>
-<li><a href="#studies"><span>§1</span>Studies</a></li>
-<li><a href="#instruments"><span>§2</span>Instruments</a></li>
-<li><a href="#data"><span>§3</span>Data</a></li>
+<li><a href="#start"><span>§1</span>Start here</a></li>
+<li><a href="#data"><span>§2</span>What is in it</a></li>
+<li><a href="#studies"><span>§3</span>What it has shown</a></li>
+<li><a href="#retune"><span>§4</span>Retune</a></li>
 </ol>
 </nav>
 <div class="c">
@@ -24,25 +25,21 @@
 <div class="title">
 <p class="lab kicker">Dataset v{{version}} · {{released}} · doi:{{doi}}</p>
 <h1>sim-highline</h1>
-<p class="standfirst">Published scaling relations from cosmological simulations with the definitions that make them comparable, and a designed experiment (CAMELS: {{camelsN}} simulations of two feedback models) for asking what retuning can change.</p>
+<p class="standfirst">Put your simulated galaxy relation next to every published simulation and observation, and find out which of those comparisons are legitimate. Two curves that look different may measure different things: a different stellar mass aperture, IMF or population cut. Every curve here carries the definitions that decide it.</p>
 </div>
 
-<section class="sec" id="studies" aria-labelledby="studies-h">
-<h2 id="studies-h"><span class="sn">§1</span>Studies</h2>
-<p>Each study asks one question of the dataset, with a protocol fixed before the outcome was computed where the study is marked pre-registered. <a href="studies.html">All studies and how they are registered</a>.</p>
-<div class="tw">{{studiesCompact}}</div>
-</section>
-
-<section class="sec" id="instruments" aria-labelledby="instruments-h">
-<h2 id="instruments-h"><span class="sn">§2</span>Instruments</h2>
+<section class="sec" id="start" aria-labelledby="start-h">
+<h2 id="start-h"><span class="sn">§1</span>Start here</h2>
 <dl class="inst">
-<div><dt><a href="../highline.html">Explorer</a></dt><dd>One relation at one epoch across every simulation, next to observations, with the definitions that decide whether two curves can be compared.</dd><dd class="m">{{records}} curves · browser</dd></div>
-<div><dt><a href="retune.html">Retune</a></dt><dd>What retuning feedback parameters can and cannot change, over the CAMELS ensemble of {{camelsN}} simulations.</dd><dd class="m">{{camelsN}} simulations · 11 observables</dd></div>
+<div><dt><a href="../highline.html#r=gsmf&amp;z=0.1">Look up a relation</a></dt><dd>Pick a relation and an epoch: the published simulations and observations on one plot, each labelled with where it came from (official table, paper table, fit or digitized figure) and whether its definitions allow it to be compared with the others.</dd><dd class="m">{{records}} curves · in the browser</dd></div>
+<div><dt><a href="../highline.html#r=gsmf&amp;z=0.1&amp;pn=mine">Check your own run</a></dt><dd>Paste your curve, say what it measures, and get offsets against the published curves that are comparable with it, as a table and a CSV. Nothing leaves your browser; there is an example to try first.</dd><dd class="m">stays in the browser</dd></div>
+<div><dt><a href="data.html">Take the data</a></dt><dd>Tidy CSV and JSON of every curve with its definitions, BibTeX for what you plot, and a Python loader (<code>pip install .</code>). Cite the dataset and the original papers.</dd><dd class="m">CC BY 4.0</dd></div>
 </dl>
+<p><b>How far to trust it.</b> Not independently reviewed: {{digitizedShare}} of simulation curves are digitized from published figures by one maintainer and are never used for ranking. Where an author or collaboration releases a table, use that. This is not a leaderboard. <a href="methods.html#limits">Methods, limits</a>; to report an error or ask for a takedown, open an issue on the repository.</p>
 </section>
 
 <section class="sec" id="data" aria-labelledby="data-h">
-<h2 id="data-h"><span class="sn">§3</span>Data</h2>
+<h2 id="data-h"><span class="sn">§2</span>What is in it</h2>
 <figure class="fig sm">
 <div class="chart">{{hero}}</div>
 <div class="key">{{heroKey}}</div>
@@ -50,7 +47,19 @@
 </figure>
 <div class="tw" role="region" aria-label="Records by relation" tabindex="0">{{dataTableCompact}}</div>
 <p class="dim" style="font-size:15px">Simulations and observations count distinct sources; records count curves. Rankable: definitions and sampling allow the curve to be used for ranking. The full table, evidence tiers, files and licences are on the <a href="data.html">Data</a> page.</p>
-<p><b>Limits.</b> Not independently reviewed: {{digitizedShare}} of simulation curves are digitized from published figures and are never rankable; where an author or collaboration releases a table, use that. This is not a leaderboard. See <a href="methods.html#limits">Methods, limits</a>.</p>
+</section>
+
+<section class="sec" id="studies" aria-labelledby="studies-h">
+<h2 id="studies-h"><span class="sn">§3</span>What it has shown</h2>
+<p>The dataset and the CAMELS ensemble ({{camelsN}} simulations of two feedback models) were used to ask four questions, each with the decision rule written down before the outcome was computed where the study is marked pre-registered. Three of the four results are null or qualified, and the pages say so. <a href="studies.html">All studies and how they are registered</a>.</p>
+<div class="tw">{{studiesCompact}}</div>
+</section>
+
+<section class="sec" id="retune" aria-labelledby="retune-h">
+<h2 id="retune-h"><span class="sn">§4</span>Retune</h2>
+<dl class="inst">
+<div><dt><a href="retune.html">Retune</a></dt><dd>Move the four feedback dials of IllustrisTNG or SIMBA and watch eleven galaxy observables respond; ask whether the other model can be made to match, and which observables resist.</dd><dd class="m">{{camelsN}} simulations · 11 observables</dd></div>
+</dl>
 </section>
 
 </div>

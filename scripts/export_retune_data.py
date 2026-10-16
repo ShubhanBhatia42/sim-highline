@@ -100,6 +100,40 @@ def overlays(raw, snapshots):
     return out
 
 
+NATIVE_UNIT = {"gsmf": "dex", "qf": "fraction", "sfms": "dex", "bhms": "dex", "bhocc": "fraction", "mzr": "dex", "zstar": "dex", "size": "dex", "fgas": "fraction", "shmr": "dex", "rho": "dex"}
+
+
+def native_table(emus, keep, blocks, scale, point):
+    """The distances of the study in the units of the observables (descriptive; the registered distances are in noise units): for every joint family the rms difference between the two codes' emulated outputs, equal weight per block, at the fiducial parameters,
+    at the best setting for that family alone and at the best joint setting, and the size of one noise unit (rms of the noise scale over the family's outputs)."""
+    co = {s: collapse(emus[s]) for s in J.SUITES}
+
+    def predict(s, a, js):
+        terms, coef = co[s]
+        feats = np.array([np.prod([a[i] for i in t]) if t else 1.0 for t in terms])
+        return feats @ coef[:, js]
+
+    def rms(fam, aT, aS):
+        ms = []
+        for b, js in blocks.items():
+            if b[0] != fam:
+                continue
+            d = predict("IllustrisTNG", aT, js) - predict("SIMBA", aS, js)
+            ms.append(float(np.mean(d[np.isfinite(d)] ** 2)))
+        return float(np.sqrt(np.mean(ms))) if ms else None
+
+    zero = [0.0] * 4
+    rows = {}
+    for f in NATIVE_UNIT:
+        js = [j for b, v in blocks.items() if b[0] == f for j in v]
+        if not js:
+            continue
+        alone, joint = point.get("fam:" + f), point["all"]
+        rows[f] = {"unit": NATIVE_UNIT[f], "fiducial": rms(f, zero, zero), "alone": rms(f, alone["a_tng"], alone["a_simba"]) if alone else None, "joint": rms(f, joint["a_tng"], joint["a_simba"]),
+                   "noise_unit": float(np.sqrt(np.mean(scale[js] ** 2)))}
+    return rows
+
+
 def export(data=None, analysis=None, path=None, with_overlays=True):
     raw = json.loads((ROOT / "data" / "ensembles" / "camels-galaxies.json").read_text()) if data is None else None
     data = data or J.load_galaxies()
@@ -124,6 +158,7 @@ def export(data=None, analysis=None, path=None, with_overlays=True):
     out["floor"] = J.FLOOR
     out["margin"] = J.MARGIN
     out["analysis"] = analysis
+    out["native"] = native_table(emus, keep, blocks, scale, analysis["point"]) if analysis else None
     if with_overlays and raw:
         out["overlays"] = overlays(raw, {s: snaps[s] for s in data["meta"]["snapshots"]})
     p = Path(path or ROOT / "data" / "retune" / "retune.json")

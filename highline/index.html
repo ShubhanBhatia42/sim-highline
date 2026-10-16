@@ -171,6 +171,7 @@ main.table .stagehead,main.table .plot{display:none}
 .pbody a{color:var(--link)}
 .pbody .warn{font-size:13px;color:var(--ink2);border-left:2px solid var(--orange);padding-left:10px;margin:10px 0}
 .pbody .hint{font-size:12.5px;color:var(--ink3);margin:6px 0}
+.pbody .sumline{font-size:13px;line-height:1.45;color:var(--ink);margin:8px 0;padding:8px 10px;border-left:3px solid var(--ink)}
 .pbody label{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink2);margin:6px 0}
 .pbody label:has(>select),.pbody .two label{flex-direction:column;align-items:stretch;gap:3px}
 .pbody select,.pbody input[type=number],.pbody input[type=text],.pbody textarea{background:var(--bg);border:1px solid var(--rule-strong);padding:6px 9px;font-size:13.5px;color:var(--ink);width:100%;min-width:0}
@@ -767,7 +768,9 @@ function mineTable(){
   const rows=mineRows();if(!rows.length)return`<p class="hint">No published curve for this relation at z = ${fmtZ(currentZ())} is currently shown.</p>`;
   const f=v=>v==null||!Number.isFinite(v)?"–":(v>=0?"+":"−")+Math.abs(v).toFixed(2);
   const set=Object.values(state.user.defs||{}).some(v=>v&&v!=="unspecified");
-  let h=`<table class="mt"><thead><tr><th>Published curve</th><th title="definition compatibility with your declared definitions">defs</th><th title="median of (your run − curve) over the shared x range, in y units">Δ</th><th title="shared x bins">n</th></tr></thead><tbody>`;
+  const comp=rows.filter(x=>x.v?.verdict==="comparable"&&x.sm).map(x=>x.sm.median).sort((a,b)=>a-b),med=comp.length?(comp.length%2?comp[(comp.length-1)/2]:(comp[comp.length/2-1]+comp[comp.length/2])/2):null;
+  let h=comp.length?`<p class="sumline"><b>Against ${comp.length} comparable curve${comp.length>1?"s":""}</b> (definitions agree): your run is ${f(comp[0])} to ${f(comp[comp.length-1])} from them, median ${f(med)}, in the y units of the relation.</p>`:"";
+  h+=`<table class="mt"><thead><tr><th>Published curve</th><th title="definition compatibility with your declared definitions">defs</th><th title="median of (your run − curve) over the shared x range, in y units">Δ</th><th title="shared x bins">n</th></tr></thead><tbody>`;
   for(const {r,sm,v} of rows){
     const k=v?.verdict,g=k==="comparable"?"✓":k==="not-comparable"?"✕":"~",c=k==="comparable"?"ok":k==="not-comparable"?"no":"cav";
     const why=v?(v.blockers.length?v.blockers.join("; "):v.caveats.join("; ")):"";
@@ -784,7 +787,7 @@ function mineHtml(){
   <input type="text" id="uName" placeholder="label" value="${esc(u?.name||"")}" style="margin-bottom:6px">
   <textarea id="uText" placeholder="x,y per line">${esc(u?.raw||"")}</textarea>
   <label><input type="checkbox" id="uLin" ${u?.linear?"checked":""}> values are linear, not log₁₀</label>
-  <div class="btns"><button class="btn" id="uPlot">Plot</button><button class="btn" id="uClear">Clear</button><label class="btn" style="margin:0;cursor:pointer">Load file<input type="file" id="uFile" accept=".csv,.txt,text/plain" hidden></label></div>
+  <div class="btns"><button class="btn" id="uPlot">Plot</button><button class="btn" id="uEx" type="button" title="Fills the box with a published simulation curve shifted by +0.15, so you can see what the comparison does before pasting your own">Try an example</button><button class="btn" id="uClear">Clear</button><label class="btn" style="margin:0;cursor:pointer">Load file<input type="file" id="uFile" accept=".csv,.txt,text/plain" hidden></label></div>
   <h4>DEFINITIONS OF YOUR RUN</h4>
   <p class="hint">Declare what your numbers mean; undeclared keys can never be matched. Options are the values used by the published records.</p>
   <div class="defs">${sel||'<span class="hint">This relation has no comparability keys.</span>'}</div>
@@ -798,6 +801,10 @@ function wireMine(){
     state.user=r.pts.length?{name:$("uName").value||"your run",raw:txt,linear:lin,defs:old,pts:r.pts}:null;mineSave();
     toast(r.pts.length?`${r.pts.length} points plotted${r.skipped?`, ${r.skipped} rows skipped`:""}`:"No numeric x,y rows found");renderPlot(false);renderPanel()};
   $("uPlot").onclick=()=>plotUser($("uText").value);
+  $("uEx").onclick=()=>{const z=currentZ(),o=relationSeries(z).find(s=>!s.scatter&&s.r.kind==="simulation"&&rawPoints(s.r,z).filter(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)).length>=5);
+    if(!o){toast("No published simulation curve at this epoch to build an example from");return}
+    const txt=rawPoints(o.r,z).filter(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)).map(p=>`${p.x.toFixed(3)},${(p.y+0.15).toFixed(3)}`).join("\n");
+    $("uText").value=txt;$("uName").value=`example: ${label(o.r)} + 0.15`;plotUser(txt)};
   $("uClear").onclick=()=>{state.user=null;mineSave();renderPlot(false);renderPanel()};
   $("uFile").onchange=async e=>{const f=e.target.files[0];if(!f)return;$("uText").value=await f.text();if(!$("uName").value)$("uName").value=f.name.replace(/\.[^.]+$/,"");plotUser($("uText").value)};
   $("pbody").querySelectorAll("[data-def]").forEach(s=>s.onchange=()=>{if(!state.user){toast("Plot a curve first");s.value="unspecified";return}state.user.defs={...state.user.defs,[s.dataset.def]:s.value};mineSave();refresh()});
@@ -1080,10 +1087,11 @@ addEventListener("hashchange",()=>{readHash();syncShell();if(state.mode==="atlas
 const srcCount=new Set(sims.map(r=>r.source)).size;
 $("aboutCounts").innerHTML=`<b>${sims.length}</b> simulation records from <b>${srcCount}</b> suites, plus <b>${obs.length}</b> observational references. Dataset v${esc(SIMHIGHLINE_RELEASE.version)}.`;
 new ResizeObserver(()=>{if(isTable())return;renderPlot(false);if(state.mode!=="evol")renderSlider()}).observe($("stage"));
+const wantMine=new URLSearchParams(location.hash.slice(1)).get("pn")==="mine";
 mineLoad();readHash();syncShell();
 if(state.mode==="atlas")renderAtlas();if(state.mode==="tension")renderTension();if(state.mode==="spread")renderSpread();
 renderAll(false);
-if(state.sel)openRecord(state.sel);
+if(state.sel)openRecord(state.sel);else if(wantMine)openPanel("mine");
 {const go=()=>{document.body.classList.remove("boot");const b=$("boot");if(b){b.classList.add("done");setTimeout(()=>b.remove(),400)}};requestAnimationFrame(()=>requestAnimationFrame(go));setTimeout(go,250)}
 </script>
 </body>
