@@ -134,6 +134,21 @@ def native_table(emus, keep, blocks, scale, point):
     return rows
 
 
+def validation_table(info, blocks):
+    """How well the emulators predict simulations they were not fitted to: each simulation within 0.5 of the fiducial cosmology is predicted by an emulator fitted without the tenth of the simulations it belongs to (10-fold cross-validation, the check V1 of the study), by family, in the property's own units and relative to the seed scatter between two runs of the same code."""
+    out = {"n_test": {suite: info[suite]["n_cv_test"] for suite in J.SUITES}}
+    for f in NATIVE_UNIT:
+        js = [j for b, v in blocks.items() if b[0] == f for j in v]
+        if not js:
+            continue
+        row = {"unit": NATIVE_UNIT[f]}
+        for suite in J.SUITES:
+            cv, sn = info[suite]["cv_rmse"][js], np.maximum(info[suite]["seed_noise"][js], J.FLOOR)
+            row[suite] = {"cv_rmse_median": float(np.nanmedian(cv)), "ratio_median": float(np.nanmedian(cv / sn)), "share_within_1.5": float(np.nanmean(cv / sn <= 1.5))}
+        out[f] = row
+    return out
+
+
 def export(data=None, analysis=None, path=None, with_overlays=True):
     raw = json.loads((ROOT / "data" / "ensembles" / "camels-galaxies.json").read_text()) if data is None else None
     data = data or J.load_galaxies()
@@ -159,6 +174,7 @@ def export(data=None, analysis=None, path=None, with_overlays=True):
     out["margin"] = J.MARGIN
     out["analysis"] = analysis
     out["native"] = native_table(emus, keep, blocks, scale, analysis["point"]) if analysis else None
+    out["validation"] = validation_table(info, blocks)
     if with_overlays and raw:
         out["overlays"] = overlays(raw, {s: snaps[s] for s in data["meta"]["snapshots"]})
     p = Path(path or ROOT / "data" / "retune" / "retune.json")

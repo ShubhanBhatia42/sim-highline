@@ -5,7 +5,8 @@
   "scripts": {
     "test:ui": "node scripts/test-ui.mjs",
     "test:journeys": "node scripts/test-journeys.mjs",
-    "test:yourrun": "node scripts/test-yourrun.mjs"
+    "test:yourrun": "node scripts/test-yourrun.mjs",
+    "test:dials": "node scripts/test-dials.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.0",

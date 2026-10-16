@@ -371,6 +371,11 @@ stats.camelsBox = camels.boxMpcPerH; stats.camelsBins = camels.zCentres.length;
 const JR = await read("data/analysis/joint-reachability.json").then(t => JSON.parse(t), () => null);
 const RT = await read("data/retune/retune.json").then(t => JSON.parse(t), () => null);
 Object.assign(stats, jointStats(JR, undefined, RT && !RT.pending ? RT.native : null));
+{
+  const V = RT && !RT.pending ? RT.validation : null, FN = RT && RT.family_names ? RT.family_names : {};
+  stats.rtValRows = V ? Object.entries(V).filter(([k]) => k !== "n_test").map(([f, r]) => `<tr><td>${esc(FN[f] || f)}</td><td>${r.unit === "dex" ? "dex" : "fraction"}</td>${["IllustrisTNG", "SIMBA"].map(c => `<td class="n">${r[c].cv_rmse_median.toFixed(3)}</td><td class="n">${r[c].ratio_median.toFixed(2)}</td>`).join("")}</tr>`).join("") : "";
+  stats.rtValN = V ? `${V.n_test.IllustrisTNG} (IllustrisTNG) and ${V.n_test.SIMBA} (SIMBA)` : "";
+}
 stats.repo = stats.repo || "https://github.com/ShubhanBhatia42/sim-highline";
 
 // ---- data quality: generated from data/analysis/data-quality.json (scripts/analyze_data_quality.py)
