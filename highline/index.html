@@ -6,7 +6,7 @@
 <title>sim-highline: galaxy scaling relations from simulations and observations</title>
 <meta name="description" content="Every published simulation prediction for a galaxy scaling relation on one axis, next to observations, with the definitions that decide whether two curves can be compared.">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0b0e12" media="(prefers-color-scheme: dark)">
-<meta property="og:type" content="website"><meta property="og:title" content="sim-highline"><meta property="og:description" content="Galaxy scaling relations from cosmological simulations, next to observations, with definitions and provenance on every curve.">
+<meta property="og:type" content="website"><meta property="og:title" content="sim-highline"><meta property="og:description" content="Galaxy scaling relations from cosmological simulations, next to observations, with definitions and provenance on every curve."><meta property="og:image" content="https://shubhanbhatia42.github.io/sim-highline/site/og-explorer.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="The Explorer showing the stellar mass function at z = 0.1"><meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230c1016'/%3E%3Cpath d='M5 24H13V17H19V9H27' fill='none' stroke='%23ffffff' stroke-width='2.4' stroke-linejoin='miter'/%3E%3C/svg%3E">
 <script>try{const t=localStorage.getItem("sh-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,7 +56,7 @@ a:focus-visible,[tabindex]:focus-visible,button:focus-visible,input:focus-visibl
 .loader{position:fixed;inset:0;display:grid;place-content:center;justify-items:center;gap:14px;background:var(--bg);z-index:100;transition:opacity .3s}
 .loader p{margin:0;color:var(--ink3);font:12px var(--mono)}.loader .bar{width:160px;height:2px;background:var(--rule);overflow:hidden}.loader .bar i{display:block;height:100%;width:40%;background:var(--ink);animation:ld 1.1s ease-in-out infinite}
 @keyframes ld{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
-.loader.done{opacity:0;pointer-events:none}
+.loader.done{opacity:0;pointer-events:none}.loader.failed p{max-width:34rem;text-align:center;line-height:1.7;padding:0 16px;color:var(--ink2)}.loader.failed a{color:var(--link)}.loader.failed .bar{display:none}
 .app{display:grid;height:100%;grid-template-columns:236px minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto;grid-template-areas:"top top" "rail main" "rail foot"}
 .topbar{grid-area:top;display:flex;align-items:center;gap:14px;padding:0 20px;min-height:48px;background:var(--bg);border-bottom:1px solid var(--rule)}
 .mark{font:500 14px/1 var(--mono);white-space:nowrap;color:var(--ink);text-decoration:none}
@@ -141,7 +141,7 @@ main.table .stagehead,main.table .plot{display:none}
 .legend .legctl{display:flex;justify-content:space-between;align-items:center;padding:2px 4px 8px;font-size:12.5px;color:var(--ink2);gap:8px;border-bottom:1px solid var(--rule);margin-bottom:6px;flex-wrap:wrap}
 .pv{font:500 10px var(--mono);padding:1px 5px;border:1px solid var(--rule-strong);color:var(--ink3);margin:0 3px;flex:none;min-width:18px;text-align:center}
 .pv.tD{color:var(--link);border-color:var(--link)}.pv.tO,.pv.tC{color:var(--ok);border-color:var(--ok)}
-.legend .keyline{font-size:12px;line-height:1.5;color:var(--ink3);padding:8px 6px 2px;border-top:1px solid var(--rule);margin-top:6px}
+.legend .keyline{font-size:12px;line-height:1.5;color:var(--ink3);padding:8px 6px 8px;border-top:1px solid var(--rule);margin-top:6px;position:sticky;bottom:-10px;background:var(--bg)}
 .sw{width:16px;height:3px;flex:none;background:var(--ink3)}
 .legend .obsrow .sw{background:repeating-linear-gradient(90deg,var(--ink3) 0 3px,transparent 3px 6px)}
 .v{font-size:11.5px;width:14px;text-align:center;flex:none}
@@ -268,6 +268,12 @@ footer{grid-area:foot;display:flex;align-items:center;gap:16px;padding:10px 24px
 </head>
 <body class="boot">
 <div class="loader" id="boot" role="status"><div class="mark">sim-highline</div><div class="bar"><i></i></div><p>Loading the dataset…</p></div>
+<noscript><div class="loader failed" role="alert"><div class="mark">sim-highline</div><p>The Explorer needs JavaScript. The curves are also plain files on the <a href="site/data.html">data page</a>.</p></div></noscript>
+<script>
+/* if the Explorer cannot start, say so in words instead of leaving the loading bar running */
+window.addEventListener("error",function(e){var b=document.getElementById("boot");if(!b||b.classList.contains("done")||b.classList.contains("failed"))return;
+b.classList.add("failed");b.setAttribute("role","alert");b.innerHTML='<div class="mark">sim-highline</div><p>The Explorer could not start in this browser ('+String(e.message||"error").replace(/[<>&]/g,"")+').<br>Reload the page, or try a current Chrome, Firefox or Safari.<br>The curves are also plain files on the <a href="site/data.html">data page</a>, and you can <a href="https://github.com/ShubhanBhatia42/sim-highline/issues/new?title=Explorer%20did%20not%20start">report it</a>.</p>'});
+</script>
 <a class="skip" href="#stage">Skip to the chart</a>
 <div class="app">
   <header class="topbar">

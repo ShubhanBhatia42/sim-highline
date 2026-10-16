@@ -4,8 +4,7 @@ import assert from "node:assert/strict";
 import http from "node:http";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { chromium } from "playwright";
-import { launchOptions } from "./browser-options.mjs";
+import { launchBrowser } from "./browser-options.mjs";
 
 const DIST = new URL("../dist/", import.meta.url).pathname;
 const TYPES = { ".html": "text/html", ".js": "text/javascript", ".json": "application/json", ".css": "text/css", ".csv": "text/csv" };
@@ -15,7 +14,7 @@ const server = http.createServer(async (req, res) => {
 });
 await new Promise(r => server.listen(0, "127.0.0.1", r));
 const BASE = `http://127.0.0.1:${server.address().port}`;
-const browser = await chromium.launch(launchOptions());
+const browser = await launchBrowser();
 const failures = []; let n = 0;
 const settle = page => page.waitForFunction(() => !document.getElementById("boot"), null, { timeout: 15000 });
 async function step(name, fn) {

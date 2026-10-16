@@ -6,7 +6,13 @@
     "test:ui": "node scripts/test-ui.mjs",
     "test:journeys": "node scripts/test-journeys.mjs",
     "test:yourrun": "node scripts/test-yourrun.mjs",
-    "test:dials": "node scripts/test-dials.mjs"
+    "test:dials": "node scripts/test-dials.mjs",
+    "test:performance": "node scripts/test-performance.mjs",
+    "test:layouts": "node scripts/test-layouts.mjs",
+    "test:keyboard": "node scripts/test-keyboard.mjs",
+    "test:resilience": "node scripts/test-resilience.mjs",
+    "test:browser": "node scripts/test-ui.mjs && node scripts/test-journeys.mjs && node scripts/test-yourrun.mjs && node scripts/test-dials.mjs && node scripts/test-layouts.mjs && node scripts/test-keyboard.mjs && node scripts/test-resilience.mjs && node scripts/test-performance.mjs",
+    "og": "node scripts/make-og-images.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.0",

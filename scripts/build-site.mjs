@@ -1,6 +1,7 @@
 import { copyFile, readdir, readFile, writeFile, mkdir } from "node:fs/promises";
 import vm from "node:vm";
 import { jointStats } from "./site-joint.mjs";
+import { withCsp } from "./csp.mjs";
 const root = new URL("../", import.meta.url);
 const read = async p => readFile(new URL(p, root), "utf8");
 const palette = await read("data/palette.css");
@@ -331,7 +332,7 @@ stats.camelsBox = camels.boxMpcPerH; stats.camelsBins = camels.zCentres.length;
   const nameCell = r => { const t = notes[r.k]?.title; return `${t ? `<a href="../highline.html#r=${esc(r.k)}">${esc(t)}</a> ` : ""}<span class="dim mono">${esc(r.k)}</span>`; };
   const tr = r => `<tr><td>${nameCell(r)}</td><td class="n">${n(r.records)}</td><td class="n">${r.sims.length}</td><td class="n">${r.obs.length}</td><td class="n">${n(r.rankable)}</td><td class="n">${zr(r.z0, r.z1)}</td></tr>`;
   const head = `<thead><tr><th>Relation</th><th class="n">Records</th><th class="n" title="distinct simulations with a curve of this relation">Simulations</th><th class="n" title="distinct observational sources">Observations</th><th class="n">Rankable</th><th class="n">z-range</th></tr></thead>`;
-  const totalRow = `<tfoot><tr><td>All ${cov.totals.relations} relation codes</td><td class="n">${stats.records}</td><td class="n">${stats.suites}</td><td class="n">${stats.obsSources}</td><td class="n">${stats.rankableAll}</td><td class="n">${stats.zMin} – ${stats.zMaxAll}</td></tr></tfoot>`;
+  const totalRow = `<tfoot><tr><td>All ${cov.totals.relations} relation codes <span class="dim">(the Explorer groups them into ${stats.relations} relations)</span></td><td class="n">${stats.records}</td><td class="n">${stats.suites}</td><td class="n">${stats.obsSources}</td><td class="n">${stats.rankableAll}</td><td class="n">${stats.zMin} – ${stats.zMaxAll}</td></tr></tfoot>`;
   const TOP = 10, top = relRows.slice(0, TOP), rest = relRows.slice(TOP);
   const restRow = rest.length ? `<tr><td>${rest.length} further relations <span class="dim">(<a href="data.html#relations">all</a>)</span></td><td class="n">${n(rest.reduce((t, r) => t + r.records, 0))}</td><td class="n">${uniq(rest.flatMap(r => r.sims)).length}</td><td class="n">${uniq(rest.flatMap(r => r.obs)).length}</td><td class="n">${n(rest.reduce((t, r) => t + r.rankable, 0))}</td><td class="n">${zr(Math.min(...rest.map(r => r.z0)), Math.max(...rest.map(r => r.z1)))}</td></tr>` : "";
   stats.dataTableCompact = `<table>${head}<tbody>${top.map(tr).join("")}${restRow}</tbody>${totalRow}</table>`;
@@ -375,6 +376,28 @@ Object.assign(stats, jointStats(JR, undefined, RT && !RT.pending ? RT.native : n
   const V = RT && !RT.pending ? RT.validation : null, FN = RT && RT.family_names ? RT.family_names : {};
   stats.rtValRows = V ? Object.entries(V).filter(([k]) => k !== "n_test").map(([f, r]) => `<tr><td>${esc(FN[f] || f)}</td><td>${r.unit === "dex" ? "dex" : "fraction"}</td>${["IllustrisTNG", "SIMBA"].map(c => `<td class="n">${r[c].cv_rmse_median.toFixed(3)}</td><td class="n">${r[c].ratio_median.toFixed(2)}</td>`).join("")}</tr>`).join("") : "";
   stats.rtValN = V ? `${V.n_test.IllustrisTNG} (IllustrisTNG) and ${V.n_test.SIMBA} (SIMBA)` : "";
+}
+// ---- checks made after the registered run: generated from the exploratory outputs when they exist
+{
+  const j = async f => read(f).then(t => JSON.parse(t), () => null);
+  const RB = await j("data/analysis/joint-robustness.json"), T3 = await j("data/analysis/third-code.json"), TO = await j("data/analysis/tune-to-observations.json");
+  const f1 = v => v.toFixed(1), f2 = v => v.toFixed(2), repo = "https://github.com/ShubhanBhatia42/sim-highline/blob/main/docs/";
+  const rows = [];
+  if (RB) {
+    rows.push(["A second, independently written search for the same distance", `${f2(RB.reimplementation.all)} against the registered ${f2(RB.registered.all)}`, "ROBUSTNESS-joint-reachability.md"]);
+    rows.push(["A different kind of emulator (kernel ridge instead of polynomials)", `${f2(RB.emulator.all)}`, "ROBUSTNESS-joint-reachability.md"]);
+    const W = Object.entries(RB.weightings).filter(([k]) => k !== "block").map(([, v]) => v);
+    rows.push(["Other weightings and subsets of the outputs", `${f1(Math.min(...W))} to ${f1(Math.max(...W))}`, "CHOICES-joint-reachability.md"]);
+  }
+  if (T3) {
+    const p = T3.pairs, short = k => k.replace("IllustrisTNG", "TNG").replace("|", " – ");
+    rows.push([`A third code, Astrid, on the ${T3.n_outputs} outputs all three codes have`, Object.keys(p).map(k => `${short(k)} ${f1(p[k].all.D)}`).join(", ") + `; black hole occupation separates SIMBA from both others (TNG – SIMBA ${f1(p["IllustrisTNG|SIMBA"].bhocc.D)}, SIMBA – Astrid ${f1(p["SIMBA|Astrid"].bhocc.D)}, TNG – Astrid ${f2(p["IllustrisTNG|Astrid"].bhocc.D)})`, "ANALYSIS-third-code.md"]);
+  }
+  if (TO) {
+    const bh = TO.rows.filter(r => r.family === "bhms");
+    rows.push([`Each code tuned to ${TO.n} observed curves`, `either code reaches the mass function and the quenched fraction easily; neither reaches the black hole mass relation (${f1(Math.min(...bh.flatMap(r => [r.IllustrisTNG.gap, r.SIMBA.gap])))} to ${f1(Math.max(...bh.flatMap(r => [r.IllustrisTNG.gap, r.SIMBA.gap])))} noise units). Not a test of either code: observed and simulated curves are defined differently`, "ANALYSIS-tune-to-observations.md"]);
+  }
+  stats.jrAfterRows = rows.map(([a, b, d]) => `<tr><td>${esc(a)}</td><td>${esc(b)}</td><td><a href="${repo}${d}">${d.replace(/\.md$/, "")}</a></td></tr>`).join("");
 }
 stats.repo = stats.repo || "https://github.com/ShubhanBhatia42/sim-highline";
 
@@ -423,11 +446,13 @@ const SUN = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-w
 const THEME_JS = `<script>(function(){var L=document.querySelectorAll(".idx a[href^='#']");if(L.length&&window.IntersectionObserver){var m={};L.forEach(function(a){m[a.getAttribute("href").slice(1)]=a});var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){L.forEach(function(a){a.removeAttribute("aria-current")});m[e.target.id].setAttribute("aria-current","location")}})},{rootMargin:"0px 0px -70% 0px"});Object.keys(m).forEach(function(i){var s=document.getElementById(i);if(s)o.observe(s)})}document.querySelectorAll(".chart").forEach(function(c){if(c.scrollWidth>c.clientWidth+1){c.tabIndex=0;c.setAttribute("role","group");c.setAttribute("aria-label","Chart, scrolls sideways")}});var b=document.getElementById("theme"),r=document.documentElement,S='${SUN}',M='${MOON}';function now(){return r.dataset.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}function paint(){var d=now()==="dark";b.innerHTML=d?S:M;b.setAttribute("aria-label",d?"Switch to the light theme":"Switch to the dark theme")}b.onclick=function(){var n=now()==="dark"?"light":"dark";r.dataset.theme=n;try{localStorage.setItem("sh-theme",n)}catch(e){}paint()};paint()})()</script>`;
 const FONTS = "https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap";
 const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230c1016'/%3E%3Cpath d='M5 24H13V17H19V9H27' fill='none' stroke='%23ffffff' stroke-width='2.4' stroke-linejoin='miter'/%3E%3C/svg%3E";
-const HEAD = (title, desc) => `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+const SITE_URL = "https://shubhanbhatia42.github.io/sim-highline";
+const OG = { "study-joint.html": "og-study-joint.png", "retune.html": "og-retune.png" };
+const HEAD = (title, desc, img = "og-default.png") => `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="${FONTS}" rel="stylesheet">
 <link rel="icon" href="${FAVICON}">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0b0e12" media="(prefers-color-scheme: dark)">
-<meta property="og:type" content="website"><meta property="og:site_name" content="sim-highline"><meta property="og:title" content="${title}"><meta property="og:description" content="${desc}">
+<meta property="og:type" content="website"><meta property="og:site_name" content="sim-highline"><meta property="og:title" content="${title}"><meta property="og:description" content="${desc}"><meta property="og:image" content="${SITE_URL}/site/${img}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="${esc(title)}: a chart from the page beside its title"><meta name="twitter:card" content="summary_large_image">
 <script>try{var t=localStorage.getItem("sh-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 <style>${stats.css}</style>`;
 const MENU = [["../highline.html", "Explorer", null], ["retune.html", "Dials", "retune"], ["studies.html", "Studies", "studies"], ["data.html", "Data", "data"], ["methods.html", "Methods", "methods"]];
@@ -448,9 +473,28 @@ for (const page of PAGES) {
   let html = await read(`site/src/${page}`);
   const title = (html.match(/<title>([^<]*)<\/title>/) || [])[1], desc = (html.match(/<meta name="description" content="([^"]*)"/) || [])[1];
   if (!title || !desc) throw new Error(`${page}: <title> and <meta name="description"> are required`);
-  stats.head = HEAD(title, desc); stats.header = HEADER(page); stats.footer = FOOTER();
+  stats.head = HEAD(title, desc, OG[page]); stats.header = HEADER(page); stats.footer = FOOTER();
   html = html.replace(/\{\{(\w+)\}\}/g, (m, k) => { if (!(k in stats)) throw new Error(`unknown placeholder ${m} in ${page}`); return String(stats[k]); });
-  await writeFile(new URL(`dist/site/${page}`, root), html);
+  await writeFile(new URL(`dist/site/${page}`, root), page === "findings.html" ? html : withCsp(html));
+}
+// the page the host serves for an address that does not exist (GitHub Pages serves 404.html from the site root); links are relative to site/ and the base is set from where the site is mounted
+{
+  const title = "Page not found · sim-highline", desc = "This address does not exist on sim-highline. Here is where to go instead.";
+  stats.head = HEAD(title, desc); stats.header = HEADER("404.html"); stats.footer = FOOTER();
+  const body = `<main id="main" class="wrap page" tabindex="-1"><div class="doc"><div class="c">
+<div class="title"><p class="lab kicker">404 · not found</p><h1>That page does not exist</h1>
+<p class="standfirst">The address may be old or mistyped. Pages move; the data does not. Here is where people usually mean to go.</p></div>
+<ul class="flat">
+<li><a href="../highline.html"><b>Explorer</b></a>: look up a relation and see every published simulation and observation on one plot.</li>
+<li><a href="retune.html"><b>Dials</b></a>: turn the feedback dials of two simulated universes and watch the galaxies change.</li>
+<li><a href="studies.html"><b>Studies</b></a>: the four questions asked of the data, with the rules written before the answers.</li>
+<li><a href="data.html"><b>Data</b></a>: download the curves as CSV or JSON, or load them in Python.</li>
+<li><a href="faq.html"><b>Questions</b></a> · <a href="glossary.html">glossary</a> · <a href="quality.html">how much to trust the data</a></li>
+</ul>
+<p>Looking for something that used to be here? <a href="${release.repo}/issues/new?title=Broken%20link">Tell us</a>, or search the <a href="${release.repo}">repository</a>.</p>
+</div></div></main>`;
+  const page = `<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<title>${title}</title>\n<meta name="description" content="${desc}">\n<meta name="robots" content="noindex">\n<base href="/site/">\n<script>(function(){var h=location.hostname,p=location.pathname.split("/")[1]||"";var r=/\\.github\\.io$/.test(h)&&p?"/"+p+"/":"/";document.querySelector("base").href=location.origin+r+"site/"})()</script>\n${stats.head}\n</head>\n<body>\n${stats.header}\n${body}\n${stats.footer}\n</body>\n</html>\n`;
+  await writeFile(new URL("dist/404.html", root), withCsp(page));
 }
 // supporting files that pages load (scripts, data, images placed next to the templates) are published beside them
 for (const f of await readdir(new URL("site/src/", root))) if (/\.(js|json|svg|png|webp|woff2)$/.test(f)) await copyFile(new URL(`site/src/${f}`, root), new URL(`dist/site/${f}`, root));

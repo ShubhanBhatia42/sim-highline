@@ -1,5 +1,5 @@
 """Checks that the DOIs and URLs behind every record resolve. A publisher that refuses automated requests (401, 403, 429) is reported as 'unverified', not broken; 404, 410 and failures to connect are 'broken'.
-Writes data/analysis/link-check.json. Needs network access, so it is not part of verify-all.sh; run it before a release and weekly from CI. Usage: python3 scripts/check_links.py [--limit N]"""
+Writes data/analysis/link-check.json. Needs network access, so it is not part of verify-all.sh; run it before a release and weekly from CI. Usage: python3 scripts/check_links.py [--limit N] [--site]   (--site checks the external links on the built pages in dist/ instead of the records)"""
 import concurrent.futures as cf
 import json
 import ssl
@@ -22,6 +22,20 @@ def collect():
             urls.setdefault("https://doi.org/" + p["doi"], []).append(r["id"])
         if p.get("url"):
             urls.setdefault(p["url"], []).append(r["id"])
+    return urls
+
+
+SKIP = ("https://fonts.googleapis.com", "https://fonts.gstatic.com", "http://www.w3.org/", "https://shubhanbhatia42.github.io/sim-highline/")
+
+
+def collect_site():
+    """External links on the built pages (dist/), keyed by the pages that carry them."""
+    import re
+    urls = {}
+    for f in sorted((ROOT / "dist").rglob("*.html")):
+        for u in set(re.findall(r'href="(https?://[^"#]+)', f.read_text(errors="ignore"))):
+            if not u.startswith(SKIP) and "$" not in u and "{" not in u:  # not template fragments of the app's own script
+                urls.setdefault(u.replace("&amp;", "&"), []).append(f.name)
     return urls
 
 
@@ -59,7 +73,8 @@ def check_doi(url):
 
 def main():
     limit = int(sys.argv[sys.argv.index("--limit") + 1]) if "--limit" in sys.argv else None
-    urls = collect()
+    site = "--site" in sys.argv
+    urls = collect_site() if site else collect()
     items = sorted(urls)[:limit]
     out = {}
     with cf.ThreadPoolExecutor(12) as ex:
@@ -67,10 +82,10 @@ def main():
             out[url] = {"status": status, "code": code, "records": len(urls[url])}
     summary = {s: sum(1 for v in out.values() if v["status"] == s) for s in ("ok", "unverified", "broken")}
     report = {"checked": len(out), **summary, "broken": {u: v for u, v in out.items() if v["status"] == "broken"}, "unverified": {u: v for u, v in out.items() if v["status"] == "unverified"}}
-    (ROOT / "data" / "analysis" / "link-check.json").write_text(json.dumps(report, indent=1) + "\n")
+    (ROOT / "data" / "analysis" / ("link-check-site.json" if site else "link-check.json")).write_text(json.dumps(report, indent=1) + "\n")
     print(f"links: {len(out)} checked, {summary['ok']} ok, {summary['unverified']} unverified (publisher refused a script), {summary['broken']} broken")
     for u, v in report["broken"].items():
-        print("  BROKEN", v["code"], u, f"({v['records']} records)")
+        print("  BROKEN", v["code"], u, f"({v['records']} {'pages' if site else 'records'}: {', '.join(urls[u][:3]) if site else ''})")
 
 
 if __name__ == "__main__":

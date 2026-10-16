@@ -53,3 +53,28 @@ jobs:
         run: node scripts/test-ui.mjs
       - name: Walk-throughs and the check-your-run flow
         run: node scripts/test-journeys.mjs && node scripts/test-yourrun.mjs && node scripts/test-dials.mjs
+      - name: Every page at every width, keyboard only, and when things go wrong
+        run: node scripts/test-layouts.mjs && node scripts/test-keyboard.mjs && node scripts/test-resilience.mjs
+      - name: Speed budget on a slow phone
+        run: node scripts/test-performance.mjs
+  other-browsers:
+    # Firefox and Safari's engine. Informational: a failure here is reported but does not block, because these runs have never been made in the environment this was written in.
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [firefox, webkit]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: node scripts/build-static.mjs && node scripts/build-highline.mjs && node scripts/build-site.mjs
+      - run: npm ci
+      - run: npx playwright install --with-deps ${{ matrix.browser }}
+      - name: Browser tests
+        env:
+          PW_BROWSER: ${{ matrix.browser }}
+        run: node scripts/test-ui.mjs && node scripts/test-journeys.mjs && node scripts/test-dials.mjs && node scripts/test-keyboard.mjs && node scripts/test-layouts.mjs
