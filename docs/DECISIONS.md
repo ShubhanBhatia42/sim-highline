@@ -4,6 +4,8 @@ Newest first. Each entry says what was decided, why, and what would reverse it.
 
 ## 2026-10-16
 
+- **No separate Research page.** The four studies stay on the front page below the tools and on the Studies page. Reason: a second layer of navigation adds a click for nobody's benefit. Reverses if visitors cannot find them.
+- **The menu calls the dials page "Dials".** The address stays `retune.html` so links survive.
 - **The front door is "check your own run" and "turn the dials", not the studies.** Reason: the studies are evidence, the tools are what someone returns for. Reverses if pilot users go to the studies first.
 - **Study codes (S1 to S4) are dropped from everything a visitor reads.** Reason: nobody remembers them. The files keep their names; pages use plain titles.
 - **Retune matches one property at a time by default.** Reason: matching everything at once reports "agree on 2 of 11", which hides what tuning can do. Matching one property shows the trade-off it causes.
