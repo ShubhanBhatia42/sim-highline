@@ -79,6 +79,14 @@
   "note": "roadmap is in the repo (docs/ROADMAP.md); private page to be published at the end",
   "status": "partial"
  },
+ "10.01": {
+  "note": "Independent review by a separate AI agent (not a human): docs/INDEPENDENT-REVIEW.md. It found a real export bug, undisclosed AI involvement, a wrong redshift range and several overstated claims",
+  "status": "done"
+ },
+ "10.02": {
+  "note": "All 5 must-fix and 9 of 14 should-fix items fixed or disclosed (table in docs/INDEPENDENT-REVIEW.md); 5 not done and listed there",
+  "status": "done"
+ },
  "10.04": {
   "note": "README and CHANGELOG updated (Unreleased section); version not bumped because the DOI is per release and needs the maintainer's Zenodo deposit",
   "status": "done"
@@ -106,6 +114,10 @@
  "10.13": {
   "note": "Scanned pages, README, drafts and note for overclaiming words (novel, first, proves, definitive...): none left; novelty is explicitly not claimed. The independent review's claims audit is the second check",
   "status": "done"
+ },
+ "10.14": {
+  "note": "The reviewer re-read the study pages as a sceptic; wording tightened (plain-words blocks, abstracts, glossary). A human sceptic has not read them",
+  "status": "partial"
  },
  "10.15": {
   "note": "Only ignored build and cache directories remain; scratch work lives outside the repository",

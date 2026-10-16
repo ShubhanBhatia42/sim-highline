@@ -30,6 +30,10 @@ IllustrisTNG and SIMBA are two galaxy-formation codes, each with four feedback d
 - **Nothing about other codes in general.** Three codes from one project at one resolution.
 - **No observational test.** Simulation subhaloes are compared with each other; observations enter only in the exploratory fits above.
 
+## A check on the edge of the dial range
+
+The registered minimum sits at the edge of the range (4 of 8 coordinates on a bound), where the emulators are least tested. Afterwards, the simulations nearest each code's minimising setting were held out and predicted: their error is no worse than random simulations' (`docs/ANALYSIS-minimiser-check.md`). They are not at the minimum, and nothing has been run there.
+
 ## What a reader should check first
 
 The choices never varied (`docs/CHOICES-joint-reachability.md`, rows marked *not tested*); the objections in `docs/SCEPTIC.md` marked *stands*; and whether the pre-registration timestamps can be trusted without an independent deposit.

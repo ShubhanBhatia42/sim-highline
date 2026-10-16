@@ -7,10 +7,10 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 | tier | tasks | done | partly | waiting for a person | not done |
 |---|---|---|---|---|---|
 | 1 Quick (under 15 min) | 46 | 40 | 1 | 3 | 2 |
-| 2 Solid (about an hour) | 121 | 109 | 4 | 2 | 6 |
-| 3 Big (several hours) | 23 | 19 | 1 | 0 | 3 |
+| 2 Solid (about an hour) | 121 | 109 | 5 | 2 | 5 |
+| 3 Big (several hours) | 23 | 21 | 1 | 0 | 1 |
 | 4 Needs other people or days | 10 | 0 | 0 | 2 | 8 |
-| all | 200 | 168 | 6 | 7 | 19 |
+| all | 200 | 170 | 7 | 7 | 16 |
 
 ## Step 1. Say what great means, and how we will know
 
@@ -241,10 +241,10 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 ## Step 10. Review, measure and decide
 
-*Fresh eyes, a final check on the live site, and a dated decision using the criteria set in step 1.* (7 of 18 done)
+*Fresh eyes, a final check on the live site, and a dated decision using the criteria set in step 1.* (9 of 18 done)
 
-- [ ] **10.01** · tier 3 · Claude · Get an independent fresh-eyes review of the whole product from a separate reviewer
-- [ ] **10.02** · tier 3 · Claude · Fix everything the review marks as must-fix
+- [x] **10.01** · tier 3 · Claude · Get an independent fresh-eyes review of the whole product from a separate reviewer — Independent review by a separate AI agent (not a human): docs/INDEPENDENT-REVIEW.md. It found a real export bug, undisclosed AI involvement, a wrong redshift range and several overstated claims
+- [x] **10.02** · tier 3 · Claude · Fix everything the review marks as must-fix — All 5 must-fix and 9 of 14 should-fix items fixed or disclosed (table in docs/INDEPENDENT-REVIEW.md); 5 not done and listed there
 - [ ] **10.03** · tier 2 · Claude · Do a final check of the live site
 - [x] **10.04** · tier 1 · Claude · Update the README and changelog for the release — README and CHANGELOG updated (Unreleased section); version not bumped because the DOI is per release and needs the maintainer's Zenodo deposit
 - [!] **10.05** · tier 2 · Claude · Bump the version and tag the release — scripts/release.sh X.Y.Z is ready; the bump, tag and DOI belong after the merge to main and the Zenodo deposit, which need the maintainer
@@ -256,7 +256,7 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 - [x] **10.11** · tier 2 · Claude · Re-run every test suite from a clean checkout — Fresh clone of the pushed branch, npm ci, verify-all (4 min 18 s, generated files unchanged), all 10 browser suites and the determinism test passed. (This did not catch the export bug found by the independent review; see 10.01)
 - [!] **10.12** · tier 1 · Claude · Confirm the live site matches the release — The live site is still the old build of main (0.23.0 without the faq, summary, tests of this push: /site/summary.html and /site/faq.html return 404). It can be confirmed only after the merge to main
 - [x] **10.13** · tier 2 · Claude · Check that nothing on the site claims more than the evidence — Scanned pages, README, drafts and note for overclaiming words (novel, first, proves, definitive...): none left; novelty is explicitly not claimed. The independent review's claims audit is the second check
-- [ ] **10.14** · tier 2 · Claude · Re-read every study page as a sceptic and tighten
+- [~] **10.14** · tier 2 · Claude · Re-read every study page as a sceptic and tighten — The reviewer re-read the study pages as a sceptic; wording tightened (plain-words blocks, abstracts, glossary). A human sceptic has not read them
 - [x] **10.15** · tier 1 · Claude · Archive scratch files and make the repository tidy — Only ignored build and cache directories remain; scratch work lives outside the repository
 - [x] **10.16** · tier 2 · Claude · Write the list of what would make it great next — docs/NEXT.md
 - [ ] **10.17** · tier 1 · Claude · Write the short message to the maintainer: what is done, what is not, what to decide
