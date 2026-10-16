@@ -171,6 +171,7 @@ main.table .stagehead,main.table .plot{display:none}
 .pbody a{color:var(--link)}
 .pbody .warn{font-size:13px;color:var(--ink2);border-left:2px solid var(--orange);padding-left:10px;margin:10px 0}
 .pbody .hint{font-size:12.5px;color:var(--ink3);margin:6px 0}
+.pbody .sure{font-size:13px;line-height:1.45;margin:8px 0;color:var(--ink2)}
 .pbody .sumline{font-size:13px;line-height:1.45;color:var(--ink);margin:8px 0;padding:8px 10px;border-left:3px solid var(--ink)}
 .pbody label{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink2);margin:6px 0}
 .pbody label:has(>select),.pbody .two label{flex-direction:column;align-items:stretch;gap:3px}
@@ -337,7 +338,7 @@ footer{grid-area:foot;display:flex;align-items:center;gap:16px;padding:10px 24px
 <script>/*__COMPARE__*/</script>
 <script>/*__EXPORT__*/</script>
 <script>/*__LOGIC__*/</script>
-<script>window.SIMHIGHLINE_RELEASE=/*__RELEASE__*/;window.SIMHIGHLINE_NOTES=/*__NOTES__*/;window.SIMHIGHLINE_SENS=/*__SENS__*/;</script>
+<script>window.SIMHIGHLINE_RELEASE=/*__RELEASE__*/;window.SIMHIGHLINE_NOTES=/*__NOTES__*/;window.SIMHIGHLINE_SENS=/*__SENS__*/;window.SIMHIGHLINE_AUDIT=/*__AUDIT__*/;</script>
 <script>
 const relKey=r=>{if(r.relation!=="mzr")return r.relation;const q=r.definitions?.metallicityQuantity;if(q==="gas-O/H")return"mzr";return /Zsun/.test(r.axes?.yDefinition||"")?"mzrz":"mzrraw"};
 const ALL=(window.SIMHIGHLINE_CURVES||[]).filter(r=>r.representation&&r.domain).map(r=>({...r,rel0:r.relation,relation:relKey(r)}));
@@ -675,6 +676,8 @@ function renderPanel(){
   if(state.tab==="evidence")wireEvidence();else if(state.tab==="tune")wireTune();else if(state.tab==="mine")wireMine();else if(state.tab==="data")wireData();
 }
 const issueUrl=r=>`${SIMHIGHLINE_RELEASE.repo}/issues/new?template=curve-error.yml&title=${encodeURIComponent("Curve error: "+r.id)}&record=${encodeURIComponent(r.id)}&view=${encodeURIComponent(location.href)}`;
+const SURE={"official-table":"The authors' own table, checksummed when downloaded.","published-table":"A table printed in the paper, spot-checked against numbers the paper quotes.","published-fit":"The paper's fitting function evaluated at the plotted points, not refitted.","catalog-derived":"Binned by this project from a catalogue, with fixed cuts and a fixed random seed.","digitized-figure":"Read from a published figure"};
+function sureHtml(r){const p=r.provenance||{},t=p.tier;let s=SURE[t]||"";if(!s)return"";const a=(window.SIMHIGHLINE_AUDIT||{})[r.id];if(t==="digitized-figure"){const u=p.digitizationUncertaintyDex;s+=` (axes calibrated on the printed tick marks${Number.isFinite(u)?`, reading error about ${u} dex`:""}). Not checked against the authors' numbers; shown for context and never used for ranking.`}const chk=a?` Checked by ${esc(a.reviewer)} (${esc(a.verdict)}, ${esc(a.date||"")}).`:" Not yet checked by anyone who knows the source.";return`<p class="sure"><b>How sure are we?</b> ${esc(s)}${chk}</p>`}
 function evidenceHtml(){
   const r=byId.get(state.sel);
   if(!r)return`<h3>Evidence</h3><p class="hint">Click any curve to see where it comes from, how it was extracted, and which definitions it uses.</p><p class="hint">Tiers: ${TIERS.map(t=>`<b>${t.replace(/-/g," ")}</b> ${TIER_NOTE[t]}`).join("; ")}.</p>`;
@@ -683,6 +686,7 @@ function evidenceHtml(){
   const ref=state.ref?refRecord(currentZ()):null,v=verdict(ref,r);
   return`<h3>${esc(label(r))}</h3><div class="sub">${esc(REL[r.relation]?.t||r.relation)}, z = ${fmtZ(r.epoch.zRepresentative)}${r.epoch.snapshot!=null?`, snapshot ${r.epoch.snapshot}`:""}</div>
   <span class="tier" title="${esc(TIER_NOTE[p.tier]||"")}">${esc((p.tier||"").replace(/-/g," "))}</span><span class="tier">${esc(r.calibration||"")}</span>${r.rankable?"":'<span class="tier" title="Definitions or sampling do not allow ranking">context only</span>'}
+  ${sureHtml(r)}
   <div class="btns"><button class="btn" id="evRef">${state.ref===unitOf(r)?"Clear reference":"Use as reference"}</button><button class="btn" id="evFit">Fit line</button><button class="btn" id="evCsv">CSV</button><button class="btn" id="evBib">Cite</button><a class="btn" id="evIssue" href="${esc(issueUrl(r))}" target="_blank" rel="noopener" title="Open a prefilled issue about this curve on GitHub">Report an issue</a></div>
   ${v?`<div class="warn" style="border-color:${v.verdict==="comparable"?"#7fc47f":v.verdict==="not-comparable"?"var(--orange)":"var(--mustard)"}"><b>vs reference:</b> ${esc(v.verdict.replace(/-/g," "))}${v.blockers.length?`<br>${v.blockers.map(esc).join("<br>")}`:""}${v.caveats.length?`<br>${v.caveats.map(esc).join("<br>")}`:""}</div>`:""}
   ${(()=>{const s=imfShift(r);return s?`<div class="warn" style="border-color:var(--mustard)"><b>IMF converted:</b> plotted ${s.ax==="xy"?"x and y":s.ax} shifted by ${s.d>0?"+":"−"}${Math.abs(s.d).toFixed(3)} dex from ${esc(s.from)} to chabrier03 (standard offset). The downloadable record keeps the published values.</div>`:""})()}
@@ -945,7 +949,7 @@ function renderHead(){
   let t=meta.xz?meta.t:`${meta.t} at z = ${fmtZ(z)}`,sub;
   if(state.mode==="evol"){t=`${meta.t} versus redshift`;sub=`Value at x = ${atX()} read from each published curve; points are published epochs and lines only join consecutive ones.`}
   else if(state.resid&&state.ref){t=`${meta.t}: residuals at z = ${fmtZ(z)}`;sub=`Each curve minus ${ulabel(state.ref)} over the x range they share.`}
-  else sub=`${ns} simulation${ns===1?"":"s"}${no?` and ${no} observational reference${no===1?"":"s"}`:""}. ${meta.y} against ${meta.x}.`;
+  else sub=`${ns} simulation${ns===1?"":"s"}${no?` and ${no} observational reference${no===1?"":"s"}`:""}. ${meta.y} against ${meta.x}.${ns<3?" Thin evidence at this epoch: with fewer than three simulations, an offset against them says little about the field.":""}`;
   $("shTitle").textContent=t;$("shSub").textContent=sub;
 }
 $("shNotes").onclick=()=>openPanel("about");

@@ -373,6 +373,25 @@ const RT = await read("data/retune/retune.json").then(t => JSON.parse(t), () => 
 Object.assign(stats, jointStats(JR, undefined, RT && !RT.pending ? RT.native : null));
 stats.repo = stats.repo || "https://github.com/ShubhanBhatia42/sim-highline";
 
+// ---- data quality: generated from data/analysis/data-quality.json (scripts/analyze_data_quality.py)
+{
+  const Q = JSON.parse(await read("data/analysis/data-quality.json")), f3 = v => (v == null ? "–" : v.toFixed(3));
+  const TIERNAME = { "official-table": "the authors' table", "published-table": "a table in the paper", "published-fit": "a published fit", "catalog-derived": "computed by this project from a catalogue", "digitized-figure": "read from a figure" };
+  stats.qTierRows = Q.tiers.map(t => `<tr><td>${esc(t.kind)}</td><td>${esc(TIERNAME[t.tier] || t.tier)}</td><td class="n">${t.records}</td><td class="n">${t.rankable}</td></tr>`).join("");
+  const d = Q.digitized, u = d.declared_uncertainty_dex;
+  stats.qDigitized = `${d.n} of the ${d.n_simulation_curves} simulation curves (${(100 * d.share_of_simulation_curves).toFixed(0)} %) were read from published figures, and ${d.rankable} of them are used for ranking. They are read from the vector paths in the figure files with the axes calibrated on the printed tick marks, not by eye from an image; the reading error the scripts declare is a median ${u.median} dex and at most ${u.max} dex. That is the error of reading the figure. Whether the figure itself is right only its authors can say.`;
+  const e = Q.extraction_checks;
+  stats.qExtractN = String(e.n); stats.qExtractShare = (100 * e.n / Math.max(1, d.n)).toFixed(1);
+  stats.qExtractRows = e.pairs.map(p => `<tr><td>${esc(p.label)}</td><td class="n">${p.n}</td><td class="n">${f3(p.median_abs)}</td><td class="n">${f3(p.max_abs)}</td></tr>`).join("") || `<tr><td colspan="4">none</td></tr>`;
+  stats.qExtractSummary = e.n ? `The ${e.n === 1 ? "pair that exists differs" : "pairs differ"} by a median of ${Math.min(...e.pairs.map(p => p.median_abs)).toFixed(3)}${e.n > 1 ? " to " + Math.max(...e.pairs.map(p => p.median_abs)).toFixed(3) : ""} in the curve's units.` : "No such pair exists.";
+  stats.qPaperN = String(Q.paper_disagreements.n);
+  const th = Q.thin;
+  stats.qThinHead = th.epochs.map(z => `<th class="n">z = ${z}</th>`).join("");
+  stats.qThinRows = Object.entries(th.cells).map(([rel, row]) => `<tr><td>${esc(rel)}</td>${th.epochs.map(z => { const n = row[String(z)]; return `<td class="n${n === 0 ? " none" : n < 3 ? " thin" : ""}">${n}</td>`; }).join("")}</tr>`).join("");
+  stats.qThinCells = String(Object.values(th.cells).reduce((s, r) => s + Object.values(r).filter(n => n > 0 && n < 3).length, 0));
+  stats.qTerms = `${Q.terms.records_with_terms} records carry explicit third-party terms. ${Q.terms.permission_not_requested} of them are values this project binned from a repository with no licence file; permission has not yet been requested, and they should be treated as not cleared for reuse until it is.`;
+}
+
 // ---- studies (one list feeds the front page and the studies page)
 const STUDIES = [
   { id: "S1", href: "study-definitions.html", title: "How much is just definitions?", q: "How much of the disagreement between simulations is just definitions?", status: "Result", head: `${stats.fMatchedPct} of ${stats.fPairs} cross-simulation pairs fully matched`,
@@ -408,11 +427,11 @@ const [first, ...lastParts] = release.author.split(" ");
 const FOOTER = () => `<footer class="foot"><div class="wrap">
 <p>Cite as: ${esc(lastParts.join(" "))}, ${esc(first[0])}. (${stats.year}). <em>${esc(release.title)}</em> (v${release.version}). Zenodo. <a href="https://doi.org/${release.doi}">doi:${release.doi}</a>. Cite the original papers as well: every record carries its citation and DOI.</p>
 <p>Code ${esc(release.license.code)}; data ${esc(release.license.data.replace("CC-BY-4.0", "CC BY 4.0"))}, third-party inputs keep their own terms (<a href="${release.repo}/blob/main/docs/SOURCE-TERMS.md">SOURCE-TERMS.md</a>). Maintained by ${esc(release.author)}.</p>
-<p class="links"><a href="../highline.html">Explorer</a><a href="retune.html">Dials</a><a href="studies.html">Studies</a><a href="data.html">Data</a><a href="methods.html">Methods</a><a href="glossary.html">Glossary</a><a href="faq.html">FAQ</a><a href="changes.html">What is new</a><a href="${release.repo}/issues/new/choose">Report a problem</a><a href="${release.repo}">Repository</a><a href="${release.repo}/blob/main/CHANGELOG.md">Changelog</a><a href="${release.repo}/blob/main/CITATION.cff">CITATION.cff</a><a href="${release.repo}/blob/main/LICENSE">LICENSE</a><a href="${release.repo}/blob/main/LICENSE-DATA.md">LICENSE-DATA</a></p>
+<p class="links"><a href="../highline.html">Explorer</a><a href="retune.html">Dials</a><a href="studies.html">Studies</a><a href="data.html">Data</a><a href="methods.html">Methods</a><a href="glossary.html">Glossary</a><a href="faq.html">FAQ</a><a href="quality.html">Data quality</a><a href="changes.html">What is new</a><a href="${release.repo}/issues/new/choose">Report a problem</a><a href="${release.repo}">Repository</a><a href="${release.repo}/blob/main/CHANGELOG.md">Changelog</a><a href="${release.repo}/blob/main/CITATION.cff">CITATION.cff</a><a href="${release.repo}/blob/main/LICENSE">LICENSE</a><a href="${release.repo}/blob/main/LICENSE-DATA.md">LICENSE-DATA</a></p>
 </div></footer>${THEME_JS}`;
 
 await mkdir(new URL("dist/site/", root), { recursive: true });
-const PAGES = ["index.html", "studies.html", "study-definitions.html", "study-harmonization.html", "study-sfh.html", "study-joint.html", "retune.html", "data.html", "methods.html", "sources.html", "findings.html", "glossary.html", "faq.html", "changes.html"];
+const PAGES = ["index.html", "studies.html", "study-definitions.html", "study-harmonization.html", "study-sfh.html", "study-joint.html", "retune.html", "data.html", "methods.html", "sources.html", "findings.html", "glossary.html", "faq.html", "changes.html", "quality.html"];
 for (const page of PAGES) {
   let html = await read(`site/src/${page}`);
   const title = (html.match(/<title>([^<]*)<\/title>/) || [])[1], desc = (html.match(/<meta name="description" content="([^"]*)"/) || [])[1];

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How far to trust the data</title>
+<meta name="description" content="How each curve in sim-highline was obtained, how much of it has an independent check, where papers disagree, where the evidence is thin and which records carry third-party terms. All computed from the data.">
+{{head}}
+</head>
+<body>
+{{header}}
+<main id="main" class="wrap page" tabindex="-1">
+<div class="doc">
+<nav class="idx" aria-label="On this page">
+<p class="lab">Contents</p>
+<ol>
+<li><a href="#how"><span>§1</span>How curves were obtained</a></li>
+<li><a href="#checks"><span>§2</span>Independent checks</a></li>
+<li><a href="#thin"><span>§3</span>Thin evidence</a></li>
+<li><a href="#terms"><span>§4</span>Terms</a></li>
+</ol>
+</nav>
+<div class="c">
+
+<div class="title">
+<p class="lab kicker">Data quality</p>
+<h1>How far to trust the data</h1>
+<p class="standfirst">Everything here is computed from the records, not typed. The short version: the curves are traceable to their sources, but most of the simulation curves were read from figures and almost none has an independent check.</p>
+</div>
+
+<section class="sec" id="how" aria-labelledby="how-h">
+<h2 id="how-h"><span class="sn">§1</span>How the curves were obtained</h2>
+<p>{{qDigitized}}</p>
+<div class="tw"><table class="dense"><thead><tr><th>Kind</th><th>How obtained</th><th class="n">Records</th><th class="n">Used for ranking</th></tr></thead><tbody>{{qTierRows}}</tbody></table></div>
+</section>
+
+<section class="sec" id="checks" aria-labelledby="checks-h">
+<h2 id="checks-h"><span class="sn">§2</span>Independent checks</h2>
+<p>A figure-reading can be checked directly only where the same simulation, relation and epoch also exists as a table or fit with identical definitions. That holds for {{qExtractN}} digitized curves ({{qExtractShare}} %). For every other digitized curve the reading has no independent check in the data; the extraction code is tested on synthetic figures with known answers, which checks the method and not each figure. {{qExtractSummary}}</p>
+<div class="tw sm"><table class="dense"><thead><tr><th>Curve</th><th class="n">shared points</th><th class="n">median difference</th><th class="n">largest difference</th></tr></thead><tbody>{{qExtractRows}}</tbody></table></div>
+<p>Where one simulation and run appears in two papers with the same axis definitions, the papers can be compared with each other; {{qPaperN}} such pair exists today. The full lists are in <a href="{{repo}}/blob/main/docs/DATA-QUALITY.md">DATA-QUALITY.md</a>.</p>
+</section>
+
+<section class="sec" id="thin" aria-labelledby="thin-h">
+<h2 id="thin-h"><span class="sn">§3</span>Where the evidence is thin</h2>
+<p>The number of distinct simulations with a curve of each relation near each epoch. Amber cells have one or two: an offset against so few says little about the field. {{qThinCells}} cells are amber, and a grey zero means no simulation at all.</p>
+<div class="tw" role="region" aria-label="Simulations per relation and epoch" tabindex="0"><table class="dense qthin"><thead><tr><th>Relation</th>{{qThinHead}}</tr></thead><tbody>{{qThinRows}}</tbody></table></div>
+</section>
+
+<section class="sec" id="terms" aria-labelledby="terms-h">
+<h2 id="terms-h"><span class="sn">§4</span>Third-party terms</h2>
+<p>{{qTerms}}</p>
+</section>
+</div>
+</div>
+</main>
+{{footer}}
+</body>
+</html>

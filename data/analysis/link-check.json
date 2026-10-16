@@ -1,0 +1,332 @@
+{
+ "checked": 210,
+ "ok": 145,
+ "unverified": {
+  "https://academic.oup.com/mnras/article-pdf/491/1/944/31094303/stz2910.pdf": {
+   "status": "unverified",
+   "code": 403,
+   "records": 1
+  },
+  "https://doi.org/10.1093/mnras/stt308": {
+   "status": "unverified",
+   "code": 403,
+   "records": 12
+  },
+  "https://doi.org/10.1093/mnras/stv1985": {
+   "status": "unverified",
+   "code": 403,
+   "records": 1
+  },
+  "https://doi.org/10.1093/mnras/stx458": {
+   "status": "unverified",
+   "code": 403,
+   "records": 6
+  },
+  "https://github.com/AlexGarcia623/does_the_fmr_evolve_simulations_2": {
+   "status": "unverified",
+   "code": 403,
+   "records": 142
+  },
+  "https://github.com/Astro-William-Baker/Baker-2025d": {
+   "status": "unverified",
+   "code": 403,
+   "records": 5
+  },
+  "https://github.com/HarleyKatz/SPHINX-20-data": {
+   "status": "unverified",
+   "code": 403,
+   "records": 34
+  },
+  "https://github.com/flaresimulations/flares": {
+   "status": "unverified",
+   "code": 403,
+   "records": 12
+  },
+  "https://github.com/maciejpkoprowski/COSMOS-Web-GSMF-MS-data": {
+   "status": "unverified",
+   "code": 403,
+   "records": 13
+  },
+  "https://github.com/psharda/colibre_mzr_sharda26": {
+   "status": "unverified",
+   "code": 403,
+   "records": 18
+  },
+  "https://ui.adsabs.harvard.edu/abs/2003AJ....125.2842Z": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2004ApJ...613..898T": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2005MNRAS.362...41G": {
+   "status": "unverified",
+   "code": 405,
+   "records": 2
+  },
+  "https://ui.adsabs.harvard.edu/abs/2006ApJ...640..691V": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2006ApJ...647..970L": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2008AJ....136.1340A": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2008ApJ...688..709T": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2009ApJ...693.1142S": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2009MNRAS.398.2177L": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2010A&A...523A..74V": {
+   "status": "unverified",
+   "code": 405,
+   "records": 2
+  },
+  "https://ui.adsabs.harvard.edu/abs/2010MNRAS.405.2594G": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2011AJ....142..170H": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2011ApJ...735L..34G": {
+   "status": "unverified",
+   "code": 405,
+   "records": 4
+  },
+  "https://ui.adsabs.harvard.edu/abs/2011MNRAS.417.2347R": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2012ApJ...745L...3L": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2012MNRAS.421..621B": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2013A&A...556A..55I": {
+   "status": "unverified",
+   "code": 405,
+   "records": 8
+  },
+  "https://ui.adsabs.harvard.edu/abs/2013ApJ...764..184M": {
+   "status": "unverified",
+   "code": 405,
+   "records": 2
+  },
+  "https://ui.adsabs.harvard.edu/abs/2013ApJ...765..140A": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2013ApJ...767...50M": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2013ApJ...770...57B": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2013ApJ...777...18M": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2013ApJ...779..102K": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2013MNRAS.428.1128S": {
+   "status": "unverified",
+   "code": 405,
+   "records": 4
+  },
+  "https://ui.adsabs.harvard.edu/abs/2013MNRAS.428.3121M": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2013MNRAS.434..209B": {
+   "status": "unverified",
+   "code": 405,
+   "records": 2
+  },
+  "https://ui.adsabs.harvard.edu/abs/2014A&A...563A..31R": {
+   "status": "unverified",
+   "code": 405,
+   "records": 2
+  },
+  "https://ui.adsabs.harvard.edu/abs/2014ApJ...783...85T": {
+   "status": "unverified",
+   "code": 405,
+   "records": 7
+  },
+  "https://ui.adsabs.harvard.edu/abs/2014ApJ...791..130Z": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2014MNRAS.444.2960D": {
+   "status": "unverified",
+   "code": 405,
+   "records": 4
+  },
+  "https://ui.adsabs.harvard.edu/abs/2015A&A...573A.118L": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2015A&A...575A..96G": {
+   "status": "unverified",
+   "code": 405,
+   "records": 4
+  },
+  "https://ui.adsabs.harvard.edu/abs/2015ApJ...803...34B": {
+   "status": "unverified",
+   "code": 405,
+   "records": 4
+  },
+  "https://ui.adsabs.harvard.edu/abs/2015MNRAS..446..521S": {
+   "status": "unverified",
+   "code": 405,
+   "records": 4
+  },
+  "https://ui.adsabs.harvard.edu/abs/2015MNRAS.446..521S": {
+   "status": "unverified",
+   "code": 405,
+   "records": 16
+  },
+  "https://ui.adsabs.harvard.edu/abs/2015MNRAS.447.2603L": {
+   "status": "unverified",
+   "code": 405,
+   "records": 2
+  },
+  "https://ui.adsabs.harvard.edu/abs/2015MNRAS.450.1937C": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2015MNRAS.454.4027D": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2016A&A...592A..12E": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2016ApJ...832...56A": {
+   "status": "unverified",
+   "code": 405,
+   "records": 3
+  },
+  "https://ui.adsabs.harvard.edu/abs/2016MNRAS.456.2361B": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2016MNRAS.456.3194P": {
+   "status": "unverified",
+   "code": 405,
+   "records": 3
+  },
+  "https://ui.adsabs.harvard.edu/abs/2016MNRAS.461..458D": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2017ApJS..233...22S": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2017MNRAS.467.2019R": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2017MNRAS.470.283W": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2018ApJ...864..166D": {
+   "status": "unverified",
+   "code": 405,
+   "records": 5
+  },
+  "https://ui.adsabs.harvard.edu/abs/2018MNRAS.476..875C": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2018MNRAS.479.1077B": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2019ApJ...876..155S": {
+   "status": "unverified",
+   "code": 405,
+   "records": 1
+  },
+  "https://ui.adsabs.harvard.edu/abs/2019ApJ...887...10S": {
+   "status": "unverified",
+   "code": 405,
+   "records": 2
+  },
+  "https://ui.adsabs.harvard.edu/abs/2019MNRAS.488.3143B": {
+   "status": "unverified",
+   "code": 405,
+   "records": 36
+  },
+  "https://ui.adsabs.harvard.edu/abs/2020ApJ...905..170M": {
+   "status": "unverified",
+   "code": 405,
+   "records": 8
+  },
+  "https://ui.adsabs.harvard.edu/abs/2020MNRAS.491.5073P": {
+   "status": "unverified",
+   "code": 405,
+   "records": 2
+  },
+  "https://ui.adsabs.harvard.edu/abs/2021arXiv210101706C": {
+   "status": "unverified",
+   "code": 405,
+   "records": 3
+  }
+ },
+ "broken": {}
+}

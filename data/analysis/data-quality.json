@@ -1,0 +1,366 @@
+{
+ "n_records": 1699,
+ "n_sources": 101,
+ "tiers": [
+  {
+   "kind": "empirical-model",
+   "tier": "published-table",
+   "records": 40,
+   "rankable": 40
+  },
+  {
+   "kind": "observation",
+   "tier": "catalog-derived",
+   "records": 11,
+   "rankable": 11
+  },
+  {
+   "kind": "observation",
+   "tier": "digitized-figure",
+   "records": 1,
+   "rankable": 0
+  },
+  {
+   "kind": "observation",
+   "tier": "official-table",
+   "records": 15,
+   "rankable": 15
+  },
+  {
+   "kind": "observation",
+   "tier": "published-fit",
+   "records": 36,
+   "rankable": 32
+  },
+  {
+   "kind": "observation",
+   "tier": "published-table",
+   "records": 163,
+   "rankable": 163
+  },
+  {
+   "kind": "simulation",
+   "tier": "catalog-derived",
+   "records": 190,
+   "rankable": 190
+  },
+  {
+   "kind": "simulation",
+   "tier": "digitized-figure",
+   "records": 792,
+   "rankable": 0
+  },
+  {
+   "kind": "simulation",
+   "tier": "official-table",
+   "records": 254,
+   "rankable": 126
+  },
+  {
+   "kind": "simulation",
+   "tier": "published-fit",
+   "records": 55,
+   "rankable": 25
+  },
+  {
+   "kind": "simulation",
+   "tier": "published-table",
+   "records": 142,
+   "rankable": 129
+  }
+ ],
+ "digitized": {
+  "n": 792,
+  "share_of_simulation_curves": 0.5526866713189114,
+  "n_simulation_curves": 1433,
+  "declared_uncertainty_dex": {
+   "n": 792,
+   "median": 0.01,
+   "max": 0.05
+  },
+  "extraction_methods": [
+   [
+    "vector path vertices from the figure PDF (PyMuPDF get_drawin",
+    791
+   ],
+   [
+    "HSV marker segmentation on 180 dpi raster",
+    1
+   ]
+  ],
+  "rankable": 0
+ },
+ "extraction_checks": {
+  "pairs": [
+   {
+    "a": "chaikin26.colibre.l200m6.gsmf-ap-50pkpc.z0",
+    "b": "chaikin26.colibre.l200m6.gsmf.z0",
+    "label": "COLIBRE m6 (L200, 50 pkpc aperture, figure) (gsmf, z = 0)",
+    "tier_a": "digitized-figure",
+    "tier_b": "official-table",
+    "unit": "log10(cMpc^-3 dex^-1)",
+    "n": 18,
+    "median_abs": 0.0,
+    "max_abs": 0.00010000000000021103,
+    "signed_median": -0.0,
+    "same_definitions": true
+   }
+  ],
+  "n": 1,
+  "n_same_definitions": 1
+ },
+ "paper_disagreements": {
+  "pairs": [
+   {
+    "a": "schaye23.flamingo-l1_m9-fgas+2s.sfrd",
+    "b": "schaye23.flamingo-l1_m9-fgas-2s.sfrd",
+    "label": "FLAMINGO L1_m9 variation fgas+2sigma (sfrd) (sfrd, z = 2)",
+    "tier_a": "digitized-figure",
+    "tier_b": "digitized-figure",
+    "unit": "log10(Msun yr^-1 cMpc^-3)",
+    "n": 149,
+    "median_abs": 0.008299999999999974,
+    "max_abs": 0.02159999999999984,
+    "signed_median": -0.008299999999999974,
+    "same_definitions": true
+   }
+  ],
+  "n": 1
+ },
+ "terms": {
+  "records_with_terms": 332,
+  "by_terms": [
+   [
+    "third-party: source repository has no licence file (Garcia et al. 2024)",
+    142
+   ],
+   [
+    "source release: CC-BY-4.0",
+    99
+   ],
+   [
+    "third-party: GPL-2.0 (Sharda et al. 2026 data release)",
+    88
+   ],
+   [
+    "source tables: CC-BY-4.0 (paper tables)",
+    3
+   ]
+  ],
+  "permission_not_requested": 142
+ },
+ "thin": {
+  "epochs": [
+   0.1,
+   0.5,
+   1,
+   2,
+   3,
+   4,
+   6,
+   8
+  ],
+  "cells": {
+   "bh": {
+    "0.1": 10,
+    "0.5": 2,
+    "1": 8,
+    "2": 8,
+    "3": 5,
+    "4": 8,
+    "6": 0,
+    "8": 1
+   },
+   "bhsigma": {
+    "0.1": 2,
+    "0.5": 1,
+    "1": 1,
+    "2": 1,
+    "3": 0,
+    "4": 1,
+    "6": 0,
+    "8": 1
+   },
+   "btfr": {
+    "0.1": 5,
+    "0.5": 1,
+    "1": 1,
+    "2": 1,
+    "3": 0,
+    "4": 1,
+    "6": 0,
+    "8": 0
+   },
+   "gas": {
+    "0.1": 3,
+    "0.5": 1,
+    "1": 2,
+    "2": 2,
+    "3": 0,
+    "4": 2,
+    "6": 0,
+    "8": 1
+   },
+   "gsmf": {
+    "0.1": 10,
+    "0.5": 7,
+    "1": 8,
+    "2": 8,
+    "3": 6,
+    "4": 10,
+    "6": 10,
+    "8": 9
+   },
+   "h2-fraction": {
+    "0.1": 3,
+    "0.5": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "6": 0,
+    "8": 0
+   },
+   "hi-fraction": {
+    "0.1": 3,
+    "0.5": 0,
+    "1": 1,
+    "2": 0,
+    "3": 0,
+    "4": 1,
+    "6": 0,
+    "8": 0
+   },
+   "jstar": {
+    "0.1": 5,
+    "0.5": 2,
+    "1": 3,
+    "2": 2,
+    "3": 2,
+    "4": 1,
+    "6": 0,
+    "8": 0
+   },
+   "metald": {
+    "0.1": 0,
+    "0.5": 0,
+    "1": 0,
+    "2": 0,
+    "3": 1,
+    "4": 0,
+    "6": 0,
+    "8": 0
+   },
+   "mzr": {
+    "0.1": 7,
+    "0.5": 1,
+    "1": 6,
+    "2": 5,
+    "3": 6,
+    "4": 5,
+    "6": 5,
+    "8": 9
+   },
+   "quenched": {
+    "0.1": 6,
+    "0.5": 2,
+    "1": 4,
+    "2": 4,
+    "3": 2,
+    "4": 0,
+    "6": 0,
+    "8": 1
+   },
+   "sfms": {
+    "0.1": 8,
+    "0.5": 1,
+    "1": 7,
+    "2": 6,
+    "3": 5,
+    "4": 6,
+    "6": 7,
+    "8": 7
+   },
+   "sfrd": {
+    "0.1": 0,
+    "0.5": 0,
+    "1": 0,
+    "2": 9,
+    "3": 1,
+    "4": 0,
+    "6": 1,
+    "8": 3
+   },
+   "shmr": {
+    "0.1": 9,
+    "0.5": 4,
+    "1": 7,
+    "2": 5,
+    "3": 3,
+    "4": 6,
+    "6": 3,
+    "8": 5
+   },
+   "size": {
+    "0.1": 8,
+    "0.5": 5,
+    "1": 7,
+    "2": 7,
+    "3": 5,
+    "4": 6,
+    "6": 4,
+    "8": 4
+   },
+   "smd": {
+    "0.1": 0,
+    "0.5": 0,
+    "1": 0,
+    "2": 4,
+    "3": 1,
+    "4": 1,
+    "6": 0,
+    "8": 1
+   },
+   "ssfr": {
+    "0.1": 8,
+    "0.5": 2,
+    "1": 2,
+    "2": 2,
+    "3": 0,
+    "4": 2,
+    "6": 0,
+    "8": 1
+   },
+   "stfr": {
+    "0.1": 3,
+    "0.5": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "6": 0,
+    "8": 0
+   },
+   "uvlf": {
+    "0.1": 0,
+    "0.5": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 1,
+    "6": 5,
+    "8": 6
+   },
+   "zstar": {
+    "0.1": 6,
+    "0.5": 2,
+    "1": 5,
+    "2": 5,
+    "3": 4,
+    "4": 6,
+    "6": 5,
+    "8": 5
+   }
+  }
+ }
+}

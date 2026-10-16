@@ -69,7 +69,9 @@ await journey(4, "Where does a curve come from, and how was it obtained?", async
   await page.waitForSelector("#panel.open");
   const txt = await page.locator("#pbody").innerText();
   assert.ok(txt.length > 80, "evidence panel has content");
-  return `evidence panel ${txt.length} characters`;
+  assert.ok(/How sure are we\?/.test(txt), "plain statement of how sure we are");
+  assert.ok((await page.locator('#pbody a[href*="issues/new"]').count()) === 1, "a link that reports a problem with this curve");
+  return `evidence panel ${txt.length} characters, with how-sure note and report link`;
 });
 await journey(5, "Where do simulations disagree most?", async ({ page, click, base }) => {
   await page.goto(`${base}/highline.html#r=gsmf&z=0.1`); await settle(page);
