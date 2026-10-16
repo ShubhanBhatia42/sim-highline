@@ -1,5 +1,5 @@
 """The roadmap: ten steps and 200 tasks. Tier: 1 = quick (under 15 minutes), 2 = solid (about an hour), 3 = big (several hours), 4 = needs other people or days.
-Who: C = Claude can do it in a session, U = only the maintainer can, B = both. Status lives in data/roadmap-status.json (scripts/roadmap.py)."""
+Who: C = can be built and checked in a working session, U = only the maintainer can, B = both. Status lives in data/roadmap-status.json (scripts/roadmap.py)."""
 
 STEPS = {
     1: ("Say what great means, and how we will know", "Without a stated purpose, audience and stopping rule, every improvement is a guess."),

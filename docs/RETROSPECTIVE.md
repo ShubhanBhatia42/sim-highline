@@ -25,8 +25,9 @@ After the project was judged "ok and nowhere close to great", the request was: d
 
 ## What went wrong along the way
 
-- Early in the session I answered the wrong question twice (the push, then one study) when the question was about the whole project, and I used shorthand the maintainer does not remember. I now write for someone who has not read the code.
-- I made at least one wrong claim and had to correct it (a noise unit is not about 0.04 dex everywhere; it is 0.04 to 0.18 dex). Several features were built first and then found to break an existing test, mostly because a new piece of text repeated a button's name or a new element was nested in the wrong container; the layout test caught a long DOI overflowing at 320 px. All of these were fixed before commit, but they are a reminder that the tests, not my reading, are what catches these.
+- Early in the push the wrong question was answered twice (a push, then one study) when the question was about the whole project, and shorthand the maintainer does not remember was used. The pages and notes are now written for someone who has not read the code.
+- At least one wrong claim had to be corrected (a noise unit is not about 0.04 dex everywhere; it is 0.04 to 0.18 dex). Several features were built first and then found to break an existing test, mostly because a new piece of text repeated a button's name or a new element was nested in the wrong container; the layout test caught a long DOI overflowing at 320 px. All were fixed before commit, but they are a reminder that the tests, not a reading of the code, are what catches these.
+- A review of the whole project after the plan was finished found what the tests did not: the downloadable files had carried a wrong redshift for 91 curves since version 0.8.0, the abstracts quoted a redshift range that was typed by hand and wrong, and several sentences said more than the evidence allowed. These are fixed (see `docs/INDEPENDENT-REVIEW.md` and `docs/CORRECTIONS.md`). The lesson is that a green test suite is not a review.
 - The tests grew faster than the evidence of use. That is the central risk of the project: it is easy to keep improving what has no audience.
 
 ## Counts

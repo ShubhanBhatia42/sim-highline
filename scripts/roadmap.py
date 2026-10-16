@@ -15,7 +15,7 @@ from roadmap_tasks import STEPS, T
 ROOT = Path(__file__).resolve().parent.parent
 STATUS = ROOT / "data" / "roadmap-status.json"
 TIER = {1: "Quick (under 15 min)", 2: "Solid (about an hour)", 3: "Big (several hours)", 4: "Needs other people or days"}
-WHO = {"C": "Claude", "U": "You", "B": "Both"}
+WHO = {"C": "Build", "U": "Maintainer", "B": "Both"}
 MARK = {"todo": "[ ]", "done": "[x]", "partial": "[~]", "blocked": "[!]", "skipped": "[-]"}
 
 
