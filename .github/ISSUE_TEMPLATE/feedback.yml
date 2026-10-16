@@ -1,0 +1,22 @@
+name: Feedback: what was confusing, missing or useful
+description: Tell us what you tried and where you got stuck. Two sentences are enough.
+title: "[feedback] "
+labels: ["feedback"]
+body:
+  - type: dropdown
+    id: who
+    attributes:
+      label: Which describes you best?
+      options: ["I run simulations", "I need predictions to compare with data", "I am learning how feedback shapes galaxies", "Something else"]
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What did you try to do, and did you manage?
+    validations:
+      required: true
+  - type: textarea
+    id: missing
+    attributes:
+      label: What was confusing, or what is missing?

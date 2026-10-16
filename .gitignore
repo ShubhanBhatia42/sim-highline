@@ -5,3 +5,8 @@ __pycache__/
 node_modules/
 dist/
 node_modules/
+.coverage
+coverage-python.txt
+coverage-js.txt
+coverage/
+.verify-cache/

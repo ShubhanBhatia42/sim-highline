@@ -14,11 +14,18 @@ import analyze_model_form as A
 import power_joint_reachability as P
 
 ROOT = Path(__file__).resolve().parent.parent
-SMALL = dict(nsplit=6, nsmall=4, npath=3, nstarts=3, sens=False, workers=2)
+SMALL = dict(nsplit=6, nsmall=4, npath=3, nstarts=3, sens=False, workers=1)
 
 
 def go(kind, shift=0.0, seed=11):
     return J.run(data=P.world(kind, seed, n_lh=300, snaps=("090",), shift=shift), **SMALL)
+
+
+# the four synthetic runs are independent and take most of the time: start them side by side (a split's result does not depend on how many processes run it), then check the quick things while they work
+import multiprocessing as mp
+from concurrent.futures import ProcessPoolExecutor
+_POOL = ProcessPoolExecutor(4, mp_context=mp.get_context("fork"))
+_RUN = {"identical": _POOL.submit(go, "identical"), "shift1.5": _POOL.submit(go, "shift", 1.5), "shift0.15": _POOL.submit(go, "shift", 0.15), "conflict": _POOL.submit(go, "conflict")}
 
 
 # ---- noise scale, sets and weights
@@ -44,7 +51,7 @@ k1, b1, _ = J.eligibility(d1)
 assert not k1[jbad[:8]].any() and ("gsmf", "090") not in b1
 
 # ---- identical codes: everything is removable and the controls are at the noise floor
-r0 = go("identical")
+r0 = _RUN["identical"].result()
 assert r0["splits"]["all"]["verdict"] == "removable", r0["splits"]["all"]
 assert all(r0["splits"]["fam:" + f]["verdict"] == "removable" for f in J.JOINT_FAMILIES), {f: r0["splits"]["fam:" + f]["verdict"] for f in J.JOINT_FAMILIES}
 assert r0["splits"]["all"]["control"]["p95"] < 0.6 and r0["point"]["all"]["D"] < 0.5
@@ -52,17 +59,17 @@ assert r0["validations"]["V2"]["passed"] and r0["validations"]["V1"]["passed"] a
 assert r0["J3"]["mechanism"] is None
 
 # ---- one family shifted by an amount no parameter can absorb: that family is structural alone, so is the joint distance, and it is classed irreducible
-r1 = go("shift", shift=1.5)
+r1 = _RUN["shift1.5"].result()
 st = [f for f in J.JOINT_FAMILIES if r1["splits"]["fam:" + f]["verdict"] == "structural"]
 assert st == ["bhocc"], st
 assert r1["splits"]["all"]["verdict"] == "structural" and r1["J3"]["mechanism"] == "irreducible"
 assert r1["greedy_path"][0]["family"] == "bhocc", r1["greedy_path"][:3]  # the shifted family is the first to be added
 assert r1["splits"]["path:1"]["verdict"] == "structural"
-r1b = go("shift", shift=0.15)
+r1b = _RUN["shift0.15"].result()
 assert r1b["splits"]["all"]["verdict"] == "removable", r1b["splits"]["all"]  # a small shift is within the margin
 
 # ---- every family reachable alone but by different parameter pairs: no family is structural alone, the joint distance is, the ratio is far above the same-code null, and it is classed a conflict
-r2 = go("conflict")
+r2 = _RUN["conflict"].result()
 assert not any(r2["splits"]["fam:" + f]["verdict"] == "structural" for f in J.JOINT_FAMILIES), {f: r2["splits"]["fam:" + f]["verdict"] for f in J.JOINT_FAMILIES}
 assert r2["splits"]["all"]["verdict"] == "structural", r2["splits"]["all"]
 assert r2["J3"]["above_null"] is True and r2["J3"]["ratio_point"] > 10 and r2["J3"]["ratio_between"]["p5"] > 5 * r2["J3"]["ratio_control"]["p95"], r2["J3"]

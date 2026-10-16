@@ -2,6 +2,9 @@
 # The whole offline verification chain, in one place (used by CONTRIBUTING.md and by CI). Needs node and python3 with requirements-dev.txt.
 # Run from the repository root. Regenerates derived files; commit them if they change.
 set -euo pipefail
+# The three slow Python tests (a few minutes together) are skipped when nothing they can read has changed since they last passed here (stamp in .verify-cache/). FRESH=1 runs them anyway; CI starts without stamps, so it always runs everything.
+SLOW="test_joint_reachability test_model_form test_harmonization"
+stamp_of() { cat scripts/*.py data/ensembles/*.json data/analysis/*.json data/retune/retune.json 2>/dev/null | sha256sum | cut -d' ' -f1; }
 node scripts/annotate-definitions.mjs
 node scripts/validate-curves.mjs
 node scripts/validate-manifest.mjs
@@ -31,7 +34,15 @@ node scripts/make-author-requests.mjs
 node scripts/make-heads-up.mjs
 node scripts/build-site.mjs
 node scripts/test-site.mjs
-for t in scripts/test_*.py; do python3 "$t"; done
+node scripts/lint.mjs
+python3 scripts/check_prose.py
+STAMP=$(stamp_of); mkdir -p .verify-cache
+for t in scripts/test_*.py; do
+  n=$(basename "$t" .py)
+  if [[ " $SLOW " == *" $n "* && "${FRESH:-0}" != "1" && -f ".verify-cache/$n" && "$(cat ".verify-cache/$n")" == "$STAMP" ]]; then echo "$n: unchanged since the last pass, skipped (FRESH=1 to run it anyway)"; continue; fi
+  python3 "$t"
+  [[ " $SLOW " == *" $n "* ]] && echo "$STAMP" > ".verify-cache/$n"
+done
 AUDIT=$(mktemp)
 node scripts/audit-curves.mjs > "$AUDIT"
 head -1 "$AUDIT"

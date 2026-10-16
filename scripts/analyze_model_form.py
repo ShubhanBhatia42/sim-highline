@@ -346,7 +346,9 @@ def fit_emulator(X, Y, degree=2, ridge=RIDGE, h=KERNEL_H):
 def astro_x(A, cosmo=(0.0, 0.0)):
     """Rows of four astrophysical coordinates as full six-dimensional emulator inputs at a fixed cosmology."""
     A = np.atleast_2d(A)
-    return np.column_stack([np.full(len(A), cosmo[0]), np.full(len(A), cosmo[1]), A])
+    X = np.empty((len(A), 2 + A.shape[1]))
+    X[:, 0], X[:, 1], X[:, 2:] = cosmo[0], cosmo[1], A
+    return X
 
 
 def predict_astro(emu, A, cosmo=(0.0, 0.0)):
@@ -395,9 +397,12 @@ def _dist2(Pt, Ps, zsel):
     return np.mean((Pt[zsel] - Ps[zsel]) ** 2)
 
 
+_EYE4 = np.eye(4)
+
+
 def _grad_pred(emu, a, eps=1e-5):
     """Prediction and its Jacobian with respect to the four astrophysical coordinates (central differences in one batch)."""
-    pts = np.vstack([a] + [a + eps * np.eye(4)[j] for j in range(4)] + [a - eps * np.eye(4)[j] for j in range(4)])
+    pts = np.vstack([a, a + eps * _EYE4, a - eps * _EYE4])
     P = predict_astro(emu, pts)
     return P[0], ((P[1:5] - P[5:9]) / (2 * eps)).T  # (nz,), (nz, 4)
 

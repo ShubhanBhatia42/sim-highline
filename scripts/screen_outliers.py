@@ -77,8 +77,8 @@ def main():
                   for (s, r), v in by_src.items() if len(v) >= 3 and sum(o["flag"] for o in v) >= max(2, len(v) // 2)]
     doc = dict(schemaVersion="1.0.0", method=f"Offset of each curve from the median of other sources' curves (interpolating peers only inside their published range) at the same relation, units and z within {DZ}; at least {MIN_PEERS} peer sources per point. Flag: |median offset| >= {FLAG_DEX} dex and robust z >= {FLAG_Z} within the relation.",
                nScreened=len(res), nFlagged=len(flagged), systematic=sorted(systematic, key=lambda s: -abs(s["medianOffsetDex"])),
-               flagged=[{k: (round(v, 3) if isinstance(v, float) else v) for k, v in o.items()} for o in flagged])
-    (ROOT / "data" / "analysis" / "plausibility-screen.json").write_text(json.dumps(doc, indent=1) + "\n")
+               flagged=[{k: (None if isinstance(v, float) and v != v else round(v, 3) if isinstance(v, float) else v) for k, v in o.items()} for o in flagged])  # a missing run name is null, not NaN (NaN is not JSON)
+    (ROOT / "data" / "analysis" / "plausibility-screen.json").write_text(json.dumps(doc, indent=1, allow_nan=False) + "\n")
     print(f"plausibility screen: {len(res)} curves screened, {len(flagged)} flagged, {len(systematic)} source/relation pairs systematic")
     triaged = json.loads((ROOT / "data" / "screen-triaged.json").read_text())["triaged"]
     new = [o["id"] for o in flagged if o["id"] not in triaged]

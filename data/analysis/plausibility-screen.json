@@ -65,7 +65,7 @@
    "id": "baker25.qsmf.z2.5-3",
    "relation": "gsmf",
    "source": "Baker et al. 2025 (quiescent, JWST)",
-   "run": NaN,
+   "run": null,
    "kind": "observation",
    "z": 2.75,
    "medianOffsetDex": -0.847,
