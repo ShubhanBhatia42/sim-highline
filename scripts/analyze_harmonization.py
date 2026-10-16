@@ -15,6 +15,18 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import analyze_definition_budget as adb
 
 ROOT = adb.ROOT
+
+
+def _round_floats(x, digits=10):
+    """Floats are written to 10 significant digits: the last digits of a floating-point sum differ between machines (BLAS and library versions), which made the committed file differ from a fresh run on another computer although no result differs."""
+    if isinstance(x, float):
+        return float(f"{x:.{digits}g}")
+    if isinstance(x, dict):
+        return {k: _round_floats(v, digits) for k, v in x.items()}
+    if isinstance(x, (list, tuple)):
+        return [_round_floats(v, digits) for v in x]
+    return x
+
 SEED = 20261014
 PHI = np.round(np.arange(-2.0, -4.5001, -0.25), 2)
 PHI_FINE = np.round(np.arange(-2.0, -4.5001, -0.05), 2)
@@ -765,7 +777,7 @@ def deviations(res):
 
 def write_outputs(res):
     out = ROOT / "data" / "analysis" / "harmonization.json"
-    out.write_text(json.dumps(res, indent=1) + "\n")
+    out.write_text(json.dumps(_round_floats(res), indent=1) + "\n")
     (ROOT / "docs" / "ANALYSIS-harmonization.md").write_text(render(res))
 
 
