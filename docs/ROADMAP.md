@@ -6,11 +6,11 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 | tier | tasks | done | partly | waiting for a person | not done |
 |---|---|---|---|---|---|
-| 1 Quick (under 15 min) | 46 | 22 | 1 | 2 | 21 |
-| 2 Solid (about an hour) | 121 | 61 | 2 | 0 | 58 |
+| 1 Quick (under 15 min) | 46 | 26 | 1 | 2 | 17 |
+| 2 Solid (about an hour) | 121 | 73 | 3 | 0 | 45 |
 | 3 Big (several hours) | 23 | 18 | 0 | 0 | 5 |
 | 4 Needs other people or days | 10 | 0 | 0 | 2 | 8 |
-| all | 200 | 101 | 3 | 4 | 92 |
+| all | 200 | 117 | 4 | 4 | 75 |
 
 ## Step 1. Say what great means, and how we will know
 
@@ -147,28 +147,28 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 ## Step 6. Make it fast, robust and accessible
 
-*Works on a phone, on a slow connection, with a keyboard, in dark mode.* (2 of 20 done)
+*Works on a phone, on a slow connection, with a keyboard, in dark mode.* (18 of 20 done)
 
 - [x] **6.01** · tier 1 · Claude · Measure the real transfer size and load time of every page — scripts/test-performance.mjs: slow 4G plus 4x slower processor; Explorer 5.1 s, front page 2.9 s, dials page 3.3 s, a study page 1.3 s; budgets enforced in the test
 - [-] **6.02** · tier 3 · Claude · Split the Explorer's data so the first view appears fast, if the measurement says it is needed — Measured instead of assumed: the Explorer was 8.1 s on the throttled phone; embedding its data as JSON text brought that to 5.1 s, inside the budget, so splitting the data was not needed
-- [ ] **6.03** · tier 2 · Claude · Add a loading state and an error state to the Explorer
-- [ ] **6.04** · tier 2 · Claude · Audit speed, accessibility and best practice and enforce a budget in tests
-- [ ] **6.05** · tier 2 · Claude · Screenshot every page at 320, 390, 768 and 1440 pixels and review them
-- [ ] **6.06** · tier 2 · Claude · Review every page in dark mode
-- [ ] **6.07** · tier 1 · Claude · Respect reduced-motion everywhere
-- [ ] **6.08** · tier 2 · Claude · Walk every page with the keyboard only and fix traps
-- [ ] **6.09** · tier 2 · Claude · Give every chart a text summary for screen readers
-- [ ] **6.10** · tier 2 · Claude · Add a print stylesheet for the study pages
-- [ ] **6.11** · tier 1 · Claude · Give every page a proper share title and description
-- [ ] **6.12** · tier 2 · Claude · Generate share-preview images from the real charts at build time
-- [ ] **6.13** · tier 2 · Claude · Check the Explorer works offline once loaded
-- [ ] **6.14** · tier 1 · Claude · Fix the clipped legend footer in the Explorer
-- [ ] **6.15** · tier 2 · Claude · Run the browser tests in Firefox and WebKit as well
-- [ ] **6.16** · tier 2 · Claude · Check very wide screens
+- [x] **6.03** · tier 2 · Claude · Add a loading state and an error state to the Explorer — Explorer: error message with a way on instead of a running loading bar; no-JavaScript message; tested with corrupted data
+- [x] **6.04** · tier 2 · Claude · Audit speed, accessibility and best practice and enforce a budget in tests — Budget enforced in test-performance; axe in test-ui; layouts, keyboard and resilience tests in CI. No Lighthouse run (not installed)
+- [x] **6.05** · tier 2 · Claude · Screenshot every page at 320, 390, 768 and 1440 pixels and review them — scripts/test-layouts.mjs: 17 pages x 320/390/768/1440/2560 px, light and dark, no sideways scroll; screenshots looked at
+- [x] **6.06** · tier 2 · Claude · Review every page in dark mode — scripts/test-layouts.mjs: 17 pages x 320/390/768/1440/2560 px, light and dark, no sideways scroll; screenshots looked at
+- [x] **6.07** · tier 1 · Claude · Respect reduced-motion everywhere — test-resilience.mjs: reduced motion respected on 4 pages; Explorer and dials page keep working offline after load; blocked web fonts
+- [x] **6.08** · tier 2 · Claude · Walk every page with the keyboard only and fix traps — test-keyboard.mjs: 780 focus stops on 11 pages, no traps, visible focus, skip links, Escape; every chart named and described
+- [x] **6.09** · tier 2 · Claude · Give every chart a text summary for screen readers — test-keyboard.mjs: 780 focus stops on 11 pages, no traps, visible focus, skip links, Escape; every chart named and described
+- [x] **6.10** · tier 2 · Claude · Add a print stylesheet for the study pages — Print stylesheet: A4, black on white in dark theme, no navigation, link addresses shown; tested
+- [x] **6.11** · tier 1 · Claude · Give every page a proper share title and description — Every page has share title, description and a 1200x630 preview made from the real chart (scripts/make-og-images.mjs); tested in test-site
+- [x] **6.12** · tier 2 · Claude · Generate share-preview images from the real charts at build time — Every page has share title, description and a 1200x630 preview made from the real chart (scripts/make-og-images.mjs); tested in test-site
+- [x] **6.13** · tier 2 · Claude · Check the Explorer works offline once loaded — test-resilience.mjs: reduced motion respected on 4 pages; Explorer and dials page keep working offline after load; blocked web fonts
+- [x] **6.14** · tier 1 · Claude · Fix the clipped legend footer in the Explorer — Legend key pinned to the bottom of the legend
+- [~] **6.15** · tier 2 · Claude · Run the browser tests in Firefox and WebKit as well — Firefox and WebKit wired into CI as a non-blocking job (PW_BROWSER); not run here, no such browsers installed
+- [x] **6.16** · tier 2 · Claude · Check very wide screens — scripts/test-layouts.mjs: 17 pages x 320/390/768/1440/2560 px, light and dark, no sideways scroll; screenshots looked at
 - [x] **6.17** · tier 2 · Claude · Throttle the network and measure time to first interaction — scripts/test-performance.mjs: slow 4G plus 4x slower processor; Explorer 5.1 s, front page 2.9 s, dials page 3.3 s, a study page 1.3 s; budgets enforced in the test
-- [ ] **6.18** · tier 1 · Claude · Add a helpful 404 page
-- [ ] **6.19** · tier 2 · Claude · Check every link on the built site and external links
-- [ ] **6.20** · tier 2 · Claude · Add a content security policy to the site
+- [x] **6.18** · tier 1 · Claude · Add a helpful 404 page — 404.html built, base set from the mount point, links tested from a nested address
+- [x] **6.19** · tier 2 · Claude · Check every link on the built site and external links — check_links.py --site: 181 external links on the built pages, 9 'broken' = docs not on main yet (resolve after merge), 57 publishers refuse scripts
+- [x] **6.20** · tier 2 · Claude · Add a content security policy to the site — Content-Security-Policy meta with script hashes on every built page; zero violations tested; a wrong hash is caught
 
 ## Step 7. Make the first minute work, in plain language
 

@@ -431,8 +431,76 @@
   "note": "Measured instead of assumed: the Explorer was 8.1 s on the throttled phone; embedding its data as JSON text brought that to 5.1 s, inside the budget, so splitting the data was not needed",
   "status": "skipped"
  },
+ "6.03": {
+  "note": "Explorer: error message with a way on instead of a running loading bar; no-JavaScript message; tested with corrupted data",
+  "status": "done"
+ },
+ "6.04": {
+  "note": "Budget enforced in test-performance; axe in test-ui; layouts, keyboard and resilience tests in CI. No Lighthouse run (not installed)",
+  "status": "done"
+ },
+ "6.05": {
+  "note": "scripts/test-layouts.mjs: 17 pages x 320/390/768/1440/2560 px, light and dark, no sideways scroll; screenshots looked at",
+  "status": "done"
+ },
+ "6.06": {
+  "note": "scripts/test-layouts.mjs: 17 pages x 320/390/768/1440/2560 px, light and dark, no sideways scroll; screenshots looked at",
+  "status": "done"
+ },
+ "6.07": {
+  "note": "test-resilience.mjs: reduced motion respected on 4 pages; Explorer and dials page keep working offline after load; blocked web fonts",
+  "status": "done"
+ },
+ "6.08": {
+  "note": "test-keyboard.mjs: 780 focus stops on 11 pages, no traps, visible focus, skip links, Escape; every chart named and described",
+  "status": "done"
+ },
+ "6.09": {
+  "note": "test-keyboard.mjs: 780 focus stops on 11 pages, no traps, visible focus, skip links, Escape; every chart named and described",
+  "status": "done"
+ },
+ "6.10": {
+  "note": "Print stylesheet: A4, black on white in dark theme, no navigation, link addresses shown; tested",
+  "status": "done"
+ },
+ "6.11": {
+  "note": "Every page has share title, description and a 1200x630 preview made from the real chart (scripts/make-og-images.mjs); tested in test-site",
+  "status": "done"
+ },
+ "6.12": {
+  "note": "Every page has share title, description and a 1200x630 preview made from the real chart (scripts/make-og-images.mjs); tested in test-site",
+  "status": "done"
+ },
+ "6.13": {
+  "note": "test-resilience.mjs: reduced motion respected on 4 pages; Explorer and dials page keep working offline after load; blocked web fonts",
+  "status": "done"
+ },
+ "6.14": {
+  "note": "Legend key pinned to the bottom of the legend",
+  "status": "done"
+ },
+ "6.15": {
+  "note": "Firefox and WebKit wired into CI as a non-blocking job (PW_BROWSER); not run here, no such browsers installed",
+  "status": "partial"
+ },
+ "6.16": {
+  "note": "scripts/test-layouts.mjs: 17 pages x 320/390/768/1440/2560 px, light and dark, no sideways scroll; screenshots looked at",
+  "status": "done"
+ },
  "6.17": {
   "note": "scripts/test-performance.mjs: slow 4G plus 4x slower processor; Explorer 5.1 s, front page 2.9 s, dials page 3.3 s, a study page 1.3 s; budgets enforced in the test",
+  "status": "done"
+ },
+ "6.18": {
+  "note": "404.html built, base set from the mount point, links tested from a nested address",
+  "status": "done"
+ },
+ "6.19": {
+  "note": "check_links.py --site: 181 external links on the built pages, 9 'broken' = docs not on main yet (resolve after merge), 57 publishers refuse scripts",
+  "status": "done"
+ },
+ "6.20": {
+  "note": "Content-Security-Policy meta with script hashes on every built page; zero violations tested; a wrong hash is caught",
   "status": "done"
  },
  "7.08": {

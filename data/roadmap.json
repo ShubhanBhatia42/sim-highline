@@ -993,7 +993,8 @@
   "tier": 2,
   "who": "C",
   "title": "Add a loading state and an error state to the Explorer",
-  "status": "todo"
+  "note": "Explorer: error message with a way on instead of a running loading bar; no-JavaScript message; tested with corrupted data",
+  "status": "done"
  },
  {
   "id": "6.04",
@@ -1001,7 +1002,8 @@
   "tier": 2,
   "who": "C",
   "title": "Audit speed, accessibility and best practice and enforce a budget in tests",
-  "status": "todo"
+  "note": "Budget enforced in test-performance; axe in test-ui; layouts, keyboard and resilience tests in CI. No Lighthouse run (not installed)",
+  "status": "done"
  },
  {
   "id": "6.05",
@@ -1009,7 +1011,8 @@
   "tier": 2,
   "who": "C",
   "title": "Screenshot every page at 320, 390, 768 and 1440 pixels and review them",
-  "status": "todo"
+  "note": "scripts/test-layouts.mjs: 17 pages x 320/390/768/1440/2560 px, light and dark, no sideways scroll; screenshots looked at",
+  "status": "done"
  },
  {
   "id": "6.06",
@@ -1017,7 +1020,8 @@
   "tier": 2,
   "who": "C",
   "title": "Review every page in dark mode",
-  "status": "todo"
+  "note": "scripts/test-layouts.mjs: 17 pages x 320/390/768/1440/2560 px, light and dark, no sideways scroll; screenshots looked at",
+  "status": "done"
  },
  {
   "id": "6.07",
@@ -1025,7 +1029,8 @@
   "tier": 1,
   "who": "C",
   "title": "Respect reduced-motion everywhere",
-  "status": "todo"
+  "note": "test-resilience.mjs: reduced motion respected on 4 pages; Explorer and dials page keep working offline after load; blocked web fonts",
+  "status": "done"
  },
  {
   "id": "6.08",
@@ -1033,7 +1038,8 @@
   "tier": 2,
   "who": "C",
   "title": "Walk every page with the keyboard only and fix traps",
-  "status": "todo"
+  "note": "test-keyboard.mjs: 780 focus stops on 11 pages, no traps, visible focus, skip links, Escape; every chart named and described",
+  "status": "done"
  },
  {
   "id": "6.09",
@@ -1041,7 +1047,8 @@
   "tier": 2,
   "who": "C",
   "title": "Give every chart a text summary for screen readers",
-  "status": "todo"
+  "note": "test-keyboard.mjs: 780 focus stops on 11 pages, no traps, visible focus, skip links, Escape; every chart named and described",
+  "status": "done"
  },
  {
   "id": "6.10",
@@ -1049,7 +1056,8 @@
   "tier": 2,
   "who": "C",
   "title": "Add a print stylesheet for the study pages",
-  "status": "todo"
+  "note": "Print stylesheet: A4, black on white in dark theme, no navigation, link addresses shown; tested",
+  "status": "done"
  },
  {
   "id": "6.11",
@@ -1057,7 +1065,8 @@
   "tier": 1,
   "who": "C",
   "title": "Give every page a proper share title and description",
-  "status": "todo"
+  "note": "Every page has share title, description and a 1200x630 preview made from the real chart (scripts/make-og-images.mjs); tested in test-site",
+  "status": "done"
  },
  {
   "id": "6.12",
@@ -1065,7 +1074,8 @@
   "tier": 2,
   "who": "C",
   "title": "Generate share-preview images from the real charts at build time",
-  "status": "todo"
+  "note": "Every page has share title, description and a 1200x630 preview made from the real chart (scripts/make-og-images.mjs); tested in test-site",
+  "status": "done"
  },
  {
   "id": "6.13",
@@ -1073,7 +1083,8 @@
   "tier": 2,
   "who": "C",
   "title": "Check the Explorer works offline once loaded",
-  "status": "todo"
+  "note": "test-resilience.mjs: reduced motion respected on 4 pages; Explorer and dials page keep working offline after load; blocked web fonts",
+  "status": "done"
  },
  {
   "id": "6.14",
@@ -1081,7 +1092,8 @@
   "tier": 1,
   "who": "C",
   "title": "Fix the clipped legend footer in the Explorer",
-  "status": "todo"
+  "note": "Legend key pinned to the bottom of the legend",
+  "status": "done"
  },
  {
   "id": "6.15",
@@ -1089,7 +1101,8 @@
   "tier": 2,
   "who": "C",
   "title": "Run the browser tests in Firefox and WebKit as well",
-  "status": "todo"
+  "note": "Firefox and WebKit wired into CI as a non-blocking job (PW_BROWSER); not run here, no such browsers installed",
+  "status": "partial"
  },
  {
   "id": "6.16",
@@ -1097,7 +1110,8 @@
   "tier": 2,
   "who": "C",
   "title": "Check very wide screens",
-  "status": "todo"
+  "note": "scripts/test-layouts.mjs: 17 pages x 320/390/768/1440/2560 px, light and dark, no sideways scroll; screenshots looked at",
+  "status": "done"
  },
  {
   "id": "6.17",
@@ -1114,7 +1128,8 @@
   "tier": 1,
   "who": "C",
   "title": "Add a helpful 404 page",
-  "status": "todo"
+  "note": "404.html built, base set from the mount point, links tested from a nested address",
+  "status": "done"
  },
  {
   "id": "6.19",
@@ -1122,7 +1137,8 @@
   "tier": 2,
   "who": "C",
   "title": "Check every link on the built site and external links",
-  "status": "todo"
+  "note": "check_links.py --site: 181 external links on the built pages, 9 'broken' = docs not on main yet (resolve after merge), 57 publishers refuse scripts",
+  "status": "done"
  },
  {
   "id": "6.20",
@@ -1130,7 +1146,8 @@
   "tier": 2,
   "who": "C",
   "title": "Add a content security policy to the site",
-  "status": "todo"
+  "note": "Content-Security-Policy meta with script hashes on every built page; zero violations tested; a wrong hash is caught",
+  "status": "done"
  },
  {
   "id": "7.01",

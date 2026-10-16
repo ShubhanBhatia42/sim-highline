@@ -24,6 +24,17 @@ for (const page of [...PAGES, "findings"]) {
   assert(h.includes(`v${release.version} · doi`), `${page}: version and DOI chip missing`);
   assert(!/concord/i.test(h.replace(/concordance/gi, "")), `${page}: no old project name`);
   assert(/<main id="main"/.test(h) && /class="skip"/.test(h), `${page}: landmark and skip link`);
+  // sharing: a title, a description and a preview image that exists, at the right size
+  const og = k => (h.match(new RegExp(`<meta property="og:${k}" content="([^"]+)"`)) || [])[1];
+  assert(og("title") && og("description") && og("image"), `${page}: share title, description and image required`);
+  assert(/^https:\/\/shubhanbhatia42\.github\.io\/sim-highline\/site\/og-[a-z-]+\.png$/.test(og("image")), `${page}: share image URL (${og("image")})`);
+  await access(new URL(`site/${og("image").split("/site/")[1]}`, root)).catch(() => assert.fail(`${page}: share image missing from the build`));
+  assert(h.includes('name="twitter:card" content="summary_large_image"'), `${page}: card type`);
+  assert(og("description").length >= 50 && og("description").length <= 300, `${page}: share description length ${og("description").length}`);
+}
+// the preview images are PNGs of the size the card says
+for (const f of ["default", "explorer", "retune", "study-joint"]) {
+  const b = await readFile(new URL(`site/og-${f}.png`, root)); assert(b.subarray(1, 4).toString() === "PNG" && b.readUInt32BE(16) === 1200 && b.readUInt32BE(20) === 630, `og-${f}.png must be a 1200 x 630 PNG`);
 }
 // the old pages are gone and the old findings URL redirects
 for (const gone of ["about", "use-cases"]) await access(new URL(`site/${gone}.html`, root)).then(() => assert.fail(`${gone}.html must be removed`), () => {});

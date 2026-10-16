@@ -19,8 +19,9 @@
 <li><a href="#result"><span>§3</span>Result</a></li>
 <li><a href="#reading"><span>§4</span>Reading</a></li>
 <li><a href="#validation"><span>§5</span>Validation</a></li>
-<li><a href="#limits"><span>§6</span>Limits</a></li>
-<li><a href="#reproduce"><span>§7</span>Reproduce</a></li>
+<li><a href="#after"><span>§6</span>After the run</a></li>
+<li><a href="#limits"><span>§7</span>Limits</a></li>
+<li><a href="#reproduce"><span>§8</span>Reproduce</a></li>
 </ol>
 <p class="back"><a href="studies.html">All studies</a> · <a href="retune.html">Dials</a></p>
 </nav>
@@ -118,8 +119,14 @@
 <ul class="flat">{{jrDev}}</ul>
 </section>
 
+<section class="sec" id="after" aria-labelledby="after-h">
+<h2 id="after-h"><span class="sn">§6</span>Checks made after the run</h2>
+<p>These were made once, after the registered result existed, and reported whatever they gave. <b>None is part of the registered result and none changes a verdict.</b> They are the checks a sceptical reader would ask for first. The decisions that went into the headline, and what happened when each was changed, are in <a href="{{repo}}/blob/main/docs/CHOICES-joint-reachability.md">CHOICES-joint-reachability</a>; objections and answers in <a href="{{repo}}/blob/main/docs/SCEPTIC.md">SCEPTIC</a>.</p>
+<div class="tw"><table class="dense"><thead><tr><th>Check</th><th>Result</th><th>Details</th></tr></thead><tbody>{{jrAfterRows}}</tbody></table></div>
+</section>
+
 <section class="sec" id="limits" aria-labelledby="limits-h">
-<h2 id="limits-h"><span class="sn">§6</span>Limits</h2>
+<h2 id="limits-h"><span class="sn">§7</span>Limits</h2>
 <ul class="flat">
 <li><b>Two codes, and more than subgrid form.</b> The result is about this pair, not about structural uncertainty in general; what separates them includes the hydrodynamic solver, the star formation algorithm and the yields, not only the feedback prescriptions. Black hole occupation and mass compare seeding prescriptions (a discrete model choice that no dial changes), so a structural verdict there is expected by construction; the sensitivity analyses give the result without them.</li>
 <li><b>CAMELS resolution.</b> 25 Mpc/h boxes, 256³ elements: few galaxies above 10<sup>11</sup> M<sub>☉</sub>, a mass limit of 10<sup>9</sup> M<sub>☉</sub>, almost nothing at z ≥ 3; star formation and black hole growth depend on resolution in both codes.</li>
@@ -130,7 +137,7 @@
 </section>
 
 <section class="sec" id="reproduce" aria-labelledby="reproduce-h">
-<h2 id="reproduce-h"><span class="sn">§7</span>Reproduce</h2>
+<h2 id="reproduce-h"><span class="sn">§8</span>Reproduce</h2>
 <pre tabindex="0" aria-label="Reproduction commands">python3 scripts/ingest_camels_galaxies.py        # about 35 minutes; range reads of the public catalogues (needs fsspec, aiohttp)
 python3 scripts/analyze_joint_reachability.py    # about 15 minutes; writes data/analysis/joint-reachability.json and the report
 python3 scripts/power_joint_reachability.py      # calibration on synthetic worlds

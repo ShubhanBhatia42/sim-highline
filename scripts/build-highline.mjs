@@ -1,3 +1,4 @@
+import { withCsp } from "./csp.mjs";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 const root = new URL("../", import.meta.url);
 const tpl = await readFile(new URL("highline/index.html", root), "utf8");
@@ -19,5 +20,5 @@ const audit = JSON.stringify(Object.fromEntries((JSON.parse(await readFile(new U
 const safe = s => s.replaceAll("</script", "<\\/script");
 const html = tpl.replace("/*__PALETTE__*/", () => palette).replace("/*__DATA__*/", () => safe(data)).replace("/*__COMPARE__*/", () => safe(compare)).replace("/*__EXPORT__*/", () => safe(exportLib)).replace("/*__LOGIC__*/", () => safe(logic)).replace("/*__RELEASE__*/", () => JSON.stringify(JSON.parse(release))).replace("/*__NOTES__*/", () => JSON.stringify(JSON.parse(notes))).replace("/*__SENS__*/", () => sens).replace("/*__AUDIT__*/", () => audit);
 await mkdir(new URL("dist/", root), { recursive: true });
-await writeFile(new URL("dist/highline.html", root), html);
+await writeFile(new URL("dist/highline.html", root), withCsp(html));
 console.log(`Built dist/highline.html (${(html.length / 1e6).toFixed(2)} MB)`);

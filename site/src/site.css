@@ -243,11 +243,17 @@ pre[tabindex]:focus-visible{outline-offset:0}
 .foot .links a{white-space:nowrap}
 .foot code{font-size:12.5px}
 
+@page{margin:16mm 14mm}
 @media print{
-  .top,.idx,.skip,.foot .links,.btns{display:none}
+  :root,:root[data-theme="dark"]{color-scheme:light;--bg:#fff;--panel:#f4f5f7;--panel2:#eceef2;--rule:#dde1e6;--rule-strong:#c2c9d2;--ink:#000;--ink2:#333;--ink3:#555;--link:#000;--orange:#c4421a;--mustard:#8a6100;--ok:#1f6f3a}
+  .top,.idx,.skip,.foot .links,.btns,.status,#theme{display:none!important}
   body{font-size:11pt;background:#fff;color:#000}
-  a{color:#000;text-decoration:none}
-  .sec{break-inside:auto}figure,.fig,table{break-inside:avoid}
+  .wrap{max-width:none}
+  a{color:#000;text-decoration:underline}
+  .doc a[href^="http"]::after{content:" (" attr(href) ")";font:400 8.5pt var(--mono);color:#555;word-break:break-all}
+  .tw,.sm{overflow:visible}table{font-size:9pt}
+  h1,h2,h3{break-after:avoid}
+  .sec{break-inside:auto}figure,.fig,table,.limits-first{break-inside:avoid}
 }
 
 /* ---- retune instrument ---- */
