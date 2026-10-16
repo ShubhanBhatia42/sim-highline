@@ -148,6 +148,10 @@ main.table .stagehead,main.table .plot{display:none}
 .v.ok{color:var(--ok)}.v.cav{color:var(--mustard)}.v.no{color:var(--orange)}
 .chip{position:absolute;left:50%;transform:translateX(-50%);top:6px;display:none;gap:8px;align-items:center;background:var(--bg);border:1px solid var(--rule-strong);padding:5px 8px 5px 14px;font-size:13px;color:var(--ink2);z-index:2}
 .chip.on{display:flex}
+.hello{position:absolute;left:16px;bottom:16px;max-width:min(370px,calc(100% - 32px));background:var(--bg);border:1px solid var(--ink);padding:12px 14px 12px;font-size:13.5px;line-height:1.5;color:var(--ink);box-shadow:0 6px 24px rgba(0,0,0,.14);z-index:5}
+.hello ol{margin:6px 0 10px;padding-left:20px}.hello li{margin:5px 0}
+.hello .hrow{display:flex;gap:8px;flex-wrap:wrap}.hello .hbtn{border:1px solid var(--rule-strong);padding:4px 12px;font:500 12px var(--mono);letter-spacing:.04em;color:var(--ink)}.hello .hbtn:hover{background:var(--panel2)}#helloOk{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+@media (max-width:640px){.hello{left:8px;right:8px;bottom:56px;max-width:none;font-size:13px}}
 .chip button{border:1px solid var(--rule-strong);padding:2px 10px;font-size:12.5px;color:var(--ink)}
 .ramp{display:none;align-items:center;gap:6px;font:11px var(--mono);color:var(--ink3);padding:6px 6px 2px}
 .ramp i{display:block;height:6px;width:90px;background:linear-gradient(90deg,#fde725,#7ad151,#22a884,#2a788e,#414487)}
@@ -280,11 +284,11 @@ b.classList.add("failed");b.setAttribute("role","alert");b.innerHTML='<div class
     <div class="embedbar" id="embedbar"><span id="embedTitle"></span><a id="embedOpen" target="_top" rel="noopener">Open in sim-highline ↗</a></div>
     <a class="mark" href="site/index.html" title="sim-highline: the project, studies, data and methods" aria-label="sim-highline: the project">sim-highline</a>
     <div class="seg" role="group" aria-label="View">
-      <button id="mPlot" aria-pressed="true" title="One relation at one epoch, every suite">Relation</button>
-      <button id="mEvol" aria-pressed="false" title="Value at a fixed x versus redshift">Evolution</button>
-      <button id="mAtlas" aria-pressed="false" title="What the data well holds: suite by relation by redshift">Coverage</button>
-      <button id="mTension" aria-pressed="false" title="Each simulation against the default observational anchor, every relation, at one epoch">Tension</button>
-      <button id="mSpread" aria-pressed="false" title="Where simulations disagree with each other: spread across suites, every relation and epoch">Spread</button>
+      <button id="mPlot" aria-pressed="true" title="Curves: one relation at one epoch, every simulation and observation on one plot">Curves</button>
+      <button id="mEvol" aria-pressed="false" title="Over time: how the value at a fixed x changes with redshift">Over time</button>
+      <button id="mAtlas" aria-pressed="false" title="What exists: which simulations have data for which relation, and when">What exists</button>
+      <button id="mTension" aria-pressed="false" title="Vs observations: how far each simulation sits from the observations, for every relation at one epoch">Vs observations</button>
+      <button id="mSpread" aria-pressed="false" title="Disagreement: where the simulations disagree with each other, for every relation and epoch">Disagreement</button>
     </div>
     <span class="sp"></span>
     <nav class="sitenav" aria-label="Site"><a class="more" href="site/studies.html">Studies</a><a href="site/retune.html">Dials</a><a class="more" href="site/data.html">Data</a><a class="more" href="site/methods.html">Methods</a><a href="site/index.html">Site</a></nav>
@@ -308,14 +312,23 @@ b.classList.add("failed");b.setAttribute("role","alert");b.innerHTML='<div class
       <div class="chip" id="chip"></div>
       <div class="empty" id="empty" hidden></div>
       <div class="tip" id="tip"></div>
+      <div class="hello" id="hello" role="note" aria-label="New here?" hidden>
+        <b>New here? Three things to know.</b>
+        <ol>
+          <li><b>Pick a relation</b> on the left: one galaxy property against another, such as how many galaxies there are of each mass.</li>
+          <li><b>Each line is one simulation</b> (solid, dashed or dotted depending on how its numbers were obtained); dots are observations. Point at a line to see where it came from. ✓ ~ ✕ say whether two curves can fairly be compared.</li>
+          <li><b>Go back in time</b> with the bar underneath, or the ← → keys. <b>Your run</b> checks your own curve against the rest.</li>
+        </ol>
+        <div class="hrow"><button class="hbtn" id="helloOk">Got it</button><button class="hbtn" id="helloMore">More about this</button></div>
+      </div>
     </div>
     <aside class="panel" id="panel" aria-label="Details">
       <div class="tabs"><div class="tl" role="tablist" aria-label="Details"><button role="tab" data-t="evidence">Evidence</button><button role="tab" data-t="about">Notes</button><button role="tab" data-t="mine">My run</button><button role="tab" data-t="tune">Customise</button><button role="tab" data-t="data">Get data</button></div><button class="x" id="pClose" aria-label="Close panel">×</button></div>
       <div class="pbody" id="pbody" role="tabpanel"></div>
     </aside>
-    <section class="atlas" id="atlas" tabindex="0" aria-label="Coverage table"></section>
-    <section class="atlas" id="tension" tabindex="0" aria-label="Tension map"></section>
-    <section class="atlas" id="spread" tabindex="0" aria-label="Spread between simulations"></section>
+    <section class="atlas" id="atlas" tabindex="0" aria-label="What exists: coverage table"></section>
+    <section class="atlas" id="tension" tabindex="0" aria-label="Simulations against observations"></section>
+    <section class="atlas" id="spread" tabindex="0" aria-label="Disagreement between simulations"></section>
     <section class="about pal" id="pal" role="dialog" aria-modal="true" aria-label="Search sim-highline"><div>
       <input id="palQ" type="text" role="combobox" aria-expanded="true" aria-controls="palL" aria-autocomplete="list" aria-label="Search relations, simulations, papers and actions" placeholder="Search relations, simulations, papers, actions" autocomplete="off" spellcheck="false">
       <ul id="palL" role="listbox" aria-label="Results"></ul>
@@ -325,9 +338,9 @@ b.classList.add("failed");b.setAttribute("role","alert");b.innerHTML='<div class
       <h2 id="aboutTitle">sim-highline Explorer</h2>
       <p>Galaxy scaling relations from cosmological simulations, at every redshift each suite provides, next to observations. Each curve opens to its evidence: source, extraction method, and the definitions that decide whether two curves can be compared (stellar-mass aperture, halo definition, population, IMF).</p>
       <p><b>Nothing is synthesised.</b> A suite with no data at the chosen redshift disappears instead of being interpolated. The only arithmetic the page does is exact: unit-preserving transforms you ask for (per unit mass, times mass, physical axes), residuals against a reference you pick, and reading a published curve at a chosen x inside its plotted range for the vs-redshift view.</p>
-      <p><b>Evidence tiers.</b> Solid lines are catalogue-derived or tabulated values, dashed lines are published fits, dotted lines are values digitized from published figures (never used for ranking). <b>Context only</b> marks curves whose definitions are not rankable.</p>
+      <p><b>Where the numbers come from.</b> Solid lines are catalogue-derived or tabulated values, dashed lines are published fits, dotted lines are values digitized from published figures (never used to score a comparison). <b>Context only</b> marks curves whose definitions do not allow a fair comparison with the others.</p>
       <p><b>Get data</b> downloads exactly what is on screen (or all epochs) as a tidy CSV or JSON, with definitions and citations; <code>sim_highline.py</code> loads the full dataset into pandas.</p>
-      <p><b>Coverage</b> shows suite by relation by redshift. Empty cells are missing data, not missing physics.</p>
+      <p><b>What exists</b> shows suite by relation by redshift. Empty cells are missing data, not missing physics.</p>
       <p><b>Start here.</b> Three things people do with it:</p>
       <ol class="recipes">
         <li><button data-rc="hz">What do simulations predict at z≈8?</button> The stellar mass function at z≈8 for every suite that has it, with the Get data panel open to export values, definitions and citations.</li>
@@ -628,7 +641,7 @@ function renderChip(){
   if(state.mode==="evol")t=`Value at fixed x; points are published epochs, lines only join consecutive ones`;
   else if(state.resid&&state.ref)t=`Residuals vs ${esc(ulabel(state.ref))} <button id="chipX">exit</button>`;
   else if(state.evo)t=`All epochs of ${esc(ulabel(state.evo))} <span class="ramp" style="display:inline-flex"><span>z low</span><i></i><span>high</span></span> <button id="chipX">exit</button>`;
-  else if(ns<3)t=`Sparse so far: ${ns} simulation${ns>1?"s":""} (see Coverage)`;
+  else if(ns<3)t=`Sparse so far: ${ns} simulation${ns>1?"s":""} (see What exists)`;
   c.innerHTML=t;c.classList.toggle("on",!!t);const b=$("chipX");if(b)b.onclick=()=>{state.resid=false;state.evo=null;renderAll(true)};
 }
 function renderLegend(cur){
@@ -697,7 +710,7 @@ function evidenceHtml(){
   const defs=Object.entries(d).filter(([k])=>!["cosmology"].includes(k)).map(([k,v])=>`<dt>${esc(k.replace(/([A-Z])/g," $1").toLowerCase())}</dt><dd>${esc(typeof v==="object"?JSON.stringify(v):v)}</dd>`).join("");
   const ref=state.ref?refRecord(currentZ()):null,v=verdict(ref,r);
   return`<h3>${esc(label(r))}</h3><div class="sub">${esc(REL[r.relation]?.t||r.relation)}, z = ${fmtZ(r.epoch.zRepresentative)}${r.epoch.snapshot!=null?`, snapshot ${r.epoch.snapshot}`:""}</div>
-  <span class="tier" title="${esc(TIER_NOTE[p.tier]||"")}">${esc((p.tier||"").replace(/-/g," "))}</span><span class="tier">${esc(r.calibration||"")}</span>${r.rankable?"":'<span class="tier" title="Definitions or sampling do not allow ranking">context only</span>'}
+  <span class="tier" title="${esc(TIER_NOTE[p.tier]||"")}">${esc((p.tier||"").replace(/-/g," "))}</span><span class="tier">${esc(r.calibration||"")}</span>${r.rankable?"":'<span class="tier" title="Context only: the definitions or sampling do not allow a fair comparison">context only</span>'}
   ${sureHtml(r)}
   <div class="btns"><button class="btn" id="evRef">${state.ref===unitOf(r)?"Clear reference":"Use as reference"}</button><button class="btn" id="evFit">Fit line</button><button class="btn" id="evCsv">CSV</button><button class="btn" id="evBib">Cite</button><a class="btn" id="evIssue" href="${esc(issueUrl(r))}" target="_blank" rel="noopener" title="Open a prefilled issue about this curve on GitHub">Report an issue</a></div>
   ${v?`<div class="warn" style="border-color:${v.verdict==="comparable"?"#7fc47f":v.verdict==="not-comparable"?"var(--orange)":"var(--mustard)"}"><b>vs reference:</b> ${esc(v.verdict.replace(/-/g," "))}${v.blockers.length?`<br>${v.blockers.map(esc).join("<br>")}`:""}${v.caveats.length?`<br>${v.caveats.map(esc).join("<br>")}`:""}</div>`:""}
@@ -747,7 +760,7 @@ function tuneHtml(){
   <label><input type="checkbox" id="tBands" ${state.bands?"checked":""}> uncertainty / scatter bands</label>
   <label><input type="checkbox" id="tSc" ${state.scatter?"checked":""}> individual galaxies (scatter records)</label>
   <label><input type="checkbox" id="tImf" ${state.imfc?"checked":""}> convert stellar masses and SFRs to a Chabrier IMF (standard offsets: Kroupa −0.025 dex, Salpeter −0.235 dex; unstated IMFs stay as published; downloads always keep the published values)</label>
-  <label><input type="checkbox" id="tRk" ${state.rankOnly?"checked":""}> only rankable evidence (hides digitized figures and context-only curves)</label>
+  <label><input type="checkbox" id="tRk" ${state.rankOnly?"checked":""}> only evidence that can be compared fairly (hides curves read off figures, and context-only curves)</label>
   ${TIERS.map(t=>`<label><input type="checkbox" data-tier="${t}" ${state.offTier.has(t)?"":"checked"}> ${t.replace(/-/g," ")} <span style="color:var(--cream3)">${cnt(t)}</span></label>`).join("")}
   <h4>EVOLUTION</h4>
   <label>All epochs of one run, coloured by z <select id="tEvo">${opt("","off",state.evo||"")}${units.map(u=>opt(u,ulabel(u),state.evo)).join("")}</select></label>
@@ -926,7 +939,7 @@ function dataHtml(){
   <label><input type="radio" name="scope" value="all" ${dl.scope==="all"?"checked":""}> all epochs</label>
   <label><input type="radio" name="scope" value="range" ${dl.scope==="range"?"checked":""}> z from <input type="number" step="any" id="dz0" value="${dl.z0}" style="width:70px"> to <input type="number" step="any" id="dz1" value="${dl.z1}" style="width:70px"></label>
   <label><input type="checkbox" id="dObs" ${dl.obs?"checked":""}> include observations</label>
-  <p class="hint">Follows the legend: hidden suites, runs, tiers and the rankable filter are excluded. Downloads always contain the published values, never IMF-converted ones.</p>
+  <p class="hint">Follows the legend: hidden simulations, runs, kinds of source and the fair-comparison filter are excluded. Downloads always contain the published values, never IMF-converted ones.</p>
   <div class="big">${recs.length} <span style="font:13px var(--ui);color:var(--cream3)">records · ${pts} points · ${ns} sources</span></div>
   <div class="btns"><button class="btn main" id="dCsv" ${recs.length?"":"disabled"}>Download CSV</button><button class="btn" id="dJson" ${recs.length?"":"disabled"}>JSON</button><button class="btn" id="dPy" ${recs.length?"":"disabled"}>Copy Python</button><button class="btn" id="dBib" ${recs.length?"":"disabled"}>Copy BibTeX</button></div>
   <p class="hint">CSV is tidy: one row per point with units, definitions, tier, rankable flag and citation. Parametric curves are the published expression sampled at ${SimHighlineExport.NSAMPLE} points. Nothing is interpolated or smoothed.</p>
@@ -1025,7 +1038,7 @@ function renderAtlas(){
   const srcs=[...new Set(sims.map(r=>r.source))].sort((a,b)=>sims.filter(r=>r.source===b).length-sims.filter(r=>r.source===a).length);
   const ZB=[0,.5,1,1.5,2,3,4,5,6,7,8,9,10,12];
   const zbin=z=>ZB.reduce((bi,v,i)=>Math.abs(v-z)<Math.abs(ZB[bi]-z)?i:bi,0);
-  let h=`<div class="thead"><h1>Coverage</h1><p>Which simulations have data for which relation, and at which redshifts. Each bar is one epoch bin; empty cells are missing data, not missing physics. Click a cell to open that relation for that simulation.</p></div><table><tr><th></th>${rels.map(k=>`<th title="${esc(REL[k].t)}">${esc(REL[k].c)}</th>`).join("")}</tr>`;
+  let h=`<div class="thead"><h1>What exists</h1><p>Which simulations have data for which relation, and at which redshifts. Each bar is one epoch bin; empty cells are missing data, not missing physics. Click a cell to open that relation for that simulation.</p></div><table><tr><th></th>${rels.map(k=>`<th title="${esc(REL[k].t)}">${esc(REL[k].c)}</th>`).join("")}</tr>`;
   for(const s of srcs){
     h+=`<tr><th><span class="sw" style="display:inline-block;vertical-align:middle;margin-right:6px;background:${colorOf(s)}"></span>${esc(SHORT[s]||s)}</th>`;
     for(const k of rels){
@@ -1053,7 +1066,7 @@ function renderTension(){
     const d=offsetOf(r,a,zref,true);if(d==null)return"";
     const v=verdict(a,r),vk=v?v.verdict:"unknown",al=Math.min(.8,Math.abs(d)/.8*.8),bg=d>=0?`rgba(235,104,52,${al})`:`rgba(42,120,214,${al})`;
     return`<td data-r="${k}" data-s="${esc(s)}" style="background:${bg};${vk==="not-comparable"?"outline:1px dashed var(--line)":""}" title="${esc(SHORT[s]||s)} · ${esc(label(r))} vs ${esc(a.source)}, z = ${fmtZ(zref)}: ${d>=0?"above":"below"} by ${Math.abs(d).toFixed(2)} in y units (${esc(vk.replace(/-/g," "))}${v&&v.blockers.length?": "+esc(v.blockers.join("; ")):""})"><b>${d>=0?"+":"−"}${Math.abs(d).toFixed(2)}</b> <span class="v ${vk==="comparable"?"ok":vk==="not-comparable"?"no":"cav"}">${vk==="comparable"?"✓":vk==="not-comparable"?"✕":"~"}</span></td>`};
-  let h=`<div class="thead"><h1>Tension</h1><p>How far each simulation sits from the observational anchor of each relation, at one reference redshift. An offset is only a verdict when the definitions agree.</p></div><div class="tzbar" role="group" aria-label="Reference redshift">Reference redshift ${TZ.map(z=>`<button class="mini" data-tz="${z}" aria-pressed="${z===zref}">z = ${z}</button>`).join("")}</div><table><tr><th></th>${rels.map(k=>`<th title="${esc(REL[k].t)} against ${esc(REL[k].anchor.replace(/\$$/,""))}">${esc(REL[k].c)}</th>`).join("")}</tr>`;
+  let h=`<div class="thead"><h1>Simulations against observations</h1><p>How far each simulation sits from the observations (the chosen reference curve) for each relation, at one reference redshift. An offset is only a verdict when the definitions agree.</p></div><div class="tzbar" role="group" aria-label="Reference redshift">Reference redshift ${TZ.map(z=>`<button class="mini" data-tz="${z}" aria-pressed="${z===zref}">z = ${z}</button>`).join("")}</div><table><tr><th></th>${rels.map(k=>`<th title="${esc(REL[k].t)} against ${esc(REL[k].anchor.replace(/\$$/,""))}">${esc(REL[k].c)}</th>`).join("")}</tr>`;
   for(const s of srcs){const cs=rels.map(k=>cell(s,k));if(!cs.some(Boolean))continue;h+=`<tr><th><span class="sw" style="display:inline-block;vertical-align:middle;margin-right:6px;background:${colorOf(s)}"></span>${esc(SHORT[s]||s)}</th>${cs.map(c=>c||`<td class="none"></td>`).join("")}</tr>`}
   h+=`</table><p class="tnote">Each cell is the median offset of the simulation's fiducial run from the anchor observation of that relation (the bold grey line in the Relation view), over the x range they share, in the relation's y units: dex for logarithmic quantities, a fraction for the quenched fraction. Orange: above the anchor; blue: below. ✓ definitions comparable, ~ caveats, ✕ not comparable (dashed outline): an offset where definitions differ is not a verdict on the simulation. Blank: no data at this epoch. Click a cell to open that relation.</p>`;
   $("tension").innerHTML=h;
@@ -1077,8 +1090,8 @@ function renderSpread(){
   const rows=rels.filter(k=>TZ.some(z=>cells.has(k+"|"+z))),mx=Math.max(.3,...all.map(c=>c.sigma));
   const f=a=>`${esc(REL[a.k].t.toLowerCase())} at z = ${a.z} (${a.sigma.toFixed(2)}, ${a.suites} simulations)`;
   const big=[...all].sort((a,b)=>b.sigma-a.sigma).slice(0,3),small=[...all].filter(c=>c.suites>=4).sort((a,b)=>a.sigma-b.sigma).slice(0,3);
-  let h=`<div class="thead"><h1>Spread</h1><p>How much simulations disagree with each other. Each cell is the spread (standard deviation) between the fiducial runs of at least three simulations, at fixed x, in the relation's y units, taken as the median over the x range they share.</p></div>
-  <div class="tzbar" role="group" aria-label="Filter"><button class="mini" id="spRk" aria-pressed="${rk}" title="Leave out digitized figures and context-only curves">rankable only</button></div>
+  let h=`<div class="thead"><h1>How much the simulations disagree</h1><p>How much simulations disagree with each other. Each cell is the spread (standard deviation) between the fiducial runs of at least three simulations, at fixed x, in the relation's y units, taken as the median over the x range they share.</p></div>
+  <div class="tzbar" role="group" aria-label="Filter"><button class="mini" id="spRk" aria-pressed="${rk}" title="Leave out curves read off figures, and context-only curves">fair comparisons only</button></div>
   <p class="tnote" style="margin:0 0 14px"><b>Most contested:</b> ${big.map(f).join("; ")}.${small.length?` <b>Most settled</b> (four or more simulations): ${small.map(f).join("; ")}.`:""}</p>
   <table class="sp"><tr><th></th>${TZ.map(z=>`<th>z = ${z}</th>`).join("")}</tr>`;
   for(const k of rows){h+=`<tr><th>${esc(REL[k].t)}</th>${TZ.map(z=>{const c=cells.get(k+"|"+z);return c?`<td data-r="${k}" data-z="${z}" tabindex="0" title="${esc(REL[k].t)} at z = ${z}: spread ${c.sigma.toFixed(3)} across ${esc(c.names.join(", "))}; ${c.grid} x grid points${c.basis?"; compared on "+esc(c.basis):""}"><b>${c.sigma.toFixed(2)}</b><i class="sbar" style="width:${Math.max(2,Math.round(c.sigma/mx*64))}px"></i><span class="n">${c.suites}</span></td>`:`<td class="none"></td>`}).join("")}</tr>`}
@@ -1105,7 +1118,7 @@ function palItems(q){
   const recs=window.SIMHIGHLINE_PAL||(window.SIMHIGHLINE_PAL=[...sims,...obs].map(r=>({r,t:`${r.provenance?.citation||""} ${r.id} ${r.source} ${r.run||""}`.toLowerCase()})));
   const A=[];
   for(const k of Object.keys(REL))A.push({l:REL[k].t,h:"relation",t:`${REL[k].t} ${k}`.toLowerCase(),f:()=>{state.mode="plot";syncShell();selectRelation(k)}});
-  for(const [m,n] of [["plot","Relation view"],["evol","Evolution view"],["atlas","Coverage view"],["tension","Tension view"],["spread","Spread view"]])A.push({l:n,h:"view",t:n.toLowerCase(),f:()=>setMode(m)});
+  for(const [m,n,alias] of [["plot","Curves view","relation"],["evol","Over time view","evolution redshift"],["atlas","What exists view","coverage atlas"],["tension","Vs observations view","tension offset"],["spread","Disagreement view","spread scatter"]])A.push({l:n,h:"view",t:n.toLowerCase()+" "+alias,f:()=>setMode(m)});
   for(const [t,n] of [["mine","Your run: plot your own simulation"],["about","Notes on this relation"],["tune","Customise"],["data","Get data, cite, BibTeX"]])A.push({l:n,h:"panel",t:n.toLowerCase()+" "+t,f:()=>openPanel(t)});
   A.push({l:"Switch light or dark theme",h:"action",t:"theme dark light",f:()=>$("bTheme").click()},{l:"About this beta",h:"action",t:"about beta help",f:()=>$("infoBtn").click()});
   const bySrc=new Map();for(const r of sims){const m=bySrc.get(r.source)||bySrc.set(r.source,new Map()).get(r.source);m.set(r.relation,(m.get(r.relation)||0)+1)}
@@ -1149,6 +1162,12 @@ mineLoad();readHash();syncShell();
 if(state.mode==="atlas")renderAtlas();if(state.mode==="tension")renderTension();if(state.mode==="spread")renderSpread();
 renderAll(false);
 if(state.sel)openRecord(state.sel);else if(wantMine||state.openMine)openPanel("mine");
+{const KEY="sh-guide-seen";let seen=false;try{seen=!!localStorage.getItem(KEY)}catch(e){}
+const h=$("hello"),done=()=>{h.hidden=true;try{localStorage.setItem(KEY,"1")}catch(e){}};
+if(!seen&&!state.embed&&!/(^#|&)(sel|run|pn)=/.test(location.hash))h.hidden=false;
+$("helloOk").onclick=()=>{done();$("stage").focus({preventScroll:true})};$("helloMore").onclick=()=>{done();$("infoBtn").click()};
+h.addEventListener("keydown",e=>{if(e.key==="Escape"){done();e.stopPropagation()}});
+addEventListener("keydown",e=>{if(!h.hidden&&["ArrowLeft","ArrowRight"].includes(e.key))done()},true)}
 {const go=()=>{document.body.classList.remove("boot");const b=$("boot");if(b){b.classList.add("done");setTimeout(()=>b.remove(),400)}};requestAnimationFrame(()=>requestAnimationFrame(go));setTimeout(go,250)}
 </script>
 </body>

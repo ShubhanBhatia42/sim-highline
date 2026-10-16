@@ -106,6 +106,23 @@ await step("notes show measured definition effects and the figure pack describes
   await ctx.close();
 });
 
+await step("first visit: a short guide appears once, can be dismissed, and stays dismissed", async () => {
+  const { page, ctx } = await open("/highline.html");
+  assert.ok(await page.locator("#hello").isVisible(), "guide shown on a first visit");
+  assert.match(await page.locator("#hello").innerText(), /Pick a relation/);
+  await page.click("#helloOk");
+  assert.ok(!(await page.locator("#hello").isVisible()), "dismissed");
+  await page.reload(); await page.waitForFunction(() => !document.getElementById("boot")); await page.waitForTimeout(300);
+  assert.ok(!(await page.locator("#hello").isVisible()), "stays dismissed after a reload");
+  await ctx.close();
+  const e = await open("/highline.html#embed=1&r=gsmf&z=0.1"); await e.page.waitForTimeout(300);
+  assert.ok(!(await e.page.locator("#hello").isVisible()), "not shown in an embed");
+  await e.ctx.close();
+  const s = await open("/highline.html#r=sfms&z=0&m=spread"); await s.page.waitForTimeout(300);
+  assert.ok(await s.page.locator("#spread td[data-r]").first().isVisible(), "other views are not nested inside the plot");
+  await s.ctx.close();
+});
+
 await step("spread map and command palette", async () => {
   const { page, ctx } = await open("/highline.html#m=spread");
   assert.ok(await page.locator("#spread td[data-r]").count() >= 20, "spread map has cells");

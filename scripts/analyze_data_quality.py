@@ -170,7 +170,7 @@ def analyse():
 
 
 def pct(x):
-    return f"{100 * x:.0f} %"
+    return f"{100 * x:.0f}%"
 
 
 def render(q):

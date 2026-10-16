@@ -113,8 +113,49 @@ await journey(10, "Can I load the data in a notebook?", async ({ page, base }) =
   return "data page lists files and loader";
 });
 
+// the "Try this" links on the front page: each lands on what its words promise, in one click
+await journey(11, "Front page 'Try this' links each land where they say", async ({ page, base }) => {
+  await page.goto(`${base}/site/index.html`);
+  const links = await page.$$eval(".try a", as => as.map(a => ({ t: a.textContent, h: a.getAttribute("href") })));
+  assert.equal(links.length, 4, "four try-this links");
+  const out = [];
+  for (const l of links) {
+    await page.goto(new URL(l.h, `${base}/site/index.html`).href);
+    if (l.h.includes("retune")) {
+      await page.waitForSelector(".rt-panel"); const dials = await page.$$eval(".rt-dial input[type=range]", i => i.map(x => +x.value));
+      assert.ok(Math.abs(dials[0] - 0.5) < 1e-6 && Math.abs(dials[4] - 0.5) < 1e-6 && dials[1] === 0, "both supernova wind dials at x2");
+      out.push("dials");
+    } else {
+      await settle(page); const title = await page.textContent("#shTitle");
+      if (l.h.includes("pn=mine")) assert.ok(await page.locator(".panel.open").count() === 1, "your-run panel open");
+      else assert.match(title, /at z = (8|0)/, title);
+      assert.ok(await page.locator("#stage path").count() >= 3, "something is drawn");
+      out.push(title.slice(0, 22));
+    }
+  }
+  return out.join(" | ");
+});
+await journey(12, "Copy the citation and the BibTeX from the data page", async ({ page, base }) => {
+  await page.context().grantPermissions(["clipboard-read", "clipboard-write"], { origin: base });
+  await page.goto(`${base}/site/data.html#cite`);
+  await page.click("button[data-copy=cite-text]"); await page.waitForFunction(() => /Copied|Selected/.test(document.querySelector(".cpmsg").textContent));
+  const t = await page.evaluate(() => navigator.clipboard.readText());
+  assert.match(t, /Bhatia, S\. \(\d{4}\)\. sim-highline/); assert.match(t, /doi\.org\/10\.5281\/zenodo/);
+  await page.click("button[data-copy=cite-bib]"); await page.waitForTimeout(300);
+  assert.match(await page.evaluate(() => navigator.clipboard.readText()), /^@/);
+  return "citation and BibTeX copied";
+});
+await journey(13, "A returning visitor is told what changed; a first-time visitor is not", async ({ page, base }) => {
+  await page.goto(`${base}/site/index.html`);
+  assert.ok(!(await page.locator("#whatsnew").isVisible()), "nothing for a first visit");
+  await page.evaluate(() => localStorage.setItem("sh-last-version", "0.0.1")); await page.reload();
+  assert.ok(await page.locator("#whatsnew").isVisible(), "a returning visitor sees the note");
+  await page.click("#whatsnewX"); await page.reload();
+  assert.ok(!(await page.locator("#whatsnew").isVisible()), "dismissed for good until the next version");
+  return "what's-new note shown once";
+});
 console.log("journey | question | clicks | ms | answer");
 for (const r of rows) console.log(`${String(r[0]).padStart(2)} | ${r[1]} | ${r[2]} | ${r[3]} | ${r[4]}`);
 await browser.close(); server.close();
 if (failures.length) { console.log("FAILED:\n" + failures.join("\n")); process.exit(1); }
-console.log(`journeys: ${rows.length} of 10 reach their answer in at most four clicks`);
+console.log(`journeys: ${rows.length} of ${rows.length} reach their answer in at most four clicks`);

@@ -45,7 +45,7 @@ await step("connection lost after loading: the Explorer keeps working", async ct
   await ctx.setOffline(true);
   await page.evaluate(() => { location.hash = "#r=sfms&z=0"; });
   await page.waitForFunction(() => /main sequence/i.test(document.getElementById("shTitle").textContent));
-  await page.click("button:has-text('Evolution')"); await page.waitForTimeout(500);
+  await page.click("#mEvol"); await page.waitForTimeout(500);
   assert.ok(await page.locator("#stage path").count() > 3, "still draws after switching view while offline");
 });
 await step("connection lost after loading: the dials page keeps working", async ctx => {

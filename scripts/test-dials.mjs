@@ -145,6 +145,23 @@ await step("the animated move ends in the same place as the instant one", async 
   const s = await story(page); assert.match(s, /SIMBA's dials went to/);
 }, { animate: true });
 
+await step("the tour has five steps, lights each part, closes with Escape and does not move the dials", async page => {
+  const before = await dialsOf(page);
+  await page.click("#rt-tourbtn"); await page.waitForSelector(".rt-tour:not([hidden])");
+  const seen = [];
+  for (let i = 0; i < 5; i++) {
+    assert.match(await page.locator(".rt-tour-n").innerText(), new RegExp(`${i + 1} of 5`));
+    assert.equal(await page.locator(".rt-spot").count(), 1, "exactly one part is lit");
+    seen.push((await page.locator(".rt-tour-t").innerText()).slice(0, 25));
+    if (i < 4) await page.click(".rt-tour-b:has-text('Next')");
+  }
+  assert.equal(new Set(seen).size, 5, "five different steps");
+  await page.click(".rt-tour-b:has-text('Done')"); assert.ok(await page.locator(".rt-tour").isHidden(), "closed after the last step");
+  await page.click("#rt-tourbtn"); await page.waitForSelector(".rt-tour:not([hidden])"); await page.keyboard.press("Escape");
+  assert.ok(await page.locator(".rt-tour").isHidden() && (await page.locator(".rt-spot").count()) === 0, "Escape closes it and unlights");
+  assert.deepEqual(await dialsOf(page), before, "dials untouched");
+});
+
 await step("on a phone the headline stays on screen and nothing overflows", async page => {
   const pos = await page.$eval(".rt-stick", e => getComputedStyle(e).position);
   assert.equal(pos, "sticky");
