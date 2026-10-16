@@ -6,11 +6,11 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 | tier | tasks | done | partly | waiting for a person | not done |
 |---|---|---|---|---|---|
-| 1 Quick (under 15 min) | 46 | 39 | 1 | 2 | 4 |
-| 2 Solid (about an hour) | 121 | 107 | 4 | 2 | 8 |
+| 1 Quick (under 15 min) | 46 | 40 | 1 | 3 | 2 |
+| 2 Solid (about an hour) | 121 | 108 | 4 | 2 | 7 |
 | 3 Big (several hours) | 23 | 19 | 1 | 0 | 3 |
 | 4 Needs other people or days | 10 | 0 | 0 | 2 | 8 |
-| all | 200 | 165 | 6 | 6 | 23 |
+| all | 200 | 167 | 6 | 7 | 20 |
 
 ## Step 1. Say what great means, and how we will know
 
@@ -241,7 +241,7 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 ## Step 10. Review, measure and decide
 
-*Fresh eyes, a final check on the live site, and a dated decision using the criteria set in step 1.* (4 of 18 done)
+*Fresh eyes, a final check on the live site, and a dated decision using the criteria set in step 1.* (6 of 18 done)
 
 - [ ] **10.01** · tier 3 · Claude · Get an independent fresh-eyes review of the whole product from a separate reviewer
 - [ ] **10.02** · tier 3 · Claude · Fix everything the review marks as must-fix
@@ -254,10 +254,10 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 - [ ] **10.09** · tier 4 · You · On the review date, apply the kill criteria
 - [ ] **10.10** · tier 2 · Claude · Re-measure the front page: time to first meaningful action
 - [ ] **10.11** · tier 2 · Claude · Re-run every test suite from a clean checkout
-- [ ] **10.12** · tier 1 · Claude · Confirm the live site matches the release
-- [ ] **10.13** · tier 2 · Claude · Check that nothing on the site claims more than the evidence
+- [!] **10.12** · tier 1 · Claude · Confirm the live site matches the release — The live site is still the old build of main (0.23.0 without the faq, summary, tests of this push: /site/summary.html and /site/faq.html return 404). It can be confirmed only after the merge to main
+- [x] **10.13** · tier 2 · Claude · Check that nothing on the site claims more than the evidence — Scanned pages, README, drafts and note for overclaiming words (novel, first, proves, definitive...): none left; novelty is explicitly not claimed. The independent review's claims audit is the second check
 - [ ] **10.14** · tier 2 · Claude · Re-read every study page as a sceptic and tighten
-- [ ] **10.15** · tier 1 · Claude · Archive scratch files and make the repository tidy
+- [x] **10.15** · tier 1 · Claude · Archive scratch files and make the repository tidy — Only ignored build and cache directories remain; scratch work lives outside the repository
 - [x] **10.16** · tier 2 · Claude · Write the list of what would make it great next — docs/NEXT.md
 - [ ] **10.17** · tier 1 · Claude · Write the short message to the maintainer: what is done, what is not, what to decide
 - [ ] **10.18** · tier 1 · Claude · Update the private roadmap page one last time
