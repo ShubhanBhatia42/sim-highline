@@ -40,8 +40,9 @@ for (const b of BUDGET) {
   const t0 = Date.now();
   await page.goto(BASE + b.url, { waitUntil: "commit" });
   await page.waitForFunction(b.ready, null, { timeout: 60000, polling: 100 });
+  const paint = await page.evaluate(() => new Promise(res => { const fcp = performance.getEntriesByName("first-contentful-paint")[0]; let lcp = 0; try { new PerformanceObserver(l => { for (const e of l.getEntries()) lcp = e.startTime; }).observe({ type: "largest-contentful-paint", buffered: true }); } catch (e) { /* not supported */ } setTimeout(() => res({ fcp: fcp ? Math.round(fcp.startTime) : null, lcp: Math.round(lcp) }), 300); }));
   const ms = Date.now() - t0, kb = Math.round(Object.values(sizes).reduce((s, v) => s + v, 0) / 1000);
-  rows.push(`${b.name}: ${(ms / 1000).toFixed(1)} s to usable, ${kb} kB transferred (budget ${b.maxMs / 1000} s, ${b.maxKB} kB)`);
+  rows.push(`${b.name}: ${(ms / 1000).toFixed(1)} s to usable, ${kb} kB transferred (budget ${b.maxMs / 1000} s, ${b.maxKB} kB); first paint ${paint.fcp} ms, largest element ${paint.lcp} ms`);
   if (ms > b.maxMs) failures.push(`${b.name}: ${ms} ms over ${b.maxMs}`);
   if (kb > b.maxKB) failures.push(`${b.name}: ${kb} kB over ${b.maxKB}`);
   await ctx.close();

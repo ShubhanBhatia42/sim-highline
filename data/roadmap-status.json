@@ -79,6 +79,14 @@
   "note": "roadmap is in the repo (docs/ROADMAP.md); private page to be published at the end",
   "status": "partial"
  },
+ "10.04": {
+  "note": "README and CHANGELOG updated (Unreleased section); version not bumped because the DOI is per release and needs the maintainer's Zenodo deposit",
+  "status": "done"
+ },
+ "10.05": {
+  "note": "scripts/release.sh X.Y.Z is ready; the bump, tag and DOI belong after the merge to main and the Zenodo deposit, which need the maintainer",
+  "status": "blocked"
+ },
  "10.06": {
   "note": "docs/RETROSPECTIVE.md",
   "status": "done"

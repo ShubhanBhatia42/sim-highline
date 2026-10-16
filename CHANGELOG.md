@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased (since 0.23.0)
+
+- Trust: data-quality page and analysis (55% of simulation curves digitized from figures, one independent check), plausibility screen, corrections log, audit packet and cover note, link check, claims test, dated registration trail.
+- First minute: one-time guide in the Explorer; views renamed in plain words (Curves, Over time, What exists, Vs observations, Disagreement); "In plain words" block on every study; try-this links; one-page summary that prints on one sheet; dials tour; plain titles; citation copy buttons; returning-visitor note; feedback links prefilled with the page and the address; "Used in" list.
+- Dials page: fit to your own curve or an observation, hold a property, presets, share link, exports, emulator validation table; Check your run: messy inputs, warnings, plain verdict, command-line and notebook routes.
+- Science (exploratory, after the registered run; no verdict changes): robustness (second implementation, kernel-ridge emulator, other weightings), a third code (Astrid), tuning to observations, ranking of observables, choices and resolution notes, sceptic list, research note.
+- Engineering: layout (320 to 2560 px, dark, print), keyboard, resilience, speed-budget, parity (page emulators equal the analysis emulators) and determinism tests; lint; content security policy; 404 page; share images; schema.org dataset metadata; pre-commit hook; Makefile; release and coverage scripts; weekly link and data-rot workflow; the joint-reachability test from about ten minutes to under two (bit-identical speed-up, verified); offline chain about four minutes.
+- Fixed: an invalid number (NaN) in `data/analysis/plausibility-screen.json`; the Explorer says in words when it cannot start; the legend key no longer clips.
+- Not yet: any outside use, outside checking of the data, Firefox and WebKit runs, a merge to `main` (the live site still shows 0.23.0).
+
 ## 0.23.0 (2026-10-15)
 
 - Study S4 (new, pre-registered): **can retuning make two feedback models agree on every galaxy observable at once?** IllustrisTNG against SIMBA in CAMELS: 169 binned galaxy-population outputs in 35 blocks (11 families at z = 0, 0.95, 2.15, 3, 4; 186 of 530 outputs eligible), a distance in units of the noise left when everything else is fixed (1 = the standard deviation of the difference between one run of each code), minimised over the four parameters of each code. The protocol (`docs/PROTOCOL-joint-reachability.md`) fixes five questions and their rules before any outcome existed; one amendment (A1), after an independent review and before the run, replaced the distance by one with the emulators' own error at the minimiser removed in quadrature, compared the joint-to-separate ratio with the same ratio for two halves of one code, and added a decomposition by block and a calibration on synthetic worlds with known truth (`scripts/power_joint_reachability.py`, `docs/POWER-joint-reachability.md`: 0 of 17 runs with a true distance below 0.95 were called structural, 8 of 8 above 1.1; the uncorrected distance is biased up by 0.14 to 0.16 at zero true distance).
