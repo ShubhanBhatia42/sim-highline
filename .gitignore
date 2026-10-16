@@ -7,3 +7,8 @@ node_modules/
 dist/
 node_modules/
 CLAUDE.md
+.coverage
+coverage-python.txt
+coverage-js.txt
+coverage/
+.verify-cache/

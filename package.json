@@ -11,11 +11,18 @@
     "test:layouts": "node scripts/test-layouts.mjs",
     "test:keyboard": "node scripts/test-keyboard.mjs",
     "test:resilience": "node scripts/test-resilience.mjs",
-    "test:browser": "node scripts/test-ui.mjs && node scripts/test-journeys.mjs && node scripts/test-yourrun.mjs && node scripts/test-dials.mjs && node scripts/test-layouts.mjs && node scripts/test-keyboard.mjs && node scripts/test-resilience.mjs && node scripts/test-performance.mjs",
-    "og": "node scripts/make-og-images.mjs"
+    "test:browser": "node scripts/test-ui.mjs && node scripts/test-journeys.mjs && node scripts/test-yourrun.mjs && node scripts/test-dials.mjs && node scripts/test-layouts.mjs && node scripts/test-keyboard.mjs && node scripts/test-resilience.mjs && node scripts/test-parity.mjs && node scripts/test-performance.mjs",
+    "og": "node scripts/make-og-images.mjs",
+    "lint": "node scripts/lint.mjs",
+    "test:parity": "node scripts/test-parity.mjs",
+    "test:determinism": "node scripts/test-determinism.mjs",
+    "screenshots": "node scripts/make-screenshots.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.0",
     "playwright": "^1.50.0"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }

@@ -6,11 +6,11 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 | tier | tasks | done | partly | waiting for a person | not done |
 |---|---|---|---|---|---|
-| 1 Quick (under 15 min) | 46 | 31 | 1 | 2 | 12 |
-| 2 Solid (about an hour) | 121 | 83 | 4 | 0 | 34 |
-| 3 Big (several hours) | 23 | 18 | 0 | 0 | 5 |
+| 1 Quick (under 15 min) | 46 | 34 | 1 | 2 | 9 |
+| 2 Solid (about an hour) | 121 | 96 | 4 | 1 | 20 |
+| 3 Big (several hours) | 23 | 19 | 1 | 0 | 3 |
 | 4 Needs other people or days | 10 | 0 | 0 | 2 | 8 |
-| all | 200 | 132 | 5 | 4 | 59 |
+| all | 200 | 149 | 6 | 5 | 40 |
 
 ## Step 1. Say what great means, and how we will know
 
@@ -195,28 +195,28 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 ## Step 8. Keep it healthy to maintain
 
-*Fast tests, pinned tools, one-command releases, nothing that quietly rots.* (0 of 20 done)
+*Fast tests, pinned tools, one-command releases, nothing that quietly rots.* (17 of 20 done)
 
-- [ ] **8.01** · tier 3 · Claude · Cut the S4 test from seven minutes to under two without losing its checks
-- [ ] **8.02** · tier 1 · Claude · Pin tool versions and add lock files
-- [ ] **8.03** · tier 2 · Claude · Add pre-commit checks for formatting and JSON validity
-- [ ] **8.04** · tier 2 · Claude · Make the full check faster by caching what has not changed
-- [ ] **8.05** · tier 2 · Claude · Update CONTRIBUTING for the new parts
-- [ ] **8.06** · tier 2 · Claude · Unit-test the dials page's emulator code
-- [ ] **8.07** · tier 2 · Claude · Test that the browser emulator gives the same numbers as the Python one
-- [ ] **8.08** · tier 2 · Claude · Add a JavaScript and HTML lint to CI
-- [ ] **8.09** · tier 1 · Claude · Add issue labels and forms for feedback and new curves
-- [ ] **8.10** · tier 2 · Claude · Write a release script: bump, regenerate, tag, notes in one command
-- [ ] **8.11** · tier 2 · Claude · Tag the release and create GitHub release notes
+- [x] **8.01** · tier 3 · Claude · Cut the S4 test from seven minutes to under two without losing its checks — joint-reachability test 10 min -> 1 min 45 s on four cores: bit-identical refactor of the feature code (verified) + the four synthetic runs side by side; all assertions kept
+- [x] **8.02** · tier 1 · Claude · Pin tool versions and add lock files — .nvmrc, engines, requirements-lock.txt, environment.yml, package-lock.json. GitHub Actions are pinned by major tag, not commit hash
+- [x] **8.03** · tier 2 · Claude · Add pre-commit checks for formatting and JSON validity — .githooks/pre-commit (JSON, syntax, conflict markers, size); enable with git config core.hooksPath .githooks; scripts/lint.mjs found a real NaN in a JSON file
+- [x] **8.04** · tier 2 · Claude · Make the full check faster by caching what has not changed — verify-all: 4 min 18 s fresh (was over 15), 1 min 21 s with the slow tests stamped; FRESH=1 forces; CI always runs all
+- [x] **8.05** · tier 2 · Claude · Update CONTRIBUTING for the new parts — CONTRIBUTING: short commands, hooks, release, new browser tests
+- [x] **8.06** · tier 2 · Claude · Unit-test the dials page's emulator code — test_parity.py + test-parity.mjs: the page's emulators match the full analysis emulators at 24 dial settings x 186 outputs x 2 codes (largest difference 3.5e-5, the storage precision)
+- [x] **8.07** · tier 2 · Claude · Test that the browser emulator gives the same numbers as the Python one — test_parity.py + test-parity.mjs: the page's emulators match the full analysis emulators at 24 dial settings x 186 outputs x 2 codes (largest difference 3.5e-5, the storage precision)
+- [x] **8.08** · tier 2 · Claude · Add a JavaScript and HTML lint to CI — scripts/lint.mjs in verify-all: every script parses, Python compiles, JSON parses, built pages balanced with unique ids; mutation-tested
+- [x] **8.09** · tier 1 · Claude · Add issue labels and forms for feedback and new curves — Issue forms: bug, feedback (added to curve-error, source-suggestion). Labels are created on first use by GitHub only if they exist; none created from here
+- [x] **8.10** · tier 2 · Claude · Write a release script: bump, regenerate, tag, notes in one command — scripts/release.sh: bump, changelog, rebuild, verify, prints commit/tag commands; never pushes. File edits dry-run tested, full run not executed
+- [!] **8.11** · tier 2 · Claude · Tag the release and create GitHub release notes — A tag belongs on main after the merge; the release script prints the commands. Needs the maintainer to merge
 - [ ] **8.12** · tier 4 · You · Archive the new version on Zenodo
-- [ ] **8.13** · tier 2 · Claude · Remove dead code and dead pages
-- [ ] **8.14** · tier 2 · Claude · Check repository size and that no large raw files are tracked
-- [ ] **8.15** · tier 2 · Claude · Document the architecture on one page
-- [ ] **8.16** · tier 1 · Claude · Add short commands for common tasks
-- [ ] **8.17** · tier 2 · Claude · Review the static site for secrets and data leaks
-- [ ] **8.18** · tier 2 · Claude · Add a weekly scheduled check for broken links and data rot
-- [ ] **8.19** · tier 3 · Claude · Report test coverage for the Python and JavaScript
-- [ ] **8.20** · tier 2 · Claude · Check the build is deterministic: same input, same output twice
+- [x] **8.13** · tier 2 · Claude · Remove dead code and dead pages — Audit: no dead pages; 10 unreferenced scripts are tests (run by glob) or one-off ingestion scripts kept as provenance; screenshots script wired into npm
+- [x] **8.14** · tier 2 · Claude · Check repository size and that no large raw files are tracked — Packed repository 5.3 MiB; largest tracked file 9 MB; pre-commit refuses files over 12 MB
+- [x] **8.15** · tier 2 · Claude · Document the architecture on one page — docs/ARCHITECTURE.md
+- [x] **8.16** · tier 1 · Claude · Add short commands for common tasks — Makefile and npm scripts
+- [x] **8.17** · tier 2 · Claude · Review the static site for secrets and data leaks — Scanned tracked files and built pages for tokens, keys, local paths and emails: only the maintainer's own address in CITATION.cff
+- [x] **8.18** · tier 2 · Claude · Add a weekly scheduled check for broken links and data rot — .github/workflows/rot.yml weekly: links behind records and on pages, offline chain on today's tools, opens an issue
+- [~] **8.19** · tier 3 · Claude · Report test coverage for the Python and JavaScript — scripts/coverage.sh: Python core modules 67% (analysis of the model form 95%, joint reachability 40%); JavaScript only logic.js measured (65%); compare.js and export-lib.js are not instrumented
+- [x] **8.20** · tier 2 · Claude · Check the build is deterministic: same input, same output twice — test-determinism.mjs: 170 files in dist/ byte-identical across two builds
 
 ## Step 9. Get it in front of people
 

@@ -54,7 +54,9 @@ jobs:
       - name: Walk-throughs and the check-your-run flow
         run: node scripts/test-journeys.mjs && node scripts/test-yourrun.mjs && node scripts/test-dials.mjs
       - name: Every page at every width, keyboard only, and when things go wrong
-        run: node scripts/test-layouts.mjs && node scripts/test-keyboard.mjs && node scripts/test-resilience.mjs
+        run: node scripts/test-layouts.mjs && node scripts/test-keyboard.mjs && node scripts/test-resilience.mjs && node scripts/test-parity.mjs
+      - name: The build is deterministic
+        run: node scripts/test-determinism.mjs
       - name: Speed budget on a slow phone
         run: node scripts/test-performance.mjs
   other-browsers:

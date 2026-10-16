@@ -35,6 +35,7 @@
     for (let k = 0; k < terms.length; k++) { const row = coef[k], tk = t[k]; if (tk === 0) continue; if (idx) for (let i = 0; i < n; i++) y[i] += tk * row[idx[i]]; else for (let i = 0; i < n; i++) y[i] += tk * row[i]; }
     return y;
   }
+  root.__rt = { predict: (code, a) => Array.from(predict(code, a)) }; // read by scripts/test-parity.mjs: the page's own evaluation of the emulators
   /* ---- sets of outputs with the study's weights: every block the same total weight, mean weight 1 */
   const blockKeys = Object.keys(D.blocks);
   function prep(keys) {

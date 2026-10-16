@@ -91,21 +91,28 @@ def gp_draws(grid, amp, length, rng, n=1):
     return (rng.standard_normal((n, len(g))) @ root.T) * np.asarray(amp, float)[None, :]
 
 
+_FEATURE_INDEX = {}
+
+
+def _feature_index(d, degree):
+    """Index arrays of the products in the feature list, built once per input dimension: pairs (j <= k) and, for degree 3, triples (j <= k <= m), in the order the features are laid out."""
+    key = (d, degree)
+    if key not in _FEATURE_INDEX:
+        pairs = np.array([(j, k) for j in range(d) for k in range(j, d)], dtype=int).reshape(-1, 2)
+        trips = np.array([(j, k, m) for j in range(d) for k in range(j, d) for m in range(k, d)], dtype=int).reshape(-1, 3) if degree >= 3 else np.empty((0, 3), dtype=int)
+        _FEATURE_INDEX[key] = (pairs, trips)
+    return _FEATURE_INDEX[key]
+
+
 def quad_features(X, degree=2):
-    """Polynomial features of the rows of X up to `degree` (1, x_j, x_j x_k, and cubes when degree 3)."""
+    """Polynomial features of the rows of X up to `degree` (1, x_j, x_j x_k, and cubes when degree 3). Every product is formed in the same order as the plain loops would form it, so the values are identical to them bit for bit (tested against the loops in scripts/test_modelform_stats.py)."""
     X = np.atleast_2d(np.asarray(X, float))
     n, d = X.shape
-    cols = [np.ones(n)]
-    cols += [X[:, j] for j in range(d)]
-    for j in range(d):
-        for k in range(j, d):
-            cols.append(X[:, j] * X[:, k])
+    pairs, trips = _feature_index(d, degree)
+    blocks = [np.ones((n, 1)), X, X[:, pairs[:, 0]] * X[:, pairs[:, 1]]]
     if degree >= 3:
-        for j in range(d):
-            for k in range(j, d):
-                for m in range(k, d):
-                    cols.append(X[:, j] * X[:, k] * X[:, m])
-    return np.column_stack(cols)
+        blocks.append(X[:, trips[:, 0]] * X[:, trips[:, 1]] * X[:, trips[:, 2]])
+    return np.concatenate(blocks, axis=1)
 
 
 class Emulator:

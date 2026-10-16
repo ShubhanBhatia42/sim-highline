@@ -1,0 +1,39 @@
+name: link-and-data-rot
+# Weekly: do the links behind every record and on every page still resolve, and does the whole offline chain still pass on today's tools? Opens one issue listing what broke; does nothing when all is well.
+on:
+  schedule:
+    - cron: "30 5 * * 2"
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  rot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - run: pip install -r requirements-dev.txt
+      - name: Build
+        run: node scripts/build-static.mjs && node scripts/build-highline.mjs && node scripts/build-site.mjs
+      - name: Links behind the records, and external links on the pages
+        run: |
+          python3 scripts/check_links.py | tee links-records.txt
+          python3 scripts/check_links.py --site | tee links-site.txt
+      - name: Offline chain on today's tools
+        run: ./scripts/verify-all.sh 2>&1 | tail -20 | tee chain.txt
+      - name: Open an issue if anything broke
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          { echo "The weekly check found a problem. Details from the run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"; echo; echo '```'; grep -h "BROKEN" links-records.txt links-site.txt 2>/dev/null | head -40; tail -5 chain.txt 2>/dev/null; echo '```'; } > body.md
+          gh label create rot --color D93F0B --description "Broken links or a failing check found by the weekly run" 2>/dev/null || true
+          gh issue create --title "Weekly check failed, $(date -u +%F)" --label rot --body-file body.md

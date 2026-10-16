@@ -37,9 +37,13 @@ python3 scripts/verify-dois.py   # network: every DOI resolves and matches the s
 
 The audit must end with 0 errors and 0 warnings; accepted findings go in `data/audit-known.json` with a reason. Add an entry to `data/sources-catalogue.json`, profile any new observational source in `data/observation-profiles.json`, bump `data/release.json` and add a line to `CHANGELOG.md`.
 
+## The short way
+
+`make help` lists the common jobs (`make build`, `make lint`, `make test`, `make browser`, `make verify`). To run the quick checks before every commit: `git config core.hooksPath .githooks`. The structure of the project on one page: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md). Releases: `scripts/release.sh X.Y.Z "summary"` bumps the version everywhere, rebuilds, verifies and prints the commit and tag commands; it never pushes.
+
 ## Browser tests
 
-`npm install && npx playwright install chromium && npm run test:ui` runs `scripts/test-ui.mjs` against the built `dist/` (build it first): layout in the desktop, embed and phone views, Coverage and Tension, hash navigation, theme toggle, links between the site and the app, and an accessibility audit (axe, serious and critical violations fail). CI runs it as the `ui` job. Change the app or site, then run it before sending.
+`npm install && npx playwright install chromium && npm run test:ui` runs `scripts/test-ui.mjs` against the built `dist/` (build it first): layout in the desktop, embed and phone views, the What exists and Vs observations views, hash navigation, theme toggle, links between the site and the app, and an accessibility audit (axe, serious and critical violations fail). CI runs it as the `ui` job, together with the journeys, the check-your-run and dials tests, `test-layouts` (every page at 320 to 2560 px, light, dark and print), `test-keyboard`, `test-resilience` (broken data, no JavaScript, offline, reduced motion, the content security policy) and `test-performance` (a speed budget on a slow phone). `npm run test:browser` runs them all. Firefox and WebKit run in a separate, non-blocking job (`PW_BROWSER=firefox`). Change the app or site, then run them before sending.
 
 ## What happens to a submission
 

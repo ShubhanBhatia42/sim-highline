@@ -86,6 +86,8 @@ def main():
     print(f"links: {len(out)} checked, {summary['ok']} ok, {summary['unverified']} unverified (publisher refused a script), {summary['broken']} broken")
     for u, v in report["broken"].items():
         print("  BROKEN", v["code"], u, f"({v['records']} {'pages' if site else 'records'}: {', '.join(urls[u][:3]) if site else ''})")
+    if report["broken"]:
+        sys.exit(1)
 
 
 if __name__ == "__main__":
