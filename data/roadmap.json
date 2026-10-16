@@ -1728,7 +1728,8 @@
   "tier": 1,
   "who": "C",
   "title": "Confirm the live site matches the release",
-  "status": "todo"
+  "note": "The live site is still the old build of main (0.23.0 without the faq, summary, tests of this push: /site/summary.html and /site/faq.html return 404). It can be confirmed only after the merge to main",
+  "status": "blocked"
  },
  {
   "id": "10.13",
@@ -1736,7 +1737,8 @@
   "tier": 2,
   "who": "C",
   "title": "Check that nothing on the site claims more than the evidence",
-  "status": "todo"
+  "note": "Scanned pages, README, drafts and note for overclaiming words (novel, first, proves, definitive...): none left; novelty is explicitly not claimed. The independent review's claims audit is the second check",
+  "status": "done"
  },
  {
   "id": "10.14",
@@ -1752,7 +1754,8 @@
   "tier": 1,
   "who": "C",
   "title": "Archive scratch files and make the repository tidy",
-  "status": "todo"
+  "note": "Only ignored build and cache directories remain; scratch work lives outside the repository",
+  "status": "done"
  },
  {
   "id": "10.16",

@@ -95,6 +95,18 @@
   "note": "docs/REVIEW-DAY.md",
   "status": "done"
  },
+ "10.12": {
+  "note": "The live site is still the old build of main (0.23.0 without the faq, summary, tests of this push: /site/summary.html and /site/faq.html return 404). It can be confirmed only after the merge to main",
+  "status": "blocked"
+ },
+ "10.13": {
+  "note": "Scanned pages, README, drafts and note for overclaiming words (novel, first, proves, definitive...): none left; novelty is explicitly not claimed. The independent review's claims audit is the second check",
+  "status": "done"
+ },
+ "10.15": {
+  "note": "Only ignored build and cache directories remain; scratch work lives outside the repository",
+  "status": "done"
+ },
  "10.16": {
   "note": "docs/NEXT.md",
   "status": "done"
