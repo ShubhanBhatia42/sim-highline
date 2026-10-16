@@ -470,15 +470,20 @@ const copyTxt=async(t,msg)=>{try{await navigator.clipboard.writeText(t)}catch(e)
 function toast(m){const t=$("toast");t.textContent=m;t.style.display="block";clearTimeout(toast.h);toast.h=setTimeout(()=>t.style.display="none",1800)}
 
 /* ---------- state in the URL ---------- */
-function syncHash(){
+function syncHash(now){
   const p=new URLSearchParams(),d={rel:"gsmf",yt:"none",tf:"log"};
   p.set("r",state.rel);p.set("z",currentZ());if(state.mode!=="plot")p.set("m",state.mode);if(state.mode==="tension")p.set("tz",state.tz);if(state.mode==="spread"&&state.spRk)p.set("sk","1");
   const ob=Object.entries(state.offBy).filter(([,v])=>v.size).map(([k,v])=>k+":"+[...v].map(encodeURIComponent).join("~")).join(",");if(ob)p.set("off",ob);if(state.runPref.size)p.set("rp",[...state.runPref].map(([u,v])=>encodeURIComponent(u)+"*"+(v?1:0)).join("~"));if(state.variants)p.set("va","1");if(state.offTier.size)p.set("ot",[...state.offTier].join("~"));
   if(state.rankOnly)p.set("rk","1");if(state.imfc)p.set("imf","1");if(!state.showObs)p.set("obs","0");if(state.obsOff.size)p.set("oo",[...state.obsOff].join("~"));
   if(effYt()!=="none")p.set("yt",effYt());if(state.tf!=="log")p.set("tf",state.tf);if(state.xr)p.set("xr",state.xr.join(","));if(state.yr)p.set("yr",state.yr.join(","));
   if(!state.bands)p.set("bd","0");if(!state.scatter)p.set("sc","0");if(state.evo)p.set("ev",state.evo);if(state.ref)p.set("ref",state.ref);if(state.resid)p.set("res","1");if(state.at!=null)p.set("at",state.at);if(state.sel)p.set("sel",state.sel);if(Object.keys(state.anc).length)p.set("an",Object.entries(state.anc).map(([k,v])=>encodeURIComponent(k)+"*"+encodeURIComponent(v)).join("~"));if(state.embed)p.set("embed","1");
-  history.replaceState(null,"","#"+p.toString());if(state.embed)embedSync();
+  writeHash("#"+p.toString(),now);if(state.embed)embedSync();
 }
+/* Browsers limit history.replaceState (Safari and Firefox: about 100 calls per 10 s, then a SecurityError), and a dragged slider or a fast keyboard repeat would pass that. The first write goes out at once, later ones at most every 150 ms with the latest value winning, and a pending one is flushed when the page is hidden or the link is copied. */
+const HASH_GAP=150;let hashAt=0,hashWant=null,hashTimer=0;
+function hashFlush(){clearTimeout(hashTimer);hashTimer=0;if(hashWant===null)return;const h=hashWant;hashWant=null;hashAt=Date.now();try{history.replaceState(null,"",h)}catch(e){}}
+function writeHash(h,now){hashWant=h;if(now||Date.now()-hashAt>=HASH_GAP){hashFlush();return}if(!hashTimer)hashTimer=setTimeout(hashFlush,HASH_GAP-(Date.now()-hashAt))}
+addEventListener("pagehide",()=>hashFlush());document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="hidden")hashFlush()});
 function embedSync(){$("embedTitle").textContent="sim-highline · "+REL[state.rel].t;const u=new URL(location.href),q=new URLSearchParams(u.hash.slice(1));q.delete("embed");u.hash=q.toString();$("embedOpen").href=u.href}
 function readHash(){
   const p=new URLSearchParams(location.hash.slice(1)),set=k=>new Set((p.get(k)||"").split("~").filter(Boolean));
@@ -705,7 +710,7 @@ function renderPanel(){
   if(state.tab==="evidence")body.innerHTML=evidenceHtml();else if(state.tab==="about")body.innerHTML=aboutHtml();else if(state.tab==="tune")body.innerHTML=tuneHtml();else if(state.tab==="mine")body.innerHTML=mineHtml();else body.innerHTML=dataHtml();
   if(state.tab==="evidence")wireEvidence();else if(state.tab==="tune")wireTune();else if(state.tab==="mine")wireMine();else if(state.tab==="data")wireData();
 }
-const issueUrl=r=>`${SIMHIGHLINE_RELEASE.repo}/issues/new?template=curve-error.yml&title=${encodeURIComponent("Curve error: "+r.id)}&record=${encodeURIComponent(r.id)}&view=${encodeURIComponent(location.href)}`;
+const issueUrl=r=>(hashFlush(),`${SIMHIGHLINE_RELEASE.repo}/issues/new?template=curve-error.yml&title=${encodeURIComponent("Curve error: "+r.id)}&record=${encodeURIComponent(r.id)}&view=${encodeURIComponent(location.href)}`);
 const SURE={"official-table":"The authors' own table, checksummed when downloaded.","published-table":"A table printed in the paper, spot-checked against numbers the paper quotes.","published-fit":"The paper's fitting function evaluated at the plotted points, not refitted.","catalog-derived":"Binned by this project from a catalogue, with fixed cuts and a fixed random seed.","digitized-figure":"Read from a published figure"};
 function sureHtml(r){const p=r.provenance||{},t=p.tier;let s=SURE[t]||"";if(!s)return"";const a=(window.SIMHIGHLINE_AUDIT||{})[r.id];if(t==="digitized-figure"){const u=p.digitizationUncertaintyDex;s+=` (axes calibrated on the printed tick marks${Number.isFinite(u)?`, reading error about ${u} dex`:""}). Not checked against the authors' numbers; shown for context and never used for ranking.`}const chk=a?` Checked by ${esc(a.reviewer)} (${esc(a.verdict)}, ${esc(a.date||"")}).`:" Not yet checked by anyone who knows the source.";return`<p class="sure"><b>How sure are we?</b> ${esc(s)}${chk}</p>`}
 function evidenceHtml(){
@@ -864,7 +869,7 @@ function figurePng(name,caption){
   const wrap=`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${H}" viewBox="0 0 ${w} ${H}"><rect width="${w}" height="${H}" fill="${bg}"/><text x="12" y="26" font-family="Georgia,serif" font-size="18" fill="${fg}">${esc($("shTitle").textContent)}</text><g transform="translate(0 ${pad})">${new XMLSerializer().serializeToString(clone)}</g><text x="12" y="${H-10}" font-family="monospace" font-size="11" fill="${fg}">${esc(caption)}</text></svg>`;
   const img=new Image();img.onload=()=>{const c=document.createElement("canvas");c.width=w*2;c.height=H*2;const g=c.getContext("2d");g.scale(2,2);g.drawImage(img,0,0);c.toBlob(bl=>saveBlob(name,bl),"image/png")};img.onerror=()=>toast("The figure could not be rendered in this browser");
   img.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(wrap)}
-function mineShareHash(){const u=state.user,q=new URLSearchParams(location.hash.slice(1)),r4=v=>Number.isFinite(v)?+v.toFixed(4):null;
+function mineShareHash(){hashFlush();const u=state.user,q=new URLSearchParams(location.hash.slice(1)),r4=v=>Number.isFinite(v)?+v.toFixed(4):null;
   q.set("run",btoa(unescape(encodeURIComponent(JSON.stringify({n:u.name,p:u.pts.map(p=>[r4(p.x),r4(p.y),r4(p.lo),r4(p.hi)]),d:u.defs||{}})))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""));q.set("pn","mine");return q.toString()}
 function mineFromHash(s){try{const j=JSON.parse(decodeURIComponent(escape(atob(s.replace(/-/g,"+").replace(/_/g,"/")))));const pts=(j.p||[]).filter(a=>Number.isFinite(a[0])&&Number.isFinite(a[1])).map(a=>({x:a[0],y:a[1],lo:Number.isFinite(a[2])?a[2]:undefined,hi:Number.isFinite(a[3])?a[3]:undefined}));if(!pts.length)return false;
   const raw=pts.map(p=>[p.x,p.y,...(Number.isFinite(p.lo)&&Number.isFinite(p.hi)?[p.lo,p.hi]:[])].join(",")).join("\n");state.user={name:String(j.n||"shared run").slice(0,80),raw,linear:false,defs:j.d&&typeof j.d==="object"?j.d:{},pts};mineSave();return true}catch(e){return false}}
@@ -973,9 +978,9 @@ function wireData(){
   $("dJson").onclick=()=>download(nm()+".json","application/json",JSON.stringify({version:SIMHIGHLINE_RELEASE.version,released:SIMHIGHLINE_RELEASE.released,selection:note()[0],records:exportSet()},null,1));
   $("dPy").onclick=()=>copyTxt(pySnippet(exportSet()),"Python snippet copied");
   $("dBib").onclick=()=>copyTxt(SimHighlineExport.bibtex(exportSet()),"BibTeX copied");
-  $("fLink").onclick=()=>{syncHash();copyTxt(location.href,"Link copied")};
+  $("fLink").onclick=()=>{syncHash(true);copyTxt(location.href,"Link copied")};
   $("cTxt").onclick=()=>copyTxt(citeText(),"Citation copied");$("cBibD").onclick=()=>copyTxt(citeBib(),"BibTeX copied");
-  $("fEmb").onclick=()=>{syncHash();const u=new URL(location.href);const q=new URLSearchParams(u.hash.slice(1));q.set("embed","1");u.hash=q.toString();copyTxt(`<iframe src="${u.href}" width="820" height="560" style="border:1px solid #ccc;border-radius:8px" loading="lazy" title="sim-highline: ${REL[state.rel].t}"></iframe>`,"Embed code copied")};
+  $("fEmb").onclick=()=>{syncHash(true);const u=new URL(location.href);const q=new URLSearchParams(u.hash.slice(1));q.set("embed","1");u.hash=q.toString();copyTxt(`<iframe src="${u.href}" width="820" height="560" style="border:1px solid #ccc;border-radius:8px" loading="lazy" title="sim-highline: ${REL[state.rel].t}"></iframe>`,"Embed code copied")};
   $("fMeth").onclick=()=>copyTxt(methodsPack().methods,"Methods text copied");
   $("fPack").onclick=()=>{const m=methodsPack();download(`sim-highline_${state.rel}_z${fmtZ(currentZ())}_pack.md`,"text/markdown",m.pack)};
   $("fSvg").onclick=()=>download(`sim-highline_${state.rel}_z${fmtZ(currentZ())}.svg`,"image/svg+xml",figureSvg().svg);
@@ -994,7 +999,7 @@ function methodsPack(){
   const cites=[...new Map([...sim,...ob].map(r=>[r.provenance.doi||r.provenance.url||r.id,String(r.provenance.citation||"").replace(/,\s*(Fig\.|Figure|figure|Table).*$/,"")])).values()];
   const methods=`The ${meta.t.toLowerCase()} at z = ${fmtZ(z)} was compiled from the sim-highline dataset (v${SIMHIGHLINE_RELEASE.version}; ${SIMHIGHLINE_RELEASE.doi?"https://doi.org/"+SIMHIGHLINE_RELEASE.doi:SIMHIGHLINE_RELEASE.repo}), which collects values as published or released by each simulation team together with the definitions each source states. The ${sim.length} simulation curves shown come from ${names.join(", ")} (${tl}); ${ob.length} observational curves are shown for reference${anc?`, with ${anc.source} as the anchor`:""}. Curves digitized from published figures (${dig}) are context only and are never used for ranking. No curve was interpolated across epochs, smoothed or extrapolated${state.imfc?"; stellar masses and star formation rates of Kroupa and Salpeter curves were converted to a Chabrier IMF with the standard offsets":"; no IMF conversion was applied"}. ${diffs.length?`The curves do not share all definitions: ${diffs.join(". ")}.`:"All plotted simulation curves state matching definitions."}${comp}${sens.length?` Measured inside single runs, changing the definition alone shifts the relation by: ${sens.join("; ")} (y units).`:""} Original sources: ${cites.join("; ")}.`;
   const rows=sim.map(r=>`| ${label(r)} | ${r.provenance.tier} | ${r.rankable?"yes":"no"} | ${keys.map(k=>val(r,k)).join(" | ")} |`);
-  const pack=`# ${meta.t} at z = ${fmtZ(z)}\n\n_sim-highline v${SIMHIGHLINE_RELEASE.version}, ${new Date().toISOString().slice(0,10)}; ${location.origin==="null"?"":location.href}_\n\n## Caption\n\n${meta.t} at z = ${fmtZ(z)}: ${sim.length} simulation curves (${names.join(", ")}) and ${ob.length} observational curves. Solid lines are tabulated or catalogue-derived values, dashed lines published fits, dotted lines values digitized from published figures. Definitions differ between curves; see the table.\n\n## Methods\n\n${methods}\n\n## Definitions of the plotted simulation curves\n\n| curve | tier | rankable | ${keys.join(" | ")} |\n|---|---|---|${keys.map(()=>"---").join("|")}|\n${rows.join("\n")}\n\n## BibTeX\n\n\`\`\`bibtex\n${citeBib()}\n\n${SimHighlineExport.bibtex([...sim,...ob])}\n\`\`\`\n`;
+  hashFlush();const pack=`# ${meta.t} at z = ${fmtZ(z)}\n\n_sim-highline v${SIMHIGHLINE_RELEASE.version}, ${new Date().toISOString().slice(0,10)}; ${location.origin==="null"?"":location.href}_\n\n## Caption\n\n${meta.t} at z = ${fmtZ(z)}: ${sim.length} simulation curves (${names.join(", ")}) and ${ob.length} observational curves. Solid lines are tabulated or catalogue-derived values, dashed lines published fits, dotted lines values digitized from published figures. Definitions differ between curves; see the table.\n\n## Methods\n\n${methods}\n\n## Definitions of the plotted simulation curves\n\n| curve | tier | rankable | ${keys.join(" | ")} |\n|---|---|---|${keys.map(()=>"---").join("|")}|\n${rows.join("\n")}\n\n## BibTeX\n\n\`\`\`bibtex\n${citeBib()}\n\n${SimHighlineExport.bibtex([...sim,...ob])}\n\`\`\`\n`;
   return{methods,pack};
 }
 function figureSvg(){

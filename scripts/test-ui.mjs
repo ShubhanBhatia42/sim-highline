@@ -123,17 +123,40 @@ await step("first visit: a short guide appears once, can be dismissed, and stays
   await s.ctx.close();
 });
 
+await step("address bar: rapid changes stay under the browsers' replaceState limit, and the last one wins", async () => {
+  const { page, ctx } = await open("/highline.html#r=gsmf&z=0");
+  const out = await page.evaluate(async () => {
+    let calls = 0, errors = 0;
+    const t0 = performance.now();
+    const orig = history.replaceState.bind(history);
+    history.replaceState = (...a) => { calls++; return orig(...a); };
+    addEventListener("error", () => errors++);
+    const z = document.getElementById("z"), max = Number(z.max);
+    for (let i = 0; i < 400; i++) { z.value = String(i % (max + 1)); z.dispatchEvent(new Event("input", { bubbles: true })); await new Promise(r => setTimeout(r, 2)); }
+    z.value = String(max); z.dispatchEvent(new Event("input", { bubbles: true }));
+    await new Promise(r => setTimeout(r, 400));
+    return { calls, errors, hash: location.hash, secs: (performance.now() - t0) / 1000 };
+  });
+  assert.ok(out.calls <= out.secs / 0.15 + 3, `${out.calls} address-bar writes in ${out.secs.toFixed(1)} s for 401 slider moves (at most one per 150 ms; Safari and Firefox allow 100 per 10 s)`);
+  assert.equal(out.errors, 0, "no page errors");
+  assert.ok(/z=/.test(out.hash), "the address still carries the redshift");
+  const z = Number(new URLSearchParams(out.hash.slice(1)).get("z"));
+  assert.ok(Number.isFinite(z), "redshift in the address is a number");
+  await ctx.close();
+});
 await step("spread map and command palette", async () => {
   const { page, ctx } = await open("/highline.html#m=spread");
   assert.ok(await page.locator("#spread td[data-r]").count() >= 20, "spread map has cells");
   const first = await page.locator("#spread td[data-r] b").first().innerText();
   assert.ok(Number(first) > 0 && Number(first) < 3, "spread values are plausible dex");
   await page.locator("#spread td[data-r]").first().click();
+  await page.waitForFunction(() => !location.hash.includes("m=spread"), null, { timeout: 2000 }).catch(() => {});  // the address bar is written at most every 150 ms
   assert.ok(!(await page.evaluate(() => location.hash)).includes("m=spread"), "clicking a cell opens the relation");
   await page.keyboard.press("/");
   assert.ok(await page.locator("#pal.on").count() === 1, "palette opens with /");
   await page.fill("#palQ", "tension");
   await page.keyboard.press("Enter");
+  await page.waitForFunction(() => location.hash.includes("m=tension"), null, { timeout: 2000 }).catch(() => {});
   assert.ok((await page.evaluate(() => location.hash)).includes("m=tension"), "palette runs the first match");
   await page.keyboard.press("Control+k");
   await page.fill("#palQ", "pillepich");

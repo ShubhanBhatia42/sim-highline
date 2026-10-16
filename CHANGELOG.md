@@ -9,7 +9,9 @@
 - Engineering: layout (320 to 2560 px, dark, print), keyboard, resilience, speed-budget, parity (page emulators equal the analysis emulators) and determinism tests; lint; content security policy; 404 page; share images; schema.org dataset metadata; pre-commit hook; Makefile; release and coverage scripts; weekly link and data-rot workflow; the joint-reachability test from about ten minutes to under two (bit-identical speed-up, verified); offline chain about four minutes.
 - Fixed (found by a review of the whole project): the downloadable files evaluated redshift-dependent parametric curves at the row number instead of the record's redshift, since 0.8.0 (`z` column of 91 records, points of 4 fits); abstracts quoted z = 0 to 2.15 when the outputs reach z = 4; wording that said no dial setting closes a gap now says the gap stays beyond run-to-run scatter at every setting tried, with its size; "documentation, not physics, is the binding constraint" removed. The pages now call the reviews that preceded two studies internal, not independent.
 - Fixed: an invalid number (NaN) in `data/analysis/plausibility-screen.json`; the Explorer says in words when it cannot start; the legend key no longer clips.
-- Not yet: any outside use, outside checking of the data, Firefox and WebKit runs, a merge to `main` (the live site still shows 0.23.0).
+- Fixed: the Explorer wrote the address bar on every slider step, which Safari and Firefox cut off after 100 writes in 10 seconds; it now writes at most every 150 ms (latest value wins) and never fails the page if the browser refuses.
+- Fixed: `data/analysis/harmonization.json` differed in the 13th digit between machines and failed the "generated files are up to date" check in CI; floats are now written to 10 significant digits (no verdict or table changes).
+- Merged to `main` and live. Not yet: any outside use, outside checking of the data, a tagged release and a new archive deposit (the archived 0.23.0 files still have the redshift error above), a clean Firefox and WebKit run.
 
 ## 0.23.0 (2026-10-15)
 
