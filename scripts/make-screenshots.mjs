@@ -14,6 +14,7 @@ await mkdir(OUT, { recursive: true });
 const browser = await launchBrowser();
 async function shot(name, url, { scheme = "light", w = 1440, h = 900, prep } = {}) {
   const ctx = await browser.newContext({ viewport: { width: w, height: h }, colorScheme: scheme, deviceScaleFactor: 1 });
+  await ctx.addInitScript(() => { try { localStorage.setItem("sh-guide-seen", "1"); } catch (e) { /* no storage */ } }); // the screenshots show the Explorer as a returning visitor sees it
   const page = await ctx.newPage();
   await page.goto(BASE + url, { waitUntil: "load" });
   await page.waitForFunction(() => !document.getElementById("boot"), null, { timeout: 8000 });
