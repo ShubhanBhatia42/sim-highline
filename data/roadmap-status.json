@@ -99,6 +99,14 @@
   "note": "already present: evidence panel link opens a pre-filled curve-error issue (verified in code)",
   "status": "done"
  },
+ "2.06": {
+  "note": "an independent re-extraction needs the per-figure pipeline re-run by another method; the regression re-runs the same method. Not built.",
+  "status": "skipped"
+ },
+ "2.07": {
+  "note": "screen_outliers.py now fails the build for a flagged curve not listed with a reason in data/screen-triaged.json (9 listed, 2 open leads)",
+  "status": "done"
+ },
  "2.08": {
   "note": "scripts/check_links.py: 210 links, 145 resolve, 65 refuse scripts (publishers, GitHub via the proxy), 0 broken; needs network so not part of verify-all",
   "status": "done"
@@ -124,7 +132,7 @@
   "status": "done"
  },
  "2.14": {
-  "note": "all 12 accepted patterns (16 records) carry a written reason in data/audit-known.json",
+  "note": "all 12 accepted audit patterns (16 records) carry a written reason in data/audit-known.json",
   "status": "done"
  },
  "2.15": {
@@ -139,9 +147,25 @@
   "note": "generated data-quality page (site/quality.html, docs/DATA-QUALITY.md); plain 'how sure are we' in the evidence panel; thin-evidence note under the chart title",
   "status": "done"
  },
+ "2.18": {
+  "note": "scripts/test_claims.py checks the README and overview numbers against the generated JSON (runs with the other test_*.py in verify-all)",
+  "status": "done"
+ },
+ "2.19": {
+  "note": "1636 of 1699 records carry the SHA-256 of their source; the regression re-fetches every source and reproduced all records today",
+  "status": "done"
+ },
+ "2.20": {
+  "note": "spelling of definitions reported (docs/DATA-QUALITY.md); strict vocabulary not enforced, because changing it changes the inputs of two pre-registered studies",
+  "status": "partial"
+ },
  "2.21": {
   "note": "needs you to send them",
   "status": "blocked"
+ },
+ "2.22": {
+  "note": "docs/CORRECTIONS.md linked from the quality page",
+  "status": "done"
  },
  "3.22": {
   "note": "scripts/test-journeys.mjs walks all ten in a browser; docs/QUESTIONS.md",
@@ -149,6 +173,10 @@
  },
  "5.01": {
   "note": "docs/RELATED-WORK.md; summaries only, papers not read",
+  "status": "done"
+ },
+ "5.20": {
+  "note": "scripts/test_claims.py checks the README and overview numbers against the generated JSON (runs with the other test_*.py in verify-all)",
   "status": "done"
  },
  "7.08": {

@@ -6,11 +6,11 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 | tier | tasks | done | partly | waiting for a person | not done |
 |---|---|---|---|---|---|
-| 1 Quick (under 15 min) | 46 | 9 | 1 | 2 | 34 |
-| 2 Solid (about an hour) | 121 | 22 | 1 | 0 | 98 |
-| 3 Big (several hours) | 23 | 3 | 0 | 0 | 20 |
+| 1 Quick (under 15 min) | 46 | 10 | 1 | 2 | 33 |
+| 2 Solid (about an hour) | 121 | 25 | 2 | 0 | 94 |
+| 3 Big (several hours) | 23 | 4 | 0 | 0 | 19 |
 | 4 Needs other people or days | 10 | 0 | 0 | 2 | 8 |
-| all | 200 | 34 | 2 | 4 | 160 |
+| all | 200 | 39 | 3 | 4 | 154 |
 
 ## Step 1. Say what great means, and how we will know
 
@@ -39,30 +39,30 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 ## Step 2. Make the data trustworthy
 
-*The curves are the asset. Most were digitized by one person and nobody has checked them.* (13 of 22 done)
+*The curves are the asset. Most were digitized by one person and nobody has checked them.* (17 of 22 done)
 
 - [x] **2.01** · tier 1 · Claude · Count the curves by how they were obtained (official table, paper table, fit, digitized figure) and show the breakdown — generated data-quality page (site/quality.html, docs/DATA-QUALITY.md); plain 'how sure are we' in the evidence panel; thin-evidence note under the chart title
 - [x] **2.02** · tier 2 · Claude · Cross-check every digitized curve that has an independent table of the same thing; publish the deviations — only 1 of 792 figure curves has an independent counterpart in the data (COLIBRE m6 50 pkpc: 0.000); reported on the quality page
 - [x] **2.03** · tier 2 · Claude · Re-run the script that regenerates every digitized curve from its source and compare with what ships — scripts/regress_digitizers.py: 82 scripts, 82 outputs, 0 problems, regenerated from arXiv today
 - [x] **2.04** · tier 2 · Claude · Show a plain 'how sure are we' label with the reason on every curve in the Explorer — generated data-quality page (site/quality.html, docs/DATA-QUALITY.md); plain 'how sure are we' in the evidence panel; thin-evidence note under the chart title
 - [x] **2.05** · tier 2 · Claude · Add a 'report a problem with this curve' link on every curve that opens a pre-filled issue — already present: evidence panel link opens a pre-filled curve-error issue (verified in code)
-- [ ] **2.06** · tier 2 · Claude · Re-extract 30 random digitized points independently from the figure and record the error
-- [ ] **2.07** · tier 3 · Claude · Make the plausibility screen a gate that fails the build on new outliers
+- [-] **2.06** · tier 2 · Claude · Re-extract 30 random digitized points independently from the figure and record the error — an independent re-extraction needs the per-figure pipeline re-run by another method; the regression re-runs the same method. Not built.
+- [x] **2.07** · tier 3 · Claude · Make the plausibility screen a gate that fails the build on new outliers — screen_outliers.py now fails the build for a flagged curve not listed with a reason in data/screen-triaged.json (9 listed, 2 open leads)
 - [x] **2.08** · tier 2 · Claude · Check that every citation link resolves and fix broken ones — scripts/check_links.py: 210 links, 145 resolve, 65 refuse scripts (publishers, GitHub via the proxy), 0 broken; needs network so not part of verify-all
 - [x] **2.09** · tier 2 · Claude · Check every record has licence or terms information; list the gaps — 142 records are values we binned from a repository with no licence file, permission not yet requested: needs the maintainer
 - [x] **2.10** · tier 3 · Claude · Prepare the expert-audit packet: 60 records sampled across sources, figure and data side by side — scripts/make_audit_packet.py builds docs/audit-packet/packet.html (60 curves from 17 simulations); COVER-NOTE.md; the evidence panel shows who has checked a record (nobody yet)
 - [x] **2.11** · tier 1 · Claude · Write the cover note for the audit request in plain language — scripts/make_audit_packet.py builds docs/audit-packet/packet.html (60 curves from 17 simulations); COVER-NOTE.md; the evidence panel shows who has checked a record (nobody yet)
 - [!] **2.12** · tier 4 · You · Send the audit packet to two outside experts — needs you to send them
 - [x] **2.13** · tier 3 · Claude · Add a 'checked by' field to the data and show it (empty until experts reply) — scripts/make_audit_packet.py builds docs/audit-packet/packet.html (60 curves from 17 simulations); COVER-NOTE.md; the evidence panel shows who has checked a record (nobody yet)
-- [x] **2.14** · tier 2 · Claude · Give each of the accepted audit warnings a written reason — all 12 accepted patterns (16 records) carry a written reason in data/audit-known.json
+- [x] **2.14** · tier 2 · Claude · Give each of the accepted audit warnings a written reason — all 12 accepted audit patterns (16 records) carry a written reason in data/audit-known.json
 - [x] **2.15** · tier 2 · Claude · Mark the ten thinnest relation-epoch cells as 'thin evidence' in the Explorer — generated data-quality page (site/quality.html, docs/DATA-QUALITY.md); plain 'how sure are we' in the evidence panel; thin-evidence note under the chart title
 - [~] **2.16** · tier 2 · Claude · Compare curves where one simulation appears in two papers; list disagreements above 0.1 dex — only 1 pair of one simulation and run in two papers with identical axis definitions (agrees to 0.008 dex median); the matcher is strict, more pairs may exist
 - [x] **2.17** · tier 3 · Claude · Build a data-quality page on the site, generated from the data — generated data-quality page (site/quality.html, docs/DATA-QUALITY.md); plain 'how sure are we' in the evidence panel; thin-evidence note under the chart title
-- [ ] **2.18** · tier 1 · Claude · Make sure the digitized share is computed everywhere, never typed
-- [ ] **2.19** · tier 2 · Claude · Record checksums of every raw source file used and add a script that verifies them
-- [ ] **2.20** · tier 2 · Claude · Test that every record's definitions validate against the schema, with clear errors
+- [x] **2.18** · tier 1 · Claude · Make sure the digitized share is computed everywhere, never typed — scripts/test_claims.py checks the README and overview numbers against the generated JSON (runs with the other test_*.py in verify-all)
+- [x] **2.19** · tier 2 · Claude · Record checksums of every raw source file used and add a script that verifies them — 1636 of 1699 records carry the SHA-256 of their source; the regression re-fetches every source and reproduced all records today
+- [~] **2.20** · tier 2 · Claude · Test that every record's definitions validate against the schema, with clear errors — spelling of definitions reported (docs/DATA-QUALITY.md); strict vocabulary not enforced, because changing it changes the inputs of two pre-registered studies
 - [!] **2.21** · tier 4 · You · Ask three simulation authors to confirm their own curves (drafts exist) — needs you to send them
-- [ ] **2.22** · tier 2 · Claude · Add a visible corrections log for data fixes
+- [x] **2.22** · tier 2 · Claude · Add a visible corrections log for data fixes — docs/CORRECTIONS.md linked from the quality page
 
 ## Step 3. Make "check my run" excellent
 
@@ -122,7 +122,7 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 ## Step 5. Strengthen the science
 
-*Check what is already known, test the result's robustness, and say only what survives.* (1 of 20 done)
+*Check what is already known, test the result's robustness, and say only what survives.* (2 of 20 done)
 
 - [x] **5.01** · tier 2 · Claude · Search the literature: has cross-code retuning been studied in CAMELS? Write the related-work note — docs/RELATED-WORK.md; summaries only, papers not read
 - [ ] **5.02** · tier 1 · Claude · Change the claims on the pages to match what the prior art shows
@@ -143,7 +143,7 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 - [ ] **5.17** · tier 4 · You · Deposit the analysis data with a DOI
 - [ ] **5.18** · tier 3 · Claude · Make every analysis run end to end with one command and a documented runtime
 - [ ] **5.19** · tier 2 · Claude · Add an environment file so others can reproduce the numbers
-- [ ] **5.20** · tier 2 · Claude · Test that every number on the site and in the README matches the generated results
+- [x] **5.20** · tier 2 · Claude · Test that every number on the site and in the README matches the generated results — scripts/test_claims.py checks the README and overview numbers against the generated JSON (runs with the other test_*.py in verify-all)
 
 ## Step 6. Make it fast, robust and accessible
 

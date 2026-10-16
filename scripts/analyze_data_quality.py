@@ -114,6 +114,35 @@ def thin_cells(recs):
     return out
 
 
+def vocabulary(recs):
+    """For each definition key, how many distinct spellings there are and which differ only in case, punctuation or filler words (so that string comparison would call them different)."""
+    out = {}
+    for key in ("population", "massDefinition", "imf", "densityFrame", "sizeDefinition"):
+        vals = collections.Counter(str(r["definitions"][key]) for r in recs if r.get("definitions") and r["definitions"].get(key) is not None)
+        groups = collections.defaultdict(list)
+        for v in vals:
+            groups[re.sub(r"(galaxies|galaxy|the|of|all|sample)", "", re.sub(r"[^a-z0-9]", "", v.lower())) or "empty"].append(v)
+        near = [sorted(g, key=lambda v: -vals[v]) for g in groups.values() if len(g) > 1]
+        out[key] = {"distinct": len(vals), "records": sum(vals.values()), "near_duplicates": [{"spellings": g, "records": [vals[v] for v in g]} for g in near]}
+    # consequence: pairs of curves at a relation whose rules make population a hard key, which differ as strings but not after the normalisation above
+    canon = lambda v: re.sub(r"(galaxies|galaxy|the|of|all|sample)", "", re.sub(r"[^a-z0-9]", "", str(v).lower())) or "all"
+    blocked = {}
+    for rel in ("sfms", "ssfr", "size"):
+        rs = [r for r in recs if r["relation"] == rel and r["kind"] == "simulation" and (r.get("definitions") or {}).get("population") is not None]
+        total = spelled = 0
+        for i in range(len(rs)):
+            for j in range(i + 1, len(rs)):
+                a, b = rs[i], rs[j]
+                if a["source"] == b["source"] or abs(a["epoch"]["zRepresentative"] - b["epoch"]["zRepresentative"]) > 0.3:
+                    continue
+                total += 1
+                pa, pb = a["definitions"]["population"], b["definitions"]["population"]
+                spelled += pa != pb and canon(pa) == canon(pb)
+        blocked[rel] = {"pairs": total, "differ_only_in_spelling": spelled}
+    out["population_hard_key"] = blocked
+    return out
+
+
 def analyse():
     recs = load()
     tiers = collections.defaultdict(lambda: {"records": 0, "rankable": 0})
@@ -136,7 +165,8 @@ def analyse():
             "extraction_checks": {"pairs": extraction, "n": len(extraction), "n_same_definitions": sum(1 for p in extraction if p["same_definitions"])},
             "paper_disagreements": {"pairs": papers, "n": len(papers)},
             "terms": {"records_with_terms": sum(terms.values()), "by_terms": terms.most_common(8), "permission_not_requested": len(pending)},
-            "thin": {"epochs": list(EPOCHS), "cells": thin}}
+            "thin": {"epochs": list(EPOCHS), "cells": thin}, "vocabulary": vocabulary(recs),
+            "checksums": {"with_checksum": sum(bool(r["provenance"].get("checksumSha256")) for r in recs), "records": len(recs)}}
 
 
 def pct(x):
@@ -170,6 +200,15 @@ def render(q):
             L.append(f"| {r['label']} | {r['tier_a']} / {r['tier_b']} | {r['unit']} | {r['n']} | {r['median_abs']:.3f} | {r['max_abs']:.3f} | {'yes' if r['same_definitions'] else 'no'} |")
     t = q["terms"]
     L += ["", "## Third-party terms", "", f"{t['records_with_terms']} records carry explicit terms; {t['permission_not_requested']} of them are binned values derived by sim-highline from a repository that has no licence file, for which permission has not yet been requested. " + "; ".join(f"{k} ({n})" for k, n in t["by_terms"]) + ".", ""]
+    c = q["checksums"]
+    L += ["## Source checksums", "", f"{c['with_checksum']} of {c['records']} records carry the SHA-256 of the file they were made from. The digitizer regression re-fetches every source and compares; the records without a checksum are transcribed fits and tables.", "", "## Spelling of definitions", "",
+          "Comparison rules match definition values as strings, so two spellings of one thing count as different. Spellings that differ only in case, punctuation or filler words:", ""]
+    for key, v in q["vocabulary"].items():
+        if key == "population_hard_key":
+            L.append("- **Consequence**: population is a hard key for " + ", ".join(f"{rel} ({v2['differ_only_in_spelling']} of {v2['pairs']} cross-simulation pairs near the same epoch differ only in spelling)" for rel, v2 in v.items()) + ". Such pairs are judged not comparable only because of how the population was written.")
+            continue
+        L.append(f"- **{key}**: {v['distinct']} distinct values over {v['records']} records" + (f"; {len(v['near_duplicates'])} groups of near-duplicates, for example " + "; ".join(" / ".join(f"`{x}` ({n})" for x, n in zip(g["spellings"], g["records"])) for g in v["near_duplicates"][:3]) if v["near_duplicates"] else "; no near-duplicates"))
+    L += ["", "Changing the vocabulary changes the inputs of the definitions and mass-function studies, whose rules were fixed in advance, so it is recorded here and not changed silently.", ""]
     th = q["thin"]
     L += ["## Where the evidence is thin", "", "Distinct simulations with a curve of the relation near each epoch (within 0.3 in z, or 15 % of z at higher z). Cells with fewer than three are thin: an offset against so few says little about the field.", "",
           "| relation | " + " | ".join(f"z={z}" for z in th["epochs"]) + " |", "|---|" + "---|" * len(th["epochs"])]

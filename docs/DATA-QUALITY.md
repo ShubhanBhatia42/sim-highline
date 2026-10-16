@@ -44,6 +44,23 @@ The extraction code itself is tested on synthetic figures with known curves and 
 
 332 records carry explicit terms; 142 of them are binned values derived by sim-highline from a repository that has no licence file, for which permission has not yet been requested. third-party: source repository has no licence file (Garcia et al. 2024) (142); source release: CC-BY-4.0 (99); third-party: GPL-2.0 (Sharda et al. 2026 data release) (88); source tables: CC-BY-4.0 (paper tables) (3).
 
+## Source checksums
+
+1636 of 1699 records carry the SHA-256 of the file they were made from. The digitizer regression re-fetches every source and compares; the records without a checksum are transcribed fits and tables.
+
+## Spelling of definitions
+
+Comparison rules match definition values as strings, so two spellings of one thing count as different. Spellings that differ only in case, punctuation or filler words:
+
+- **population**: 64 distinct values over 1656 records; 3 groups of near-duplicates, for example `all` (711) / `all galaxies` (119); `star-forming` (143) / `all galaxies, star-forming` (8); `passive` (40) / `all galaxies, passive` (8)
+- **massDefinition**: 43 distinct values over 1423 records; 1 groups of near-duplicates, for example `aperture-0.1Rvir` (36) / `aperture-0.1rvir` (18)
+- **imf**: 4 distinct values over 1653 records; no near-duplicates
+- **densityFrame**: 2 distinct values over 618 records; no near-duplicates
+- **sizeDefinition**: 17 distinct values over 209 records; no near-duplicates
+- **Consequence**: population is a hard key for sfms (0 of 446 cross-simulation pairs near the same epoch differ only in spelling), ssfr (0 of 310 cross-simulation pairs near the same epoch differ only in spelling), size (53 of 2012 cross-simulation pairs near the same epoch differ only in spelling). Such pairs are judged not comparable only because of how the population was written.
+
+Changing the vocabulary changes the inputs of the definitions and mass-function studies, whose rules were fixed in advance, so it is recorded here and not changed silently.
+
 ## Where the evidence is thin
 
 Distinct simulations with a curve of the relation near each epoch (within 0.3 in z, or 15 % of z at higher z). Cells with fewer than three are thin: an offset against so few says little about the field.

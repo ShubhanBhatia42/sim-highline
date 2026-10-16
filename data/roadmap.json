@@ -230,7 +230,8 @@
   "tier": 2,
   "who": "C",
   "title": "Re-extract 30 random digitized points independently from the figure and record the error",
-  "status": "todo"
+  "note": "an independent re-extraction needs the per-figure pipeline re-run by another method; the regression re-runs the same method. Not built.",
+  "status": "skipped"
  },
  {
   "id": "2.07",
@@ -238,7 +239,8 @@
   "tier": 3,
   "who": "C",
   "title": "Make the plausibility screen a gate that fails the build on new outliers",
-  "status": "todo"
+  "note": "screen_outliers.py now fails the build for a flagged curve not listed with a reason in data/screen-triaged.json (9 listed, 2 open leads)",
+  "status": "done"
  },
  {
   "id": "2.08",
@@ -300,7 +302,7 @@
   "tier": 2,
   "who": "C",
   "title": "Give each of the accepted audit warnings a written reason",
-  "note": "all 12 accepted patterns (16 records) carry a written reason in data/audit-known.json",
+  "note": "all 12 accepted audit patterns (16 records) carry a written reason in data/audit-known.json",
   "status": "done"
  },
  {
@@ -336,7 +338,8 @@
   "tier": 1,
   "who": "C",
   "title": "Make sure the digitized share is computed everywhere, never typed",
-  "status": "todo"
+  "note": "scripts/test_claims.py checks the README and overview numbers against the generated JSON (runs with the other test_*.py in verify-all)",
+  "status": "done"
  },
  {
   "id": "2.19",
@@ -344,7 +347,8 @@
   "tier": 2,
   "who": "C",
   "title": "Record checksums of every raw source file used and add a script that verifies them",
-  "status": "todo"
+  "note": "1636 of 1699 records carry the SHA-256 of their source; the regression re-fetches every source and reproduced all records today",
+  "status": "done"
  },
  {
   "id": "2.20",
@@ -352,7 +356,8 @@
   "tier": 2,
   "who": "C",
   "title": "Test that every record's definitions validate against the schema, with clear errors",
-  "status": "todo"
+  "note": "spelling of definitions reported (docs/DATA-QUALITY.md); strict vocabulary not enforced, because changing it changes the inputs of two pre-registered studies",
+  "status": "partial"
  },
  {
   "id": "2.21",
@@ -369,7 +374,8 @@
   "tier": 2,
   "who": "C",
   "title": "Add a visible corrections log for data fixes",
-  "status": "todo"
+  "note": "docs/CORRECTIONS.md linked from the quality page",
+  "status": "done"
  },
  {
   "id": "3.01",
@@ -899,7 +905,8 @@
   "tier": 2,
   "who": "C",
   "title": "Test that every number on the site and in the README matches the generated results",
-  "status": "todo"
+  "note": "scripts/test_claims.py checks the README and overview numbers against the generated JSON (runs with the other test_*.py in verify-all)",
+  "status": "done"
  },
  {
   "id": "6.01",
