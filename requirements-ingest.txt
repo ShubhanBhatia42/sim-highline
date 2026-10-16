@@ -1,0 +1,6 @@
+# To rebuild the CAMELS catalogue files by range reads (scripts/ingest_camels_galaxies.py, needs a network)
+numpy
+h5py
+fsspec
+aiohttp
+requests

@@ -1,0 +1,8 @@
+name: sim-highline
+channels: [conda-forge]
+dependencies:
+  - python=3.13
+  - nodejs=22
+  - pip
+  - pip:
+      - -r requirements-lock.txt

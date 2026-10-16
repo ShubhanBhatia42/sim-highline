@@ -1,0 +1,5 @@
+# To re-run the analyses and exploratory checks (scripts/reproduce.sh). The numbers in the repository were produced with the versions in requirements-lock.txt.
+numpy
+scipy
+scikit-learn
+pandas
