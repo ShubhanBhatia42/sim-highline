@@ -20,7 +20,8 @@ const probe = () => {
   const e = document.activeElement; if (!e || e === document.body) return null;
   const b = e.getBoundingClientRect(), cs = getComputedStyle(e), pcs = e.parentElement ? getComputedStyle(e.parentElement) : null;
   const mark = (cs.outlineStyle !== "none" && parseFloat(cs.outlineWidth) > 0) || (cs.boxShadow && cs.boxShadow !== "none") || e.matches(":focus-visible");
-  return { idx: [...document.querySelectorAll('*')].indexOf(e), id: e.tagName.toLowerCase() + (e.id ? "#" + e.id : "") + (e.className && typeof e.className === "string" ? "." + e.className.split(" ")[0] : ""), text: (e.getAttribute("aria-label") || e.textContent || e.value || "").trim().slice(0, 30), w: b.width, h: b.height, hidden: cs.visibility === "hidden" || cs.display === "none" || b.width === 0 || b.height === 0, mark, tag: e.tagName.toLowerCase() };
+  const tabbable = [...document.querySelectorAll('a[href],button,input,select,textarea,summary,[tabindex]')].filter(x => !x.disabled && x.tabIndex >= 0 && x.getClientRects().length);
+  return { last: tabbable[tabbable.length - 1] === e, idx: [...document.querySelectorAll('*')].indexOf(e), id: e.tagName.toLowerCase() + (e.id ? "#" + e.id : "") + (e.className && typeof e.className === "string" ? "." + e.className.split(" ")[0] : ""), text: (e.getAttribute("aria-label") || e.textContent || e.value || "").trim().slice(0, 30), w: b.width, h: b.height, hidden: cs.visibility === "hidden" || cs.display === "none" || b.width === 0 || b.height === 0, mark, tag: e.tagName.toLowerCase() };
 };
 for (const pg of PAGES) {
   const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } }); const page = await ctx.newPage();
@@ -33,7 +34,8 @@ for (const pg of PAGES) {
     const r = await page.evaluate(probe);
     if (!r) continue; stops++;
     const key = r.idx + "|" + r.id + "|" + r.text;
-    if (key === last) { same++; if (same >= 3) { problems.push(`${pg}: keyboard trap at ${r.id} "${r.text}"`); break; } } else same = 0;
+    if (key === last) { same++; if (same >= 3 && r.last) break;  /* Firefox keeps focus on the last control when there is no browser toolbar to move to */
+      if (same >= 3) { problems.push(`${pg}: keyboard trap at ${r.id} "${r.text}"`); break; } } else same = 0;
     last = key; seen.add(key);
     if (r.hidden) problems.push(`${pg}: focus on something invisible: ${r.id} "${r.text}"`);
     else if (!r.mark) problems.push(`${pg}: no visible focus mark on ${r.id} "${r.text}"`);
