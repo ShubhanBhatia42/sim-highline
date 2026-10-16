@@ -17,7 +17,7 @@ const BASE = `http://127.0.0.1:${server.address().port}`;
 const browser = await launchBrowser();
 const failures = [];
 let n = 0;
-const step = async (name, fn) => { n++; try { await fn(); } catch (e) { failures.push(`${name}: ${e.message.split("\n")[0]}`); console.log("FAIL", name, "-", e.message.split("\n")[0]); } };
+const step = async (name, fn) => { n++; try { await fn(); } catch (e) { const why = e.message.split("\n").slice(0, 8).join(" | ").slice(0, 600); failures.push(`${name}: ${why}`); console.log("FAIL", name, "-", why); } };
 
 async function open(url, { w = 1280, h = 800, scheme = "light", storage } = {}) {
   const ctx = await browser.newContext({ viewport: { width: w, height: h }, colorScheme: scheme });
