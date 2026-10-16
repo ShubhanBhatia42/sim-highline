@@ -1,0 +1,25 @@
+name: I used sim-highline (get listed)
+description: Tell us where you used the data or a page, so it can be listed on the Data page
+title: "[used in] "
+labels: ["used-in"]
+body:
+  - type: input
+    id: what
+    attributes:
+      label: Where did you use it? (paper, talk, course, code, thesis)
+      placeholder: "Title or link"
+    validations:
+      required: true
+  - type: textarea
+    id: how
+    attributes:
+      label: What did you use it for, in one or two sentences?
+    validations:
+      required: true
+  - type: dropdown
+    id: ok
+    attributes:
+      label: May we list it with your name and the link?
+      options: ["Yes, with my name", "Yes, without my name", "No, I only wanted to tell you"]
+    validations:
+      required: true

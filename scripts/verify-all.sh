@@ -32,6 +32,7 @@ node scripts/test-profiles.mjs
 node scripts/make-audit-sample.mjs
 node scripts/make-author-requests.mjs
 node scripts/make-heads-up.mjs
+node scripts/make-outreach.mjs
 node scripts/build-site.mjs
 node scripts/test-site.mjs
 node scripts/lint.mjs

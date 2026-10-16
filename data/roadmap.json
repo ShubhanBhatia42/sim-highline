@@ -1496,7 +1496,8 @@
   "tier": 2,
   "who": "C",
   "title": "Write the announcement text, short and plain",
-  "status": "todo"
+  "note": "docs/outreach/: ANNOUNCEMENT, FORUM-POST, REGISTRIES, SOFTWARE-CATALOGUE, generated from the data (scripts/make-outreach.mjs); nothing sent",
+  "status": "done"
  },
  {
   "id": "9.02",
@@ -1504,7 +1505,8 @@
   "tier": 2,
   "who": "C",
   "title": "Write the pilot script for three testers: tasks, questions, what to record",
-  "status": "todo"
+  "note": "docs/outreach/PILOT.md: tasks, what to record, how to read the result",
+  "status": "done"
  },
  {
   "id": "9.03",
@@ -1512,7 +1514,8 @@
   "tier": 1,
   "who": "C",
   "title": "Add a feedback link on every page that opens a pre-filled issue",
-  "status": "todo"
+  "note": "Footer on every page: 'Tell us in two sentences' and 'Report a problem', prefilled with the page and the address; Explorer about dialog; tested",
+  "status": "done"
  },
  {
   "id": "9.04",
@@ -1520,7 +1523,8 @@
   "tier": 2,
   "who": "C",
   "title": "Draft the emails to the authors whose curves are included",
-  "status": "todo"
+  "note": "docs/author-heads-up.md and author-requests.md (generated per suite and per paper, with permission requests first); nothing sent",
+  "status": "done"
  },
  {
   "id": "9.05",
@@ -1528,7 +1532,8 @@
   "tier": 2,
   "who": "C",
   "title": "Draft the post for the relevant research community forums",
-  "status": "todo"
+  "note": "docs/outreach/: ANNOUNCEMENT, FORUM-POST, REGISTRIES, SOFTWARE-CATALOGUE, generated from the data (scripts/make-outreach.mjs); nothing sent",
+  "status": "done"
  },
  {
   "id": "9.06",
@@ -1536,7 +1541,8 @@
   "tier": 1,
   "who": "C",
   "title": "Make 'tell us what is wrong' easy to find",
-  "status": "todo"
+  "note": "Footer on every page: 'Tell us in two sentences' and 'Report a problem', prefilled with the page and the address; Explorer about dialog; tested",
+  "status": "done"
  },
  {
   "id": "9.07",
@@ -1560,7 +1566,8 @@
   "tier": 2,
   "who": "C",
   "title": "Write a one-page summary page suitable for printing or sharing",
-  "status": "todo"
+  "note": "site/summary.html: the project on one printed A4 page; tested",
+  "status": "done"
  },
  {
   "id": "9.10",
@@ -1568,7 +1575,8 @@
   "tier": 2,
   "who": "C",
   "title": "Outline a five-slide talk",
-  "status": "todo"
+  "note": "docs/outreach/TALK-OUTLINE.md",
+  "status": "done"
  },
  {
   "id": "9.11",
@@ -1584,7 +1592,8 @@
   "tier": 2,
   "who": "C",
   "title": "Add structured dataset metadata so search engines understand it",
-  "status": "todo"
+  "note": "schema.org Dataset JSON-LD on front and data pages, validated in test-site",
+  "status": "done"
  },
  {
   "id": "9.13",
@@ -1592,7 +1601,8 @@
   "tier": 1,
   "who": "C",
   "title": "Draft the text for dataset registries",
-  "status": "todo"
+  "note": "docs/outreach/: ANNOUNCEMENT, FORUM-POST, REGISTRIES, SOFTWARE-CATALOGUE, generated from the data (scripts/make-outreach.mjs); nothing sent",
+  "status": "done"
  },
  {
   "id": "9.14",
@@ -1608,7 +1618,8 @@
   "tier": 2,
   "who": "C",
   "title": "Draft the software-catalogue entry",
-  "status": "todo"
+  "note": "docs/outreach/: ANNOUNCEMENT, FORUM-POST, REGISTRIES, SOFTWARE-CATALOGUE, generated from the data (scripts/make-outreach.mjs); nothing sent",
+  "status": "done"
  },
  {
   "id": "9.16",
@@ -1616,7 +1627,8 @@
   "tier": 2,
   "who": "C",
   "title": "Add a 'used in' section and how to be listed",
-  "status": "todo"
+  "note": "Data page 'Used in' (honestly empty), issue form used-in.yml, data/used-in.json",
+  "status": "done"
  },
  {
   "id": "10.01",

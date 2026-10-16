@@ -14,7 +14,7 @@ const server = http.createServer(async (req, res) => {
 await new Promise(r => server.listen(0, "127.0.0.1", r));
 const BASE = `http://127.0.0.1:${server.address().port}`;
 const browser = await launchBrowser();
-const PAGES = ["index.html", "highline.html#r=gsmf&z=0.1", "site/index.html", "site/retune.html", "site/studies.html", "site/study-joint.html", "site/study-definitions.html", "site/study-harmonization.html", "site/study-sfh.html", "site/findings.html", "site/data.html", "site/methods.html", "site/sources.html", "site/quality.html", "site/glossary.html", "site/faq.html", "site/changes.html"];
+const PAGES = ["index.html", "highline.html#r=gsmf&z=0.1", "site/index.html", "site/retune.html", "site/studies.html", "site/study-joint.html", "site/study-definitions.html", "site/study-harmonization.html", "site/study-sfh.html", "site/findings.html", "site/data.html", "site/methods.html", "site/sources.html", "site/quality.html", "site/glossary.html", "site/faq.html", "site/changes.html", "site/summary.html"];
 const WIDTHS = [320, 390, 768, 1440, 2560];
 const SHOTS = process.env.SHOTS; if (SHOTS) await mkdir(SHOTS, { recursive: true });
 const only = process.env.ONLY ? process.env.ONLY.split(",") : null;
@@ -52,7 +52,7 @@ for (const pg of PAGES) {
   }
 }
 // on paper: A4 width, light colours whatever the theme, no navigation chrome, nothing wider than the sheet
-for (const pg of ["site/study-joint.html", "site/study-definitions.html", "site/methods.html", "site/quality.html", "site/faq.html"]) {
+for (const pg of ["site/study-joint.html", "site/study-definitions.html", "site/methods.html", "site/quality.html", "site/faq.html", "site/summary.html"]) {
   const ctx = await browser.newContext({ viewport: { width: 794, height: 1123 }, colorScheme: "dark" }); const page = await ctx.newPage();
   await page.goto(`${BASE}/${pg}`); await page.emulateMedia({ media: "print" }); await page.waitForTimeout(300);
   const r = await page.evaluate(() => ({ sw: document.documentElement.scrollWidth, iw: innerWidth, bg: getComputedStyle(document.body).backgroundColor, ink: getComputedStyle(document.body).color, top: getComputedStyle(document.querySelector(".top")).display, status: getComputedStyle(document.querySelector(".status")).display }));
@@ -60,9 +60,10 @@ for (const pg of ["site/study-joint.html", "site/study-definitions.html", "site/
   if (r.sw > r.iw + 1) problems.push(`${pg} on paper: wider than the sheet (${r.sw} > ${r.iw})`);
   if (r.bg !== "rgb(255, 255, 255)" || r.ink !== "rgb(0, 0, 0)") problems.push(`${pg} on paper: not black on white in a dark theme (${r.bg} ${r.ink})`);
   if (r.top !== "none" || r.status !== "none") problems.push(`${pg} on paper: navigation is printed`);
+  if (pg === "site/summary.html") { const pdf = (await page.pdf({ format: "A4" })).toString("latin1"); const pages = (pdf.match(/\/Type\s*\/Page[^s]/g) || []).length; if (pages !== 1) problems.push(`${pg} on paper: ${pages} pages, it is meant to be one`); }
   if (SHOTS) { await page.pdf({ path: path.join(SHOTS, pg.replace(/[^a-z0-9]+/gi, "_") + "-print.pdf"), format: "A4" }); }
   await ctx.close();
 }
 await browser.close(); server.close();
 if (problems.length) { console.log(problems.join("\n")); process.exit(1); }
-console.log(`layouts: ${n} page views (${PAGES.length} pages, 320 to 2560 px, light and dark) without sideways scroll or overflow; five study and method pages also checked as print (A4, black on white, no navigation)`);
+console.log(`layouts: ${n} page views (${PAGES.length} pages, 320 to 2560 px, light and dark) without sideways scroll or overflow; six pages also checked as print (A4, black on white, no navigation; the one-page summary prints on one page)`);

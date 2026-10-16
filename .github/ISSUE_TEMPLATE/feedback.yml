@@ -20,3 +20,11 @@ body:
     id: missing
     attributes:
       label: What was confusing, or what is missing?
+  - type: input
+    id: page
+    attributes:
+      label: Which page were you on? (filled in if you came from a link on the site)
+  - type: textarea
+    id: link
+    attributes:
+      label: The address (the part after # holds your settings)

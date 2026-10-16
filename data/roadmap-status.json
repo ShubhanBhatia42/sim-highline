@@ -650,5 +650,53 @@
  "8.20": {
   "note": "test-determinism.mjs: 170 files in dist/ byte-identical across two builds",
   "status": "done"
+ },
+ "9.01": {
+  "note": "docs/outreach/: ANNOUNCEMENT, FORUM-POST, REGISTRIES, SOFTWARE-CATALOGUE, generated from the data (scripts/make-outreach.mjs); nothing sent",
+  "status": "done"
+ },
+ "9.02": {
+  "note": "docs/outreach/PILOT.md: tasks, what to record, how to read the result",
+  "status": "done"
+ },
+ "9.03": {
+  "note": "Footer on every page: 'Tell us in two sentences' and 'Report a problem', prefilled with the page and the address; Explorer about dialog; tested",
+  "status": "done"
+ },
+ "9.04": {
+  "note": "docs/author-heads-up.md and author-requests.md (generated per suite and per paper, with permission requests first); nothing sent",
+  "status": "done"
+ },
+ "9.05": {
+  "note": "docs/outreach/: ANNOUNCEMENT, FORUM-POST, REGISTRIES, SOFTWARE-CATALOGUE, generated from the data (scripts/make-outreach.mjs); nothing sent",
+  "status": "done"
+ },
+ "9.06": {
+  "note": "Footer on every page: 'Tell us in two sentences' and 'Report a problem', prefilled with the page and the address; Explorer about dialog; tested",
+  "status": "done"
+ },
+ "9.09": {
+  "note": "site/summary.html: the project on one printed A4 page; tested",
+  "status": "done"
+ },
+ "9.10": {
+  "note": "docs/outreach/TALK-OUTLINE.md",
+  "status": "done"
+ },
+ "9.12": {
+  "note": "schema.org Dataset JSON-LD on front and data pages, validated in test-site",
+  "status": "done"
+ },
+ "9.13": {
+  "note": "docs/outreach/: ANNOUNCEMENT, FORUM-POST, REGISTRIES, SOFTWARE-CATALOGUE, generated from the data (scripts/make-outreach.mjs); nothing sent",
+  "status": "done"
+ },
+ "9.15": {
+  "note": "docs/outreach/: ANNOUNCEMENT, FORUM-POST, REGISTRIES, SOFTWARE-CATALOGUE, generated from the data (scripts/make-outreach.mjs); nothing sent",
+  "status": "done"
+ },
+ "9.16": {
+  "note": "Data page 'Used in' (honestly empty), issue form used-in.yml, data/used-in.json",
+  "status": "done"
  }
 }
