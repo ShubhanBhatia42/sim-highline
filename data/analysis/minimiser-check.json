@@ -1,0 +1,64 @@
+{
+ "k": 15,
+ "outputs": 169,
+ "codes": {
+  "IllustrisTNG": {
+   "minimiser": [
+    -0.877,
+    1.0,
+    -0.463,
+    0.405
+   ],
+   "degree": 3,
+   "sets": {
+    "nearest the minimising setting": {
+     "rms_noise_units": 0.7327572154697639,
+     "median_per_simulation": 0.6054760117406756,
+     "mean_signed": -0.014004804091132635,
+     "mean_distance_in_dial_coordinates": 0.4497057392626775
+    },
+    "nearest the fiducial setting": {
+     "rms_noise_units": 0.7921675208616236,
+     "median_per_simulation": 0.5427442802495762,
+     "mean_signed": 0.023839975016488234,
+     "mean_distance_in_dial_coordinates": 0.35027279609202544
+    },
+    "random simulations": {
+     "rms_noise_units": 0.8242901483475918,
+     "median_per_simulation": 0.5810270147954452,
+     "mean_signed": 0.0010836959353360274,
+     "mean_distance_in_dial_coordinates": null
+    }
+   }
+  },
+  "SIMBA": {
+   "minimiser": [
+    -1.0,
+    -1.0,
+    -1.0,
+    -0.708
+   ],
+   "degree": 3,
+   "sets": {
+    "nearest the minimising setting": {
+     "rms_noise_units": 0.738001420848824,
+     "median_per_simulation": 0.6816952333551368,
+     "mean_signed": -0.015879942088225955,
+     "mean_distance_in_dial_coordinates": 0.6666314879258886
+    },
+    "nearest the fiducial setting": {
+     "rms_noise_units": 0.7546764433593157,
+     "median_per_simulation": 0.5770752802513242,
+     "mean_signed": -0.005380190605078787,
+     "mean_distance_in_dial_coordinates": 0.40392160456544235
+    },
+    "random simulations": {
+     "rms_noise_units": 0.810362993600079,
+     "median_per_simulation": 0.7223448877440014,
+     "mean_signed": -0.004018423202719295,
+     "mean_distance_in_dial_coordinates": null
+    }
+   }
+  }
+ }
+}

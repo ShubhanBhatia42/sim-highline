@@ -16,6 +16,7 @@ stage "retuning data for the dials page (seconds)";     python3 scripts/export_r
 stage "robustness checks (about 5 minutes)";            python3 scripts/explore_joint_robustness.py
 stage "third code (about 2 minutes)";                   python3 scripts/explore_third_code.py
 stage "tuning to observations (under a minute)";        python3 scripts/explore_tune_to_observations.py
+stage "emulators at the minimum (about a minute)";    python3 scripts/explore_minimiser_check.py
 stage "ranking (seconds)";                              python3 scripts/rank_observables.py
 stage "data quality (seconds)";                         python3 scripts/analyze_data_quality.py
 stage "checks";                                         python3 scripts/test_calibration.py; python3 scripts/test_registration.py

@@ -380,7 +380,7 @@ Object.assign(stats, Object.fromEntries(Object.entries(jointStats(JR, undefined,
 // ---- checks made after the registered run: generated from the exploratory outputs when they exist
 {
   const j = async f => read(f).then(t => JSON.parse(t), () => null);
-  const RB = await j("data/analysis/joint-robustness.json"), T3 = await j("data/analysis/third-code.json"), TO = await j("data/analysis/tune-to-observations.json");
+  const RB = await j("data/analysis/joint-robustness.json"), T3 = await j("data/analysis/third-code.json"), TO = await j("data/analysis/tune-to-observations.json"), MC = await j("data/analysis/minimiser-check.json");
   const f1 = v => v.toFixed(1), f2 = v => v.toFixed(2), repo = "https://github.com/ShubhanBhatia42/sim-highline/blob/main/docs/";
   const rows = [];
   if (RB) {
@@ -398,6 +398,10 @@ Object.assign(stats, Object.fromEntries(Object.entries(jointStats(JR, undefined,
     const fams = [...new Set(TO.rows.map(r => r.family))], far = fams.map(f => { const rs = TO.rows.filter(r => r.family === f), out = rs.filter(r => better(r) > 1); return out.length ? `${TITLE[f] || f} (${out.length} of ${rs.length} curve${rs.length > 1 ? "s" : ""}, the better code ${f1(Math.min(...out.map(better))) === f1(Math.max(...out.map(better))) ? f1(Math.min(...out.map(better))) : `${f1(Math.min(...out.map(better)))} to ${f1(Math.max(...out.map(better)))}`} noise units away)` : null; }).filter(Boolean);
     const near = TO.rows.filter(r => better(r) <= 1).length;
     rows.push([`Each code tuned to ${TO.n} observed curves`, `at least one code gets within one noise unit of ${near} of them (mostly mass functions and quenched fractions, about 0.2 dex or less, which four dials can fit easily); neither does for ${far.join("; ")}. Few bins per curve, and observed and simulated curves are defined differently, so this is not a test of either code`, "ANALYSIS-tune-to-observations.md"]);
+  }
+  if (MC) {
+    const c = MC.codes, g = (code, k) => c[code].sets[k].rms_noise_units.toFixed(2), near = "nearest the minimising setting", far = "random simulations";
+    rows.push([`Emulators at the minimum: the ${MC.k} simulations nearest each code's minimising setting, held out and predicted`, `held-out error ${g("IllustrisTNG", near)} (TNG) and ${g("SIMBA", near)} (SIMBA) noise units, against ${g("IllustrisTNG", far)} and ${g("SIMBA", far)} for random simulations: no worse in that corner. The nearest simulations are not at the minimum (${c.IllustrisTNG.sets[near].mean_distance_in_dial_coordinates.toFixed(2)} and ${c.SIMBA.sets[near].mean_distance_in_dial_coordinates.toFixed(2)} away in dial coordinates), and no simulation has been run there`, "ANALYSIS-minimiser-check.md"]);
   }
   stats.jrAfterRows = rows.map(([a, b, d]) => `<tr><td>${esc(a)}</td><td>${esc(b)}</td><td><a href="${repo}${d}">${d.replace(/\.md$/, "")}</a></td></tr>`).join("");
 }

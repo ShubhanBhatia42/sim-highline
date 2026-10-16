@@ -22,7 +22,7 @@
 | 14 | Google Fonts sends the reader's address to Google | **Disclosed** on the Methods page (objection 18); self-hosting the fonts is not done |
 | NICE | legend count vs header, "1 observational curves", tab bar clipped at 390 px, 5.4 MB first load | **Not done** |
 
-Gaps named by the reviewer that remain: outside checking of the digitized curves; a direct check of the emulators at the minimiser; a bridge from a user's snapshot to a curve.
+Gaps named by the reviewer: outside checking of the digitized curves (needs people); a direct check of the emulators at the minimiser (**partly done afterwards**: `docs/ANALYSIS-minimiser-check.md`, the simulations nearest the minimum are predicted as well as random ones, but none is at the minimum); a bridge from a user's snapshot to a curve (not done).
 
 ---
 

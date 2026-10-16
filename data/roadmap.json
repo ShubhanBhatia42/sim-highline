@@ -1636,7 +1636,8 @@
   "tier": 3,
   "who": "C",
   "title": "Get an independent fresh-eyes review of the whole product from a separate reviewer",
-  "status": "todo"
+  "note": "Independent review by a separate AI agent (not a human): docs/INDEPENDENT-REVIEW.md. It found a real export bug, undisclosed AI involvement, a wrong redshift range and several overstated claims",
+  "status": "done"
  },
  {
   "id": "10.02",
@@ -1644,7 +1645,8 @@
   "tier": 3,
   "who": "C",
   "title": "Fix everything the review marks as must-fix",
-  "status": "todo"
+  "note": "All 5 must-fix and 9 of 14 should-fix items fixed or disclosed (table in docs/INDEPENDENT-REVIEW.md); 5 not done and listed there",
+  "status": "done"
  },
  {
   "id": "10.03",
@@ -1747,7 +1749,8 @@
   "tier": 2,
   "who": "C",
   "title": "Re-read every study page as a sceptic and tighten",
-  "status": "todo"
+  "note": "The reviewer re-read the study pages as a sceptic; wording tightened (plain-words blocks, abstracts, glossary). A human sceptic has not read them",
+  "status": "partial"
  },
  {
   "id": "10.15",
