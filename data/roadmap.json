@@ -1720,7 +1720,8 @@
   "tier": 2,
   "who": "C",
   "title": "Re-run every test suite from a clean checkout",
-  "status": "todo"
+  "note": "Fresh clone of the pushed branch, npm ci, verify-all (4 min 18 s, generated files unchanged), all 10 browser suites and the determinism test passed. (This did not catch the export bug found by the independent review; see 10.01)",
+  "status": "done"
  },
  {
   "id": "10.12",

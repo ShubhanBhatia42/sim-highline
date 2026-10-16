@@ -11,7 +11,7 @@ const records = [];
 for (const f of files) records.push(...JSON.parse(await readFile(new URL(`data/curves/${f}`, root), "utf8")).records);
 const out = new URL("data/export/", root);
 await mkdir(out, { recursive: true });
-const recRows = records.map(X.recordRow), ptRows = records.flatMap(X.pointRows);
+const recRows = records.map(r => X.recordRow(r)), ptRows = records.flatMap(r => X.pointRows(r)); // not records.map(X.recordRow): map passes the row index as a second argument, which these functions read as the redshift to evaluate at
 const head = [`sim-highline dataset v${release.version} (${release.released}); records table, one row per evidence record`, "join with sim-highline-points.csv on record_id; see sim_highline.py"];
 const outputs = {
   "sim-highline-records.csv": X.toCsv(recRows, X.RECORD_COLS, head),

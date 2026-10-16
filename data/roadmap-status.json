@@ -95,6 +95,10 @@
   "note": "docs/REVIEW-DAY.md",
   "status": "done"
  },
+ "10.11": {
+  "note": "Fresh clone of the pushed branch, npm ci, verify-all (4 min 18 s, generated files unchanged), all 10 browser suites and the determinism test passed. (This did not catch the export bug found by the independent review; see 10.01)",
+  "status": "done"
+ },
  "10.12": {
   "note": "The live site is still the old build of main (0.23.0 without the faq, summary, tests of this push: /site/summary.html and /site/faq.html return 404). It can be confirmed only after the merge to main",
   "status": "blocked"

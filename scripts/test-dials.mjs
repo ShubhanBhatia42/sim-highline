@@ -170,6 +170,10 @@ await step("on a phone the headline stays on screen and nothing overflows", asyn
   await page.evaluate(() => window.scrollTo({ top: 1800, behavior: "instant" })); await page.waitForTimeout(200);
   const top = await page.$eval(".rt-stick", e => Math.round(e.getBoundingClientRect().top));
   assert.ok(top <= 1, `the headline is pinned to the top (${top})`);
+  const before = await page.$eval(".rt-stick .rt-mini", e => e.innerHTML);
+  assert.ok((await page.$eval(".rt-stick .rt-mini svg", e => e.getBoundingClientRect().height)) > 60, "a live copy of the matched property is pinned with the headline");
+  await page.click("button:has-text(\"Strong feedback\")"); await page.waitForTimeout(700);
+  assert.notEqual(await page.$eval(".rt-stick .rt-mini", e => e.innerHTML), before, "the pinned copy changes when a dial moves, so the effect is visible while scrolled past the panels");
 }, { viewport: { width: 390, height: 844 } });
 
 await browser.close(); server.close();

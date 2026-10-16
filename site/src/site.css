@@ -362,3 +362,5 @@ pre[tabindex]:focus-visible{outline-offset:0}
   .onepage ul.flat li{padding:.05rem 0;border:0;margin:.15rem 0}.onepage .citetext{margin:.2rem 0}
   .onepage .standfirst br{display:none}
 }
+.rt-mini{display:none}
+@media (max-width:979px){.rt-stick .rt-mini{display:block;margin:.2rem 0 0;border:0;padding:0}.rt-stick .rt-mini .rt-cap{font-size:11px;margin:0}.rt-stick .rt-mini svg{display:block;width:100%;height:112px}.rt-stick .rt-mini .rt-expl,.rt-stick .rt-mini .rt-hint{display:none}.rt-stick .rt-striplab{display:none}}

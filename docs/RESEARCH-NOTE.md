@@ -16,11 +16,11 @@ IllustrisTNG and SIMBA are two galaxy-formation codes, each with four feedback d
 ## What survived
 
 1. **All at once, the codes stay 4.8 apart** (169 outputs, 35 blocks; half-sample range 4.6 to 4.9). A second implementation of the search gives 4.85 and a different kind of emulator 4.91. Other weightings of the outputs give 4.5 to 5.4 (`docs/ROBUSTNESS-joint-reachability.md`).
-2. **Black hole occupation (9.5) and gas metallicity (1.7) cannot be closed by any setting of the dials** when taken alone. **Six of eleven properties can** (stellar mass function, quenched fraction, black hole mass, size, gas fraction, mass and SFR density). Three are borderline.
+2. **Black hole occupation (9.5) and gas metallicity (1.7) stay apart at every setting of the dials tested** when taken alone (gas metallicity by 1.7 noise units, about 0.07 dex, which is beyond run-to-run scatter but small in absolute terms; the best settings sit at the edge of the dials' range, where the emulators are least tested). **Six of eleven properties can** (stellar mass function, quenched fraction, black hole mass, size, gas fraction, mass and SFR density). Three are borderline.
 3. **Not just black hole occupation.** Without it the all-at-once distance is 3.7.
 4. **One setting for all properties costs more than separate settings, but this is not claimed as a conflict.** Tuning each property with its own dials leaves 2.9; one set of dials for all leaves 4.8 (the squared distance is 2.8 times larger). The registered rule does not count that as above what two halves of the same code give (ratio 2.0, 95th percentile 2.7), so the result is classed as irreducible (a property is structural even alone) and not as a conflict between properties.
 5. **A third code (exploratory):** on 97 outputs usable in all three codes, Astrid is 1.5 from TNG and 3.4 from SIMBA, and black hole occupation separates SIMBA from both others while TNG and Astrid agree. This suggests the black hole result is about SIMBA standing apart.
-6. **Tuned to observed curves** (exploratory), either code reaches the stellar mass function and quenched fraction easily and neither reaches the black hole mass relation (2.5 to 4.5). This is not a test of either code: definitions differ.
+6. **Tuned to observed curves** (exploratory), either code reaches most stellar mass functions and quenched fractions easily (about 0.2 dex or less). Neither gets within one noise unit of the black hole mass relation (2 curves, 2.5 to 3.6 for the better code), one specific-SFR curve at z = 2.15, one quiescent mass function at z = 2.15 or the stellar metallicity curve; these rest on few curves with few bins. This is not a test of either code: definitions differ.
 
 ## What did not survive, or is not claimed
 
