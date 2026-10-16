@@ -148,6 +148,23 @@ await step("your run: plot, declare definitions, compare, export", async () => {
   await ctx.close();
 });
 
+await step("your run: opens from a link, and the example plots and compares without any data of one's own", async () => {
+  const { page, ctx, errors } = await open("/highline.html#r=gsmf&z=0.1&pn=mine");
+  await settle(page);
+  assert.equal(await page.locator("#uText").count(), 1, "the panel opens from the link");
+  await page.click("#uEx");
+  assert.ok((await page.locator("#stage .userdot").count()) >= 5, "example points drawn");
+  assert.match(await page.inputValue("#uName"), /^example: /);
+  assert.equal(await page.locator("#mineTab .sumline").count(), 0, "no summary before definitions are declared");
+  const sel = (k) => page.locator(`[data-def="${k}"]`);
+  for (const k of ["densityFrame", "imf", "massDefinition"]) { const opts = await sel(k).locator("option").allInnerTexts(); if (opts.length > 1) await sel(k).selectOption({ index: 1 }); }
+  const verdicts = await page.locator("#mineTab .v").allInnerTexts();
+  assert.ok(verdicts.length >= 5, "comparison rows listed");
+  if (verdicts.includes("\\u2713")) assert.equal(await page.locator("#mineTab .sumline").count(), 1, "a summary line appears once a curve is comparable");
+  assert.deepEqual(errors, []);
+  await ctx.close();
+});
+
 await step("embed mode keeps a tall chart and hides the chrome", async () => {
   const { page, ctx } = await open("/highline.html#r=sfrd&embed=1");
   await settle(page);

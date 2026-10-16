@@ -369,7 +369,8 @@ stats.camelsBox = camels.boxMpcPerH; stats.camelsBins = camels.zCentres.length;
 
 // ---- joint reachability (S4): generated from data/analysis/joint-reachability.json when it exists
 const JR = await read("data/analysis/joint-reachability.json").then(t => JSON.parse(t), () => null);
-Object.assign(stats, jointStats(JR));
+const RT = await read("data/retune/retune.json").then(t => JSON.parse(t), () => null);
+Object.assign(stats, jointStats(JR, undefined, RT && !RT.pending ? RT.native : null));
 stats.repo = stats.repo || "https://github.com/ShubhanBhatia42/sim-highline";
 
 // ---- studies (one list feeds the front page and the studies page)

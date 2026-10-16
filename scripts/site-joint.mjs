@@ -7,11 +7,11 @@ const FAMILY = { gsmf: "Stellar mass function", qf: "Quenched fraction", sfms: "
   zstar: "Stellar metallicity at fixed M*", size: "Stellar half-mass radius", fgas: "Gas fraction at fixed M*", shmr: "Stellar-to-halo mass ratio", rho: "Stellar mass and SFR density", hmf: "Halo mass function (control)" };
 const VERDICT = { structural: "structural", removable: "removable", unresolved: "unresolved" };
 
-export function jointStats(R, repo) {
+export function jointStats(R, repo, native) {
   const out = {};
   if (!R) {
     const pend = "Pending: the protocol is committed and the analysis has not been run.";
-    Object.assign(out, { jrStatus: "Pre-registered · pending", jrAbs: pend, jrAbsShort: pend, jrHead: "pending", jrJ1: `<p>${pend}</p>`, jrFig1: "", jrFamRows: "", jrJ2: "", jrJ3: "", jrJ4: "", jrFig2: "", jrPathRows: "", jrDropRows: "", jrDecompRows: "", jrReading: `<p>${pend}</p>`, jrZRows: "", jrRespRows: "", jrValRows: "", jrSensRows: "", jrDev: "<li>none yet</li>", jrElig: "The eligible outputs are counted in the protocol", jrNoise: "not yet computed", jrNote: "", jrVal: "Pending.", jrD: "–", jrDfid: "–", jrVerdict: "pending", jrDials: "" });
+    Object.assign(out, { jrStatus: "Pre-registered · pending", jrAbs: pend, jrAbsShort: pend, jrHead: "pending", jrJ1: `<p>${pend}</p>`, jrFig1: "", jrFamRows: "", jrJ2: "", jrJ3: "", jrJ4: "", jrFig2: "", jrPathRows: "", jrDropRows: "", jrDecompRows: "", jrReading: `<p>${pend}</p>`, jrNativeRows: "", jrZRows: "", jrRespRows: "", jrValRows: "", jrSensRows: "", jrDev: "<li>none yet</li>", jrElig: "The eligible outputs are counted in the protocol", jrNoise: "not yet computed", jrNote: "", jrVal: "Pending.", jrD: "–", jrDfid: "–", jrVerdict: "pending", jrDials: "" });
     return out;
   }
   const P = R.point, S = R.splits, fams = R.meta.families.filter(f => f !== "hmf"), A = P.all, SA = S.all;
@@ -79,6 +79,10 @@ export function jointStats(R, repo) {
   out.jrRespRows = fams.filter(f => resp.IllustrisTNG[f] && resp.SIMBA[f]).map(f => `<tr><td>${esc(FAMILY[f])}</td>${["IllustrisTNG", "SIMBA"].map(su => [0, 1, 2, 3].map(j => `<td class="rc">${bar(rms(resp[su][f], j))}</td>`).join("")).join("")}</tr>`).join("");
   out.jrDials = dials.join(" · ");
 
+
+  // ---- the distances in the units of the observables (descriptive; from the emulators at the study's minimisers)
+  const nu = u => (u === "dex" ? "dex" : "in fraction");
+  out.jrNativeRows = native ? fams.filter(f => native[f]).map(f => { const n = native[f]; const d = v => (v == null ? "–" : v.toFixed(2)); return `<tr><td>${esc(FAMILY[f])}</td><td>${nu(n.unit)}</td><td class="n">${d(n.noise_unit)}</td><td class="n">${d(n.fiducial)}</td><td class="n">${d(n.alone)}</td><td class="n">${d(n.joint)}</td></tr>`; }).join("") : "";
   // ---- reading: prose assembled from the result, so that it cannot say something the numbers do not
   const rem = famRows.filter(r => r.s.verdict === "removable"), str = famRows.filter(r => r.s.verdict === "structural"), unr = famRows.filter(r => r.s.verdict === "unresolved");
   const calib = ["gsmf", "qf", "rho"].filter(f => rem.some(r => r.f === f));
