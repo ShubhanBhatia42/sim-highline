@@ -219,6 +219,14 @@ footer{grid-area:foot;display:flex;align-items:center;gap:16px;padding:10px 24px
 .zread small{display:block;font:400 11.5px var(--mono);color:var(--ink3);letter-spacing:0}
 .atlas{position:absolute;inset:0;overflow:auto;padding:26px 30px 40px;display:none;background:var(--bg)}
 .atlas.on{display:block}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px;margin:10px 0 22px}
+.dpanel{border:1px solid var(--rule);border-radius:6px;background:var(--panel);padding:10px 10px 8px;min-width:0;cursor:pointer}
+.dpanel:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.dpanel h3{font:600 14px/1.3 var(--serif);margin:0 0 2px}.dpanel .sub{font-size:12px;color:var(--ink3);margin:0 0 6px}
+.dpanel svg{width:100%;height:auto;display:block}.dpanel svg text{font:10px var(--mono);fill:var(--ink2)}
+.dtab{border-collapse:separate;border-spacing:2px;font-size:12.5px;margin:6px 0 16px}.dtab th{font:500 11px var(--mono);color:var(--ink2);padding:3px 6px;text-align:left;background:var(--bg)}.dtab th:first-child{white-space:normal;max-width:170px}.dtab td{padding:3px 6px;text-align:right;font-variant-numeric:tabular-nums;background:var(--panel);position:relative;min-width:44px}.dtab td.none{background:transparent;color:var(--ink3)}
+.dtab td i{position:absolute;left:0;bottom:0;height:2px;background:var(--link);opacity:.7}
+
 .thead h1{font:600 24px/1.2 var(--serif);letter-spacing:-.012em;margin:0}
 .thead p{margin:6px 0 18px;color:var(--ink2);font-size:14.5px;max-width:78ch}
 .atlas table{border-collapse:separate;border-spacing:3px;font-size:13.5px}
@@ -292,6 +300,7 @@ b.classList.add("failed");b.setAttribute("role","alert");b.innerHTML='<div class
       <button id="mAtlas" aria-pressed="false" title="What exists: which simulations have data for which relation, and when">What exists</button>
       <button id="mTension" aria-pressed="false" title="Vs observations: how far each simulation sits from the observations, for every relation at one epoch">Vs observations</button>
       <button id="mSpread" aria-pressed="false" title="Disagreement: where the simulations disagree with each other, for every relation and epoch">Disagreement</button>
+      <button id="mDist" aria-pressed="false" title="Distribution: where the galaxies are, not only their median: blue cloud, green valley, red sequence">Distribution</button>
     </div>
     <span class="sp"></span>
     <nav class="sitenav" aria-label="Site"><a class="more" href="site/studies.html">Studies</a><a href="site/retune.html">Dials</a><a class="more" href="site/data.html">Data</a><a class="more" href="site/methods.html">Methods</a><a href="site/index.html">Site</a></nav>
@@ -332,6 +341,7 @@ b.classList.add("failed");b.setAttribute("role","alert");b.innerHTML='<div class
     </aside>
     <section class="atlas" id="atlas" tabindex="0" aria-label="What exists: coverage table"></section>
     <section class="atlas" id="tension" tabindex="0" aria-label="Simulations against observations"></section>
+    <section class="atlas" id="dist" tabindex="0" aria-label="Distributions of galaxies"></section>
     <section class="atlas" id="spread" tabindex="0" aria-label="Disagreement between simulations"></section>
     <section class="about pal" id="pal" role="dialog" aria-modal="true" aria-label="Search sim-highline"><div>
       <input id="palQ" type="text" role="combobox" aria-expanded="true" aria-controls="palL" aria-autocomplete="list" aria-label="Search relations, simulations, papers and actions" placeholder="Search relations, simulations, papers, actions" autocomplete="off" spellcheck="false">
@@ -418,8 +428,8 @@ const provTip=(r,extra="")=>{const p=r.provenance||{};return`${label(r)}${extra}
 const provBadge=r=>{const p=r?.provenance;if(!p)return"";const g=TIER_GLYPH[p.tier]||"?";return`<span class="pv t${g}" title="${esc((TIER_SHORT[p.tier]||p.tier)+": "+citeShort(r))}">${g}</span>`};
 const unitRec=new Map();
 const RAMP=[[0,"#fde725"],[.25,"#7ad151"],[.5,"#22a884"],[.75,"#2a788e"],[1,"#414487"]];
-const isTable=()=>state.mode==="atlas"||state.mode==="tension"||state.mode==="spread";
-const state={whatif:false,tz:0,legendOpen:innerWidth>=1180,rel:"gsmf",z:null,offBy:{},runPref:new Map(),variants:false,showSparse:false,anc:{},embed:false,imfc:false,offTier:new Set(),rankOnly:false,showObs:true,obsOff:new Set(),mode:"plot",playing:null,sel:null,ref:null,resid:false,yt:"none",tf:"log",xr:null,yr:null,bands:true,scatter:true,evo:null,at:null,panel:null,tab:"evidence",user:null,fit:null,expand:new Set(),dl:{scope:"epoch",obs:true,z0:0,z1:10}};
+const isTable=()=>state.mode==="atlas"||state.mode==="tension"||state.mode==="spread"||state.mode==="dist";
+const state={drel:null,whatif:false,tz:0,legendOpen:innerWidth>=1180,rel:"gsmf",z:null,offBy:{},runPref:new Map(),variants:false,showSparse:false,anc:{},embed:false,imfc:false,offTier:new Set(),rankOnly:false,showObs:true,obsOff:new Set(),mode:"plot",playing:null,sel:null,ref:null,resid:false,yt:"none",tf:"log",xr:null,yr:null,bands:true,scatter:true,evo:null,at:null,panel:null,tab:"evidence",user:null,fit:null,expand:new Set(),dl:{scope:"epoch",obs:true,z0:0,z1:10}};
 const $=id=>document.getElementById(id);
 const slugOf=s=>String(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -490,7 +500,7 @@ function embedSync(){$("embedTitle").textContent="sim-highline · "+REL[state.re
 function readHash(){
   const p=new URLSearchParams(location.hash.slice(1)),set=k=>new Set((p.get(k)||"").split("~").filter(Boolean));
   if(p.get("r")&&REL[p.get("r")])state.rel=p.get("r");
-  state.z=num(p.get("z"));state.tz=num(p.get("tz"))??0;state.spRk=p.get("sk")==="1";state.mode=["plot","evol","atlas","tension","spread"].includes(p.get("m"))?p.get("m"):"plot";
+  state.z=num(p.get("z"));state.tz=num(p.get("tz"))??0;state.spRk=p.get("sk")==="1";state.mode=["plot","evol","atlas","tension","spread","dist"].includes(p.get("m"))?p.get("m"):"plot";
   state.offBy={};for(const part of (p.get("off")||"").split(",").filter(Boolean)){const i=part.indexOf(":");if(i>0)state.offBy[part.slice(0,i)]=new Set(part.slice(i+1).split("~").filter(Boolean).map(decodeURIComponent))}state.runPref=new Map((p.get("rp")||"").split("~").filter(Boolean).map(t=>{const [u,v]=t.split("*");return[decodeURIComponent(u),v==="1"]}));state.variants=p.get("va")==="1";state.offTier=set("ot");state.rankOnly=p.get("rk")==="1";state.showObs=p.get("obs")!=="0";state.obsOff=set("oo");
   state.yt=p.get("yt")||"none";state.tf=p.get("tf")==="phys"?"phys":"log";
   const rg=k=>{const v=(p.get(k)||"").split(",").map(Number);return v.length===2&&v.every(Number.isFinite)?v:null};
@@ -1151,9 +1161,53 @@ function renderSpread(){
   const go=td=>{state.rel=td.dataset.r;state.sel=state.ref=state.evo=null;state.resid=false;state.z=nearestStop(state.rel,+td.dataset.z);setMode("plot")};
   $("spread").querySelectorAll("td[data-r]").forEach(td=>{td.onclick=()=>go(td);td.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go(td)}}});
 }
-function syncShell(){for(const [id,k] of [["mPlot","plot"],["mEvol","evol"],["mAtlas","atlas"],["mTension","tension"],["mSpread","spread"]])$(id).setAttribute("aria-pressed",state.mode===k);$("atlas").classList.toggle("on",state.mode==="atlas");$("tension").classList.toggle("on",state.mode==="tension");$("spread").classList.toggle("on",state.mode==="spread");$("main").classList.toggle("table",isTable());$("legend").hidden=isTable();document.querySelector("footer").style.display=isTable()?"none":""}
-function setMode(m){state.mode=m;syncShell();if(m==="atlas")renderAtlas();if(m==="tension")renderTension();if(m==="spread")renderSpread();renderAll(false)}
-$("mPlot").onclick=()=>setMode("plot");$("mEvol").onclick=()=>setMode("evol");$("mAtlas").onclick=()=>setMode("atlas");$("mTension").onclick=()=>setMode("tension");$("mSpread").onclick=()=>setMode("spread");
+
+/* ---------- Distribution view: where the galaxies are, not only their median ---------- */
+function distRecords(rel){return [...sims,...obs].filter(r=>r.relation===rel&&r.representation?.distribution&&pass(r))}
+function distRelations(){return Object.keys(REL).filter(k=>[...sims,...obs].some(r=>r.relation===k&&r.representation?.distribution))}
+function renderDist(){
+  const rels=distRelations();let h=`<div class="thead"><h1>Where the galaxies are</h1><p>The curve views show a median. Many galaxies sit far from it: in the blue cloud, the green valley or the red sequence. Here each column is a stellar-mass bin and the colour is the share of its galaxies at each value, so every column adds to 100%. The solid line is the median; the thin lines are the 16th and 84th percentiles; dashed lines mark the two thresholds the quenched-fraction records use (specific SFR of 10<sup>−11</sup> and 10<sup>−10.5</sup> yr<sup>−1</sup>), and the band between them is what the tables call the green valley. Columns with fewer than ten galaxies are greyed.</p></div>`;
+  if(!rels.length){$("dist").innerHTML=h+`<p class="tnote">No record in the current filter carries a per-galaxy distribution.</p>`;return}
+  if(!rels.includes(state.drel))state.drel=rels.includes(state.rel)?state.rel:rels[0];
+  const rel=state.drel,z=currentZ(),best=new Map();
+  for(const r of distRecords(rel)){const u=unitOf(r),c=best.get(u);if(!c||Math.abs(r.epoch.zRepresentative-z)<Math.abs(c.epoch.zRepresentative-z))best.set(u,r)}
+  const recs=[...best.values()].sort((a,b)=>(a.kind===b.kind?0:a.kind==="observation"?-1:1)||label(a).localeCompare(label(b)));
+  let fmax=0;for(const r of recs){const d=r.representation.distribution,sm=d.summary;d.counts.forEach((row,i)=>{if(sm.n[i]>=sm.minCount){const t=sm.n[i];for(const c of row)fmax=Math.max(fmax,c/t)}})}
+  fmax=fmax||1;
+  h+=`<div class="tzbar" role="group" aria-label="Relation">${rels.map(k=>`<button class="mini" data-dr="${k}" aria-pressed="${k===rel}">${esc(REL[k].t)}</button>`).join("")}</div><p class="tnote" style="margin:4px 0 0">Epoch: the one nearest z = ${fmtZ(z)} for each source (set it in the Curves view). ${recs.length} source${recs.length===1?"":"s"} with a distribution.</p><div class="dgrid">`;
+  const W=300,H=210,L=34,Rr=6,T=8,B=26,pw=W-L-Rr,ph=H-T-B;
+  for(const r of recs){
+    const d=r.representation.distribution,sm=d.summary,nx=d.xEdges.length-1,ny=d.yEdges.length-1,x0=d.xEdges[0],x1=d.xEdges.at(-1),y0=d.yEdges[0],y1=d.yEdges.at(-1);
+    const sx=v=>L+(v-x0)/(x1-x0)*pw,sy=v=>T+ph-(v-y0)/(y1-y0)*ph;let g="";
+    for(let i=0;i<nx;i++){const n=sm.n[i],low=n<sm.minCount;for(let j=0;j<ny;j++){const c=d.counts[i][j];if(!c)continue;const u=Math.sqrt(c/(n||1)/fmax);g+=`<rect x="${sx(d.xEdges[i]).toFixed(1)}" y="${sy(d.yEdges[j+1]).toFixed(1)}" width="${(sx(d.xEdges[i+1])-sx(d.xEdges[i])+.5).toFixed(1)}" height="${(sy(d.yEdges[j])-sy(d.yEdges[j+1])+.5).toFixed(1)}" fill="${low?"var(--rule-strong)":ramp(1-Math.min(1,u))}" opacity="${low?.35:1}"/>`}}
+    const path=(arr)=>{let q="",pen=false;arr.forEach((v,i)=>{if(v==null){pen=false;return}q+=(pen?"L":"M")+sx(sm.xCentres[i]).toFixed(1)+","+sy(v).toFixed(1);pen=true});return q};
+    const ks=[sm.levels.indexOf(.16),sm.levels.indexOf(.5),sm.levels.indexOf(.84)];
+    g+=`<path d="${path(sm.quantiles[ks[0]])}" fill="none" stroke="var(--ink)" stroke-width=".8" opacity=".7"/><path d="${path(sm.quantiles[ks[2]])}" fill="none" stroke="var(--ink)" stroke-width=".8" opacity=".7"/><path d="${path(sm.quantiles[ks[1]])}" fill="none" stroke="var(--ink)" stroke-width="1.8"/>`;
+    for(const t of sm.thresholds)if(t>y0&&t<y1)g+=`<line x1="${L}" x2="${W-Rr}" y1="${sy(t).toFixed(1)}" y2="${sy(t).toFixed(1)}" stroke="var(--orange)" stroke-width="1" stroke-dasharray="4 3"/>`;
+    let ax="";for(let v=Math.ceil(y0);v<=y1;v++)ax+=`<text x="${L-4}" y="${(sy(v)+3).toFixed(1)}" text-anchor="end">${v}</text>`;
+    for(let v=Math.ceil(x0*2)/2;v<=x1;v+=.5)ax+=`<text x="${sx(v).toFixed(1)}" y="${H-12}" text-anchor="middle">${v}</text>`;
+    ax+=`<text x="${(L+pw/2).toFixed(0)}" y="${H-1}" text-anchor="middle">${esc(r.axes.xDefinition.split(" (")[0])}</text>`;
+    const nAll=sm.n.reduce((a,b)=>a+b,0),yl=r.axes.yUnit;
+    h+=`<figure class="dpanel" tabindex="0" role="img" data-id="${esc(r.id)}" aria-label="${esc(label(r))}, ${nAll} galaxies: distribution of ${esc(r.axes.yDefinition)} by stellar mass. Press Enter to open the record."><h3>${esc(label(r))}${r.kind==="observation"?' <span class="tier">obs</span>':""}</h3><p class="sub">z = ${fmtZ(r.epoch.zRepresentative)} · ${nAll.toLocaleString()} galaxies${d.nSims>1?` pooled over ${d.nSims} boxes`:""}${d.weighting&&d.weighting!=="number"?" · "+esc(d.weighting):""}</p><svg viewBox="0 0 ${W} ${H}" aria-hidden="true"><rect x="${L}" y="${T}" width="${pw}" height="${ph}" fill="var(--panel2)"/>${g}<rect x="${L}" y="${T}" width="${pw}" height="${ph}" fill="none" stroke="var(--rule-strong)"/>${ax}</svg></figure>`;
+  }
+  h+=`</div>`;
+  const tab=(title,get,fmt,note)=>{
+    const rows=recs.map(r=>{const sm=r.representation.distribution.summary,v=get(sm);return v?{r,sm,v}:null}).filter(Boolean);
+    if(!rows.length)return"";
+    const xs=recs[0].representation.distribution.summary.xCentres;
+    return`<h2 style="font:600 15px var(--serif);margin:18px 0 2px">${title}</h2><p class="tnote" style="margin:0 0 4px">${note}</p><table class="dtab"><tr><th>source</th>${xs.map(x=>`<th>${x}</th>`).join("")}</tr>${rows.map(({r,sm,v})=>`<tr><th>${esc(label(r))}</th>${sm.xCentres.map((x,i)=>v[i]==null?`<td class="none">–</td>`:`<td>${fmt(v[i])}${typeof v[i]==="number"&&v[i]<=1&&v[i]>=0&&fmt===pct?`<i style="width:${Math.round(v[i]*100)}%"></i>`:""}</td>`).join("")}</tr>`).join("")}</table>`};
+  const pct=v=>(100*v).toFixed(0)+"%";
+  h+=tab("Share of galaxies that are quenched (specific SFR below 10<sup>−11</sup> yr<sup>−1</sup>)",sm=>sm.thresholds.length?sm.fracBelow[0]:null,pct,"By stellar-mass bin (centre of the bin, log M★). Includes galaxies with no star formation at all.");
+  h+=tab("Share of galaxies in the green valley (between the two thresholds)",sm=>sm.between,pct,"Specific SFR between 10<sup>−11</sup> and 10<sup>−10.5</sup> yr<sup>−1</sup>, the two criteria the quenched-fraction records use.");
+  h+=tab("Median",sm=>sm.quantiles[sm.levels.indexOf(.5)],v=>v.toFixed(2),"Median of the plotted quantity in each stellar-mass bin; bins with fewer than ten galaxies are left out.");
+  h+=`<p class="tnote">A small simulated box holds only a few hundred massive galaxies, so the high-mass columns are noisy even when pooled; the number of galaxies in each panel is in its caption. Simulation catalogues put galaxies with no star formation in the lowest row; observed catalogues cannot measure very low specific SFRs, so the red sequence of an observed panel sits at its detection limit, not at zero.</p>`;
+  $("dist").innerHTML=h;
+  $("dist").querySelectorAll("[data-dr]").forEach(b=>b.onclick=()=>{state.drel=b.dataset.dr;renderDist();syncHash()});
+  $("dist").querySelectorAll(".dpanel").forEach(f=>{const go=()=>{const r=byId.get(f.dataset.id);state.rel=r.relation;state.z=nearestStop(state.rel,r.epoch.zRepresentative);state.sel=r.id;setMode("plot");openRecord(r.id)};f.onclick=go;f.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}}});
+}
+function syncShell(){for(const [id,k] of [["mPlot","plot"],["mEvol","evol"],["mAtlas","atlas"],["mTension","tension"],["mSpread","spread"],["mDist","dist"]])$(id).setAttribute("aria-pressed",state.mode===k);$("dist").classList.toggle("on",state.mode==="dist");$("atlas").classList.toggle("on",state.mode==="atlas");$("tension").classList.toggle("on",state.mode==="tension");$("spread").classList.toggle("on",state.mode==="spread");$("main").classList.toggle("table",isTable());$("legend").hidden=isTable();document.querySelector("footer").style.display=isTable()?"none":""}
+function setMode(m){state.mode=m;syncShell();if(m==="atlas")renderAtlas();if(m==="tension")renderTension();if(m==="spread")renderSpread();if(m==="dist")renderDist();renderAll(false)}
+$("mPlot").onclick=()=>setMode("plot");$("mEvol").onclick=()=>setMode("evol");$("mAtlas").onclick=()=>setMode("atlas");$("mTension").onclick=()=>setMode("tension");$("mSpread").onclick=()=>setMode("spread");$("mDist").onclick=()=>setMode("dist");
 document.querySelectorAll(".recipes button").forEach(b=>b.onclick=()=>{
   const k=b.dataset.rc;$("about").classList.remove("on");
   Object.assign(state,{sel:null,ref:null,resid:false,evo:null,fit:null,at:null,xr:null,yr:null,yt:"none",variants:false,showObs:true});
@@ -1168,7 +1222,7 @@ function palItems(q){
   const recs=window.SIMHIGHLINE_PAL||(window.SIMHIGHLINE_PAL=[...sims,...obs].map(r=>({r,t:`${r.provenance?.citation||""} ${r.id} ${r.source} ${r.run||""}`.toLowerCase()})));
   const A=[];
   for(const k of Object.keys(REL))A.push({l:REL[k].t,h:"relation",t:`${REL[k].t} ${k}`.toLowerCase(),f:()=>{state.mode="plot";syncShell();selectRelation(k)}});
-  for(const [m,n,alias] of [["plot","Curves view","relation"],["evol","Over time view","evolution redshift"],["atlas","What exists view","coverage atlas"],["tension","Vs observations view","tension offset"],["spread","Disagreement view","spread scatter"]])A.push({l:n,h:"view",t:n.toLowerCase()+" "+alias,f:()=>setMode(m)});
+  for(const [m,n,alias] of [["plot","Curves view","relation"],["evol","Over time view","evolution redshift"],["atlas","What exists view","coverage atlas"],["tension","Vs observations view","tension offset"],["spread","Disagreement view","spread scatter"],["dist","Distribution view","distribution green valley blue cloud red sequence bimodality"]])A.push({l:n,h:"view",t:n.toLowerCase()+" "+alias,f:()=>setMode(m)});
   for(const [t,n] of [["mine","Your run: plot your own simulation"],["about","Notes on this relation"],["tune","Customise"],["data","Get data, cite, BibTeX"]])A.push({l:n,h:"panel",t:n.toLowerCase()+" "+t,f:()=>openPanel(t)});
   A.push({l:"Switch light or dark theme",h:"action",t:"theme dark light",f:()=>$("bTheme").click()},{l:"About this beta",h:"action",t:"about beta help",f:()=>$("infoBtn").click()});
   const bySrc=new Map();for(const r of sims){const m=bySrc.get(r.source)||bySrc.set(r.source,new Map()).get(r.source);m.set(r.relation,(m.get(r.relation)||0)+1)}
@@ -1203,13 +1257,13 @@ function paintThemeBtn(){const d=themeNow()==="dark";$("bTheme").innerHTML=d?SUN
 $("bTheme").onclick=()=>{const n=themeNow()==="dark"?"light":"dark";document.documentElement.dataset.theme=n;try{localStorage.setItem("sh-theme",n)}catch(e){}paintThemeBtn()};
 try{matchMedia("(prefers-color-scheme: dark)").addEventListener("change",paintThemeBtn)}catch(e){}
 paintThemeBtn();
-addEventListener("hashchange",()=>{readHash();syncShell();if(state.mode==="atlas")renderAtlas();if(state.mode==="tension")renderTension();if(state.mode==="spread")renderSpread();renderAll(false);if(state.sel)openRecord(state.sel);else if(state.panel&&state.tab==="evidence")closePanel()});
+addEventListener("hashchange",()=>{readHash();syncShell();if(state.mode==="atlas")renderAtlas();if(state.mode==="tension")renderTension();if(state.mode==="spread")renderSpread();if(state.mode==="dist")renderDist();renderAll(false);if(state.sel)openRecord(state.sel);else if(state.panel&&state.tab==="evidence")closePanel()});
 const srcCount=new Set(sims.map(r=>r.source)).size;
 $("aboutCounts").innerHTML=`<b>${sims.length}</b> simulation records from <b>${srcCount}</b> suites, plus <b>${obs.length}</b> observational references. Dataset v${esc(SIMHIGHLINE_RELEASE.version)}.`;
 new ResizeObserver(()=>{if(isTable())return;renderPlot(false);if(state.mode!=="evol")renderSlider()}).observe($("stage"));
 const wantMine=new URLSearchParams(location.hash.slice(1)).get("pn")==="mine";
 mineLoad();readHash();syncShell();
-if(state.mode==="atlas")renderAtlas();if(state.mode==="tension")renderTension();if(state.mode==="spread")renderSpread();
+if(state.mode==="atlas")renderAtlas();if(state.mode==="tension")renderTension();if(state.mode==="spread")renderSpread();if(state.mode==="dist")renderDist();
 renderAll(false);
 if(state.sel)openRecord(state.sel);else if(wantMine||state.openMine)openPanel("mine");
 {const KEY="sh-guide-seen";let seen=false;try{seen=!!localStorage.getItem(KEY)}catch(e){}

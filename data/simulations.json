@@ -336,7 +336,7 @@
         12700000
       ],
       "redshiftRange": [
-        3,
+        0,
         10
       ],
       "access": "catalog-derived",
@@ -356,7 +356,7 @@
       ],
       "source": "https://astrid.psc.edu/",
       "initialConditionsRedshift": 99,
-      "redshiftRangeBasis": "Bird et al. 2022 and Ni et al. 2022 (arXiv:2111.01160, 2110.14154): run from z=99 to z=3 in the presented papers; ingested relations (Bird+22 figures) span z=3-10. Later extensions beyond z=3 not verified."
+      "redshiftRangeBasis": "Bird et al. 2022 and Ni et al. 2022 (arXiv:2111.01160, 2110.14154): the 250 Mpc/h run from z=99 to z=3 in the presented papers, ingested relations z=3-10; the CAMELS-Astrid boxes (25 Mpc/h, Ni et al. 2023, arXiv:2304.02096) reach z=0 and supply the CAMELS cosmic-variance records at z=0 to 4."
     },
     {
       "id": "camels",

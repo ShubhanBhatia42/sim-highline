@@ -145,6 +145,24 @@ await step("address bar: rapid changes stay under the browsers' replaceState lim
   assert.ok(Number.isFinite(z), "redshift in the address is a number");
   await ctx.close();
 });
+await step("distribution view: panels per source, quantile lines, thresholds, tables, a click opens the record", async () => {
+  const { page, ctx, errors } = await open("/highline.html#r=ssfr&z=0&m=dist");
+  await settle(page);
+  assert.ok(await page.locator("#dist.on").count() === 1, "the distribution view is shown");
+  assert.ok(await page.locator("#dist .dpanel").count() >= 3, "a heat map for each code");
+  assert.ok(await page.locator("#dist .dpanel svg rect").count() > 300, "cells are drawn");
+  assert.ok(await page.locator("#dist .dtab").count() >= 2, "the tables of quenched and green-valley shares");
+  const q = await page.locator("#dist .dtab").first().innerText();
+  assert.match(q, /\d+%/, "percentages in the table");
+  assert.equal(await page.locator("#mDist[aria-pressed=true]").count(), 1, "the button shows it is pressed");
+  assert.ok((await page.evaluate(() => location.hash)).includes("m=dist"), "the address carries the view");
+  await page.locator("#dist .dpanel").first().click();
+  await page.waitForSelector("#panel.open");
+  assert.equal(await page.locator("#dist.on").count(), 0, "opening a record leaves the distribution view");
+  assert.deepEqual(errors, []);
+  await ctx.close();
+});
+
 await step("spread map and command palette", async () => {
   const { page, ctx } = await open("/highline.html#m=spread");
   assert.ok(await page.locator("#spread td[data-r]").count() >= 20, "spread map has cells");

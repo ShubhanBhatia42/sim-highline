@@ -5,11 +5,14 @@ set -euo pipefail
 # The three slow Python tests (a few minutes together) are skipped when nothing they can read has changed since they last passed here (stamp in .verify-cache/). FRESH=1 runs them anyway; CI starts without stamps, so it always runs everything.
 SLOW="test_joint_reachability test_model_form test_harmonization"
 stamp_of() { cat scripts/*.py data/ensembles/*.json data/analysis/*.json data/retune/retune.json 2>/dev/null | sha256sum | cut -d' ' -f1; }
+python3 scripts/ingest_camels_distributions.py --records
+node scripts/derive-distributions.mjs
 node scripts/annotate-definitions.mjs
 node scripts/validate-curves.mjs
 node scripts/validate-manifest.mjs
 node scripts/test-curves.mjs
 node scripts/test-compare.mjs
+node scripts/test-distributions.mjs
 node scripts/report-coverage.mjs
 python3 scripts/analyze_definition_budget.py > /dev/null
 python3 scripts/analyze_harmonization.py > /dev/null
