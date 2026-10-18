@@ -118,7 +118,7 @@ x, y, lo, hi = sim_highline.curve(df, one.record_id.iloc[0])
 print(sim_highline.bibtex(sel))
 ```
 
-Units are log10, physical and h-free as published; compare curves only where `x_definition`, `y_definition`, `mass_definition`, `population` and the other definition columns agree.
+Units are log10, physical and h-free as published (no simulation curve is converted for IMF, aperture or cosmology; what was changed is listed in [docs/DATA-CHANGES.md](docs/DATA-CHANGES.md)); compare curves only where `x_definition`, `y_definition`, `mass_definition`, `population` and the other definition columns agree.
 
 ### Compare your own curve in Python
 

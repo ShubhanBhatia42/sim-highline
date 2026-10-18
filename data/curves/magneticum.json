@@ -5654,7 +5654,7 @@
         "warning": "Morphology and radial aperture are not specified in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -5662,7 +5662,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "jDefinition": "unspecified"
+        "jDefinition": "stars within 3 R_1/2 (3D stellar half-mass radius), j = sum m r x v / sum m (Teklu+15)"
       },
       "provenance": {
         "tier": "official-table",
@@ -5671,7 +5671,11 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_specific_angular_momentum_relation_z0.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "e9d1fa99c3e4092b67c7ae6ecd122f02834fcc61fa70b2b8d7e917624fae6ac8"
+        "checksumSha256": "e9d1fa99c3e4092b67c7ae6ecd122f02834fcc61fa70b2b8d7e917624fae6ac8",
+        "definitionFills": [
+          "dolag25-magneticum-jstar-mass",
+          "dolag25-magneticum-jstar-j"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -5782,7 +5786,7 @@
         "warning": "Morphology and radial aperture are not specified in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -5790,7 +5794,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "jDefinition": "unspecified"
+        "jDefinition": "stars within 3 R_1/2 (3D stellar half-mass radius), j = sum m r x v / sum m (Teklu+15)"
       },
       "provenance": {
         "tier": "official-table",
@@ -5799,7 +5803,11 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_specific_angular_momentum_relation_z0.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "e9d1fa99c3e4092b67c7ae6ecd122f02834fcc61fa70b2b8d7e917624fae6ac8"
+        "checksumSha256": "e9d1fa99c3e4092b67c7ae6ecd122f02834fcc61fa70b2b8d7e917624fae6ac8",
+        "definitionFills": [
+          "dolag25-magneticum-jstar-mass",
+          "dolag25-magneticum-jstar-j"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -5916,7 +5924,7 @@
         "warning": "Morphology and radial aperture are not specified in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -5924,7 +5932,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "jDefinition": "unspecified"
+        "jDefinition": "stars within 3 R_1/2 (3D stellar half-mass radius), j = sum m r x v / sum m (Teklu+15)"
       },
       "provenance": {
         "tier": "official-table",
@@ -5933,7 +5941,11 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_specific_angular_momentum_relation_z0.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "e9d1fa99c3e4092b67c7ae6ecd122f02834fcc61fa70b2b8d7e917624fae6ac8"
+        "checksumSha256": "e9d1fa99c3e4092b67c7ae6ecd122f02834fcc61fa70b2b8d7e917624fae6ac8",
+        "definitionFills": [
+          "dolag25-magneticum-jstar-mass",
+          "dolag25-magneticum-jstar-j"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -6026,7 +6038,7 @@
         "warning": "Morphology and radial aperture are not specified in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -6034,7 +6046,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "jDefinition": "unspecified"
+        "jDefinition": "stars within 3 R_1/2 (3D stellar half-mass radius), j = sum m r x v / sum m (Teklu+15)"
       },
       "provenance": {
         "tier": "official-table",
@@ -6043,7 +6055,11 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_specific_angular_momentum_relation_z0.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "e9d1fa99c3e4092b67c7ae6ecd122f02834fcc61fa70b2b8d7e917624fae6ac8"
+        "checksumSha256": "e9d1fa99c3e4092b67c7ae6ecd122f02834fcc61fa70b2b8d7e917624fae6ac8",
+        "definitionFills": [
+          "dolag25-magneticum-jstar-mass",
+          "dolag25-magneticum-jstar-j"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -6124,7 +6140,7 @@
         "warning": "Morphology and radial aperture are not specified in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -6132,7 +6148,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "jDefinition": "unspecified"
+        "jDefinition": "stars within 3 R_1/2 (3D stellar half-mass radius), j = sum m r x v / sum m (Teklu+15)"
       },
       "provenance": {
         "tier": "official-table",
@@ -6141,7 +6157,11 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_specific_angular_momentum_relation_z1.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "c892bb91b67ae3f99ddb72fc514f491014c7681b252338b6cf25cf1e5218e036"
+        "checksumSha256": "c892bb91b67ae3f99ddb72fc514f491014c7681b252338b6cf25cf1e5218e036",
+        "definitionFills": [
+          "dolag25-magneticum-jstar-mass",
+          "dolag25-magneticum-jstar-j"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -6228,7 +6248,7 @@
         "warning": "Morphology and radial aperture are not specified in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -6236,7 +6256,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "jDefinition": "unspecified"
+        "jDefinition": "stars within 3 R_1/2 (3D stellar half-mass radius), j = sum m r x v / sum m (Teklu+15)"
       },
       "provenance": {
         "tier": "official-table",
@@ -6245,7 +6265,11 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_specific_angular_momentum_relation_z1.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "c892bb91b67ae3f99ddb72fc514f491014c7681b252338b6cf25cf1e5218e036"
+        "checksumSha256": "c892bb91b67ae3f99ddb72fc514f491014c7681b252338b6cf25cf1e5218e036",
+        "definitionFills": [
+          "dolag25-magneticum-jstar-mass",
+          "dolag25-magneticum-jstar-j"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -6344,7 +6368,7 @@
         "warning": "Morphology and radial aperture are not specified in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -6352,7 +6376,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "jDefinition": "unspecified"
+        "jDefinition": "stars within 3 R_1/2 (3D stellar half-mass radius), j = sum m r x v / sum m (Teklu+15)"
       },
       "provenance": {
         "tier": "official-table",
@@ -6361,7 +6385,11 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_specific_angular_momentum_relation_z1.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "c892bb91b67ae3f99ddb72fc514f491014c7681b252338b6cf25cf1e5218e036"
+        "checksumSha256": "c892bb91b67ae3f99ddb72fc514f491014c7681b252338b6cf25cf1e5218e036",
+        "definitionFills": [
+          "dolag25-magneticum-jstar-mass",
+          "dolag25-magneticum-jstar-j"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -6472,7 +6500,7 @@
         "warning": "Morphology and radial aperture are not specified in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -6480,7 +6508,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "jDefinition": "unspecified"
+        "jDefinition": "stars within 3 R_1/2 (3D stellar half-mass radius), j = sum m r x v / sum m (Teklu+15)"
       },
       "provenance": {
         "tier": "official-table",
@@ -6489,7 +6517,11 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_specific_angular_momentum_relation_z1.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "c892bb91b67ae3f99ddb72fc514f491014c7681b252338b6cf25cf1e5218e036"
+        "checksumSha256": "c892bb91b67ae3f99ddb72fc514f491014c7681b252338b6cf25cf1e5218e036",
+        "definitionFills": [
+          "dolag25-magneticum-jstar-mass",
+          "dolag25-magneticum-jstar-j"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -6564,7 +6596,7 @@
         "warning": "Morphology and radial aperture are not specified in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -6572,7 +6604,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "jDefinition": "unspecified"
+        "jDefinition": "stars within 3 R_1/2 (3D stellar half-mass radius), j = sum m r x v / sum m (Teklu+15)"
       },
       "provenance": {
         "tier": "official-table",
@@ -6581,7 +6613,11 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_specific_angular_momentum_relation_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "d5cf87312a99d54885e203116055be1636351ac38b6a2c3b3c5d484d6bfff862"
+        "checksumSha256": "d5cf87312a99d54885e203116055be1636351ac38b6a2c3b3c5d484d6bfff862",
+        "definitionFills": [
+          "dolag25-magneticum-jstar-mass",
+          "dolag25-magneticum-jstar-j"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -6662,7 +6698,7 @@
         "warning": "Morphology and radial aperture are not specified in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -6670,7 +6706,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "jDefinition": "unspecified"
+        "jDefinition": "stars within 3 R_1/2 (3D stellar half-mass radius), j = sum m r x v / sum m (Teklu+15)"
       },
       "provenance": {
         "tier": "official-table",
@@ -6679,7 +6715,11 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_specific_angular_momentum_relation_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "d5cf87312a99d54885e203116055be1636351ac38b6a2c3b3c5d484d6bfff862"
+        "checksumSha256": "d5cf87312a99d54885e203116055be1636351ac38b6a2c3b3c5d484d6bfff862",
+        "definitionFills": [
+          "dolag25-magneticum-jstar-mass",
+          "dolag25-magneticum-jstar-j"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -6778,7 +6818,7 @@
         "warning": "Morphology and radial aperture are not specified in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -6786,7 +6826,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "jDefinition": "unspecified"
+        "jDefinition": "stars within 3 R_1/2 (3D stellar half-mass radius), j = sum m r x v / sum m (Teklu+15)"
       },
       "provenance": {
         "tier": "official-table",
@@ -6795,7 +6835,11 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_specific_angular_momentum_relation_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "d5cf87312a99d54885e203116055be1636351ac38b6a2c3b3c5d484d6bfff862"
+        "checksumSha256": "d5cf87312a99d54885e203116055be1636351ac38b6a2c3b3c5d484d6bfff862",
+        "definitionFills": [
+          "dolag25-magneticum-jstar-mass",
+          "dolag25-magneticum-jstar-j"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -6906,7 +6950,7 @@
         "warning": "Morphology and radial aperture are not specified in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -6914,7 +6958,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "jDefinition": "unspecified"
+        "jDefinition": "stars within 3 R_1/2 (3D stellar half-mass radius), j = sum m r x v / sum m (Teklu+15)"
       },
       "provenance": {
         "tier": "official-table",
@@ -6923,7 +6967,11 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_specific_angular_momentum_relation_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "d5cf87312a99d54885e203116055be1636351ac38b6a2c3b3c5d484d6bfff862"
+        "checksumSha256": "d5cf87312a99d54885e203116055be1636351ac38b6a2c3b3c5d484d6bfff862",
+        "definitionFills": [
+          "dolag25-magneticum-jstar-mass",
+          "dolag25-magneticum-jstar-j"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -7028,7 +7076,7 @@
         "warning": "Morphology and radial aperture are not specified in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -7036,7 +7084,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "jDefinition": "unspecified"
+        "jDefinition": "stars within 3 R_1/2 (3D stellar half-mass radius), j = sum m r x v / sum m (Teklu+15)"
       },
       "provenance": {
         "tier": "official-table",
@@ -7045,7 +7093,11 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_specific_angular_momentum_relation_z2.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "d5cf87312a99d54885e203116055be1636351ac38b6a2c3b3c5d484d6bfff862"
+        "checksumSha256": "d5cf87312a99d54885e203116055be1636351ac38b6a2c3b3c5d484d6bfff862",
+        "definitionFills": [
+          "dolag25-magneticum-jstar-mass",
+          "dolag25-magneticum-jstar-j"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -7102,7 +7154,7 @@
         "warning": "Morphology and radial aperture are not specified in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -7110,7 +7162,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "jDefinition": "unspecified"
+        "jDefinition": "stars within 3 R_1/2 (3D stellar half-mass radius), j = sum m r x v / sum m (Teklu+15)"
       },
       "provenance": {
         "tier": "official-table",
@@ -7119,7 +7171,11 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_specific_angular_momentum_relation_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "e172643a080ff3be73cf8b8c0692e462afaf7190c8743ea0be7a186b51ad004f"
+        "checksumSha256": "e172643a080ff3be73cf8b8c0692e462afaf7190c8743ea0be7a186b51ad004f",
+        "definitionFills": [
+          "dolag25-magneticum-jstar-mass",
+          "dolag25-magneticum-jstar-j"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -7194,7 +7250,7 @@
         "warning": "Morphology and radial aperture are not specified in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -7202,7 +7258,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "jDefinition": "unspecified"
+        "jDefinition": "stars within 3 R_1/2 (3D stellar half-mass radius), j = sum m r x v / sum m (Teklu+15)"
       },
       "provenance": {
         "tier": "official-table",
@@ -7211,7 +7267,11 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_specific_angular_momentum_relation_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "e172643a080ff3be73cf8b8c0692e462afaf7190c8743ea0be7a186b51ad004f"
+        "checksumSha256": "e172643a080ff3be73cf8b8c0692e462afaf7190c8743ea0be7a186b51ad004f",
+        "definitionFills": [
+          "dolag25-magneticum-jstar-mass",
+          "dolag25-magneticum-jstar-j"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -7298,7 +7358,7 @@
         "warning": "Morphology and radial aperture are not specified in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -7306,7 +7366,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "jDefinition": "unspecified"
+        "jDefinition": "stars within 3 R_1/2 (3D stellar half-mass radius), j = sum m r x v / sum m (Teklu+15)"
       },
       "provenance": {
         "tier": "official-table",
@@ -7315,7 +7375,11 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_specific_angular_momentum_relation_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "e172643a080ff3be73cf8b8c0692e462afaf7190c8743ea0be7a186b51ad004f"
+        "checksumSha256": "e172643a080ff3be73cf8b8c0692e462afaf7190c8743ea0be7a186b51ad004f",
+        "definitionFills": [
+          "dolag25-magneticum-jstar-mass",
+          "dolag25-magneticum-jstar-j"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -7414,7 +7478,7 @@
         "warning": "Morphology and radial aperture are not specified in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -7422,7 +7486,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "jDefinition": "unspecified"
+        "jDefinition": "stars within 3 R_1/2 (3D stellar half-mass radius), j = sum m r x v / sum m (Teklu+15)"
       },
       "provenance": {
         "tier": "official-table",
@@ -7431,7 +7495,11 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_specific_angular_momentum_relation_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "e172643a080ff3be73cf8b8c0692e462afaf7190c8743ea0be7a186b51ad004f"
+        "checksumSha256": "e172643a080ff3be73cf8b8c0692e462afaf7190c8743ea0be7a186b51ad004f",
+        "definitionFills": [
+          "dolag25-magneticum-jstar-mass",
+          "dolag25-magneticum-jstar-j"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -7530,7 +7598,7 @@
         "warning": "Morphology and radial aperture are not specified in the table header."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-0.1rvir",
         "imf": "chabrier03",
         "imfBasis": "model paper; not stated in table header",
         "cosmology": {
@@ -7538,7 +7606,7 @@
           "Om": 0.272
         },
         "population": "all",
-        "jDefinition": "unspecified"
+        "jDefinition": "stars within 3 R_1/2 (3D stellar half-mass radius), j = sum m r x v / sum m (Teklu+15)"
       },
       "provenance": {
         "tier": "official-table",
@@ -7547,7 +7615,11 @@
         "url": "https://wwwmpa.mpa-garching.mpg.de/HydroSims/Magneticum/Downloads/data.zip",
         "sourceMember": "data/Magneticum_specific_angular_momentum_relation_z4.dat",
         "retrieved": "2026-10-06",
-        "checksumSha256": "e172643a080ff3be73cf8b8c0692e462afaf7190c8743ea0be7a186b51ad004f"
+        "checksumSha256": "e172643a080ff3be73cf8b8c0692e462afaf7190c8743ea0be7a186b51ad004f",
+        "definitionFills": [
+          "dolag25-magneticum-jstar-mass",
+          "dolag25-magneticum-jstar-j"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -7637,7 +7709,7 @@
         },
         "population": "all",
         "sfrTimescaleMyr": "instantaneous",
-        "sfrStatistic": "unspecified"
+        "sfrStatistic": "median"
       },
       "provenance": {
         "tier": "official-table",
@@ -7648,7 +7720,8 @@
         "retrieved": "2026-10-06",
         "checksumSha256": "5b146f358b37e1582fd7c54166f22a846835948b6f177547be581e4082d387e6",
         "definitionFills": [
-          "dolag25-magneticum-sfr-timescale"
+          "dolag25-magneticum-sfr-timescale",
+          "dolag25-magneticum-sfms-statistic"
         ]
       },
       "calibration": "prediction",
@@ -7769,7 +7842,7 @@
         },
         "population": "all",
         "sfrTimescaleMyr": "instantaneous",
-        "sfrStatistic": "unspecified"
+        "sfrStatistic": "median"
       },
       "provenance": {
         "tier": "official-table",
@@ -7780,7 +7853,8 @@
         "retrieved": "2026-10-06",
         "checksumSha256": "5b146f358b37e1582fd7c54166f22a846835948b6f177547be581e4082d387e6",
         "definitionFills": [
-          "dolag25-magneticum-sfr-timescale"
+          "dolag25-magneticum-sfr-timescale",
+          "dolag25-magneticum-sfms-statistic"
         ]
       },
       "calibration": "prediction",
@@ -7895,7 +7969,7 @@
         },
         "population": "all",
         "sfrTimescaleMyr": "instantaneous",
-        "sfrStatistic": "unspecified"
+        "sfrStatistic": "median"
       },
       "provenance": {
         "tier": "official-table",
@@ -7906,7 +7980,8 @@
         "retrieved": "2026-10-06",
         "checksumSha256": "5b146f358b37e1582fd7c54166f22a846835948b6f177547be581e4082d387e6",
         "definitionFills": [
-          "dolag25-magneticum-sfr-timescale"
+          "dolag25-magneticum-sfr-timescale",
+          "dolag25-magneticum-sfms-statistic"
         ]
       },
       "calibration": "prediction",
@@ -8009,7 +8084,7 @@
         },
         "population": "all",
         "sfrTimescaleMyr": "instantaneous",
-        "sfrStatistic": "unspecified"
+        "sfrStatistic": "median"
       },
       "provenance": {
         "tier": "official-table",
@@ -8020,7 +8095,8 @@
         "retrieved": "2026-10-06",
         "checksumSha256": "5b146f358b37e1582fd7c54166f22a846835948b6f177547be581e4082d387e6",
         "definitionFills": [
-          "dolag25-magneticum-sfr-timescale"
+          "dolag25-magneticum-sfr-timescale",
+          "dolag25-magneticum-sfms-statistic"
         ]
       },
       "calibration": "prediction",
@@ -8105,7 +8181,7 @@
         },
         "population": "all",
         "sfrTimescaleMyr": "instantaneous",
-        "sfrStatistic": "unspecified"
+        "sfrStatistic": "median"
       },
       "provenance": {
         "tier": "official-table",
@@ -8116,7 +8192,8 @@
         "retrieved": "2026-10-06",
         "checksumSha256": "1236f2daea8271c470c8371eb240a8f325960118a2457e0ee81ff01061d2b6ba",
         "definitionFills": [
-          "dolag25-magneticum-sfr-timescale"
+          "dolag25-magneticum-sfr-timescale",
+          "dolag25-magneticum-sfms-statistic"
         ]
       },
       "calibration": "prediction",
@@ -8213,7 +8290,7 @@
         },
         "population": "all",
         "sfrTimescaleMyr": "instantaneous",
-        "sfrStatistic": "unspecified"
+        "sfrStatistic": "median"
       },
       "provenance": {
         "tier": "official-table",
@@ -8224,7 +8301,8 @@
         "retrieved": "2026-10-06",
         "checksumSha256": "1236f2daea8271c470c8371eb240a8f325960118a2457e0ee81ff01061d2b6ba",
         "definitionFills": [
-          "dolag25-magneticum-sfr-timescale"
+          "dolag25-magneticum-sfr-timescale",
+          "dolag25-magneticum-sfms-statistic"
         ]
       },
       "calibration": "prediction",
@@ -8333,7 +8411,7 @@
         },
         "population": "all",
         "sfrTimescaleMyr": "instantaneous",
-        "sfrStatistic": "unspecified"
+        "sfrStatistic": "median"
       },
       "provenance": {
         "tier": "official-table",
@@ -8344,7 +8422,8 @@
         "retrieved": "2026-10-06",
         "checksumSha256": "1236f2daea8271c470c8371eb240a8f325960118a2457e0ee81ff01061d2b6ba",
         "definitionFills": [
-          "dolag25-magneticum-sfr-timescale"
+          "dolag25-magneticum-sfr-timescale",
+          "dolag25-magneticum-sfms-statistic"
         ]
       },
       "calibration": "prediction",
@@ -8453,7 +8532,7 @@
         },
         "population": "all",
         "sfrTimescaleMyr": "instantaneous",
-        "sfrStatistic": "unspecified"
+        "sfrStatistic": "median"
       },
       "provenance": {
         "tier": "official-table",
@@ -8464,7 +8543,8 @@
         "retrieved": "2026-10-06",
         "checksumSha256": "1236f2daea8271c470c8371eb240a8f325960118a2457e0ee81ff01061d2b6ba",
         "definitionFills": [
-          "dolag25-magneticum-sfr-timescale"
+          "dolag25-magneticum-sfr-timescale",
+          "dolag25-magneticum-sfms-statistic"
         ]
       },
       "calibration": "prediction",
@@ -8543,7 +8623,7 @@
         },
         "population": "all",
         "sfrTimescaleMyr": "instantaneous",
-        "sfrStatistic": "unspecified"
+        "sfrStatistic": "median"
       },
       "provenance": {
         "tier": "official-table",
@@ -8554,7 +8634,8 @@
         "retrieved": "2026-10-06",
         "checksumSha256": "5c3d9d46243bb19e3371a18af81c1948c8ce39603be4da156a4449cb74ebb733",
         "definitionFills": [
-          "dolag25-magneticum-sfr-timescale"
+          "dolag25-magneticum-sfr-timescale",
+          "dolag25-magneticum-sfms-statistic"
         ]
       },
       "calibration": "prediction",
@@ -8645,7 +8726,7 @@
         },
         "population": "all",
         "sfrTimescaleMyr": "instantaneous",
-        "sfrStatistic": "unspecified"
+        "sfrStatistic": "median"
       },
       "provenance": {
         "tier": "official-table",
@@ -8656,7 +8737,8 @@
         "retrieved": "2026-10-06",
         "checksumSha256": "5c3d9d46243bb19e3371a18af81c1948c8ce39603be4da156a4449cb74ebb733",
         "definitionFills": [
-          "dolag25-magneticum-sfr-timescale"
+          "dolag25-magneticum-sfr-timescale",
+          "dolag25-magneticum-sfms-statistic"
         ]
       },
       "calibration": "prediction",
@@ -8765,7 +8847,7 @@
         },
         "population": "all",
         "sfrTimescaleMyr": "instantaneous",
-        "sfrStatistic": "unspecified"
+        "sfrStatistic": "median"
       },
       "provenance": {
         "tier": "official-table",
@@ -8776,7 +8858,8 @@
         "retrieved": "2026-10-06",
         "checksumSha256": "5c3d9d46243bb19e3371a18af81c1948c8ce39603be4da156a4449cb74ebb733",
         "definitionFills": [
-          "dolag25-magneticum-sfr-timescale"
+          "dolag25-magneticum-sfr-timescale",
+          "dolag25-magneticum-sfms-statistic"
         ]
       },
       "calibration": "prediction",
@@ -8885,7 +8968,7 @@
         },
         "population": "all",
         "sfrTimescaleMyr": "instantaneous",
-        "sfrStatistic": "unspecified"
+        "sfrStatistic": "median"
       },
       "provenance": {
         "tier": "official-table",
@@ -8896,7 +8979,8 @@
         "retrieved": "2026-10-06",
         "checksumSha256": "5c3d9d46243bb19e3371a18af81c1948c8ce39603be4da156a4449cb74ebb733",
         "definitionFills": [
-          "dolag25-magneticum-sfr-timescale"
+          "dolag25-magneticum-sfr-timescale",
+          "dolag25-magneticum-sfms-statistic"
         ]
       },
       "calibration": "prediction",
@@ -8999,7 +9083,7 @@
         },
         "population": "all",
         "sfrTimescaleMyr": "instantaneous",
-        "sfrStatistic": "unspecified"
+        "sfrStatistic": "median"
       },
       "provenance": {
         "tier": "official-table",
@@ -9010,7 +9094,8 @@
         "retrieved": "2026-10-06",
         "checksumSha256": "5c3d9d46243bb19e3371a18af81c1948c8ce39603be4da156a4449cb74ebb733",
         "definitionFills": [
-          "dolag25-magneticum-sfr-timescale"
+          "dolag25-magneticum-sfr-timescale",
+          "dolag25-magneticum-sfms-statistic"
         ]
       },
       "calibration": "prediction",
@@ -9077,7 +9162,7 @@
         },
         "population": "all",
         "sfrTimescaleMyr": "instantaneous",
-        "sfrStatistic": "unspecified"
+        "sfrStatistic": "median"
       },
       "provenance": {
         "tier": "official-table",
@@ -9088,7 +9173,8 @@
         "retrieved": "2026-10-06",
         "checksumSha256": "d479581b73db2b61c79fca7f24aa64b4bd14eba07872896b34dc5c76ace2fcfe",
         "definitionFills": [
-          "dolag25-magneticum-sfr-timescale"
+          "dolag25-magneticum-sfr-timescale",
+          "dolag25-magneticum-sfms-statistic"
         ]
       },
       "calibration": "prediction",
@@ -9173,7 +9259,7 @@
         },
         "population": "all",
         "sfrTimescaleMyr": "instantaneous",
-        "sfrStatistic": "unspecified"
+        "sfrStatistic": "median"
       },
       "provenance": {
         "tier": "official-table",
@@ -9184,7 +9270,8 @@
         "retrieved": "2026-10-06",
         "checksumSha256": "d479581b73db2b61c79fca7f24aa64b4bd14eba07872896b34dc5c76ace2fcfe",
         "definitionFills": [
-          "dolag25-magneticum-sfr-timescale"
+          "dolag25-magneticum-sfr-timescale",
+          "dolag25-magneticum-sfms-statistic"
         ]
       },
       "calibration": "prediction",
@@ -9281,7 +9368,7 @@
         },
         "population": "all",
         "sfrTimescaleMyr": "instantaneous",
-        "sfrStatistic": "unspecified"
+        "sfrStatistic": "median"
       },
       "provenance": {
         "tier": "official-table",
@@ -9292,7 +9379,8 @@
         "retrieved": "2026-10-06",
         "checksumSha256": "d479581b73db2b61c79fca7f24aa64b4bd14eba07872896b34dc5c76ace2fcfe",
         "definitionFills": [
-          "dolag25-magneticum-sfr-timescale"
+          "dolag25-magneticum-sfr-timescale",
+          "dolag25-magneticum-sfms-statistic"
         ]
       },
       "calibration": "prediction",
@@ -9389,7 +9477,7 @@
         },
         "population": "all",
         "sfrTimescaleMyr": "instantaneous",
-        "sfrStatistic": "unspecified"
+        "sfrStatistic": "median"
       },
       "provenance": {
         "tier": "official-table",
@@ -9400,7 +9488,8 @@
         "retrieved": "2026-10-06",
         "checksumSha256": "d479581b73db2b61c79fca7f24aa64b4bd14eba07872896b34dc5c76ace2fcfe",
         "definitionFills": [
-          "dolag25-magneticum-sfr-timescale"
+          "dolag25-magneticum-sfr-timescale",
+          "dolag25-magneticum-sfms-statistic"
         ]
       },
       "calibration": "prediction",
@@ -9497,7 +9586,7 @@
         },
         "population": "all",
         "sfrTimescaleMyr": "instantaneous",
-        "sfrStatistic": "unspecified"
+        "sfrStatistic": "median"
       },
       "provenance": {
         "tier": "official-table",
@@ -9508,7 +9597,8 @@
         "retrieved": "2026-10-06",
         "checksumSha256": "d479581b73db2b61c79fca7f24aa64b4bd14eba07872896b34dc5c76ace2fcfe",
         "definitionFills": [
-          "dolag25-magneticum-sfr-timescale"
+          "dolag25-magneticum-sfr-timescale",
+          "dolag25-magneticum-sfms-statistic"
         ]
       },
       "calibration": "prediction",

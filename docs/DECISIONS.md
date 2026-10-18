@@ -2,6 +2,11 @@
 
 Newest first. Each entry says what was decided, why, and what would reverse it.
 
+## 2026-10-18
+
+- **A definition is added only from a sentence in the paper that says it, quoted and hashed; readings that need an inference are listed as "read, not stated".** Reason: a wrong definition makes a comparison look fair that is not, which is worse than an open one. Rejected on those grounds in the second reading: ASTRID stellar mass "in the FOF halo" (only implied), FIREbox "comoving" (only implied by the box volume), NewHorizon SED mass for the whole mass function (stated for one curve only). Reverses if the authors confirm one.
+- **The audit of what was changed in the data is generated from the records and from the compilation's own scripts, and checked in CI.** Reason: a hand-written list drifts. `scripts/audit_conversions.py --check` fails when the committed counts differ from the records.
+
 ## 2026-10-16
 
 - **The Explorer writes its address at most every 150 ms; the harmonization result is written to 10 significant digits.** Reasons: Safari and Firefox refuse more than 100 `history.replaceState` calls in 10 seconds, which a dragged slider can reach, and the last digits of the harmonization result differ between machines (about 1e-13), which made the CI "generated files are up to date" check fail on a clean runner. Neither changes a number anyone reads: the registered analysis script is touched only in how it saves floats, the values agree to 10 digits. Reverses if a browser adds a way to ask for more writes or if the numeric stack is pinned bit-for-bit.

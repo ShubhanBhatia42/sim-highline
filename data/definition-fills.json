@@ -987,6 +987,300 @@
         "retrieved": "2026-10-13",
         "sourceSha256": "12f3b58a22a856e920edcf9099e0fb2587ac3e12e6c37ce33f214badc0a2071f"
       }
+    },
+    {
+      "id": "feldmann23-firebox-quenched-mass",
+      "match": {
+        "source": "FIREbox",
+        "relation": [
+          "quenched"
+        ],
+        "citationIncludes": "Feldmann et al. 2023"
+      },
+      "set": {
+        "massDefinition": "aperture-Rg"
+      },
+      "evidence": {
+        "citation": "Feldmann et al. 2023, MNRAS 522, 3831",
+        "url": "https://arxiv.org/abs/2205.15325",
+        "where": "Sec. 2, Halo and galaxy catalogs; the quiescent-fraction figure caption states no other aperture",
+        "quote": "Unless stated otherwise, stellar masses, SFRs, and other properties of galaxies refer to integrated properties within $R_{\\rm g}$ computed as in the first method.",
+        "retrieved": "2026-10-18",
+        "sourceSha256": "f04b44f1059e3cb723b3306f4297fe833f36c5f4d1e16e9f6d27d47b6b036ebd",
+        "note": "The first method sets R_g = 3 R_half, iterating from a start value of 0.15 R_vir. The figure's own caption gives the SFR averaging time (100 Myr) and the thresholds but no different aperture."
+      }
+    },
+    {
+      "id": "garaldi24-thesan1-sfms-sfr",
+      "match": {
+        "source": "THESAN-1",
+        "relation": [
+          "sfms"
+        ],
+        "citationIncludes": "Garaldi et al. 2024"
+      },
+      "set": {
+        "sfrTimescaleMyr": "instantaneous (gas)"
+      },
+      "evidence": {
+        "citation": "Garaldi et al. 2024, MNRAS 530, 3317 (THESAN public data release)",
+        "url": "https://arxiv.org/abs/2309.06475",
+        "where": "Sec. 'The galaxy main sequence at z>6', note on the SFR reported in the main-sequence figures",
+        "quote": "we report the instantaneous SFR, computed internally by the simulation at run time from the gas bulk properties only",
+        "retrieved": "2026-10-18",
+        "sourceSha256": "c7b338026405104f818e03a56f27edb26517a60c65178fdd716d147dad539bda",
+        "note": "The sentence is about the SFR in the paper's galaxy-main-sequence figures; the released table gms_Thesan1.dat is the table of that quantity, but the table's own header does not say so."
+      }
+    },
+    {
+      "id": "lagos17-eagle-jstar-mass",
+      "match": {
+        "source": "EAGLE",
+        "relation": [
+          "jstar"
+        ],
+        "citationIncludes": "Lagos et al. 2017"
+      },
+      "set": {
+        "massDefinition": "aperture-30pkpc"
+      },
+      "evidence": {
+        "citation": "Lagos et al. 2017, MNRAS 464, 3850",
+        "url": "https://arxiv.org/abs/1609.01739",
+        "where": "Sec. 2.2 (Calculation of dynamic and kinematic properties of galaxies in EAGLE), paragraph defining M_stars, M_neutral, M_bar",
+        "quote": "Following S15, all these properties are measured in $3$-dimensional apertures of $30$~pkpc.",
+        "retrieved": "2026-10-18",
+        "sourceSha256": "ea6a9fd798d2bae7207dc85cc105570fb2802dfc82993c551e5010f6202a8886",
+        "note": "The sentence covers the stellar, neutral-gas and baryon masses just defined, so it fixes the stellar mass on the x axis; j itself is measured within r50 (stated separately)."
+      }
+    },
+    {
+      "id": "dave20-tng-aperture",
+      "match": {
+        "source": "IllustrisTNG",
+        "relation": [
+          "gsmf",
+          "ssfr",
+          "hi-fraction",
+          "h2-fraction"
+        ],
+        "citationIncludes": "Dave et al. 2020"
+      },
+      "set": {
+        "massDefinition": "bound to a Subfind subhalo, within the variable BaryMP aperture (Stevens+14; 'inherent' definition of Stevens+19)"
+      },
+      "evidence": {
+        "citation": "Dave et al. 2020, MNRAS 497, 146",
+        "url": "https://arxiv.org/abs/2002.07226",
+        "where": "Sec. 2.3 (IllustrisTNG), last paragraph before 'Comparison of Models'",
+        "quote": "TNG100 galaxy properties in this paper follow the `inherent' definition of~\\citet{Stevens:2019}. This means isolating particles/cells bound to (sub)structures according to {\\sc Subfind}",
+        "retrieved": "2026-10-18",
+        "sourceSha256": "80bafcb8f93a1772c86a04569b2f13571a770f6dbcfb143d30dd4ddd2045b774",
+        "note": "The same paragraph gives the aperture radius for TNG100: 20 +/- 10 kpc at M* = 1e9 Msun and 70 +/- 30 kpc at 1e11 Msun (z = 0). Not a fixed pkpc aperture and not the whole subhalo."
+      }
+    },
+    {
+      "id": "dolag25-magneticum-jstar-mass",
+      "match": {
+        "source": "Magneticum Pathfinder",
+        "relation": [
+          "jstar"
+        ],
+        "citationIncludes": "Dolag et al. 2025"
+      },
+      "set": {
+        "massDefinition": "aperture-0.1rvir"
+      },
+      "evidence": {
+        "citation": "Dolag et al. 2025, Encyclopedia Magneticum (arXiv:2504.01061)",
+        "url": "https://arxiv.org/abs/2504.01061",
+        "where": "Sec. 'Specific Angular Momentum Relation', caption of Fig. jstar_mstar (fig:jm-relation)",
+        "quote": "For the simulation we show $J^*_{3R_{1/2}}$ and $M^*_{R_{0.1}}$, which are the two quantities which were determined as the best morphological indicators",
+        "retrieved": "2026-10-18",
+        "sourceSha256": "2a3c25cc9dc4c32147a9d2e769bc33be6103be402cc474dbdc835f37f4b2aa79",
+        "note": "The caption of the angular-momentum figure names M*_{R_0.1}, which the paper defines as the stellar mass within 10% of the virial radius. It is the paper's figure; the released table is taken to be the same quantity."
+      }
+    },
+    {
+      "id": "dolag25-magneticum-jstar-j",
+      "match": {
+        "source": "Magneticum Pathfinder",
+        "relation": [
+          "jstar"
+        ],
+        "citationIncludes": "Dolag et al. 2025"
+      },
+      "set": {
+        "jDefinition": "stars within 3 R_1/2 (3D stellar half-mass radius), j = sum m r x v / sum m (Teklu+15)"
+      },
+      "evidence": {
+        "citation": "Dolag et al. 2025, Encyclopedia Magneticum (arXiv:2504.01061)",
+        "url": "https://arxiv.org/abs/2504.01061",
+        "where": "Sec. 'Specific Angular Momentum Relation', caption of Fig. jstar_mstar; definition in Sec. 'Local properties'",
+        "quote": "For the simulation we show $J^*_{3R_{1/2}}$ and $M^*_{R_{0.1}}$",
+        "retrieved": "2026-10-18",
+        "sourceSha256": "2a3c25cc9dc4c32147a9d2e769bc33be6103be402cc474dbdc835f37f4b2aa79",
+        "note": "The caption writes J*_{3R_1/2} and the text defines the specific angular momentum j* as the vector formula; the paper does not say that the magnitude is plotted."
+      }
+    },
+    {
+      "id": "dolag25-magneticum-sfms-statistic",
+      "match": {
+        "source": "Magneticum Pathfinder",
+        "relation": [
+          "sfms"
+        ],
+        "citationIncludes": "Dolag et al. 2025"
+      },
+      "set": {
+        "sfrStatistic": "median"
+      },
+      "evidence": {
+        "citation": "Dolag et al. 2025, Encyclopedia Magneticum (arXiv:2504.01061)",
+        "url": "https://arxiv.org/abs/2504.01061",
+        "where": "Caption of Fig. sfms (fig:sfms); text in Sec. 'Galaxy Star Formation Main Sequence'",
+        "quote": "Median lines are calculated using active galaxies only, that is galaxies above the threshold by \\citet{carnall:2020}",
+        "retrieved": "2026-10-18",
+        "sourceSha256": "2a3c25cc9dc4c32147a9d2e769bc33be6103be402cc474dbdc835f37f4b2aa79",
+        "note": "The median line uses active (star-forming) galaxies only; the paper's scatter points show all galaxies. The released table is taken to be the plotted median."
+      }
+    },
+    {
+      "id": "dubois21-newhorizon-smd-mass",
+      "match": {
+        "source": "NewHorizon",
+        "relation": [
+          "smd"
+        ],
+        "citationIncludes": "Dubois et al. 2021"
+      },
+      "set": {
+        "massDefinition": "all star particles in the simulation that are associated with a galaxy (sub)structure, summed over the box"
+      },
+      "evidence": {
+        "citation": "Dubois et al. 2021, A&A 651, A109",
+        "url": "https://arxiv.org/abs/2009.10578",
+        "where": "Sec. 'Star formation rates', text after Fig. cosmicsfr (cosmic stellar density, bottom panel)",
+        "quote": "this value is obtained by summing over the individual mass of all the star particles in the simulation, which are again associated with a galaxy (sub)structure, whether pure or not",
+        "retrieved": "2026-10-18",
+        "sourceSha256": "aa5e1c93e47c3a0740c0e107ace8a17a479a72349765e8c1737fe9b851f121d3"
+      }
+    },
+    {
+      "id": "katz23-sphinx20-imf",
+      "match": {
+        "source": "SPHINX20",
+        "relation": [
+          "sfms",
+          "zstar",
+          "shmr",
+          "size"
+        ],
+        "citationIncludes": "Katz et al. 2023"
+      },
+      "set": {
+        "imf": "kroupa01"
+      },
+      "evidence": {
+        "citation": "Katz et al. 2023, SPHINX-20 data release (arXiv:2309.03269)",
+        "url": "https://arxiv.org/abs/2309.03269",
+        "where": "Sec. 4 Discussion, subsection 'Caveats' (list of modelling assumptions of SPHINX)",
+        "quote": "For example, we have chosen a specific stellar IMF (Kroupa-like), a stellar population synthesis library ({\\small BPASS}) for the stellar spectra",
+        "retrieved": "2026-10-18",
+        "sourceSha256": "8ea5a5afa2aa12f53a25282414a0435bd4b170fece157e2aa58f38b6bf4239c7",
+        "note": "The paper says 'Kroupa-like' and gives a high-mass slope of -1.35 with a 100 Msun upper limit; Kroupa (2001) is the nearest entry in this dataset's vocabulary. It is a simulation-wide assumption stated in the caveats."
+      }
+    },
+    {
+      "id": "diemer19-tng-gas-statistic",
+      "match": {
+        "source": "IllustrisTNG",
+        "relation": [
+          "hi-fraction",
+          "h2-fraction"
+        ],
+        "citationIncludes": "Diemer et al. 2019"
+      },
+      "set": {
+        "gasStatistic": "median of the gas fractions above a threshold (galaxies below it are counted separately)"
+      },
+      "evidence": {
+        "citation": "Diemer et al. 2019, MNRAS 487, 1529",
+        "url": "https://arxiv.org/abs/1902.10714",
+        "where": "Sec. 4.3 'Gas Fractions' (text before Fig. fraction)",
+        "quote": "we now count the fraction of galaxies that lie below the threshold, $f_{\\rm low}$, and compute the median and 68\\% scatter of those gas fractions that lie above the threshold.",
+        "retrieved": "2026-10-18",
+        "sourceSha256": "706911748979b6d0ab0c8c54f844e490c7b674c68453b75a8865309b482a331e",
+        "note": "The paper says plain means or medians over all galaxies are not appropriate for these fractions."
+      }
+    },
+    {
+      "id": "diemer19-tng-gas-method",
+      "match": {
+        "source": "IllustrisTNG",
+        "relation": [
+          "hi-fraction",
+          "h2-fraction"
+        ],
+        "citationIncludes": "Diemer et al. 2019"
+      },
+      "set": {
+        "gasMethod": "centre of the shaded region spanned by nine HI/H2 partition methods (no single model)"
+      },
+      "evidence": {
+        "citation": "Diemer et al. 2019, MNRAS 487, 1529",
+        "url": "https://arxiv.org/abs/1902.10714",
+        "where": "Sec. 3.2 'Modelling the HI/H2 Fractions'",
+        "quote": "Thus, the \\hi and \\htwo masses of each galaxy are estimated by a total of nine different methods. In the forthcoming figures, we shade the region between the models but do not show the individual models to avoid crowding.",
+        "retrieved": "2026-10-18",
+        "sourceSha256": "706911748979b6d0ab0c8c54f844e490c7b674c68453b75a8865309b482a331e",
+        "note": "The paper is agnostic about which of the nine methods is best and shades the region between them; the stored record's own warning says the plotted median is the centre of the dark band."
+      }
+    },
+    {
+      "id": "schaye26-colibre-shmr-halo",
+      "match": {
+        "source": "COLIBRE",
+        "relation": [
+          "shmr"
+        ],
+        "citationIncludes": "Schaye et al. 2026"
+      },
+      "set": {
+        "haloMassDefinition": "BN98",
+        "haloMassHistory": "current"
+      },
+      "evidence": {
+        "citation": "Schaye et al. 2026, MNRAS 548, stag375",
+        "url": "https://arxiv.org/abs/2508.21126",
+        "where": "Sec. 7.1.1 'The galaxy stellar mass function', paragraph after Fig. smhm (stellar-to-halo mass ratio)",
+        "quote": "we define the halo mass as the mass within the radius for which the mean internal density is equal to the critical overdensity provided by \\citet{Bryan1998}",
+        "retrieved": "2026-10-18",
+        "sourceSha256": "dc109cb57eff9ed465aa7d2128a9ec40f75d5369f01fc19ca5a0883403cc77f3",
+        "note": "Halo mass is the Bryan & Norman (1998) virial mass, not M200c; the paper contrasts its use of the current halo mass with the peak halo mass of Behroozi+19 (main.tex line 1060, same paragraph)."
+      }
+    },
+    {
+      "id": "vcd-kirby13-imf",
+      "match": {
+        "source": "Kirby et al. 2013 (Local Group dwarfs)",
+        "relation": [
+          "zstar"
+        ],
+        "citationIncludes": "Kirby et al. (2013)"
+      },
+      "set": {
+        "imf": "chabrier03"
+      },
+      "evidence": {
+        "citation": "SWIFT/VELOCIraptor comparison-data compilation, conversion script for Kirby et al. 2013",
+        "url": "https://github.com/calvin-sykes/velociraptor-comparison-data/blob/fc740f4d0856efd711f03242d40c03caea969a20/data/GalaxyStellarMassStellarMetallicity/conversion/convertKirby2013.py",
+        "where": "comment string written into the converted file",
+        "quote": "There is also a correction of {kroupa_to_chabrier_mass} on the stellar masses to convert from Kroupa to the Chabrier IMF.",
+        "retrieved": "2026-10-18",
+        "sourceSha256": "0e966b3314e7f2b09bdf0b90688e7b2e2f970f854357aa50cb7c77747d3a6f69",
+        "note": "The paper's masses assume a Kroupa IMF; the compilation multiplies them by 0.912 (Kroupa to Chabrier), so the stored masses are on a Chabrier IMF. This is the compilation's statement, not the paper's. The sha256 is that of the conversion script, not an arXiv archive."
+      }
     }
   ],
   "readWithoutResult": [
@@ -1181,6 +1475,159 @@
         "massDefinition"
       ],
       "note": "FOF and SUBFIND stellar masses are both shown; which one the digitized relations use is not stated."
+    },
+    {
+      "arxiv": "1703.02970",
+      "paper": "Pillepich et al. 2018 (the IllustrisTNG model)",
+      "keys": [
+        "sfrIndicator"
+      ],
+      "note": "Read again on 2026-10-18. The cosmic star formation rate density panel (Fig. 4, top left) is plotted without saying how it was computed; the only use of 'instantaneous' is for the local star formation rate that drives the wind model, not for the plotted curve."
+    },
+    {
+      "arxiv": "1909.05864",
+      "paper": "Buck et al. 2019 (NIHAO-UHD)",
+      "keys": [
+        "imf"
+      ],
+      "note": "Read on 2026-10-18. The paper mentions the initial mass function only in general terms and defers the model to the NIHAO base paper; the base paper (Wang et al. 2015, arXiv:1503.04818) states a Milky Way-type IMF only for the abundance-matching comparison, not for the simulation's stellar particles."
+    },
+    {
+      "arxiv": "2110.00584",
+      "source": "THESAN-1",
+      "paper": "Kannan et al. 2022 (THESAN overview)",
+      "keys": [
+        "haloMassDefinition",
+        "haloMassHistory"
+      ],
+      "note": "Read on 2026-10-18. The stellar-to-halo mass figure and its text do not state which halo mass is used or at what epoch."
+    },
+    {
+      "arxiv": "2309.06475",
+      "source": "THESAN-1",
+      "paper": "Garaldi et al. 2024 (THESAN data release)",
+      "keys": [
+        "haloMassDefinition",
+        "haloMassHistory"
+      ],
+      "note": "Read on 2026-10-18. The data-release paper describes the group catalogues but does not state the halo mass used in the released stellar-to-halo mass table (smhm_Thesan1.dat), whose header gives only the column names."
+    },
+    {
+      "arxiv": "2111.01160",
+      "paper": "Ni et al. 2022 (ASTRID)",
+      "keys": [
+        "massDefinition"
+      ],
+      "note": "Read a second time on 2026-10-18. Star particles are attached to the host FOF halo and the stellar mass function text says 'stars within FOF halos', but no sentence ties the stellar-to-halo mass or metallicity figures to a mass definition; not inferred."
+    },
+    {
+      "arxiv": "2205.15325",
+      "paper": "Feldmann et al. 2023 (FIREbox)",
+      "keys": [
+        "densityFrame"
+      ],
+      "note": "Read a second time on 2026-10-18. The box volume is given as (15 cMpc/h)^3 and the mass function is built from 1/V weights, but no sentence says the density is per comoving volume; not inferred."
+    },
+    {
+      "arxiv": "2606.25995",
+      "paper": "Sharda et al. 2026",
+      "keys": [
+        "massDefinition"
+      ],
+      "note": "Read on 2026-10-18. The SIMBA and FIREbox mass-metallicity curves are adopted from Garcia et al. 2025 and Feldmann et al. 2023 and the stellar-mass definition is not restated; the 3 kpc aperture given is for the oxygen abundance."
+    },
+    {
+      "arxiv": "1704.00954",
+      "paper": "Wilkins et al. 2017 (BlueTides)",
+      "keys": [
+        "imf",
+        "massDefinition",
+        "sfrTimescaleMyr",
+        "haloMassHistory",
+        "bhMassMethod"
+      ],
+      "note": "Read a second time on 2026-10-18. Chabrier is named only for the SED library and for observations converted to it; no stellar-mass, SFR-timescale, halo-mass-epoch or black-hole-mass definition is given for the simulation tables."
+    },
+    {
+      "arxiv": "2504.01061",
+      "paper": "Dolag et al. 2025 (Magneticum), second reading",
+      "keys": [
+        "massDefinition"
+      ],
+      "note": "Read a second time on 2026-10-18. The mass function, size and main-sequence figures do not state the stellar-mass aperture; the paper states M*_{R_0.1} for the angular-momentum, mass-metallicity and other figures only, and it is not carried over by inference.",
+      "source": "Magneticum Pathfinder"
+    },
+    {
+      "arxiv": "1901.10203",
+      "paper": "Dave et al. 2019 (SIMBA), second reading",
+      "keys": [
+        "densityFrame"
+      ],
+      "note": "Read a second time on 2026-10-18. No statement of comoving or physical for the mass function or the star formation rate density; comoving appears only for box length and softening."
+    },
+    {
+      "arxiv": "1605.09379",
+      "paper": "Kaviraj et al. 2017 (Horizon-AGN), second reading",
+      "keys": [
+        "massDefinition",
+        "densityFrame",
+        "sfrIndicator",
+        "sfrIntegrationLimit",
+        "dustCorrection"
+      ],
+      "note": "Read a second time on 2026-10-18. The stellar mass of a galaxy is not defined; the star formation history figure caption states none of the four SFR-density keys; the paper has no black hole mass versus stellar mass figure."
+    },
+    {
+      "arxiv": "2009.10578",
+      "paper": "Dubois et al. 2021 (NewHorizon), second reading",
+      "keys": [
+        "massDefinition",
+        "densityFrame"
+      ],
+      "note": "Read a second time on 2026-10-18. Stated only for the stellar mass density and for one selection-corrected mass function curve; not stated for the size and black hole relations or for the density frame (the volume is the initial (16 Mpc)^3)."
+    },
+    {
+      "arxiv": "2006.10094",
+      "paper": "Habouzit et al. 2021, second reading",
+      "keys": [
+        "massDefinition",
+        "imf"
+      ],
+      "note": "Read a second time on 2026-10-18. The paper says the stellar masses are 'total' and may be computed differently in each simulation, and names no IMF; an aperture given in an appendix applies only to eight matched galaxies."
+    },
+    {
+      "arxiv": "1409.0009",
+      "paper": "Sparre et al. 2015 (Illustris), second reading",
+      "keys": [
+        "massDefinition"
+      ],
+      "note": "Read a second time on 2026-10-18. The stellar mass behind the main-sequence figures is not defined."
+    },
+    {
+      "arxiv": "1503.01117",
+      "paper": "Genel et al. 2015 (Illustris), second reading",
+      "keys": [
+        "massDefinition"
+      ],
+      "note": "Read a second time on 2026-10-18. The stellar mass is not defined; j is defined for all stellar particles of the subhalo without a radius cut."
+    },
+    {
+      "arxiv": "2008.13379",
+      "paper": "Blank et al. 2021 (NIHAO XXVI), second reading",
+      "keys": [
+        "massDefinition"
+      ],
+      "note": "Read a second time on 2026-10-18. Only the SFR is defined (star particles within 0.2 R_vir formed in the last 200 Myr)."
+    },
+    {
+      "arxiv": "2002.07226",
+      "paper": "Dave et al. 2020, second reading",
+      "keys": [
+        "imf",
+        "densityFrame",
+        "sfrTimescaleMyr"
+      ],
+      "note": "Read a second time on 2026-10-18. No IMF for IllustrisTNG; no density frame for any of the three; no SFR timescale for EAGLE or IllustrisTNG, and for SIMBA only the per-element law is given."
     }
   ]
 }

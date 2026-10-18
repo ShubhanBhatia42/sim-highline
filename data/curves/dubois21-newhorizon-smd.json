@@ -2908,7 +2908,8 @@
           "Om": 0.272
         },
         "densityFrame": "unspecified",
-        "population": "all galaxies in the zoom volume"
+        "population": "all galaxies in the zoom volume",
+        "massDefinition": "all star particles in the simulation that are associated with a galaxy (sub)structure, summed over the box"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -2922,7 +2923,10 @@
         "sourceMember": "stellardensity_cosmo-eps-converted-to.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: labels 0.0-1.0 of log10(1+z) snapped to ticks, converted exactly to z; y: decade labels 10^5-10^9 snapped to ticks (log10)",
-        "digitizationUncertaintyDex": 0.02
+        "digitizationUncertaintyDex": 0.02,
+        "definitionFills": [
+          "dubois21-newhorizon-smd-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
