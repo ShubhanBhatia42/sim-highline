@@ -1,6 +1,6 @@
 {
-  "version": "0.23.0",
-  "released": "2026-10-15",
+  "version": "0.24.0",
+  "released": "2026-10-18",
   "doi": "10.5281/zenodo.23217259",
   "license": {
     "code": "MIT",
@@ -68,15 +68,15 @@
   },
   "files": {
     "sim-highline-records.csv": {
-      "sha256": "5bf0a261c18cdb5a3f86f400d0c80f214f11ff0dd1479eb06880c044fb52b28f",
+      "sha256": "2f73fd60e86994ac87d40ab47ad032ec832e2f8018fe5d2dcee60fa88a26523f",
       "bytes": 1447833
     },
     "sim-highline-points.csv": {
-      "sha256": "0716117e49e8b9a60d9706e183a47b52fdbe18c0e5fe585cc4014229e924c8bb",
+      "sha256": "065f9a67f5a5ec9777f3ecba410525a1eddc1e1e313b2db0875f23e7c8673c9f",
       "bytes": 3396550
     },
     "sim-highline-records.json": {
-      "sha256": "564d6c3549515c85bb5ed0811518884ebddc1d42e7a35bf94217b04d8dee49e6",
+      "sha256": "234de6d8ffe33f0fb59450268fd8eed6c70ee8492223d08ff7d8506784d00c6d",
       "bytes": 5059279
     },
     "sim-highline-citations.bib": {

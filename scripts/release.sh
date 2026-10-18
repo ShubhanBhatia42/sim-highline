@@ -30,6 +30,7 @@ if _re.search(r"(?m)^## Unreleased", t):  # the work was logged as it was done: 
 else:
     open("CHANGELOG.md", "w").write(f"{head}\n## {v} ({d})\n\n- {msg}\n\n## {rest}" if sep else t + f"\n## {v} ({d})\n\n- {msg}\n")
 PY
+python3 scripts/export_retune_data.py >/dev/null   # the dials-page data carries the version
 node scripts/build-static.mjs >/dev/null && node scripts/build-highline.mjs >/dev/null && node scripts/build-site.mjs >/dev/null
 ./scripts/verify-all.sh
 node scripts/lint.mjs
