@@ -32,7 +32,7 @@ const RULES={
   bhsigma:{hard:["sigmaDefinition"],soft:["bhMassMethod","population"]}
 };
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
-const IMF_DEX={kroupa01:0,chabrier03:-0.025,salpeter55:0.21};
+const IMF_DEX={kroupa01:0,chabrier03:-0.04,salpeter55:0.1775};  /* data/imf-offsets.json documents where these come from; scripts/test-compare.mjs keeps the two equal */
 function cosmologyNote(relation,a,b){
   const ra=Math.log10(a.H0/b.H0);
   if(relation==="gsmf")return `H0 ${a.H0} vs ${b.H0}: up to ${Math.abs(3*ra).toFixed(3)} dex in Phi and ${Math.abs(2*ra).toFixed(3)} dex in mass if not converted`;

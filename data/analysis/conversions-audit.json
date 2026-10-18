@@ -1,5 +1,5 @@
 {
- "records": 1699,
+ "records": 1719,
  "exactReexpressions": {
   "timeToRedshift": {
    "label": "cosmic time on the x axis turned into redshift (flat LCDM age relation)",
@@ -104,8 +104,8 @@
  "correctionsLogged": 9,
  "onScreenImfOffsetsDex": {
   "kroupa01": 0.0,
-  "chabrier03": -0.025,
-  "salpeter55": 0.21
+  "chabrier03": -0.04,
+  "salpeter55": 0.1775
  },
  "compilation": {
   "repo": "https://github.com/calvin-sykes/velociraptor-comparison-data",

@@ -33,7 +33,7 @@ for z in (0.0, 2.0):
   out = here.parent / "data" / "curves" / "caesar-synthetic-m100n1024.json"
   records = json.loads(out.read_text())["records"]
   out.unlink()
-  by = {r["relation"]: r for r in records}
+  by = {r["relation"]: r for r in records if r["representation"]["type"] == "points"}
   box = 100 / 0.68
   assert abs(sum(10 ** p["y"] * 0.2 for p in by["gsmf"]["representation"]["points"]) * box**3 - sum(p["count"] for p in by["gsmf"]["representation"]["points"])) < 1, f"box must stay comoving cMpc at z={z}"
   assert all(abs(p["y"] - np.log10(2.0)) < 1e-3 for p in by["size"]["representation"]["points"]), "kpccm/h radii must become physical kpc"

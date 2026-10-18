@@ -133,6 +133,7 @@ def derive(label, groupdir, snaps, retrieved):
 
 
 def relations_from_arrays(spec, A):
+    import distribution_stats as DS  # same folder
     records, z, z_nominal, snap = [], spec["z"], spec["z_nominal"], spec["snap"]
     logm, sfr, resolved, central, box = A["logm"], A["sfr"], A["resolved"], A["central"], spec["box"]
     mstar = 10 ** np.where(np.isfinite(logm), logm, -np.inf)
@@ -143,15 +144,15 @@ def relations_from_arrays(spec, A):
     edges = np.arange(7.0, 12.6, DM)
     prov, warn = spec["provenance"], spec["warning"]
 
-    def rec(relation, suffix, points, interval, ydef, yunit, xdef, defs, population, extra=""):
-        if len(points) < 2:
+    def rec(relation, suffix, points, interval, ydef, yunit, xdef, defs, population, extra="", representation=None):
+        if representation is None and len(points) < 2:
             return
         records.append({
             "id": f"derived.{spec['source'].lower().replace(' ', '-')}.{spec['run'].lower().replace(' ', '-')}.{relation}.{suffix}.z{z_nominal:g}", "source": spec["source"], "run": spec["run"], "kind": "simulation", "relation": relation,
             "epoch": {"zRepresentative": round(z, 4), "zNominal": z_nominal, "zMin": round(z, 4), "zMax": round(z, 4), "mode": "snapshot", "snapshot": snap},
             "axes": {"xDefinition": xdef, "xUnit": "log10(Msun)", "yDefinition": ydef, "yUnit": yunit},
-            "domain": {"xMin": points[0]["x"], "xMax": points[-1]["x"]},
-            "representation": {"type": "points", "intervalKind": interval, "connect": True, "points": points},
+            "domain": {"xMin": representation["xEdges"][0], "xMax": representation["xEdges"][-1]} if representation else {"xMin": points[0]["x"], "xMax": points[-1]["x"]},
+            "representation": representation or {"type": "points", "intervalKind": interval, "connect": True, "points": points},
             "scatter": {"lower": "16th percentile", "upper": "84th percentile"} if interval == "scatter" else None,
             "selection": {"population": population, "warning": (warn + " " + extra).strip()},
             "definitions": {**common, **defs, "population": defs.get("population", population)},
@@ -174,6 +175,14 @@ def relations_from_arrays(spec, A):
         "log10 stellar mass", {"sfrTimescaleMyr": "instantaneous", "sfrStatistic": "median"}, "star-forming", f"Star-forming: sSFR > 0.2/t_age(z) = {sf_cut:.3g} /yr.")
     rec("ssfr", "all", binned_median(logm[sel], np.log10(np.maximum(ssfr[sel], 1e-14)), edges), "scatter", "log10 specific SFR, median of all galaxies (floored at 1e-14 /yr)", "log10(yr^-1)",
         "log10 stellar mass", {"sfrTimescaleMyr": "instantaneous", "sfrStatistic": "median"}, "all")
+    # the whole distribution, not only its median: counts of galaxies on a stellar-mass by sSFR grid (zero or very low sSFR in the lowest row), from which the quenched share, the green valley and the peaks follow
+    xe, ye = [round(float(v), 3) for v in np.arange(8.0, 12.5001, 0.25)], [round(float(v), 3) for v in np.arange(-13.5, -8.4999, 0.1)]
+    ly = np.where(ssfr > 0, np.log10(np.where(ssfr > 0, ssfr, 1.0)), -99.0)
+    counts = DS.bin_counts(logm[sel], ly[sel], xe, ye)
+    if counts.sum() >= 10:
+        rec("ssfr", "dist", [], "scatter", "log10 specific SFR of all galaxies; zero or lower values are in the lowest bin", "log10(yr^-1)", "log10 stellar mass",
+            {"sfrTimescaleMyr": "instantaneous", "sfrStatistic": "median"}, "all", "Per-galaxy distribution: counts on a grid; the curve is derived from them.",
+            representation={"type": "distribution", "xEdges": xe, "yEdges": ye, "counts": counts.astype(int).tolist(), "weighting": "number", "clipped": {"low": True, "high": True}, "thresholds": [-11.0, -10.5]})
     fq = []
     for lo, hi in zip(edges[:-1], edges[1:]):
         m = sel & (logm >= lo) & (logm < hi)

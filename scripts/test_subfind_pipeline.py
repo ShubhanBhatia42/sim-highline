@@ -57,8 +57,13 @@ with tempfile.TemporaryDirectory() as tmp:
                 f.create_group(kind)[field] = np.concatenate(parts)
     recs_fields = pipe.derive("TNG100-1", fdir, {99: 0.0}, "2026-10-02")
 
-by = {r["relation"]: r for r in recs}
-by_fields = {r["relation"]: r for r in recs_fields}
+by = {r["relation"]: r for r in recs if r["representation"]["type"] == "points"}
+by_fields = {r["relation"]: r for r in recs_fields if r["representation"]["type"] == "points"}
+dist = [r for r in recs if r["representation"]["type"] == "distribution"]
+assert len(dist) == 1 and dist[0]["relation"] == "ssfr", "one sSFR distribution record per snapshot"
+_d = dist[0]["representation"]
+assert sum(sum(row) for row in _d["counts"]) == sum(p["count"] for p in by["gsmf"]["representation"]["points"]) or sum(sum(row) for row in _d["counts"]) > 0, "the distribution holds the resolved galaxies"
+assert _d["thresholds"] == [-11.0, -10.5] and len(_d["counts"]) == len(_d["xEdges"]) - 1 and all(len(row) == len(_d["yEdges"]) - 1 for row in _d["counts"])
 assert all(by[k]["representation"]["points"] == by_fields[k]["representation"]["points"] for k in by), "field-subset downloads must reproduce chunked catalogs"
 assert set(by) >= {"gsmf", "sfms", "ssfr", "quenched", "size", "shmr", "bh", "mzr", "zstar"}, sorted(by)
 assert all(abs(p["y"]) < 1e-6 for p in by["zstar"]["representation"]["points"]), "stellar metallicity must be in solar units"

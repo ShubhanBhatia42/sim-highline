@@ -27,7 +27,7 @@ with tempfile.TemporaryDirectory() as tmp:
 out = here.parent / "data" / "curves" / "soap-flamingo-synthetic.json"
 records = json.loads(out.read_text())["records"]
 out.unlink()
-by = {r["relation"]: r for r in records}
+by = {r["relation"]: r for r in records if r["representation"]["type"] == "points"}
 assert sum(p["count"] for p in by["gsmf"]["representation"]["points"]) == n, "GSMF must count every resolved galaxy"
 assert all(abs(p["y"] + 1.8) < 0.05 for p in by["shmr"]["representation"]["points"]), "SO/200_crit masses must give the injected ratio"
 assert all(abs(p["y"] + 10) < 0.05 for p in by["ssfr"]["representation"]["points"]), "SFR units must come from the CGS conversion attribute"

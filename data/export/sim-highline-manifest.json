@@ -6,8 +6,10 @@
     "code": "MIT",
     "data": "CC-BY-4.0"
   },
-  "nRecords": 1699,
-  "nPoints": 55692,
+  "nRecords": 1719,
+  "nPoints": 55880,
+  "nDistributionRecords": 20,
+  "nDistributionCells": 3814,
   "nParametric": 91,
   "parametricSampling": "40 points over the record domain at zRepresentative; the published expression is evaluated, nothing else is generated",
   "columns": {
@@ -64,24 +66,36 @@
       "x_low",
       "x_high",
       "count"
+    ],
+    "distributions": [
+      "record_id",
+      "x_low",
+      "x_high",
+      "y_low",
+      "y_high",
+      "count"
     ]
   },
   "files": {
     "sim-highline-records.csv": {
-      "sha256": "2f73fd60e86994ac87d40ab47ad032ec832e2f8018fe5d2dcee60fa88a26523f",
-      "bytes": 1447833
+      "sha256": "e63d8cf1e8f6be9838021e5a7226e52dd90390e4bec090be00e6f070f4ca5b31",
+      "bytes": 1469604
     },
     "sim-highline-points.csv": {
-      "sha256": "065f9a67f5a5ec9777f3ecba410525a1eddc1e1e313b2db0875f23e7c8673c9f",
-      "bytes": 3396550
+      "sha256": "68f00ada8e678544bfb0a5f7eb97ea937e06930d3c3924b26d1684f537b9c971",
+      "bytes": 3410187
+    },
+    "sim-highline-distributions.csv": {
+      "sha256": "5b784b110b77cff2194d4ef1e1a4b2571f5e92130cc6f06d3c38d5bc8b0e46c2",
+      "bytes": 200923
     },
     "sim-highline-records.json": {
-      "sha256": "234de6d8ffe33f0fb59450268fd8eed6c70ee8492223d08ff7d8506784d00c6d",
-      "bytes": 5059279
+      "sha256": "b41d080568743e6dda2ac1ae569d4eecd4713d51eab9ab7ce90d6e0396e867fc",
+      "bytes": 5173169
     },
     "sim-highline-citations.bib": {
-      "sha256": "37d2453101c5193638370481ee3d79c0a21927569d223cde5887aee0a76a6d36",
-      "bytes": 28520
+      "sha256": "f4a28c41f776e765d87eadd21020606a081510bd3d808fe0bdb8229708e19364",
+      "bytes": 28765
     },
     "sim-highline-rules.json": {
       "sha256": "49b3d5c8eb0c18b4e531dec2f1364d36ddbca6033eae83bd25caa91775e43f10",

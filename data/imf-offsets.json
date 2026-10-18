@@ -1,0 +1,41 @@
+{
+  "convention": "Furlong+15 factors, as used by the SWIFT/VELOCIraptor comparison-data compilation",
+  "note": "One set of stellar-mass offsets for converting an IMF to Chabrier 2003. Population averages: the true offset depends on a galaxy's age and on the mass range of the IMF, so any such conversion is uncertain at about the 0.02 dex level. The set is a convention chosen so that the Explorer's optional conversion agrees with the conversion the compilation already applied to nine observation curves (data/analysis/conversions-audit.json).",
+  "massFactorToChabrier": {
+    "kroupa01": 0.912,
+    "salpeter55": 0.606
+  },
+  "toChabrierDex": {
+    "kroupa01": -0.04,
+    "chabrier03": 0.0,
+    "salpeter55": -0.2175
+  },
+  "compareJs": {
+    "kroupa01": 0.0,
+    "chabrier03": -0.04,
+    "salpeter55": 0.1775
+  },
+  "origin": {
+    "factors": "scripts/cosmology.py of https://github.com/calvin-sykes/velociraptor-comparison-data at commit fc740f4 ('IMF conversion factors from Furlong+ 2015': kroupa_to_chabrier_mass = 0.912, salpeter_to_chabrier_mass = 0.606)",
+    "furlong15": "Furlong et al. 2015 (arXiv:1410.3485), Sec. 2: star formation amplitude lowered by a factor 1.65 (= 1/0.606) for a Chabrier instead of a Salpeter IMF; the Kroupa factor is not stated there."
+  },
+  "previousWebsiteSet": {
+    "toChabrierDex": {
+      "kroupa01": -0.025,
+      "salpeter55": -0.235
+    },
+    "retired": "2026-10-18",
+    "reason": "Its origin was not documented and it differed from the conversion the compilation applied by 0.015 dex (Kroupa) and 0.017 dex (Salpeter)."
+  },
+  "frozenForRegisteredStudies": {
+    "toChabrierDex": {
+      "kroupa01": -0.025,
+      "salpeter55": -0.235
+    },
+    "studies": [
+      "harmonization (registered 2026-10-14)",
+      "model-form (registered 2026-10-14)"
+    ],
+    "note": "A registered analysis keeps the offsets it was registered with. scripts/analyze_harmonization.py can re-run with the current set (HARM_IMF_SET=current) as an exploratory sensitivity check: data/analysis/harmonization-imf-sensitivity.json."
+  }
+}

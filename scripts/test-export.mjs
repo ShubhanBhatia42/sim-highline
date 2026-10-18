@@ -69,4 +69,15 @@ assert.ok(thirdParty >= 200, "expected the Sharda and Garcia records to be flagg
   }
   void fs;
 }
+{ // per-galaxy distributions: the exported cells add up to the counts of every record
+  const { readdir } = await import("node:fs/promises");
+  const all = [];
+  for (const f of (await readdir(new URL("../data/curves/", import.meta.url))).filter(f => f.endsWith(".json"))) all.push(...JSON.parse(await readFile(new URL(`../data/curves/${f}`, import.meta.url), "utf8")).records);
+  const dr = all.filter(r => r.representation.distribution);
+  assert.ok(dr.length > 0, "records with distributions are exported");
+  const total = dr.reduce((a, r) => a + r.representation.distribution.counts.flat().reduce((x, y) => x + y, 0), 0);
+  const rows = dr.flatMap(r => X.distRows(r));
+  assert.equal(rows.reduce((a, c) => a + c.count, 0), total, "exported distribution cells must add up to the record counts");
+  assert.ok(rows.every(c => c.x_high > c.x_low && c.y_high > c.y_low && c.count > 0), "cells have extent and content");
+}
 console.log("Export library tests passed");

@@ -781,7 +781,7 @@ function tuneHtml(){
   <h4>WHAT IS SHOWN</h4>
   <label><input type="checkbox" id="tBands" ${state.bands?"checked":""}> uncertainty / scatter bands</label>
   <label><input type="checkbox" id="tSc" ${state.scatter?"checked":""}> individual galaxies (scatter records)</label>
-  <label><input type="checkbox" id="tImf" ${state.imfc?"checked":""}> convert stellar masses and SFRs to a Chabrier IMF (standard offsets: Kroupa −0.025 dex, Salpeter −0.235 dex; unstated IMFs stay as published; downloads always keep the published values)</label>
+  <label><input type="checkbox" id="tImf" ${state.imfc?"checked":""}> convert stellar masses and SFRs to a Chabrier IMF (offsets: Kroupa −0.040 dex, Salpeter −0.218 dex, the factors of the comparison-data compilation; unstated IMFs stay as published; downloads always keep the published values)</label>
   <label><input type="checkbox" id="tRk" ${state.rankOnly?"checked":""}> only evidence that can be compared fairly (hides curves read off figures, and context-only curves)</label>
   ${TIERS.map(t=>`<label><input type="checkbox" data-tier="${t}" ${state.offTier.has(t)?"":"checked"}> ${t.replace(/-/g," ")} <span style="color:var(--cream3)">${cnt(t)}</span></label>`).join("")}
   <h4>EVOLUTION</h4>

@@ -47,6 +47,27 @@ def load(path=None, points=True):
     return df
 
 
+def load_distributions(path=None):
+    """Per-galaxy distributions: one row per non-empty grid cell (x_low, x_high, y_low, y_high, count), joined to the identifying columns of its record (source, run, relation, z). Use `grid(df, record_id)` for the counts as a matrix."""
+    base = _base(path)
+    d = pd.read_csv(f"{base}/sim-highline-distributions.csv", comment="#")
+    rec = pd.read_csv(f"{base}/sim-highline-records.csv", comment="#", usecols=["record_id", "kind", "source", "run", "relation", "z", "x_definition", "y_definition", "x_unit", "y_unit"])
+    return d.merge(rec, on="record_id", how="inner", validate="many_to_one")
+
+
+def grid(dist, record_id):
+    """Counts of one distribution record as a matrix [x bin][y bin] with its edges: (counts, x_edges, y_edges)."""
+    d = dist[dist["record_id"] == record_id]
+    if d.empty:
+        raise KeyError(f"no distribution for {record_id}")
+    xe = np.unique(np.concatenate([d["x_low"].to_numpy(), d["x_high"].to_numpy()]))
+    ye = np.unique(np.concatenate([d["y_low"].to_numpy(), d["y_high"].to_numpy()]))
+    m = np.zeros((len(xe) - 1, len(ye) - 1))
+    for r in d.itertuples():
+        m[np.searchsorted(xe, r.x_low), np.searchsorted(ye, r.y_low)] = r.count
+    return m, xe, ye
+
+
 def manifest(path=None):
     base = _base(path)
     if "://" in base:

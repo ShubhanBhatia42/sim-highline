@@ -38,7 +38,7 @@ We keep these values as the compilation made them and record Chabrier IMF and Pl
 
 ## 4. An optional switch on screen
 
-The Explorer can shift the stellar-mass and SFR axes of simulation curves to a Chabrier IMF (Kroupa -0.025 dex, Salpeter -0.235 dex). It is off by default, labelled in the legend, the evidence panel and exported figures when on, never applied to curves whose IMF is not stated, and **downloads and the Python loader always hold the published values**. These two offsets are population averages and differ from the compilation's factors in section 3 by 0.015 dex (Kroupa) and 0.017 dex (Salpeter).
+The Explorer can shift the stellar-mass and SFR axes of simulation curves to a Chabrier IMF (Kroupa -0.040 dex, Salpeter -0.217 dex). It is off by default, labelled in the legend, the evidence panel and exported figures when on, never applied to curves whose IMF is not stated, and **downloads and the Python loader always hold the published values**. These offsets are population averages (uncertain at about 0.02 dex) and are the same factors the compilation applied in section 3 (data/imf-offsets.json; the Explorer used slightly different, undocumented values until 2026-10-18, and the two registered studies keep the offsets they were registered with).
 
 ## 5. Mistakes we fixed
 

@@ -49,4 +49,9 @@ opened = sim_highline.open_terms(df)
 assert not opened.record_id.isin(third.record_id).any() and len(opened) > 0.5 * len(df)
 bib = sim_highline.bibtex(sim_highline.select(df, sources="EAGLE"))
 assert bib.count("@misc") >= 5 and "10.1093/mnras/stu2058" in bib
+dist = sim_highline.load_distributions()
+assert len(dist) > 1000 and set(["x_low", "y_high", "count", "source", "relation", "z"]) <= set(dist.columns)
+_rid = dist["record_id"].iloc[0]
+_m, _xe, _ye = sim_highline.grid(dist, _rid)
+assert _m.shape == (len(_xe) - 1, len(_ye) - 1) and _m.sum() == dist[dist["record_id"] == _rid]["count"].sum()
 print(f"sim-highline loader test passed: {len(records)} records, {len(df)} points, v{man['version']}")

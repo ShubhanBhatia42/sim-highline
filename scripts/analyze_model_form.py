@@ -27,7 +27,7 @@ WINDOW = 0.125  # a curve's value at a grid redshift is the mean of log10 SFRD o
 BANDS = {"low": (0.5, 3.0), "high": (5.0, 7.5)}
 MIN_FAMILIES = 5
 NBOOT = 5000
-IMF_DEX = {"kroupa01": 0.0, "chabrier03": -0.025, "salpeter55": 0.21}  # compare.js: dex in stellar mass, the website's offsets
+IMF_DEX = {"kroupa01": 0.0, "chabrier03": -0.025, "salpeter55": 0.21}  # dex in stellar mass: the offsets this analysis was registered with (frozen; the website now uses data/imf-offsets.json)
 
 
 def imf_shift(imf):

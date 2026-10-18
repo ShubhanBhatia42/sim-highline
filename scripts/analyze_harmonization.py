@@ -5,6 +5,7 @@ Coordinate: the stellar mass at fixed abundance, m(phi). Operators: IMF (standar
 Writes data/analysis/harmonization.json and docs/ANALYSIS-harmonization.md. Nothing here changes a stored record."""
 import itertools
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -52,8 +53,11 @@ ID_SUBLIBRARY = re.compile(r"\.gsmf-ap-")
 
 
 def imf_dex():
-    body = re.search(r"const IMF_DEX=\{(.*?)\}", (ROOT / "compare.js").read_text()).group(1)
-    return {k: float(v) for k, v in (kv.split(":") for kv in body.split(","))}
+    """The offsets this analysis was registered with (2026-10-14) stay frozen: the website has since adopted another documented set (data/imf-offsets.json), and a registered result must not move when a convention is revised. HARM_IMF_SET=current re-runs with the website's current offsets as an exploratory sensitivity check (written to data/analysis/harmonization-imf-sensitivity.json, nothing registered is touched)."""
+    if os.environ.get("HARM_IMF_SET") == "current":
+        body = re.search(r"const IMF_DEX=\{(.*?)\}", (ROOT / "compare.js").read_text()).group(1)
+        return {k: float(v) for k, v in (kv.split(":") for kv in body.split(","))}
+    return {"kroupa01": 0.0, "chabrier03": -0.025, "salpeter55": 0.21}
 
 
 IMF_DEX = imf_dex()
@@ -776,6 +780,9 @@ def deviations(res):
 
 
 def write_outputs(res):
+    if os.environ.get("HARM_IMF_SET") == "current":
+        (ROOT / "data" / "analysis" / "harmonization-imf-sensitivity.json").write_text(json.dumps(_round_floats(res), indent=1) + "\n")
+        return
     out = ROOT / "data" / "analysis" / "harmonization.json"
     out.write_text(json.dumps(_round_floats(res), indent=1) + "\n")
     (ROOT / "docs" / "ANALYSIS-harmonization.md").write_text(render(res))
