@@ -1,8 +1,16 @@
 name: release
-# Pushing a tag vX.Y.Z (made by scripts/release.sh and the commands it prints) publishes the GitHub release, which is what the Zenodo integration archives.
+# Publishes the GitHub release for a version, which is what the Zenodo integration archives.
+#   - push a tag vX.Y.Z (made by scripts/release.sh and the commands it prints), or
+#   - run this workflow by hand with the full SHA of the release commit: it creates the tag vX.Y.Z at that commit itself (for when tags cannot be pushed from where you work).
+# In both cases the commit must be on main and carry the same version in data/release.json.
 on:
   push:
     tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: "Full SHA of the release commit (on main, with the version in data/release.json); the tag is created at it"
+        required: true
 permissions:
   contents: write
 jobs:
@@ -12,11 +20,19 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: The tagged commit is on main
-        run: git merge-base --is-ancestor "$GITHUB_SHA" origin/main || { echo "::error::$GITHUB_REF_NAME is not on main; merge first, then tag"; exit 1; }
+          ref: ${{ inputs.commit || github.sha }}
+      - name: Which tag, which commit
+        run: |
+          SHA=$(git rev-parse HEAD)
+          if [ "$GITHUB_EVENT_NAME" = push ]; then TAG="$GITHUB_REF_NAME"; else TAG="v$(python3 -c "import json;print(json.load(open('data/release.json'))['version'])")"; fi
+          echo "SHA=$SHA" >> "$GITHUB_ENV"; echo "TAG=$TAG" >> "$GITHUB_ENV"; echo "release $TAG at $SHA"
+      - name: The commit is on main
+        run: git merge-base --is-ancestor "$SHA" origin/main || { echo "::error::$SHA is not on main; merge first, then release"; exit 1; }
       - name: Release notes from the changelog
-        run: python3 scripts/release_notes.py "$GITHUB_REF_NAME" > notes.md
-      - name: Publish the release
+        run: python3 scripts/release_notes.py "$TAG" > notes.md
+      - name: Publish the release (and the tag, if it does not exist)
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" --title "sim-highline ${GITHUB_REF_NAME#v}" --notes-file notes.md --verify-tag
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then echo "::error::a release $TAG already exists"; exit 1; fi
+          gh release create "$TAG" --target "$SHA" --title "sim-highline ${TAG#v}" --notes-file notes.md
