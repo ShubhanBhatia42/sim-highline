@@ -290,7 +290,7 @@
         "warning": "z=0 stellar mass function of TNG100-1 (all galaxies, Dave+20) read from the vector paths of Dave et al. 2020. The SIMBA shaded variance over 8 sub-octants and the Wright+17 points are not extracted."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "bound to a Subfind subhalo, within the variable BaryMP aperture (Stevens+14; 'inherent' definition of Stevens+19)",
         "imf": "unspecified",
         "cosmology": {
           "H0": 67.74,
@@ -311,7 +311,10 @@
         "sourceMember": "ms_sfr_m100n1024.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: numeric tick labels snapped to ticks; y: positive tick words negated (minus glyphs are separate) and paired with ticks",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dave20-tng-aperture"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -659,7 +662,7 @@
         "warning": "Running median sSFR of TNG100-1 (all galaxies, Dave+20) for galaxies above sSFR = 10^-1.8 Gyr^-1 at z=0, marker centres read from the vector paths of Dave et al. 2020 (axis in Gyr^-1, converted to yr^-1). The 1-sigma error bars and the xGASS points are not extracted."
       },
       "definitions": {
-        "massDefinition": "unspecified",
+        "massDefinition": "bound to a Subfind subhalo, within the variable BaryMP aperture (Stevens+14; 'inherent' definition of Stevens+19)",
         "imf": "unspecified",
         "cosmology": {
           "H0": 67.74,
@@ -681,7 +684,10 @@
         "sourceMember": "ms_sfr_m100n1024.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x: numeric tick labels snapped to ticks; y: as the top panel; the axis is labelled in Gyr^-1 and converted exactly by subtracting 9 dex",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "dave20-tng-aperture"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

@@ -27899,7 +27899,7 @@
       },
       "definitions": {
         "massDefinition": "sed-total",
-        "imf": "unspecified",
+        "imf": "chabrier03",
         "metallicityQuantity": "stellar-Z",
         "metallicityCalibration": "resolved-star [Fe/H]",
         "population": "dwarfs"
@@ -27912,7 +27912,10 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassStellarMetallicity/Kirby2013_Data.hdf5",
-        "checksumSha256": "eb32e224cc9ab50cee88e1761030170c915777b2c0fc6ba284cbc84d87ec515b"
+        "checksumSha256": "eb32e224cc9ab50cee88e1761030170c915777b2c0fc6ba284cbc84d87ec515b",
+        "definitionFills": [
+          "vcd-kirby13-imf"
+        ]
       },
       "calibration": "validation",
       "rankable": true,

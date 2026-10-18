@@ -119,7 +119,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "population": "star-forming",
         "sfrTimescaleMyr": 10,
         "sfrStatistic": "median"
@@ -132,7 +132,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -256,7 +259,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "population": "star-forming",
         "sfrTimescaleMyr": 100,
         "sfrStatistic": "median"
@@ -269,7 +272,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -393,7 +399,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "metallicityQuantity": "stellar-Z",
         "metallicityCalibration": "intrinsic mass-weighted (solar value per release)",
         "population": "release-sample"
@@ -406,7 +412,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -515,7 +524,7 @@
         "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Halo mass definition as provided in the release table (virial)."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "haloMassDefinition": "Mvir (release definition)",
         "haloMassHistory": "current",
         "population": "release-sample",
@@ -531,7 +540,8 @@
         "sourceMember": "data/all_basic_data.csv",
         "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
         "definitionFills": [
-          "katz23-sphinx-mass"
+          "katz23-sphinx-mass",
+          "katz23-sphinx20-imf"
         ]
       },
       "calibration": "prediction",
@@ -649,7 +659,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "population": "star-forming",
         "sfrTimescaleMyr": 10,
         "sfrStatistic": "median"
@@ -662,7 +672,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -779,7 +792,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "population": "star-forming",
         "sfrTimescaleMyr": 100,
         "sfrStatistic": "median"
@@ -792,7 +805,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -909,7 +925,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "metallicityQuantity": "stellar-Z",
         "metallicityCalibration": "intrinsic mass-weighted (solar value per release)",
         "population": "release-sample"
@@ -922,7 +938,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1024,7 +1043,7 @@
         "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Halo mass definition as provided in the release table (virial)."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "haloMassDefinition": "Mvir (release definition)",
         "haloMassHistory": "current",
         "population": "release-sample",
@@ -1040,7 +1059,8 @@
         "sourceMember": "data/all_basic_data.csv",
         "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
         "definitionFills": [
-          "katz23-sphinx-mass"
+          "katz23-sphinx-mass",
+          "katz23-sphinx20-imf"
         ]
       },
       "calibration": "prediction",
@@ -1158,7 +1178,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "sizeDefinition": "uv-half-light-1500A-circularised",
         "population": "release-sample"
       },
@@ -1170,7 +1190,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/galaxy_sizes/morph_z5_1500A.json",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1287,7 +1310,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "population": "star-forming",
         "sfrTimescaleMyr": 10,
         "sfrStatistic": "median"
@@ -1300,7 +1323,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1417,7 +1443,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "population": "star-forming",
         "sfrTimescaleMyr": 100,
         "sfrStatistic": "median"
@@ -1430,7 +1456,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1547,7 +1576,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "metallicityQuantity": "stellar-Z",
         "metallicityCalibration": "intrinsic mass-weighted (solar value per release)",
         "population": "release-sample"
@@ -1560,7 +1589,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1662,7 +1694,7 @@
         "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Halo mass definition as provided in the release table (virial)."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "haloMassDefinition": "Mvir (release definition)",
         "haloMassHistory": "current",
         "population": "release-sample",
@@ -1678,7 +1710,8 @@
         "sourceMember": "data/all_basic_data.csv",
         "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
         "definitionFills": [
-          "katz23-sphinx-mass"
+          "katz23-sphinx-mass",
+          "katz23-sphinx20-imf"
         ]
       },
       "calibration": "prediction",
@@ -1796,7 +1829,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "sizeDefinition": "uv-half-light-1500A-circularised",
         "population": "release-sample"
       },
@@ -1808,7 +1841,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/galaxy_sizes/morph_z6_1500A.json",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1911,7 +1947,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "population": "star-forming",
         "sfrTimescaleMyr": 10,
         "sfrStatistic": "median"
@@ -1924,7 +1960,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -2027,7 +2066,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "population": "star-forming",
         "sfrTimescaleMyr": 100,
         "sfrStatistic": "median"
@@ -2040,7 +2079,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -2143,7 +2185,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "metallicityQuantity": "stellar-Z",
         "metallicityCalibration": "intrinsic mass-weighted (solar value per release)",
         "population": "release-sample"
@@ -2156,7 +2198,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -2244,7 +2289,7 @@
         "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Halo mass definition as provided in the release table (virial)."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "haloMassDefinition": "Mvir (release definition)",
         "haloMassHistory": "current",
         "population": "release-sample",
@@ -2260,7 +2305,8 @@
         "sourceMember": "data/all_basic_data.csv",
         "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
         "definitionFills": [
-          "katz23-sphinx-mass"
+          "katz23-sphinx-mass",
+          "katz23-sphinx20-imf"
         ]
       },
       "calibration": "prediction",
@@ -2364,7 +2410,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "sizeDefinition": "uv-half-light-1500A-circularised",
         "population": "release-sample"
       },
@@ -2376,7 +2422,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/galaxy_sizes/morph_z7_1500A.json",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -2472,7 +2521,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "population": "star-forming",
         "sfrTimescaleMyr": 10,
         "sfrStatistic": "median"
@@ -2485,7 +2534,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -2581,7 +2633,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "population": "star-forming",
         "sfrTimescaleMyr": 100,
         "sfrStatistic": "median"
@@ -2594,7 +2646,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -2690,7 +2745,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "metallicityQuantity": "stellar-Z",
         "metallicityCalibration": "intrinsic mass-weighted (solar value per release)",
         "population": "release-sample"
@@ -2703,7 +2758,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -2798,7 +2856,7 @@
         "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Halo mass definition as provided in the release table (virial)."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "haloMassDefinition": "Mvir (release definition)",
         "haloMassHistory": "current",
         "population": "release-sample",
@@ -2814,7 +2872,8 @@
         "sourceMember": "data/all_basic_data.csv",
         "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
         "definitionFills": [
-          "katz23-sphinx-mass"
+          "katz23-sphinx-mass",
+          "katz23-sphinx20-imf"
         ]
       },
       "calibration": "prediction",
@@ -2911,7 +2970,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "sizeDefinition": "uv-half-light-1500A-circularised",
         "population": "release-sample"
       },
@@ -2923,7 +2982,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/galaxy_sizes/morph_z8_1500A.json",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -2998,7 +3060,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "population": "star-forming",
         "sfrTimescaleMyr": 10,
         "sfrStatistic": "median"
@@ -3011,7 +3073,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -3086,7 +3151,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "population": "star-forming",
         "sfrTimescaleMyr": 100,
         "sfrStatistic": "median"
@@ -3099,7 +3164,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -3174,7 +3242,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "metallicityQuantity": "stellar-Z",
         "metallicityCalibration": "intrinsic mass-weighted (solar value per release)",
         "population": "release-sample"
@@ -3187,7 +3255,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -3261,7 +3332,7 @@
         "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Halo mass definition as provided in the release table (virial)."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "haloMassDefinition": "Mvir (release definition)",
         "haloMassHistory": "current",
         "population": "release-sample",
@@ -3277,7 +3348,8 @@
         "sourceMember": "data/all_basic_data.csv",
         "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
         "definitionFills": [
-          "katz23-sphinx-mass"
+          "katz23-sphinx-mass",
+          "katz23-sphinx20-imf"
         ]
       },
       "calibration": "prediction",
@@ -3353,7 +3425,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "sizeDefinition": "uv-half-light-1500A-circularised",
         "population": "release-sample"
       },
@@ -3365,7 +3437,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/galaxy_sizes/morph_z9_1500A.json",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -3426,7 +3501,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "population": "star-forming",
         "sfrTimescaleMyr": 10,
         "sfrStatistic": "median"
@@ -3439,7 +3514,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -3500,7 +3578,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "population": "star-forming",
         "sfrTimescaleMyr": 100,
         "sfrStatistic": "median"
@@ -3513,7 +3591,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -3574,7 +3655,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "metallicityQuantity": "stellar-Z",
         "metallicityCalibration": "intrinsic mass-weighted (solar value per release)",
         "population": "release-sample"
@@ -3587,7 +3668,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/all_basic_data.csv",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -3654,7 +3738,7 @@
         "warning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Halo mass definition as provided in the release table (virial)."
       },
       "definitions": {
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "haloMassDefinition": "Mvir (release definition)",
         "haloMassHistory": "current",
         "population": "release-sample",
@@ -3670,7 +3754,8 @@
         "sourceMember": "data/all_basic_data.csv",
         "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
         "definitionFills": [
-          "katz23-sphinx-mass"
+          "katz23-sphinx-mass",
+          "katz23-sphinx20-imf"
         ]
       },
       "calibration": "prediction",
@@ -3732,7 +3817,7 @@
       },
       "definitions": {
         "massDefinition": "integral-of-SFH",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "sizeDefinition": "uv-half-light-1500A-circularised",
         "population": "release-sample"
       },
@@ -3744,7 +3829,10 @@
         "retrieved": "2026-10-03",
         "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
         "sourceMember": "data/galaxy_sizes/morph_z10_1500A.json",
-        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85"
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,

@@ -1927,7 +1927,8 @@
         "densityFrame": "comoving",
         "population": "central galaxies",
         "massDefinition": "aperture-50pkpc",
-        "haloMassDefinition": "unspecified"
+        "haloMassDefinition": "BN98",
+        "haloMassHistory": "current"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -1943,7 +1944,8 @@
         "axisCalibrationPixels": "x and y: decade labels snapped to ticks and validated by the minor-tick pattern; log axes",
         "digitizationUncertaintyDex": 0.02,
         "definitionFills": [
-          "schaye26-colibre-aperture"
+          "schaye26-colibre-aperture",
+          "schaye26-colibre-shmr-halo"
         ]
       },
       "calibration": "prediction",
@@ -2079,7 +2081,8 @@
         "densityFrame": "comoving",
         "population": "central galaxies",
         "massDefinition": "aperture-50pkpc",
-        "haloMassDefinition": "unspecified"
+        "haloMassDefinition": "BN98",
+        "haloMassHistory": "current"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -2095,7 +2098,8 @@
         "axisCalibrationPixels": "x and y: decade labels snapped to ticks and validated by the minor-tick pattern; log axes",
         "digitizationUncertaintyDex": 0.02,
         "definitionFills": [
-          "schaye26-colibre-aperture"
+          "schaye26-colibre-aperture",
+          "schaye26-colibre-shmr-halo"
         ]
       },
       "calibration": "prediction",
@@ -2223,7 +2227,8 @@
         "densityFrame": "comoving",
         "population": "central galaxies",
         "massDefinition": "aperture-50pkpc",
-        "haloMassDefinition": "unspecified"
+        "haloMassDefinition": "BN98",
+        "haloMassHistory": "current"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -2239,7 +2244,8 @@
         "axisCalibrationPixels": "x and y: decade labels snapped to ticks and validated by the minor-tick pattern; log axes",
         "digitizationUncertaintyDex": 0.02,
         "definitionFills": [
-          "schaye26-colibre-aperture"
+          "schaye26-colibre-aperture",
+          "schaye26-colibre-shmr-halo"
         ]
       },
       "calibration": "prediction",

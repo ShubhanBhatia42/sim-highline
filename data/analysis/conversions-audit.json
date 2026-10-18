@@ -1,0 +1,161 @@
+{
+ "records": 1699,
+ "exactReexpressions": {
+  "timeToRedshift": {
+   "label": "cosmic time on the x axis turned into redshift (flat LCDM age relation)",
+   "records": 1,
+   "bySource": {
+    "SIMBA": 1
+   }
+  },
+  "log1pz": {
+   "label": "an x axis of log10(1+z) turned into redshift",
+   "records": 40,
+   "bySource": {
+    "FLAMINGO": 16,
+    "COLIBRE": 11,
+    "EAGLE": 4,
+    "FIREbox": 4,
+    "NewHorizon": 2,
+    "Horizon-AGN": 1,
+    "Romulus25": 1,
+    "Illustris": 1
+   }
+  },
+  "perGyr": {
+   "label": "a specific star formation rate per Gyr turned into per year",
+   "records": 31,
+   "bySource": {
+    "FLAMINGO": 16,
+    "EAGLE": 4,
+    "NewHorizon": 4,
+    "COLIBRE": 3,
+    "Horizon-AGN": 2,
+    "SIMBA": 1,
+    "IllustrisTNG": 1
+   }
+  },
+  "ratio": {
+   "label": "a stellar-to-halo (or stellar-to-baryon) mass ratio built or rescaled from the plotted quantities",
+   "records": 51,
+   "bySource": {
+    "Magneticum Pathfinder": 18,
+    "Illustris": 11,
+    "NIHAO zoom suite": 8,
+    "IllustrisTNG": 6,
+    "ASTRID": 5,
+    "EAGLE": 3
+   }
+  },
+  "perDex": {
+   "label": "a density per unit mass ratio turned into per dex",
+   "records": 13,
+   "bySource": {
+    "EAGLE": 12,
+    "Baldry et al. 2012 (GAMA)": 1
+   }
+  },
+  "uvUnits": {
+   "label": "a UV luminosity or density turned into absolute magnitude or per magnitude",
+   "records": 12,
+   "bySource": {
+    "FLARES": 12
+   }
+  },
+  "errorsToLog": {
+   "label": "published linear error bars turned into dex",
+   "records": 23,
+   "bySource": {
+    "Bouwens et al. 2021": 9,
+    "FLARES": 6,
+    "Donnan et al. 2024": 5,
+    "Harikane et al. 2023": 3
+   }
+  },
+  "gasFractionTransform": {
+   "label": "a gas fraction f turned into gas-to-stellar mass ratio, log10(f/(1-f))",
+   "records": 8,
+   "bySource": {
+    "NewHorizon": 8
+   }
+  },
+  "displayOffset": {
+   "label": "a display offset the figure added to each redshift taken out again",
+   "records": 16,
+   "bySource": {
+    "THESAN-1": 16
+   }
+  }
+ },
+ "ownHConversion": {
+  "records": 17,
+  "sources": [
+   "Magneticum Pathfinder"
+  ],
+  "h": [
+   "0.704"
+  ]
+ },
+ "definitionFills": {
+  "rules": 60,
+  "records": 458,
+  "papersReadWithoutResult": 23
+ },
+ "correctionsLogged": 9,
+ "onScreenImfOffsetsDex": {
+  "kroupa01": 0.0,
+  "chabrier03": -0.025,
+  "salpeter55": 0.21
+ },
+ "compilation": {
+  "repo": "https://github.com/calvin-sykes/velociraptor-comparison-data",
+  "commit": "fc740f4d0856efd711f03242d40c03caea969a20",
+  "cosmology": "Planck15",
+  "factors": {
+   "kroupa_to_chabrier_mass": 0.912,
+   "salpeter_to_chabrier_mass": 0.606
+  },
+  "records": 173,
+  "hCorrected": 142,
+  "imfConverted": 9,
+  "noConversion": 15,
+  "notTraced": 16,
+  "imfConvertedDatasets": {
+   "Andrews2013": {
+    "from": "Kroupa",
+    "records": 1,
+    "recordImf": {
+     "chabrier03": 1
+    }
+   },
+   "Gallazzi2005": {
+    "from": "Kroupa",
+    "records": 2,
+    "recordImf": {
+     "chabrier03": 2
+    }
+   },
+   "Grazian2015": {
+    "from": "Salpeter",
+    "records": 4,
+    "recordImf": {
+     "chabrier03": 4
+    }
+   },
+   "Kirby2013": {
+    "from": "Kroupa",
+    "records": 1,
+    "recordImf": {
+     "unspecified": 1
+    }
+   },
+   "Reyes2011": {
+    "from": "Kroupa",
+    "records": 1,
+    "recordImf": {
+     "chabrier03": 1
+    }
+   }
+  }
+ }
+}

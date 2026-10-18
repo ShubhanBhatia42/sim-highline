@@ -97,7 +97,7 @@
           "H0": 67.74,
           "Om": 0.3089
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-Rg",
         "population": "all galaxies",
         "quenchingCriterion": "ssfr<10^-10.5",
         "sfrTimescaleMyr": 100
@@ -114,7 +114,10 @@
         "sourceMember": "fig6.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: numeric tick labels snapped to ticks (linear axes)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "feldmann23-firebox-quenched-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -198,7 +201,7 @@
           "H0": 67.74,
           "Om": 0.3089
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-Rg",
         "population": "all galaxies",
         "quenchingCriterion": "ssfr<1e-11",
         "sfrTimescaleMyr": 100
@@ -215,7 +218,10 @@
         "sourceMember": "fig6.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: numeric tick labels snapped to ticks (linear axes)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "feldmann23-firebox-quenched-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -317,7 +323,7 @@
           "H0": 67.74,
           "Om": 0.3089
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-Rg",
         "population": "central galaxies",
         "quenchingCriterion": "ssfr<10^-10.5",
         "sfrTimescaleMyr": 100
@@ -334,7 +340,10 @@
         "sourceMember": "fig6.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: numeric tick labels snapped to ticks (linear axes)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "feldmann23-firebox-quenched-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -418,7 +427,7 @@
           "H0": 67.74,
           "Om": 0.3089
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-Rg",
         "population": "central galaxies",
         "quenchingCriterion": "ssfr<1e-11",
         "sfrTimescaleMyr": 100
@@ -435,7 +444,10 @@
         "sourceMember": "fig6.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: numeric tick labels snapped to ticks (linear axes)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "feldmann23-firebox-quenched-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -525,7 +537,7 @@
           "H0": 67.74,
           "Om": 0.3089
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-Rg",
         "population": "satellite galaxies",
         "quenchingCriterion": "ssfr<10^-10.5",
         "sfrTimescaleMyr": 100
@@ -542,7 +554,10 @@
         "sourceMember": "fig6.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: numeric tick labels snapped to ticks (linear axes)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "feldmann23-firebox-quenched-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -618,7 +633,7 @@
           "H0": 67.74,
           "Om": 0.3089
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-Rg",
         "population": "satellite galaxies",
         "quenchingCriterion": "ssfr<1e-11",
         "sfrTimescaleMyr": 100
@@ -635,7 +650,10 @@
         "sourceMember": "fig6.pdf",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: numeric tick labels snapped to ticks (linear axes)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "feldmann23-firebox-quenched-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

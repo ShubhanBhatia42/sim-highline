@@ -17,11 +17,12 @@
 <li><a href="#routes"><span>§1</span>Routes</a></li>
 <li><a href="#extraction"><span>§2</span>Extraction</a></li>
 <li><a href="#definitions"><span>§3</span>Definitions</a></li>
-<li><a href="#explorer"><span>§4</span>Computed</a></li>
-<li><a href="#audit"><span>§5</span>Audit</a></li>
-<li><a href="#limits"><span>§6</span>Limits</a></li>
-<li><a href="#ledger"><span>§7</span>Ledger</a></li>
-<li><a href="#undocumented"><span>§8</span>Undocumented</a></li>
+<li><a href="#changes"><span>§4</span>What we changed</a></li>
+<li><a href="#explorer"><span>§5</span>Computed</a></li>
+<li><a href="#audit"><span>§6</span>Audit</a></li>
+<li><a href="#limits"><span>§7</span>Limits</a></li>
+<li><a href="#ledger"><span>§8</span>Ledger</a></li>
+<li><a href="#undocumented"><span>§9</span>Undocumented</a></li>
 </ol>
 </nav>
 <div class="c">
@@ -62,8 +63,8 @@
 <dt>~ with caveats</dt><dd>hard keys documented and equal; a soft key differs or is undocumented, or the two epochs are more than 0.5 apart in z</dd>
 <dt>✕ not comparable</dt><dd>a hard key differs or is undocumented, a curve is marked context only, or structured definitions are missing</dd>
 </dl>
-<aside class="note"><span class="lab">Not converted</span><p>IMF and cosmology are stored, not converted. The Explorer can shift stellar masses to a Chabrier IMF on screen, labelled; downloads always hold the published values.</p></aside>
-<p>Some tables and figures do not state a definition that the source paper does. Each such value is recovered with the paper, section, a short quote and the SHA-256 of the arXiv source archive (§7); a definition that cannot be quoted stays <code>unspecified</code>. A fill never overwrites a stated value.</p>
+<aside class="note"><span class="lab">Not converted</span><p>IMF and cosmology are stored, not converted, for every simulation curve (the one exception is an h-unit conversion, §4). The Explorer can shift stellar masses to a Chabrier IMF on screen, labelled; downloads always hold the published values. Everything we did change, and what the observation compilation had already changed, is in <a href="#changes">§4</a>.</p></aside>
+<p>Some tables and figures do not state a definition that the source paper does. Each such value is recovered with the paper, section, a short quote and the SHA-256 of the arXiv source archive (§8); a definition that cannot be quoted stays <code>unspecified</code>. A fill never overwrites a stated value.</p>
 
 <p>The figures below show what a comparison looks like when definitions are not harmonized: one relation, one epoch, every simulation that reaches the reference mass, and the observational curves in grey. The stellar mass function at z ≈ 6 is Fig. 1 on the <a href="index.html#data">front page</a>.</p>
 
@@ -81,20 +82,43 @@
 </figure>
 </section>
 
+<section class="sec" id="changes" aria-labelledby="changes-h">
+<h2 id="changes-h"><span class="sn">§4</span>What we changed in the data, and what we did not</h2>
+<p><b>The simulation curves are stored as their authors published them.</b> Nothing is corrected for the initial mass function (IMF), the stellar-mass aperture, which galaxies are counted, dust or the cosmology. Where two curves differ in those, the difference is recorded and flagged, not removed. What we did change is only the way numbers are written (a, b) and the fixes in (e). The observation curves that came through a compilation carry that compilation’s own conversions (c). Every change is also written in the warning of each record it touches, and the counts below are made from the records, not typed in (<a href="{{repo}}/blob/main/docs/DATA-CHANGES.md">DATA-CHANGES.md</a>).</p>
+<h3>a · Same numbers, written in the axis units we use</h3>
+<p>Where a paper plots an equivalent axis, the record converts it exactly. Nothing is fitted or interpolated.</p>
+<div class="tw" role="region" aria-label="Exact re-expressions of axes" tabindex="0"><table class="long dense"><thead><tr><th>what was re-expressed</th><th class="n">Records</th><th>mainly</th></tr></thead><tbody>{{cvRows}}</tbody></table></div>
+<h3>b · One cosmology conversion we made ourselves</h3>
+<p>{{cvHRecords}} curves ({{cvHSources}}): the released mass functions are densities in units that carry h. They are converted with h = {{cvH}}, the simulation’s own value, so each curve stays in its run’s own cosmology.</p>
+<h3>c · What the observation compilation did before we received the numbers</h3>
+<p>{{cvCompN}} observation curves come from the SWIFT/VELOCIraptor comparison-data compilation (<a href="{{cvCompRepo}}">calvin-sykes/velociraptor-comparison-data</a>, commit <code>{{cvCompCommit}}</code>), whose scripts re-express each published table in their own conventions. Reading those scripts: <b>{{cvCompH}}</b> are corrected for h to a Planck15 cosmology; <b>{{cvCompImf}}</b> of those also had their stellar masses converted to a Chabrier IMF by the compilation (Kroupa to Chabrier: mass × {{cvKro}}, {{cvKroDex}} dex; Salpeter to Chabrier: × {{cvSal}}, {{cvSalDex}} dex): {{cvImfList}}. {{cvCompNone}} are taken as published and {{cvCompUntraced}} come from a file whose script could not be matched. We keep these values as the compilation made them and record Chabrier IMF and Planck15 as their definitions. We did not re-derive them from the original papers.</p>
+<h3>d · An optional switch on screen</h3>
+<p>The Explorer can shift the stellar-mass and SFR axes of simulation curves to a Chabrier IMF (Kroupa {{cvOnKro}} dex, Salpeter {{cvOnSal}} dex). It is off by default, labelled wherever it is on, never applied to a curve whose IMF is not stated, and <b>downloads and the Python loader always hold the published values</b>. These offsets are population averages and differ slightly from the compilation’s factors in (c).</p>
+<h3>e · Mistakes we fixed, and definitions we added</h3>
+<p>{{cvCorrN}} fixes to data, analyses or claims are listed, release by release, in <a href="quality.html#corrections">the corrections log</a>. {{cvFillRecords}} simulation records carry a definition (for example the stellar-mass aperture) that the table left unstated and the paper states ({{cvFillRules}} sourced rules, §3 and §8); a stated value is never overwritten.</p>
+<h3>What the analyses and tools do with this</h3>
+<ul class="tick">
+<li>The harmonisation study applies IMF offsets and aperture maps inside its own calculation to test whether matching definitions closes the gap between simulated mass functions. It changes no stored curve.</li>
+<li>The definition-budget analysis measures how large definition differences are. It corrects no curve.</li>
+<li>The dials page uses the CAMELS simulations as measured (every CAMELS code is measured the same way, so none is converted to match another). The published and observed curves drawn on it are not adjusted to the CAMELS definitions, and the page says so.</li>
+<li>Check your run does not convert your numbers. It tells you which of your definitions differ from each curve’s.</li>
+</ul>
+</section>
+
 <section class="sec" id="explorer" aria-labelledby="explorer-h">
-<h2 id="explorer-h"><span class="sn">§4</span>What the Explorer computes</h2>
+<h2 id="explorer-h"><span class="sn">§5</span>What the Explorer computes</h2>
 <p>Only exact operations: unit-preserving transforms the reader asks for (per unit mass, times mass, physical axes), residuals against a chosen reference using the plotted points only, and, in the evolution view, reading a published curve at one chosen x inside its plotted range. A simulation with no epoch near the chosen redshift disappears; nothing is interpolated in redshift and nothing is extrapolated.</p>
 <p>A simulation can carry dozens of records for one relation (resolutions, model variations, populations, fits). The default view shows one fiducial run per simulation and relation and keeps the rest one click away. The number beside each simulation in the legend is its median offset from a default observational anchor over the x range they share: a picture of where predictions and data differ, not a ranking.</p>
 </section>
 
 <section class="sec" id="audit" aria-labelledby="audit-h">
-<h2 id="audit-h"><span class="sn">§5</span>Audit</h2>
+<h2 id="audit-h"><span class="sn">§6</span>Audit</h2>
 <p>{{auditNote}}</p>
 <p>Accepted findings are kept with a reason each in <code>data/audit-known.json</code>; anything else fails the build. A stable sample of records for an independent check by people who know each suite is in <a href="{{repo}}/blob/main/docs/expert-audit-sample.md">expert-audit-sample.md</a>; no reply has been recorded yet.</p>
 </section>
 
 <section class="sec" id="limits" aria-labelledby="limits-h">
-<h2 id="limits-h"><span class="sn">§6</span>Limits</h2>
+<h2 id="limits-h"><span class="sn">§7</span>Limits</h2>
 <ul class="flat">
 <li><b>Not reviewed by anyone outside.</b> No record has been checked by an outside expert. A single author confirming a suite’s definitions would change the status of its curves.</li>
 <li><b>Web fonts.</b> The pages load their fonts from Google, which sends the reader’s address to Google on every visit. Your own curve, in the Explorer’s “Your run”, stays in your browser and is never sent anywhere.</li>
@@ -109,7 +133,7 @@
 </section>
 
 <section class="sec" id="ledger" aria-labelledby="ledger-h">
-<h2 id="ledger-h"><span class="sn">§7</span>Evidence ledger</h2>
+<h2 id="ledger-h"><span class="sn">§8</span>Evidence ledger</h2>
 <p>Every recovered definition is applied only where the record states none, and never overwrites a stated value. Each cites the paper section, a short quote and the SHA-256 of the arXiv source archive that was read ({{fNFills}} rules).</p>
 <div class="tw" role="region" aria-label="Evidence ledger" tabindex="0">
 <table class="long dense">
@@ -120,7 +144,7 @@
 </section>
 
 <section class="sec" id="undocumented" aria-labelledby="undocumented-h">
-<h2 id="undocumented-h"><span class="sn">§8</span>Read, and not stated</h2>
+<h2 id="undocumented-h"><span class="sn">§9</span>Read, and not stated</h2>
 <p>{{fUndoc}} definition values remain open: {{fOpenBreakdown}}. The papers below were searched for the listed definitions and do not state them, so the values stay unspecified instead of being inferred. The full list, with the paper to read for each, is <a href="{{repo}}/blob/main/docs/UNDOCUMENTED-DEFINITIONS.md">UNDOCUMENTED-DEFINITIONS.md</a>.</p>
 <ul class="tick">{{fRead}}</ul>
 </section>

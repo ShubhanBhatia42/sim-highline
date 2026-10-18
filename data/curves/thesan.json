@@ -1410,7 +1410,10 @@
         "doi": null,
         "url": "https://www.thesan-project.com/thesan/quantities/gms_Thesan1.dat",
         "retrieved": "2026-10-02",
-        "checksumSha256": "688ac4a4ff056a598bec96b427be06bf81e8170bc7f552e898521b0b55db08a8"
+        "checksumSha256": "688ac4a4ff056a598bec96b427be06bf81e8170bc7f552e898521b0b55db08a8",
+        "definitionFills": [
+          "garaldi24-thesan1-sfms-sfr"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1424,7 +1427,7 @@
           "Om": 0.3089
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous (gas)",
         "sfrStatistic": "median"
       }
     },
@@ -1532,7 +1535,10 @@
         "doi": null,
         "url": "https://www.thesan-project.com/thesan/quantities/gms_Thesan1.dat",
         "retrieved": "2026-10-02",
-        "checksumSha256": "688ac4a4ff056a598bec96b427be06bf81e8170bc7f552e898521b0b55db08a8"
+        "checksumSha256": "688ac4a4ff056a598bec96b427be06bf81e8170bc7f552e898521b0b55db08a8",
+        "definitionFills": [
+          "garaldi24-thesan1-sfms-sfr"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1546,7 +1552,7 @@
           "Om": 0.3089
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous (gas)",
         "sfrStatistic": "median"
       }
     },
@@ -1648,7 +1654,10 @@
         "doi": null,
         "url": "https://www.thesan-project.com/thesan/quantities/gms_Thesan1.dat",
         "retrieved": "2026-10-02",
-        "checksumSha256": "688ac4a4ff056a598bec96b427be06bf81e8170bc7f552e898521b0b55db08a8"
+        "checksumSha256": "688ac4a4ff056a598bec96b427be06bf81e8170bc7f552e898521b0b55db08a8",
+        "definitionFills": [
+          "garaldi24-thesan1-sfms-sfr"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1662,7 +1671,7 @@
           "Om": 0.3089
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous (gas)",
         "sfrStatistic": "median"
       }
     },
@@ -1752,7 +1761,10 @@
         "doi": null,
         "url": "https://www.thesan-project.com/thesan/quantities/gms_Thesan1.dat",
         "retrieved": "2026-10-02",
-        "checksumSha256": "688ac4a4ff056a598bec96b427be06bf81e8170bc7f552e898521b0b55db08a8"
+        "checksumSha256": "688ac4a4ff056a598bec96b427be06bf81e8170bc7f552e898521b0b55db08a8",
+        "definitionFills": [
+          "garaldi24-thesan1-sfms-sfr"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1766,7 +1778,7 @@
           "Om": 0.3089
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous (gas)",
         "sfrStatistic": "median"
       }
     },
@@ -1850,7 +1862,10 @@
         "doi": null,
         "url": "https://www.thesan-project.com/thesan/quantities/gms_Thesan1.dat",
         "retrieved": "2026-10-02",
-        "checksumSha256": "688ac4a4ff056a598bec96b427be06bf81e8170bc7f552e898521b0b55db08a8"
+        "checksumSha256": "688ac4a4ff056a598bec96b427be06bf81e8170bc7f552e898521b0b55db08a8",
+        "definitionFills": [
+          "garaldi24-thesan1-sfms-sfr"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1864,7 +1879,7 @@
           "Om": 0.3089
         },
         "population": "all",
-        "sfrTimescaleMyr": "unspecified",
+        "sfrTimescaleMyr": "instantaneous (gas)",
         "sfrStatistic": "median"
       }
     },

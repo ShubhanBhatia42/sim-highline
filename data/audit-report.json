@@ -121,6 +121,7 @@
     "aperture-100pkpc",
     "total-bound-subhalo",
     "caesar-6dfof-galaxy-total",
+    "bound to a Subfind subhalo, within the variable BaryMP aperture (Stevens+14; 'inherent' definition of Stevens+19)",
     "unspecified",
     "aperture-Rg",
     "aperture-2rhalf-stars",
@@ -137,7 +138,7 @@
    "massDefinitions": [
     "aperture-50pkpc",
     "aperture-2rhalf-stars",
-    "unspecified",
+    "aperture-Rg",
     "aperture-30pkpc"
    ]
   },
@@ -150,6 +151,7 @@
     "all star particles",
     "bound stars within 50 pkpc 3D apertures of galaxies with M* >= 1e8 Msun",
     "-",
+    "all star particles in the simulation that are associated with a galaxy (sub)structure, summed over the box",
     "stars in galaxies with M*>10^9.3 Msun",
     "stars in all identified galaxies",
     "stars-within-third-Rmax-masked"
@@ -203,7 +205,7 @@
    "massDefinitions": [
     "aperture-30pkpc",
     "caesar-6dfof-galaxy-total",
-    "unspecified"
+    "bound to a Subfind subhalo, within the variable BaryMP aperture (Stevens+14; 'inherent' definition of Stevens+19)"
    ]
   },
   "h2-fraction": {
@@ -212,7 +214,7 @@
    ],
    "massDefinitions": [
     "caesar-6dfof-galaxy-total",
-    "unspecified",
+    "bound to a Subfind subhalo, within the variable BaryMP aperture (Stevens+14; 'inherent' definition of Stevens+19)",
     "aperture-30pkpc"
    ]
   },
@@ -223,11 +225,12 @@
    ],
    "massDefinitions": [
     "caesar-6dfof-galaxy-total",
-    "unspecified",
+    "bound to a Subfind subhalo, within the variable BaryMP aperture (Stevens+14; 'inherent' definition of Stevens+19)",
     "aperture-30pkpc",
     "total-galaxy-finder",
     "aperture-Reff-stars",
-    "aperture-50pkpc"
+    "aperture-50pkpc",
+    "unspecified"
    ]
   },
   "gas": {
@@ -260,7 +263,9 @@
    ],
    "massDefinitions": [
     "unspecified",
+    "aperture-30pkpc",
     "aperture-50pkpc",
+    "aperture-0.1rvir",
     "total-subhalo (entire Subfind object, no aperture)"
    ]
   },

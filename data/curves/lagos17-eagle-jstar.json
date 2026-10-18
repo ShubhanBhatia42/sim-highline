@@ -103,7 +103,7 @@
           "H0": 67.77,
           "Om": 0.307
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-30pkpc",
         "population": "all",
         "jDefinition": "stars within r50 (all particles)",
         "sfrStatistic": "median"
@@ -120,7 +120,10 @@
         "sourceMember": "EAGLE_L100JstarsVsMstellar_redshift.eps (converted to PDF)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks (frame from the long axis strokes)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "lagos17-eagle-jstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -224,7 +227,7 @@
           "H0": 67.77,
           "Om": 0.307
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-30pkpc",
         "population": "all",
         "jDefinition": "stars within r50 (all particles)",
         "sfrStatistic": "median"
@@ -241,7 +244,10 @@
         "sourceMember": "EAGLE_L100JstarsVsMstellar_redshift.eps (converted to PDF)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks (frame from the long axis strokes)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "lagos17-eagle-jstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -341,7 +347,7 @@
           "H0": 67.77,
           "Om": 0.307
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-30pkpc",
         "population": "all",
         "jDefinition": "stars within r50 (all particles)",
         "sfrStatistic": "median"
@@ -358,7 +364,10 @@
         "sourceMember": "EAGLE_L100JstarsVsMstellar_redshift.eps (converted to PDF)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks (frame from the long axis strokes)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "lagos17-eagle-jstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -454,7 +463,7 @@
           "H0": 67.77,
           "Om": 0.307
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-30pkpc",
         "population": "all",
         "jDefinition": "stars within r50 (all particles)",
         "sfrStatistic": "median"
@@ -471,7 +480,10 @@
         "sourceMember": "EAGLE_L100JstarsVsMstellar_redshift.eps (converted to PDF)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks (frame from the long axis strokes)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "lagos17-eagle-jstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,
@@ -559,7 +571,7 @@
           "H0": 67.77,
           "Om": 0.307
         },
-        "massDefinition": "unspecified",
+        "massDefinition": "aperture-30pkpc",
         "population": "all",
         "jDefinition": "stars within r50 (all particles)",
         "sfrStatistic": "median"
@@ -576,7 +588,10 @@
         "sourceMember": "EAGLE_L100JstarsVsMstellar_redshift.eps (converted to PDF)",
         "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
         "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks (frame from the long axis strokes)",
-        "digitizationUncertaintyDex": 0.01
+        "digitizationUncertaintyDex": 0.01,
+        "definitionFills": [
+          "lagos17-eagle-jstar-mass"
+        ]
       },
       "calibration": "prediction",
       "rankable": false,

@@ -160,6 +160,7 @@ stats.css = (await read("site/src/site.css")).replace("/*__PALETTE__*/", () => p
   const vmCtx = { globalThis: {} }; (await import("node:vm")).runInNewContext(await read("compare.js"), vmCtx);
   const RULES = vmCtx.globalThis.SimHighlineCompare.RULES, UNSET = new Set([undefined, null, "unspecified", "heterogeneous"]);
   const A = JSON.parse(await read("data/analysis/definition-budget.json")), FL = JSON.parse(await read("data/definition-fills.json")), UD = JSON.parse(await read("data/undocumented-definitions.json"));
+  const CA = JSON.parse(await read("data/analysis/conversions-audit.json"));
   const S = A.summary, pc = v => `${Math.round(100 * v / S.pairs)}%`;
   const fillSet = new Map(FL.fills.map(f => [f.id, Object.keys(f.set).length]));
   const per = new Map();
@@ -209,6 +210,16 @@ stats.css = (await read("site/src/site.css")).replace("/*__PALETTE__*/", () => p
   stats.fRecRecords = UD.summary.recordsWithRecoveredDefinition; stats.fSimRecords = UD.summary.simulationRecords; stats.fUndoc = UD.summary.undocumentedValues; stats.fNotStated = UD.summary.sourceReadNotStated; stats.fNotRead = UD.summary.sourceNotYetRead; stats.fNoPaper = UD.summary.noPaperToRead;
   stats.fTests = S.testsRun; stats.fBelow = S.testsBelow0 || S["testsBelow0.05"]; stats.fExpect = S["expectedBelow0.05UnderNull"]; stats.fBonf = S.bonferroniSignificant;
   stats.fOpenBreakdown = `${UD.summary.sourceReadNotStated} where the paper was read and does not state it${UD.summary.sourceNotYetRead ? `, ${UD.summary.sourceNotYetRead} where it has not yet been read for that key` : "; every paper behind a record has now been read for every open key"}, and ${UD.summary.noPaperToRead} where the source is a data release without a paper`;
+  {
+    const dexOf = x => Math.log10(x), sgn = v => (v >= 0 ? "+" : "−") + Math.abs(v).toFixed(3), C = CA.compilation, off = CA.onScreenImfOffsetsDex;
+    stats.cvRows = Object.values(CA.exactReexpressions).map(v => `<tr><td>${esc(v.label)}</td><td>${n(v.records)}</td><td>${esc(Object.keys(v.bySource).slice(0, 4).join(", "))}</td></tr>`).join("");
+    stats.cvHRecords = n(CA.ownHConversion.records); stats.cvHSources = esc(CA.ownHConversion.sources.join(", ")); stats.cvH = esc(CA.ownHConversion.h.join(", "));
+    stats.cvCompRepo = esc(C.repo); stats.cvCompN = n(C.records); stats.cvCompH = n(C.hCorrected); stats.cvCompImf = n(C.imfConverted); stats.cvCompNone = n(C.noConversion); stats.cvCompUntraced = n(C.notTraced); stats.cvCompCommit = esc((C.commit || "").slice(0, 7));
+    stats.cvKro = C.factors.kroupa_to_chabrier_mass; stats.cvSal = C.factors.salpeter_to_chabrier_mass; stats.cvKroDex = sgn(dexOf(C.factors.kroupa_to_chabrier_mass)); stats.cvSalDex = sgn(dexOf(C.factors.salpeter_to_chabrier_mass));
+    stats.cvImfList = Object.entries(C.imfConvertedDatasets).map(([k, v]) => `${esc(k)} (from ${esc(v.from)}, ${v.records} curve${v.records === 1 ? "" : "s"})`).join("; ");
+    stats.cvOnKro = sgn(off.chabrier03 - off.kroupa01); stats.cvOnSal = sgn(off.chabrier03 - off.salpeter55);
+    stats.cvCorrN = n(CA.correctionsLogged); stats.cvFillRecords = n(CA.definitionFills.records); stats.cvFillRules = n(CA.definitionFills.rules);
+  }
   stats.fNFills = FL.fills.length; stats.fSensN = A.sensitivity.pairs.length; stats.fSensG = A.sensitivity.summary.length;
   // definition changes inside single runs, one row per group (all from data/analysis/definition-budget.json)
   const f3 = (v, d = 3) => (v >= 0 ? "+" : "−") + Math.abs(v).toFixed(d), KEYN = { massDefinition: "stellar mass", haloMassDefinition: "halo mass", sfrTimescaleMyr: "SFR timescale (Myr)", dustCorrection: "dust treatment", sizeDefinition: "size", gasDefinition: "gas" };

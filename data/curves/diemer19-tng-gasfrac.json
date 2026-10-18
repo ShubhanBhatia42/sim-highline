@@ -193,7 +193,9 @@
         "massDefinition": "aperture-30pkpc",
         "population": "galaxies-above-detection-threshold",
         "gasPhase": "HI",
-        "gasDefinition": "HI"
+        "gasDefinition": "HI",
+        "gasStatistic": "median of the gas fractions above a threshold (galaxies below it are counted separately)",
+        "gasMethod": "centre of the shaded region spanned by nine HI/H2 partition methods (no single model)"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -210,7 +212,9 @@
         "digitizationUncertaintyDex": 0.01,
         "definitionFills": [
           "diemer19-tng-mass",
-          "diemer19-tng-hi-def"
+          "diemer19-tng-hi-def",
+          "diemer19-tng-gas-statistic",
+          "diemer19-tng-gas-method"
         ]
       },
       "calibration": "prediction",
@@ -365,7 +369,9 @@
         "massDefinition": "aperture-30pkpc",
         "population": "galaxies-above-detection-threshold",
         "gasPhase": "HI",
-        "gasDefinition": "HI"
+        "gasDefinition": "HI",
+        "gasStatistic": "median of the gas fractions above a threshold (galaxies below it are counted separately)",
+        "gasMethod": "centre of the shaded region spanned by nine HI/H2 partition methods (no single model)"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -382,7 +388,9 @@
         "digitizationUncertaintyDex": 0.01,
         "definitionFills": [
           "diemer19-tng-mass",
-          "diemer19-tng-hi-def"
+          "diemer19-tng-hi-def",
+          "diemer19-tng-gas-statistic",
+          "diemer19-tng-gas-method"
         ]
       },
       "calibration": "prediction",
@@ -581,7 +589,9 @@
         "massDefinition": "aperture-30pkpc",
         "population": "galaxies-above-detection-threshold",
         "gasPhase": "H2",
-        "gasDefinition": "H2"
+        "gasDefinition": "H2",
+        "gasStatistic": "median of the gas fractions above a threshold (galaxies below it are counted separately)",
+        "gasMethod": "centre of the shaded region spanned by nine HI/H2 partition methods (no single model)"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -598,7 +608,9 @@
         "digitizationUncertaintyDex": 0.01,
         "definitionFills": [
           "diemer19-tng-mass",
-          "diemer19-tng-h2-def"
+          "diemer19-tng-h2-def",
+          "diemer19-tng-gas-statistic",
+          "diemer19-tng-gas-method"
         ]
       },
       "calibration": "prediction",
@@ -753,7 +765,9 @@
         "massDefinition": "aperture-30pkpc",
         "population": "galaxies-above-detection-threshold",
         "gasPhase": "H2",
-        "gasDefinition": "H2"
+        "gasDefinition": "H2",
+        "gasStatistic": "median of the gas fractions above a threshold (galaxies below it are counted separately)",
+        "gasMethod": "centre of the shaded region spanned by nine HI/H2 partition methods (no single model)"
       },
       "provenance": {
         "tier": "digitized-figure",
@@ -770,7 +784,9 @@
         "digitizationUncertaintyDex": 0.01,
         "definitionFills": [
           "diemer19-tng-mass",
-          "diemer19-tng-h2-def"
+          "diemer19-tng-h2-def",
+          "diemer19-tng-gas-statistic",
+          "diemer19-tng-gas-method"
         ]
       },
       "calibration": "prediction",

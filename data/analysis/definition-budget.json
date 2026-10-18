@@ -333,7 +333,7 @@
     "unknown": 0.3594,
     "mismatch": 0.2259
    },
-   "documented_fraction": 0.867,
+   "documented_fraction": 0.907,
    "excess_differing_minus_matched": -0.073,
    "p_permutation": 0.6812,
    "ci95_excess": [
@@ -367,7 +367,7 @@
     "unknown": 0.3615,
     "mismatch": 0.1948
    },
-   "documented_fraction": 0.815,
+   "documented_fraction": 0.877,
    "excess_differing_minus_matched": 0.2245,
    "p_permutation": 0.089,
    "ci95_excess": [
@@ -400,7 +400,7 @@
     "unknown": 0.2766,
     "mismatch": 0.1368
    },
-   "documented_fraction": 0.785,
+   "documented_fraction": 0.862,
    "excess_differing_minus_matched": 0.1291,
    "p_permutation": 0.1179,
    "ci95_excess": [
@@ -433,7 +433,7 @@
     "unknown": 0.0862,
     "mismatch": 0.1282
    },
-   "documented_fraction": 0.8,
+   "documented_fraction": 0.867,
    "excess_differing_minus_matched": 0.1262,
    "p_permutation": 0.1519,
    "ci95_excess": [
@@ -457,21 +457,21 @@
    "pairs": 25,
    "counts": {
     "matched": 3,
-    "differing": 3,
-    "unknown": 2,
+    "differing": 5,
+    "unknown": 0,
     "mismatch": 17
    },
    "median_abs_dy": {
     "matched": 0.0824,
-    "differing": 0.328,
-    "unknown": 0.1506,
+    "differing": 0.2971,
+    "unknown": null,
     "mismatch": 0.1709
    },
-   "documented_fraction": 0.925,
-   "excess_differing_minus_matched": 0.2456,
-   "p_permutation": 0.0335,
+   "documented_fraction": 1.0,
+   "excess_differing_minus_matched": 0.2147,
+   "p_permutation": 0.0195,
    "ci95_excess": [
-    0.2147,
+    0.0564,
     0.326
    ]
   },
@@ -492,22 +492,22 @@
    "pairs": 235,
    "counts": {
     "matched": 8,
-    "differing": 53,
-    "unknown": 59,
-    "mismatch": 115
+    "differing": 70,
+    "unknown": 0,
+    "mismatch": 157
    },
    "median_abs_dy": {
     "matched": 0.1721,
-    "differing": 0.2163,
-    "unknown": 0.1566,
-    "mismatch": 0.2372
+    "differing": 0.2031,
+    "unknown": null,
+    "mismatch": 0.2119
    },
-   "documented_fraction": 0.95,
-   "excess_differing_minus_matched": 0.0442,
-   "p_permutation": 0.2064,
+   "documented_fraction": 1.0,
+   "excess_differing_minus_matched": 0.031,
+   "p_permutation": 0.2684,
    "ci95_excess": [
-    -0.1377,
-    0.1783
+    -0.1961,
+    0.1403
    ]
   },
   {
@@ -616,7 +616,7 @@
     "unknown": 0.741,
     "mismatch": 1.5931
    },
-   "documented_fraction": 0.733,
+   "documented_fraction": 0.8,
    "excess_differing_minus_matched": null
   },
   {
@@ -757,7 +757,7 @@
     "unknown": null,
     "mismatch": 0.7705
    },
-   "documented_fraction": 0.938,
+   "documented_fraction": 1.0,
    "excess_differing_minus_matched": null
   },
   {
@@ -902,18 +902,23 @@
    "pairs": 10,
    "counts": {
     "matched": 3,
-    "differing": 0,
-    "unknown": 3,
+    "differing": 3,
+    "unknown": 0,
     "mismatch": 4
    },
    "median_abs_dy": {
     "matched": 0.2055,
-    "differing": null,
-    "unknown": 0.3894,
+    "differing": 0.3894,
+    "unknown": null,
     "mismatch": 8.6937
    },
-   "documented_fraction": 0.92,
-   "excess_differing_minus_matched": null
+   "documented_fraction": 0.96,
+   "excess_differing_minus_matched": 0.1839,
+   "p_permutation": 0.2374,
+   "ci95_excess": [
+    -0.1369,
+    0.4113
+   ]
   },
   {
    "relation": "bh",
@@ -1362,21 +1367,21 @@
    "pairs": 25,
    "counts": {
     "matched": 3,
-    "differing": 3,
-    "unknown": 2,
+    "differing": 5,
+    "unknown": 0,
     "mismatch": 17
    },
    "median_abs_dy": {
     "matched": 0.0824,
-    "differing": 0.328,
-    "unknown": 0.1506,
+    "differing": 0.2971,
+    "unknown": null,
     "mismatch": 0.1709
    },
-   "documented_fraction": 0.925,
-   "excess_differing_minus_matched": 0.2456,
-   "p_permutation": 0.0375,
+   "documented_fraction": 1.0,
+   "excess_differing_minus_matched": 0.2147,
+   "p_permutation": 0.0215,
    "ci95_excess": [
-    0.2147,
+    0.0564,
     0.326
    ]
   },
@@ -1503,7 +1508,7 @@
     "unknown": null,
     "mismatch": 0.7705
    },
-   "documented_fraction": 0.938,
+   "documented_fraction": 1.0,
    "excess_differing_minus_matched": null
   },
   {
@@ -1619,18 +1624,23 @@
    "pairs": 6,
    "counts": {
     "matched": 3,
-    "differing": 0,
-    "unknown": 3,
+    "differing": 3,
+    "unknown": 0,
     "mismatch": 0
    },
    "median_abs_dy": {
     "matched": 0.2055,
-    "differing": null,
-    "unknown": 0.3894,
+    "differing": 0.3894,
+    "unknown": null,
     "mismatch": null
    },
-   "documented_fraction": 0.95,
-   "excess_differing_minus_matched": null
+   "documented_fraction": 1.0,
+   "excess_differing_minus_matched": 0.1839,
+   "p_permutation": 0.2549,
+   "ci95_excess": [
+    -0.1369,
+    0.4113
+   ]
   }
  ],
  "sensitivity": {
@@ -3509,13 +3519,13 @@
   "pairs": 2174,
   "byClass": {
    "matched": 97,
-   "differing": 348,
-   "unknown": 466,
-   "mismatch": 1263
+   "differing": 370,
+   "unknown": 402,
+   "mismatch": 1305
   },
-  "testsRun": 16,
+  "testsRun": 17,
   "testsBelow0.05": 1,
-  "expectedBelow0.05UnderNull": 0.8,
+  "expectedBelow0.05UnderNull": 0.85,
   "bonferroniSignificant": 0
  }
 }
