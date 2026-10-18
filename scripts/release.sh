@@ -23,7 +23,12 @@ import sys
 v, d, msg = sys.argv[1:4]
 t = open("CHANGELOG.md").read()
 head, sep, rest = t.partition("\n## ")
-open("CHANGELOG.md", "w").write(f"{head}\n## {v} ({d})\n\n- {msg}\n\n## {rest}" if sep else t + f"\n## {v} ({d})\n\n- {msg}\n")
+import re as _re
+if _re.search(r"(?m)^## Unreleased", t):  # the work was logged as it was done: that section becomes this release
+    t = _re.sub(r"(?m)^## Unreleased[^\n]*\n", f"## {v} ({d})\n\n- {msg}\n", t, count=1)
+    open("CHANGELOG.md", "w").write(t)
+else:
+    open("CHANGELOG.md", "w").write(f"{head}\n## {v} ({d})\n\n- {msg}\n\n## {rest}" if sep else t + f"\n## {v} ({d})\n\n- {msg}\n")
 PY
 node scripts/build-static.mjs >/dev/null && node scripts/build-highline.mjs >/dev/null && node scripts/build-site.mjs >/dev/null
 ./scripts/verify-all.sh
@@ -33,5 +38,5 @@ cat <<EOF
 Release $V is prepared and verified. Review the diff, then:
   git add -A && git commit -m "Release $V: $MSG"
   git tag -a v$V -m "$MSG"
-  # after it is merged to main:  git push origin v$V   (then create the GitHub release from the tag; Zenodo archives it if the integration is on)
+  # after it is merged to main:  git push origin v$V   (the release workflow then publishes the GitHub release from the tag, and Zenodo archives that release if its integration is on)
 EOF

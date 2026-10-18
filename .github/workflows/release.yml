@@ -1,0 +1,22 @@
+name: release
+# Pushing a tag vX.Y.Z (made by scripts/release.sh and the commands it prints) publishes the GitHub release, which is what the Zenodo integration archives.
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: write
+jobs:
+  github-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: The tagged commit is on main
+        run: git merge-base --is-ancestor "$GITHUB_SHA" origin/main || { echo "::error::$GITHUB_REF_NAME is not on main; merge first, then tag"; exit 1; }
+      - name: Release notes from the changelog
+        run: python3 scripts/release_notes.py "$GITHUB_REF_NAME" > notes.md
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" --title "sim-highline ${GITHUB_REF_NAME#v}" --notes-file notes.md --verify-tag
