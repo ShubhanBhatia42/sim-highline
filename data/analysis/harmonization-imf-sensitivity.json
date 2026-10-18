@@ -1,0 +1,790 @@
+{
+ "version": "0.24.0",
+ "protocol": "docs/PROTOCOL-harmonization.md",
+ "parameters": {
+  "seed": 20261014,
+  "phi_levels": [
+   -2.0,
+   -2.25,
+   -2.5,
+   -2.75,
+   -3.0,
+   -3.25,
+   -3.5,
+   -3.75,
+   -4.0,
+   -4.25,
+   -4.5
+  ],
+  "reference_aperture_pkpc": 30,
+  "min_suites_per_level": 4,
+  "z_max": 0.2,
+  "bootstrap": 2000,
+  "permutations": 2000,
+  "random_fiducial_draws": 200,
+  "injection_draws": 100,
+  "injection_bootstrap": 200,
+  "lambdas": [
+   0.0,
+   0.5,
+   1.0,
+   2.0
+  ],
+  "scatter_iterations": 10,
+  "imf_dex": {
+   "kroupa01": 0.0,
+   "chabrier03": -0.04,
+   "salpeter55": 0.1775
+  }
+ },
+ "gate_V1": {
+  "passed": true,
+  "threshold_dex": 0.05,
+  "rows": [
+   {
+    "z": 0,
+    "sigma": 0.1,
+    "levels": 11,
+    "needed_median": 0.0151,
+    "needed_max": 0.0261,
+    "deconvolution_max_error": 0.0304,
+    "convolution_max_error": 0.0107
+   },
+   {
+    "z": 1,
+    "sigma": 0.2,
+    "levels": 11,
+    "needed_median": 0.0732,
+    "needed_max": 0.105,
+    "deconvolution_max_error": 0.0336,
+    "convolution_max_error": 0.0152
+   },
+   {
+    "z": 2,
+    "sigma": 0.3,
+    "levels": 11,
+    "needed_median": 0.1245,
+    "needed_max": 0.2975,
+    "deconvolution_max_error": 0.0252,
+    "convolution_max_error": 0.0226
+   },
+   {
+    "z": 3,
+    "sigma": 0.3,
+    "levels": 11,
+    "needed_median": 0.0826,
+    "needed_max": 0.2144,
+    "deconvolution_max_error": 0.0303,
+    "convolution_max_error": 0.0189
+   },
+   {
+    "z": 4,
+    "sigma": 0.3,
+    "levels": 11,
+    "needed_median": 0.0891,
+    "needed_max": 0.1651,
+    "deconvolution_max_error": 0.0352,
+    "convolution_max_error": 0.0267
+   }
+  ]
+ },
+ "operators_used": [
+  "imf",
+  "scatter",
+  "aperture"
+ ],
+ "suites": [
+  {
+   "suite": "COLIBRE",
+   "record": "chaikin26.colibre.l200m6.gsmf.z0",
+   "run": "m6 (L200)",
+   "z": 0,
+   "imf": "chabrier03",
+   "mass_definition": "aperture-50pkpc",
+   "aperture_class": "50",
+   "stated_scatter_dex": 0.0,
+   "levels_defined": 11,
+   "phi_lowest_defined": -4.5,
+   "mean_shift_imf_dex": 0.0,
+   "mean_shift_scatter_dex": 0.0,
+   "mean_shift_aperture_dex": -0.0128
+  },
+  {
+   "suite": "EAGLE",
+   "record": "furlong15.eagle-ref.gsmf.z0.1",
+   "run": "Ref-L100N1504",
+   "z": 0.1,
+   "imf": "chabrier03",
+   "mass_definition": "aperture-30pkpc",
+   "aperture_class": "30",
+   "stated_scatter_dex": 0.0,
+   "levels_defined": 9,
+   "phi_lowest_defined": -4.0,
+   "mean_shift_imf_dex": 0.0,
+   "mean_shift_scatter_dex": 0.0,
+   "mean_shift_aperture_dex": 0.0
+  },
+  {
+   "suite": "FIREbox",
+   "record": "feldmann23.firebox.gsmf.z0",
+   "run": "FIREbox (FB1024, 22.1 cMpc box)",
+   "z": 0,
+   "imf": "kroupa01",
+   "mass_definition": "aperture-Rg",
+   "aperture_class": null,
+   "stated_scatter_dex": 0.0,
+   "levels_defined": 3,
+   "phi_lowest_defined": -2.5,
+   "mean_shift_imf_dex": -0.04,
+   "mean_shift_scatter_dex": 0.0,
+   "mean_shift_aperture_dex": 0.0
+  },
+  {
+   "suite": "FLAMINGO",
+   "record": "schaye23.flamingo-l1_m9.gsmf.z0",
+   "run": "L1_m9",
+   "z": 0,
+   "imf": "chabrier03",
+   "mass_definition": "aperture-50pkpc",
+   "aperture_class": "50",
+   "stated_scatter_dex": 0.3,
+   "levels_defined": 10,
+   "phi_lowest_defined": -4.5,
+   "mean_shift_imf_dex": 0.0,
+   "mean_shift_scatter_dex": -0.2179,
+   "mean_shift_aperture_dex": -0.0114
+  },
+  {
+   "suite": "Horizon-AGN",
+   "record": "kaviraj17.horizon-agn.gsmf.z0.1",
+   "run": "Horizon-AGN",
+   "z": 0.1,
+   "imf": "salpeter55",
+   "mass_definition": "unspecified",
+   "aperture_class": null,
+   "stated_scatter_dex": 0.0,
+   "levels_defined": 11,
+   "phi_lowest_defined": -4.5,
+   "mean_shift_imf_dex": -0.2175,
+   "mean_shift_scatter_dex": 0.0,
+   "mean_shift_aperture_dex": 0.0
+  },
+  {
+   "suite": "Illustris",
+   "record": "pillepich18.illustris.gsmf.z0",
+   "run": "Illustris-1",
+   "z": 0,
+   "imf": "chabrier03",
+   "mass_definition": "aperture-30pkpc",
+   "aperture_class": "30",
+   "stated_scatter_dex": 0.0,
+   "levels_defined": 11,
+   "phi_lowest_defined": -4.5,
+   "mean_shift_imf_dex": 0.0,
+   "mean_shift_scatter_dex": 0.0,
+   "mean_shift_aperture_dex": 0.0
+  },
+  {
+   "suite": "IllustrisTNG",
+   "record": "pillepich18.tng100.gsmf.z0",
+   "run": "TNG100-1",
+   "z": 0,
+   "imf": "chabrier03",
+   "mass_definition": "aperture-30pkpc",
+   "aperture_class": "30",
+   "stated_scatter_dex": 0.0,
+   "levels_defined": 10,
+   "phi_lowest_defined": -4.25,
+   "mean_shift_imf_dex": 0.0,
+   "mean_shift_scatter_dex": 0.0,
+   "mean_shift_aperture_dex": 0.0
+  },
+  {
+   "suite": "Magneticum Pathfinder",
+   "record": "magneticum.box2hr.gsmf.z0.official",
+   "run": "Box2/hr",
+   "z": 0.033,
+   "imf": "chabrier03",
+   "mass_definition": "unspecified",
+   "aperture_class": null,
+   "stated_scatter_dex": 0.0,
+   "levels_defined": 8,
+   "phi_lowest_defined": -4.5,
+   "mean_shift_imf_dex": 0.0,
+   "mean_shift_scatter_dex": 0.0,
+   "mean_shift_aperture_dex": 0.0
+  }
+ ],
+ "excluded_suites": {
+  "SIMBA": "its fiducial run 'm100n1024 (all galaxies)' is not eligible: per-dex normalisation not stated"
+ },
+ "levels": [
+  {
+   "phi": -2.0,
+   "suites": 6,
+   "sd_raw_dex": 0.4064,
+   "sd_harmonized_dex": 0.3503
+  },
+  {
+   "phi": -2.25,
+   "suites": 6,
+   "sd_raw_dex": 0.2615,
+   "sd_harmonized_dex": 0.213
+  },
+  {
+   "phi": -2.5,
+   "suites": 7,
+   "sd_raw_dex": 0.1397,
+   "sd_harmonized_dex": 0.1069
+  },
+  {
+   "phi": -2.75,
+   "suites": 7,
+   "sd_raw_dex": 0.1453,
+   "sd_harmonized_dex": 0.1006
+  },
+  {
+   "phi": -3.0,
+   "suites": 7,
+   "sd_raw_dex": 0.1266,
+   "sd_harmonized_dex": 0.0937
+  },
+  {
+   "phi": -3.25,
+   "suites": 7,
+   "sd_raw_dex": 0.1298,
+   "sd_harmonized_dex": 0.1182
+  },
+  {
+   "phi": -3.5,
+   "suites": 6,
+   "sd_raw_dex": 0.1416,
+   "sd_harmonized_dex": 0.1563
+  },
+  {
+   "phi": -3.75,
+   "suites": 6,
+   "sd_raw_dex": 0.15,
+   "sd_harmonized_dex": 0.1896
+  },
+  {
+   "phi": -4.0,
+   "suites": 6,
+   "sd_raw_dex": 0.1523,
+   "sd_harmonized_dex": 0.2125
+  },
+  {
+   "phi": -4.25,
+   "suites": 4,
+   "sd_raw_dex": 0.1016,
+   "sd_harmonized_dex": 0.0773
+  },
+  {
+   "phi": -4.5,
+   "suites": 3,
+   "sd_raw_dex": null,
+   "sd_harmonized_dex": null
+  }
+ ],
+ "library": {
+  "summary": [
+   {
+    "pair": "10 -> 30",
+    "suites": [
+     "EAGLE"
+    ],
+    "range": {
+     "EAGLE": [
+      8.3,
+      10.98
+     ]
+    },
+    "shift_dex_at": {
+     "10.0": {
+      "EAGLE": 0.0889
+     },
+     "10.5": {
+      "EAGLE": 0.1313
+     },
+     "11.0": {
+      "EAGLE": null
+     },
+     "11.5": {
+      "EAGLE": null
+     }
+    }
+   },
+   {
+    "pair": "50 -> 30",
+    "suites": [
+     "COLIBRE"
+    ],
+    "range": {
+     "COLIBRE": [
+      7.28,
+      11.38
+     ]
+    },
+    "shift_dex_at": {
+     "10.0": {
+      "COLIBRE": -0.0017
+     },
+     "10.5": {
+      "COLIBRE": -0.0122
+     },
+     "11.0": {
+      "COLIBRE": -0.0343
+     },
+     "11.5": {
+      "COLIBRE": null
+     }
+    }
+   },
+   {
+    "pair": "100 -> 30",
+    "suites": [
+     "COLIBRE",
+     "EAGLE"
+    ],
+    "range": {
+     "COLIBRE": [
+      7.28,
+      11.38
+     ],
+     "EAGLE": [
+      8.32,
+      11.18
+     ]
+    },
+    "shift_dex_at": {
+     "10.0": {
+      "COLIBRE": -0.0021,
+      "EAGLE": -0.008
+     },
+     "10.5": {
+      "COLIBRE": -0.0208,
+      "EAGLE": -0.0249
+     },
+     "11.0": {
+      "COLIBRE": -0.0607,
+      "EAGLE": -0.0629
+     },
+     "11.5": {
+      "COLIBRE": null,
+      "EAGLE": null
+     }
+    }
+   },
+   {
+    "pair": "total -> 30",
+    "suites": [
+     "COLIBRE",
+     "EAGLE",
+     "Illustris"
+    ],
+    "range": {
+     "COLIBRE": [
+      7.28,
+      11.38
+     ],
+     "EAGLE": [
+      8.32,
+      11.18
+     ],
+     "Illustris": [
+      8.35,
+      11.67
+     ]
+    },
+    "shift_dex_at": {
+     "10.0": {
+      "COLIBRE": -0.001,
+      "EAGLE": -0.0085,
+      "Illustris": 0.0224
+     },
+     "10.5": {
+      "COLIBRE": -0.0263,
+      "EAGLE": -0.0329,
+      "Illustris": 0.0093
+     },
+     "11.0": {
+      "COLIBRE": -0.0804,
+      "EAGLE": -0.0929,
+      "Illustris": -0.0249
+     },
+     "11.5": {
+      "COLIBRE": null,
+      "EAGLE": null,
+      "Illustris": -0.0898
+     }
+    }
+   },
+   {
+    "pair": "2rhalf -> 30",
+    "suites": [
+     "Illustris"
+    ],
+    "range": {
+     "Illustris": [
+      8.35,
+      11.67
+     ]
+    },
+    "shift_dex_at": {
+     "10.0": {
+      "Illustris": 0.0922
+     },
+     "10.5": {
+      "Illustris": 0.0931
+     },
+     "11.0": {
+      "Illustris": 0.0775
+     },
+     "11.5": {
+      "Illustris": 0.0356
+     }
+    }
+   },
+   {
+    "pair": "petrosian -> 30",
+    "suites": [
+     "EAGLE"
+    ],
+    "range": {
+     "EAGLE": [
+      8.3,
+      11.18
+     ]
+    },
+    "shift_dex_at": {
+     "10.0": {
+      "EAGLE": 0.0275
+     },
+     "10.5": {
+      "EAGLE": 0.0299
+     },
+     "11.0": {
+      "EAGLE": 0.0211
+     },
+     "11.5": {
+      "EAGLE": null
+     }
+    }
+   }
+  ],
+  "records": {
+   "EAGLE": {
+    "10": "schaye15.eagle-ref-l100n1504.gsmf-ap-10pkpc.z0.1",
+    "30": "schaye15.eagle-ref-l100n1504.gsmf-ap-30pkpc.z0.1",
+    "100": "schaye15.eagle-ref-l100n1504.gsmf-ap-100pkpc.z0.1",
+    "petrosian": "schaye15.eagle-ref-l100n1504.gsmf-ap-petrosian.z0.1",
+    "total": "schaye15.eagle-ref-l100n1504.gsmf-ap-all-bound.z0.1"
+   },
+   "COLIBRE": {
+    "30": "chaikin26.colibre.l200m6.gsmf-ap-30pkpc.z0",
+    "50": "chaikin26.colibre.l200m6.gsmf-ap-50pkpc.z0",
+    "100": "chaikin26.colibre.l200m6.gsmf-ap-100pkpc.z0",
+    "total": "chaikin26.colibre.l200m6.gsmf-ap-all-bound.z0"
+   },
+   "Illustris": {
+    "2rhalf": "genel14.illustris-1.gsmf-r2.z0",
+    "30": "pillepich18.illustris.gsmf.z0",
+    "total": "genel14.illustris-1.gsmf-full.z0"
+   }
+  }
+ },
+ "E3": [
+  {
+   "pair": "100 -> 30",
+   "suites": [
+    "COLIBRE",
+    "EAGLE"
+   ],
+   "n_suites": 2,
+   "common_mass_range": [
+    8.32,
+    11.18
+   ],
+   "testable": true,
+   "folds": [
+    {
+     "left_out": "COLIBRE",
+     "skill": 0.9667,
+     "mae_dex": 0.0043,
+     "rms_map_dex": 0.0259
+    },
+    {
+     "left_out": "EAGLE",
+     "skill": 0.9703,
+     "mae_dex": 0.0043,
+     "rms_map_dex": 0.0274
+    }
+   ],
+   "leave_one_out_with_three_or_more": false,
+   "universal": false,
+   "between_suite_sd_dex": 0.003
+  },
+  {
+   "pair": "total -> 30",
+   "suites": [
+    "COLIBRE",
+    "EAGLE",
+    "Illustris"
+   ],
+   "n_suites": 3,
+   "common_mass_range": [
+    8.354,
+    11.18
+   ],
+   "testable": true,
+   "folds": [
+    {
+     "left_out": "COLIBRE",
+     "skill": 0.791,
+     "mae_dex": 0.0135,
+     "rms_map_dex": 0.0333
+    },
+    {
+     "left_out": "EAGLE",
+     "skill": 0.6135,
+     "mae_dex": 0.0229,
+     "rms_map_dex": 0.0389
+    },
+    {
+     "left_out": "Illustris",
+     "skill": -1.6309,
+     "mae_dex": 0.0364,
+     "rms_map_dex": 0.0237
+    }
+   ],
+   "leave_one_out_with_three_or_more": true,
+   "universal": false,
+   "between_suite_sd_dex": 0.0215
+  }
+ ],
+ "E1": {
+  "R": {
+   "all": 0.1546736072,
+   "body": 0.3162345964,
+   "tail": -0.3496657382
+  },
+  "ci95": {
+   "all": [
+    -1.0403,
+    0.5088
+   ],
+   "body": [
+    0.0,
+    0.557
+   ],
+   "tail": [
+    -7.4002,
+    0.6454
+   ]
+  },
+  "boot_fraction_positive": {
+   "all": 0.6705,
+   "body": 0.9745,
+   "tail": 0.3215
+  },
+  "permutation": {
+   "n": 2000,
+   "mean": -0.2381,
+   "p95": 0.284,
+   "p_value": 0.1079
+  }
+ },
+ "operators": {
+  "imf only": {
+   "R": 0.3075,
+   "ci95": [
+    0.0,
+    0.5594
+   ]
+  },
+  "scatter only": {
+   "R": -0.3181,
+   "ci95": [
+    -1.7294,
+    0.0
+   ]
+  },
+  "aperture only": {
+   "R": -0.0011,
+   "ci95": [
+    -0.0298,
+    0.0268
+   ]
+  },
+  "without imf": {
+   "R": -0.1911,
+   "ci95": [
+    -1.3427,
+    0.0
+   ]
+  },
+  "without scatter": {
+   "R": 0.2943,
+   "ci95": [
+    -0.0044,
+    0.527
+   ]
+  },
+  "without aperture": {
+   "R": 0.0523,
+   "ci95": [
+    -1.3772,
+    0.4979
+   ]
+  },
+  "all three": {
+   "R": 0.1547,
+   "ci95": [
+    -1.1104,
+    0.492
+   ]
+  }
+ },
+ "E2": {
+  "R_ub": 0.1568,
+  "assignment": {
+   "FIREbox": "100",
+   "Horizon-AGN": "30",
+   "Magneticum Pathfinder": "total"
+  },
+  "free_suites": [
+   "FIREbox",
+   "Horizon-AGN",
+   "Magneticum Pathfinder"
+  ],
+  "null_n": 255,
+  "null_p95": 0.2898,
+  "null_max": 0.2898,
+  "null_median": 0.238,
+  "exceeds_null": false
+ },
+ "E4": [
+  {
+   "lambda": 0.0,
+   "draws": 100,
+   "R_true_mean": -0.0141,
+   "R_recovered_mean": -0.0072,
+   "recovery_rmse": 0.0894,
+   "detection_rate": 0.01
+  },
+  {
+   "lambda": 0.5,
+   "draws": 100,
+   "R_true_mean": -0.0088,
+   "R_recovered_mean": 0.0004,
+   "recovery_rmse": 0.0877,
+   "detection_rate": 0.02
+  },
+  {
+   "lambda": 1.0,
+   "draws": 100,
+   "R_true_mean": 0.007,
+   "R_recovered_mean": 0.0087,
+   "recovery_rmse": 0.0672,
+   "detection_rate": 0.02
+  },
+  {
+   "lambda": 2.0,
+   "draws": 100,
+   "R_true_mean": 0.0428,
+   "R_recovered_mean": 0.0236,
+   "recovery_rmse": 0.0972,
+   "detection_rate": 0.04
+  }
+ ],
+ "sensitivity": {
+  "S1_reference_50pkpc": 0.014,
+  "S2_map_applied_by_abundance": -0.1024,
+  "S3_levels_phi_ge_-3.75": 0.2198,
+  "S4_imf_offsets_plus_0.05": 0.0783,
+  "S4_imf_offsets_minus_0.05": 0.2056,
+  "S5_random_fiducial_run": {
+   "draws": 200,
+   "median": 0.1578,
+   "ci95": [
+    0.0504,
+    0.3216
+   ],
+   "fraction_positive": 1.0
+  },
+  "S6_leave_one_suite_out": {
+   "COLIBRE": 0.1741,
+   "EAGLE": -0.0013,
+   "FIREbox": 0.2123,
+   "FLAMINGO": 0.3116,
+   "Horizon-AGN": -0.1587,
+   "Illustris": 0.242,
+   "IllustrisTNG": 0.1558,
+   "Magneticum Pathfinder": 0.1465
+  },
+  "S7_include_unstated_normalisation": {
+   "suites": [
+    "COLIBRE",
+    "EAGLE",
+    "FIREbox",
+    "FLAMINGO",
+    "Horizon-AGN",
+    "Illustris",
+    "IllustrisTNG",
+    "Magneticum Pathfinder",
+    "SIMBA"
+   ],
+   "R": 0.1663,
+   "ci95": [
+    -0.4015,
+    0.4532
+   ]
+  },
+  "S8_convolve_all_to_sigma_0.3": {
+   "R": 0.2869,
+   "ci95": [
+    -0.0439,
+    0.5998
+   ],
+   "placebo_smoothing_only_R": -0.0378
+  },
+  "S9_deconvolution_error_0.03": {
+   "median": 0.1511,
+   "ci95": [
+    0.1182,
+    0.1798
+   ]
+  }
+ },
+ "verdicts": {
+  "E1": {
+   "supported": false,
+   "R": 0.1546736072,
+   "ci95_lower": -1.0403,
+   "permutation_p": 0.1079,
+   "sign_consistent_S1_S2": false
+  },
+  "E2": {
+   "R_ub": 0.1568,
+   "exceeds_null": false
+  },
+  "E3": {
+   "universal": {
+    "total -> 30": false
+   },
+   "tested_with_three_or_more_suites": [
+    "total -> 30"
+   ]
+  },
+  "E4": {
+   "smallest_lambda_detected_in_80_percent": null,
+   "false_positive_rate_at_lambda_0": 0.01
+  }
+ },
+ "deviations": [
+  "An E3 was computed under the earlier level-matched design and its outcome was seen before amendment A2 replaced the aperture operator (details in section 8 of the protocol); the rule and the new result are the ones reported here.",
+  "The E1 permutation test shuffles the complete label (IMF, aperture class, stated scatter) among all suites, including those with no measured map, rather than only among correctable suites; the null it generates is therefore somewhat wider than the protocol described.",
+  "The Illustris 30 pkpc curve and its total curve come from different papers (Pillepich+18 and Genel+14), whereas the EAGLE and COLIBRE maps come from one figure each; the protocol listed three codes without that difference.",
+  "E3 is evaluated in the direction in which the map is applied (to 30 pkpc); the protocol named the pair 30 pkpc to total, which is the same map in the other direction."
+ ]
+}

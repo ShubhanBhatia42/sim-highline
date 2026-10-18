@@ -75,3 +75,15 @@ const jwst = sharda.find(r => r.id === "sharda26.compilation.mzr.z6-8");
 assert(jwst && jwst.representation.points.length >= 5 && /Binned by sim-highline from \d+ galaxies/.test(jwst.selection.warning), "the high-z MZR compilation must state its sample");
 
 console.log(`Comparison tests passed: THESAN z=6 vs COSMOS-Web median ${stats.median.toFixed(3)} dex, mean |d|/sigma ${stats.meanAbsSigma.toFixed(1)} over ${stats.n} bins`);
+
+{ // one documented set of IMF offsets: compare.js equals data/imf-offsets.json
+  const { readFile: rf } = await import("node:fs/promises");
+  const vm2 = await import("node:vm");
+  const c2 = { globalThis: {} };
+  vm2.default.runInNewContext(await rf(new URL("../compare.js", import.meta.url), "utf8"), c2);
+  const off = JSON.parse(await rf(new URL("../data/imf-offsets.json", import.meta.url), "utf8"));
+  assert.deepEqual(JSON.parse(JSON.stringify(c2.globalThis.SimHighlineCompare.IMF_DEX)), off.compareJs, "compare.js IMF_DEX must equal data/imf-offsets.json");
+  const D = c2.globalThis.SimHighlineCompare.IMF_DEX;
+  assert.ok(Math.abs((D.chabrier03 - D.kroupa01) - off.toChabrierDex.kroupa01) < 1e-9 && Math.abs((D.chabrier03 - D.salpeter55) - off.toChabrierDex.salpeter55) < 1e-9, "the offsets to Chabrier follow from the table");
+  assert.ok(Math.abs(Math.log10(off.massFactorToChabrier.kroupa01) - off.toChabrierDex.kroupa01) < 1e-4 && Math.abs(Math.log10(off.massFactorToChabrier.salpeter55) - off.toChabrierDex.salpeter55) < 1e-4, "dex and factors agree");
+}

@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased (since 0.24.0)
+
+- IMF offsets: one documented set (`data/imf-offsets.json`; Kroupa -0.040, Salpeter -0.218 dex to Chabrier, the compilation's factors) replaces two in use; the Explorer's optional conversion changes by up to 0.017 dex; the registered studies keep their registered offsets, and a re-run of the harmonization with the new set leaves its verdict unchanged.
+
 ## 0.24.0 (2026-10-18)
 
 - Definitions: every pending paper read and 123 more values sourced; a plain account of what was changed in the data; Check your run shows what would make more curves fair to compare; the downloadable files' redshift error fixed; Safari and Firefox pass the browser suites

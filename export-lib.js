@@ -1,6 +1,7 @@
 (function(root){
 const DEF_COLS=["imf","massDefinition","haloMassDefinition","population","sfrTimescaleMyr","sfrStatistic","quenchingCriterion","sizeDefinition","metallicityQuantity","gasPhase","densityFrame"];
 const RECORD_COLS=["record_id","kind","source","run","relation","z","z_min","z_max","representation","interval_kind","connect","x_unit","y_unit","x_definition","y_definition","tier","terms","rankable","calibration","epoch_mode","population_note","mass_class","cosmology_h0","cosmology_om",...DEF_COLS.map(k=>k==="population"?"population":k.replace(/[A-Z]/g,c=>"_"+c.toLowerCase())),"citation","doi","url","checksum_sha256","retrieved","definitions_json"];
+const DIST_COLS=["record_id","x_low","x_high","y_low","y_high","count"];
 const POINT_COLS=["record_id","point_index","x","y","y_low","y_high","x_low","x_high","count"];
 const NSAMPLE=40;
 function massClass(d){
@@ -32,6 +33,7 @@ function recordRow(r,zEval){
   for(const k of DEF_COLS)row[snake(k)]=d[k];
   return row;
 }
+function distRows(r){const d=r.representation&&r.representation.distribution,rows=[];if(!d)return rows;for(let i=0;i<d.counts.length;i++)for(let j=0;j<d.counts[i].length;j++)if(d.counts[i][j])rows.push({record_id:r.id,x_low:d.xEdges[i],x_high:d.xEdges[i+1],y_low:d.yEdges[j],y_high:d.yEdges[j+1],count:d.counts[i][j]});return rows;}
 function pointRows(r,zEval){return pointsOf(r,zEval).map((p,i)=>({record_id:r.id,point_index:i,x:p.x,y:p.y,y_low:p.yLow,y_high:p.yHigh,x_low:p.xLow,x_high:p.xHigh,count:p.count}));}
 function joined(records,zEval){
   const rows=[];
@@ -61,5 +63,5 @@ function bibtex(records){
     return`@misc{${key},\n${f.join(",\n")}\n}`;
   }).join("\n\n")+"\n";
 }
-root.SimHighlineExport={RECORD_COLS,POINT_COLS,JOINED_COLS,NSAMPLE,massClass,sampled,recordRow,pointRows,joined,toCsv,citations,bibtex};
+root.SimHighlineExport={RECORD_COLS,POINT_COLS,DIST_COLS,distRows,JOINED_COLS,NSAMPLE,massClass,sampled,recordRow,pointRows,joined,toCsv,citations,bibtex};
 })(typeof globalThis!=="undefined"?globalThis:window);
