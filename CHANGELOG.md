@@ -14,7 +14,7 @@
 - New (Check your run): "What would make more curves fair to compare?" under the verdict. For each comparability key it shows the answer that would make the most published curves fair at the epoch on screen (and the best pair of answers), how many curves that adds or removes, and which. It only reports; nothing is applied to the form, and a test declares each suggestion and checks that exactly that many curves are added.
 - Fixed: the Explorer wrote the address bar on every slider step, which Safari and Firefox cut off after 100 writes in 10 seconds; it now writes at most every 150 ms (latest value wins) and never fails the page if the browser refuses.
 - Fixed: `data/analysis/harmonization.json` differed in the 13th digit between machines and failed the "generated files are up to date" check in CI; floats are now written to 10 significant digits (no verdict or table changes).
-- Merged to `main` and live. Not yet: any outside use, outside checking of the data, a tagged release and a new archive deposit (the archived 0.23.0 files still have the redshift error above).
+- First tagged and archived release since 0.15.0 (versions 0.16 to 0.23 were never tagged or deposited). Not yet: any outside use or outside checking of the data.
 - Browsers: the full browser suites now pass in Firefox and WebKit as well as Chromium (the two small differences found, a 1 px overflow of the dials-page gap figure on a 320 px screen in Firefox and the address-bar rate limit, are fixed; the tests no longer assume Chromium-only clipboard, PDF and eval behaviour).
 
 ## 0.23.0 (2026-10-15)
