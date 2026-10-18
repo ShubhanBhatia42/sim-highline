@@ -1,5 +1,5 @@
 {
- "total": 1699,
+ "total": 1719,
  "known": 16,
  "errors": 0,
  "warnings": 0,
@@ -109,6 +109,30 @@
     "aperture-30pkpc"
    ]
   },
+  "ssfr": {
+   "yUnit": [
+    "log10(yr^-1)",
+    "log10(1/yr)"
+   ],
+   "massDefinitions": [
+    "total-bound-subhalo",
+    "caesar-6dfof-galaxy-total",
+    "bound to a Subfind subhalo, within the variable BaryMP aperture (Stevens+14; 'inherent' definition of Stevens+19)",
+    "aperture-30pkpc",
+    "total-galaxy-finder",
+    "aperture-Reff-stars",
+    "aperture-50pkpc",
+    "unspecified"
+   ]
+  },
+  "colour": {
+   "yUnit": [
+    "mag (AB)"
+   ],
+   "massDefinitions": [
+    "total-bound-subhalo"
+   ]
+  },
   "gsmf": {
    "yUnit": [
     "log10(cMpc^-3 dex^-1)",
@@ -216,21 +240,6 @@
     "caesar-6dfof-galaxy-total",
     "bound to a Subfind subhalo, within the variable BaryMP aperture (Stevens+14; 'inherent' definition of Stevens+19)",
     "aperture-30pkpc"
-   ]
-  },
-  "ssfr": {
-   "yUnit": [
-    "log10(yr^-1)",
-    "log10(1/yr)"
-   ],
-   "massDefinitions": [
-    "caesar-6dfof-galaxy-total",
-    "bound to a Subfind subhalo, within the variable BaryMP aperture (Stevens+14; 'inherent' definition of Stevens+19)",
-    "aperture-30pkpc",
-    "total-galaxy-finder",
-    "aperture-Reff-stars",
-    "aperture-50pkpc",
-    "unspecified"
    ]
   },
   "gas": {

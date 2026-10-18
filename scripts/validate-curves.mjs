@@ -1,8 +1,12 @@
 import { readFile, readdir } from "node:fs/promises";
+import vm from "node:vm";
+const cctx = { globalThis: {} };
+vm.runInNewContext(await readFile(new URL("../compare.js", import.meta.url), "utf8"), cctx);
+const Cmp = cctx.globalThis.SimHighlineCompare;
 
 const directory = new URL("../data/curves/", import.meta.url);
 const files = (await readdir(directory)).filter(file => file.endsWith(".json"));
-const allowedRelations = new Set(["sfms","ssfr","gsmf","quenched","mzr","gas","hi-fraction","h2-fraction","shmr","size","jstar","btfr","bh","bhsigma","smd","bhmd","zstar","age","himf","sfrf","uvlf","sfrd","fgas500","metald","dmf","dtg","stfr","hmf"]);
+const allowedRelations = new Set(["sfms","ssfr","gsmf","quenched","mzr","gas","hi-fraction","h2-fraction","shmr","size","jstar","btfr","bh","bhsigma","smd","bhmd","zstar","age","himf","sfrf","uvlf","sfrd","fgas500","metald","dmf","dtg","stfr","hmf","fmr","ks","wp","hod","colour","sigmam","sigma1","lxm","ysz","agnlf","bhad","lambdar","fslow","elf","uvbeta"]);
 const allowedTiers = new Set(["catalog-derived","official-table","published-table","published-fit","digitized-figure"]);
 const ids = new Set();
 const evidenceKeys = new Set();
@@ -34,6 +38,17 @@ for (const file of files) {
     const evidenceKey = `${record.source}:${record.run || "none"}:${record.relation}:${record.epoch?.zRepresentative}`;
     if (evidenceKeys.has(evidenceKey)) errors.push(`${record.id}: duplicate source/run/relation/epoch`);
     evidenceKeys.add(evidenceKey);
+    const dist = record.representation?.distribution;
+    if (dist) {
+      const inc = a => a.length >= 2 && a.every((v, i) => Number.isFinite(v) && (i === 0 || v > a[i - 1]));
+      if (!inc(dist.xEdges) || !inc(dist.yEdges)) errors.push(`${record.id}: distribution edges must be finite and increasing`);
+      else if (dist.counts.length !== dist.xEdges.length - 1 || dist.counts.some(row => row.length !== dist.yEdges.length - 1 || row.some(v => !(v >= 0) || !Number.isFinite(v)))) errors.push(`${record.id}: distribution counts must be a non-negative ${dist.xEdges.length - 1} by ${dist.yEdges.length - 1} grid`);
+      else {
+        const stats = Cmp.distributionStats(dist);
+        if (JSON.stringify(stats) !== JSON.stringify(dist.summary)) errors.push(`${record.id}: distribution summary does not match its counts (run node scripts/derive-distributions.mjs)`);
+        if (JSON.stringify(Cmp.distributionPoints(dist, stats)) !== JSON.stringify(record.representation.points)) errors.push(`${record.id}: points are not the median and band of the distribution (run node scripts/derive-distributions.mjs)`);
+      }
+    }
     if (record.representation?.type === "points") {
       let previous = -Infinity;
       for (const [index, point] of record.representation.points.entries()) {
