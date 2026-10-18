@@ -183,6 +183,7 @@ main.table .stagehead,main.table .plot{display:none}
 .pbody tr.grp th{text-align:left;font:600 11px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);padding:10px 0 4px;border-bottom:1px solid var(--line)}
 .pbody .defs small{display:block;font-weight:400;font-size:11.5px;line-height:1.35;color:var(--ink3);margin:1px 0 3px}
 .pbody label.like{display:block;margin:6px 0 10px}
+.pbody details.whatif{margin:8px 0;font-size:13px;line-height:1.45}.pbody details.whatif summary{cursor:pointer;font-weight:600;padding:2px 0}.pbody details.whatif ul{margin:6px 0 6px 18px;padding:0}.pbody details.whatif li{margin:5px 0}
 .pbody .sumline{font-size:13px;line-height:1.45;color:var(--ink);margin:8px 0;padding:8px 10px;border-left:3px solid var(--ink)}
 .pbody label{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink2);margin:6px 0}
 .pbody label:has(>select),.pbody .two label{flex-direction:column;align-items:stretch;gap:3px}
@@ -418,7 +419,7 @@ const provBadge=r=>{const p=r?.provenance;if(!p)return"";const g=TIER_GLYPH[p.ti
 const unitRec=new Map();
 const RAMP=[[0,"#fde725"],[.25,"#7ad151"],[.5,"#22a884"],[.75,"#2a788e"],[1,"#414487"]];
 const isTable=()=>state.mode==="atlas"||state.mode==="tension"||state.mode==="spread";
-const state={tz:0,legendOpen:innerWidth>=1180,rel:"gsmf",z:null,offBy:{},runPref:new Map(),variants:false,showSparse:false,anc:{},embed:false,imfc:false,offTier:new Set(),rankOnly:false,showObs:true,obsOff:new Set(),mode:"plot",playing:null,sel:null,ref:null,resid:false,yt:"none",tf:"log",xr:null,yr:null,bands:true,scatter:true,evo:null,at:null,panel:null,tab:"evidence",user:null,fit:null,expand:new Set(),dl:{scope:"epoch",obs:true,z0:0,z1:10}};
+const state={whatif:false,tz:0,legendOpen:innerWidth>=1180,rel:"gsmf",z:null,offBy:{},runPref:new Map(),variants:false,showSparse:false,anc:{},embed:false,imfc:false,offTier:new Set(),rankOnly:false,showObs:true,obsOff:new Set(),mode:"plot",playing:null,sel:null,ref:null,resid:false,yt:"none",tf:"log",xr:null,yr:null,bands:true,scatter:true,evo:null,at:null,panel:null,tab:"evidence",user:null,fit:null,expand:new Set(),dl:{scope:"epoch",obs:true,z0:0,z1:10}};
 const $=id=>document.getElementById(id);
 const slugOf=s=>String(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -826,6 +827,40 @@ function mineResidualSvg(rows){
   let g=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Your run minus each comparable curve, in the y units of the relation, against x" style="width:100%;max-width:${W}px;display:block"><g stroke="var(--line)" stroke-width="1"><line x1="${L}" x2="${W-R}" y1="${sy(0)}" y2="${sy(0)}" stroke="var(--ink2)"/><line x1="${L}" x2="${W-R}" y1="${sy(m)}" y2="${sy(m)}"/><line x1="${L}" x2="${W-R}" y1="${sy(-m)}" y2="${sy(-m)}"/></g><g font-family="var(--mono)" font-size="9" fill="var(--ink3)"><text x="${L-4}" y="${sy(m)+3}" text-anchor="end">+${m}</text><text x="${L-4}" y="${sy(0)+3}" text-anchor="end">0</text><text x="${L-4}" y="${sy(-m)+3}" text-anchor="end">−${m}</text><text x="${(L+W-R)/2}" y="${H-6}" text-anchor="middle">x of your run</text></g>`;
   for(const c of cs)g+=`<path d="${c.res.map((p,i)=>`${i?"L":"M"}${sx(p.x).toFixed(1)},${sy(p.d).toFixed(1)}`).join("")}" fill="none" stroke="var(--ink)" stroke-width="1.4" opacity=".55"><title>${esc(label(c.r))}: median ${c.sm.median.toFixed(2)}</title></path>`;
   return`<figure class="resid">${g}</svg><figcaption>Your run minus each comparable curve (y units). Above zero: your run is higher.</figcaption></figure>`}
+function mineWhatIf(rows,withPairs){
+  /* What would change if a different choice were true of the user's run: for every comparability key, the value that makes the most published curves fair (comparable or comparable with caveats); optionally the best pair of changes. Nothing is applied. */
+  const C=window.SimHighlineCompare,rel=state.rel,base=mineRecord(currentZ()),keys=mineKeys(rel),pubs=rows.map(x=>x.r).filter(r=>r.definitions&&r.rankable!==false);
+  const fair=defs=>{const me={...base,definitions:{...base.definitions,...defs}},s=new Set();for(const r of pubs){try{if(C.compatible(me,r).verdict!=="not-comparable")s.add(r.id)}catch(e){}}return s};
+  const B=fair({}),net=x=>x.gain-x.lose,score=defs=>{const S=fair(defs);let gain=0,lose=0;for(const id of S)if(!B.has(id))gain++;for(const id of B)if(!S.has(id))lose++;return{defs,gain,lose,S}};
+  const opts=k=>mineOptions(rel,k).filter(o=>o!==base.definitions[k]);
+  const single=[];for(const k of keys){let best=null;for(const o of opts(k)){const x=score({[k]:o});if(!best||net(x)>net(best))best=x}if(best&&net(best)>0)single.push(best)}
+  single.sort((a,b)=>net(b)-net(a));
+  let pair=null;if(withPairs)for(let i=0;i<keys.length;i++)for(let j=i+1;j<keys.length;j++)for(const a of opts(keys[i]))for(const b of opts(keys[j])){const x=score({[keys[i]]:a,[keys[j]]:b});if(!pair||net(x)>net(pair))pair=x}
+  if(pair&&!(net(pair)>=2&&net(pair)>(single[0]?net(single[0]):0)))pair=null;
+  return{B,single:single.slice(0,3),pair,context:rows.filter(x=>x.r.rankable===false).length}
+}
+function whatIfLine(x,B){
+  const gained=[...x.S].filter(id=>!B.has(id)).map(id=>byId.get(id)).filter(Boolean).map(label),names=gained.slice(0,3).join(", ")+(gained.length>3?` and ${gained.length-3} more`:"");
+  const what=Object.entries(x.defs).map(([k,v])=>`<b>${esc(keyLabel(k))}</b> is <i>${esc(niceVal(v))}</i>`).join(" and ");
+  return`<li>If ${what}: <b>${x.gain} more curve${x.gain===1?"":"s"}</b> ${x.gain===1?"becomes":"become"} fair to compare${names?` (${esc(names)})`:""}${x.lose?`; ${x.lose} now fair ${x.lose===1?"stops":"stop"} being fair`:""}.</li>`;
+}
+function mineWhatIfHtml(rows,set){
+  if(!rows.length)return"";
+  const w=mineWhatIf(rows,false);
+  const items=w.single.map(x=>whatIfLine(x,w.B)).join("");
+  const body=(set?`<p class="hint">You have declared definitions. Each line is one change to what is <i>true of your run</i>, so you know what is worth re-measuring or looking up in your own methods.</p>`:`<p class="hint">Nothing is declared yet, so no curve counts as fair. These are the answers that would make the most curves fair; declare only what your run really does.</p>`)
+   +(items?`<ul>${items}</ul>`:`<p class="hint">No single change makes more curves fair at this epoch: what blocks the rest is what the curves themselves do not state (the reason is under each curve).</p>`)
+   +`<div id="whatifPair"></div>`
+   +(w.context?`<p class="hint">${w.context} curve${w.context===1?" is":"s are"} context only (read from figures or flagged by their authors) and stay${w.context===1?"s":""} that way whatever you declare.</p>`:"")
+   +`<p class="hint">Changing the form without changing your run would give a false “fair” label. Nothing here is applied for you.</p>`;
+  return`<details class="whatif" id="whatif"${state.whatif?" open":""}><summary>What would make more curves fair to compare?</summary>${body}</details>`;
+}
+function wireWhatIf(){
+  const d=$("whatif");if(!d)return;
+  const fill=()=>{const box=$("whatifPair");if(!box||box.dataset.done)return;box.dataset.done="1";const rows=mineRows(),w=mineWhatIf(rows,true);box.innerHTML=w.pair?`<p class="hint">Two changes together:</p><ul>${whatIfLine(w.pair,w.B)}</ul>`:""};
+  d.ontoggle=()=>{state.whatif=d.open;if(d.open)fill()};
+  if(d.open)fill();
+}
 function mineTable(){
   if(!state.user)return`<p class="hint">Plot a curve to see how it compares with every published curve at this epoch.</p>`;
   const rows=mineRows();if(!rows.length)return`<p class="hint">No published curve for this relation at z = ${fmtZ(currentZ())} is currently shown.</p>`;
@@ -835,7 +870,7 @@ function mineTable(){
     return`<tr data-id="${esc(r.id)}" tabindex="0" title="${esc(why)}"><td>${esc(label(r))}${r.kind==="observation"?' <span class="tier">obs</span>':""}${why&&k!=="comparable"?`<div class="why">${esc(why.length>130?why.slice(0,127)+"…":why)}</div>`:""}</td><td><span class="v ${c}">${v?g:""}</span></td><td>${sm?f(sm.median):"–"}</td><td>${sm?sm.n:"–"}</td></tr>`};
   const fair=rows.filter(x=>x.v&&x.v.verdict!=="not-comparable"),other=rows.filter(x=>!x.v||x.v.verdict==="not-comparable");
   const head=t=>`<tr class="grp"><th colspan="4">${t}</th></tr>`;
-  let h=mineVerdict(rows,set)+mineResidualSvg(rows);
+  let h=mineVerdict(rows,set)+mineWhatIfHtml(rows,set)+mineResidualSvg(rows);
   h+=`<table class="mt"><thead><tr><th>Published curve</th><th title="definition compatibility with your declared definitions">defs</th><th title="median of (your run − curve) over the shared x range, in y units">Δ</th><th title="shared x bins">n</th></tr></thead><tbody>`;
   if(fair.length)h+=head("Fair to compare: your definitions agree")+fair.map(row).join("");
   if(other.length)h+=head(set?"Context only: definitions disagree or are missing":"Context only: nothing is comparable until you declare definitions")+other.map(row).join("");
@@ -900,7 +935,7 @@ function wireMine(){
     download(`sim-highline-yourrun-${state.rel}-z${fmtZ(z)}.csv`,"text/csv",`# sim-highline v${SIMHIGHLINE_RELEASE.version}; offsets in the y units of the relation; your_label=${state.user.name}\n`+out.join("\n")+"\n")};
   wireMineRows();
 }
-function wireMineRows(){$("pbody").querySelectorAll("tr[data-id]").forEach(tr=>{const go=()=>openRecord(tr.dataset.id);tr.onclick=go;tr.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}}})}
+function wireMineRows(){wireWhatIf();$("pbody").querySelectorAll("tr[data-id]").forEach(tr=>{const go=()=>openRecord(tr.dataset.id);tr.onclick=go;tr.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}}})}
 function updateFitReadout(){
   const o=$("fitOut");if(!o)return;
   if(!state.fit){o.textContent=state.sel?"Fits the plotted points inside the visible x-range.":"Select a curve first.";return}

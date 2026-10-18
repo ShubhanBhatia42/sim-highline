@@ -128,6 +128,40 @@ await step("the whole flow works from the keyboard", async page => {
   assert.match(await page.locator("#pbody").innerText(), /How sure are we/);
 });
 
+await step("what would make more curves fair: the panel's claim is true when that answer is declared, and nothing is applied for the user", async page => {
+  for (const [rel, key] of [["gsmf", "densityFrame"], ["sfms", "population"], ["mzr", "metallicityQuantity"]]) {
+    await open(page, `r=${rel}&z=0.1&pn=mine`);
+    await page.click("#uEx");
+    const fairCount = () => page.evaluate(() => { let n = 0; for (const tr of document.querySelectorAll("#mineTab tbody tr")) { if (tr.classList.contains("grp")) { if (n || !/^Fair/.test(tr.textContent)) break; continue; } n++; } return /^Fair/.test(document.querySelector("#mineTab tbody tr.grp")?.textContent || "") ? n : 0; });
+    const before = await fairCount();
+    if (!(await page.locator("#whatif").evaluate(d => d.open))) await page.click("#whatif summary");  // it stays open once opened
+    const text = await page.locator("#whatif").innerText();
+    assert.match(text, /Nothing here is applied for you/, `says it applies nothing (${rel}: ${JSON.stringify(text.slice(0, 200))})`);
+    const m = text.match(/If (.+?) is (.+?): (\d+) more curves? becomes? fair/);
+    assert.ok(m, `a suggestion is offered for ${rel}: ${text.slice(0, 300)}`);
+    const gain = Number(m[3]);
+    assert.equal(await fairCount(), before, "opening the panel changes nothing");
+    assert.ok(await page.locator(`select[data-def="${key}"]`).count() === 1, "the suggested key has a selector");
+    const label = m[2];
+    const opt = await page.locator(`select[data-def="${key}"] option`).evaluateAll((os, want) => os.find(o => o.textContent.trim().toLowerCase() === want.toLowerCase())?.value, label);
+    assert.ok(opt, `option "${label}" exists for ${key}`);
+    await page.selectOption(`select[data-def="${key}"]`, opt);
+    await page.waitForTimeout(200);
+    assert.equal(await fairCount() - before, gain, `${rel}: declaring ${key} = ${opt} adds exactly the ${gain} curves the panel promised`);
+  }
+});
+
+await step("what-if: with a declared run the panel speaks of changes to the run, and it stays open across re-renders", async page => {
+  await open(page, "r=gsmf&z=0.1&pn=mine");
+  await page.click("#uEx");
+  const options = await page.locator("#uLike option").evaluateAll(os => os.map(o => o.value).filter(Boolean));
+  await page.selectOption("#uLike", options[0]);
+  await page.click("#whatif summary");
+  assert.match(await page.locator("#whatif").innerText(), /You have declared definitions|No single change/);
+  await page.click("#uPlot");
+  assert.equal(await page.locator("#whatif").evaluate(d => d.open), true, "stays open after the table is redrawn");
+});
+
 await browser.close(); server.close();
 if (failures.length) { console.log(failures.join("\n")); process.exit(1); }
 console.log(`your run: ${n} browser checks passed`);
