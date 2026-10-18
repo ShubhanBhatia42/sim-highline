@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased (since 0.23.0)
+## 0.24.0 (2026-10-18)
+
+- Definitions: every pending paper read and 123 more values sourced; a plain account of what was changed in the data; Check your run shows what would make more curves fair to compare; the downloadable files' redshift error fixed; Safari and Firefox pass the browser suites
 
 - Trust: data-quality page and analysis (55% of simulation curves digitized from figures, one independent check), plausibility screen, corrections log, audit packet and cover note, link check, claims test, dated registration trail.
 - First minute: one-time guide in the Explorer; views renamed in plain words (Curves, Over time, What exists, Vs observations, Disagreement); "In plain words" block on every study; try-this links; one-page summary that prints on one sheet; dials tour; plain titles; citation copy buttons; returning-visitor note; feedback links prefilled with the page and the address; "Used in" list.
