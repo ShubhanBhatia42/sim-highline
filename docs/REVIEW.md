@@ -1,5 +1,7 @@
 # sim-highline: a candid review
 
+> Historical. Written at v0.5.0 (2026-10-06). The current picture is in [INDEPENDENT-REVIEW.md](INDEPENDENT-REVIEW.md) (2026-10-16), [DATA-QUALITY.md](DATA-QUALITY.md) and [CORRECTIONS.md](CORRECTIONS.md); the numbers below are not updated.
+
 Date: 2026-10-06, dataset v0.5.0. Numbers are computed from `data/curves/` and the audit report; nothing here is estimated.
 
 ## Verdict

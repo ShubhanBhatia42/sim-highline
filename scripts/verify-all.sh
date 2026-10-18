@@ -38,6 +38,7 @@ node scripts/test-site.mjs
 node scripts/lint.mjs
 python3 scripts/check_prose.py
 python3 scripts/audit_conversions.py --check
+python3 scripts/make-scripts-index.py
 STAMP=$(stamp_of); mkdir -p .verify-cache
 for t in scripts/test_*.py; do
   n=$(basename "$t" .py)

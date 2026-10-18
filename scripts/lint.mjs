@@ -55,5 +55,12 @@ const built = [];
 for (const d of ["dist", "dist/site"]) { try { for (const e of await readdir(path.join(ROOT, d))) if (e.endsWith(".html") && !(d === "dist" && e === "index.html")) built.push([path.join(ROOT, d, e), `${d}/${e}`]); } catch { /* not built */ } }
 for (const [f, n] of built) { counts.html++; await lintHtml(f, n); }
 for (const f of ["highline/index.html", ...(await readdir(path.join(ROOT, "site/src"))).filter(x => x.endsWith(".html")).map(x => "site/src/" + x)]) { /* templates carry {{placeholders}}; the built pages are what is checked */ }
+{ // every document is listed in docs/README.md, so nothing is findable only by luck
+  const idx = await readFile(path.join(ROOT, "docs/README.md"), "utf8");
+  for (const e of await readdir(path.join(ROOT, "docs"), { withFileTypes: true })) {
+    if (e.name === "README.md") continue;
+    if (!idx.includes(`](${e.name}${e.isDirectory() ? "/" : ""})`)) problems.push(`docs/${e.name}${e.isDirectory() ? "/" : ""} is not listed in docs/README.md`);
+  }
+}
 console.log(`lint: ${counts.js} scripts parse, ${counts.py} Python files compile, ${counts.json} JSON files parse, ${counts.html} built pages balanced with unique ids` + (problems.length ? `; ${problems.length} PROBLEMS` : ""));
 if (problems.length) { console.log(problems.slice(0, 30).map(p => "  " + p).join("\n")); process.exit(1); }
