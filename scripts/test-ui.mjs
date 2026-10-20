@@ -163,6 +163,31 @@ await step("distribution view: panels per source, quantile lines, thresholds, ta
   await ctx.close();
 });
 
+await step("links carry the dataset version, and a link from another version shows a notice", async () => {
+  const cur = await open("/highline.html#r=gsmf&z=2");
+  await settle(cur.page);
+  const version = await cur.page.evaluate(() => SIMHIGHLINE_RELEASE.version);
+  assert.ok(await cur.page.locator("#verbanner[hidden]").count() === 1, "no notice without a version in the address");
+  const pinned = await cur.page.evaluate(() => window.__sh.withVersion("#r=gsmf&z=2"));
+  assert.equal(new URLSearchParams(pinned).get("dv"), version, "copied links carry the version");
+  assert.equal(new URLSearchParams(pinned).get("r"), "gsmf", "and keep the rest of the state");
+  assert.deepEqual(cur.errors, []);
+  await cur.ctx.close();
+  const same = await open(`/highline.html#r=gsmf&z=2&dv=${version}`);
+  await settle(same.page);
+  assert.ok(await same.page.locator("#verbanner[hidden]").count() === 1, "no notice when the version matches");
+  await same.ctx.close();
+  const old = await open("/highline.html#r=gsmf&z=2&dv=0.0.1");
+  await settle(old.page);
+  assert.ok(await old.page.locator("#verbanner:not([hidden])").count() === 1, "a notice for a link from another version");
+  const t = await old.page.locator("#verbannerText").innerText();
+  assert.ok(t.includes("0.0.1") && t.includes(version), "the notice names both versions: " + t);
+  await old.page.locator("#verbannerX").click();
+  assert.ok(await old.page.locator("#verbanner[hidden]").count() === 1, "the notice can be dismissed");
+  assert.deepEqual(old.errors, []);
+  await old.ctx.close();
+});
+
 await step("spread map and command palette", async () => {
   const { page, ctx } = await open("/highline.html#m=spread");
   assert.ok(await page.locator("#spread td[data-r]").count() >= 20, "spread map has cells");
