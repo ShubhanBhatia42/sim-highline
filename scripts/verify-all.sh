@@ -7,12 +7,16 @@ SLOW="test_joint_reachability test_model_form test_harmonization"
 stamp_of() { cat scripts/*.py data/ensembles/*.json data/analysis/*.json data/retune/retune.json 2>/dev/null | sha256sum | cut -d' ' -f1; }
 python3 scripts/ingest_camels_distributions.py --records
 node scripts/derive-distributions.mjs
+python3 scripts/ingest_camels_conversions.py --derive
+python3 scripts/make-conversions-doc.py
+node scripts/apply-compilation-corrections.mjs
 node scripts/annotate-definitions.mjs
 node scripts/validate-curves.mjs
 node scripts/validate-manifest.mjs
 node scripts/test-curves.mjs
 node scripts/test-compare.mjs
 node scripts/test-distributions.mjs
+node scripts/test-compilation-corrections.mjs
 node scripts/report-coverage.mjs
 python3 scripts/analyze_definition_budget.py > /dev/null
 python3 scripts/analyze_harmonization.py > /dev/null

@@ -3764,8 +3764,8 @@
         "yUnit": "log10(Mpc^-3 dex^-1)"
       },
       "domain": {
-        "xMin": 9.059077,
-        "xMax": 11.859158
+        "xMin": 8.749273,
+        "xMax": 11.549354
       },
       "representation": {
         "type": "points",
@@ -3773,94 +3773,94 @@
         "connect": false,
         "points": [
           {
-            "x": 9.059077,
-            "y": -2.463824,
-            "yLow": -2.778038,
-            "yHigh": -2.288258
+            "x": 8.749273,
+            "y": -1.999118,
+            "yLow": -2.313332,
+            "yHigh": -1.823552
           },
           {
-            "x": 9.260472,
-            "y": -2.731534,
-            "yLow": -2.880254,
-            "yHigh": -2.630249
+            "x": 8.950668,
+            "y": -2.266828,
+            "yLow": -2.415548,
+            "yHigh": -2.165543
           },
           {
-            "x": 9.46186,
-            "y": -2.940184,
-            "yLow": -3.013286,
-            "yHigh": -2.864466
+            "x": 9.152056,
+            "y": -2.475478,
+            "yLow": -2.54858,
+            "yHigh": -2.39976
           },
           {
-            "x": 9.6616,
-            "y": -3.068024,
-            "yLow": -3.120512,
-            "yHigh": -3.011331
+            "x": 9.351796,
+            "y": -2.603318,
+            "yLow": -2.655806,
+            "yHigh": -2.546625
           },
           {
-            "x": 9.858126,
-            "y": -3.323284,
-            "yLow": -3.369877,
-            "yHigh": -3.270771
+            "x": 9.548322,
+            "y": -2.858578,
+            "yLow": -2.905171,
+            "yHigh": -2.806065
           },
           {
-            "x": 10.057864,
-            "y": -3.479104,
-            "yLow": -3.519265,
-            "yHigh": -3.421464
+            "x": 9.74806,
+            "y": -3.014398,
+            "yLow": -3.054559,
+            "yHigh": -2.956758
           },
           {
-            "x": 10.259243,
-            "y": -3.656674,
-            "yLow": -3.710688,
-            "yHigh": -3.601168
+            "x": 9.949439,
+            "y": -3.191968,
+            "yLow": -3.245982,
+            "yHigh": -3.136462
           },
           {
-            "x": 10.457382,
-            "y": -3.883974,
-            "yLow": -3.952614,
-            "yHigh": -3.822091
+            "x": 10.147578,
+            "y": -3.419268,
+            "yLow": -3.487908,
+            "yHigh": -3.357385
           },
           {
-            "x": 10.65874,
-            "y": -4.042894,
-            "yLow": -4.136953,
-            "yHigh": -3.981948
+            "x": 10.348936,
+            "y": -3.578188,
+            "yLow": -3.672247,
+            "yHigh": -3.517242
           },
           {
-            "x": 10.858555,
-            "y": -4.372754,
-            "yLow": -4.492572,
-            "yHigh": -4.270504
+            "x": 10.548751,
+            "y": -3.908048,
+            "yLow": -4.027866,
+            "yHigh": -3.805798
           },
           {
-            "x": 11.059992,
-            "y": -4.715054,
-            "yLow": -4.806439,
-            "yHigh": -4.580602
+            "x": 10.750188,
+            "y": -4.250348,
+            "yLow": -4.341733,
+            "yHigh": -4.115896
           },
           {
-            "x": 11.259748,
-            "y": -4.908164,
-            "yLow": -5.091112,
-            "yHigh": -4.736393
+            "x": 10.949944,
+            "y": -4.443458,
+            "yLow": -4.626406,
+            "yHigh": -4.271687
           },
           {
-            "x": 11.45636,
-            "y": -5.377884,
-            "yLow": -6.622717,
-            "yHigh": -5.110027
+            "x": 11.146556,
+            "y": -4.913178,
+            "yLow": -6.158011,
+            "yHigh": -4.645321
           },
           {
-            "x": 11.859158,
-            "y": -5.866674,
-            "yHigh": -5.511682
+            "x": 11.549354,
+            "y": -5.401968,
+            "yHigh": -5.046976
           }
         ]
       },
       "scatter": null,
       "selection": {
         "population": "all",
-        "warning": "Vmax selection, quoted redshift is lower bound of range. Data assumes Salpeter IMF, converted to Chabrier using factor 0.606. h-corrected for SWIFT using Cosmology: Planck15."
+        "warning": "Vmax selection, quoted redshift is lower bound of range. Data assumes Salpeter IMF, converted to Chabrier using factor 0.606. h-corrected for SWIFT using Cosmology: Planck15. Corrected by sim-highline: the compilation applied the Hubble parameter h = 0.6774 to data tabulated in h_70 units; the values are shifted by -0.3098 dex in log mass and +0.4647 dex in log number density to the correct h_70 conversion."
       },
       "definitions": {
         "massDefinition": "sed-total",
@@ -3880,7 +3880,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassFunction/Grazian2015.hdf5",
-        "checksumSha256": "ce7a19109e5a1203b302ff67936642066dfcdd893f8a6c0fb93b9c9365867ab5"
+        "checksumSha256": "ce7a19109e5a1203b302ff67936642066dfcdd893f8a6c0fb93b9c9365867ab5",
+        "corrections": [
+          {
+            "id": "grazian15-h70",
+            "summary": "the compilation applied the Hubble parameter h = 0.6774 to data tabulated in h_70 units; the values are shifted by -0.3098 dex in log mass and +0.4647 dex in log number density to the correct h_70 conversion.",
+            "dxDex": -0.309804,
+            "dyDex": 0.464706,
+            "pointsBefore": "aac97599eb8f47a42e3ff6c2e11f6a80d248f1ec4ff2f3f627895eb4130ce76a"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
@@ -3906,8 +3915,8 @@
         "yUnit": "log10(Mpc^-3 dex^-1)"
       },
       "domain": {
-        "xMin": 9.447937,
-        "xMax": 11.845042
+        "xMin": 9.138133,
+        "xMax": 11.535238
       },
       "representation": {
         "type": "points",
@@ -3915,86 +3924,86 @@
         "connect": false,
         "points": [
           {
-            "x": 9.447937,
-            "y": -3.338444,
-            "yLow": -3.845013,
-            "yHigh": -3.115726
+            "x": 9.138133,
+            "y": -2.873738,
+            "yLow": -3.380307,
+            "yHigh": -2.65102
           },
           {
-            "x": 9.645308,
-            "y": -3.354514,
-            "yLow": -3.527892,
-            "yHigh": -3.235401
+            "x": 9.335504,
+            "y": -2.889808,
+            "yLow": -3.063186,
+            "yHigh": -2.770695
           },
           {
-            "x": 9.844829,
-            "y": -3.580084,
-            "yLow": -3.677646,
-            "yHigh": -3.50445
+            "x": 9.535025,
+            "y": -3.115378,
+            "yLow": -3.21294,
+            "yHigh": -3.039744
           },
           {
-            "x": 10.046321,
-            "y": -3.660784,
-            "yLow": -3.745154,
-            "yHigh": -3.601676
+            "x": 9.736517,
+            "y": -3.196078,
+            "yLow": -3.280448,
+            "yHigh": -3.13697
           },
           {
-            "x": 10.245808,
-            "y": -3.825654,
-            "yLow": -3.904149,
-            "yHigh": -3.762316
+            "x": 9.936004,
+            "y": -3.360948,
+            "yLow": -3.439443,
+            "yHigh": -3.29761
           },
           {
-            "x": 10.447405,
-            "y": -4.143264,
-            "yLow": -4.249449,
-            "yHigh": -4.048579
+            "x": 10.137601,
+            "y": -3.678558,
+            "yLow": -3.784743,
+            "yHigh": -3.583873
           },
           {
-            "x": 10.647896,
-            "y": -4.272894,
-            "yLow": -4.392528,
-            "yHigh": -4.178507
+            "x": 10.338092,
+            "y": -3.808188,
+            "yLow": -3.927822,
+            "yHigh": -3.713801
           },
           {
-            "x": 10.846433,
-            "y": -4.615944,
-            "yLow": -4.817925,
-            "yHigh": -4.480839
+            "x": 10.536629,
+            "y": -4.151238,
+            "yLow": -4.353219,
+            "yHigh": -4.016133
           },
           {
-            "x": 11.046975,
-            "y": -4.859144,
-            "yLow": -5.183115,
-            "yHigh": -4.680042
+            "x": 10.737171,
+            "y": -4.394438,
+            "yLow": -4.718409,
+            "yHigh": -4.215336
           },
           {
-            "x": 11.245482,
-            "y": -5.116044,
-            "yLow": -5.741521,
-            "yHigh": -4.877106
+            "x": 10.935678,
+            "y": -4.651338,
+            "yLow": -5.276815,
+            "yHigh": -4.4124
           },
           {
-            "x": 11.446072,
-            "y": -5.513914,
-            "yHigh": -5.211808
+            "x": 11.136268,
+            "y": -5.049208,
+            "yHigh": -4.747102
           },
           {
-            "x": 11.64562,
-            "y": -5.809974,
-            "yHigh": -5.453528
+            "x": 11.335816,
+            "y": -5.345268,
+            "yHigh": -4.988822
           },
           {
-            "x": 11.845042,
-            "y": -5.814304,
-            "yHigh": -5.455956
+            "x": 11.535238,
+            "y": -5.349598,
+            "yHigh": -4.99125
           }
         ]
       },
       "scatter": null,
       "selection": {
         "population": "all",
-        "warning": "Vmax selection, quoted redshift is lower bound of range. Data assumes Salpeter IMF, converted to Chabrier using factor 0.606. h-corrected for SWIFT using Cosmology: Planck15."
+        "warning": "Vmax selection, quoted redshift is lower bound of range. Data assumes Salpeter IMF, converted to Chabrier using factor 0.606. h-corrected for SWIFT using Cosmology: Planck15. Corrected by sim-highline: the compilation applied the Hubble parameter h = 0.6774 to data tabulated in h_70 units; the values are shifted by -0.3098 dex in log mass and +0.4647 dex in log number density to the correct h_70 conversion."
       },
       "definitions": {
         "massDefinition": "sed-total",
@@ -4014,7 +4023,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassFunction/Grazian2015.hdf5",
-        "checksumSha256": "ce7a19109e5a1203b302ff67936642066dfcdd893f8a6c0fb93b9c9365867ab5"
+        "checksumSha256": "ce7a19109e5a1203b302ff67936642066dfcdd893f8a6c0fb93b9c9365867ab5",
+        "corrections": [
+          {
+            "id": "grazian15-h70",
+            "summary": "the compilation applied the Hubble parameter h = 0.6774 to data tabulated in h_70 units; the values are shifted by -0.3098 dex in log mass and +0.4647 dex in log number density to the correct h_70 conversion.",
+            "dxDex": -0.309804,
+            "dyDex": 0.464706,
+            "pointsBefore": "9ac3e51f88d537e9f6aaf35c5457284ae178d935cdd5501bcf74f6d3f5f076b9"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
@@ -4040,8 +4058,8 @@
         "yUnit": "log10(Mpc^-3 dex^-1)"
       },
       "domain": {
-        "xMin": 9.625973,
-        "xMax": 11.024577
+        "xMin": 9.316169,
+        "xMax": 10.714773
       },
       "representation": {
         "type": "points",
@@ -4049,58 +4067,58 @@
         "connect": false,
         "points": [
           {
-            "x": 9.625973,
-            "y": -3.285514,
-            "yLow": -3.801593,
-            "yHigh": -3.064554
+            "x": 9.316169,
+            "y": -2.820808,
+            "yLow": -3.336887,
+            "yHigh": -2.599848
           },
           {
-            "x": 9.825842,
-            "y": -3.767664,
-            "yLow": -3.936372,
-            "yHigh": -3.653789
+            "x": 9.516038,
+            "y": -3.302958,
+            "yLow": -3.471666,
+            "yHigh": -3.189083
           },
           {
-            "x": 10.023932,
-            "y": -3.870644,
-            "yLow": -4.00672,
-            "yHigh": -3.770065
+            "x": 9.714128,
+            "y": -3.405938,
+            "yLow": -3.542014,
+            "yHigh": -3.305359
           },
           {
-            "x": 10.225338,
-            "y": -4.141454,
-            "yLow": -4.276423,
-            "yHigh": -4.040233
+            "x": 9.915534,
+            "y": -3.676748,
+            "yLow": -3.811717,
+            "yHigh": -3.575527
           },
           {
-            "x": 10.423481,
-            "y": -4.350104,
-            "yLow": -4.500843,
-            "yHigh": -4.242085
+            "x": 10.113677,
+            "y": -3.885398,
+            "yLow": -4.036137,
+            "yHigh": -3.777379
           },
           {
-            "x": 10.62336,
-            "y": -4.860224,
-            "yLow": -5.141879,
-            "yHigh": -4.693832
+            "x": 10.313556,
+            "y": -4.395518,
+            "yLow": -4.677173,
+            "yHigh": -4.229126
           },
           {
-            "x": 10.823161,
-            "y": -5.159014,
-            "yLow": -5.815232,
-            "yHigh": -4.92415
+            "x": 10.513357,
+            "y": -4.694308,
+            "yLow": -5.350526,
+            "yHigh": -4.459444
           },
           {
-            "x": 11.024577,
-            "y": -5.457794,
-            "yHigh": -5.158751
+            "x": 10.714773,
+            "y": -4.993088,
+            "yHigh": -4.694045
           }
         ]
       },
       "scatter": null,
       "selection": {
         "population": "all",
-        "warning": "Vmax selection, quoted redshift is lower bound of range. Data assumes Salpeter IMF, converted to Chabrier using factor 0.606. h-corrected for SWIFT using Cosmology: Planck15."
+        "warning": "Vmax selection, quoted redshift is lower bound of range. Data assumes Salpeter IMF, converted to Chabrier using factor 0.606. h-corrected for SWIFT using Cosmology: Planck15. Corrected by sim-highline: the compilation applied the Hubble parameter h = 0.6774 to data tabulated in h_70 units; the values are shifted by -0.3098 dex in log mass and +0.4647 dex in log number density to the correct h_70 conversion."
       },
       "definitions": {
         "massDefinition": "sed-total",
@@ -4120,7 +4138,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassFunction/Grazian2015.hdf5",
-        "checksumSha256": "ce7a19109e5a1203b302ff67936642066dfcdd893f8a6c0fb93b9c9365867ab5"
+        "checksumSha256": "ce7a19109e5a1203b302ff67936642066dfcdd893f8a6c0fb93b9c9365867ab5",
+        "corrections": [
+          {
+            "id": "grazian15-h70",
+            "summary": "the compilation applied the Hubble parameter h = 0.6774 to data tabulated in h_70 units; the values are shifted by -0.3098 dex in log mass and +0.4647 dex in log number density to the correct h_70 conversion.",
+            "dxDex": -0.309804,
+            "dyDex": 0.464706,
+            "pointsBefore": "5f9042430ab45765c33fefbfd43ef8b03a3cf75e34390f52dc4a129c493ef64f"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
@@ -4146,8 +4173,8 @@
         "yUnit": "log10(Mpc^-3 dex^-1)"
       },
       "domain": {
-        "xMin": 9.883903,
-        "xMax": 10.882673
+        "xMin": 9.574099,
+        "xMax": 10.572869
       },
       "representation": {
         "type": "points",
@@ -4155,43 +4182,43 @@
         "connect": false,
         "points": [
           {
-            "x": 9.883903,
-            "y": -3.994664,
-            "yLow": -4.843613,
-            "yHigh": -3.728548
+            "x": 9.574099,
+            "y": -3.529958,
+            "yLow": -4.378907,
+            "yHigh": -3.263842
           },
           {
-            "x": 10.08363,
-            "y": -4.870854,
-            "yHigh": -4.585558
+            "x": 9.773826,
+            "y": -4.406148,
+            "yHigh": -4.120852
           },
           {
-            "x": 10.283018,
-            "y": -4.783154,
-            "yLow": -5.142221,
-            "yHigh": -4.58844
+            "x": 9.973214,
+            "y": -4.318448,
+            "yLow": -4.677515,
+            "yHigh": -4.123734
           },
           {
-            "x": 10.48166,
-            "y": -5.390524,
-            "yHigh": -5.105399
+            "x": 10.171856,
+            "y": -4.925818,
+            "yHigh": -4.640693
           },
           {
-            "x": 10.684275,
-            "y": -5.714004,
-            "yHigh": -5.347109
+            "x": 10.374471,
+            "y": -5.249298,
+            "yHigh": -4.882403
           },
           {
-            "x": 10.882673,
-            "y": -5.722244,
-            "yHigh": -5.356106
+            "x": 10.572869,
+            "y": -5.257538,
+            "yHigh": -4.8914
           }
         ]
       },
       "scatter": null,
       "selection": {
         "population": "all",
-        "warning": "Vmax selection, quoted redshift is lower bound of range. Data assumes Salpeter IMF, converted to Chabrier using factor 0.606. h-corrected for SWIFT using Cosmology: Planck15."
+        "warning": "Vmax selection, quoted redshift is lower bound of range. Data assumes Salpeter IMF, converted to Chabrier using factor 0.606. h-corrected for SWIFT using Cosmology: Planck15. Corrected by sim-highline: the compilation applied the Hubble parameter h = 0.6774 to data tabulated in h_70 units; the values are shifted by -0.3098 dex in log mass and +0.4647 dex in log number density to the correct h_70 conversion."
       },
       "definitions": {
         "massDefinition": "sed-total",
@@ -4211,7 +4238,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassFunction/Grazian2015.hdf5",
-        "checksumSha256": "ce7a19109e5a1203b302ff67936642066dfcdd893f8a6c0fb93b9c9365867ab5"
+        "checksumSha256": "ce7a19109e5a1203b302ff67936642066dfcdd893f8a6c0fb93b9c9365867ab5",
+        "corrections": [
+          {
+            "id": "grazian15-h70",
+            "summary": "the compilation applied the Hubble parameter h = 0.6774 to data tabulated in h_70 units; the values are shifted by -0.3098 dex in log mass and +0.4647 dex in log number density to the correct h_70 conversion.",
+            "dxDex": -0.309804,
+            "dyDex": 0.464706,
+            "pointsBefore": "531fb9a493a8803727e088cd077273713d666aee660514096efabb396959d99b"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
