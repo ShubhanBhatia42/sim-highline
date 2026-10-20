@@ -8,8 +8,8 @@
  "minBins": 3,
  "imfDex": {
   "kroupa01": 0,
-  "chabrier03": -0.025,
-  "salpeter55": 0.21
+  "chabrier03": -0.04,
+  "salpeter55": 0.1775
  },
  "rules": {
   "gsmf": {

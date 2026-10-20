@@ -17,6 +17,7 @@ node scripts/test-curves.mjs
 node scripts/test-compare.mjs
 node scripts/test-distributions.mjs
 node scripts/test-compilation-corrections.mjs
+node scripts/test-submission.mjs
 node scripts/report-coverage.mjs
 python3 scripts/analyze_definition_budget.py > /dev/null
 python3 scripts/analyze_harmonization.py > /dev/null

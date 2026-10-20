@@ -68,6 +68,46 @@ def grid(dist, record_id):
     return m, xe, ye
 
 
+def load_conversions(path=None):
+    """Measured conversions between definitions in the CAMELS simulations (see docs/CONVERSIONS.md): a dict with suites -> redshift -> pairs/gsmf. Use `measured_shift` for one number with its spread."""
+    base = _base(path)
+    if "://" in base:
+        import urllib.request
+        with urllib.request.urlopen(f"{base}/sim-highline-conversions.json") as f:
+            return json.load(f)
+    return json.loads((Path(base) / "sim-highline-conversions.json").read_text())
+
+
+def measured_shift(pair, code, x, z=0.0, conv=None):
+    """What changing a definition does to a quantity, measured in the CAMELS catalogues of one code: `pair` such as 'mass.total-to-rad2' (stars within twice the stellar half-mass radius against all bound stars),
+    `code` one of IllustrisTNG, SIMBA, Astrid, `x` the log10 stellar mass (log10 M200crit for 'halo.*') of the galaxy, `z` one of 0, 0.95, 2.15. Returns median, p16, p84 (galaxies) and se (spread of the median across the 27 boxes) in dex,
+    linearly interpolated between the bin centres; raises ValueError outside the measured range rather than extrapolating."""
+    conv = conv or load_conversions()
+    key = f"z{z:g}"
+    try:
+        rows = conv["suites"][code][key]["pairs"][pair]
+    except KeyError as e:
+        raise KeyError(f"no measurement for {pair!r} in {code} at z={z:g}") from e
+    xs = np.array([r["x"] for r in rows])
+    if not (xs.min() <= x <= xs.max()):
+        raise ValueError(f"x={x} is outside the measured range {xs.min():.2f} to {xs.max():.2f}")
+    out = {k: float(np.interp(x, xs, [r[k] for r in rows])) for k in ("median", "p16", "p84")}
+    i = int(min(max(np.searchsorted(xs, x) - 1, 0), len(xs) - 2))      # the two bins around x
+    se = [rows[i]["seedSe"], rows[i + 1]["seedSe"]]
+    out["se"] = None if None in se else float(np.interp(x, xs[i:i + 2], se))
+    return out
+
+
+def corrections(path=None):
+    """The corrections made to curves taken from third-party compilations (why, by how much, which records); see data/compilation-corrections.json."""
+    base = _base(path)
+    if "://" in base:
+        import urllib.request
+        with urllib.request.urlopen(f"{base}/sim-highline-corrections.json") as f:
+            return json.load(f)["corrections"]
+    return json.loads((Path(base) / "sim-highline-corrections.json").read_text())["corrections"]
+
+
 def manifest(path=None):
     base = _base(path)
     if "://" in base:

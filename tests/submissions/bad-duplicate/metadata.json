@@ -1,0 +1,36 @@
+{
+  "source": "NameOfSimulationOrSurvey",
+  "run": "box or run name (required for simulations)",
+  "kind": "simulation",
+  "relation": "gsmf",
+  "epoch": {
+    "z": 0.1,
+    "zMin": 0.0,
+    "zMax": 0.2,
+    "mode": "published-epoch"
+  },
+  "definitions": {
+    "densityFrame": "comoving",
+    "imf": "chabrier03",
+    "massDefinition": "aperture-30pkpc",
+    "cosmology": {
+      "H0": 67.74,
+      "Om": 0.3075
+    },
+    "population": "all"
+  },
+  "intervals": "uncertainty",
+  "tier": "published-table",
+  "calibration": "prediction",
+  "citation": "Author et al. 2026, Journal 1, 1",
+  "doi": "10.0000/replace-me",
+  "url": "https://arxiv.org/abs/0000.00000",
+  "valuesFrom": "Table 2 of the paper (or: the data release at https://...)",
+  "contact": {
+    "name": "Your name",
+    "orcid": "0000-0000-0000-0000"
+  },
+  "licence": "CC-BY-4.0",
+  "csv": "curve.csv",
+  "id": "vcd.grazian-et-al-2015.main.gsmf.z4"
+}
