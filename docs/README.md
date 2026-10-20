@@ -15,6 +15,7 @@ Fifty documents is too many to find anything in, so here they are by what you wa
 - [DATA-CARD.md](DATA-CARD.md): what is in the dataset, licences and intended use.
 - [DATA-QUALITY.md](DATA-QUALITY.md) *(generated)*: how the curves were obtained, how many were read from figures, how well they check out.
 - [UNDOCUMENTED-DEFINITIONS.md](UNDOCUMENTED-DEFINITIONS.md) *(generated)*: definitions no paper states, and which papers were read for them.
+- [CONVERSIONS.md](CONVERSIONS.md) *(generated)*: what changes, measured in three codes, when an aperture or a weighting changes (stellar mass, SFR, metallicity, halo mass).
 - [PLAUSIBILITY-SCREEN.md](PLAUSIBILITY-SCREEN.md) *(generated)*: curves that look odd next to the others.
 - [SOURCE-TERMS.md](SOURCE-TERMS.md): terms of the third-party inputs.
 - [EXPANDING-COVERAGE.md](EXPANDING-COVERAGE.md): adding catalogue-based sources on your own machine.

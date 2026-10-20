@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "about": "Corrections to curves taken from the SWIFT/VELOCIraptor comparison-data compilation (commit fc740f4), where its conversion of the original paper's numbers was found not to match the paper. Applied by scripts/apply-compilation-corrections.mjs. Every entry says what was wrong, how it was found, and shows the arithmetic. See docs/UPSTREAM-ISSUES.md for the drafts of what to tell the compilation's maintainers.",
+  "corrections": [
+    {
+      "id": "grazian15-h70",
+      "records": [
+        "vcd.grazian-et-al-2015.main.gsmf.z4",
+        "vcd.grazian-et-al-2015.main.gsmf.z5",
+        "vcd.grazian-et-al-2015.main.gsmf.z6",
+        "vcd.grazian-et-al-2015.main.gsmf.z7"
+      ],
+      "dxDex": -0.309804,
+      "dyDex": 0.464706,
+      "summary": "the compilation applied the Hubble parameter h = 0.6774 to data tabulated in h_70 units; the values are shifted by -0.3098 dex in log mass and +0.4647 dex in log number density to the correct h_70 conversion.",
+      "evidence": [
+        "Raw table header in the compilation (data/GalaxyStellarMassFunction/raw/Grazian2015.txt): 'GSMF from Grazian et al 2015. Salpeter IMF, h=0.7' with column label 'Mstar/h**-2'.",
+        "The paper (arXiv:1412.0532, Fig. summarymfhz) labels its axes 'M_star/h_70^-2' and 'log(phi)[h_70^3 Mpc^-3/log(M_star)]', and adopts H0 = 70 (grazian.tex:438-440).",
+        "The compilation's own script (convertGrazian2015.py) says '# ORIGINAL_H = 0.7 ... not required, since data file is already in h-free units', then computes M = Mstar * h**-2 and Phi = 10**logPhi * h**3 with h = cosmology.h = 0.6774, i.e. it treats h_70 as if it were h. The sibling scripts for Duncan 2014, Muzzin 2013, Ilbert 2013, Tomczak 2014, Deshmukh 2018 and Gonzalez 2011 use (h / ORIGINAL_H)**-2 and (h / ORIGINAL_H)**3 with ORIGINAL_H = 0.7.",
+        "Correct factors for h_70 units and h = 0.6774: mass x (0.7/0.6774)^2, density x (0.6774/0.7)^3. The compilation applied x 0.6774^-2 and x 0.6774^3. The ratio correct/applied is 0.7^2 on mass (-0.3098 dex) and 0.7^-3 on density (+0.4647 dex).",
+        "Check against the paper's own numbers: the first point of the z = 4 curve is stored at log M = 9.858 and log Phi = -3.323; the corrected values are 9.548 and -2.859, which agree with the raw table converted by hand (an independent reader reproduced 9.5483 and -2.8586) and with the paper's Schechter fit at the same mass (log Phi = -2.83)."
+      ],
+      "set": { "definitions.cosmology": { "H0": 67.74, "Om": 0.3075 } }
+    }
+  ]
+}
