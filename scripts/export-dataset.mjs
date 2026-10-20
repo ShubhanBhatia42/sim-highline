@@ -19,6 +19,8 @@ const outputs = {
   "sim-highline-distributions.csv": X.toCsv(distRows, X.DIST_COLS, [`sim-highline dataset v${release.version} (${release.released}); per-galaxy distributions, one row per non-empty cell of a record's grid (x = stellar mass or similar, y = specific SFR or colour); join with sim-highline-records.csv on record_id`]),
   "sim-highline-records.json": JSON.stringify({ version: release.version, released: release.released, records }) + "\n",
   "sim-highline-citations.bib": X.bibtex(records),
+  "sim-highline-conversions.json": await readFile(new URL("data/conversions.json", root), "utf8"),
+  "sim-highline-corrections.json": await readFile(new URL("data/compilation-corrections.json", root), "utf8"),
   "sim-highline-rules.json": JSON.stringify({ note: "Comparability rules used by the website and by sim_highline.compatible; generated from compare.js", unset: [null, "unspecified", "heterogeneous"], minBins: C.MIN_BINS, imfDex: C.IMF_DEX, rules: C.RULES }, null, 1) + "\n"
 };
 const manifest = { version: release.version, released: release.released, doi: release.doi, license: release.license, nRecords: records.length, nPoints: ptRows.length, nDistributionRecords: records.filter(r => r.representation.distribution).length, nDistributionCells: distRows.length, nParametric: records.filter(r => r.representation.type === "parametric").length,

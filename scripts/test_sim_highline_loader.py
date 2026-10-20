@@ -1,5 +1,6 @@
 import hashlib
 import json
+import math
 import sys
 from pathlib import Path
 
@@ -54,4 +55,17 @@ assert len(dist) > 1000 and set(["x_low", "y_high", "count", "source", "relation
 _rid = dist["record_id"].iloc[0]
 _m, _xe, _ye = sim_highline.grid(dist, _rid)
 assert _m.shape == (len(_xe) - 1, len(_ye) - 1) and _m.sum() == dist[dist["record_id"] == _rid]["count"].sum()
+conv = sim_highline.load_conversions()
+s = sim_highline.measured_shift("mass.total-to-rad2", "IllustrisTNG", 10.0, 0.0, conv)
+assert -0.2 < s["p16"] < s["median"] < s["p84"] < 0.0 and s["se"] is not None and s["se"] < 0.01, s
+half = sim_highline.measured_shift("mass.total-to-rad1", "SIMBA", 9.8, 0.0, conv)
+assert abs(half["median"] - math.log10(0.5)) < 0.012, half   # the stellar half-mass aperture holds half the stars by definition
+for bad in (lambda: sim_highline.measured_shift("mass.total-to-rad2", "SIMBA", 14.0, 0.0, conv), lambda: sim_highline.measured_shift("nope", "SIMBA", 10.0, 0.0, conv)):
+    try:
+        bad()
+        raise AssertionError("should have raised")
+    except (ValueError, KeyError):
+        pass
+cor = sim_highline.corrections()
+assert cor and cor[0]["id"] == "grazian15-h70" and len(cor[0]["records"]) == 4
 print(f"sim-highline loader test passed: {len(records)} records, {len(df)} points, v{man['version']}")

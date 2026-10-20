@@ -19,6 +19,7 @@ Fifty documents is too many to find anything in, so here they are by what you wa
 - [PLAUSIBILITY-SCREEN.md](PLAUSIBILITY-SCREEN.md) *(generated)*: curves that look odd next to the others.
 - [SOURCE-TERMS.md](SOURCE-TERMS.md): terms of the third-party inputs.
 - [EXPANDING-COVERAGE.md](EXPANDING-COVERAGE.md): adding catalogue-based sources on your own machine.
+- [SUBMIT-A-CURVE.md](SUBMIT-A-CURVE.md): give us your published numbers as a table (a folder under `submissions/`, checked automatically).
 - [literature-candidates.md](literature-candidates.md) *(dated)*: papers found by search and not added.
 
 ## The four studies (each: protocol written first, then the analysis)

@@ -35,12 +35,13 @@ assert bad.returncode != 0 and "fewer than three" in (bad.stderr + bad.stdout), 
 # every code cell of the notebook runs from the repository root
 import os
 os.chdir(ROOT)
-nb = json.loads((ROOT / "notebooks" / "compare-your-run.ipynb").read_text())
 import matplotlib
 matplotlib.use("Agg")
-g = {}
-for cell in nb["cells"]:
-    if cell["cell_type"] == "code":
-        src = "".join(cell["source"]).replace("plt.show()", "plt.close('all')")
-        exec(compile(src, "notebook cell", "exec"), g)
+for name in ("compare-your-run", "definitions-and-distributions"):
+    nb = json.loads((ROOT / "notebooks" / f"{name}.ipynb").read_text())
+    g = {}
+    for cell in nb["cells"]:
+        if cell["cell_type"] == "code":
+            src = "".join(cell["source"]).replace("plt.show()", "plt.close('all')")
+            exec(compile(src, f"{name} cell", "exec"), g)
 print("cli: OK")

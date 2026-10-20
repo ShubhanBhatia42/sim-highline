@@ -1,0 +1,43 @@
+name: Submit a curve table
+description: You are an author (or a careful reader) and want your published numbers in sim-highline
+title: "Submit: "
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The quickest way is a pull request with a folder under `submissions/` (see docs/SUBMIT-A-CURVE.md): a CSV and a `metadata.json`, checked automatically. If you prefer, fill this in and a maintainer will build the folder. Values must come from a table or data release, not from reading a figure.
+  - type: input
+    id: paper
+    attributes:
+      label: Paper or data release (link or DOI)
+    validations:
+      required: true
+  - type: dropdown
+    id: relation
+    attributes:
+      label: Relation
+      options: [gsmf, sfms, ssfr, quenched, mzr, size, shmr, bh, bhsigma, smd, sfrd, uvlf, "other (say which)"]
+    validations:
+      required: true
+  - type: textarea
+    id: values
+    attributes:
+      label: Where the numbers are
+      description: Table number, file link, or paste the table (x, y, and errors if any), and say what x and y are (log10? units? h?).
+    validations:
+      required: true
+  - type: textarea
+    id: definitions
+    attributes:
+      label: What the numbers mean
+      description: IMF, how stellar mass was defined (aperture, SED total), which galaxies are included, SFR timescale, cosmology/h. Write "the paper does not say" where it does not; that is useful to know.
+    validations:
+      required: true
+  - type: input
+    id: licence
+    attributes:
+      label: Are the values yours to share under CC-BY-4.0 or CC0?
+      description: Yes / no / not sure.
+    validations:
+      required: true

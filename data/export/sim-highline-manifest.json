@@ -82,24 +82,32 @@
       "bytes": 1469604
     },
     "sim-highline-points.csv": {
-      "sha256": "68f00ada8e678544bfb0a5f7eb97ea937e06930d3c3924b26d1684f537b9c971",
-      "bytes": 3410187
+      "sha256": "828e3b5a41f1e8e1e7944ce17cf94b8947aa3487519f3646a0460183a3695332",
+      "bytes": 3410180
     },
     "sim-highline-distributions.csv": {
       "sha256": "5b784b110b77cff2194d4ef1e1a4b2571f5e92130cc6f06d3c38d5bc8b0e46c2",
       "bytes": 200923
     },
     "sim-highline-records.json": {
-      "sha256": "b41d080568743e6dda2ac1ae569d4eecd4713d51eab9ab7ce90d6e0396e867fc",
-      "bytes": 5173169
+      "sha256": "b8620783e8fc7663e7a26c8a838e0b2d0ca43c921661a4157920766524eb464f",
+      "bytes": 5175614
     },
     "sim-highline-citations.bib": {
       "sha256": "f4a28c41f776e765d87eadd21020606a081510bd3d808fe0bdb8229708e19364",
       "bytes": 28765
     },
+    "sim-highline-conversions.json": {
+      "sha256": "d6e50131770fb9f56e8ed8bc7c34c106999516171833899e90de18296cae2391",
+      "bytes": 331552
+    },
+    "sim-highline-corrections.json": {
+      "sha256": "75e9f548a7ff4f3135077d39f880e2cfe3fb1d240f53e8c90167550892dc0bf4",
+      "bytes": 2541
+    },
     "sim-highline-rules.json": {
-      "sha256": "49b3d5c8eb0c18b4e531dec2f1364d36ddbca6033eae83bd25caa91775e43f10",
-      "bytes": 3768
+      "sha256": "5c2db094c8b74aa816f9d9b51c36395bcdd50d35daf239e4702682f81266ca5a",
+      "bytes": 3769
     }
   }
 }

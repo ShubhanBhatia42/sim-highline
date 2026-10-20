@@ -1,11 +1,16 @@
 import { readFile, readdir } from "node:fs/promises";
+import { pathToFileURL } from "node:url";
+import path from "node:path";
 import vm from "node:vm";
 const cctx = { globalThis: {} };
 vm.runInNewContext(await readFile(new URL("../compare.js", import.meta.url), "utf8"), cctx);
 const Cmp = cctx.globalThis.SimHighlineCompare;
 
 const directory = new URL("../data/curves/", import.meta.url);
+// extra record files given on the command line (a submission before it is merged) are checked together with the dataset, so duplicates against existing records are caught
+const extra = process.argv.slice(2).filter(a => a.endsWith(".json")).map(a => pathToFileURL(path.resolve(a)));
 const files = (await readdir(directory)).filter(file => file.endsWith(".json"));
+const sources = [...files.map(file => [file, new URL(file, directory)]), ...extra.map(u => [u.pathname, u])];
 const allowedRelations = new Set(["sfms","ssfr","gsmf","quenched","mzr","gas","hi-fraction","h2-fraction","shmr","size","jstar","btfr","bh","bhsigma","smd","bhmd","zstar","age","himf","sfrf","uvlf","sfrd","fgas500","metald","dmf","dtg","stfr","hmf","fmr","ks","wp","hod","colour","sigmam","sigma1","lxm","ysz","agnlf","bhad","lambdar","fslow","elf","uvbeta"]);
 const allowedTiers = new Set(["catalog-derived","official-table","published-table","published-fit","digitized-figure"]);
 const ids = new Set();
@@ -14,8 +19,8 @@ const allowedModes = new Set(["snapshot","published-epoch","observational-bin","
 const errors = [];
 let count = 0;
 
-for (const file of files) {
-  const payload = JSON.parse(await readFile(new URL(file, directory), "utf8"));
+for (const [file, url] of sources) {
+  const payload = JSON.parse(await readFile(url, "utf8"));
   if (payload.schemaVersion !== "1.0.0") errors.push(`${file}: unsupported schema version`);
   for (const record of payload.records || []) {
     count += 1;
@@ -67,5 +72,5 @@ if (errors.length) {
   console.error(errors.join("\n"));
   process.exitCode = 1;
 } else {
-  console.log(`sim-highline curves: ${count} evidence records across ${files.length} files valid`);
+  console.log(`sim-highline curves: ${count} evidence records across ${sources.length} files valid`);
 }

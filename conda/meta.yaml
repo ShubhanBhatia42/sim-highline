@@ -1,0 +1,47 @@
+{% set release = load_file_data("../data/release.json", from_recipe_dir=True) %}
+{% set version = release["version"] %}
+
+package:
+  name: sim-highline
+  version: {{ version }}
+
+# Builds from this checkout. For conda-forge, replace `path` by the release tarball
+#   url: https://github.com/ShubhanBhatia42/sim-highline/archive/refs/tags/v{{ version }}.tar.gz
+# and add the sha256 of that tarball (curl -L <url> | sha256sum) once the release exists.
+source:
+  path: ..
+
+build:
+  noarch: python
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python >=3.9
+    - pip
+    - hatchling >=1.27
+  run:
+    - python >=3.9
+    - numpy
+    - pandas
+
+test:
+  imports:
+    - sim_highline
+  commands:
+    - python -c "import sim_highline as s; df = s.load(); print(df.attrs['version'], len(df))"
+
+about:
+  home: https://github.com/ShubhanBhatia42/sim-highline
+  summary: Curated galaxy scaling relations from cosmological simulations, with the definitions that decide whether two curves are comparable
+  license: MIT AND CC-BY-4.0
+  license_file:
+    - LICENSE
+    - LICENSE-DATA.md
+  doc_url: https://shubhanbhatia42.github.io/sim-highline/site/methods.html
+  dev_url: https://github.com/ShubhanBhatia42/sim-highline
+
+extra:
+  recipe-maintainers:
+    - ShubhanBhatia42

@@ -1,0 +1,24 @@
+name: submission
+on:
+  pull_request:
+    paths: ["submissions/**"]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Only submission folders changed
+        run: |
+          git fetch --no-tags --depth=1 origin "${{ github.base_ref }}"
+          other=$(git diff --name-only "origin/${{ github.base_ref }}"...HEAD | grep -v '^submissions/' || true)
+          if [ -n "$other" ]; then echo "::error::A submission pull request must change files under submissions/ only. Also changed: $other"; exit 1; fi
+      - name: Check every changed submission folder
+        run: |
+          dirs=$(git diff --name-only "origin/${{ github.base_ref }}"...HEAD | grep '^submissions/' | grep -v '^submissions/_template/' | grep -v '^submissions/README.md$' | cut -d/ -f1-2 | sort -u)
+          if [ -z "$dirs" ]; then echo "nothing to check"; exit 0; fi
+          node scripts/submission.mjs check $dirs
