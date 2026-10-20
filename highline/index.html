@@ -218,6 +218,7 @@ footer{grid-area:foot;display:flex;align-items:center;gap:16px;padding:10px 24px
 .zread{font:500 20px var(--mono);min-width:120px;text-align:right;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
 .zread small{display:block;font:400 11.5px var(--mono);color:var(--ink3);letter-spacing:0}
 .atlas{position:absolute;inset:0;overflow:auto;padding:26px 30px 40px;display:none;background:var(--bg)}
+.verbanner{margin:0;padding:8px 16px;background:var(--panel2);border-bottom:1px solid var(--rule-strong);font-size:13px;color:var(--ink);display:flex;gap:10px;align-items:center}.verbanner[hidden]{display:none}.verbanner a{color:var(--link)}.verbanner button{margin-left:auto;border:0;background:transparent;color:var(--ink2);font-size:18px;cursor:pointer;line-height:1}
 .atlas.on{display:block}
 .dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px;margin:10px 0 22px}
 .dpanel{border:1px solid var(--rule);border-radius:6px;background:var(--panel);padding:10px 10px 8px;min-width:0;cursor:pointer}
@@ -315,6 +316,7 @@ b.classList.add("failed");b.setAttribute("role","alert");b.innerHTML='<div class
   </header>
   <div class="relsel"><label class="sr" for="relSel">Relation</label><select id="relSel"></select></div>
   <nav class="rail" id="presets" aria-label="Relation"></nav>
+  <p class="verbanner" id="verbanner" role="status" hidden><span id="verbannerText"></span> <button type="button" id="verbannerX" aria-label="Dismiss this notice">×</button></p>
   <main id="main">
     <div class="stagehead" id="stagehead"><div><h1 id="shTitle"></h1><p id="shSub"></p>
 <div class="hello" id="hello" role="note" aria-label="New here?" hidden>
@@ -482,6 +484,17 @@ const copyTxt=async(t,msg)=>{try{await navigator.clipboard.writeText(t)}catch(e)
 function toast(m){const t=$("toast");t.textContent=m;t.style.display="block";clearTimeout(toast.h);toast.h=setTimeout(()=>t.style.display="none",1800)}
 
 /* ---------- state in the URL ---------- */
+/* A link made with another dataset version says so: curves may have changed since, and the old data are archived. */
+const withVersion=h=>{const q=new URLSearchParams(String(h).replace(/^#/,""));q.set("dv",SIMHIGHLINE_RELEASE.version);return q.toString()};
+window.__sh={withVersion};
+function versionBanner(){
+  const dv=new URLSearchParams(location.hash.slice(1)).get("dv"),el=$("verbanner");
+  if(!el)return;
+  const R=SIMHIGHLINE_RELEASE;
+  if(dv&&dv!==R.version){$("verbannerText").innerHTML=`This link was made with dataset v${esc(dv)}; you are viewing v${esc(R.version)}. Curves may have been added, corrected or removed since (<a href="site/changes.html" target="_blank" rel="noopener">what changed</a>). Every archived version is listed under <a href="https://doi.org/${esc(R.doi||"")}" target="_blank" rel="noopener">the dataset DOI</a>.`;el.hidden=false}
+  else el.hidden=true;
+}
+
 function syncHash(now){
   const p=new URLSearchParams(),d={rel:"gsmf",yt:"none",tf:"log"};
   p.set("r",state.rel);p.set("z",currentZ());if(state.mode!=="plot")p.set("m",state.mode);if(state.mode==="tension")p.set("tz",state.tz);if(state.mode==="spread"&&state.spRk)p.set("sk","1");
@@ -916,7 +929,7 @@ function figurePng(name,caption){
   const img=new Image();img.onload=()=>{const c=document.createElement("canvas");c.width=w*2;c.height=H*2;const g=c.getContext("2d");g.scale(2,2);g.drawImage(img,0,0);c.toBlob(bl=>saveBlob(name,bl),"image/png")};img.onerror=()=>toast("The figure could not be rendered in this browser");
   img.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(wrap)}
 function mineShareHash(){hashFlush();const u=state.user,q=new URLSearchParams(location.hash.slice(1)),r4=v=>Number.isFinite(v)?+v.toFixed(4):null;
-  q.set("run",btoa(unescape(encodeURIComponent(JSON.stringify({n:u.name,p:u.pts.map(p=>[r4(p.x),r4(p.y),r4(p.lo),r4(p.hi)]),d:u.defs||{}})))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""));q.set("pn","mine");return q.toString()}
+  q.set("run",btoa(unescape(encodeURIComponent(JSON.stringify({n:u.name,p:u.pts.map(p=>[r4(p.x),r4(p.y),r4(p.lo),r4(p.hi)]),d:u.defs||{}})))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""));q.set("pn","mine");q.set("dv",SIMHIGHLINE_RELEASE.version);return q.toString()}
 function mineFromHash(s){try{const j=JSON.parse(decodeURIComponent(escape(atob(s.replace(/-/g,"+").replace(/_/g,"/")))));const pts=(j.p||[]).filter(a=>Number.isFinite(a[0])&&Number.isFinite(a[1])).map(a=>({x:a[0],y:a[1],lo:Number.isFinite(a[2])?a[2]:undefined,hi:Number.isFinite(a[3])?a[3]:undefined}));if(!pts.length)return false;
   const raw=pts.map(p=>[p.x,p.y,...(Number.isFinite(p.lo)&&Number.isFinite(p.hi)?[p.lo,p.hi]:[])].join(",")).join("\n");state.user={name:String(j.n||"shared run").slice(0,80),raw,linear:false,defs:j.d&&typeof j.d==="object"?j.d:{},pts};mineSave();return true}catch(e){return false}}
 function wireMine(){
@@ -1024,9 +1037,9 @@ function wireData(){
   $("dJson").onclick=()=>download(nm()+".json","application/json",JSON.stringify({version:SIMHIGHLINE_RELEASE.version,released:SIMHIGHLINE_RELEASE.released,selection:note()[0],records:exportSet()},null,1));
   $("dPy").onclick=()=>copyTxt(pySnippet(exportSet()),"Python snippet copied");
   $("dBib").onclick=()=>copyTxt(SimHighlineExport.bibtex(exportSet()),"BibTeX copied");
-  $("fLink").onclick=()=>{syncHash(true);copyTxt(location.href,"Link copied")};
+  $("fLink").onclick=()=>{syncHash(true);const u=new URL(location.href);u.hash=withVersion(u.hash);copyTxt(u.href,"Link copied")};
   $("cTxt").onclick=()=>copyTxt(citeText(),"Citation copied");$("cBibD").onclick=()=>copyTxt(citeBib(),"BibTeX copied");
-  $("fEmb").onclick=()=>{syncHash(true);const u=new URL(location.href);const q=new URLSearchParams(u.hash.slice(1));q.set("embed","1");u.hash=q.toString();copyTxt(`<iframe src="${u.href}" width="820" height="560" style="border:1px solid #ccc;border-radius:8px" loading="lazy" title="sim-highline: ${REL[state.rel].t}"></iframe>`,"Embed code copied")};
+  $("fEmb").onclick=()=>{syncHash(true);const u=new URL(location.href);const q=new URLSearchParams(u.hash.slice(1));q.set("embed","1");q.set("dv",SIMHIGHLINE_RELEASE.version);u.hash=q.toString();copyTxt(`<iframe src="${u.href}" width="820" height="560" style="border:1px solid #ccc;border-radius:8px" loading="lazy" title="sim-highline: ${REL[state.rel].t}"></iframe>`,"Embed code copied")};
   $("fMeth").onclick=()=>copyTxt(methodsPack().methods,"Methods text copied");
   $("fPack").onclick=()=>{const m=methodsPack();download(`sim-highline_${state.rel}_z${fmtZ(currentZ())}_pack.md`,"text/markdown",m.pack)};
   $("fSvg").onclick=()=>download(`sim-highline_${state.rel}_z${fmtZ(currentZ())}.svg`,"image/svg+xml",figureSvg().svg);
@@ -1215,7 +1228,7 @@ document.querySelectorAll(".recipes button").forEach(b=>b.onclick=()=>{
   if(k==="cmp"){if(state.panel)closePanel();state.rel="shmr";state.z=nearestStop("shmr",0);const u=[...primaryUnits("shmr")].find(x=>x.startsWith("IllustrisTNG|"));setMode("plot");if(u){state.ref=u;state.resid=true;renderAll(false);toast("Residuals against TNG: ✓ comparable, ~ caveats, ✕ not comparable")}}
   if(k==="pd"){state.rel="mzr";state.z=nearestStop("mzr",6);state.dl.scope="epoch";state.dl.obs=true;setMode("plot");openPanel("data")}
 });
-$("infoBtn").onclick=()=>{const on=$("about").classList.toggle("on");const box=$("about").firstElementChild;if(on){box.scrollTop=0;box.focus({preventScroll:true})}else $("infoBtn").focus()};$("about").onclick=e=>{if(e.target.id==="about")$("about").classList.remove("on")};
+$("verbannerX").onclick=()=>{$("verbanner").hidden=true};$("infoBtn").onclick=()=>{const on=$("about").classList.toggle("on");const box=$("about").firstElementChild;if(on){box.scrollTop=0;box.focus({preventScroll:true})}else $("infoBtn").focus()};$("about").onclick=e=>{if(e.target.id==="about")$("about").classList.remove("on")};
 /* ---------- command palette ---------- */
 const pal={items:[],sel:0};
 function palItems(q){
@@ -1257,12 +1270,12 @@ function paintThemeBtn(){const d=themeNow()==="dark";$("bTheme").innerHTML=d?SUN
 $("bTheme").onclick=()=>{const n=themeNow()==="dark"?"light":"dark";document.documentElement.dataset.theme=n;try{localStorage.setItem("sh-theme",n)}catch(e){}paintThemeBtn()};
 try{matchMedia("(prefers-color-scheme: dark)").addEventListener("change",paintThemeBtn)}catch(e){}
 paintThemeBtn();
-addEventListener("hashchange",()=>{readHash();syncShell();if(state.mode==="atlas")renderAtlas();if(state.mode==="tension")renderTension();if(state.mode==="spread")renderSpread();if(state.mode==="dist")renderDist();renderAll(false);if(state.sel)openRecord(state.sel);else if(state.panel&&state.tab==="evidence")closePanel()});
+addEventListener("hashchange",()=>{readHash();versionBanner();syncShell();if(state.mode==="atlas")renderAtlas();if(state.mode==="tension")renderTension();if(state.mode==="spread")renderSpread();if(state.mode==="dist")renderDist();renderAll(false);if(state.sel)openRecord(state.sel);else if(state.panel&&state.tab==="evidence")closePanel()});
 const srcCount=new Set(sims.map(r=>r.source)).size;
 $("aboutCounts").innerHTML=`<b>${sims.length}</b> simulation records from <b>${srcCount}</b> suites, plus <b>${obs.length}</b> observational references. Dataset v${esc(SIMHIGHLINE_RELEASE.version)}.`;
 new ResizeObserver(()=>{if(isTable())return;renderPlot(false);if(state.mode!=="evol")renderSlider()}).observe($("stage"));
 const wantMine=new URLSearchParams(location.hash.slice(1)).get("pn")==="mine";
-mineLoad();readHash();syncShell();
+mineLoad();readHash();versionBanner();syncShell();
 if(state.mode==="atlas")renderAtlas();if(state.mode==="tension")renderTension();if(state.mode==="spread")renderSpread();if(state.mode==="dist")renderDist();
 renderAll(false);
 if(state.sel)openRecord(state.sel);else if(wantMine||state.openMine)openPanel("mine");
