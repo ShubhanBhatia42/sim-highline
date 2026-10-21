@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "schreiber15.goods-candels-cosmos.sfms.evolution",
+      "source": "Schreiber et al. 2015 (Herschel stacking)",
+      "run": null,
+      "kind": "observation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 2,
+        "zMin": 0.3,
+        "zMax": 5,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (FAST, Bruzual & Charlot 2003, Salpeter IMF, delayed-exponential SFHs)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 of the mode of the SFR distribution of star-forming galaxies, SFR = SFR_UV (uncorrected, Daddi+04) + SFR_IR (Kennicutt98), Salpeter IMF, from mean Herschel stacks corrected to the mode (about -0.1 dex)",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 9.74,
+        "xMax": 11.21
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "log10 SFR_MS = m - m0 + a0 r - a1 [max(0, m - m1 - a2 r)]^2, m = log10(M*/1e9 Msun), r = log10(1+z) (Eq. 7)",
+        "expression": "(x-9)-m0+a0*Math.log10(1+z)-a1*Math.pow(Math.max(0,(x-9)-m1-a2*Math.log10(1+z)),2)",
+        "parameters": {
+          "m0": 0.5,
+          "a0": 1.5,
+          "a1": 0.3,
+          "m1": 0.36,
+          "a2": 2.5,
+          "m0Error": 0.07,
+          "a0Error": 0.15,
+          "a1Error": 0.08,
+          "m1Error": 0.3,
+          "a2Error": 0.6
+        }
+      },
+      "scatter": {
+        "value": 0.3,
+        "unit": "dex",
+        "meaning": "non-varying dispersion of log SFR at fixed mass and redshift from scatter stacking (0.30 +-0.06 Herschel; 0.33 +-0.03 COSMOS UltraVISTA), not an uncertainty of the curve"
+      },
+      "selection": {
+        "population": "mass-complete star-forming galaxies selected with the UVJ criterion (U-V>1.3, V-J<1.6, U-V>0.88(V-J)+0.49 = quiescent), GOODS-N/S, UDS, COSMOS CANDELS H-band and GOODS-N/COSMOS UltraVISTA Ks-band catalogues",
+        "warning": "The fit was made to the filled circles of Fig. 8 (stacked mass/redshift bins with 0.3<z<5.0 in six redshift bins); the stacks span log M* = 9.74 to 11.21, so the expression is an extrapolation outside this mass range and outside 0.3<z<5.0. The paper's text says the catalogue is mass-complete above 2e10 Msun and extends to z=4. Abstract: flattening at log M* > 10.5. Quiescent galaxies, not AGN, are excluded."
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Schreiber et al. 2015, A&A 575, A74 (arXiv:1409.5433), Eq. 7",
+        "doi": null,
+        "url": "https://arxiv.org/abs/1409.5433",
+        "retrieved": "2026-10-18"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Analytic redshift evolution (variable z in the expression). Verification: parameters parsed from the arXiv source; the expression, evaluated at the legend bin centres, reproduces the six grey best-fit curves of the paper's Fig. 8 with rms 0.007-0.016 dex and maximum 0.04 dex (digitisation of vector paths, axes calibrated on tick marks).",
+      "definitions": {
+        "massDefinition": "sed-total",
+        "imf": "salpeter55",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "population": "star-forming",
+        "sfrIndicator": "UV (uncorrected, 1500 A) + IR (Herschel stacks, CE01 templates), L_IR from 24-500 micron stacks",
+        "sfrTimescaleMyr": 100,
+        "sfrTimescaleBasis": "'assume that the SFR remained constant over the last 100 Myr'",
+        "sfrStatistic": "mode",
+        "sfrStatisticBasis": "'in all the following we refer to the SFR of the main sequence as the mode of the distribution'"
+      }
+    }
+  ]
+}

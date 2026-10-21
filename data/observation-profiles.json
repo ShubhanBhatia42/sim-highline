@@ -411,6 +411,41 @@
       "kind": "survey",
       "facility": "xGASS Arecibo HI survey, via the velociraptor comparison data",
       "measures": "Size relation as provided by the compilation (the upstream citation read 'in prep')."
+    },
+    "Whitaker et al. 2014 (3D-HST/CANDELS)": {
+      "kind": "survey",
+      "facility": "3D-HST (HST WFC3 grism) and CANDELS imaging, with Spitzer/MIPS 24 micron for the infrared",
+      "measures": "Star-forming sequence at 0.5 < z < 2.5 from median stacks of star-forming galaxies; SFR from UV plus infrared luminosity, stellar masses from SED fits."
+    },
+    "Schreiber et al. 2015 (Herschel stacking)": {
+      "kind": "survey",
+      "facility": "Herschel far-infrared stacking with UV, in the GOODS, CANDELS and COSMOS fields",
+      "measures": "Main sequence of star formation at 0.3 < z < 5 as the mode of the SFR distribution, from stacks of galaxies that are not UVJ-quiescent."
+    },
+    "Leja et al. 2022 (COSMOS-2015 + 3D-HST, Prospector-alpha)": {
+      "kind": "survey",
+      "facility": "COSMOS-2015 (0.2 < z < 0.8) and 3D-HST (0.5 < z < 3.0) galaxy catalogues, SED fitting with Prospector-alpha",
+      "measures": "Ridge and mean of the SFR distribution at fixed stellar mass, with no star-forming selection; SFRs averaged over 100 Myr from non-parametric star formation histories."
+    },
+    "Tomczak et al. 2016 (ZFOURGE)": {
+      "kind": "survey",
+      "facility": "ZFOURGE near-infrared medium-band catalogues, with stacked 24 to 160 micron photometry",
+      "measures": "SFR against stellar mass of all galaxies and of UVJ star-forming galaxies from stacked UV plus infrared SFRs at 0.5 < z < 4."
+    },
+    "Lee et al. 2015 (COSMOS, Herschel/Spitzer/NRK)": {
+      "kind": "survey",
+      "facility": "COSMOS field with Herschel and Spitzer infrared luminosities and the NRK colour method",
+      "measures": "Median SFR against stellar mass of star-forming galaxies at 0.25 < z < 1.3, fitted with a turnover at high mass."
+    },
+    "Iyer et al. 2018 (CANDELS GOODS-S, Dense Basis SFHs)": {
+      "kind": "survey",
+      "facility": "CANDELS GOODS-S photometry, SED fitting with Dense Basis non-parametric star formation histories",
+      "measures": "SFR against stellar mass at 1 < z < 6 down to low masses, with instantaneous SFRs from the SED fits."
+    },
+    "Salim, Boquien & Lee 2018 (GSWLC-2)": {
+      "kind": "survey",
+      "facility": "SDSS spectroscopy with GALEX ultraviolet and WISE mid-infrared photometry (GALEX-SDSS-WISE Legacy Catalog 2)",
+      "measures": "SED-fitted stellar masses and SFRs (averaged over 100 Myr) of about 360,000 galaxies at 0.01 < z < 0.30, the joint distribution of specific SFR and mass."
     }
   }
 }

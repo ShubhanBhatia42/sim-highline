@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "iyer18.goods-s.sfms.evolution",
+      "source": "Iyer et al. 2018 (CANDELS GOODS-S, Dense Basis SFHs)",
+      "run": "combined direct fits and SFR-M* trajectories",
+      "kind": "observation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 3,
+        "zMin": 1,
+        "zMax": 6,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass from Dense Basis SED fitting (FSPS, Chabrier IMF)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 SFR from Dense Basis SED fitting: effectively instantaneous SFR at the epoch of observation (direct fits) or at the epoch of interest along the reconstructed SFH (trajectories)",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 7.38,
+        "xMax": 10.5
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "log SFR = (0.80 - 0.017 t) log M* - (6.487 - 0.039 t), t = age of the universe in Gyr (Eq. 2)",
+        "expression": "(a0-a1*t)*x-(b0-b1*t)",
+        "parameters": {
+          "a0": 0.8,
+          "a1": 0.017,
+          "b0": 6.487,
+          "b1": 0.039,
+          "a0Error": 0.029,
+          "a1Error": 0.01,
+          "b0Error": 0.282,
+          "b1Error": 0.008
+        },
+        "ageCosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
+      },
+      "scatter": {
+        "value": 0.27,
+        "unit": "dex",
+        "meaning": "observed scatter of the combined (direct + trajectory) sample at z=3-6 (0.27-0.28 dex; 0.38 at z=1, 0.29 at z=2), not an uncertainty of the curve"
+      },
+      "selection": {
+        "population": "galaxies of the CANDELS GOODS-S catalogue at 0.5<z<6 (17,873 after removing stars, X-ray AGN and chi2>50 fits), high-confidence trajectories (combined uncertainty < 1 dex), linear fit with iterative robust outlier rejection; no UVJ or sSFR pre-selection",
+        "warning": "The relation is a linear fit at z=1,2,3,4,5,6 whose slope and normalization are then fitted as linear functions of cosmic time (valid 1<=z<=6). Combines galaxies observed at each epoch with galaxies observed at later epochs propagated back along their SFHs. The mass range is not stated as a validity range: the lower end 7.38 is the lowest 10th-percentile stellar mass probed by trajectories (z=6, Table of lowest masses probed); the upper end 10.5 is where the paper says earlier studies find a turnover, 'most of our galaxies fall below this mass range'. The paper finds this relation 0.2-0.4 dex below Speagle+14 and notes the SED-based SFRs are not comparable with UV+IR SFRs."
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Iyer et al. 2018, ApJ 866, 120 (arXiv:1809.04099), Eq. 2 and Table of slope/normalization",
+        "doi": null,
+        "url": "https://arxiv.org/abs/1809.04099",
+        "retrieved": "2026-10-18"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Coefficients parsed from the arXiv source. Verification: Eq. 2 at t(z=1..6) in the paper's flat LCDM (H0=70, Om=0.3) reproduces the paper's own total slope m and normalization c9 (log SFR at 1e9 Msun) at z=1-6 within 0.51 sigma for all 12 numbers (differences <= 0.04 dex).",
+      "definitions": {
+        "massDefinition": "sed-total",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "population": "all",
+        "sfrIndicator": "Dense Basis SED fitting of 0.3-8 micron photometry",
+        "sfrTimescaleMyr": "instantaneous",
+        "sfrTimescaleBasis": "'Fits to the galaxy SEDs ... provide us with both the Stellar Masses and effectively instantaneous Star Formation Rates at the epoch of observation'",
+        "sfrStatistic": "unspecified",
+        "sfrStatisticNote": "linear fit to individual galaxies with iterative robust outlier exclusion (Holland & Welsch 1977), not a median or mean"
+      }
+    }
+  ]
+}
