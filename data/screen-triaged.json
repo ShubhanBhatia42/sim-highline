@@ -1,14 +1,16 @@
 {
- "note": "Every curve the plausibility screen flags must be listed here with a reason, or scripts/screen_outliers.py fails. Listing is triage, not a verdict that the curve is right: 'Not explained' entries are open leads.",
- "triaged": {
-  "dubois21.newhorizon.bh-mbh.z1": "Per-black-hole points within 2 R_eff against population medians in the peers; not like for like.",
-  "diemer19.tng300.h2-fraction.z0": "Median over galaxies above the detection threshold only; band is the spread across nine HI-H2 models. Not explained: check against the paper.",
-  "schaye23.flamingo-l1_m10.gsmf.z0": "Includes 0.3 dex mock scatter and covers only the steep high-mass segment; expected.",
-  "baker25.qsmf.z2.5-3": "Quiescent-only mass function, flagged as not comparable with total mass functions in the record; expected.",
-  "katz23.sphinx20.size.uv-1500A.z5": "UV-1500A size against half-mass radii in the peers: a different size definition; expected.",
-  "katz23.sphinx20.size.uv-1500A.z6": "UV-1500A size against half-mass radii in the peers: a different size definition; expected.",
-  "katz23.sphinx20.size.uv-1500A.z7": "UV-1500A size against half-mass radii in the peers: a different size definition; expected.",
-  "magneticum.box2hr.jstar.z0.official": "Morphology and aperture not specified in the table header. Not explained: a real lead for the Magneticum authors.",
-  "schaye23.flamingo-l1_m10.size-active-ap100.z0.1": "Projected half-mass radius in a 100 kpc 2D aperture, active galaxies; probably a definition difference."
- }
+  "note": "Every curve the plausibility screen flags must be listed here with a reason, or scripts/screen_outliers.py fails. Listing is triage, not a verdict that the curve is right: 'Not explained' entries are open leads.",
+  "triaged": {
+    "dubois21.newhorizon.bh-mbh.z1": "Per-black-hole points within 2 R_eff against population medians in the peers; not like for like.",
+    "diemer19.tng300.h2-fraction.z0": "Median over galaxies above the detection threshold only; band is the spread across nine HI-H2 models. Not explained: check against the paper.",
+    "schaye23.flamingo-l1_m10.gsmf.z0": "Includes 0.3 dex mock scatter and covers only the steep high-mass segment; expected.",
+    "baker25.qsmf.z2.5-3": "Quiescent-only mass function, flagged as not comparable with total mass functions in the record; expected.",
+    "katz23.sphinx20.size.uv-1500A.z5": "UV-1500A size against half-mass radii in the peers: a different size definition; expected.",
+    "katz23.sphinx20.size.uv-1500A.z6": "UV-1500A size against half-mass radii in the peers: a different size definition; expected.",
+    "katz23.sphinx20.size.uv-1500A.z7": "UV-1500A size against half-mass radii in the peers: a different size definition; expected.",
+    "magneticum.box2hr.jstar.z0.official": "Morphology and aperture not specified in the table header. Not explained: a real lead for the Magneticum authors.",
+    "schaye23.flamingo-l1_m10.size-active-ap100.z0.1": "Projected half-mass radius in a 100 kpc 2D aperture, active galaxies; probably a definition difference.",
+    "camels.simba.ssfr-dist.cv.z0": "Median over all subhaloes, quiescent ones included (the distribution record's median, not a star-forming main sequence); in SIMBA the median falls to log sSFR -11.6 at 10^10.4 Msun because most galaxies there are quenched, so it sits far below the star-forming medians of the peers. Expected for this definition; the distribution view shows the shares.",
+    "vcd.bauer-et-al-2013-gama.all-galaxies.ssfr.z0.2": "The median sSFR of all GAMA galaxies (Bauer+13) lies about 1.2 dex below the median of all galaxies in GSWLC-2 (Salim+18) at the same mass and redshift (log sSFR -11.3 against -10.1 at 10^10 Msun). Both are labelled population 'all'; the SFR indicators differ (H-alpha against SED fitting with UV and infrared) and the Bauer statistic and treatment of galaxies without a detection are not stated in the compilation. Not explained: check against the paper before reading this as a tension between observations."
+  }
 }

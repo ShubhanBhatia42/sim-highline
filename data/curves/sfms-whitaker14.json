@@ -1,0 +1,269 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "whitaker14.3dhst.sfms.bpl.z0.5-1",
+      "source": "Whitaker et al. 2014 (3D-HST/CANDELS)",
+      "run": "broken power law, median stacks",
+      "kind": "observation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 0.75,
+        "zMin": 0.5,
+        "zMax": 1,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (FAST, Bruzual & Charlot 2003, Chabrier IMF, emission-line corrected)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 UV+IR SFR (Psi = 1.09e-10 (L_IR + 2.2 L_UV) Lsun, Chabrier IMF) of the median 24um-stack plus median UV luminosity of star-forming galaxies in the mass bin",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 8.4,
+        "xMax": 11.1
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "log Psi = a [log(M*/Msun) - 10.2] + b, with a = a_low below and a_high above log M* = 10.2 (Eq. 2, Table 2)",
+        "expression": "b+alow*Math.min(x-10.2,0)+ahigh*Math.max(x-10.2,0)",
+        "parameters": {
+          "alow": 0.94,
+          "ahigh": 0.14,
+          "b": 1.11,
+          "alowError": 0.03,
+          "ahighError": 0.08,
+          "bError": 0.03
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "UVJ-selected star-forming galaxies above the 90% mass-completeness limits, 3D-HST v4.0 / CANDELS (five fields)",
+        "warning": "Fit to median stacked UV+IR SFRs in 0.2 dex mass bins; the SFR of each bin includes MIPS-undetected galaxies through stacking. The paper does not measure the intrinsic scatter. The break mass 10.2 is fixed. zRepresentative is the bin centre. The paper's quadratic (Table 1) is not stored: its two-decimal coefficients do not reproduce the paper's own Table 3 (see M1 notes)."
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Whitaker et al. 2014, ApJ 795, 104 (arXiv:1407.1843), Eq. 2 and Table 2",
+        "doi": null,
+        "url": "https://arxiv.org/abs/1407.1843",
+        "retrieved": "2026-10-18"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Coefficients parsed from the arXiv source Table 2; mass range is the range of the tabulated stacks in Table 3 (8.4 to 11.1). Verification: mean a_low of the four bins = 0.97 (paper quotes 0.97+-0.06); a refit to Table 3 reproduces Table 2 within 1 sigma.",
+      "definitions": {
+        "massDefinition": "sed-total",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "population": "star-forming",
+        "sfrIndicator": "UV+IR (Spitzer/MIPS 24 um stacking for L_IR, rest-frame 2800 A for L_UV)",
+        "sfrTimescaleMyr": 100,
+        "sfrTimescaleBasis": "'This conversion implicitly assumes that galaxies continuously form stars over timescales of 100 Myr or longer.' (lower bound)",
+        "sfrStatistic": "median",
+        "massBasis": "stellar masses include a correction for emission-line contamination"
+      }
+    },
+    {
+      "id": "whitaker14.3dhst.sfms.bpl.z1-1.5",
+      "source": "Whitaker et al. 2014 (3D-HST/CANDELS)",
+      "run": "broken power law, median stacks",
+      "kind": "observation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 1.25,
+        "zMin": 1,
+        "zMax": 1.5,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (FAST, Bruzual & Charlot 2003, Chabrier IMF, emission-line corrected)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 UV+IR SFR (Psi = 1.09e-10 (L_IR + 2.2 L_UV) Lsun, Chabrier IMF) of the median 24um-stack plus median UV luminosity of star-forming galaxies in the mass bin",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 8.8,
+        "xMax": 11.3
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "log Psi = a [log(M*/Msun) - 10.2] + b, with a = a_low below and a_high above log M* = 10.2 (Eq. 2, Table 2)",
+        "expression": "b+alow*Math.min(x-10.2,0)+ahigh*Math.max(x-10.2,0)",
+        "parameters": {
+          "alow": 0.99,
+          "ahigh": 0.51,
+          "b": 1.31,
+          "alowError": 0.04,
+          "ahighError": 0.07,
+          "bError": 0.02
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "UVJ-selected star-forming galaxies above the 90% mass-completeness limits, 3D-HST v4.0 / CANDELS (five fields)",
+        "warning": "Fit to median stacked UV+IR SFRs in 0.2 dex mass bins; the SFR of each bin includes MIPS-undetected galaxies through stacking. The paper does not measure the intrinsic scatter. The break mass 10.2 is fixed. zRepresentative is the bin centre. The paper's quadratic (Table 1) is not stored: its two-decimal coefficients do not reproduce the paper's own Table 3 (see M1 notes)."
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Whitaker et al. 2014, ApJ 795, 104 (arXiv:1407.1843), Eq. 2 and Table 2",
+        "doi": null,
+        "url": "https://arxiv.org/abs/1407.1843",
+        "retrieved": "2026-10-18"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Coefficients parsed from the arXiv source Table 2; mass range is the range of the tabulated stacks in Table 3 (8.8 to 11.3). Verification: mean a_low of the four bins = 0.97 (paper quotes 0.97+-0.06); a refit to Table 3 reproduces Table 2 within 1 sigma.",
+      "definitions": {
+        "massDefinition": "sed-total",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "population": "star-forming",
+        "sfrIndicator": "UV+IR (Spitzer/MIPS 24 um stacking for L_IR, rest-frame 2800 A for L_UV)",
+        "sfrTimescaleMyr": 100,
+        "sfrTimescaleBasis": "'This conversion implicitly assumes that galaxies continuously form stars over timescales of 100 Myr or longer.' (lower bound)",
+        "sfrStatistic": "median",
+        "massBasis": "stellar masses include a correction for emission-line contamination"
+      }
+    },
+    {
+      "id": "whitaker14.3dhst.sfms.bpl.z1.5-2",
+      "source": "Whitaker et al. 2014 (3D-HST/CANDELS)",
+      "run": "broken power law, median stacks",
+      "kind": "observation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 1.75,
+        "zMin": 1.5,
+        "zMax": 2,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (FAST, Bruzual & Charlot 2003, Chabrier IMF, emission-line corrected)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 UV+IR SFR (Psi = 1.09e-10 (L_IR + 2.2 L_UV) Lsun, Chabrier IMF) of the median 24um-stack plus median UV luminosity of star-forming galaxies in the mass bin",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 9.2,
+        "xMax": 11.5
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "log Psi = a [log(M*/Msun) - 10.2] + b, with a = a_low below and a_high above log M* = 10.2 (Eq. 2, Table 2)",
+        "expression": "b+alow*Math.min(x-10.2,0)+ahigh*Math.max(x-10.2,0)",
+        "parameters": {
+          "alow": 1.04,
+          "ahigh": 0.62,
+          "b": 1.49,
+          "alowError": 0.05,
+          "ahighError": 0.06,
+          "bError": 0.02
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "UVJ-selected star-forming galaxies above the 90% mass-completeness limits, 3D-HST v4.0 / CANDELS (five fields)",
+        "warning": "Fit to median stacked UV+IR SFRs in 0.2 dex mass bins; the SFR of each bin includes MIPS-undetected galaxies through stacking. The paper does not measure the intrinsic scatter. The break mass 10.2 is fixed. zRepresentative is the bin centre. The paper's quadratic (Table 1) is not stored: its two-decimal coefficients do not reproduce the paper's own Table 3 (see M1 notes)."
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Whitaker et al. 2014, ApJ 795, 104 (arXiv:1407.1843), Eq. 2 and Table 2",
+        "doi": null,
+        "url": "https://arxiv.org/abs/1407.1843",
+        "retrieved": "2026-10-18"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Coefficients parsed from the arXiv source Table 2; mass range is the range of the tabulated stacks in Table 3 (9.2 to 11.5). Verification: mean a_low of the four bins = 0.97 (paper quotes 0.97+-0.06); a refit to Table 3 reproduces Table 2 within 1 sigma.",
+      "definitions": {
+        "massDefinition": "sed-total",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "population": "star-forming",
+        "sfrIndicator": "UV+IR (Spitzer/MIPS 24 um stacking for L_IR, rest-frame 2800 A for L_UV)",
+        "sfrTimescaleMyr": 100,
+        "sfrTimescaleBasis": "'This conversion implicitly assumes that galaxies continuously form stars over timescales of 100 Myr or longer.' (lower bound)",
+        "sfrStatistic": "median",
+        "massBasis": "stellar masses include a correction for emission-line contamination"
+      }
+    },
+    {
+      "id": "whitaker14.3dhst.sfms.bpl.z2-2.5",
+      "source": "Whitaker et al. 2014 (3D-HST/CANDELS)",
+      "run": "broken power law, median stacks",
+      "kind": "observation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 2.25,
+        "zMin": 2,
+        "zMax": 2.5,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (FAST, Bruzual & Charlot 2003, Chabrier IMF, emission-line corrected)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 UV+IR SFR (Psi = 1.09e-10 (L_IR + 2.2 L_UV) Lsun, Chabrier IMF) of the median 24um-stack plus median UV luminosity of star-forming galaxies in the mass bin",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 9.3,
+        "xMax": 11.5
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "log Psi = a [log(M*/Msun) - 10.2] + b, with a = a_low below and a_high above log M* = 10.2 (Eq. 2, Table 2)",
+        "expression": "b+alow*Math.min(x-10.2,0)+ahigh*Math.max(x-10.2,0)",
+        "parameters": {
+          "alow": 0.91,
+          "ahigh": 0.67,
+          "b": 1.62,
+          "alowError": 0.06,
+          "ahighError": 0.06,
+          "bError": 0.02
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "UVJ-selected star-forming galaxies above the 90% mass-completeness limits, 3D-HST v4.0 / CANDELS (five fields)",
+        "warning": "Fit to median stacked UV+IR SFRs in 0.2 dex mass bins; the SFR of each bin includes MIPS-undetected galaxies through stacking. The paper does not measure the intrinsic scatter. The break mass 10.2 is fixed. zRepresentative is the bin centre. The paper's quadratic (Table 1) is not stored: its two-decimal coefficients do not reproduce the paper's own Table 3 (see M1 notes)."
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Whitaker et al. 2014, ApJ 795, 104 (arXiv:1407.1843), Eq. 2 and Table 2",
+        "doi": null,
+        "url": "https://arxiv.org/abs/1407.1843",
+        "retrieved": "2026-10-18"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Coefficients parsed from the arXiv source Table 2; mass range is the range of the tabulated stacks in Table 3 (9.3 to 11.5). Verification: mean a_low of the four bins = 0.97 (paper quotes 0.97+-0.06); a refit to Table 3 reproduces Table 2 within 1 sigma.",
+      "definitions": {
+        "massDefinition": "sed-total",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "population": "star-forming",
+        "sfrIndicator": "UV+IR (Spitzer/MIPS 24 um stacking for L_IR, rest-frame 2800 A for L_UV)",
+        "sfrTimescaleMyr": 100,
+        "sfrTimescaleBasis": "'This conversion implicitly assumes that galaxies continuously form stars over timescales of 100 Myr or longer.' (lower bound)",
+        "sfrStatistic": "median",
+        "massBasis": "stellar masses include a correction for emission-line contamination"
+      }
+    }
+  ]
+}

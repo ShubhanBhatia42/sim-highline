@@ -12,7 +12,7 @@ Galaxy scaling relations from cosmological simulations and observations, with th
 
 ## Description
 
-1,699 curves from 19 simulations and 82 observational and empirical sources: stellar mass functions, star-forming main sequence, quenched fractions, sizes, metallicities, black hole scaling relations, cosmic star formation history and more, at the epochs each source provides. Every curve carries its axis definitions and units, the mass aperture, IMF, population and SFR timescale where they apply, its provenance (official table, paper table, published fit, catalogue-derived or digitized from a figure), a citation with DOI, and a flag for whether it can be used in a quantitative comparison. Also: binned galaxy-population summaries of 2,054 CAMELS simulations (IllustrisTNG and SIMBA). Nothing is interpolated or synthesised. Beta; 55% of simulation curves are digitized from published figures.
+1,736 curves from 19 simulations and 89 observational and empirical sources: stellar mass functions, star-forming main sequence, quenched fractions, sizes, metallicities, black hole scaling relations, cosmic star formation history and more, at the epochs each source provides. Every curve carries its axis definitions and units, the mass aperture, IMF, population and SFR timescale where they apply, its provenance (official table, paper table, published fit, catalogue-derived or digitized from a figure), a citation with DOI, and a flag for whether it can be used in a quantitative comparison. Also: binned galaxy-population summaries of 2,054 CAMELS simulations (IllustrisTNG and SIMBA). Nothing is interpolated or synthesised. Beta; 55% of simulation curves are digitized from published figures.
 
 ## Metadata
 

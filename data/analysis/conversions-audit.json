@@ -1,5 +1,5 @@
 {
- "records": 1719,
+ "records": 1736,
  "exactReexpressions": {
   "timeToRedshift": {
    "label": "cosmic time on the x axis turned into redshift (flat LCDM age relation)",
@@ -146,7 +146,7 @@
     "from": "Kroupa",
     "records": 1,
     "recordImf": {
-     "unspecified": 1
+     "chabrier03": 1
     }
    },
    "Reyes2011": {

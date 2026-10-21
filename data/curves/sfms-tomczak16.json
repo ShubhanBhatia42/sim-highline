@@ -1,0 +1,137 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "tomczak16.zfourge.sfms.all.evolution",
+      "source": "Tomczak et al. 2016 (ZFOURGE)",
+      "run": "all galaxies (star-forming plus quiescent)",
+      "kind": "observation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 2,
+        "zMin": 0.5,
+        "zMax": 4,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (FAST, Bruzual & Charlot 2003, Chabrier IMF, solar metallicity)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 UV+IR SFR (Psi = 1.09e-10 (L_IR + 2.2 L_UV), Chabrier IMF) of the median UV luminosity plus stacked 24-160 micron IR luminosity in bins of mass and redshift",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 8.62,
+        "xMax": 11.38
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "log Psi = s0 - log[1 + (M*/M0)^-gamma] (Eq. 1, Lee+15 form); s0 = a + b z + c z^2 and log M0 = a + b z + c z^2 (Eq. 2-3), gamma constant (fixed-gamma fit)",
+        "expression": "(s00+s01*z+s02*z*z)-Math.log10(1+Math.pow(10,-gamma*(x-(logM00+logM01*z+logM02*z*z))))",
+        "parameters": {
+          "s00": 0.195,
+          "s01": 1.157,
+          "s02": -0.143,
+          "logM00": 9.244,
+          "logM01": 0.753,
+          "logM02": -0.09,
+          "gamma": 1.118
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (star-forming plus quiescent), ZFOURGE (CDFS, COSMOS, UDS) with Spitzer 24 micron and Herschel 100/160 micron stacking",
+        "warning": "Valid for 0.5<z<4 and the stacked mass ranges; the authors warn that the parameterization 'may not extrapolate well outside of the z and/or stellar mass ranges used here'. Digitised start of the fitted lines (log M*, by z bin): {\"0.5-0.75\": 8.62, \"0.75-1.0\": 8.62, \"1.0-1.25\": 8.62, \"1.25-1.5\": 8.62, \"1.5-2.0\": 9.12, \"2.0-2.5\": 9.38, \"2.5-3.0\": 9.62, \"3.0-4.0\": 9.88}; end 11.38. The SFR of each bin is built from the median UV luminosity and the stacked IR luminosity of the bin. The 'all galaxies' relation includes quiescent galaxies (the turnover mass may be influenced by the growing quiescent population, as the authors note)."
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Tomczak et al. 2016, ApJ 817, 118 (arXiv:1510.06072), Eqs. 1-3",
+        "doi": null,
+        "url": "https://arxiv.org/abs/1510.06072",
+        "retrieved": "2026-10-18"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Coefficients parsed from the arXiv source. Verification: the expression reproduces the eight redshift-parameterised curves of the paper's Fig. 7 at the bin-centre redshifts with rms 0.0003-0.0032 dex (max 0.005) and a free fit of z returns the bin centres; it matches the paper's Table 4 stacked SFRs with rms 0.083 dex over all 80 stacks (including bins below the completeness limit).",
+      "definitions": {
+        "massDefinition": "sed-total",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "population": "all",
+        "sfrIndicator": "UV+IR (Bell05 conversion scaled to Chabrier; L_IR from Wuyts08 template fitted to stacked 24-160 micron photometry)",
+        "sfrTimescaleMyr": "unspecified",
+        "sfrStatistic": "unspecified",
+        "sfrStatisticNote": "'we aim to measure the average star-formation rate of galaxies in bins of z and stellar mass'; median L_UV, stacked L_IR"
+      }
+    },
+    {
+      "id": "tomczak16.zfourge.sfms.sf.evolution",
+      "source": "Tomczak et al. 2016 (ZFOURGE)",
+      "run": "UVJ-selected star-forming galaxies",
+      "kind": "observation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 2,
+        "zMin": 0.5,
+        "zMax": 4,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (FAST, Bruzual & Charlot 2003, Chabrier IMF, solar metallicity)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 UV+IR SFR (Psi = 1.09e-10 (L_IR + 2.2 L_UV), Chabrier IMF) of the median UV luminosity plus stacked 24-160 micron IR luminosity in bins of mass and redshift",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 8.62,
+        "xMax": 11.38
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "log Psi = s0 - log[1 + (M*/M0)^-gamma] (Eq. 1, Lee+15 form); s0 = a + b z + c z^2 and log M0 = a + b z + c z^2 (Eq. 2-3), gamma constant (fixed-gamma fit)",
+        "expression": "(s00+s01*z+s02*z*z)-Math.log10(1+Math.pow(10,-gamma*(x-(logM00+logM01*z+logM02*z*z))))",
+        "parameters": {
+          "s00": 0.448,
+          "s01": 1.22,
+          "s02": -0.174,
+          "logM00": 9.458,
+          "logM01": 0.865,
+          "logM02": -0.132,
+          "gamma": 1.091
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "UVJ-selected star-forming galaxies, ZFOURGE (CDFS, COSMOS, UDS) with Spitzer 24 micron and Herschel 100/160 micron stacking",
+        "warning": "Valid for 0.5<z<4 and the stacked mass ranges; the authors warn that the parameterization 'may not extrapolate well outside of the z and/or stellar mass ranges used here'. Digitised start of the fitted lines (log M*, by z bin): {\"0.5-0.75\": 8.62, \"0.75-1.0\": 8.62, \"1.0-1.25\": 8.62, \"1.25-1.5\": 8.62, \"1.5-2.0\": 9.12, \"2.0-2.5\": 9.38, \"2.5-3.0\": 9.62, \"3.0-4.0\": 9.88}; end 11.38. The SFR of each bin is built from the median UV luminosity and the stacked IR luminosity of the bin. The 'all galaxies' relation includes quiescent galaxies (the turnover mass may be influenced by the growing quiescent population, as the authors note)."
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Tomczak et al. 2016, ApJ 817, 118 (arXiv:1510.06072), Eqs. 1-3",
+        "doi": null,
+        "url": "https://arxiv.org/abs/1510.06072",
+        "retrieved": "2026-10-18"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Coefficients parsed from the arXiv source. Verification: the expression reproduces the eight redshift-parameterised curves of the paper's Fig. 8 at the bin-centre redshifts with rms 0.0003-0.0032 dex (max 0.005) and a free fit of z returns the bin centres; it matches the paper's Table 4 stacked SFRs with rms 0.074 dex over all 80 stacks (including bins below the completeness limit).",
+      "definitions": {
+        "massDefinition": "sed-total",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "population": "star-forming",
+        "sfrIndicator": "UV+IR (Bell05 conversion scaled to Chabrier; L_IR from Wuyts08 template fitted to stacked 24-160 micron photometry)",
+        "sfrTimescaleMyr": "unspecified",
+        "sfrStatistic": "unspecified",
+        "sfrStatisticNote": "'we aim to measure the average star-formation rate of galaxies in bins of z and stellar mass'; median L_UV, stacked L_IR"
+      }
+    }
+  ]
+}

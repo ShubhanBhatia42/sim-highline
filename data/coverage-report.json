@@ -2,10 +2,10 @@
   "schemaVersion": "1.0.0",
   "generatedAt": "2026-10-18",
   "totals": {
-    "records": 1699,
-    "sources": 101,
-    "relations": 27,
-    "rankable": 731,
+    "records": 1736,
+    "sources": 108,
+    "relations": 28,
+    "rankable": 768,
     "contextOnly": 968
   },
   "byRelation": {
@@ -158,6 +158,31 @@
       "tiers": [
         "digitized-figure",
         "published-fit"
+      ]
+    },
+    "colour": {
+      "records": 5,
+      "epochs": [
+        0,
+        0.95,
+        2.15,
+        3,
+        4
+      ],
+      "epochRanges": [
+        "0.95:0.95",
+        "0:0",
+        "2.15:2.15",
+        "3:3",
+        "4:4"
+      ],
+      "relations": [
+        "colour"
+      ],
+      "rankable": 5,
+      "contextOnly": 0,
+      "tiers": [
+        "catalog-derived"
       ]
     },
     "dmf": {
@@ -703,22 +728,32 @@
       ]
     },
     "sfms": {
-      "records": 116,
+      "records": 132,
       "epochs": [
         0,
         0.033,
         0.05,
         0.066,
         0.252,
+        0.36,
+        0.55,
+        0.7,
+        0.75,
         0.802,
+        0.85,
         0.901,
         0.963,
+        0.99,
         0.995,
         1,
+        1.19,
         1.24,
+        1.25,
         1.722,
+        1.75,
         1.98,
         2,
+        2.25,
         2.445,
         3,
         3.65,
@@ -739,20 +774,31 @@
         "0.05:0.05",
         "0.066:0.066",
         "0.252:0.252",
+        "0.25:0.46",
+        "0.2:3",
+        "0.3:5",
+        "0.46:0.63",
         "0.5:1",
+        "0.5:4",
+        "0.63:0.78",
+        "0.78:0.93",
         "0.901:0.901",
+        "0.93:1.11",
         "0.963:0.963",
         "0.995:0.995",
         "0:0",
         "0:0.1",
         "0:6",
+        "1.11:1.3",
         "1.5:2",
         "1.98:1.98",
         "10:10",
         "17:17",
         "1:1",
         "1:1.5",
+        "1:6",
         "2:2",
+        "2:2.5",
         "2:3",
         "3:3",
         "3:5",
@@ -769,7 +815,7 @@
       "relations": [
         "sfms"
       ],
-      "rankable": 75,
+      "rankable": 91,
       "contextOnly": 41,
       "tiers": [
         "catalog-derived",
@@ -1122,15 +1168,18 @@
       ]
     },
     "ssfr": {
-      "records": 48,
+      "records": 64,
       "epochs": [
         0,
         0.1,
         0.2,
         0.25,
         0.3,
+        0.95,
         1,
         2,
+        2.15,
+        3,
         4,
         8,
         9,
@@ -1141,17 +1190,21 @@
       ],
       "epochRanges": [
         "0.01:0.2",
+        "0.01:0.3",
         "0.05:0.32",
         "0.1:0.1",
         "0.25:0.25",
         "0.3:0.3",
+        "0.95:0.95",
         "0:0",
         "10:10",
         "11:11",
         "12:12",
         "13:13",
         "1:1",
+        "2.15:2.15",
         "2:2",
+        "3:3",
         "4:4",
         "8:8",
         "9:9"
@@ -1159,9 +1212,10 @@
       "relations": [
         "ssfr"
       ],
-      "rankable": 9,
+      "rankable": 25,
       "contextOnly": 39,
       "tiers": [
+        "catalog-derived",
         "digitized-figure",
         "published-table"
       ]
@@ -1364,8 +1418,11 @@
       ]
     },
     "ASTRID": {
-      "records": 11,
+      "records": 16,
       "epochs": [
+        0,
+        0.95,
+        2.15,
         3,
         4,
         6,
@@ -1374,7 +1431,10 @@
         10
       ],
       "epochRanges": [
+        "0.95:0.95",
+        "0:0",
         "10:10",
+        "2.15:2.15",
         "2.815287353744129:11.984527510362348",
         "3:3",
         "4:4",
@@ -1384,11 +1444,13 @@
       "relations": [
         "sfrd",
         "shmr",
+        "ssfr",
         "zstar"
       ],
-      "rankable": 0,
+      "rankable": 5,
       "contextOnly": 11,
       "tiers": [
+        "catalog-derived",
         "digitized-figure"
       ]
     },
@@ -2686,7 +2748,7 @@
       ]
     },
     "IllustrisTNG": {
-      "records": 181,
+      "records": 191,
       "epochs": [
         0,
         0.1,
@@ -2695,9 +2757,11 @@
         0.5,
         0.65,
         0.75,
+        0.95,
         1,
         1.75,
         2,
+        2.15,
         3,
         4,
         5,
@@ -2723,10 +2787,12 @@
         "0.5:0.5",
         "0.65:0.65",
         "0.75:0.75",
+        "0.95:0.95",
         "0:0",
         "1.75:1.75",
         "10:10",
         "1:1",
+        "2.15:2.15",
         "2:2",
         "3:3",
         "4:4",
@@ -2738,6 +2804,7 @@
       ],
       "relations": [
         "bh",
+        "colour",
         "gas",
         "gsmf",
         "h2-fraction",
@@ -2752,12 +2819,29 @@
         "ssfr",
         "zstar"
       ],
-      "rankable": 60,
+      "rankable": 70,
       "contextOnly": 121,
       "tiers": [
         "catalog-derived",
         "digitized-figure",
         "published-table"
+      ]
+    },
+    "Iyer et al. 2018 (CANDELS GOODS-S, Dense Basis SFHs)": {
+      "records": 1,
+      "epochs": [
+        3
+      ],
+      "epochRanges": [
+        "1:6"
+      ],
+      "relations": [
+        "sfms"
+      ],
+      "rankable": 1,
+      "contextOnly": 0,
+      "tiers": [
+        "published-fit"
       ]
     },
     "JWST+ground MZR compilation (Sharda+26 repository)": {
@@ -2915,6 +2999,50 @@
       "contextOnly": 0,
       "tiers": [
         "published-table"
+      ]
+    },
+    "Lee et al. 2015 (COSMOS, Herschel/Spitzer/NRK)": {
+      "records": 6,
+      "epochs": [
+        0.36,
+        0.55,
+        0.7,
+        0.85,
+        0.99,
+        1.19
+      ],
+      "epochRanges": [
+        "0.25:0.46",
+        "0.46:0.63",
+        "0.63:0.78",
+        "0.78:0.93",
+        "0.93:1.11",
+        "1.11:1.3"
+      ],
+      "relations": [
+        "sfms"
+      ],
+      "rankable": 6,
+      "contextOnly": 0,
+      "tiers": [
+        "published-fit"
+      ]
+    },
+    "Leja et al. 2022 (COSMOS-2015 + 3D-HST, Prospector-alpha)": {
+      "records": 2,
+      "epochs": [
+        1
+      ],
+      "epochRanges": [
+        "0.2:3"
+      ],
+      "relations": [
+        "sfms"
+      ],
+      "rankable": 2,
+      "contextOnly": 0,
+      "tiers": [
+        "published-fit"
       ]
     },
     "Lewis et al. 2024 (LEGA-C)": {
@@ -3404,13 +3532,49 @@
         "published-table"
       ]
     },
+    "Salim, Boquien & Lee 2018 (GSWLC-2)": {
+      "records": 1,
+      "epochs": [
+        0.1
+      ],
+      "epochRanges": [
+        "0.01:0.3"
+      ],
+      "relations": [
+        "ssfr"
+      ],
+      "rankable": 1,
+      "contextOnly": 0,
+      "tiers": [
+        "catalog-derived"
+      ]
+    },
+    "Schreiber et al. 2015 (Herschel stacking)": {
+      "records": 1,
+      "epochs": [
+        2
+      ],
+      "epochRanges": [
+        "0.3:5"
+      ],
+      "relations": [
+        "sfms"
+      ],
+      "rankable": 1,
+      "contextOnly": 0,
+      "tiers": [
+        "published-fit"
+      ]
+    },
     "SIMBA": {
-      "records": 68,
+      "records": 73,
       "epochs": [
         0,
         0.1,
+        0.95,
         1,
         2,
+        2.15,
         3,
         4,
         5,
@@ -3422,8 +3586,10 @@
       "epochRanges": [
         "0.001:8.9",
         "0.1:0.1",
+        "0.95:0.95",
         "0:0",
         "1:1",
+        "2.15:2.15",
         "2:2",
         "3:3",
         "4:4",
@@ -3444,7 +3610,7 @@
         "sfrd",
         "ssfr"
       ],
-      "rankable": 27,
+      "rankable": 32,
       "contextOnly": 41,
       "tiers": [
         "catalog-derived",
@@ -3747,6 +3913,23 @@
         "published-table"
       ]
     },
+    "Tomczak et al. 2016 (ZFOURGE)": {
+      "records": 2,
+      "epochs": [
+        2
+      ],
+      "epochRanges": [
+        "0.5:4"
+      ],
+      "relations": [
+        "sfms"
+      ],
+      "rankable": 2,
+      "contextOnly": 0,
+      "tiers": [
+        "published-fit"
+      ]
+    },
     "Tremonti et al. 2004 (SDSS)": {
       "records": 1,
       "epochs": [
@@ -3826,6 +4009,29 @@
       "contextOnly": 0,
       "tiers": [
         "published-table"
+      ]
+    },
+    "Whitaker et al. 2014 (3D-HST/CANDELS)": {
+      "records": 4,
+      "epochs": [
+        0.75,
+        1.25,
+        1.75,
+        2.25
+      ],
+      "epochRanges": [
+        "0.5:1",
+        "1.5:2",
+        "1:1.5",
+        "2:2.5"
+      ],
+      "relations": [
+        "sfms"
+      ],
+      "rankable": 4,
+      "contextOnly": 0,
+      "tiers": [
+        "published-fit"
       ]
     },
     "Wright et al. 2017 (GAMA-II)": {

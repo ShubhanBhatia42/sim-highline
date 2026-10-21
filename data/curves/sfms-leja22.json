@@ -1,0 +1,169 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "leja22.prospector.sfms.ridge.evolution",
+      "source": "Leja et al. 2022 (COSMOS-2015 + 3D-HST, Prospector-alpha)",
+      "run": "ridge, broken power law",
+      "kind": "observation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 1,
+        "zMin": 0.2,
+        "zMax": 3,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass from Prospector-alpha SED fitting (Chabrier IMF)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 SFR averaged over the most recent 100 Myr, ridge (mode of the SFR distribution at fixed mass and redshift) of the full galaxy population, no star-forming pre-selection",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 8.82,
+        "xMax": 11.3
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "log SFR = a (M - Mt) + c for M > Mt and b (M - Mt) + c for M <= Mt, M = log10 M*/Msun; each of a, b, c, Mt = X0 + X1 z + X2 z^2 (Eq. 3-4, Table 1)",
+        "expression": "((a0+a1*z+a2*z*z)*(x-(Mt0+Mt1*z+Mt2*z*z))*(x>(Mt0+Mt1*z+Mt2*z*z)?1:0)+(b0+b1*z+b2*z*z)*(x-(Mt0+Mt1*z+Mt2*z*z))*(x>(Mt0+Mt1*z+Mt2*z*z)?0:1)+(c0+c1*z+c2*z*z))",
+        "parameters": {
+          "a0": 0.03746,
+          "a1": 0.3448,
+          "a2": -0.1156,
+          "a0Error": 0.01739,
+          "a1Error": 0.0297,
+          "a2Error": 0.0107,
+          "b0": 0.9605,
+          "b1": 0.0499,
+          "b2": -0.05984,
+          "b0Error": 0.01,
+          "b1Error": 0.01518,
+          "b2Error": 0.00482,
+          "c0": 0.2516,
+          "c1": 1.118,
+          "c2": -0.2006,
+          "c0Error": 0.0082,
+          "c1Error": 0.013,
+          "c2Error": 0.0039,
+          "Mt0": 10.22,
+          "Mt1": 0.3826,
+          "Mt2": -0.04491,
+          "Mt0Error": 0.01,
+          "Mt1Error": 0.0188,
+          "Mt2Error": 0.00613
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies (no star-forming pre-selection); the ridge is the density peak of the star-forming sequence",
+        "warning": "Fit to the normalizing-flow density field over 0.2<z<3.0, mass-complete samples (COSMOS-2015 at 0.2<z<0.8, 3D-HST at 0.5<z<3.0; limits from Leja+20, raised by 0.1-0.25 dex at some redshifts). Mass range shown in the paper's fit figure is log M* = 8.82 to 11.3; this range is read from the digitised plot, the paper does not state it. Deviations of the fit from the density field are <~0.1 dex (paper). SED-based SFRs and masses (Prospector-alpha, nonparametric continuity SFH) sit 0.2-0.5 dex below UV+IR based sequences, see the paper's Section 5."
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Leja et al. 2022, ApJ 936, 165 (arXiv:2110.04314), Eqs. 3-4 and Table 1",
+        "doi": null,
+        "url": "https://arxiv.org/abs/2110.04314",
+        "retrieved": "2026-10-18"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Coefficients parsed from the arXiv source Table 1. Verification: the expression with the quoted coefficients reproduces the six solid fit lines of the paper's parameterized-moments figure (z=0.3, 0.6, 1.0, 1.5, 2.0, 2.7) with rms 0.002-0.004 dex (max 0.006), and a free fit of z to each line returns the legend redshift to <=0.012. The plotted lines start at log M* = {\"0.3\": 8.99, \"0.6\": 8.82, \"1.0\": 9.07, \"1.5\": 9.64, \"2.0\": 9.86, \"2.7\": 10.08} (by redshift; the mass-complete limits) and end at 11.3. Cosmology: Om = Omega_b + Omega_c = 0.0464 + 0.235 = 0.2814 (WMAP9, H0=69.7). The paper does not say here whether the stellar mass is the surviving or the formed mass.",
+      "definitions": {
+        "massDefinition": "sed-total",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 69.7,
+          "Om": 0.2814
+        },
+        "population": "all",
+        "sfrIndicator": "Prospector-alpha SED fit to 0.2-24 micron photometry",
+        "sfrTimescaleMyr": 100,
+        "sfrStatistic": "mode"
+      }
+    },
+    {
+      "id": "leja22.prospector.sfms.mean.evolution",
+      "source": "Leja et al. 2022 (COSMOS-2015 + 3D-HST, Prospector-alpha)",
+      "run": "mean, broken power law",
+      "kind": "observation",
+      "relation": "sfms",
+      "epoch": {
+        "zRepresentative": 1,
+        "zMin": 0.2,
+        "zMax": 3,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass from Prospector-alpha SED fitting (Chabrier IMF)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 SFR averaged over the most recent 100 Myr, mean SFR (not mean log SFR) of the full galaxy population including quiescent galaxies",
+        "yUnit": "log10(Msun/yr)"
+      },
+      "domain": {
+        "xMin": 8.82,
+        "xMax": 11.3
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "log SFR = a (M - Mt) + c for M > Mt and b (M - Mt) + c for M <= Mt, M = log10 M*/Msun; each of a, b, c, Mt = X0 + X1 z + X2 z^2 (Eq. 3-4, Table 1)",
+        "expression": "((a0+a1*z+a2*z*z)*(x-(Mt0+Mt1*z+Mt2*z*z))*(x>(Mt0+Mt1*z+Mt2*z*z)?1:0)+(b0+b1*z+b2*z*z)*(x-(Mt0+Mt1*z+Mt2*z*z))*(x>(Mt0+Mt1*z+Mt2*z*z)?0:1)+(c0+c1*z+c2*z*z))",
+        "parameters": {
+          "a0": -0.06707,
+          "a1": 0.3684,
+          "a2": -0.1047,
+          "a0Error": 0.00821,
+          "a1Error": 0.0128,
+          "a2Error": 0.0044,
+          "b0": 0.8552,
+          "b1": -0.101,
+          "b2": -0.001816,
+          "b0Error": 0.0068,
+          "b1Error": 0.0107,
+          "b2Error": 0.00329,
+          "c0": 0.2148,
+          "c1": 0.8137,
+          "c2": -0.08052,
+          "c0Error": 0.0045,
+          "c1Error": 0.0069,
+          "c2Error": 0.00219,
+          "Mt0": 10.29,
+          "Mt1": -0.1284,
+          "Mt2": 0.1203,
+          "Mt0Error": 0.01,
+          "Mt1Error": 0.0135,
+          "Mt2Error": 0.0044
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies including quiescent",
+        "warning": "Fit to the normalizing-flow density field over 0.2<z<3.0, mass-complete samples (COSMOS-2015 at 0.2<z<0.8, 3D-HST at 0.5<z<3.0; limits from Leja+20, raised by 0.1-0.25 dex at some redshifts). Mass range shown in the paper's fit figure is log M* = 8.82 to 11.3; this range is read from the digitised plot, the paper does not state it. Deviations of the fit from the density field are <~0.1 dex (paper). SED-based SFRs and masses (Prospector-alpha, nonparametric continuity SFH) sit 0.2-0.5 dex below UV+IR based sequences, see the paper's Section 5."
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Leja et al. 2022, ApJ 936, 165 (arXiv:2110.04314), Eqs. 3-4 and Table 1",
+        "doi": null,
+        "url": "https://arxiv.org/abs/2110.04314",
+        "retrieved": "2026-10-18"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Coefficients parsed from the arXiv source Table 1. Verification: the expression with the quoted coefficients reproduces the six solid fit lines of the paper's parameterized-moments figure (z=0.3, 0.6, 1.0, 1.5, 2.0, 2.7) with rms 0.002-0.004 dex (max 0.006), and a free fit of z to each line returns the legend redshift to <=0.012. The plotted lines start at log M* = {\"0.3\": 8.99, \"0.6\": 8.82, \"1.0\": 9.07, \"1.5\": 9.64, \"2.0\": 9.86, \"2.7\": 10.08} (by redshift; the mass-complete limits) and end at 11.3. Cosmology: Om = Omega_b + Omega_c = 0.0464 + 0.235 = 0.2814 (WMAP9, H0=69.7). The paper does not say here whether the stellar mass is the surviving or the formed mass.",
+      "definitions": {
+        "massDefinition": "sed-total",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 69.7,
+          "Om": 0.2814
+        },
+        "population": "all",
+        "sfrIndicator": "Prospector-alpha SED fit to 0.2-24 micron photometry",
+        "sfrTimescaleMyr": 100,
+        "sfrStatistic": "mean"
+      }
+    }
+  ]
+}
