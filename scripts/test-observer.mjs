@@ -1,7 +1,7 @@
 // Tests of observer-lib.js (Gaussian mass scatter, mass offset, completeness, sSFR detection floor): closed forms and an independent quadrature, invariants, equality with the Python
 // implementation on tests/fixtures/observer-fixture.json (written by scripts/test_observer.py), and a check that the battery fails if the convolution is a no-op.
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
 
@@ -11,10 +11,10 @@ const file = fileURLToPath(new URL("../observer-lib.js", import.meta.url));
 const ctx = { globalThis: {} };
 vm.runInNewContext(await readFile(file, "utf8"), ctx, { filename: file });   // a filename, so coverage tools attribute the lines to observer-lib.js
 const O = ctx.globalThis.SimHighlineObserver;
-const cfile = fileURLToPath(new URL("../compare.js", import.meta.url));
-const cctx = { globalThis: {} };
-vm.runInNewContext(await readFile(cfile, "utf8"), cctx, { filename: cfile });
-const C = cctx.globalThis.SimHighlineCompare;
+const cfile = fileURLToPath(new URL("../compare.js", import.meta.url)), efile = fileURLToPath(new URL("../export-lib.js", import.meta.url));
+vm.runInNewContext(await readFile(cfile, "utf8"), ctx, { filename: cfile });      // export-lib.js reads compare.js's evaluator from the same context
+vm.runInNewContext(await readFile(efile, "utf8"), ctx, { filename: efile });
+const C = ctx.globalThis.SimHighlineCompare;
 
 const arange = (a, b, s) => { const out = []; for (let i = 0; a + i * s <= b + 1e-9; i++) out.push(Math.round((a + i * s) * 1e6) / 1e6); return out; };
 const ptsFrom = (f, xs, band) => xs.map(x => ({ x, y: f(x), ...(band ? { yLow: f(x) - band, yHigh: f(x) + band } : {}) }));
@@ -204,4 +204,24 @@ const half = { ...O, scatterPoints: (p, s, o) => O.scatterPoints(p, typeof s ===
 for (const [name, broken] of [["no-op", noop.scatterPoints], ["half the scatter", half.scatterPoints]]) assert.throws(() => checks(broken), undefined, `the checks did not fail for a ${name} convolution`);
 assert.throws(() => parity(noop), undefined, "the parity test did not fail for a no-op convolution");
 
-console.log(`observer tests passed: ${n1 + n2} check groups, analytic and quadrature agreement, invariants, ${fx.cases.length} fixture cases equal to the Python results, and a no-op convolution is caught`);
+// the saved measurement (data/analysis/observer-layer.json, written by the Python script) is reproduced for a sample of its pairs from the curves, with compare.js for the offsets and observer-lib.js for the scatter
+{
+  const saved = JSON.parse(await readFile(new URL("../data/analysis/observer-layer.json", import.meta.url), "utf8")), recs = {};
+  for (const f of (await readdir(new URL("../data/curves/", import.meta.url))).filter(f => f.endsWith(".json")))
+    for (const r of JSON.parse(await readFile(new URL(`../data/curves/${f}`, import.meta.url), "utf8")).records) recs[r.id] = r;
+  const X = ctx.globalThis.SimHighlineExport;
+  const pts = r => (r.representation.type === "parametric" ? X.sampled(r) : r.representation.points).filter(p => Number.isFinite(p.x) && Number.isFinite(p.y)).sort((a, b) => a.x - b.x);
+  const kind = r => r.representation.intervalKind === "uncertainty" ? "uncertainty" : "unspecified";
+  let worst = 0, checked = 0;
+  for (let i = 0; i < saved.pairs.length; i += 9) {
+    const p = saved.pairs[i], s = recs[p.sim], o = recs[p.obs], sp = pts(s), op = pts(o);
+    const off = A => { const st = C.summarize(C.residuals(A, op, kind(s), kind(o))); assert(st, `${p.sim} against ${p.obs}: no summary`); return st.median; };
+    worst = Math.max(worst, Math.abs(off(sp) - p.before));
+    for (const sg of saved.settings.sigmasDex) worst = Math.max(worst, Math.abs(off(O.scatterPoints(sp, sg)) - p.after[String(sg)]));
+    checked++;
+  }
+  assert(checked >= 50 && worst < 1e-4, `the saved measurement is not reproduced from the curves (largest difference ${worst}); run python3 scripts/analyze_observer_layer.py`);
+  var savedNote = `${checked} saved pairs reproduced from the curves to ${worst.toExponential(1)} dex`;
+}
+
+console.log(`observer tests passed: ${n1 + n2} check groups, analytic and quadrature agreement, invariants, ${fx.cases.length} fixture cases equal to the Python results, and a no-op convolution is caught; ${savedNote}`);
