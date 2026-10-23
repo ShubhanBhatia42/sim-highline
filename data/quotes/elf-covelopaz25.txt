@@ -1,0 +1,15 @@
+main.tex:111: We compute the observed H$\alpha$ luminosity functions (LFs) in three bins centered at $z\sim4.45$, $5.30$, and $6.15$
+main.tex:134: we adopt a concordance flat $\Lambda$CDM cosmology with $H_0=70\,\textrm{km}\,\textrm{s}^{-1}\,\textrm{Mpc}^{-1}$, $\Omega_m=0.3$, and $\Omega_\Lambda=0.7$.
+main.tex:179: While the grism data measures the full (spatially resolved) emission line without flux loss (in principle)
+main.tex:331: one for all CONGRESS data, with $3.8<z<5.1$; and two for FRESCO data, splitting our redshift range in half: $4.9<z<5.7$, and $5.7<z<6.6$.
+main.tex:331: We remove the broad-line H$\alpha$ emitters from the luminosity function calculation, as their H$\alpha$ flux does not only probe star formation
+main.tex:331: This resulted in 527 CONGRESS sources at $z\sim4.45$, 379 FRESCO sources at $z\sim5.3$, and 94 FRESCO sources in the last bin centered at $z\sim6.15$.
+main.tex:333: For each redshift bin, we derive the observed H$\alpha$ luminosity function following the $V/V_\textrm{max}$ method
+main.tex:248: Our final catalog only contains sources with an H$\alpha$ flux $\textrm{S/N}>5$
+main.tex:390: \phi=\frac{dn}{d\log{L}}=\ln{(10)}\,\phi^*
+main.tex:251: one line of H$\alpha$ ($6\,564.59\AA$), a doublet of [NII] ($6\,549.84\AA$, $6\,585.23\AA$), and a doublet of [SII]
+main.tex:384: The completeness is a multiplication of the detection, extraction, line detection, and visual inspection completeness computed for each source
+main.tex:339: The uncertainty of the number density includes Poisson noise, the completeness uncertainty, as well as cosmic variance following \citet{Trenti+08}
+check z=4.45: {"sources": 321, "sources_in_bin": 527, "rms_z_vs_fit": 0.76, "max_abs_z": 1.22}
+check z=5.3: {"sources": 294, "sources_in_bin": 379, "rms_z_vs_fit": 0.31, "max_abs_z": 0.64}
+check z=6.15: {"sources": 76, "sources_in_bin": 94, "rms_z_vs_fit": 0.26, "max_abs_z": 0.41}
