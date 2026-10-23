@@ -531,7 +531,7 @@ function dataNeeded(){
   return[...s];
 }
 const dataMissing=()=>dataNeeded().filter(f=>dataOf.get(f)?.st!=="done");
-const dataPending=()=>dataWaiters.length>0||dataMissing().length>0;
+const dataPending=()=>dataWaiters.some(w=>w.always||w.sig===dataSig())||dataMissing().length>0;
 function dataWhy(e){
   if(location.protocol==="file:")return"a page opened from a file cannot read its data files; open the Explorer from the sim-highline site";
   if(e&&e.name==="AbortError")return"it took too long";
@@ -557,20 +557,22 @@ function dataStart(f,retry){
     .finally(()=>{clearTimeout(limit);if(dataOf.get(f)===st){st.ctl=null;dataChanged()}});
   return st;
 }
-function dataWait(fn){
+/* A queued redraw is dropped when the relation or the view has been changed since it was queued (the later change draws, or queues, for itself); the first drawing of the page is never dropped. */
+const dataSig=()=>state.mode+"|"+state.rel;
+function dataWait(fn,always){
   const miss=dataMissing();if(!miss.length)return false;
-  dataWaiters.push(fn);let started=false;
+  dataWaiters=dataWaiters.filter(w=>w.always||w.sig===dataSig());dataWaiters.push({fn,sig:dataSig(),always});let started=false;
   for(const f of miss)if(!dataOf.has(f)){dataStart(f);started=true}
   dataShell();dataStatus();if(started)setTimeout(dataStatus,LOAD_SLOW+50);
   return true;
 }
-const onData=fn=>{if(!dataWait(fn))fn()};
+const onData=(fn,always)=>{if(!dataWait(fn,always))fn()};
 function dataChanged(){
   if(dataMissing().length){dataStatus();return}
   const b=$("boot");if(b&&b.dataset.dl){delete b.dataset.dl;b.classList.remove("dl","failed");b.setAttribute("role","status");b.querySelector("p").textContent="Loading the dataset…"}
   const e=$("empty");if(e.querySelector(".dstat")){e.hidden=true;e.textContent=""}
   const ws=dataWaiters;dataWaiters=[];
-  for(const fn of ws){try{fn()}catch(e){setTimeout(()=>{throw e})}}
+  for(const w of ws){if(!w.always&&w.sig!==dataSig())continue;try{w.fn()}catch(e){setTimeout(()=>{throw e})}}
   if(state.panel&&panelStale)try{renderPanel()}catch(e){setTimeout(()=>{throw e})}
 }
 /* while a relation's data is on its way: the relation list and the title are drawn, the plot area says what is happening */
@@ -1397,7 +1399,7 @@ if(state.mode==="atlas")renderAtlas();if(state.mode==="tension")renderTension();
 renderAll(false);
 if(state.sel)openRecord(state.sel);else if(wantMine||state.openMine)openPanel("mine");
 booted=true;helloShow();requestAnimationFrame(()=>requestAnimationFrame(bootGo));setTimeout(bootGo,250);
-});
+},true);
 {const KEY="sh-guide-seen";let seen=false;try{seen=!!localStorage.getItem(KEY)}catch(e){}
 const h=$("hello"),done=()=>{h.hidden=true;try{localStorage.setItem(KEY,"1")}catch(e){}};
 helloShow=()=>{if(!seen&&!state.embed&&!/(^#|&)(sel|run|pn)=/.test(location.hash))h.hidden=false};if(booted)helloShow();
