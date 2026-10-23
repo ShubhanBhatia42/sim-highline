@@ -78,7 +78,7 @@ a:focus-visible,[tabindex]:focus-visible,button:focus-visible,input:focus-visibl
 .sitenav a{font:500 11.5px/1 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--ink2);text-decoration:none;padding:6px 0;border-bottom:1px solid transparent;white-space:nowrap}
 .sitenav a:hover{color:var(--ink);border-bottom-color:var(--ink)}
 .sitenav .more{display:none}
-@media (min-width:1400px){.sitenav .more{display:inline}}
+@media (min-width:1480px){.sitenav .more{display:inline}}
 .relsel{grid-area:sel;display:none;padding:8px 12px;border-bottom:1px solid var(--rule);background:var(--bg)}
 .relsel select{width:100%;height:40px;padding:0 10px;border:1px solid var(--rule-strong);background:var(--bg);font-size:15px;font-weight:500}
 .rail{grid-area:rail;overflow:auto;padding:14px 10px 28px;border-right:1px solid var(--rule);background:var(--panel)}
@@ -609,9 +609,10 @@ function chart(spec){
   if(!series.length){svg.innerHTML="";svg.removeAttribute("viewBox");lastPaths=new Map();return false}
   let xs=[],ys=[];
   const fitLike=o=>/\bfit\b/i.test(o.r.run||""),core=series.filter(o=>!o.obs&&!fitLike(o)),rs=core.length?core:series.filter(o=>!o.obs);
-  for(const o of rs)for(const p of o.pts){xs.push(p.x);ys.push(p.y);if(state.bands&&Number.isFinite(p.lo))ys.push(p.lo);if(state.bands&&Number.isFinite(p.hi))ys.push(p.hi)}
+  const obsOnly=!rs.length;  // a relation with observations and no simulation yet: the axes follow the observations
+  for(const o of (obsOnly?series:rs))for(const p of o.pts){xs.push(p.x);ys.push(p.y);if(state.bands&&Number.isFinite(p.lo))ys.push(p.lo);if(state.bands&&Number.isFinite(p.hi))ys.push(p.hi)}
   const xmin=Math.min(...xs),xmax=Math.max(...xs);
-  for(const o of series.filter(o=>o.obs))for(const p of o.pts)if(p.x>=xmin-.5&&p.x<=xmax+.5){xs.push(p.x);ys.push(p.y)}
+  if(!obsOnly)for(const o of series.filter(o=>o.obs))for(const p of o.pts)if(p.x>=xmin-.5&&p.x<=xmax+.5){xs.push(p.x);ys.push(p.y)}
   const upts=state.user&&state.user.pts.length&&spec.user!==false?tx(state.user.pts):[];for(const p of upts){xs.push(p.x);ys.push(p.y)}
   ys.sort((a,b)=>a-b);const q=k=>ys[Math.floor(k*(ys.length-1))];
   let x0=Math.min(...xs),x1=Math.max(...xs),y0=ys.length>40?q(.01):ys[0],y1=ys.length>40?q(.99):ys[ys.length-1];
@@ -692,7 +693,7 @@ function renderPlot(animate){
   if(state.resid&&state.ref){const rs=residualSeries(z);series=rs.series;refRec=rs.ref;res=true}
   else series=relationSeries(z);
   const hasSim=series.some(o=>!o.obs);
-  if(!hasSim){svg.innerHTML="";$("empty").hidden=false;$("empty").textContent=res?(refRec?"No overlapping curves to compare with the reference at this epoch.":"The reference has no data at this epoch."):cur.length?"Everything with data here is hidden by the current filters.":`No simulation data for ${meta.t.toLowerCase()} at z = ${fmtZ(z)}.`;lastPaths=new Map();return}
+  if(!hasSim&&!(series.length&&!res)){svg.innerHTML="";$("empty").hidden=false;$("empty").textContent=res?(refRec?"No overlapping curves to compare with the reference at this epoch.":"The reference has no data at this epoch."):cur.length?"Everything with data here is hidden by the current filters.":`No simulation data for ${meta.t.toLowerCase()} at z = ${fmtZ(z)}.`;lastPaths=new Map();return}
   $("empty").hidden=true;
   ok=chart({series,xrev:!!meta.xrev,xlab,ylab:res?`Δ ${ylab} (curve − reference)`:ylab,zero:res,fit:!res,user:!res,xfmt:axisFmt(meta,"x"),yfmt:res?undefined:axisFmt(meta,"y")});
   svg.setAttribute("aria-label",`${meta.t} at redshift ${fmtZ(z)}`);
@@ -705,6 +706,7 @@ function renderChip(){
   if(state.mode==="evol")t=`Value at fixed x; points are published epochs, lines only join consecutive ones`;
   else if(state.resid&&state.ref)t=`Residuals vs ${esc(ulabel(state.ref))} <button id="chipX">exit</button>`;
   else if(state.evo)t=`All epochs of ${esc(ulabel(state.evo))} <span class="ramp" style="display:inline-flex"><span>z low</span><i></i><span>high</span></span> <button id="chipX">exit</button>`;
+  else if(ns===0)t=`No simulation has been added for this relation yet: showing the observations only (see What exists)`;
   else if(ns<3)t=`Sparse so far: ${ns} simulation${ns>1?"s":""} (see What exists)`;
   c.innerHTML=t;c.classList.toggle("on",!!t);const b=$("chipX");if(b)b.onclick=()=>{state.resid=false;state.evo=null;renderAll(true)};
 }
@@ -938,7 +940,7 @@ function mineHtml(){
   <input type="text" id="uName" placeholder="label" value="${esc(u?.name||"")}" style="margin-bottom:6px">
   <textarea id="uText" placeholder="x,y per line">${esc(u?.raw||"")}</textarea>
   <label><input type="checkbox" id="uLin" ${u?.linear?"checked":""}> values are linear, not log₁₀</label>
-  <div class="btns"><button class="btn" id="uPlot">Plot</button><button class="btn" id="uEx" type="button" title="Fills the box with a published simulation curve shifted by +0.15, so you can see what the comparison does before pasting your own">Try an example</button><button class="btn" id="uClear">Clear</button><label class="btn" style="margin:0;cursor:pointer">Load file<input type="file" id="uFile" accept=".csv,.txt,text/plain" hidden></label><button class="btn" id="uTpl" type="button">Template</button></div>
+  <div class="btns"><button class="btn" id="uPlot">Plot</button><button class="btn" id="uEx" type="button" title="Fills the box with a published curve (a simulation's where there is one) shifted by +0.15, so you can see what the comparison does before pasting your own">Try an example</button><button class="btn" id="uClear">Clear</button><label class="btn" style="margin:0;cursor:pointer">Load file<input type="file" id="uFile" accept=".csv,.txt,text/plain" hidden></label><button class="btn" id="uTpl" type="button">Template</button></div>
   <p class="hint" id="uInfo" aria-live="polite">${mineInfo(u)}</p>
   <h4>DEFINITIONS OF YOUR RUN</h4>
   <p class="hint">Say what your numbers mean; a definition you leave unspecified can never be matched. Options are the values used by the published records.</p>
@@ -967,10 +969,11 @@ function wireMine(){
     state.user=r.pts.length?{name:$("uName").value||"your run",raw:txt,linear:lin,defs:old,pts:r.pts}:null;mineSave();
     renderPlot(false);renderPanel();const i=$("uInfo");if(i){i.innerHTML=state.user?mineInfo(state.user):esc(window.SimHighlineLogic.inspectUserCurve(txt,{linear:lin},mineExpect()).warnings.concat(window.SimHighlineLogic.inspectUserCurve(txt,{linear:lin}).summary).join(" "))}};
   $("uPlot").onclick=()=>plotUser($("uText").value);
-  $("uEx").onclick=()=>{const z=currentZ(),o=relationSeries(z).find(s=>!s.scatter&&s.r.kind==="simulation"&&rawPoints(s.r,z).filter(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)).length>=5);
-    if(!o){toast("No published simulation curve at this epoch to build an example from");return}
+  $("uEx").onclick=()=>{const z=currentZ(),good=s=>!s.scatter&&rawPoints(s.r,z).filter(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)).length,series=[...relationSeries(z),...pickObs(state.rel,z).map(r=>({r}))].filter(s=>good(s)>=3);
+    const pick=a=>a.sort((u,v)=>good(v)-good(u))[0],o=pick(series.filter(s=>s.r.kind==="simulation"&&good(s)>=5))||pick(series.filter(s=>s.r.kind==="simulation"))||pick(series);
+    if(!o){toast("No published curve at this epoch to build an example from");return}
     const txt=rawPoints(o.r,z).filter(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)).map(p=>`${p.x.toFixed(3)},${(p.y+0.15).toFixed(3)}`).join("\n");
-    $("uText").value=txt;$("uName").value=`example: ${label(o.r)} + 0.15`;plotUser(txt)};
+    $("uText").value=txt;$("uName").value=`example: ${label(o.r)} + 0.15${o.r.kind==="simulation"?"":" (an observed curve)"}`;plotUser(txt)};
   $("uClear").onclick=()=>{state.user=null;mineSave();renderPlot(false);renderPanel()};
   $("uFile").onchange=async e=>{const f=e.target.files[0];if(!f)return;$("uText").value=await f.text();if(!$("uName").value)$("uName").value=f.name.replace(/\.[^.]+$/,"");plotUser($("uText").value)};
   $("uTpl").onclick=()=>download("sim-highline-template.csv","text/csv",`# One row per point: x, y, optional 1-sigma error. Values are log10 as plotted (stellar mass in Msun, number density per cMpc^3 per dex); tick "values are linear" for plain values.\n# Lines starting with # are ignored. A header row (x,y,err) is fine.\nx,y,err\n8.0,-1.20,0.05\n9.0,-1.65,0.05\n10.0,-2.30,0.08\n11.0,-3.60,0.20\n`);

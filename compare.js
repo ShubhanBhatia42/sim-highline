@@ -99,7 +99,9 @@ function cosmicAgeGyr(z,cosmo={H0:67.74,Om:0.3089}){
 function evaluator(record){
   const rep=record.representation;if(rep.type!=="parametric"||!rep.expression)return null;
   const params=Object.fromEntries(Object.entries(rep.parameters||{}).filter(([,v])=>typeof v==="number"));
-  const fn=new Function(...Object.keys(params),"x","t","z","log10",`return ${rep.expression};`);
+  // a page whose content security policy forbids eval ships the expressions precompiled (window.SIMHIGHLINE_EXPR, written by scripts/build-highline.mjs from the same records); everything else compiles the expression here
+  const names=Object.keys(params),pre=root.SIMHIGHLINE_EXPR&&root.SIMHIGHLINE_EXPR[names.join(",")+"|"+rep.expression];
+  const fn=pre||new Function(...names,"x","t","z","log10",`return ${rep.expression};`);
   return(x,z)=>fn(...Object.values(params),x,rep.ageCosmology?cosmicAgeGyr(z,rep.ageCosmology):NaN,z,Math.log10);
 }
 
