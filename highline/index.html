@@ -872,7 +872,7 @@ function wireEvidence(){
   $("evCsv").onclick=()=>download(`${r.id}.csv`,"text/csv",csvOf([r],currentZ()));
   $("evBib").onclick=()=>copyTxt(SimHighlineExport.bibtex([r]),"BibTeX copied");
 }
-function openRecord(id){if(!byId.has(id))return;state.sel=id;if(dataWait(()=>openRecord(id)))return;openPanel("evidence");renderPlot(false);syncHash()}
+function openRecord(id){if(!byId.has(id))return;if(dataWait(()=>openRecord(id)))return;state.sel=id;if(dataWait(()=>openRecord(id)))return;openPanel("evidence");renderPlot(false);syncHash()}
 function closeRecord(){state.sel=null;if(state.tab==="evidence")closePanel();renderPlot(false);syncHash()}
 
 function aboutHtml(){
@@ -1388,17 +1388,17 @@ const srcCount=new Set(sims.map(r=>r.source)).size;
 $("aboutCounts").innerHTML=`<b>${sims.length}</b> simulation records from <b>${srcCount}</b> suites, plus <b>${obs.length}</b> observational references. Dataset v${esc(SIMHIGHLINE_RELEASE.version)}.`;
 new ResizeObserver(()=>{if(isTable())return;renderPlot(false);if(state.mode!=="evol")renderSlider()}).observe($("stage"));
 const wantMine=new URLSearchParams(location.hash.slice(1)).get("pn")==="mine";
-let booted=false;
+let booted=false,helloShow=()=>{};
 mineLoad();readHash();versionBanner();syncShell();
 onData(()=>{
 if(state.mode==="atlas")renderAtlas();if(state.mode==="tension")renderTension();if(state.mode==="spread")renderSpread();if(state.mode==="dist")renderDist();
 renderAll(false);
 if(state.sel)openRecord(state.sel);else if(wantMine||state.openMine)openPanel("mine");
-booted=true;requestAnimationFrame(()=>requestAnimationFrame(bootGo));setTimeout(bootGo,250);
+booted=true;helloShow();requestAnimationFrame(()=>requestAnimationFrame(bootGo));setTimeout(bootGo,250);
 });
 {const KEY="sh-guide-seen";let seen=false;try{seen=!!localStorage.getItem(KEY)}catch(e){}
 const h=$("hello"),done=()=>{h.hidden=true;try{localStorage.setItem(KEY,"1")}catch(e){}};
-if(!seen&&!state.embed&&!/(^#|&)(sel|run|pn)=/.test(location.hash))h.hidden=false;
+helloShow=()=>{if(!seen&&!state.embed&&!/(^#|&)(sel|run|pn)=/.test(location.hash))h.hidden=false};if(booted)helloShow();
 $("helloOk").onclick=()=>{done();$("stage").focus({preventScroll:true})};$("helloMore").onclick=()=>{done();$("infoBtn").click()};
 h.addEventListener("keydown",e=>{if(e.key==="Escape"){done();e.stopPropagation()}});
 addEventListener("keydown",e=>{if(!h.hidden&&["ArrowLeft","ArrowRight"].includes(e.key))done()},true)}
