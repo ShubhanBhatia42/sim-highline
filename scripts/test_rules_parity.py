@@ -30,6 +30,23 @@ assert not bad, f"{len(bad)} of {len(oracle['verdicts'])} pairs disagree with th
 kinds = {v["verdict"] for v in oracle["verdicts"]}
 assert {"comparable", "comparable-with-caveats", "not-comparable"} <= kinds, f"oracle sample did not exercise every verdict: {kinds}"
 
+# population classes: a quiescent, centrals-only or zoom-sample mass function is not one of all galaxies; spelling variants of "all" are one population (the same cases as scripts/test-compare.mjs)
+cases = {"all": "all", "all galaxies": "all", "all galaxies (PGalF)": "all", "All galaxies": "all", "quiescent": "quiescent", "passive": "quiescent", "all galaxies, passive": "quiescent", "star-forming": "star-forming",
+         "all galaxies, star-forming": "star-forming", "centrals": "centrals", "satellites": "satellites", "all galaxies of the zoom sample, as drawn": "zoom", "something else": "something else",
+         "star-forming-centrals": "centrals star-forming", "zoom-centrals": "centrals zoom", "isolated-zoom-centrals": "centrals isolated zoom", "star-forming galaxies, sSFR > 0.2 / t_H(z)": "star-forming galaxies, sSFR > 0.2 / t_H(z)"}
+for text, want in cases.items():
+    assert sim_highline.population_class(text) == want, (text, sim_highline.population_class(text), want)
+
+
+def _gsmf(population, source):
+    return {"relation": "gsmf", "source": source, "rankable": True, "epoch": {"zRepresentative": 1}, "definitions": {"densityFrame": "comoving", "imf": "chabrier03", "massDefinition": "total", "cosmology": {"H0": 70, "Om": 0.3}, "population": population}}
+
+
+assert sim_highline.compatible(_gsmf("all", "A"), _gsmf("all galaxies", "B"), R)["verdict"] == "comparable"
+for other in ("quiescent", "centrals", "all galaxies of the zoom sample, as drawn", "star-forming"):
+    got = sim_highline.compatible(_gsmf("all", "A"), _gsmf(other, "B"), R)
+    assert got["verdict"] == "not-comparable" and any(b.startswith("population") for b in got["blockers"]), (other, got)
+
 u = oracle["user"]
 n = 0
 for s in oracle["stats"]:
