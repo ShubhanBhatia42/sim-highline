@@ -61,3 +61,4 @@ Fifty documents is too many to find anything in, so here they are by what you wa
 - [expert-audit-request.md](expert-audit-request.md), [expert-audit-sample.md](expert-audit-sample.md), [audit-packet/](audit-packet/): the packet for an outside check of the digitized curves.
 - [outreach/](outreach/) *(generated)*: pilot and announcement texts.
 - [DEMO-SCRIPT.md](DEMO-SCRIPT.md): a 90-second demonstration of the dials page.
+- [changelog-fragments/](changelog-fragments/): changelog bullets for the next release, one file per piece of work, to be folded into CHANGELOG.md.
