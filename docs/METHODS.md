@@ -93,3 +93,12 @@ Some tables and figures do not state a definition (for example the aperture of t
 
 `scripts/analyze_definition_budget.py` classifies cross-suite record pairs from documented definitions alone and measures the definitional shift inside single runs published under two definitions; see `docs/ANALYSIS-definition-budget.md`. No curve is corrected anywhere.
 
+
+## Corrections, measured conversions, credit and records held back
+
+- **Corrections to compilation curves.** Curves taken from the SWIFT/VELOCIraptor comparison data were checked against their papers (`docs/COMPILATION-CHECK.md`). A mistake is fixed only through `data/compilation-corrections.json`, applied by `scripts/apply-compilation-corrections.mjs`: each entry names its records, the shift or label, at least two pieces of evidence for a numeric change (one for a label or flag), and the reason. A corrected record keeps a hash of its points as ingested (`provenance.corrections`), so the change can be undone and a test does so. The list is exported (`sim-highline-corrections.json`) and read by the Python loader (`sim_highline.corrections`).
+- **Measured conversions.** `docs/CONVERSIONS.md` and `data/conversions.json` give, for IllustrisTNG, SIMBA and Astrid, what a change of aperture or weighting does to a quantity, measured on the public catalogues of the 27 fiducial boxes with the seed-to-seed error. They are reported and available (`sim_highline.measured_shift`), never applied to a record.
+- **Credit.** `data/attribution.json` names, per record, whose numbers it reproduces; `scripts/apply-attribution.mjs` writes it into `provenance.attribution`, and the Evidence panel, the records table and the BibTeX file show it.
+- **Records held back.** `data/staged/` holds extracted and checked records that are not in the dataset (contour polygons, per-bin histograms, one fit with an unstated pivot), each with the reason and what would change it.
+- **Tables replace figure reads.** When an author's table matches the plotted numbers, the record is rebuilt from the table (tier `published-table` or `official-table`) by an ingest script that asserts the checksum of the source and compares with the figure read it replaces; `docs/DATA-QUALITY.md` counts how many were replaced.
+- **Authors can submit their own numbers** through `submissions/` and `scripts/submission.mjs` (`docs/SUBMIT-A-CURVE.md`).

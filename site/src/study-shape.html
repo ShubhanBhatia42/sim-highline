@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Does the shape of star formation separate the two codes?</title>
+<meta name="description" content="Whether the share of galaxies between the blue cloud and the red sequence, and the width of the star-forming sequence, tell IllustrisTNG and SIMBA apart in the CAMELS experiment beyond what the quenched fraction and the main sequence already do.">
+{{head}}
+</head>
+<body>
+{{header}}
+<main id="main" class="wrap page" tabindex="-1">
+<div class="doc">
+<nav class="idx" aria-label="On this page">
+<p class="lab">Contents</p>
+<ol>
+<li><a href="#question"><span>§1</span>Question</a></li>
+<li><a href="#data"><span>§2</span>Data</a></li>
+<li><a href="#result"><span>§3</span>Result</a></li>
+<li><a href="#validation"><span>§4</span>Validation</a></li>
+<li><a href="#limits"><span>§5</span>Limits</a></li>
+<li><a href="#reproduce"><span>§6</span>Reproduce</a></li>
+</ol>
+<p class="back"><a href="studies.html">All studies</a> · <a href="retune.html">Dials</a></p>
+</nav>
+<div class="c">
+
+<div class="title">
+<p class="lab kicker">Study · IllustrisTNG and SIMBA in CAMELS</p>
+<h1>Does the shape of the star-formation distribution tell the two codes apart?</h1>
+<div class="plain"><p class="lab">In plain words</p><p class="one">{{plainShapeOne}}</p><p>{{plainShape}}</p></div>
+<div class="abstract">
+<p class="lab">Abstract</p>
+<p>{{qsAbs}}</p>
+</div>
+<dl class="facts">
+<div><dt>Status</dt><dd>{{qsStatus}}</dd></div>
+<div><dt>Protocol</dt><dd><a href="{{repo}}/blob/main/docs/PROTOCOL-quenching-shape.md">PROTOCOL-quenching-shape.md</a> (one amendment, made before any distance existed)</dd></div>
+<div><dt>Analysis</dt><dd><a href="{{repo}}/blob/main/docs/ANALYSIS-quenching-shape.md">ANALYSIS-quenching-shape.md</a></dd></div>
+<div><dt>Dataset</dt><dd>v{{version}}</dd></div>
+</dl>
+</div>
+
+<p class="limits-first"><b>Limits in brief.</b> Two codes at CAMELS resolution, instantaneous star formation rates of Subfind subhaloes, two summaries of a distribution that has more, and estimators that were calibrated on a different layout of outputs. Internal: no outside expert has reviewed this study.</p>
+
+<section class="sec" id="question" aria-labelledby="question-h">
+<h2 id="question-h"><span class="sn">§1</span>Question</h2>
+<p>The <a href="study-joint.html">joint study</a> asked whether retuning four feedback parameters can make IllustrisTNG and SIMBA agree on every galaxy observable at once. Its star-formation outputs were two numbers per mass bin: the quenched fraction and the median specific star formation rate of the galaxies that are still forming stars. A distribution has more structure than that: how many galaxies are in between the blue cloud and the red sequence (the green valley), and how wide the star-forming sequence is.</p>
+<p>Two new outputs per stellar-mass bin: the <em>green-valley fraction</em> (the share of galaxies with specific star formation rate between 10<sup>−11</sup> and 10<sup>−10.5</sup> per year) and the <em>width of the star-forming sequence</em> (the 84th minus the 16th percentile of log specific star formation rate among the galaxies above 10<sup>−10.5</sup> per year). Three questions with rules fixed in advance: is the distance between the codes for these outputs alone structural, removable or neither (Q1); do they add separation to the quenched fraction and the main sequence (Q2); do they add separation to the whole joint set (Q3)?</p>
+</section>
+
+<section class="sec" id="data" aria-labelledby="data-h">
+<h2 id="data-h"><span class="sn">§2</span>Data</h2>
+<aside class="note"><span class="lab">Registration</span><p>The protocol was committed before the data were ingested. One amendment was made, before any distance, emulator or verdict existed for the Latin-hypercube simulations: a test on synthetic worlds showed that the first rule for Q2 and Q3 would call two identical codes different, because adding outputs raises a minimised distance a little even when there is nothing to find. The amended rule compares each change with the same-code controls of the same split. The commits are listed on the <a href="studies.html">Studies page</a>.</p></aside>
+<dl class="kv">
+<dt>Simulations</dt><dd>The {{camelsN}} CAMELS simulations of the earlier studies (IllustrisTNG and SIMBA; 1000 Latin-hypercube simulations and 27 seeds at the fiducial parameters each), snapshots at z = 0, 0.95 and 2.15.</dd>
+<dt>Outputs</dt><dd>Ten bins of 0.25 dex in stellar mass from 10<sup>9</sup> M<sub>☉</sub>, read from three arrays of each Subfind catalogue by range requests (<code>data/ensembles/camels-distshape.json</code>, <code>scripts/ingest_camels_distshape.py</code>); a bin needs at least 10 galaxies. {{qsEligible}}</dd>
+<dt>Method</dt><dd>The estimators of the joint study, unchanged: polynomial ridge emulators per code, the noise left when everything else is fixed, the distance minimised over both codes' four parameters, 100 random half-sample splits per set and the margin of one noise unit.</dd>
+</dl>
+</section>
+
+<section class="sec" id="result" aria-labelledby="result-h">
+<h2 id="result-h"><span class="sn">§3</span>Result</h2>
+<ul class="flat">{{qsHeadline}}</ul>
+<div class="tw"><table class="dense"><thead><tr><th>Set</th><th class="n">outputs</th><th class="n">at fiducial</th><th class="n">retuned (all simulations)</th><th class="n">half-sample 5–95%</th><th class="n">control p95</th><th>verdict</th></tr></thead><tbody>{{qsSetRows}}</tbody></table></div>
+<p class="dim" style="font-size:15px">What the shape adds, in the same splits. The excess is the change of the between-code distance minus the mean change of the two same-code controls; "adds separation" needs its 5th percentile above zero and an equally strong verdict, "adds nothing detectable" needs its 95th percentile below 0.1 noise units.</p>
+<div class="tw sm"><table class="dense"><thead><tr><th>Question</th><th class="n">excess 5–50–95%</th><th class="n">between-code change</th><th>base → with shape</th><th>rule result</th></tr></thead><tbody>{{qsPairRows}}</tbody></table></div>
+</section>
+
+<section class="sec" id="validation" aria-labelledby="validation-h">
+<h2 id="validation-h"><span class="sn">§4</span>Validation</h2>
+<div class="tw"><table class="dense"><thead><tr><th>Check</th><th>Result</th><th>Required</th><th>Holds</th></tr></thead><tbody>{{qsValRows}}</tbody></table></div>
+<p>Sensitivity analyses (reported, none used to choose):</p>
+<div class="tw sm"><table class="dense"><thead><tr><th>Analysis</th><th class="n">D</th><th>verdict</th></tr></thead><tbody>{{qsSensRows}}</tbody></table></div>
+<p>Deviations from the protocol and implementation choices:</p>
+<ul class="flat">{{qsDev}}</ul>
+</section>
+
+<section class="sec" id="limits" aria-labelledby="limits-h">
+<h2 id="limits-h"><span class="sn">§5</span>Limits</h2>
+<ul class="flat">
+<li><b>Two codes, CAMELS resolution.</b> 25 Mpc/h boxes with 256³ elements: the lowest mass bins hold galaxies of a few tens of star particles, where a green-valley share can be driven by single events. The validation table reports how many outputs rest on few galaxies.</li>
+<li><b>Instantaneous rates, zero counted as quenched.</b> A galaxy with no star formation at the snapshot is counted as quenched, so the quenched and green-valley shares both depend on how often a code assigns exactly zero.</li>
+<li><b>Two summaries of a distribution that has more.</b> The position of the red peak or the colour is a different study.</li>
+<li><b>Estimators not calibrated for this layout.</b> They were calibrated for the joint study's outputs; a result of "adds nothing detectable" means this method did not detect more separation, not that there is none.</li>
+<li><b>Subfind subhaloes are not galaxies on the sky.</b> No aperture, selection or survey effect is modelled.</li>
+</ul>
+</section>
+
+<section class="sec" id="reproduce" aria-labelledby="reproduce-h">
+<h2 id="reproduce-h"><span class="sn">§6</span>Reproduce</h2>
+<pre tabindex="0" aria-label="Reproduction commands">python3 scripts/ingest_camels_distshape.py       # about 10 minutes; range reads of the public catalogues (needs fsspec, aiohttp)
+python3 scripts/analyze_quenching_shape.py       # writes data/analysis/quenching-shape.json and the report
+python3 scripts/test_quenching_shape.py          # machinery tests on synthetic worlds and the stale-output check
+node scripts/build-site.mjs                      # regenerates this page from the JSON</pre>
+</section>
+
+</div>
+</div>
+</main>
+{{footer}}
+</body>
+</html>
