@@ -4,3 +4,6 @@ h5py
 fsspec
 aiohttp
 requests
+# scripts/ingest_darwin1_catalogue.py --relations also reads the figures of the paper (scripts/darwin_raster_check.py)
+scipy
+pymupdf
