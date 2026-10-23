@@ -1,0 +1,323 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "covelopaz25.fresco-congress.elf.halpha.z4.45",
+      "source": "Covelo-Paz et al. 2025 (FRESCO, CONGRESS)",
+      "run": "observed H-alpha luminosity function (Table 3, completeness-corrected phi)",
+      "kind": "observation",
+      "relation": "elf",
+      "epoch": {
+        "zRepresentative": 4.45,
+        "zNominal": 4.45,
+        "zMin": 3.8,
+        "zMax": 5.1,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 observed H-alpha line luminosity (grism line flux, not corrected for dust)",
+        "xUnit": "log10(erg s^-1)",
+        "yDefinition": "log10 number density of H-alpha emitters per dex of luminosity from the V/Vmax method, corrected for the completeness of each source",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 42.0,
+        "xMax": 43.25
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 42.0,
+            "y": -2.426,
+            "yLow": -2.5003,
+            "yHigh": -2.3615
+          },
+          {
+            "x": 42.25,
+            "y": -2.5867,
+            "yLow": -2.6655,
+            "yHigh": -2.5186
+          },
+          {
+            "x": 42.5,
+            "y": -3.0458,
+            "yLow": -3.1487,
+            "yHigh": -2.9547
+          },
+          {
+            "x": 42.75,
+            "y": -3.3188,
+            "yLow": -3.4559,
+            "yHigh": -3.2007
+          },
+          {
+            "x": 43.0,
+            "y": -4.0177,
+            "yLow": -4.3188,
+            "yHigh": -3.762
+          },
+          {
+            "x": 43.25,
+            "y": -4.3279,
+            "yLow": -4.7959,
+            "yHigh": -3.9626
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "H-alpha emitters with line S/N > 5 and quality flag q >= 1.75 in CONGRESS (F356W grism, GOODS-North, 62 arcmin2); broad-line emitters removed",
+        "warning": "Observed luminosities: no dust correction. Only bins with average completeness of at least 65 per cent are tabulated. Errors are Poisson, completeness uncertainty and cosmic variance (asymmetric; the band is the printed error). Luminosity bins of 0.25 dex; each redshift bin is wide (3.8 < z < 5.1, 4.9 < z < 5.7, 5.7 < z < 6.6), and evolution inside the bin is not modelled."
+      },
+      "definitions": {
+        "line": "H-alpha (without [NII])",
+        "dustCorrection": "attenuated",
+        "dustCorrectionMethod": "none (observed luminosities)",
+        "densityFrame": "comoving",
+        "apertureDefinition": "total grism line flux of the whole galaxy (spatially resolved, no flux loss in principle)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "population": "H-alpha emitters in the grism surveys, broad-line emitters removed (star-forming galaxies and narrow-line AGN)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Covelo-Paz et al. 2025, A&A 694, A178 (arXiv:2409.17241), Table 3",
+        "doi": "10.1051/0004-6361/202452363",
+        "url": "https://arxiv.org/abs/2409.17241",
+        "retrieved": "2026-10-23",
+        "sourceMember": "main.tex",
+        "sourceArchiveSha256": "da08aef2a54af33eb216d078dceffb18309d8be1d744d616637983a3f65c067b",
+        "quotes": {
+          "observed": "main.tex:111",
+          "cosmology": "main.tex:134",
+          "aperture": "main.tex:179",
+          "redshift_bins": "main.tex:331",
+          "broad_line": "main.tex:331",
+          "counts": "main.tex:331",
+          "method": "main.tex:333",
+          "line_snr": "main.tex:248",
+          "per_dex": "main.tex:390",
+          "mock_lines": "main.tex:251",
+          "completeness": "main.tex:384",
+          "errors": "main.tex:339"
+        },
+        "definitionBasis": "line: the paper calls the measured quantity the H-alpha flux and models H-alpha, [NII] and [SII] as separate lines in its completeness simulations; it does not say in a sentence that the real fluxes exclude [NII] (read, not stated). densityFrame: Mpc^-3 is not called comoving anywhere (read, not stated)."
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Table 3 transcribed (6 bins of 0.25 dex, 321 of the 527 H-alpha emitters of the redshift bin; bins below 65 per cent average completeness are not tabulated). Checks: the Table 4 Schechter fit (log L*=42.6, phi*=0.89e-3, alpha=-1.64) agrees with every point to within 2 sigma of the printed error (rms 0.76 sigma), which also shows the table is per dex; the number of sources in the bins is below the 527 the text gives for the redshift bin."
+    },
+    {
+      "id": "covelopaz25.fresco-congress.elf.halpha.z5.3",
+      "source": "Covelo-Paz et al. 2025 (FRESCO, CONGRESS)",
+      "run": "observed H-alpha luminosity function (Table 3, completeness-corrected phi)",
+      "kind": "observation",
+      "relation": "elf",
+      "epoch": {
+        "zRepresentative": 5.3,
+        "zNominal": 5.3,
+        "zMin": 4.9,
+        "zMax": 5.7,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 observed H-alpha line luminosity (grism line flux, not corrected for dust)",
+        "xUnit": "log10(erg s^-1)",
+        "yDefinition": "log10 number density of H-alpha emitters per dex of luminosity from the V/Vmax method, corrected for the completeness of each source",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 42.0,
+        "xMax": 43.0
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 42.0,
+            "y": -2.5171,
+            "yLow": -2.5901,
+            "yHigh": -2.4535
+          },
+          {
+            "x": 42.25,
+            "y": -2.7399,
+            "yLow": -2.8182,
+            "yHigh": -2.6696
+          },
+          {
+            "x": 42.5,
+            "y": -3.0132,
+            "yLow": -3.1079,
+            "yHigh": -2.9318
+          },
+          {
+            "x": 42.75,
+            "y": -3.4365,
+            "yLow": -3.5719,
+            "yHigh": -3.3152
+          },
+          {
+            "x": 43.0,
+            "y": -3.8477,
+            "yLow": -4.0655,
+            "yHigh": -3.6556
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "H-alpha emitters with line S/N > 5 and quality flag q >= 1.75 in FRESCO (F444W grism, GOODS-North and GOODS-South); broad-line emitters removed",
+        "warning": "Observed luminosities: no dust correction. Only bins with average completeness of at least 65 per cent are tabulated. Errors are Poisson, completeness uncertainty and cosmic variance (asymmetric; the band is the printed error). Luminosity bins of 0.25 dex; each redshift bin is wide (3.8 < z < 5.1, 4.9 < z < 5.7, 5.7 < z < 6.6), and evolution inside the bin is not modelled."
+      },
+      "definitions": {
+        "line": "H-alpha (without [NII])",
+        "dustCorrection": "attenuated",
+        "dustCorrectionMethod": "none (observed luminosities)",
+        "densityFrame": "comoving",
+        "apertureDefinition": "total grism line flux of the whole galaxy (spatially resolved, no flux loss in principle)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "population": "H-alpha emitters in the grism surveys, broad-line emitters removed (star-forming galaxies and narrow-line AGN)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Covelo-Paz et al. 2025, A&A 694, A178 (arXiv:2409.17241), Table 3",
+        "doi": "10.1051/0004-6361/202452363",
+        "url": "https://arxiv.org/abs/2409.17241",
+        "retrieved": "2026-10-23",
+        "sourceMember": "main.tex",
+        "sourceArchiveSha256": "da08aef2a54af33eb216d078dceffb18309d8be1d744d616637983a3f65c067b",
+        "quotes": {
+          "observed": "main.tex:111",
+          "cosmology": "main.tex:134",
+          "aperture": "main.tex:179",
+          "redshift_bins": "main.tex:331",
+          "broad_line": "main.tex:331",
+          "counts": "main.tex:331",
+          "method": "main.tex:333",
+          "line_snr": "main.tex:248",
+          "per_dex": "main.tex:390",
+          "mock_lines": "main.tex:251",
+          "completeness": "main.tex:384",
+          "errors": "main.tex:339"
+        },
+        "definitionBasis": "line: the paper calls the measured quantity the H-alpha flux and models H-alpha, [NII] and [SII] as separate lines in its completeness simulations; it does not say in a sentence that the real fluxes exclude [NII] (read, not stated). densityFrame: Mpc^-3 is not called comoving anywhere (read, not stated)."
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Table 3 transcribed (5 bins of 0.25 dex, 294 of the 379 H-alpha emitters of the redshift bin; bins below 65 per cent average completeness are not tabulated). Checks: the Table 4 Schechter fit (log L*=42.65, phi*=0.69e-3, alpha=-1.58) agrees with every point to within 2 sigma of the printed error (rms 0.31 sigma), which also shows the table is per dex; the number of sources in the bins is below the 379 the text gives for the redshift bin."
+    },
+    {
+      "id": "covelopaz25.fresco-congress.elf.halpha.z6.15",
+      "source": "Covelo-Paz et al. 2025 (FRESCO, CONGRESS)",
+      "run": "observed H-alpha luminosity function (Table 3, completeness-corrected phi)",
+      "kind": "observation",
+      "relation": "elf",
+      "epoch": {
+        "zRepresentative": 6.15,
+        "zNominal": 6.15,
+        "zMin": 5.7,
+        "zMax": 6.6,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 observed H-alpha line luminosity (grism line flux, not corrected for dust)",
+        "xUnit": "log10(erg s^-1)",
+        "yDefinition": "log10 number density of H-alpha emitters per dex of luminosity from the V/Vmax method, corrected for the completeness of each source",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 42.0,
+        "xMax": 42.75
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 42.0,
+            "y": -2.9281,
+            "yLow": -3.0757,
+            "yHigh": -2.8508
+          },
+          {
+            "x": 42.25,
+            "y": -3.1427,
+            "yLow": -3.301,
+            "yHigh": -3.0506
+          },
+          {
+            "x": 42.5,
+            "y": -3.4202,
+            "yLow": -3.585,
+            "yHigh": -3.2757
+          },
+          {
+            "x": 42.75,
+            "y": -3.9208,
+            "yLow": -4.2757,
+            "yHigh": -3.71
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "H-alpha emitters with line S/N > 5 and quality flag q >= 1.75 in FRESCO (F444W grism, GOODS-North and GOODS-South); broad-line emitters removed",
+        "warning": "Observed luminosities: no dust correction. Only bins with average completeness of at least 65 per cent are tabulated. Errors are Poisson, completeness uncertainty and cosmic variance (asymmetric; the band is the printed error). Luminosity bins of 0.25 dex; each redshift bin is wide (3.8 < z < 5.1, 4.9 < z < 5.7, 5.7 < z < 6.6), and evolution inside the bin is not modelled."
+      },
+      "definitions": {
+        "line": "H-alpha (without [NII])",
+        "dustCorrection": "attenuated",
+        "dustCorrectionMethod": "none (observed luminosities)",
+        "densityFrame": "comoving",
+        "apertureDefinition": "total grism line flux of the whole galaxy (spatially resolved, no flux loss in principle)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "population": "H-alpha emitters in the grism surveys, broad-line emitters removed (star-forming galaxies and narrow-line AGN)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Covelo-Paz et al. 2025, A&A 694, A178 (arXiv:2409.17241), Table 3",
+        "doi": "10.1051/0004-6361/202452363",
+        "url": "https://arxiv.org/abs/2409.17241",
+        "retrieved": "2026-10-23",
+        "sourceMember": "main.tex",
+        "sourceArchiveSha256": "da08aef2a54af33eb216d078dceffb18309d8be1d744d616637983a3f65c067b",
+        "quotes": {
+          "observed": "main.tex:111",
+          "cosmology": "main.tex:134",
+          "aperture": "main.tex:179",
+          "redshift_bins": "main.tex:331",
+          "broad_line": "main.tex:331",
+          "counts": "main.tex:331",
+          "method": "main.tex:333",
+          "line_snr": "main.tex:248",
+          "per_dex": "main.tex:390",
+          "mock_lines": "main.tex:251",
+          "completeness": "main.tex:384",
+          "errors": "main.tex:339"
+        },
+        "definitionBasis": "line: the paper calls the measured quantity the H-alpha flux and models H-alpha, [NII] and [SII] as separate lines in its completeness simulations; it does not say in a sentence that the real fluxes exclude [NII] (read, not stated). densityFrame: Mpc^-3 is not called comoving anywhere (read, not stated)."
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Table 3 transcribed (4 bins of 0.25 dex, 76 of the 94 H-alpha emitters of the redshift bin; bins below 65 per cent average completeness are not tabulated). Checks: the Table 4 Schechter fit (log L*=42.46, phi*=0.45e-3, alpha=-1.49) agrees with every point to within 2 sigma of the printed error (rms 0.26 sigma), which also shows the table is per dex; the number of sources in the bins is below the 94 the text gives for the redshift bin."
+    }
+  ]
+}
