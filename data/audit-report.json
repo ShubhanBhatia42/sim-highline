@@ -1,16 +1,16 @@
 {
- "total": 1736,
- "known": 16,
+ "total": 1859,
+ "known": 24,
  "errors": 0,
  "warnings": 0,
- "info": 203,
+ "info": 210,
  "byCode": {
-  "info:no-cosmology": 186,
+  "info:no-cosmology": 193,
   "info:no-mass-definition": 17,
   "known:x-out-of-range": 1,
   "known:y-out-of-range": 6,
   "known:quenched-decreases": 2,
-  "known:duplicate-data": 6,
+  "known:duplicate-data": 14,
   "known:cross-source-offset": 1
  },
  "yUnitsByRelation": {
@@ -116,21 +116,23 @@
    ],
    "massDefinitions": [
     "total-bound-subhalo",
+    "unspecified",
     "caesar-6dfof-galaxy-total",
     "bound to a Subfind subhalo, within the variable BaryMP aperture (Stevens+14; 'inherent' definition of Stevens+19)",
     "aperture-30pkpc",
     "total-galaxy-finder",
     "aperture-Reff-stars",
-    "aperture-50pkpc",
-    "unspecified"
+    "aperture-50pkpc"
    ]
   },
   "colour": {
    "yUnit": [
-    "mag (AB)"
+    "mag (AB)",
+    "mag (AB not stated in the paper)"
    ],
    "massDefinitions": [
-    "total-bound-subhalo"
+    "total-bound-subhalo",
+    "unspecified"
    ]
   },
   "gsmf": {
@@ -194,9 +196,9 @@
     "-",
     "bound-within-Rvir",
     "aperture-0.2Rvir",
+    "aperture-30pkpc",
     "aperture-Reff-stars",
-    "caesar-6dfof-galaxy-total",
-    "aperture-30pkpc"
+    "caesar-6dfof-galaxy-total"
    ]
   },
   "size": {
@@ -266,6 +268,14 @@
     "baryonic mass within r_star"
    ]
   },
+  "fmr": {
+   "yUnit": [
+    "dex"
+   ],
+   "massDefinitions": [
+    "unspecified"
+   ]
+  },
   "jstar": {
    "yUnit": [
     "log10(kpc km/s)"
@@ -278,6 +288,14 @@
     "total-subhalo (entire Subfind object, no aperture)"
    ]
   },
+  "hod": {
+   "yUnit": [
+    "log10(number per halo)"
+   ],
+   "massDefinitions": [
+    "unspecified"
+   ]
+  },
   "uvlf": {
    "yUnit": [
     "log10(cMpc^-3 mag^-1)"
@@ -285,9 +303,57 @@
    "massDefinitions": [
     "-"
    ]
+  },
+  "wp": {
+   "yUnit": [
+    "log10(h^-1 Mpc)"
+   ],
+   "massDefinitions": [
+    "aperture-30pkpc"
+   ]
   }
  },
  "crossSource": [
+  {
+   "a": "nelson18.tng100.colour-pdf.z0.modelC-all12",
+   "b": "nelson18.tng100.colour-pdf.z0.modelA",
+   "relation": "colour",
+   "n": 3,
+   "medianOffset": 0.101,
+   "maxAbs": 0.103
+  },
+  {
+   "a": "nelson18.tng100.colour-pdf.z0.modelC-all12",
+   "b": "nelson18.tng100.colour-pdf.z0.modelB",
+   "relation": "colour",
+   "n": 3,
+   "medianOffset": 0.022,
+   "maxAbs": 0.023
+  },
+  {
+   "a": "nelson18.tng100.colour-pdf.z0.modelC-all12",
+   "b": "nelson18.tng100.colour-pdf.z0.modelC1",
+   "relation": "colour",
+   "n": 3,
+   "medianOffset": -0.001,
+   "maxAbs": 0.005
+  },
+  {
+   "a": "nelson18.tng100.colour-pdf.z0.modelC-all12",
+   "b": "nelson18.tng100.colour-pdf.z0.modelCall",
+   "relation": "colour",
+   "n": 3,
+   "medianOffset": 0,
+   "maxAbs": 0
+  },
+  {
+   "a": "nelson18.tng100.colour-pdf.z0.modelC-all12",
+   "b": "nelson18.tng100.colour-pdf.z0.modelD",
+   "relation": "colour",
+   "n": 3,
+   "medianOffset": -0.008,
+   "maxAbs": 0.013
+  },
   {
    "a": "chaikin26.colibre.l200m6.gsmf-ap-50pkpc.z0",
    "b": "chaikin26.colibre.l025m6.gsmf.z0",
@@ -1507,6 +1573,33 @@
   {
    "sev": "info",
    "code": "no-cosmology",
+   "id": "derossi17.eagle-recal-l025n0752.mzr.sfr-0.5-0.0.zlt5",
+   "file": "derossi17-eagle-mzr-sfr-bins.json",
+   "relation": "mzr",
+   "source": "EAGLE",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "derossi17.eagle-recal-l025n0752.mzr.sfr0.0-0.5.zlt5",
+   "file": "derossi17-eagle-mzr-sfr-bins.json",
+   "relation": "mzr",
+   "source": "EAGLE",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "derossi17.eagle-recal-l025n0752.mzr.sfr0.5-1.0.zlt5",
+   "file": "derossi17-eagle-mzr-sfr-bins.json",
+   "relation": "mzr",
+   "source": "EAGLE",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
    "id": "nihao.stinson15.coldgas.z0.fig1.digitized",
    "file": "digitized.json",
    "relation": "gas",
@@ -1567,6 +1660,42 @@
    "file": "fire2-wetzel23.json",
    "relation": "shmr",
    "source": "FIRE-2",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "garcia24.illustris.fmr.mu0.23.linear.z0",
+   "file": "fmr-garcia24.json",
+   "relation": "fmr",
+   "source": "Illustris",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "garcia24.tng.fmr.mu0.31.linear.z0",
+   "file": "fmr-garcia24.json",
+   "relation": "fmr",
+   "source": "IllustrisTNG",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "garcia24.eagle.fmr.mu0.74.linear.z0",
+   "file": "fmr-garcia24.json",
+   "relation": "fmr",
+   "source": "EAGLE",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "garcia24.simba.fmr.mu0.66.linear.z0",
+   "file": "fmr-garcia24.json",
+   "relation": "fmr",
+   "source": "SIMBA",
    "msg": "definitions.cosmology missing"
   },
   {
@@ -2466,6 +2595,86 @@
    "source": "FLAMINGO",
    "msg": "same first points as schaye23.flamingo-l1_m9.zstar.z0.1",
    "reason": "L1_m9 and L2p8_m9 share resolution and physics, so their low-mass medians agree to the digitization precision (checked: curves differ at high mass and in length)."
+  },
+  {
+   "sev": "known",
+   "code": "duplicate-data",
+   "id": "zehavi11.sdss.hod.lumthr-m21.0.all",
+   "file": "wp-hod-zehavi11.json",
+   "relation": "hod",
+   "source": "Zehavi et al. 2011 (SDSS DR7 HOD)",
+   "msg": "same first points as zehavi11.sdss.hod.lumthr-m21.0.central",
+   "reason": "The mean number of all galaxies per halo equals the mean number of central galaxies at low halo mass, where there are no satellites, so the first points of the two curves are the same by construction."
+  },
+  {
+   "sev": "known",
+   "code": "duplicate-data",
+   "id": "zehavi11.sdss.hod.lumthr-m21.0.central",
+   "file": "wp-hod-zehavi11.json",
+   "relation": "hod",
+   "source": "Zehavi et al. 2011 (SDSS DR7 HOD)",
+   "msg": "same first points as zehavi11.sdss.hod.lumthr-m21.0.all",
+   "reason": "The mean number of all galaxies per halo equals the mean number of central galaxies at low halo mass, where there are no satellites, so the first points of the two curves are the same by construction."
+  },
+  {
+   "sev": "known",
+   "code": "duplicate-data",
+   "id": "zehavi11.sdss.hod.lumthr-m19.5.all",
+   "file": "wp-hod-zehavi11.json",
+   "relation": "hod",
+   "source": "Zehavi et al. 2011 (SDSS DR7 HOD)",
+   "msg": "same first points as zehavi11.sdss.hod.lumthr-m19.5.central",
+   "reason": "The mean number of all galaxies per halo equals the mean number of central galaxies at low halo mass, where there are no satellites, so the first points of the two curves are the same by construction."
+  },
+  {
+   "sev": "known",
+   "code": "duplicate-data",
+   "id": "zehavi11.sdss.hod.lumthr-m19.5.central",
+   "file": "wp-hod-zehavi11.json",
+   "relation": "hod",
+   "source": "Zehavi et al. 2011 (SDSS DR7 HOD)",
+   "msg": "same first points as zehavi11.sdss.hod.lumthr-m19.5.all",
+   "reason": "The mean number of all galaxies per halo equals the mean number of central galaxies at low halo mass, where there are no satellites, so the first points of the two curves are the same by construction."
+  },
+  {
+   "sev": "known",
+   "code": "duplicate-data",
+   "id": "zehavi11.sdss.hod.lumthr-m20.0.all",
+   "file": "wp-hod-zehavi11.json",
+   "relation": "hod",
+   "source": "Zehavi et al. 2011 (SDSS DR7 HOD)",
+   "msg": "same first points as zehavi11.sdss.hod.lumthr-m20.0.central",
+   "reason": "The mean number of all galaxies per halo equals the mean number of central galaxies at low halo mass, where there are no satellites, so the first points of the two curves are the same by construction."
+  },
+  {
+   "sev": "known",
+   "code": "duplicate-data",
+   "id": "zehavi11.sdss.hod.lumthr-m20.0.central",
+   "file": "wp-hod-zehavi11.json",
+   "relation": "hod",
+   "source": "Zehavi et al. 2011 (SDSS DR7 HOD)",
+   "msg": "same first points as zehavi11.sdss.hod.lumthr-m20.0.all",
+   "reason": "The mean number of all galaxies per halo equals the mean number of central galaxies at low halo mass, where there are no satellites, so the first points of the two curves are the same by construction."
+  },
+  {
+   "sev": "known",
+   "code": "duplicate-data",
+   "id": "zehavi11.sdss.hod.lumthr-m22.0.all.fig10",
+   "file": "wp-hod-zehavi11.json",
+   "relation": "hod",
+   "source": "Zehavi et al. 2011 (SDSS DR7 HOD)",
+   "msg": "same first points as zehavi11.sdss.hod.lumthr-m22.0.central.fig10",
+   "reason": "The mean number of all galaxies per halo equals the mean number of central galaxies at low halo mass, where there are no satellites, so the first points of the two curves are the same by construction."
+  },
+  {
+   "sev": "known",
+   "code": "duplicate-data",
+   "id": "zehavi11.sdss.hod.lumthr-m22.0.central.fig10",
+   "file": "wp-hod-zehavi11.json",
+   "relation": "hod",
+   "source": "Zehavi et al. 2011 (SDSS DR7 HOD)",
+   "msg": "same first points as zehavi11.sdss.hod.lumthr-m22.0.all.fig10",
+   "reason": "The mean number of all galaxies per halo equals the mean number of central galaxies at low halo mass, where there are no satellites, so the first points of the two curves are the same by construction."
   },
   {
    "sev": "known",

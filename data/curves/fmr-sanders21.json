@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "sanders21.sdss-stacks.fmr.mu0.60.cubic",
+      "source": "Sanders et al. 2021",
+      "run": "z~0 cubic fit to Andrews & Martini stacks",
+      "kind": "observation",
+      "relation": "fmr",
+      "epoch": {
+        "zRepresentative": 0.08,
+        "zMin": 0.027,
+        "zMax": 0.25,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "mu_0.60 = log10(M*/Msun) - 0.60 log10(SFR/(Msun/yr)); median M* and median SFR of each stack, SFR from Halpha (Hao+11 calibration), Chabrier IMF",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "12+log10(O/H), strong-line ratios ([OII], Hbeta, [OIII], [NeIII]) with z~0 calibrations anchored to direct-method (Te) metallicities, DIG-corrected",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 8.25,
+        "xMax": 11.125
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "12+log(O/H) = 8.80 + 0.188 y - 0.220 y^2 - 0.0531 y^3, y = mu_0.60 - 10",
+        "expression": "8.80+0.188*(x-10)-0.220*Math.pow(x-10,2)-0.0531*Math.pow(x-10,3)",
+        "parameters": {}
+      },
+      "scatter": {
+        "value": 0.05,
+        "unit": "dex",
+        "meaning": "intrinsic scatter of the FMR at z=0 quoted in the paper text ('approximately 0.05 dex', citing Mannucci+10, Cresci+19, Curti+20); not measured for this fit"
+      },
+      "selection": {
+        "population": "Andrews & Martini 2013 SDSS stacks in M*-SFR bins with at least 5 galaxies, DIG-corrected line fluxes; z~0.08",
+        "warning": "Cubic fit to z~0 stacks only; the paper reports that its z~2.3 and z~3.3 stacks fall on it without being fitted. x range is the extent of the curve drawn in the paper's figure (not stated in the text). The redshift range 0.027<z<0.25 is that of the Andrews & Martini stacks (their paper, Sec. 2), zRepresentative 0.08 is the paper's 'z~0.08'. The cubic turns over (maximum 8.84 at mu=10.38) and decreases beyond it, which is the shape drawn. SFRs are not DIG-corrected; metallicities are NOT the Andrews & Martini direct-method values but strong-line values calibrated to them."
+      },
+      "definitions": {
+        "muAlpha": 0.6,
+        "metallicityQuantity": "gas-O/H",
+        "metallicityCalibration": "strong-line calibrations (O32, R23, [NeIII]/[OII] etc.) anchored to direct-method (Te) metallicities of SDSS stacks and dwarfs (Sanders+21 z~0 set), DIG-corrected",
+        "sfrTimescaleMyr": "unspecified",
+        "sfrIndicator": "Halpha (dust-corrected Balmer lines), Hao+11 calibration renormalised to Chabrier IMF, not DIG-corrected",
+        "imf": "chabrier03",
+        "massDefinition": "sed-total",
+        "population": "star-forming"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Sanders et al. 2021, ApJ 914, 19 (arXiv:2009.07292), eq. 'fmr' (Sec. 'The fundamental metallicity relation at z=0-3.3')",
+        "doi": "10.3847/1538-4357/abf4c1",
+        "url": "https://arxiv.org/abs/2009.07292",
+        "retrieved": "2026-10-18",
+        "sourceMember": "ms.tex",
+        "figureMember": "z0z2z3_fmr_combined.pdf",
+        "figureSha256": "f1487bc79a304f869eaf653d2aa1e00e409e63780a95c3b668187bffe2341da6",
+        "sourceArchiveSha256": "8fb01530d79223ee3f224e5980196df4e42a8ecb9cbfd7cab3fd29249482877e"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Cubic as published. drawn black best-fit cubic (100 vertices, x 8.25..11.125) minus transcribed cubic: max |diff| = 0.0023 dex (rms 0.0020); ends: drawn 8.080,8.656 vs cubic 8.082,8.657 cubic maximum 8.837 at mu_0.60 = 10.38 (the paper: flattening above mu_0.60 = 10.0)"
+    }
+  ]
+}

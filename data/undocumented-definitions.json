@@ -1,10 +1,10 @@
 {
  "summary": {
-  "simulationRecords": 1453,
-  "recordsWithRecoveredDefinition": 457,
-  "undocumentedValues": 344,
+  "simulationRecords": 1490,
+  "recordsWithRecoveredDefinition": 458,
+  "undocumentedValues": 369,
   "sourceReadNotStated": 343,
-  "sourceNotYetRead": 0,
+  "sourceNotYetRead": 25,
   "noPaperToRead": 1
  },
  "groups": [
@@ -142,6 +142,15 @@
    "citation": "Genel et al. 2015, ApJ 804, L40 (arXiv:1503.01117), stellar specific angular momentum vers",
    "records": 7,
    "status": "source read, not stated"
+  },
+  {
+   "source": "IllustrisTNG",
+   "relation": "colour",
+   "key": "massDefinition",
+   "arxiv": "1707.03395",
+   "citation": "Nelson et al. 2018, MNRAS 475, 624 (arXiv:1707.03395)",
+   "records": 7,
+   "status": "source not yet read for this key"
   },
   {
    "source": "BlueTides",
@@ -387,6 +396,15 @@
    "status": "source read, not stated"
   },
   {
+   "source": "EAGLE",
+   "relation": "colour",
+   "key": "massDefinition",
+   "arxiv": "1504.04374",
+   "citation": "Trayford et al. 2015, MNRAS 452, 2879 (arXiv:1504.04374), Appendix Fig. B1 (colour converg",
+   "records": 3,
+   "status": "source not yet read for this key"
+  },
+  {
    "source": "Illustris",
    "relation": "sfrd",
    "key": "sfrIndicator",
@@ -394,6 +412,15 @@
    "citation": "Pillepich et al. 2018, MNRAS 473, 4077 (doi:10.1093/mnras/stx2656; arXiv:1703.02970), the ",
    "records": 3,
    "status": "source read, not stated"
+  },
+  {
+   "source": "Illustris",
+   "relation": "colour",
+   "key": "massDefinition",
+   "arxiv": "1707.03395",
+   "citation": "Nelson et al. 2018, MNRAS 475, 624 (arXiv:1707.03395)",
+   "records": 2,
+   "status": "source not yet read for this key"
   },
   {
    "source": "NIHAO zoom suite",
@@ -430,6 +457,33 @@
    "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), specific star formation rate versus s",
    "records": 1,
    "status": "source read, not stated"
+  },
+  {
+   "source": "EAGLE",
+   "relation": "fmr",
+   "key": "sfrIndicator",
+   "arxiv": "2407.06254",
+   "citation": "Garcia et al. 2024, 'Does the Fundamental Metallicity Relation Evolve with Redshift? II' (",
+   "records": 1,
+   "status": "source not yet read for this key"
+  },
+  {
+   "source": "EAGLE",
+   "relation": "fmr",
+   "key": "sfrTimescaleMyr",
+   "arxiv": "2407.06254",
+   "citation": "Garcia et al. 2024, 'Does the Fundamental Metallicity Relation Evolve with Redshift? II' (",
+   "records": 1,
+   "status": "source not yet read for this key"
+  },
+  {
+   "source": "EAGLE",
+   "relation": "fmr",
+   "key": "massDefinition",
+   "arxiv": "2407.06254",
+   "citation": "Garcia et al. 2024, 'Does the Fundamental Metallicity Relation Evolve with Redshift? II' (",
+   "records": 1,
+   "status": "source not yet read for this key"
   },
   {
    "source": "FIREbox",
@@ -475,6 +529,33 @@
    "citation": "Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), cosmic star formation history",
    "records": 1,
    "status": "source read, not stated"
+  },
+  {
+   "source": "Illustris",
+   "relation": "fmr",
+   "key": "sfrIndicator",
+   "arxiv": "2407.06254",
+   "citation": "Garcia et al. 2024, 'Does the Fundamental Metallicity Relation Evolve with Redshift? II' (",
+   "records": 1,
+   "status": "source not yet read for this key"
+  },
+  {
+   "source": "Illustris",
+   "relation": "fmr",
+   "key": "sfrTimescaleMyr",
+   "arxiv": "2407.06254",
+   "citation": "Garcia et al. 2024, 'Does the Fundamental Metallicity Relation Evolve with Redshift? II' (",
+   "records": 1,
+   "status": "source not yet read for this key"
+  },
+  {
+   "source": "Illustris",
+   "relation": "fmr",
+   "key": "massDefinition",
+   "arxiv": "2407.06254",
+   "citation": "Garcia et al. 2024, 'Does the Fundamental Metallicity Relation Evolve with Redshift? II' (",
+   "records": 1,
+   "status": "source not yet read for this key"
   },
   {
    "source": "IllustrisTNG",
@@ -531,6 +612,33 @@
    "status": "source read, not stated"
   },
   {
+   "source": "IllustrisTNG",
+   "relation": "fmr",
+   "key": "sfrIndicator",
+   "arxiv": "2407.06254",
+   "citation": "Garcia et al. 2024, 'Does the Fundamental Metallicity Relation Evolve with Redshift? II' (",
+   "records": 1,
+   "status": "source not yet read for this key"
+  },
+  {
+   "source": "IllustrisTNG",
+   "relation": "fmr",
+   "key": "sfrTimescaleMyr",
+   "arxiv": "2407.06254",
+   "citation": "Garcia et al. 2024, 'Does the Fundamental Metallicity Relation Evolve with Redshift? II' (",
+   "records": 1,
+   "status": "source not yet read for this key"
+  },
+  {
+   "source": "IllustrisTNG",
+   "relation": "fmr",
+   "key": "massDefinition",
+   "arxiv": "2407.06254",
+   "citation": "Garcia et al. 2024, 'Does the Fundamental Metallicity Relation Evolve with Redshift? II' (",
+   "records": 1,
+   "status": "source not yet read for this key"
+  },
+  {
    "source": "NewHorizon",
    "relation": "sfrd",
    "key": "densityFrame",
@@ -547,6 +655,15 @@
    "citation": "Dubois et al. 2021, A&A 651, A109 (arXiv:2009.10578), cosmic stellar mass density",
    "records": 1,
    "status": "source read, not stated"
+  },
+  {
+   "source": "SIMBA",
+   "relation": "ssfr",
+   "key": "massDefinition",
+   "arxiv": "1901.10203",
+   "citation": "Dave et al. 2019, MNRAS 486, 2827 (arXiv:1901.10203), sSFR histograms in three stellar-mas",
+   "records": 1,
+   "status": "source not yet read for this key"
   },
   {
    "source": "SIMBA",
@@ -574,6 +691,33 @@
    "citation": "Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), specific star formation rate versus s",
    "records": 1,
    "status": "source read, not stated"
+  },
+  {
+   "source": "SIMBA",
+   "relation": "fmr",
+   "key": "sfrIndicator",
+   "arxiv": "2407.06254",
+   "citation": "Garcia et al. 2024, 'Does the Fundamental Metallicity Relation Evolve with Redshift? II' (",
+   "records": 1,
+   "status": "source not yet read for this key"
+  },
+  {
+   "source": "SIMBA",
+   "relation": "fmr",
+   "key": "sfrTimescaleMyr",
+   "arxiv": "2407.06254",
+   "citation": "Garcia et al. 2024, 'Does the Fundamental Metallicity Relation Evolve with Redshift? II' (",
+   "records": 1,
+   "status": "source not yet read for this key"
+  },
+  {
+   "source": "SIMBA",
+   "relation": "fmr",
+   "key": "massDefinition",
+   "arxiv": "2407.06254",
+   "citation": "Garcia et al. 2024, 'Does the Fundamental Metallicity Relation Evolve with Redshift? II' (",
+   "records": 1,
+   "status": "source not yet read for this key"
   }
  ]
 }

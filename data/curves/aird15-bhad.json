@@ -1,0 +1,1044 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "aird15.bhad.total",
+      "source": "Aird et al. 2015",
+      "run": "Aird et al. 2015 (XLAF model, total AGN)",
+      "kind": "observation",
+      "relation": "bhad",
+      "epoch": {
+        "zRepresentative": 2,
+        "zNominal": 2,
+        "zMin": 0,
+        "zMax": 4.968,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift",
+        "xUnit": "redshift",
+        "yDefinition": "log10 comoving SMBH accretion-rate density of all AGN (the plotted curve divided by the paper's factor 1500)",
+        "yUnit": "log10(Msun yr^-1 cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 0,
+        "xMax": 4.968
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 0,
+            "y": -5.495,
+            "yLow": -5.5971,
+            "yHigh": -5.3653
+          },
+          {
+            "x": 0.012,
+            "y": -5.4706,
+            "yLow": -5.5716,
+            "yHigh": -5.3441
+          },
+          {
+            "x": 0.024,
+            "y": -5.4458,
+            "yLow": -5.5453,
+            "yHigh": -5.3218
+          },
+          {
+            "x": 0.037,
+            "y": -5.4206,
+            "yLow": -5.5188,
+            "yHigh": -5.298
+          },
+          {
+            "x": 0.049,
+            "y": -5.3955,
+            "yLow": -5.4918,
+            "yHigh": -5.2743
+          },
+          {
+            "x": 0.062,
+            "y": -5.3696,
+            "yLow": -5.4642,
+            "yHigh": -5.2502
+          },
+          {
+            "x": 0.074,
+            "y": -5.3437,
+            "yLow": -5.4362,
+            "yHigh": -5.2261
+          },
+          {
+            "x": 0.087,
+            "y": -5.3179,
+            "yLow": -5.4093,
+            "yHigh": -5.202
+          },
+          {
+            "x": 0.101,
+            "y": -5.2916,
+            "yLow": -5.382,
+            "yHigh": -5.1779
+          },
+          {
+            "x": 0.114,
+            "y": -5.2658,
+            "yLow": -5.3558,
+            "yHigh": -5.1538
+          },
+          {
+            "x": 0.127,
+            "y": -5.2395,
+            "yLow": -5.3292,
+            "yHigh": -5.1297
+          },
+          {
+            "x": 0.141,
+            "y": -5.213,
+            "yLow": -5.2994,
+            "yHigh": -5.1056
+          },
+          {
+            "x": 0.155,
+            "y": -5.1867,
+            "yLow": -5.2714,
+            "yHigh": -5.0815
+          },
+          {
+            "x": 0.169,
+            "y": -5.1609,
+            "yLow": -5.2442,
+            "yHigh": -5.0574
+          },
+          {
+            "x": 0.183,
+            "y": -5.1347,
+            "yLow": -5.2165,
+            "yHigh": -5.0337
+          },
+          {
+            "x": 0.197,
+            "y": -5.1084,
+            "yLow": -5.1892,
+            "yHigh": -5.0099
+          },
+          {
+            "x": 0.211,
+            "y": -5.0826,
+            "yLow": -5.1619,
+            "yHigh": -4.9862
+          },
+          {
+            "x": 0.226,
+            "y": -5.0567,
+            "yLow": -5.135,
+            "yHigh": -4.9628
+          },
+          {
+            "x": 0.241,
+            "y": -5.0312,
+            "yLow": -5.1081,
+            "yHigh": -4.938
+          },
+          {
+            "x": 0.256,
+            "y": -5.0057,
+            "yLow": -5.0815,
+            "yHigh": -4.9118
+          },
+          {
+            "x": 0.271,
+            "y": -4.9805,
+            "yLow": -5.0549,
+            "yHigh": -4.8855
+          },
+          {
+            "x": 0.286,
+            "y": -4.9553,
+            "yLow": -5.0287,
+            "yHigh": -4.86
+          },
+          {
+            "x": 0.302,
+            "y": -4.9305,
+            "yLow": -5.0025,
+            "yHigh": -4.8345
+          },
+          {
+            "x": 0.317,
+            "y": -4.9057,
+            "yLow": -4.977,
+            "yHigh": -4.8097
+          },
+          {
+            "x": 0.333,
+            "y": -4.8816,
+            "yLow": -4.9515,
+            "yHigh": -4.7849
+          },
+          {
+            "x": 0.349,
+            "y": -4.8575,
+            "yLow": -4.927,
+            "yHigh": -4.7605
+          },
+          {
+            "x": 0.366,
+            "y": -4.8334,
+            "yLow": -4.9025,
+            "yHigh": -4.7371
+          },
+          {
+            "x": 0.382,
+            "y": -4.8101,
+            "yLow": -4.8785,
+            "yHigh": -4.7151
+          },
+          {
+            "x": 0.399,
+            "y": -4.7867,
+            "yLow": -4.8547,
+            "yHigh": -4.6935
+          },
+          {
+            "x": 0.416,
+            "y": -4.764,
+            "yLow": -4.831,
+            "yHigh": -4.6722
+          },
+          {
+            "x": 0.433,
+            "y": -4.7413,
+            "yLow": -4.8083,
+            "yHigh": -4.6513
+          },
+          {
+            "x": 0.45,
+            "y": -4.719,
+            "yLow": -4.7877,
+            "yHigh": -4.6308
+          },
+          {
+            "x": 0.468,
+            "y": -4.6967,
+            "yLow": -4.7675,
+            "yHigh": -4.6102
+          },
+          {
+            "x": 0.485,
+            "y": -4.6751,
+            "yLow": -4.7477,
+            "yHigh": -4.5904
+          },
+          {
+            "x": 0.503,
+            "y": -4.6538,
+            "yLow": -4.725,
+            "yHigh": -4.5705
+          },
+          {
+            "x": 0.521,
+            "y": -4.6325,
+            "yLow": -4.7023,
+            "yHigh": -4.551
+          },
+          {
+            "x": 0.54,
+            "y": -4.612,
+            "yLow": -4.68,
+            "yHigh": -4.5322
+          },
+          {
+            "x": 0.558,
+            "y": -4.5918,
+            "yLow": -4.6577,
+            "yHigh": -4.5135
+          },
+          {
+            "x": 0.577,
+            "y": -4.5716,
+            "yLow": -4.6361,
+            "yHigh": -4.495
+          },
+          {
+            "x": 0.596,
+            "y": -4.5521,
+            "yLow": -4.6148,
+            "yHigh": -4.477
+          },
+          {
+            "x": 0.615,
+            "y": -4.5326,
+            "yLow": -4.595,
+            "yHigh": -4.4593
+          },
+          {
+            "x": 0.635,
+            "y": -4.5138,
+            "yLow": -4.5755,
+            "yHigh": -4.4422
+          },
+          {
+            "x": 0.655,
+            "y": -4.4954,
+            "yLow": -4.5563,
+            "yHigh": -4.4252
+          },
+          {
+            "x": 0.674,
+            "y": -4.477,
+            "yLow": -4.5376,
+            "yHigh": -4.4082
+          },
+          {
+            "x": 0.695,
+            "y": -4.4592,
+            "yLow": -4.5188,
+            "yHigh": -4.3909
+          },
+          {
+            "x": 0.715,
+            "y": -4.4419,
+            "yLow": -4.5004,
+            "yHigh": -4.3731
+          },
+          {
+            "x": 0.736,
+            "y": -4.4249,
+            "yLow": -4.4826,
+            "yHigh": -4.3558
+          },
+          {
+            "x": 0.757,
+            "y": -4.4082,
+            "yLow": -4.4649,
+            "yHigh": -4.3388
+          },
+          {
+            "x": 0.778,
+            "y": -4.3919,
+            "yLow": -4.4476,
+            "yHigh": -4.3225
+          },
+          {
+            "x": 0.8,
+            "y": -4.376,
+            "yLow": -4.4305,
+            "yHigh": -4.3065
+          },
+          {
+            "x": 0.821,
+            "y": -4.3604,
+            "yLow": -4.4139,
+            "yHigh": -4.2909
+          },
+          {
+            "x": 0.843,
+            "y": -4.3451,
+            "yLow": -4.3983,
+            "yHigh": -4.2757
+          },
+          {
+            "x": 0.865,
+            "y": -4.3303,
+            "yLow": -4.3831,
+            "yHigh": -4.2608
+          },
+          {
+            "x": 0.888,
+            "y": -4.3161,
+            "yLow": -4.3682,
+            "yHigh": -4.2466
+          },
+          {
+            "x": 0.911,
+            "y": -4.3019,
+            "yLow": -4.3536,
+            "yHigh": -4.2328
+          },
+          {
+            "x": 0.934,
+            "y": -4.2884,
+            "yLow": -4.3395,
+            "yHigh": -4.2193
+          },
+          {
+            "x": 0.957,
+            "y": -4.2753,
+            "yLow": -4.3257,
+            "yHigh": -4.2062
+          },
+          {
+            "x": 0.981,
+            "y": -4.2626,
+            "yLow": -4.3122,
+            "yHigh": -4.1931
+          },
+          {
+            "x": 1.004,
+            "y": -4.2502,
+            "yLow": -4.2994,
+            "yHigh": -4.18
+          },
+          {
+            "x": 1.029,
+            "y": -4.2381,
+            "yLow": -4.2867,
+            "yHigh": -4.1687
+          },
+          {
+            "x": 1.053,
+            "y": -4.2268,
+            "yLow": -4.2746,
+            "yHigh": -4.1587
+          },
+          {
+            "x": 1.078,
+            "y": -4.2154,
+            "yLow": -4.2633,
+            "yHigh": -4.1478
+          },
+          {
+            "x": 1.103,
+            "y": -4.2048,
+            "yLow": -4.2519,
+            "yHigh": -4.1371
+          },
+          {
+            "x": 1.128,
+            "y": -4.1945,
+            "yLow": -4.242,
+            "yHigh": -4.1272
+          },
+          {
+            "x": 1.154,
+            "y": -4.1846,
+            "yLow": -4.2328,
+            "yHigh": -4.1173
+          },
+          {
+            "x": 1.18,
+            "y": -4.1751,
+            "yLow": -4.224,
+            "yHigh": -4.1077
+          },
+          {
+            "x": 1.206,
+            "y": -4.1662,
+            "yLow": -4.2155,
+            "yHigh": -4.0985
+          },
+          {
+            "x": 1.233,
+            "y": -4.1573,
+            "yLow": -4.207,
+            "yHigh": -4.09
+          },
+          {
+            "x": 1.26,
+            "y": -4.1492,
+            "yLow": -4.1984,
+            "yHigh": -4.0815
+          },
+          {
+            "x": 1.287,
+            "y": -4.1414,
+            "yLow": -4.1903,
+            "yHigh": -4.0737
+          },
+          {
+            "x": 1.315,
+            "y": -4.1343,
+            "yLow": -4.1825,
+            "yHigh": -4.0663
+          },
+          {
+            "x": 1.343,
+            "y": -4.1272,
+            "yLow": -4.1751,
+            "yHigh": -4.0592
+          },
+          {
+            "x": 1.371,
+            "y": -4.1208,
+            "yLow": -4.1687,
+            "yHigh": -4.0528
+          },
+          {
+            "x": 1.4,
+            "y": -4.1152,
+            "yLow": -4.1626,
+            "yHigh": -4.0461
+          },
+          {
+            "x": 1.428,
+            "y": -4.1095,
+            "yLow": -4.1573,
+            "yHigh": -4.0397
+          },
+          {
+            "x": 1.458,
+            "y": -4.1045,
+            "yLow": -4.152,
+            "yHigh": -4.0333
+          },
+          {
+            "x": 1.487,
+            "y": -4.0999,
+            "yLow": -4.1474,
+            "yHigh": -4.028
+          },
+          {
+            "x": 1.517,
+            "y": -4.0957,
+            "yLow": -4.1435,
+            "yHigh": -4.0227
+          },
+          {
+            "x": 1.548,
+            "y": -4.0921,
+            "yLow": -4.1396,
+            "yHigh": -4.0181
+          },
+          {
+            "x": 1.578,
+            "y": -4.0889,
+            "yLow": -4.1364,
+            "yHigh": -4.0142
+          },
+          {
+            "x": 1.609,
+            "y": -4.0865,
+            "yLow": -4.1336,
+            "yHigh": -4.0106
+          },
+          {
+            "x": 1.641,
+            "y": -4.0843,
+            "yLow": -4.1311,
+            "yHigh": -4.0074
+          },
+          {
+            "x": 1.673,
+            "y": -4.0826,
+            "yLow": -4.1293,
+            "yHigh": -4.005
+          },
+          {
+            "x": 1.705,
+            "y": -4.0815,
+            "yLow": -4.1279,
+            "yHigh": -4.0028
+          },
+          {
+            "x": 1.738,
+            "y": -4.0808,
+            "yLow": -4.1269,
+            "yHigh": -4.0014
+          },
+          {
+            "x": 1.771,
+            "y": -4.0808,
+            "yLow": -4.1262,
+            "yHigh": -4.0007
+          },
+          {
+            "x": 1.804,
+            "y": -4.0811,
+            "yLow": -4.1258,
+            "yHigh": -4.0004
+          },
+          {
+            "x": 1.838,
+            "y": -4.0822,
+            "yLow": -4.1265,
+            "yHigh": -4.0007
+          },
+          {
+            "x": 1.872,
+            "y": -4.0836,
+            "yLow": -4.1276,
+            "yHigh": -4.0014
+          },
+          {
+            "x": 1.907,
+            "y": -4.0858,
+            "yLow": -4.129,
+            "yHigh": -4.0028
+          },
+          {
+            "x": 1.942,
+            "y": -4.0882,
+            "yLow": -4.1311,
+            "yHigh": -4.0046
+          },
+          {
+            "x": 1.978,
+            "y": -4.0914,
+            "yLow": -4.1332,
+            "yHigh": -4.0074
+          },
+          {
+            "x": 2.013,
+            "y": -4.095,
+            "yLow": -4.1364,
+            "yHigh": -4.0103
+          },
+          {
+            "x": 2.05,
+            "y": -4.0992,
+            "yLow": -4.1403,
+            "yHigh": -4.0142
+          },
+          {
+            "x": 2.087,
+            "y": -4.1042,
+            "yLow": -4.1453,
+            "yHigh": -4.0184
+          },
+          {
+            "x": 2.124,
+            "y": -4.1095,
+            "yLow": -4.1513,
+            "yHigh": -4.023
+          },
+          {
+            "x": 2.161,
+            "y": -4.1155,
+            "yLow": -4.1577,
+            "yHigh": -4.0287
+          },
+          {
+            "x": 2.2,
+            "y": -4.1223,
+            "yLow": -4.1648,
+            "yHigh": -4.0347
+          },
+          {
+            "x": 2.238,
+            "y": -4.1293,
+            "yLow": -4.1722,
+            "yHigh": -4.0415
+          },
+          {
+            "x": 2.277,
+            "y": -4.1371,
+            "yLow": -4.18,
+            "yHigh": -4.0485
+          },
+          {
+            "x": 2.317,
+            "y": -4.1453,
+            "yLow": -4.1875,
+            "yHigh": -4.0563
+          },
+          {
+            "x": 2.357,
+            "y": -4.1545,
+            "yLow": -4.1963,
+            "yHigh": -4.0649
+          },
+          {
+            "x": 2.397,
+            "y": -4.1641,
+            "yLow": -4.2066,
+            "yHigh": -4.0741
+          },
+          {
+            "x": 2.438,
+            "y": -4.1743,
+            "yLow": -4.2176,
+            "yHigh": -4.0836
+          },
+          {
+            "x": 2.479,
+            "y": -4.1853,
+            "yLow": -4.2289,
+            "yHigh": -4.0939
+          },
+          {
+            "x": 2.521,
+            "y": -4.1967,
+            "yLow": -4.2413,
+            "yHigh": -4.1049
+          },
+          {
+            "x": 2.564,
+            "y": -4.2087,
+            "yLow": -4.2541,
+            "yHigh": -4.1166
+          },
+          {
+            "x": 2.607,
+            "y": -4.2215,
+            "yLow": -4.2675,
+            "yHigh": -4.1286
+          },
+          {
+            "x": 2.65,
+            "y": -4.2349,
+            "yLow": -4.2817,
+            "yHigh": -4.1414
+          },
+          {
+            "x": 2.694,
+            "y": -4.2491,
+            "yLow": -4.2966,
+            "yHigh": -4.1549
+          },
+          {
+            "x": 2.739,
+            "y": -4.2636,
+            "yLow": -4.3122,
+            "yHigh": -4.169
+          },
+          {
+            "x": 2.785,
+            "y": -4.2792,
+            "yLow": -4.3285,
+            "yHigh": -4.1839
+          },
+          {
+            "x": 2.83,
+            "y": -4.2952,
+            "yLow": -4.3455,
+            "yHigh": -4.1991
+          },
+          {
+            "x": 2.876,
+            "y": -4.3118,
+            "yLow": -4.3632,
+            "yHigh": -4.2151
+          },
+          {
+            "x": 2.923,
+            "y": -4.3288,
+            "yLow": -4.3816,
+            "yHigh": -4.2314
+          },
+          {
+            "x": 2.97,
+            "y": -4.3469,
+            "yLow": -4.4004,
+            "yHigh": -4.2488
+          },
+          {
+            "x": 3.018,
+            "y": -4.3653,
+            "yLow": -4.4203,
+            "yHigh": -4.2665
+          },
+          {
+            "x": 3.067,
+            "y": -4.3845,
+            "yLow": -4.4408,
+            "yHigh": -4.2849
+          },
+          {
+            "x": 3.116,
+            "y": -4.4043,
+            "yLow": -4.4617,
+            "yHigh": -4.3033
+          },
+          {
+            "x": 3.165,
+            "y": -4.4249,
+            "yLow": -4.4837,
+            "yHigh": -4.3218
+          },
+          {
+            "x": 3.215,
+            "y": -4.4458,
+            "yLow": -4.506,
+            "yHigh": -4.3409
+          },
+          {
+            "x": 3.266,
+            "y": -4.4677,
+            "yLow": -4.5276,
+            "yHigh": -4.3604
+          },
+          {
+            "x": 3.318,
+            "y": -4.4897,
+            "yLow": -4.5507,
+            "yHigh": -4.3806
+          },
+          {
+            "x": 3.37,
+            "y": -4.5128,
+            "yLow": -4.5755,
+            "yHigh": -4.4015
+          },
+          {
+            "x": 3.422,
+            "y": -4.5361,
+            "yLow": -4.601,
+            "yHigh": -4.4231
+          },
+          {
+            "x": 3.476,
+            "y": -4.5602,
+            "yLow": -4.6272,
+            "yHigh": -4.4451
+          },
+          {
+            "x": 3.53,
+            "y": -4.585,
+            "yLow": -4.6534,
+            "yHigh": -4.4674
+          },
+          {
+            "x": 3.584,
+            "y": -4.6102,
+            "yLow": -4.68,
+            "yHigh": -4.4908
+          },
+          {
+            "x": 3.639,
+            "y": -4.6361,
+            "yLow": -4.7073,
+            "yHigh": -4.5142
+          },
+          {
+            "x": 3.695,
+            "y": -4.6623,
+            "yLow": -4.736,
+            "yHigh": -4.5386
+          },
+          {
+            "x": 3.752,
+            "y": -4.6892,
+            "yLow": -4.7658,
+            "yHigh": -4.5634
+          },
+          {
+            "x": 3.81,
+            "y": -4.7165,
+            "yLow": -4.7955,
+            "yHigh": -4.5889
+          },
+          {
+            "x": 3.868,
+            "y": -4.7445,
+            "yLow": -4.826,
+            "yHigh": -4.6148
+          },
+          {
+            "x": 3.927,
+            "y": -4.7729,
+            "yLow": -4.8568,
+            "yHigh": -4.641
+          },
+          {
+            "x": 3.986,
+            "y": -4.8015,
+            "yLow": -4.8887,
+            "yHigh": -4.6683
+          },
+          {
+            "x": 4.046,
+            "y": -4.831,
+            "yLow": -4.921,
+            "yHigh": -4.6956
+          },
+          {
+            "x": 4.107,
+            "y": -4.8607,
+            "yLow": -4.9539,
+            "yHigh": -4.7232
+          },
+          {
+            "x": 4.169,
+            "y": -4.8908,
+            "yLow": -4.9872,
+            "yHigh": -4.7505
+          },
+          {
+            "x": 4.231,
+            "y": -4.9213,
+            "yLow": -5.0205,
+            "yHigh": -4.7771
+          },
+          {
+            "x": 4.294,
+            "y": -4.9525,
+            "yLow": -5.0546,
+            "yHigh": -4.8012
+          },
+          {
+            "x": 4.358,
+            "y": -4.9837,
+            "yLow": -5.0889,
+            "yHigh": -4.8257
+          },
+          {
+            "x": 4.422,
+            "y": -5.0156,
+            "yLow": -5.1237,
+            "yHigh": -4.8501
+          },
+          {
+            "x": 4.488,
+            "y": -5.0478,
+            "yLow": -5.1598,
+            "yHigh": -4.8795
+          },
+          {
+            "x": 4.554,
+            "y": -5.0801,
+            "yLow": -5.1974,
+            "yHigh": -4.91
+          },
+          {
+            "x": 4.621,
+            "y": -5.113,
+            "yLow": -5.2335,
+            "yHigh": -4.9408
+          },
+          {
+            "x": 4.689,
+            "y": -5.146,
+            "yLow": -5.2736,
+            "yHigh": -4.9706
+          },
+          {
+            "x": 4.757,
+            "y": -5.1793,
+            "yLow": -5.3115,
+            "yHigh": -4.9979
+          },
+          {
+            "x": 4.827,
+            "y": -5.2133,
+            "yLow": -5.3526,
+            "yHigh": -5.0252
+          },
+          {
+            "x": 4.897,
+            "y": -5.2473,
+            "yLow": -5.394,
+            "yHigh": -5.0528
+          },
+          {
+            "x": 4.968,
+            "y": -5.2817,
+            "yLow": -5.4366,
+            "yHigh": -5.0808
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all AGN: unabsorbed, absorbed and Compton-thick (20 < log N_H < 26)",
+        "warning": "Model curve from the paper's X-ray luminosity and absorption function fitted to hard- and soft-band samples; the band is the paper's 99 per cent confidence interval of the model parameters and, in the paper's words, may under-represent the uncertainties in the bolometric correction and radiative efficiency. Only the solid part of the curve (inside the coverage of the data, z < 5) is stored; the dashed extrapolation to higher z is not. The plotted quantity was shown multiplied by 1500; it is divided back here (exact)."
+      },
+      "definitions": {
+        "luminosityBand": "bolometric, from the 2-10 keV XLF with the luminosity-dependent bolometric corrections of Hopkins+07",
+        "luminosityBandQuote": "We adopt the luminosity-dependent bolometric corrections from \\citet{Hopkins07b}.",
+        "radiativeEfficiency": 0.1,
+        "radiativeEfficiencyQuote": "Adopting a radiative efficiency of $\\eta=0.1$,",
+        "bhadDefinition": "(1-eta) L_bol-density/(eta c^2): the convention is not written in the text; it was established numerically (the f20 curve/1500 equals the f19 luminosity density times (1-eta)/(eta c^2) to 0.005-0.006 dex (uniform offset) for eta=0.1, whereas the version without (1-eta) is 0.046 dex higher)",
+        "obscurationCorrection": "total XLF over the full absorption range incl. Compton-thick: XLF of AGNs across the full range of absorption ($20<\\log \\nh<26$)",
+        "densityFrame": "comoving",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "cosmologyQuote": "We adopt a flat cosmology with $\\Omega_\\Lambda=0.7$ and $h=0.7$ throughout this paper."
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Aird et al. 2015, MNRAS (arXiv:1503.01120), total SMBH accretion density (figure f20)",
+        "doi": null,
+        "url": "https://arxiv.org/abs/1503.01120",
+        "retrieved": "2026-10-18",
+        "figure": "Total SFR density compared to our estimate of the total SMBH accretion density",
+        "panel": "solid black line with grey 99 per cent band",
+        "checksumSha256": "bc2fdd9a5584273d949c6096bb5a14983c89675fb58739933c0909f806c8877f",
+        "sourceMember": "f20.eps",
+        "sourceArchiveSha256": "45b0e18bf875248337307cd42cb3cdb222cbe7c2fc2eed6162e8240323f332c5",
+        "extractionMethod": "vector path vertices of the EPS (converted with epstopdf, PyMuPDF get_drawings), transformed through axes calibrated on the drawn ticks; band from the grey fill polygon",
+        "axisCalibrationPixels": "x: log10(1+z) linear in the six top ticks z=0,0.5,1,2,5,9 (residual <0.05 pt); y: log decades 1, 0.1, 0.01, 0.001 at 23.26, 103.46, 183.63, 263.80 pt",
+        "digitizationUncertaintyDex": 0.01,
+        "verification": {
+          "fig19ConversionDiffDex": {
+            "0.0": 0.0052,
+            "0.5": 0.0051,
+            "1.0": 0.0046,
+            "1.76": 0.0047,
+            "2.5": 0.0053,
+            "3.0": 0.0051,
+            "4.0": 0.0056
+          },
+          "peakRedshiftF19": 1.776,
+          "peakRedshiftF20": 1.762,
+          "quotedPeak": "1.76 +- 0.05",
+          "relicMassDensity_1e5": {
+            "integratedFromCurve": 4.28,
+            "quoted": 4.2
+          }
+        },
+        "quotes": {
+          "scaling": {
+            "file": "ms.tex",
+            "line": 2168,
+            "text": "Our estimate of the SMBH accretion density (solid black line) is scaled up by an arbitrary factor of 1500."
+          },
+          "conversion": {
+            "file": "ms.tex",
+            "line": 2176,
+            "text": "converted to $\\mathcal{M}_\\odot$ yr$^{-1}$ Mpc$^{-3}$ using the same bolometric corrections and radiative efficiency assumptions described above"
+          },
+          "eta": {
+            "file": "ms.tex",
+            "line": 2153,
+            "text": "Adopting a radiative efficiency of $\\eta=0.1$,"
+          },
+          "bolcorr": {
+            "file": "ms.tex",
+            "line": 2145,
+            "text": "We adopt the luminosity-dependent bolometric corrections from \\citet{Hopkins07b}."
+          },
+          "peak": {
+            "file": "ms.tex",
+            "line": 2146,
+            "text": "We find a clear peak in the luminosity density at $z=1.76\\pm0.05$"
+          },
+          "relic": {
+            "file": "ms.tex",
+            "line": 2154,
+            "text": "we estimate a relic SMBH mass density of $4.20^{+0.29}_{-0.14} \\times 10^5"
+          },
+          "cosmology": {
+            "file": "ms.tex",
+            "line": 171,
+            "text": "We adopt a flat cosmology with $\\Omega_\\Lambda=0.7$ and $h=0.7$ throughout this paper."
+          },
+          "band": {
+            "file": "ms.tex",
+            "line": 2069,
+            "text": "Shaded regions indicate the 99 per cent confidence interval in our model parameters"
+          },
+          "xlfdef": {
+            "file": "ms.tex",
+            "line": 1581,
+            "text": "XLF of AGNs across the full range of absorption ($20<\\log \\nh<26$)"
+          },
+          "extrapolation": {
+            "file": "ms.tex",
+            "line": 2170,
+            "text": "The dashed black line and grey hatching indicate where we are substantially extrapolating our model outside the coverage of our data."
+          }
+        }
+      },
+      "calibration": "target",
+      "rankable": false,
+      "notes": "Vector-path extraction; checks in provenance.verification."
+    }
+  ]
+}

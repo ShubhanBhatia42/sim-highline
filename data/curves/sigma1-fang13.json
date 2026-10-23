@@ -1,0 +1,133 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "fang13.sdss.sigma1.green-red.fit",
+      "source": "Fang et al. 2013 (SDSS)",
+      "run": "central green+red galaxies, z<0.075, least-squares fit",
+      "kind": "observation",
+      "relation": "sigma1",
+      "epoch": {
+        "zRepresentative": 0.04,
+        "zNominal": 0.04,
+        "zMin": 0.005,
+        "zMax": 0.075,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 total stellar mass (MPA/JHU DR7)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 average stellar surface mass density within a circular aperture of radius 1 kpc, Sigma_1",
+        "yUnit": "log10(Msun/kpc^2)"
+      },
+      "domain": {
+        "xMin": 9.75,
+        "xMax": 11.25
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "log Sigma_1 = 9.29 + 0.64 (log M* - 10.25)",
+        "expression": "a+b*(x-10.25)",
+        "parameters": {
+          "a": 9.29,
+          "b": 0.64
+        }
+      },
+      "scatter": {
+        "value": 0.16,
+        "unit": "dex",
+        "meaning": "1 sigma scatter of green and red galaxies about the relation"
+      },
+      "selection": {
+        "population": "central, green valley + red sequence",
+        "warning": "SDSS DR7 central galaxies (most massive group member, Yang+12), 0.005<z<0.075, b/a>0.6, green-valley and red-sequence (NUV-r>4) galaxies only, 9.75<log M*<11.25, volume-limited per 0.25 dex mass bin; blue-cloud galaxies lie below the ridge and are excluded from the fit. Not a relation for all galaxies. zRepresentative is the midpoint of 0.005<z<0.075 (not a median). The drawn line in Fig. 4 spans log M* 9-11.5; the fit uses the 9.75-11.25 sample. IMF and cosmology are not stated in the paper. Sigma_1 is from SDSS i-band surface-brightness profiles converted with a g-i colour M/L calibrated on the MPA/JHU masses, so it inherits SDSS seeing (HWHM 0.7 arcsec ~ 1 kpc at z=0.075)."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": "unspecified",
+        "massDefinition": "sed-total",
+        "population": "central green-valley and red-sequence",
+        "sigma1Definition": "average surface mass density within a circular aperture of radius 1 kpc, computed by directly integrating the mass profiles from the innermost point out to R=1 kpc"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Fang et al. 2013, ApJ 776, 63 (arXiv:1308.5224), fit to Fig. 4 (Sigma_1 vs M*)",
+        "doi": "10.1088/0004-637X/776/1/63",
+        "url": "https://arxiv.org/abs/1308.5224",
+        "retrieved": "2026-10-18",
+        "sourceArchiveSha256": "e41adaecc34114a227801cbe2cd9dde2f6636ea11a3012a0fac4cab893c3ee9f",
+        "sourceMember": "ms_v2.tex lines 193-197 (Eq. sd1_mass_eqn)",
+        "figureCheck": "f4.pdf checksum 74a767bba87193408ac509cb73d31a2d3c2b466ab1dcf231d35da980c16e159f"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Fit 9.29(+0.10,-0.10) + 0.64(+0.23,-0.20)(log M* - 10.25), 1 sigma scatter 0.16 dex (bootstrap 16-84%). Drawn line in f4.pdf reproduces the closed form to 0.006 dex at all vertices."
+    },
+    {
+      "id": "fang13.sdss.sigmam.sigma1kpc.green-red.fit",
+      "source": "Fang et al. 2013 (SDSS)",
+      "run": "central green+red galaxies, sigma scaled to 1 kpc, z<0.075, least-squares fit",
+      "kind": "observation",
+      "relation": "sigmam",
+      "epoch": {
+        "zRepresentative": 0.04,
+        "zNominal": 0.04,
+        "zMin": 0.005,
+        "zMax": 0.075,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 total stellar mass (MPA/JHU DR7)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 SDSS fibre velocity dispersion scaled to a circular aperture of radius 1 kpc, sigma_1",
+        "yUnit": "log10(km/s)"
+      },
+      "domain": {
+        "xMin": 9.75,
+        "xMax": 11.25
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "log sigma_1 = 2.09 + 0.29 (log M* - 10.25)",
+        "expression": "a+b*(x-10.25)",
+        "parameters": {
+          "a": 2.09,
+          "b": 0.29
+        }
+      },
+      "scatter": {
+        "value": 0.09,
+        "unit": "dex",
+        "meaning": "1 sigma vertical scatter of green and red galaxies about the relation"
+      },
+      "selection": {
+        "population": "central, green valley + red sequence",
+        "warning": "SDSS DR7 central galaxies (most massive group member, Yang+12), 0.005<z<0.075, b/a>0.6, green-valley and red-sequence (NUV-r>4) galaxies only, 9.75<log M*<11.25, volume-limited per 0.25 dex mass bin; blue-cloud galaxies lie below the ridge and are excluded from the fit. Not a relation for all galaxies. The aperture is 1 kpc (not R_e and not the 3 kpc of Zahid+16): fibre dispersions were scaled with sigma ~ R^-0.66 (Cappellari+06). zRepresentative is the midpoint of the redshift range. IMF and cosmology not stated."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": "unspecified",
+        "massDefinition": "sed-total",
+        "population": "central green-valley and red-sequence",
+        "sigmaDefinition": "SDSS fibre (3 arcsec) stellar velocity dispersion scaled to a circular aperture of radius 1 kpc with sigma ~ R^-0.66 (Cappellari+06); 1D line of sight",
+        "sigmaDimension": "1D line of sight, scaled to 1 kpc aperture",
+        "sigmaWeighting": "unspecified"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Fang et al. 2013, ApJ 776, 63 (arXiv:1308.5224), fit to Fig. 11 (sigma_1 vs M*)",
+        "doi": "10.1088/0004-637X/776/1/63",
+        "url": "https://arxiv.org/abs/1308.5224",
+        "retrieved": "2026-10-18",
+        "sourceArchiveSha256": "e41adaecc34114a227801cbe2cd9dde2f6636ea11a3012a0fac4cab893c3ee9f",
+        "sourceMember": "ms_v2.tex lines 339-344",
+        "figureCheck": "f11.pdf checksum c346c1996fdf5b5c5c56ba9bd1d77a40630a59692ed888c52910d096116e6b57"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Fit 2.09(+0.05,-0.08) + 0.29(+0.13,-0.10)(log M* - 10.25); 1 sigma scatter 0.09 dex. Drawn line in f11.pdf reproduces the closed form to 0.004 dex at all vertices."
+    }
+  ]
+}

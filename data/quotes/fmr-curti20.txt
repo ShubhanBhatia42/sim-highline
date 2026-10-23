@@ -1,0 +1,23 @@
+fmr_new_paper.tex:433: \text{12 + log(O/H)} = \text{Z}_{0} - \gamma/\beta * \text{log}\bigg(1 + \bigg(\frac{\text{M}}{\text{M}_{0}} \bigg)^{-\beta} \bigg)\ .
+fmr_new_paper.tex:1264: Following \cite{Mannucci:2010aa}, we search for the 2D-projection of the FMR that reduce the metallicity scatter around the relation Z- $\mu_{\alpha}$, where $\mu_{\alpha} = \text{log}(M_{\star}) - \alpha\ \text{log}(\text{SFR})$.
+fmr_new_paper.tex:1272: We fit our M-SFR bins (we here consider total-SFR only) against log(O/H) according to the same functional form used for the MZR (i.e. Eq.~\ref{eq:mzr}), where the x-variable is now $\mu_{\alpha}$
+fmr_new_paper.tex:1338: \text{Global Sample} & 0.55 $\pm$ 0.01 & 8.780 $\pm$ 0.004 & 10.14 $\pm$ 0.03 & 0.30 $\pm$ 0.01 & 2.4 $\pm$ 0.4 \\
+fmr_new_paper.tex:1339: \text{sSFR}$< 10^{-9.5}$ Gyr$^{-1}$ & 0.22 $\pm$ 0.02 & 8.796 $\pm$ 0.005 & 10.1 $\pm$ 0.1 & 0.25 $\pm$ 0.03 & 1.1 $\pm$ 0.2 \\
+fmr_new_paper.tex:1340: \text{sSFR}$> 10^{-9.5}$ Gyr$^{-1}$ & 0.65 $\pm$ 0.01 & 8.74 $\pm$ 0.04 & 9.9 $\pm$ 0.1 & 0.32 $\pm$ 0.01 & 5.0 $\pm$ 3.0 \\
+fmr_new_paper.tex:1285: we can divide our total sample into two subset of galaxies, the ``high sSFR'' sample (log(sSFR)$>-9.5$) and the ``low sSFR'' sample (log(sSFR)$<-9.5$) respectively
+fmr_new_paper.tex:1321: The Z-SFR dependence is weaker ($\alpha = 0.22$)
+fmr_new_paper.tex:1322: The Z-SFR dependence is tighter ($\alpha = 0.65$)
+fmr_new_paper.tex:1273: We obtain a best-fit $\upalpha$ value of $0.55$
+fmr_new_paper.tex:1330: \caption{Best fit parameters for the 2D projections of the FMR on the Z-$\mu_{\alpha}$ plane, for different SFR regimes. }
+fmr_new_paper.tex:186: We applied a redshift selection of $\text{z}>0.027$ to ensure the presence of the [\ion{O}{ii}]$\lambda3727$ emission line
+fmr_new_paper.tex:185: We required galaxies to be classified as star forming, according to their position on the {[\ion{N}{ii}]-BPT diagram and following the classification scheme by \cite{Kauffmann:2003aa}.
+fmr_new_paper.tex:224: The stellar masses for our sample are provided by the MPA/JHU catalog and have been estimated from fits to the photometry
+fmr_new_paper.tex:225: Star formation rates used in this work are derived from the extinction corrected H$\upalpha$ luminosity inside the fibre, adopting the calibration proposed by \cite{Kennicutt:2012aa}.
+fmr_new_paper.tex:226: We then apply the aperture corrections provided by the MPA/JHU catalog
+fmr_new_paper.tex:226: to compute the total SFR for our galaxies.
+fmr_new_paper.tex:227: Both stellar masses and SFRs estimates are re-scaled to a common \cite{Chabrier:2003aa} IMF.
+fmr_new_paper.tex:274: assuming the calibrations presented in \cite{Curti:2017aa} which are consistently defined on the T$_{\text{e}}$-based abundance scale over the entire metallicity range spanned by SDSS galaxies.
+fmr_new_paper.tex:219: the total analysed sample is reduced to $153,452$ galaxies.
+curti20.sdss.fmr.mu0.55.global: drawn best-fit curve (50 vertices, x 8.38..11.29) minus transcribed expression: max |diff| = 0.0007 dex (rms 0.0004); ends: drawn 8.251,8.780 vs expression 8.251,8.780
+curti20.sdss.fmr.mu0.22.low-ssfr: drawn best-fit curve (50 vertices, x 8.64..11.52) minus transcribed expression: max |diff| = 0.0126 dex (rms 0.0071); ends: drawn 8.441,8.794 vs expression 8.429,8.793
+curti20.sdss.fmr.mu0.65.high-ssfr: drawn best-fit curve (50 vertices, x 8.41..10.33) minus transcribed expression: max |diff| = 0.0127 dex (rms 0.0093); ends: drawn 8.250,8.736 vs expression 8.263,8.740

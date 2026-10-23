@@ -1,0 +1,916 @@
+{
+ "schemaVersion": "1.0.0",
+ "about": "An independent re-digitization of figure-read curves by a different method: the figure PDF is rendered to a 400 dpi raster, the axes are recalibrated from tick marks found in the raster, and the curve is traced by colour; the vector paths the original extraction used are never read. Curves were drawn at random (seeded random stream, seed 20261018, from the 744 digitized simulation records with a figure PDF at the time) until 20 could be checked. A curve passes if its largest difference from the stored values is within max(0.02 dex on a log axis, 1.5 pixels at 400 dpi). A curve that fails is not necessarily wrong: each failure was looked at and attributed to the check (a marker, error bar or other curve of the same colour on top of the stroke) or called inconclusive. This is not a verdict on the 76 curves that could not be checked (overlapping same-colour curves, raster or outlined axes, quantities stored after a transform).",
+ "checked": "2026-10-21",
+ "reader": "one reader; no author or outside expert has seen it",
+ "summary": {
+  "nAttempted": 96,
+  "nChecked": 20,
+  "nNotCheckable": 76,
+  "nPassTolerance": 10,
+  "nFailTolerance": 10,
+  "medianOfPerCurveMedians_yUnits": 0.000365,
+  "p90OfPerCurveMaxima_yUnits": 0.08902100000000011,
+  "medianOfPerCurveMedians_px": 0.11368999999999999,
+  "p90OfPerCurveMaxima_px": 28.34525400000001,
+  "maxOfMaxima_px": 61.77283,
+  "nLogYAxisCurves": 12,
+  "logY_medianOfMedians_dex": 0.000625,
+  "logY_p90OfMaxima_dex": 0.14782200000000004,
+  "logY_nExceedStatedUncertainty": 4,
+  "exceedStatedUncertaintyIds": [
+   "schaye23.flamingo-zstar.fgas+2s.z0.1",
+   "dave19.simba-m100n1024.gsmf.z3",
+   "ludlow26.colibre.size.cen-sf.z1",
+   "ludlow26.colibre.size.cen-passive.z2"
+  ],
+  "failTolerance_ids": [
+   "donnari21.tng100.quenched-cent.z0.1",
+   "schaye23.flamingo-zstar.fgas+2s.z0.1",
+   "donnari21.tng300.quenched-cent.z0.65",
+   "dave19.simba-m100n1024.gsmf.z3",
+   "donnari21.tng300.quenched-cent.z0.1",
+   "feldmann23.firebox.quenched.all-ssfr10p5.z0",
+   "donnari21.tng300.quenched-sat.z0.1",
+   "ludlow26.colibre.size.cen-sf.z1",
+   "schaye23.flamingo-passive.jet.z0",
+   "ludlow26.colibre.size.cen-passive.z2"
+  ],
+  "notCheckableByClass": {
+   "overlapping same-colour curves / bands / markers (>30% columns ambiguous)": 24,
+   "no numeric text layer (outlined text)": 7,
+   "stored values are a transform of the plotted quantity": 15,
+   "no panel with raster-calibrated axes containing the stored curve (tool limitation)": 19,
+   "curve occluded or merged with other drawing (>30% columns)": 8,
+   "trace covers <50% of columns (dashed/fragmented or hidden)": 3
+  }
+ },
+ "curves": [
+  {
+   "id": "donnari21.tng100.quenched-cent.z0.1",
+   "arxiv": "2008.00004",
+   "sourceFigure": "QF_Cent_ALL_errors_z01.pdf (TNG100-1 line with Poisson band)",
+   "panel": "z=0.1",
+   "relation": "quenched",
+   "yAxisIsLog10": false,
+   "yUnit": "fraction",
+   "yMedianAbsDiff": 0.00012,
+   "yMaxAbsDiff": 0.00275,
+   "pxMedian": 0.27893,
+   "pxMax": 5.89143,
+   "nColumnsUsed": 2769,
+   "coverage": 0.85,
+   "nColumnsOverTolerance": 51,
+   "toleranceY": 0.00054,
+   "verdictTolerance": "fail",
+   "statedDigitizationUncertaintyDex": 0.01,
+   "verdictVsStatedUncertainty": "n/a (linear y axis: stated uncertainty is in dex)",
+   "figureFile": "/tmp/vector_figure_src/2008.00004/figures/QF_Cent_ALL_errors_z01.pdf",
+   "figureSha256": "8ad418583f768fcdb8d7e92048650ff7a2d95d0ebd4fdc7a127b0d12d4ef48f6",
+   "failClass": "local (<=10% of columns)",
+   "diagnosis": "CHECK WRONG (stored curve looks right). Overlay and zoomed crops viewed: the stored polyline lies on the blue TNG100 line along its whole length (median deviation 0.28 px). The 51 columns over tolerance (1.5-8 px) sit where the thick green TNG50 line, the orange TNG300 band edge and hatching cross or cover the blue line, so the visible part of the blue stroke is off-centre. Cannot be fixed by the mask; the record is not contradicted."
+  },
+  {
+   "id": "schaye23.flamingo-zstar.fgas+2s.z0.1",
+   "arxiv": "2306.04024",
+   "sourceFigure": "Images/galaxy_props_z01.pdf (fgas+2sigma curve)",
+   "panel": "right column, zstar, fgas+2sigma",
+   "relation": "zstar",
+   "yAxisIsLog10": true,
+   "yUnit": "log10(Z/Zsun)",
+   "yMedianAbsDiff": 0.01171,
+   "yMaxAbsDiff": 0.03138,
+   "pxMedian": 2.18247,
+   "pxMax": 4.5386,
+   "nColumnsUsed": 430,
+   "coverage": 0.836,
+   "nColumnsOverTolerance": 16,
+   "toleranceY": 0.02,
+   "verdictTolerance": "fail",
+   "statedDigitizationUncertaintyDex": 0.01,
+   "verdictVsStatedUncertainty": "exceeds",
+   "figureFile": "/tmp/vector_figure_src/2306.04024/Images/galaxy_props_z01.pdf",
+   "figureSha256": "d640f2df8549eaa4bba4ab205b418947fd2793c525725aa710105770e6461762",
+   "failClass": "local (<=10% of columns)",
+   "diagnosis": "INCONCLUSIVE. Median offset 2.2 px (0.012 dex), max 0.031 dex vs the 0.02 dex tolerance, 16 of 430 columns over tolerance, in a panel with about a dozen model-variation curves in two or three similar colours (indigo, green) that overlap within a few px over much of the mass range, so the traced centroid may be the combination of two neighbouring strokes. A real offset of about 0.01 dex (the record's stated uncertainty), or a neighbouring variant, cannot be excluded; an error of more than about 0.03 dex is not supported."
+  },
+  {
+   "id": "dubois21.newhorizon.zstar.z1",
+   "arxiv": "2009.10578",
+   "sourceFigure": "metsvsmgal_reff-eps-converted-to.pdf",
+   "panel": "z=1",
+   "relation": "zstar",
+   "yAxisIsLog10": true,
+   "yUnit": "dex",
+   "yMedianAbsDiff": 6e-05,
+   "yMaxAbsDiff": 0.00379,
+   "pxMedian": 0.05898,
+   "pxMax": 3.61007,
+   "nColumnsUsed": 1334,
+   "coverage": 0.915,
+   "nColumnsOverTolerance": 0,
+   "toleranceY": 0.02,
+   "verdictTolerance": "pass",
+   "statedDigitizationUncertaintyDex": 0.01,
+   "verdictVsStatedUncertainty": "within",
+   "figureFile": "/tmp/vector_figure_src/2009.10578/metsvsmgal_reff-eps-converted-to.pdf",
+   "figureSha256": "218d119c1645ff1e2d4cf418f35d9296256f39af304121a54e00b1f94e70eca8",
+   "failClass": null,
+   "diagnosis": null
+  },
+  {
+   "id": "schaye23.flamingo-l1_m10.passive.z0",
+   "arxiv": "2306.04024",
+   "sourceFigure": "Images/galaxy_props_z01.pdf (L1_m10 curve)",
+   "panel": "left column, passive",
+   "relation": "quenched",
+   "yAxisIsLog10": false,
+   "yUnit": "fraction",
+   "yMedianAbsDiff": 0.00023,
+   "yMaxAbsDiff": 0.00112,
+   "pxMedian": 0.085,
+   "pxMax": 0.42021,
+   "nColumnsUsed": 213,
+   "coverage": 1.0,
+   "nColumnsOverTolerance": 0,
+   "toleranceY": 0.00335,
+   "verdictTolerance": "pass",
+   "statedDigitizationUncertaintyDex": 0.01,
+   "verdictVsStatedUncertainty": "n/a (linear y axis: stated uncertainty is in dex)",
+   "figureFile": "/tmp/vector_figure_src/2306.04024/Images/galaxy_props_z01.pdf",
+   "figureSha256": "d640f2df8549eaa4bba4ab205b418947fd2793c525725aa710105770e6461762",
+   "failClass": null,
+   "diagnosis": null
+  },
+  {
+   "id": "donnari21.tng300.quenched-cent.z0.65",
+   "arxiv": "2008.00004",
+   "sourceFigure": "QF_Cent_ALL_errors_z065.pdf (TNG300-1 line with Poisson band)",
+   "panel": "z=0.65",
+   "relation": "quenched",
+   "yAxisIsLog10": false,
+   "yUnit": "fraction",
+   "yMedianAbsDiff": 4e-05,
+   "yMaxAbsDiff": 0.00081,
+   "pxMedian": 0.13115,
+   "pxMax": 1.69036,
+   "nColumnsUsed": 2149,
+   "coverage": 0.672,
+   "nColumnsOverTolerance": 10,
+   "toleranceY": 0.00054,
+   "verdictTolerance": "fail",
+   "statedDigitizationUncertaintyDex": 0.01,
+   "verdictVsStatedUncertainty": "n/a (linear y axis: stated uncertainty is in dex)",
+   "figureFile": "/tmp/vector_figure_src/2008.00004/figures/QF_Cent_ALL_errors_z065.pdf",
+   "figureSha256": "8a1cb3396bdebb005580f3fba7a54e92138fce8b235bf43a1e7edae5bff57e82",
+   "failClass": "marginal (<=2x tol, <=2% of columns)",
+   "diagnosis": "CHECK WRONG / marginal: max 1.69 px vs 1.5 px tolerance, median 0.13 px; same cause as donnari21.tng300.quenched-cent.z0.1."
+  },
+  {
+   "id": "dave19.simba-m100n1024.gsmf-sf.z1",
+   "arxiv": "1901.10203",
+   "sourceFigure": "mfssfr_m100n1024.pdf",
+   "panel": "z=1",
+   "relation": "gsmf",
+   "yAxisIsLog10": true,
+   "yUnit": "log10(Mpc^-3)",
+   "yMedianAbsDiff": 0.00043,
+   "yMaxAbsDiff": 0.0066,
+   "pxMedian": 0.06795,
+   "pxMax": 1.00926,
+   "nColumnsUsed": 572,
+   "coverage": 0.722,
+   "nColumnsOverTolerance": 0,
+   "toleranceY": 0.02,
+   "verdictTolerance": "pass",
+   "statedDigitizationUncertaintyDex": 0.01,
+   "verdictVsStatedUncertainty": "within",
+   "figureFile": "/tmp/vector_figure_src/1901.10203/mfssfr_m100n1024.pdf",
+   "figureSha256": "4ea35f4676657d793fbdf9dd685bd8c602db0c8c259fa17ed6247ef666727377",
+   "failClass": null,
+   "diagnosis": null
+  },
+  {
+   "id": "schaye23.flamingo-bh.jet.z0",
+   "arxiv": "2306.04024",
+   "sourceFigure": "Images/SMBHM_2_panel.pdf (Jet solid curve)",
+   "panel": "right panel, Jet",
+   "relation": "bh",
+   "yAxisIsLog10": true,
+   "yUnit": "log10(Msun)",
+   "yMedianAbsDiff": 0.00139,
+   "yMaxAbsDiff": 0.00473,
+   "pxMedian": 0.1276,
+   "pxMax": 0.51588,
+   "nColumnsUsed": 294,
+   "coverage": 0.681,
+   "nColumnsOverTolerance": 0,
+   "toleranceY": 0.02,
+   "verdictTolerance": "pass",
+   "statedDigitizationUncertaintyDex": 0.01,
+   "verdictVsStatedUncertainty": "within",
+   "figureFile": "/tmp/vector_figure_src/2306.04024/Images/SMBHM_2_panel.pdf",
+   "figureSha256": "e48a2163d148e0d0d3e506902f77e34da5163d0441dac959d97ea71a26289d92",
+   "failClass": null,
+   "diagnosis": null
+  },
+  {
+   "id": "dave19.simba-m100n1024.gsmf.z3",
+   "arxiv": "1901.10203",
+   "sourceFigure": "mfssfr_m100n1024.pdf",
+   "panel": "z=3",
+   "relation": "gsmf",
+   "yAxisIsLog10": true,
+   "yUnit": "log10(Mpc^-3)",
+   "yMedianAbsDiff": 0.00071,
+   "yMaxAbsDiff": 0.21533,
+   "pxMedian": 0.09429,
+   "pxMax": 27.49936,
+   "nColumnsUsed": 502,
+   "coverage": 0.916,
+   "nColumnsOverTolerance": 4,
+   "toleranceY": 0.02,
+   "verdictTolerance": "fail",
+   "statedDigitizationUncertaintyDex": 0.01,
+   "verdictVsStatedUncertainty": "exceeds",
+   "figureFile": "/tmp/vector_figure_src/1901.10203/mfssfr_m100n1024.pdf",
+   "figureSha256": "4ea35f4676657d793fbdf9dd685bd8c602db0c8c259fa17ed6247ef666727377",
+   "failClass": "local (<=10% of columns)",
+   "diagnosis": "CHECK WRONG (stored curve looks right): only 4 of 502 columns exceed the tolerance (two isolated columns 30 px off where a black data marker / error bar crosses the green stroke, two at 3.4 px); median 0.09 px, node check 0.003 dex. Overlay viewed: the stored polyline sits on the thick green Simba curve."
+  },
+  {
+   "id": "donnari21.tng300.quenched-cent.z0.1",
+   "arxiv": "2008.00004",
+   "sourceFigure": "QF_Cent_ALL_errors_z01.pdf (TNG300-1 line with Poisson band)",
+   "panel": "z=0.1",
+   "relation": "quenched",
+   "yAxisIsLog10": false,
+   "yUnit": "fraction",
+   "yMedianAbsDiff": 7e-05,
+   "yMaxAbsDiff": 0.00076,
+   "pxMedian": 0.24368,
+   "pxMax": 1.60385,
+   "nColumnsUsed": 3083,
+   "coverage": 0.902,
+   "nColumnsOverTolerance": 13,
+   "toleranceY": 0.00054,
+   "verdictTolerance": "fail",
+   "statedDigitizationUncertaintyDex": 0.01,
+   "verdictVsStatedUncertainty": "n/a (linear y axis: stated uncertainty is in dex)",
+   "figureFile": "/tmp/vector_figure_src/2008.00004/figures/QF_Cent_ALL_errors_z01.pdf",
+   "figureSha256": "8ad418583f768fcdb8d7e92048650ff7a2d95d0ebd4fdc7a127b0d12d4ef48f6",
+   "failClass": "marginal (<=2x tol, <=2% of columns)",
+   "diagnosis": "CHECK WRONG / marginal: 13 of 3083 columns exceed the 1.5 px tolerance, by 0.1-0.6 px (max 1.6 px), at stroke joins and hatching crossings; median 0.24 px. Overlay viewed, stored polyline on the orange line. Not evidence against the record."
+  },
+  {
+   "id": "schaye23.flamingo-l1_m10.zstar.z0.1",
+   "arxiv": "2306.04024",
+   "sourceFigure": "Images/galaxy_props_z01.pdf (L1_m10 curve)",
+   "panel": "left column, zstar",
+   "relation": "zstar",
+   "yAxisIsLog10": true,
+   "yUnit": "log10(Z/Zsun)",
+   "yMedianAbsDiff": 0.00052,
+   "yMaxAbsDiff": 0.00293,
+   "pxMedian": 0.09978,
+   "pxMax": 0.55982,
+   "nColumnsUsed": 189,
+   "coverage": 0.881,
+   "nColumnsOverTolerance": 0,
+   "toleranceY": 0.02,
+   "verdictTolerance": "pass",
+   "statedDigitizationUncertaintyDex": 0.01,
+   "verdictVsStatedUncertainty": "within",
+   "figureFile": "/tmp/vector_figure_src/2306.04024/Images/galaxy_props_z01.pdf",
+   "figureSha256": "d640f2df8549eaa4bba4ab205b418947fd2793c525725aa710105770e6461762",
+   "failClass": null,
+   "diagnosis": null
+  },
+  {
+   "id": "feldmann23.firebox.quenched.all-ssfr10p5.z0",
+   "arxiv": "2205.15325",
+   "sourceFigure": "fig6.pdf",
+   "panel": "all galaxies, sSFR<10^-10.5",
+   "relation": "quenched",
+   "yAxisIsLog10": false,
+   "yUnit": "fraction",
+   "yMedianAbsDiff": 7e-05,
+   "yMaxAbsDiff": 0.00389,
+   "pxMedian": 0.09806,
+   "pxMax": 16.51462,
+   "nColumnsUsed": 1415,
+   "coverage": 0.865,
+   "nColumnsOverTolerance": 5,
+   "toleranceY": 0.00101,
+   "verdictTolerance": "fail",
+   "statedDigitizationUncertaintyDex": 0.01,
+   "verdictVsStatedUncertainty": "n/a (linear y axis: stated uncertainty is in dex)",
+   "figureFile": "/tmp/vector_figure_src/2205.15325/fig6.pdf",
+   "figureSha256": "bafa3d43318b7d90280410ba4b64ef3a196b0112808da160c20cd24cc5586997",
+   "failClass": "local (<=10% of columns)",
+   "diagnosis": "CHECK WRONG (stored curve looks right): 5 of 1415 columns exceed tolerance, all in one 20-column stretch (cols 1930-1950) at the local peak where the same-colour red error bar runs through the stroke and shifts the column centroid by up to 34 px; elsewhere median 0.10 px. Overlay viewed: the stored polyline lies on the red solid curve ('all', sSFR<-10.5)."
+  },
+  {
+   "id": "donnari21.tng300.quenched-sat.z0.1",
+   "arxiv": "2008.00004",
+   "sourceFigure": "QF_Sat_ALL_errors_z01.pdf (TNG300-1 line with Poisson band)",
+   "panel": "z=0.1",
+   "relation": "quenched",
+   "yAxisIsLog10": false,
+   "yUnit": "fraction",
+   "yMedianAbsDiff": 5e-05,
+   "yMaxAbsDiff": 0.00073,
+   "pxMedian": 0.13862,
+   "pxMax": 1.78298,
+   "nColumnsUsed": 3345,
+   "coverage": 0.901,
+   "nColumnsOverTolerance": 7,
+   "toleranceY": 0.00054,
+   "verdictTolerance": "fail",
+   "statedDigitizationUncertaintyDex": 0.01,
+   "verdictVsStatedUncertainty": "n/a (linear y axis: stated uncertainty is in dex)",
+   "figureFile": "/tmp/vector_figure_src/2008.00004/figures/QF_Sat_ALL_errors_z01.pdf",
+   "figureSha256": "86f5bca3f495b674c75f131d2ad68f5fc881d05765bd463ba61368e750c6dcc9",
+   "failClass": "marginal (<=2x tol, <=2% of columns)",
+   "diagnosis": "CHECK WRONG / marginal: 7 of 3345 columns exceed 1.5 px (max 1.78 px), median 0.14 px; same cause (stroke joins / band hatching)."
+  },
+  {
+   "id": "ludlow26.colibre.size.cen-sf.z1",
+   "arxiv": "2603.26200",
+   "sourceFigure": "plots/size_j_redshift.pdf",
+   "panel": "upper panel, z=1, connected circles (centrals)",
+   "relation": "size",
+   "yAxisIsLog10": true,
+   "yUnit": "log10(kpc)",
+   "yMedianAbsDiff": 0.01099,
+   "yMaxAbsDiff": 0.02343,
+   "pxMedian": 3.67076,
+   "pxMax": 8.98944,
+   "nColumnsUsed": 109,
+   "coverage": 0.643,
+   "nColumnsOverTolerance": 8,
+   "toleranceY": 0.02,
+   "verdictTolerance": "fail",
+   "statedDigitizationUncertaintyDex": 0.01,
+   "verdictVsStatedUncertainty": "exceeds",
+   "figureFile": "/tmp/vector_figure_src/2603.26200/plots/size_j_redshift.pdf",
+   "figureSha256": "f6ca86d3cab827e8d44168f6ecccd59566ca2c2078e501cad17dbd025857f04c",
+   "failClass": "local (<=10% of columns)",
+   "diagnosis": "CHECK WRONG (stored curve looks right): the blue 'Centrals' chain of black-edged markers is partly covered by the red dashed 'All galaxies' stroke and the marker outlines, leaving only 109 usable columns (64% coverage) whose centroids are off-centre (median 3.7 px, max 9 px). Overlay viewed: the stored polyline runs through the blue marker centres."
+  },
+  {
+   "id": "bird22.astrid.zstar.z6",
+   "arxiv": "2111.01160",
+   "sourceFigure": "plots/starmetal_oh.pdf (z=6 line)",
+   "panel": "z=6 curve",
+   "relation": "zstar",
+   "yAxisIsLog10": true,
+   "yUnit": "dex",
+   "yMedianAbsDiff": 0.00013,
+   "yMaxAbsDiff": 0.00126,
+   "pxMedian": 0.09037,
+   "pxMax": 0.97472,
+   "nColumnsUsed": 676,
+   "coverage": 0.69,
+   "nColumnsOverTolerance": 0,
+   "toleranceY": 0.02,
+   "verdictTolerance": "pass",
+   "statedDigitizationUncertaintyDex": 0.01,
+   "verdictVsStatedUncertainty": "within",
+   "figureFile": "/tmp/vector_figure_src/2111.01160/plots/starmetal_oh.pdf",
+   "figureSha256": "33e9b5af6dd16c383b2070f9fcdd834328cc3a48b82a148bc54bb44f21868cc5",
+   "failClass": null,
+   "diagnosis": null
+  },
+  {
+   "id": "katz23.sphinx20.uvlf.z7",
+   "arxiv": "2309.03269",
+   "sourceFigure": "figures/uvlf_sphinx20.pdf",
+   "panel": "z = 7 curve (lower panel)",
+   "relation": "uvlf",
+   "yAxisIsLog10": true,
+   "yUnit": "log10(cMpc^-3 mag^-1)",
+   "yMedianAbsDiff": 0.00054,
+   "yMaxAbsDiff": 0.00284,
+   "pxMedian": 0.07952,
+   "pxMax": 0.4877,
+   "nColumnsUsed": 305,
+   "coverage": 0.918,
+   "nColumnsOverTolerance": 0,
+   "toleranceY": 0.02,
+   "verdictTolerance": "pass",
+   "statedDigitizationUncertaintyDex": 0.02,
+   "verdictVsStatedUncertainty": "within",
+   "figureFile": "/tmp/vector_figure_src/2309.03269/figures/uvlf_sphinx20.pdf",
+   "figureSha256": "5ce9ab9ca4ff57dc60bcd643884f896e934727089d01118891edc9dff24bd4b1",
+   "failClass": null,
+   "diagnosis": null
+  },
+  {
+   "id": "katz23.sphinx20.uvlf.z5",
+   "arxiv": "2309.03269",
+   "sourceFigure": "figures/uvlf_sphinx20.pdf",
+   "panel": "z = 5 curve (lower panel)",
+   "relation": "uvlf",
+   "yAxisIsLog10": true,
+   "yUnit": "log10(cMpc^-3 mag^-1)",
+   "yMedianAbsDiff": 0.00051,
+   "yMaxAbsDiff": 0.00255,
+   "pxMedian": 0.07682,
+   "pxMax": 0.33028,
+   "nColumnsUsed": 493,
+   "coverage": 0.925,
+   "nColumnsOverTolerance": 0,
+   "toleranceY": 0.02,
+   "verdictTolerance": "pass",
+   "statedDigitizationUncertaintyDex": 0.02,
+   "verdictVsStatedUncertainty": "within",
+   "figureFile": "/tmp/vector_figure_src/2309.03269/figures/uvlf_sphinx20.pdf",
+   "figureSha256": "5ce9ab9ca4ff57dc60bcd643884f896e934727089d01118891edc9dff24bd4b1",
+   "failClass": null,
+   "diagnosis": null
+  },
+  {
+   "id": "schaye23.flamingo-zstar.mstar-s.z0.1",
+   "arxiv": "2306.04024",
+   "sourceFigure": "Images/galaxy_props_z01.pdf (M*-sigma curve)",
+   "panel": "right column, zstar, M*-sigma",
+   "relation": "zstar",
+   "yAxisIsLog10": true,
+   "yUnit": "log10(Z/Zsun)",
+   "yMedianAbsDiff": 0.00174,
+   "yMaxAbsDiff": 0.00675,
+   "pxMedian": 0.33781,
+   "pxMax": 1.3148,
+   "nColumnsUsed": 283,
+   "coverage": 0.535,
+   "nColumnsOverTolerance": 0,
+   "toleranceY": 0.02,
+   "verdictTolerance": "pass",
+   "statedDigitizationUncertaintyDex": 0.01,
+   "verdictVsStatedUncertainty": "within",
+   "figureFile": "/tmp/vector_figure_src/2306.04024/Images/galaxy_props_z01.pdf",
+   "figureSha256": "d640f2df8549eaa4bba4ab205b418947fd2793c525725aa710105770e6461762",
+   "failClass": null,
+   "diagnosis": null
+  },
+  {
+   "id": "schaye23.flamingo-passive.jet.z0",
+   "arxiv": "2306.04024",
+   "sourceFigure": "Images/galaxy_props_z01.pdf (Jet curve)",
+   "panel": "right column, passive, Jet",
+   "relation": "quenched",
+   "yAxisIsLog10": false,
+   "yUnit": "fraction",
+   "yMedianAbsDiff": 0.0003,
+   "yMaxAbsDiff": 0.08105,
+   "pxMedian": 0.14467,
+   "pxMax": 35.9583,
+   "nColumnsUsed": 169,
+   "coverage": 0.835,
+   "nColumnsOverTolerance": 7,
+   "toleranceY": 0.00335,
+   "verdictTolerance": "fail",
+   "statedDigitizationUncertaintyDex": 0.01,
+   "verdictVsStatedUncertainty": "n/a (linear y axis: stated uncertainty is in dex)",
+   "figureFile": "/tmp/vector_figure_src/2306.04024/Images/galaxy_props_z01.pdf",
+   "figureSha256": "d640f2df8549eaa4bba4ab205b418947fd2793c525725aa710105770e6461762",
+   "failClass": "local (<=10% of columns)",
+   "diagnosis": "CHECK INCONCLUSIVE: ~12 model-variation curves in similar colours cross in this panel; median deviation is 0.14 px but 169 usable columns include a stretch where a same-colour light-green branch (rising at the high-mass end) takes over the run, giving up to 36 px / 0.08 dex. Overlay viewed; identity of the stored curve among the crowd cannot be confirmed or refuted by this check."
+  },
+  {
+   "id": "ludlow26.colibre.size.cen-passive.z2",
+   "arxiv": "2603.26200",
+   "sourceFigure": "plots/size_j_redshift.pdf",
+   "panel": "upper panel, z=2, connected circles (centrals)",
+   "relation": "size",
+   "yAxisIsLog10": true,
+   "yUnit": "log10(kpc)",
+   "yMedianAbsDiff": 0.04356,
+   "yMaxAbsDiff": 0.16076,
+   "pxMedian": 13.64573,
+   "pxMax": 61.77283,
+   "nColumnsUsed": 131,
+   "coverage": 0.932,
+   "nColumnsOverTolerance": 72,
+   "toleranceY": 0.02,
+   "verdictTolerance": "fail",
+   "statedDigitizationUncertaintyDex": 0.01,
+   "verdictVsStatedUncertainty": "exceeds",
+   "figureFile": "/tmp/vector_figure_src/2603.26200/plots/size_j_redshift.pdf",
+   "figureSha256": "f6ca86d3cab827e8d44168f6ecccd59566ca2c2078e501cad17dbd025857f04c",
+   "failClass": "systematic (>10% of columns)",
+   "diagnosis": "CHECK WRONG (curve identity in the check, not shown wrong in the record): the dominant colour near the stored curve was that of the red dashed 'All galaxies' line, which peaks 60 px above the salmon-marker 'Centrals' chain that the stored polyline follows (overlay viewed). The check therefore traced a neighbouring curve; the result says nothing about the record."
+  },
+  {
+   "id": "schaye23.flamingo-l1_m8.passive.z0",
+   "arxiv": "2306.04024",
+   "sourceFigure": "Images/galaxy_props_z01.pdf (L1_m8 curve)",
+   "panel": "left column, passive",
+   "relation": "quenched",
+   "yAxisIsLog10": false,
+   "yUnit": "fraction",
+   "yMedianAbsDiff": 0.00026,
+   "yMaxAbsDiff": 0.00284,
+   "pxMedian": 0.09516,
+   "pxMax": 0.97436,
+   "nColumnsUsed": 584,
+   "coverage": 0.927,
+   "nColumnsOverTolerance": 0,
+   "toleranceY": 0.00335,
+   "verdictTolerance": "pass",
+   "statedDigitizationUncertaintyDex": 0.01,
+   "verdictVsStatedUncertainty": "n/a (linear y axis: stated uncertainty is in dex)",
+   "figureFile": "/tmp/vector_figure_src/2306.04024/Images/galaxy_props_z01.pdf",
+   "figureSha256": "d640f2df8549eaa4bba4ab205b418947fd2793c525725aa710105770e6461762",
+   "failClass": null,
+   "diagnosis": null
+  }
+ ],
+ "attempts": [
+  {
+   "id": "feldmann23.firebox.quenched.all-ssfr11.z0",
+   "result": "not-checkable"
+  },
+  {
+   "id": "habouzit21.m100n1024.bh.z4",
+   "result": "not-checkable"
+  },
+  {
+   "id": "crain17.eagle.hi-fraction.recal.z1",
+   "result": "not-checkable"
+  },
+  {
+   "id": "pillepich18.tng100.shmr.z0",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye15.eagle-recal.stfr.z0.1",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye23.flamingo-l1_m10.sfrd",
+   "result": "not-checkable"
+  },
+  {
+   "id": "donnari21.tng100.quenched-cent.z0.1",
+   "result": "checked"
+  },
+  {
+   "id": "furlong15.eagle-ref.gsmf.z2",
+   "result": "not-checkable"
+  },
+  {
+   "id": "crain15.eagle.fbconst-l050n0752.smd",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye23.flamingo-zstar.fgas+2s.z0.1",
+   "result": "checked"
+  },
+  {
+   "id": "genel14.illustris-1.shmr-r2.z2",
+   "result": "not-checkable"
+  },
+  {
+   "id": "genel14.illustris-1.gsmf-full.z3",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye23.flamingo-shmr.mstar-s-fgas-4s.z0",
+   "result": "not-checkable"
+  },
+  {
+   "id": "dubois21.newhorizon.zstar.z1",
+   "result": "checked"
+  },
+  {
+   "id": "schaye23.flamingo-l1_m9.bh.z0",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye23.flamingo-l1_m10.passive.z0",
+   "result": "checked"
+  },
+  {
+   "id": "chaikin26.colibre.quenched.m5.z7",
+   "result": "not-checkable"
+  },
+  {
+   "id": "furlong17.eagle-l100n1504.size-active.z0.5-1",
+   "result": "not-checkable"
+  },
+  {
+   "id": "donnari21.tng300.quenched-cent.z0.65",
+   "result": "checked"
+  },
+  {
+   "id": "schaye23.flamingo-size-active-ap50.ls8.z0.1",
+   "result": "not-checkable"
+  },
+  {
+   "id": "donnari19.tng300.quenched-uvj.z1.75",
+   "result": "not-checkable"
+  },
+  {
+   "id": "dave19.simba-m100n1024.gsmf-sf.z1",
+   "result": "checked"
+  },
+  {
+   "id": "schaye23.flamingo-bh.jet.z0",
+   "result": "checked"
+  },
+  {
+   "id": "furlong15.eagle-recal.gsmf.z2",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye23.flamingo-passive.fgas-2s.z0",
+   "result": "not-checkable"
+  },
+  {
+   "id": "feldmann23.firebox.sfrd.all",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye23.flamingo-l1_m9-fgas+2s.sfrd",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye15.eagle-agndt9.stfr.z0.1",
+   "result": "not-checkable"
+  },
+  {
+   "id": "crain17.eagle.hi-fraction.recal.z0",
+   "result": "not-checkable"
+  },
+  {
+   "id": "diemer19.tng300.hi-fraction.z0",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye25.colibre.ssfr.m5-l025.z0",
+   "result": "not-checkable"
+  },
+  {
+   "id": "sparre15.illustris-1.sfms-median.z0",
+   "result": "not-checkable"
+  },
+  {
+   "id": "pillepich19.tng50.size.stellar3d.z0.5",
+   "result": "not-checkable"
+  },
+  {
+   "id": "bird22.astrid.sfrd.total",
+   "result": "not-checkable"
+  },
+  {
+   "id": "dave19.simba-m100n1024.gsmf.z3",
+   "result": "checked"
+  },
+  {
+   "id": "schaye23.flamingo-l1_m9-planck-nu0p24fix.sfrd",
+   "result": "not-checkable"
+  },
+  {
+   "id": "donnari19.tng100.quenched-sfr1dex.z0.3",
+   "result": "not-checkable"
+  },
+  {
+   "id": "sparre15.illustris-1.sfms-median.z1",
+   "result": "not-checkable"
+  },
+  {
+   "id": "dubois21.newhorizon.gsmf-raw.z2",
+   "result": "not-checkable"
+  },
+  {
+   "id": "dave20.eagle.h2-fraction.ref-l100n1504.z0",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye23.flamingo-zstar.planck.z0.1",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye23.flamingo-bh.fgas+2s.z0",
+   "result": "not-checkable"
+  },
+  {
+   "id": "chaikin26.colibre.quenched.m6.z3",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye23.flamingo-gsmf.planck-nu0p24fix.z0",
+   "result": "not-checkable"
+  },
+  {
+   "id": "chaikin26.colibre.shmr.l200m6.z0",
+   "result": "not-checkable"
+  },
+  {
+   "id": "kannan22.thesan.uvlf.sdao2.z7",
+   "result": "not-checkable"
+  },
+  {
+   "id": "sparre15.illustris-1.ssfr-median.z4",
+   "result": "not-checkable"
+  },
+  {
+   "id": "donnari21.tng300.quenched-cent.z0.1",
+   "result": "checked"
+  },
+  {
+   "id": "genel18.tng100.size.ms.z3",
+   "result": "not-checkable"
+  },
+  {
+   "id": "diemer19.tng100.h2-fraction.z0",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye23.flamingo-gsmf.jet.z0",
+   "result": "not-checkable"
+  },
+  {
+   "id": "crain15.eagle.fbz-l050n0752.smd",
+   "result": "not-checkable"
+  },
+  {
+   "id": "dave19.simba-m100n1024.gsmf-q.z3",
+   "result": "not-checkable"
+  },
+  {
+   "id": "pillepich18.tng100.shmr.z0.5",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye23.flamingo-l1_m9.size-active-ap50.z0.1",
+   "result": "not-checkable"
+  },
+  {
+   "id": "furlong15.eagle-recal.gsmf.z5",
+   "result": "not-checkable"
+  },
+  {
+   "id": "pillepich18.tng-l25n512.var-illustris-winds.sfrd",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye15.eagle-ref-l100n1504.gsmf-ap-10pkpc.z0.1",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye23.flamingo-l1_m10.zstar.z0.1",
+   "result": "checked"
+  },
+  {
+   "id": "ludlow26.colibre.jstar.all-passive.z3",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye23.flamingo-l2p8_m9.size-active-ap50.z0.1",
+   "result": "not-checkable"
+  },
+  {
+   "id": "dutton17.nihao.btfr-stars-neutral-gas.fit.z0",
+   "result": "not-checkable"
+  },
+  {
+   "id": "chaikin26.colibre.shmr.l200m6.z17",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye15.eagle-recal.bh.z0.1",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye23.flamingo-shmr.fgas-2s.z0",
+   "result": "not-checkable"
+  },
+  {
+   "id": "feldmann23.firebox.quenched.all-ssfr10p5.z0",
+   "result": "checked"
+  },
+  {
+   "id": "schaye23.flamingo-size-passive-ap100.fgas-4s.z0.1",
+   "result": "not-checkable"
+  },
+  {
+   "id": "blank21.nihao.sfms-fit.z4",
+   "result": "not-checkable"
+  },
+  {
+   "id": "donnari21.tng300.quenched-all-ms1dex-boundgas.z0",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye23.flamingo-l1_m10.size-passive-ap50.z0.1",
+   "result": "not-checkable"
+  },
+  {
+   "id": "donnari21.tng300.quenched-sat.z0.1",
+   "result": "checked"
+  },
+  {
+   "id": "habouzit21.tng1001.bh.z3",
+   "result": "not-checkable"
+  },
+  {
+   "id": "ludlow26.colibre.size.cen-sf.z1",
+   "result": "checked"
+  },
+  {
+   "id": "wilkins22.flares.uvlf.intrinsic.z10",
+   "result": "not-checkable"
+  },
+  {
+   "id": "chaikin26.colibre.quenched.m5.z1",
+   "result": "not-checkable"
+  },
+  {
+   "id": "bird22.astrid.zstar.z6",
+   "result": "checked"
+  },
+  {
+   "id": "katz23.sphinx20.uvlf.z7",
+   "result": "checked"
+  },
+  {
+   "id": "katz23.sphinx20.uvlf.z5",
+   "result": "checked"
+  },
+  {
+   "id": "pillepich18.rtng300.gsmf.z1",
+   "result": "not-checkable"
+  },
+  {
+   "id": "feldmann23.firebox.quenched.sat-ssfr10p5.z0",
+   "result": "not-checkable"
+  },
+  {
+   "id": "wilkins22.flares.uvlf.intrinsic.z13",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye23.flamingo-bh.jet-fgas-4s.z0",
+   "result": "not-checkable"
+  },
+  {
+   "id": "dave19.simba-m100n1024.gsmf-q.z1",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye23.flamingo-zstar.mstar-s.z0.1",
+   "result": "checked"
+  },
+  {
+   "id": "furlong15.eagle-recal.quenched.z0.1",
+   "result": "not-checkable"
+  },
+  {
+   "id": "dubois16.horizon-noagn.ssfr.z0.3",
+   "result": "not-checkable"
+  },
+  {
+   "id": "dubois21.newhorizon.mzr-gas.z0.25",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye23.flamingo-l1_m9.ssfr-active.z0.1",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye23.flamingo-passive.jet.z0",
+   "result": "checked"
+  },
+  {
+   "id": "schaye23.flamingo-size-passive-ap100.ls8.z0.1",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye23.flamingo-size-passive-ap50.jet.z0.1",
+   "result": "not-checkable"
+  },
+  {
+   "id": "kannan25.thesanzoom.uvlf.bouwens16.z6",
+   "result": "not-checkable"
+  },
+  {
+   "id": "schaye23.flamingo-gsmf.planck-nu0p24var.z0",
+   "result": "not-checkable"
+  },
+  {
+   "id": "furlong15.eagle-ref.gsmf.z0.5",
+   "result": "not-checkable"
+  },
+  {
+   "id": "ludlow26.colibre.size.cen-passive.z2",
+   "result": "checked"
+  },
+  {
+   "id": "schaye23.flamingo-l1_m8.passive.z0",
+   "result": "checked"
+  }
+ ]
+}

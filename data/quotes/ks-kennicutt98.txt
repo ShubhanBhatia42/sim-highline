@@ -1,0 +1,20 @@
+text.tex:802: {\Sigma_{SFR}} = {(2.5 \pm 0.7) \times 10^{-4}}~{{ ({{\Sigma_{gas}} \over {1~M_{\odot}~{\rm pc}^{-2}}})}^{1.4 \pm 0.15}}~ {{\rm M_{\odot}~yr^{-1}~kpc^{-2}}}
+text.tex:30: The disk-averaged SFRs and gas densities for the combined sample are well represented by a Schmidt law with index $N = 1.4 \pm 0.15$.
+text.tex:509: Figure 2 shows the relationship between the disk-averaged SFR and total gas density (atomic and molecular hydrogen) for the 61 normal spirals in our sample.
+text.tex:336: Consequently we have ignored the HI component and approximate the molecular mass as the total gas mass in the starburst region.
+text.tex:190: conversion factor: $N(H_2) = 2.8 \times 10^{20}~I_{{\rm CO}}$~cm$^{-2}$~ (K~km~s$^{-1}$).
+text.tex:574: The lines are offset by a factor of 1.37 to include helium and heavy elements in the total gas mass.
+text.tex:239: The IMF used in this conversion is a Salpeter function ($dN(m)/dm = -2.35$) over $m = 0.1 - 100$ \msun.
+text.tex:224: The \halpha\ luminosities used in equation (2) were corrected for internal extinction by 1.1 mag (factor 2.8)
+text.tex:219: SFR~({\rm M_\odot~yr^{-1}}) = {{L(H\alpha)} \over {1.26 \times 10^{41} ~{\rm ergs~s^{-1}}}}
+text.tex:385: { {SFR} \over {1~{\rm M_{\odot}~yr^{-1}}} } = { {L_{FIR}} \over {2.2 \times 10^{43}~ {\rm ergs~s^{-1}} } }
+text.tex:381: Adopting the mean luminosity for 10--100 Myr continuous bursts, solar abundances, the Salpeter IMF described earlier
+text.tex:249: Finally, the mean SFR surface density (units \msun~yr$^{-1}$~kpc$^{-2}$) was derived for each galaxy, by dividing the total SFR from equation (2) by the deprojected area within the corrected RC2 radius.
+text.tex:678: The SFRs and densities are averaged within the radii of the central molecular disks and starbursts, which have typical dimensions of order 1 kpc.
+text.tex:327: The mean molecular surface densities were then derived, averaged within the radius of the central molecular disk as determined from the CO maps.
+text.tex:779: This yields a best fitting index $N = 1.40 \pm 0.05$ (bivariate regression) or $N = 1.35 \pm 0.03$ (errors in SFRs only).
+text.tex:684: with a best fitting least squares slope $N = 1.40 \pm 0.13$ (bivariate regression)
+Tables 1-2 parsed: 58 normal disks (log Sigma_gas, log Sigma_SFR) + 34 starbursts (log Sigma_H2, log Sigma_SFR) (92 points)
+OLS bisector, all points: slope 1.384, intercept -3.578 (paper: N=1.40+-0.05; eq. 4 intercept log10(2.5e-4)=-3.602); starbursts only: slope 1.362 (paper 1.40+-0.13)
+eq. 4 minus tabulated log Sigma_SFR: mean -0.004 dex, rms 0.355 dex (disks +0.024, starbursts -0.052)
+x span of the tabulated points: log Sigma_gas = 0.25..4.76

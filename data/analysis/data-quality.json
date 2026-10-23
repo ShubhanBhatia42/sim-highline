@@ -1,6 +1,6 @@
 {
- "n_records": 1699,
- "n_sources": 101,
+ "n_records": 1859,
+ "n_sources": 128,
  "tiers": [
   {
    "kind": "empirical-model",
@@ -11,13 +11,13 @@
   {
    "kind": "observation",
    "tier": "catalog-derived",
-   "records": 11,
-   "rankable": 11
+   "records": 12,
+   "rankable": 12
   },
   {
    "kind": "observation",
    "tier": "digitized-figure",
-   "records": 1,
+   "records": 16,
    "rankable": 0
   },
   {
@@ -29,62 +29,70 @@
   {
    "kind": "observation",
    "tier": "published-fit",
-   "records": 36,
-   "rankable": 32
+   "records": 110,
+   "rankable": 104
   },
   {
    "kind": "observation",
    "tier": "published-table",
-   "records": 163,
-   "rankable": 163
+   "records": 176,
+   "rankable": 175
   },
   {
    "kind": "simulation",
    "tier": "catalog-derived",
-   "records": 190,
-   "rankable": 190
+   "records": 210,
+   "rankable": 210
   },
   {
    "kind": "simulation",
    "tier": "digitized-figure",
-   "records": 792,
+   "records": 809,
    "rankable": 0
   },
   {
    "kind": "simulation",
    "tier": "official-table",
-   "records": 254,
+   "records": 259,
    "rankable": 126
   },
   {
    "kind": "simulation",
    "tier": "published-fit",
-   "records": 55,
-   "rankable": 25
+   "records": 65,
+   "rankable": 35
   },
   {
    "kind": "simulation",
    "tier": "published-table",
-   "records": 142,
+   "records": 147,
    "rankable": 129
   }
  ],
  "digitized": {
-  "n": 792,
-  "share_of_simulation_curves": 0.5526866713189114,
-  "n_simulation_curves": 1433,
+  "n": 809,
+  "share_of_simulation_curves": 0.5429530201342282,
+  "n_simulation_curves": 1490,
   "declared_uncertainty_dex": {
-   "n": 792,
+   "n": 809,
    "median": 0.01,
    "max": 0.05
   },
   "extraction_methods": [
    [
     "vector path vertices from the figure PDF (PyMuPDF get_drawin",
-    791
+    797
+   ],
+   [
+    "vector path vertices (EPS converted with ghostscript",
+    10
    ],
    [
     "HSV marker segmentation on 180 dpi raster",
+    1
+   ],
+   [
+    "vector path vertices from the figure (EPS converted with gho",
     1
    ]
   ],
@@ -92,6 +100,136 @@
  },
  "extraction_checks": {
   "pairs": [
+   {
+    "a": "kannan22.thesan.sfrd.t1",
+    "b": "kannan22.thesan.sfrd.sdao2",
+    "label": "THESAN-1 THESAN-1 (sfrd, z = 10)",
+    "tier_a": "official-table",
+    "tier_b": "digitized-figure",
+    "unit": "log10(Msun yr^-1 cMpc^-3)",
+    "n": 49,
+    "median_abs": 0.5281106741573032,
+    "max_abs": 1.4508637352245861,
+    "signed_median": 0.5281106741573032,
+    "same_definitions": true
+   },
+   {
+    "a": "kannan22.thesan.sfrd.t1",
+    "b": "kannan22.thesan.sfrd.t2",
+    "label": "THESAN-1 THESAN-1 (sfrd, z = 10)",
+    "tier_a": "official-table",
+    "tier_b": "digitized-figure",
+    "unit": "log10(Msun yr^-1 cMpc^-3)",
+    "n": 49,
+    "median_abs": 0.3537056179775284,
+    "max_abs": 1.0393496926713945,
+    "signed_median": 0.3537056179775284,
+    "same_definitions": true
+   },
+   {
+    "a": "blank19.nihao-bh.bh-galaxies.z0",
+    "b": "blank19.nihao-bh.bh-fit.z0",
+    "label": "NIHAO zoom suite NIHAO zoom sample with black holes (per galaxy) (bh, z = 0)",
+    "tier_a": "published-table",
+    "tier_b": "digitized-figure",
+    "unit": "log10(Msun)",
+    "n": 50,
+    "median_abs": 0.13877541666666637,
+    "max_abs": 0.8314000000000004,
+    "signed_median": 0.028406249999999744,
+    "same_definitions": true
+   },
+   {
+    "a": "blank19.nihao-bh.shmr-galaxies.z0",
+    "b": "blank19.nihao-bh.shmr-fit.z0",
+    "label": "NIHAO zoom suite NIHAO zoom sample with black holes (per galaxy) (shmr, z = 0)",
+    "tier_a": "published-table",
+    "tier_b": "digitized-figure",
+    "unit": "dex",
+    "n": 48,
+    "median_abs": 0.09642499999999987,
+    "max_abs": 0.4322588235294118,
+    "signed_median": 0.005774999999999975,
+    "same_definitions": true
+   },
+   {
+    "a": "artale18.illustris.hod.n0p00316.all.measured, Fig. HOD-ND left",
+    "b": "artale18.illustris.hod.n0p00316.all.fit of the paper",
+    "label": "Illustris Illustris-1, n = 0.00316 h^3 Mpc^-3, all (measured, Fig. HOD-ND left) (hod, z = 0)",
+    "tier_a": "digitized-figure",
+    "tier_b": "published-fit",
+    "unit": "log10(number per halo)",
+    "n": 9,
+    "median_abs": 0.025949999999999168,
+    "max_abs": 0.127,
+    "signed_median": -0.018119999999999692,
+    "same_definitions": true
+   },
+   {
+    "a": "artale18.eagle.hod.n0p00316.all.measured, Fig. HOD-ND left",
+    "b": "artale18.eagle.hod.n0p00316.all.fit of the paper",
+    "label": "EAGLE L0100N1504 (Ref), n = 0.00316 h^3 Mpc^-3, all (measured, Fig. HOD-ND left) (hod, z = 0)",
+    "tier_a": "digitized-figure",
+    "tier_b": "published-fit",
+    "unit": "log10(number per halo)",
+    "n": 9,
+    "median_abs": 0.011789999999999079,
+    "max_abs": 0.10600000000000076,
+    "signed_median": -0.009450000000000625,
+    "same_definitions": true
+   },
+   {
+    "a": "artale18.illustris.hod.n0p01.all.measured, Fig. HOD-ND left",
+    "b": "artale18.illustris.hod.n0p01.all.fit of the paper",
+    "label": "Illustris Illustris-1, n = 0.01 h^3 Mpc^-3, all (measured, Fig. HOD-ND left) (hod, z = 0)",
+    "tier_a": "digitized-figure",
+    "tier_b": "published-fit",
+    "unit": "log10(number per halo)",
+    "n": 11,
+    "median_abs": 0.01387999999999967,
+    "max_abs": 0.09220000000000006,
+    "signed_median": 0.0071299999999997615,
+    "same_definitions": true
+   },
+   {
+    "a": "artale18.eagle.hod.n0p01.all.measured, Fig. HOD-ND left",
+    "b": "artale18.eagle.hod.n0p01.all.fit of the paper",
+    "label": "EAGLE L0100N1504 (Ref), n = 0.01 h^3 Mpc^-3, all (measured, Fig. HOD-ND left) (hod, z = 0)",
+    "tier_a": "digitized-figure",
+    "tier_b": "published-fit",
+    "unit": "log10(number per halo)",
+    "n": 11,
+    "median_abs": 0.01601999999999948,
+    "max_abs": 0.06731999999999971,
+    "signed_median": -0.005209999999999895,
+    "same_definitions": true
+   },
+   {
+    "a": "artale18.illustris.hod.n0p0316.all.measured, Fig. HOD-ND left",
+    "b": "artale18.illustris.hod.n0p0316.all.fit of the paper",
+    "label": "Illustris Illustris-1, n = 0.0316 h^3 Mpc^-3, all (measured, Fig. HOD-ND left) (hod, z = 0)",
+    "tier_a": "digitized-figure",
+    "tier_b": "published-fit",
+    "unit": "log10(number per halo)",
+    "n": 11,
+    "median_abs": 0.008999999999999925,
+    "max_abs": 0.04830000000000001,
+    "signed_median": 0.004160000000000198,
+    "same_definitions": true
+   },
+   {
+    "a": "artale18.eagle.hod.n0p0316.all.measured, Fig. HOD-ND left",
+    "b": "artale18.eagle.hod.n0p0316.all.fit of the paper",
+    "label": "EAGLE L0100N1504 (Ref), n = 0.0316 h^3 Mpc^-3, all (measured, Fig. HOD-ND left) (hod, z = 0)",
+    "tier_a": "digitized-figure",
+    "tier_b": "published-fit",
+    "unit": "log10(number per halo)",
+    "n": 13,
+    "median_abs": 0.007200000000001164,
+    "max_abs": 0.0281199999999997,
+    "signed_median": -0.0007500000000000701,
+    "same_definitions": true
+   },
    {
     "a": "chaikin26.colibre.l200m6.gsmf-ap-50pkpc.z0",
     "b": "chaikin26.colibre.l200m6.gsmf.z0",
@@ -106,8 +244,73 @@
     "same_definitions": true
    }
   ],
-  "n": 1,
-  "n_same_definitions": 1
+  "n": 11,
+  "n_same_definitions": 11
+ },
+ "redigitization": {
+  "attempted": 96,
+  "checked": 20,
+  "pass": 10,
+  "fail": 10,
+  "notCheckable": 76,
+  "logYMedianDex": 0.000625,
+  "logYP90Dex": 0.14782200000000004,
+  "logYChecked": 12,
+  "logYExceed": 4,
+  "papers": 8,
+  "classes": {
+   "overlapping same-colour curves / bands / markers (>30% columns ambiguous)": 24,
+   "no numeric text layer (outlined text)": 7,
+   "stored values are a transform of the plotted quantity": 15,
+   "no panel with raster-calibrated axes containing the stored curve (tool limitation)": 19,
+   "curve occluded or merged with other drawing (>30% columns)": 8,
+   "trace covers <50% of columns (dashed/fragmented or hidden)": 3
+  }
+ },
+ "released_tables": {
+  "papers": 49,
+  "records": 792,
+  "categories": {
+   "announced-not-released": 2,
+   "on-request": 3,
+   "table-partial": 2,
+   "none-found": 12,
+   "catalog-public-recompute": 24,
+   "table-released-partial": 2,
+   "table-in-paper": 1,
+   "table-released-unverified": 1,
+   "table-released-full": 1,
+   "table-in-eprint": 1
+  },
+  "recordsByCategory": {
+   "announced-not-released": 196,
+   "on-request": 92,
+   "table-partial": 47,
+   "none-found": 98,
+   "catalog-public-recompute": 272,
+   "table-released-partial": 47,
+   "table-in-paper": 16,
+   "table-released-unverified": 11,
+   "table-released-full": 7,
+   "table-in-eprint": 6
+  },
+  "exactMatch": 10,
+  "replaced": [
+   "blank19.nihao-bh.bh-galaxies.z0",
+   "blank19.nihao-bh.shmr-galaxies.z0",
+   "dutton17.nihao.btfr-all-baryons.galaxies.z0",
+   "dutton17.nihao.btfr-stars-neutral-gas.galaxies.z0",
+   "dutton17.nihao.stfr-stars.galaxies.z0",
+   "kannan22.thesan.sfrd.t1",
+   "ma18.fire2.uvlf.z10",
+   "ma18.fire2.uvlf.z12",
+   "ma18.fire2.uvlf.z6",
+   "ma18.fire2.uvlf.z8"
+  ],
+  "stillFigureRead": [],
+  "duplicates": [
+   "chaikin26.colibre.l200m6.gsmf-ap-50pkpc.z0"
+  ]
  },
  "paper_disagreements": {
   "pairs": [
@@ -128,11 +331,11 @@
   "n": 1
  },
  "terms": {
-  "records_with_terms": 332,
+  "records_with_terms": 336,
   "by_terms": [
    [
     "third-party: source repository has no licence file (Garcia et al. 2024)",
-    142
+    146
    ],
    [
     "source release: CC-BY-4.0",
@@ -147,7 +350,7 @@
     3
    ]
   ],
-  "permission_not_requested": 142
+  "permission_not_requested": 146
  },
  "thin": {
   "epochs": [
@@ -191,6 +394,26 @@
     "6": 0,
     "8": 0
    },
+   "colour": {
+    "0.1": 3,
+    "0.5": 0,
+    "1": 1,
+    "2": 1,
+    "3": 1,
+    "4": 1,
+    "6": 0,
+    "8": 0
+   },
+   "fmr": {
+    "0.1": 4,
+    "0.5": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "6": 0,
+    "8": 0
+   },
    "gas": {
     "0.1": 3,
     "0.5": 1,
@@ -228,6 +451,16 @@
     "2": 0,
     "3": 0,
     "4": 1,
+    "6": 0,
+    "8": 0
+   },
+   "hod": {
+    "0.1": 2,
+    "0.5": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
     "6": 0,
     "8": 0
    },
@@ -322,12 +555,12 @@
     "8": 1
    },
    "ssfr": {
-    "0.1": 8,
+    "0.1": 9,
     "0.5": 2,
-    "1": 2,
-    "2": 2,
-    "3": 0,
-    "4": 2,
+    "1": 5,
+    "2": 5,
+    "3": 3,
+    "4": 5,
     "6": 0,
     "8": 1
    },
@@ -351,6 +584,16 @@
     "6": 5,
     "8": 6
    },
+   "wp": {
+    "0.1": 1,
+    "0.5": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "6": 0,
+    "8": 0
+   },
    "zstar": {
     "0.1": 6,
     "0.5": 2,
@@ -365,8 +608,8 @@
  },
  "vocabulary": {
   "population": {
-   "distinct": 64,
-   "records": 1656,
+   "distinct": 67,
+   "records": 1769,
    "near_duplicates": [
     {
      "spellings": [
@@ -374,7 +617,7 @@
       "all galaxies"
      ],
      "records": [
-      711,
+      781,
       119
      ]
     },
@@ -384,7 +627,7 @@
       "all galaxies, star-forming"
      ],
      "records": [
-      143,
+      169,
       8
      ]
     },
@@ -401,8 +644,8 @@
    ]
   },
   "massDefinition": {
-   "distinct": 43,
-   "records": 1423,
+   "distinct": 49,
+   "records": 1540,
    "near_duplicates": [
     {
      "spellings": [
@@ -411,19 +654,19 @@
      ],
      "records": [
       36,
-      18
+      36
      ]
     }
    ]
   },
   "imf": {
    "distinct": 4,
-   "records": 1653,
+   "records": 1754,
    "near_duplicates": []
   },
   "densityFrame": {
    "distinct": 2,
-   "records": 618,
+   "records": 627,
    "near_duplicates": []
   },
   "sizeDefinition": {
@@ -437,7 +680,7 @@
     "differ_only_in_spelling": 0
    },
    "ssfr": {
-    "pairs": 310,
+    "pairs": 471,
     "differ_only_in_spelling": 0
    },
    "size": {
@@ -447,7 +690,7 @@
   }
  },
  "checksums": {
-  "with_checksum": 1636,
-  "records": 1699
+  "with_checksum": 1698,
+  "records": 1859
  }
 }

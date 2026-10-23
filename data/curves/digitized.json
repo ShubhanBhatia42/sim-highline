@@ -314,7 +314,17 @@
         "figure": "Figure 1",
         "panel": "single panel",
         "extractionMethod": "published broken-power-law slopes 1.052/0.461 and break logMstar=8.6; normalization digitized from plotted gray fit",
-        "digitizationUncertaintyDex": 0.08
+        "digitizationUncertaintyDex": 0.08,
+        "attribution": {
+          "kind": "curve-produced-elsewhere",
+          "statement": "The cited paper reproduces this curve; it was produced in Bradford, Geha & Blanton 2015 (cited in the Stinson bibliography as \"ArXiv e-prints\"; no arXiv id given there).",
+          "primarySource": "Bradford, Geha & Blanton 2015 (cited in the Stinson bibliography as \"ArXiv e-prints\"; no arXiv id given there)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The grey line shows the fit \\citet{Bradford2015} make to their observations. (and the record citation: \"Bradford et al. 2015 fit as reproduced in Stinson et al. 2015 Figure 1\")",
+            "where": "arXiv:1506.08785 source, stinson12.tex, line 127"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": false,

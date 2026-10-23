@@ -897,13 +897,13 @@
       "id": "ma18-fire2-uvlf",
       "suite": "FIRE-2",
       "status": "ingested",
-      "access": "arXiv source, vector figure PDF",
+      "access": "numerical files released by the authors (hiz_smf_lf.zip), checked against the paper's appendix table",
       "url": "https://arxiv.org/abs/1706.06605",
       "relations": [
         "uvlf"
       ],
       "redshifts": "z 6, 8, 10, 12",
-      "adapter": "scripts/digitize_fire2_uvlf_ma18.py",
+      "adapter": "scripts/ingest_fire2_uvlf_ma18.py",
       "note": "Intrinsic 1500 A luminosity function of the weighted zoom sample (open symbols); B and J band panels not extracted."
     },
     {

@@ -1,0 +1,1156 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "zahid16.sdss.sigmam.fit",
+      "source": "Zahid et al. 2016 (SDSS)",
+      "run": "SDSS DR12 quiescent, broken power-law fit",
+      "kind": "observation",
+      "relation": "sigmam",
+      "epoch": {
+        "zRepresentative": 0.11,
+        "zNominal": 0.11,
+        "zMin": 0.02,
+        "zMax": 0.2,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (SED fit, Chabrier IMF)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 central line-of-sight stellar velocity dispersion (fibre, corrected to a 3 kpc aperture)",
+        "yUnit": "log10(km/s)"
+      },
+      "domain": {
+        "xMin": 9.362,
+        "xMax": 11.656
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "log sigma = log sigma_b + alpha*(log M - log Mb), alpha = alpha1 (M<=Mb), alpha2 (M>Mb)",
+        "expression": "logSigb+(x<=logMb?alpha1:alpha2)*(x-logMb)",
+        "parameters": {
+          "logMb": 10.26,
+          "logSigb": 2.073,
+          "alpha1": 0.403,
+          "alpha2": 0.293
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "quiescent (Dn4000>1.5), median log sigma in equally populated mass bins",
+        "warning": "Domain = extent of the best-fit line plotted in Fig. 5 (log M* 9.36-11.66); the paper fits all bins. Quiescent galaxies only (SDSS: M*>1e9 Msun, 0.02<z<0.2, Dn4000>1.5; SHELS: R<20.6, M*>10^9.5 Msun, Dn4000>1.5). The relation is for the median log sigma in equally populated stellar-mass bins, so it is not a relation for star-forming/disc galaxies, whose stellar kinematics are partly ordered rotation. Stellar masses are 0.13 dex below the Portsmouth Kroupa passive masses (paper footnote). zRepresentative is the midpoint of the 0.02<z<0.2 selection, not a median."
+      },
+      "definitions": {
+        "sigmaDefinition": "central LOS stellar velocity dispersion measured from stellar absorption lines through circular fibre apertures centred on each galaxy, corrected with sigma_SDSS/sigma_HECTO = (R_SDSS/R_HECTO)^beta, beta=-0.033, to a fiducial physical aperture of 3 kpc (revised.tex lines 84, 110, 120)",
+        "massDefinition": "sed-total",
+        "imf": "chabrier03",
+        "cosmology": "unspecified",
+        "population": "quiescent (Dn4000>1.5)",
+        "sigmaDimension": "1D line of sight, central fibre aperture",
+        "sigmaWeighting": "unspecified (spectrum-weighted, i.e. light; not stated in the paper)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Zahid et al. 2016, ApJ 832, 203 (arXiv:1607.04275), Table 'Fit Parameters' row SDSS (N=371884)",
+        "doi": "10.3847/0004-637x/832/2/203",
+        "url": "https://arxiv.org/abs/1607.04275",
+        "retrieved": "2026-10-18",
+        "sourceArchiveSha256": "aa9308b57ad3d6187ce7cf5eb9422561c94b9dd8c52d2eede77b293f29cab81e",
+        "sourceMember": "revised.tex lines 478-479 (Table Fit Parameters, rows SDSS and SHELS)"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "log Mb=10.26+-0.01, log sigma_b=2.073+-0.003, alpha1=0.403+-0.004, alpha2=0.293+-0.001. The expression reproduces the plotted line of Fig. 5 to <0.004 dex."
+    },
+    {
+      "id": "zahid16.sdss.sigmam.medians",
+      "source": "Zahid et al. 2016 (SDSS)",
+      "run": "SDSS DR12 quiescent, binned medians",
+      "kind": "observation",
+      "relation": "sigmam",
+      "epoch": {
+        "zRepresentative": 0.11,
+        "zNominal": 0.11,
+        "zMin": 0.02,
+        "zMax": 0.2,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (SED fit, Chabrier IMF)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 central line-of-sight stellar velocity dispersion (fibre, corrected to a 3 kpc aperture)",
+        "yUnit": "log10(km/s)"
+      },
+      "domain": {
+        "xMin": 9.362,
+        "xMax": 11.656
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.362,
+            "y": 1.7026
+          },
+          {
+            "x": 9.59,
+            "y": 1.8022
+          },
+          {
+            "x": 9.705,
+            "y": 1.8513
+          },
+          {
+            "x": 9.782,
+            "y": 1.8809
+          },
+          {
+            "x": 9.838,
+            "y": 1.9051
+          },
+          {
+            "x": 9.885,
+            "y": 1.9327
+          },
+          {
+            "x": 9.923,
+            "y": 1.94
+          },
+          {
+            "x": 9.958,
+            "y": 1.9542
+          },
+          {
+            "x": 9.987,
+            "y": 1.9659
+          },
+          {
+            "x": 10.014,
+            "y": 1.9802
+          },
+          {
+            "x": 10.039,
+            "y": 1.9845
+          },
+          {
+            "x": 10.06,
+            "y": 1.997
+          },
+          {
+            "x": 10.081,
+            "y": 2.0029
+          },
+          {
+            "x": 10.1,
+            "y": 2.0101
+          },
+          {
+            "x": 10.119,
+            "y": 2.0209
+          },
+          {
+            "x": 10.136,
+            "y": 2.0235
+          },
+          {
+            "x": 10.151,
+            "y": 2.0346
+          },
+          {
+            "x": 10.166,
+            "y": 2.0423
+          },
+          {
+            "x": 10.181,
+            "y": 2.0357
+          },
+          {
+            "x": 10.195,
+            "y": 2.0545
+          },
+          {
+            "x": 10.208,
+            "y": 2.0496
+          },
+          {
+            "x": 10.222,
+            "y": 2.0556
+          },
+          {
+            "x": 10.234,
+            "y": 2.0583
+          },
+          {
+            "x": 10.246,
+            "y": 2.069
+          },
+          {
+            "x": 10.256,
+            "y": 2.0702
+          },
+          {
+            "x": 10.268,
+            "y": 2.0692
+          },
+          {
+            "x": 10.279,
+            "y": 2.0717
+          },
+          {
+            "x": 10.29,
+            "y": 2.074
+          },
+          {
+            "x": 10.299,
+            "y": 2.0814
+          },
+          {
+            "x": 10.31,
+            "y": 2.083
+          },
+          {
+            "x": 10.319,
+            "y": 2.0887
+          },
+          {
+            "x": 10.33,
+            "y": 2.0885
+          },
+          {
+            "x": 10.339,
+            "y": 2.0933
+          },
+          {
+            "x": 10.348,
+            "y": 2.0939
+          },
+          {
+            "x": 10.356,
+            "y": 2.1035
+          },
+          {
+            "x": 10.365,
+            "y": 2.099
+          },
+          {
+            "x": 10.373,
+            "y": 2.1
+          },
+          {
+            "x": 10.382,
+            "y": 2.1037
+          },
+          {
+            "x": 10.39,
+            "y": 2.1087
+          },
+          {
+            "x": 10.397,
+            "y": 2.1097
+          },
+          {
+            "x": 10.405,
+            "y": 2.1137
+          },
+          {
+            "x": 10.412,
+            "y": 2.1192
+          },
+          {
+            "x": 10.419,
+            "y": 2.1231
+          },
+          {
+            "x": 10.427,
+            "y": 2.1181
+          },
+          {
+            "x": 10.434,
+            "y": 2.1211
+          },
+          {
+            "x": 10.441,
+            "y": 2.126
+          },
+          {
+            "x": 10.448,
+            "y": 2.1331
+          },
+          {
+            "x": 10.455,
+            "y": 2.1341
+          },
+          {
+            "x": 10.462,
+            "y": 2.1332
+          },
+          {
+            "x": 10.469,
+            "y": 2.1301
+          },
+          {
+            "x": 10.476,
+            "y": 2.1344
+          },
+          {
+            "x": 10.483,
+            "y": 2.1389
+          },
+          {
+            "x": 10.489,
+            "y": 2.1447
+          },
+          {
+            "x": 10.496,
+            "y": 2.1476
+          },
+          {
+            "x": 10.502,
+            "y": 2.1448
+          },
+          {
+            "x": 10.508,
+            "y": 2.1533
+          },
+          {
+            "x": 10.515,
+            "y": 2.1524
+          },
+          {
+            "x": 10.521,
+            "y": 2.1501
+          },
+          {
+            "x": 10.527,
+            "y": 2.1508
+          },
+          {
+            "x": 10.533,
+            "y": 2.1505
+          },
+          {
+            "x": 10.539,
+            "y": 2.1593
+          },
+          {
+            "x": 10.545,
+            "y": 2.1557
+          },
+          {
+            "x": 10.55,
+            "y": 2.1613
+          },
+          {
+            "x": 10.556,
+            "y": 2.1608
+          },
+          {
+            "x": 10.562,
+            "y": 2.1687
+          },
+          {
+            "x": 10.568,
+            "y": 2.1612
+          },
+          {
+            "x": 10.574,
+            "y": 2.1648
+          },
+          {
+            "x": 10.579,
+            "y": 2.1624
+          },
+          {
+            "x": 10.585,
+            "y": 2.1668
+          },
+          {
+            "x": 10.59,
+            "y": 2.1652
+          },
+          {
+            "x": 10.595,
+            "y": 2.18
+          },
+          {
+            "x": 10.6,
+            "y": 2.1738
+          },
+          {
+            "x": 10.606,
+            "y": 2.174
+          },
+          {
+            "x": 10.611,
+            "y": 2.1762
+          },
+          {
+            "x": 10.616,
+            "y": 2.1813
+          },
+          {
+            "x": 10.622,
+            "y": 2.1816
+          },
+          {
+            "x": 10.627,
+            "y": 2.1814
+          },
+          {
+            "x": 10.632,
+            "y": 2.1782
+          },
+          {
+            "x": 10.637,
+            "y": 2.1846
+          },
+          {
+            "x": 10.642,
+            "y": 2.1819
+          },
+          {
+            "x": 10.647,
+            "y": 2.1851
+          },
+          {
+            "x": 10.652,
+            "y": 2.1912
+          },
+          {
+            "x": 10.658,
+            "y": 2.1886
+          },
+          {
+            "x": 10.663,
+            "y": 2.1941
+          },
+          {
+            "x": 10.668,
+            "y": 2.1959
+          },
+          {
+            "x": 10.673,
+            "y": 2.1969
+          },
+          {
+            "x": 10.678,
+            "y": 2.1935
+          },
+          {
+            "x": 10.683,
+            "y": 2.2013
+          },
+          {
+            "x": 10.688,
+            "y": 2.1975
+          },
+          {
+            "x": 10.693,
+            "y": 2.2005
+          },
+          {
+            "x": 10.697,
+            "y": 2.2024
+          },
+          {
+            "x": 10.702,
+            "y": 2.2006
+          },
+          {
+            "x": 10.707,
+            "y": 2.2112
+          },
+          {
+            "x": 10.712,
+            "y": 2.2066
+          },
+          {
+            "x": 10.717,
+            "y": 2.2124
+          },
+          {
+            "x": 10.722,
+            "y": 2.2045
+          },
+          {
+            "x": 10.727,
+            "y": 2.2085
+          },
+          {
+            "x": 10.732,
+            "y": 2.2073
+          },
+          {
+            "x": 10.737,
+            "y": 2.2104
+          },
+          {
+            "x": 10.741,
+            "y": 2.211
+          },
+          {
+            "x": 10.746,
+            "y": 2.2133
+          },
+          {
+            "x": 10.751,
+            "y": 2.2234
+          },
+          {
+            "x": 10.755,
+            "y": 2.2164
+          },
+          {
+            "x": 10.76,
+            "y": 2.222
+          },
+          {
+            "x": 10.765,
+            "y": 2.2247
+          },
+          {
+            "x": 10.77,
+            "y": 2.2209
+          },
+          {
+            "x": 10.775,
+            "y": 2.227
+          },
+          {
+            "x": 10.78,
+            "y": 2.226
+          },
+          {
+            "x": 10.784,
+            "y": 2.2251
+          },
+          {
+            "x": 10.789,
+            "y": 2.2269
+          },
+          {
+            "x": 10.794,
+            "y": 2.2287
+          },
+          {
+            "x": 10.798,
+            "y": 2.2306
+          },
+          {
+            "x": 10.803,
+            "y": 2.2326
+          },
+          {
+            "x": 10.808,
+            "y": 2.2373
+          },
+          {
+            "x": 10.812,
+            "y": 2.2375
+          },
+          {
+            "x": 10.818,
+            "y": 2.2422
+          },
+          {
+            "x": 10.823,
+            "y": 2.2339
+          },
+          {
+            "x": 10.827,
+            "y": 2.2439
+          },
+          {
+            "x": 10.832,
+            "y": 2.2355
+          },
+          {
+            "x": 10.836,
+            "y": 2.2451
+          },
+          {
+            "x": 10.841,
+            "y": 2.2411
+          },
+          {
+            "x": 10.846,
+            "y": 2.2432
+          },
+          {
+            "x": 10.85,
+            "y": 2.2454
+          },
+          {
+            "x": 10.855,
+            "y": 2.2425
+          },
+          {
+            "x": 10.86,
+            "y": 2.253
+          },
+          {
+            "x": 10.865,
+            "y": 2.2502
+          },
+          {
+            "x": 10.87,
+            "y": 2.2535
+          },
+          {
+            "x": 10.875,
+            "y": 2.2543
+          },
+          {
+            "x": 10.88,
+            "y": 2.2487
+          },
+          {
+            "x": 10.884,
+            "y": 2.2546
+          },
+          {
+            "x": 10.889,
+            "y": 2.2589
+          },
+          {
+            "x": 10.894,
+            "y": 2.2634
+          },
+          {
+            "x": 10.898,
+            "y": 2.2645
+          },
+          {
+            "x": 10.903,
+            "y": 2.2626
+          },
+          {
+            "x": 10.909,
+            "y": 2.261
+          },
+          {
+            "x": 10.914,
+            "y": 2.2648
+          },
+          {
+            "x": 10.919,
+            "y": 2.2676
+          },
+          {
+            "x": 10.924,
+            "y": 2.2656
+          },
+          {
+            "x": 10.929,
+            "y": 2.2711
+          },
+          {
+            "x": 10.934,
+            "y": 2.2689
+          },
+          {
+            "x": 10.939,
+            "y": 2.2745
+          },
+          {
+            "x": 10.944,
+            "y": 2.2745
+          },
+          {
+            "x": 10.949,
+            "y": 2.2751
+          },
+          {
+            "x": 10.954,
+            "y": 2.2771
+          },
+          {
+            "x": 10.959,
+            "y": 2.2824
+          },
+          {
+            "x": 10.965,
+            "y": 2.2857
+          },
+          {
+            "x": 10.971,
+            "y": 2.2842
+          },
+          {
+            "x": 10.976,
+            "y": 2.2889
+          },
+          {
+            "x": 10.981,
+            "y": 2.287
+          },
+          {
+            "x": 10.986,
+            "y": 2.2876
+          },
+          {
+            "x": 10.991,
+            "y": 2.2935
+          },
+          {
+            "x": 10.996,
+            "y": 2.2941
+          },
+          {
+            "x": 11.002,
+            "y": 2.2957
+          },
+          {
+            "x": 11.007,
+            "y": 2.2969
+          },
+          {
+            "x": 11.013,
+            "y": 2.2958
+          },
+          {
+            "x": 11.02,
+            "y": 2.2985
+          },
+          {
+            "x": 11.025,
+            "y": 2.2995
+          },
+          {
+            "x": 11.031,
+            "y": 2.3049
+          },
+          {
+            "x": 11.037,
+            "y": 2.3046
+          },
+          {
+            "x": 11.042,
+            "y": 2.3045
+          },
+          {
+            "x": 11.048,
+            "y": 2.312
+          },
+          {
+            "x": 11.054,
+            "y": 2.3107
+          },
+          {
+            "x": 11.06,
+            "y": 2.3095
+          },
+          {
+            "x": 11.067,
+            "y": 2.3127
+          },
+          {
+            "x": 11.074,
+            "y": 2.3165
+          },
+          {
+            "x": 11.08,
+            "y": 2.319
+          },
+          {
+            "x": 11.086,
+            "y": 2.3231
+          },
+          {
+            "x": 11.092,
+            "y": 2.3256
+          },
+          {
+            "x": 11.098,
+            "y": 2.3243
+          },
+          {
+            "x": 11.105,
+            "y": 2.33
+          },
+          {
+            "x": 11.112,
+            "y": 2.3339
+          },
+          {
+            "x": 11.119,
+            "y": 2.3344
+          },
+          {
+            "x": 11.127,
+            "y": 2.3331
+          },
+          {
+            "x": 11.134,
+            "y": 2.3344
+          },
+          {
+            "x": 11.141,
+            "y": 2.3334
+          },
+          {
+            "x": 11.148,
+            "y": 2.3352
+          },
+          {
+            "x": 11.156,
+            "y": 2.344
+          },
+          {
+            "x": 11.164,
+            "y": 2.347
+          },
+          {
+            "x": 11.173,
+            "y": 2.3467
+          },
+          {
+            "x": 11.181,
+            "y": 2.3489
+          },
+          {
+            "x": 11.189,
+            "y": 2.3526
+          },
+          {
+            "x": 11.198,
+            "y": 2.3522
+          },
+          {
+            "x": 11.207,
+            "y": 2.3565
+          },
+          {
+            "x": 11.218,
+            "y": 2.3573
+          },
+          {
+            "x": 11.228,
+            "y": 2.3631
+          },
+          {
+            "x": 11.238,
+            "y": 2.3643
+          },
+          {
+            "x": 11.248,
+            "y": 2.3665
+          },
+          {
+            "x": 11.26,
+            "y": 2.375
+          },
+          {
+            "x": 11.274,
+            "y": 2.3714
+          },
+          {
+            "x": 11.288,
+            "y": 2.3806
+          },
+          {
+            "x": 11.302,
+            "y": 2.3826
+          },
+          {
+            "x": 11.318,
+            "y": 2.387
+          },
+          {
+            "x": 11.336,
+            "y": 2.3881
+          },
+          {
+            "x": 11.355,
+            "y": 2.3943
+          },
+          {
+            "x": 11.379,
+            "y": 2.4011
+          },
+          {
+            "x": 11.403,
+            "y": 2.4062
+          },
+          {
+            "x": 11.437,
+            "y": 2.4193
+          },
+          {
+            "x": 11.479,
+            "y": 2.4249
+          },
+          {
+            "x": 11.537,
+            "y": 2.435
+          },
+          {
+            "x": 11.656,
+            "y": 2.4566
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "quiescent (Dn4000>1.5), median log sigma in 200 equally populated mass bins",
+        "warning": "200 binned medians (marker centres, error bars not extracted). Quiescent galaxies only (SDSS: M*>1e9 Msun, 0.02<z<0.2, Dn4000>1.5; SHELS: R<20.6, M*>10^9.5 Msun, Dn4000>1.5). The relation is for the median log sigma in equally populated stellar-mass bins, so it is not a relation for star-forming/disc galaxies, whose stellar kinematics are partly ordered rotation. Stellar masses are 0.13 dex below the Portsmouth Kroupa passive masses (paper footnote)."
+      },
+      "definitions": {
+        "sigmaDefinition": "central LOS stellar velocity dispersion measured from stellar absorption lines through circular fibre apertures centred on each galaxy, corrected with sigma_SDSS/sigma_HECTO = (R_SDSS/R_HECTO)^beta, beta=-0.033, to a fiducial physical aperture of 3 kpc (revised.tex lines 84, 110, 120)",
+        "massDefinition": "sed-total",
+        "imf": "chabrier03",
+        "cosmology": "unspecified",
+        "population": "quiescent (Dn4000>1.5)",
+        "sigmaDimension": "1D line of sight, central fibre aperture",
+        "sigmaWeighting": "unspecified (spectrum-weighted, i.e. light; not stated in the paper)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Zahid et al. 2016, ApJ 832, 203 (arXiv:1607.04275), Fig. 5",
+        "doi": "10.3847/0004-637x/832/2/203",
+        "url": "https://arxiv.org/abs/1607.04275",
+        "retrieved": "2026-10-18",
+        "figure": "Fig. 5: median velocity dispersion in bins of stellar mass, SDSS (black) and SHELS (red)",
+        "panel": "single panel",
+        "checksumSha256": "bf2a604c0445e247a108193eafe450e33d53cafe3edc2292ececd895fb239c97",
+        "sourceMember": "fig5.eps (converted to PDF)",
+        "sourceArchiveSha256": "aa9308b57ad3d6187ce7cf5eb9422561c94b9dd8c52d2eede77b293f29cab81e",
+        "extractionMethod": "vector path vertices/marker centres from fig5.eps (converted with epstopdf; PyMuPDF get_drawings), transformed through axes calibrated on tick marks",
+        "axisCalibrationPixels": "x: 31 equally spaced ticks, frame edges = 9 and 12; y: 21 ticks, bottom/top frame edges = 1.6 and 2.6 (labels read from the rendered figure: IDL outlines, no text layer); verified: the plotted best-fit lines reproduce the table fits to < 0.004 dex at every vertex",
+        "digitizationUncertaintyDex": 0.003
+      },
+      "calibration": "validation",
+      "rankable": false,
+      "notes": "Marker centres of the black filled circles of Fig. 5; the paper states the medians are taken in equally populated stellar mass bins with bootstrapped errors (revised.tex:189)."
+    },
+    {
+      "id": "zahid16.shels.sigmam.fit",
+      "source": "Zahid et al. 2016 (SHELS)",
+      "run": "SHELS F2 quiescent z<0.7, single power-law fit (Mb fixed)",
+      "kind": "observation",
+      "relation": "sigmam",
+      "epoch": {
+        "zRepresentative": 0.3,
+        "zNominal": 0.3,
+        "zMin": 0,
+        "zMax": 0.7,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (SED fit, Chabrier IMF)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 central line-of-sight stellar velocity dispersion (fibre, corrected to a 3 kpc aperture)",
+        "yUnit": "log10(km/s)"
+      },
+      "domain": {
+        "xMin": 9.86,
+        "xMax": 11.59
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "log sigma = log sigma_b + alpha2*(log M - log Mb), Mb fixed",
+        "expression": "logSigb+alpha2*(x-logMb)",
+        "parameters": {
+          "logMb": 10.26,
+          "logSigb": 2.071,
+          "alpha2": 0.281
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "quiescent (Dn4000>1.5), median log sigma in equally populated mass bins",
+        "warning": "Domain = extent of the red best-fit line in Fig. 5 (log M* 9.86-11.59). Sample covers 0<z<0.7 with no redshift evolution found (zRepresentative 0.3 = median redshift quoted for SHELS in the paper). Quiescent galaxies only (SDSS: M*>1e9 Msun, 0.02<z<0.2, Dn4000>1.5; SHELS: R<20.6, M*>10^9.5 Msun, Dn4000>1.5). The relation is for the median log sigma in equally populated stellar-mass bins, so it is not a relation for star-forming/disc galaxies, whose stellar kinematics are partly ordered rotation. Stellar masses are 0.13 dex below the Portsmouth Kroupa passive masses (paper footnote)."
+      },
+      "definitions": {
+        "sigmaDefinition": "central LOS stellar velocity dispersion measured from stellar absorption lines through circular fibre apertures (SHELS: 1.5 arcsec Hectospec fibre) centred on each galaxy, corrected with sigma_SDSS/sigma_HECTO = (R_SDSS/R_HECTO)^beta, beta=-0.033, to a fiducial physical aperture of 3 kpc (revised.tex lines 84, 110, 120)",
+        "massDefinition": "sed-total",
+        "imf": "chabrier03",
+        "cosmology": "unspecified",
+        "population": "quiescent (Dn4000>1.5)",
+        "sigmaDimension": "1D line of sight, central fibre aperture",
+        "sigmaWeighting": "unspecified (spectrum-weighted, i.e. light; not stated in the paper)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Zahid et al. 2016, ApJ 832, 203 (arXiv:1607.04275), Table 'Fit Parameters' row SHELS (N=4585)",
+        "doi": "10.3847/0004-637x/832/2/203",
+        "url": "https://arxiv.org/abs/1607.04275",
+        "retrieved": "2026-10-18",
+        "sourceArchiveSha256": "aa9308b57ad3d6187ce7cf5eb9422561c94b9dd8c52d2eede77b293f29cab81e",
+        "sourceMember": "revised.tex lines 478-479 (Table Fit Parameters, rows SDSS and SHELS)"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "log sigma_b=2.071+-0.004 at fixed log Mb=10.26, alpha2=0.281+-0.005. Expression reproduces the plotted red line of Fig. 5 to <0.004 dex."
+    },
+    {
+      "id": "zahid16.shels.sigmam.medians",
+      "source": "Zahid et al. 2016 (SHELS)",
+      "run": "SHELS F2 quiescent z<0.7, binned medians",
+      "kind": "observation",
+      "relation": "sigmam",
+      "epoch": {
+        "zRepresentative": 0.3,
+        "zNominal": 0.3,
+        "zMin": 0,
+        "zMax": 0.7,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (SED fit, Chabrier IMF)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 central line-of-sight stellar velocity dispersion (fibre, corrected to a 3 kpc aperture)",
+        "yUnit": "log10(km/s)"
+      },
+      "domain": {
+        "xMin": 9.859,
+        "xMax": 11.59
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.859,
+            "y": 1.9292
+          },
+          {
+            "x": 10.14,
+            "y": 2.0243
+          },
+          {
+            "x": 10.29,
+            "y": 2.0726
+          },
+          {
+            "x": 10.378,
+            "y": 2.1112
+          },
+          {
+            "x": 10.45,
+            "y": 2.1404
+          },
+          {
+            "x": 10.51,
+            "y": 2.1192
+          },
+          {
+            "x": 10.558,
+            "y": 2.14
+          },
+          {
+            "x": 10.61,
+            "y": 2.174
+          },
+          {
+            "x": 10.651,
+            "y": 2.1978
+          },
+          {
+            "x": 10.7,
+            "y": 2.2045
+          },
+          {
+            "x": 10.74,
+            "y": 2.203
+          },
+          {
+            "x": 10.78,
+            "y": 2.2027
+          },
+          {
+            "x": 10.82,
+            "y": 2.2302
+          },
+          {
+            "x": 10.86,
+            "y": 2.2224
+          },
+          {
+            "x": 10.9,
+            "y": 2.2488
+          },
+          {
+            "x": 10.946,
+            "y": 2.268
+          },
+          {
+            "x": 10.981,
+            "y": 2.2731
+          },
+          {
+            "x": 11.02,
+            "y": 2.3041
+          },
+          {
+            "x": 11.069,
+            "y": 2.3046
+          },
+          {
+            "x": 11.12,
+            "y": 2.3138
+          },
+          {
+            "x": 11.18,
+            "y": 2.3198
+          },
+          {
+            "x": 11.24,
+            "y": 2.3475
+          },
+          {
+            "x": 11.3,
+            "y": 2.3624
+          },
+          {
+            "x": 11.41,
+            "y": 2.3953
+          },
+          {
+            "x": 11.59,
+            "y": 2.4339
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "quiescent (Dn4000>1.5), 25 bins of median log sigma",
+        "warning": "25 binned medians (marker centres, bootstrap error bars not extracted). Quiescent galaxies only (SDSS: M*>1e9 Msun, 0.02<z<0.2, Dn4000>1.5; SHELS: R<20.6, M*>10^9.5 Msun, Dn4000>1.5). The relation is for the median log sigma in equally populated stellar-mass bins, so it is not a relation for star-forming/disc galaxies, whose stellar kinematics are partly ordered rotation. Stellar masses are 0.13 dex below the Portsmouth Kroupa passive masses (paper footnote)."
+      },
+      "definitions": {
+        "sigmaDefinition": "central LOS stellar velocity dispersion measured from stellar absorption lines through circular fibre apertures centred on each galaxy, corrected with sigma_SDSS/sigma_HECTO = (R_SDSS/R_HECTO)^beta, beta=-0.033, to a fiducial physical aperture of 3 kpc (revised.tex lines 84, 110, 120)",
+        "massDefinition": "sed-total",
+        "imf": "chabrier03",
+        "cosmology": "unspecified",
+        "population": "quiescent (Dn4000>1.5)",
+        "sigmaDimension": "1D line of sight, central fibre aperture",
+        "sigmaWeighting": "unspecified (spectrum-weighted, i.e. light; not stated in the paper)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Zahid et al. 2016, ApJ 832, 203 (arXiv:1607.04275), Fig. 5",
+        "doi": "10.3847/0004-637x/832/2/203",
+        "url": "https://arxiv.org/abs/1607.04275",
+        "retrieved": "2026-10-18",
+        "figure": "Fig. 5: median velocity dispersion in bins of stellar mass, SDSS (black) and SHELS (red)",
+        "panel": "single panel",
+        "checksumSha256": "bf2a604c0445e247a108193eafe450e33d53cafe3edc2292ececd895fb239c97",
+        "sourceMember": "fig5.eps (converted to PDF)",
+        "sourceArchiveSha256": "aa9308b57ad3d6187ce7cf5eb9422561c94b9dd8c52d2eede77b293f29cab81e",
+        "extractionMethod": "vector path vertices/marker centres from fig5.eps (converted with epstopdf; PyMuPDF get_drawings), transformed through axes calibrated on tick marks",
+        "axisCalibrationPixels": "x: 31 equally spaced ticks, frame edges = 9 and 12; y: 21 ticks, bottom/top frame edges = 1.6 and 2.6 (labels read from the rendered figure: IDL outlines, no text layer); verified: the plotted best-fit lines reproduce the table fits to < 0.004 dex at every vertex",
+        "digitizationUncertaintyDex": 0.003
+      },
+      "calibration": "validation",
+      "rankable": false,
+      "notes": "Marker centres of the red filled circles of Fig. 5."
+    }
+  ]
+}

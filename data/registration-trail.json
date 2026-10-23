@@ -76,5 +76,29 @@
    "subject": "Joint-reachability: confirmatory run (one run, protocol and A1 committed before it); joint verdict structural, D = 4.8 noise units; report and JSON",
    "short": "d2b314b"
   }
+ },
+ "quenching-shape": {
+  "protocol_file": "docs/PROTOCOL-quenching-shape.md",
+  "result_file": "data/analysis/quenching-shape.json",
+  "protocol_commits": [
+   {
+    "hash": "c28625330f66f1885dd3a41fba16a9b9c961282c",
+    "date": "2026-10-23T01:16:00+00:00",
+    "subject": "Pre-registered protocol: does the shape of the star-formation distribution separate TNG and SIMBA",
+    "short": "c286253"
+   },
+   {
+    "hash": "c5ed5fecef325be61f45c81bb3de04b2e7551f42",
+    "date": "2026-10-23T01:25:56+00:00",
+    "subject": "Quenching-shape study: ingest and analysis code, synthetic tests, protocol amendment A1 (before any distance was computed)",
+    "short": "c5ed5fe"
+   }
+  ],
+  "result_first_commit": {
+   "hash": "a7e61276aae885dcda11efa1979056ac423517ad",
+   "date": "2026-10-23T01:42:58+00:00",
+   "subject": "Quenching-shape study: the registered run, as it came out (Q1 removable; Q2 and Q3 add nothing detectable; validations V1 and V4 do not hold)",
+   "short": "a7e6127"
+  }
  }
 }

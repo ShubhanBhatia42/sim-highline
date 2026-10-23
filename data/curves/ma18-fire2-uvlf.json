@@ -71,7 +71,7 @@
       "scatter": true,
       "selection": {
         "population": "central galaxies of the zoom-in sample, weighted to the halo mass function",
-        "warning": "Open symbols are the luminosity function derived from the weighted FIRE-2 zoom-in sample (the paper's dashed model lines are not extracted). Magnitudes are intrinsic: no dust attenuation, BPASS v2 binary models with a Kroupa IMF. Marker centres read from the vector paths."
+        "warning": "Open symbols of the paper's figure: the luminosity function derived from the weighted FIRE-2 zoom-in sample (the dashed model lines are not stored). Magnitudes are intrinsic: no dust attenuation, BPASS v2 binary models with a Kroupa IMF. A zoom-in sample, not a periodic volume, so not directly rankable."
       },
       "definitions": {
         "imf": "kroupa01",
@@ -85,22 +85,18 @@
         "population": "centrals"
       },
       "provenance": {
-        "tier": "digitized-figure",
+        "tier": "official-table",
         "citation": "Ma et al. 2018, MNRAS 478, 1694 (arXiv:1706.06605), predicted luminosity functions at 1500 A, z=6",
         "doi": "10.1093/mnras/sty1024",
         "url": "https://arxiv.org/abs/1706.06605",
-        "retrieved": "2026-10-05",
-        "figure": "Predicted luminosity functions at rest-frame 1500 A, B and J band",
-        "panel": "left panel (1500 A), z=6",
-        "checksumSha256": "5ee377b51a576a165e96cb521ba7ce8ac204d4294720d17b5a9d0542b07a8558",
-        "sourceMember": "plot/lfall.pdf",
-        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
-        "axisCalibrationPixels": "x: numeric tick labels snapped to ticks (axis runs from -8 to -24); y: labels paired with ticks (signed-label boxes sit about 6 pt low)",
-        "digitizationUncertaintyDex": 0.01
+        "retrieved": "2026-10-21",
+        "checksumSha256": "94ea32b37b795ad9b19c3e9abfa5e33e1126edb2362e34a19030752bc3b20a91",
+        "sourceMember": "LF_UV_sim_z06.txt in hiz_smf_lf.zip (http://www.tapir.caltech.edu/~xchma/data/hiz_smf_lf.zip; served over http only)",
+        "extractionMethod": "numerical data file released by the authors, read as is"
       },
       "calibration": "prediction",
       "rankable": false,
-      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+      "notes": "Numerical file released by the authors; equal to the paper's appendix table (checked row by row to its two decimals) and to the earlier figure read to 0.0005."
     },
     {
       "id": "ma18.fire2.uvlf.z8",
@@ -164,7 +160,7 @@
       "scatter": true,
       "selection": {
         "population": "central galaxies of the zoom-in sample, weighted to the halo mass function",
-        "warning": "Open symbols are the luminosity function derived from the weighted FIRE-2 zoom-in sample (the paper's dashed model lines are not extracted). Magnitudes are intrinsic: no dust attenuation, BPASS v2 binary models with a Kroupa IMF. Marker centres read from the vector paths."
+        "warning": "Open symbols of the paper's figure: the luminosity function derived from the weighted FIRE-2 zoom-in sample (the dashed model lines are not stored). Magnitudes are intrinsic: no dust attenuation, BPASS v2 binary models with a Kroupa IMF. A zoom-in sample, not a periodic volume, so not directly rankable."
       },
       "definitions": {
         "imf": "kroupa01",
@@ -178,22 +174,18 @@
         "population": "centrals"
       },
       "provenance": {
-        "tier": "digitized-figure",
+        "tier": "official-table",
         "citation": "Ma et al. 2018, MNRAS 478, 1694 (arXiv:1706.06605), predicted luminosity functions at 1500 A, z=8",
         "doi": "10.1093/mnras/sty1024",
         "url": "https://arxiv.org/abs/1706.06605",
-        "retrieved": "2026-10-05",
-        "figure": "Predicted luminosity functions at rest-frame 1500 A, B and J band",
-        "panel": "left panel (1500 A), z=8",
-        "checksumSha256": "5ee377b51a576a165e96cb521ba7ce8ac204d4294720d17b5a9d0542b07a8558",
-        "sourceMember": "plot/lfall.pdf",
-        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
-        "axisCalibrationPixels": "x: numeric tick labels snapped to ticks (axis runs from -8 to -24); y: labels paired with ticks (signed-label boxes sit about 6 pt low)",
-        "digitizationUncertaintyDex": 0.01
+        "retrieved": "2026-10-21",
+        "checksumSha256": "94ea32b37b795ad9b19c3e9abfa5e33e1126edb2362e34a19030752bc3b20a91",
+        "sourceMember": "LF_UV_sim_z08.txt in hiz_smf_lf.zip (http://www.tapir.caltech.edu/~xchma/data/hiz_smf_lf.zip; served over http only)",
+        "extractionMethod": "numerical data file released by the authors, read as is"
       },
       "calibration": "prediction",
       "rankable": false,
-      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+      "notes": "Numerical file released by the authors; equal to the paper's appendix table (checked row by row to its two decimals) and to the earlier figure read to 0.0005."
     },
     {
       "id": "ma18.fire2.uvlf.z10",
@@ -245,7 +237,7 @@
             "y": -0.7514
           },
           {
-            "x": -10.596,
+            "x": -10.595,
             "y": -0.2057
           },
           {
@@ -257,7 +249,7 @@
       "scatter": true,
       "selection": {
         "population": "central galaxies of the zoom-in sample, weighted to the halo mass function",
-        "warning": "Open symbols are the luminosity function derived from the weighted FIRE-2 zoom-in sample (the paper's dashed model lines are not extracted). Magnitudes are intrinsic: no dust attenuation, BPASS v2 binary models with a Kroupa IMF. Marker centres read from the vector paths."
+        "warning": "Open symbols of the paper's figure: the luminosity function derived from the weighted FIRE-2 zoom-in sample (the dashed model lines are not stored). Magnitudes are intrinsic: no dust attenuation, BPASS v2 binary models with a Kroupa IMF. A zoom-in sample, not a periodic volume, so not directly rankable."
       },
       "definitions": {
         "imf": "kroupa01",
@@ -271,22 +263,18 @@
         "population": "centrals"
       },
       "provenance": {
-        "tier": "digitized-figure",
+        "tier": "official-table",
         "citation": "Ma et al. 2018, MNRAS 478, 1694 (arXiv:1706.06605), predicted luminosity functions at 1500 A, z=10",
         "doi": "10.1093/mnras/sty1024",
         "url": "https://arxiv.org/abs/1706.06605",
-        "retrieved": "2026-10-05",
-        "figure": "Predicted luminosity functions at rest-frame 1500 A, B and J band",
-        "panel": "left panel (1500 A), z=10",
-        "checksumSha256": "5ee377b51a576a165e96cb521ba7ce8ac204d4294720d17b5a9d0542b07a8558",
-        "sourceMember": "plot/lfall.pdf",
-        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
-        "axisCalibrationPixels": "x: numeric tick labels snapped to ticks (axis runs from -8 to -24); y: labels paired with ticks (signed-label boxes sit about 6 pt low)",
-        "digitizationUncertaintyDex": 0.01
+        "retrieved": "2026-10-21",
+        "checksumSha256": "94ea32b37b795ad9b19c3e9abfa5e33e1126edb2362e34a19030752bc3b20a91",
+        "sourceMember": "LF_UV_sim_z10.txt in hiz_smf_lf.zip (http://www.tapir.caltech.edu/~xchma/data/hiz_smf_lf.zip; served over http only)",
+        "extractionMethod": "numerical data file released by the authors, read as is"
       },
       "calibration": "prediction",
       "rankable": false,
-      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+      "notes": "Numerical file released by the authors; equal to the paper's appendix table (checked row by row to its two decimals) and to the earlier figure read to 0.0005."
     },
     {
       "id": "ma18.fire2.uvlf.z12",
@@ -346,7 +334,7 @@
       "scatter": true,
       "selection": {
         "population": "central galaxies of the zoom-in sample, weighted to the halo mass function",
-        "warning": "Open symbols are the luminosity function derived from the weighted FIRE-2 zoom-in sample (the paper's dashed model lines are not extracted). Magnitudes are intrinsic: no dust attenuation, BPASS v2 binary models with a Kroupa IMF. Marker centres read from the vector paths."
+        "warning": "Open symbols of the paper's figure: the luminosity function derived from the weighted FIRE-2 zoom-in sample (the dashed model lines are not stored). Magnitudes are intrinsic: no dust attenuation, BPASS v2 binary models with a Kroupa IMF. A zoom-in sample, not a periodic volume, so not directly rankable."
       },
       "definitions": {
         "imf": "kroupa01",
@@ -360,22 +348,18 @@
         "population": "centrals"
       },
       "provenance": {
-        "tier": "digitized-figure",
+        "tier": "official-table",
         "citation": "Ma et al. 2018, MNRAS 478, 1694 (arXiv:1706.06605), predicted luminosity functions at 1500 A, z=12",
         "doi": "10.1093/mnras/sty1024",
         "url": "https://arxiv.org/abs/1706.06605",
-        "retrieved": "2026-10-05",
-        "figure": "Predicted luminosity functions at rest-frame 1500 A, B and J band",
-        "panel": "left panel (1500 A), z=12",
-        "checksumSha256": "5ee377b51a576a165e96cb521ba7ce8ac204d4294720d17b5a9d0542b07a8558",
-        "sourceMember": "plot/lfall.pdf",
-        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
-        "axisCalibrationPixels": "x: numeric tick labels snapped to ticks (axis runs from -8 to -24); y: labels paired with ticks (signed-label boxes sit about 6 pt low)",
-        "digitizationUncertaintyDex": 0.01
+        "retrieved": "2026-10-21",
+        "checksumSha256": "94ea32b37b795ad9b19c3e9abfa5e33e1126edb2362e34a19030752bc3b20a91",
+        "sourceMember": "LF_UV_sim_z12.txt in hiz_smf_lf.zip (http://www.tapir.caltech.edu/~xchma/data/hiz_smf_lf.zip; served over http only)",
+        "extractionMethod": "numerical data file released by the authors, read as is"
       },
       "calibration": "prediction",
       "rankable": false,
-      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+      "notes": "Numerical file released by the authors; equal to the paper's appendix table (checked row by row to its two decimals) and to the earlier figure read to 0.0005."
     }
   ]
 }

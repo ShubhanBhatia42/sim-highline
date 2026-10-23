@@ -1,0 +1,257 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "garcia24.illustris.fmr.mu0.23.linear.z0",
+      "source": "Illustris",
+      "run": "Illustris-1 (Garcia+24 FMR regression, star-forming centrals)",
+      "kind": "simulation",
+      "relation": "fmr",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "mu_0.23 = log10(M*/Msun) - 0.23 log10(SFR/(Msun/yr)), star-forming centrals at z=0",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "12+log10(O/H) from the mass-weighted total metallicity of star-forming gas bound to the system, scaled with constant f_O = 0.35 and X = 0.76",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 8.54,
+        "xMax": 10.98
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "12+log(O/H) = 0.693 mu_0.23 + 1.807",
+        "expression": "m*x+b",
+        "parameters": {
+          "m": 0.693,
+          "b": 1.807
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming central galaxies (sSFR within 0.5 dex of the sSFMS), well resolved (M* > 1e8 Msun, 1e9 in SIMBA; gas mass > 10^8.5, 10^9.5 in SIMBA)",
+        "warning": "z=0 linear least-squares regression of 12+log(O/H) on mu_alpha for the star-forming central galaxies of the simulation, alpha = alpha_min of the minimum-scatter projection. x range is NOT stated by the paper: it is mu_alpha evaluated along the z=0 star-forming main sequence (digitized from the paper's SFMS figure) over the stellar-mass range of the paper's predicted-MZR curve (log M* 8.10-11.20), so it is narrower than the full galaxy scatter in mu_alpha. METALLICITY SCALE: the printed equation of the Illustris/TNG/EAGLE lines is identical in arXiv v1 and v2, but v1 converts the star-forming-gas metal mass fraction to O/H with f_O = 35 per cent while v2 text says f_O = 50 per cent. The equation reproduces the v1 figure (mean offset -0.011 dex) and sits 0.166 dex below the v2 figure (log10(50/35) = 0.155), so it corresponds to f_O = 35 per cent; the v2 text did not update this line. Not a directly tracked oxygen abundance (constant f_O and X scaling of the total metallicity)."
+      },
+      "definitions": {
+        "muAlpha": 0.23,
+        "metallicityQuantity": "gas-O/H",
+        "metallicityCalibration": "total metallicity of star-forming gas rescaled to O/H with constant oxygen-to-metal mass fraction f_O = 0.35 and hydrogen mass fraction X = 0.76",
+        "sfrTimescaleMyr": "unspecified",
+        "imf": "chabrier03",
+        "massDefinition": "unspecified",
+        "population": "star-forming-centrals"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Garcia et al. 2024, 'Does the Fundamental Metallicity Relation Evolve with Redshift? II' (arXiv:2407.06254), eq. 'FMR_regressions'",
+        "doi": null,
+        "url": "https://arxiv.org/abs/2407.06254",
+        "retrieved": "2026-10-18",
+        "sourceMember": "paper.tex",
+        "figureMember": "figures/fake_MZR_mega.pdf (v1), figures/Figure4.pdf and Figure2.pdf (v2)",
+        "figureSha256": "9fe321b30eb788fb48ce116a94835046ebd7f20991db5bdd02884b6866955b9d",
+        "sourceArchiveSha256": "1966844be96db2cd3a1588714c096ee5679f283d7e834376fac8fe7e98c28e50",
+        "terms": "third-party: source repository has no licence file (Garcia et al. 2024); binned values derived by sim-highline, permission not yet requested"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Equation as printed. v1 figures (f_O=35%): formula minus drawn z=0 predicted MZR, mean/sd (dex): Illustris -0.0108/0.0027; TNG -0.0015/0.0021; EAGLE -0.0066/0.0048; SIMBA -0.0012/0.0065 v2 figures (f_O=50%): Illustris -0.1658/0.0027; TNG -0.1564/0.0021; EAGLE -0.1616/0.0048; SIMBA -0.0026/0.0133; log10(50/35) = 0.1549"
+    },
+    {
+      "id": "garcia24.tng.fmr.mu0.31.linear.z0",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (Garcia+24 FMR regression, star-forming centrals)",
+      "kind": "simulation",
+      "relation": "fmr",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "mu_0.31 = log10(M*/Msun) - 0.31 log10(SFR/(Msun/yr)), star-forming centrals at z=0",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "12+log10(O/H) from the mass-weighted total metallicity of star-forming gas bound to the system, scaled with constant f_O = 0.35 and X = 0.76",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 8.65,
+        "xMax": 10.71
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "12+log(O/H) = 0.368 mu_0.31 + 5.044",
+        "expression": "m*x+b",
+        "parameters": {
+          "m": 0.368,
+          "b": 5.044
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming central galaxies (sSFR within 0.5 dex of the sSFMS), well resolved (M* > 1e8 Msun, 1e9 in SIMBA; gas mass > 10^8.5, 10^9.5 in SIMBA)",
+        "warning": "z=0 linear least-squares regression of 12+log(O/H) on mu_alpha for the star-forming central galaxies of the simulation, alpha = alpha_min of the minimum-scatter projection. x range is NOT stated by the paper: it is mu_alpha evaluated along the z=0 star-forming main sequence (digitized from the paper's SFMS figure) over the stellar-mass range of the paper's predicted-MZR curve (log M* 8.10-10.90), so it is narrower than the full galaxy scatter in mu_alpha. METALLICITY SCALE: the printed equation of the Illustris/TNG/EAGLE lines is identical in arXiv v1 and v2, but v1 converts the star-forming-gas metal mass fraction to O/H with f_O = 35 per cent while v2 text says f_O = 50 per cent. The equation reproduces the v1 figure (mean offset -0.001 dex) and sits 0.156 dex below the v2 figure (log10(50/35) = 0.155), so it corresponds to f_O = 35 per cent; the v2 text did not update this line. Not a directly tracked oxygen abundance (constant f_O and X scaling of the total metallicity)."
+      },
+      "definitions": {
+        "muAlpha": 0.31,
+        "metallicityQuantity": "gas-O/H",
+        "metallicityCalibration": "total metallicity of star-forming gas rescaled to O/H with constant oxygen-to-metal mass fraction f_O = 0.35 and hydrogen mass fraction X = 0.76",
+        "sfrTimescaleMyr": "unspecified",
+        "imf": "chabrier03",
+        "massDefinition": "unspecified",
+        "population": "star-forming-centrals"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Garcia et al. 2024, 'Does the Fundamental Metallicity Relation Evolve with Redshift? II' (arXiv:2407.06254), eq. 'FMR_regressions'",
+        "doi": null,
+        "url": "https://arxiv.org/abs/2407.06254",
+        "retrieved": "2026-10-18",
+        "sourceMember": "paper.tex",
+        "figureMember": "figures/fake_MZR_mega.pdf (v1), figures/Figure4.pdf and Figure2.pdf (v2)",
+        "figureSha256": "9fe321b30eb788fb48ce116a94835046ebd7f20991db5bdd02884b6866955b9d",
+        "sourceArchiveSha256": "1966844be96db2cd3a1588714c096ee5679f283d7e834376fac8fe7e98c28e50",
+        "terms": "third-party: source repository has no licence file (Garcia et al. 2024); binned values derived by sim-highline, permission not yet requested"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Equation as printed. v1 figures (f_O=35%): formula minus drawn z=0 predicted MZR, mean/sd (dex): Illustris -0.0108/0.0027; TNG -0.0015/0.0021; EAGLE -0.0066/0.0048; SIMBA -0.0012/0.0065 v2 figures (f_O=50%): Illustris -0.1658/0.0027; TNG -0.1564/0.0021; EAGLE -0.1616/0.0048; SIMBA -0.0026/0.0133; log10(50/35) = 0.1549"
+    },
+    {
+      "id": "garcia24.eagle.fmr.mu0.74.linear.z0",
+      "source": "EAGLE",
+      "run": "RefL0100N1504 (Garcia+24 FMR regression, star-forming centrals)",
+      "kind": "simulation",
+      "relation": "fmr",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "mu_0.74 = log10(M*/Msun) - 0.74 log10(SFR/(Msun/yr)), star-forming centrals at z=0",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "12+log10(O/H) from the mass-weighted total metallicity of star-forming gas bound to the system, scaled with constant f_O = 0.35 and X = 0.76",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 9.47,
+        "xMax": 10.75
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "12+log(O/H) = 0.38 mu_0.74 + 5.132",
+        "expression": "m*x+b",
+        "parameters": {
+          "m": 0.38,
+          "b": 5.132
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming central galaxies (sSFR within 0.5 dex of the sSFMS), well resolved (M* > 1e8 Msun, 1e9 in SIMBA; gas mass > 10^8.5, 10^9.5 in SIMBA)",
+        "warning": "z=0 linear least-squares regression of 12+log(O/H) on mu_alpha for the star-forming central galaxies of the simulation, alpha = alpha_min of the minimum-scatter projection. x range is NOT stated by the paper: it is mu_alpha evaluated along the z=0 star-forming main sequence (digitized from the paper's SFMS figure) over the stellar-mass range of the paper's predicted-MZR curve (log M* 8.10-11.20), so it is narrower than the full galaxy scatter in mu_alpha. METALLICITY SCALE: the printed equation of the Illustris/TNG/EAGLE lines is identical in arXiv v1 and v2, but v1 converts the star-forming-gas metal mass fraction to O/H with f_O = 35 per cent while v2 text says f_O = 50 per cent. The equation reproduces the v1 figure (mean offset -0.007 dex) and sits 0.162 dex below the v2 figure (log10(50/35) = 0.155), so it corresponds to f_O = 35 per cent; the v2 text did not update this line. Not a directly tracked oxygen abundance (constant f_O and X scaling of the total metallicity)."
+      },
+      "definitions": {
+        "muAlpha": 0.74,
+        "metallicityQuantity": "gas-O/H",
+        "metallicityCalibration": "total metallicity of star-forming gas rescaled to O/H with constant oxygen-to-metal mass fraction f_O = 0.35 and hydrogen mass fraction X = 0.76",
+        "sfrTimescaleMyr": "unspecified",
+        "imf": "chabrier03",
+        "massDefinition": "unspecified",
+        "population": "star-forming-centrals"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Garcia et al. 2024, 'Does the Fundamental Metallicity Relation Evolve with Redshift? II' (arXiv:2407.06254), eq. 'FMR_regressions'",
+        "doi": null,
+        "url": "https://arxiv.org/abs/2407.06254",
+        "retrieved": "2026-10-18",
+        "sourceMember": "paper.tex",
+        "figureMember": "figures/fake_MZR_mega.pdf (v1), figures/Figure4.pdf and Figure2.pdf (v2)",
+        "figureSha256": "9fe321b30eb788fb48ce116a94835046ebd7f20991db5bdd02884b6866955b9d",
+        "sourceArchiveSha256": "1966844be96db2cd3a1588714c096ee5679f283d7e834376fac8fe7e98c28e50",
+        "terms": "third-party: source repository has no licence file (Garcia et al. 2024); binned values derived by sim-highline, permission not yet requested"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Equation as printed. v1 figures (f_O=35%): formula minus drawn z=0 predicted MZR, mean/sd (dex): Illustris -0.0108/0.0027; TNG -0.0015/0.0021; EAGLE -0.0066/0.0048; SIMBA -0.0012/0.0065 v2 figures (f_O=50%): Illustris -0.1658/0.0027; TNG -0.1564/0.0021; EAGLE -0.1616/0.0048; SIMBA -0.0026/0.0133; log10(50/35) = 0.1549"
+    },
+    {
+      "id": "garcia24.simba.fmr.mu0.66.linear.z0",
+      "source": "SIMBA",
+      "run": "m100n1024 (Garcia+24 FMR regression, star-forming centrals)",
+      "kind": "simulation",
+      "relation": "fmr",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "mu_0.66 = log10(M*/Msun) - 0.66 log10(SFR/(Msun/yr)), star-forming centrals at z=0",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "12+log10(O/H) from the mass-weighted total metallicity of star-forming gas bound to the system, scaled with constant f_O = 0.5 and X = 0.76",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 9.4,
+        "xMax": 10.94
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "12+log(O/H) = 0.364 mu_0.66 + 4.901",
+        "expression": "m*x+b",
+        "parameters": {
+          "m": 0.364,
+          "b": 4.901
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming central galaxies (sSFR within 0.5 dex of the sSFMS), well resolved (M* > 1e8 Msun, 1e9 in SIMBA; gas mass > 10^8.5, 10^9.5 in SIMBA)",
+        "warning": "z=0 linear least-squares regression of 12+log(O/H) on mu_alpha for the star-forming central galaxies of the simulation, alpha = alpha_min of the minimum-scatter projection. x range is NOT stated by the paper: it is mu_alpha evaluated along the z=0 star-forming main sequence (digitized from the paper's SFMS figure) over the stellar-mass range of the paper's predicted-MZR curve (log M* 9.10-11.40), so it is narrower than the full galaxy scatter in mu_alpha. METALLICITY SCALE: f_O = 50 per cent, X = 76 per cent (v2). The v1 line for SIMBA was 0.440 mu_0.33 + 3.974 (f_O = 35 per cent); v2 text still says alpha_min = 0.33 for SIMBA in one sentence, but its equation and figure use alpha = 0.66, which the figure check confirms (alpha = 0.33 does not reproduce the drawn curve)."
+      },
+      "definitions": {
+        "muAlpha": 0.66,
+        "metallicityQuantity": "gas-O/H",
+        "metallicityCalibration": "total metallicity of star-forming gas rescaled to O/H with constant oxygen-to-metal mass fraction f_O = 0.5 and hydrogen mass fraction X = 0.76",
+        "sfrTimescaleMyr": "unspecified",
+        "imf": "chabrier03",
+        "massDefinition": "unspecified",
+        "population": "star-forming-centrals"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Garcia et al. 2024, 'Does the Fundamental Metallicity Relation Evolve with Redshift? II' (arXiv:2407.06254), eq. 'FMR_regressions'",
+        "doi": null,
+        "url": "https://arxiv.org/abs/2407.06254",
+        "retrieved": "2026-10-18",
+        "sourceMember": "paper.tex",
+        "figureMember": "figures/fake_MZR_mega.pdf (v1), figures/Figure4.pdf and Figure2.pdf (v2)",
+        "figureSha256": "3cb50554df66ebf8c7a6925aa562b9c06b2f71ce97a954563cb28d6e6041eb41",
+        "sourceArchiveSha256": "6da622ce40cca088c348d26705c83b79d482b483a463771c46722032f5527b38",
+        "terms": "third-party: source repository has no licence file (Garcia et al. 2024); binned values derived by sim-highline, permission not yet requested"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Equation as printed. v1 figures (f_O=35%): formula minus drawn z=0 predicted MZR, mean/sd (dex): Illustris -0.0108/0.0027; TNG -0.0015/0.0021; EAGLE -0.0066/0.0048; SIMBA -0.0012/0.0065 v2 figures (f_O=50%): Illustris -0.1658/0.0027; TNG -0.1564/0.0021; EAGLE -0.1616/0.0048; SIMBA -0.0026/0.0133; log10(50/35) = 0.1549"
+    }
+  ]
+}

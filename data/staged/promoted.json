@@ -1,0 +1,18 @@
+{
+ "about": "Records of the staged files that are in data/curves (copied unchanged, then expanded by scripts/derive-distributions.mjs). scripts/test-staged.mjs checks that they are still identical to their staged originals.",
+ "promoted": [
+  "nelson18.tng100.colour-pdf.z0.modelC-all12",
+  "nelson18.illustris1.colour-pdf.z0.modelC-all12",
+  "nelson18.tng100.colour-pdf-centrals.z0.modelC-all12",
+  "nelson18.illustris1.colour-pdf-centrals.z0.modelC-all12",
+  "nelson18.tng100.colour-pdf.z0.modelA",
+  "nelson18.tng100.colour-pdf.z0.modelB",
+  "nelson18.tng100.colour-pdf.z0.modelC1",
+  "nelson18.tng100.colour-pdf.z0.modelCall",
+  "nelson18.tng100.colour-pdf.z0.modelD",
+  "trayford15.eagle-ref100.colour-counts.z0p1.m9p45-10p05",
+  "trayford15.eagle-ref25.colour-counts.z0p1.m9p45-10p05",
+  "trayford15.eagle-recal25.colour-counts.z0p1.m9p45-10p05",
+  "dave19.simba.ssfr-hist.m100n1024.z0p1"
+ ]
+}

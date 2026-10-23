@@ -1,0 +1,5 @@
+{
+  "about": "Optional, off by default. When enabled, every built page sends one anonymous message when it is opened, to the address below: the page path and nothing else (no identifier, no cookie, no address stored by this project, no referrer). It is not sent when the browser says Do Not Track. Turning it on changes the promise on the site that nothing is collected, so the privacy sentence in site/src/index.html and docs/PROJECT.md must be changed in the same commit (scripts/test-usage-counts.mjs checks that they are).",
+  "enabled": false,
+  "endpoint": null
+}

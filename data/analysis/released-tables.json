@@ -1,0 +1,897 @@
+{
+ "schemaVersion": "1.0.0",
+ "about": "For the papers behind the most figure-read simulation curves: did the authors release the numbers? Read from the papers' LaTeX sources and the data pages they point to on 2026-10-20; each entry gives the sentence, the address, whether it was reachable from here, and the licence where one is stated. 'table-in-eprint' means the numbers are in the arXiv source of the paper; 'catalog-public-recompute' means the simulation's catalogues are public but the plotted numbers are not (they would have to be recomputed); 'on-request' means the authors say the data are available on request.",
+ "checked": "2026-10-20",
+ "entries": [
+  {
+   "rank": 1,
+   "paper": "Schaye et al. 2023 (MNRAS 526)",
+   "arXiv": "2306.04024",
+   "digitizedSimRecords": 176,
+   "category": "announced-not-released",
+   "recordsCovered": [],
+   "where": [
+    "https://flamingo.strw.leidenuniv.nl/data.html -> meta-refresh to https://dataweb.cosma.dur.ac.uk:8443/flamingo/introduction.html"
+   ],
+   "format": null,
+   "licence": null,
+   "quote": "main.tex:1001: The data supporting the plots within this article are available on reasonable request to the corresponding author. A public version of the \\swift\\ code is available at http://www.swiftsim.com. The swift-emulator framework used for the calibration is publicly available, see \\citet{Kugel2022}. The \\flamingo\\ simulation data will eventually be made publicly available, though we note that the data volume (several petabytes) may prohibit us from simply placing the raw data on a server. In the meantime, people intereste",
+   "reachable": "unknown",
+   "reachableTest": "HEAD flamingo.strw.leidenuniv.nl -> 200 (GET intermittently reset); data.html (2.9 kB) redirects to dataweb.cosma.dur.ac.uk:8443, which the agent proxy could not reach (tunnel closed twice), so the content of the FLAMINGO data release page is unknown",
+   "notes": "Paper statement: data on reasonable request, public release eventually. 176 records (22% of all digitized simulation curves) depend on this paper; a check of the dataweb page from an unrestricted machine is the single most valuable follow-up."
+  },
+  {
+   "rank": 2,
+   "paper": "Dubois et al. 2021 (A&A 651)",
+   "arXiv": "2009.10578",
+   "digitizedSimRecords": 62,
+   "category": "on-request",
+   "recordsCovered": [],
+   "where": [
+    "https://new.horizon-simulation.org/data.html"
+   ],
+   "format": null,
+   "licence": null,
+   "quote": "New Data: Please do not hesitate to contact us in order to have access to the galaxy/black hole catalogues, etc. (new.horizon-simulation.org/data.html; the paper has no data-availability section)",
+   "reachable": "yes",
+   "reachableTest": "GET -> 200",
+   "notes": "NewHorizon page: \"Existing Data: Catalogues ... Please do not hesitate to contact us in order to have access to the galaxy/black hole catalogues\". Nothing public. 62 records depend on this paper (2nd largest)."
+  },
+  {
+   "rank": 3,
+   "paper": "Habouzit et al. 2021 (MNRAS 503)",
+   "arXiv": "2006.10094",
+   "digitizedSimRecords": 35,
+   "category": "table-partial",
+   "recordsCovered": {
+    "partial": [
+     "habouzit21.{illustris1,tng1001,horizonagn,refl100n1504,m100n1024}.bh.z0-z3 (4 mass bins each)"
+    ],
+    "not-covered": "TNG300 (6 records); z=4 and z=5 (all sims); the full curves"
+   },
+   "where": [
+    "arXiv e-print 2006.10094 paper_aftersecondreport.tex:1417 (Table table:tab_scatter_1) and :1494 (tab_scatter_2)"
+   ],
+   "format": "LaTeX table: mean and median log MBH and 15-85 percentile scatter at log M*=9.5,10,10.5,11 and z=0,1,2,3, for Illustris, TNG100, Horizon-AGN, EAGLE, SIMBA",
+   "licence": "not stated",
+   "quote": "Time evolution of the scaling relation MBH-M*. We provide the stellar mass bins, the redshift in the range z=3-0, the corresponding mean and median of BH mass in the given stellar mass bin, and the scatter (15th-85th percentiles) of the mean scaling relation. (tex:1417)",
+   "reachable": "yes",
+   "reachableTest": "arXiv e-print downloaded, sha256 a13ee4652adebe636102939c9ee4a303608554b003b8d7ea79495885a3e09e05",
+   "notes": "Gives 4 exact points per curve for z<=3: a verification set for the digitized curves, not a replacement.",
+   "verification": "Table medians vs digitized curves interpolated at the table masses: median deviation 0.03-0.04 dex (max 0.09-0.13, SIMBA 0.67 at one bin) for Illustris/TNG100/EAGLE/SIMBA; Horizon-AGN not compared (name H-AGN)."
+  },
+  {
+   "rank": 4,
+   "paper": "Ludlow et al. 2026 (COLIBRE sizes and angular momentum (arXiv:2603.26200))",
+   "arXiv": "2603.26200",
+   "digitizedSimRecords": 32,
+   "category": "none-found",
+   "recordsCovered": [],
+   "where": [],
+   "format": null,
+   "licence": null,
+   "quote": "The COLIBRE data underlying the figures and results presented in this paper are available from the corresponding author upon reasonable request. (paper.tex:1284)",
+   "reachable": "no",
+   "reachableTest": "https://colibre.strw.leidenuniv.nl/paper_data/2603.26200.yml -> 404; no arXiv ancillary files",
+   "notes": ""
+  },
+  {
+   "rank": 5,
+   "paper": "Donnari et al. 2021 (MNRAS 506)",
+   "arXiv": "2008.00004",
+   "digitizedSimRecords": 30,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "https://www.tng-project.org/data/"
+   ],
+   "format": "HDF5 group catalogues, supplementary catalogues, snapshots (Nelson et al. 2019 data release)",
+   "licence": null,
+   "quote": "main.tex:470: Data directly related to this publication and its figures is available on request from the corresponding author. The IllustrisTNG simulations themselves including the more recent TNG50 data, are publicly available and accessible at www.tng-project.org/data. We thank Elad Zinger, Mohammadreza Ayromlou, Bruno Henriques, Sydney Sherman, Shardha Jogee, and Danilo Marchesini for useful discussions, and Andrew Wetzel for providing data files.",
+   "reachable": "yes",
+   "reachableTest": "HEAD https://www.tng-project.org/data/ -> 200 (registration needed to download)",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read. Paper: \"Data directly related to this publication and its figures is available on request from the corresponding author.\""
+  },
+  {
+   "rank": 6,
+   "paper": "Chaikin et al. 2026 (MNRAS 548)",
+   "arXiv": "2509.07960",
+   "digitizedSimRecords": 28,
+   "category": "table-released-partial",
+   "recordsCovered": {
+    "exact-match": [
+     "chaikin26.colibre.l200m6.gsmf-ap-50pkpc.z0 (already present as official-table chaikin26.colibre.l200m6.gsmf.z0)"
+    ],
+    "not-covered": "quenched fraction (18 records), CSMD (6), 30/100 pkpc and all-bound aperture GSMFs (3)"
+   },
+   "where": [
+    "https://colibre.strw.leidenuniv.nl/paper_data/2509.07960.yml",
+    "https://colibre-simulations.org/papers.html"
+   ],
+   "format": "YAML (GSMF per run and redshift: log10_bin_centers, log10_gsmf_values, bin_counts; keys gsmf_raw and gsmf_with_edd_bias)",
+   "licence": "CC BY 4.0 for site content \"except where otherwise noted\" (colibre-simulations.org footer); not repeated inside the yml",
+   "quote": "All GSMF data presented in this work will be made available on https://colibre-simulations.org/ upon publication. The remaining data underlying this article will be shared on reasonable request to the corresponding author. (main.tex:623)",
+   "reachable": "yes",
+   "reachableTest": "curl -I -> HTTP 200, Content-Length 548395",
+   "sha256": {
+    "2509.07960.yml": "51306bb4b1da43367830bbc22af87cc965f2cc8e39e68600b776dcaaf63749f2"
+   },
+   "verification": "digitized ap-50pkpc curve vs yml COLIBRE_L200m6 gsmf_raw z0.0: median deviation 0.000, max 0.000 dex over 25 bins (so the digitized record is a duplicate of data already ingested); the 30 pkpc and 100 pkpc curves are not in the yml (deviations up to 0.3-0.4 dex because the yml is the 50 pkpc GSMF).",
+   "notes": "The same page lists no plot-data link for 2603.26200, 2608.19007, 2508.21126 or 2606.25995 (paper_data/<id>.yml returns 404 for each)."
+  },
+  {
+   "rank": 7,
+   "paper": "Genel et al. 2014 (MNRAS 445)",
+   "arXiv": "1405.3749",
+   "digitizedSimRecords": 26,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "https://www.illustris-project.org/data/",
+    "https://www.tng-project.org/data/"
+   ],
+   "format": "HDF5 group catalogues, merger trees, snapshots (Nelson et al. 2015 data release)",
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "yes",
+   "reachableTest": "HEAD https://www.illustris-project.org/data/ -> 200",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read. Illustris public release is the data behind this Illustris figure."
+  },
+  {
+   "rank": 8,
+   "paper": "Pillepich et al. 2018 (MNRAS 475)",
+   "arXiv": "1707.03406",
+   "digitizedSimRecords": 25,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "https://www.tng-project.org/data/"
+   ],
+   "format": "HDF5 group catalogues, supplementary catalogues, snapshots (Nelson et al. 2019 data release)",
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "yes",
+   "reachableTest": "HEAD https://www.tng-project.org/data/ -> 200 (registration needed to download)",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read."
+  },
+  {
+   "rank": 9,
+   "paper": "Furlong et al. 2015 (MNRAS 450)",
+   "arXiv": "1410.3485",
+   "digitizedSimRecords": 23,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "http://icc.dur.ac.uk/Eagle/database.php"
+   ],
+   "format": "SQL database of galaxy properties (McAlpine et al. 2016) plus particle data on request",
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "yes",
+   "reachableTest": "HEAD http://icc.dur.ac.uk/Eagle/database.php -> 200 (http://icc.dur.ac.uk/Eagle/ root: connection reset)",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read."
+  },
+  {
+   "rank": 10,
+   "paper": "Kannan et al. 2025 (OJAp 8 (arXiv:2502.20437))",
+   "arXiv": "2502.20437",
+   "digitizedSimRecords": 20,
+   "category": "announced-not-released",
+   "recordsCovered": [],
+   "where": [
+    "https://www.thesan-project.com/thesan-zoom/data.html"
+   ],
+   "format": "paper tables (thzoom.tex:800,829,857): Schechter (GSMF), Schechter and double-power-law (UVLF) fit parameters",
+   "licence": null,
+   "quote": "thzoom.tex:778: All simulation data, including snapshots, group, and subhalo catalogs and merger trees will be made publicly available in the near future. Data will be distributed via www.thesan-project.com. Before the public data release, data underlying this article will be shared on reasonable request to the corresponding author(s). \\bibliographystyle{mnras} % You should give the same name for your .bbl as your main .tex",
+   "reachable": "yes",
+   "reachableTest": "GET -> 200; page text says public access is \"in the future\"",
+   "notes": "Fit tables could back published-fit alternatives for the GSMF (6) and UVLF (12) records but are fits, not the plotted curve."
+  },
+  {
+   "rank": 11,
+   "paper": "Dave et al. 2019 (MNRAS 486)",
+   "arXiv": "1901.10203",
+   "digitizedSimRecords": 19,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "http://simba.roe.ac.uk/"
+   ],
+   "format": "SIMBA snapshots/catalogues (site cited by Habouzit+21 for SIMBA data); no data-availability statement in this paper",
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "yes",
+   "reachableTest": "HEAD http://simba.roe.ac.uk/ -> 200",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read."
+  },
+  {
+   "rank": 12,
+   "paper": "Kannan et al. 2022 (MNRAS 511)",
+   "arXiv": "2110.00584",
+   "digitizedSimRecords": 19,
+   "category": "table-released-partial",
+   "recordsCovered": {
+    "exact-match": [
+     "kannan22.thesan.sfrd.t1"
+    ],
+    "definition-unverified": [
+     "kannan22.thesan.uvlf.t1.z6",
+     "kannan22.thesan.uvlf.t1.z7",
+     "kannan22.thesan.uvlf.t1.z8",
+     "kannan22.thesan.uvlf.t1.z9",
+     "kannan22.thesan.uvlf.t1.z10"
+    ],
+    "not-covered": "THESAN-2 and THESAN-SDAO-2 curves, t1dust.z6"
+   },
+   "where": [
+    "https://www.thesan-project.com/thesan/quantities/sfrd_Thesan1.dat",
+    "https://www.thesan-project.com/thesan/quantities/uvlf_Thesan1.dat",
+    "https://www.thesan-project.com/thesan/data.html"
+   ],
+   "format": "whitespace-separated ASCII with header (z, SFRD [Msun/yr/Mpc^3]; z, M_UV, UVLF [Mpc^-3 mag^-1], error)",
+   "licence": "not stated on the data page",
+   "quote": "Predictions for common physical quantities from THESAN-1 are summarised below in machine-readable format. All files have an header describing the content of each (white space-separated) column. ... Star-formation rate density sfrd_Thesan1.dat Kannan et al. 2022 ... UV luminosity function uvlf_Thesan1.dat Kannan et al. 2022",
+   "paperAvailabilityStatement": "All simulation data ... will be made publicly available in the near future. Data will be distributed via www.thesan-project.com (thesan.tex:707-710)",
+   "reachable": "yes",
+   "reachableTest": "curl -I https://www.thesan-project.com/thesan/quantities/{sfrd,uvlf}_Thesan1.dat -> HTTP/2 200 (981 and 3995 bytes); nonexistent name foo_Thesan1.dat -> 404",
+   "sha256": {
+    "sfrd_Thesan1.dat": "7cb854c975c9ad218f28e77cf8c169f71c75d2d36f9521edcbaeebcf3805f509",
+    "uvlf_Thesan1.dat": "a4cefa8c74519bd42fb15e1e4eb12a621e7e68b4236247803ae4b10cfa374a57"
+   },
+   "verification": "SFRD file vs digitized THESAN-1 curve: agree to ~0.005 dex at z=5.6 and z=9.7 (file 0.027691 at z=5.5969 -> log -1.5577, digitized -1.5625 at z=5.592). UVLF file vs digitized: median offset -0.04 (z=6) to +0.14 dex (z=10), max 0.8 dex; the file header does not say whether it is dust-attenuated, so it is NOT a drop-in replacement until the definition is known.",
+   "notes": "The data page already supplies four other files that the repository ingests (smhm, smf, gms, mzr -> thesan.json). The star formation rate density file is now ingested (kannan22.thesan.sfrd.t1)."
+  },
+  {
+   "rank": 13,
+   "paper": "Pillepich et al. 2018 (MNRAS 473)",
+   "arXiv": "1703.02970",
+   "digitizedSimRecords": 18,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "https://www.tng-project.org/data/"
+   ],
+   "format": "HDF5 group catalogues, supplementary catalogues, snapshots (Nelson et al. 2019 data release)",
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "yes",
+   "reachableTest": "HEAD https://www.tng-project.org/data/ -> 200 (registration needed to download)",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read."
+  },
+  {
+   "rank": 14,
+   "paper": "Kaviraj et al. 2017 (MNRAS (doi 10.1093/mnras/stx126))",
+   "arXiv": "1605.09379",
+   "digitizedSimRecords": 17,
+   "category": "none-found",
+   "recordsCovered": [],
+   "where": [
+    "https://www.horizon-simulation.org/data.html"
+   ],
+   "format": null,
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "yes",
+   "reachableTest": "GET -> 200",
+   "notes": "Horizon-AGN page lists only matter power spectra and photometric catalogues (neither is the plotted quantity); paper has no data statement."
+  },
+  {
+   "rank": 15,
+   "paper": "Blank et al. 2019 (MNRAS 487)",
+   "arXiv": "1906.06955",
+   "digitizedSimRecords": 16,
+   "category": "table-in-paper",
+   "recordsCovered": {
+    "exact-match": [
+     "blank19.nihao-bh.bh-galaxies.z0 (50 pts, M* vs MBH)",
+     "blank19.nihao-bh.shmr-galaxies.z0 (48 pts, M200 vs M*/M200)"
+    ],
+    "not-covered": "z=1,2,4 galaxy records and fits (the table is z=0 only)"
+   },
+   "where": [
+    "arXiv e-print 1906.06955 library.tex:673 Table tab:galaxies"
+   ],
+   "format": "LaTeX table, 61 galaxies: N, N_DM, N_star, log M200, log M*, log MBH (2 decimals)",
+   "licence": "not stated",
+   "quote": "Galaxies and their properties: particle number N, dark matter particle number N_DM, star particle number N_star, halo mass M200, stellar mass M* and black hole mass M_BH. ... Galaxies without black hole mass are re-simulations without black holes. (library.tex:673-682)",
+   "reachable": "yes",
+   "reachableTest": "arXiv e-print downloaded, sha256 of tarball c4b35e2551f472d4c27085219b6e1e618c0c2ca5139ed82baa353d9f68bf4afd",
+   "notes": "Note: the digitized records number only the points at z=0; check the other redshift records (z=1,2,4) separately, they are not in this table.",
+   "verification": "bh-galaxies.z0: nearest table (M*,MBH) pair median 0.004, max 0.007 dex for all 50 points; shmr-galaxies.z0: nearest (M200, M*-M200) median 0.004, max 0.010 dex for all 48 points."
+  },
+  {
+   "rank": 16,
+   "paper": "Feldmann et al. 2023 (MNRAS 522)",
+   "arXiv": "2205.15325",
+   "digitizedSimRecords": 16,
+   "category": "on-request",
+   "recordsCovered": [],
+   "where": [
+    "https://flathub.flatironinstitute.org/fire"
+   ],
+   "format": null,
+   "licence": null,
+   "quote": "main.tex:808: The data supporting the plots within this article are available on reasonable request to the corresponding author. A public version of the GIZMO code is available at http://www.tapir.caltech.edu/~phopkins/Site/GIZMO.html. FIRE data releases are publicly available at http://flathub.flatironinstitute.org/fire. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%",
+   "reachable": "yes",
+   "reachableTest": "GET https://flathub.flatironinstitute.org/fire -> 200",
+   "notes": "Paper: data on reasonable request; FIRE data releases (FIRE-2, Wetzel+23) are on Flathub but FIREbox is not stated to be there. Table tab:ScalingRelations holds fits for SFMS, HI, H2, MZR, Fe (not the digitized GSMF/quenched/SFRD/SMD)."
+  },
+  {
+   "rank": 17,
+   "paper": "Furlong et al. 2017 (MNRAS 465)",
+   "arXiv": "1510.05645",
+   "digitizedSimRecords": 16,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "http://icc.dur.ac.uk/Eagle/database.php",
+    "https://www.illustris-project.org/data/"
+   ],
+   "format": "EAGLE SQL database; Illustris HDF5 catalogues",
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "yes",
+   "reachableTest": "HEAD http://icc.dur.ac.uk/Eagle/database.php -> 200 (http://icc.dur.ac.uk/Eagle/ root: connection reset); HEAD https://www.illustris-project.org/data/ -> 200",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read. Paper: Illustris half-mass radii, masses and SFRs \"were obtained from their public data release\"."
+  },
+  {
+   "rank": 18,
+   "paper": "Sparre et al. 2015 (MNRAS 447)",
+   "arXiv": "1409.0009",
+   "digitizedSimRecords": 16,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "https://www.illustris-project.org/data/",
+    "https://www.tng-project.org/data/"
+   ],
+   "format": "HDF5 group catalogues, merger trees, snapshots (Nelson et al. 2015 data release)",
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "yes",
+   "reachableTest": "HEAD https://www.illustris-project.org/data/ -> 200",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read. Illustris public release is the data behind this Illustris figure."
+  },
+  {
+   "rank": 19,
+   "paper": "Donnari et al. 2019 (MNRAS 485)",
+   "arXiv": "1812.07584",
+   "digitizedSimRecords": 15,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "https://www.tng-project.org/data/"
+   ],
+   "format": "HDF5 group catalogues, supplementary catalogues, snapshots (Nelson et al. 2019 data release)",
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "yes",
+   "reachableTest": "HEAD https://www.tng-project.org/data/ -> 200 (registration needed to download)",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read."
+  },
+  {
+   "rank": 20,
+   "paper": "Dave et al. 2020 (MNRAS 497)",
+   "arXiv": "2002.07226",
+   "digitizedSimRecords": 14,
+   "category": "on-request",
+   "recordsCovered": [],
+   "where": [],
+   "format": null,
+   "licence": null,
+   "quote": "coldgas.tex:639: The data underlying this work, including simulation snapshots and galaxy catalogs, will be shared on reasonable request to the corresponding author R. Dav\\'e. \\bibliographystyle{mnras} \\bibliography{coldgas} % if your bibtex file is called example.bib",
+   "reachable": "no",
+   "reachableTest": "no URL",
+   "notes": "EAGLE/TNG inputs are public catalogues but the post-processing (Rahmati/GK11, Stevens+19 H2) is the authors'; nothing to download for the plotted medians."
+  },
+  {
+   "rank": 21,
+   "paper": "Schaye et al. 2015 (MNRAS 446)",
+   "arXiv": "1407.7040",
+   "digitizedSimRecords": 14,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "http://icc.dur.ac.uk/Eagle/database.php"
+   ],
+   "format": "SQL database of galaxy properties (McAlpine et al. 2016) plus particle data on request",
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "yes",
+   "reachableTest": "HEAD http://icc.dur.ac.uk/Eagle/database.php -> 200 (http://icc.dur.ac.uk/Eagle/ root: connection reset)",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read."
+  },
+  {
+   "rank": 22,
+   "paper": "Genel et al. 2018 (MNRAS 474)",
+   "arXiv": "1707.05327",
+   "digitizedSimRecords": 12,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "https://www.tng-project.org/data/"
+   ],
+   "format": "HDF5 group catalogues, supplementary catalogues, snapshots (Nelson et al. 2019 data release)",
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "yes",
+   "reachableTest": "HEAD https://www.tng-project.org/data/ -> 200 (registration needed to download)",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read."
+  },
+  {
+   "rank": 23,
+   "paper": "Wilkins et al. 2023 (MNRAS 519)",
+   "arXiv": "2204.09431",
+   "digitizedSimRecords": 12,
+   "category": "table-partial",
+   "recordsCovered": {
+    "partial": [
+     "wilkins22.flares.uvlf.observed.z10-z15 (6 records)"
+    ],
+    "not-covered": "intrinsic records (6) do not match the table"
+   },
+   "where": [
+    "arXiv e-print 2204.09431 sections/observational.tex:34 Table tab:uvlf",
+    "https://github.com/stephenmwilkins/flares_frontier_data"
+   ],
+   "format": "LaTeX table log10 phi [Mpc^-3 dex^-1] vs log10 L_FUV (27.8-29.4, 0.2 dex) for z=15..10; repository: ascii (per the paper)",
+   "licence": "not stated",
+   "quote": "FLARES-V.tex:162: Binned data for making easy comparisons is available in \\texttt{ascii} formats at https://github.com/stephenmwilkins/flares_frontier_data. Data from the wider \\flares\\ project is available at https://flaresimulations.github.io/data.html. If you use data from this paper please also cite \\citet{FLARES-I} and \\citet{FLARES-II}. %%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%% % The best way to enter references is to use BibTeX:",
+   "reachable": "partial",
+   "reachableTest": "github.com and api.github.com -> HTTP 403 (agent-proxy policy); https://raw.githubusercontent.com/stephenmwilkins/flares_frontier_data/main/README.md -> 200 but README is only \"# flares_frontier_data / Tabulated data\" and a directory listing was not obtainable, so the file names (and whether they cover the 12 records) are unverified",
+   "notes": "Table binning differs from the digitized curves, so it is a cross-check or an alternative record, not a drop-in.",
+   "verification": "Table (0.2 dex bins) vs the digitized observed curves (0.1 dex bins) at the matching L_FUV: deviations mostly 0.0-0.15 dex at the faint end, up to 0.3-0.9 dex in the sparse bright bins; intrinsic curves differ by up to 2 dex. The table does not say whether it is dust-attenuated; agreement indicates observed."
+  },
+  {
+   "rank": 24,
+   "paper": "Bird et al. 2022 (MNRAS 512)",
+   "arXiv": "2111.01160",
+   "digitizedSimRecords": 11,
+   "category": "table-released-unverified",
+   "recordsCovered": [],
+   "where": [
+    "https://github.com/sbird/asterix_intro"
+   ],
+   "format": "\"Text file forms of the data presented here as well as scripts to generate the figures\"",
+   "licence": null,
+   "quote": "asterix-i.tex:615: The code to reproduce the simulation is available at https://github.com/MP-Gadget/MP-Gadget in the \\texttt{asterix} branch, and continues to be developed. Text file forms of the data presented here as well as scripts to generate the figures are available at https://github.com/sbird/asterix_intro. Halo catalogues and snapshot particle tables are available on reasonable request to the authors. The particle tables are about $20$ TB each and the halo catalogues are $\\sim 2$ TB. % Reference %%%%%%%%%%%%%%%%%%%% REFEREN",
+   "reachable": "no",
+   "reachableTest": "github.com/api.github.com -> 403 (agent-proxy policy); raw.githubusercontent.com README.md -> 404 on main and master; the GitHub MCP tool is restricted to the sim-highline repository; contents not listable",
+   "notes": "Paper promises text-file data for the figures (would cover the 11 digitized ASTRID records: SFRD and SMHM). Not verified; a user with open GitHub access should list the repository."
+  },
+  {
+   "rank": 25,
+   "paper": "Schaye et al. 2026 (MNRAS 548)",
+   "arXiv": "2508.21126",
+   "digitizedSimRecords": 11,
+   "category": "none-found",
+   "recordsCovered": [],
+   "where": [
+    "https://arxiv.org/src/2508.21126/anc/"
+   ],
+   "format": "ancillary files output_list.txt, output_properties.pdf (list of snapshot times and saved particle properties only, no curve data)",
+   "licence": null,
+   "quote": "The data supporting the plots within this article are available on reasonable request to the corresponding author. The COLIBRE simulation data will eventually be made publicly available ... (main.tex:1339)",
+   "reachable": "yes (ancillary listing) / no table",
+   "reachableTest": "https://arxiv.org/src/2508.21126/anc lists two files; https://colibre.strw.leidenuniv.nl/paper_data/2508.21126.yml -> 404",
+   "notes": "No numeric table for SFRD, sSFR or SHMR."
+  },
+  {
+   "rank": 26,
+   "paper": "Blank et al. 2021 (NIHAO XXVI) (MNRAS)",
+   "arXiv": "2008.13379",
+   "digitizedSimRecords": 8,
+   "category": "none-found",
+   "recordsCovered": [],
+   "where": [],
+   "format": null,
+   "licence": null,
+   "quote": "manuscript.tex:435: The data underlying this article will be shared on reasonable request to the corresponding author. \\bibliographystyle{mnras} \\bibliography{library}",
+   "reachable": "no",
+   "reachableTest": "no URL",
+   "notes": "paper: \"The data underlying this article will be shared on reasonable request\""
+  },
+  {
+   "rank": 27,
+   "paper": "Dubois et al. 2016 (MNRAS 463)",
+   "arXiv": "1606.03086",
+   "digitizedSimRecords": 8,
+   "category": "none-found",
+   "recordsCovered": [],
+   "where": [
+    "https://www.horizon-simulation.org/data.html"
+   ],
+   "format": null,
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "yes",
+   "reachableTest": "GET -> 200",
+   "notes": "Horizon-AGN page lists only matter power spectra and photometric catalogues (neither is the plotted quantity); paper has no data statement."
+  },
+  {
+   "rank": 28,
+   "paper": "Genel et al. 2015 (ApJ 804)",
+   "arXiv": "1503.01117",
+   "digitizedSimRecords": 7,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "https://www.illustris-project.org/data/",
+    "https://www.tng-project.org/data/"
+   ],
+   "format": "HDF5 group catalogues, merger trees, snapshots (Nelson et al. 2015 data release)",
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "yes",
+   "reachableTest": "HEAD https://www.illustris-project.org/data/ -> 200",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read. Illustris public release is the data behind this Illustris figure."
+  },
+  {
+   "rank": 29,
+   "paper": "Katz et al. 2023 (OJAp 6 (arXiv:2309.03269))",
+   "arXiv": "2309.03269",
+   "digitizedSimRecords": 7,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "https://github.com/HarleyKatz/SPHINX-20-data (data/all_basic_data.csv)"
+   ],
+   "format": "CSV per halo and redshift (1380 galaxies with SFR10>=0.3, z=4.64-10)",
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "partial",
+   "reachableTest": "github.com 403 via proxy; raw.githubusercontent.com README.md -> 200 (describes data/all_basic_data.csv, spectra on git-lfs)",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read. The repository already ingests this CSV (sphinx20.json); the 7 UVLF records could be recomputed from it but the paper shows no tabulated UVLF."
+  },
+  {
+   "rank": 30,
+   "paper": "Ma et al. 2018 (MNRAS 478)",
+   "arXiv": "1706.06605",
+   "digitizedSimRecords": 7,
+   "category": "table-released-full",
+   "recordsCovered": {
+    "exact-match": [
+     "ma18.fire2.uvlf.z6",
+     "ma18.fire2.uvlf.z8",
+     "ma18.fire2.uvlf.z10",
+     "ma18.fire2.uvlf.z12"
+    ],
+    "not-covered": "ma18.fire2.smd.* (3): SMD is not tabulated; integrating the released SMF_model files from log M*=lo to 11.5 gives values ~0.2 dex above the digitized curve (upper limit / definition of the figure unknown), so no replacement"
+   },
+   "where": [
+    "https://www.tapir.caltech.edu/~xchma/data/hiz_smf_lf.zip",
+    "arXiv e-print 1706.06605 hizsmf.tex Table tbl:lf (appendix)"
+   ],
+   "format": "zip of whitespace-separated ASCII: LF_UV_sim_zNN.txt (M1500, log phi), LF_UV_red_zNN.txt (dust-attenuated), SMF_sim/model_zNN.txt, LF_B/J_*; NN=05..12",
+   "licence": "not stated",
+   "quote": "In addition, we also make our model stellar mass function and luminosity functions public. A machine-readable version of these results is available at http://www.tapir.caltech.edu/~xchma/data/hiz_smf_lf.zip. Those derived from the simulated catalog are tabulated in files SMF_sim_zxx.txt, LF_UV_sim_zxx.txt, LF_B_sim_zxx.txt, and LF_J_sim_zxx.txt (these are identical to the data in Tables tbl:smf and tbl:lf). (hizsmf.tex:613)",
+   "reachable": "yes",
+   "reachableTest": "curl -I http://www.tapir.caltech.edu/~xchma/data/hiz_smf_lf.zip -> HTTP 200, content-length 67102 (downloaded, sha256 94ea32b37b795ad9b19c3e9abfa5e33e1126edb2362e34a19030752bc3b20a91)",
+   "notes": "The four luminosity-function records were converted from digitized-figure to official-table (exact numbers). The repository already ingested the SMF table of the same appendix (ma18.fire2.gsmf.z5-z12).",
+   "verification": "LF_UV_sim_z06/08/10/12.txt vs the four digitized uvlf records: median and max deviation 0.000 dex at every common abscissa (digitized y = file y to 4 decimals). The digitized records say intrinsic (no dust), matching LF_UV_sim; LF_UV_red is the dust-attenuated version."
+  },
+  {
+   "rank": 31,
+   "paper": "Chaikin et al. 2026 (COLIBRE progenitors of z>10 JWST galaxies (arXiv:2608.19007))",
+   "arXiv": "2608.19007",
+   "digitizedSimRecords": 6,
+   "category": "none-found",
+   "recordsCovered": [],
+   "where": [],
+   "format": null,
+   "licence": null,
+   "quote": "The data underlying this article will be shared on reasonable request to the corresponding author. (main.tex:520)",
+   "reachable": "no",
+   "reachableTest": "https://colibre.strw.leidenuniv.nl/paper_data/2608.19007.yml -> 404; no arXiv ancillary files",
+   "notes": ""
+  },
+  {
+   "rank": 32,
+   "paper": "Crain et al. 2017 (MNRAS 464)",
+   "arXiv": "1604.06803",
+   "digitizedSimRecords": 6,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "http://icc.dur.ac.uk/Eagle/database.php"
+   ],
+   "format": "SQL database of galaxy properties (McAlpine et al. 2016) plus particle data on request",
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "yes",
+   "reachableTest": "HEAD http://icc.dur.ac.uk/Eagle/database.php -> 200 (http://icc.dur.ac.uk/Eagle/ root: connection reset)",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read."
+  },
+  {
+   "rank": 33,
+   "paper": "Dutton et al. 2017 (NIHAO XII) (MNRAS 467)",
+   "arXiv": "1610.06375",
+   "digitizedSimRecords": 6,
+   "category": "table-in-eprint",
+   "recordsCovered": {
+    "exact-match": [
+     "dutton17.nihao.btfr-all-baryons.galaxies.z0 (V_HI vs Mbar)",
+     "dutton17.nihao.btfr-stars-neutral-gas.galaxies.z0 (V_HI vs Mgal)",
+     "dutton17.nihao.stfr-stars.galaxies.z0 (Mstar vs V_HI)"
+    ],
+    "not-covered": "the *.fit.z0 records (2 points each: straight-line fits)"
+   },
+   "where": [
+    "arXiv e-print 1610.06375 files table1a.txt and table1b.txt, \\input into Table tab:mvall (nihaoXII_2017.03.07.tex:1420-1460)"
+   ],
+   "format": "LaTeX table rows (& separated), 83 galaxies x 10 columns: R_HI, V_HI, Vmax_DMO, V200, V200_DMO, Mstar, Mneut, Mgal, Mbar, Mbar_DMO (3 decimals)",
+   "licence": "not stated",
+   "quote": "Data from NIHAO simulations from Fig. mvall. All logarithms are base 10. Sizes are in units of kpc, velocities in km/s, and masses in Msun. Column (1) NIHAO simulation ID, column (2) HI radius, column (3) circular velocity measured at the HI radius, ... column (7) stellar mass, column (8) neutral gas mass, column (9) galaxy baryonic mass (column 7 plus column 8), column (10) baryonic mass inside the virial radius of the hydro simulation (nihaoXII_2017.03.07.tex:1420-1434)",
+   "reachable": "yes",
+   "reachableTest": "arXiv e-print downloaded, sha256 of tarball 5084f65a3bea9883bbfc3f7055a02f900f0e280afdff2cd209f1308f4f354464; https://arxiv.org/abs/1610.06375 -> 200",
+   "notes": "Converts 3 per-galaxy records (83 points each) to exact published values. Note the table is \\input from external files, so a grep of the main .tex does not show it.",
+   "verification": "Digitized marker centres (83 per record) vs table rows: median nearest-neighbour distance 0.003 (V_HI,Mbar), 0.003 (V_HI,Mgal), 0.002 (Mstar,V_HI) dex; max 0.007 dex. The record warnings say \"no table is published\", which is wrong: the table is in the arXiv e-print (Table tab:mvall, \\input from table1a.txt and table1b.txt); whether the journal version prints it was not checked."
+  },
+  {
+   "rank": 34,
+   "paper": "Pillepich et al. 2019 (MNRAS 490)",
+   "arXiv": "1902.05553",
+   "digitizedSimRecords": 6,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "https://www.tng-project.org/data/"
+   ],
+   "format": "HDF5 group catalogues, supplementary catalogues, snapshots (Nelson et al. 2019 data release)",
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "yes",
+   "reachableTest": "HEAD https://www.tng-project.org/data/ -> 200 (registration needed to download)",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read."
+  },
+  {
+   "rank": 35,
+   "paper": "Lagos et al. 2017 (MNRAS 464)",
+   "arXiv": "1609.01739",
+   "digitizedSimRecords": 5,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "http://icc.dur.ac.uk/Eagle/database.php"
+   ],
+   "format": "SQL database of galaxy properties (McAlpine et al. 2016) plus particle data on request",
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "yes",
+   "reachableTest": "HEAD http://icc.dur.ac.uk/Eagle/database.php -> 200 (http://icc.dur.ac.uk/Eagle/ root: connection reset)",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read."
+  },
+  {
+   "rank": 36,
+   "paper": "Ricarte et al. 2019 (MNRAS 489)",
+   "arXiv": "1904.10116",
+   "digitizedSimRecords": 5,
+   "category": "none-found",
+   "recordsCovered": [],
+   "where": [],
+   "format": null,
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "no",
+   "reachableTest": "no URL",
+   "notes": "Romulus25; only regression-fit tables"
+  },
+  {
+   "rank": 37,
+   "paper": "Crain et al. 2015 (MNRAS 450)",
+   "arXiv": "1501.01311",
+   "digitizedSimRecords": 4,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "http://icc.dur.ac.uk/Eagle/database.php"
+   ],
+   "format": "SQL database of galaxy properties (McAlpine et al. 2016) plus particle data on request",
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "yes",
+   "reachableTest": "HEAD http://icc.dur.ac.uk/Eagle/database.php -> 200 (http://icc.dur.ac.uk/Eagle/ root: connection reset)",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read."
+  },
+  {
+   "rank": 38,
+   "paper": "Diemer et al. 2019 (MNRAS 487)",
+   "arXiv": "1902.10714",
+   "digitizedSimRecords": 4,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "https://www.tng-project.org/data/",
+    "http://www.benediktdiemer.com/data/hi-h2-in-illustris/"
+   ],
+   "format": "HDF5 supplementary catalogue \"Molecular and atomic hydrogen (HI+H2) galaxy contents\" in the TNG release; plus zips of figure sets (images, not numbers) on the author page",
+   "licence": null,
+   "quote": "We emphasize that all simulation data used in this work are publicly available as part of the IllustrisTNG data release. (paper.tex:543)",
+   "reachable": "yes",
+   "reachableTest": "HEAD both -> 200",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read. The author page offers figure zips, not tables."
+  },
+  {
+   "rank": 39,
+   "paper": "Marszewski et al. 2024 (ApJL 967)",
+   "arXiv": "2403.08853",
+   "digitizedSimRecords": 4,
+   "category": "none-found",
+   "recordsCovered": [],
+   "where": [],
+   "format": null,
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "no",
+   "reachableTest": "no URL",
+   "notes": "Only the MZR fit-parameter table (already ingested); the 4 gas-fraction records have no table."
+  },
+  {
+   "rank": 40,
+   "paper": "Rodriguez-Gomez et al. 2022 (MNRAS 512)",
+   "arXiv": "2203.10098",
+   "digitizedSimRecords": 4,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "https://www.tng-project.org/data/"
+   ],
+   "format": "HDF5 group catalogues, supplementary catalogues, snapshots (Nelson et al. 2019 data release)",
+   "licence": null,
+   "quote": "paper.tex:427: The data from the Illustris and IllustrisTNG simulations used in this work are publicly available at the websites https://www.illustris-project.org and https://www.tng-project.org, respectively . %\\bibliographystyle{mn2eFixed} \\bibliographystyle{mnras}",
+   "reachable": "yes",
+   "reachableTest": "HEAD https://www.tng-project.org/data/ -> 200 (registration needed to download)",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read."
+  },
+  {
+   "rank": 41,
+   "paper": "Torrey et al. 2019 (MNRAS (doi 10.1093/mnras/stz243; arXiv:1711.05261))",
+   "arXiv": "1711.05261",
+   "digitizedSimRecords": 4,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "https://www.tng-project.org/data/"
+   ],
+   "format": "HDF5 group catalogues, supplementary catalogues, snapshots (Nelson et al. 2019 data release)",
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "yes",
+   "reachableTest": "HEAD https://www.tng-project.org/data/ -> 200 (registration needed to download)",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read."
+  },
+  {
+   "rank": 42,
+   "paper": "Volonteri et al. 2016 (MNRAS 460)",
+   "arXiv": "1602.01941",
+   "digitizedSimRecords": 4,
+   "category": "none-found",
+   "recordsCovered": [],
+   "where": [
+    "https://www.horizon-simulation.org/data.html"
+   ],
+   "format": null,
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "yes",
+   "reachableTest": "GET -> 200",
+   "notes": "Horizon-AGN page lists only matter power spectra and photometric catalogues (neither is the plotted quantity); paper has no data statement."
+  },
+  {
+   "rank": 43,
+   "paper": "Lagos et al. 2015 (MNRAS 452)",
+   "arXiv": "1503.04807",
+   "digitizedSimRecords": 3,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "http://icc.dur.ac.uk/Eagle/database.php"
+   ],
+   "format": "SQL database of galaxy properties (McAlpine et al. 2016) plus particle data on request",
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "yes",
+   "reachableTest": "HEAD http://icc.dur.ac.uk/Eagle/database.php -> 200 (http://icc.dur.ac.uk/Eagle/ root: connection reset)",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read."
+  },
+  {
+   "rank": 44,
+   "paper": "Vijayan et al. 2021 (MNRAS (doi 10.1093/mnras/staa3715; arXiv:2008.06057))",
+   "arXiv": "2008.06057",
+   "digitizedSimRecords": 3,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "https://doi.org/10.5281/zenodo.4290823",
+    "https://flaresimulations.github.io/data.html (404 from here; the site root links the Zenodo record)"
+   ],
+   "format": "HDF5 per-galaxy stellar masses, SFRs, luminosities, fluxes for all 40 regions z=5-10",
+   "licence": "CC-BY-4.0 (Zenodo metadata)",
+   "quote": "main.tex:151: The photometric catalogue of the galaxies in the different regions is available at https://flaresimulations.github.io/data.html and the code to reproduce the plots can be found at https://github.com/aswinpvijayan/flares_photometryphotometry}. %%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%% % The best way to enter references is to use BibTeX:",
+   "reachable": "yes",
+   "reachableTest": "Zenodo API https://zenodo.org/api/records/4290823 -> 200: FLARES DR2 Photometric Properties, file flares_public.hdf5 1003161338 bytes (not downloaded, >50 MB), licence cc-by-4.0",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read. The UV LF appendix table of this paper is already ingested (vijayan21-flares-uvlf); the 3 SFRD records have no table."
+  },
+  {
+   "rank": 45,
+   "paper": "Vogelsberger et al. 2014 (MNRAS 444)",
+   "arXiv": "1405.2921",
+   "digitizedSimRecords": 3,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "https://www.illustris-project.org/data/",
+    "https://www.tng-project.org/data/"
+   ],
+   "format": "HDF5 group catalogues, merger trees, snapshots (Nelson et al. 2015 data release)",
+   "licence": null,
+   "quote": "paper.tex:2327: The Illustris simulation data in the form of various group catalogues, merger trees (subhalo-, halo-, and galaxy-based), light-cone mock observations, pre-processed snapshot data in HDF5 format allowing access to every stored quantity at all redshifts, galaxy images, galaxy spectra and broad-band magnitudes, etc. will be made available in the near future. Data distribution",
+   "reachable": "yes",
+   "reachableTest": "HEAD https://www.illustris-project.org/data/ -> 200",
+   "notes": "Public per-galaxy/halo catalogues (not tables of the plotted curves): the curve would have to be recomputed; not a replacement for the figure read. Illustris public release is the data behind this Illustris figure."
+  },
+  {
+   "rank": 46,
+   "paper": "Buck et al. 2019 (MNRAS)",
+   "arXiv": "1909.05864",
+   "digitizedSimRecords": 2,
+   "category": "catalog-public-recompute",
+   "recordsCovered": [],
+   "where": [
+    "https://tobibu.github.io/#sim_data"
+   ],
+   "format": null,
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "yes",
+   "reachableTest": "GET https://tobibu.github.io/ -> 200; page says \"Simulation data is publicly available here\" (link target not resolved)",
+   "notes": "NIHAO-UHD particle data, not a table of the Tully-Fisher points."
+  },
+  {
+   "rank": 47,
+   "paper": "Stinson et al. 2015 (MNRAS 454)",
+   "arXiv": "1506.08785",
+   "digitizedSimRecords": 1,
+   "category": "none-found",
+   "recordsCovered": [],
+   "where": [],
+   "format": null,
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "no",
+   "reachableTest": "no URL",
+   "notes": "NIHAO paper; no table/data link"
+  },
+  {
+   "rank": 48,
+   "paper": "Maccio et al. 2016 (NIHAO X) (MNRAS 463)",
+   "arXiv": "1607.01028",
+   "digitizedSimRecords": 1,
+   "category": "none-found",
+   "recordsCovered": [],
+   "where": [],
+   "format": null,
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "no",
+   "reachableTest": "no URL",
+   "notes": "no table/data link"
+  },
+  {
+   "rank": 49,
+   "paper": "Tremmel et al. 2017 (MNRAS 470)",
+   "arXiv": "1607.02151",
+   "digitizedSimRecords": 1,
+   "category": "none-found",
+   "recordsCovered": [],
+   "where": [],
+   "format": null,
+   "licence": null,
+   "quote": "no data-availability statement or table/anc link found in the LaTeX source (searched: data availab*, zenodo, github, vizier, cds, globus, flatiron, ancillary, supplementary, machine-readable, \\input data files)",
+   "reachable": "no",
+   "reachableTest": "no URL",
+   "notes": "no table/data link"
+  }
+ ]
+}

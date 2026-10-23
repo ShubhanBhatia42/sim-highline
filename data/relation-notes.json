@@ -920,6 +920,1013 @@
           "key": "dubois21"
         }
       ]
+    },
+    "sfrf": {
+      "title": "Star-formation rate function",
+      "paragraph": "The star-formation rate function is the number of galaxies per unit comoving volume per dex of star-formation rate. It is the SFR counterpart of the stellar mass function and the distribution whose integral weighted by SFR gives the cosmic star-formation rate density (Madau & Dickinson 2014), so it shows which galaxies build the stellar mass of the Universe at each epoch. Observed functions are derived from dust-corrected UV luminosity functions, infrared luminosity functions or H-alpha surveys: Smit et al. (2012) convert the z=4 to 7 UV luminosity functions with dust corrections based on the UV slope and the IRX-beta relation, and find a characteristic SFR that grows from about 5 solar masses per year at z~8 to about 100 at z~2. Each tracer has its own calibration (Kennicutt & Evans 2012), and they do not always agree: Katsianis et al. (2017) compile UV, IR and H-alpha functions and find them inconsistent for the highest star-forming objects at z<2, possibly through selection biases and dust attenuation. In EAGLE supernova feedback sets the abundance of galaxies at all star-forming regimes while AGN feedback affects only the highest-SFR systems (Katsianis et al. 2017), and at z~4 to 7 the function is insensitive to feedback at z>5 but responds to it at lower redshift (Tescari et al. 2014). Two curves are comparable only if the SFR indicator and dust correction, the IMF, the SFR timescale and the comoving normalisation per dex agree.",
+      "refs": [
+        {
+          "arxiv": "1204.3626",
+          "doi": "10.1088/0004-637X/756/1/14",
+          "role": "observation",
+          "cite": "Smit et al. 2012, ApJ 756, 14",
+          "key": "smit12"
+        },
+        {
+          "arxiv": "1204.3552",
+          "doi": "10.1146/annurev-astro-081811-125610",
+          "role": "review",
+          "cite": "Kennicutt & Evans 2012, ARA&A 50, 531",
+          "key": "kennicutt12"
+        },
+        {
+          "arxiv": "1403.0007",
+          "doi": "10.1146/annurev-astro-081811-125615",
+          "role": "review",
+          "cite": "Madau & Dickinson 2014, ARA&A 52, 415",
+          "key": "madau14"
+        },
+        {
+          "arxiv": "1312.5310",
+          "doi": "10.1093/mnras/stt2461",
+          "role": "simulation vs data",
+          "cite": "Tescari et al. 2014, MNRAS 438, 3490",
+          "key": "tescari14"
+        },
+        {
+          "arxiv": "1708.01913",
+          "doi": "10.1093/mnras/stx2020",
+          "role": "simulation vs data",
+          "cite": "Katsianis et al. 2017, MNRAS 472, 919",
+          "key": "katsianis17"
+        }
+      ]
+    },
+    "himf": {
+      "title": "HI mass function",
+      "paragraph": "The HI mass function counts galaxies per unit comoving volume per dex of atomic-hydrogen mass, and its integral is the cosmic HI density. It is measured directly from blind 21 cm surveys that do not depend on optical selection. The HIPASS Bright Galaxy Catalogue of 1000 galaxies gave a Schechter function with faint-end slope -1.30 and a cosmic HI density of (3.8±0.6)×10^-4, with later-type galaxies having steeper slopes (Zwaan et al. 2003). The final ALFALFA catalogue gives a knee mass of 10^9.94 and a low-mass slope of -1.25, and its authors conclude that the knee is a fair cosmological measurement while the slope is representative only of the local Universe (Jones et al. 2018). The review of the cold interstellar medium by Saintonge & Catinella (2022) places the function within the network of gas scaling relations. Simulations must assign HI in post-processing, so the function tests that step as much as the physics. In EAGLE the standard-resolution run underestimates HI column densities, which leaves a deficiency below 10^10 M☉ and a poor match to the observed function; higher-resolution runs largely remove this (Crain et al. 2017). TNG agrees well for gas fractions but overestimates the total neutral gas abundance at z=0 by about a factor of two (Diemer et al. 2019), and Simba, EAGLE and TNG all qualitatively reproduce the local function while diverging in its evolution to z~2 (Davé et al. 2020). Compare curves only after matching the HI definition (self-shielding and molecular correction, aperture), the h-scaling of masses and volumes, and the comoving normalisation.",
+      "refs": [
+        {
+          "arxiv": "astro-ph/0302440",
+          "doi": "10.1086/374944",
+          "role": "past: observation",
+          "cite": "Zwaan et al. 2003, AJ 125, 2842",
+          "key": "zwaan03"
+        },
+        {
+          "arxiv": "1802.00053",
+          "doi": "10.1093/mnras/sty521",
+          "role": "present: observation",
+          "cite": "Jones et al. 2018, MNRAS 477, 2",
+          "key": "jones18"
+        },
+        {
+          "arxiv": "2202.00690",
+          "doi": "10.1146/annurev-astro-021022-043545",
+          "role": "review",
+          "cite": "Saintonge & Catinella 2022, ARA&A 60, 319",
+          "key": "saintonge22"
+        },
+        {
+          "arxiv": "1604.06803",
+          "doi": "10.1093/mnras/stw2586",
+          "role": "simulation vs data",
+          "cite": "Crain et al. 2017, MNRAS 464, 4204",
+          "key": "crain17"
+        },
+        {
+          "arxiv": "1902.10714",
+          "doi": "10.1093/mnras/stz1323",
+          "role": "simulation vs data",
+          "cite": "Diemer et al. 2019, MNRAS 487, 1529",
+          "key": "diemer19"
+        },
+        {
+          "arxiv": "2002.07226",
+          "doi": "10.1093/mnras/staa1894",
+          "role": "simulation vs data",
+          "cite": "Davé et al. 2020, MNRAS 497, 146",
+          "key": "dave20"
+        }
+      ]
+    },
+    "hmf": {
+      "title": "Halo mass function",
+      "paragraph": "The halo mass function is the comoving number density of dark-matter haloes per dex of halo mass. It is the starting point of every galaxy-halo model: abundance matching and semi-analytic models assume it, and the baseline against which galaxy abundances are read as efficiencies. It is fixed by cosmology and the growth of structure, but only for a stated mass definition: Tinker et al. (2008) calibrated it in collisionless simulations to about 5% for 10^11 to 10^15 M☉/h, argued that spherical-overdensity masses are more directly linked to cluster observables than friends-of-friends masses, and found that no universal fitting function holds at that accuracy, with the amplitude falling by 20 to 50% from z=0 to 2.5 depending on the mass definition. Cluster counts anchor the massive end: Chandra measurements of the mass function at z≈0.05 and z≈0.55 give cosmological constraints (Vikhlinin et al. 2009). Baryons modify the function: in Magneticum they lower cluster masses and so reduce number densities at fixed mass, an effect that vanishes at z~2 and above 10^14 M☉ (Bocquet et al. 2016), and galaxy formation lowers it by about 20%, in correction formulae derived from simulations that reproduce the observed baryon fractions (Velliscig et al. 2014). Frenk & White (2012) review the role of simulations in this picture. Curves are comparable only if the halo mass definition (M200c, M200m, M500c, virial, FOF), the cosmology and h-units, the comoving normalisation per dex, and the choice of dark-matter-only or hydrodynamical masses agree.",
+      "refs": [
+        {
+          "arxiv": "0803.2706",
+          "doi": "10.1086/591439",
+          "role": "past: empirical model",
+          "cite": "Tinker et al. 2008, ApJ 688, 709",
+          "key": "tinker08"
+        },
+        {
+          "arxiv": "1502.07357",
+          "doi": "10.1093/mnras/stv2657",
+          "role": "present: empirical model",
+          "cite": "Bocquet et al. 2016, MNRAS 456, 2361",
+          "key": "bocquet16"
+        },
+        {
+          "arxiv": "0812.2720",
+          "doi": "10.1088/0004-637X/692/2/1060",
+          "role": "observation",
+          "cite": "Vikhlinin et al. 2009, ApJ 692, 1060",
+          "key": "vikhlinin09"
+        },
+        {
+          "arxiv": "1210.0544",
+          "doi": "10.1002/andp.201200212",
+          "role": "review",
+          "cite": "Frenk & White 2012, Ann. Phys. 524, 507",
+          "key": "frenk12"
+        },
+        {
+          "arxiv": "1402.4461",
+          "doi": "10.1093/mnras/stu1044",
+          "role": "simulation vs data",
+          "cite": "Velliscig et al. 2014, MNRAS 442, 2641",
+          "key": "velliscig14"
+        }
+      ]
+    },
+    "dmf": {
+      "title": "Dust mass function",
+      "paragraph": "The dust mass function counts galaxies per unit comoving volume per dex of dust mass. Its integral is the cosmic dust density, and its shape constrains how dust is produced, grown and destroyed. Locally, the GAMA/H-ATLAS function of 15,750 galaxies at z<0.1 is a Schechter function with a faint-end slope of 1.22 and a dust density parameter of 1.1×10^-6 integrated down to 10^4 M☉ (Beeston et al. 2018). The Herschel-ATLAS found rapid evolution of dust in galaxies over the past 5 Gyr (Dunne et al. 2011), and Pozzi et al. (2020) extended the function to z≈2.5 and found a broad peak of the dust mass density near z≈1. The review by Galliano et al. (2018) covers the dust properties of nearby galaxies from which such masses are inferred. Simulations do not agree with each other: a smoothed-particle simulation with a dust-evolution model reproduces the z=0 function but overproduces dust masses above 10^8 M☉ (Hou et al. 2019); Simba reproduces it at z=0 but falls short by about a factor of three at z~1 to 2 (Li et al. 2019); and IllustrisTNG, post-processed with a dust model, shows no evolution of the function at 0<z<0.5, in conflict with the rapid evolution derived from observations (Millard et al. 2020). Observed dust masses depend on the spectral-energy-distribution model (single or multiple temperatures, energy balance) and on the dust absorption coefficient, simulated ones on the dust model or post-processing recipe, and the units carry h factors, so compare only matched definitions and the comoving normalisation per dex.",
+      "refs": [
+        {
+          "arxiv": "1712.07261",
+          "doi": "10.1093/mnras/sty1460",
+          "role": "present: observation",
+          "cite": "Beeston et al. 2018, MNRAS 479, 1077",
+          "key": "beeston18"
+        },
+        {
+          "arxiv": "1012.5186",
+          "doi": "10.1111/j.1365-2966.2011.19363.x",
+          "role": "past: observation",
+          "cite": "Dunne et al. 2011, MNRAS 417, 1510",
+          "key": "dunne11"
+        },
+        {
+          "arxiv": "1909.11333",
+          "doi": "10.1093/mnras/stz2724",
+          "role": "present: observation",
+          "cite": "Pozzi et al. 2020, MNRAS 491, 5073",
+          "key": "pozzi20"
+        },
+        {
+          "arxiv": "1711.07434",
+          "doi": "10.1146/annurev-astro-081817-051900",
+          "role": "review",
+          "cite": "Galliano et al. 2018, ARA&A 56, 673",
+          "key": "galliano18"
+        },
+        {
+          "arxiv": "1901.02886",
+          "doi": "10.1093/mnras/stz121",
+          "role": "simulation vs data",
+          "cite": "Hou et al. 2019, MNRAS 485, 1727",
+          "key": "hou19"
+        },
+        {
+          "arxiv": "1906.09277",
+          "doi": "10.1093/mnras/stz2684",
+          "role": "simulation vs data",
+          "cite": "Li et al. 2019, MNRAS 490, 1425",
+          "key": "li19"
+        },
+        {
+          "arxiv": "2010.07309",
+          "doi": "10.1093/mnras/staa3207",
+          "role": "simulation vs data",
+          "cite": "Millard et al. 2020, MNRAS 500, 871",
+          "key": "millard20"
+        }
+      ]
+    },
+    "dtg": {
+      "title": "Dust-to-gas ratio",
+      "paragraph": "The dust-to-gas ratio is the dust mass divided by the atomic plus molecular gas mass of a galaxy, plotted against its gas-phase oxygen abundance, 12+log(O/H). It measures what fraction of the metals is locked in grains, so it tests models of dust production, growth and destruction. In the SINGS galaxies the ratio depends on metallicity, with spirals resembling the dust of the local Milky Way (Draine et al. 2007). A sample of 126 local galaxies spanning 2 dex in metallicity shows that metallicity is the property that drives the ratio among five tested, that the relation is not a single power law of slope -1, and that it is steeper below 12+log(O/H)≈8.0, with a scatter of 0.37 dex at fixed metallicity (Rémy-Ruyer et al. 2014). The review by Galliano et al. (2018) surveys the dust properties of nearby galaxies behind these numbers. Simulations with dust models can match the local trend: one cosmological model reproduces the observed relation for nearby galaxies (Aoyama et al. 2018), another agrees with it at z=0 (Hou et al. 2019), and Simba predicts a tight positive correlation for star-forming galaxies that is absent for quenched ones, with little evolution between z=0 and 6 (Li et al. 2019). Observed ratios depend on the molecular gas mass, which Rémy-Ruyer et al. (2014) derive with either a Galactic or a metallicity-dependent CO conversion factor, and on the dust-mass method and the oxygen-abundance calibration, so curves are comparable only with matched gas definitions.",
+      "refs": [
+        {
+          "arxiv": "astro-ph/0703213",
+          "doi": "10.1086/518306",
+          "role": "past: observation",
+          "cite": "Draine et al. 2007, ApJ 663, 866",
+          "key": "draine07"
+        },
+        {
+          "arxiv": "1312.3442",
+          "doi": "10.1051/0004-6361/201322803",
+          "role": "present: observation",
+          "cite": "Rémy-Ruyer et al. 2014, A&A 563, A31",
+          "key": "rmyruyer14"
+        },
+        {
+          "arxiv": "1711.07434",
+          "doi": "10.1146/annurev-astro-081817-051900",
+          "role": "review",
+          "cite": "Galliano et al. 2018, ARA&A 56, 673",
+          "key": "galliano18"
+        },
+        {
+          "arxiv": "1802.04027",
+          "doi": "10.1093/mnras/sty1431",
+          "role": "simulation vs data",
+          "cite": "Aoyama et al. 2018, MNRAS 478, 4905",
+          "key": "aoyama18"
+        },
+        {
+          "arxiv": "1901.02886",
+          "doi": "10.1093/mnras/stz121",
+          "role": "simulation vs data",
+          "cite": "Hou et al. 2019, MNRAS 485, 1727",
+          "key": "hou19"
+        },
+        {
+          "arxiv": "1906.09277",
+          "doi": "10.1093/mnras/stz2684",
+          "role": "simulation vs data",
+          "cite": "Li et al. 2019, MNRAS 490, 1425",
+          "key": "li19"
+        }
+      ]
+    },
+    "metald": {
+      "title": "Cosmic metal mass density",
+      "paragraph": "The cosmic metal mass density is the mass of heavy elements per unit comoving volume as a function of redshift. Because stars only add metals, it follows the integrated star-formation history, but where the metals sit changes with time. Madau & Dickinson (2014) review how the history of star formation and of heavy-element production can be mapped from the cosmic dark ages to today. Péroux & Howk (2020) compile contemporary censuses of the baryons and metals in collapsed structures and conclude that cold gas contains virtually all the metals produced by stars at z>2.5, whereas at z<1 most of the observed metals are bound in stars. At z~0, only 20 to 25% of the metals produced by galaxies of 10^9.3 to 10^11.6 M☉ remain in their stars, interstellar gas and dust, and the bulk lie outside them (Peeples et al. 2014). A simulation comparison must therefore be made phase by phase: Yates et al. (2021) contrast damped Lyman-alpha observations with L-Galaxies, TNG100 and EAGLE, and find that the fraction of metals in neutral gas is below 40% at 3<z<5 in all three while the observations suggest above 85%, with hot, low-density gas a major contributor to the metal budget even at high redshift. The two EAGLE curves in this data well, summed over all gas particles and over all star particles, are different pieces of that budget and are never interchangeable. Compare only the same metal phase (all gas, neutral gas, stars or total), the comoving frame, and the IMF and yields behind the metal production.",
+      "refs": [
+        {
+          "arxiv": "1403.0007",
+          "doi": "10.1146/annurev-astro-081811-125615",
+          "role": "review",
+          "cite": "Madau & Dickinson 2014, ARA&A 52, 415",
+          "key": "madau14"
+        },
+        {
+          "arxiv": "2011.01935",
+          "doi": "10.1146/annurev-astro-021820-120014",
+          "role": "review",
+          "cite": "Péroux & Howk 2020, ARA&A 58, 363",
+          "key": "peroux20"
+        },
+        {
+          "arxiv": "1310.2253",
+          "doi": "10.1088/0004-637X/786/1/54",
+          "role": "observation",
+          "cite": "Peeples et al. 2014, ApJ 786, 54",
+          "key": "peeples14"
+        },
+        {
+          "arxiv": "2109.06888",
+          "doi": "10.1093/mnras/stab2837",
+          "role": "simulation vs data",
+          "cite": "Yates et al. 2021, MNRAS 508, 3535",
+          "key": "yates21"
+        }
+      ]
+    },
+    "age": {
+      "title": "Stellar age–mass relation",
+      "paragraph": "The age relation gives the typical age of the stars in a galaxy as a function of stellar mass, and so records how long star formation lasted. From SDSS spectra Gallazzi et al. (2005) derived light-weighted ages and found low-mass galaxies young and massive galaxies old, with a rapid transition between the two regimes. Mattolini et al. (2025) revise this with updated population synthesis models and aperture corrections, and find a bimodal mass-age distribution with a young and an old sequence that transition at 10^10.8 M☉; their aperture corrections lower masses, ages and metallicities in a mass-dependent way. For early-type galaxies, spectral fitting gives mass-weighted ages and star-formation histories whose duration is longer in lower-mass objects (McDermid et al. 2015). Conroy (2013) reviews what can be measured from galaxy spectral energy distributions, including star-formation histories, metallicities and the initial mass function. Simulations do not provide ages the way observers measure them, so tests are indirect: Hill et al. (2017) compare the time at which half of the stellar mass was assembled with the median light-weighted ages of SDSS galaxies, find that both correlate strongly with mass in the data, and report that EAGLE instead shows a flat relation between assembly time and mass, which the semi-analytic model they test reproduces. A curve is comparable only if the age weighting (light or mass, and the band), the stellar mass definition and aperture, the IMF and the population synthesis model all agree.",
+      "refs": [
+        {
+          "arxiv": "astro-ph/0506539",
+          "doi": "10.1111/j.1365-2966.2005.09321.x",
+          "role": "past: observation",
+          "cite": "Gallazzi et al. 2005, MNRAS 362, 41",
+          "key": "gallazzi05"
+        },
+        {
+          "arxiv": "2509.04570",
+          "doi": "10.1051/0004-6361/202554972",
+          "role": "present: observation",
+          "cite": "Mattolini et al. 2025, A&A 703, A5",
+          "key": "mattolini25"
+        },
+        {
+          "arxiv": "1501.03723",
+          "doi": "10.1093/mnras/stv105",
+          "role": "observation",
+          "cite": "McDermid et al. 2015, MNRAS 448, 3484",
+          "key": "mcdermid15"
+        },
+        {
+          "arxiv": "1301.7095",
+          "doi": "10.1146/annurev-astro-082812-141017",
+          "role": "review",
+          "cite": "Conroy 2013, ARA&A 51, 393",
+          "key": "conroy13"
+        },
+        {
+          "arxiv": "1710.08421",
+          "doi": "10.3847/2041-8213/aa951a",
+          "role": "simulation vs data",
+          "cite": "Hill et al. 2017, ApJ 849, L26",
+          "key": "hill17"
+        }
+      ]
+    },
+    "bhmd": {
+      "title": "Cosmic black-hole mass density",
+      "paragraph": "The cosmic black-hole mass density is the mass in supermassive black holes per unit comoving volume, plotted against redshift. Observationally it is built in two ways that must agree: from the local black-hole mass function, and by integrating the accretion implied by AGN luminosity functions for an assumed radiative efficiency. Yu & Tremaine (2002) combined SDSS velocity dispersions with the black hole mass-dispersion relation to estimate a local density of 2.5×10^5 M☉ Mpc^-3, consistent with the density accreted during optically bright quasar phases for an efficiency of 0.1. Marconi et al. (2004) found 4.6×10^5 (h/0.7)^2 M☉ Mpc^-3 and an anti-hierarchical growth in which smaller black holes grow later. Shankar et al. (2009) show that local estimates still span 3 to 5.5×10^5 M☉ Mpc^-3 and that the integrated AGN emissivity closely tracks the cosmic star-formation history, which Heckman & Best (2014) review in the wider context of galaxy and black-hole co-evolution. In simulations the density is the integral of the black-hole mass function: Habouzit et al. (2021) find that Illustris, TNG100, TNG300, Horizon-AGN, EAGLE and SIMBA struggle to form black holes below 10^7.5 M☉ in galaxies of 10^10.5 to 10^11.5 M☉ and, compared with local observations, produce an excess of black holes above 10^9 M☉ in most cases. Because observed densities rest on the assumed efficiency and the mass scale of the M-sigma relation and carry h factors, compare curves only with the same black-hole mass method, comoving frame and cosmology.",
+      "refs": [
+        {
+          "arxiv": "astro-ph/0203082",
+          "doi": "10.1046/j.1365-8711.2002.05532.x",
+          "role": "past: observation",
+          "cite": "Yu & Tremaine 2002, MNRAS 335, 965",
+          "key": "yu02"
+        },
+        {
+          "arxiv": "astro-ph/0311619",
+          "doi": "10.1111/j.1365-2966.2004.07765.x",
+          "role": "past: observation",
+          "cite": "Marconi et al. 2004, MNRAS 351, 169",
+          "key": "marconi04"
+        },
+        {
+          "arxiv": "0710.4488",
+          "doi": "10.1088/0004-637X/690/1/20",
+          "role": "present: empirical model",
+          "cite": "Shankar et al. 2009, ApJ 690, 20",
+          "key": "shankar09"
+        },
+        {
+          "arxiv": "1403.4620",
+          "doi": "10.1146/annurev-astro-081913-035722",
+          "role": "review",
+          "cite": "Heckman & Best 2014, ARA&A 52, 589",
+          "key": "heckman14"
+        },
+        {
+          "arxiv": "2006.10094",
+          "doi": "10.1093/mnras/stab496",
+          "role": "simulation vs data",
+          "cite": "Habouzit et al. 2021, MNRAS 503, 1940",
+          "key": "habouzit21"
+        }
+      ]
+    },
+    "fgas500": {
+      "title": "Hot gas fraction within R500",
+      "paragraph": "The gas fraction within R500 is the mass of hot, X-ray emitting gas divided by the total mass inside the radius that encloses 500 times the critical density, plotted against M500c and here normalised by the cosmic baryon fraction. It records how much of the infalling gas feedback has expelled, so it constrains supernova and AGN feedback at group masses. Vikhlinin et al. (2006) measured gas and hydrostatic total-mass profiles for 13 relaxed clusters with Chandra, and Lovisari et al. (2015) used XMM-Newton observations of a complete group sample and, with a master sample of 82 objects spanning two orders of magnitude in mass, found almost a factor of two difference in gas mass fraction between groups and clusters. The mass estimator matters: with weak-lensing-calibrated masses the XXL clusters have gas fractions substantially lower than those found with hydrostatic masses, a baryon budget short of the cosmic value by about a factor of two at R500, and a hydrostatic bias of 1-b=0.72 (Eckert et al. 2016). Kravtsov & Borgani (2012) review gas and stellar fractions as a testing ground for galaxy formation models. In cosmo-OWLS some AGN feedback models give a realistic population of groups and clusters while others are too violent (Le Brun et al. 2014), BAHAMAS calibrates its feedback to the hot gas mass fractions of groups and clusters (McCarthy et al. 2017), and the C-EAGLE clusters are too gas rich (Barnes et al. 2017). Compare only the same aperture, normalisation, and mass method, and whether a simulated mass is true or X-ray-estimated.",
+      "refs": [
+        {
+          "arxiv": "astro-ph/0507092",
+          "doi": "10.1086/500288",
+          "role": "past: observation",
+          "cite": "Vikhlinin et al. 2006, ApJ 640, 691",
+          "key": "vikhlinin06"
+        },
+        {
+          "arxiv": "1409.3845",
+          "doi": "10.1051/0004-6361/201423954",
+          "role": "observation",
+          "cite": "Lovisari et al. 2015, A&A 573, A118",
+          "key": "lovisari15"
+        },
+        {
+          "arxiv": "1512.03814",
+          "doi": "10.1051/0004-6361/201527293",
+          "role": "present: observation",
+          "cite": "Eckert et al. 2016, A&A 592, A12",
+          "key": "eckert16"
+        },
+        {
+          "arxiv": "1205.5556",
+          "doi": "10.1146/annurev-astro-081811-125502",
+          "role": "review",
+          "cite": "Kravtsov & Borgani 2012, ARA&A 50, 353",
+          "key": "kravtsov12"
+        },
+        {
+          "arxiv": "1312.5462",
+          "doi": "10.1093/mnras/stu608",
+          "role": "simulation vs data",
+          "cite": "Le Brun et al. 2014, MNRAS 441, 1270",
+          "key": "lebrun14"
+        },
+        {
+          "arxiv": "1603.02702",
+          "doi": "10.1093/mnras/stw2792",
+          "role": "simulation vs data",
+          "cite": "McCarthy et al. 2017, MNRAS 465, 2936",
+          "key": "mccarthy17"
+        },
+        {
+          "arxiv": "1703.10907",
+          "doi": "10.1093/mnras/stx1647",
+          "role": "simulation vs data",
+          "cite": "Barnes et al. 2017, MNRAS 471, 1088",
+          "key": "barnes17"
+        }
+      ]
+    },
+    "fmr": {
+      "title": "Fundamental metallicity relation",
+      "paragraph": "The fundamental metallicity relation extends the mass-metallicity relation by a dependence on star-formation rate: at fixed stellar mass, galaxies with higher SFR have lower gas-phase oxygen abundance. It is usually shown as a projection, mu_alpha = log M★ - alpha log SFR, against 12+log(O/H). Mannucci et al. (2010) found a tight surface in stellar mass, SFR and metallicity with a residual dispersion of about 0.05 dex, adopted alpha=0.32 as the value that minimises the local scatter, and found that galaxies out to z≈2.5 follow it. The projection is not universal: direct-method stacks of about 200,000 SDSS galaxies show a factor of two to three greater dependence on SFR than strong-line studies (Andrews & Martini 2013), and a fully Te-anchored recalibration lowers the normalisation and gives a new parametrisation (Curti et al. 2020). MOSDEF finds no evidence that the relation evolves out to z≈3.3 (Sanders et al. 2021), and Maiolino & Mannucci (2019) review the chemical evolution behind it. The simulated relation in EAGLE agrees remarkably well with the observed one at z≲5 (De Rossi et al. 2017), whereas TNG50 and MaNGA both indicate that galaxy size is a stronger secondary parameter than SFR (Ma et al. 2024). Curves are comparable only if alpha, the metallicity quantity and calibration (strong-line, Te-anchored or intrinsic simulation abundance), the SFR indicator and timescale, the IMF and the mass definition are matched.",
+      "refs": [
+        {
+          "arxiv": "1005.0006",
+          "doi": "10.1111/j.1365-2966.2010.17291.x",
+          "role": "past: observation",
+          "cite": "Mannucci et al. 2010, MNRAS 408, 2115",
+          "key": "mannucci10"
+        },
+        {
+          "arxiv": "1211.3418",
+          "doi": "10.1088/0004-637X/765/2/140",
+          "role": "observation",
+          "cite": "Andrews & Martini 2013, ApJ 765, 140",
+          "key": "andrews13"
+        },
+        {
+          "arxiv": "1910.00597",
+          "doi": "10.1093/mnras/stz2910",
+          "role": "present: observation",
+          "cite": "Curti et al. 2020, MNRAS 491, 944",
+          "key": "curti20"
+        },
+        {
+          "arxiv": "2009.07292",
+          "doi": "10.3847/1538-4357/abf4c1",
+          "role": "present: observation",
+          "cite": "Sanders et al. 2021, ApJ 914, 19",
+          "key": "sanders21"
+        },
+        {
+          "arxiv": "1811.09642",
+          "doi": "10.1007/s00159-018-0112-2",
+          "role": "review",
+          "cite": "Maiolino & Mannucci 2019, A&ARv 27, 3",
+          "key": "maiolino19"
+        },
+        {
+          "arxiv": "1704.00006",
+          "doi": "10.1093/mnras/stx2158",
+          "role": "simulation vs data",
+          "cite": "De Rossi et al. 2017, MNRAS 472, 3354",
+          "key": "derossi17"
+        },
+        {
+          "arxiv": "2407.21716",
+          "doi": "10.3847/2041-8213/ad675f",
+          "role": "simulation vs data",
+          "cite": "Ma et al. 2024, ApJ 971, L14",
+          "key": "ma24"
+        }
+      ]
+    },
+    "ks": {
+      "title": "Kennicutt–Schmidt relation",
+      "paragraph": "The Kennicutt-Schmidt relation links the surface density of star formation to the surface density of gas, and it is the empirical law that star-formation prescriptions in galaxy-formation models try to reproduce. Kennicutt (1998) combined 61 normal spirals with 36 infrared-selected starbursts and found that disk-averaged SFR and gas densities follow a Schmidt law with index 1.4±0.15 over several orders of magnitude. At sub-kpc resolution in 18 nearby galaxies, Bigiel et al. (2008) found instead that the SFR surface density is linear (index 1.0±0.2) in the H2 surface density, with a depletion time of about 2 Gyr, while in most galaxies HI correlates little or not at all with SFR. Leroy et al. (2013) found a similar molecular depletion time at 1 kpc resolution with systematic second-order variations, which a CO-to-H2 conversion factor that depends on the dust-to-gas ratio can explain, though not uniquely. Kennicutt & Evans (2012) review the relation from entire galaxies to individual clouds and provide updated SFR prescriptions. In the FIRE simulations the relation emerges from feedback regulation and is independent of redshift and averaging scale, but the cold and dense gas surface density is about 0.5 dex lower than observed at kpc scales (Orr et al. 2018), and in IllustrisTNG the H2 mass correlates with SFR with an almost constant depletion time (Diemer et al. 2019). Curves are comparable only if the gas (total, HI+H2 or H2), the averaging scale (pixel size or galaxy-integrated), the SFR indicator and timescale, the IMF and the CO conversion factor agree.",
+      "refs": [
+        {
+          "arxiv": "astro-ph/9712213",
+          "doi": "10.1086/305588",
+          "role": "past: observation",
+          "cite": "Kennicutt 1998, ApJ 498, 541",
+          "key": "kennicutt98"
+        },
+        {
+          "arxiv": "0810.2541",
+          "doi": "10.1088/0004-6256/136/6/2846",
+          "role": "present: observation",
+          "cite": "Bigiel et al. 2008, AJ 136, 2846",
+          "key": "bigiel08"
+        },
+        {
+          "arxiv": "1301.2328",
+          "doi": "10.1088/0004-6256/146/2/19",
+          "role": "observation",
+          "cite": "Leroy et al. 2013, AJ 146, 19",
+          "key": "leroy13"
+        },
+        {
+          "arxiv": "1204.3552",
+          "doi": "10.1146/annurev-astro-081811-125610",
+          "role": "review",
+          "cite": "Kennicutt & Evans 2012, ARA&A 50, 531",
+          "key": "kennicutt12"
+        },
+        {
+          "arxiv": "1701.01788",
+          "doi": "10.1093/mnras/sty1241",
+          "role": "simulation vs data",
+          "cite": "Orr et al. 2018, MNRAS 478, 3653",
+          "key": "orr18"
+        },
+        {
+          "arxiv": "1902.10714",
+          "doi": "10.1093/mnras/stz1323",
+          "role": "simulation vs data",
+          "cite": "Diemer et al. 2019, MNRAS 487, 1529",
+          "key": "diemer19"
+        }
+      ]
+    },
+    "sigmam": {
+      "title": "Stellar mass–velocity dispersion relation",
+      "paragraph": "This relation links a galaxy's stellar mass to its central stellar velocity dispersion, an observable that reflects the depth of the central gravitational potential (it is not the black-hole M-sigma relation). For massive quiescent galaxies at z<0.7, Zahid et al. (2016) find that the relation and its scatter are independent of redshift, with sigma proportional to M^0.3 above 10^10.3 M☉, the same slope as the halo mass to dark-matter velocity dispersion relation of N-body simulations; they suggest that the central stellar dispersion is directly proportional to that of the dark matter halo. The relation is not a single power law: in the ATLAS3D analysis the mean relation breaks near 3×10^10 M☉, with M proportional to sigma^2.3 and sigma^4.7 at small and large sigma (Cappellari et al. 2013), and the velocity dispersion function of quiescent SDSS galaxies is remarkably flat at low sigma (Sohn et al. 2017). Cappellari (2016) reviews the structure and kinematics of early-type galaxies. Simulations must measure sigma the way a fibre does, and the radius matters: Horizon-AGN and NewHorizon reproduce the variety of velocity dispersion profile slopes seen in SAMI and CALIFA, and their stellar-mass dependence, at inner and outer radii (Han et al. 2024). Compare curves only with the same dimension (line of sight or three-dimensional), aperture and weighting for sigma, the same stellar mass definition and IMF, and the same population (quiescent or all galaxies).",
+      "refs": [
+        {
+          "arxiv": "1607.04275",
+          "doi": "10.3847/0004-637X/832/2/203",
+          "role": "present: observation",
+          "cite": "Zahid et al. 2016, ApJ 832, 203",
+          "key": "zahid16"
+        },
+        {
+          "arxiv": "1208.3523",
+          "doi": "10.1093/mnras/stt644",
+          "role": "observation",
+          "cite": "Cappellari et al. 2013, MNRAS 432, 1862",
+          "key": "cappellari13"
+        },
+        {
+          "arxiv": "1704.07843",
+          "doi": "10.3847/1538-4357/aa7de3",
+          "role": "observation",
+          "cite": "Sohn et al. 2017, ApJ 845, 73",
+          "key": "sohn17"
+        },
+        {
+          "arxiv": "1602.04267",
+          "doi": "10.1146/annurev-astro-082214-122432",
+          "role": "review",
+          "cite": "Cappellari 2016, ARA&A 54, 597",
+          "key": "cappellari16"
+        },
+        {
+          "arxiv": "2310.15534",
+          "doi": "10.3847/1538-4357/ad43dc",
+          "role": "simulation vs data",
+          "cite": "Han et al. 2024, ApJ 968, 96",
+          "key": "han24"
+        }
+      ]
+    },
+    "sigma1": {
+      "title": "Central stellar surface density (Σ1) – mass relation",
+      "paragraph": "Sigma_1 is the stellar mass inside the inner 1 kpc divided by the area of that circle, plotted here against total stellar mass. It measures how dense a galaxy's core is and is used to follow the growth of the bulge. For SDSS central galaxies, Fang et al. (2013) found that galaxies quench once Sigma_1 crosses a threshold that grows with stellar mass as M^0.64, and that a dense bulge appears necessary but not sufficient to quench a galaxy fully. Since z=3, star-forming and quiescent galaxies occupy distinct linear relations between log Sigma_1 and log M whose slopes and scatter barely change while their normalisations decline, and quiescent galaxies have denser cores than star-forming galaxies of the same mass (Barro et al. 2017). Conselice (2014) reviews how galaxy structure evolves over cosmic time. Simulations link the core to the history of the gas: in zoom simulations a wet compaction event at about 10^9.5 M☉ is followed by depletion of the central 1 kpc and saturation of the stellar density there (Tacchella et al. 2016), and in IllustrisTNG, which retains too much cold gas in quenched galaxies compared with observations, Sigma_1 correlates tightly with black-hole mass (Ma et al. 2022). Because the 1 kpc aperture is small, curves are comparable only if the mass profile method (SED-based or colour-based mass-to-light ratio, treatment of seeing), the stellar mass definition, the IMF and the population (star-forming, quiescent or all) agree.",
+      "refs": [
+        {
+          "arxiv": "1308.5224",
+          "doi": "10.1088/0004-637X/776/1/63",
+          "role": "observation",
+          "cite": "Fang et al. 2013, ApJ 776, 63",
+          "key": "fang13"
+        },
+        {
+          "arxiv": "1509.00469",
+          "doi": "10.3847/1538-4357/aa6b05",
+          "role": "present: observation",
+          "cite": "Barro et al. 2017, ApJ 840, 47",
+          "key": "barro17"
+        },
+        {
+          "arxiv": "1403.2783",
+          "doi": "10.1146/annurev-astro-081913-040037",
+          "role": "review",
+          "cite": "Conselice 2014, ARA&A 52, 291",
+          "key": "conselice14"
+        },
+        {
+          "arxiv": "1509.00017",
+          "doi": "10.1093/mnras/stw303",
+          "role": "simulation vs data",
+          "cite": "Tacchella et al. 2016, MNRAS 458, 242",
+          "key": "tacchella16"
+        },
+        {
+          "arxiv": "2211.09969",
+          "doi": "10.3847/1538-4357/aca326",
+          "role": "simulation vs data",
+          "cite": "Ma et al. 2022, ApJ 941, 205",
+          "key": "ma22"
+        }
+      ]
+    },
+    "agnlf": {
+      "title": "AGN luminosity function",
+      "paragraph": "The AGN luminosity function counts active nuclei per unit comoving volume per dex of luminosity, either bolometric or in a stated band such as 2 to 10 keV. Its integral over luminosity is the luminosity density that powers black-hole growth. Hopkins et al. (2007) compiled quasar luminosity functions in the optical, soft and hard X-ray and near and mid-infrared, accounted for the observed column-density distributions and SED shapes, and found that a single bolometric function reproduces the observed functions in all bands, with the total luminosity density peaking at z=2.15±0.05. Shen et al. (2020) update this with a new SED model and extinction corrections: the normalisation falls towards high redshift and the bright-end slope is steeper at z>2, while the faint end at z>5 remains uncertain. Ueda et al. (2014) provide the X-ray luminosity function and absorption function from 4039 detections at 0<z<5. Hickox & Alexander (2018) review how obscuration hides much of the accretion, and Brandt & Alexander (2015) review cosmic X-ray surveys. Simulations differ widely: in six of them the function varies significantly, agrees with observations at z=0, and at higher redshift mostly produces too many AGN around 10^43 to 10^44 erg/s (Habouzit et al. 2021); TNG matches the low-redshift function but over-predicts the high-redshift one (Weinberger et al. 2018). Compare curves only with the same band and bolometric correction, the same obscuration treatment (intrinsic or observed) and the same comoving normalisation per dex.",
+      "refs": [
+        {
+          "arxiv": "astro-ph/0605678",
+          "doi": "10.1086/509629",
+          "role": "past: compilation",
+          "cite": "Hopkins et al. 2007, ApJ 654, 731",
+          "key": "hopkins07"
+        },
+        {
+          "arxiv": "2001.02696",
+          "doi": "10.1093/mnras/staa1381",
+          "role": "present: compilation",
+          "cite": "Shen et al. 2020, MNRAS 495, 3252",
+          "key": "shen20"
+        },
+        {
+          "arxiv": "1402.1836",
+          "doi": "10.1088/0004-637X/786/2/104",
+          "role": "observation",
+          "cite": "Ueda et al. 2014, ApJ 786, 104",
+          "key": "ueda14"
+        },
+        {
+          "arxiv": "1806.04680",
+          "doi": "10.1146/annurev-astro-081817-051803",
+          "role": "review",
+          "cite": "Hickox & Alexander 2018, ARA&A 56, 625",
+          "key": "hickox18"
+        },
+        {
+          "arxiv": "1501.01982",
+          "doi": "10.1007/s00159-014-0081-z",
+          "role": "review",
+          "cite": "Brandt & Alexander 2015, A&ARv 23, 1",
+          "key": "brandt15"
+        },
+        {
+          "arxiv": "2111.01802",
+          "doi": "10.1093/mnras/stab3147",
+          "role": "simulation vs data",
+          "cite": "Habouzit et al. 2021, MNRAS 509, 3015",
+          "key": "habouzit21b"
+        },
+        {
+          "arxiv": "1710.04659",
+          "doi": "10.1093/mnras/sty1733",
+          "role": "simulation vs data",
+          "cite": "Weinberger et al. 2018, MNRAS 479, 4056",
+          "key": "weinberger18"
+        }
+      ]
+    },
+    "bhad": {
+      "title": "Black-hole accretion rate density",
+      "paragraph": "The black-hole accretion rate density is the mass accreted by black holes per unit time and comoving volume as a function of redshift. Observationally it is inferred from the AGN luminosity density by assuming a radiative efficiency, so it is the time derivative of the cosmic black-hole mass density. Madau & Dickinson (2014) show that the comoving rates of star formation and of central black-hole accretion follow a similar rise and fall, which they read as evidence for co-evolution, and Heckman & Best (2014) review what surveys of the contemporary Universe say about that link. Hopkins et al. (2007) integrate their bolometric quasar luminosity function to predict the relic black-hole mass density, and Shen et al. (2020) find that the cosmic black-hole mass density and mass function implied by their updated function are generally consistent with existing observations. Simulations are checked against this history: ASTRID is broadly consistent with empirical constraints on the time evolution of black-hole mass and accretion rate density (Ni et al. 2022), Horizon-AGN reproduces the redshift evolution of the black-hole mass density (Volonteri et al. 2016), and TNG tends to over-predict the high-redshift quasar luminosity function (Weinberger et al. 2018). Observed curves depend on the assumed radiative efficiency, the bolometric correction, the obscuration correction, and on whether the factor (1 minus efficiency) is applied, which is 0.046 dex at an efficiency of 0.1; compare only matched conventions, per comoving volume.",
+      "refs": [
+        {
+          "arxiv": "1403.0007",
+          "doi": "10.1146/annurev-astro-081811-125615",
+          "role": "review",
+          "cite": "Madau & Dickinson 2014, ARA&A 52, 415",
+          "key": "madau14"
+        },
+        {
+          "arxiv": "1403.4620",
+          "doi": "10.1146/annurev-astro-081913-035722",
+          "role": "review",
+          "cite": "Heckman & Best 2014, ARA&A 52, 589",
+          "key": "heckman14"
+        },
+        {
+          "arxiv": "astro-ph/0605678",
+          "doi": "10.1086/509629",
+          "role": "past: compilation",
+          "cite": "Hopkins et al. 2007, ApJ 654, 731",
+          "key": "hopkins07"
+        },
+        {
+          "arxiv": "2001.02696",
+          "doi": "10.1093/mnras/staa1381",
+          "role": "present: compilation",
+          "cite": "Shen et al. 2020, MNRAS 495, 3252",
+          "key": "shen20"
+        },
+        {
+          "arxiv": "2110.14154",
+          "doi": "10.1093/mnras/stac351",
+          "role": "simulation vs data",
+          "cite": "Ni et al. 2022, MNRAS 513, 670",
+          "key": "ni22"
+        },
+        {
+          "arxiv": "1602.01941",
+          "doi": "10.1093/mnras/stw1123",
+          "role": "simulation vs data",
+          "cite": "Volonteri et al. 2016, MNRAS 460, 2979",
+          "key": "volonteri16"
+        },
+        {
+          "arxiv": "1710.04659",
+          "doi": "10.1093/mnras/sty1733",
+          "role": "simulation vs data",
+          "cite": "Weinberger et al. 2018, MNRAS 479, 4056",
+          "key": "weinberger18"
+        }
+      ]
+    },
+    "lambdar": {
+      "title": "Stellar spin parameter (λR) – mass relation",
+      "paragraph": "The spin parameter lambda_R is a proxy for the projected stellar angular momentum per unit mass, built from luminosity-weighted averages over the full two-dimensional velocity field, and evaluated here within the effective radius. Emsellem et al. (2007) introduced it with SAURON integral-field data to separate early-type galaxies into slow and fast rotators. In the MASSIVE and ATLAS3D samples of 370 early-type galaxies, Veale et al. (2017) find a strong correlation between lambda_e and stellar mass, with the average lambda_e falling from about 0.4 to below 0.1 with increasing mass, and almost no trend with environment at fixed mass. Cappellari (2016) reviews the structure and kinematics of early-type galaxies that this builds on. Simulations are tested against it as a population property: Illustris reproduces rotation properties similar to ATLAS3D, with low-mass ellipticals forming a smooth distribution of fast rotators and high-mass ones mostly slow rotators, in agreement with observations (Penoyre et al. 2017), and Magneticum ellipticals show the observed prevalence of fast and slow rotators (Schulze et al. 2018). Schulze et al. (2018) also show that the fast and slow dichotomy is enhanced in the edge-on plane of lambda_R and ellipticity, so the viewing angle matters. Curves are comparable only if the projection and orientation, the aperture and weighting, the statistic (mean or median), the population (early types only or all galaxies) and the stellar mass definition agree.",
+      "refs": [
+        {
+          "arxiv": "astro-ph/0703531",
+          "doi": "10.1111/j.1365-2966.2007.11752.x",
+          "role": "past: observation",
+          "cite": "Emsellem et al. 2007, MNRAS 379, 401",
+          "key": "emsellem07"
+        },
+        {
+          "arxiv": "1703.08573",
+          "doi": "10.1093/mnras/stx1639",
+          "role": "present: observation",
+          "cite": "Veale et al. 2017, MNRAS 471, 1428",
+          "key": "veale17"
+        },
+        {
+          "arxiv": "1602.04267",
+          "doi": "10.1146/annurev-astro-082214-122432",
+          "role": "review",
+          "cite": "Cappellari 2016, ARA&A 54, 597",
+          "key": "cappellari16"
+        },
+        {
+          "arxiv": "1703.00545",
+          "doi": "10.1093/mnras/stx762",
+          "role": "simulation vs data",
+          "cite": "Penoyre et al. 2017, MNRAS 468, 3883",
+          "key": "penoyre17"
+        },
+        {
+          "arxiv": "1802.01583",
+          "doi": "10.1093/mnras/sty2090",
+          "role": "simulation vs data",
+          "cite": "Schulze et al. 2018, MNRAS 480, 4636",
+          "key": "schulze18"
+        }
+      ]
+    },
+    "fslow": {
+      "title": "Slow-rotator fraction – mass relation",
+      "paragraph": "The slow-rotator fraction is the share of early-type galaxies whose stellar rotation is weak, as a function of stellar mass, and it is one of the cleanest kinematic signatures of how massive galaxies assemble. The definition of a slow rotator has changed: Emsellem et al. (2007) separated the classes at lambda_R below or above 0.1 within the effective radius, while Emsellem et al. (2011), with a complete sample of 260 galaxies, introduced a criterion that depends on ellipticity, lambda_R below 0.31 times the square root of epsilon, and found that 14% of early types in the volume-limited ATLAS3D sample are slow rotators. In MASSIVE and ATLAS3D together, the slow-rotator fraction rises from about 10% to 90% with increasing stellar mass (Veale et al. 2017), and Cappellari (2016) reviews the dichotomy between the two classes. Simulations broadly reproduce the trend: Illustris ellipticals are mostly fast rotators at low mass and slow rotators at high mass in agreement with observations (Penoyre et al. 2017), Magneticum shows the observed prevalence (Schulze et al. 2018), and in EAGLE, where slow rotators are visually classified, quenching by AGN feedback precedes kinematic transformation in most of them (Lagos et al. 2021). Curves are comparable only if the slow-rotator criterion, the aperture, the projection, the stellar mass proxy and the parent population (early types or all galaxies) agree; a fraction among early types is not a fraction of all galaxies.",
+      "refs": [
+        {
+          "arxiv": "astro-ph/0703531",
+          "doi": "10.1111/j.1365-2966.2007.11752.x",
+          "role": "past: observation",
+          "cite": "Emsellem et al. 2007, MNRAS 379, 401",
+          "key": "emsellem07"
+        },
+        {
+          "arxiv": "1102.4444",
+          "doi": "10.1111/j.1365-2966.2011.18496.x",
+          "role": "observation",
+          "cite": "Emsellem et al. 2011, MNRAS 414, 888",
+          "key": "emsellem11"
+        },
+        {
+          "arxiv": "1703.08573",
+          "doi": "10.1093/mnras/stx1639",
+          "role": "present: observation",
+          "cite": "Veale et al. 2017, MNRAS 471, 1428",
+          "key": "veale17"
+        },
+        {
+          "arxiv": "1602.04267",
+          "doi": "10.1146/annurev-astro-082214-122432",
+          "role": "review",
+          "cite": "Cappellari 2016, ARA&A 54, 597",
+          "key": "cappellari16"
+        },
+        {
+          "arxiv": "1703.00545",
+          "doi": "10.1093/mnras/stx762",
+          "role": "simulation vs data",
+          "cite": "Penoyre et al. 2017, MNRAS 468, 3883",
+          "key": "penoyre17"
+        },
+        {
+          "arxiv": "1802.01583",
+          "doi": "10.1093/mnras/sty2090",
+          "role": "simulation vs data",
+          "cite": "Schulze et al. 2018, MNRAS 480, 4636",
+          "key": "schulze18"
+        },
+        {
+          "arxiv": "2012.08060",
+          "doi": "10.1093/mnras/stab3128",
+          "role": "simulation vs data",
+          "cite": "Lagos et al. 2021, MNRAS 509, 4372",
+          "key": "lagos21"
+        }
+      ]
+    },
+    "wp": {
+      "title": "Projected galaxy correlation function",
+      "paragraph": "The projected correlation function w_p(r_p) measures the excess probability of finding a galaxy pair at projected separation r_p, with the line-of-sight pair separation integrated up to a stated maximum. It is the standard clustering statistic for comparing simulated galaxies with redshift surveys and the data to which halo occupation models are fitted. In the SDSS DR7 main sample, Zehavi et al. (2011) measured it for volume-limited samples and found that the amplitude grows slowly with luminosity below L* and sharply above, that redder galaxies cluster more strongly and steeply at fixed luminosity, and that the trends are naturally understood within the LCDM and halo occupation framework. Wechsler & Tinker (2018) review how surveys and simulations constrain the galaxy-halo connection, and list its link to galaxy clustering among the open questions. EAGLE agrees very well with GAMA clustering when galaxies are binned by stellar mass, colour or luminosity, but low-mass red galaxies are clustered too strongly, partly through limited resolution, and the box is too small to test scales beyond a few Mpc (Artale et al. 2017). IllustrisTNG agrees well with SDSS at z~0.1 as a function of stellar mass and colour, apart from a mild excess for red galaxies of 10^9 to 10^10 M☉/h^2 (Springel et al. 2018). Curves are comparable only if the sample selection (luminosity threshold, stellar mass threshold or colour cut), the maximum line-of-sight integration, and the length unit (h^-1 Mpc here) agree; the SDSS records here integrate to 40 or 60 h^-1 Mpc and the EAGLE record to about 34.",
+      "refs": [
+        {
+          "arxiv": "1005.2413",
+          "doi": "10.1088/0004-637X/736/1/59",
+          "role": "present: observation",
+          "cite": "Zehavi et al. 2011, ApJ 736, 59",
+          "key": "zehavi11"
+        },
+        {
+          "arxiv": "1804.03097",
+          "doi": "10.1146/annurev-astro-081817-051756",
+          "role": "review",
+          "cite": "Wechsler & Tinker 2018, ARA&A 56, 435",
+          "key": "wechsler18"
+        },
+        {
+          "arxiv": "1611.05064",
+          "doi": "10.1093/mnras/stx1263",
+          "role": "simulation vs data",
+          "cite": "Artale et al. 2017, MNRAS 470, 1771",
+          "key": "artale17"
+        },
+        {
+          "arxiv": "1707.03397",
+          "doi": "10.1093/mnras/stx3304",
+          "role": "simulation vs data",
+          "cite": "Springel et al. 2018, MNRAS 475, 676",
+          "key": "springel18"
+        }
+      ]
+    },
+    "hod": {
+      "title": "Halo occupation distribution",
+      "paragraph": "The halo occupation distribution gives the mean number of galaxies hosted by a halo as a function of halo mass, usually split into central and satellite galaxies. Berlind & Weinberg (2002) defined the framework through the probability that a halo of mass M contains N galaxies, together with the spatial distribution of galaxies within halos, and showed how different clustering statistics respond to it. Zheng et al. (2005) used a hydrodynamical simulation and a semi-analytic model to examine the separate contributions of central and satellite galaxies. Zehavi et al. (2011) fitted halo occupation models to SDSS clustering and found that the growth of clustering with luminosity reflects a shift in the minimum host halo mass. Wechsler & Tinker (2018) review the galaxy-halo connection as a test of galaxy formation models. In EAGLE and Illustris, low-mass halos in dense environments are more likely to host a central galaxy than those in sparse ones, and early-formed halos host fewer satellites (Artale et al. 2018), so the occupation is not a function of mass alone; EAGLE galaxies are found to inhabit similar halos to the observed GAMA galaxies (Artale et al. 2017). The records use different samples and mass definitions: SDSS luminosity-threshold samples with halo mass defined at 200 times the mean density, simulation samples ranked by stellar mass at fixed number density with M200 relative to the critical density. Compare only matched galaxy type (all, central or satellite), sample selection and halo mass definition.",
+      "refs": [
+        {
+          "arxiv": "astro-ph/0109001",
+          "doi": "10.1086/341469",
+          "role": "past: empirical model",
+          "cite": "Berlind & Weinberg 2002, ApJ 575, 587",
+          "key": "berlind02"
+        },
+        {
+          "arxiv": "astro-ph/0408564",
+          "doi": "10.1086/466510",
+          "role": "past: empirical model",
+          "cite": "Zheng et al. 2005, ApJ 633, 791",
+          "key": "zheng05"
+        },
+        {
+          "arxiv": "1005.2413",
+          "doi": "10.1088/0004-637X/736/1/59",
+          "role": "present: observation",
+          "cite": "Zehavi et al. 2011, ApJ 736, 59",
+          "key": "zehavi11"
+        },
+        {
+          "arxiv": "1804.03097",
+          "doi": "10.1146/annurev-astro-081817-051756",
+          "role": "review",
+          "cite": "Wechsler & Tinker 2018, ARA&A 56, 435",
+          "key": "wechsler18"
+        },
+        {
+          "arxiv": "1805.06938",
+          "doi": "10.1093/mnras/sty2110",
+          "role": "simulation vs data",
+          "cite": "Artale et al. 2018, MNRAS 480, 3978",
+          "key": "artale18"
+        },
+        {
+          "arxiv": "1611.05064",
+          "doi": "10.1093/mnras/stx1263",
+          "role": "simulation vs data",
+          "cite": "Artale et al. 2017, MNRAS 470, 1771",
+          "key": "artale17"
+        }
+      ]
+    },
+    "lxm": {
+      "title": "X-ray luminosity–halo mass relation",
+      "paragraph": "The X-ray luminosity–mass relation of groups and clusters links the luminosity of their hot gas to the mass M500c inside the radius enclosing 500 times the critical density. It is a sensitive probe of the gas content and of feedback, and it is used to turn X-ray surveys into mass estimates. For the 31 REXCESS clusters, Pratt et al. (2009) find power laws steeper than the self-similar expectation, with a systematic variation of gas content with mass as the primary driver, a scatter dominated by cool cores, and a scatter reduced by more than 50% when the central regions are excluded. Giodini et al. (2013) review scaling relations and the deviations from self-similarity. In simulations, the C-EAGLE clusters have soft-band luminosities in reasonable agreement with observed relations but too high central temperatures and larger-than-observed entropy cores (Barnes et al. 2017); cosmo-OWLS models with the right AGN feedback give realistic groups and clusters while others are too violent (Le Brun et al. 2014); and simulated relations are in general agreement with observations, with the mass-Y_X scaling the most robust and almost independent of the gas physics (Truong et al. 2018). Curves are comparable only if the X-ray band (bolometric or a soft band such as 0.1 to 2.4 keV), the treatment of the core (included or excised), the E(z) scaling, the aperture, the halo mass definition and how the mass was obtained (hydrostatic, Y_X-based, lensing, or true simulation mass) agree.",
+      "refs": [
+        {
+          "arxiv": "0809.3784",
+          "doi": "10.1051/0004-6361/200810994",
+          "role": "observation",
+          "cite": "Pratt et al. 2009, A&A 498, 361",
+          "key": "pratt09"
+        },
+        {
+          "arxiv": "1305.3286",
+          "doi": "10.1007/s11214-013-9994-5",
+          "role": "review",
+          "cite": "Giodini et al. 2013, Space Sci. Rev. 177, 247",
+          "key": "giodini13"
+        },
+        {
+          "arxiv": "1703.10907",
+          "doi": "10.1093/mnras/stx1647",
+          "role": "simulation vs data",
+          "cite": "Barnes et al. 2017, MNRAS 471, 1088",
+          "key": "barnes17"
+        },
+        {
+          "arxiv": "1312.5462",
+          "doi": "10.1093/mnras/stu608",
+          "role": "simulation vs data",
+          "cite": "Le Brun et al. 2014, MNRAS 441, 1270",
+          "key": "lebrun14"
+        },
+        {
+          "arxiv": "1607.00019",
+          "doi": "10.1093/mnras/stx2927",
+          "role": "simulation vs data",
+          "cite": "Truong et al. 2018, MNRAS 474, 4089",
+          "key": "truong18"
+        }
+      ]
+    },
+    "ysz": {
+      "title": "Sunyaev–Zel'dovich signal–mass relation",
+      "paragraph": "The Y_SZ-M500 relation connects the integrated thermal Sunyaev-Zel'dovich signal of a cluster, a measure of its hot-gas pressure, to its mass M500c. Arnaud et al. (2010) derived a universal pressure profile from the 33 REXCESS clusters, with masses between 10^14 and 10^15 M☉, and from it the expected relation for the spherically and the cylindrically integrated signal and for any aperture. Planck Collaboration (2011) combined all-sky Planck data with X-ray clusters and found the measured SZ signal in excellent agreement with X-ray-based predictions over the whole luminosity range, with no significant deviation from standard evolution. Planck Collaboration (2014) used a relation between mass and SZ signal calibrated to X-ray measurements for cluster counts, and found that possible biases in that relation and in the halo mass function are larger than the statistical errors; they allowed the X-ray mass to be biased low by zero to 30%. Mroczkowski et al. (2019) review the SZ effects as probes of galaxy clusters. Simulations are tested on the same relation: the C-EAGLE clusters have SZ properties in reasonable agreement with the observed relations (Barnes et al. 2017), and cosmo-OWLS models with suitable AGN feedback broadly reproduce the observed SZ flux among other properties (Le Brun et al. 2014). Curves are comparable only if the aperture (spherical or cylindrical), the E(z) scaling, the mass definition and mass estimator (hydrostatic, Y_X-based, lensing or true), and the cosmology and h-units agree.",
+      "refs": [
+        {
+          "arxiv": "0910.1234",
+          "doi": "10.1051/0004-6361/200913416",
+          "role": "present: observation",
+          "cite": "Arnaud et al. 2010, A&A 517, A92",
+          "key": "arnaud10"
+        },
+        {
+          "arxiv": "1101.2043",
+          "doi": "10.1051/0004-6361/201116457",
+          "role": "observation",
+          "cite": "Planck Collaboration 2011, A&A 536, A10",
+          "key": "planck11"
+        },
+        {
+          "arxiv": "1303.5080",
+          "doi": "10.1051/0004-6361/201321521",
+          "role": "present: observation",
+          "cite": "Planck Collaboration 2014, A&A 571, A20",
+          "key": "planck14"
+        },
+        {
+          "arxiv": "1811.02310",
+          "doi": "10.1007/s11214-019-0581-2",
+          "role": "review",
+          "cite": "Mroczkowski et al. 2019, Space Sci. Rev. 215, 17",
+          "key": "mroczkowski19"
+        },
+        {
+          "arxiv": "1703.10907",
+          "doi": "10.1093/mnras/stx1647",
+          "role": "simulation vs data",
+          "cite": "Barnes et al. 2017, MNRAS 471, 1088",
+          "key": "barnes17"
+        },
+        {
+          "arxiv": "1312.5462",
+          "doi": "10.1093/mnras/stu608",
+          "role": "simulation vs data",
+          "cite": "Le Brun et al. 2014, MNRAS 441, 1270",
+          "key": "lebrun14"
+        }
+      ]
+    },
+    "colour": {
+      "title": "Galaxy colour–mass distribution",
+      "paragraph": "The colour-mass distribution shows the rest-frame g-r colour of galaxies against stellar mass. It is bimodal, with a blue cloud of star-forming galaxies and a red sequence of passive ones, and it is therefore a direct test of how and when galaxies quench. The bimodality in the Sloan Digital Sky Survey was first detected as a local minimum in the colour distribution, with the two peaks corresponding roughly to early and late types (Strateva et al. 2001), and Baldry et al. (2004) quantified it with double Gaussians in colour-magnitude space, finding that the transitions occur around 2×10^10 M☉. Blanton & Moustakas (2009) review the physical properties of nearby galaxies. In IllustrisTNG, once dust attenuation is included, the simulated g-r colours of galaxies between 10^9 and 10^12.5 M☉ agree excellently with SDSS, with a sharp transition at about 10^10.5 M☉ that is driven by black-hole feedback in its low-accretion state (Nelson et al. 2018). EAGLE produces a red sequence and a blue cloud with g-r colours within 0.1 magnitudes of those observed, but its blue cloud extends to somewhat higher luminosities and its passive fraction is modestly underestimated in massive galaxies (Trayford et al. 2015). These agreements hold only with dust models: intrinsic colours, which the CAMELS-TNG records here use, are not comparable with attenuated ones, and different dust models, the choice of one line of sight or all projections, the passband, and the population (all galaxies or centrals only) must also match.",
+      "refs": [
+        {
+          "arxiv": "astro-ph/0107201",
+          "doi": "10.1086/323301",
+          "role": "past: observation",
+          "cite": "Strateva et al. 2001, AJ 122, 1861",
+          "key": "strateva01"
+        },
+        {
+          "arxiv": "astro-ph/0309710",
+          "doi": "10.1086/380092",
+          "role": "present: observation",
+          "cite": "Baldry et al. 2004, ApJ 600, 681",
+          "key": "baldry04"
+        },
+        {
+          "arxiv": "0908.3017",
+          "doi": "10.1146/annurev-astro-082708-101734",
+          "role": "review",
+          "cite": "Blanton & Moustakas 2009, ARA&A 47, 159",
+          "key": "blanton09"
+        },
+        {
+          "arxiv": "1707.03395",
+          "doi": "10.1093/mnras/stx3040",
+          "role": "simulation vs data",
+          "cite": "Nelson et al. 2018, MNRAS 475, 624",
+          "key": "nelson18"
+        },
+        {
+          "arxiv": "1504.04374",
+          "doi": "10.1093/mnras/stv1461",
+          "role": "simulation vs data",
+          "cite": "Trayford et al. 2015, MNRAS 452, 2879",
+          "key": "trayford15"
+        }
+      ]
     }
   }
 }

@@ -1,0 +1,3571 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "nelson18.tng100.colour-contour.z0.modelC.l098.red1",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (per galaxy, KDE contour 0.98, red 1)",
+      "kind": "simulation",
+      "relation": "colour",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "(g-r) colour, SDSS passbands, attenuated (Model C resolved dust)",
+        "yUnit": "mag (AB not stated in the paper)"
+      },
+      "domain": {
+        "xMin": 10.251,
+        "xMax": 12.0
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 12.0,
+            "y": 0.8118
+          },
+          {
+            "x": 11.955,
+            "y": 0.8099
+          },
+          {
+            "x": 11.894,
+            "y": 0.8059
+          },
+          {
+            "x": 11.849,
+            "y": 0.8018
+          },
+          {
+            "x": 11.819,
+            "y": 0.7985
+          },
+          {
+            "x": 11.764,
+            "y": 0.792
+          },
+          {
+            "x": 11.744,
+            "y": 0.7895
+          },
+          {
+            "x": 11.698,
+            "y": 0.7841
+          },
+          {
+            "x": 11.679,
+            "y": 0.782
+          },
+          {
+            "x": 11.638,
+            "y": 0.7787
+          },
+          {
+            "x": 11.603,
+            "y": 0.7769
+          },
+          {
+            "x": 11.578,
+            "y": 0.7763
+          },
+          {
+            "x": 11.518,
+            "y": 0.7748
+          },
+          {
+            "x": 11.487,
+            "y": 0.7739
+          },
+          {
+            "x": 11.442,
+            "y": 0.7729
+          },
+          {
+            "x": 11.412,
+            "y": 0.7727
+          },
+          {
+            "x": 11.382,
+            "y": 0.7732
+          },
+          {
+            "x": 11.337,
+            "y": 0.7748
+          },
+          {
+            "x": 11.307,
+            "y": 0.7756
+          },
+          {
+            "x": 11.276,
+            "y": 0.7757
+          },
+          {
+            "x": 11.246,
+            "y": 0.775
+          },
+          {
+            "x": 11.201,
+            "y": 0.7732
+          },
+          {
+            "x": 11.171,
+            "y": 0.7717
+          },
+          {
+            "x": 11.095,
+            "y": 0.7685
+          },
+          {
+            "x": 11.05,
+            "y": 0.7676
+          },
+          {
+            "x": 11.005,
+            "y": 0.7676
+          },
+          {
+            "x": 10.915,
+            "y": 0.7679
+          },
+          {
+            "x": 10.854,
+            "y": 0.7674
+          },
+          {
+            "x": 10.779,
+            "y": 0.7667
+          },
+          {
+            "x": 10.688,
+            "y": 0.7664
+          },
+          {
+            "x": 10.568,
+            "y": 0.7662
+          },
+          {
+            "x": 10.508,
+            "y": 0.7655
+          },
+          {
+            "x": 10.312,
+            "y": 0.7617
+          },
+          {
+            "x": 10.266,
+            "y": 0.7615
+          },
+          {
+            "x": 10.265,
+            "y": 0.7619
+          },
+          {
+            "x": 10.257,
+            "y": 0.7644
+          },
+          {
+            "x": 10.253,
+            "y": 0.7669
+          },
+          {
+            "x": 10.251,
+            "y": 0.7694
+          },
+          {
+            "x": 10.251,
+            "y": 0.7719
+          },
+          {
+            "x": 10.255,
+            "y": 0.7744
+          },
+          {
+            "x": 10.261,
+            "y": 0.7769
+          },
+          {
+            "x": 10.266,
+            "y": 0.7786
+          },
+          {
+            "x": 10.357,
+            "y": 0.7792
+          },
+          {
+            "x": 10.432,
+            "y": 0.7803
+          },
+          {
+            "x": 10.538,
+            "y": 0.7823
+          },
+          {
+            "x": 10.613,
+            "y": 0.7828
+          },
+          {
+            "x": 10.794,
+            "y": 0.7832
+          },
+          {
+            "x": 10.945,
+            "y": 0.7848
+          },
+          {
+            "x": 11.095,
+            "y": 0.7853
+          },
+          {
+            "x": 11.126,
+            "y": 0.7862
+          },
+          {
+            "x": 11.186,
+            "y": 0.7888
+          },
+          {
+            "x": 11.257,
+            "y": 0.792
+          },
+          {
+            "x": 11.291,
+            "y": 0.7928
+          },
+          {
+            "x": 11.322,
+            "y": 0.7929
+          },
+          {
+            "x": 11.367,
+            "y": 0.7922
+          },
+          {
+            "x": 11.412,
+            "y": 0.7909
+          },
+          {
+            "x": 11.442,
+            "y": 0.7907
+          },
+          {
+            "x": 11.472,
+            "y": 0.7912
+          },
+          {
+            "x": 11.563,
+            "y": 0.7935
+          },
+          {
+            "x": 11.623,
+            "y": 0.7951
+          },
+          {
+            "x": 11.638,
+            "y": 0.7957
+          },
+          {
+            "x": 11.683,
+            "y": 0.7988
+          },
+          {
+            "x": 11.729,
+            "y": 0.8031
+          },
+          {
+            "x": 11.835,
+            "y": 0.8145
+          },
+          {
+            "x": 11.894,
+            "y": 0.82
+          },
+          {
+            "x": 11.961,
+            "y": 0.8246
+          },
+          {
+            "x": 12.0,
+            "y": 0.8264
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all TNG100-1 galaxies, 1e9 < M* < 1e12 Msun (centrals and satellites)",
+        "warning": "Vertices of one contour of the conditional 2-D kernel density estimate of the TNG100-1 colour-mass plane, read from the vector paths of Nelson et al. 2018 (MNRAS 475, 624), Fig. 2 (g-r panel, blue lines); no table is published. The caption states 'Conditional 2D kernel density estimates (KDEs) are shown with contours at {0.2,0.5,0.75,0.98}'; it does not say what the numbers are. The four drawn opacities (0.05, 0.2, 0.5, 1.0) nest, and the assignment outermost = 0.2 ... innermost = 0.98 is an inference: it reproduces, to within 0.007 mag at the lower edge in all four levels, the contour edges predicted by taking the level as the fraction of the peak of the conditional PDF (Fig. 1 PDF of the same run, mass bin 9.5-10), and reproduces the alternative reading as enclosed probabilities less well (0.01-0.03 mag off); the reading is not proven. This path is the red sequence. Open path: truncated by the plot edge (log M* = 9 or 12). Contour pieces with fewer than 20 vertices (slivers at the plot edge) are not stored (0 at this level). Dust: Model C resolved dust (N_side=1); whether Fig. 2 uses all 12 projections or one random one is not stated. The SDSS contours (black) and the u-i, u-r, r-i panels are not extracted.",
+        "contourLevel": 0.98,
+        "contourKind": "level of the conditional 2-D KDE as listed in the caption; read as a fraction of the per-mass peak density (inferred, see warning)",
+        "contourClosed": false,
+        "contourRegion": "red sequence"
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "massDefinition": "unspecified",
+        "population": "all",
+        "colourBand": "SDSS g-r (SDSS u,g,r,i,z passbands at airmass 1.3, galaxy at z=0)",
+        "colourAperture": "30 pkpc (3D radius from the subhalo centre)",
+        "resolutionCut": "10^9 < M* < 10^12 Msun (Fig. 1 caption)",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "dustTreatment": "attenuated (Model C: resolved dust; N_side=1, projection choice not stated for Fig. 2)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Nelson et al. 2018, MNRAS 475, 624 (arXiv:1707.03395), Fig. 2 (distribution of observed versus simulated galaxies in the colour-mass plane, g-r panel)",
+        "doi": "10.1093/mnras/stx3040",
+        "url": "https://arxiv.org/abs/1707.03395",
+        "retrieved": "2026-10-18",
+        "figure": "Fig. 2 (fig_color_mass_2d_4bands), g-r panel",
+        "panel": "top right, TNG100-1 (blue) contours",
+        "checksumSha256": "88cccf63dea204e83667b4d47fa647f6ea4a8f97757c1a83906c713589660dd5",
+        "sourceMember": "figure2_TNG100-1_p07c_cf00dust_res_conv_ns1_rad30pkpc.pdf (3 pt blue stroked contour paths, opacity 1.0)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9.0-12.0 of the g-r panel; y: labelled ticks 0.0-1.0; frame asserted at log M* 9-12 and g-r 0-1",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction of a density contour; the loop is the plotted line."
+    },
+    {
+      "id": "nelson18.tng100.colour-contour.z0.modelC.l098.blue2",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (per galaxy, KDE contour 0.98, blue 2)",
+      "kind": "simulation",
+      "relation": "colour",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "(g-r) colour, SDSS passbands, attenuated (Model C resolved dust)",
+        "yUnit": "mag (AB not stated in the paper)"
+      },
+      "domain": {
+        "xMin": 9.0,
+        "xMax": 10.257
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.0,
+            "y": 0.3793
+          },
+          {
+            "x": 9.131,
+            "y": 0.396
+          },
+          {
+            "x": 9.185,
+            "y": 0.4035
+          },
+          {
+            "x": 9.317,
+            "y": 0.4217
+          },
+          {
+            "x": 9.355,
+            "y": 0.4261
+          },
+          {
+            "x": 9.407,
+            "y": 0.4311
+          },
+          {
+            "x": 9.468,
+            "y": 0.4361
+          },
+          {
+            "x": 9.528,
+            "y": 0.4399
+          },
+          {
+            "x": 9.558,
+            "y": 0.4413
+          },
+          {
+            "x": 9.603,
+            "y": 0.4428
+          },
+          {
+            "x": 9.633,
+            "y": 0.4432
+          },
+          {
+            "x": 9.693,
+            "y": 0.443
+          },
+          {
+            "x": 9.724,
+            "y": 0.4431
+          },
+          {
+            "x": 9.754,
+            "y": 0.4437
+          },
+          {
+            "x": 9.784,
+            "y": 0.4449
+          },
+          {
+            "x": 9.814,
+            "y": 0.4466
+          },
+          {
+            "x": 9.859,
+            "y": 0.4497
+          },
+          {
+            "x": 9.92,
+            "y": 0.4539
+          },
+          {
+            "x": 9.965,
+            "y": 0.4562
+          },
+          {
+            "x": 10.01,
+            "y": 0.4574
+          },
+          {
+            "x": 10.061,
+            "y": 0.4586
+          },
+          {
+            "x": 10.085,
+            "y": 0.4595
+          },
+          {
+            "x": 10.116,
+            "y": 0.4612
+          },
+          {
+            "x": 10.146,
+            "y": 0.4633
+          },
+          {
+            "x": 10.191,
+            "y": 0.4672
+          },
+          {
+            "x": 10.236,
+            "y": 0.4723
+          },
+          {
+            "x": 10.251,
+            "y": 0.4742
+          },
+          {
+            "x": 10.253,
+            "y": 0.4712
+          },
+          {
+            "x": 10.256,
+            "y": 0.4662
+          },
+          {
+            "x": 10.257,
+            "y": 0.4612
+          },
+          {
+            "x": 10.257,
+            "y": 0.4561
+          },
+          {
+            "x": 10.256,
+            "y": 0.4511
+          },
+          {
+            "x": 10.253,
+            "y": 0.4461
+          },
+          {
+            "x": 10.251,
+            "y": 0.4426
+          },
+          {
+            "x": 10.213,
+            "y": 0.4386
+          },
+          {
+            "x": 10.154,
+            "y": 0.4336
+          },
+          {
+            "x": 10.1,
+            "y": 0.4297
+          },
+          {
+            "x": 10.07,
+            "y": 0.4278
+          },
+          {
+            "x": 10.031,
+            "y": 0.4261
+          },
+          {
+            "x": 9.995,
+            "y": 0.4251
+          },
+          {
+            "x": 9.929,
+            "y": 0.4236
+          },
+          {
+            "x": 9.905,
+            "y": 0.4226
+          },
+          {
+            "x": 9.859,
+            "y": 0.4202
+          },
+          {
+            "x": 9.748,
+            "y": 0.4135
+          },
+          {
+            "x": 9.724,
+            "y": 0.4127
+          },
+          {
+            "x": 9.693,
+            "y": 0.4121
+          },
+          {
+            "x": 9.633,
+            "y": 0.412
+          },
+          {
+            "x": 9.603,
+            "y": 0.4117
+          },
+          {
+            "x": 9.573,
+            "y": 0.411
+          },
+          {
+            "x": 9.543,
+            "y": 0.4097
+          },
+          {
+            "x": 9.513,
+            "y": 0.4078
+          },
+          {
+            "x": 9.467,
+            "y": 0.4039
+          },
+          {
+            "x": 9.422,
+            "y": 0.3991
+          },
+          {
+            "x": 9.362,
+            "y": 0.3914
+          },
+          {
+            "x": 9.015,
+            "y": 0.3429
+          },
+          {
+            "x": 9.0,
+            "y": 0.3407
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all TNG100-1 galaxies, 1e9 < M* < 1e12 Msun (centrals and satellites)",
+        "warning": "Vertices of one contour of the conditional 2-D kernel density estimate of the TNG100-1 colour-mass plane, read from the vector paths of Nelson et al. 2018 (MNRAS 475, 624), Fig. 2 (g-r panel, blue lines); no table is published. The caption states 'Conditional 2D kernel density estimates (KDEs) are shown with contours at {0.2,0.5,0.75,0.98}'; it does not say what the numbers are. The four drawn opacities (0.05, 0.2, 0.5, 1.0) nest, and the assignment outermost = 0.2 ... innermost = 0.98 is an inference: it reproduces, to within 0.007 mag at the lower edge in all four levels, the contour edges predicted by taking the level as the fraction of the peak of the conditional PDF (Fig. 1 PDF of the same run, mass bin 9.5-10), and reproduces the alternative reading as enclosed probabilities less well (0.01-0.03 mag off); the reading is not proven. This path is the blue cloud. Open path: truncated by the plot edge (log M* = 9 or 12). Contour pieces with fewer than 20 vertices (slivers at the plot edge) are not stored (0 at this level). Dust: Model C resolved dust (N_side=1); whether Fig. 2 uses all 12 projections or one random one is not stated. The SDSS contours (black) and the u-i, u-r, r-i panels are not extracted.",
+        "contourLevel": 0.98,
+        "contourKind": "level of the conditional 2-D KDE as listed in the caption; read as a fraction of the per-mass peak density (inferred, see warning)",
+        "contourClosed": false,
+        "contourRegion": "blue cloud"
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "massDefinition": "unspecified",
+        "population": "all",
+        "colourBand": "SDSS g-r (SDSS u,g,r,i,z passbands at airmass 1.3, galaxy at z=0)",
+        "colourAperture": "30 pkpc (3D radius from the subhalo centre)",
+        "resolutionCut": "10^9 < M* < 10^12 Msun (Fig. 1 caption)",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "dustTreatment": "attenuated (Model C: resolved dust; N_side=1, projection choice not stated for Fig. 2)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Nelson et al. 2018, MNRAS 475, 624 (arXiv:1707.03395), Fig. 2 (distribution of observed versus simulated galaxies in the colour-mass plane, g-r panel)",
+        "doi": "10.1093/mnras/stx3040",
+        "url": "https://arxiv.org/abs/1707.03395",
+        "retrieved": "2026-10-18",
+        "figure": "Fig. 2 (fig_color_mass_2d_4bands), g-r panel",
+        "panel": "top right, TNG100-1 (blue) contours",
+        "checksumSha256": "88cccf63dea204e83667b4d47fa647f6ea4a8f97757c1a83906c713589660dd5",
+        "sourceMember": "figure2_TNG100-1_p07c_cf00dust_res_conv_ns1_rad30pkpc.pdf (3 pt blue stroked contour paths, opacity 1.0)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9.0-12.0 of the g-r panel; y: labelled ticks 0.0-1.0; frame asserted at log M* 9-12 and g-r 0-1",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction of a density contour; the loop is the plotted line."
+    },
+    {
+      "id": "nelson18.tng100.colour-contour.z0.modelC.l075.red1",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (per galaxy, KDE contour 0.75, red 1)",
+      "kind": "simulation",
+      "relation": "colour",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "(g-r) colour, SDSS passbands, attenuated (Model C resolved dust)",
+        "yUnit": "mag (AB not stated in the paper)"
+      },
+      "domain": {
+        "xMin": 10.194,
+        "xMax": 12.0
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 12.0,
+            "y": 0.7893
+          },
+          {
+            "x": 11.955,
+            "y": 0.7878
+          },
+          {
+            "x": 11.925,
+            "y": 0.7862
+          },
+          {
+            "x": 11.894,
+            "y": 0.784
+          },
+          {
+            "x": 11.864,
+            "y": 0.7812
+          },
+          {
+            "x": 11.829,
+            "y": 0.7769
+          },
+          {
+            "x": 11.789,
+            "y": 0.7713
+          },
+          {
+            "x": 11.68,
+            "y": 0.7544
+          },
+          {
+            "x": 11.653,
+            "y": 0.7515
+          },
+          {
+            "x": 11.622,
+            "y": 0.7494
+          },
+          {
+            "x": 11.593,
+            "y": 0.7482
+          },
+          {
+            "x": 11.412,
+            "y": 0.7435
+          },
+          {
+            "x": 11.382,
+            "y": 0.7437
+          },
+          {
+            "x": 11.352,
+            "y": 0.7446
+          },
+          {
+            "x": 11.276,
+            "y": 0.7477
+          },
+          {
+            "x": 11.246,
+            "y": 0.748
+          },
+          {
+            "x": 11.216,
+            "y": 0.7476
+          },
+          {
+            "x": 11.186,
+            "y": 0.7465
+          },
+          {
+            "x": 11.126,
+            "y": 0.7437
+          },
+          {
+            "x": 11.079,
+            "y": 0.7419
+          },
+          {
+            "x": 11.05,
+            "y": 0.7411
+          },
+          {
+            "x": 11.02,
+            "y": 0.7408
+          },
+          {
+            "x": 10.975,
+            "y": 0.741
+          },
+          {
+            "x": 10.869,
+            "y": 0.7419
+          },
+          {
+            "x": 10.779,
+            "y": 0.7416
+          },
+          {
+            "x": 10.688,
+            "y": 0.7414
+          },
+          {
+            "x": 10.568,
+            "y": 0.7414
+          },
+          {
+            "x": 10.508,
+            "y": 0.7408
+          },
+          {
+            "x": 10.442,
+            "y": 0.7394
+          },
+          {
+            "x": 10.281,
+            "y": 0.7353
+          },
+          {
+            "x": 10.266,
+            "y": 0.7352
+          },
+          {
+            "x": 10.251,
+            "y": 0.7364
+          },
+          {
+            "x": 10.243,
+            "y": 0.7394
+          },
+          {
+            "x": 10.221,
+            "y": 0.7478
+          },
+          {
+            "x": 10.212,
+            "y": 0.7519
+          },
+          {
+            "x": 10.204,
+            "y": 0.7569
+          },
+          {
+            "x": 10.197,
+            "y": 0.7619
+          },
+          {
+            "x": 10.194,
+            "y": 0.7669
+          },
+          {
+            "x": 10.194,
+            "y": 0.7694
+          },
+          {
+            "x": 10.194,
+            "y": 0.7719
+          },
+          {
+            "x": 10.195,
+            "y": 0.7744
+          },
+          {
+            "x": 10.197,
+            "y": 0.7769
+          },
+          {
+            "x": 10.2,
+            "y": 0.7795
+          },
+          {
+            "x": 10.208,
+            "y": 0.7845
+          },
+          {
+            "x": 10.218,
+            "y": 0.7895
+          },
+          {
+            "x": 10.236,
+            "y": 0.7959
+          },
+          {
+            "x": 10.248,
+            "y": 0.7995
+          },
+          {
+            "x": 10.251,
+            "y": 0.8004
+          },
+          {
+            "x": 10.266,
+            "y": 0.8016
+          },
+          {
+            "x": 10.432,
+            "y": 0.8028
+          },
+          {
+            "x": 10.583,
+            "y": 0.8049
+          },
+          {
+            "x": 10.658,
+            "y": 0.805
+          },
+          {
+            "x": 10.764,
+            "y": 0.8051
+          },
+          {
+            "x": 10.839,
+            "y": 0.8057
+          },
+          {
+            "x": 10.975,
+            "y": 0.8071
+          },
+          {
+            "x": 11.111,
+            "y": 0.8077
+          },
+          {
+            "x": 11.156,
+            "y": 0.809
+          },
+          {
+            "x": 11.216,
+            "y": 0.8115
+          },
+          {
+            "x": 11.276,
+            "y": 0.8141
+          },
+          {
+            "x": 11.307,
+            "y": 0.8149
+          },
+          {
+            "x": 11.337,
+            "y": 0.8153
+          },
+          {
+            "x": 11.367,
+            "y": 0.8151
+          },
+          {
+            "x": 11.442,
+            "y": 0.814
+          },
+          {
+            "x": 11.472,
+            "y": 0.8142
+          },
+          {
+            "x": 11.533,
+            "y": 0.8155
+          },
+          {
+            "x": 11.668,
+            "y": 0.819
+          },
+          {
+            "x": 11.698,
+            "y": 0.8209
+          },
+          {
+            "x": 11.744,
+            "y": 0.8246
+          },
+          {
+            "x": 11.91,
+            "y": 0.8399
+          },
+          {
+            "x": 11.955,
+            "y": 0.8432
+          },
+          {
+            "x": 12.0,
+            "y": 0.8459
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all TNG100-1 galaxies, 1e9 < M* < 1e12 Msun (centrals and satellites)",
+        "warning": "Vertices of one contour of the conditional 2-D kernel density estimate of the TNG100-1 colour-mass plane, read from the vector paths of Nelson et al. 2018 (MNRAS 475, 624), Fig. 2 (g-r panel, blue lines); no table is published. The caption states 'Conditional 2D kernel density estimates (KDEs) are shown with contours at {0.2,0.5,0.75,0.98}'; it does not say what the numbers are. The four drawn opacities (0.05, 0.2, 0.5, 1.0) nest, and the assignment outermost = 0.2 ... innermost = 0.98 is an inference: it reproduces, to within 0.007 mag at the lower edge in all four levels, the contour edges predicted by taking the level as the fraction of the peak of the conditional PDF (Fig. 1 PDF of the same run, mass bin 9.5-10), and reproduces the alternative reading as enclosed probabilities less well (0.01-0.03 mag off); the reading is not proven. This path is the red sequence. Open path: truncated by the plot edge (log M* = 9 or 12). Contour pieces with fewer than 20 vertices (slivers at the plot edge) are not stored (0 at this level). Dust: Model C resolved dust (N_side=1); whether Fig. 2 uses all 12 projections or one random one is not stated. The SDSS contours (black) and the u-i, u-r, r-i panels are not extracted.",
+        "contourLevel": 0.75,
+        "contourKind": "level of the conditional 2-D KDE as listed in the caption; read as a fraction of the per-mass peak density (inferred, see warning)",
+        "contourClosed": false,
+        "contourRegion": "red sequence"
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "massDefinition": "unspecified",
+        "population": "all",
+        "colourBand": "SDSS g-r (SDSS u,g,r,i,z passbands at airmass 1.3, galaxy at z=0)",
+        "colourAperture": "30 pkpc (3D radius from the subhalo centre)",
+        "resolutionCut": "10^9 < M* < 10^12 Msun (Fig. 1 caption)",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "dustTreatment": "attenuated (Model C: resolved dust; N_side=1, projection choice not stated for Fig. 2)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Nelson et al. 2018, MNRAS 475, 624 (arXiv:1707.03395), Fig. 2 (distribution of observed versus simulated galaxies in the colour-mass plane, g-r panel)",
+        "doi": "10.1093/mnras/stx3040",
+        "url": "https://arxiv.org/abs/1707.03395",
+        "retrieved": "2026-10-18",
+        "figure": "Fig. 2 (fig_color_mass_2d_4bands), g-r panel",
+        "panel": "top right, TNG100-1 (blue) contours",
+        "checksumSha256": "88cccf63dea204e83667b4d47fa647f6ea4a8f97757c1a83906c713589660dd5",
+        "sourceMember": "figure2_TNG100-1_p07c_cf00dust_res_conv_ns1_rad30pkpc.pdf (3 pt blue stroked contour paths, opacity 0.5)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9.0-12.0 of the g-r panel; y: labelled ticks 0.0-1.0; frame asserted at log M* 9-12 and g-r 0-1",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction of a density contour; the loop is the plotted line."
+    },
+    {
+      "id": "nelson18.tng100.colour-contour.z0.modelC.l075.blue2",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (per galaxy, KDE contour 0.75, blue 2)",
+      "kind": "simulation",
+      "relation": "colour",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "(g-r) colour, SDSS passbands, attenuated (Model C resolved dust)",
+        "yUnit": "mag (AB not stated in the paper)"
+      },
+      "domain": {
+        "xMin": 9.0,
+        "xMax": 10.312
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.0,
+            "y": 0.4325
+          },
+          {
+            "x": 9.06,
+            "y": 0.4397
+          },
+          {
+            "x": 9.136,
+            "y": 0.4496
+          },
+          {
+            "x": 9.226,
+            "y": 0.4618
+          },
+          {
+            "x": 9.271,
+            "y": 0.4672
+          },
+          {
+            "x": 9.311,
+            "y": 0.4712
+          },
+          {
+            "x": 9.341,
+            "y": 0.4737
+          },
+          {
+            "x": 9.362,
+            "y": 0.4752
+          },
+          {
+            "x": 9.407,
+            "y": 0.4776
+          },
+          {
+            "x": 9.482,
+            "y": 0.4806
+          },
+          {
+            "x": 9.573,
+            "y": 0.4846
+          },
+          {
+            "x": 9.633,
+            "y": 0.4872
+          },
+          {
+            "x": 9.682,
+            "y": 0.4887
+          },
+          {
+            "x": 9.739,
+            "y": 0.4898
+          },
+          {
+            "x": 9.784,
+            "y": 0.4908
+          },
+          {
+            "x": 9.814,
+            "y": 0.4921
+          },
+          {
+            "x": 9.844,
+            "y": 0.4939
+          },
+          {
+            "x": 9.874,
+            "y": 0.4964
+          },
+          {
+            "x": 9.92,
+            "y": 0.501
+          },
+          {
+            "x": 9.985,
+            "y": 0.5088
+          },
+          {
+            "x": 10.029,
+            "y": 0.5138
+          },
+          {
+            "x": 10.07,
+            "y": 0.518
+          },
+          {
+            "x": 10.116,
+            "y": 0.5219
+          },
+          {
+            "x": 10.177,
+            "y": 0.5263
+          },
+          {
+            "x": 10.221,
+            "y": 0.5295
+          },
+          {
+            "x": 10.251,
+            "y": 0.5323
+          },
+          {
+            "x": 10.267,
+            "y": 0.5238
+          },
+          {
+            "x": 10.283,
+            "y": 0.5113
+          },
+          {
+            "x": 10.292,
+            "y": 0.5038
+          },
+          {
+            "x": 10.302,
+            "y": 0.4937
+          },
+          {
+            "x": 10.307,
+            "y": 0.4862
+          },
+          {
+            "x": 10.31,
+            "y": 0.4787
+          },
+          {
+            "x": 10.312,
+            "y": 0.4712
+          },
+          {
+            "x": 10.312,
+            "y": 0.4637
+          },
+          {
+            "x": 10.311,
+            "y": 0.4561
+          },
+          {
+            "x": 10.308,
+            "y": 0.4486
+          },
+          {
+            "x": 10.303,
+            "y": 0.4411
+          },
+          {
+            "x": 10.296,
+            "y": 0.4325
+          },
+          {
+            "x": 10.291,
+            "y": 0.4261
+          },
+          {
+            "x": 10.281,
+            "y": 0.4178
+          },
+          {
+            "x": 10.273,
+            "y": 0.411
+          },
+          {
+            "x": 10.266,
+            "y": 0.406
+          },
+          {
+            "x": 10.251,
+            "y": 0.3989
+          },
+          {
+            "x": 10.221,
+            "y": 0.3967
+          },
+          {
+            "x": 10.146,
+            "y": 0.3923
+          },
+          {
+            "x": 10.07,
+            "y": 0.3874
+          },
+          {
+            "x": 10.01,
+            "y": 0.3839
+          },
+          {
+            "x": 9.948,
+            "y": 0.381
+          },
+          {
+            "x": 9.889,
+            "y": 0.3782
+          },
+          {
+            "x": 9.829,
+            "y": 0.3746
+          },
+          {
+            "x": 9.754,
+            "y": 0.37
+          },
+          {
+            "x": 9.709,
+            "y": 0.3679
+          },
+          {
+            "x": 9.663,
+            "y": 0.3664
+          },
+          {
+            "x": 9.573,
+            "y": 0.364
+          },
+          {
+            "x": 9.543,
+            "y": 0.3626
+          },
+          {
+            "x": 9.513,
+            "y": 0.3606
+          },
+          {
+            "x": 9.482,
+            "y": 0.358
+          },
+          {
+            "x": 9.438,
+            "y": 0.3534
+          },
+          {
+            "x": 9.407,
+            "y": 0.3496
+          },
+          {
+            "x": 9.121,
+            "y": 0.3132
+          },
+          {
+            "x": 9.0,
+            "y": 0.297
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all TNG100-1 galaxies, 1e9 < M* < 1e12 Msun (centrals and satellites)",
+        "warning": "Vertices of one contour of the conditional 2-D kernel density estimate of the TNG100-1 colour-mass plane, read from the vector paths of Nelson et al. 2018 (MNRAS 475, 624), Fig. 2 (g-r panel, blue lines); no table is published. The caption states 'Conditional 2D kernel density estimates (KDEs) are shown with contours at {0.2,0.5,0.75,0.98}'; it does not say what the numbers are. The four drawn opacities (0.05, 0.2, 0.5, 1.0) nest, and the assignment outermost = 0.2 ... innermost = 0.98 is an inference: it reproduces, to within 0.007 mag at the lower edge in all four levels, the contour edges predicted by taking the level as the fraction of the peak of the conditional PDF (Fig. 1 PDF of the same run, mass bin 9.5-10), and reproduces the alternative reading as enclosed probabilities less well (0.01-0.03 mag off); the reading is not proven. This path is the blue cloud. Open path: truncated by the plot edge (log M* = 9 or 12). Contour pieces with fewer than 20 vertices (slivers at the plot edge) are not stored (0 at this level). Dust: Model C resolved dust (N_side=1); whether Fig. 2 uses all 12 projections or one random one is not stated. The SDSS contours (black) and the u-i, u-r, r-i panels are not extracted.",
+        "contourLevel": 0.75,
+        "contourKind": "level of the conditional 2-D KDE as listed in the caption; read as a fraction of the per-mass peak density (inferred, see warning)",
+        "contourClosed": false,
+        "contourRegion": "blue cloud"
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "massDefinition": "unspecified",
+        "population": "all",
+        "colourBand": "SDSS g-r (SDSS u,g,r,i,z passbands at airmass 1.3, galaxy at z=0)",
+        "colourAperture": "30 pkpc (3D radius from the subhalo centre)",
+        "resolutionCut": "10^9 < M* < 10^12 Msun (Fig. 1 caption)",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "dustTreatment": "attenuated (Model C: resolved dust; N_side=1, projection choice not stated for Fig. 2)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Nelson et al. 2018, MNRAS 475, 624 (arXiv:1707.03395), Fig. 2 (distribution of observed versus simulated galaxies in the colour-mass plane, g-r panel)",
+        "doi": "10.1093/mnras/stx3040",
+        "url": "https://arxiv.org/abs/1707.03395",
+        "retrieved": "2026-10-18",
+        "figure": "Fig. 2 (fig_color_mass_2d_4bands), g-r panel",
+        "panel": "top right, TNG100-1 (blue) contours",
+        "checksumSha256": "88cccf63dea204e83667b4d47fa647f6ea4a8f97757c1a83906c713589660dd5",
+        "sourceMember": "figure2_TNG100-1_p07c_cf00dust_res_conv_ns1_rad30pkpc.pdf (3 pt blue stroked contour paths, opacity 0.5)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9.0-12.0 of the g-r panel; y: labelled ticks 0.0-1.0; frame asserted at log M* 9-12 and g-r 0-1",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction of a density contour; the loop is the plotted line."
+    },
+    {
+      "id": "nelson18.tng100.colour-contour.z0.modelC.l050.red1",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (per galaxy, KDE contour 0.5, red 1)",
+      "kind": "simulation",
+      "relation": "colour",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "(g-r) colour, SDSS passbands, attenuated (Model C resolved dust)",
+        "yUnit": "mag (AB not stated in the paper)"
+      },
+      "domain": {
+        "xMin": 10.066,
+        "xMax": 12.0
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 12.0,
+            "y": 0.7677
+          },
+          {
+            "x": 11.94,
+            "y": 0.764
+          },
+          {
+            "x": 11.91,
+            "y": 0.7614
+          },
+          {
+            "x": 11.893,
+            "y": 0.7594
+          },
+          {
+            "x": 11.875,
+            "y": 0.7569
+          },
+          {
+            "x": 11.861,
+            "y": 0.7544
+          },
+          {
+            "x": 11.848,
+            "y": 0.7519
+          },
+          {
+            "x": 11.827,
+            "y": 0.7469
+          },
+          {
+            "x": 11.801,
+            "y": 0.7394
+          },
+          {
+            "x": 11.774,
+            "y": 0.7313
+          },
+          {
+            "x": 11.756,
+            "y": 0.7268
+          },
+          {
+            "x": 11.744,
+            "y": 0.7242
+          },
+          {
+            "x": 11.729,
+            "y": 0.7215
+          },
+          {
+            "x": 11.712,
+            "y": 0.7193
+          },
+          {
+            "x": 11.698,
+            "y": 0.7179
+          },
+          {
+            "x": 11.683,
+            "y": 0.7168
+          },
+          {
+            "x": 11.668,
+            "y": 0.7163
+          },
+          {
+            "x": 11.653,
+            "y": 0.716
+          },
+          {
+            "x": 11.623,
+            "y": 0.7165
+          },
+          {
+            "x": 11.563,
+            "y": 0.7178
+          },
+          {
+            "x": 11.533,
+            "y": 0.7176
+          },
+          {
+            "x": 11.503,
+            "y": 0.7167
+          },
+          {
+            "x": 11.427,
+            "y": 0.7134
+          },
+          {
+            "x": 11.397,
+            "y": 0.7132
+          },
+          {
+            "x": 11.367,
+            "y": 0.7142
+          },
+          {
+            "x": 11.322,
+            "y": 0.7171
+          },
+          {
+            "x": 11.276,
+            "y": 0.72
+          },
+          {
+            "x": 11.246,
+            "y": 0.7211
+          },
+          {
+            "x": 11.216,
+            "y": 0.7216
+          },
+          {
+            "x": 11.186,
+            "y": 0.7213
+          },
+          {
+            "x": 11.156,
+            "y": 0.7205
+          },
+          {
+            "x": 11.049,
+            "y": 0.7168
+          },
+          {
+            "x": 11.005,
+            "y": 0.7161
+          },
+          {
+            "x": 10.96,
+            "y": 0.7162
+          },
+          {
+            "x": 10.628,
+            "y": 0.7188
+          },
+          {
+            "x": 10.553,
+            "y": 0.7189
+          },
+          {
+            "x": 10.508,
+            "y": 0.7185
+          },
+          {
+            "x": 10.462,
+            "y": 0.7175
+          },
+          {
+            "x": 10.417,
+            "y": 0.716
+          },
+          {
+            "x": 10.357,
+            "y": 0.7134
+          },
+          {
+            "x": 10.281,
+            "y": 0.71
+          },
+          {
+            "x": 10.266,
+            "y": 0.7094
+          },
+          {
+            "x": 10.251,
+            "y": 0.7102
+          },
+          {
+            "x": 10.191,
+            "y": 0.7271
+          },
+          {
+            "x": 10.142,
+            "y": 0.7394
+          },
+          {
+            "x": 10.092,
+            "y": 0.7519
+          },
+          {
+            "x": 10.077,
+            "y": 0.7569
+          },
+          {
+            "x": 10.07,
+            "y": 0.7602
+          },
+          {
+            "x": 10.068,
+            "y": 0.7619
+          },
+          {
+            "x": 10.066,
+            "y": 0.7644
+          },
+          {
+            "x": 10.066,
+            "y": 0.7669
+          },
+          {
+            "x": 10.067,
+            "y": 0.7694
+          },
+          {
+            "x": 10.07,
+            "y": 0.772
+          },
+          {
+            "x": 10.074,
+            "y": 0.7744
+          },
+          {
+            "x": 10.08,
+            "y": 0.7769
+          },
+          {
+            "x": 10.094,
+            "y": 0.782
+          },
+          {
+            "x": 10.12,
+            "y": 0.7895
+          },
+          {
+            "x": 10.15,
+            "y": 0.797
+          },
+          {
+            "x": 10.195,
+            "y": 0.807
+          },
+          {
+            "x": 10.236,
+            "y": 0.8151
+          },
+          {
+            "x": 10.251,
+            "y": 0.8179
+          },
+          {
+            "x": 10.266,
+            "y": 0.8187
+          },
+          {
+            "x": 10.492,
+            "y": 0.8204
+          },
+          {
+            "x": 10.583,
+            "y": 0.8214
+          },
+          {
+            "x": 10.658,
+            "y": 0.8215
+          },
+          {
+            "x": 10.779,
+            "y": 0.8215
+          },
+          {
+            "x": 10.869,
+            "y": 0.8222
+          },
+          {
+            "x": 10.99,
+            "y": 0.8233
+          },
+          {
+            "x": 11.126,
+            "y": 0.824
+          },
+          {
+            "x": 11.171,
+            "y": 0.8252
+          },
+          {
+            "x": 11.231,
+            "y": 0.8275
+          },
+          {
+            "x": 11.291,
+            "y": 0.83
+          },
+          {
+            "x": 11.322,
+            "y": 0.8309
+          },
+          {
+            "x": 11.352,
+            "y": 0.8312
+          },
+          {
+            "x": 11.397,
+            "y": 0.8309
+          },
+          {
+            "x": 11.457,
+            "y": 0.8304
+          },
+          {
+            "x": 11.503,
+            "y": 0.8309
+          },
+          {
+            "x": 11.67,
+            "y": 0.8346
+          },
+          {
+            "x": 11.698,
+            "y": 0.836
+          },
+          {
+            "x": 11.729,
+            "y": 0.838
+          },
+          {
+            "x": 11.774,
+            "y": 0.8417
+          },
+          {
+            "x": 11.925,
+            "y": 0.8549
+          },
+          {
+            "x": 11.985,
+            "y": 0.8591
+          },
+          {
+            "x": 12.0,
+            "y": 0.8601
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all TNG100-1 galaxies, 1e9 < M* < 1e12 Msun (centrals and satellites)",
+        "warning": "Vertices of one contour of the conditional 2-D kernel density estimate of the TNG100-1 colour-mass plane, read from the vector paths of Nelson et al. 2018 (MNRAS 475, 624), Fig. 2 (g-r panel, blue lines); no table is published. The caption states 'Conditional 2D kernel density estimates (KDEs) are shown with contours at {0.2,0.5,0.75,0.98}'; it does not say what the numbers are. The four drawn opacities (0.05, 0.2, 0.5, 1.0) nest, and the assignment outermost = 0.2 ... innermost = 0.98 is an inference: it reproduces, to within 0.007 mag at the lower edge in all four levels, the contour edges predicted by taking the level as the fraction of the peak of the conditional PDF (Fig. 1 PDF of the same run, mass bin 9.5-10), and reproduces the alternative reading as enclosed probabilities less well (0.01-0.03 mag off); the reading is not proven. This path is the red sequence. Open path: truncated by the plot edge (log M* = 9 or 12). Contour pieces with fewer than 20 vertices (slivers at the plot edge) are not stored (0 at this level). Dust: Model C resolved dust (N_side=1); whether Fig. 2 uses all 12 projections or one random one is not stated. The SDSS contours (black) and the u-i, u-r, r-i panels are not extracted.",
+        "contourLevel": 0.5,
+        "contourKind": "level of the conditional 2-D KDE as listed in the caption; read as a fraction of the per-mass peak density (inferred, see warning)",
+        "contourClosed": false,
+        "contourRegion": "red sequence"
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "massDefinition": "unspecified",
+        "population": "all",
+        "colourBand": "SDSS g-r (SDSS u,g,r,i,z passbands at airmass 1.3, galaxy at z=0)",
+        "colourAperture": "30 pkpc (3D radius from the subhalo centre)",
+        "resolutionCut": "10^9 < M* < 10^12 Msun (Fig. 1 caption)",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "dustTreatment": "attenuated (Model C: resolved dust; N_side=1, projection choice not stated for Fig. 2)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Nelson et al. 2018, MNRAS 475, 624 (arXiv:1707.03395), Fig. 2 (distribution of observed versus simulated galaxies in the colour-mass plane, g-r panel)",
+        "doi": "10.1093/mnras/stx3040",
+        "url": "https://arxiv.org/abs/1707.03395",
+        "retrieved": "2026-10-18",
+        "figure": "Fig. 2 (fig_color_mass_2d_4bands), g-r panel",
+        "panel": "top right, TNG100-1 (blue) contours",
+        "checksumSha256": "88cccf63dea204e83667b4d47fa647f6ea4a8f97757c1a83906c713589660dd5",
+        "sourceMember": "figure2_TNG100-1_p07c_cf00dust_res_conv_ns1_rad30pkpc.pdf (3 pt blue stroked contour paths, opacity 0.2)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9.0-12.0 of the g-r panel; y: labelled ticks 0.0-1.0; frame asserted at log M* 9-12 and g-r 0-1",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction of a density contour; the loop is the plotted line."
+    },
+    {
+      "id": "nelson18.tng100.colour-contour.z0.modelC.l050.red2",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (per galaxy, KDE contour 0.5, red 2)",
+      "kind": "simulation",
+      "relation": "colour",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "(g-r) colour, SDSS passbands, attenuated (Model C resolved dust)",
+        "yUnit": "mag (AB not stated in the paper)"
+      },
+      "domain": {
+        "xMin": 9.0,
+        "xMax": 9.36
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.0,
+            "y": 0.7525
+          },
+          {
+            "x": 9.015,
+            "y": 0.7528
+          },
+          {
+            "x": 9.03,
+            "y": 0.753
+          },
+          {
+            "x": 9.045,
+            "y": 0.7531
+          },
+          {
+            "x": 9.06,
+            "y": 0.7531
+          },
+          {
+            "x": 9.075,
+            "y": 0.753
+          },
+          {
+            "x": 9.09,
+            "y": 0.7527
+          },
+          {
+            "x": 9.106,
+            "y": 0.7524
+          },
+          {
+            "x": 9.121,
+            "y": 0.7521
+          },
+          {
+            "x": 9.128,
+            "y": 0.7519
+          },
+          {
+            "x": 9.136,
+            "y": 0.7517
+          },
+          {
+            "x": 9.151,
+            "y": 0.7512
+          },
+          {
+            "x": 9.166,
+            "y": 0.7508
+          },
+          {
+            "x": 9.181,
+            "y": 0.7504
+          },
+          {
+            "x": 9.196,
+            "y": 0.75
+          },
+          {
+            "x": 9.211,
+            "y": 0.7497
+          },
+          {
+            "x": 9.226,
+            "y": 0.7494
+          },
+          {
+            "x": 9.226,
+            "y": 0.7494
+          },
+          {
+            "x": 9.241,
+            "y": 0.749
+          },
+          {
+            "x": 9.256,
+            "y": 0.7486
+          },
+          {
+            "x": 9.271,
+            "y": 0.7482
+          },
+          {
+            "x": 9.286,
+            "y": 0.7476
+          },
+          {
+            "x": 9.302,
+            "y": 0.7469
+          },
+          {
+            "x": 9.302,
+            "y": 0.7469
+          },
+          {
+            "x": 9.317,
+            "y": 0.7458
+          },
+          {
+            "x": 9.332,
+            "y": 0.7444
+          },
+          {
+            "x": 9.332,
+            "y": 0.7444
+          },
+          {
+            "x": 9.347,
+            "y": 0.7422
+          },
+          {
+            "x": 9.349,
+            "y": 0.7419
+          },
+          {
+            "x": 9.357,
+            "y": 0.7394
+          },
+          {
+            "x": 9.36,
+            "y": 0.7368
+          },
+          {
+            "x": 9.358,
+            "y": 0.7343
+          },
+          {
+            "x": 9.353,
+            "y": 0.7318
+          },
+          {
+            "x": 9.347,
+            "y": 0.7301
+          },
+          {
+            "x": 9.344,
+            "y": 0.7293
+          },
+          {
+            "x": 9.333,
+            "y": 0.7268
+          },
+          {
+            "x": 9.332,
+            "y": 0.7266
+          },
+          {
+            "x": 9.319,
+            "y": 0.7243
+          },
+          {
+            "x": 9.317,
+            "y": 0.7239
+          },
+          {
+            "x": 9.303,
+            "y": 0.7218
+          },
+          {
+            "x": 9.302,
+            "y": 0.7216
+          },
+          {
+            "x": 9.286,
+            "y": 0.7195
+          },
+          {
+            "x": 9.285,
+            "y": 0.7193
+          },
+          {
+            "x": 9.271,
+            "y": 0.7176
+          },
+          {
+            "x": 9.265,
+            "y": 0.7168
+          },
+          {
+            "x": 9.256,
+            "y": 0.7157
+          },
+          {
+            "x": 9.244,
+            "y": 0.7143
+          },
+          {
+            "x": 9.241,
+            "y": 0.714
+          },
+          {
+            "x": 9.226,
+            "y": 0.7123
+          },
+          {
+            "x": 9.222,
+            "y": 0.7118
+          },
+          {
+            "x": 9.211,
+            "y": 0.7106
+          },
+          {
+            "x": 9.199,
+            "y": 0.7093
+          },
+          {
+            "x": 9.196,
+            "y": 0.7089
+          },
+          {
+            "x": 9.181,
+            "y": 0.7073
+          },
+          {
+            "x": 9.177,
+            "y": 0.7068
+          },
+          {
+            "x": 9.166,
+            "y": 0.7056
+          },
+          {
+            "x": 9.154,
+            "y": 0.7043
+          },
+          {
+            "x": 9.151,
+            "y": 0.7039
+          },
+          {
+            "x": 9.136,
+            "y": 0.7022
+          },
+          {
+            "x": 9.132,
+            "y": 0.7018
+          },
+          {
+            "x": 9.121,
+            "y": 0.7005
+          },
+          {
+            "x": 9.11,
+            "y": 0.6992
+          },
+          {
+            "x": 9.106,
+            "y": 0.6987
+          },
+          {
+            "x": 9.09,
+            "y": 0.697
+          },
+          {
+            "x": 9.089,
+            "y": 0.6967
+          },
+          {
+            "x": 9.075,
+            "y": 0.6952
+          },
+          {
+            "x": 9.068,
+            "y": 0.6942
+          },
+          {
+            "x": 9.06,
+            "y": 0.6934
+          },
+          {
+            "x": 9.046,
+            "y": 0.6917
+          },
+          {
+            "x": 9.045,
+            "y": 0.6916
+          },
+          {
+            "x": 9.03,
+            "y": 0.6898
+          },
+          {
+            "x": 9.025,
+            "y": 0.6892
+          },
+          {
+            "x": 9.015,
+            "y": 0.688
+          },
+          {
+            "x": 9.004,
+            "y": 0.6867
+          },
+          {
+            "x": 9.0,
+            "y": 0.6862
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all TNG100-1 galaxies, 1e9 < M* < 1e12 Msun (centrals and satellites)",
+        "warning": "Vertices of one contour of the conditional 2-D kernel density estimate of the TNG100-1 colour-mass plane, read from the vector paths of Nelson et al. 2018 (MNRAS 475, 624), Fig. 2 (g-r panel, blue lines); no table is published. The caption states 'Conditional 2D kernel density estimates (KDEs) are shown with contours at {0.2,0.5,0.75,0.98}'; it does not say what the numbers are. The four drawn opacities (0.05, 0.2, 0.5, 1.0) nest, and the assignment outermost = 0.2 ... innermost = 0.98 is an inference: it reproduces, to within 0.007 mag at the lower edge in all four levels, the contour edges predicted by taking the level as the fraction of the peak of the conditional PDF (Fig. 1 PDF of the same run, mass bin 9.5-10), and reproduces the alternative reading as enclosed probabilities less well (0.01-0.03 mag off); the reading is not proven. This path is the red sequence. Open path: truncated by the plot edge (log M* = 9 or 12). Contour pieces with fewer than 20 vertices (slivers at the plot edge) are not stored (0 at this level). Dust: Model C resolved dust (N_side=1); whether Fig. 2 uses all 12 projections or one random one is not stated. The SDSS contours (black) and the u-i, u-r, r-i panels are not extracted.",
+        "contourLevel": 0.5,
+        "contourKind": "level of the conditional 2-D KDE as listed in the caption; read as a fraction of the per-mass peak density (inferred, see warning)",
+        "contourClosed": false,
+        "contourRegion": "red sequence"
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "massDefinition": "unspecified",
+        "population": "all",
+        "colourBand": "SDSS g-r (SDSS u,g,r,i,z passbands at airmass 1.3, galaxy at z=0)",
+        "colourAperture": "30 pkpc (3D radius from the subhalo centre)",
+        "resolutionCut": "10^9 < M* < 10^12 Msun (Fig. 1 caption)",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "dustTreatment": "attenuated (Model C: resolved dust; N_side=1, projection choice not stated for Fig. 2)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Nelson et al. 2018, MNRAS 475, 624 (arXiv:1707.03395), Fig. 2 (distribution of observed versus simulated galaxies in the colour-mass plane, g-r panel)",
+        "doi": "10.1093/mnras/stx3040",
+        "url": "https://arxiv.org/abs/1707.03395",
+        "retrieved": "2026-10-18",
+        "figure": "Fig. 2 (fig_color_mass_2d_4bands), g-r panel",
+        "panel": "top right, TNG100-1 (blue) contours",
+        "checksumSha256": "88cccf63dea204e83667b4d47fa647f6ea4a8f97757c1a83906c713589660dd5",
+        "sourceMember": "figure2_TNG100-1_p07c_cf00dust_res_conv_ns1_rad30pkpc.pdf (3 pt blue stroked contour paths, opacity 0.2)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9.0-12.0 of the g-r panel; y: labelled ticks 0.0-1.0; frame asserted at log M* 9-12 and g-r 0-1",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction of a density contour; the loop is the plotted line."
+    },
+    {
+      "id": "nelson18.tng100.colour-contour.z0.modelC.l050.blue3",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (per galaxy, KDE contour 0.5, blue 3)",
+      "kind": "simulation",
+      "relation": "colour",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "(g-r) colour, SDSS passbands, attenuated (Model C resolved dust)",
+        "yUnit": "mag (AB not stated in the paper)"
+      },
+      "domain": {
+        "xMin": 9.0,
+        "xMax": 10.396
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.0,
+            "y": 0.4778
+          },
+          {
+            "x": 9.06,
+            "y": 0.4842
+          },
+          {
+            "x": 9.151,
+            "y": 0.4945
+          },
+          {
+            "x": 9.241,
+            "y": 0.5047
+          },
+          {
+            "x": 9.286,
+            "y": 0.5093
+          },
+          {
+            "x": 9.332,
+            "y": 0.5133
+          },
+          {
+            "x": 9.377,
+            "y": 0.5165
+          },
+          {
+            "x": 9.422,
+            "y": 0.5188
+          },
+          {
+            "x": 9.467,
+            "y": 0.5205
+          },
+          {
+            "x": 9.528,
+            "y": 0.5227
+          },
+          {
+            "x": 9.573,
+            "y": 0.5249
+          },
+          {
+            "x": 9.618,
+            "y": 0.5278
+          },
+          {
+            "x": 9.698,
+            "y": 0.5338
+          },
+          {
+            "x": 9.792,
+            "y": 0.5414
+          },
+          {
+            "x": 9.829,
+            "y": 0.5448
+          },
+          {
+            "x": 9.874,
+            "y": 0.5497
+          },
+          {
+            "x": 9.935,
+            "y": 0.5569
+          },
+          {
+            "x": 10.048,
+            "y": 0.5714
+          },
+          {
+            "x": 10.102,
+            "y": 0.5789
+          },
+          {
+            "x": 10.251,
+            "y": 0.6008
+          },
+          {
+            "x": 10.266,
+            "y": 0.5947
+          },
+          {
+            "x": 10.278,
+            "y": 0.5865
+          },
+          {
+            "x": 10.306,
+            "y": 0.5664
+          },
+          {
+            "x": 10.321,
+            "y": 0.5564
+          },
+          {
+            "x": 10.337,
+            "y": 0.5464
+          },
+          {
+            "x": 10.368,
+            "y": 0.5263
+          },
+          {
+            "x": 10.377,
+            "y": 0.5188
+          },
+          {
+            "x": 10.385,
+            "y": 0.5113
+          },
+          {
+            "x": 10.39,
+            "y": 0.5038
+          },
+          {
+            "x": 10.393,
+            "y": 0.4962
+          },
+          {
+            "x": 10.395,
+            "y": 0.4887
+          },
+          {
+            "x": 10.396,
+            "y": 0.4812
+          },
+          {
+            "x": 10.394,
+            "y": 0.4737
+          },
+          {
+            "x": 10.392,
+            "y": 0.4662
+          },
+          {
+            "x": 10.387,
+            "y": 0.4576
+          },
+          {
+            "x": 10.383,
+            "y": 0.4511
+          },
+          {
+            "x": 10.376,
+            "y": 0.4436
+          },
+          {
+            "x": 10.364,
+            "y": 0.4311
+          },
+          {
+            "x": 10.349,
+            "y": 0.4185
+          },
+          {
+            "x": 10.336,
+            "y": 0.4085
+          },
+          {
+            "x": 10.32,
+            "y": 0.3985
+          },
+          {
+            "x": 10.302,
+            "y": 0.3885
+          },
+          {
+            "x": 10.281,
+            "y": 0.3784
+          },
+          {
+            "x": 10.266,
+            "y": 0.372
+          },
+          {
+            "x": 10.251,
+            "y": 0.3672
+          },
+          {
+            "x": 10.206,
+            "y": 0.3639
+          },
+          {
+            "x": 9.98,
+            "y": 0.3499
+          },
+          {
+            "x": 9.905,
+            "y": 0.3454
+          },
+          {
+            "x": 9.84,
+            "y": 0.3409
+          },
+          {
+            "x": 9.768,
+            "y": 0.3358
+          },
+          {
+            "x": 9.724,
+            "y": 0.3332
+          },
+          {
+            "x": 9.648,
+            "y": 0.3296
+          },
+          {
+            "x": 9.573,
+            "y": 0.3257
+          },
+          {
+            "x": 9.513,
+            "y": 0.3221
+          },
+          {
+            "x": 9.452,
+            "y": 0.3177
+          },
+          {
+            "x": 9.392,
+            "y": 0.3125
+          },
+          {
+            "x": 9.332,
+            "y": 0.3066
+          },
+          {
+            "x": 9.254,
+            "y": 0.2982
+          },
+          {
+            "x": 9.181,
+            "y": 0.2897
+          },
+          {
+            "x": 9.067,
+            "y": 0.2757
+          },
+          {
+            "x": 9.0,
+            "y": 0.2674
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all TNG100-1 galaxies, 1e9 < M* < 1e12 Msun (centrals and satellites)",
+        "warning": "Vertices of one contour of the conditional 2-D kernel density estimate of the TNG100-1 colour-mass plane, read from the vector paths of Nelson et al. 2018 (MNRAS 475, 624), Fig. 2 (g-r panel, blue lines); no table is published. The caption states 'Conditional 2D kernel density estimates (KDEs) are shown with contours at {0.2,0.5,0.75,0.98}'; it does not say what the numbers are. The four drawn opacities (0.05, 0.2, 0.5, 1.0) nest, and the assignment outermost = 0.2 ... innermost = 0.98 is an inference: it reproduces, to within 0.007 mag at the lower edge in all four levels, the contour edges predicted by taking the level as the fraction of the peak of the conditional PDF (Fig. 1 PDF of the same run, mass bin 9.5-10), and reproduces the alternative reading as enclosed probabilities less well (0.01-0.03 mag off); the reading is not proven. This path is the blue cloud. Open path: truncated by the plot edge (log M* = 9 or 12). Contour pieces with fewer than 20 vertices (slivers at the plot edge) are not stored (0 at this level). Dust: Model C resolved dust (N_side=1); whether Fig. 2 uses all 12 projections or one random one is not stated. The SDSS contours (black) and the u-i, u-r, r-i panels are not extracted.",
+        "contourLevel": 0.5,
+        "contourKind": "level of the conditional 2-D KDE as listed in the caption; read as a fraction of the per-mass peak density (inferred, see warning)",
+        "contourClosed": false,
+        "contourRegion": "blue cloud"
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "massDefinition": "unspecified",
+        "population": "all",
+        "colourBand": "SDSS g-r (SDSS u,g,r,i,z passbands at airmass 1.3, galaxy at z=0)",
+        "colourAperture": "30 pkpc (3D radius from the subhalo centre)",
+        "resolutionCut": "10^9 < M* < 10^12 Msun (Fig. 1 caption)",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "dustTreatment": "attenuated (Model C: resolved dust; N_side=1, projection choice not stated for Fig. 2)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Nelson et al. 2018, MNRAS 475, 624 (arXiv:1707.03395), Fig. 2 (distribution of observed versus simulated galaxies in the colour-mass plane, g-r panel)",
+        "doi": "10.1093/mnras/stx3040",
+        "url": "https://arxiv.org/abs/1707.03395",
+        "retrieved": "2026-10-18",
+        "figure": "Fig. 2 (fig_color_mass_2d_4bands), g-r panel",
+        "panel": "top right, TNG100-1 (blue) contours",
+        "checksumSha256": "88cccf63dea204e83667b4d47fa647f6ea4a8f97757c1a83906c713589660dd5",
+        "sourceMember": "figure2_TNG100-1_p07c_cf00dust_res_conv_ns1_rad30pkpc.pdf (3 pt blue stroked contour paths, opacity 0.2)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9.0-12.0 of the g-r panel; y: labelled ticks 0.0-1.0; frame asserted at log M* 9-12 and g-r 0-1",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction of a density contour; the loop is the plotted line."
+    },
+    {
+      "id": "nelson18.tng100.colour-contour.z0.modelC.l020.island1",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (per galaxy, KDE contour 0.2, island 1)",
+      "kind": "simulation",
+      "relation": "colour",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "(g-r) colour, SDSS passbands, attenuated (Model C resolved dust)",
+        "yUnit": "mag (AB not stated in the paper)"
+      },
+      "domain": {
+        "xMin": 9.481,
+        "xMax": 9.947
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.481,
+            "y": 0.6366
+          },
+          {
+            "x": 9.482,
+            "y": 0.6353
+          },
+          {
+            "x": 9.484,
+            "y": 0.6341
+          },
+          {
+            "x": 9.49,
+            "y": 0.6316
+          },
+          {
+            "x": 9.497,
+            "y": 0.63
+          },
+          {
+            "x": 9.502,
+            "y": 0.6291
+          },
+          {
+            "x": 9.513,
+            "y": 0.6277
+          },
+          {
+            "x": 9.524,
+            "y": 0.6266
+          },
+          {
+            "x": 9.528,
+            "y": 0.6263
+          },
+          {
+            "x": 9.543,
+            "y": 0.6255
+          },
+          {
+            "x": 9.558,
+            "y": 0.625
+          },
+          {
+            "x": 9.573,
+            "y": 0.6247
+          },
+          {
+            "x": 9.588,
+            "y": 0.6247
+          },
+          {
+            "x": 9.603,
+            "y": 0.6249
+          },
+          {
+            "x": 9.618,
+            "y": 0.6253
+          },
+          {
+            "x": 9.633,
+            "y": 0.6258
+          },
+          {
+            "x": 9.648,
+            "y": 0.6266
+          },
+          {
+            "x": 9.648,
+            "y": 0.6266
+          },
+          {
+            "x": 9.663,
+            "y": 0.6275
+          },
+          {
+            "x": 9.678,
+            "y": 0.6286
+          },
+          {
+            "x": 9.685,
+            "y": 0.6291
+          },
+          {
+            "x": 9.693,
+            "y": 0.6298
+          },
+          {
+            "x": 9.709,
+            "y": 0.631
+          },
+          {
+            "x": 9.715,
+            "y": 0.6316
+          },
+          {
+            "x": 9.724,
+            "y": 0.6324
+          },
+          {
+            "x": 9.739,
+            "y": 0.6338
+          },
+          {
+            "x": 9.742,
+            "y": 0.6341
+          },
+          {
+            "x": 9.754,
+            "y": 0.6352
+          },
+          {
+            "x": 9.768,
+            "y": 0.6366
+          },
+          {
+            "x": 9.769,
+            "y": 0.6367
+          },
+          {
+            "x": 9.784,
+            "y": 0.6382
+          },
+          {
+            "x": 9.793,
+            "y": 0.6391
+          },
+          {
+            "x": 9.799,
+            "y": 0.6397
+          },
+          {
+            "x": 9.814,
+            "y": 0.6413
+          },
+          {
+            "x": 9.817,
+            "y": 0.6416
+          },
+          {
+            "x": 9.829,
+            "y": 0.643
+          },
+          {
+            "x": 9.839,
+            "y": 0.6441
+          },
+          {
+            "x": 9.844,
+            "y": 0.6447
+          },
+          {
+            "x": 9.859,
+            "y": 0.6466
+          },
+          {
+            "x": 9.859,
+            "y": 0.6467
+          },
+          {
+            "x": 9.874,
+            "y": 0.6489
+          },
+          {
+            "x": 9.876,
+            "y": 0.6491
+          },
+          {
+            "x": 9.889,
+            "y": 0.6514
+          },
+          {
+            "x": 9.891,
+            "y": 0.6516
+          },
+          {
+            "x": 9.903,
+            "y": 0.6541
+          },
+          {
+            "x": 9.905,
+            "y": 0.6544
+          },
+          {
+            "x": 9.914,
+            "y": 0.6566
+          },
+          {
+            "x": 9.92,
+            "y": 0.658
+          },
+          {
+            "x": 9.924,
+            "y": 0.6591
+          },
+          {
+            "x": 9.932,
+            "y": 0.6617
+          },
+          {
+            "x": 9.935,
+            "y": 0.6628
+          },
+          {
+            "x": 9.938,
+            "y": 0.6642
+          },
+          {
+            "x": 9.943,
+            "y": 0.6667
+          },
+          {
+            "x": 9.946,
+            "y": 0.6692
+          },
+          {
+            "x": 9.947,
+            "y": 0.6717
+          },
+          {
+            "x": 9.945,
+            "y": 0.6742
+          },
+          {
+            "x": 9.941,
+            "y": 0.6767
+          },
+          {
+            "x": 9.935,
+            "y": 0.679
+          },
+          {
+            "x": 9.934,
+            "y": 0.6792
+          },
+          {
+            "x": 9.921,
+            "y": 0.6817
+          },
+          {
+            "x": 9.92,
+            "y": 0.6819
+          },
+          {
+            "x": 9.905,
+            "y": 0.6835
+          },
+          {
+            "x": 9.895,
+            "y": 0.6842
+          },
+          {
+            "x": 9.889,
+            "y": 0.6845
+          },
+          {
+            "x": 9.874,
+            "y": 0.685
+          },
+          {
+            "x": 9.859,
+            "y": 0.6851
+          },
+          {
+            "x": 9.844,
+            "y": 0.685
+          },
+          {
+            "x": 9.829,
+            "y": 0.6847
+          },
+          {
+            "x": 9.814,
+            "y": 0.6843
+          },
+          {
+            "x": 9.812,
+            "y": 0.6842
+          },
+          {
+            "x": 9.799,
+            "y": 0.6837
+          },
+          {
+            "x": 9.784,
+            "y": 0.683
+          },
+          {
+            "x": 9.769,
+            "y": 0.6823
+          },
+          {
+            "x": 9.757,
+            "y": 0.6817
+          },
+          {
+            "x": 9.754,
+            "y": 0.6815
+          },
+          {
+            "x": 9.739,
+            "y": 0.6806
+          },
+          {
+            "x": 9.724,
+            "y": 0.6797
+          },
+          {
+            "x": 9.717,
+            "y": 0.6792
+          },
+          {
+            "x": 9.709,
+            "y": 0.6786
+          },
+          {
+            "x": 9.693,
+            "y": 0.6774
+          },
+          {
+            "x": 9.686,
+            "y": 0.6767
+          },
+          {
+            "x": 9.678,
+            "y": 0.676
+          },
+          {
+            "x": 9.663,
+            "y": 0.6745
+          },
+          {
+            "x": 9.66,
+            "y": 0.6742
+          },
+          {
+            "x": 9.648,
+            "y": 0.6729
+          },
+          {
+            "x": 9.638,
+            "y": 0.6717
+          },
+          {
+            "x": 9.633,
+            "y": 0.6711
+          },
+          {
+            "x": 9.618,
+            "y": 0.6692
+          },
+          {
+            "x": 9.618,
+            "y": 0.6692
+          },
+          {
+            "x": 9.603,
+            "y": 0.6671
+          },
+          {
+            "x": 9.6,
+            "y": 0.6667
+          },
+          {
+            "x": 9.588,
+            "y": 0.6648
+          },
+          {
+            "x": 9.584,
+            "y": 0.6642
+          },
+          {
+            "x": 9.573,
+            "y": 0.6624
+          },
+          {
+            "x": 9.568,
+            "y": 0.6617
+          },
+          {
+            "x": 9.558,
+            "y": 0.6599
+          },
+          {
+            "x": 9.554,
+            "y": 0.6591
+          },
+          {
+            "x": 9.543,
+            "y": 0.6571
+          },
+          {
+            "x": 9.54,
+            "y": 0.6566
+          },
+          {
+            "x": 9.528,
+            "y": 0.6542
+          },
+          {
+            "x": 9.527,
+            "y": 0.6541
+          },
+          {
+            "x": 9.515,
+            "y": 0.6516
+          },
+          {
+            "x": 9.513,
+            "y": 0.6509
+          },
+          {
+            "x": 9.505,
+            "y": 0.6491
+          },
+          {
+            "x": 9.497,
+            "y": 0.6469
+          },
+          {
+            "x": 9.496,
+            "y": 0.6466
+          },
+          {
+            "x": 9.489,
+            "y": 0.6441
+          },
+          {
+            "x": 9.484,
+            "y": 0.6416
+          },
+          {
+            "x": 9.482,
+            "y": 0.64
+          },
+          {
+            "x": 9.481,
+            "y": 0.6391
+          },
+          {
+            "x": 9.481,
+            "y": 0.6366
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all TNG100-1 galaxies, 1e9 < M* < 1e12 Msun (centrals and satellites)",
+        "warning": "Vertices of one contour of the conditional 2-D kernel density estimate of the TNG100-1 colour-mass plane, read from the vector paths of Nelson et al. 2018 (MNRAS 475, 624), Fig. 2 (g-r panel, blue lines); no table is published. The caption states 'Conditional 2D kernel density estimates (KDEs) are shown with contours at {0.2,0.5,0.75,0.98}'; it does not say what the numbers are. The four drawn opacities (0.05, 0.2, 0.5, 1.0) nest, and the assignment outermost = 0.2 ... innermost = 0.98 is an inference: it reproduces, to within 0.007 mag at the lower edge in all four levels, the contour edges predicted by taking the level as the fraction of the peak of the conditional PDF (Fig. 1 PDF of the same run, mass bin 9.5-10), and reproduces the alternative reading as enclosed probabilities less well (0.01-0.03 mag off); the reading is not proven. This path is the closed island at log M* 9.48-9.95, g-r 0.62-0.69. Closed loop. Contour pieces with fewer than 20 vertices (slivers at the plot edge) are not stored (1 at this level). Dust: Model C resolved dust (N_side=1); whether Fig. 2 uses all 12 projections or one random one is not stated. The SDSS contours (black) and the u-i, u-r, r-i panels are not extracted.",
+        "contourLevel": 0.2,
+        "contourKind": "level of the conditional 2-D KDE as listed in the caption; read as a fraction of the per-mass peak density (inferred, see warning)",
+        "contourClosed": true,
+        "contourRegion": "closed island at log M* 9.48-9.95, g-r 0.62-0.69"
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "massDefinition": "unspecified",
+        "population": "all",
+        "colourBand": "SDSS g-r (SDSS u,g,r,i,z passbands at airmass 1.3, galaxy at z=0)",
+        "colourAperture": "30 pkpc (3D radius from the subhalo centre)",
+        "resolutionCut": "10^9 < M* < 10^12 Msun (Fig. 1 caption)",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "dustTreatment": "attenuated (Model C: resolved dust; N_side=1, projection choice not stated for Fig. 2)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Nelson et al. 2018, MNRAS 475, 624 (arXiv:1707.03395), Fig. 2 (distribution of observed versus simulated galaxies in the colour-mass plane, g-r panel)",
+        "doi": "10.1093/mnras/stx3040",
+        "url": "https://arxiv.org/abs/1707.03395",
+        "retrieved": "2026-10-18",
+        "figure": "Fig. 2 (fig_color_mass_2d_4bands), g-r panel",
+        "panel": "top right, TNG100-1 (blue) contours",
+        "checksumSha256": "88cccf63dea204e83667b4d47fa647f6ea4a8f97757c1a83906c713589660dd5",
+        "sourceMember": "figure2_TNG100-1_p07c_cf00dust_res_conv_ns1_rad30pkpc.pdf (3 pt blue stroked contour paths, opacity 0.05)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9.0-12.0 of the g-r panel; y: labelled ticks 0.0-1.0; frame asserted at log M* 9-12 and g-r 0-1",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction of a density contour; the loop is the plotted line."
+    },
+    {
+      "id": "nelson18.tng100.colour-contour.z0.modelC.l020.span2",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (per galaxy, KDE contour 0.2, span 2)",
+      "kind": "simulation",
+      "relation": "colour",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "(g-r) colour, SDSS passbands, attenuated (Model C resolved dust)",
+        "yUnit": "mag (AB not stated in the paper)"
+      },
+      "domain": {
+        "xMin": 9.0,
+        "xMax": 12.0
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 12.0,
+            "y": 0.6942
+          },
+          {
+            "x": 11.975,
+            "y": 0.6867
+          },
+          {
+            "x": 11.948,
+            "y": 0.6792
+          },
+          {
+            "x": 11.918,
+            "y": 0.6717
+          },
+          {
+            "x": 11.864,
+            "y": 0.6588
+          },
+          {
+            "x": 11.789,
+            "y": 0.6416
+          },
+          {
+            "x": 11.759,
+            "y": 0.6357
+          },
+          {
+            "x": 11.729,
+            "y": 0.631
+          },
+          {
+            "x": 11.708,
+            "y": 0.6291
+          },
+          {
+            "x": 11.698,
+            "y": 0.6284
+          },
+          {
+            "x": 11.683,
+            "y": 0.628
+          },
+          {
+            "x": 11.664,
+            "y": 0.6291
+          },
+          {
+            "x": 11.653,
+            "y": 0.6304
+          },
+          {
+            "x": 11.638,
+            "y": 0.6336
+          },
+          {
+            "x": 11.608,
+            "y": 0.6416
+          },
+          {
+            "x": 11.593,
+            "y": 0.6445
+          },
+          {
+            "x": 11.578,
+            "y": 0.6467
+          },
+          {
+            "x": 11.563,
+            "y": 0.6481
+          },
+          {
+            "x": 11.546,
+            "y": 0.6491
+          },
+          {
+            "x": 11.533,
+            "y": 0.6495
+          },
+          {
+            "x": 11.518,
+            "y": 0.6497
+          },
+          {
+            "x": 11.487,
+            "y": 0.6491
+          },
+          {
+            "x": 11.457,
+            "y": 0.6476
+          },
+          {
+            "x": 11.412,
+            "y": 0.6452
+          },
+          {
+            "x": 11.382,
+            "y": 0.6443
+          },
+          {
+            "x": 11.367,
+            "y": 0.6442
+          },
+          {
+            "x": 11.352,
+            "y": 0.6445
+          },
+          {
+            "x": 11.322,
+            "y": 0.646
+          },
+          {
+            "x": 11.291,
+            "y": 0.6484
+          },
+          {
+            "x": 11.231,
+            "y": 0.6535
+          },
+          {
+            "x": 11.216,
+            "y": 0.6543
+          },
+          {
+            "x": 11.201,
+            "y": 0.6547
+          },
+          {
+            "x": 11.186,
+            "y": 0.6547
+          },
+          {
+            "x": 11.167,
+            "y": 0.6541
+          },
+          {
+            "x": 11.156,
+            "y": 0.6536
+          },
+          {
+            "x": 11.126,
+            "y": 0.651
+          },
+          {
+            "x": 11.087,
+            "y": 0.6466
+          },
+          {
+            "x": 11.05,
+            "y": 0.6424
+          },
+          {
+            "x": 11.02,
+            "y": 0.6395
+          },
+          {
+            "x": 10.99,
+            "y": 0.6374
+          },
+          {
+            "x": 10.96,
+            "y": 0.6361
+          },
+          {
+            "x": 10.839,
+            "y": 0.6319
+          },
+          {
+            "x": 10.809,
+            "y": 0.6302
+          },
+          {
+            "x": 10.779,
+            "y": 0.6281
+          },
+          {
+            "x": 10.749,
+            "y": 0.6253
+          },
+          {
+            "x": 10.734,
+            "y": 0.6234
+          },
+          {
+            "x": 10.719,
+            "y": 0.6209
+          },
+          {
+            "x": 10.71,
+            "y": 0.619
+          },
+          {
+            "x": 10.702,
+            "y": 0.6165
+          },
+          {
+            "x": 10.696,
+            "y": 0.614
+          },
+          {
+            "x": 10.688,
+            "y": 0.6095
+          },
+          {
+            "x": 10.685,
+            "y": 0.6065
+          },
+          {
+            "x": 10.682,
+            "y": 0.6015
+          },
+          {
+            "x": 10.679,
+            "y": 0.594
+          },
+          {
+            "x": 10.677,
+            "y": 0.584
+          },
+          {
+            "x": 10.673,
+            "y": 0.5589
+          },
+          {
+            "x": 10.67,
+            "y": 0.5489
+          },
+          {
+            "x": 10.664,
+            "y": 0.5388
+          },
+          {
+            "x": 10.658,
+            "y": 0.5288
+          },
+          {
+            "x": 10.649,
+            "y": 0.5188
+          },
+          {
+            "x": 10.637,
+            "y": 0.5063
+          },
+          {
+            "x": 10.626,
+            "y": 0.4962
+          },
+          {
+            "x": 10.613,
+            "y": 0.4858
+          },
+          {
+            "x": 10.6,
+            "y": 0.4762
+          },
+          {
+            "x": 10.573,
+            "y": 0.4586
+          },
+          {
+            "x": 10.544,
+            "y": 0.4411
+          },
+          {
+            "x": 10.511,
+            "y": 0.4236
+          },
+          {
+            "x": 10.465,
+            "y": 0.401
+          },
+          {
+            "x": 10.401,
+            "y": 0.3734
+          },
+          {
+            "x": 10.381,
+            "y": 0.3659
+          },
+          {
+            "x": 10.347,
+            "y": 0.3534
+          },
+          {
+            "x": 10.302,
+            "y": 0.3383
+          },
+          {
+            "x": 10.266,
+            "y": 0.3278
+          },
+          {
+            "x": 10.251,
+            "y": 0.3243
+          },
+          {
+            "x": 10.1,
+            "y": 0.3126
+          },
+          {
+            "x": 9.98,
+            "y": 0.303
+          },
+          {
+            "x": 9.874,
+            "y": 0.2949
+          },
+          {
+            "x": 9.799,
+            "y": 0.2882
+          },
+          {
+            "x": 9.716,
+            "y": 0.2807
+          },
+          {
+            "x": 9.678,
+            "y": 0.2776
+          },
+          {
+            "x": 9.633,
+            "y": 0.2744
+          },
+          {
+            "x": 9.558,
+            "y": 0.2698
+          },
+          {
+            "x": 9.362,
+            "y": 0.2588
+          },
+          {
+            "x": 9.317,
+            "y": 0.2553
+          },
+          {
+            "x": 9.266,
+            "y": 0.2506
+          },
+          {
+            "x": 9.22,
+            "y": 0.2456
+          },
+          {
+            "x": 9.151,
+            "y": 0.2372
+          },
+          {
+            "x": 9.032,
+            "y": 0.2231
+          },
+          {
+            "x": 9.0,
+            "y": 0.2195
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all TNG100-1 galaxies, 1e9 < M* < 1e12 Msun (centrals and satellites)",
+        "warning": "Vertices of one contour of the conditional 2-D kernel density estimate of the TNG100-1 colour-mass plane, read from the vector paths of Nelson et al. 2018 (MNRAS 475, 624), Fig. 2 (g-r panel, blue lines); no table is published. The caption states 'Conditional 2D kernel density estimates (KDEs) are shown with contours at {0.2,0.5,0.75,0.98}'; it does not say what the numbers are. The four drawn opacities (0.05, 0.2, 0.5, 1.0) nest, and the assignment outermost = 0.2 ... innermost = 0.98 is an inference: it reproduces, to within 0.007 mag at the lower edge in all four levels, the contour edges predicted by taking the level as the fraction of the peak of the conditional PDF (Fig. 1 PDF of the same run, mass bin 9.5-10), and reproduces the alternative reading as enclosed probabilities less well (0.01-0.03 mag off); the reading is not proven. This path is the open envelope spanning blue cloud and red sequence (g-r 0.22-0.69). Open path: truncated by the plot edge (log M* = 9 or 12). Contour pieces with fewer than 20 vertices (slivers at the plot edge) are not stored (1 at this level). Dust: Model C resolved dust (N_side=1); whether Fig. 2 uses all 12 projections or one random one is not stated. The SDSS contours (black) and the u-i, u-r, r-i panels are not extracted.",
+        "contourLevel": 0.2,
+        "contourKind": "level of the conditional 2-D KDE as listed in the caption; read as a fraction of the per-mass peak density (inferred, see warning)",
+        "contourClosed": false,
+        "contourRegion": "open envelope spanning blue cloud and red sequence (g-r 0.22-0.69)"
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "massDefinition": "unspecified",
+        "population": "all",
+        "colourBand": "SDSS g-r (SDSS u,g,r,i,z passbands at airmass 1.3, galaxy at z=0)",
+        "colourAperture": "30 pkpc (3D radius from the subhalo centre)",
+        "resolutionCut": "10^9 < M* < 10^12 Msun (Fig. 1 caption)",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "dustTreatment": "attenuated (Model C: resolved dust; N_side=1, projection choice not stated for Fig. 2)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Nelson et al. 2018, MNRAS 475, 624 (arXiv:1707.03395), Fig. 2 (distribution of observed versus simulated galaxies in the colour-mass plane, g-r panel)",
+        "doi": "10.1093/mnras/stx3040",
+        "url": "https://arxiv.org/abs/1707.03395",
+        "retrieved": "2026-10-18",
+        "figure": "Fig. 2 (fig_color_mass_2d_4bands), g-r panel",
+        "panel": "top right, TNG100-1 (blue) contours",
+        "checksumSha256": "88cccf63dea204e83667b4d47fa647f6ea4a8f97757c1a83906c713589660dd5",
+        "sourceMember": "figure2_TNG100-1_p07c_cf00dust_res_conv_ns1_rad30pkpc.pdf (3 pt blue stroked contour paths, opacity 0.05)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9.0-12.0 of the g-r panel; y: labelled ticks 0.0-1.0; frame asserted at log M* 9-12 and g-r 0-1",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction of a density contour; the loop is the plotted line."
+    },
+    {
+      "id": "nelson18.tng100.colour-contour.z0.modelC.l020.red3",
+      "source": "IllustrisTNG",
+      "run": "TNG100-1 (per galaxy, KDE contour 0.2, red 3)",
+      "kind": "simulation",
+      "relation": "colour",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "(g-r) colour, SDSS passbands, attenuated (Model C resolved dust)",
+        "yUnit": "mag (AB not stated in the paper)"
+      },
+      "domain": {
+        "xMin": 9.0,
+        "xMax": 12.0
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.0,
+            "y": 0.8135
+          },
+          {
+            "x": 9.045,
+            "y": 0.8162
+          },
+          {
+            "x": 9.09,
+            "y": 0.8182
+          },
+          {
+            "x": 9.136,
+            "y": 0.8192
+          },
+          {
+            "x": 9.181,
+            "y": 0.8194
+          },
+          {
+            "x": 9.226,
+            "y": 0.8189
+          },
+          {
+            "x": 9.332,
+            "y": 0.8167
+          },
+          {
+            "x": 9.437,
+            "y": 0.8149
+          },
+          {
+            "x": 9.497,
+            "y": 0.8143
+          },
+          {
+            "x": 9.693,
+            "y": 0.8131
+          },
+          {
+            "x": 9.784,
+            "y": 0.8118
+          },
+          {
+            "x": 9.829,
+            "y": 0.8118
+          },
+          {
+            "x": 9.874,
+            "y": 0.8126
+          },
+          {
+            "x": 9.92,
+            "y": 0.8143
+          },
+          {
+            "x": 9.965,
+            "y": 0.8168
+          },
+          {
+            "x": 10.01,
+            "y": 0.8199
+          },
+          {
+            "x": 10.07,
+            "y": 0.8247
+          },
+          {
+            "x": 10.131,
+            "y": 0.8302
+          },
+          {
+            "x": 10.176,
+            "y": 0.8349
+          },
+          {
+            "x": 10.251,
+            "y": 0.8436
+          },
+          {
+            "x": 10.266,
+            "y": 0.8441
+          },
+          {
+            "x": 10.538,
+            "y": 0.8454
+          },
+          {
+            "x": 10.628,
+            "y": 0.846
+          },
+          {
+            "x": 10.734,
+            "y": 0.8458
+          },
+          {
+            "x": 10.824,
+            "y": 0.8459
+          },
+          {
+            "x": 11.156,
+            "y": 0.8475
+          },
+          {
+            "x": 11.201,
+            "y": 0.8487
+          },
+          {
+            "x": 11.261,
+            "y": 0.851
+          },
+          {
+            "x": 11.322,
+            "y": 0.8531
+          },
+          {
+            "x": 11.352,
+            "y": 0.8537
+          },
+          {
+            "x": 11.397,
+            "y": 0.8539
+          },
+          {
+            "x": 11.472,
+            "y": 0.8536
+          },
+          {
+            "x": 11.518,
+            "y": 0.8541
+          },
+          {
+            "x": 11.698,
+            "y": 0.8578
+          },
+          {
+            "x": 11.735,
+            "y": 0.8597
+          },
+          {
+            "x": 11.774,
+            "y": 0.8624
+          },
+          {
+            "x": 11.861,
+            "y": 0.8697
+          },
+          {
+            "x": 11.91,
+            "y": 0.8737
+          },
+          {
+            "x": 12.0,
+            "y": 0.8804
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all TNG100-1 galaxies, 1e9 < M* < 1e12 Msun (centrals and satellites)",
+        "warning": "Vertices of one contour of the conditional 2-D kernel density estimate of the TNG100-1 colour-mass plane, read from the vector paths of Nelson et al. 2018 (MNRAS 475, 624), Fig. 2 (g-r panel, blue lines); no table is published. The caption states 'Conditional 2D kernel density estimates (KDEs) are shown with contours at {0.2,0.5,0.75,0.98}'; it does not say what the numbers are. The four drawn opacities (0.05, 0.2, 0.5, 1.0) nest, and the assignment outermost = 0.2 ... innermost = 0.98 is an inference: it reproduces, to within 0.007 mag at the lower edge in all four levels, the contour edges predicted by taking the level as the fraction of the peak of the conditional PDF (Fig. 1 PDF of the same run, mass bin 9.5-10), and reproduces the alternative reading as enclosed probabilities less well (0.01-0.03 mag off); the reading is not proven. This path is the red sequence. Open path: truncated by the plot edge (log M* = 9 or 12). Contour pieces with fewer than 20 vertices (slivers at the plot edge) are not stored (1 at this level). Dust: Model C resolved dust (N_side=1); whether Fig. 2 uses all 12 projections or one random one is not stated. The SDSS contours (black) and the u-i, u-r, r-i panels are not extracted.",
+        "contourLevel": 0.2,
+        "contourKind": "level of the conditional 2-D KDE as listed in the caption; read as a fraction of the per-mass peak density (inferred, see warning)",
+        "contourClosed": false,
+        "contourRegion": "red sequence"
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "massDefinition": "unspecified",
+        "population": "all",
+        "colourBand": "SDSS g-r (SDSS u,g,r,i,z passbands at airmass 1.3, galaxy at z=0)",
+        "colourAperture": "30 pkpc (3D radius from the subhalo centre)",
+        "resolutionCut": "10^9 < M* < 10^12 Msun (Fig. 1 caption)",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "dustTreatment": "attenuated (Model C: resolved dust; N_side=1, projection choice not stated for Fig. 2)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Nelson et al. 2018, MNRAS 475, 624 (arXiv:1707.03395), Fig. 2 (distribution of observed versus simulated galaxies in the colour-mass plane, g-r panel)",
+        "doi": "10.1093/mnras/stx3040",
+        "url": "https://arxiv.org/abs/1707.03395",
+        "retrieved": "2026-10-18",
+        "figure": "Fig. 2 (fig_color_mass_2d_4bands), g-r panel",
+        "panel": "top right, TNG100-1 (blue) contours",
+        "checksumSha256": "88cccf63dea204e83667b4d47fa647f6ea4a8f97757c1a83906c713589660dd5",
+        "sourceMember": "figure2_TNG100-1_p07c_cf00dust_res_conv_ns1_rad30pkpc.pdf (3 pt blue stroked contour paths, opacity 0.05)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks 9.0-12.0 of the g-r panel; y: labelled ticks 0.0-1.0; frame asserted at log M* 9-12 and g-r 0-1",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction of a density contour; the loop is the plotted line."
+    }
+  ]
+}

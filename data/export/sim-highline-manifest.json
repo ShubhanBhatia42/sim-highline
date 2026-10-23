@@ -6,11 +6,11 @@
     "code": "MIT",
     "data": "CC-BY-4.0"
   },
-  "nRecords": 1736,
-  "nPoints": 56533,
-  "nDistributionRecords": 21,
-  "nDistributionCells": 4394,
-  "nParametric": 107,
+  "nRecords": 1859,
+  "nPoints": 68501,
+  "nDistributionRecords": 34,
+  "nDistributionCells": 7253,
+  "nParametric": 146,
   "parametricSampling": "40 points over the record domain at zRepresentative; the published expression is evaluated, nothing else is generated",
   "columns": {
     "records": [
@@ -53,6 +53,8 @@
       "doi",
       "url",
       "checksum_sha256",
+      "attribution_kind",
+      "primary_source",
       "retrieved",
       "definitions_json"
     ],
@@ -78,36 +80,36 @@
   },
   "files": {
     "sim-highline-records.csv": {
-      "sha256": "de9b2dd4c8fc21cd5aeed4174643b06f031b157b5b4509e95fc35c122bec400b",
-      "bytes": 1491010
+      "sha256": "d979ddb3a5439c2f70c3bbfc97b493f0f8e7de5e51aa10cb34564b10e8cfb324",
+      "bytes": 1676618
     },
     "sim-highline-points.csv": {
-      "sha256": "d24af11cebd20090d4748348d37dbe7b012a43d83f52dbf05f95d82439f64d55",
-      "bytes": 3449035
+      "sha256": "c20e887c2bfb7e44a5dc057d96d3ccd6e0158adea7ec312fe83ff90521c947a4",
+      "bytes": 4176098
     },
     "sim-highline-distributions.csv": {
-      "sha256": "5903b337d7ccddff56afc0d267850c0cd58ea955b4009ad0e9ed6a1dda7dd99c",
-      "bytes": 238554
+      "sha256": "164aa7f255d113534f334d83adad119cea4db29ef0f77af7f52c71a79453eec7",
+      "bytes": 418015
     },
     "sim-highline-records.json": {
-      "sha256": "4b895cf2950202908f49867682a9e3a00d4a34e6efd51050d68ec7379a4f8218",
-      "bytes": 5228152
+      "sha256": "83deaa904572338cb2ba170fb4d043d65b7af90f0b7b536d05f52810690bb06b",
+      "bytes": 5984144
     },
     "sim-highline-citations.bib": {
-      "sha256": "38346923772e56380838efb5222f42218f95ab379dccf5e12b05a395dd62c301",
-      "bytes": 29899
+      "sha256": "abcc6d68838921c105644919e1987fbb0fa79f24336e9bf9773ff45b6b1d91ee",
+      "bytes": 35886
     },
     "sim-highline-conversions.json": {
       "sha256": "d6e50131770fb9f56e8ed8bc7c34c106999516171833899e90de18296cae2391",
       "bytes": 331552
     },
     "sim-highline-corrections.json": {
-      "sha256": "75e9f548a7ff4f3135077d39f880e2cfe3fb1d240f53e8c90167550892dc0bf4",
-      "bytes": 2541
+      "sha256": "494c50460357e214e6acb17fc2c9fc9ce29ddd665d30b219ed2c2e322ca95f26",
+      "bytes": 20866
     },
     "sim-highline-rules.json": {
-      "sha256": "5c2db094c8b74aa816f9d9b51c36395bcdd50d35daf239e4702682f81266ca5a",
-      "bytes": 3769
+      "sha256": "704fbf67fbe192ded2f292c5aefa5a8191a92a0894d9097f74037ad0a8ab7907",
+      "bytes": 6017
     }
   }
 }

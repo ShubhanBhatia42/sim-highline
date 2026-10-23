@@ -489,22 +489,22 @@
     "NIHAO zoom suite"
    ],
    "records": 24,
-   "pairs": 235,
+   "pairs": 234,
    "counts": {
     "matched": 8,
     "differing": 70,
     "unknown": 0,
-    "mismatch": 157
+    "mismatch": 156
    },
    "median_abs_dy": {
     "matched": 0.1721,
     "differing": 0.2031,
     "unknown": null,
-    "mismatch": 0.2119
+    "mismatch": 0.2103
    },
    "documented_fraction": 1.0,
    "excess_differing_minus_matched": 0.031,
-   "p_permutation": 0.2684,
+   "p_permutation": 0.2669,
    "ci95_excess": [
     -0.1961,
     0.1403
@@ -1654,8 +1654,8 @@
     "to": "stars-plus-neutral-gas",
     "idFrom": "dutton17.nihao.btfr-all-baryons.galaxies.z0",
     "idTo": "dutton17.nihao.btfr-stars-neutral-gas.galaxies.z0",
-    "median_dy": -0.3568,
-    "max_abs_dy": 1.6238,
+    "median_dy": -0.3504,
+    "max_abs_dy": 1.617,
     "bins": 11,
     "xRange": [
      1.31,
@@ -3434,12 +3434,12 @@
      0,
      0
     ],
-    "median_dy": -0.3568,
+    "median_dy": -0.3504,
     "medianRange": [
-     -0.3568,
-     -0.3568
+     -0.3504,
+     -0.3504
     ],
-    "max_abs_dy": 1.6238
+    "max_abs_dy": 1.617
    },
    {
     "source": "NewHorizon",
@@ -3516,12 +3516,12 @@
   ]
  },
  "summary": {
-  "pairs": 2174,
+  "pairs": 2173,
   "byClass": {
    "matched": 97,
    "differing": 370,
    "unknown": 402,
-   "mismatch": 1305
+   "mismatch": 1304
   },
   "testsRun": 17,
   "testsBelow0.05": 1,

@@ -1,0 +1,1928 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "shen20.bhmd.fitA.zi7",
+      "source": "Shen et al. 2020",
+      "run": "Shen et al. 2020 (integrated bolometric QLF, global fit A, z_i=7)",
+      "kind": "observation",
+      "relation": "bhmd",
+      "epoch": {
+        "zRepresentative": 3.185,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 6.37,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift",
+        "xUnit": "redshift",
+        "yDefinition": "log10 cosmic black-hole mass density integrated from the bolometric QLF",
+        "yUnit": "log10(Msun cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 0,
+        "xMax": 6.37
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 0,
+            "y": 5.7155
+          },
+          {
+            "x": 0.07,
+            "y": 5.7136
+          },
+          {
+            "x": 0.14,
+            "y": 5.7109
+          },
+          {
+            "x": 0.21,
+            "y": 5.7072
+          },
+          {
+            "x": 0.28,
+            "y": 5.7023
+          },
+          {
+            "x": 0.35,
+            "y": 5.6961
+          },
+          {
+            "x": 0.42,
+            "y": 5.6884
+          },
+          {
+            "x": 0.49,
+            "y": 5.6791
+          },
+          {
+            "x": 0.56,
+            "y": 5.668
+          },
+          {
+            "x": 0.63,
+            "y": 5.6552
+          },
+          {
+            "x": 0.7,
+            "y": 5.6405
+          },
+          {
+            "x": 0.77,
+            "y": 5.624
+          },
+          {
+            "x": 0.84,
+            "y": 5.6056
+          },
+          {
+            "x": 0.91,
+            "y": 5.5854
+          },
+          {
+            "x": 0.98,
+            "y": 5.5634
+          },
+          {
+            "x": 1.05,
+            "y": 5.5396
+          },
+          {
+            "x": 1.12,
+            "y": 5.5141
+          },
+          {
+            "x": 1.19,
+            "y": 5.4869
+          },
+          {
+            "x": 1.26,
+            "y": 5.4582
+          },
+          {
+            "x": 1.33,
+            "y": 5.428
+          },
+          {
+            "x": 1.4,
+            "y": 5.3963
+          },
+          {
+            "x": 1.47,
+            "y": 5.3633
+          },
+          {
+            "x": 1.54,
+            "y": 5.329
+          },
+          {
+            "x": 1.61,
+            "y": 5.2934
+          },
+          {
+            "x": 1.68,
+            "y": 5.2567
+          },
+          {
+            "x": 1.75,
+            "y": 5.219
+          },
+          {
+            "x": 1.82,
+            "y": 5.1802
+          },
+          {
+            "x": 1.89,
+            "y": 5.1405
+          },
+          {
+            "x": 1.96,
+            "y": 5.1
+          },
+          {
+            "x": 2.03,
+            "y": 5.0586
+          },
+          {
+            "x": 2.1,
+            "y": 5.0165
+          },
+          {
+            "x": 2.17,
+            "y": 4.9737
+          },
+          {
+            "x": 2.24,
+            "y": 4.9303
+          },
+          {
+            "x": 2.31,
+            "y": 4.8863
+          },
+          {
+            "x": 2.38,
+            "y": 4.8418
+          },
+          {
+            "x": 2.45,
+            "y": 4.7969
+          },
+          {
+            "x": 2.52,
+            "y": 4.7515
+          },
+          {
+            "x": 2.59,
+            "y": 4.7057
+          },
+          {
+            "x": 2.66,
+            "y": 4.6596
+          },
+          {
+            "x": 2.73,
+            "y": 4.6133
+          },
+          {
+            "x": 2.8,
+            "y": 4.5667
+          },
+          {
+            "x": 2.87,
+            "y": 4.5198
+          },
+          {
+            "x": 2.94,
+            "y": 4.4729
+          },
+          {
+            "x": 3.01,
+            "y": 4.4258
+          },
+          {
+            "x": 3.08,
+            "y": 4.3786
+          },
+          {
+            "x": 3.15,
+            "y": 4.3313
+          },
+          {
+            "x": 3.22,
+            "y": 4.284
+          },
+          {
+            "x": 3.29,
+            "y": 4.2367
+          },
+          {
+            "x": 3.36,
+            "y": 4.1895
+          },
+          {
+            "x": 3.43,
+            "y": 4.1423
+          },
+          {
+            "x": 3.5,
+            "y": 4.0952
+          },
+          {
+            "x": 3.57,
+            "y": 4.0482
+          },
+          {
+            "x": 3.64,
+            "y": 4.0014
+          },
+          {
+            "x": 3.71,
+            "y": 3.9547
+          },
+          {
+            "x": 3.78,
+            "y": 3.9082
+          },
+          {
+            "x": 3.85,
+            "y": 3.8619
+          },
+          {
+            "x": 3.92,
+            "y": 3.8159
+          },
+          {
+            "x": 3.99,
+            "y": 3.7701
+          },
+          {
+            "x": 4.06,
+            "y": 3.7245
+          },
+          {
+            "x": 4.13,
+            "y": 3.6792
+          },
+          {
+            "x": 4.2,
+            "y": 3.6343
+          },
+          {
+            "x": 4.27,
+            "y": 3.5895
+          },
+          {
+            "x": 4.34,
+            "y": 3.5451
+          },
+          {
+            "x": 4.41,
+            "y": 3.501
+          },
+          {
+            "x": 4.48,
+            "y": 3.4572
+          },
+          {
+            "x": 4.55,
+            "y": 3.4137
+          },
+          {
+            "x": 4.62,
+            "y": 3.3705
+          },
+          {
+            "x": 4.69,
+            "y": 3.3276
+          },
+          {
+            "x": 4.76,
+            "y": 3.285
+          },
+          {
+            "x": 4.83,
+            "y": 3.2426
+          },
+          {
+            "x": 4.9,
+            "y": 3.2005
+          },
+          {
+            "x": 4.97,
+            "y": 3.1585
+          },
+          {
+            "x": 5.04,
+            "y": 3.1168
+          },
+          {
+            "x": 5.11,
+            "y": 3.0751
+          },
+          {
+            "x": 5.18,
+            "y": 3.0336
+          },
+          {
+            "x": 5.25,
+            "y": 2.9921
+          },
+          {
+            "x": 5.32,
+            "y": 2.9506
+          },
+          {
+            "x": 5.39,
+            "y": 2.909
+          },
+          {
+            "x": 5.46,
+            "y": 2.8673
+          },
+          {
+            "x": 5.53,
+            "y": 2.8252
+          },
+          {
+            "x": 5.6,
+            "y": 2.7829
+          },
+          {
+            "x": 5.67,
+            "y": 2.74
+          },
+          {
+            "x": 5.74,
+            "y": 2.6965
+          },
+          {
+            "x": 5.81,
+            "y": 2.6523
+          },
+          {
+            "x": 5.88,
+            "y": 2.607
+          },
+          {
+            "x": 5.95,
+            "y": 2.5606
+          },
+          {
+            "x": 6.02,
+            "y": 2.5127
+          },
+          {
+            "x": 6.09,
+            "y": 2.463
+          },
+          {
+            "x": 6.16,
+            "y": 2.4112
+          },
+          {
+            "x": 6.23,
+            "y": 2.3566
+          },
+          {
+            "x": 6.3,
+            "y": 2.2988
+          },
+          {
+            "x": 6.37,
+            "y": 2.2369
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all AGN (global fit A of the bolometric QLF, 43 <= log L_bol <= 48)",
+        "warning": "Model curve integrated by the authors from z_i=7 (zero initial mass density) down to z with eps_r=0.1; the grey/coloured shaded +-2x eps_r bands are not extracted; points are the vertices of the plotted path inside the frame (the curve leaves the frame below log rho=2.2 at high z). It is a prediction of the fitted QLF, not a measurement of local BH masses."
+      },
+      "definitions": {
+        "densityFrame": "comoving",
+        "bhMassMethod": "integrated accreted mass (Soltan argument) from the bolometric QLF",
+        "radiativeEfficiency": 0.1,
+        "radiativeEfficiencyQuote": "Assuming a constant averaged radiative efficiency $\\epsilon_{\\rm r}\\simeq 0.1$",
+        "bhmdFormula": "\\dfrac{{\\rm d}\\rho_{\\rm BH}}{{\\rm d}z}=\\dfrac{1-\\epsilon_{\\rm r}}{\\epsilon_{\\rm r}c^{2}H(z)(1+z)}",
+        "luminosityBand": "bolometric",
+        "luminosityRange": "where we adopt $\\log{L_{\\rm min}}=43,\\log{L_{\\rm max}}=48$ here.",
+        "startRedshift": 7,
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Shen et al. 2020, MNRAS (arXiv:2001.02696), predicted evolution of the cosmic SMBH mass density (figure bh_mass_density)",
+        "doi": "10.1093/mnras/staa1381",
+        "url": "https://arxiv.org/abs/2001.02696",
+        "retrieved": "2026-10-18",
+        "figure": "Predicted evolution of the cosmic SMBH mass density at z=0-7",
+        "panel": "line with z_i=7",
+        "checksumSha256": "f12c8f55f843f6b5eec2b57a97b98bd5d5fcfc64933e950a49e2fe5bc71788f3",
+        "sourceMember": "figures/bh_mass_density.pdf",
+        "sourceArchiveSha256": "b7d18324e929cde6bb2abe4dae39a89f032b42868c851d330e97ddd92629a327",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on the drawn major ticks",
+        "axisCalibrationPixels": "x: labels 0..7 snapped to ticks; y: 8 major ticks at y=51.32..587.63 pt equally spaced by 76.62 pt (0.5 dex) assigned 6.0..2.5 (label centres sit a constant 3.27 pt above the ticks)",
+        "digitizationUncertaintyDex": 0.01,
+        "verification": {
+          "recomputedFromFitA_maxAbsDiffDex": {
+            "maxAbsDiffDex": 0.024,
+            "n": 16,
+            "rho0_digitized_log10": 5.7155,
+            "z0_point": 0
+          },
+          "colourToStartRedshift": "The red, blue and green lines represent the predictions with starting redshift of integration $z_{\\rm i}=10,7,4$ respectively."
+        },
+        "quotes": {
+          "cosmology": {
+            "file": "paper-arxiv.tex",
+            "line": 185,
+            "text": "$H_{0} = 100h \\kms  \\Mpc^{-1} = 70 \\kms \\Mpc^{-1}$"
+          },
+          "eps": {
+            "file": "paper-arxiv.tex",
+            "line": 679,
+            "text": "Assuming a constant averaged radiative efficiency $\\epsilon_{\\rm r}\\simeq 0.1$"
+          },
+          "lbol": {
+            "file": "paper-arxiv.tex",
+            "line": 681,
+            "text": "L_{\\rm bol}=\\epsilon_{\\rm r}\\dot{M}c^{2}."
+          },
+          "rate": {
+            "file": "paper-arxiv.tex",
+            "line": 683,
+            "text": "the integrated luminosity density can be translated to the rate of change in the total SMBH mass density as:"
+          },
+          "formula": {
+            "file": "paper-arxiv.tex",
+            "line": 685,
+            "text": "\\dfrac{{\\rm d}\\rho_{\\rm BH}}{{\\rm d}z}=\\dfrac{1-\\epsilon_{\\rm r}}{\\epsilon_{\\rm r}c^{2}H(z)(1+z)}"
+          },
+          "limits": {
+            "file": "paper-arxiv.tex",
+            "line": 687,
+            "text": "where we adopt $\\log{L_{\\rm min}}=43,\\log{L_{\\rm max}}=48$ here."
+          },
+          "caption": {
+            "file": "paper-arxiv.tex",
+            "line": 673,
+            "text": "The red, blue and green lines represent the predictions with starting redshift of integration $z_{\\rm i}=10,7,4$ respectively."
+          },
+          "fitA": {
+            "file": "paper-arxiv.tex",
+            "line": 579,
+            "text": "we will only show the result of the global fit A and refer to it as \"the global fit\" for simplicity."
+          },
+          "hop_eps": {
+            "file": "ms.tex",
+            "line": 1574,
+            "text": "assuming $\\epsilon_{r}=0.1$."
+          },
+          "hop_lbol": {
+            "file": "ms.tex",
+            "line": 1569,
+            "text": "L_{\\rm bol} = \\epsilon_{r}\\,\\dot{M}\\,c^{2}"
+          },
+          "hop_int": {
+            "file": "ms.tex",
+            "line": 1135,
+            "text": "We determine the luminosity density by integrating the best-fit "
+          },
+          "hop_cosmo": {
+            "file": "ms.tex",
+            "line": 246,
+            "text": "$H_{0}=70\\,{\\rm km\\,s^{-1}\\,Mpc^{-1}}$ cosmology, "
+          }
+        }
+      },
+      "calibration": "target",
+      "rankable": false,
+      "notes": "Vector-path extraction; the integration check against the paper's own formula is in provenance.verification."
+    },
+    {
+      "id": "shen20.bhmd.fitA.zi10",
+      "source": "Shen et al. 2020",
+      "run": "Shen et al. 2020 (integrated bolometric QLF, global fit A, z_i=10)",
+      "kind": "observation",
+      "relation": "bhmd",
+      "epoch": {
+        "zRepresentative": 3.4,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 6.8,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift",
+        "xUnit": "redshift",
+        "yDefinition": "log10 cosmic black-hole mass density integrated from the bolometric QLF",
+        "yUnit": "log10(Msun cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 0,
+        "xMax": 6.8
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 0,
+            "y": 5.716
+          },
+          {
+            "x": 0.1,
+            "y": 5.7132
+          },
+          {
+            "x": 0.2,
+            "y": 5.7088
+          },
+          {
+            "x": 0.3,
+            "y": 5.7021
+          },
+          {
+            "x": 0.4,
+            "y": 5.6926
+          },
+          {
+            "x": 0.5,
+            "y": 5.68
+          },
+          {
+            "x": 0.6,
+            "y": 5.6638
+          },
+          {
+            "x": 0.7,
+            "y": 5.644
+          },
+          {
+            "x": 0.8,
+            "y": 5.6204
+          },
+          {
+            "x": 0.9,
+            "y": 5.593
+          },
+          {
+            "x": 1,
+            "y": 5.5619
+          },
+          {
+            "x": 1.1,
+            "y": 5.5272
+          },
+          {
+            "x": 1.2,
+            "y": 5.4891
+          },
+          {
+            "x": 1.3,
+            "y": 5.4477
+          },
+          {
+            "x": 1.4,
+            "y": 5.4034
+          },
+          {
+            "x": 1.5,
+            "y": 5.3562
+          },
+          {
+            "x": 1.6,
+            "y": 5.3064
+          },
+          {
+            "x": 1.7,
+            "y": 5.2543
+          },
+          {
+            "x": 1.8,
+            "y": 5.1999
+          },
+          {
+            "x": 1.9,
+            "y": 5.1436
+          },
+          {
+            "x": 2,
+            "y": 5.0856
+          },
+          {
+            "x": 2.1,
+            "y": 5.0259
+          },
+          {
+            "x": 2.2,
+            "y": 4.9649
+          },
+          {
+            "x": 2.3,
+            "y": 4.9026
+          },
+          {
+            "x": 2.4,
+            "y": 4.8392
+          },
+          {
+            "x": 2.5,
+            "y": 4.7749
+          },
+          {
+            "x": 2.6,
+            "y": 4.7098
+          },
+          {
+            "x": 2.7,
+            "y": 4.6441
+          },
+          {
+            "x": 2.8,
+            "y": 4.5778
+          },
+          {
+            "x": 2.9,
+            "y": 4.5112
+          },
+          {
+            "x": 3,
+            "y": 4.4442
+          },
+          {
+            "x": 3.1,
+            "y": 4.3771
+          },
+          {
+            "x": 3.2,
+            "y": 4.31
+          },
+          {
+            "x": 3.3,
+            "y": 4.2428
+          },
+          {
+            "x": 3.4,
+            "y": 4.1758
+          },
+          {
+            "x": 3.5,
+            "y": 4.1091
+          },
+          {
+            "x": 3.6,
+            "y": 4.0426
+          },
+          {
+            "x": 3.7,
+            "y": 3.9766
+          },
+          {
+            "x": 3.8,
+            "y": 3.911
+          },
+          {
+            "x": 3.9,
+            "y": 3.8461
+          },
+          {
+            "x": 4,
+            "y": 3.7817
+          },
+          {
+            "x": 4.1,
+            "y": 3.7181
+          },
+          {
+            "x": 4.2,
+            "y": 3.6552
+          },
+          {
+            "x": 4.3,
+            "y": 3.5931
+          },
+          {
+            "x": 4.4,
+            "y": 3.5319
+          },
+          {
+            "x": 4.5,
+            "y": 3.4716
+          },
+          {
+            "x": 4.6,
+            "y": 3.4123
+          },
+          {
+            "x": 4.7,
+            "y": 3.3539
+          },
+          {
+            "x": 4.8,
+            "y": 3.2964
+          },
+          {
+            "x": 4.9,
+            "y": 3.2399
+          },
+          {
+            "x": 5,
+            "y": 3.1844
+          },
+          {
+            "x": 5.1,
+            "y": 3.1297
+          },
+          {
+            "x": 5.2,
+            "y": 3.0759
+          },
+          {
+            "x": 5.3,
+            "y": 3.0229
+          },
+          {
+            "x": 5.4,
+            "y": 2.9707
+          },
+          {
+            "x": 5.5,
+            "y": 2.919
+          },
+          {
+            "x": 5.6,
+            "y": 2.8678
+          },
+          {
+            "x": 5.7,
+            "y": 2.817
+          },
+          {
+            "x": 5.8,
+            "y": 2.7664
+          },
+          {
+            "x": 5.9,
+            "y": 2.7159
+          },
+          {
+            "x": 6,
+            "y": 2.6651
+          },
+          {
+            "x": 6.1,
+            "y": 2.614
+          },
+          {
+            "x": 6.2,
+            "y": 2.5622
+          },
+          {
+            "x": 6.3,
+            "y": 2.5095
+          },
+          {
+            "x": 6.4,
+            "y": 2.4556
+          },
+          {
+            "x": 6.5,
+            "y": 2.4
+          },
+          {
+            "x": 6.6,
+            "y": 2.3424
+          },
+          {
+            "x": 6.7,
+            "y": 2.2825
+          },
+          {
+            "x": 6.8,
+            "y": 2.2197
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all AGN (global fit A of the bolometric QLF, 43 <= log L_bol <= 48)",
+        "warning": "Model curve integrated by the authors from z_i=10 (zero initial mass density) down to z with eps_r=0.1; the grey/coloured shaded +-2x eps_r bands are not extracted; points are the vertices of the plotted path inside the frame (the curve leaves the frame below log rho=2.2 at high z). It is a prediction of the fitted QLF, not a measurement of local BH masses."
+      },
+      "definitions": {
+        "densityFrame": "comoving",
+        "bhMassMethod": "integrated accreted mass (Soltan argument) from the bolometric QLF",
+        "radiativeEfficiency": 0.1,
+        "radiativeEfficiencyQuote": "Assuming a constant averaged radiative efficiency $\\epsilon_{\\rm r}\\simeq 0.1$",
+        "bhmdFormula": "\\dfrac{{\\rm d}\\rho_{\\rm BH}}{{\\rm d}z}=\\dfrac{1-\\epsilon_{\\rm r}}{\\epsilon_{\\rm r}c^{2}H(z)(1+z)}",
+        "luminosityBand": "bolometric",
+        "luminosityRange": "where we adopt $\\log{L_{\\rm min}}=43,\\log{L_{\\rm max}}=48$ here.",
+        "startRedshift": 10,
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Shen et al. 2020, MNRAS (arXiv:2001.02696), predicted evolution of the cosmic SMBH mass density (figure bh_mass_density)",
+        "doi": "10.1093/mnras/staa1381",
+        "url": "https://arxiv.org/abs/2001.02696",
+        "retrieved": "2026-10-18",
+        "figure": "Predicted evolution of the cosmic SMBH mass density at z=0-7",
+        "panel": "line with z_i=10",
+        "checksumSha256": "f12c8f55f843f6b5eec2b57a97b98bd5d5fcfc64933e950a49e2fe5bc71788f3",
+        "sourceMember": "figures/bh_mass_density.pdf",
+        "sourceArchiveSha256": "b7d18324e929cde6bb2abe4dae39a89f032b42868c851d330e97ddd92629a327",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on the drawn major ticks",
+        "axisCalibrationPixels": "x: labels 0..7 snapped to ticks; y: 8 major ticks at y=51.32..587.63 pt equally spaced by 76.62 pt (0.5 dex) assigned 6.0..2.5 (label centres sit a constant 3.27 pt above the ticks)",
+        "digitizationUncertaintyDex": 0.01,
+        "verification": {
+          "recomputedFromFitA_maxAbsDiffDex": {
+            "maxAbsDiffDex": 0.034,
+            "n": 12,
+            "rho0_digitized_log10": 5.716,
+            "z0_point": 0
+          },
+          "colourToStartRedshift": "The red, blue and green lines represent the predictions with starting redshift of integration $z_{\\rm i}=10,7,4$ respectively."
+        },
+        "quotes": {
+          "cosmology": {
+            "file": "paper-arxiv.tex",
+            "line": 185,
+            "text": "$H_{0} = 100h \\kms  \\Mpc^{-1} = 70 \\kms \\Mpc^{-1}$"
+          },
+          "eps": {
+            "file": "paper-arxiv.tex",
+            "line": 679,
+            "text": "Assuming a constant averaged radiative efficiency $\\epsilon_{\\rm r}\\simeq 0.1$"
+          },
+          "lbol": {
+            "file": "paper-arxiv.tex",
+            "line": 681,
+            "text": "L_{\\rm bol}=\\epsilon_{\\rm r}\\dot{M}c^{2}."
+          },
+          "rate": {
+            "file": "paper-arxiv.tex",
+            "line": 683,
+            "text": "the integrated luminosity density can be translated to the rate of change in the total SMBH mass density as:"
+          },
+          "formula": {
+            "file": "paper-arxiv.tex",
+            "line": 685,
+            "text": "\\dfrac{{\\rm d}\\rho_{\\rm BH}}{{\\rm d}z}=\\dfrac{1-\\epsilon_{\\rm r}}{\\epsilon_{\\rm r}c^{2}H(z)(1+z)}"
+          },
+          "limits": {
+            "file": "paper-arxiv.tex",
+            "line": 687,
+            "text": "where we adopt $\\log{L_{\\rm min}}=43,\\log{L_{\\rm max}}=48$ here."
+          },
+          "caption": {
+            "file": "paper-arxiv.tex",
+            "line": 673,
+            "text": "The red, blue and green lines represent the predictions with starting redshift of integration $z_{\\rm i}=10,7,4$ respectively."
+          },
+          "fitA": {
+            "file": "paper-arxiv.tex",
+            "line": 579,
+            "text": "we will only show the result of the global fit A and refer to it as \"the global fit\" for simplicity."
+          },
+          "hop_eps": {
+            "file": "ms.tex",
+            "line": 1574,
+            "text": "assuming $\\epsilon_{r}=0.1$."
+          },
+          "hop_lbol": {
+            "file": "ms.tex",
+            "line": 1569,
+            "text": "L_{\\rm bol} = \\epsilon_{r}\\,\\dot{M}\\,c^{2}"
+          },
+          "hop_int": {
+            "file": "ms.tex",
+            "line": 1135,
+            "text": "We determine the luminosity density by integrating the best-fit "
+          },
+          "hop_cosmo": {
+            "file": "ms.tex",
+            "line": 246,
+            "text": "$H_{0}=70\\,{\\rm km\\,s^{-1}\\,Mpc^{-1}}$ cosmology, "
+          }
+        }
+      },
+      "calibration": "target",
+      "rankable": false,
+      "notes": "Vector-path extraction; the integration check against the paper's own formula is in provenance.verification."
+    },
+    {
+      "id": "shen20.bhmd.fitA.zi4",
+      "source": "Shen et al. 2020",
+      "run": "Shen et al. 2020 (integrated bolometric QLF, global fit A, z_i=4)",
+      "kind": "observation",
+      "relation": "bhmd",
+      "epoch": {
+        "zRepresentative": 1.98,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 3.96,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift",
+        "xUnit": "redshift",
+        "yDefinition": "log10 cosmic black-hole mass density integrated from the bolometric QLF",
+        "yUnit": "log10(Msun cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 0,
+        "xMax": 3.96
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 0,
+            "y": 5.7104
+          },
+          {
+            "x": 0.04,
+            "y": 5.7093
+          },
+          {
+            "x": 0.08,
+            "y": 5.7079
+          },
+          {
+            "x": 0.12,
+            "y": 5.7063
+          },
+          {
+            "x": 0.16,
+            "y": 5.7043
+          },
+          {
+            "x": 0.2,
+            "y": 5.702
+          },
+          {
+            "x": 0.24,
+            "y": 5.6993
+          },
+          {
+            "x": 0.28,
+            "y": 5.6961
+          },
+          {
+            "x": 0.32,
+            "y": 5.6925
+          },
+          {
+            "x": 0.36,
+            "y": 5.6885
+          },
+          {
+            "x": 0.4,
+            "y": 5.6839
+          },
+          {
+            "x": 0.44,
+            "y": 5.6788
+          },
+          {
+            "x": 0.48,
+            "y": 5.6731
+          },
+          {
+            "x": 0.52,
+            "y": 5.6669
+          },
+          {
+            "x": 0.56,
+            "y": 5.66
+          },
+          {
+            "x": 0.6,
+            "y": 5.6526
+          },
+          {
+            "x": 0.64,
+            "y": 5.6446
+          },
+          {
+            "x": 0.68,
+            "y": 5.6359
+          },
+          {
+            "x": 0.72,
+            "y": 5.6267
+          },
+          {
+            "x": 0.76,
+            "y": 5.6168
+          },
+          {
+            "x": 0.8,
+            "y": 5.6063
+          },
+          {
+            "x": 0.84,
+            "y": 5.5952
+          },
+          {
+            "x": 0.88,
+            "y": 5.5835
+          },
+          {
+            "x": 0.92,
+            "y": 5.5711
+          },
+          {
+            "x": 0.96,
+            "y": 5.5582
+          },
+          {
+            "x": 1,
+            "y": 5.5447
+          },
+          {
+            "x": 1.04,
+            "y": 5.5306
+          },
+          {
+            "x": 1.08,
+            "y": 5.5159
+          },
+          {
+            "x": 1.12,
+            "y": 5.5007
+          },
+          {
+            "x": 1.16,
+            "y": 5.4849
+          },
+          {
+            "x": 1.2,
+            "y": 5.4686
+          },
+          {
+            "x": 1.24,
+            "y": 5.4517
+          },
+          {
+            "x": 1.28,
+            "y": 5.4343
+          },
+          {
+            "x": 1.32,
+            "y": 5.4164
+          },
+          {
+            "x": 1.36,
+            "y": 5.3981
+          },
+          {
+            "x": 1.4,
+            "y": 5.3792
+          },
+          {
+            "x": 1.44,
+            "y": 5.3599
+          },
+          {
+            "x": 1.48,
+            "y": 5.3401
+          },
+          {
+            "x": 1.52,
+            "y": 5.3199
+          },
+          {
+            "x": 1.56,
+            "y": 5.2992
+          },
+          {
+            "x": 1.6,
+            "y": 5.2781
+          },
+          {
+            "x": 1.64,
+            "y": 5.2566
+          },
+          {
+            "x": 1.68,
+            "y": 5.2347
+          },
+          {
+            "x": 1.72,
+            "y": 5.2124
+          },
+          {
+            "x": 1.76,
+            "y": 5.1897
+          },
+          {
+            "x": 1.8,
+            "y": 5.1666
+          },
+          {
+            "x": 1.84,
+            "y": 5.1432
+          },
+          {
+            "x": 1.88,
+            "y": 5.1194
+          },
+          {
+            "x": 1.92,
+            "y": 5.0953
+          },
+          {
+            "x": 1.96,
+            "y": 5.0708
+          },
+          {
+            "x": 2,
+            "y": 5.046
+          },
+          {
+            "x": 2.04,
+            "y": 5.0209
+          },
+          {
+            "x": 2.08,
+            "y": 4.9954
+          },
+          {
+            "x": 2.12,
+            "y": 4.9697
+          },
+          {
+            "x": 2.16,
+            "y": 4.9436
+          },
+          {
+            "x": 2.2,
+            "y": 4.9172
+          },
+          {
+            "x": 2.24,
+            "y": 4.8905
+          },
+          {
+            "x": 2.28,
+            "y": 4.8634
+          },
+          {
+            "x": 2.32,
+            "y": 4.8361
+          },
+          {
+            "x": 2.36,
+            "y": 4.8085
+          },
+          {
+            "x": 2.4,
+            "y": 4.7805
+          },
+          {
+            "x": 2.44,
+            "y": 4.7522
+          },
+          {
+            "x": 2.48,
+            "y": 4.7236
+          },
+          {
+            "x": 2.52,
+            "y": 4.6947
+          },
+          {
+            "x": 2.56,
+            "y": 4.6655
+          },
+          {
+            "x": 2.6,
+            "y": 4.6359
+          },
+          {
+            "x": 2.64,
+            "y": 4.606
+          },
+          {
+            "x": 2.68,
+            "y": 4.5757
+          },
+          {
+            "x": 2.72,
+            "y": 4.545
+          },
+          {
+            "x": 2.76,
+            "y": 4.5139
+          },
+          {
+            "x": 2.8,
+            "y": 4.4824
+          },
+          {
+            "x": 2.84,
+            "y": 4.4505
+          },
+          {
+            "x": 2.88,
+            "y": 4.4181
+          },
+          {
+            "x": 2.92,
+            "y": 4.3851
+          },
+          {
+            "x": 2.96,
+            "y": 4.3517
+          },
+          {
+            "x": 3,
+            "y": 4.3177
+          },
+          {
+            "x": 3.04,
+            "y": 4.2831
+          },
+          {
+            "x": 3.08,
+            "y": 4.2478
+          },
+          {
+            "x": 3.12,
+            "y": 4.2117
+          },
+          {
+            "x": 3.16,
+            "y": 4.1749
+          },
+          {
+            "x": 3.2,
+            "y": 4.1372
+          },
+          {
+            "x": 3.24,
+            "y": 4.0985
+          },
+          {
+            "x": 3.28,
+            "y": 4.0586
+          },
+          {
+            "x": 3.32,
+            "y": 4.0176
+          },
+          {
+            "x": 3.36,
+            "y": 3.9752
+          },
+          {
+            "x": 3.4,
+            "y": 3.9312
+          },
+          {
+            "x": 3.44,
+            "y": 3.8854
+          },
+          {
+            "x": 3.48,
+            "y": 3.8374
+          },
+          {
+            "x": 3.52,
+            "y": 3.7871
+          },
+          {
+            "x": 3.56,
+            "y": 3.7338
+          },
+          {
+            "x": 3.6,
+            "y": 3.6771
+          },
+          {
+            "x": 3.64,
+            "y": 3.6162
+          },
+          {
+            "x": 3.68,
+            "y": 3.55
+          },
+          {
+            "x": 3.72,
+            "y": 3.4771
+          },
+          {
+            "x": 3.76,
+            "y": 3.3954
+          },
+          {
+            "x": 3.8,
+            "y": 3.3017
+          },
+          {
+            "x": 3.84,
+            "y": 3.1903
+          },
+          {
+            "x": 3.88,
+            "y": 3.0511
+          },
+          {
+            "x": 3.92,
+            "y": 2.8609
+          },
+          {
+            "x": 3.96,
+            "y": 2.5459
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all AGN (global fit A of the bolometric QLF, 43 <= log L_bol <= 48)",
+        "warning": "Model curve integrated by the authors from z_i=4 (zero initial mass density) down to z with eps_r=0.1; the grey/coloured shaded +-2x eps_r bands are not extracted; points are the vertices of the plotted path inside the frame (the curve leaves the frame below log rho=2.2 at high z). It is a prediction of the fitted QLF, not a measurement of local BH masses."
+      },
+      "definitions": {
+        "densityFrame": "comoving",
+        "bhMassMethod": "integrated accreted mass (Soltan argument) from the bolometric QLF",
+        "radiativeEfficiency": 0.1,
+        "radiativeEfficiencyQuote": "Assuming a constant averaged radiative efficiency $\\epsilon_{\\rm r}\\simeq 0.1$",
+        "bhmdFormula": "\\dfrac{{\\rm d}\\rho_{\\rm BH}}{{\\rm d}z}=\\dfrac{1-\\epsilon_{\\rm r}}{\\epsilon_{\\rm r}c^{2}H(z)(1+z)}",
+        "luminosityBand": "bolometric",
+        "luminosityRange": "where we adopt $\\log{L_{\\rm min}}=43,\\log{L_{\\rm max}}=48$ here.",
+        "startRedshift": 4,
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Shen et al. 2020, MNRAS (arXiv:2001.02696), predicted evolution of the cosmic SMBH mass density (figure bh_mass_density)",
+        "doi": "10.1093/mnras/staa1381",
+        "url": "https://arxiv.org/abs/2001.02696",
+        "retrieved": "2026-10-18",
+        "figure": "Predicted evolution of the cosmic SMBH mass density at z=0-7",
+        "panel": "line with z_i=4",
+        "checksumSha256": "f12c8f55f843f6b5eec2b57a97b98bd5d5fcfc64933e950a49e2fe5bc71788f3",
+        "sourceMember": "figures/bh_mass_density.pdf",
+        "sourceArchiveSha256": "b7d18324e929cde6bb2abe4dae39a89f032b42868c851d330e97ddd92629a327",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on the drawn major ticks",
+        "axisCalibrationPixels": "x: labels 0..7 snapped to ticks; y: 8 major ticks at y=51.32..587.63 pt equally spaced by 76.62 pt (0.5 dex) assigned 6.0..2.5 (label centres sit a constant 3.27 pt above the ticks)",
+        "digitizationUncertaintyDex": 0.01,
+        "verification": {
+          "recomputedFromFitA_maxAbsDiffDex": {
+            "maxAbsDiffDex": 0.014,
+            "n": 17,
+            "rho0_digitized_log10": 5.7104,
+            "z0_point": 0
+          },
+          "colourToStartRedshift": "The red, blue and green lines represent the predictions with starting redshift of integration $z_{\\rm i}=10,7,4$ respectively."
+        },
+        "quotes": {
+          "cosmology": {
+            "file": "paper-arxiv.tex",
+            "line": 185,
+            "text": "$H_{0} = 100h \\kms  \\Mpc^{-1} = 70 \\kms \\Mpc^{-1}$"
+          },
+          "eps": {
+            "file": "paper-arxiv.tex",
+            "line": 679,
+            "text": "Assuming a constant averaged radiative efficiency $\\epsilon_{\\rm r}\\simeq 0.1$"
+          },
+          "lbol": {
+            "file": "paper-arxiv.tex",
+            "line": 681,
+            "text": "L_{\\rm bol}=\\epsilon_{\\rm r}\\dot{M}c^{2}."
+          },
+          "rate": {
+            "file": "paper-arxiv.tex",
+            "line": 683,
+            "text": "the integrated luminosity density can be translated to the rate of change in the total SMBH mass density as:"
+          },
+          "formula": {
+            "file": "paper-arxiv.tex",
+            "line": 685,
+            "text": "\\dfrac{{\\rm d}\\rho_{\\rm BH}}{{\\rm d}z}=\\dfrac{1-\\epsilon_{\\rm r}}{\\epsilon_{\\rm r}c^{2}H(z)(1+z)}"
+          },
+          "limits": {
+            "file": "paper-arxiv.tex",
+            "line": 687,
+            "text": "where we adopt $\\log{L_{\\rm min}}=43,\\log{L_{\\rm max}}=48$ here."
+          },
+          "caption": {
+            "file": "paper-arxiv.tex",
+            "line": 673,
+            "text": "The red, blue and green lines represent the predictions with starting redshift of integration $z_{\\rm i}=10,7,4$ respectively."
+          },
+          "fitA": {
+            "file": "paper-arxiv.tex",
+            "line": 579,
+            "text": "we will only show the result of the global fit A and refer to it as \"the global fit\" for simplicity."
+          },
+          "hop_eps": {
+            "file": "ms.tex",
+            "line": 1574,
+            "text": "assuming $\\epsilon_{r}=0.1$."
+          },
+          "hop_lbol": {
+            "file": "ms.tex",
+            "line": 1569,
+            "text": "L_{\\rm bol} = \\epsilon_{r}\\,\\dot{M}\\,c^{2}"
+          },
+          "hop_int": {
+            "file": "ms.tex",
+            "line": 1135,
+            "text": "We determine the luminosity density by integrating the best-fit "
+          },
+          "hop_cosmo": {
+            "file": "ms.tex",
+            "line": 246,
+            "text": "$H_{0}=70\\,{\\rm km\\,s^{-1}\\,Mpc^{-1}}$ cosmology, "
+          }
+        }
+      },
+      "calibration": "target",
+      "rankable": false,
+      "notes": "Vector-path extraction; the integration check against the paper's own formula is in provenance.verification."
+    },
+    {
+      "id": "shen20.bhad.fitA",
+      "source": "Shen et al. 2020",
+      "run": "Shen et al. 2020 (global fit A, computed)",
+      "kind": "observation",
+      "relation": "bhad",
+      "epoch": {
+        "zRepresentative": 3.5,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 7,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift",
+        "xUnit": "redshift",
+        "yDefinition": "log10 comoving black-hole accretion-rate density",
+        "yUnit": "log10(Msun yr^-1 cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 0,
+        "xMax": 7
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 0,
+            "y": -5.6257
+          },
+          {
+            "x": 0.25,
+            "y": -5.0252
+          },
+          {
+            "x": 0.5,
+            "y": -4.6099
+          },
+          {
+            "x": 0.75,
+            "y": -4.3313
+          },
+          {
+            "x": 1,
+            "y": -4.151
+          },
+          {
+            "x": 1.25,
+            "y": -4.0432
+          },
+          {
+            "x": 1.5,
+            "y": -3.9903
+          },
+          {
+            "x": 1.75,
+            "y": -3.9796
+          },
+          {
+            "x": 2,
+            "y": -4.0015
+          },
+          {
+            "x": 2.25,
+            "y": -4.0489
+          },
+          {
+            "x": 2.5,
+            "y": -4.1162
+          },
+          {
+            "x": 2.75,
+            "y": -4.1989
+          },
+          {
+            "x": 3,
+            "y": -4.2935
+          },
+          {
+            "x": 3.25,
+            "y": -4.3971
+          },
+          {
+            "x": 3.5,
+            "y": -4.5074
+          },
+          {
+            "x": 3.75,
+            "y": -4.6221
+          },
+          {
+            "x": 4,
+            "y": -4.7395
+          },
+          {
+            "x": 4.25,
+            "y": -4.8579
+          },
+          {
+            "x": 4.5,
+            "y": -4.9757
+          },
+          {
+            "x": 4.75,
+            "y": -5.0914
+          },
+          {
+            "x": 5,
+            "y": -5.2033
+          },
+          {
+            "x": 5.25,
+            "y": -5.31
+          },
+          {
+            "x": 5.5,
+            "y": -5.41
+          },
+          {
+            "x": 5.75,
+            "y": -5.5019
+          },
+          {
+            "x": 6,
+            "y": -5.585
+          },
+          {
+            "x": 6.25,
+            "y": -5.6596
+          },
+          {
+            "x": 6.5,
+            "y": -5.7281
+          },
+          {
+            "x": 6.75,
+            "y": -5.7964
+          },
+          {
+            "x": 7,
+            "y": -5.8756
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all AGN",
+        "warning": "Computed from the published global fit A (the paper shows only the time-integrated mass density, not this rate). Mass-growth convention (1-eps)/eps, so this is eps-dependent and is NOT the accretion rate L/(eps c^2) of Hopkins+07; fit A is constrained by data at 0<z<7 only."
+      },
+      "definitions": {
+        "luminosityBand": "bolometric",
+        "radiativeEfficiency": 0.1,
+        "radiativeEfficiencyQuote": "Assuming a constant averaged radiative efficiency $\\epsilon_{\\rm r}\\simeq 0.1$",
+        "densityFrame": "comoving",
+        "bhadDefinition": "rate of change of the SMBH mass density per unit proper time, (1-eps)/(eps c^2) * int L phi dlogL over 43 <= log L_bol <= 48 (the integrand of: \\dfrac{{\\rm d}\\rho_{\\rm BH}}{{\\rm d}z}=\\dfrac{1-\\epsilon_{\\rm r}}{\\epsilon_{\\rm r}c^{2}H(z)(1+z)})",
+        "luminosityRange": "where we adopt $\\log{L_{\\rm min}}=43,\\log{L_{\\rm max}}=48$ here.",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Shen et al. 2020, MNRAS (arXiv:2001.02696): the published global fit A of the bolometric QLF integrated with the paper's own formula",
+        "doi": "10.1093/mnras/staa1381",
+        "url": "https://arxiv.org/abs/2001.02696",
+        "retrieved": "2026-10-18",
+        "figure": "global fit A parameters table + integral formula of the SMBH mass density section",
+        "checksumSha256": "1c0f565357abc5a82e9222084cbb1578e270a4c6835101095f1970f7c480d476",
+        "sourceMember": "paper-arxiv.tex",
+        "sourceArchiveSha256": "b7d18324e929cde6bb2abe4dae39a89f032b42868c851d330e97ddd92629a327",
+        "extractionMethod": "computed by this script from the published fit by quadrature (scipy), z step 0.25; NOT a table of the paper",
+        "verification": {
+          "timeIntegralOfThisCurve_vs_digitizedPaperCurve": {
+            "maxAbsDiffDex": 0.024,
+            "n": 16,
+            "rho0_digitized_log10": 5.7155,
+            "z0_point": 0
+          },
+          "all_start_redshifts": {
+            "4": {
+              "maxAbsDiffDex": 0.014,
+              "n": 17,
+              "rho0_digitized_log10": 5.7104,
+              "z0_point": 0
+            },
+            "7": {
+              "maxAbsDiffDex": 0.024,
+              "n": 16,
+              "rho0_digitized_log10": 5.7155,
+              "z0_point": 0
+            },
+            "10": {
+              "maxAbsDiffDex": 0.034,
+              "n": 12,
+              "rho0_digitized_log10": 5.716,
+              "z0_point": 0
+            }
+          }
+        },
+        "quotes": {
+          "cosmology": {
+            "file": "paper-arxiv.tex",
+            "line": 185,
+            "text": "$H_{0} = 100h \\kms  \\Mpc^{-1} = 70 \\kms \\Mpc^{-1}$"
+          },
+          "eps": {
+            "file": "paper-arxiv.tex",
+            "line": 679,
+            "text": "Assuming a constant averaged radiative efficiency $\\epsilon_{\\rm r}\\simeq 0.1$"
+          },
+          "lbol": {
+            "file": "paper-arxiv.tex",
+            "line": 681,
+            "text": "L_{\\rm bol}=\\epsilon_{\\rm r}\\dot{M}c^{2}."
+          },
+          "rate": {
+            "file": "paper-arxiv.tex",
+            "line": 683,
+            "text": "the integrated luminosity density can be translated to the rate of change in the total SMBH mass density as:"
+          },
+          "formula": {
+            "file": "paper-arxiv.tex",
+            "line": 685,
+            "text": "\\dfrac{{\\rm d}\\rho_{\\rm BH}}{{\\rm d}z}=\\dfrac{1-\\epsilon_{\\rm r}}{\\epsilon_{\\rm r}c^{2}H(z)(1+z)}"
+          },
+          "limits": {
+            "file": "paper-arxiv.tex",
+            "line": 687,
+            "text": "where we adopt $\\log{L_{\\rm min}}=43,\\log{L_{\\rm max}}=48$ here."
+          },
+          "caption": {
+            "file": "paper-arxiv.tex",
+            "line": 673,
+            "text": "The red, blue and green lines represent the predictions with starting redshift of integration $z_{\\rm i}=10,7,4$ respectively."
+          },
+          "fitA": {
+            "file": "paper-arxiv.tex",
+            "line": 579,
+            "text": "we will only show the result of the global fit A and refer to it as \"the global fit\" for simplicity."
+          },
+          "hop_eps": {
+            "file": "ms.tex",
+            "line": 1574,
+            "text": "assuming $\\epsilon_{r}=0.1$."
+          },
+          "hop_lbol": {
+            "file": "ms.tex",
+            "line": 1569,
+            "text": "L_{\\rm bol} = \\epsilon_{r}\\,\\dot{M}\\,c^{2}"
+          },
+          "hop_int": {
+            "file": "ms.tex",
+            "line": 1135,
+            "text": "We determine the luminosity density by integrating the best-fit "
+          },
+          "hop_cosmo": {
+            "file": "ms.tex",
+            "line": 246,
+            "text": "$H_{0}=70\\,{\\rm km\\,s^{-1}\\,Mpc^{-1}}$ cosmology, "
+          }
+        }
+      },
+      "calibration": "target",
+      "rankable": false,
+      "notes": "Derived curve; checked by integrating it in time and comparing with the paper's own digitized rho_BH(z) curves (max 0.04 dex)."
+    },
+    {
+      "id": "hopkins07.bhad.full",
+      "source": "Hopkins et al. 2007",
+      "run": "Hopkins et al. 2007 (Full fit, computed)",
+      "kind": "observation",
+      "relation": "bhad",
+      "epoch": {
+        "zRepresentative": 3,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 6,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "redshift",
+        "xUnit": "redshift",
+        "yDefinition": "log10 comoving black-hole accretion-rate density",
+        "yUnit": "log10(Msun yr^-1 cMpc^-3)"
+      },
+      "domain": {
+        "xMin": 0,
+        "xMax": 6
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 0,
+            "y": -4.9617
+          },
+          {
+            "x": 0.25,
+            "y": -4.8784
+          },
+          {
+            "x": 0.5,
+            "y": -4.6887
+          },
+          {
+            "x": 0.75,
+            "y": -4.4932
+          },
+          {
+            "x": 1,
+            "y": -4.3237
+          },
+          {
+            "x": 1.25,
+            "y": -4.1894
+          },
+          {
+            "x": 1.5,
+            "y": -4.0917
+          },
+          {
+            "x": 1.75,
+            "y": -4.0287
+          },
+          {
+            "x": 2,
+            "y": -3.9973
+          },
+          {
+            "x": 2.25,
+            "y": -3.994
+          },
+          {
+            "x": 2.5,
+            "y": -4.0155
+          },
+          {
+            "x": 2.75,
+            "y": -4.0587
+          },
+          {
+            "x": 3,
+            "y": -4.1208
+          },
+          {
+            "x": 3.25,
+            "y": -4.199
+          },
+          {
+            "x": 3.5,
+            "y": -4.2908
+          },
+          {
+            "x": 3.75,
+            "y": -4.394
+          },
+          {
+            "x": 4,
+            "y": -4.5062
+          },
+          {
+            "x": 4.25,
+            "y": -4.6254
+          },
+          {
+            "x": 4.5,
+            "y": -4.7491
+          },
+          {
+            "x": 4.75,
+            "y": -4.8751
+          },
+          {
+            "x": 5,
+            "y": -5.0004
+          },
+          {
+            "x": 5.25,
+            "y": -5.1849
+          },
+          {
+            "x": 5.5,
+            "y": -5.3839
+          },
+          {
+            "x": 5.75,
+            "y": -5.5896
+          },
+          {
+            "x": 6,
+            "y": -5.8015
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all AGN",
+        "warning": "Computed from the published Full fit (the paper plots the luminosity density and the integrated mass density, not this curve); accretion-rate convention L/(eps c^2) inferred from the paper's quoted rho_BH(z=0); fit range z<=6 of the compiled data, the paper extrapolates beyond."
+      },
+      "definitions": {
+        "luminosityBand": "bolometric",
+        "radiativeEfficiency": 0.1,
+        "radiativeEfficiencyQuote": "assuming $\\epsilon_{r}=0.1$.",
+        "densityFrame": "comoving",
+        "bhadDefinition": "accretion-rate density L_bol-density/(eps c^2) with L_bol = eps Mdot c^2 (no (1-eps) factor; the factor was selected because only this form reproduces the paper's quoted rho_BH(z=0)=4.81e5 to 1%), luminosity density from integrating the QLF to L=0",
+        "luminosityDensityQuote": "We determine the luminosity density by integrating the best-fit ",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Hopkins, Richards & Hernquist 2007, ApJ 654, 731 (arXiv:astro-ph/0605678): the 'Full' bolometric QLF fit integrated over luminosity",
+        "doi": "10.1086/509629",
+        "url": "https://arxiv.org/abs/astro-ph/0605678",
+        "retrieved": "2026-10-18",
+        "figure": "'Best-Fit QLF to all Redshifts' table, row Full",
+        "checksumSha256": "1aaed9dbcaee42fdba68afc4228cf0e1f6b90520aa0081fc4daf467f0af996f7",
+        "sourceMember": "ms.tex",
+        "sourceArchiveSha256": "5d181e1a663171a4796e241115603c427fb0902823c9d554df32b05b4d0154cc",
+        "extractionMethod": "computed by this script from the published fit by quadrature (scipy), z step 0.25; NOT a table of the paper",
+        "verification": {
+          "timeIntegralReproducesQuotedRhoBH0": "see transcribe_agnlf_hopkins07_shen20.py: 4.861 vs 4.81 (1.1%) for this exact expression and eps=0.1"
+        },
+        "quotes": {
+          "hop_eps": {
+            "file": "ms.tex",
+            "line": 1574,
+            "text": "assuming $\\epsilon_{r}=0.1$."
+          },
+          "hop_lbol": {
+            "file": "ms.tex",
+            "line": 1569,
+            "text": "L_{\\rm bol} = \\epsilon_{r}\\,\\dot{M}\\,c^{2}"
+          },
+          "hop_int": {
+            "file": "ms.tex",
+            "line": 1135,
+            "text": "We determine the luminosity density by integrating the best-fit "
+          },
+          "hop_cosmo": {
+            "file": "ms.tex",
+            "line": 246,
+            "text": "$H_{0}=70\\,{\\rm km\\,s^{-1}\\,Mpc^{-1}}$ cosmology, "
+          }
+        }
+      },
+      "calibration": "target",
+      "rankable": false,
+      "notes": "Derived curve, rankable false."
+    }
+  ]
+}

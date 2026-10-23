@@ -1,0 +1,441 @@
+{
+ "schemaVersion": "1.0.0",
+ "about": "Result of reading the original paper (arXiv source or PDF) and the compilation's conversion script for each curve listed, and comparing the stored curve with the paper's printed numbers or figure after the paper's own h and IMF. 'agrees': within 0.02 dex; 'fit-only': the paper prints only a fit and the points agree with it to the fit's scatter; 'disagrees': a difference larger than 0.02 dex or a definition the paper contradicts, with its size and cause; 'not-verifiable': the paper does not contain the numbers. Records in the compilation not listed here have not been checked against their papers. The checks were made by a reader working only from the papers and the compilation's scripts; no author or outside expert has reviewed them.",
+ "checked": "2026-10-21",
+ "compilationCommit": "fc740f4d0856efd711f03242d40c03caea969a20",
+ "curves": [
+  {
+   "records": [
+    "vcd.andrews--martini-2013-sdss.main.mzr.z0.08"
+   ],
+   "paper": "1211.3418",
+   "paperSha256": "b6bd52edb898efb67c508b1ad8e986745d0f1b041831e55325fc3abc182757be",
+   "result": "disagrees",
+   "size": "0.0285 dex in log M (0.016 dex in O/H)",
+   "cause": "h not applied",
+   "corrections": [
+    "cosmology-label-h70",
+    "flag-andrews13-solar"
+   ]
+  },
+  {
+   "records": [
+    "vcd.gallazzi-et-al-2005-sdss.main.zstar.z0.1"
+   ],
+   "paper": "astro-ph/0506539",
+   "paperSha256": "c43d130b2b7680328a66e5372eae402caedb720060548f5118d6f2a720bdb953",
+   "result": "disagrees",
+   "size": "+0.2007 dex in log Z, -0.0115 dex in log M",
+   "cause": "solar-metallicity rescale and h shift not stated in the paper",
+   "corrections": [
+    "flag-gallazzi05-conventions"
+   ]
+  },
+  {
+   "records": [
+    "vcd.gallazzi-et-al-2005-sdss.main.age.z0.1"
+   ],
+   "paper": "astro-ph/0506539",
+   "paperSha256": "c43d130b2b7680328a66e5372eae402caedb720060548f5118d6f2a720bdb953",
+   "result": "agrees",
+   "size": "0.0115 dex in log M",
+   "cause": "h shift not stated in the paper",
+   "corrections": [
+    "flag-gallazzi05-conventions"
+   ]
+  },
+  {
+   "records": [
+    "vcd.grazian-et-al-2015.main.gsmf.z4"
+   ],
+   "paper": "1412.0532",
+   "paperSha256": "992ee5e9ff577f9ea4b55c669315af56dcfee36707e52acdeb59906afe937206",
+   "result": "disagrees",
+   "size": "0.310 dex in log M, 0.465 dex in log Phi",
+   "cause": "h_70 units treated as h-free",
+   "corrections": [
+    "grazian15-h70"
+   ]
+  },
+  {
+   "records": [
+    "vcd.grazian-et-al-2015.main.gsmf.z5"
+   ],
+   "paper": "1412.0532",
+   "paperSha256": "992ee5e9ff577f9ea4b55c669315af56dcfee36707e52acdeb59906afe937206",
+   "result": "disagrees",
+   "size": "0.310 dex in log M, 0.465 dex in log Phi",
+   "cause": "h_70 units treated as h-free",
+   "corrections": [
+    "grazian15-h70"
+   ]
+  },
+  {
+   "records": [
+    "vcd.grazian-et-al-2015.main.gsmf.z6"
+   ],
+   "paper": "1412.0532",
+   "paperSha256": "992ee5e9ff577f9ea4b55c669315af56dcfee36707e52acdeb59906afe937206",
+   "result": "disagrees",
+   "size": "0.310 dex in log M, 0.465 dex in log Phi",
+   "cause": "h_70 units treated as h-free",
+   "corrections": [
+    "grazian15-h70"
+   ]
+  },
+  {
+   "records": [
+    "vcd.grazian-et-al-2015.main.gsmf.z7"
+   ],
+   "paper": "1412.0532",
+   "paperSha256": "992ee5e9ff577f9ea4b55c669315af56dcfee36707e52acdeb59906afe937206",
+   "result": "disagrees",
+   "size": "0.310 dex in log M, 0.465 dex in log Phi",
+   "cause": "h_70 units treated as h-free",
+   "corrections": [
+    "grazian15-h70"
+   ]
+  },
+  {
+   "records": [
+    "vcd.kirby-et-al-2013-local-group-dwarfs.main.zstar.z0"
+   ],
+   "paper": "1310.0814",
+   "paperSha256": "52eead8158fbe90cf00405b5cfd427597ded77d9907a0c884541b5f515d6cff9",
+   "result": "disagrees",
+   "size": "0.040 dex in log M",
+   "cause": "IMF conversion the paper does not support",
+   "corrections": [
+    "label-kirby13-mass",
+    "flag-kirby13-imf"
+   ]
+  },
+  {
+   "records": [
+    "vcd.reyes-et-al-2011.main.stfr.z0"
+   ],
+   "paper": "1106.1650",
+   "paperSha256": "a8c867dda42fa02c3562e81b9635c46bb4977b0e520a0d6f1b93b725e5cd8877",
+   "result": "disagrees",
+   "size": "0.0285 dex in log M",
+   "cause": "h not applied; y is V80, not a halo Vmax",
+   "corrections": [
+    "cosmology-label-h70",
+    "label-reyes11-velocity"
+   ]
+  },
+  {
+   "records": [
+    "vcd.baldry-et-al-2012-gama.binned-table.gsmf.z0.06"
+   ],
+   "paper": "1111.5707",
+   "paperSha256": "61c75b7a595c7c677b6f8d8ad58a10dcc31d4f265060ee37fc60e8ed61a18c01",
+   "result": "agrees",
+   "size": "none in the numbers",
+   "cause": "record said H0 = 70 but the numbers are Planck15",
+   "corrections": [
+    "cosmology-label-baldry12"
+   ]
+  },
+  {
+   "records": [
+    "vcd.ilbert-et-al-2013.main.gsmf.z0.2"
+   ],
+   "paper": "1301.3157",
+   "paperSha256": "2e6999ddfc5d0ad0dcf94914991c721a89ca6de7e38e8bddd03edf9b0f867ecf",
+   "result": "fit-only",
+   "size": "0.06 dex against the printed Schechter fit",
+   "cause": "paper prints only a fit",
+   "corrections": []
+  },
+  {
+   "records": [
+    "vcd.chang-et-al-2015-sdss.main.ssfr.z0.1"
+   ],
+   "paper": "1506.00648",
+   "paperSha256": "1b79cbd825052a5f6b1e6f467ba24832d30e171f98485bf2462e85df5061acce",
+   "result": "disagrees",
+   "size": "0.0285 dex in log M",
+   "cause": "h not applied; population not stated as star-forming",
+   "corrections": [
+    "cosmology-label-h70",
+    "label-chang15-population"
+   ]
+  },
+  {
+   "records": [
+    "vcd.li--white-2009.main.gsmf.z0.07"
+   ],
+   "paper": "0901.0706",
+   "paperSha256": "8b12648d8b8de65f15f1dbd372b117f1e4b91691d32657c3f4aab55690a0e3c5",
+   "result": "agrees",
+   "size": "none",
+   "cause": "script correct",
+   "corrections": []
+  },
+  {
+   "records": [
+    "vcd.lange-et-al-2015-gama.r-band.size.z0.05"
+   ],
+   "paper": "1411.6355",
+   "paperSha256": "870769e1ee32351b27f7462f87a9f4a55f295ec768452e3a4d89389e147efda7",
+   "result": "not-verifiable",
+   "size": "n/a",
+   "cause": "per-galaxy file not in the paper",
+   "corrections": [
+    "flag-lange15-trace"
+   ]
+  },
+  {
+   "records": [
+    "vcd.tremonti-et-al-2004-sdss.main.mzr.z0.1"
+   ],
+   "paper": "astro-ph/0405537",
+   "paperSha256": "1418a78c8fb44dca8d383a439158d39c29a99a5b2cdf82274075ceebd422e5e1",
+   "result": "agrees",
+   "size": "none",
+   "cause": "none",
+   "corrections": []
+  },
+  {
+   "records": [
+    "vcd.mosleh-et-al-2020.quiescent.size.z0.5"
+   ],
+   "paper": "2011.04656",
+   "paperSha256": "516c919c84e1beda9f723f84b167db1c91abe550beb332df0c471bc5c690a31a",
+   "result": "fit-only",
+   "size": "0.03 to 0.04 dex against the printed fit (inner bins)",
+   "cause": "paper prints only a fit",
+   "corrections": [
+    "label-mosleh20-size"
+   ]
+  },
+  {
+   "records": [
+    "vcd.mosleh-et-al-2020.star-forming.size.z0.5"
+   ],
+   "paper": "2011.04656",
+   "paperSha256": "516c919c84e1beda9f723f84b167db1c91abe550beb332df0c471bc5c690a31a",
+   "result": "fit-only",
+   "size": "0.03 to 0.04 dex against the printed fit (inner bins)",
+   "cause": "paper prints only a fit",
+   "corrections": [
+    "label-mosleh20-size"
+   ]
+  },
+  {
+   "records": [
+    "vcd.zahid-et-al-2014.main.mzr.z0.08"
+   ],
+   "paper": "1404.7526",
+   "paperSha256": "46194f5426052de5637be67a8a0cdf9e5c88c6df7b2033d3f9835fefe463f3a0",
+   "result": "agrees",
+   "size": "0.019 dex against the printed fit",
+   "cause": "none",
+   "corrections": []
+  },
+  {
+   "records": [
+    "vcd.avila-reese-et-al-2008.main.stfr.z0"
+   ],
+   "paper": "0807.0636",
+   "paperSha256": "e995185b9913142e3794e9122483d82ea2784e54f026c7604fc4afa3b976f72f",
+   "result": "disagrees",
+   "size": "0.16 to 0.41 dex in log M (mass dependent)",
+   "cause": "unsupported IMF shift and linear map; digitized with WebPlotDigitizer",
+   "corrections": [
+    "label-avilareese08-velocity",
+    "digitized-avilareese08"
+   ]
+  },
+  {
+   "records": [
+    "vcd.haynes-et-al-2011-alfalfa.main.himf.z0"
+   ],
+   "paper": "1109.0027",
+   "paperSha256": "993229fb35076ed7f4e18b899dca531ac09c54fd3a892f8898f6d2ce3a9c23c5",
+   "result": "disagrees",
+   "size": "0.0285 dex in log M, 0.0427 dex in log Phi (against a Planck15 basis)",
+   "cause": "h not converted; record declared no cosmology",
+   "corrections": [
+    "cosmology-label-h70"
+   ]
+  },
+  {
+   "records": [
+    "vcd.zwaan-et-al-2003-hipass.main.himf.z0"
+   ],
+   "paper": "astro-ph/0302440",
+   "paperSha256": "adbd2454575b57280b084131b0d736356149afadda07b0b0bc55bbc5c103c3dc",
+   "result": "disagrees",
+   "size": "0.088 dex in log M, 0.133 dex in log Phi (against a Planck15 basis)",
+   "cause": "h_75 units not converted",
+   "corrections": [
+    "cosmology-label-zwaan03-h75"
+   ]
+  },
+  {
+   "records": [
+    "vcd.gilbank-et-al-2010-sdss.main.quenched.z0.1"
+   ],
+   "paper": "1002.3172",
+   "paperSha256": "d22b3b347a280c228159240a5dd15087bfecbc84e8d447d2a257a346febe7240",
+   "result": "not-verifiable",
+   "size": "n/a",
+   "cause": "the cited paper has no passive fraction",
+   "corrections": [
+    "flag-gilbank10-origin"
+   ]
+  },
+  {
+   "records": [
+    "vcd.muzzin-et-al-2013-ultravista.main.smd.z1.8"
+   ],
+   "paper": "1303.4409",
+   "paperSha256": "8cb40578ab7f41ca2780d8da9ff7fa346174effa7f98a7a51a966d3131a6b7a5",
+   "result": "disagrees",
+   "size": "0.0142 dex in log rho, lower error bars 0.04 dex",
+   "cause": "h not applied; error bars not IMF-converted",
+   "corrections": [
+    "cosmology-label-h70",
+    "flag-muzzin13-errors"
+   ]
+  },
+  {
+   "records": [
+    "vcd.mcconnell--ma-2013.galaxies.bh.z0"
+   ],
+   "paper": "1211.2816",
+   "paperSha256": "9d5f02ad68011c270a67875b6a3c4e481fbd194e37e8412576bd7d610b83525c",
+   "result": "agrees",
+   "size": "none",
+   "cause": "none",
+   "corrections": []
+  },
+  {
+   "records": [
+    "vcd.gonzalez-et-al-2011.main.gsmf.z3.8",
+    "vcd.gonzalez-et-al-2011.main.gsmf.z5",
+    "vcd.gonzalez-et-al-2011.main.gsmf.z5.9",
+    "vcd.gonzalez-et-al-2011.main.gsmf.z6.8"
+   ],
+   "paper": null,
+   "paperSha256": null,
+   "result": "disagrees",
+   "size": "0.2175 dex in log M",
+   "cause": "IMF conversion missing (Salpeter masses labelled Chabrier)",
+   "corrections": [
+    "gonzalez11-salpeter"
+   ]
+  },
+  {
+   "records": [
+    "vcd.bauer-et-al-2013-gama.all-galaxies.ssfr.z0.2",
+    "vcd.bauer-et-al-2013-gama.star-forming.ssfr.z0.2"
+   ],
+   "paper": null,
+   "paperSha256": null,
+   "result": "disagrees",
+   "size": "0.0285 dex in log M",
+   "cause": "h not applied; values hand-extracted and not compared with the paper",
+   "corrections": [
+    "cosmology-label-h70",
+    "flag-bauer13-origin"
+   ]
+  },
+  {
+   "records": [
+    "vcd.moustakas-et-al-2013-sdss.main.quenched.z0.1"
+   ],
+   "paper": null,
+   "paperSha256": null,
+   "result": "disagrees",
+   "size": "0.0285 dex in log M",
+   "cause": "h not applied; record declared no cosmology",
+   "corrections": [
+    "cosmology-label-h70"
+   ]
+  },
+  {
+   "records": [
+    "vcd.davies-et-al-2016-gama.main.sfms.z0"
+   ],
+   "paper": null,
+   "paperSha256": null,
+   "result": "not-verifiable",
+   "size": "n/a",
+   "cause": "values extracted by hand from a figure; the paper could not be located",
+   "corrections": [
+    "digitized-davies16"
+   ]
+  },
+  {
+   "records": [
+    "vcd.wright-et-al-2017-gama-ii.main.gsmf.z0.1"
+   ],
+   "paper": null,
+   "paperSha256": null,
+   "result": "agrees",
+   "size": "none",
+   "cause": "none",
+   "corrections": []
+  },
+  {
+   "records": [
+    "vcd.d-souza-et-al-2015.main.gsmf.z0.1"
+   ],
+   "paper": null,
+   "paperSha256": null,
+   "result": "agrees",
+   "size": "none",
+   "cause": "none",
+   "corrections": []
+  },
+  {
+   "records": [
+    "vcd.tomczak-et-al-2014.main.gsmf.z0.625",
+    "vcd.tomczak-et-al-2014.main.gsmf.z0.875",
+    "vcd.tomczak-et-al-2014.main.gsmf.z1.125",
+    "vcd.tomczak-et-al-2014.main.gsmf.z1.375",
+    "vcd.tomczak-et-al-2014.main.gsmf.z1.75",
+    "vcd.tomczak-et-al-2014.main.gsmf.z2.25",
+    "vcd.tomczak-et-al-2014.main.gsmf.z2.75"
+   ],
+   "paper": null,
+   "paperSha256": null,
+   "result": "agrees",
+   "size": "none",
+   "cause": "none",
+   "corrections": []
+  },
+  {
+   "records": [
+    "vcd.deshmukh-et-al-2018.main.gsmf.z2",
+    "vcd.deshmukh-et-al-2018.main.gsmf.z2.5",
+    "vcd.deshmukh-et-al-2018.main.gsmf.z3",
+    "vcd.deshmukh-et-al-2018.main.gsmf.z4",
+    "vcd.deshmukh-et-al-2018.main.gsmf.z5"
+   ],
+   "paper": null,
+   "paperSha256": null,
+   "result": "agrees",
+   "size": "none",
+   "cause": "none",
+   "corrections": []
+  },
+  {
+   "records": [
+    "vcd.duncan-et-al-2014.main.gsmf.z4",
+    "vcd.duncan-et-al-2014.main.gsmf.z5",
+    "vcd.duncan-et-al-2014.main.gsmf.z6",
+    "vcd.duncan-et-al-2014.main.gsmf.z7"
+   ],
+   "paper": null,
+   "paperSha256": null,
+   "result": "agrees",
+   "size": "none",
+   "cause": "none",
+   "corrections": []
+  }
+ ]
+}

@@ -1,0 +1,310 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "derossi17.eagle-recal-l025n0752.mzr.sfr-0.5-0.0.zlt5",
+      "source": "EAGLE",
+      "run": "Recal-L025N0752 (De Rossi+17, SFR bin -0.5 to 0.0)",
+      "kind": "simulation",
+      "relation": "mzr",
+      "epoch": {
+        "zRepresentative": 2.5,
+        "zNominal": 2.5,
+        "zMin": 0,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within 30 pkpc",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "12+log10(O/H) of star-forming gas (mdot_* > 0) within 30 pkpc, median in stellar-mass bins, galaxies in the SFR bin",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 8.996,
+        "xMax": 10.726
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.996,
+            "y": 8.4597
+          },
+          {
+            "x": 9.092,
+            "y": 8.5649
+          },
+          {
+            "x": 9.285,
+            "y": 8.6904
+          },
+          {
+            "x": 9.492,
+            "y": 8.7955
+          },
+          {
+            "x": 9.714,
+            "y": 8.891
+          },
+          {
+            "x": 9.884,
+            "y": 8.9373
+          },
+          {
+            "x": 10.09,
+            "y": 9.0273
+          },
+          {
+            "x": 10.279,
+            "y": 9.0477
+          },
+          {
+            "x": 10.507,
+            "y": 8.8512
+          },
+          {
+            "x": 10.726,
+            "y": 8.8332
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies at z<~5 pooled, SFR bin log10(SFR/(Msun/yr)) = -0.5 to 0.0",
+        "warning": "MZR in a bin of SFR, not a mu_alpha relation (not converted). The paper pools all galaxies below z~5 (zRepresentative 2.5 is the midpoint, not a median; epoch range 0-5). SFR bins as printed: log10(SFR/(Msun/yr)) = -0.5 to 0.0; the bin edge convention is not stated. SFR and stellar mass are global properties inside 30 pkpc; the SFR timescale is not stated. Only mass bins with more than 10 galaxies are drawn (13-296, 25-142 and 23-82 galaxies per bin at log SFR ~ -0.25, 0.25, 0.75)."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "massDefinition": "aperture-30pkpc",
+        "metallicityQuantity": "gas-O/H",
+        "metallicityCalibration": "intrinsic-simulation (star-forming gas, 30 pkpc)",
+        "population": "all",
+        "sfrTimescaleMyr": "unspecified",
+        "sfrBin": "log10 SFR/(Msun/yr) = -0.5 to 0.0"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "De Rossi et al. 2017, MNRAS 472, 3354 (arXiv:1704.00006), Fig. 'FMR' bottom panel (2D projection onto the mass-metallicity plane), EAGLE Recal-L025N0752",
+        "doi": "10.1093/mnras/stx2208",
+        "url": "https://arxiv.org/abs/1704.00006",
+        "retrieved": "2026-10-18",
+        "figure": "FMR figure, bottom panel: median M* - O/H|SF,gas in SFR bins for Recal-L025N0752, all galaxies below z~5",
+        "panel": "diamonds, dash-dotted",
+        "checksumSha256": "ef93e29209b7a0d423f679dad562ab794a60853530a9a1729face6377fe06ad8",
+        "sourceMember": "FMZR_since_z5_Mannucci09_vrot4_AllGal_v4.eps",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "axes calibrated on the drawn major ticks (labels read on the rendered figure; the text is outlined) and validated by the Mannucci+10 surface drawn in the same panel (black lines, max |diff| < 0.001 dex)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Marker centres/segment end points of the vector figure; connect=true joins the drawn polyline."
+    },
+    {
+      "id": "derossi17.eagle-recal-l025n0752.mzr.sfr0.0-0.5.zlt5",
+      "source": "EAGLE",
+      "run": "Recal-L025N0752 (De Rossi+17, SFR bin 0.0 to 0.5)",
+      "kind": "simulation",
+      "relation": "mzr",
+      "epoch": {
+        "zRepresentative": 2.5,
+        "zNominal": 2.5,
+        "zMin": 0,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within 30 pkpc",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "12+log10(O/H) of star-forming gas (mdot_* > 0) within 30 pkpc, median in stellar-mass bins, galaxies in the SFR bin",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 8.998,
+        "xMax": 10.715
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 8.998,
+            "y": 8.2236
+          },
+          {
+            "x": 9.114,
+            "y": 8.348
+          },
+          {
+            "x": 9.31,
+            "y": 8.5028
+          },
+          {
+            "x": 9.501,
+            "y": 8.6722
+          },
+          {
+            "x": 9.692,
+            "y": 8.7889
+          },
+          {
+            "x": 9.906,
+            "y": 8.8733
+          },
+          {
+            "x": 10.084,
+            "y": 8.933
+          },
+          {
+            "x": 10.284,
+            "y": 8.9639
+          },
+          {
+            "x": 10.483,
+            "y": 9.033
+          },
+          {
+            "x": 10.715,
+            "y": 9.0312
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies at z<~5 pooled, SFR bin log10(SFR/(Msun/yr)) = 0.0 to 0.5",
+        "warning": "MZR in a bin of SFR, not a mu_alpha relation (not converted). The paper pools all galaxies below z~5 (zRepresentative 2.5 is the midpoint, not a median; epoch range 0-5). SFR bins as printed: log10(SFR/(Msun/yr)) = 0.0 to 0.5; the bin edge convention is not stated. SFR and stellar mass are global properties inside 30 pkpc; the SFR timescale is not stated. Only mass bins with more than 10 galaxies are drawn (13-296, 25-142 and 23-82 galaxies per bin at log SFR ~ -0.25, 0.25, 0.75)."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "massDefinition": "aperture-30pkpc",
+        "metallicityQuantity": "gas-O/H",
+        "metallicityCalibration": "intrinsic-simulation (star-forming gas, 30 pkpc)",
+        "population": "all",
+        "sfrTimescaleMyr": "unspecified",
+        "sfrBin": "log10 SFR/(Msun/yr) = 0.0 to 0.5"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "De Rossi et al. 2017, MNRAS 472, 3354 (arXiv:1704.00006), Fig. 'FMR' bottom panel (2D projection onto the mass-metallicity plane), EAGLE Recal-L025N0752",
+        "doi": "10.1093/mnras/stx2208",
+        "url": "https://arxiv.org/abs/1704.00006",
+        "retrieved": "2026-10-18",
+        "figure": "FMR figure, bottom panel: median M* - O/H|SF,gas in SFR bins for Recal-L025N0752, all galaxies below z~5",
+        "panel": "triangles, dashed",
+        "checksumSha256": "ef93e29209b7a0d423f679dad562ab794a60853530a9a1729face6377fe06ad8",
+        "sourceMember": "FMZR_since_z5_Mannucci09_vrot4_AllGal_v4.eps",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "axes calibrated on the drawn major ticks (labels read on the rendered figure; the text is outlined) and validated by the Mannucci+10 surface drawn in the same panel (black lines, max |diff| < 0.001 dex)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Marker centres/segment end points of the vector figure; connect=true joins the drawn polyline."
+    },
+    {
+      "id": "derossi17.eagle-recal-l025n0752.mzr.sfr0.5-1.0.zlt5",
+      "source": "EAGLE",
+      "run": "Recal-L025N0752 (De Rossi+17, SFR bin 0.5 to 1.0)",
+      "kind": "simulation",
+      "relation": "mzr",
+      "epoch": {
+        "zRepresentative": 2.5,
+        "zNominal": 2.5,
+        "zMin": 0,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within 30 pkpc",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "12+log10(O/H) of star-forming gas (mdot_* > 0) within 30 pkpc, median in stellar-mass bins, galaxies in the SFR bin",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 9.095,
+        "xMax": 10.657
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.095,
+            "y": 8.1334
+          },
+          {
+            "x": 9.309,
+            "y": 8.2816
+          },
+          {
+            "x": 9.51,
+            "y": 8.4537
+          },
+          {
+            "x": 9.702,
+            "y": 8.6607
+          },
+          {
+            "x": 9.911,
+            "y": 8.8087
+          },
+          {
+            "x": 10.099,
+            "y": 8.8678
+          },
+          {
+            "x": 10.28,
+            "y": 8.92
+          },
+          {
+            "x": 10.462,
+            "y": 9.0421
+          },
+          {
+            "x": 10.657,
+            "y": 9.1038
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies at z<~5 pooled, SFR bin log10(SFR/(Msun/yr)) = 0.5 to 1.0",
+        "warning": "MZR in a bin of SFR, not a mu_alpha relation (not converted). The paper pools all galaxies below z~5 (zRepresentative 2.5 is the midpoint, not a median; epoch range 0-5). SFR bins as printed: log10(SFR/(Msun/yr)) = 0.5 to 1.0; the bin edge convention is not stated. SFR and stellar mass are global properties inside 30 pkpc; the SFR timescale is not stated. Only mass bins with more than 10 galaxies are drawn (13-296, 25-142 and 23-82 galaxies per bin at log SFR ~ -0.25, 0.25, 0.75)."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "massDefinition": "aperture-30pkpc",
+        "metallicityQuantity": "gas-O/H",
+        "metallicityCalibration": "intrinsic-simulation (star-forming gas, 30 pkpc)",
+        "population": "all",
+        "sfrTimescaleMyr": "unspecified",
+        "sfrBin": "log10 SFR/(Msun/yr) = 0.5 to 1.0"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "De Rossi et al. 2017, MNRAS 472, 3354 (arXiv:1704.00006), Fig. 'FMR' bottom panel (2D projection onto the mass-metallicity plane), EAGLE Recal-L025N0752",
+        "doi": "10.1093/mnras/stx2208",
+        "url": "https://arxiv.org/abs/1704.00006",
+        "retrieved": "2026-10-18",
+        "figure": "FMR figure, bottom panel: median M* - O/H|SF,gas in SFR bins for Recal-L025N0752, all galaxies below z~5",
+        "panel": "crosses, dotted",
+        "checksumSha256": "ef93e29209b7a0d423f679dad562ab794a60853530a9a1729face6377fe06ad8",
+        "sourceMember": "FMZR_since_z5_Mannucci09_vrot4_AllGal_v4.eps",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "axes calibrated on the drawn major ticks (labels read on the rendered figure; the text is outlined) and validated by the Mannucci+10 surface drawn in the same panel (black lines, max |diff| < 0.001 dex)",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Marker centres/segment end points of the vector figure; connect=true joins the drawn polyline."
+    }
+  ]
+}

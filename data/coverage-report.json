@@ -2,11 +2,11 @@
   "schemaVersion": "1.0.0",
   "generatedAt": "2026-10-18",
   "totals": {
-    "records": 1736,
-    "sources": 108,
-    "relations": 28,
-    "rankable": 768,
-    "contextOnly": 968
+    "records": 1859,
+    "sources": 128,
+    "relations": 41,
+    "rankable": 846,
+    "contextOnly": 1013
   },
   "byRelation": {
     "age": {
@@ -24,6 +24,24 @@
       "contextOnly": 0,
       "tiers": [
         "published-table"
+      ]
+    },
+    "agnlf": {
+      "records": 3,
+      "epochs": [
+        2
+      ],
+      "epochRanges": [
+        "0:6",
+        "0:7"
+      ],
+      "relations": [
+        "agnlf"
+      ],
+      "rankable": 3,
+      "contextOnly": 0,
+      "tiers": [
+        "published-fit"
       ]
     },
     "bh": {
@@ -86,6 +104,49 @@
         "official-table",
         "published-fit",
         "published-table"
+      ]
+    },
+    "bhad": {
+      "records": 3,
+      "epochs": [
+        2,
+        3,
+        3.5
+      ],
+      "epochRanges": [
+        "0:4.968",
+        "0:6",
+        "0:7"
+      ],
+      "relations": [
+        "bhad"
+      ],
+      "rankable": 0,
+      "contextOnly": 3,
+      "tiers": [
+        "digitized-figure",
+        "published-fit"
+      ]
+    },
+    "bhmd": {
+      "records": 3,
+      "epochs": [
+        1.98,
+        3.185,
+        3.4
+      ],
+      "epochRanges": [
+        "0:3.96",
+        "0:6.37",
+        "0:6.8"
+      ],
+      "relations": [
+        "bhmd"
+      ],
+      "rankable": 0,
+      "contextOnly": 3,
+      "tiers": [
+        "digitized-figure"
       ]
     },
     "bhsigma": {
@@ -157,19 +218,22 @@
       "contextOnly": 24,
       "tiers": [
         "digitized-figure",
-        "published-fit"
+        "published-fit",
+        "published-table"
       ]
     },
     "colour": {
-      "records": 5,
+      "records": 17,
       "epochs": [
         0,
+        0.1,
         0.95,
         2.15,
         3,
         4
       ],
       "epochRanges": [
+        "0.1:0.1",
         "0.95:0.95",
         "0:0",
         "2.15:2.15",
@@ -180,9 +244,10 @@
         "colour"
       ],
       "rankable": 5,
-      "contextOnly": 0,
+      "contextOnly": 12,
       "tiers": [
-        "catalog-derived"
+        "catalog-derived",
+        "digitized-figure"
       ]
     },
     "dmf": {
@@ -238,6 +303,51 @@
       "contextOnly": 0,
       "tiers": [
         "published-table"
+      ]
+    },
+    "fmr": {
+      "records": 13,
+      "epochs": [
+        0,
+        0.027,
+        0.07,
+        0.08,
+        0.138,
+        0.185
+      ],
+      "epochRanges": [
+        "0.027:0.027",
+        "0.027:0.25",
+        "0.07:0.3",
+        "0.07:2.5",
+        "0:0"
+      ],
+      "relations": [
+        "fmr"
+      ],
+      "rankable": 12,
+      "contextOnly": 1,
+      "tiers": [
+        "digitized-figure",
+        "published-fit",
+        "published-table"
+      ]
+    },
+    "fslow": {
+      "records": 1,
+      "epochs": [
+        0
+      ],
+      "epochRanges": [
+        "0:0.03"
+      ],
+      "relations": [
+        "fslow"
+      ],
+      "rankable": 0,
+      "contextOnly": 1,
+      "tiers": [
+        "digitized-figure"
       ]
     },
     "gas": {
@@ -490,6 +600,42 @@
         "published-table"
       ]
     },
+    "hod": {
+      "records": 41,
+      "epochs": [
+        0,
+        0.0308,
+        0.0363,
+        0.0421,
+        0.0524,
+        0.0632,
+        0.0762,
+        0.0895,
+        0.1094,
+        0.1326
+      ],
+      "epochRanges": [
+        "0.02:0.0417",
+        "0.02:0.0525",
+        "0.02:0.0642",
+        "0.02:0.0849",
+        "0.02:0.1064",
+        "0.02:0.1324",
+        "0.02:0.1589",
+        "0.02:0.1988",
+        "0.02:0.2452",
+        "0:0"
+      ],
+      "relations": [
+        "hod"
+      ],
+      "rankable": 27,
+      "contextOnly": 14,
+      "tiers": [
+        "digitized-figure",
+        "published-fit"
+      ]
+    },
     "jstar": {
       "records": 50,
       "epochs": [
@@ -536,6 +682,58 @@
         "official-table"
       ]
     },
+    "ks": {
+      "records": 2,
+      "epochs": [
+        0
+      ],
+      "epochRanges": [
+        "0:0"
+      ],
+      "relations": [
+        "ks"
+      ],
+      "rankable": 2,
+      "contextOnly": 0,
+      "tiers": [
+        "published-fit"
+      ]
+    },
+    "lambdar": {
+      "records": 1,
+      "epochs": [
+        0
+      ],
+      "epochRanges": [
+        "0:0.03"
+      ],
+      "relations": [
+        "lambdar"
+      ],
+      "rankable": 0,
+      "contextOnly": 1,
+      "tiers": [
+        "digitized-figure"
+      ]
+    },
+    "lxm": {
+      "records": 12,
+      "epochs": [
+        0.1181
+      ],
+      "epochRanges": [
+        "0.0564:0.1832"
+      ],
+      "relations": [
+        "lxm"
+      ],
+      "rankable": 12,
+      "contextOnly": 0,
+      "tiers": [
+        "published-fit",
+        "published-table"
+      ]
+    },
     "metald": {
       "records": 2,
       "epochs": [
@@ -554,7 +752,7 @@
       ]
     },
     "mzr": {
-      "records": 158,
+      "records": 161,
       "epochs": [
         0,
         0.08,
@@ -605,6 +803,7 @@
         "0.7:1.3",
         "0:0",
         "0:0.01",
+        "0:5",
         "1.22:1.41",
         "1.5:1.5",
         "1.9:2.07",
@@ -643,7 +842,7 @@
         "mzr"
       ],
       "rankable": 142,
-      "contextOnly": 16,
+      "contextOnly": 19,
       "tiers": [
         "catalog-derived",
         "digitized-figure",
@@ -720,8 +919,8 @@
       "relations": [
         "quenched"
       ],
-      "rankable": 33,
-      "contextOnly": 91,
+      "rankable": 32,
+      "contextOnly": 92,
       "tiers": [
         "digitized-figure",
         "published-table"
@@ -815,8 +1014,8 @@
       "relations": [
         "sfms"
       ],
-      "rankable": 91,
-      "contextOnly": 41,
+      "rankable": 90,
+      "contextOnly": 42,
       "tiers": [
         "catalog-derived",
         "digitized-figure",
@@ -881,7 +1080,7 @@
         "2.815287353744129:11.984527510362348",
         "3:14",
         "5.499961198556029:15.73765343666158",
-        "5.592177484748817:15.154076265043987",
+        "5.5969:14.9031",
         "5.692:18.963",
         "5:10",
         "9:16"
@@ -893,6 +1092,7 @@
       "contextOnly": 56,
       "tiers": [
         "digitized-figure",
+        "official-table",
         "published-fit",
         "published-table"
       ]
@@ -1039,6 +1239,53 @@
         "published-table"
       ]
     },
+    "sigma1": {
+      "records": 9,
+      "epochs": [
+        0.04,
+        0.75,
+        1.2,
+        1.8,
+        2.6
+      ],
+      "epochRanges": [
+        "0.005:0.075",
+        "0.5:1",
+        "1.4:2.2",
+        "1:1.4",
+        "2.2:3"
+      ],
+      "relations": [
+        "sigma1"
+      ],
+      "rankable": 9,
+      "contextOnly": 0,
+      "tiers": [
+        "published-fit"
+      ]
+    },
+    "sigmam": {
+      "records": 5,
+      "epochs": [
+        0.04,
+        0.11,
+        0.3
+      ],
+      "epochRanges": [
+        "0.005:0.075",
+        "0.02:0.2",
+        "0:0.7"
+      ],
+      "relations": [
+        "sigmam"
+      ],
+      "rankable": 3,
+      "contextOnly": 2,
+      "tiers": [
+        "digitized-figure",
+        "published-fit"
+      ]
+    },
     "size": {
       "records": 209,
       "epochs": [
@@ -1168,7 +1415,7 @@
       ]
     },
     "ssfr": {
-      "records": 64,
+      "records": 65,
       "epochs": [
         0,
         0.1,
@@ -1213,7 +1460,7 @@
         "ssfr"
       ],
       "rankable": 25,
-      "contextOnly": 39,
+      "contextOnly": 40,
       "tiers": [
         "catalog-derived",
         "digitized-figure",
@@ -1235,8 +1482,8 @@
       "relations": [
         "stfr"
       ],
-      "rankable": 2,
-      "contextOnly": 9,
+      "rankable": 1,
+      "contextOnly": 10,
       "tiers": [
         "digitized-figure",
         "published-table"
@@ -1310,6 +1557,61 @@
       "contextOnly": 63,
       "tiers": [
         "digitized-figure",
+        "official-table",
+        "published-fit",
+        "published-table"
+      ]
+    },
+    "wp": {
+      "records": 10,
+      "epochs": [
+        0.0308,
+        0.0363,
+        0.0421,
+        0.0524,
+        0.0632,
+        0.0762,
+        0.0895,
+        0.1,
+        0.1094,
+        0.1326
+      ],
+      "epochRanges": [
+        "0.02:0.0417",
+        "0.02:0.0525",
+        "0.02:0.0642",
+        "0.02:0.0849",
+        "0.02:0.1064",
+        "0.02:0.1324",
+        "0.02:0.1589",
+        "0.02:0.1988",
+        "0.02:0.2452",
+        "0.1:0.1"
+      ],
+      "relations": [
+        "wp"
+      ],
+      "rankable": 9,
+      "contextOnly": 1,
+      "tiers": [
+        "digitized-figure",
+        "published-table"
+      ]
+    },
+    "ysz": {
+      "records": 4,
+      "epochs": [
+        0.1181
+      ],
+      "epochRanges": [
+        "0.0564:0.1832"
+      ],
+      "relations": [
+        "ysz"
+      ],
+      "rankable": 4,
+      "contextOnly": 0,
+      "tiers": [
         "published-fit",
         "published-table"
       ]
@@ -1379,6 +1681,23 @@
     }
   },
   "bySource": {
+    "Aird et al. 2015": {
+      "records": 1,
+      "epochs": [
+        2
+      ],
+      "epochRanges": [
+        "0:4.968"
+      ],
+      "relations": [
+        "bhad"
+      ],
+      "rankable": 0,
+      "contextOnly": 1,
+      "tiers": [
+        "digitized-figure"
+      ]
+    },
     "Alavi et al. 2016": {
       "records": 3,
       "epochs": [
@@ -1400,6 +1719,24 @@
         "published-table"
       ]
     },
+    "Andrews & Martini 2013": {
+      "records": 2,
+      "epochs": [
+        0.138
+      ],
+      "epochRanges": [
+        "0.027:0.25"
+      ],
+      "relations": [
+        "fmr"
+      ],
+      "rankable": 1,
+      "contextOnly": 1,
+      "tiers": [
+        "digitized-figure",
+        "published-table"
+      ]
+    },
     "Andrews & Martini 2013 (SDSS)": {
       "records": 1,
       "epochs": [
@@ -1415,6 +1752,57 @@
       "contextOnly": 0,
       "tiers": [
         "published-table"
+      ]
+    },
+    "Arnaud et al. 2010 (REXCESS fit)": {
+      "records": 1,
+      "epochs": [
+        0.1181
+      ],
+      "epochRanges": [
+        "0.0564:0.1832"
+      ],
+      "relations": [
+        "ysz"
+      ],
+      "rankable": 1,
+      "contextOnly": 0,
+      "tiers": [
+        "published-fit"
+      ]
+    },
+    "Arnaud et al. 2010 (REXCESS)": {
+      "records": 1,
+      "epochs": [
+        0.1181
+      ],
+      "epochRanges": [
+        "0.0564:0.1832"
+      ],
+      "relations": [
+        "ysz"
+      ],
+      "rankable": 1,
+      "contextOnly": 0,
+      "tiers": [
+        "published-table"
+      ]
+    },
+    "Arnaud et al. 2010 (universal profile)": {
+      "records": 2,
+      "epochs": [
+        0.1181
+      ],
+      "epochRanges": [
+        "0.0564:0.1832"
+      ],
+      "relations": [
+        "ysz"
+      ],
+      "rankable": 2,
+      "contextOnly": 0,
+      "tiers": [
+        "published-fit"
       ]
     },
     "ASTRID": {
@@ -1465,10 +1853,10 @@
       "relations": [
         "stfr"
       ],
-      "rankable": 1,
-      "contextOnly": 0,
+      "rankable": 0,
+      "contextOnly": 1,
       "tiers": [
-        "published-table"
+        "digitized-figure"
       ]
     },
     "Baker et al. 2025 (quiescent, JWST)": {
@@ -1513,6 +1901,29 @@
       "tiers": [
         "published-fit",
         "published-table"
+      ]
+    },
+    "Barro et al. 2017 (CANDELS GOODS-S)": {
+      "records": 8,
+      "epochs": [
+        0.75,
+        1.2,
+        1.8,
+        2.6
+      ],
+      "epochRanges": [
+        "0.5:1",
+        "1.4:2.2",
+        "1:1.4",
+        "2.2:3"
+      ],
+      "relations": [
+        "sigma1"
+      ],
+      "rankable": 8,
+      "contextOnly": 0,
+      "tiers": [
+        "published-fit"
       ]
     },
     "Bauer et al. 2013 (GAMA)": {
@@ -1626,6 +2037,23 @@
       "contextOnly": 0,
       "tiers": [
         "published-table"
+      ]
+    },
+    "Bigiel et al. 2008": {
+      "records": 1,
+      "epochs": [
+        0
+      ],
+      "epochRanges": [
+        "0:0"
+      ],
+      "relations": [
+        "ks"
+      ],
+      "rankable": 1,
+      "contextOnly": 0,
+      "tiers": [
+        "published-fit"
       ]
     },
     "BlueTides": {
@@ -1963,17 +2391,20 @@
       ]
     },
     "Curti et al. 2020": {
-      "records": 1,
+      "records": 4,
       "epochs": [
+        0.027,
         0.08
       ],
       "epochRanges": [
+        "0.027:0.027",
         "0.02:0.25"
       ],
       "relations": [
+        "fmr",
         "mzr"
       ],
-      "rankable": 1,
+      "rankable": 4,
       "contextOnly": 0,
       "tiers": [
         "published-fit"
@@ -2024,10 +2455,10 @@
       "relations": [
         "sfms"
       ],
-      "rankable": 1,
-      "contextOnly": 0,
+      "rankable": 0,
+      "contextOnly": 1,
       "tiers": [
-        "published-table"
+        "digitized-figure"
       ]
     },
     "Deshmukh et al. 2018": {
@@ -2104,7 +2535,7 @@
       ]
     },
     "EAGLE": {
-      "records": 163,
+      "records": 179,
       "epochs": [
         0,
         0.1,
@@ -2119,6 +2550,7 @@
         1.7,
         1.75,
         2,
+        2.5,
         2.749,
         3,
         4,
@@ -2140,6 +2572,7 @@
         "0:0",
         "0:0.5",
         "0:20",
+        "0:5",
         "0:6.346",
         "0:6.729",
         "0:7.787",
@@ -2161,9 +2594,12 @@
       "relations": [
         "bh",
         "btfr",
+        "colour",
+        "fmr",
         "gsmf",
         "h2-fraction",
         "hi-fraction",
+        "hod",
         "jstar",
         "metald",
         "mzr",
@@ -2175,10 +2611,11 @@
         "smd",
         "ssfr",
         "stfr",
+        "wp",
         "zstar"
       ],
-      "rankable": 87,
-      "contextOnly": 76,
+      "rankable": 91,
+      "contextOnly": 88,
       "tiers": [
         "catalog-derived",
         "digitized-figure",
@@ -2201,6 +2638,24 @@
       "contextOnly": 0,
       "tiers": [
         "published-table"
+      ]
+    },
+    "Fang et al. 2013 (SDSS)": {
+      "records": 2,
+      "epochs": [
+        0.04
+      ],
+      "epochRanges": [
+        "0.005:0.075"
+      ],
+      "relations": [
+        "sigma1",
+        "sigmam"
+      ],
+      "rankable": 2,
+      "contextOnly": 0,
+      "tiers": [
+        "published-fit"
       ]
     },
     "FIRE-2": {
@@ -2251,6 +2706,7 @@
       "contextOnly": 26,
       "tiers": [
         "digitized-figure",
+        "official-table",
         "published-fit",
         "published-table"
       ]
@@ -2405,8 +2861,8 @@
       "relations": [
         "quenched"
       ],
-      "rankable": 1,
-      "contextOnly": 0,
+      "rankable": 0,
+      "contextOnly": 1,
       "tiers": [
         "published-table"
       ]
@@ -2600,6 +3056,25 @@
         "published-table"
       ]
     },
+    "Hopkins et al. 2007": {
+      "records": 2,
+      "epochs": [
+        2,
+        3
+      ],
+      "epochRanges": [
+        "0:6"
+      ],
+      "relations": [
+        "agnlf",
+        "bhad"
+      ],
+      "rankable": 1,
+      "contextOnly": 1,
+      "tiers": [
+        "published-fit"
+      ]
+    },
     "Horizon-AGN": {
       "records": 35,
       "epochs": [
@@ -2680,7 +3155,7 @@
       ]
     },
     "Illustris": {
-      "records": 123,
+      "records": 134,
       "epochs": [
         0,
         0.25,
@@ -2728,7 +3203,10 @@
       "relations": [
         "bh",
         "btfr",
+        "colour",
+        "fmr",
         "gsmf",
+        "hod",
         "jstar",
         "mzr",
         "quenched",
@@ -2740,15 +3218,16 @@
         "stfr",
         "zstar"
       ],
-      "rankable": 44,
-      "contextOnly": 79,
+      "rankable": 48,
+      "contextOnly": 86,
       "tiers": [
         "catalog-derived",
-        "digitized-figure"
+        "digitized-figure",
+        "published-fit"
       ]
     },
     "IllustrisTNG": {
-      "records": 191,
+      "records": 199,
       "epochs": [
         0,
         0.1,
@@ -2805,6 +3284,7 @@
       "relations": [
         "bh",
         "colour",
+        "fmr",
         "gas",
         "gsmf",
         "h2-fraction",
@@ -2819,11 +3299,12 @@
         "ssfr",
         "zstar"
       ],
-      "rankable": 70,
-      "contextOnly": 121,
+      "rankable": 71,
+      "contextOnly": 128,
       "tiers": [
         "catalog-derived",
         "digitized-figure",
+        "published-fit",
         "published-table"
       ]
     },
@@ -2869,6 +3350,23 @@
       "contextOnly": 0,
       "tiers": [
         "catalog-derived"
+      ]
+    },
+    "Kennicutt 1998": {
+      "records": 1,
+      "epochs": [
+        0
+      ],
+      "epochRanges": [
+        "0:0"
+      ],
+      "relations": [
+        "ks"
+      ],
+      "rankable": 1,
+      "contextOnly": 0,
+      "tiers": [
+        "published-fit"
       ]
     },
     "Kirby et al. 2013 (Local Group dwarfs)": {
@@ -3170,6 +3668,25 @@
         "official-table"
       ]
     },
+    "Mannucci et al. 2010": {
+      "records": 3,
+      "epochs": [
+        0.07,
+        0.185
+      ],
+      "epochRanges": [
+        "0.07:0.3",
+        "0.07:2.5"
+      ],
+      "relations": [
+        "fmr"
+      ],
+      "rankable": 3,
+      "contextOnly": 0,
+      "tiers": [
+        "published-fit"
+      ]
+    },
     "McConnell & Ma 2013": {
       "records": 2,
       "epochs": [
@@ -3402,6 +3919,40 @@
         "published-table"
       ]
     },
+    "Pratt et al. 2009 (REXCESS fit)": {
+      "records": 8,
+      "epochs": [
+        0.1181
+      ],
+      "epochRanges": [
+        "0.0564:0.1832"
+      ],
+      "relations": [
+        "lxm"
+      ],
+      "rankable": 8,
+      "contextOnly": 0,
+      "tiers": [
+        "published-fit"
+      ]
+    },
+    "Pratt et al. 2009 (REXCESS)": {
+      "records": 4,
+      "epochs": [
+        0.1181
+      ],
+      "epochRanges": [
+        "0.0564:0.1832"
+      ],
+      "relations": [
+        "lxm"
+      ],
+      "rankable": 4,
+      "contextOnly": 0,
+      "tiers": [
+        "published-table"
+      ]
+    },
     "Read et al. 2017": {
       "records": 1,
       "epochs": [
@@ -3549,6 +4100,23 @@
         "catalog-derived"
       ]
     },
+    "Sanders et al. 2021": {
+      "records": 1,
+      "epochs": [
+        0.08
+      ],
+      "epochRanges": [
+        "0.027:0.25"
+      ],
+      "relations": [
+        "fmr"
+      ],
+      "rankable": 1,
+      "contextOnly": 0,
+      "tiers": [
+        "published-fit"
+      ]
+    },
     "Schreiber et al. 2015 (Herschel stacking)": {
       "records": 1,
       "epochs": [
@@ -3566,8 +4134,35 @@
         "published-fit"
       ]
     },
+    "Shen et al. 2020": {
+      "records": 6,
+      "epochs": [
+        1.98,
+        2,
+        3.185,
+        3.4,
+        3.5
+      ],
+      "epochRanges": [
+        "0:3.96",
+        "0:6.37",
+        "0:6.8",
+        "0:7"
+      ],
+      "relations": [
+        "agnlf",
+        "bhad",
+        "bhmd"
+      ],
+      "rankable": 2,
+      "contextOnly": 4,
+      "tiers": [
+        "digitized-figure",
+        "published-fit"
+      ]
+    },
     "SIMBA": {
-      "records": 73,
+      "records": 75,
       "epochs": [
         0,
         0.1,
@@ -3602,6 +4197,7 @@
       "relations": [
         "bh",
         "btfr",
+        "fmr",
         "gsmf",
         "h2-fraction",
         "hi-fraction",
@@ -3610,8 +4206,8 @@
         "sfrd",
         "ssfr"
       ],
-      "rankable": 32,
-      "contextOnly": 41,
+      "rankable": 33,
+      "contextOnly": 42,
       "tiers": [
         "catalog-derived",
         "digitized-figure",
@@ -3802,7 +4398,7 @@
       "epochRanges": [
         "10:10",
         "5.499961198556029:15.73765343666158",
-        "5.592177484748817:15.154076265043987",
+        "5.5969:14.9031",
         "6:6",
         "7:7",
         "8:8",
@@ -3994,6 +4590,24 @@
         "published-table"
       ]
     },
+    "Veale et al. 2017 (MASSIVE+ATLAS3D)": {
+      "records": 2,
+      "epochs": [
+        0
+      ],
+      "epochRanges": [
+        "0:0.03"
+      ],
+      "relations": [
+        "fslow",
+        "lambdar"
+      ],
+      "rankable": 0,
+      "contextOnly": 2,
+      "tiers": [
+        "digitized-figure"
+      ]
+    },
     "Vikhlinin et al. 2006 (Chandra)": {
       "records": 1,
       "epochs": [
@@ -4080,6 +4694,109 @@
         "mzr"
       ],
       "rankable": 1,
+      "contextOnly": 0,
+      "tiers": [
+        "published-table"
+      ]
+    },
+    "Zahid et al. 2016 (SDSS)": {
+      "records": 2,
+      "epochs": [
+        0.11
+      ],
+      "epochRanges": [
+        "0.02:0.2"
+      ],
+      "relations": [
+        "sigmam"
+      ],
+      "rankable": 1,
+      "contextOnly": 1,
+      "tiers": [
+        "digitized-figure",
+        "published-fit"
+      ]
+    },
+    "Zahid et al. 2016 (SHELS)": {
+      "records": 2,
+      "epochs": [
+        0.3
+      ],
+      "epochRanges": [
+        "0:0.7"
+      ],
+      "relations": [
+        "sigmam"
+      ],
+      "rankable": 1,
+      "contextOnly": 1,
+      "tiers": [
+        "digitized-figure",
+        "published-fit"
+      ]
+    },
+    "Zehavi et al. 2011 (SDSS DR7 HOD)": {
+      "records": 25,
+      "epochs": [
+        0.0308,
+        0.0363,
+        0.0421,
+        0.0524,
+        0.0632,
+        0.0762,
+        0.0895,
+        0.1094,
+        0.1326
+      ],
+      "epochRanges": [
+        "0.02:0.0417",
+        "0.02:0.0525",
+        "0.02:0.0642",
+        "0.02:0.0849",
+        "0.02:0.1064",
+        "0.02:0.1324",
+        "0.02:0.1589",
+        "0.02:0.1988",
+        "0.02:0.2452"
+      ],
+      "relations": [
+        "hod"
+      ],
+      "rankable": 21,
+      "contextOnly": 4,
+      "tiers": [
+        "digitized-figure",
+        "published-fit"
+      ]
+    },
+    "Zehavi et al. 2011 (SDSS DR7)": {
+      "records": 9,
+      "epochs": [
+        0.0308,
+        0.0363,
+        0.0421,
+        0.0524,
+        0.0632,
+        0.0762,
+        0.0895,
+        0.1094,
+        0.1326
+      ],
+      "epochRanges": [
+        "0.02:0.0417",
+        "0.02:0.0525",
+        "0.02:0.0642",
+        "0.02:0.0849",
+        "0.02:0.1064",
+        "0.02:0.1324",
+        "0.02:0.1589",
+        "0.02:0.1988",
+        "0.02:0.2452"
+      ],
+      "relations": [
+        "wp"
+      ],
+      "rankable": 9,
       "contextOnly": 0,
       "tiers": [
         "published-table"
