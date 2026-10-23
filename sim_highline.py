@@ -491,9 +491,9 @@ def compare_records_cli(records, relations=None, top=5, csv=None, rankable_only=
                     if not rs and c["n_bins"] == 0:
                         rs = [f"shares fewer than {R['minBins']} points with your curve (the mass ranges barely overlap)"]
                     reasons.update(set(rs) or {"no reason recorded"})
-                print(f"    not fair to compare: {len(rest)}. Most common reasons:")
+                print(f"    not fair to compare: {len(rest)}. Most common reasons (a curve can have several):")
                 for text, n in reasons.most_common(3):
-                    print(f"      {n} curves: {text}")
+                    print(f"      {n} curve{'s' if n != 1 else ''}: {text}")
     if csv and frames:
         pd.concat(frames).drop(columns=["blocker_list", "caveat_list"]).to_csv(csv, index=False)
         print(f"\nfull table written to {csv}")

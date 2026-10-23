@@ -254,6 +254,8 @@ assert x.returncode == 2 and "refusing to guess" in x.stderr and "--imf" in x.st
 x = subprocess.run(argv + ["--imf", "chabrier03"], capture_output=True, text=True)
 assert x.returncode == 0 and out.exists() and "9 records written" in x.stdout and "stated by you" in x.stdout and "read from" in x.stdout, x.stdout[-500:] + x.stderr[-300:]
 assert len(json.loads(out.read_text())["records"]) == 9
+x = subprocess.run(argv[:-1] + [str(TMP / "cli-run2.json"), "--imf", "chabrier03", "--compare", "--top", "1"], capture_output=True, text=True)
+assert x.returncode == 0 and "gsmf at z = 0" in x.stdout and "sfms at z = 0" in x.stdout and "yours minus theirs" in x.stdout, "derive --compare goes from the catalogue to the comparison in one command: " + x.stdout[-300:] + x.stderr[-300:]
 x = subprocess.run(CLI + ["derive", "--format", "eagle", "--catalog", str(EAG), "--source", "S", "--run", "R", "--imf", "kroupa01", "--baryon-particle-mass", "1e6", "--out", str(TMP / "no.json")], capture_output=True, text=True)
 assert x.returncode == 2 and not (TMP / "no.json").exists() and all(f in x.stderr for f in ("--units eagle-database", "--h", "--omega-m", "--box-mpc", "--aperture")), x.stderr
 
