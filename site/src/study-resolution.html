@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How much does resolution change a model's output?</title>
+<meta name="description" content="How far published curves of one galaxy-formation model move when only the resolution changes, in noise units of the CAMELS experiment and against the distance between IllustrisTNG and SIMBA. An internal check; CAMELS itself is not run at a second resolution.">
+{{head}}
+</head>
+<body>
+{{header}}
+<main id="main" class="wrap page" tabindex="-1">
+<div class="doc">
+<nav class="idx" aria-label="On this page">
+<p class="lab">Contents</p>
+<ol>
+<li><a href="#question"><span>§1</span>Question</a></li>
+<li><a href="#built"><span>§2</span>What could be built</a></li>
+<li><a href="#result"><span>§3</span>Result</a></li>
+<li><a href="#reading"><span>§4</span>Reading it</a></li>
+<li><a href="#limits"><span>§5</span>Limits and gaps</a></li>
+<li><a href="#reproduce"><span>§6</span>Reproduce</a></li>
+</ol>
+<p class="back"><a href="studies.html">All studies</a> · <a href="retune.html">Dials</a></p>
+</nav>
+<div class="c">
+
+<div class="title">
+<p class="lab kicker">Study · the same model at two resolutions</p>
+<h1>How much does a model's output change with resolution?</h1>
+<div class="plain"><p class="lab">In plain words</p><p class="one">{{plainResolutionOne}}</p><p>{{plainResolution}}</p></div>
+<div class="abstract">
+<p class="lab">Abstract</p>
+<p>{{rsAbs}}</p>
+</div>
+<dl class="facts">
+<div><dt>Status</dt><dd>{{rsStatus}}</dd></div>
+<div><dt>Protocol</dt><dd><a href="{{repo}}/blob/main/docs/PROTOCOL-resolution.md">PROTOCOL-resolution.md</a> (committed before any difference between two resolutions was computed)</dd></div>
+<div><dt>Analysis</dt><dd><a href="{{repo}}/blob/main/docs/ANALYSIS-resolution.md">ANALYSIS-resolution.md</a>; checks made after the run: <a href="{{repo}}/blob/main/docs/CHECKS-resolution.md">CHECKS-resolution.md</a></dd></div>
+<div><dt>Dataset</dt><dd>v{{version}}</dd></div>
+</dl>
+</div>
+
+<p class="limits-first"><b>Limits in brief.</b> This is an internal check: no outside expert has reviewed it. It compares published curves of other models; CAMELS itself is not run at a second resolution, so it does not say what IllustrisTNG or SIMBA would give at CAMELS or at a higher resolution. Different papers use different galaxy finders and apertures; each pair compares two curves of one paper only.</p>
+
+<section class="sec" id="question" aria-labelledby="question-h">
+<h2 id="question-h"><span class="sn">§1</span>Question</h2>
+<p>The <a href="study-joint.html">joint study</a> and the <a href="study-shape.html">shape study</a> both name resolution as their largest open weakness: CAMELS boxes are 25 Mpc/h with 256³ dark matter and 256³ gas elements, and nothing in the project measured how much a model's output changes when only the resolution changes. CAMELS has no second resolution, so that cannot be measured on CAMELS. What can be measured is how published curves of other models change between resolutions of the same model, and how large that is next to two numbers the project already has: the run-to-run noise of the CAMELS observables, and the distance between IllustrisTNG and SIMBA that the joint study reports.</p>
+<p>Two questions with rules fixed in advance:</p>
+<ul class="flat">
+<li><b>How many steps are converged?</b> For each step between adjacent resolutions of one model in a box stated to be the same, the root-mean-square change of the curve is measured in noise units (one unit is the scatter between one run of each CAMELS code). Below one unit: converged. With the digitization noise taken out, above one unit: resolution-dependent. Otherwise: cannot tell.</li>
+<li><b>Is the change smaller or larger than the gap between the codes?</b> The same change, in the same units, set against the IllustrisTNG–SIMBA distance for the same kind of observable.</li>
+</ul>
+</section>
+
+<section class="sec" id="built" aria-labelledby="built-h">
+<h2 id="built-h"><span class="sn">§2</span>What could be built</h2>
+<p>A pair needs two records of the same model at two resolutions with the same axes and definitions and a comparable epoch (within 0.1 in redshift). {{rsPairsN}} pairs of curves met that rule, grouped into {{rsUnitsN}} steps in {{rsLadN}} sets of runs. Tier A means the records or the registry state that the box is the same, so a change can be read as resolution (and, where the authors recalibrate at each resolution, as the effect of that recalibration). Tier B means the box, the sample or the run differs or is not stated.</p>
+<div class="tw" role="region" aria-label="Sets of runs" tabindex="0"><table class="dense"><thead><tr><th>Runs</th><th>Tier</th><th>Box</th><th>Parameters</th><th>Resolutions, coarse to fine</th><th class="n">pairs</th><th class="n">refused</th><th>Observables</th></tr></thead><tbody>{{rsLadderRows}}</tbody></table></div>
+<p>Examined and not built:</p>
+<ul class="flat">{{rsNotBuilt}}</ul>
+<p>Other public sources of one model at two resolutions, checked without any account or key:</p>
+<ul class="flat">{{rsSources}}</ul>
+</section>
+
+<section class="sec" id="result" aria-labelledby="result-h">
+<h2 id="result-h"><span class="sn">§3</span>Result</h2>
+<ul class="flat">{{rsHeadline}}</ul>
+<p><b>Steps between adjacent resolutions, tier A, by label.</b></p>
+<div class="tw sm" role="region" aria-label="Labels by set of runs" tabindex="0"><table class="dense"><thead><tr><th>Runs</th><th class="n">converged</th><th class="n">resolution-dependent</th><th class="n">cannot tell</th></tr></thead><tbody>{{rsP1Rows}}</tbody></table></div>
+<p><b>The change against the distance between IllustrisTNG and SIMBA.</b> R<sub>c</sub> is the root-mean-square change in noise units with the digitization noise taken out. The distance is that of the joint study for the same kind of observable: at the fiducial parameters where the authors changed nothing but the resolution, after retuning where they recalibrated. {{rsP2Line}}</p>
+<div class="tw" role="region" aria-label="Resolution change against the code distance" tabindex="0"><table class="dense"><thead><tr><th>Runs</th><th>Observable</th><th>Step</th><th>Parameters</th><th class="n">R<sub>c</sub></th><th class="n">D retuned</th><th class="n">D fiducial</th><th>compared with</th><th class="n">R<sub>c</sub> / D</th></tr></thead><tbody>{{rsP2Rows}}</tbody></table></div>
+<p><b>The step that starts at CAMELS resolution.</b> The IllustrisTNG and Illustris models in a 25 Mpc/h box with 256³ elements are at CAMELS resolution; the next run has eight times the mass resolution. The observable is the cosmic star formation rate density.</p>
+<div class="tw sm" role="region" aria-label="The step from CAMELS resolution" tabindex="0"><table class="dense"><thead><tr><th>Step</th><th class="n">R</th><th class="n">rms (dex)</th><th class="n">mean (dex)</th><th class="n">largest (dex)</th><th>label</th></tr></thead><tbody>{{rsStepRows}}</tbody></table></div>
+</section>
+
+<section class="sec" id="reading" aria-labelledby="reading-h">
+<h2 id="reading-h"><span class="sn">§4</span>Reading it</h2>
+<p>All tier A steps, with the span from the coarsest to the finest run where there are three. R is the root-mean-square change in noise units, R<sub>c</sub> the same with the digitization noise taken out; the last three columns are in dex (a factor of 10; 0.1 dex is a factor of 1.26), or in fraction for the quenched fraction, finer minus coarser. "Noise basis" says whether the unit is the CAMELS noise of the matching observable and mass bins (reference) or a typical CAMELS noise (yardstick), used where the observable has no counterpart or too few mass bins overlap.</p>
+<div class="tw" role="region" aria-label="All tier A steps" tabindex="0"><table class="dense"><thead><tr><th>Runs</th><th>Observable</th><th>Step</th><th>kind</th><th class="n">pairs</th><th>noise basis</th><th class="n">R</th><th class="n">R<sub>c</sub></th><th class="n">rms</th><th class="n">mean</th><th>label</th></tr></thead><tbody>{{rsTierARows}}</tbody></table></div>
+<p>{{rsTailLine}}</p>
+<div class="tw sm" role="region" aria-label="Mass functions: where the change sits" tabindex="0"><table class="dense"><thead><tr><th>Step</th><th class="n">rms (dex)</th><th class="n">share in the top quarter</th><th class="n">rms without it (dex)</th><th class="n">same change in log mass (dex)</th></tr></thead><tbody>{{rsTailRows}}</tbody></table></div>
+<p>{{rsSensLine}} {{rsChecks}}</p>
+<p><b>Tier B</b> (the box, sample or run differs or is not stated): a small change may be called converged, a large one cannot be put down to resolution. Steps between adjacent resolutions; the last column is the largest root-mean-square change among them, in dex or fraction.</p>
+<div class="tw sm" role="region" aria-label="Tier B steps" tabindex="0"><table class="dense"><thead><tr><th>Runs</th><th class="n">converged (box also differs)</th><th class="n">cannot tell</th><th class="n">largest rms</th></tr></thead><tbody>{{rsTierBRows}}</tbody></table></div>
+<p><b>COLIBRE in other boxes</b> (supplementary: read from the public data file of the COLIBRE paper, where the 50, 100 and 200 Mpc boxes are listed at more resolutions than the dataset holds; not added to the dataset).</p>
+<div class="tw" role="region" aria-label="Supplementary COLIBRE steps" tabindex="0"><table class="dense"><thead><tr><th>Runs</th><th>Observable</th><th>Step</th><th>kind</th><th class="n">pairs</th><th>noise basis</th><th class="n">R</th><th class="n">R<sub>c</sub></th><th class="n">rms</th><th class="n">mean</th><th>label</th></tr></thead><tbody>{{rsSuppRows}}</tbody></table></div>
+<p>Deviations from the protocol:</p>
+<ul class="flat">{{rsDev}}</ul>
+</section>
+
+<section class="sec" id="limits" aria-labelledby="limits-h">
+<h2 id="limits-h"><span class="sn">§5</span>Limits and gaps</h2>
+<ul class="flat">
+<li><b>Internal check.</b> No outside expert has reviewed the protocol, the code or the result. The labels are not significance tests: the only uncertainty in R is the digitization of the figures.</li>
+<li><b>CAMELS is not tested at a second resolution.</b> The changes are those of other models, from their papers. SIMBA has no pair that can be evaluated in the dataset (its published fits at two resolutions are parametric and were not evaluated), so nothing here measures the resolution dependence of SIMBA.</li>
+<li><b>Different papers, finders and apertures.</b> Each pair compares two curves of one paper. The noise unit comes from CAMELS Subfind catalogues with total bound masses and is only a yardstick for curves with other definitions.</li>
+<li><b>The curves stop at the authors' resolution limits.</b> Most records keep only what lies above a resolution limit, so the changes below it, where resolution matters most, are not in the data. The numbers understate the effect there.</li>
+<li><b>Recalibration.</b> COLIBRE and FLAMINGO recalibrate their subgrid parameters at each resolution, so a small change there reflects that recalibration. Only the two Pillepich et al. sets of runs change nothing but the resolution, and they cover one observable, the cosmic star formation rate density.</li>
+<li><b>One margin.</b> A noise unit is a convention, not a physical tolerance. It is small (typically {{rsTypical}} dex), so the labels are strict; the counts at other margins are given above.</li>
+<li><b>Few independent sets of runs.</b> Epochs and observables within one set of runs are correlated. The counts are counts of rows, not independent tests, and no p-value is given.</li>
+</ul>
+</section>
+
+<section class="sec" id="reproduce" aria-labelledby="reproduce-h">
+<h2 id="reproduce-h"><span class="sn">§6</span>Reproduce</h2>
+<pre tabindex="0" aria-label="Reproduction commands">python3 scripts/analyze_resolution.py       # a few seconds; writes data/analysis/resolution.json and the report
+python3 scripts/check_resolution.py         # the checks made after the run
+python3 scripts/test_resolution.py          # machinery tests on synthetic ladders and the stale-output check
+node scripts/build-site.mjs                 # regenerates this page from the JSON</pre>
+</section>
+
+</div>
+</div>
+</main>
+{{footer}}
+</body>
+</html>
