@@ -225,7 +225,7 @@ def render(q):
         for r in p["pairs"][:25]:
             L.append(f"| {r['label']} | {r['tier_a']} / {r['tier_b']} | {r['unit']} | {r['n']} | {r['median_abs']:.3f} | {r['max_abs']:.3f} | {'yes' if r['same_definitions'] else 'no'} |")
     t = q["terms"]
-    L += ["", "## Third-party terms", "", f"{t['records_with_terms']} records carry explicit terms; {t['permission_not_requested']} of them are binned values derived by sim-highline from a repository that has no licence file, for which permission has not yet been requested. " + "; ".join(f"{k} ({n})" for k, n in t["by_terms"]) + ".", ""]
+    L += ["", "## Third-party terms", "", f"{t['records_with_terms']} records carry explicit terms; {t['permission_not_requested']} of them are values derived by sim-highline from a source that states no licence (a repository without a licence file, or a data page without terms), for which permission has not yet been requested. " + "; ".join(f"{k} ({n})" for k, n in t["by_terms"]) + ".", ""]
     c = q["checksums"]
     L += ["## Source checksums", "", f"{c['with_checksum']} of {c['records']} records carry the SHA-256 of the file they were made from. The digitizer regression re-fetches every source and compares; the records without a checksum are transcribed fits and tables.", "", "## Spelling of definitions", "",
           "Comparison rules match definition values as strings, so two spellings of one thing count as different. Spellings that differ only in case, punctuation or filler words:", ""]

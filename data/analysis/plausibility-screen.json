@@ -1,7 +1,7 @@
 {
  "schemaVersion": "1.0.0",
  "method": "Offset of each curve from the median of other sources' curves (interpolating peers only inside their published range) at the same relation, units and z within 0.15; at least 3 peer sources per point. Flag: |median offset| >= 0.7 dex and robust z >= 3.0 within the relation.",
- "nScreened": 940,
+ "nScreened": 967,
  "nFlagged": 10,
  "systematic": [
   {
@@ -56,7 +56,7 @@
    "nPoints": 43,
    "xUnit": "log10(Msun)",
    "yUnit": "log10(Mpc^-3 dex^-1)",
-   "robustZ": -4.355,
+   "robustZ": -4.361,
    "flag": true,
    "population": "all galaxies",
    "recordWarning": "Solid segment only of the curve in Schaye et al. 2023 (MNRAS 526, 4978) Fig. 8 left-top panel, above the resolution-dependent lower mass limit for calibration; the dotted low-mass part is omitted. L1_m10: box 1000 cMpc, fiducial galaxy form"
@@ -88,7 +88,7 @@
    "nPoints": 6,
    "xUnit": "log10(Msun)",
    "yUnit": "log10(Mpc^-3 dex^-1)",
-   "robustZ": -3.079,
+   "robustZ": -3.065,
    "flag": true,
    "population": "massive quiescent galaxies",
    "recordWarning": "phi_low/phi_high are treated as offsets from phi (they are smaller than phi in every row). Quiescent-only mass function: not comparable with total GSMFs."

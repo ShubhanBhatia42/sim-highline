@@ -1400,16 +1400,15 @@
     {
       "id": "darwin1-catalogs",
       "suite": "DARWIN",
-      "status": "discovered",
+      "status": "ingested",
       "access": "public FoF and galaxy catalogues (HDF5), one file per snapshot, z = 16 to 0.19 (snapshot 1001)",
       "url": "https://darwin.kasi.re.kr/data_darwin1.html",
       "relations": [
-        "gsmf",
-        "shmr",
-        "size",
-        "mzr"
+        "gsmf"
       ],
-      "note": "The DARWIN-1 galaxy catalogues are public (the data page states that only these are on offer; other data on request). A catalogue-derived stellar mass function, stellar mass-halo mass relation and sizes would replace the figure reads with computed numbers; no adapter has been written, and the files' fields have not been inspected."
+      "note": "The galaxy stellar mass function is counted from the public DARWIN-1 galaxy catalogues (substructures with star particles, stellar mass `sub/mstar` in Msun/h, 100 or more star particles) at eleven snapshots. At the paper's four panels the counts agree with the digitized curves of its Fig. 7 within 0.033 dex (8 %) in every bin of 100 or more galaxies (identical at z = 5); above 3e11 Msun at z = 1 and 0.25 the catalogue holds more galaxies than the figure implies, which the paper says depends on the mass definition. Not done: a stellar mass-halo mass relation (the catalogue has FoF total masses, not M200), black hole masses (summed over the black hole particles of a substructure; central/satellite and population cuts not checked), and sizes and metallicities (the catalogue has no radii or abundances).",
+      "redshifts": "10, 8, 6, 5, 4, 3, 2, 1, 0.5, 0.25, 0.19",
+      "adapter": "scripts/ingest_darwin1_catalogue.py"
     }
   ]
 }

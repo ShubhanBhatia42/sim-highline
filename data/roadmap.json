@@ -1103,8 +1103,8 @@
   "tier": 2,
   "who": "C",
   "title": "Run the browser tests in Firefox and WebKit as well",
-  "note": "Firefox and WebKit wired into CI as a non-blocking job (PW_BROWSER); not run here, no such browsers installed",
-  "status": "partial"
+  "note": "the CI jobs other-browsers (firefox) and other-browsers (webkit) run the suites (PW_BROWSER); both passed on commit 61d2a45 (2026-10-23). They cannot run in the authoring environment, where only Chromium is installed",
+  "status": "done"
  },
  {
   "id": "6.16",
@@ -1409,7 +1409,7 @@
   "tier": 2,
   "who": "C",
   "title": "Tag the release and create GitHub release notes",
-  "note": "A tag belongs on main after the merge; the release script prints the commands. Needs the maintainer to merge",
+  "note": "main carries the work (2026-10-23); creating a tag or a release is refused for the automated session (HTTP 403), so the maintainer publishes it (docs/SEND-THIS-WEEK.md, item 1)",
   "status": "blocked"
  },
  {
@@ -1481,8 +1481,8 @@
   "tier": 3,
   "who": "C",
   "title": "Report test coverage for the Python and JavaScript",
-  "note": "scripts/coverage.sh: Python core modules 67% (analysis of the model form 95%, joint reachability 40%); JavaScript only logic.js measured (65%); compare.js and export-lib.js are not instrumented",
-  "status": "partial"
+  "note": "scripts/coverage.sh: Python core modules 67% (analysis of the model form 95%, joint reachability 40%); JavaScript lines: compare.js 77%, export-lib.js 100%, highline/logic.js 65% (the files are loaded in a vm context, which now has its file name so that coverage is attributed to it)",
+  "status": "done"
  },
  {
   "id": "8.20",
@@ -1661,8 +1661,8 @@
   "tier": 2,
   "who": "C",
   "title": "Do a final check of the live site",
-  "note": "Same as 10.12: the live site is main, which does not yet have this work; check after the merge",
-  "status": "blocked"
+  "note": "2026-10-23, after main moved to 61d2a45: the Explorer, the data export manifest (1872 records), the summary, FAQ, quality and study pages return 200 and carry the new records; the pages workflow and all verify jobs passed",
+  "status": "done"
  },
  {
   "id": "10.04",
@@ -1679,7 +1679,7 @@
   "tier": 2,
   "who": "C",
   "title": "Bump the version and tag the release",
-  "note": "scripts/release.sh X.Y.Z is ready; the bump, tag and DOI belong after the merge to main and the Zenodo deposit, which need the maintainer",
+  "note": "scripts/release.sh X.Y.Z is ready; the bump, tag and DOI need the maintainer, who also chooses the number: 0.24.0 as it stands in the files, or 0.25.0 for the work listed under Unreleased in the changelog",
   "status": "blocked"
  },
  {
@@ -1742,8 +1742,8 @@
   "tier": 1,
   "who": "C",
   "title": "Confirm the live site matches the release",
-  "note": "The live site is still the old build of main (0.23.0 without the faq, summary, tests of this push: /site/summary.html and /site/faq.html return 404). It can be confirmed only after the merge to main",
-  "status": "blocked"
+  "note": "the live site is main at 61d2a45 (2026-10-23): the export manifest on the site says 1872 records and the Explorer contains the DARWIN records and the precompiled expressions. The release itself (tag, GitHub release, DOI) is task 8.11",
+  "status": "done"
  },
  {
   "id": "10.13",
