@@ -193,6 +193,31 @@ def _same(a, b):
     return json.dumps(a) == json.dumps(b)
 
 
+_POP_STOP = {"all", "galaxies", "galaxy", "pgalf", "of", "the", "as", "drawn", "sample"}
+_POP_DESC = {"quiescent": "quiescent", "passive": "quiescent", "quenched": "quiescent", "starforming": "star-forming", "central": "centrals", "centrals": "centrals", "satellite": "satellites", "satellites": "satellites", "zoom": "zoom", "isolated": "isolated"}
+
+
+def population_class(v):
+    """Which galaxies a curve covers (the same as populationClass in compare.js): spelling variants ('all', 'all galaxies', 'all galaxies (PGalF)'; 'quiescent', 'passive') are one population, while a quiescent, centrals-only, zoom or selection-based curve is another. A text with any word that is not a plain descriptor stays as written."""
+    if not isinstance(v, str):
+        return v
+    s = re.sub(r"star[- ]forming", "starforming", re.sub(r"[(),]", " ", v.lower()))
+    words = [w for w in re.split(r"[\s\-/]+", s) if w]
+    tokens = set()
+    for w in words:
+        if w in _POP_DESC:
+            tokens.add(_POP_DESC[w])
+        elif w not in _POP_STOP:
+            return v
+    if not tokens:
+        return "all" if "all" in words else v
+    return " ".join(sorted(tokens))
+
+
+def _norm(key, v):
+    return population_class(v) if key == "population" else v
+
+
 def compatible(a, b, rule_table=None):
     """Definition compatibility of two records (dicts with relation, source, rankable, definitions, epoch), identical to the website.
     Returns {"verdict": "comparable" | "comparable-with-caveats" | "not-comparable", "blockers": [...], "caveats": [...]}."""
@@ -210,7 +235,7 @@ def compatible(a, b, rule_table=None):
     for key in rule["hard"]:
         if _unset(da.get(key)) or _unset(db.get(key)):
             blockers.append(f"{key} not documented")
-        elif not _same(da.get(key), db.get(key)):
+        elif not _same(_norm(key, da.get(key)), _norm(key, db.get(key))):
             blockers.append(f"{key}: {da.get(key)} vs {db.get(key)}")
     imf = R["imfDex"]
     for key in rule["soft"]:
@@ -227,7 +252,7 @@ def compatible(a, b, rule_table=None):
             continue
         if _unset(da.get(key)) or _unset(db.get(key)):
             caveats.append(f"{key} not documented for {a['source'] if _unset(da.get(key)) else b['source']}")
-        elif not _same(da.get(key), db.get(key)):
+        elif not _same(_norm(key, da.get(key)), _norm(key, db.get(key))):
             caveats.append(f"{key}: {da.get(key)} vs {db.get(key)}")
     ea, eb = a.get("epoch") or {}, b.get("epoch") or {}
     analytic = ea.get("mode") == "analytic-evolution" or eb.get("mode") == "analytic-evolution"

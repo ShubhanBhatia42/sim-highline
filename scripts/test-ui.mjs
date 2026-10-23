@@ -236,7 +236,7 @@ await step("your run: plot, declare definitions, compare, export", async () => {
   assert.equal(await page.locator("#stage .userdot").count(), 7, "seven user points drawn");
   assert.ok(await page.locator("#mineTab tr[data-id]").count() >= 5, "comparison rows listed");
   assert.equal(await page.locator("#mineTab .v.ok").count(), 0, "nothing comparable before definitions are declared");
-  for (const [k, v] of [["densityFrame", "comoving"], ["imf", "chabrier03"], ["massDefinition", "aperture-30pkpc"]]) await page.selectOption(`[data-def="${k}"]`, v);
+  for (const [k, v] of [["densityFrame", "comoving"], ["population", "all"], ["imf", "chabrier03"], ["massDefinition", "aperture-30pkpc"]]) await page.selectOption(`[data-def="${k}"]`, v);
   const glyphs = await page.locator("#mineTab .v").allInnerTexts();
   assert.ok(glyphs.some(g => g === "~" || g === "\u2713"), "declaring definitions makes at least one curve comparable");
   const [dl] = await Promise.all([page.waitForEvent("download"), page.click("#uCsv")]);
@@ -258,7 +258,7 @@ await step("your run: opens from a link, and the example plots and compares with
   assert.match(await page.inputValue("#uName"), /^example: /);
   assert.match(await page.locator("#mineTab .sumline").innerText(), /Say what your numbers mean/, "before definitions are declared the summary asks for them");
   const sel = (k) => page.locator(`[data-def="${k}"]`);
-  for (const k of ["densityFrame", "imf", "massDefinition"]) { const opts = await sel(k).locator("option").allInnerTexts(); if (opts.length > 1) await sel(k).selectOption({ index: 1 }); }
+  for (const k of ["densityFrame", "population", "imf", "massDefinition"]) { const opts = await sel(k).locator("option").allInnerTexts(); if (opts.length > 1) await sel(k).selectOption({ index: 1 }); }
   const verdicts = await page.locator("#mineTab .v").allInnerTexts();
   assert.ok(verdicts.length >= 5, "comparison rows listed");
   if (verdicts.includes("\\u2713")) assert.equal(await page.locator("#mineTab .sumline").count(), 1, "a summary line appears once a curve is comparable");

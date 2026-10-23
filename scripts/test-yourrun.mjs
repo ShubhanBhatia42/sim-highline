@@ -132,9 +132,12 @@ await step("what would make more curves fair: the panel's claim is true when tha
   for (const [rel, key] of [["gsmf", "densityFrame"], ["sfms", "population"], ["mzr", "metallicityQuantity"]]) {
     await open(page, `r=${rel}&z=0.1&pn=mine`);
     await page.click("#uEx");
+    if (rel === "gsmf") { await page.selectOption('select[data-def="population"]', "all"); await page.waitForTimeout(200); }  // a mass function needs its population declared as well; no single answer would make a curve fair while two hard keys are open
     const fairCount = () => page.evaluate(() => { let n = 0; for (const tr of document.querySelectorAll("#mineTab tbody tr")) { if (tr.classList.contains("grp")) { if (n || !/^Fair/.test(tr.textContent)) break; continue; } n++; } return /^Fair/.test(document.querySelector("#mineTab tbody tr.grp")?.textContent || "") ? n : 0; });
     const before = await fairCount();
+    await page.waitForTimeout(250);
     if (!(await page.locator("#whatif").evaluate(d => d.open))) await page.click("#whatif summary");  // it stays open once opened
+    await page.waitForFunction(() => /Nothing here is applied/.test(document.getElementById("whatif")?.innerText || ""), null, { timeout: 5000 });
     const text = await page.locator("#whatif").innerText();
     assert.match(text, /Nothing here is applied for you/, `says it applies nothing (${rel}: ${JSON.stringify(text.slice(0, 200))})`);
     const m = text.match(/If (.+?) is (.+?): (\d+) more curves? becomes? fair/);
@@ -147,7 +150,7 @@ await step("what would make more curves fair: the panel's claim is true when tha
     assert.ok(opt, `option "${label}" exists for ${key}`);
     await page.selectOption(`select[data-def="${key}"]`, opt);
     await page.waitForTimeout(200);
-    assert.equal(await fairCount() - before, gain, `${rel}: declaring ${key} = ${opt} adds exactly the ${gain} curves the panel promised`);
+    { const after = await fairCount(); assert.equal(after - before, gain, `${rel}: declaring ${key} = ${opt} adds exactly the ${gain} curves the panel promised (panel: ${m[0]}; fair before ${before}, after ${after})`); }
   }
 });
 

@@ -56,7 +56,7 @@ await journey(2, "How does my own run compare with the others?", async ({ page, 
 await journey(3, "Is a comparison fair (same IMF, aperture, population)?", async ({ page, click, base }) => {
   await page.goto(`${base}/highline.html#r=gsmf&z=0.1&pn=mine`); await settle(page);
   await click("#uEx");
-  for (const k of ["densityFrame", "imf", "massDefinition"]) { const o = await page.locator(`[data-def="${k}"] option`).count(); if (o > 1) await page.selectOption(`[data-def="${k}"]`, { index: 1 }); }
+  for (const k of ["densityFrame", "population", "imf", "massDefinition"]) { const o = await page.locator(`[data-def="${k}"] option`).count(); if (o > 1) await page.selectOption(`[data-def="${k}"]`, { index: 1 }); }
   const glyphs = await page.locator("#mineTab .v").allInnerTexts();
   assert.ok(glyphs.some(g => ["✓", "~", "✕", "✗"].includes(g)), "verdict marks shown");
   const why = await page.locator("#mineTab tr[data-id]").first().getAttribute("title");

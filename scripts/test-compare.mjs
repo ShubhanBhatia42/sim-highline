@@ -101,3 +101,20 @@ console.log(`Comparison tests passed: THESAN z=6 vs COSMOS-Web median ${stats.me
   assert.deepEqual(unexplained, [], `definition keys without help text in the Explorer's MINE_HELP: ${unexplained.join(", ")}`);
   assert(!/const KEY_LABEL=\{/.test(html), "the Explorer must read KEY_LABEL from compare.js, not keep its own copy");
 }
+{ // a mass function of quiescent galaxies, of centrals only, or of a zoom sample is not the mass function of all galaxies; spelling variants of "all" are one population
+  const { populationClass } = context.globalThis.SimHighlineCompare;
+  const cases = { all: "all", "all galaxies": "all", "all galaxies (PGalF)": "all", "All galaxies": "all", quiescent: "quiescent", passive: "quiescent", "all galaxies, passive": "quiescent", "star-forming": "star-forming", "all galaxies, star-forming": "star-forming", centrals: "centrals", satellites: "satellites", "all galaxies of the zoom sample, as drawn": "zoom",
+    "star-forming-centrals": "centrals star-forming", "zoom-centrals": "centrals zoom", "isolated-zoom-centrals": "centrals isolated zoom", "star-forming galaxies, sSFR > 0.2 / t_H(z)": "star-forming galaxies, sSFR > 0.2 / t_H(z)" };
+  for (const [text, want] of Object.entries(cases)) assert.equal(populationClass(text), want, `population "${text}" must read as "${want}"`);
+  assert.equal(populationClass("something else"), "something else", "an unknown population stays as written");
+  assert.equal(populationClass(undefined), undefined);
+  const rec = (population, source) => ({ relation: "gsmf", source, rankable: true, epoch: { zRepresentative: 1 }, definitions: { densityFrame: "comoving", imf: "chabrier03", massDefinition: "total", cosmology: { H0: 70, Om: 0.3 }, population } });
+  const v = (a, b) => compatible(rec(a, "A"), rec(b, "B"));
+  assert.equal(v("all", "all galaxies").verdict, "comparable", "'all' and 'all galaxies' are the same population");
+  for (const other of ["quiescent", "centrals", "all galaxies of the zoom sample, as drawn", "star-forming"]) {
+    const r = v("all", other);
+    assert.equal(r.verdict, "not-comparable", `a mass function of '${other}' must not be compared with one of all galaxies`);
+    assert(r.blockers.some(b => b.startsWith("population")), "the blocker must name the population");
+  }
+  assert.equal(v("quiescent", "passive").verdict, "comparable", "'quiescent' and 'passive' are the same population");
+}

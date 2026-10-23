@@ -1,7 +1,7 @@
 (function(root){
 const UNSET=new Set([undefined,null,"unspecified","heterogeneous"]);
 const RULES={
-  gsmf:{hard:["densityFrame"],soft:["imf","massDefinition","cosmology"]},
+  gsmf:{hard:["densityFrame","population"],soft:["imf","massDefinition","cosmology"]},
   sfms:{hard:["population"],soft:["imf","massDefinition","sfrTimescaleMyr","sfrStatistic","cosmology"]},
   ssfr:{hard:["population"],soft:["imf","massDefinition","sfrTimescaleMyr","sfrStatistic","cosmology"]},
   quenched:{hard:["quenchingCriterion"],soft:["imf","massDefinition"]},
@@ -47,6 +47,16 @@ const RULES={
   uvbeta:{hard:["betaWindow","dustTreatment"],soft:[]}
 };
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
+/* Which galaxies a curve covers, so that spelling variants ("all", "all galaxies", "all galaxies (PGalF)"; "quiescent", "passive") are one population while a quiescent, centrals-only, zoom or selection-based curve is another. A text with any word that is not a plain descriptor stays as written. scripts/test-compare.mjs and sim_highline.population_class keep the two ports equal. */
+function populationClass(v){
+  if(typeof v!=="string")return v;
+  const STOP=new Set(["all","galaxies","galaxy","pgalf","of","the","as","drawn","sample"]),DESC={quiescent:"quiescent",passive:"quiescent",quenched:"quiescent",starforming:"star-forming",central:"centrals",centrals:"centrals",satellite:"satellites",satellites:"satellites",zoom:"zoom",isolated:"isolated"};
+  const words=v.toLowerCase().replace(/[(),]/g," ").replace(/star[- ]forming/g,"starforming").split(/[\s\-\/]+/).filter(Boolean),tokens=new Set();
+  for(const w of words){if(DESC[w])tokens.add(DESC[w]);else if(!STOP.has(w))return v}
+  if(!tokens.size)return words.includes("all")?"all":v;
+  return[...tokens].sort().join(" ");
+}
+const norm=(key,v)=>key==="population"?populationClass(v):v;
 const IMF_DEX={kroupa01:0,chabrier03:-0.04,salpeter55:0.1775};  /* data/imf-offsets.json documents where these come from; scripts/test-compare.mjs keeps the two equal */
 function cosmologyNote(relation,a,b){
   const ra=Math.log10(a.H0/b.H0);
@@ -61,13 +71,13 @@ function compatible(a,b){
   if(!a.definitions||!b.definitions)blockers.push("structured definitions missing");
   for(const key of rule.hard){
     if(UNSET.has(da[key])||UNSET.has(db[key]))blockers.push(`${key} not documented`);
-    else if(!same(da[key],db[key]))blockers.push(`${key}: ${da[key]} vs ${db[key]}`);
+    else if(!same(norm(key,da[key]),norm(key,db[key])))blockers.push(`${key}: ${da[key]} vs ${db[key]}`);
   }
   for(const key of rule.soft){
     if(key==="imf"&&da.imf in IMF_DEX&&db.imf in IMF_DEX){if(da.imf!==db.imf)caveats.push(`imf: ${da.imf} vs ${db.imf}: ${Math.abs(IMF_DEX[da.imf]-IMF_DEX[db.imf]).toFixed(3)} dex in stellar mass if not converted`);continue}
     if(key==="cosmology"){if(da.cosmology&&db.cosmology&&!same(da.cosmology,db.cosmology))caveats.push(cosmologyNote(relation,da.cosmology,db.cosmology));continue}
     if(UNSET.has(da[key])||UNSET.has(db[key]))caveats.push(`${key} not documented for ${UNSET.has(da[key])?a.source:b.source}`);
-    else if(!same(da[key],db[key]))caveats.push(`${key}: ${da[key]} vs ${db[key]}`);
+    else if(!same(norm(key,da[key]),norm(key,db[key])))caveats.push(`${key}: ${da[key]} vs ${db[key]}`);
   }
   const analytic=[a,b].some(r=>r.epoch?.mode==="analytic-evolution"),dz=Math.abs((a.epoch?.zRepresentative??0)-(b.epoch?.zRepresentative??0));
   if(!analytic&&dz>.5)caveats.push(`epoch: z=${a.epoch.zRepresentative} vs z=${b.epoch.zRepresentative} (bin ${b.epoch.zMin}-${b.epoch.zMax}); evolution within the bin is not modelled`);
@@ -143,5 +153,5 @@ function distributionPoints(d,stats){
   return pts;
 }
 const KEY_LABEL={imf:"Initial mass function (IMF)",massDefinition:"Which stars count toward the mass",haloMassDefinition:"Halo mass definition",population:"Which galaxies are included",sfrTimescaleMyr:"Star formation rate averaged over",sfrStatistic:"How the star formation rate is measured",quenchingCriterion:"What counts as quenched",sizeDefinition:"Size definition",metallicityQuantity:"What metallicity means",gasPhase:"Which gas",densityFrame:"Volume for densities",ageWeighting:"How the stellar age is averaged",apertureDefinition:"Region the quantity is measured within",areaScale:"Scale the surface densities are measured on",betaWindow:"Wavelength window of the UV slope",bhMassMethod:"How the black hole mass is obtained",bhadDefinition:"How the accretion-rate density is defined",bolometricCorrection:"Bolometric correction",coConversion:"CO-to-H2 conversion factor",colourBand:"Which colour (bands)",coreTreatment:"Cluster core included or removed",cosmology:"Cosmology (H0, matter density)",dustCorrection:"Dust correction of the luminosities",dustMethod:"How the dust mass is measured",dustTreatment:"Dust treatment of the colours",fgasNormalisation:"Baryon fraction the gas fraction is divided by",galaxyType:"Central, satellite or all galaxies",gasDefinition:"Which gas (phase and region)",gasMethod:"How the gas phase is computed or measured",gasStatistic:"Mean or median of the gas fraction",haloMassHistory:"Halo mass: current or peak",heliumIncluded:"Helium in the gas surface density",jDefinition:"How the specific angular momentum is defined",lambdaStatistic:"Statistic of the spin parameter",lengthUnit:"Length unit (with or without h)",lfConvention:"Luminosity function convention",line:"Emission line",luminosityBand:"Luminosity band",massMethod:"How the mass is obtained",metalPhase:"Metals in gas or in stars",metallicityCalibration:"Metallicity calibration (and solar value)",muAlpha:"Mixing parameter of the metallicity relation",obscurationCorrection:"Obscured AGN: corrected or not",piMax:"Line-of-sight integration limit",projection:"Projection (3D, 2D or redshift space)",radiativeEfficiency:"Radiative efficiency of accretion",sampleSelection:"How the sample is selected",sfrIndicator:"Star formation rate indicator",sfrIntegrationLimit:"Region the SFR density is summed over",sigma1Definition:"How the inner surface density is defined",sigmaDefinition:"How the velocity dispersion is defined",sigmaDimension:"Velocity dispersion: dimension and aperture",sigmaWeighting:"Velocity dispersion weighted by light or mass",slowRotatorCriterion:"Slow-rotator cut",spinDefinition:"How the spin parameter is defined",szScaling:"Redshift scaling of the Compton-Y relation",uvBand:"Rest-frame UV band",velocityDefinition:"Which velocity (circular, rotation, maximum)",xrayBand:"X-ray band"};
-root.SimHighlineCompare={KEY_LABEL,distributionStats,distributionPoints,IMF_DEX,RULES,MIN_BINS,compatible,interpolate,residuals,summarize,cosmicAgeGyr,evaluator,sigmaOf};
+root.SimHighlineCompare={populationClass,KEY_LABEL,distributionStats,distributionPoints,IMF_DEX,RULES,MIN_BINS,compatible,interpolate,residuals,summarize,cosmicAgeGyr,evaluator,sigmaOf};
 })(typeof globalThis!=="undefined"?globalThis:window);
