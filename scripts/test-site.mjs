@@ -3,7 +3,7 @@ import { readFile, access } from "node:fs/promises";
 const root = new URL("../dist/", import.meta.url);
 const manifest = JSON.parse(await readFile(new URL("../data/export/sim-highline-manifest.json", import.meta.url), "utf8"));
 const release = JSON.parse(await readFile(new URL("../data/release.json", import.meta.url), "utf8"));
-const PAGES = ["index", "studies", "study-definitions", "study-harmonization", "study-sfh", "study-joint", "study-shape", "retune", "data", "methods", "sources", "glossary", "faq", "changes", "quality", "summary"];
+const PAGES = ["index", "studies", "study-definitions", "study-harmonization", "study-sfh", "study-joint", "study-shape", "study-resolution", "retune", "data", "methods", "sources", "glossary", "faq", "changes", "quality", "summary"];
 const html = {};
 for (const page of [...PAGES, "findings"]) {
   const h = html[page] = await readFile(new URL(`site/${page}.html`, root), "utf8");
@@ -66,12 +66,12 @@ assert(index.includes(manifest.nRecords.toLocaleString("en-US")), "index: record
 assert(/<svg viewBox/.test(index) && (index.match(/<path d="M/g) || []).length >= 5, "index: figure must contain curves");
 assert(/Not reviewed by any outside expert/.test(index), "index must state limits");
 assert(/Fig\. 1/.test(index) && /Records by relation/.test(index), "index: figure and data table expected");
-for (const f of ["study-definitions", "study-harmonization", "study-sfh", "study-joint", "study-shape"]) assert(index.includes(`href="${f}.html"`), `index: study ${f} missing from the table`);
+for (const f of ["study-definitions", "study-harmonization", "study-sfh", "study-joint", "study-shape", "study-resolution"]) assert(index.includes(`href="${f}.html"`), `index: study ${f} missing from the table`);
 assert(/study-joint\.html[\s\S]*?Pre-registered · (pending|result)/.test(index), "index: the all-at-once study row must say pending or result");
 assert(!/hero|What you get|What it is not|Start with a question|problem it removes/i.test(index), "index: marketing sections must be gone");
 
 const studies = html.studies;
-assert(["study-definitions", "study-harmonization", "study-sfh", "study-joint", "study-shape"].every(s => studies.includes(`href="${s}.html"`)), "studies: every study must be linked");
+assert(["study-definitions", "study-harmonization", "study-sfh", "study-joint", "study-shape", "study-resolution"].every(s => studies.includes(`href="${s}.html"`)), "studies: every study must be linked");
 assert(/pre-registered|Protocol first/i.test(studies) && /Null results are reported/.test(studies), "studies: how studies are registered");
 for (const [p, n] of [["study-definitions", 3], ["study-harmonization", 1], ["study-sfh", 3]]) {
   assert((html[p].match(/<figure class="fig/g) || []).length === n, `${p}: ${n} figures expected`);
