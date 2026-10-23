@@ -1,7 +1,8 @@
-"""Measured conversions between definitions, from the CAMELS fiducial (cosmic-variance) Subfind catalogues of IllustrisTNG, SIMBA and Astrid: how much a galaxy's stellar mass, SFR, gas metallicity and stellar metallicity change when the aperture is changed
+"""Measured conversions between definitions, from the CAMELS fiducial (cosmic-variance) Subfind catalogues of IllustrisTNG, SIMBA, Astrid and Swift-EAGLE: how much a galaxy's stellar mass, SFR, gas metallicity and stellar metallicity change when the aperture is changed
 (all bound particles, within twice the stellar half-mass radius, within the stellar half-mass radius, within the radius of maximum circular velocity), how a central's total Subfind mass compares with M200crit, and the stellar mass function
-that results from each stellar-mass definition. Every number is a median or percentile of galaxies in the catalogues, with the spread between the 27 seeds as its error bar. These are conversions for these three codes at 25 Mpc/h, not universal laws.
-Stage 1 (network): python3 scripts/ingest_camels_conversions.py [--workers 12]    writes data/ensembles/camels-conversions.json (per-seed counts; arrays are read by HTTP range requests)
+that results from each stellar-mass definition. Every number is a median or percentile of galaxies in the catalogues, with the spread between the 27 seeds as its error bar. These are conversions for these four codes at 25 Mpc/h, not universal laws.
+The first three codes are read from the Sims tree of the CAMELS server; Swift-EAGLE has no catalogues there and is read from the FOF_Subfind tree (see catalogue_url).
+Stage 1 (network): python3 scripts/ingest_camels_conversions.py [--workers 12] [--suites Swift-EAGLE]    writes data/ensembles/camels-conversions.json (per-seed counts; arrays are read by HTTP range requests); with --suites only those codes are read and the others in the file are kept as they are
 Stage 2 (offline, run by verify-all.sh): python3 scripts/ingest_camels_conversions.py --derive    pools the seeds and writes data/conversions.json (the file the Explorer and docs/CONVERSIONS.md read)."""
 import argparse
 import hashlib
@@ -21,11 +22,15 @@ import distribution_stats as D  # noqa: E402
 ROOT = HERE.parent
 BASE = "https://users.flatironinstitute.org/~camels"
 SNAPS = {"090": 0.0, "062": 0.95, "042": 2.15}
-SUITES = ("IllustrisTNG", "SIMBA", "Astrid")
+SUITES = ("IllustrisTNG", "SIMBA", "Astrid", "Swift-EAGLE")
+# where each code's group catalogues are on the server: the first three codes have them next to their snapshots, Swift-EAGLE only in the separate FOF_Subfind tree
+CATALOGUE_PATH = {"IllustrisTNG": "Sims/{suite}/CV/{name}/groups_{snap}.hdf5", "SIMBA": "Sims/{suite}/CV/{name}/groups_{snap}.hdf5", "Astrid": "Sims/{suite}/CV/{name}/groups_{snap}.hdf5",
+                  "Swift-EAGLE": "FOF_Subfind/{suite}/L25n256/CV/{name}/groups_{snap}.hdf5"}
 X_EDGES = [round(v, 3) for v in np.arange(9.0, 11.5001, 0.25)]       # log10 reference stellar mass
 H_EDGES = [round(v, 3) for v in np.arange(10.0, 13.5001, 0.25)]      # log10 M200crit
 G_EDGES = [round(v, 3) for v in np.arange(8.5, 12.0001, 0.1)]        # stellar mass function bins
-MIN_N = 10                                                           # a seed contributes a bin's median only with this many galaxies
+NUMBER_WORDS = {3: "three", 4: "four"}
+MIN_N = 10                                                          # a seed contributes a bin's median only with this many galaxies
 MIN_POOLED = 50                                                      # a bin is published only with this many galaxies in all seeds
 ENS = ROOT / "data" / "ensembles" / "camels-conversions.json"
 OUT = ROOT / "data" / "conversions.json"
@@ -40,6 +45,10 @@ LOG_D = [round(v, 3) for v in np.arange(-2.0, 2.0001, 0.02)]
 HALO_D = [round(v, 3) for v in np.arange(-1.0, 1.0001, 0.01)]
 ARRAYS = ["SubhaloMassType", "SubhaloLenType", "SubhaloSFR", "SubhaloGasMetallicity", "SubhaloStarMetallicity", "SubhaloMass", "SubhaloGrNr"] + [a for _, a in MASS_DEFS + SFR_DEFS + GASZ_DEFS + STARZ_DEFS]
 GROUP_ARRAYS = ["Group_M_Crit200", "GroupFirstSub"]
+
+
+def catalogue_url(suite, name, snap):
+    return f"{BASE}/" + CATALOGUE_PATH[suite].format(suite=suite, name=name, snap=snap)
 
 
 def read(url):
@@ -124,7 +133,7 @@ def one(args):
     suite, name, snaps = args
     res = {}
     for s in snaps:
-        url = f"{BASE}/Sims/{suite}/CV/{name}/groups_{s}.hdf5"
+        url = catalogue_url(suite, name, s)
         for attempt in range(4):
             try:
                 arr, z, h, box, sha = read(url)
@@ -137,25 +146,57 @@ def one(args):
     return suite, name, res
 
 
-def stage1(workers):
+def build_ensemble(results, run, existing=None, today=None):
+    """The ensemble dictionary from per-seed results [(code, seed name, {snapshot: block})] of the codes in `run`. With `existing` (the saved file), every code not in `run` is kept exactly as it is; without it a fresh file is made. Pure: no network, no file."""
+    today = today or date.today().isoformat()
+    fresh = {"schemaVersion": "1.0.0", "source": "CAMELS first-generation Subfind catalogues (Villaescusa-Navarro et al. 2021, ApJ 915, 71), cosmic-variance set CV", "base": BASE, "retrieved": today,
+             "snapshots": SNAPS, "xEdges": X_EDGES, "haloEdges": H_EDGES, "gsmfEdges": G_EDGES, "deltaEdges": {"mass": MASS_D, "log": LOG_D, "halo": HALO_D}, "suites": {}, "pooledGrids": {}}
+    if existing is not None:
+        out = existing
+        for k in ("snapshots", "xEdges", "haloEdges", "gsmfEdges", "deltaEdges", "base"):
+            if out[k] != fresh[k]:
+                raise ValueError(f"the saved ensemble file has different {k} from this script; read every code again (without --suites) or fix the constants")
+        out.setdefault("retrievedBySuite", {s: out["retrieved"] for s in out["suites"]})
+        for s in run:
+            out["suites"][s] = {}
+            out["retrievedBySuite"][s] = today
+    else:
+        out = fresh
+        out["retrievedBySuite"] = {s: today for s in run}
+    out["suiteSources"] = {s: p.format(suite=s, name="{name}", snap="{snap}") for s, p in CATALOGUE_PATH.items()}
+    pooled = {}
+    for suite, name, res in results:
+        for snap, r in res.items():                # the (x, delta) counts are summed over the seeds as they arrive (per-seed medians and counts are kept separately)
+            for key, blk in (r.get("pairs") or {}).items():
+                g = np.array(blk.pop("grid"), int)
+                cur = pooled.setdefault(suite, {}).setdefault(snap, {})
+                cur[key] = g if key not in cur else cur[key] + g
+        out["suites"].setdefault(suite, {})[name] = res
+    for su, v in pooled.items():
+        out["pooledGrids"][su] = {sn: {k: g.tolist() for k, g in d.items()} for sn, d in v.items()}
+    return out
+
+
+def stage1(workers, only=None):
+    """Read the catalogues of every code in SUITES and write the ensemble file; with `only` (a list of codes), read just those and keep the other codes in the existing file exactly as they are."""
     names = [f"CV_{i}" for i in range(27)]
-    jobs = [(s, n, list(SNAPS)) for s in SUITES for n in names]
-    out = {"schemaVersion": "1.0.0", "source": "CAMELS first-generation Subfind catalogues (Villaescusa-Navarro et al. 2021, ApJ 915, 71), cosmic-variance set CV", "base": BASE, "retrieved": date.today().isoformat(),
-           "snapshots": SNAPS, "xEdges": X_EDGES, "haloEdges": H_EDGES, "gsmfEdges": G_EDGES, "deltaEdges": {"mass": MASS_D, "log": LOG_D, "halo": HALO_D}, "suites": {}}
+    run = list(only) if only else list(SUITES)
+    jobs = [(s, n, list(SNAPS)) for s in run for n in names]
     t0, done = time.time(), 0
-    out["pooledGrids"] = {}
-    with ProcessPoolExecutor(workers) as ex:
-        for suite, name, res in ex.map(one, jobs, chunksize=1):
-            for snap, r in res.items():            # the (x, delta) counts are summed over the seeds as they arrive (per-seed medians and counts are kept separately)
-                for key, blk in (r.get("pairs") or {}).items():
-                    g = np.array(blk.pop("grid"), int)
-                    cur = out["pooledGrids"].setdefault(suite, {}).setdefault(snap, {})
-                    cur[key] = g if key not in cur else cur[key] + g
-            out["suites"].setdefault(suite, {})[name] = res
-            done += 1
-            if done % 9 == 0:
-                print(f"{done}/{len(jobs)} {time.time() - t0:.0f}s", flush=True)
-    out["pooledGrids"] = {su: {sn: {k: g.tolist() for k, g in d.items()} for sn, d in v.items()} for su, v in out["pooledGrids"].items()}
+
+    def progress():
+        nonlocal done
+        with ProcessPoolExecutor(workers) as ex:
+            for item in ex.map(one, jobs, chunksize=1):
+                yield item
+                done += 1
+                if done % 9 == 0:
+                    print(f"{done}/{len(jobs)} {time.time() - t0:.0f}s", flush=True)
+
+    try:
+        out = build_ensemble(progress(), run, json.loads(ENS.read_text()) if only else None)
+    except ValueError as e:
+        sys.exit(str(e))
     ENS.write_text(json.dumps(out, separators=(",", ":")) + "\n")
     errs = sum(1 for su in out["suites"].values() for r in su.values() for s in r.values() if "error" in s)
     print(f"written {ENS}: {done} simulations, {errs} snapshot errors, {time.time() - t0:.0f}s")
@@ -178,9 +219,11 @@ def mass_at_number_density(counts, vol, edges, n_target):
 def derive():
     ens = json.loads(ENS.read_text())
     res = {"schemaVersion": "1.0.0", "retrieved": ens["retrieved"], "source": ens["source"],
-           "about": "Measured conversions between definitions in the CAMELS fiducial (cosmic-variance) simulations of three codes, 27 seeds each, 25 Mpc/h boxes. Each conversion is the change in log10 of a quantity when its definition changes, as a function of the log10 stellar mass (or M200crit) of the galaxy; median and 16th to 84th percentile of the pooled galaxies, and the standard error of the median across the 27 seeds. Galaxies with a zero value in either definition are left out and counted separately. These describe these codes at this resolution and volume; they are not corrections for other simulations.",
+           "about": f"Measured conversions between definitions in the CAMELS fiducial (cosmic-variance) simulations of {NUMBER_WORDS.get(len([s for s in SUITES if s in ens['suites']]), len([s for s in SUITES if s in ens['suites']]))} codes, 27 seeds each, 25 Mpc/h boxes. Each conversion is the change in log10 of a quantity when its definition changes, as a function of the log10 stellar mass (or M200crit) of the galaxy; median and 16th to 84th percentile of the pooled galaxies, and the standard error of the median across the 27 seeds. Galaxies with a zero value in either definition are left out and counted separately. These describe these codes at this resolution and volume; they are not corrections for other simulations.",
            "xEdges": ens["xEdges"], "haloEdges": ens["haloEdges"], "minPooledGalaxies": MIN_POOLED, "minPerSeedForMedian": MIN_N, "numberDensities": [-2.0, -2.5, -3.0, -3.5], "suites": {}}
     for suite in SUITES:
+        if suite not in ens["suites"]:             # a code not read yet (stage 1 not run for it)
+            continue
         res["suites"][suite] = {}
         for snap, z in SNAPS.items():
             seeds = [(n, r[snap]) for n, r in sorted(ens["suites"][suite].items(), key=lambda kv: int(kv[0].split("_")[1])) if snap in r and "error" not in r[snap]]
@@ -232,6 +275,11 @@ def derive():
                 shifts[f"total-to-{lab}"] = per
             block["gsmfShiftAtFixedNumberDensity"] = shifts
             res["suites"][suite][f"z{z:g}"] = block
+    if "suiteSources" in ens:                      # where each code's catalogues were read and when (present once a code from the second tree was added)
+        suites = res.pop("suites")
+        res["suiteSources"] = {s: ens["suiteSources"][s] for s in SUITES if s in suites}
+        res["retrievedBySuite"] = {s: ens["retrievedBySuite"][s] for s in SUITES if s in suites}
+        res["suites"] = suites
     OUT.write_text(json.dumps(res, indent=1) + "\n")
     print(f"wrote {OUT}: {sum(len(v) for v in res['suites'].values())} (code, redshift) blocks")
 
@@ -240,5 +288,6 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--workers", type=int, default=12)
     ap.add_argument("--derive", action="store_true", help="offline: pool the saved per-seed counts and write data/conversions.json")
+    ap.add_argument("--suites", nargs="+", choices=SUITES, help="read only these codes and keep the other codes in the saved file unchanged")
     a = ap.parse_args()
-    derive() if a.derive else stage1(a.workers)
+    derive() if a.derive else stage1(a.workers, a.suites)

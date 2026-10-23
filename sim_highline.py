@@ -80,7 +80,7 @@ def load_conversions(path=None):
 
 def measured_shift(pair, code, x, z=0.0, conv=None):
     """What changing a definition does to a quantity, measured in the CAMELS catalogues of one code: `pair` such as 'mass.total-to-rad2' (stars within twice the stellar half-mass radius against all bound stars),
-    `code` one of IllustrisTNG, SIMBA, Astrid, `x` the log10 stellar mass (log10 M200crit for 'halo.*') of the galaxy, `z` one of 0, 0.95, 2.15. Returns median, p16, p84 (galaxies) and se (spread of the median across the 27 boxes) in dex,
+    `code` one of IllustrisTNG, SIMBA, Astrid, Swift-EAGLE, `x` the log10 stellar mass (log10 M200crit for 'halo.*') of the galaxy, `z` one of 0, 0.95, 2.15. Returns median, p16, p84 (galaxies) and se (spread of the median across the 27 boxes) in dex,
     linearly interpolated between the bin centres; raises ValueError outside the measured range rather than extrapolating."""
     conv = conv or load_conversions()
     key = f"z{z:g}"
