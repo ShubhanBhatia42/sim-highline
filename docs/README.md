@@ -18,6 +18,7 @@ Fifty documents is too many to find anything in, so here they are by what you wa
 - [COMPILATION-CHECK.md](COMPILATION-CHECK.md) *(generated)*: observation curves from the SWIFT compilation checked against their papers, what disagreed and what was done. [UPSTREAM-ISSUES.md](UPSTREAM-ISSUES.md): drafts, not sent, for the compilation's maintainers.
 - [CONVERSIONS.md](CONVERSIONS.md) *(generated)*: what changes, measured in three codes, when an aperture or a weighting changes (stellar mass, SFR, metallicity, halo mass).
 - [PLAUSIBILITY-SCREEN.md](PLAUSIBILITY-SCREEN.md) *(generated)*: curves that look odd next to the others.
+- [OBSERVER-LAYER.md](OBSERVER-LAYER.md) *(numbers generated)*: Gaussian mass scatter, a mass offset, completeness and a detection floor applied to simulation curves, what the tests check, and how much of the simulation-observation offsets in the stellar mass function pairs a scatter of 0.1 to 0.3 dex could absorb (not evidence that any survey has it).
 - [SOURCE-TERMS.md](SOURCE-TERMS.md): terms of the third-party inputs.
 - [EXPANDING-COVERAGE.md](EXPANDING-COVERAGE.md): adding catalogue-based sources on your own machine.
 - [SUBMIT-A-CURVE.md](SUBMIT-A-CURVE.md): give us your published numbers as a table (a folder under `submissions/`, checked automatically).
