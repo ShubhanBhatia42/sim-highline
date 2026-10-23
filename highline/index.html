@@ -56,6 +56,8 @@ a:focus-visible,[tabindex]:focus-visible,button:focus-visible,input:focus-visibl
 .loader{position:fixed;inset:0;display:grid;place-content:center;justify-items:center;gap:14px;background:var(--bg);z-index:100;transition:opacity .3s}
 .loader p{margin:0;color:var(--ink3);font:12px var(--mono)}.loader .bar{width:160px;height:2px;background:var(--rule);overflow:hidden}.loader .bar i{display:block;height:100%;width:40%;background:var(--ink);animation:ld 1.1s ease-in-out infinite}
 @keyframes ld{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
+.loader.dl p{max-width:34rem;text-align:center;line-height:1.7;padding:0 16px}.loader .btn{margin-top:4px}
+.dstat{max-width:34rem;line-height:1.6;color:var(--ink2);font-size:14.5px;pointer-events:auto}.dstat .btn{margin-top:10px}.atlas .dstat{margin:40px 0}
 .loader.done{opacity:0;pointer-events:none}.loader.failed p{max-width:34rem;text-align:center;line-height:1.7;padding:0 16px;color:var(--ink2)}.loader.failed a{color:var(--link)}.loader.failed .bar{display:none}
 .app{display:grid;height:100%;grid-template-columns:236px minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto;grid-template-areas:"top top" "rail main" "rail foot"}
 .topbar{grid-area:top;display:flex;align-items:center;gap:14px;padding:0 20px;min-height:48px;background:var(--bg);border-bottom:1px solid var(--rule)}
@@ -384,7 +386,7 @@ b.classList.add("failed");b.setAttribute("role","alert");b.innerHTML='<div class
 <script>window.SIMHIGHLINE_RELEASE=/*__RELEASE__*/;window.SIMHIGHLINE_NOTES=/*__NOTES__*/;window.SIMHIGHLINE_SENS=/*__SENS__*/;window.SIMHIGHLINE_AUDIT=/*__AUDIT__*/;</script>
 <script>
 const relKey=r=>{if(r.relation!=="mzr")return r.relation;const q=r.definitions?.metallicityQuantity;if(q==="gas-O/H")return"mzr";return /Zsun/.test(r.axes?.yDefinition||"")?"mzrz":"mzrraw"};
-const ALL=(window.SIMHIGHLINE_CURVES||[]).filter(r=>r.representation&&r.domain).map(r=>({...r,rel0:r.relation,relation:relKey(r)}));
+const ALL=(window.SIMHIGHLINE_CURVES||[]).filter(r=>r.representation).map(r=>({...r,rel0:r.relation,relation:relKey(r)}));
 const MASS="log M★ [M☉]";
 const REL={
   gsmf:{t:"Stellar mass function",c:"GSMF",x:MASS,y:"log Φ [cMpc⁻³ dex⁻¹]",yt:{timesx:"log M★ Φ [cMpc⁻³]"},anchor:"COSMOS-Web 2025|Baldry et al. 2012"},
@@ -512,10 +514,90 @@ const dashOf=r=>r.provenance?.tier==="published-fit"?' stroke-dasharray="7 4"':r
 const copyTxt=async(t,msg)=>{try{await navigator.clipboard.writeText(t)}catch(e){const a=document.createElement("textarea");a.value=t;document.body.append(a);a.select();try{document.execCommand("copy")}catch(_){}a.remove()}toast(msg||"Copied")};
 function toast(m){const t=$("toast");t.textContent=m;t.style.display="block";clearTimeout(toast.h);toast.h=setTimeout(()=>t.style.display="none",1800)}
 
+/* ---------- data per relation ---------- */
+/* SIMHIGHLINE_CURVES holds a thin entry for every record: enough to list, count, search and group them. The rest of a record (points, parameters, distributions, definitions, selection, notes, the full provenance) comes with its relation's file, highline-data/<relation>.json, which is fetched the first time a view needs that relation and then completes the entries in place, so a record keeps its identity. The tension, spread and distribution views read many relations and fetch them all first.
+   Nothing is computed from an incomplete entry: renderAll, setMode, openRecord, renderPlot and renderPanel wait until dataMissing() is empty. A file that cannot be had says so, with a retry. See docs/ARCHITECTURE.md. */
+const FILES=window.SIMHIGHLINE_FILES||{dir:"",files:{}};
+const RAW=new Map(),byRaw=new Map();
+for(const r of ALL){if(!RAW.has(r.relation))RAW.set(r.relation,r.rel0);(byRaw.get(r.rel0)||byRaw.set(r.rel0,[]).get(r.rel0)).push(r)}
+const rawOf=k=>RAW.get(k)||k;
+const VIEW_RELS=(()=>{const ws=Object.keys(REL).filter(k=>sims.some(r=>r.relation===k));return{tension:ws.filter(k=>REL[k].anchor&&!REL[k].xz),spread:ws.filter(k=>!REL[k].xz),dist:Object.keys(REL).filter(k=>sims.concat(obs).some(r=>r.relation===k&&r.representation.distribution))}})();
+const dataOf=new Map(),LOAD_SLOW=6000,LOAD_LIMIT=30000;let dataWaiters=[],panelStale=false;
+function dataNeeded(){
+  const s=new Set(),add=f=>{if(FILES.files[f])s.add(f)};
+  add(rawOf(state.rel));
+  const sel=state.sel&&byId.get(state.sel);if(sel)add(sel.rel0);
+  for(const k of VIEW_RELS[state.mode]||[])add(rawOf(k));
+  return[...s];
+}
+const dataMissing=()=>dataNeeded().filter(f=>dataOf.get(f)?.st!=="done");
+const dataPending=()=>dataWaiters.some(w=>w.always||w.sig===dataSig())||dataMissing().length>0;
+function dataWhy(e){
+  if(location.protocol==="file:")return"a page opened from a file cannot read its data files; open the Explorer from the sim-highline site";
+  if(e&&e.name==="AbortError")return"it took too long";
+  if(e instanceof SyntaxError)return"the file arrived damaged";
+  if(e&&e.mismatch)return"the file does not belong to this version of the page; reload the page";
+  if(e&&e.http)return`the server answered ${e.http}`;
+  return"the connection failed";
+}
+function dataHydrate(f,recs){
+  const want=FILES.files[f],light=byRaw.get(f)||[],bad=()=>Object.assign(new Error("mismatch"),{mismatch:true});
+  if(!Array.isArray(recs)||recs.length!==want.n)throw bad();
+  const m=new Map(recs.map(r=>[r&&r.id,r]));
+  for(const r of light){const full=m.get(r.id);if(!full||full.relation!==f)throw bad()}
+  for(const r of light){const full=m.get(r.id),key=r.relation,raw=r.rel0;for(const k of Object.keys(r))delete r[k];Object.assign(r,full);r.rel0=raw;r.relation=key}
+}
+function dataStart(f,retry){
+  const old=dataOf.get(f);if(old&&old.ctl)old.ctl.abort();
+  const ctl=new AbortController(),st={st:"loading",t0:performance.now(),ctl},limit=setTimeout(()=>ctl.abort(),LOAD_LIMIT);dataOf.set(f,st);
+  st.p=fetch(`${FILES.dir}/${f}.json?v=${FILES.files[f].v}`,{signal:ctl.signal,cache:retry?"reload":"default"})
+    .then(r=>{if(!r.ok)throw Object.assign(new Error("http"),{http:r.status});return r.json()})
+    .then(recs=>{if(dataOf.get(f)!==st)return;dataHydrate(f,recs);st.st="done"})
+    .catch(e=>{if(dataOf.get(f)!==st)return;st.st="error";st.why=dataWhy(e)})
+    .finally(()=>{clearTimeout(limit);if(dataOf.get(f)===st){st.ctl=null;dataChanged()}});
+  return st;
+}
+/* A queued redraw is dropped when the relation or the view has been changed since it was queued (the later change draws, or queues, for itself); the first drawing of the page is never dropped. */
+const dataSig=()=>state.mode+"|"+state.rel;
+function dataWait(fn,always){
+  const miss=dataMissing();if(!miss.length)return false;
+  dataWaiters=dataWaiters.filter(w=>w.always||w.sig===dataSig());dataWaiters.push({fn,sig:dataSig(),always});let started=false;
+  for(const f of miss)if(!dataOf.has(f)){dataStart(f);started=true}
+  dataShell();dataStatus();if(started)setTimeout(dataStatus,LOAD_SLOW+50);
+  return true;
+}
+const onData=(fn,always)=>{if(!dataWait(fn,always))fn()};
+function dataChanged(){
+  if(dataMissing().length){dataStatus();return}
+  const b=$("boot");if(b&&b.dataset.dl){delete b.dataset.dl;b.classList.remove("dl","failed");b.setAttribute("role","status");b.querySelector("p").textContent="Loading the dataset…"}
+  const e=$("empty");if(e.querySelector(".dstat")){e.hidden=true;e.textContent=""}
+  const ws=dataWaiters;dataWaiters=[];
+  for(const w of ws){if(!w.always&&w.sig!==dataSig())continue;try{w.fn()}catch(e){setTimeout(()=>{throw e})}}
+  if(state.panel&&panelStale)try{renderPanel()}catch(e){setTimeout(()=>{throw e})}
+}
+/* while a relation's data is on its way: the relation list and the title are drawn, the plot area says what is happening */
+function dataShell(){renderPresets();if(!isTable()){$("shTitle").textContent=REL[state.rel].t;$("shSub").textContent="";$("stage").innerHTML="";$("stage").removeAttribute("viewBox");$("legend").innerHTML="";$("chip").innerHTML="";lastPaths=new Map()}}
+function dataStatus(){
+  const miss=dataMissing();if(!miss.length)return;
+  const sts=miss.map(f=>dataOf.get(f)).filter(Boolean),bad=sts.find(x=>x.st==="error"),slow=!bad&&sts.some(x=>performance.now()-x.t0>LOAD_SLOW);
+  const name=f=>{if(rawOf(state.rel)===f)return REL[state.rel].t;const k=Object.keys(REL).find(k=>rawOf(k)===f);return k?REL[k].t:f},what=miss.length===1?name(miss[0]):`${miss.length} relations`;
+  const btn=`<br><button class="btn" data-dretry>Try again</button>`;
+  dataPaint(bad?`The data for <b>${esc(what)}</b> could not be loaded: ${esc(bad.why)}. Check your connection, then try again.${btn}`:slow?`Still loading the data for <b>${esc(what)}</b>. The connection looks slow; you can keep waiting or try again.${btn}`:`Loading the data for <b>${esc(what)}</b>…`,bad?"error":slow?"slow":"loading");
+}
+function dataPaint(html,kind){
+  const b=$("boot"),role=kind==="error"?"alert":"status";
+  if(b&&!b.classList.contains("done")&&(!b.classList.contains("failed")||b.dataset.dl)){b.dataset.dl="1";b.classList.add("dl");b.classList.toggle("failed",kind==="error");b.setAttribute("role",role);b.querySelector("p").innerHTML=html}
+  else{const el=isTable()&&state.mode!=="atlas"?$(state.mode):$("empty");if(el.id==="empty")el.hidden=false;el.innerHTML=`<div class="dstat" role="${role}">${html}</div>`}
+  const rb=document.querySelector("[data-dretry]");if(rb)rb.onclick=dataRetry;
+}
+function dataRetry(){for(const f of dataMissing()){const x=dataOf.get(f);if(x&&x.st!=="done")dataStart(f,true)}dataStatus();setTimeout(dataStatus,LOAD_SLOW+50)}
+/* for tests and for anyone scripting the page: fetch every relation */
+function dataLoadAll(){return Promise.all(Object.keys(FILES.files).map(f=>(dataOf.get(f)||dataStart(f)).p))}
+
 /* ---------- state in the URL ---------- */
 /* A link made with another dataset version says so: curves may have changed since, and the old data are archived. */
 const withVersion=h=>{const q=new URLSearchParams(String(h).replace(/^#/,""));q.set("dv",SIMHIGHLINE_RELEASE.version);return q.toString()};
-window.__sh={withVersion};
+window.__sh={withVersion,pending:()=>dataPending(),loadAll:()=>dataLoadAll()};
 function versionBanner(){
   const dv=new URLSearchParams(location.hash.slice(1)).get("dv"),el=$("verbanner");
   if(!el)return;
@@ -679,6 +761,7 @@ function tween(next){
 const axisFmt=(meta,axis)=>state.tf==="phys"&&!(axis==="y"&&meta.yl&&state.mode!=="evol")&&!(axis==="x"&&meta.xlin&&state.mode!=="evol")?phys:undefined;
 
 function renderPlot(animate){
+  if(dataMissing().length)return;
   const rel=state.rel,z=currentZ(),meta=REL[rel],svg=$("stage");
   const cur=pick(rel,z);renderLegend(cur);renderChip();
   let res=false,ok;
@@ -761,6 +844,8 @@ $("bData").onclick=()=>state.panel&&state.tab==="data"?closePanel():openPanel("d
 $("pClose").onclick=closePanel;
 $("panel").querySelectorAll(".tabs [data-t]").forEach(b=>{b.onclick=()=>openPanel(b.dataset.t);b.onkeydown=e=>{const t=[...$("panel").querySelectorAll(".tabs [data-t]")],i=t.indexOf(b),n=e.key==="ArrowRight"?t[(i+1)%t.length]:e.key==="ArrowLeft"?t[(i-1+t.length)%t.length]:null;if(n){e.preventDefault();openPanel(n.dataset.t);n.focus()}}});
 function renderPanel(){
+  if(dataMissing().length){panelStale=true;return}
+  panelStale=false;
   $("panel").querySelectorAll(".tabs [data-t]").forEach(b=>{b.setAttribute("aria-selected",b.dataset.t===state.tab);b.tabIndex=b.dataset.t===state.tab?0:-1});
   const body=$("pbody");
   if(state.tab==="evidence")body.innerHTML=evidenceHtml();else if(state.tab==="about")body.innerHTML=aboutHtml();else if(state.tab==="tune")body.innerHTML=tuneHtml();else if(state.tab==="mine")body.innerHTML=mineHtml();else body.innerHTML=dataHtml();
@@ -791,7 +876,7 @@ function wireEvidence(){
   $("evCsv").onclick=()=>download(`${r.id}.csv`,"text/csv",csvOf([r],currentZ()));
   $("evBib").onclick=()=>copyTxt(SimHighlineExport.bibtex([r]),"BibTeX copied");
 }
-function openRecord(id){if(!byId.has(id))return;state.sel=id;openPanel("evidence");renderPlot(false);syncHash()}
+function openRecord(id){if(!byId.has(id))return;if(dataWait(()=>openRecord(id)))return;state.sel=id;if(dataWait(()=>openRecord(id)))return;openPanel("evidence");renderPlot(false);syncHash()}
 function closeRecord(){state.sel=null;if(state.tab==="evidence")closePanel();renderPlot(false);syncHash()}
 
 function aboutHtml(){
@@ -1251,7 +1336,7 @@ function renderDist(){
   $("dist").querySelectorAll(".dpanel").forEach(f=>{const go=()=>{const r=byId.get(f.dataset.id);state.rel=r.relation;state.z=nearestStop(state.rel,r.epoch.zRepresentative);state.sel=r.id;setMode("plot");openRecord(r.id)};f.onclick=go;f.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}}});
 }
 function syncShell(){for(const [id,k] of [["mPlot","plot"],["mEvol","evol"],["mAtlas","atlas"],["mTension","tension"],["mSpread","spread"],["mDist","dist"]])$(id).setAttribute("aria-pressed",state.mode===k);$("dist").classList.toggle("on",state.mode==="dist");$("atlas").classList.toggle("on",state.mode==="atlas");$("tension").classList.toggle("on",state.mode==="tension");$("spread").classList.toggle("on",state.mode==="spread");$("main").classList.toggle("table",isTable());$("legend").hidden=isTable();document.querySelector("footer").style.display=isTable()?"none":""}
-function setMode(m){state.mode=m;syncShell();if(m==="atlas")renderAtlas();if(m==="tension")renderTension();if(m==="spread")renderSpread();if(m==="dist")renderDist();renderAll(false)}
+function setMode(m){state.mode=m;syncShell();if(dataWait(()=>setMode(m)))return;if(m==="atlas")renderAtlas();if(m==="tension")renderTension();if(m==="spread")renderSpread();if(m==="dist")renderDist();renderAll(false)}
 $("mPlot").onclick=()=>setMode("plot");$("mEvol").onclick=()=>setMode("evol");$("mAtlas").onclick=()=>setMode("atlas");$("mTension").onclick=()=>setMode("tension");$("mSpread").onclick=()=>setMode("spread");$("mDist").onclick=()=>setMode("dist");
 document.querySelectorAll(".recipes button").forEach(b=>b.onclick=()=>{
   const k=b.dataset.rc;$("about").classList.remove("on");
@@ -1295,29 +1380,35 @@ $("play").onclick=()=>{
   $("playIcon").setAttribute("d","M2.5 1.5h3.5v11h-3.5zM8 1.5h3.5v11h-3.5z");
   state.playing=setInterval(()=>{const st=stops(state.rel);state.z=st[(st.indexOf(currentZ())+1)%st.length];renderAll(true)},1400);
 };
-function renderAll(animate){if(state.mode==="evol"&&REL[state.rel]?.xz){state.mode="plot";$("mPlot").setAttribute("aria-pressed",true);$("mEvol").setAttribute("aria-pressed",false)}renderPresets();renderSlider();renderHead();if(!isTable())renderPlot(animate);if(state.panel&&state.tab==="data")renderPanel();if(state.panel&&state.tab==="mine"){if(mineRel!==state.rel){mineRel=state.rel;renderPanel()}else if($("mineTab")){$("mineTab").innerHTML=mineTable();$("mineH").textContent="AGAINST PUBLISHED CURVES AT z = "+fmtZ(currentZ());wireMineRows()}}syncHash()}
+function renderAll(animate){if(dataWait(()=>renderAll(animate)))return;if(state.mode==="evol"&&REL[state.rel]?.xz){state.mode="plot";$("mPlot").setAttribute("aria-pressed",true);$("mEvol").setAttribute("aria-pressed",false)}renderPresets();renderSlider();renderHead();if(!isTable())renderPlot(animate);if(state.panel&&state.tab==="data")renderPanel();if(state.panel&&state.tab==="mine"){if(mineRel!==state.rel){mineRel=state.rel;renderPanel()}else if($("mineTab")){$("mineTab").innerHTML=mineTable();$("mineH").textContent="AGAINST PUBLISHED CURVES AT z = "+fmtZ(currentZ());wireMineRows()}}syncHash()}
 const SUN='<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10" cy="10" r="3.6"/><path d="M10 2.5v1.8M10 15.7v1.8M2.5 10h1.8M15.7 10h1.8M4.7 4.7l1.3 1.3M14 14l1.3 1.3M4.7 15.3 6 14M14 6l1.3-1.3"/></svg>',MOON='<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M16.5 11.8A6.8 6.8 0 0 1 8.2 3.5a6.8 6.8 0 1 0 8.3 8.3z"/></svg>';
 const themeNow=()=>document.documentElement.dataset.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
 function paintThemeBtn(){const d=themeNow()==="dark";$("bTheme").innerHTML=d?SUN:MOON;$("bTheme").setAttribute("aria-label",d?"Switch to the light theme":"Switch to the dark theme");$("bTheme").title=d?"Light theme":"Dark theme"}
 $("bTheme").onclick=()=>{const n=themeNow()==="dark"?"light":"dark";document.documentElement.dataset.theme=n;try{localStorage.setItem("sh-theme",n)}catch(e){}paintThemeBtn()};
 try{matchMedia("(prefers-color-scheme: dark)").addEventListener("change",paintThemeBtn)}catch(e){}
 paintThemeBtn();
-addEventListener("hashchange",()=>{readHash();versionBanner();syncShell();if(state.mode==="atlas")renderAtlas();if(state.mode==="tension")renderTension();if(state.mode==="spread")renderSpread();if(state.mode==="dist")renderDist();renderAll(false);if(state.sel)openRecord(state.sel);else if(state.panel&&state.tab==="evidence")closePanel()});
+addEventListener("hashchange",()=>{readHash();versionBanner();syncShell();onData(()=>{if(state.mode==="atlas")renderAtlas();if(state.mode==="tension")renderTension();if(state.mode==="spread")renderSpread();if(state.mode==="dist")renderDist();renderAll(false);if(state.sel)openRecord(state.sel);else if(state.panel&&state.tab==="evidence")closePanel()})});
 const srcCount=new Set(sims.map(r=>r.source)).size;
 $("aboutCounts").innerHTML=`<b>${sims.length}</b> simulation records from <b>${srcCount}</b> suites, plus <b>${obs.length}</b> observational references. Dataset v${esc(SIMHIGHLINE_RELEASE.version)}.`;
 new ResizeObserver(()=>{if(isTable())return;renderPlot(false);if(state.mode!=="evol")renderSlider()}).observe($("stage"));
 const wantMine=new URLSearchParams(location.hash.slice(1)).get("pn")==="mine";
+let booted=false,helloShow=()=>{};
 mineLoad();readHash();versionBanner();syncShell();
+onData(()=>{
 if(state.mode==="atlas")renderAtlas();if(state.mode==="tension")renderTension();if(state.mode==="spread")renderSpread();if(state.mode==="dist")renderDist();
 renderAll(false);
 if(state.sel)openRecord(state.sel);else if(wantMine||state.openMine)openPanel("mine");
+booted=true;helloShow();requestAnimationFrame(()=>requestAnimationFrame(bootGo));setTimeout(bootGo,250);
+},true);
 {const KEY="sh-guide-seen";let seen=false;try{seen=!!localStorage.getItem(KEY)}catch(e){}
 const h=$("hello"),done=()=>{h.hidden=true;try{localStorage.setItem(KEY,"1")}catch(e){}};
-if(!seen&&!state.embed&&!/(^#|&)(sel|run|pn)=/.test(location.hash))h.hidden=false;
+helloShow=()=>{if(!seen&&!state.embed&&!/(^#|&)(sel|run|pn)=/.test(location.hash))h.hidden=false};if(booted)helloShow();
 $("helloOk").onclick=()=>{done();$("stage").focus({preventScroll:true})};$("helloMore").onclick=()=>{done();$("infoBtn").click()};
 h.addEventListener("keydown",e=>{if(e.key==="Escape"){done();e.stopPropagation()}});
 addEventListener("keydown",e=>{if(!h.hidden&&["ArrowLeft","ArrowRight"].includes(e.key))done()},true)}
-{const go=()=>{const b=$("boot");if(b&&b.classList.contains("failed"))return;document.body.classList.remove("boot");if(b){b.classList.add("done");setTimeout(()=>b.remove(),400)}};requestAnimationFrame(()=>requestAnimationFrame(go));setTimeout(go,250)}
+/* the opening screen stays until the first view is drawn, or says why it cannot be */
+function bootGo(){const b=$("boot");if(!booted||(b&&b.classList.contains("failed")))return;document.body.classList.remove("boot");if(b){b.classList.add("done");setTimeout(()=>b.remove(),400)}}
+requestAnimationFrame(()=>requestAnimationFrame(bootGo));setTimeout(bootGo,250);
 </script>
 </body>
 </html>

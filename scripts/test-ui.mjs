@@ -46,7 +46,8 @@ await step("every published expression is drawn under the page's content securit
   // Playwright's page.evaluate is exempt from the page's policy, so this cannot try new Function itself: it checks the mechanism instead (the policy has no 'unsafe-eval'; every parametric record has a precompiled function; nothing the page itself tried to compile failed)
   const { page, ctx } = await open("/highline.html#r=sfms&z=0.1");
   await settle(page);
-  const res = await page.evaluate(() => {
+  const res = await page.evaluate(async () => {
+    await window.__sh.loadAll(); // the page holds only the relations it has opened; this check is about all of them
     const par = ALL.filter(r => r.representation.type === "parametric");
     const key = r => Object.entries(r.representation.parameters || {}).filter(([, v]) => typeof v === "number").map(([k]) => k).join(",") + "|" + r.representation.expression;
     return { n: par.length, missing: par.filter(r => typeof window.SIMHIGHLINE_EXPR[key(r)] !== "function").map(r => r.id), failedToCompile: [...evalCache.values()].filter(v => v === null).length, compiled: evalCache.size, csp: document.querySelector('meta[http-equiv="Content-Security-Policy"]').content };
@@ -83,6 +84,7 @@ await step("Coverage and Tension are opaque tables with the chart hidden", async
   await settle(page);
   for (const [btn, sel] of [["#mTension", "#tension"], ["#mAtlas", "#atlas"]]) {
     await page.click(btn);
+    await page.waitForSelector(sel + " table", { timeout: 30000 }).catch(() => {}); // the Tension view fetches the relations it compares first; a missing table is still reported below
     const r = await page.evaluate(s => ({ plot: getComputedStyle(document.getElementById("plot")).display, bg: getComputedStyle(document.querySelector(s)).backgroundColor, table: !!document.querySelector(s + " table"), footer: getComputedStyle(document.querySelector("footer")).display }), sel);
     assert.equal(r.plot, "none", `${btn}: chart must be hidden`);
     assert(!/rgba\(0, 0, 0, 0\)/.test(r.bg), `${btn}: table background must be opaque`);

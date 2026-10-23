@@ -75,14 +75,14 @@ await journey(4, "Where does a curve come from, and how was it obtained?", async
 });
 await journey(5, "Where do simulations disagree most?", async ({ page, click, base }) => {
   await page.goto(`${base}/highline.html#r=gsmf&z=0.1`); await settle(page);
-  await click("#mSpread"); await page.waitForTimeout(600);
+  await click("#mSpread"); await page.waitForSelector("#spread table.sp td[data-r]", { timeout: 30000 }); // the view fetches every relation it compares first
   const t = await page.locator("body").innerText();
   assert.ok(/spread/i.test(t));
   return "spread view";
 });
 await journey(6, "How do simulations compare with observations?", async ({ page, click, base }) => {
   await page.goto(`${base}/highline.html#r=gsmf&z=0.1`); await settle(page);
-  await click("#mTension"); await page.waitForTimeout(600);
+  await click("#mTension"); await page.waitForSelector("#tension td[data-r]", { timeout: 30000 });
   assert.ok(/tension|observ/i.test(await page.locator("body").innerText()));
   return "tension view";
 });
