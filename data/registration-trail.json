@@ -100,5 +100,23 @@
    "subject": "Quenching-shape study: the registered run, as it came out (Q1 removable; Q2 and Q3 add nothing detectable; validations V1 and V4 do not hold)",
    "short": "a7e6127"
   }
+ },
+ "resolution": {
+  "protocol_file": "docs/PROTOCOL-resolution.md",
+  "result_file": "data/analysis/resolution.json",
+  "protocol_commits": [
+   {
+    "hash": "a995a935723c24445d8c85f52fdd9530c0a795d2",
+    "date": "2026-10-23T15:56:23+00:00",
+    "subject": "Pre-registered protocol: how much does a model's published output change with resolution (ladders, metric in CAMELS noise units, labels, comparison with the TNG-SIMBA distance)",
+    "short": "a995a93"
+   }
+  ],
+  "result_first_commit": {
+   "hash": "661b22f24c9a5bf5cfc187afc71a42f74efe0ad8",
+   "date": "2026-10-23T16:04:41+00:00",
+   "subject": "Resolution study: the registered run, as it came out (30 adjacent steps with a stated common box: 2 converged, 28 resolution-dependent by the rule; 16 of 19 comparable steps at least as large as the TNG-SIMBA distance), generated report and JSON",
+   "short": "661b22f"
+  }
  }
 }
