@@ -390,6 +390,11 @@ def p1(units):
             "reference_only": dict(defaultdict(int, {l: sum(1 for u in A if u["basis"] == "reference" and u["label"] == l) for l in ("converged", "resolution-dependent", "cannot tell")}))}
 
 
+def rel_label(u):
+    """The relation, with the variant for the FLAMINGO relations that have several (size apertures, active or passive)."""
+    return u["relation"] + (" " + u["stem"].split(".")[-1] if u["ladder"] == "flamingo-l1" and u["relation"] in ("size", "ssfr", "quenched") else "")
+
+
 def p2(units, saved):
     rows = []
     for u in units:
@@ -400,7 +405,7 @@ def p2(units, saved):
                 continue
             ref_field = "D_fiducial" if u["parameters"] == "unchanged" else "D"
             d_ref = pt[ref_field]
-            rows.append({"unit": u["id"], "ladder": u["ladder"], "relation": u["relation"], "family": f, "rungs": f"{u['rung_a']}>{u['rung_b']}", "parameters": u["parameters"], "Rc": u["Rc"], "R": u["R"],
+            rows.append({"unit": u["id"], "ladder": u["ladder"], "relation": u["relation"], "relation_label": rel_label(u), "family": f, "rungs": f"{u['rung_a']}>{u['rung_b']}", "parameters": u["parameters"], "Rc": u["Rc"], "R": u["R"],
                          "D": pt["D"], "D_fiducial": pt["D_fiducial"], "compared_with": ref_field, "ratio": u["Rc"] / d_ref, "ratio_D": u["Rc"] / pt["D"], "ratio_D_fiducial": u["Rc"] / pt["D_fiducial"]})
     r = [x["ratio"] for x in rows]
     return {"n": len(rows), "n_ratio_at_least_1": int(sum(1 for v in r if v >= 1.0)), "median_ratio": float(np.median(r)) if r else None, "rows": rows}
@@ -449,7 +454,7 @@ def run(recs=None, ref=None, saved=None, supp=None):
     for lad in ("tng-l25n", "illustris-l25n"):
         for u in units:
             if u["ladder"] == lad and u["kind"] == "adjacent" and u["rung_a"] == "256":
-                named.append({k: u[k] for k in ("id", "ladder", "label", "R", "Rc", "basis", "rms_dex", "mean_dex", "max_abs_dex")})
+                named.append({**{k: u[k] for k in ("id", "ladder", "label", "R", "Rc", "basis", "rms_dex", "mean_dex", "max_abs_dex")}, "name": f"{u['ladder']}: {u['rung_a']} > {u['rung_b']}, {u['relation']}"})
     res["camels_resolution_step"] = named
     # supplementary
     if supp is None:
@@ -511,8 +516,7 @@ UNIT_HEAD = ["ladder", "relation", "rungs (coarse > fine)", "step", "epoch-pairs
 
 def unit_row(u):
     rungs = f"{u['rung_a']} > {u['rung_b']}" + (f" ({u['token_a']} > {u['token_b']})" if u["ladder"] == "magneticum" else "")
-    rel = u["relation"] + (" " + u["stem"].split(".")[-1] if u["ladder"] == "flamingo-l1" and u["relation"] in ("size", "ssfr", "quenched") else "")
-    return [u["ladder"], rel, rungs, u["kind"], u["n_epoch_pairs"], u["basis"] or "-", fmt(u["R"]), fmt(u["Rc"]), fmt(u["rms_dex"], 3), fmt(u["mean_dex"], 3), fmt(u["max_abs_dex"], 3),
+    return [u["ladder"], rel_label(u), rungs, u["kind"], u["n_epoch_pairs"], u["basis"] or "-", fmt(u["R"]), fmt(u["Rc"]), fmt(u["rms_dex"], 3), fmt(u["mean_dex"], 3), fmt(u["max_abs_dex"], 3),
             u["label"] + (f" ({u['qualifier']})" if u["qualifier"] else "")]
 
 
@@ -546,14 +550,14 @@ def render(res):
     L += ["", "## 6. P2: the resolution shift against the TNG-SIMBA distance", ""]
     if P2["rows"]:
         L += _table(["ladder", "relation", "rungs", "parameters", "R_c", "TNG-SIMBA D (retuned)", "D at fiducial", "compared with", "R_c / D"],
-                    [[r["ladder"], r["relation"], r["rungs"], r["parameters"], fmt(r["Rc"]), fmt(r["D"]), fmt(r["D_fiducial"]), r["compared_with"], fmt(r["ratio"])] for r in P2["rows"]])
+                    [[r["ladder"], r.get("relation_label", r["relation"]), r["rungs"], r["parameters"], fmt(r["Rc"]), fmt(r["D"]), fmt(r["D_fiducial"]), r["compared_with"], fmt(r["ratio"])] for r in P2["rows"]])
         L += ["", f"{P2['n_ratio_at_least_1']} of {P2['n']} units have a ratio of at least 1; the median ratio is {fmt(P2['median_ratio'])}. The distance is taken at the fiducial parameters for a ladder whose parameters are unchanged, retuned (the minimum over both codes' four parameters) for the others."]
     else:
         L += ["No unit qualified."]
     L += ["", "## 7. The step that starts at CAMELS resolution", ""]
     if res["camels_resolution_step"]:
         L += ["The TNG and Illustris models in the 25 Mpc/h box with 256^3 elements (n256) are at CAMELS resolution; n512 has eight times the mass resolution.", ""]
-        L += _table(["unit", "label", "R", "R_c", "rms shift (dex)", "mean shift (dex)", "largest (dex)"], [[u["id"], u["label"], fmt(u["R"]), fmt(u["Rc"]), fmt(u["rms_dex"], 3), fmt(u["mean_dex"], 3), fmt(u["max_abs_dex"], 3)] for u in res["camels_resolution_step"]])
+        L += _table(["unit", "label", "R", "R_c", "rms shift (dex)", "mean shift (dex)", "largest (dex)"], [[u.get("name", u["id"]), u["label"], fmt(u["R"]), fmt(u["Rc"]), fmt(u["rms_dex"], 3), fmt(u["mean_dex"], 3), fmt(u["max_abs_dex"], 3)] for u in res["camels_resolution_step"]])
     L += ["", "## 8. Does the step shrink?", ""]
     if res["steps"]:
         L += ["Ratio of R_c of the finer step to that of the coarser step in three-rung ladders (below 1: the step shrinks).", ""]
@@ -603,7 +607,27 @@ def write_outputs(res):
     (ROOT / "docs" / "ANALYSIS-resolution.md").write_text(render(res))
 
 
+REWORDED = "The table formatting of the report was corrected after the run (unit names with the pipe character broke one table; a variant column was added to the comparison table); no number was recomputed, and the first output is in the version history."
+
+
+def rerender():
+    """Rewrites the text of the report from the saved numbers (no analysis is run): the readable names are added and the headline and the deviations are recomputed; the numbers are not touched."""
+    res = json.loads((ROOT / "data" / "analysis" / "resolution.json").read_text())
+    by_id = {u["id"]: u for u in res["units"]}
+    for r in res["P2"]["rows"]:
+        r["relation_label"] = rel_label(by_id[r["unit"]])
+    for n in res["camels_resolution_step"]:
+        u = by_id[n["id"]]
+        n["name"] = f"{u['ladder']}: {u['rung_a']} > {u['rung_b']}, {u['relation']}"
+    res["deviations"] = [d for d in deviations(res) if d != REWORDED] + [REWORDED]
+    res["headline"] = headline(res)
+    write_outputs(res)
+    print("resolution: report text rewritten from the saved numbers")
+
+
 def main():
+    if "--rerender" in sys.argv:
+        return rerender()
     res = assemble()
     write_outputs(res)
     P1 = res["P1"]
