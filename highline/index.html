@@ -522,7 +522,7 @@ const RAW=new Map(),byRaw=new Map();
 for(const r of ALL){if(!RAW.has(r.relation))RAW.set(r.relation,r.rel0);(byRaw.get(r.rel0)||byRaw.set(r.rel0,[]).get(r.rel0)).push(r)}
 const rawOf=k=>RAW.get(k)||k;
 const VIEW_RELS=(()=>{const ws=Object.keys(REL).filter(k=>sims.some(r=>r.relation===k));return{tension:ws.filter(k=>REL[k].anchor&&!REL[k].xz),spread:ws.filter(k=>!REL[k].xz),dist:Object.keys(REL).filter(k=>sims.concat(obs).some(r=>r.relation===k&&r.representation.distribution))}})();
-const dataOf=new Map(),LOAD_SLOW=6000,LOAD_LIMIT=30000;let dataWaiters=[];
+const dataOf=new Map(),LOAD_SLOW=6000,LOAD_LIMIT=30000;let dataWaiters=[],panelStale=false;
 function dataNeeded(){
   const s=new Set(),add=f=>{if(FILES.files[f])s.add(f)};
   add(rawOf(state.rel));
@@ -571,7 +571,7 @@ function dataChanged(){
   const e=$("empty");if(e.querySelector(".dstat")){e.hidden=true;e.textContent=""}
   const ws=dataWaiters;dataWaiters=[];
   for(const fn of ws){try{fn()}catch(e){setTimeout(()=>{throw e})}}
-  if(state.panel)try{renderPanel()}catch(e){setTimeout(()=>{throw e})}
+  if(state.panel&&panelStale)try{renderPanel()}catch(e){setTimeout(()=>{throw e})}
 }
 /* while a relation's data is on its way: the relation list and the title are drawn, the plot area says what is happening */
 function dataShell(){renderPresets();if(!isTable()){$("shTitle").textContent=REL[state.rel].t;$("shSub").textContent="";$("stage").innerHTML="";$("stage").removeAttribute("viewBox");$("legend").innerHTML="";$("chip").innerHTML="";lastPaths=new Map()}}
@@ -590,7 +590,7 @@ function dataPaint(html,kind){
 }
 function dataRetry(){for(const f of dataMissing()){const x=dataOf.get(f);if(x&&x.st!=="done")dataStart(f,true)}dataStatus();setTimeout(dataStatus,LOAD_SLOW+50)}
 /* for tests and for anyone scripting the page: fetch every relation */
-function dataLoadAll(){return Promise.all(Object.keys(FILES.files).map(f=>(dataOf.get(f)||dataStart(f)).p)).then(()=>{if(state.panel)renderPanel()})}
+function dataLoadAll(){return Promise.all(Object.keys(FILES.files).map(f=>(dataOf.get(f)||dataStart(f)).p))}
 
 /* ---------- state in the URL ---------- */
 /* A link made with another dataset version says so: curves may have changed since, and the old data are archived. */
@@ -842,7 +842,8 @@ $("bData").onclick=()=>state.panel&&state.tab==="data"?closePanel():openPanel("d
 $("pClose").onclick=closePanel;
 $("panel").querySelectorAll(".tabs [data-t]").forEach(b=>{b.onclick=()=>openPanel(b.dataset.t);b.onkeydown=e=>{const t=[...$("panel").querySelectorAll(".tabs [data-t]")],i=t.indexOf(b),n=e.key==="ArrowRight"?t[(i+1)%t.length]:e.key==="ArrowLeft"?t[(i-1+t.length)%t.length]:null;if(n){e.preventDefault();openPanel(n.dataset.t);n.focus()}}});
 function renderPanel(){
-  if(dataMissing().length)return;
+  if(dataMissing().length){panelStale=true;return}
+  panelStale=false;
   $("panel").querySelectorAll(".tabs [data-t]").forEach(b=>{b.setAttribute("aria-selected",b.dataset.t===state.tab);b.tabIndex=b.dataset.t===state.tab?0:-1});
   const body=$("pbody");
   if(state.tab==="evidence")body.innerHTML=evidenceHtml();else if(state.tab==="about")body.innerHTML=aboutHtml();else if(state.tab==="tune")body.innerHTML=tuneHtml();else if(state.tab==="mine")body.innerHTML=mineHtml();else body.innerHTML=dataHtml();
