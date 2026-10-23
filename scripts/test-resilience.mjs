@@ -14,7 +14,7 @@ const server = http.createServer(async (req, res) => {
   const dm = p.match(/^\/highline-data\/([a-z0-9-]+)\.json$/);
   if (fault && dm && dm[1] === fault.rel) {
     if (fault.mode === "missing") { res.writeHead(404, { "content-type": "text/plain" }); res.end("not found"); return; }
-    if (fault.mode === "stall") { held.push(res); return; }
+    if (fault.mode === "stall") { held.push({ res, p }); return; }
     const b = await readFile(path.join(DIST, fault.mode === "wrong" ? "highline-data/gsmf.json" : p));
     res.writeHead(200, { "content-type": "application/json" }); res.end(fault.mode === "damaged" ? b.subarray(0, Math.floor(b.length / 2)) : b); return;
   }
@@ -44,7 +44,8 @@ await step("broken data: the Explorer says it could not start, with a way on", a
   assert.match(t, /could not start/); assert.match(t, /data page/);
   assert.equal(await page.locator("#boot a").count(), 2);
 });
-const dataStep = (name, fn) => step(name, async ctx => { try { await fn(ctx); } finally { fault = null; for (const r of held.splice(0)) { try { r.destroy(); } catch { /* gone */ } } } });
+const releaseHeld = async () => { for (const h of held.splice(0)) { try { h.res.writeHead(200, { "content-type": "application/json" }); h.res.end(await readFile(path.join(DIST, h.p))); } catch { /* the page gave up on it */ } } };
+const dataStep = (name, fn) => step(name, async ctx => { try { await fn(ctx); } finally { fault = null; for (const h of held.splice(0)) { try { h.res.destroy(); } catch { /* gone */ } } } });
 await dataStep("a relation's data file is missing: the plot area says so, the other relations still work, Try again brings it back", async ctx => {
   const page = await ctx.newPage(); await page.goto(`${BASE}/highline.html#r=gsmf&z=0.1`); await ready(page);
   fault = { rel: "sfms", mode: "missing" };
@@ -95,6 +96,19 @@ await dataStep("the views that read many relations fetch them first, and say so 
   assert.match(await page2.locator("#boot").innerText(), /could not be loaded/);
   fault = null; await page2.click("#boot button");
   await page2.waitForFunction(() => !document.getElementById("boot") && document.querySelectorAll("#tension td[data-r]").length > 5, null, { timeout: 60000 });
+});
+await dataStep("leaving a view while its data are on the way: the data arriving later does not pull the visitor back", async ctx => {
+  const page = await ctx.newPage(); await page.goto(`${BASE}/highline.html#r=gsmf&z=0.1`); await ready(page);
+  fault = { rel: "mzr", mode: "stall" };
+  await page.click("#mSpread");
+  await page.waitForSelector("#spread .dstat", { timeout: 15000 });
+  await page.click("#mPlot");
+  await page.waitForFunction(() => document.querySelectorAll("#stage path").length > 5 && state.mode === "plot");
+  fault = null; await releaseHeld();
+  await page.waitForTimeout(1500);
+  assert.equal(await page.evaluate(() => state.mode), "plot", "the late data must not switch the view back to the one that was left");
+  assert.equal(await page.locator("#spread.on").count(), 0);
+  assert.ok(await page.locator("#stage path").count() > 5);
 });
 await step("no JavaScript: the Explorer says what it needs", async ctx => {
   const page = await ctx.newPage(); await page.goto(`${BASE}/highline.html`);
