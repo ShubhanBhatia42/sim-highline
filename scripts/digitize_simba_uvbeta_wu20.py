@@ -1,4 +1,4 @@
-"""SIMBA, UV-continuum slope beta against M_1500 and against stellar mass at z = 6 (Wu et al. 2020, MNRAS 494, 5; arXiv:1911.06330, photometric properties of reionization-epoch galaxies in SIMBA-25 and SIMBA-50), read from three vector figures:
+"""SIMBA, UV-continuum slope beta against M_1500 and against stellar mass at z = 6 (Wu et al. 2020, MNRAS 494, 5636; arXiv:1911.06330, photometric properties of reionization-epoch galaxies in SIMBA-25 and SIMBA-50), read from three vector figures:
 beta-MUV_extinction.pdf (the combined SIMBA-25 and SIMBA-50 relation with no dust, the Salmon et al. 2016, the Calzetti et al. 2000 and the SMC law), beta-MUV.pdf (the Calzetti law with its 1 sigma spread, SIMBA-25 and SIMBA-50 separately)
 and beta-Mstar_extinction.pdf (the combined beta-stellar mass relation, four dust laws). The tick labels are text, but their minus signs are separate vector paths, so each label is read as the digits plus the minus path found to its left;
 the axes are calibrated on the labelled tick marks. Every axis is checked against numbers printed elsewhere: the observations drawn in the M_1500 panel must reproduce the Bouwens et al. 2014 table (z ~ 6, read by transcribe_uvbeta_bouwens.py), the
@@ -19,7 +19,7 @@ DOI = "10.1093/mnras/staa1044"
 SRC = Path(sys.argv[1]) if len(sys.argv) > 1 else vf.fetch_arxiv(ARXIV)
 FIG = SRC / "figures"
 OUT = Path(__file__).resolve().parent.parent / "data" / "curves" / "wu20-simba-uvbeta.json"
-CITE = "Wu et al. 2020, MNRAS 494, 5 (arXiv:1911.06330)"
+CITE = "Wu et al. 2020, MNRAS 494, 5636 (arXiv:1911.06330)"
 TEXFILE = SRC / "mnras_template.tex"
 SHA_TEX = vf.sha256(TEXFILE)
 flat = " ".join(TEXFILE.read_text(errors="ignore").split())
