@@ -163,10 +163,25 @@ def analyse():
             "digitized": {"n": len(dig), "share_of_simulation_curves": len(dig) / len(sims), "n_simulation_curves": len(sims), "declared_uncertainty_dex": {"n": len(unc), "median": float(np.median(unc)) if unc else None, "max": float(max(unc)) if unc else None},
                           "extraction_methods": methods.most_common(6), "rankable": sum(bool(r["rankable"]) for r in dig)},
             "extraction_checks": {"pairs": extraction, "n": len(extraction), "n_same_definitions": sum(1 for p in extraction if p["same_definitions"])},
+            "redigitization": redigitization(),
+            "released_tables": released_tables(recs),
             "paper_disagreements": {"pairs": papers, "n": len(papers)},
             "terms": {"records_with_terms": sum(terms.values()), "by_terms": terms.most_common(8), "permission_not_requested": len(pending)},
             "thin": {"epochs": list(EPOCHS), "cells": thin}, "vocabulary": vocabulary(recs),
             "checksums": {"with_checksum": sum(bool(r["provenance"].get("checksumSha256")) for r in recs), "records": len(recs)}}
+
+
+def replaced_sentence(rt):
+    if "exactMatch" not in rt:
+        return ""
+    s = f"Of the {rt['exactMatch']} curves for which a table that matches the plotted numbers exactly was found, {len(rt['replaced'])} have been replaced by the table's numbers (their tier is now published-table or official-table)"
+    n = len(rt["stillFigureRead"])
+    if n:
+        s += f"; {n} {'is' if n == 1 else 'are'} still the figure read: " + ", ".join("`" + i + "`" for i in rt["stillFigureRead"])
+    s += "."
+    if rt.get("duplicates"):
+        s += f" {len(rt['duplicates'])} more figure-read curve{' is' if len(rt['duplicates']) == 1 else 's are'} a duplicate of numbers already in the dataset as an official table ({', '.join('`' + i + '`' for i in rt['duplicates'])}); {'it is' if len(rt['duplicates']) == 1 else 'they are'} kept because the figure shows an aperture series."
+    return s
 
 
 def pct(x):
@@ -192,6 +207,17 @@ def render(q):
         for p in e["pairs"][:25]:
             L.append(f"| {p['label']} | {p['tier_a']} / {p['tier_b']} | {p['unit']} | {p['n']} | {p['median_abs']:.3f} | {p['max_abs']:.3f} | {'yes' if p['same_definitions'] else 'no'} |")
         L += ["", "The extraction code itself is tested on synthetic figures with known curves and axes (`scripts/test_vector_figure.py`: linear and log calibration, curve vertices, marker centres), which checks the method but not each figure."]
+    rd = q.get("redigitization")
+    if rd:
+        L += ["", "## Re-digitizing a random sample by a different method", "",
+              f"The original extraction reads the vector paths of the figure. To test it without those paths, a second reader rendered each figure to a 400 dpi raster, recalibrated the axes from the tick marks in the image, and traced the curve by colour (`data/analysis/redigitization-check.json`). Curves were drawn at random until {rd['checked']} could be checked; {rd['attempted']} were tried, and {rd['notCheckable']} could not be checked (overlapping curves of one colour, raster or outlined axes, or a stored quantity that is a transform of the plotted one). "
+              f"Of the {rd['checked']} checked, from {rd['papers']} papers, {rd['pass']} are within tolerance and {rd['fail']} are not. On the {rd['logYChecked']} curves with logarithmic y axes the median of the per-curve median differences is {rd['logYMedianDex']:.4f} dex and the 90th percentile of the per-curve maxima is {rd['logYP90Dex']:.2f} dex; {rd['logYExceed']} exceed the extraction's stated uncertainty. Each failure was inspected: none could be attributed to a stored curve (a marker, error bar or other stroke of the same colour lay on the curve, or the panel holds many near-identical curves), one is inconclusive at about 0.01 dex. "
+              "This checks the extraction of the curves it could check (21% of those tried); it is not a statement about the rest, it cannot see a wrong panel or run, or a wrong tick label shared by both methods, and one reader made it.", ""]
+    rt = q.get("released_tables")
+    if rt:
+        c, rc = rt["categories"], rt["recordsByCategory"]
+        L += ["", "## Did the authors release the numbers?", "",
+              f"For the {rt['papers']} papers behind the {rt['records']} figure-read simulation curves, `data/analysis/released-tables.json` records whether the numbers were published or released. Result: the numbers of {c.get('table-in-eprint', 0) + c.get('table-in-paper', 0) + c.get('table-released-full', 0)} paper(s) are fully available as a table, {c.get('table-released-partial', 0) + c.get('table-partial', 0) + c.get('table-released-unverified', 0)} partly; for {c.get('catalog-public-recompute', 0)} papers ({rc.get('catalog-public-recompute', 0)} curves) only the simulation's catalogues are public, so the plotted numbers would have to be recomputed; {c.get('on-request', 0) + c.get('announced-not-released', 0)} papers say the data are available on request or will be released ({rc.get('on-request', 0) + rc.get('announced-not-released', 0)} curves, among them the largest block); for {c.get('none-found', 0)} nothing was found. " + replaced_sentence(rt), ""]
     p = q["paper_disagreements"]
     L += ["", "## Where two papers give the same simulation and disagree", "", f"{p['n']} pairs of curves of the same simulation, relation and epoch come from different papers with the same axis units.", ""]
     if p["pairs"]:
@@ -215,6 +241,38 @@ def render(q):
     for rel, row in th["cells"].items():
         L.append(f"| {rel} | " + " | ".join(str(row[str(z)]) for z in th["epochs"]) + " |")
     return "\n".join(L) + "\n"
+
+
+def redigitization():
+    f = ROOT / "data" / "analysis" / "redigitization-check.json"
+    if not f.exists():
+        return None
+    d = json.loads(f.read_text())
+    sm = d["summary"]
+    return {"attempted": sm["nAttempted"], "checked": sm["nChecked"], "pass": sm["nPassTolerance"], "fail": sm["nFailTolerance"], "notCheckable": sm["nNotCheckable"], "logYMedianDex": sm["logY_medianOfMedians_dex"],
+            "logYP90Dex": sm["logY_p90OfMaxima_dex"], "logYChecked": sm["nLogYAxisCurves"], "logYExceed": sm["logY_nExceedStatedUncertainty"], "papers": len({c["arxiv"] for c in d["curves"]}), "classes": sm["notCheckableByClass"]}
+
+
+def released_tables(recs=None):
+    f = ROOT / "data" / "analysis" / "released-tables.json"
+    if not f.exists():
+        return None
+    d = json.loads(f.read_text())
+    cat = collections.Counter(e["category"] for e in d["entries"])
+    covered = collections.Counter()
+    for e in d["entries"]:
+        covered[e["category"]] += e["digitizedSimRecords"]
+    out = {"papers": len(d["entries"]), "records": sum(e["digitizedSimRecords"] for e in d["entries"]), "categories": dict(cat), "recordsByCategory": dict(covered)}
+    if recs is not None:
+        tier = {r["id"]: r["provenance"]["tier"] for r in recs}
+        raw = [x for e in d["entries"] if isinstance(e["recordsCovered"], dict) for x in e["recordsCovered"].get("exact-match", [])]
+        dup = {re.split(r" \(", x)[0] for x in raw if "already present as" in x}   # the table's numbers are already in the dataset under another record: the figure-read record is a duplicate, not a missing replacement
+        exact = [i for i in (re.split(r" \(", x)[0] for x in raw) if i in tier and i not in dup]
+        out["exactMatch"] = len(exact)
+        out["replaced"] = sorted(i for i in exact if tier[i] != "digitized-figure")
+        out["stillFigureRead"] = sorted(i for i in exact if tier[i] == "digitized-figure")
+        out["duplicates"] = sorted(i for i in dup if i in tier)
+    return out
 
 
 def main():

@@ -76,7 +76,7 @@ if sp and nsp:
 # reading level
 front = fk_grade(texts["index.html"])
 plain = {}
-for name in ("study-definitions.html", "study-harmonization.html", "study-sfh.html", "study-joint.html"):
+for name in ("study-definitions.html", "study-harmonization.html", "study-sfh.html", "study-joint.html", "study-shape.html"):
     m = re.search(r'<div class="plain">(.*?)</div>', (ROOT / "dist" / "site" / name).read_text(), re.S)
     plain[name] = fk_grade(html.unescape(re.sub(r"<[^>]+>", " ", m.group(1)))) if m else None
 if front > 14:

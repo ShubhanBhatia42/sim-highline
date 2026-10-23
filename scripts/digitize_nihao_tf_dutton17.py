@@ -1,3 +1,4 @@
+# NOTE: the three *.galaxies.z0 records this script writes were later replaced by the numbers of the paper's own data table (scripts/ingest_nihao_tf_dutton17_table.py). Run that script after this one; the *.fit.z0 records are still the figure read.
 import json
 import math
 import sys

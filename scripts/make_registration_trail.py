@@ -9,6 +9,7 @@ STUDIES = {
     "harmonization": ("docs/PROTOCOL-harmonization.md", "data/analysis/harmonization.json"),
     "model-form": ("docs/PROTOCOL-model-form.md", "data/analysis/model-form.json"),
     "joint-reachability": ("docs/PROTOCOL-joint-reachability.md", "data/analysis/joint-reachability.json"),
+    "quenching-shape": ("docs/PROTOCOL-quenching-shape.md", "data/analysis/quenching-shape.json"),
 }
 
 

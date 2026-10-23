@@ -227,8 +227,10 @@ def answer_paired(res, key, label, base_name, big_name):
             "adds nothing detectable": f"**adds nothing detectable**: the rise beyond what the same-code controls show is below {_f(ADD_MIN, 1)} noise units even at its largest",
             "unresolved": "is **unresolved**: the change is neither clearly positive nor clearly negligible"}[q["verdict"]]
     both = " (both conditions of the rule hold; the first listed, adds separation, is reported)" if q.get("both_conditions") else ""
-    return (f"**{label}.** Adding the shape outputs to {base_name} {word}{both}. {base_name} alone is {q['verdict_base']}; with the shape outputs it is {q['verdict_big']}. Excess of the change of the raw between-code distance over the mean change of the two same-code controls, split by split: median {_f(x['p50'], 3)}, "
-            f"5th to 95th percentile {_f(x['p5'], 3)} to {_f(x['p95'], 3)} noise units (n = {q['n']} splits). The unadjusted change of the between-code distance: median {_f(d['p50'], 3)} ({_f(d['p5'], 3)} to {_f(d['p95'], 3)}); of the controls: IllustrisTNG {_f(c['IllustrisTNG']['p50'], 3)} ({_f(c['IllustrisTNG']['p5'], 3)} to {_f(c['IllustrisTNG']['p95'], 3)}), "
+    dilution = (" The sign is negative because each block has the same weight: blocks on which the two codes already agree lower the root mean distance of the set they join. That is dilution, not evidence that the shape closes the gap."
+                if q["excess"]["p50"] < 0 and q["verdict"] != "adds separation" else "")
+    return (f"**{label}.** Adding the shape outputs to {base_name} {word}{both}. Alone, {base_name} is {q['verdict_base']}; with the shape outputs the set is {q['verdict_big']}. Excess of the change of the raw between-code distance over the mean change of the two same-code controls, split by split: median {_f(x['p50'], 3)}, "
+            f"5th to 95th percentile {_f(x['p5'], 3)} to {_f(x['p95'], 3)} noise units (n = {q['n']} splits).{dilution} The unadjusted change of the between-code distance: median {_f(d['p50'], 3)} ({_f(d['p5'], 3)} to {_f(d['p95'], 3)}); of the controls: IllustrisTNG {_f(c['IllustrisTNG']['p50'], 3)} ({_f(c['IllustrisTNG']['p5'], 3)} to {_f(c['IllustrisTNG']['p95'], 3)}), "
             f"SIMBA {_f(c['SIMBA']['p50'], 3)} ({_f(c['SIMBA']['p5'], 3)} to {_f(c['SIMBA']['p95'], 3)}).")
 
 
@@ -237,8 +239,19 @@ def headline(res):
            answer_paired(res, "Q3", "Q3 - shape in the joint set", "the joint set of the earlier study", "joint+shape")]
     val = res["validations"]
     bad = [k for k, x in val.items() if isinstance(x, dict) and x.get("passed") is False]
-    out.append("**Validations.** " + ("All four hold." if not bad else f"Not all hold: {', '.join(bad)}; read the conclusions above with the qualification stated in section 2."))
+    out.append("**Validations.** " + ("All four hold." if not bad else f"Not all hold: {', '.join(bad)}; read the conclusions above with the qualification below and in section 2.") + validation_note(res))
     return out
+
+
+def validation_note(res):
+    val, notes = res["validations"], []
+    if val["V1"]["passed"] is False:
+        notes.append(f"V1: the emulators of the shape outputs are less accurate than the seed noise (median cross-validation error {_f(val['V1']['IllustrisTNG']['median_ratio'])} and {_f(val['V1']['SIMBA']['median_ratio'])} times the seed noise; the share within 1.5 times is {_f(val['V1']['IllustrisTNG']['fraction_below_1.5'])} and {_f(val['V1']['SIMBA']['fraction_below_1.5'])}, the rule asks for 0.8 each). "
+                     "The emulators' error is part of the noise scale, so it widens the unit in which distances are measured; a low distance therefore means no difference larger than that combined noise could be shown, and the power to see a small shape difference is limited.")
+    if val["V4"]["passed"] is False:
+        notes.append(f"V4: the point distance of the shape set changes from {_f(val['V4']['D_starts_4'], 3)} with 4 random starts to {_f(val['V4']['D_starts_8'], 3)} with 8 ({_f(100 * val['V4']['relative_change'], 0)} %). Both are far below the margin of 1: when a distance is this small the surface the search minimises is flat and noisy, and different starts end in different places. "
+                     "A larger number of starts can only lower a found minimum, so the verdict removable does not depend on it; the check after the run (`docs/CHECKS-quenching-shape.md`) tests this with up to 64 starts.")
+    return (" " + " ".join(notes)) if notes else ""
 
 
 def deviations(res, s4=None):
@@ -358,7 +371,23 @@ def write_outputs(res):
     (ROOT / "docs" / "ANALYSIS-quenching-shape.md").write_text(render(res))
 
 
+REWORDED = "The wording of the report was revised after the run (clearer sentences, an explanation of the negative excess and of the two validations that do not hold); no number was recomputed, and the first output is in the git history."
+
+
+def rerender():
+    """Rewrites the text of the report from the saved numbers (no analysis is run): the headline sentences and the deviations are recomputed, the numbers are not touched."""
+    res = json.loads((ROOT / "data" / "analysis" / "quenching-shape.json").read_text())
+    s4_path = ROOT / "data" / "analysis" / "joint-reachability.json"
+    s4 = json.loads(s4_path.read_text())["meta"] if s4_path.exists() else None
+    res["deviations"] = [d for d in deviations(res, s4) if d != REWORDED] + [REWORDED]
+    res["headline"] = headline(res)
+    write_outputs(res)
+    print("quenching shape: report text rewritten from the saved numbers")
+
+
 def main():
+    if "--rerender" in sys.argv:
+        return rerender()
     res = assemble()
     write_outputs(res)
     v = res["verdicts"]

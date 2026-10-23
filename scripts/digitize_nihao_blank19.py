@@ -1,3 +1,4 @@
+# NOTE: bh-galaxies.z0 and shmr-galaxies.z0 were later replaced by the numbers of the paper's table of galaxies (scripts/ingest_nihao_bh_blank19_table.py). Run that script after this one; the other records (z = 1, 2, 4 and the fits) are still the figure read.
 import json
 import re
 import subprocess
