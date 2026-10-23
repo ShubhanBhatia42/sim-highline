@@ -1,6 +1,6 @@
 # Expert audit sample
 
-Records for an independent check by someone who knows each suite. Selection is deterministic (two records per simulation source, different relations, digitized figures first, ordered by a hash of the id), so the list is stable between releases of the same data. 38 records from 19 sources.
+Records for an independent check by someone who knows each suite. Selection is deterministic (two records per simulation source, different relations, digitized figures first, ordered by a hash of the id), so the list is stable between releases of the same data. 40 records from 20 sources.
 
 For each record: open the cited figure or table, confirm (1) the curve is the one named (run, population, panel), (2) the axis values at two labelled ticks, (3) the definitions block (mass aperture, IMF, SFR timescale, halo definition), and (4) that the epoch is the published one. Report disagreements with the record id.
 
@@ -12,6 +12,8 @@ For each record: open the cited figure or table, confirm (1) the curve is the on
 | BlueTides | `wilkins17.bluetides.shmr.z12` | shmr | 12 | published-table | Wilkins et al. 2017, MNRAS 469, 2517 (arXiv:1704.00954), Table DM_stellar |
 | COLIBRE | `chaikin26.colibre.smd.l400m7.50pkpc-m8` | smd | 4 | digitized-figure | Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, cosmic stellar mass density |
 | COLIBRE | `chaikin26.colibre.quenched.m7.z1` | quenched | 1 | digitized-figure | Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, quenched fraction, z=1 |
+| DARWIN | `lee26.darwin1.gsmf.z0.25` | gsmf | 0.25 | digitized-figure | Lee et al. 2026 (The DARWIN Project; arXiv:2610.25786, submitted to ApJ), Fig. 7 (galaxy stellar mass functions) |
+| DARWIN | `lee26.darwin1.mzr.z4.5` | mzr | 4.5 | digitized-figure | Lee et al. 2026 (The DARWIN Project; arXiv:2610.25786, submitted to ApJ), Fig. 9 (gas-phase metallicity, z = 4.5) |
 | EAGLE | `lagos17.eagle.jstar.z0.5` | jstar | 0.5 | digitized-figure | Lagos et al. 2017, MNRAS 464, 3850 (arXiv:1609.01739), j_stars-M_stars relation at several redshifts, z=0.5 |
 | EAGLE | `artale18.eagle.hod.n0p0316.central.measured, Fig. HOD-ND right` | hod | 0 | digitized-figure | Artale et al. 2018, MNRAS 480, 3978 (arXiv:1805.06938) |
 | FIRE-2 | `marszewski24.fire2.gas.z9` | gas | 9 | digitized-figure | Marszewski et al. 2024, ApJL 967, L41 (arXiv:2403.08853), gas fractions in stellar mass bins, z=9 |

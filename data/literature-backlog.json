@@ -179,6 +179,17 @@
       "statusNote": "Scanned 2026-10-08: captions mention gas, sfms in vector figures or tables (2); not yet extracted."
     },
     {
+      "arxiv": "2610.25786",
+      "project": "DARWIN",
+      "year": 2026,
+      "firstAuthor": "Lee",
+      "title": "The DARWIN Project: Cosmological Simulations of Galaxy Formation down to Dwarf Scales in Diverse Environments",
+      "section": "suite in sim-highline",
+      "couldSupply": "overview (ingested; five vector figures read, three raster figures not)",
+      "status": "ingested",
+      "statusNote": ""
+    },
+    {
       "arxiv": "1407.7040",
       "project": "EAGLE",
       "year": 2014,

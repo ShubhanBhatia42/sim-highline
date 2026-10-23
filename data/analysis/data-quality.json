@@ -1,6 +1,6 @@
 {
- "n_records": 1859,
- "n_sources": 128,
+ "n_records": 1872,
+ "n_sources": 129,
  "tiers": [
   {
    "kind": "empirical-model",
@@ -47,7 +47,7 @@
   {
    "kind": "simulation",
    "tier": "digitized-figure",
-   "records": 809,
+   "records": 822,
    "rankable": 0
   },
   {
@@ -70,18 +70,18 @@
   }
  ],
  "digitized": {
-  "n": 809,
-  "share_of_simulation_curves": 0.5429530201342282,
-  "n_simulation_curves": 1490,
+  "n": 822,
+  "share_of_simulation_curves": 0.5469061876247505,
+  "n_simulation_curves": 1503,
   "declared_uncertainty_dex": {
-   "n": 809,
+   "n": 822,
    "median": 0.01,
    "max": 0.05
   },
   "extraction_methods": [
    [
     "vector path vertices from the figure PDF (PyMuPDF get_drawin",
-    797
+    810
    ],
    [
     "vector path vertices (EPS converted with ghostscript",
@@ -425,11 +425,11 @@
     "8": 1
    },
    "gsmf": {
-    "0.1": 10,
-    "0.5": 7,
-    "1": 8,
+    "0.1": 11,
+    "0.5": 8,
+    "1": 9,
     "2": 8,
-    "3": 6,
+    "3": 7,
     "4": 10,
     "6": 10,
     "8": 9
@@ -474,6 +474,16 @@
     "6": 0,
     "8": 0
    },
+   "ks": {
+    "0.1": 0,
+    "0.5": 0,
+    "1": 0,
+    "2": 0,
+    "3": 1,
+    "4": 0,
+    "6": 0,
+    "8": 0
+   },
    "metald": {
     "0.1": 0,
     "0.5": 0,
@@ -490,7 +500,7 @@
     "1": 6,
     "2": 5,
     "3": 6,
-    "4": 5,
+    "4": 6,
     "6": 5,
     "8": 9
    },
@@ -518,7 +528,7 @@
     "0.1": 0,
     "0.5": 0,
     "1": 0,
-    "2": 9,
+    "2": 10,
     "3": 1,
     "4": 0,
     "6": 1,
@@ -535,12 +545,12 @@
     "8": 5
    },
    "size": {
-    "0.1": 8,
-    "0.5": 5,
+    "0.1": 9,
+    "0.5": 6,
     "1": 7,
-    "2": 7,
+    "2": 8,
     "3": 5,
-    "4": 6,
+    "4": 7,
     "6": 4,
     "8": 4
    },
@@ -608,8 +618,8 @@
  },
  "vocabulary": {
   "population": {
-   "distinct": 67,
-   "records": 1769,
+   "distinct": 70,
+   "records": 1782,
    "near_duplicates": [
     {
      "spellings": [
@@ -645,7 +655,7 @@
   },
   "massDefinition": {
    "distinct": 49,
-   "records": 1540,
+   "records": 1551,
    "near_duplicates": [
     {
      "spellings": [
@@ -661,17 +671,17 @@
   },
   "imf": {
    "distinct": 4,
-   "records": 1754,
+   "records": 1767,
    "near_duplicates": []
   },
   "densityFrame": {
    "distinct": 2,
-   "records": 627,
+   "records": 632,
    "near_duplicates": []
   },
   "sizeDefinition": {
    "distinct": 17,
-   "records": 209,
+   "records": 214,
    "near_duplicates": []
   },
   "population_hard_key": {
@@ -684,13 +694,13 @@
     "differ_only_in_spelling": 0
    },
    "size": {
-    "pairs": 2012,
+    "pairs": 2149,
     "differ_only_in_spelling": 53
    }
   }
  },
  "checksums": {
-  "with_checksum": 1698,
-  "records": 1859
+  "with_checksum": 1711,
+  "records": 1872
  }
 }

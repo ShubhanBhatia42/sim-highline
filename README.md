@@ -9,7 +9,7 @@
 
 **A curated dataset of galaxy scaling relations from cosmological simulations, an instrument for retuning two feedback models against each other, and five pre-registered studies of how far simulated galaxy populations can and cannot be made to agree.**
 
-> **Beta, not reviewed by anyone outside the project.** More than half of the simulation curves (54 %) were read from published figures by script; every record carries its source, definitions and evidence tier, but **no record has been checked by an outside expert yet**. Where an author or collaboration publishes its own table, use that. Some records come from third-party releases with their own terms (`terms` column; `docs/SOURCE-TERMS.md`).
+> **Beta, not reviewed by anyone outside the project.** More than half of the simulation curves (55 %) were read from published figures by script; every record carries its source, definitions and evidence tier, but **no record has been checked by an outside expert yet**. Where an author or collaboration publishes its own table, use that. Some records come from third-party releases with their own terms (`terms` column; `docs/SOURCE-TERMS.md`).
 >
 > **Corrections and takedowns:** if you are an author or data owner and want a record corrected, attributed differently or removed, open an issue (the "Curve error" form) or use the contact in `CITATION.cff`. Requests are handled promptly and removal is not contested.
 

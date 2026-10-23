@@ -8,7 +8,7 @@ How much of the disagreement between simulations at fixed stellar mass (or halo 
 
 ## What the data allow
 
-Of 2173 usable cross-suite record pairs (7 relations, 5 epochs), 4% have every documented key equal (matched), 17% differ in a documented soft key, 18% cannot be classified because a definition is undocumented in at least one record, and 60% differ in a hard key (for example different size definitions) and are not comparable at all.
+Of 2224 usable cross-suite record pairs (7 relations, 5 epochs), 4% have every documented key equal (matched), 17% differ in a documented soft key, 17% cannot be classified because a definition is undocumented in at least one record, and 62% differ in a hard key (for example different size definitions) and are not comparable at all.
 
 Of 17 epoch-by-relation permutation tests with enough matched and differing pairs, 1 have p < 0.05; 0.85 would be expected by chance alone. After Bonferroni correction 0 remain. The honest reading is that the present records neither show nor rule out a definitional contribution; the binding constraint is documentation, not physics.
 
@@ -16,7 +16,7 @@ Of 17 epoch-by-relation permutation tests with enough matched and differing pair
 
 | relation | z | suites | pairs (matched / differing / unknown / not comparable) | median abs dy: matched | differing | unknown | excess | p |
 |---|---|---|---|---|---|---|---|---|
-| gsmf | 1 | 4 | 38 (4 / 2 / 32 / 0) | 0.16 | 0.16 | 0.24 | 0.00 | - |
+| gsmf | 1 | 4 | 23 (0 / 14 / 9 / 0) | - | 0.10 | 0.15 | - | - |
 | gsmf | 2 | 4 | 33 (4 / 2 / 27 / 0) | 0.11 | 0.14 | 0.33 | 0.03 | - |
 | gsmf | 4 | 5 | 44 (4 / 2 / 38 / 0) | 0.14 | 0.13 | 0.24 | -0.01 | - |
 | gsmf | 6 | 5 | 32 (3 / 29 / 0 / 0) | 0.13 | 0.23 | - | 0.09 | 0.1019 |
@@ -35,9 +35,9 @@ Of 17 epoch-by-relation permutation tests with enough matched and differing pair
 | shmr | 2 | 5 | 60 (0 / 17 / 0 / 43) | - | 0.28 | - | - | - |
 | shmr | 4 | 6 | 56 (0 / 16 / 0 / 40) | - | 0.35 | - | - | - |
 | shmr | 6 | 3 | 3 (0 / 0 / 2 / 1) | - | - | 0.74 | - | - |
-| size | 0 | 7 | 283 (3 / 0 / 0 / 280) | 0.29 | - | - | - | - |
+| size | 0 | 8 | 313 (3 / 0 / 0 / 310) | 0.29 | - | - | - | - |
 | size | 1 | 7 | 210 (3 / 0 / 0 / 207) | 0.30 | - | - | - | - |
-| size | 2 | 7 | 187 (3 / 0 / 0 / 184) | 0.24 | - | - | - | - |
+| size | 2 | 8 | 223 (3 / 0 / 0 / 220) | 0.24 | - | - | - | - |
 | size | 4 | 6 | 32 (3 / 0 / 0 / 29) | 0.14 | - | - | - | - |
 | size | 6 | 4 | 6 (3 / 0 / 0 / 3) | 0.11 | - | - | - | - |
 | zstar | 0 | 4 | 9 (3 / 6 / 0 / 0) | 0.23 | 0.17 | - | -0.06 | 0.8081 |
