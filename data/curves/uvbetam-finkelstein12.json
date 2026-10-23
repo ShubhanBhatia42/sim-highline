@@ -1,0 +1,410 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "finkelstein12.uvbetam.z4",
+      "source": "Finkelstein et al. 2012",
+      "run": "Finkelstein et al. 2012",
+      "kind": "observation",
+      "relation": "uvbetam",
+      "epoch": {
+        "zRepresentative": 4.0,
+        "zNominal": 4.0,
+        "zMin": 4.0,
+        "zMax": 4.0,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass, from the SED fit to the rest-UV photometry (bin centre of the 1 dex bin; the bin edges are the paper's)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (median of the galaxies in the stellar-mass bin)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": 7.5,
+        "xMax": 9.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": 7.5,
+            "y": -2.22,
+            "yLow": -2.27,
+            "yHigh": -2.09
+          },
+          {
+            "x": 8.5,
+            "y": -2.03,
+            "yLow": -2.07,
+            "yHigh": -2.01
+          },
+          {
+            "x": 9.5,
+            "y": -1.88,
+            "yLow": -1.9,
+            "yHigh": -1.86
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "Lyman-break galaxies at z = 4 (photometric-redshift samples of the paper)",
+        "warning": "Median beta in the three stellar-mass bins 7-8, 8-9 and 9-10 (galaxies per bin, low/middle/high: 52/510/927); the x value is the bin centre, not a measured median mass; the band is the 68 per cent range from the paper's Monte Carlo. The paper warns that completeness may drive part of the trend (low-mass red galaxies are harder to detect) and that the masses use only rest-UV photometry. The paper's fitted slope is 0.17 +- 0.03 per dex."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the best-fit SED spectrum in the wavelength windows of Calzetti et al. 1994 (the paper does not list the windows)",
+        "dustTreatment": "attenuated",
+        "dustModel": "observed light: the SED fit includes dust attenuation with the Calzetti et al. 2000 law, 0 <= A_V <= 2",
+        "betaMethod": "SED fitting, then a power law fitted to the best-fit model spectrum",
+        "xVariable": "stellar mass",
+        "massDefinition": "SED-fitting stellar mass from the rest-UV photometry (BC03 2011 models, Calzetti attenuation); no aperture statement",
+        "imf": "salpeter55",
+        "population": "Lyman-break galaxies at z = 4 to 8 (CANDELS-GOODS-S, HUDF09, ERS)",
+        "cosmology": "unspecified"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Finkelstein et al. 2012, ApJ 756, 164 (arXiv:1110.3785), Table 5: values of the UV spectral slope split by stellar mass",
+        "doi": "10.1088/0004-637X/756/2/164",
+        "url": "https://arxiv.org/abs/1110.3785",
+        "retrieved": "2026-10-23",
+        "figure": "Table 5",
+        "checksumSha256": "6b86350aa3b40e65616bf12d7c8dc8f1be179afa64122e02fff0b86e7b4ca58b",
+        "sourceMember": "tab5.tex",
+        "sourceTexSha256": "55f46a8ed70b9f9ecf9582db726ed5652a5d7c21cd48343db652677264888b4d",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values asserted against the printed numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "finkelstein12.uvbetam.z5",
+      "source": "Finkelstein et al. 2012",
+      "run": "Finkelstein et al. 2012",
+      "kind": "observation",
+      "relation": "uvbetam",
+      "epoch": {
+        "zRepresentative": 5.0,
+        "zNominal": 5.0,
+        "zMin": 5.0,
+        "zMax": 5.0,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass, from the SED fit to the rest-UV photometry (bin centre of the 1 dex bin; the bin edges are the paper's)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (median of the galaxies in the stellar-mass bin)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": 7.5,
+        "xMax": 9.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": 7.5,
+            "y": -2.4,
+            "yLow": -2.5,
+            "yHigh": -2.18
+          },
+          {
+            "x": 8.5,
+            "y": -2.15,
+            "yLow": -2.19,
+            "yHigh": -2.09
+          },
+          {
+            "x": 9.5,
+            "y": -1.79,
+            "yLow": -1.82,
+            "yHigh": -1.7
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "Lyman-break galaxies at z = 5 (photometric-redshift samples of the paper)",
+        "warning": "Median beta in the three stellar-mass bins 7-8, 8-9 and 9-10 (galaxies per bin, low/middle/high: 24/227/223); the x value is the bin centre, not a measured median mass; the band is the 68 per cent range from the paper's Monte Carlo. The paper warns that completeness may drive part of the trend (low-mass red galaxies are harder to detect) and that the masses use only rest-UV photometry. The paper's fitted slope is 0.3 +- 0.06 per dex."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the best-fit SED spectrum in the wavelength windows of Calzetti et al. 1994 (the paper does not list the windows)",
+        "dustTreatment": "attenuated",
+        "dustModel": "observed light: the SED fit includes dust attenuation with the Calzetti et al. 2000 law, 0 <= A_V <= 2",
+        "betaMethod": "SED fitting, then a power law fitted to the best-fit model spectrum",
+        "xVariable": "stellar mass",
+        "massDefinition": "SED-fitting stellar mass from the rest-UV photometry (BC03 2011 models, Calzetti attenuation); no aperture statement",
+        "imf": "salpeter55",
+        "population": "Lyman-break galaxies at z = 4 to 8 (CANDELS-GOODS-S, HUDF09, ERS)",
+        "cosmology": "unspecified"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Finkelstein et al. 2012, ApJ 756, 164 (arXiv:1110.3785), Table 5: values of the UV spectral slope split by stellar mass",
+        "doi": "10.1088/0004-637X/756/2/164",
+        "url": "https://arxiv.org/abs/1110.3785",
+        "retrieved": "2026-10-23",
+        "figure": "Table 5",
+        "checksumSha256": "6b86350aa3b40e65616bf12d7c8dc8f1be179afa64122e02fff0b86e7b4ca58b",
+        "sourceMember": "tab5.tex",
+        "sourceTexSha256": "55f46a8ed70b9f9ecf9582db726ed5652a5d7c21cd48343db652677264888b4d",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values asserted against the printed numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "finkelstein12.uvbetam.z6",
+      "source": "Finkelstein et al. 2012",
+      "run": "Finkelstein et al. 2012",
+      "kind": "observation",
+      "relation": "uvbetam",
+      "epoch": {
+        "zRepresentative": 6.0,
+        "zNominal": 6.0,
+        "zMin": 6.0,
+        "zMax": 6.0,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass, from the SED fit to the rest-UV photometry (bin centre of the 1 dex bin; the bin edges are the paper's)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (median of the galaxies in the stellar-mass bin)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": 7.5,
+        "xMax": 9.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": 7.5,
+            "y": -2.59,
+            "yLow": -2.69,
+            "yHigh": -2.36
+          },
+          {
+            "x": 8.5,
+            "y": -2.2,
+            "yLow": -2.36,
+            "yHigh": -2.15
+          },
+          {
+            "x": 9.5,
+            "y": -1.78,
+            "yLow": -1.88,
+            "yHigh": -1.59
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "Lyman-break galaxies at z = 6 (photometric-redshift samples of the paper)",
+        "warning": "Median beta in the three stellar-mass bins 7-8, 8-9 and 9-10 (galaxies per bin, low/middle/high: 29/104/76); the x value is the bin centre, not a measured median mass; the band is the 68 per cent range from the paper's Monte Carlo. The paper warns that completeness may drive part of the trend (low-mass red galaxies are harder to detect) and that the masses use only rest-UV photometry. The paper's fitted slope is 0.4 +- 0.1 per dex."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the best-fit SED spectrum in the wavelength windows of Calzetti et al. 1994 (the paper does not list the windows)",
+        "dustTreatment": "attenuated",
+        "dustModel": "observed light: the SED fit includes dust attenuation with the Calzetti et al. 2000 law, 0 <= A_V <= 2",
+        "betaMethod": "SED fitting, then a power law fitted to the best-fit model spectrum",
+        "xVariable": "stellar mass",
+        "massDefinition": "SED-fitting stellar mass from the rest-UV photometry (BC03 2011 models, Calzetti attenuation); no aperture statement",
+        "imf": "salpeter55",
+        "population": "Lyman-break galaxies at z = 4 to 8 (CANDELS-GOODS-S, HUDF09, ERS)",
+        "cosmology": "unspecified"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Finkelstein et al. 2012, ApJ 756, 164 (arXiv:1110.3785), Table 5: values of the UV spectral slope split by stellar mass",
+        "doi": "10.1088/0004-637X/756/2/164",
+        "url": "https://arxiv.org/abs/1110.3785",
+        "retrieved": "2026-10-23",
+        "figure": "Table 5",
+        "checksumSha256": "6b86350aa3b40e65616bf12d7c8dc8f1be179afa64122e02fff0b86e7b4ca58b",
+        "sourceMember": "tab5.tex",
+        "sourceTexSha256": "55f46a8ed70b9f9ecf9582db726ed5652a5d7c21cd48343db652677264888b4d",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values asserted against the printed numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "finkelstein12.uvbetam.z7",
+      "source": "Finkelstein et al. 2012",
+      "run": "Finkelstein et al. 2012",
+      "kind": "observation",
+      "relation": "uvbetam",
+      "epoch": {
+        "zRepresentative": 7.0,
+        "zNominal": 7.0,
+        "zMin": 7.0,
+        "zMax": 7.0,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass, from the SED fit to the rest-UV photometry (bin centre of the 1 dex bin; the bin edges are the paper's)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (median of the galaxies in the stellar-mass bin)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": 7.5,
+        "xMax": 9.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": 7.5,
+            "y": -2.68,
+            "yLow": -2.92,
+            "yHigh": -2.53
+          },
+          {
+            "x": 8.5,
+            "y": -2.42,
+            "yLow": -2.53,
+            "yHigh": -2.11
+          },
+          {
+            "x": 9.5,
+            "y": -1.76,
+            "yLow": -2.09,
+            "yHigh": -1.53
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "Lyman-break galaxies at z = 7 (photometric-redshift samples of the paper)",
+        "warning": "Median beta in the three stellar-mass bins 7-8, 8-9 and 9-10 (galaxies per bin, low/middle/high: 17/36/22); the x value is the bin centre, not a measured median mass; the band is the 68 per cent range from the paper's Monte Carlo. The paper warns that completeness may drive part of the trend (low-mass red galaxies are harder to detect) and that the masses use only rest-UV photometry. The paper's fitted slope is 0.46 +- 0.1 per dex."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the best-fit SED spectrum in the wavelength windows of Calzetti et al. 1994 (the paper does not list the windows)",
+        "dustTreatment": "attenuated",
+        "dustModel": "observed light: the SED fit includes dust attenuation with the Calzetti et al. 2000 law, 0 <= A_V <= 2",
+        "betaMethod": "SED fitting, then a power law fitted to the best-fit model spectrum",
+        "xVariable": "stellar mass",
+        "massDefinition": "SED-fitting stellar mass from the rest-UV photometry (BC03 2011 models, Calzetti attenuation); no aperture statement",
+        "imf": "salpeter55",
+        "population": "Lyman-break galaxies at z = 4 to 8 (CANDELS-GOODS-S, HUDF09, ERS)",
+        "cosmology": "unspecified"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Finkelstein et al. 2012, ApJ 756, 164 (arXiv:1110.3785), Table 5: values of the UV spectral slope split by stellar mass",
+        "doi": "10.1088/0004-637X/756/2/164",
+        "url": "https://arxiv.org/abs/1110.3785",
+        "retrieved": "2026-10-23",
+        "figure": "Table 5",
+        "checksumSha256": "6b86350aa3b40e65616bf12d7c8dc8f1be179afa64122e02fff0b86e7b4ca58b",
+        "sourceMember": "tab5.tex",
+        "sourceTexSha256": "55f46a8ed70b9f9ecf9582db726ed5652a5d7c21cd48343db652677264888b4d",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values asserted against the printed numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "finkelstein12.uvbetam.z8",
+      "source": "Finkelstein et al. 2012",
+      "run": "Finkelstein et al. 2012",
+      "kind": "observation",
+      "relation": "uvbetam",
+      "epoch": {
+        "zRepresentative": 8.0,
+        "zNominal": 8.0,
+        "zMin": 8.0,
+        "zMax": 8.0,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass, from the SED fit to the rest-UV photometry (bin centre of the 1 dex bin; the bin edges are the paper's)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (median of the galaxies in the stellar-mass bin)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": 7.5,
+        "xMax": 9.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": 7.5,
+            "y": -2.5,
+            "yLow": -2.93,
+            "yHigh": -1.24
+          },
+          {
+            "x": 8.5,
+            "y": -2.35,
+            "yLow": -2.51,
+            "yHigh": -1.89
+          },
+          {
+            "x": 9.5,
+            "y": -1.6,
+            "yLow": -2.14,
+            "yHigh": -1.28
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "Lyman-break galaxies at z = 8 (photometric-redshift samples of the paper)",
+        "warning": "Median beta in the three stellar-mass bins 7-8, 8-9 and 9-10 (galaxies per bin, low/middle/high: 3/15/12); the x value is the bin centre, not a measured median mass; the band is the 68 per cent range from the paper's Monte Carlo. The paper warns that completeness may drive part of the trend (low-mass red galaxies are harder to detect) and that the masses use only rest-UV photometry. The paper's fitted slope is 0.45 +- 0.37 per dex."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the best-fit SED spectrum in the wavelength windows of Calzetti et al. 1994 (the paper does not list the windows)",
+        "dustTreatment": "attenuated",
+        "dustModel": "observed light: the SED fit includes dust attenuation with the Calzetti et al. 2000 law, 0 <= A_V <= 2",
+        "betaMethod": "SED fitting, then a power law fitted to the best-fit model spectrum",
+        "xVariable": "stellar mass",
+        "massDefinition": "SED-fitting stellar mass from the rest-UV photometry (BC03 2011 models, Calzetti attenuation); no aperture statement",
+        "imf": "salpeter55",
+        "population": "Lyman-break galaxies at z = 4 to 8 (CANDELS-GOODS-S, HUDF09, ERS)",
+        "cosmology": "unspecified"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Finkelstein et al. 2012, ApJ 756, 164 (arXiv:1110.3785), Table 5: values of the UV spectral slope split by stellar mass",
+        "doi": "10.1088/0004-637X/756/2/164",
+        "url": "https://arxiv.org/abs/1110.3785",
+        "retrieved": "2026-10-23",
+        "figure": "Table 5",
+        "checksumSha256": "6b86350aa3b40e65616bf12d7c8dc8f1be179afa64122e02fff0b86e7b4ca58b",
+        "sourceMember": "tab5.tex",
+        "sourceTexSha256": "55f46a8ed70b9f9ecf9582db726ed5652a5d7c21cd48343db652677264888b4d",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values asserted against the printed numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    }
+  ]
+}
