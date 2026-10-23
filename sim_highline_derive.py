@@ -280,13 +280,19 @@ def load_field_files(groupdir, snap):
     return {}, cat, digest.hexdigest(), len(found)
 
 
-def load(groupdir, snap):
-    h5py = _h5py()
+def subfind_files(groupdir, snap):
+    """The files of one snapshot's group catalogue, in chunk order (empty list when there are none)."""
     files = []
     for pattern in (f"fof_subhalo_tab_{snap:03d}.*.hdf5", f"groups_{snap:03d}.*.hdf5", f"groups_{snap:03d}.hdf5", f"fof_subhalo_tab_{snap:03d}.hdf5"):
         files = sorted((f for f in glob.glob(str(Path(groupdir) / pattern)) if "*" not in pattern or f.split(".")[-2].isdigit()), key=lambda f: int(f.split(".")[-2]) if f.split(".")[-2].isdigit() else 0)
         if files:
             break
+    return files
+
+
+def load(groupdir, snap):
+    h5py = _h5py()
+    files = subfind_files(groupdir, snap)
     if not files:
         return None
     sub, grp, digest = {k: [] for k in FIELDS}, {k: [] for k in GROUP_FIELDS}, hashlib.sha256()
@@ -551,3 +557,484 @@ def eagle_records(sim, execute, retrieved=None):
 
 def write_records(records, out):
     Path(out).write_text(json.dumps({"schemaVersion": SCHEMA_VERSION, "records": records}, indent=2) + "\n")
+
+
+# =====================================================================================================================
+# `sim-highline derive`: from a catalogue you hold to records in the project's format.
+# The rule: a definition is taken from what you state or from what the file itself says, never assumed. Where the two
+# disagree, or neither says, nothing is written and every such item is listed with the option that would settle it.
+# =====================================================================================================================
+FORMATS = ("subfind", "caesar", "soap", "eagle")
+IMFS = ("chabrier03", "kroupa01", "salpeter55")
+DOCS_URL = "https://github.com/ShubhanBhatia42/sim-highline/blob/main/docs/DERIVE-CLI.md"
+RELATIONS_DERIVED = ("gsmf", "sfms", "ssfr", "quenched", "size", "shmr", "bh", "zstar", "mzr", "hi-fraction", "h2-fraction")
+# what each format can hold beyond the core (stellar mass, SFR, centrals, halo mass): the relation, the array it needs, and what to say when it is absent
+OPTIONAL = {
+    "subfind": (("size", "rhalf_kpc", "SubhaloHalfmassRadType"), ("bh", "mbh", "SubhaloBHMass"), ("zstar", "zstar_solar", "SubhaloStarMetallicity"), ("mzr", "oh", "SubhaloGasMetalFractionsSfrWeighted")),
+    "caesar": (("size", "rhalf_kpc", "dicts/radii.stellar_half_mass"), ("bh", "mbh", "dicts/masses.bh"), ("hi-fraction", "mHI", "dicts/masses.HI"), ("h2-fraction", "mH2", "dicts/masses.H2")),
+    "soap": (("size", "rhalf_kpc", "HalfMassRadiusStars"), ("bh", "mbh", "MostMassiveBlackHoleMass")),
+    "eagle": (("size", "rhalf_kpc", "R_halfmass30"), ("bh", "mbh", "Mass_BH")),
+}
+SUBFIND_CORE = ("SubhaloMassInRadType", "SubhaloSFRinRad", "SubhaloGrNr", "GroupFirstSub", "Group_M_Crit200")
+EAGLE_CORE = ("Redshift", "SnapNum", "SubGroupNumber", "Mass_Star", "SFR", "Group_M_Crit200")
+
+
+class UnderSpecified(ValueError):
+    """Raised, with every problem at once, when a definition cannot be known (nothing stated, nothing in the file) or the file and the statement disagree. `problems` is the list."""
+
+    def __init__(self, problems):
+        self.problems = list(problems)
+        n = len(self.problems)
+        super().__init__(f"refusing to guess: {n} thing{'s' if n != 1 else ''} the tool cannot know or that conflict\n"
+                         + "\n".join(f"  {i}. {p}" for i, p in enumerate(self.problems, 1)) + "\nNothing was written.")
+
+
+class Derived(dict):
+    """The payload ({"schemaVersion", "records"}) with a plain-language `report` (list of lines) and the `facts` (where each definition came from)."""
+    report = ()
+    facts = ()
+
+
+def slug(text):
+    return re.sub(r"[^a-z0-9.-]+", "-", str(text).lower()).strip("-.")
+
+
+def _num(x):
+    return float(np.atleast_1d(x)[0])
+
+
+def _close(a, b, tol=1e-3):
+    return abs(a - b) <= tol * max(abs(a), abs(b), 1e-12)
+
+
+def _pick(problems, facts, name, flag, stated, in_file, where, tol=1e-3, fmt="{:g}"):
+    """One value from the statement and/or the file. Both and different: a problem. Neither: a problem. Returns the value (the file's on a conflict, so that the rest can go on)."""
+    if stated is not None and in_file is not None and not _close(stated, in_file, tol):
+        problems.append(f"{name}: you stated {fmt.format(stated)} ({flag}) but {where} says {fmt.format(in_file)}. Fix whichever is wrong; the tool will not choose between them.")
+        return in_file
+    if stated is not None:
+        facts.append(f"{name} = {fmt.format(stated)} (stated by you with {flag}" + (f"; {where} agrees" if in_file is not None else "") + ")")
+        return stated
+    if in_file is not None:
+        facts.append(f"{name} = {fmt.format(in_file)} (read from {where})")
+        return in_file
+    problems.append(f"{name}: {where} does not record it and you did not state it. Add {flag}.")
+    return None
+
+
+def _snapshot_from_name(path):
+    m = re.search(r"(\d+)(?!.*\d)", Path(path).stem)
+    return int(m.group(1)) if m else None
+
+
+def _attr_float(attrs, key):
+    return _num(attrs[key]) if key in attrs else None
+
+
+def _subfind_snapshots(path):
+    """{snapshot: folder} for a folder of group-catalogue files (one level of groups_NNN subfolders is searched too) or one such file."""
+    path = Path(path)
+    pats = (r"fof_subhalo_tab_(\d+)\.\d+\.hdf5", r"groups_(\d+)\.\d+\.hdf5", r"groups_(\d+)\.hdf5", r"fof_subhalo_tab_(\d+)\.hdf5")
+    found = {}
+
+    def scan(folder, only=None):
+        for f in sorted(folder.glob("*.hdf5")):
+            for p in pats:
+                m = re.fullmatch(p, f.name)
+                if m and (only is None or f == only):
+                    found.setdefault(int(m.group(1)), folder)
+    if path.is_file():
+        scan(path.parent, only=path)
+    else:
+        scan(path)
+        if not found:
+            for sub in sorted(d for d in path.glob("groups_*") if d.is_dir()):
+                scan(sub)
+    return found
+
+
+def _attested_units(first_file):
+    """(UnitLength_in_cm, UnitMass_in_g) when the catalogue carries them in Header, Parameters or Config; else None."""
+    h5py = _h5py()
+    with h5py.File(first_file, "r") as f:
+        for grp in ("Header", "Parameters", "Config"):
+            if grp in f and "UnitLength_in_cm" in f[grp].attrs and "UnitMass_in_g" in f[grp].attrs:
+                return _num(f[grp].attrs["UnitLength_in_cm"]), _num(f[grp].attrs["UnitMass_in_g"])
+    return None
+
+
+def _prep_subfind(catalogs, st, problems, facts):
+    epochs = []
+    if st["units"] not in (None, "illustris"):
+        problems.append(f"units: '{st['units']}' is not a units convention this format knows; the only one is 'illustris' (masses in 1e10 Msun/h, comoving lengths in kpc/h, SFR in Msun/yr).")
+    for c in catalogs:
+        snaps = _subfind_snapshots(c)
+        if not snaps:
+            problems.append(f"catalog: no Subfind group-catalogue files in {c} (looked for fof_subhalo_tab_NNN.*.hdf5, groups_NNN.*.hdf5, groups_NNN.hdf5 and fof_subhalo_tab_NNN.hdf5).")
+            continue
+        for snap, folder in sorted(snaps.items()):
+            where = f"the catalogue {Path(folder).name} (snapshot {snap})"
+            header, cat, digest, nfiles = load(folder, snap)
+            lacking = [k for k in SUBFIND_CORE if k not in cat]
+            if lacking:
+                problems.append(f"{where} lacks the fields {lacking}. They give the stellar mass within twice the stellar half-mass radius, the SFR, which subhaloes are centrals and the halo mass; derive cannot do without them.")
+                continue
+            if "Redshift" not in header:
+                problems.append(f"{where} has no Redshift in its Header (a download of single fields has no header); derive needs the full group-catalogue files.")
+                continue
+            z = _num(header["Redshift"])
+            a = _num(header["Time"]) if "Time" in header else 1 / (1 + z)
+            attested = _attested_units(subfind_files(folder, snap)[0])
+            if attested is not None:
+                if not (_close(attested[0], KPC_CM) and _close(attested[1], 1e10 * MSUN_G)):
+                    problems.append(f"units: {where} says UnitLength_in_cm = {attested[0]:g} and UnitMass_in_g = {attested[1]:g}; this format reads lengths in kpc/h and masses in 1e10 Msun/h, which are 3.085678e21 and 1.989e43.")
+                unit_fact = "units: lengths ckpc/h, masses 1e10 Msun/h (checked against the unit attributes in the file)"
+            elif st["units"] == "illustris":
+                unit_fact = "units: lengths ckpc/h, masses 1e10 Msun/h (stated by you with --units illustris; the file carries no unit attributes to check)"
+            else:
+                problems.append(f"units: {where} carries no UnitLength_in_cm and UnitMass_in_g, so it cannot show that lengths are comoving kpc/h and masses 1e10 Msun/h. If they are (the Illustris and IllustrisTNG convention), add --units illustris.")
+                unit_fact = None
+            local = []
+            h = _pick(problems, local, "h", "--h", st["h"], _attr_float(header, "HubbleParam"), where, fmt="{:.4g}")
+            om = _pick(problems, local, "omega_m", "--omega-m", st["omega_m"], _attr_float(header, "Omega0"), where, fmt="{:.4g}")
+            ol = _attr_float(header, "OmegaLambda")
+            if om is not None and ol is not None and abs(om + ol - 1) > 1e-3:
+                problems.append(f"{where} has Omega0 + OmegaLambda = {om + ol:.4g}; the star-forming cut uses a flat cosmology, so a non-flat run is not supported.")
+            box_file = _attr_float(header, "BoxSize")
+            box = _pick(problems, local, "box (comoving Mpc)", "--box-mpc", st["box_mpc"], None if box_file is None or h is None else box_file / 1000 / h, f"{where} (BoxSize in ckpc/h divided by h)", fmt="{:.6g}")
+            if None in (h, om, box):
+                continue
+            flag = cat.get("SubhaloFlag")
+            local += [unit_fact] if unit_fact else []
+            local.append("mass: stellar mass within twice the stellar half-mass radius (SubhaloMassInRadType), SFR from SubhaloSFRinRad (the field's own definitions)")
+            local.append("SubhaloFlag: " + ("subhaloes flagged as not of cosmological origin are excluded" if flag is not None else "absent from the catalogue, so no subhalo is excluded as spurious"))
+            epochs.append({"z": z, "snap": snap, "h": h, "Om": om, "box": box, "arrays": subfind_arrays(cat, h, a, st["mbar"]), "digest": digest, "nfiles": nfiles,
+                           "member": f"{Path(folder).name}/ ({nfiles} files of snapshot {snap})", "name": Path(folder).name, "facts": local,
+                           "mass_definition": "aperture-2rhalf-stars", "size_definition": "stellar-half-mass-3d-bound", "halo": "m200c",
+                           "metallicity_note": "SFR-weighted, within twice the stellar half-mass radius",
+                           "warning": (f"Subhaloes with SubhaloFlag = 0 excluded; " if flag is not None else "No SubhaloFlag in the catalogue, so spurious subhaloes are not excluded; ")
+                           + "stellar mass and SFR within twice the stellar half-mass radius."})
+    return epochs
+
+
+def _prep_caesar(catalogs, st, problems, facts):
+    h5py = _h5py()
+    epochs = []
+    for c in catalogs:
+        path = Path(c)
+        if not path.is_file():
+            problems.append(f"catalog: {path} is not a file; give the CAESAR .hdf5 catalogue itself.")
+            continue
+        where = f"the catalogue {path.name}"
+        with h5py.File(path, "r") as f:
+            if "simulation_attributes" not in f or "galaxy_data" not in f or "halo_data" not in f:
+                problems.append(f"{where} does not look like a CAESAR catalogue (no simulation_attributes, galaxy_data and halo_data).")
+                continue
+            sa = f["simulation_attributes"].attrs
+            z = _attr_float(sa, "redshift")
+            h_file, om_file = _attr_float(sa, "hubble_constant"), _attr_float(sa, "omega_matter")
+            halo_keys = [k for k in CAESAR_HALO_MASS_KEYS[:2] if k in f["halo_data"]]
+        if z is None:
+            problems.append(f"{where} has no redshift in simulation_attributes.")
+            continue
+        local = []
+        h = _pick(problems, local, "h", "--h", st["h"], h_file, where, fmt="{:.4g}")
+        om = _pick(problems, local, "omega_m", "--omega-m", st["omega_m"], om_file, where, fmt="{:.4g}")
+        if not halo_keys:
+            problems.append(f"{where} has no M200crit halo mass (looked for dicts/masses.m200c and dicts/virial_quantities.m200c in halo_data); a mean-density m200 is not accepted because the halo-mass relation would then not be M200crit.")
+        snap = _snapshot_from_name(path) if st["snapshot"] is None else st["snapshot"]
+        if snap is None:
+            problems.append(f"snapshot: no number in the file name {path.name}; add --snapshot N (only with one catalogue).")
+        if None in (h, om) or not halo_keys or snap is None:
+            continue
+        try:
+            r = caesar_read(path, st["mbar"], halo_keys=tuple(halo_keys), h=h)
+        except SystemExit as e:
+            problems.append(str(e))
+            continue
+        box = _pick(problems, local, "box (comoving Mpc)", "--box-mpc", st["box_mpc"], r["box_kpc"] / 1e3, f"{where} (boxsize with its stated units)", fmt="{:.6g}")
+        local.append("units: every quantity is converted from the 'unit' attribute of its dataset; an unrecognised unit stops the run")
+        local.append("mass: total stellar mass of the CAESAR galaxy (6D-FOF members), not an aperture")
+        epochs.append({"z": z, "snap": snap, "h": h, "Om": om, "box": box, "arrays": r["arrays"], "digest": r["digest"], "member": path.name, "name": path.name, "facts": local,
+                       "mass_definition": "caesar-6dfof-galaxy-total", "size_definition": "stellar-half-mass-3d-bound", "halo": r["hkey"].split("/")[-1], "metallicity_note": "",
+                       "warning": "CAESAR stellar masses are totals of 6D-FOF galaxy members, not apertures; units read from each dataset's 'unit' attribute."})
+    return epochs
+
+
+def _prep_soap(catalogs, st, problems, facts):
+    h5py = _h5py()
+    epochs = []
+    ap = st["aperture"]
+    if ap is None:
+        problems.append("aperture: the mass aperture is a choice made when the catalogue was built and the tool cannot guess it. Add --aperture, for example 50kpc (the name of a group under ExclusiveSphere in the file).")
+    elif not re.fullmatch(r"\d+p?kpc", ap):
+        problems.append(f"aperture: '{ap}' is not of the form 50kpc.")
+        ap = None
+    else:
+        ap = ap.replace("pkpc", "kpc")
+    for c in catalogs:
+        path = Path(c)
+        if not path.is_file():
+            problems.append(f"catalog: {path} is not a file; give the SOAP halo_properties_NNNN.hdf5 file itself.")
+            continue
+        where = f"the catalogue {path.name}"
+        with h5py.File(path, "r") as f:
+            if "Header" not in f or "ExclusiveSphere" not in f:
+                problems.append(f"{where} does not look like a SOAP halo catalogue (no Header and ExclusiveSphere).")
+                continue
+            available = sorted(f["ExclusiveSphere"].keys())
+        if ap is not None and ap not in available:
+            problems.append(f"aperture: {where} has no ExclusiveSphere/{ap}; it has {available}.")
+            continue
+        if ap is None:
+            continue
+        try:
+            r = soap_read(path, ap, st["mbar"], box_mpc=st["box_mpc"])
+        except SystemExit as e:
+            msg = str(e)
+            problems.append(msg + (" State the box with --box-mpc (comoving Mpc)." if "BoxSize" in msg else ""))
+            continue
+        local = []
+        h = _pick(problems, local, "h", "--h", st["h"], r["h"], f"the Cosmology group of {where}", fmt="{:.4g}")
+        om = _pick(problems, local, "omega_m", "--omega-m", st["omega_m"], r["Om"], f"the Cosmology group of {where}", fmt="{:.4g}")
+        snap = _snapshot_from_name(path) if st["snapshot"] is None else st["snapshot"]
+        if snap is None:
+            problems.append(f"snapshot: no number in the file name {path.name}; add --snapshot N (only with one catalogue).")
+        if None in (h, om) or snap is None:
+            continue
+        local.append(f"box = {r['box']:.6g} comoving Mpc (" + ("stated by you with --box-mpc" if st["box_mpc"] is not None else "read from the Header; it is plausibly comoving Mpc") + ")")
+        local.append(f"mass: stellar mass in the {ap} exclusive sphere (ExclusiveSphere/{ap}); units from the file's own CGS conversion attributes (a dataset without one stops the run)")
+        epochs.append({"z": r["z"], "snap": snap, "h": h, "Om": om, "box": r["box"], "arrays": r["arrays"], "digest": r["digest"], "member": path.name, "name": path.name, "facts": local,
+                       "mass_definition": f"aperture-{ap.replace('kpc', 'pkpc')}", "halo": "m200c", "metallicity_note": "",
+                       "size_definition": f"stellar-half-mass-3d-{'aperture' if r['rpath'] and 'Exclusive' in r['rpath'] else 'bound'}",
+                       "warning": f"Masses and SFRs in the {ap} exclusive sphere (the particles bound to the subhalo within that radius); M200crit from SO/200_crit."})
+    return epochs
+
+
+def _prep_eagle(catalogs, st, problems, facts):
+    import pandas as pd
+    epochs = []
+    if st["units"] != "eagle-database":
+        problems.append("units: a table of numbers does not say what its columns are in. If they are as the EAGLE database gives them (Msun, Msun/yr, proper kpc), add --units eagle-database.")
+    if st["aperture"] not in (None, "30pkpc", "30kpc"):
+        problems.append(f"aperture: this format reads the 30 pkpc aperture quantities (the R_halfmass30 column is a 30 pkpc radius); '{st['aperture']}' is not supported.")
+    elif st["aperture"] is None:
+        problems.append("aperture: the table does not say which aperture Mass_Star, SFR and Mass_BH were taken in. Add --aperture 30pkpc if they come from the 30 pkpc aperture (ApertureSize = 30) as in the documented query.")
+    for c in catalogs:
+        path = Path(c)
+        if not path.is_file():
+            problems.append(f"catalog: {path} is not a file; give the table exported from the EAGLE database (CSV).")
+            continue
+        where = f"the table {path.name}"
+        df = pd.read_csv(path, comment="#")
+        lacking = [k for k in EAGLE_CORE if k not in df.columns]
+        if lacking:
+            problems.append(f"{where} lacks the columns {lacking}; the documented query (docs/DERIVE-CLI.md) lists them.")
+            continue
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        local = []
+        h = _pick(problems, local, "h", "--h", st["h"], None, "the table (it holds no cosmology)", fmt="{:.4g}")
+        om = _pick(problems, local, "omega_m", "--omega-m", st["omega_m"], None, "the table (it holds no cosmology)", fmt="{:.4g}")
+        box = _pick(problems, local, "box (comoving Mpc)", "--box-mpc", st["box_mpc"], None, "the table (it holds no box size)", fmt="{:.6g}")
+        if None in (h, om, box):
+            continue
+        cut = MIN_STAR_PARTICLES * st["mbar"]
+        local += ["units: as the EAGLE database gives them (stated by you with --units eagle-database)", "mass: stellar mass in the 30 pkpc aperture (stated by you with --aperture 30pkpc)"]
+        for snap, d in sorted(df.groupby("SnapNum"), key=lambda kv: kv[0]):
+            if d["Mass_Star"].min() > 2 * cut:
+                problems.append(f"{where}, snapshot {snap}: the smallest Mass_Star is {d['Mass_Star'].min():.3g} Msun, more than twice the resolution cut ({cut:.3g} Msun = 100 baryon particle masses), so the table is not complete down to the cut and the mass function would be wrong. Export every galaxy above the cut.")
+                continue
+            zs = d["Redshift"].to_numpy(float)
+            if np.ptp(zs) > 1e-6:
+                problems.append(f"{where}, snapshot {snap}: Redshift is not one value ({zs.min():g} to {zs.max():g}).")
+                continue
+            rows = {k: d[k].to_numpy() for k in d.columns}
+            ms = rows["Mass_Star"].astype(float)
+            arrays = {"logm": np.log10(np.where(ms > 0, ms, np.nan)), "sfr": rows["SFR"].astype(float), "resolved": ms >= cut, "central": rows["SubGroupNumber"] == 0,
+                      "logmh": np.log10(np.where(rows["Group_M_Crit200"].astype(float) > 0, rows["Group_M_Crit200"].astype(float), np.nan))}
+            if "R_halfmass30" in rows:
+                arrays["rhalf_kpc"] = rows["R_halfmass30"].astype(float)
+            if "Mass_BH" in rows:
+                arrays["mbh"] = rows["Mass_BH"].astype(float)
+            epochs.append({"z": float(zs[0]), "snap": int(snap), "h": h, "Om": om, "box": box, "arrays": arrays, "digest": digest, "member": f"{path.name} (SnapNum = {int(snap)})", "name": path.name, "facts": local,
+                           "mass_definition": "aperture-30pkpc", "size_definition": "stellar-half-mass-3d-30pkpc", "halo": "m200c", "metallicity_note": "",
+                           "warning": "Masses, SFRs and black-hole masses in the 30 pkpc aperture; sizes are the 30 pkpc half-mass radii; the table must hold every galaxy above the resolution cut."})
+    return epochs
+
+
+_PREP = {"subfind": _prep_subfind, "caesar": _prep_caesar, "soap": _prep_soap, "eagle": _prep_eagle}
+
+
+def validate_records(records):
+    """The structural checks that scripts/validate-curves.mjs makes on a record file, for the records this tool writes. Returns a list of problems (empty when valid)."""
+    errors, ids, keys = [], set(), set()
+    for r in records:
+        i = r.get("id", "?")
+        if not re.fullmatch(r"[a-z0-9][a-z0-9._-]+", i):
+            errors.append(f"{i}: id must match ^[a-z0-9][a-z0-9._-]+$")
+        if i in ids:
+            errors.append(f"{i}: duplicate id")
+        ids.add(i)
+        key = (r["source"], r.get("run") or "none", r["relation"], r["epoch"]["zRepresentative"])
+        if key in keys:
+            errors.append(f"{i}: duplicate source/run/relation/epoch")
+        keys.add(key)
+        e = r["epoch"]
+        if not (e["zMin"] <= e["zRepresentative"] <= e["zMax"]):
+            errors.append(f"{i}: representative redshift outside range")
+        if e["mode"] == "snapshot" and not isinstance(e.get("snapshot"), int):
+            errors.append(f"{i}: snapshot number required")
+        if not re.match(r"https://", r["provenance"].get("url", "")):
+            errors.append(f"{i}: HTTPS primary source required")
+        if r["provenance"]["tier"] == "digitized-figure" and r["rankable"]:
+            errors.append(f"{i}: digitized figures cannot be rankable")
+        rep = r["representation"]
+        if rep["type"] != "points":
+            errors.append(f"{i}: representation type {rep['type']} is not the stored form")
+            continue
+        prev = -math.inf
+        for k, p in enumerate(rep["points"]):
+            if not (all(isinstance(p.get(c), (int, float)) and math.isfinite(p[c]) for c in ("x", "y"))):
+                errors.append(f"{i}: non-finite coordinate at point {k}")
+                continue
+            if rep.get("connect") is not False and not p["x"] > prev:
+                errors.append(f"{i}: x values must increase at point {k}")
+            prev = p["x"]
+            if "yLow" in p and p["yLow"] > p["y"] or "yHigh" in p and p["yHigh"] < p["y"]:
+                errors.append(f"{i}: interval does not contain y at point {k}")
+        if len(rep["points"]) < 2 or r["domain"]["xMin"] != rep["points"][0]["x"] or r["domain"]["xMax"] != rep["points"][-1]["x"]:
+            errors.append(f"{i}: domain must match the point extent (and there must be two points)")
+    return errors
+
+
+def derive_run(fmt, catalogs, *, source=None, run=None, imf=None, baryon_particle_mass=None, h=None, omega_m=None, box_mpc=None, units=None, aperture=None,
+               snapshot=None, url=None, calibrated_on=(), distributions=False, retrieved=None):
+    """Records of the standard relations from a catalogue you hold. `fmt` is one of FORMATS; `catalogs` a path or a list of paths (a folder or file per snapshot for subfind, a file per snapshot for caesar and soap, an exported table for eagle).
+    Stated here: source and run (names), imf, baryon_particle_mass (initial baryon particle mass in Msun, sets the 100-particle cut), and where the catalogue does not say them h, omega_m, box_mpc (comoving Mpc), units, aperture, snapshot.
+    Raises UnderSpecified, listing every missing or conflicting definition, instead of assuming one. Returns a Derived payload (a dict with "schemaVersion" and "records", plus .report and .facts)."""
+    problems, facts = [], []
+    if fmt not in FORMATS:
+        raise UnderSpecified([f"format: '{fmt}' is not one of {', '.join(FORMATS)}."])
+    paths = [Path(c) for c in ([catalogs] if isinstance(catalogs, (str, Path)) else list(catalogs or []))]
+    if not paths:
+        problems.append("catalog: no catalogue given. Add --catalog PATH (repeat it for several snapshots).")
+    problems += [f"catalog: {p} does not exist." for p in paths if not p.exists()]
+    if not source or not run:
+        problems.append("source and run: the name of your simulation and of this run are yours to give. Add --source and --run (they appear in every record and in the comparison).")
+    if imf is None:
+        problems.append(f"imf: no catalogue format records the initial mass function the stellar masses assume. Add --imf ({', '.join(IMFS)}).")
+    elif imf not in IMFS:
+        problems.append(f"imf: '{imf}' is not one of {', '.join(IMFS)}, the three the comparison rules can convert between; a different IMF is not supported.")
+    if baryon_particle_mass is None or not baryon_particle_mass > 0:
+        problems.append("baryon particle mass: the resolution cut (stellar mass of at least 100 baryon particle masses) needs the initial baryon particle mass in Msun (not Msun/h). Add --baryon-particle-mass.")
+    for name, val, lo, hi, flag in (("h", h, 0.3, 1.5, "--h"), ("omega_m", omega_m, 0.05, 0.95, "--omega-m"), ("box (comoving Mpc)", box_mpc, 0.0, math.inf, "--box-mpc")):
+        if val is not None and not lo < val < hi:
+            problems.append(f"{name}: {val} is not plausible for {flag}" + (" (h is H0 / 100, for example 0.6774, not 67.74)" if name == "h" else "") + ".")
+    bad = [r for r in calibrated_on if r not in RELATIONS_DERIVED]
+    if bad:
+        problems.append(f"calibrated-on: {bad} are not relations this tool derives ({', '.join(RELATIONS_DERIVED)}).")
+    if snapshot is not None and len(paths) > 1:
+        problems.append("snapshot: --snapshot names one snapshot, so it can be used with one catalogue only.")
+    st = {"imf": imf, "mbar": baryon_particle_mass if baryon_particle_mass and baryon_particle_mass > 0 else 1.0, "h": h, "omega_m": omega_m, "box_mpc": box_mpc, "units": units, "aperture": aperture, "snapshot": snapshot}
+    epochs = _PREP[fmt]([p for p in paths if p.exists()], st, problems, facts) if all(p.exists() for p in paths) and paths else []
+    if not problems and not epochs:
+        problems.append("catalog: nothing could be read from the catalogue(s).")
+    seen = {}
+    for ep in epochs:
+        key = round(ep["z"], 4)
+        if key in seen:
+            problems.append(f"catalog: {ep['name']} and {seen[key]} are at the same redshift ({ep['z']:.4g}); give one catalogue per snapshot.")
+        seen[key] = ep["name"]
+    for k in ("h", "Om"):
+        vals = sorted({round(ep[k], 6) for ep in epochs})
+        if len(vals) > 1:
+            problems.append(f"{k}: the catalogues disagree ({vals}); one run has one cosmology.")
+    if problems:
+        raise UnderSpecified(problems)
+    retrieved = retrieved or date.today().isoformat()
+    records, report = [], []
+    for ep in sorted(epochs, key=lambda e: e["z"]):
+        z = ep["z"]
+        spec = {"source": source, "run": run, "idPrefix": f"derived.{slug(source)}.{slug(run)}", "h": ep["h"], "Om": ep["Om"], "box": ep["box"], "snap": ep["snap"], "z": z, "z_nominal": round(z, 2),
+                "imf": imf, "massDefinition": ep["mass_definition"], "sizeDefinition": ep["size_definition"], "halo": ep["halo"], "metallicityNote": ep["metallicity_note"],
+                "calibratedAtLowZ": tuple(calibrated_on), "calibrationDefault": "unknown", "distribution": bool(distributions), "storedDistribution": True,
+                "distributionRun": f"{run} (per-galaxy distribution)",
+                "provenance": {"tier": "catalog-derived", "citation": f"{source} {run}: catalogue {ep['name']} supplied by the user (format {fmt}), not a public release; relations derived by sim-highline derive",
+                               "doi": None, "url": url or DOCS_URL, "retrieved": retrieved, "sourceMember": ep["member"], "checksumSha256": ep["digest"]},
+                "warning": (f"Derived by sim-highline derive (format {fmt}) from a catalogue supplied by the user. Galaxies: stellar mass of at least {MIN_STAR_PARTICLES} baryon particle masses "
+                            f"({MIN_STAR_PARTICLES * st['mbar']:.2g} Msun, as stated); {ep['warning']} Bins of {DM} dex with at least {MIN_PER_BIN} galaxies for medians."),
+                "notes": "Derived with the same cuts and definitions as the dataset's own catalogue-derived records. Where each value came from: " + "; ".join(facts_of(st, ep, imf, calibrated_on)) + "."}
+        made = relations_from_arrays(spec, ep["arrays"])
+        records += made
+        have = {r["relation"] for r in made}
+        n_res = int(np.sum(ep["arrays"]["resolved"] & np.isfinite(ep["arrays"]["logm"])))
+        line = f"z = {z:.4g} (snapshot {ep['snap']}), {ep['name']}: {n_res} galaxies above the cut; relations written: {', '.join(r for r in RELATIONS_DERIVED if r in have)}"
+        skipped = []
+        for rel, key, field in OPTIONAL[fmt]:
+            if rel not in have:
+                skipped.append(f"{rel} ({field} not in the catalogue)" if key not in ep["arrays"] else f"{rel} (fewer than two bins with {MIN_PER_BIN} galaxies)")
+        for rel in ("gsmf", "sfms", "ssfr", "quenched", "shmr"):
+            if rel not in have:
+                skipped.append(f"{rel} (fewer than two bins with enough galaxies)")
+        report.append(line + (f"; not derived: {', '.join(skipped)}" if skipped else ""))
+    errors = validate_records(records)
+    if errors:
+        raise RuntimeError("the records this tool built do not pass its own validation (a bug, please report it): " + "; ".join(errors[:5]))
+    out = Derived({"schemaVersion": SCHEMA_VERSION, "records": records})
+    out.report, out.facts = report, list(dict.fromkeys(f for ep in epochs for f in facts_of(st, ep, imf, calibrated_on)))
+    return out
+
+
+def facts_of(st, ep, imf, calibrated_on):
+    f = [f"imf = {imf} (stated by you with --imf)", f"baryon particle mass = {st['mbar']:.3g} Msun (stated by you)"]
+    f += [x for x in ep["facts"] if x]
+    f.append("calibration: " + (f"{', '.join(calibrated_on)} stated by you as tuned to at z < 0.2; every other relation, and every epoch above z = 0.2, is marked unknown" if calibrated_on else "not stated, so every record is marked unknown"))
+    return f
+
+
+def write_payload(payload, out):
+    Path(out).write_text(json.dumps({"schemaVersion": payload["schemaVersion"], "records": payload["records"]}, indent=2, ensure_ascii=False, allow_nan=False) + "\n", encoding="utf-8")
+
+
+def add_derive_arguments(p):
+    p.add_argument("--format", required=True, choices=FORMATS, dest="fmt", help="subfind (Illustris/TNG-style group catalogue), caesar (SIMBA), soap (FLAMINGO/COLIBRE halo catalogue) or eagle (a table exported from the EAGLE database)")
+    p.add_argument("--catalog", required=True, action="append", metavar="PATH", help="the catalogue: a folder or file (repeat for several snapshots)")
+    p.add_argument("--out", required=True, metavar="run.json", help="where to write the records")
+    p.add_argument("--source", help="name of your simulation or suite (required)")
+    p.add_argument("--run", help="name of this run (required)")
+    p.add_argument("--imf", help="initial mass function the stellar masses assume: " + ", ".join(IMFS) + " (required)")
+    p.add_argument("--baryon-particle-mass", type=float, metavar="MSUN", help="initial baryon particle mass in Msun, not Msun/h (required)")
+    p.add_argument("--h", type=float, help="H0/100, only if the catalogue does not record it")
+    p.add_argument("--omega-m", type=float, help="matter density, only if the catalogue does not record it")
+    p.add_argument("--box-mpc", type=float, help="box side in comoving Mpc (not Mpc/h), only if the catalogue does not record it")
+    p.add_argument("--units", help="the units convention of a catalogue that does not carry its units: illustris (subfind), eagle-database (eagle)")
+    p.add_argument("--aperture", help="mass aperture: 50kpc (a group under ExclusiveSphere in a SOAP file) or 30pkpc (eagle)")
+    p.add_argument("--snapshot", type=int, help="snapshot number, when the file name has none (one catalogue only)")
+    p.add_argument("--calibrated-on", default="", metavar="RELATIONS", help="comma-separated relations your run was tuned to at z < 0.2 (default: none stated, every record is marked unknown)")
+    p.add_argument("--url", help="https address describing the catalogue (default: the page describing this tool, which is not where the data are)")
+    p.add_argument("--distributions", action="store_true", help="also write the per-galaxy specific-SFR distribution as its own record")
+    p.add_argument("--compare", action="store_true", help="after writing, compare the records with the dataset as `sim-highline compare` does")
+    p.add_argument("--top", type=int, default=5, help="rows per list with --compare")
+
+
+def run_derive_cli(a):
+    """Entry point for the derive subcommand (called by sim_highline.main). Returns the exit code: 0 written, 2 refused."""
+    import sys
+    try:
+        payload = derive_run(a.fmt, a.catalog, source=a.source, run=a.run, imf=a.imf, baryon_particle_mass=a.baryon_particle_mass, h=a.h, omega_m=a.omega_m, box_mpc=a.box_mpc,
+                             units=a.units, aperture=a.aperture, snapshot=a.snapshot, url=a.url, calibrated_on=tuple(x for x in a.calibrated_on.split(",") if x), distributions=a.distributions)
+    except UnderSpecified as e:
+        print(f"sim-highline derive: {e}", file=sys.stderr)
+        return 2
+    write_payload(payload, a.out)
+    print(f"sim-highline derive: {len(payload['records'])} records written to {a.out}")
+    for line in payload.report:
+        print("  " + line)
+    print("definitions used (each says whether you stated it or the file did):")
+    for f in payload.facts:
+        print("  " + f)
+    if a.compare:
+        import sim_highline
+        print()
+        sim_highline.compare_records_cli(payload["records"], top=a.top)
+    return 0
