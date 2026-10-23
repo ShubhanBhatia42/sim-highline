@@ -16,3 +16,6 @@ identifiers:
   - type: doi
     value: 10.5281/zenodo.23217260
     description: "Version 0.15.0"
+  - type: swh
+    value: swh:1:snp:3c71d0fd02f3a1436c56a78f02e6a2ce348496d2
+    description: "Software Heritage archive of the repository, snapshot of 2026-10-21 (the code as it stood then, not a release)"

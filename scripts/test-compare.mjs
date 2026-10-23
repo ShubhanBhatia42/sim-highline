@@ -87,3 +87,17 @@ console.log(`Comparison tests passed: THESAN z=6 vs COSMOS-Web median ${stats.me
   assert.ok(Math.abs((D.chabrier03 - D.kroupa01) - off.toChabrierDex.kroupa01) < 1e-9 && Math.abs((D.chabrier03 - D.salpeter55) - off.toChabrierDex.salpeter55) < 1e-9, "the offsets to Chabrier follow from the table");
   assert.ok(Math.abs(Math.log10(off.massFactorToChabrier.kroupa01) - off.toChabrierDex.kroupa01) < 1e-4 && Math.abs(Math.log10(off.massFactorToChabrier.salpeter55) - off.toChabrierDex.salpeter55) < 1e-4, "dex and factors agree");
 }
+
+// every definition key a comparability rule uses has a plain-language name, and the Explorer's "your run" form explains it
+{
+  const { RULES, KEY_LABEL } = context.globalThis.SimHighlineCompare;
+  const keys = new Set(Object.values(RULES).flatMap(r => [...r.hard, ...r.soft]));
+  const unnamed = [...keys].filter(k => !KEY_LABEL[k]);
+  assert.deepEqual(unnamed, [], `definition keys without a plain name in compare.js KEY_LABEL: ${unnamed.join(", ")}`);
+  assert(Object.values(KEY_LABEL).every(v => typeof v === "string" && v.length > 3 && !/^[a-z]+[A-Z]/.test(v)), "a KEY_LABEL value looks like a code name, not words");
+  const html = await readFile(new URL("../highline/index.html", import.meta.url), "utf8");
+  const help = html.match(/const MINE_HELP=\{[\s\S]*?\};/)[0];
+  const unexplained = [...keys].filter(k => !new RegExp(`[{,]${k}:"`).test(help));
+  assert.deepEqual(unexplained, [], `definition keys without help text in the Explorer's MINE_HELP: ${unexplained.join(", ")}`);
+  assert(!/const KEY_LABEL=\{/.test(html), "the Explorer must read KEY_LABEL from compare.js, not keep its own copy");
+}

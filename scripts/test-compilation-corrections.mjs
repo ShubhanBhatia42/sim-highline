@@ -10,14 +10,16 @@ const round = v => Math.round(v * 1e6) / 1e6;
 const sha = x => crypto.createHash("sha256").update(JSON.stringify(x)).digest("hex");
 let n = 0;
 for (const c of list.corrections) {
-  assert.ok(c.evidence.length >= 2, `${c.id}: at least two pieces of evidence`);
+  assert.ok(c.evidence.length >= (c.kind === "numeric" ? 2 : 1), `${c.id}: a number-changing correction needs at least two pieces of evidence, a label or flag at least one`);
+  assert.ok(["numeric", "label", "flag"].includes(c.kind), `${c.id}: kind must be numeric, label or flag`);
+  if (c.kind === "flag") assert.ok(!c.set && !c.dxDex && !c.dyDex, `${c.id}: a flag changes nothing`);
   assert.ok(c.records.length, `${c.id}: names records`);
   for (const rid of c.records) {
     const r = doc.records.find(x => x.id === rid);
     assert.ok(r, `${rid} exists`);
     const m = r.provenance.corrections?.find(x => x.id === c.id);
     assert.ok(m, `${rid} carries ${c.id}`);
-    assert.match(r.selection.warning, /Corrected by sim-highline/, `${rid} says so in its warning`);
+    assert.match(r.selection.warning, c.kind === "flag" ? /Checked by sim-highline against the paper/ : /Corrected by sim-highline/, `${rid} says so in its warning`);
     if (r.representation.type === "points" && (m.dxDex || m.dyDex)) {
       const undone = r.representation.points.map(p => { const q = { ...p, x: round(p.x - (m.dxDex ?? 0)) }; for (const k of ["y", "yLow", "yHigh"]) if (typeof p[k] === "number") q[k] = round(p[k] - (m.dyDex ?? 0)); return q; });
       const ok = sha(undone) === m.pointsBefore;

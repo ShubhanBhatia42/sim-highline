@@ -135,4 +135,10 @@ if saved.exists():
         g = Q.load()
         keepr, blocksr, _ = J.eligibility(g)
         assert s["meta"]["n_outputs_eligible"] == int(keepr.sum()) and s["meta"]["n_blocks"] == len(blocksr), "analysis output is stale; rerun analyze_quenching_shape.py"
+chk = ROOT / "data" / "analysis" / "quenching-shape-checks.json"
+if chk.exists():
+    import check_quenching_shape as C
+    c = json.loads(chk.read_text())
+    assert (ROOT / "docs" / "CHECKS-quenching-shape.md").read_text() == C.render(c), "the checks report is not the rendering of its saved numbers"
+    assert all(r["min"] <= r["median"] <= r["max"] for d in c["distances"].values() for r in d["rows"].values())
 print("quenching shape: OK")

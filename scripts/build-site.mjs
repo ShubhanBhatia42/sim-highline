@@ -1,13 +1,14 @@
 import { copyFile, readdir, readFile, writeFile, mkdir } from "node:fs/promises";
 import vm from "node:vm";
 import { jointStats } from "./site-joint.mjs";
+import { shapeStats } from "./site-shape.mjs";
 import { withCsp } from "./csp.mjs";
 const root = new URL("../", import.meta.url);
 const read = async p => readFile(new URL(p, root), "utf8");
 const palette = await read("data/palette.css");
 const ctx = { globalThis: {} };
 vm.runInNewContext(await read("compare.js"), ctx);
-const { evaluator } = ctx.globalThis.SimHighlineCompare;
+const { evaluator, RULES, KEY_LABEL } = ctx.globalThis.SimHighlineCompare;
 const files = (await readdir(new URL("data/curves/", root))).filter(f => f.endsWith(".json")).sort();
 const all = [];
 for (const f of files) all.push(...JSON.parse(await read(`data/curves/${f}`)).records);
@@ -218,6 +219,14 @@ stats.css = (await read("site/src/site.css")).replace("/*__PALETTE__*/", () => p
     stats.cvKro = C.factors.kroupa_to_chabrier_mass; stats.cvSal = C.factors.salpeter_to_chabrier_mass; stats.cvKroDex = sgn(dexOf(C.factors.kroupa_to_chabrier_mass)); stats.cvSalDex = sgn(dexOf(C.factors.salpeter_to_chabrier_mass));
     stats.cvImfList = Object.entries(C.imfConvertedDatasets).map(([k, v]) => `${esc(k)} (from ${esc(v.from)}, ${v.records} curve${v.records === 1 ? "" : "s"})`).join("; ");
     stats.cvOnKro = sgn(off.chabrier03 - off.kroupa01); stats.cvOnSal = sgn(off.chabrier03 - off.salpeter55);
+    {
+      const V = JSON.parse(await read("data/analysis/compilation-verification.json")), K = JSON.parse(await read("data/compilation-corrections.json")).corrections;
+      const tally = {}; for (const row of V.curves) tally[row.result] = (tally[row.result] || 0) + row.records.length;
+      const ids = kind => new Set(K.filter(c => c.kind === kind).flatMap(c => c.records));
+      const numeric = ids("numeric"), label = ids("label"), flag = ids("flag");
+      stats.cvChecked = n(Object.values(tally).reduce((a, b) => a + b, 0)); stats.cvAgree = n(tally.agrees || 0); stats.cvFit = n(tally["fit-only"] || 0); stats.cvDisagree = n(tally.disagrees || 0); stats.cvNoCheck = n(tally["not-verifiable"] || 0);
+      stats.cvNumeric = n(numeric.size); stats.cvLabel = n([...label].filter(r => !numeric.has(r)).length); stats.cvFlag = n([...flag].filter(r => !numeric.has(r) && !label.has(r)).length);
+    }
     stats.cvCorrN = n(CA.correctionsLogged); stats.cvFillRecords = n(CA.definitionFills.records); stats.cvFillRules = n(CA.definitionFills.rules);
   }
   stats.fNFills = FL.fills.length; stats.fSensN = A.sensitivity.pairs.length; stats.fSensG = A.sensitivity.summary.length;
@@ -416,8 +425,21 @@ Object.assign(stats, Object.fromEntries(Object.entries(jointStats(JR, undefined,
   }
   stats.jrAfterRows = rows.map(([a, b, d]) => `<tr><td>${esc(a)}</td><td>${esc(b)}</td><td><a href="${repo}${d}">${d.replace(/\.md$/, "")}</a></td></tr>`).join("");
 }
+// ---- quenching shape (the fifth study): generated from data/analysis/quenching-shape.json (and the checks made after the run)
+{
+  const QSR = await read("data/analysis/quenching-shape.json").then(t => JSON.parse(t), () => null), QSC = await read("data/analysis/quenching-shape-checks.json").then(t => JSON.parse(t), () => null);
+  Object.assign(stats, shapeStats(QSR, QSC));
+}
 stats.repo = stats.repo || "https://github.com/ShubhanBhatia42/sim-highline";
 stats.siteUrl = "shubhanbhatia42.github.io/sim-highline";
+
+// ---- which definitions must agree for each relation (compare.js RULES, with the plain names of the keys); only relations that have records
+{
+  const T = Object.fromEntries([...(await read("highline/index.html")).matchAll(/\n  "?([A-Za-z0-9-]+)"?:\{t:"([^"]+)"/g)].map(m => [m[1], m[2]]));
+  const have = new Set(all.map(r => r.relation)), name = k => esc(KEY_LABEL[k] || k);
+  stats.ruleRows = Object.entries(RULES).filter(([k]) => have.has(k)).map(([k, r]) => `<tr><td>${esc(T[k] || k)}</td><td>${r.hard.map(name).join("; ") || "–"}</td><td>${r.soft.map(name).join("; ") || "–"}</td></tr>`).join("");
+  stats.ruleCount = String(Object.keys(RULES).filter(k => have.has(k)).length);
+}
 
 // ---- data quality: generated from data/analysis/data-quality.json (scripts/analyze_data_quality.py)
 {
@@ -430,6 +452,9 @@ stats.siteUrl = "shubhanbhatia42.github.io/sim-highline";
   stats.qExtractN = String(e.n); stats.qExtractShare = (100 * e.n / Math.max(1, d.n)).toFixed(1);
   stats.qExtractRows = e.pairs.map(p => `<tr><td>${esc(p.label)}</td><td class="n">${p.n}</td><td class="n">${f3(p.median_abs)}</td><td class="n">${f3(p.max_abs)}</td></tr>`).join("") || `<tr><td colspan="4">none</td></tr>`;
   stats.qExtractSummary = e.n ? `The ${e.n === 1 ? "pair that exists differs" : "pairs differ"} by a median of ${Math.min(...e.pairs.map(p => p.median_abs)).toFixed(3)}${e.n > 1 ? " to " + Math.max(...e.pairs.map(p => p.median_abs)).toFixed(3) : ""} in the curve's units.` : "No such pair exists.";
+  { const rd = Q.redigitization, rt = Q.released_tables;
+    stats.qRedigText = rd ? `A second reader re-digitized a random sample by a different method (a 400 dpi raster of each figure, axes recalibrated from the tick marks, the curve traced by colour; the original extraction's vector paths were not read). ${rd.checked} curves from ${rd.papers} papers could be checked, out of ${rd.attempted} tried; ${rd.pass} are within tolerance and ${rd.fail} are not. On logarithmic axes the median difference is ${rd.logYMedianDex.toFixed(4)} dex. Each failure was inspected and none could be attributed to a stored curve, but the check could not see a wrong panel or run, and ${rd.notCheckable} curves could not be checked at all. One reader made it.` : "";
+    stats.qReleasedText = rt ? `For the ${rt.papers} papers behind the figure-read simulation curves we looked for released numbers. Fully available as a table: ${(rt.categories["table-in-eprint"] || 0) + (rt.categories["table-in-paper"] || 0) + (rt.categories["table-released-full"] || 0)} paper(s); partly: ${(rt.categories["table-released-partial"] || 0) + (rt.categories["table-partial"] || 0) + (rt.categories["table-released-unverified"] || 0)}; only the simulation's catalogues are public (the plotted numbers would be recomputed): ${rt.categories["catalog-public-recompute"] || 0}; available on request or announced: ${(rt.categories["on-request"] || 0) + (rt.categories["announced-not-released"] || 0)} (${(rt.recordsByCategory["on-request"] || 0) + (rt.recordsByCategory["announced-not-released"] || 0)} curves); nothing found: ${rt.categories["none-found"] || 0}.${rt.exactMatch != null ? ` Of the ${rt.exactMatch} curves for which a table matching the plotted numbers exactly was found, ${rt.replaced.length} have been replaced by the table's numbers and ${rt.stillFigureRead.length} ${rt.stillFigureRead.length === 1 ? "is" : "are"} still the figure read${rt.duplicates && rt.duplicates.length ? `; ${rt.duplicates.length} more figure-read curve${rt.duplicates.length === 1 ? " duplicates" : "s duplicate"} numbers already in the dataset as an official table` : ""}.` : ""}` : ""; }
   stats.qPaperN = String(Q.paper_disagreements.n);
   const th = Q.thin;
   stats.qThinHead = th.epochs.map(z => `<th class="n">z = ${z}</th>`).join("");
@@ -447,7 +472,7 @@ stats.siteUrl = "shubhanbhatia42.github.io/sim-highline";
 }
 // ---- the dated registration trail (data/registration-trail.json, from scripts/make_registration_trail.py)
 {
-  const TR = JSON.parse(await read("data/registration-trail.json")), NAMES = { harmonization: "Can matching definitions close the gap?", "model-form": "What can retuning change in cosmic star formation?", "joint-reachability": "Can two universes agree on everything at once?" };
+  const TR = JSON.parse(await read("data/registration-trail.json")), NAMES = { harmonization: "Can matching definitions close the gap?", "model-form": "What can retuning change in cosmic star formation?", "joint-reachability": "Can two universes agree on everything at once?", "quenching-shape": "Does the shape of star formation tell the codes apart?" };
   const d = x => x.slice(0, 10), link = c => `<a href="${release.repo}/commit/${c.hash}"><code>${c.short}</code></a>`;
   stats.trailRows = Object.entries(TR).map(([k, t]) => { const p = t.protocol_commits, r = t.result_first_commit; return `<tr><td>${esc(NAMES[k] || k)}</td><td>${d(p[0].date)} ${link(p[0])}</td><td>${p.length > 1 ? p.slice(1).map(c => `${d(c.date)} ${link(c)}`).join(", ") : "none"}</td><td>${r ? `${d(r.date)} ${link(r)}` : "–"}</td></tr>`; }).join("");
 }
@@ -460,7 +485,8 @@ const STUDIES = [
     abs: `Express ${stats.hSuites} suites' z ≈ 0 stellar mass functions in one IMF, without added scatter and in a 30 pkpc aperture, and ask what fraction R of the spread across suites disappears. R = ${stats.hR} (95% interval ${stats.hCI}; permutation p = ${stats.hP}): ${stats.hVerdict} by the rule fixed in advance.` },
   { id: "S3", href: "study-sfh.html", title: "What can retuning change in cosmic star formation?", q: "Do simulations disagree more in the early Universe, and can retuning remove the difference between two codes?", status: "Pre-registered · result", head: `Funnel ${stats.mfSuccess}, factor ${stats.mfFactor}; retuning: ${stats.mfDfid} to ${stats.mfD} dex (${stats.mfReach})`,
     abs: `Published curves of ${stats.mfNFamAll} model families, the authors' own variants and ${stats.camelsN} CAMELS simulations of IllustrisTNG and SIMBA. Across the ${stats.mfNFam} families defined in both redshift bands the spread is ${stats.mfSdLow} dex at z = 0.5 to 3 and ${stats.mfSdHigh} dex at z = 5 to 7.5 (funnel ${stats.mfSuccess}). Retuning four feedback parameters per code brings the two codes from ${stats.mfDfid} to ${stats.mfD} dex rms (${stats.mfReach}).` },
-  { id: "S4", href: "study-joint.html", title: "Can two universes agree on everything at once?", q: "Can retuning make two feedback models agree on every galaxy observable at once?", status: stats.jrStatus, head: JR ? stats.jrHead : "—", todo: !JR, abs: stats.jrAbsShort }
+  { id: "S4", href: "study-joint.html", title: "Can two universes agree on everything at once?", q: "Can retuning make two feedback models agree on every galaxy observable at once?", status: stats.jrStatus, head: JR ? stats.jrHead : "—", todo: !JR, abs: stats.jrAbsShort },
+  { id: "S5", href: "study-shape.html", title: "Does the shape of star formation tell the codes apart?", q: "Does the share of galaxies in the green valley, and the width of the star-forming sequence, separate the two codes beyond the quenched fraction and the main sequence?", status: stats.qsTodo ? "Pre-registered · pending" : stats.qsStatus, head: stats.qsTodo ? "—" : stats.qsHead, todo: !!stats.qsTodo, abs: stats.qsTodo ? "" : stats.qsAbs }
 ];
 // plain-language result of each study, in one sentence and a short paragraph; numbers come from the same stats as the abstracts
 stats.plainDefsOne = `Only ${stats.fMatchedPct} of ${stats.fPairs} pairs of curves from different simulations measure the same thing in the same way.`;
@@ -513,7 +539,7 @@ const DATASET_LD = `\n<script type="application/ld+json">${JSON.stringify({
   distribution: Object.entries(manifest.files).filter(([f]) => /\.(csv|json|bib)$/.test(f)).map(([f, m]) => ({ "@type": "DataDownload", name: f, contentUrl: `${SITE_URL}/data/export/${f}`, encodingFormat: MIME[f.slice(f.lastIndexOf("."))] || "application/octet-stream", contentSize: `${m.bytes} B`, sha256: m.sha256 }))
 }).replace(/</g, "\\u003c")}</script>`;
 await mkdir(new URL("dist/site/", root), { recursive: true });
-const PAGES = ["index.html", "studies.html", "study-definitions.html", "study-harmonization.html", "study-sfh.html", "study-joint.html", "retune.html", "data.html", "methods.html", "sources.html", "findings.html", "glossary.html", "faq.html", "changes.html", "quality.html", "summary.html"];
+const PAGES = ["index.html", "studies.html", "study-definitions.html", "study-harmonization.html", "study-sfh.html", "study-joint.html", "study-shape.html", "retune.html", "data.html", "methods.html", "sources.html", "findings.html", "glossary.html", "faq.html", "changes.html", "quality.html", "summary.html"];
 for (const page of PAGES) {
   let html = await read(`site/src/${page}`);
   const title = (html.match(/<title>([^<]*)<\/title>/) || [])[1], desc = (html.match(/<meta name="description" content="([^"]*)"/) || [])[1];
@@ -532,7 +558,7 @@ for (const page of PAGES) {
 <ul class="flat">
 <li><a href="../highline.html"><b>Explorer</b></a>: look up a relation and see every published simulation and observation on one plot.</li>
 <li><a href="retune.html"><b>Dials</b></a>: turn the feedback dials of two simulated universes and watch the galaxies change.</li>
-<li><a href="studies.html"><b>Studies</b></a>: the four questions asked of the data, with the rules written before the answers.</li>
+<li><a href="studies.html"><b>Studies</b></a>: the five questions asked of the data, with the rules written before the answers.</li>
 <li><a href="data.html"><b>Data</b></a>: download the curves as CSV or JSON, or load them in Python.</li>
 <li><a href="faq.html"><b>Questions</b></a> · <a href="glossary.html">glossary</a> · <a href="quality.html">how much to trust the data</a></li>
 </ul>

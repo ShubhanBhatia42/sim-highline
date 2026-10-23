@@ -1,5 +1,5 @@
 // Applies the corrections listed in data/compilation-corrections.json to the curves taken from the SWIFT/VELOCIraptor comparison-data compilation (data/curves/comparison-data.json).
-// Each correction names the records it changes, the shift in dex (x and y), any definition fields to set, the evidence, and why. A record that has been corrected carries the correction in provenance.corrections (id, summary and a hash of the points as ingested), so a reader can undo it and see why it was made. Applying twice does nothing.
+// Each correction (kind "numeric", "label" or "flag"; a flag changes nothing but the record's warning) names the records it changes, the shift in dex (x and y), any definition fields to set, the evidence, and why. A record that has been corrected carries the correction in provenance.corrections (id, summary and a hash of the points as ingested), so a reader can undo it and see why it was made. Applying twice does nothing.
 // Usage: node scripts/apply-compilation-corrections.mjs [--check]   (--check changes nothing and fails if the file and the list disagree)
 import fs from "node:fs";
 import crypto from "node:crypto";
@@ -45,7 +45,7 @@ for (const c of list.corrections) {
     } else if (dx || dy) problems.push(`${rid}: shifts only apply to points records`);
     for (const [path, value] of Object.entries(c.set ?? {})) setPath(r, path, value);
     r.selection ??= {};
-    r.selection.warning = [r.selection.warning, `Corrected by sim-highline: ${c.summary}`].filter(Boolean).join(" ");
+    r.selection.warning = [r.selection.warning, `${c.kind === "flag" ? "Checked by sim-highline against the paper, not changed" : "Corrected by sim-highline"}: ${c.summary}`].filter(Boolean).join(" ");
     marks.push({ id: c.id, summary: c.summary, dxDex: dx || undefined, dyDex: dy || undefined, pointsBefore: before });
     applied++;
   }

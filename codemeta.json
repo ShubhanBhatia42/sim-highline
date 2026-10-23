@@ -1,0 +1,45 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "sim-highline",
+  "description": "Galaxy scaling relations from cosmological simulations and observations, with the definitions that decide whether two curves can be compared: a dataset, an Explorer, a Python loader and four pre-registered studies.",
+  "version": "0.24.0",
+  "dateModified": "2026-10-18",
+  "identifier": "https://doi.org/10.5281/zenodo.23217259",
+  "codeRepository": "https://github.com/ShubhanBhatia42/sim-highline",
+  "issueTracker": "https://github.com/ShubhanBhatia42/sim-highline/issues",
+  "license": [
+    "https://spdx.org/licenses/MIT",
+    "https://spdx.org/licenses/CC-BY-4.0"
+  ],
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Shubhan",
+      "familyName": "Bhatia",
+      "email": "s.bhatia@campus.lmu.de"
+    }
+  ],
+  "programmingLanguage": [
+    "Python",
+    "JavaScript"
+  ],
+  "keywords": [
+    "astronomy",
+    "galaxy formation",
+    "cosmological simulations",
+    "scaling relations",
+    "open data"
+  ],
+  "readme": "https://github.com/ShubhanBhatia42/sim-highline/blob/main/README.md",
+  "developmentStatus": "active",
+  "runtimePlatform": "Python 3.9+, Node 22 (build and tests)",
+  "softwareRequirements": [
+    "numpy",
+    "pandas"
+  ],
+  "isAccessibleForFree": true,
+  "sameAs": [
+    "https://archive.softwareheritage.org/swh:1:snp:3c71d0fd02f3a1436c56a78f02e6a2ce348496d2"
+  ]
+}

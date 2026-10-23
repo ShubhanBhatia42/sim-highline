@@ -29,7 +29,22 @@ const RULES={
   stfr:{hard:["velocityDefinition"],soft:["imf"]},
   hmf:{hard:["haloMassDefinition","densityFrame"],soft:[]},
   bh:{hard:[],soft:["bhMassMethod","massDefinition","imf","population"]},
-  bhsigma:{hard:["sigmaDefinition"],soft:["bhMassMethod","population"]}
+  bhsigma:{hard:["sigmaDefinition"],soft:["bhMassMethod","population"]},
+  fmr:{hard:["muAlpha","metallicityQuantity"],soft:["metallicityCalibration","sfrIndicator","sfrTimescaleMyr","imf","massDefinition","population"]},
+  ks:{hard:["gasDefinition","areaScale"],soft:["sfrIndicator","coConversion","heliumIncluded","imf","population"]},
+  wp:{hard:["sampleSelection","lengthUnit"],soft:["piMax","cosmology"]},
+  hod:{hard:["galaxyType","haloMassDefinition"],soft:["sampleSelection"]},
+  colour:{hard:["colourBand","dustTreatment"],soft:["population","massDefinition","imf"]},
+  sigmam:{hard:["sigmaDimension"],soft:["sigmaDefinition","sigmaWeighting","massDefinition","imf","population","cosmology"]},
+  sigma1:{hard:["sigma1Definition"],soft:["massDefinition","imf","population","cosmology"]},
+  lxm:{hard:["xrayBand","coreTreatment","haloMassDefinition"],soft:[]},
+  ysz:{hard:["haloMassDefinition","szScaling"],soft:[]},
+  agnlf:{hard:["luminosityBand","lfConvention","densityFrame"],soft:["bolometricCorrection","obscurationCorrection","population","cosmology"]},
+  bhad:{hard:["densityFrame","bhadDefinition"],soft:["luminosityBand","radiativeEfficiency","obscurationCorrection","cosmology"]},
+  lambdar:{hard:["lambdaStatistic","projection"],soft:["spinDefinition","massDefinition","imf","population"]},
+  fslow:{hard:["slowRotatorCriterion"],soft:["spinDefinition","projection","massDefinition","imf","population"]},
+  elf:{hard:["line","dustCorrection"],soft:["densityFrame"]},
+  uvbeta:{hard:["betaWindow","dustTreatment"],soft:[]}
 };
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 const IMF_DEX={kroupa01:0,chabrier03:-0.04,salpeter55:0.1775};  /* data/imf-offsets.json documents where these come from; scripts/test-compare.mjs keeps the two equal */
@@ -125,5 +140,6 @@ function distributionPoints(d,stats){
   for(let i=0;i<s.n.length;i++)if(s.quantiles[k50][i]!==null)pts.push({x:s.xCentres[i],y:s.quantiles[k50][i],yLow:s.quantiles[k16][i],yHigh:s.quantiles[k84][i],count:s.n[i]});
   return pts;
 }
-root.SimHighlineCompare={distributionStats,distributionPoints,IMF_DEX,RULES,MIN_BINS,compatible,interpolate,residuals,summarize,cosmicAgeGyr,evaluator,sigmaOf};
+const KEY_LABEL={imf:"Initial mass function (IMF)",massDefinition:"Which stars count toward the mass",haloMassDefinition:"Halo mass definition",population:"Which galaxies are included",sfrTimescaleMyr:"Star formation rate averaged over",sfrStatistic:"How the star formation rate is measured",quenchingCriterion:"What counts as quenched",sizeDefinition:"Size definition",metallicityQuantity:"What metallicity means",gasPhase:"Which gas",densityFrame:"Volume for densities",ageWeighting:"How the stellar age is averaged",apertureDefinition:"Region the quantity is measured within",areaScale:"Scale the surface densities are measured on",betaWindow:"Wavelength window of the UV slope",bhMassMethod:"How the black hole mass is obtained",bhadDefinition:"How the accretion-rate density is defined",bolometricCorrection:"Bolometric correction",coConversion:"CO-to-H2 conversion factor",colourBand:"Which colour (bands)",coreTreatment:"Cluster core included or removed",cosmology:"Cosmology (H0, matter density)",dustCorrection:"Dust correction of the luminosities",dustMethod:"How the dust mass is measured",dustTreatment:"Dust treatment of the colours",fgasNormalisation:"Baryon fraction the gas fraction is divided by",galaxyType:"Central, satellite or all galaxies",gasDefinition:"Which gas (phase and region)",gasMethod:"How the gas phase is computed or measured",gasStatistic:"Mean or median of the gas fraction",haloMassHistory:"Halo mass: current or peak",heliumIncluded:"Helium in the gas surface density",jDefinition:"How the specific angular momentum is defined",lambdaStatistic:"Statistic of the spin parameter",lengthUnit:"Length unit (with or without h)",lfConvention:"Luminosity function convention",line:"Emission line",luminosityBand:"Luminosity band",massMethod:"How the mass is obtained",metalPhase:"Metals in gas or in stars",metallicityCalibration:"Metallicity calibration (and solar value)",muAlpha:"Mixing parameter of the metallicity relation",obscurationCorrection:"Obscured AGN: corrected or not",piMax:"Line-of-sight integration limit",projection:"Projection (3D, 2D or redshift space)",radiativeEfficiency:"Radiative efficiency of accretion",sampleSelection:"How the sample is selected",sfrIndicator:"Star formation rate indicator",sfrIntegrationLimit:"Region the SFR density is summed over",sigma1Definition:"How the inner surface density is defined",sigmaDefinition:"How the velocity dispersion is defined",sigmaDimension:"Velocity dispersion: dimension and aperture",sigmaWeighting:"Velocity dispersion weighted by light or mass",slowRotatorCriterion:"Slow-rotator cut",spinDefinition:"How the spin parameter is defined",szScaling:"Redshift scaling of the Compton-Y relation",uvBand:"Rest-frame UV band",velocityDefinition:"Which velocity (circular, rotation, maximum)",xrayBand:"X-ray band"};
+root.SimHighlineCompare={KEY_LABEL,distributionStats,distributionPoints,IMF_DEX,RULES,MIN_BINS,compatible,interpolate,residuals,summarize,cosmicAgeGyr,evaluator,sigmaOf};
 })(typeof globalThis!=="undefined"?globalThis:window);

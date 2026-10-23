@@ -1,6 +1,6 @@
 (function(root){
 const DEF_COLS=["imf","massDefinition","haloMassDefinition","population","sfrTimescaleMyr","sfrStatistic","quenchingCriterion","sizeDefinition","metallicityQuantity","gasPhase","densityFrame"];
-const RECORD_COLS=["record_id","kind","source","run","relation","z","z_min","z_max","representation","interval_kind","connect","x_unit","y_unit","x_definition","y_definition","tier","terms","rankable","calibration","epoch_mode","population_note","mass_class","cosmology_h0","cosmology_om",...DEF_COLS.map(k=>k==="population"?"population":k.replace(/[A-Z]/g,c=>"_"+c.toLowerCase())),"citation","doi","url","checksum_sha256","retrieved","definitions_json"];
+const RECORD_COLS=["record_id","kind","source","run","relation","z","z_min","z_max","representation","interval_kind","connect","x_unit","y_unit","x_definition","y_definition","tier","terms","rankable","calibration","epoch_mode","population_note","mass_class","cosmology_h0","cosmology_om",...DEF_COLS.map(k=>k==="population"?"population":k.replace(/[A-Z]/g,c=>"_"+c.toLowerCase())),"citation","doi","url","checksum_sha256","attribution_kind","primary_source","retrieved","definitions_json"];
 const DIST_COLS=["record_id","x_low","x_high","y_low","y_high","count"];
 const POINT_COLS=["record_id","point_index","x","y","y_low","y_high","x_low","x_high","count"];
 const NSAMPLE=40;
@@ -29,7 +29,7 @@ function recordRow(r,zEval){
     representation:rep.type==="parametric"?"sampled-parametric":"points",interval_kind:rep.intervalKind,connect:rep.connect!==false,
     x_unit:a.xUnit,y_unit:a.yUnit,x_definition:a.xDefinition,y_definition:a.yDefinition,tier:p.tier,terms:p.terms,rankable:!!r.rankable,calibration:r.calibration,
     epoch_mode:e.mode,population_note:r.selection&&r.selection.population,mass_class:massClass(d),cosmology_h0:c.H0,cosmology_om:c.Om,
-    citation:p.citation,doi:p.doi,url:p.url,checksum_sha256:p.checksumSha256,retrieved:p.retrieved,definitions_json:JSON.stringify(d)};
+    citation:p.citation,doi:p.doi,url:p.url,checksum_sha256:p.checksumSha256,attribution_kind:p.attribution&&p.attribution.kind,primary_source:p.attribution&&p.attribution.primarySource,retrieved:p.retrieved,definitions_json:JSON.stringify(d)};
   for(const k of DEF_COLS)row[snake(k)]=d[k];
   return row;
 }
@@ -54,8 +54,18 @@ function citations(records){
   for(const r of records){const p=r.provenance||{};const k=p.doi||p.url||p.citation;if(k&&!seen.has(k))seen.set(k,{citation:p.citation,doi:p.doi,url:p.url});}
   return[...seen.values()];
 }
+function primaries(records){
+  /* the paper a curve was first produced in, when that is not the paper the record cites: its own entry, so that both are credited */
+  const seen=new Map();
+  for(const r of records){const a=(r.provenance||{}).attribution;if(!a||!a.primarySource)continue;
+    const ar=(a.primarySource.match(/arXiv:(\d{4}\.\d{4,5}|[a-z\-]+\/\d{7})/)||[])[1],doi=(a.primarySource.match(/doi:(10\.\d{4,9}\/[^\s;)]+)/)||[])[1],k=doi||ar||a.primarySource;
+    if(!seen.has(k))seen.set(k,{citation:a.primarySource.replace(/\s*\((arXiv|doi)[^)]*\)\s*$/,"")+" (primary source of curves reproduced in other records)",doi,url:ar?"https://arxiv.org/abs/"+ar:undefined});}
+  return[...seen.values()];
+}
 function bibtex(records){
-  return citations(records).map((c,i)=>{
+  const all=citations(records),have=new Set(all.map(c=>c.doi||c.url));
+  for(const p of primaries(records))if(!have.has(p.doi||p.url)&&!all.some(c=>c.citation===p.citation))all.push(p);
+  return all.map((c,i)=>{
     const key=(c.doi||c.url||String(i)).replace(/[^A-Za-z0-9]+/g,"_").replace(/^_|_$/g,"");
     const f=[`  note = {${c.citation.replace(/,\s*(Fig\.|Figs\.|Figure|figure|Table|table|Eq\.|Tab\.|SFMS|supplementary).*$/,"").replace(/,\s[^,]*\(arXiv source numbering\).*$/,"").replace(/,\s*z=\S+( panel)?$/,"").replace(/[{}]/g,"")}}`];
     if(c.doi)f.unshift(`  doi = {${c.doi}}`);

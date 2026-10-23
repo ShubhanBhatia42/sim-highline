@@ -1,3 +1,4 @@
+# NOTE: the record kannan22.thesan.sfrd.t1 was later replaced by the released THESAN-1 file (scripts/ingest_thesan1_sfrd_kannan22.py). Run that script after this one; the other records are still the figure read.
 import json
 import sys
 from pathlib import Path
