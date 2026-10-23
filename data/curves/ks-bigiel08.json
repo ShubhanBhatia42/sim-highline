@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "bigiel08.spirals.ks.h2.750pc.heracles",
+      "source": "Bigiel et al. 2008",
+      "run": "molecular law, HERACLES CO, FUV+24um, 750 pc",
+      "kind": "observation",
+      "relation": "ks",
+      "epoch": {
+        "zRepresentative": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 H2 surface density at 750 pc resolution, from CO(2-1) with N(H2)=2.0e20 Ico, hydrogen only (no helium)",
+        "xUnit": "log10(Msun pc^-2)",
+        "yDefinition": "log10 SFR surface density from FUV + 24 micron (3.2e-3 I24 + 8.1e-2 IFUV), Kroupa-type IMF to 120 Msun",
+        "yUnit": "log10(Msun yr^-1 kpc^-2)"
+      },
+      "domain": {
+        "xMin": 0.477,
+        "xMax": 2.25
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "Sigma_SFR = a (Sigma_H2 / 10 Msun pc^-2)^N, log a = A = -2.12, N = 1.01; i.e. log Sigma_SFR = A + N (log Sigma_H2 - 1)",
+        "expression": "A+N*(x-1)",
+        "parameters": {
+          "A": -2.12,
+          "N": 1.01
+        }
+      },
+      "scatter": {
+        "value": 0.19,
+        "unit": "dex",
+        "meaning": "RMS scatter of log Sigma_SFR about the fit (stated in the text for this panel)"
+      },
+      "selection": {
+        "population": "pixels (750 pc sampling points) inside r25 of 7 nearby spirals with HERACLES CO and THINGS HI; Sigma_H2 > 3 Msun pc^-2",
+        "warning": "Molecular gas only (gasDefinition H2), sub-kpc resolved law: do not compare with a total-gas or galaxy-integrated KS law. The fit is normalised at 10 Msun pc^-2 (the prose ensemble law omits this). xMin is the stated CO sensitivity limit; xMax is the extent of the plotted data cells in Fig. 9 (digitized from the vector figure, not stated in the text). Fitted with the OLS bisector, equal weight per point."
+      },
+      "definitions": {
+        "gasDefinition": "H2",
+        "areaScale": "750 pc resolution pixels (pixel-by-pixel sampling inside r25)",
+        "sfrIndicator": "FUV + 24 micron (Sigma_SFR = 3.2e-3 I24 + 8.1e-2 IFUV)",
+        "sfrTimescaleMyr": "unspecified",
+        "imf": "kroupa01",
+        "imfNote": "paper: 'a Kroupa-type two-component IMF that extends to 120 Msun'; multiply Sigma_SFR by 1.59 for a truncated Salpeter IMF",
+        "coConversion": "N(H2) = 2.0e20 Ico cm^-2 (K km/s)^-1 with I(2-1)/I(1-0) = 0.8, constant",
+        "heliumIncluded": "no (hydrogen surface densities; multiply by ~1.36 for helium)",
+        "fitNormalisation": "10 Msun pc^-2",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Bigiel et al. 2008, AJ 136, 2846 (arXiv:0810.2541), Sec. 'The Combined Molecular Schmidt Law' and Fig. 9 (top left)",
+        "doi": "10.1088/0004-6256/136/6/2846",
+        "url": "https://arxiv.org/abs/0810.2541",
+        "retrieved": "2026-10-18",
+        "sourceMember": "bigiel_sflaw.tex",
+        "figureMember": "f9.eps",
+        "figureSha256": "01f5a3db7ed60c125ca86e0764020ef68619c4a02ee3fb04a399adb76621f90e",
+        "sourceArchiveSha256": "6da98e902815675442d0774f928e10132d19674ca642d69d27b0ce278121394b"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "N=1.01, A=-2.12, 0.19 dex scatter as published. Fig. 9 top-left drawn fit line: slope 1.006, value at log Sigma_H2 = 1: -2.118; at the frame edges (x=-1.00, 2.53) the published expression gives -4.140, -0.575 vs drawn -4.130, -0.579 calibration validated by the drawn 1%/10%/100% constant-SFE lines (unit slope, offsets log10(frac)-2+log10(1.36)); y scale 34.675 pt/dex, x scale 70.0 pt/dex data cells of the panel span log Sigma_H2 = 0.53..2.25; fit performed for Sigma_H2 > 3 Msun/pc^2 (log = 0.477) NOTE: the displayed ensemble equation Sigma_SFR = 10^-2.1 Sigma_H2^1.0 omits the 10 Msun/pc^2 normalisation of eq. 'power-law'; the figure confirms the normalised form"
+    }
+  ]
+}

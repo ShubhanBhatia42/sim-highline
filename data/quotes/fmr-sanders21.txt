@@ -1,0 +1,21 @@
+2009.07292/ms.tex:1175: 12+\log(\mbox{O/H})= 8.80 + 0.188 y - 0.220 y^2 - 0.0531 y^3 \end{equation} where $y=\mu_{0.60} - 10$.
+2009.07292/ms.tex:1161: \mu_{\alpha} \equiv \log(M_*/\mbox{M}_{\odot}) - \alpha\times\text{log}\left(\frac{\text{SFR}}{\msun~\text{yr}^{-1}}\right) .
+2009.07292/ms.tex:1168: We find that the scatter of the $z\sim0$ stacks is minimized at a value of $\alpha=0.60$
+2009.07292/ms.tex:1147: where the coefficient of the SFR, $\alpha=0.60$, is that which minimizes the scatter of the $z\sim0$ \mstar+SFR binned stacks.
+2009.07292/ms.tex:1149: The black line displays the best-fit cubic function to the $z\sim0$ stacks, given in equation~\ref{eq:fmr}.
+2009.07292/ms.tex:1166: For a range of $\alpha$, we fit 12+log(O/H) vs.\ $\mu_{\alpha}$ of the $z\sim0$ stacks with a cubic function
+2009.07292/ms.tex:1127: We limit the $z\sim0$ sample to those \mstar-SFR bins containing at least 5 galaxies
+2009.07292/ms.tex:437: galaxies at $z\sim0.08$ from \citet[][hereafter AM13]{and13}, binned both in stellar mass alone and in \mstar\ and SFR.
+2009.07292/ms.tex:441: The stellar masses and SFRs of both the individual SDSS galaxies and \citet{and13} stacks have been shifted to a \citet{cha03} IMF, and the SFRs have also been renormalized to the \citet{hao11} H$\alpha$ calibration.
+2009.07292/ms.tex:443: SFR and \mstar\ for stacked spectra are taken to be the median SFR and \mstar\ of the individual galaxies in each bin.
+2009.07292/ms.tex:449: The \citet{and13} stacks were corrected for DIG contamination following \citet{san17}.
+2009.07292/ms.tex:450: Note that we have not corrected the H$\alpha$-based SFRs for DIG
+2009.07292/ms.tex:662: employing different metallicity calibrations at $z\sim0$ and $z>1$, all of which are empirically calibrated to direct-method metallicities, to reflect evolving ISM conditions.
+2009.07292/ms.tex:664: At all redshifts, metallicities are estimated using line ratios of [O\ii], H$\beta$, [O\iii], and [Ne\iii].
+2009.07292/ms.tex:688: Direct-method metallicities for both the AM13 and \citet{ber12} samples have been uniformly recalculated using PyNeb
+2009.07292/ms.tex:381: Star-formation rates are derived from dust-corrected Balmer emission-line luminosities (H$\alpha$ if available, otherwise H$\beta$) using the H$\alpha$ conversion of \citet{hao11}, renormalized to a \citet{cha03} IMF
+2009.07292/ms.tex:1206: The FMR projection in the right panel of Figure~\ref{fig:fmr} displays a flattening above $\mu_{0.60}=10.0$
+2009.07292/ms.tex:1201: At $z=0$, the intrinsic scatter of the FMR is $\approx0.05$~dex
+1211.3418/ms.tex:342: 0.027~<~$z$~<~0.25 to ensure that the \oii\ line and the \oiia\ lines fall within the wavelength range of the SDSS spectrograph
+drawn black best-fit cubic (100 vertices, x 8.25..11.125) minus transcribed cubic: max |diff| = 0.0023 dex (rms 0.0020); ends: drawn 8.080,8.656 vs cubic 8.082,8.657
+cubic maximum 8.837 at mu_0.60 = 10.38 (the paper: flattening above mu_0.60 = 10.0)

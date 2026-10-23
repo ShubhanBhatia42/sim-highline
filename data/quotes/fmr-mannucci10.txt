@@ -1,0 +1,23 @@
+fmr4.tex:859: \mu_\alpha =\rm{log}(M_*)-\alpha~\rm{log(SFR)}
+fmr4.tex:878: 12+log(O/H) = 8.90 + 0.39x -0.20x^2 - 0.077x^3 +0.064x^4
+fmr4.tex:880: where $x=\mu_{0.32}-10$.
+fmr4.tex:898: 12+log(O/H)=&8.90+0.47x & ~\rm{if}~~ \mu_{0.32}<10.2 \\ &9.07 & ~\rm{if}~~ \mu_{0.32}>10.5 \\
+fmr4.tex:893: metallicity of star-forming galaxies of any mass, any SFR and at any redshift up to z=2.5 follow the following relation:
+fmr4.tex:875: The median of the resulting distribution cab be fitted by:
+fmr4.tex:241: We selected emission-line galaxies with redshift between 0.07 and 0.30
+fmr4.tex:279: with a correction factor of 1.06 to scale the masses down from a \cite{Kroupa01} to a \cite{Chabrier03} initial mass function (IMF).
+fmr4.tex:283: SFRs inside the spectroscopic aperture were measured from the \ha\ emission line flux corrected for dust extinction as estimated from the Balmer decrement.
+fmr4.tex:286: The conversion factor between \ha\ luminosity and SFR in \cite{Kennicutt98} was used, corrected to a \cite{Chabrier03} IMF.
+fmr4.tex:290: Oxygen gas-phase abundances were measured from the emission line ratios as described in \cite{Nagao06} and \cite{Maiolino08}.
+fmr4.tex:299: galaxy metallicity is then defined as the average of these two values.
+fmr4.tex:278: Total stellar masses \mstar\ from \cite{Kauffmann03a} were used
+fmr4.tex:309: The final galaxy sample contains 141825 galaxies.
+fmr4.tex:99: The same quantity also cancels out any redshift evolution up to z$\sim$2.5
+fmr4.tex:862: where $\alpha$ is a free parameter.
+fmr4.tex:466: reduces to $\sim$0.05~dex
+fmr4.tex:97: with $\alpha$=0.32,
+fmr4.tex:865: The value of $\alpha$ that minimizes the scatter of median metallicities of SDSS galaxies around the relation
+poly(10)=8.900 (quoted constant term 8.90); poly(10.8)=9.0708 -> 9.07 vs quoted plateau 9.07; poly over 10.7-11.4 in 0.1 steps = [9.06, 9.07, 9.07, 9.08, 9.08, 9.08, 9.08, 9.09]
+Table 1: 185 median cells, mu_0.32 span 9.23..11.43, N-weighted rms of polynomial minus cell median = 0.0153 dex
+Table 1 cells with mu<10.2 and N>200: least-squares slope dZ/dmu = 0.390 (the paper's linear branch, 0.47, was fitted to the SDSS plus high-z samples, so the SDSS-only slope is not expected to equal it); N-weighted rms of 8.90+0.47x minus the Table 1 cell medians with mu<10.2 = 0.025 dex
+Table 1 cells with mu>10.5 (77 cells): N-weighted mean median-metallicity = 9.0583 vs quoted 9.07 (agreement to 0.015 dex only; the plateau value is a rounded fit parameter)

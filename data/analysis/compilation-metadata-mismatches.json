@@ -1,0 +1,67 @@
+{
+ "schemaVersion": "1.0.0",
+ "about": "Records from the comparison-data compilation whose upstreamCitation (the citation the compilation itself carries in the file) names a different paper from the citation this dataset gives them. The primary source of these records cannot be settled from the metadata; the numbers have not been checked against either paper.",
+ "checked": "2026-10-20",
+ "records": [
+  {
+   "recordId": "vcd.chang-et-al-2015-sdss.main.ssfr.z0.1",
+   "citation": "Chang et al. 2015, ApJS 219, 8, via the velociraptor comparison data",
+   "upstreamCitation": "Chang et al. (2015) (SDSS) [2013MNRAS.434..209B]"
+  },
+  {
+   "recordId": "vcd.xgass-catinella-et-al-2018.sizes.size.z0",
+   "citation": "Catinella et al. 2018, MNRAS 476, 875 (xGASS), via the velociraptor comparison data",
+   "upstreamCitation": "xGASS (in prep) [None available]"
+  },
+  {
+   "recordId": "vcd.gruppioni-et-al-2013-herschel-ir.main.sfrf.z0.375",
+   "citation": "Gruppioni et al. 2013, MNRAS 432, 23, via the velociraptor comparison data",
+   "upstreamCitation": "van der Burg et. al. (2010) [2010A&A...523A..74V]"
+  },
+  {
+   "recordId": "vcd.gruppioni-et-al-2013-herschel-ir.main.sfrf.z0.7",
+   "citation": "Gruppioni et al. 2013, MNRAS 432, 23, via the velociraptor comparison data",
+   "upstreamCitation": "van der Burg et. al. (2010) [2010A&A...523A..74V]"
+  },
+  {
+   "recordId": "vcd.gruppioni-et-al-2013-herschel-ir.main.sfrf.z1",
+   "citation": "Gruppioni et al. 2013, MNRAS 432, 23, via the velociraptor comparison data",
+   "upstreamCitation": "van der Burg et. al. (2010) [2010A&A...523A..74V]"
+  },
+  {
+   "recordId": "vcd.gruppioni-et-al-2013-herschel-ir.main.sfrf.z1.2",
+   "citation": "Gruppioni et al. 2013, MNRAS 432, 23, via the velociraptor comparison data",
+   "upstreamCitation": "van der Burg et. al. (2010) [2010A&A...523A..74V]"
+  },
+  {
+   "recordId": "vcd.gruppioni-et-al-2013-herschel-ir.main.sfrf.z2.5",
+   "citation": "Gruppioni et al. 2013, MNRAS 432, 23, via the velociraptor comparison data",
+   "upstreamCitation": "van der Burg et. al. (2010) [2010A&A...523A..74V]"
+  },
+  {
+   "recordId": "vcd.gruppioni-et-al-2013-herschel-ir.main.sfrf.z3.6",
+   "citation": "Gruppioni et al. 2013, MNRAS 432, 23, via the velociraptor comparison data",
+   "upstreamCitation": "van der Burg et. al. (2010) [2010A&A...523A..74V]"
+  },
+  {
+   "recordId": "vcd.smit-et-al-2012-uv-derived.main.sfrf.z4",
+   "citation": "Smit et al. 2012, ApJ 756, 14, via the velociraptor comparison data",
+   "upstreamCitation": "Smit et. al. (2012) [2013MNRAS.428.1128S]"
+  },
+  {
+   "recordId": "vcd.smit-et-al-2012-uv-derived.main.sfrf.z5",
+   "citation": "Smit et al. 2012, ApJ 756, 14, via the velociraptor comparison data",
+   "upstreamCitation": "Smit et. al. (2012) [2013MNRAS.428.1128S]"
+  },
+  {
+   "recordId": "vcd.smit-et-al-2012-uv-derived.main.sfrf.z6",
+   "citation": "Smit et al. 2012, ApJ 756, 14, via the velociraptor comparison data",
+   "upstreamCitation": "Smit et. al. (2012) [2013MNRAS.428.1128S]"
+  },
+  {
+   "recordId": "vcd.smit-et-al-2012-uv-derived.main.sfrf.z7",
+   "citation": "Smit et al. 2012, ApJ 756, 14, via the velociraptor comparison data",
+   "upstreamCitation": "Smit et. al. (2012) [2013MNRAS.428.1128S]"
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+2407.06254/paper.tex:531: &[\log {\rm O/H} + 12]_{\rm Illustris} &= 0.693(\mu_{0.23}) + 1.807~,&\\
+2407.06254/paper.tex:532: &[\log {\rm O/H} + 12]_{\rm TNG} &= 0.368(\mu_{0.31}) + 5.044~,&\\
+2407.06254/paper.tex:533: &[\log {\rm O/H} + 12]_{\rm EAGLE} &= 0.380(\mu_{0.74}) + 5.132~,&~{\rm and}\\
+2407.06254/paper.tex:520: The regression to the FMR is the linear least-squares fit to the minimum scatter $\mu_{\alpha}\!-\!{\rm metallicity}$ distribution.
+2407.06254/paper.tex:210: \mu_\alpha = \log M_* - \alpha \log {\rm SFR}~,
+2407.06254/paper.tex:518: We find that $\alpha_{\rm min}$ at $z=0$ is 0.23 in Illustris, 0.31 in TNG, 0.74 in EAGLE, and 0.33 in SIMBA
+2407.06254/paper.tex:371: We furthermore only select star-forming galaxies from our simulations
+2407.06254/paper.tex:377: Any galaxy that has a sSFR less than 0.5 dex below the sSFMS is omitted from this analysis
+2407.06254/paper.tex:368: We limit our analysis to ``well-resolved'' central galaxies in the simulations.
+2407.06254/paper.tex:390: To convert to these observer units, we assume that the metal mass fraction of oxygen ($f_{\rm O}$) and total mass fraction of hydrogen ($X$) are constants.
+2407.06254/paper.tex:405: Finally, we limit all gas-phase metallicities derived from the simulations to that of
+2407.06254v1/paper.tex:485: &[\log {\rm O/H} + 12]_{\rm Illustris} &= 0.693(\mu_{0.23}) + 1.807~,&\\
+2407.06254v1/paper.tex:486: &[\log {\rm O/H} + 12]_{\rm TNG} &= 0.368(\mu_{0.31}) + 5.044~,&\\
+2407.06254v1/paper.tex:487: &[\log {\rm O/H} + 12]_{\rm EAGLE} &= 0.380(\mu_{0.74}) + 5.132~,&~{\rm and}\\
+2407.06254v1/paper.tex:475: The regression to the FMR is the linear least-squares fit to the minimum scatter $\mu_{\alpha}\!-\!{\rm metallicity}$ distribution.
+2407.06254v1/paper.tex:194: \mu_\alpha = \log M_* - \alpha \log {\rm SFR}~,
+2407.06254v1/paper.tex:473: We find that $\alpha_{\rm min}$ at $z=0$ is 0.23 in Illustris, 0.31 in TNG, 0.74 in EAGLE, and 0.33 in SIMBA
+2407.06254v1/paper.tex:350: We furthermore only select star-forming galaxies from our simulations
+2407.06254v1/paper.tex:356: Any galaxy that has a sSFR less than 0.5 dex below the sSFMS is omitted from this analysis
+2407.06254v1/paper.tex:347: We limit our analysis to ``well-resolved'' central galaxies in the simulations.
+2407.06254v1/paper.tex:369: To convert to these observer units, we assume that the metal mass fraction of oxygen ($f_{\rm O}$) and total mass fraction of hydrogen ($X$) are constants.
+2407.06254v1/paper.tex:379: Finally, we limit all gas-phase metallicities derived from the simulations to that of
+2407.06254/paper.tex:391: We adopt values of \secondedit{$f_{\rm O} = 50\%$} and $X=76\%$ for this analysis.
+2407.06254v1/paper.tex:370: We adopt values of $f_{\rm O} = 35\%$ and $X=76\%$ for this analysis.
+2407.06254/paper.tex:534: &[\log {\rm O/H} + 12]_{\rm SIMBA} &= 0.364(\mu_{0.66}) + 4.901~.&\\
+2407.06254v1/paper.tex:488: &[\log {\rm O/H} + 12]_{\rm SIMBA} &= 0.440(\mu_{0.33}) + 3.974~.&\\
+2407.06254/paper.tex:275: A \cite{Chabrier_2003} initial mass function is assumed
+2407.06254/paper.tex:311: we use data products from the highest-resolution $(75h^{-1}~{\rm Mpc})^3$ box, TNG100-1
+2407.06254/paper.tex:282: Illustris-1
+2407.06254/paper.tex:328: {\sc RefL0100N1504}
+2407.06254/paper.tex:352: We use data from the largest box for the most fair comparison to the selected volumes of Illustris, TNG, and EAGLE.
+2407.06254/paper.tex:1297: The level of agreement is somewhat by construction of our selection of $f_{\rm O} = 50\%$.
+v1 figures (f_O=35%): formula minus drawn z=0 predicted MZR, mean/sd (dex): Illustris -0.0108/0.0027; TNG -0.0015/0.0021; EAGLE -0.0066/0.0048; SIMBA -0.0012/0.0065
+v2 figures (f_O=50%): Illustris -0.1658/0.0027; TNG -0.1564/0.0021; EAGLE -0.1616/0.0048; SIMBA -0.0026/0.0133; log10(50/35) = 0.1549
+number of curve vertices compared: Illustris 32, TNG 29, EAGLE 32, SIMBA 23

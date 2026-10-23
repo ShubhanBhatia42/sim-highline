@@ -126,7 +126,17 @@
         "citation": "Baldry et al. 2012, MNRAS 421, 621",
         "doi": "10.1111/j.1365-2966.2012.20340.x",
         "url": "https://arxiv.org/abs/1111.5707",
-        "retrieved": "2026-10-02"
+        "retrieved": "2026-10-02",
+        "attribution": {
+          "kind": "values-via-secondary-source",
+          "statement": "Some of the values come from alpha2 and random errors from Wright et al. 2017 Table 2 (ADS 2017MNRAS.470.283W per the compilation URL), not from the cited paper.",
+          "primarySource": "alpha2 and random errors from Wright et al. 2017 Table 2 (ADS 2017MNRAS.470.283W per the compilation URL)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Double Schechter parameters from the abstract (H0=70); alpha2 and random errors as tabulated in Wright et al. 2017 Table 2. Converted from per-dM to per-dex.",
+            "where": "this record's own provenance in literature.json, line 133"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -247,7 +257,17 @@
         "citation": "Reines & Volonteri 2015, ApJ 813, 82, Eqs. 4-5 (AGN fit)",
         "doi": "10.1088/0004-637X/813/2/82",
         "url": "https://arxiv.org/abs/1508.06274",
-        "retrieved": "2026-10-02"
+        "retrieved": "2026-10-02",
+        "attribution": {
+          "kind": "values-via-secondary-source",
+          "statement": "Some of the values come from values quoted from later works (not named), not from the cited paper.",
+          "primarySource": "values quoted from later works (not named)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Parameters as quoted from Eqs. 4-5 by later works (alpha=7.45+-0.08, beta=1.05+-0.11); confirm the plotted domain against the paper's sample.",
+            "where": "this record's own provenance in literature.json, line 254"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,

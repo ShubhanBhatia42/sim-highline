@@ -20,7 +20,290 @@
         "Correct factors for h_70 units and h = 0.6774: mass x (0.7/0.6774)^2, density x (0.6774/0.7)^3. The compilation applied x 0.6774^-2 and x 0.6774^3. The ratio correct/applied is 0.7^2 on mass (-0.3098 dex) and 0.7^-3 on density (+0.4647 dex).",
         "Check against the paper's own numbers: the first point of the z = 4 curve is stored at log M = 9.858 and log Phi = -3.323; the corrected values are 9.548 and -2.859, which agree with the raw table converted by hand (an independent reader reproduced 9.5483 and -2.8586) and with the paper's Schechter fit at the same mass (log Phi = -2.83)."
       ],
-      "set": { "definitions.cosmology": { "H0": 67.74, "Om": 0.3075 } }
+      "set": {
+        "definitions.cosmology": {
+          "H0": 67.74,
+          "Om": 0.3075
+        }
+      },
+      "kind": "numeric"
+    },
+    {
+      "id": "gonzalez11-salpeter",
+      "kind": "numeric",
+      "records": [
+        "vcd.gonzalez-et-al-2011.main.gsmf.z3.8",
+        "vcd.gonzalez-et-al-2011.main.gsmf.z5",
+        "vcd.gonzalez-et-al-2011.main.gsmf.z5.9",
+        "vcd.gonzalez-et-al-2011.main.gsmf.z6.8"
+      ],
+      "dxDex": -0.217538,
+      "dyDex": 0,
+      "summary": "the stellar masses are on a Salpeter IMF but were labelled Chabrier: the compilation's script comment says 'converted from Salpeter' and applies no conversion, so log M is shifted by log10(0.606) = -0.2175 dex to a Chabrier IMF (the h conversion it did apply is correct).",
+      "evidence": [
+        "# Gonzalez 2011 GSMF, for Salpeter IMF. (raw/Gonzalez2011.txt:1)",
+        "models with a \\citet{salp55} initial mass function (IMF, 0.1--100 M_sun) ; We adopt an Omega_M=0.3, Omega_Lambda=0.7 cosmology with H0=70 km s-1 Mpc-1 (arXiv 1008.3901 msAstroph.tex:216-218, 97-98 (sha256 40431b7ef12e8abc46e3d1d17a9e16602574d08ccc3c238e80649d6d102e6a02); first table rows msAstroph.tex:488-489 equal the raw file rows (-1.90, -1.96 at z=3.8))",
+        "convertGonzalez2011.py lines 85-86: M = 10**Mstar_bins * (h/ORIGINAL_H)**(-2) * Solar_Mass, with no Salpeter-to-Chabrier factor, while line 134 of the same script says 'Assuming Chabrier IMF (converted from Salpeter)'. The factor 0.606 is the one the compilation applies to Grazian 2015 and Furlong et al. 2015 use for Salpeter to Chabrier.",
+        "stored first x - raw bin centre = 0.0285 dex = the h shift 0.0285 dex only; the Salpeter->Chabrier shift (-0.2175 dex) is absent"
+      ]
+    },
+    {
+      "id": "cosmology-label-h70",
+      "kind": "label",
+      "records": [
+        "vcd.andrews--martini-2013-sdss.main.mzr.z0.08",
+        "vcd.reyes-et-al-2011.main.stfr.z0",
+        "vcd.chang-et-al-2015-sdss.main.ssfr.z0.1",
+        "vcd.haynes-et-al-2011-alfalfa.main.himf.z0",
+        "vcd.muzzin-et-al-2013-ultravista.main.smd.z1.8",
+        "vcd.bauer-et-al-2013-gama.all-galaxies.ssfr.z0.2",
+        "vcd.bauer-et-al-2013-gama.star-forming.ssfr.z0.2",
+        "vcd.moustakas-et-al-2013-sdss.main.quenched.z0.1"
+      ],
+      "set": {
+        "definitions.cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
+      },
+      "summary": "the numbers are as published at H0 = 70 km/s/Mpc (Omega_m = 0.3); the compilation did not convert them to Planck15 although its warning said so, or declared no cosmology, so the cosmology of the record is now stated as it is. Masses (and number densities) differ by up to 0.03 dex from a Planck15 basis; the comparison logic notes this.",
+      "evidence": [
+        "vcd.andrews--martini-2013-sdss.main.mzr.z0.08: We assume a standard $\\Lambda$CDM cosmology with $\\Omega_\\mathrm{m} = 0.3$, $\\Omega_\\Lambda = 0.7$, and $H_0 = 70$~km~s$^{-1}$~Mpc$^{-1}$. (ms.tex:320-322)",
+        "vcd.reyes-et-al-2011.main.stfr.z0: Throughout, we adopt a cosmology with $\\Omega_{\\rm m}=0.3$, $\\Omega_\\Lambda=0.7$, and $h\\equiv H/(100\\ \\kms {\\rm Mpc}^{-1})=0.7$, and express all lengths in physical (not comoving) coordinates. (ms_submit.tex:139; masses use D_L with h=0.7 (ms_submit.tex:625))",
+        "vcd.chang-et-al-2015-sdss.main.ssfr.z0.1: We use AB magnitudes and adopt the cosmological parameters ($\\Omega_M$,$\\Omega_\\Lambda$,$h$)=(0.30,0.70,0.70) (20150530.tex:125-126)",
+        "vcd.haynes-et-al-2011-alfalfa.main.himf.z0: $H_\\circ$ is the Hubble constant, adopted to be 70 \\kms Mpc$^{-1}$. (a40.tex:469; units 'h_{70}^3 Mpc^{-3} dex^{-1}' and 'log(M*/Msun) + 2 log h_70', a40.tex:1505-1506)",
+        "vcd.muzzin-et-al-2013-ultravista.main.smd.z1.8: (no H0, h, Omega in ms.tex; only the authors' data file header, compilation raw/Muzzin_2013.txt:4, says 'Ho=70., Omega_lambda=0.7, Omega_matter=0.3')",
+        "vcd.bauer-et-al-2013-gama.all-galaxies.ssfr.z0.2, vcd.bauer-et-al-2013-gama.star-forming.ssfr.z0.2: Throughout the paper we assume the standard LambdaCDM cosmology ... a Hubble constant of H_0 = 70 km s^-1 Mpc^-1 ; We adjust the SFR to a Chabrier (2003) initial mass function (IMF) by dividing by a factor of 1.5 (arXiv 1306.2424 bauer_gama_arxiv.tex:107, 177 (sha256 00ad00983cd5529e40c5dcffa3d56754ed416175f3b9d4350bda483deff71aae))",
+        "vcd.moustakas-et-al-2013-sdss.main.quenched.z0.1: ## Adopted cosmological parameters and IMF: ## h100=0.70, omega0=0.30, omegaL=0.70 ## Chabrier (2003) IMF from 0.1-100 Msun ; mass - center of stellar mass bin [log Msun] (raw/Moustakas2013.txt:8-10, 14)"
+      ]
+    },
+    {
+      "id": "cosmology-label-zwaan03-h75",
+      "kind": "label",
+      "records": [
+        "vcd.zwaan-et-al-2003-hipass.main.himf.z0"
+      ],
+      "set": {
+        "definitions.cosmology": {
+          "H0": 75
+        }
+      },
+      "summary": "the numbers are as published in h_75 units at H0 = 75 km/s/Mpc and were not converted (the script's h = 0.7 is unused); stellar-mass-like axis 0.088 dex and log number density 0.133 dex from a Planck15 basis.",
+      "evidence": [
+        "We use $H_0= 75 \\rm \\,km\\,s^{-1}Mpc^{-1}$ throughout this paper. (paper.tex:233; units: 'the space density of objects in units of $h_{75}^3 \\rm Mpc^{-3}$' (paper.tex:300), Table units '[$h_{75}^{-2} \\msol$]' and '[$10^{-4} h_{75}^3 \\rm Mpc^{-3}$]' (paper.tex:1421-1422))",
+        "Q2 comparison of the stored curve with the paper's printed Schechter parameters (alpha = -1.30, log M* = 9.79, theta* = 8.6e-3 h_75^3 Mpc^-3 per decade): equal to 5e-7 dex, i.e. unconverted."
+      ]
+    },
+    {
+      "id": "cosmology-label-baldry12",
+      "kind": "label",
+      "records": [
+        "vcd.baldry-et-al-2012-gama.binned-table.gsmf.z0.06"
+      ],
+      "set": {
+        "definitions.cosmology": {
+          "H0": 67.74,
+          "Om": 0.3075
+        }
+      },
+      "summary": "the record said H0 = 70 but the stored values are the paper's Table 1 converted to Planck15 (x +0.0285 dex, log Phi -0.0427 dex, to 1e-6 dex); the label now matches the numbers.",
+      "evidence": [
+        "We assume a flat $\\Lambda$CDM cosmology with $H_0=70\\hunits$ and $\\Omega_{m,0}=0.3$. (baldry-gama-gsmf.tex:265-266)",
+        "Agrees (<=1e-6 dex) with Table 1 after the paper's own h=0.7 -> 0.6774 (x +0.0285, log Phi -0.0427) and Chabrier IMF; but record.definitions.cosmology says H0=70 while the numbers are Planck15."
+      ]
+    },
+    {
+      "id": "label-chang15-population",
+      "kind": "label",
+      "records": [
+        "vcd.chang-et-al-2015-sdss.main.ssfr.z0.1"
+      ],
+      "set": {
+        "definitions.population": "star-forming",
+        "selection.population": "star-forming"
+      },
+      "summary": "the curve is the median of the star-forming sequence, not of an unspecified population.",
+      "evidence": [
+        "The sequence of star-forming galaxies (a.k.a.~the Main Sequence) -- indicated in orange -- is quantified by the median in 0.2-wide stellar mass bins. We fit these median values with a power law and find: \\log{SFR/(M_{\\odot} yr^{-1})} = 0.80\\log{M_*/(10^{10}~M_{\\odot})} - 0.23. (20150530.tex:652-656)",
+        "axis labels in swfig_msfr.eps (text extracted after gs conversion): 'log M* [Msun]', 'log SFR [Msun/yr]', legend 'SF Sequence' (x/swfig_msfr.eps)"
+      ]
+    },
+    {
+      "id": "label-mosleh20-size",
+      "kind": "label",
+      "records": [
+        "vcd.mosleh-et-al-2020.quiescent.size.z0.5",
+        "vcd.mosleh-et-al-2020.star-forming.size.z0.5"
+      ],
+      "set": {
+        "definitions.sizeDefinition": "stellar-half-mass"
+      },
+      "summary": "the size is the mass-based half-mass radius r50 of resolved stellar mass maps, which the paper states.",
+      "evidence": [
+        "the mass-based $r_{20}$ (top panels), $r_{50}$ (middle panels), and $r_{80}$ (bottom panels) sizes, which include 20%, 50%, and 80% of the total stellar mass, respectively (MSL112020_ApJ.tex:~247 (Sect. 5): half-mass radius r50 from resolved stellar mass maps (iSEDfit, lines 130, 182, 635))"
+      ]
+    },
+    {
+      "id": "label-reyes11-velocity",
+      "kind": "label",
+      "records": [
+        "vcd.reyes-et-al-2011.main.stfr.z0"
+      ],
+      "set": {
+        "definitions.velocityDefinition": "rotation velocity V80 at the radius containing 80 per cent of the i-band light (observed disks)",
+        "axes.yDefinition": "log10 rotation velocity V80 of observed disks"
+      },
+      "summary": "the velocity is the observed disk rotation velocity V80, not a halo Vmax.",
+      "evidence": [
+        "where $V_{80}$ is the rotation velocity measured at the radius $R_{80}$ containing 80 per cent of the $i$-band galaxy light (ms_submit.tex:101; weak lensing / halo velocity is deferred: 'In a future paper, we will combine results from this optimal TFR with weak lensing measurements to constrain the ratio of rotation velocities at the optical and virial radii' (ms_submit.tex:123))",
+        "\\log V_{80}(\\mbell) = (2.142 \\pm 0.004) + (0.278 \\pm 0.010) \\times (\\log \\mbell-10.102), with an intrinsic Gaussian scatter ... (using a Kroupa IMF to define \\mbell) (ms_submit.tex:2135-2139 (equation at 2136); Table tab:itfr_masses row ms_submit.tex:1475 (x_p=10.102, a=2.142, b=-0.111 per -2.5 log M*, i.e. 0.278 per dex))"
+      ]
+    },
+    {
+      "id": "label-avilareese08-velocity",
+      "kind": "label",
+      "records": [
+        "vcd.avila-reese-et-al-2008.main.stfr.z0"
+      ],
+      "set": {
+        "definitions.velocityDefinition": "maximum circular velocity Vm of the observed rotation curves (disks), not a halo Vmax",
+        "axes.yDefinition": "log10 maximum circular velocity Vm of observed disks"
+      },
+      "summary": "the velocity is the observed disk Vm, not a halo Vmax.",
+      "evidence": [
+        "maximum circular velocity, Vm (PDF p.1 (observed disk galaxies, 76 galaxies with rotation curves, p.3); not a halo Vmax)",
+        "Vm-Ms ... Orthog. 0.274 0.012 -0.650 0.123 0.035 0.058 0.045 ; Note.\u2014 LogVm= a + bLogM(L). Vm is given in kms-1, Mbar and Ms in Msun (Table 1, PDF p.5 (slope b=0.274, intercept a=-0.650))"
+      ]
+    },
+    {
+      "id": "label-kirby13-mass",
+      "kind": "label",
+      "records": [
+        "vcd.kirby-et-al-2013-local-group-dwarfs.main.zstar.z0"
+      ],
+      "set": {
+        "definitions.massDefinition": "stellar luminosity (V band) times a stellar mass-to-light ratio (Woo+08 or Martin+08), not an SED mass"
+      },
+      "summary": "the stellar masses are V-band luminosity times a mass-to-light ratio, not SED-fitted total masses.",
+      "evidence": [
+        "Transcription exact (logM, [Fe/H] = paper Table, 35/35); x shifted -0.040 dex by a Kroupa->Chabrier factor the paper does not support (upstream M/L is BC03-Chabrier); massDefinition 'sed-total' is not what the paper does.",
+        "the paper's Table lists mean [Fe/H] (weighted); the compilation stores Z/Zsun = 10^[Fe/H], i.e. log10 Z/Zsun = [Fe/H] (y of the record) (Q2 reading of the paper table)"
+      ]
+    },
+    {
+      "id": "digitized-avilareese08",
+      "kind": "label",
+      "records": [
+        "vcd.avila-reese-et-al-2008.main.stfr.z0"
+      ],
+      "set": {
+        "provenance.tier": "digitized-figure",
+        "rankable": false
+      },
+      "summary": "the compilation's script says the fit was 'obtained directly from paper using webplotdigitizer' and then applies a '-0.15 dex IMF correction (private communication)' and a 0.922/0.130 linear map that the cited appendix does not contain, so the curve is read from a figure with an unsupported mass transform and is now context only (the y values equal the paper's Table 1 fit).",
+      "evidence": [
+        "convertAvilaReese2008.py lines 26-30: '# Apply IMF correction (Avila-Reese, private communication)'; stellar_masses = 1e10 * 10.0 ** (((log10_stellar_masses - 10.0) - 0.130) / 0.922); line 38: 'Fit obtained directly from paper using webplotdigitizer.'",
+        "The paper states no IMF: the words IMF, Kroupa, Salpeter, Chabrier, diet occur 0 times in its text. Stored log M differs from the unshifted values by -0.16 to -0.41 dex (mass dependent)."
+      ]
+    },
+    {
+      "id": "digitized-davies16",
+      "kind": "label",
+      "records": [
+        "vcd.davies-et-al-2016-gama.main.sfms.z0"
+      ],
+      "set": {
+        "provenance.tier": "digitized-figure",
+        "rankable": false
+      },
+      "summary": "the raw file states that the values were extracted by hand from a figure, so the curve is a figure read and is now context only; the paper could not be located to check it.",
+      "evidence": [
+        "# Extracted by hand from the top-left panel of Figure 13. / # Stellar Mass [M_sun], Star Formation Rate [M_sun / Year] (raw/Davies2016.txt:1-3)"
+      ]
+    },
+    {
+      "id": "flag-gilbank10-origin",
+      "kind": "label",
+      "records": [
+        "vcd.gilbank-et-al-2010-sdss.main.quenched.z0.1"
+      ],
+      "set": {
+        "rankable": false
+      },
+      "summary": "the cited paper (the SFR density of SDSS Stripe 82) contains no passive fraction against stellar mass, so the origin of the 13 values is unknown; the curve is context only until its source is found.",
+      "evidence": [
+        "NOT VERIFIABLE: the cited paper (SFRD of SDSS Stripe 82, Kroupa IMF, h=0.7) contains no passive fraction vs stellar mass ('passive' occurs 0 times); the 13 raw points of unknown origin are carried unchanged (x, f exact)."
+      ]
+    },
+    {
+      "id": "flag-gallazzi05-conventions",
+      "kind": "flag",
+      "records": [
+        "vcd.gallazzi-et-al-2005-sdss.main.zstar.z0.1",
+        "vcd.gallazzi-et-al-2005-sdss.main.age.z0.1"
+      ],
+      "summary": "the paper states no IMF, no Hubble parameter and no solar metallicity; the compilation's Kroupa label, the h = 0.7 mass shift (-0.0115 dex) and, for the metallicity curve, a rescaling of the solar metallicity (+0.2007 dex in log Z) rest on assumptions that are not in the paper.",
+      "evidence": [
+        "(none: 'IMF', 'initial mass', Kroupa, Chabrier, Salpeter occur 0 times in MF332rv.tex or in the PDF text)",
+        "(none: no H0, h, Omega or cosmology in MF332rv.tex or the PDF; the only 'Hubble' is 'deviations from the Hubble flow', MF332rv.tex:773)"
+      ]
+    },
+    {
+      "id": "flag-kirby13-imf",
+      "kind": "flag",
+      "records": [
+        "vcd.kirby-et-al-2013-local-group-dwarfs.main.zstar.z0"
+      ],
+      "summary": "the compilation shifted log M by -0.040 dex (Kroupa to Chabrier) but the paper states no IMF and its mass-to-light source is Chabrier-based, so the shift is unsupported.",
+      "evidence": [
+        "M* = L_V x M*/L_V of Woo+08 or taken from Martin+08: 'Stellar masses for all other galaxies not marked with g or h were calculated by multiplying the luminosity by the stellar mass-to-light ratios of \\citet{woo08}.' (ms.tex:1052). Woo, Courteau & Dekel 2008 (arXiv 0807.1331, sha256 7331f6cf...0fcb) compute M*/L_V from BC03 with the Chabrier IMF: '\\citet{cha03} IMF (which produces very similar results for $\\MSL$ as the Kroupa IMF - see their paper)' (lgmn.tex:1985-1987). So the upstream M/L is Chabrier-based, not Kroupa."
+      ]
+    },
+    {
+      "id": "flag-andrews13-solar",
+      "kind": "flag",
+      "records": [
+        "vcd.andrews--martini-2013-sdss.main.mzr.z0.08"
+      ],
+      "summary": "the record's warning gives a solar oxygen abundance of 8.69 but the paper uses 8.86, and the paper states no IMF (its masses come from Kauffmann+03).",
+      "evidence": [
+        "Curve = Table-4 fit exactly (5e-7 dex) with log M shifted -0.040 (Kroupa->Chabrier); but h=0.7 -> 0.6774 not applied (x 0.0285 dex low, y 0.018 dex equiv.), IMF only implicit in cited paper, warning's solar value (8.69) differs from the paper's (8.86)."
+      ]
+    },
+    {
+      "id": "flag-lange15-trace",
+      "kind": "flag",
+      "records": [
+        "vcd.lange-et-al-2015-gama.r-band.size.z0.05"
+      ],
+      "summary": "the curve is binned medians of a per-galaxy file that is not in the paper and could not be traced; the compilation's remark that the data are h-free is wrong (the paper adopts H0 = 70, as the record declares), and the lowest four bins below log M* 9.4 hold only 3, 19, 33 and 77 galaxies, outside the paper's mass-limited sample.",
+      "evidence": [
+        "Not checkable against printed numbers (paper prints fits per early/late subset only); stored curve = binned medians of an untraceable per-galaxy file, on the paper's own h=0.7/Chabrier basis (record cosmology H0=70 is right, 'h-free' claim is wrong); stored bins below logM 9.4 lie outside the paper's mass-limited sample (the lowest four hold 3, 19, 33, 77 galaxies)."
+      ]
+    },
+    {
+      "id": "flag-muzzin13-errors",
+      "kind": "flag",
+      "records": [
+        "vcd.muzzin-et-al-2013-ultravista.main.smd.z1.8"
+      ],
+      "summary": "the lower error bars were not converted from Kroupa to Chabrier as the central values were (0.04 dex too high; 3 of 7 intervals are dropped for that reason).",
+      "evidence": [
+        "DISAGREES (small): central values = paper Table log rho_A(>8) - 0.04 (the paper's own Kroupa-Chabrier offset), exact; but the h correction the record claims (Planck15) is not applied (y 0.0142 dex too high) and the lower error bars are not IMF-converted (0.04 dex), dropping 3 of 7 intervals."
+      ]
+    },
+    {
+      "id": "flag-bauer13-origin",
+      "kind": "flag",
+      "records": [
+        "vcd.bauer-et-al-2013-gama.all-galaxies.ssfr.z0.2",
+        "vcd.bauer-et-al-2013-gama.star-forming.ssfr.z0.2"
+      ],
+      "summary": "the raw five-row table is not a table in the paper (hand-extracted values) and the values were not compared with the paper; the 'all galaxies' curve lies about 1.2 dex below the GSWLC-2 median of all galaxies at the same mass.",
+      "evidence": [
+        "#From Bauer et al 2013, GAMA data, z=0.05-0.32 / #Chabrier IMFs are assumed / #Mass [log M_sun] Median [yr^-1] (SF) Plus Minus Median (All) (Limit) (raw/Bauer2013.txt:1-3 (5 rows, no statement of h))",
+        "h: the paper states H0=70, so the stellar-mass axis is at h=0.7 (0.0285 dex below a Planck15 basis); sSFR itself is h-free; script comment 'h-free' is wrong; the raw 5-row table is not a table in the paper (hand-extracted values), so the numbers were not compared"
+      ]
     }
   ]
 }

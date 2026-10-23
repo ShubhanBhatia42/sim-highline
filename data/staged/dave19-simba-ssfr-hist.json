@@ -1,0 +1,146 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "dave19.simba.ssfr-hist.m100n1024.z0p1",
+      "source": "SIMBA",
+      "run": "m100n1024 (per galaxy, normalised sSFR histogram in three mass bins)",
+      "kind": "simulation",
+      "relation": "ssfr",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass (bins 1e9-1e10, 1e10-1e11, >1e11; the last bin is open: 12.0 is a nominal upper edge)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 specific SFR (instantaneous SFR of the gas elements / stellar mass); the lowest bin holds all galaxies with sSFR < 10^-2.5 Gyr^-1 (axis in Gyr^-1, converted by subtracting 9 dex)",
+        "yUnit": "log10(yr^-1)"
+      },
+      "domain": {
+        "xMin": 9.0,
+        "xMax": 12.0
+      },
+      "representation": {
+        "type": "distribution",
+        "xEdges": [
+          9.0,
+          10.0,
+          11.0,
+          12.0
+        ],
+        "yEdges": [
+          -11.6,
+          -11.4,
+          -11.2,
+          -11.0,
+          -10.8,
+          -10.6,
+          -10.4,
+          -10.2,
+          -10.0,
+          -9.8,
+          -9.6,
+          -9.4,
+          -9.2,
+          -9.0,
+          -8.8,
+          -8.6
+        ],
+        "counts": [
+          [
+            11750,
+            851,
+            1294,
+            1907,
+            2827,
+            4393,
+            6301,
+            7561,
+            11580,
+            14714,
+            16996,
+            14748,
+            4734,
+            340,
+            0
+          ],
+          [
+            26050,
+            11414,
+            12815,
+            10084,
+            8053,
+            7493,
+            4902,
+            6512,
+            5182,
+            3851,
+            2661,
+            770,
+            210,
+            0,
+            0
+          ],
+          [
+            74776,
+            2702,
+            4504,
+            2702,
+            3603,
+            2702,
+            4504,
+            2702,
+            1801,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "weighting": "pseudo-counts: fraction of the galaxies of the mass bin per 0.2-dex sSFR bin (the figure's 'fraction', sums to 1) x 100000; relative within a mass bin only, not galaxy numbers",
+        "intervalKind": "scatter"
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all SIMBA m100n1024 galaxies in the stellar-mass bin at z=0.1 (centrals and satellites)",
+        "warning": "Fractions of galaxies per sSFR bin read from the vector lines (through the bin centres) of Dave et al. 2019 (MNRAS 486, 2827), Fig. mainseqhist (solid lines, SIMBA z=0.1); no table is published. The caption says 'All galaxies with sSFR<10^-2.5 Gyr^-1 are placed in the lowest bin': the lowest bin (centre log sSFR = -2.5 Gyr^-1 = -11.5 yr^-1) is therefore an underflow bin and its nominal edges are not physical limits. The stellar-mass bins are 1e9-1e10, 1e10-1e11 and >1e11 Msun; the upper edge of the last bin is not stated and 12.0 is a nominal value. The dotted GSWLC-D2 observed histograms are not stored. The figure plots fractions, not counts; no galaxy numbers are given. The SFR-M* scatter plots of the same paper (mainseq_z0.jpg, mainseq_z2.jpg) are JPEG rasters and cannot be used."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 68,
+          "Om": 0.3
+        },
+        "massDefinition": "unspecified",
+        "population": "all",
+        "sfrTimescaleMyr": "instantaneous",
+        "sfrStatistic": "per-galaxy",
+        "sfrIndicator": "instantaneous SFRs from the gas elements"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Dave et al. 2019, MNRAS 486, 2827 (arXiv:1901.10203), sSFR histograms in three stellar-mass bins at z=0.1 (SIMBA, solid lines)",
+        "doi": "10.1093/mnras/stz937",
+        "url": "https://arxiv.org/abs/1901.10203",
+        "retrieved": "2026-10-18",
+        "figure": "mainseqhist (histogram of sSFR in three bins of stellar mass)",
+        "panel": "SIMBA z=0.1 solid lines",
+        "checksumSha256": "9ee4dd849016da695b5affb9863aa63be4d39071e54ef4f8ab37fa3a4656f593",
+        "sourceMember": "mainseqhist_z0.pdf (2 pt solid lines blue, green, red)",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: labelled ticks -3.0..0.5 (the minus signs are missing from the text layer; the six negative labels share the same offset to their ticks, asserted); y: labelled ticks 0.0-0.7; each curve sums to 0.9999",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction. Fraction below sSFR = 10^-1.8 Gyr^-1 (the z=0 star-forming cut of the paper) per mass bin: [0.158, 0.604, 0.847]."
+    }
+  ]
+}

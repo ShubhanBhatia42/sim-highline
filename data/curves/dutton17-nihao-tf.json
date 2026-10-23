@@ -22,8 +22,8 @@
         "yUnit": "log10(Msun)"
       },
       "domain": {
-        "xMin": 1.314,
-        "xMax": 2.37
+        "xMin": 1.313,
+        "xMax": 2.367
       },
       "representation": {
         "type": "points",
@@ -31,346 +31,347 @@
         "connect": false,
         "points": [
           {
-            "x": 1.314,
-            "y": 8.1893
+            "x": 1.313,
+            "y": 8.191
           },
           {
-            "x": 1.317,
-            "y": 7.9631
+            "x": 1.316,
+            "y": 7.961
           },
           {
             "x": 1.318,
-            "y": 8.2254
+            "y": 8.222
           },
           {
             "x": 1.319,
-            "y": 7.6283
+            "y": 7.627
+          },
+          {
+            "x": 1.329,
+            "y": 7.86
           },
           {
             "x": 1.33,
-            "y": 7.8635
+            "y": 7.9
           },
           {
-            "x": 1.331,
-            "y": 7.8997
+            "x": 1.351,
+            "y": 7.926
           },
           {
-            "x": 1.352,
-            "y": 7.9269
+            "x": 1.394,
+            "y": 7.961
           },
           {
-            "x": 1.395,
-            "y": 7.9631
-          },
-          {
-            "x": 1.405,
-            "y": 8.0535
+            "x": 1.404,
+            "y": 8.052
           },
           {
             "x": 1.405,
-            "y": 8.2164
+            "y": 8.216
           },
           {
             "x": 1.413,
-            "y": 8.1983
+            "y": 8.197
           },
           {
             "x": 1.441,
-            "y": 8.3159
+            "y": 8.312
           },
           {
-            "x": 1.444,
-            "y": 8.4788
+            "x": 1.443,
+            "y": 8.477
           },
           {
             "x": 1.462,
-            "y": 8.6236
+            "y": 8.618
           },
           {
-            "x": 1.478,
-            "y": 8.334
+            "x": 1.477,
+            "y": 8.332
           },
           {
-            "x": 1.484,
-            "y": 8.7683
+            "x": 1.483,
+            "y": 8.767
           },
           {
             "x": 1.503,
-            "y": 8.9855
+            "y": 8.987
           },
           {
-            "x": 1.539,
-            "y": 8.895
+            "x": 1.538,
+            "y": 8.891
           },
           {
             "x": 1.551,
-            "y": 8.5602
+            "y": 8.555
           },
           {
-            "x": 1.555,
-            "y": 9.2117
+            "x": 1.554,
+            "y": 9.212
           },
           {
-            "x": 1.561,
-            "y": 9.076
+            "x": 1.56,
+            "y": 9.073
           },
           {
-            "x": 1.575,
-            "y": 8.8136
+            "x": 1.574,
+            "y": 8.812
           },
           {
             "x": 1.603,
-            "y": 8.7864
+            "y": 8.786
           },
           {
-            "x": 1.623,
-            "y": 8.42
+            "x": 1.622,
+            "y": 8.418
           },
           {
-            "x": 1.632,
-            "y": 8.7774
+            "x": 1.63,
+            "y": 8.772
           },
           {
-            "x": 1.635,
-            "y": 9.0579
+            "x": 1.634,
+            "y": 9.058
           },
           {
-            "x": 1.659,
-            "y": 8.7593
+            "x": 1.657,
+            "y": 8.759
           },
           {
             "x": 1.674,
-            "y": 9.3565
+            "y": 9.355
           },
           {
-            "x": 1.68,
-            "y": 9.0443
+            "x": 1.679,
+            "y": 9.042
           },
           {
             "x": 1.724,
-            "y": 9.0533
+            "y": 9.051
           },
           {
-            "x": 1.726,
-            "y": 9.4741
+            "x": 1.724,
+            "y": 9.471
           },
           {
-            "x": 1.735,
-            "y": 9.1664
+            "x": 1.733,
+            "y": 9.161
           },
           {
-            "x": 1.745,
-            "y": 9.2705
+            "x": 1.743,
+            "y": 9.268
           },
           {
-            "x": 1.753,
-            "y": 9.2976
+            "x": 1.752,
+            "y": 9.296
+          },
+          {
+            "x": 1.754,
+            "y": 9.644
           },
           {
             "x": 1.755,
-            "y": 9.646
+            "y": 9.476
           },
           {
-            "x": 1.756,
-            "y": 9.4786
+            "x": 1.759,
+            "y": 9.402
           },
           {
-            "x": 1.76,
-            "y": 9.4017
+            "x": 1.816,
+            "y": 9.424
           },
           {
-            "x": 1.818,
-            "y": 9.4288
+            "x": 1.824,
+            "y": 9.872
           },
           {
-            "x": 1.826,
-            "y": 9.8722
+            "x": 1.853,
+            "y": 9.944
           },
           {
-            "x": 1.854,
-            "y": 9.9446
+            "x": 1.858,
+            "y": 9.322
           },
           {
             "x": 1.86,
-            "y": 9.3248
+            "y": 9.741
           },
           {
-            "x": 1.861,
-            "y": 9.7455
+            "x": 1.869,
+            "y": 9.953
           },
           {
-            "x": 1.871,
-            "y": 9.9536
+            "x": 1.873,
+            "y": 9.471
           },
           {
             "x": 1.875,
-            "y": 9.4741
+            "y": 10.043
           },
           {
-            "x": 1.877,
-            "y": 10.0441
+            "x": 1.897,
+            "y": 9.794
           },
           {
-            "x": 1.899,
-            "y": 9.7998
+            "x": 1.908,
+            "y": 9.932
           },
           {
-            "x": 1.909,
-            "y": 9.9355
+            "x": 1.917,
+            "y": 10.039
           },
           {
-            "x": 1.918,
-            "y": 10.0441
+            "x": 1.926,
+            "y": 10.05
           },
           {
-            "x": 1.928,
-            "y": 10.0532
+            "x": 1.966,
+            "y": 9.845
           },
           {
-            "x": 1.967,
-            "y": 9.8451
+            "x": 1.977,
+            "y": 10.263
           },
           {
-            "x": 1.979,
-            "y": 10.2658
+            "x": 1.982,
+            "y": 10.179
           },
           {
-            "x": 1.983,
-            "y": 10.1798
+            "x": 1.99,
+            "y": 9.787
           },
           {
-            "x": 1.992,
-            "y": 9.7908
+            "x": 1.99,
+            "y": 10.385
           },
           {
-            "x": 1.992,
-            "y": 10.3879
+            "x": 2.056,
+            "y": 10.453
           },
           {
-            "x": 2.058,
-            "y": 10.4513
+            "x": 2.057,
+            "y": 10.305
           },
           {
             "x": 2.06,
-            "y": 10.3065
+            "y": 10.232
           },
           {
-            "x": 2.061,
-            "y": 10.2341
+            "x": 2.065,
+            "y": 10.139
           },
           {
-            "x": 2.066,
-            "y": 10.1436
+            "x": 2.077,
+            "y": 10.539
           },
           {
-            "x": 2.079,
-            "y": 10.5418
+            "x": 2.08,
+            "y": 10.446
           },
           {
-            "x": 2.083,
-            "y": 10.4513
+            "x": 2.09,
+            "y": 10.12
           },
           {
-            "x": 2.092,
-            "y": 10.1255
+            "x": 2.097,
+            "y": 10.607
           },
           {
-            "x": 2.099,
-            "y": 10.6096
+            "x": 2.103,
+            "y": 10.248
           },
           {
-            "x": 2.106,
-            "y": 10.2522
+            "x": 2.112,
+            "y": 10.635
           },
           {
-            "x": 2.113,
-            "y": 10.6413
+            "x": 2.124,
+            "y": 10.392
           },
           {
-            "x": 2.126,
-            "y": 10.397
+            "x": 2.145,
+            "y": 10.626
           },
           {
             "x": 2.147,
-            "y": 10.6322
+            "y": 10.433
           },
           {
-            "x": 2.148,
-            "y": 10.4332
+            "x": 2.183,
+            "y": 10.716
           },
           {
-            "x": 2.185,
-            "y": 10.7227
+            "x": 2.188,
+            "y": 10.731
           },
           {
-            "x": 2.191,
-            "y": 10.7318
+            "x": 2.193,
+            "y": 10.816
           },
           {
-            "x": 2.194,
-            "y": 10.8222
+            "x": 2.214,
+            "y": 10.65
           },
           {
             "x": 2.217,
-            "y": 10.6503
+            "y": 10.749
           },
           {
-            "x": 2.219,
-            "y": 10.7499
+            "x": 2.226,
+            "y": 10.567
           },
           {
-            "x": 2.228,
-            "y": 10.5689
-          },
-          {
-            "x": 2.259,
+            "x": 2.257,
             "y": 11.157
           },
           {
-            "x": 2.271,
-            "y": 11.157
+            "x": 2.27,
+            "y": 11.152
           },
           {
-            "x": 2.277,
-            "y": 11.0213
+            "x": 2.276,
+            "y": 11.017
           },
           {
-            "x": 2.28,
-            "y": 10.9399
+            "x": 2.278,
+            "y": 10.936
           },
           {
-            "x": 2.293,
-            "y": 10.9761
+            "x": 2.291,
+            "y": 10.972
+          },
+          {
+            "x": 2.306,
+            "y": 11.043
           },
           {
             "x": 2.308,
-            "y": 11.0484
+            "y": 11.06
           },
           {
-            "x": 2.31,
-            "y": 11.062
+            "x": 2.322,
+            "y": 11.088
           },
           {
-            "x": 2.324,
-            "y": 11.0937
+            "x": 2.365,
+            "y": 11.006
           },
           {
-            "x": 2.368,
-            "y": 11.0123
-          },
-          {
-            "x": 2.37,
-            "y": 11.1389
+            "x": 2.367,
+            "y": 11.138
           }
         ]
       },
       "scatter": {
-        "fitSlopeMeasured": 3.103,
-        "fitSlopeStatedInFigure": 3.11
+        "fitSlopeMeasured": 3.112,
+        "fitSlopeStatedInText": 3.11,
+        "fitSlopeDefinition": "slope b of log10 M against log10 V_HI, least squares on the table"
       },
       "selection": {
         "population": "individual zoom galaxies (not volume complete)",
-        "warning": "Marker centres of the simulated galaxies (black filled circles) read from the vector paths of Dutton et al. 2017 Fig. 4 (all-baryons panel); no table is published. Zoom selections are not volume complete. The paper's text labels are outlined, so the axes were calibrated from tick marks and verified against the stated fit slopes."
+        "warning": "Per-galaxy values from the data table of Dutton et al. 2017 (83 NIHAO galaxies; arXiv source files table1a.txt and table1b.txt, label tab:mvall), the numbers plotted as black filled circles in the upper left panel of Fig. 4 (arXiv source numbering). Stars and neutral gas (M_neut = 1.33 M_HI) are measured inside 0.2 R200; M_bar is all stars and gas within R200. Haloes are selected uniformly in log halo mass from ~10 to ~12 without reference to merger history, concentration or spin, but the zoom sample is not volume complete, so the points are context, not a rankable prediction."
       },
       "definitions": {
         "imf": "chabrier03",
@@ -383,22 +384,19 @@
         "population": "zoom-centrals"
       },
       "provenance": {
-        "tier": "digitized-figure",
-        "citation": "Dutton et al. 2017 (NIHAO XII), MNRAS 467, 4937, Fig. 4 (arXiv source numbering), all-baryons panel",
+        "tier": "published-table",
+        "citation": "Dutton et al. 2017 (NIHAO XII), MNRAS 467, 4937, data table (label tab:mvall, arXiv source) of the values plotted in Fig. 4 (arXiv source numbering), upper left panel",
         "doi": "10.1093/mnras/stx458",
         "url": "https://arxiv.org/abs/1610.06375",
-        "retrieved": "2026-10-05",
-        "figure": "Figure 4",
-        "panel": "all-baryons",
-        "checksumSha256": "19a4c8a8e10a35eb7e7e11d54566e063b1f4b2ad83abb4a40badbf0ef387aa17",
-        "sourceMember": "fig4.pdf (converted from fig4.eps)",
-        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
-        "axisCalibrationPixels": "manual: major ticks (log x: V=10, 50, 100, 500 km/s at 124.6 pt/dex; y: 12 to 4, 26.5 pt/dex), verified by the fit-line slopes against the paper's stated b and the virial-relation dotted line",
-        "digitizationUncertaintyDex": 0.01
+        "retrieved": "2026-10-18",
+        "checksumSha256": "20b8cee830587a17db8fd132167d0e970b7f7740986eaca33d53328663f229c7",
+        "sourceMember": "table1a.txt and table1b.txt (\\input into nihaoXII_2017.03.07.tex; rows 1-52 and 53-83)",
+        "extractionMethod": "parsed from the arXiv LaTeX table files (83 rows, values as printed to 3 decimals): x = column (3) log V_HI, y = column (10) log M_bar",
+        "checksumSha256Table1b": "9736eafa3a644df17b104ee6fd3a198e8886b397f0b507f91916043595d7a234"
       },
       "calibration": "unknown",
       "rankable": false,
-      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+      "notes": "Values of the paper's data table, equal to the earlier figure read (Fig. 4 vector paths) to <0.01 dex; not rankable because the zoom sample is not volume complete."
     },
     {
       "id": "dutton17.nihao.btfr-all-baryons.fit.z0",
@@ -493,8 +491,8 @@
         "yUnit": "log10(Msun)"
       },
       "domain": {
-        "xMin": 1.314,
-        "xMax": 2.37
+        "xMin": 1.313,
+        "xMax": 2.367
       },
       "representation": {
         "type": "points",
@@ -502,346 +500,347 @@
         "connect": false,
         "points": [
           {
-            "x": 1.314,
-            "y": 6.7235
+            "x": 1.313,
+            "y": 6.725
+          },
+          {
+            "x": 1.316,
+            "y": 7.217
           },
           {
             "x": 1.318,
-            "y": 7.2211
+            "y": 6.578
           },
           {
             "x": 1.319,
-            "y": 6.5787
+            "y": 7.089
           },
           {
-            "x": 1.32,
-            "y": 7.0944
+            "x": 1.329,
+            "y": 7.231
           },
           {
             "x": 1.33,
-            "y": 7.2302
+            "y": 7.089
           },
           {
-            "x": 1.331,
-            "y": 7.0944
+            "x": 1.351,
+            "y": 7.253
           },
           {
-            "x": 1.352,
-            "y": 7.2573
-          },
-          {
-            "x": 1.395,
-            "y": 7.1668
+            "x": 1.394,
+            "y": 7.167
           },
           {
             "x": 1.404,
-            "y": 6.8863
+            "y": 6.887
           },
           {
             "x": 1.405,
-            "y": 7.5559
+            "y": 7.557
           },
           {
-            "x": 1.414,
-            "y": 6.5787
+            "x": 1.413,
+            "y": 6.58
           },
           {
             "x": 1.441,
-            "y": 7.5649
+            "y": 7.566
           },
           {
-            "x": 1.445,
-            "y": 7.6735
+            "x": 1.443,
+            "y": 7.671
           },
           {
-            "x": 1.463,
-            "y": 7.764
+            "x": 1.462,
+            "y": 7.761
           },
           {
-            "x": 1.478,
-            "y": 7.4428
+            "x": 1.477,
+            "y": 7.441
           },
           {
-            "x": 1.484,
-            "y": 7.5559
+            "x": 1.483,
+            "y": 7.552
           },
           {
-            "x": 1.504,
-            "y": 7.9359
+            "x": 1.503,
+            "y": 7.931
           },
           {
-            "x": 1.539,
-            "y": 8.1893
+            "x": 1.538,
+            "y": 8.189
           },
           {
-            "x": 1.552,
-            "y": 7.8138
+            "x": 1.551,
+            "y": 7.812
           },
           {
-            "x": 1.556,
-            "y": 8.0535
+            "x": 1.554,
+            "y": 8.054
           },
           {
-            "x": 1.561,
-            "y": 8.2707
+            "x": 1.56,
+            "y": 8.265
           },
           {
-            "x": 1.576,
-            "y": 8.0264
+            "x": 1.574,
+            "y": 8.027
           },
           {
-            "x": 1.604,
-            "y": 8.4878
+            "x": 1.603,
+            "y": 8.483
           },
           {
-            "x": 1.624,
-            "y": 8.2662
+            "x": 1.622,
+            "y": 8.264
           },
           {
-            "x": 1.632,
-            "y": 7.9631
+            "x": 1.63,
+            "y": 7.964
           },
           {
-            "x": 1.636,
-            "y": 8.5512
+            "x": 1.634,
+            "y": 8.551
           },
           {
-            "x": 1.659,
-            "y": 8.0264
+            "x": 1.657,
+            "y": 8.023
           },
           {
-            "x": 1.675,
-            "y": 8.9945
+            "x": 1.674,
+            "y": 8.991
           },
           {
-            "x": 1.68,
-            "y": 8.8905
+            "x": 1.679,
+            "y": 8.888
           },
           {
-            "x": 1.725,
-            "y": 8.4516
+            "x": 1.724,
+            "y": 8.449
           },
           {
-            "x": 1.726,
-            "y": 8.9176
+            "x": 1.724,
+            "y": 8.916
           },
           {
-            "x": 1.736,
-            "y": 9.0126
+            "x": 1.733,
+            "y": 9.007
           },
           {
-            "x": 1.745,
-            "y": 8.6507
+            "x": 1.743,
+            "y": 8.645
+          },
+          {
+            "x": 1.752,
+            "y": 8.904
           },
           {
             "x": 1.754,
-            "y": 8.9041
+            "y": 8.909
           },
           {
             "x": 1.755,
-            "y": 8.9131
+            "y": 8.988
           },
           {
-            "x": 1.757,
-            "y": 8.99
+            "x": 1.759,
+            "y": 9.271
           },
           {
-            "x": 1.761,
-            "y": 9.275
+            "x": 1.816,
+            "y": 9.05
           },
           {
-            "x": 1.819,
-            "y": 9.0488
+            "x": 1.824,
+            "y": 9.47
           },
           {
-            "x": 1.826,
-            "y": 9.4741
+            "x": 1.853,
+            "y": 9.622
           },
           {
-            "x": 1.855,
-            "y": 9.6279
+            "x": 1.858,
+            "y": 8.898
           },
           {
             "x": 1.86,
-            "y": 8.9041
+            "y": 9.308
           },
           {
-            "x": 1.861,
-            "y": 9.3112
+            "x": 1.869,
+            "y": 9.677
           },
           {
-            "x": 1.871,
-            "y": 9.6822
+            "x": 1.873,
+            "y": 9.386
           },
           {
-            "x": 1.874,
-            "y": 9.3881
+            "x": 1.875,
+            "y": 9.692
           },
           {
-            "x": 1.876,
-            "y": 9.6912
+            "x": 1.897,
+            "y": 9.476
           },
           {
-            "x": 1.9,
-            "y": 9.4786
+            "x": 1.908,
+            "y": 9.616
           },
           {
-            "x": 1.91,
-            "y": 9.6189
+            "x": 1.917,
+            "y": 9.661
           },
           {
-            "x": 1.919,
-            "y": 9.6641
+            "x": 1.926,
+            "y": 9.8
           },
           {
-            "x": 1.928,
-            "y": 9.7998
+            "x": 1.966,
+            "y": 9.637
           },
           {
-            "x": 1.968,
-            "y": 9.6369
+            "x": 1.977,
+            "y": 9.956
           },
           {
-            "x": 1.978,
-            "y": 9.9582
+            "x": 1.982,
+            "y": 9.817
           },
           {
-            "x": 1.984,
-            "y": 9.8179
+            "x": 1.99,
+            "y": 9.594
           },
           {
-            "x": 1.992,
-            "y": 9.6008
+            "x": 1.99,
+            "y": 10.077
           },
           {
-            "x": 1.992,
-            "y": 10.0803
+            "x": 2.056,
+            "y": 10.095
           },
           {
             "x": 2.057,
-            "y": 10.0984
+            "y": 10.046
           },
           {
-            "x": 2.059,
-            "y": 10.0486
+            "x": 2.06,
+            "y": 10.019
           },
           {
-            "x": 2.061,
-            "y": 10.0215
+            "x": 2.065,
+            "y": 9.978
           },
           {
-            "x": 2.067,
-            "y": 9.9808
+            "x": 2.077,
+            "y": 10.276
           },
           {
-            "x": 2.079,
-            "y": 10.2794
+            "x": 2.08,
+            "y": 10.185
           },
           {
-            "x": 2.083,
-            "y": 10.1889
+            "x": 2.09,
+            "y": 9.98
           },
           {
-            "x": 2.092,
-            "y": 9.9808
+            "x": 2.097,
+            "y": 10.267
           },
           {
-            "x": 2.1,
-            "y": 10.2703
+            "x": 2.103,
+            "y": 10.054
           },
           {
-            "x": 2.106,
-            "y": 10.0532
+            "x": 2.112,
+            "y": 10.395
           },
           {
-            "x": 2.113,
-            "y": 10.397
+            "x": 2.124,
+            "y": 10.172
           },
           {
-            "x": 2.126,
-            "y": 10.1708
+            "x": 2.145,
+            "y": 10.369
           },
           {
-            "x": 2.148,
-            "y": 10.3698
+            "x": 2.147,
+            "y": 10.274
           },
           {
-            "x": 2.149,
-            "y": 10.2794
+            "x": 2.183,
+            "y": 10.391
           },
           {
-            "x": 2.186,
-            "y": 10.3925
+            "x": 2.188,
+            "y": 10.534
           },
           {
-            "x": 2.19,
-            "y": 10.5372
+            "x": 2.193,
+            "y": 10.488
           },
           {
-            "x": 2.195,
-            "y": 10.4875
+            "x": 2.214,
+            "y": 10.441
           },
           {
             "x": 2.217,
-            "y": 10.4422
+            "y": 10.514
           },
           {
-            "x": 2.219,
-            "y": 10.5146
+            "x": 2.226,
+            "y": 10.487
           },
           {
-            "x": 2.229,
-            "y": 10.4875
+            "x": 2.257,
+            "y": 10.873
           },
           {
-            "x": 2.26,
-            "y": 10.8765
+            "x": 2.27,
+            "y": 10.819
           },
           {
-            "x": 2.272,
-            "y": 10.8222
+            "x": 2.276,
+            "y": 10.852
           },
           {
             "x": 2.278,
-            "y": 10.8584
+            "y": 10.75
           },
           {
-            "x": 2.281,
-            "y": 10.7499
+            "x": 2.291,
+            "y": 10.799
           },
           {
-            "x": 2.293,
-            "y": 10.8041
+            "x": 2.306,
+            "y": 10.791
           },
           {
             "x": 2.308,
-            "y": 10.7951
+            "y": 10.939
           },
           {
-            "x": 2.31,
-            "y": 10.9399
+            "x": 2.322,
+            "y": 10.957
           },
           {
-            "x": 2.325,
-            "y": 10.958
+            "x": 2.365,
+            "y": 10.85
           },
           {
-            "x": 2.368,
-            "y": 10.8494
-          },
-          {
-            "x": 2.37,
-            "y": 10.9399
+            "x": 2.367,
+            "y": 10.937
           }
         ]
       },
       "scatter": {
-        "fitSlopeMeasured": 3.955,
-        "fitSlopeStatedInFigure": 3.97
+        "fitSlopeMeasured": 3.965,
+        "fitSlopeStatedInText": 3.97,
+        "fitSlopeDefinition": "slope b of log10 M against log10 V_HI, least squares on the table"
       },
       "selection": {
         "population": "individual zoom galaxies (not volume complete)",
-        "warning": "Marker centres of the simulated galaxies (black filled circles) read from the vector paths of Dutton et al. 2017 Fig. 4 (stars+neutral-gas panel); no table is published. Zoom selections are not volume complete. The paper's text labels are outlined, so the axes were calibrated from tick marks and verified against the stated fit slopes."
+        "warning": "Per-galaxy values from the data table of Dutton et al. 2017 (83 NIHAO galaxies; arXiv source files table1a.txt and table1b.txt, label tab:mvall), the numbers plotted as black filled circles in the upper right panel of Fig. 4 (arXiv source numbering). Stars and neutral gas (M_neut = 1.33 M_HI) are measured inside 0.2 R200; M_bar is all stars and gas within R200. Haloes are selected uniformly in log halo mass from ~10 to ~12 without reference to merger history, concentration or spin, but the zoom sample is not volume complete, so the points are context, not a rankable prediction."
       },
       "definitions": {
         "imf": "chabrier03",
@@ -854,22 +853,19 @@
         "population": "zoom-centrals"
       },
       "provenance": {
-        "tier": "digitized-figure",
-        "citation": "Dutton et al. 2017 (NIHAO XII), MNRAS 467, 4937, Fig. 4 (arXiv source numbering), stars+neutral-gas panel",
+        "tier": "published-table",
+        "citation": "Dutton et al. 2017 (NIHAO XII), MNRAS 467, 4937, data table (label tab:mvall, arXiv source) of the values plotted in Fig. 4 (arXiv source numbering), upper right panel",
         "doi": "10.1093/mnras/stx458",
         "url": "https://arxiv.org/abs/1610.06375",
-        "retrieved": "2026-10-05",
-        "figure": "Figure 4",
-        "panel": "stars+neutral-gas",
-        "checksumSha256": "19a4c8a8e10a35eb7e7e11d54566e063b1f4b2ad83abb4a40badbf0ef387aa17",
-        "sourceMember": "fig4.pdf (converted from fig4.eps)",
-        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
-        "axisCalibrationPixels": "manual: major ticks (log x: V=10, 50, 100, 500 km/s at 124.6 pt/dex; y: 12 to 4, 26.5 pt/dex), verified by the fit-line slopes against the paper's stated b and the virial-relation dotted line",
-        "digitizationUncertaintyDex": 0.01
+        "retrieved": "2026-10-18",
+        "checksumSha256": "20b8cee830587a17db8fd132167d0e970b7f7740986eaca33d53328663f229c7",
+        "sourceMember": "table1a.txt and table1b.txt (\\input into nihaoXII_2017.03.07.tex; rows 1-52 and 53-83)",
+        "extractionMethod": "parsed from the arXiv LaTeX table files (83 rows, values as printed to 3 decimals): x = column (3) log V_HI, y = column (9) log M_gal",
+        "checksumSha256Table1b": "9736eafa3a644df17b104ee6fd3a198e8886b397f0b507f91916043595d7a234"
       },
       "calibration": "unknown",
       "rankable": false,
-      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+      "notes": "Values of the paper's data table, equal to the earlier figure read (Fig. 4 vector paths) to <0.01 dex; not rankable because the zoom sample is not volume complete."
     },
     {
       "id": "dutton17.nihao.btfr-stars-neutral-gas.fit.z0",
@@ -964,8 +960,8 @@
         "yUnit": "log10(km/s)"
       },
       "domain": {
-        "xMin": 4.516,
-        "xMax": 10.895
+        "xMin": 4.518,
+        "xMax": 10.894
       },
       "representation": {
         "type": "points",
@@ -973,346 +969,347 @@
         "connect": false,
         "points": [
           {
-            "x": 4.516,
+            "x": 4.518,
             "y": 1.318
           },
           {
-            "x": 4.734,
-            "y": 1.4047
+            "x": 4.73,
+            "y": 1.404
           },
           {
-            "x": 5.068,
-            "y": 1.317
+            "x": 5.064,
+            "y": 1.316
           },
           {
-            "x": 5.068,
-            "y": 1.395
+            "x": 5.07,
+            "y": 1.394
           },
           {
             "x": 5.575,
-            "y": 1.3517
+            "y": 1.351
           },
           {
-            "x": 5.629,
-            "y": 1.3315
+            "x": 5.626,
+            "y": 1.33
           },
           {
-            "x": 6.082,
-            "y": 1.3189
+            "x": 6.084,
+            "y": 1.319
           },
           {
-            "x": 6.199,
-            "y": 1.4133
+            "x": 6.201,
+            "y": 1.413
           },
           {
             "x": 6.24,
-            "y": 1.3295
+            "y": 1.329
           },
           {
-            "x": 6.353,
-            "y": 1.3141
+            "x": 6.355,
+            "y": 1.313
           },
           {
-            "x": 6.534,
-            "y": 1.4413
+            "x": 6.531,
+            "y": 1.441
           },
           {
-            "x": 6.534,
-            "y": 1.4778
+            "x": 6.531,
+            "y": 1.477
           },
           {
-            "x": 6.579,
-            "y": 1.4441
+            "x": 6.581,
+            "y": 1.443
           },
           {
-            "x": 6.724,
-            "y": 1.5029
+            "x": 6.721,
+            "y": 1.503
           },
           {
-            "x": 6.769,
-            "y": 1.4624
+            "x": 6.772,
+            "y": 1.462
           },
           {
             "x": 6.81,
             "y": 1.603
           },
           {
-            "x": 6.824,
-            "y": 1.6801
+            "x": 6.826,
+            "y": 1.679
           },
           {
             "x": 6.914,
-            "y": 1.6319
+            "y": 1.63
           },
           {
             "x": 6.95,
-            "y": 1.4047
+            "y": 1.405
           },
           {
             "x": 7.077,
-            "y": 1.5395
+            "y": 1.538
           },
           {
-            "x": 7.109,
-            "y": 1.5607
+            "x": 7.108,
+            "y": 1.56
           },
           {
-            "x": 7.131,
-            "y": 1.4836
+            "x": 7.133,
+            "y": 1.483
           },
           {
-            "x": 7.168,
-            "y": 1.5549
+            "x": 7.167,
+            "y": 1.554
           },
           {
-            "x": 7.213,
-            "y": 1.6233
+            "x": 7.215,
+            "y": 1.622
           },
           {
-            "x": 7.457,
-            "y": 1.76
+            "x": 7.459,
+            "y": 1.759
           },
           {
-            "x": 7.484,
-            "y": 1.735
+            "x": 7.481,
+            "y": 1.733
           },
           {
-            "x": 7.566,
-            "y": 1.6348
+            "x": 7.565,
+            "y": 1.634
           },
           {
-            "x": 7.566,
-            "y": 1.6743
+            "x": 7.567,
+            "y": 1.674
           },
           {
-            "x": 7.629,
+            "x": 7.631,
             "y": 1.551
           },
           {
-            "x": 7.738,
-            "y": 1.6589
+            "x": 7.739,
+            "y": 1.657
           },
           {
-            "x": 7.765,
-            "y": 1.5751
+            "x": 7.764,
+            "y": 1.574
           },
           {
-            "x": 7.765,
-            "y": 1.7263
+            "x": 7.767,
+            "y": 1.724
           },
           {
-            "x": 7.801,
-            "y": 1.7552
+            "x": 7.797,
+            "y": 1.754
           },
           {
-            "x": 7.955,
-            "y": 1.8178
+            "x": 7.954,
+            "y": 1.816
           },
           {
-            "x": 7.973,
-            "y": 1.7244
+            "x": 7.971,
+            "y": 1.724
           },
           {
-            "x": 8.036,
-            "y": 1.7446
+            "x": 8.033,
+            "y": 1.743
           },
           {
-            "x": 8.081,
-            "y": 1.7533
+            "x": 8.078,
+            "y": 1.752
           },
           {
-            "x": 8.081,
-            "y": 1.8746
+            "x": 8.082,
+            "y": 1.873
           },
           {
-            "x": 8.127,
-            "y": 1.7562
+            "x": 8.122,
+            "y": 1.755
           },
           {
-            "x": 8.308,
-            "y": 1.8766
+            "x": 8.31,
+            "y": 1.875
           },
           {
-            "x": 8.398,
-            "y": 1.8602
+            "x": 8.396,
+            "y": 1.858
           },
           {
-            "x": 8.421,
-            "y": 1.8544
+            "x": 8.419,
+            "y": 1.853
           },
           {
-            "x": 8.543,
-            "y": 1.8708
+            "x": 8.544,
+            "y": 1.869
           },
           {
             "x": 8.552,
-            "y": 1.8612
+            "y": 1.86
           },
           {
-            "x": 8.606,
-            "y": 1.8987
+            "x": 8.601,
+            "y": 1.897
           },
           {
             "x": 8.679,
-            "y": 1.8255
+            "y": 1.824
           },
           {
-            "x": 8.742,
-            "y": 1.9093
+            "x": 8.744,
+            "y": 1.908
           },
           {
-            "x": 8.814,
-            "y": 1.9787
+            "x": 8.813,
+            "y": 1.977
           },
           {
-            "x": 8.887,
-            "y": 1.9835
+            "x": 8.882,
+            "y": 1.982
           },
           {
-            "x": 8.923,
-            "y": 1.9671
+            "x": 8.922,
+            "y": 1.966
           },
           {
-            "x": 8.946,
-            "y": 1.9921
+            "x": 8.944,
+            "y": 1.99
           },
           {
-            "x": 8.959,
-            "y": 1.918
+            "x": 8.961,
+            "y": 1.917
           },
           {
-            "x": 9.054,
-            "y": 1.9276
+            "x": 9.053,
+            "y": 1.926
           },
           {
             "x": 9.303,
-            "y": 1.9921
+            "y": 1.99
           },
           {
-            "x": 9.538,
-            "y": 2.0596
+            "x": 9.54,
+            "y": 2.057
           },
           {
-            "x": 9.565,
-            "y": 2.0576
+            "x": 9.563,
+            "y": 2.056
           },
           {
-            "x": 9.574,
-            "y": 2.0827
+            "x": 9.572,
+            "y": 2.08
           },
           {
-            "x": 9.574,
-            "y": 2.1135
+            "x": 9.575,
+            "y": 2.112
           },
           {
             "x": 9.592,
-            "y": 2.099
+            "y": 2.097
           },
           {
-            "x": 9.611,
-            "y": 2.0615
+            "x": 9.61,
+            "y": 2.06
           },
           {
-            "x": 9.638,
-            "y": 2.0788
+            "x": 9.635,
+            "y": 2.077
           },
           {
-            "x": 9.674,
-            "y": 2.0663
+            "x": 9.67,
+            "y": 2.065
           },
           {
-            "x": 9.737,
-            "y": 2.0923
+            "x": 9.736,
+            "y": 2.09
           },
           {
-            "x": 9.764,
-            "y": 2.1058
+            "x": 9.762,
+            "y": 2.103
           },
           {
-            "x": 9.873,
-            "y": 2.126
+            "x": 9.868,
+            "y": 2.124
           },
           {
-            "x": 10.036,
-            "y": 2.1482
+            "x": 10.033,
+            "y": 2.147
           },
           {
             "x": 10.063,
-            "y": 2.1944
+            "y": 2.193
           },
           {
-            "x": 10.072,
-            "y": 2.1472
+            "x": 10.073,
+            "y": 2.145
           },
           {
             "x": 10.162,
-            "y": 2.1905
+            "y": 2.188
           },
           {
-            "x": 10.217,
-            "y": 2.1848
+            "x": 10.214,
+            "y": 2.183
           },
           {
-            "x": 10.235,
-            "y": 2.2165
+            "x": 10.232,
+            "y": 2.214
           },
           {
-            "x": 10.244,
-            "y": 2.2714
+            "x": 10.245,
+            "y": 2.27
           },
           {
             "x": 10.253,
-            "y": 2.2589
+            "y": 2.257
           },
           {
-            "x": 10.267,
-            "y": 2.2194
+            "x": 10.265,
+            "y": 2.217
           },
           {
-            "x": 10.334,
-            "y": 2.2281
+            "x": 10.333,
+            "y": 2.226
           },
           {
-            "x": 10.484,
-            "y": 2.2926
+            "x": 10.482,
+            "y": 2.291
           },
           {
-            "x": 10.488,
-            "y": 2.2772
+            "x": 10.49,
+            "y": 2.276
           },
           {
-            "x": 10.515,
-            "y": 2.2801
+            "x": 10.513,
+            "y": 2.278
           },
           {
-            "x": 10.651,
-            "y": 2.308
+            "x": 10.647,
+            "y": 2.306
           },
           {
             "x": 10.669,
-            "y": 2.3244
+            "y": 2.322
           },
           {
-            "x": 10.769,
-            "y": 2.3677
+            "x": 10.771,
+            "y": 2.365
           },
           {
-            "x": 10.823,
-            "y": 2.31
+            "x": 10.824,
+            "y": 2.308
           },
           {
-            "x": 10.895,
-            "y": 2.3697
+            "x": 10.894,
+            "y": 2.367
           }
         ]
       },
       "scatter": {
-        "fitSlopeMeasured": 5.026,
-        "fitSlopeStatedInFigure": 5.04
+        "fitSlopeMeasured": 5.038,
+        "fitSlopeStatedInText": 5.04,
+        "fitSlopeDefinition": "slope b of log10 M against log10 V_HI, least squares on the table"
       },
       "selection": {
         "population": "individual zoom galaxies (not volume complete)",
-        "warning": "Marker centres of the simulated galaxies (black filled circles) read from the vector paths of Dutton et al. 2017 Fig. 4 (stars panel); no table is published. Zoom selections are not volume complete. The paper's text labels are outlined, so the axes were calibrated from tick marks and verified against the stated fit slopes."
+        "warning": "Per-galaxy values from the data table of Dutton et al. 2017 (83 NIHAO galaxies; arXiv source files table1a.txt and table1b.txt, label tab:mvall), the numbers plotted as black filled circles in the lower left panel of Fig. 4 (arXiv source numbering). Stars and neutral gas (M_neut = 1.33 M_HI) are measured inside 0.2 R200; M_bar is all stars and gas within R200. Haloes are selected uniformly in log halo mass from ~10 to ~12 without reference to merger history, concentration or spin, but the zoom sample is not volume complete, so the points are context, not a rankable prediction."
       },
       "definitions": {
         "imf": "chabrier03",
@@ -1325,22 +1322,19 @@
         "population": "zoom-centrals"
       },
       "provenance": {
-        "tier": "digitized-figure",
-        "citation": "Dutton et al. 2017 (NIHAO XII), MNRAS 467, 4937, Fig. 4 (arXiv source numbering), stars panel",
+        "tier": "published-table",
+        "citation": "Dutton et al. 2017 (NIHAO XII), MNRAS 467, 4937, data table (label tab:mvall, arXiv source) of the values plotted in Fig. 4 (arXiv source numbering), lower left panel",
         "doi": "10.1093/mnras/stx458",
         "url": "https://arxiv.org/abs/1610.06375",
-        "retrieved": "2026-10-05",
-        "figure": "Figure 4",
-        "panel": "stars",
-        "checksumSha256": "19a4c8a8e10a35eb7e7e11d54566e063b1f4b2ad83abb4a40badbf0ef387aa17",
-        "sourceMember": "fig4.pdf (converted from fig4.eps)",
-        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
-        "axisCalibrationPixels": "manual: major ticks (log x: V=10, 50, 100, 500 km/s at 124.6 pt/dex; y: 12 to 4, 26.5 pt/dex), verified by the fit-line slopes against the paper's stated b and the virial-relation dotted line",
-        "digitizationUncertaintyDex": 0.01
+        "retrieved": "2026-10-18",
+        "checksumSha256": "20b8cee830587a17db8fd132167d0e970b7f7740986eaca33d53328663f229c7",
+        "sourceMember": "table1a.txt and table1b.txt (\\input into nihaoXII_2017.03.07.tex; rows 1-52 and 53-83)",
+        "extractionMethod": "parsed from the arXiv LaTeX table files (83 rows, values as printed to 3 decimals): x = column (7) log M_star, y = column (3) log V_HI",
+        "checksumSha256Table1b": "9736eafa3a644df17b104ee6fd3a198e8886b397f0b507f91916043595d7a234"
       },
       "calibration": "unknown",
       "rankable": false,
-      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+      "notes": "Values of the paper's data table, equal to the earlier figure read (Fig. 4 vector paths) to <0.01 dex; not rankable because the zoom sample is not volume complete."
     },
     {
       "id": "dutton17.nihao.stfr-stars.fit.z0",

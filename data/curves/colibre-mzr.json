@@ -11623,7 +11623,7 @@
       "scatter": null,
       "selection": {
         "population": "star-forming galaxies",
-        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. SIMBA medians supplied to Sharda et al. by A. Garcia; selection and aperture follow Garcia et al. 2025, not re-derived."
+        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. SIMBA medians supplied to Sharda et al. by A. Garcia; selection and aperture follow Garcia et al. 2025, not re-derived. Attribution note (sim-highline): the record warning says definitions \"follow the paper's re-analysis\"; for SIMBA the paper instead uses the selection of Garcia+25 (resolution of 100 star and 500 gas particles, sSFR within 0.5 dex of the SFMS)."
       },
       "definitions": {
         "metallicityQuantity": "gas-O/H",
@@ -11640,7 +11640,17 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/SIMBA_z=0_mass.npy",
         "checksumSha256": "ae7349ba3bffbc59662ac2059de4ffd33d668bdc227d858e050d201a06305fda",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "attribution": {
+          "kind": "curve-produced-elsewhere",
+          "statement": "The cited paper reproduces this curve; it was produced in Garcia et al. 2025, MNRAS 536, 119 (arXiv:2407.06254; doi:10.1093/mnras/stae2587).",
+          "primarySource": "Garcia et al. 2025, MNRAS 536, 119 (arXiv:2407.06254; doi:10.1093/mnras/stae2587)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "SIMBA at $z=0-5$ \\protect\\citep[adopted from][]{2025MNRAS.536..119G} || We also include results from the SIMBA cosmological simulations, using the compilation of \\citet{2025MNRAS.536..119G} for the largest ($100\\,\\rm{Mpc}$) SIMBA box",
+            "where": "arXiv:2606.25995 source, main.tex, line 362; 389"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -11760,7 +11770,7 @@
       "scatter": null,
       "selection": {
         "population": "star-forming galaxies",
-        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. SIMBA medians supplied to Sharda et al. by A. Garcia; selection and aperture follow Garcia et al. 2025, not re-derived."
+        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. SIMBA medians supplied to Sharda et al. by A. Garcia; selection and aperture follow Garcia et al. 2025, not re-derived. Attribution note (sim-highline): the record warning says definitions \"follow the paper's re-analysis\"; for SIMBA the paper instead uses the selection of Garcia+25 (resolution of 100 star and 500 gas particles, sSFR within 0.5 dex of the SFMS)."
       },
       "definitions": {
         "metallicityQuantity": "gas-O/H",
@@ -11777,7 +11787,17 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/SIMBA_z=1_mass.npy",
         "checksumSha256": "12f960975421b85deb457142fbf826d0f6878c0012c0e277eba56be25c7cd3a8",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "attribution": {
+          "kind": "curve-produced-elsewhere",
+          "statement": "The cited paper reproduces this curve; it was produced in Garcia et al. 2025, MNRAS 536, 119 (arXiv:2407.06254; doi:10.1093/mnras/stae2587).",
+          "primarySource": "Garcia et al. 2025, MNRAS 536, 119 (arXiv:2407.06254; doi:10.1093/mnras/stae2587)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "SIMBA at $z=0-5$ \\protect\\citep[adopted from][]{2025MNRAS.536..119G} || We also include results from the SIMBA cosmological simulations, using the compilation of \\citet{2025MNRAS.536..119G} for the largest ($100\\,\\rm{Mpc}$) SIMBA box",
+            "where": "arXiv:2606.25995 source, main.tex, line 362; 389"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -11897,7 +11917,7 @@
       "scatter": null,
       "selection": {
         "population": "star-forming galaxies",
-        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. SIMBA medians supplied to Sharda et al. by A. Garcia; selection and aperture follow Garcia et al. 2025, not re-derived."
+        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. SIMBA medians supplied to Sharda et al. by A. Garcia; selection and aperture follow Garcia et al. 2025, not re-derived. Attribution note (sim-highline): the record warning says definitions \"follow the paper's re-analysis\"; for SIMBA the paper instead uses the selection of Garcia+25 (resolution of 100 star and 500 gas particles, sSFR within 0.5 dex of the SFMS)."
       },
       "definitions": {
         "metallicityQuantity": "gas-O/H",
@@ -11914,7 +11934,17 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/SIMBA_z=2_mass.npy",
         "checksumSha256": "555ff56cad389d46508b732bd5a434e467732dd1d04e5cbace783e30b44fe773",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "attribution": {
+          "kind": "curve-produced-elsewhere",
+          "statement": "The cited paper reproduces this curve; it was produced in Garcia et al. 2025, MNRAS 536, 119 (arXiv:2407.06254; doi:10.1093/mnras/stae2587).",
+          "primarySource": "Garcia et al. 2025, MNRAS 536, 119 (arXiv:2407.06254; doi:10.1093/mnras/stae2587)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "SIMBA at $z=0-5$ \\protect\\citep[adopted from][]{2025MNRAS.536..119G} || We also include results from the SIMBA cosmological simulations, using the compilation of \\citet{2025MNRAS.536..119G} for the largest ($100\\,\\rm{Mpc}$) SIMBA box",
+            "where": "arXiv:2606.25995 source, main.tex, line 362; 389"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12030,7 +12060,7 @@
       "scatter": null,
       "selection": {
         "population": "star-forming galaxies",
-        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. SIMBA medians supplied to Sharda et al. by A. Garcia; selection and aperture follow Garcia et al. 2025, not re-derived."
+        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. SIMBA medians supplied to Sharda et al. by A. Garcia; selection and aperture follow Garcia et al. 2025, not re-derived. Attribution note (sim-highline): the record warning says definitions \"follow the paper's re-analysis\"; for SIMBA the paper instead uses the selection of Garcia+25 (resolution of 100 star and 500 gas particles, sSFR within 0.5 dex of the SFMS)."
       },
       "definitions": {
         "metallicityQuantity": "gas-O/H",
@@ -12047,7 +12077,17 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/SIMBA_z=3_mass.npy",
         "checksumSha256": "5d405a6d9ad56b13228e47ca28865ce9b4f0d1c42361d7505c0ccb9a13b71919",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "attribution": {
+          "kind": "curve-produced-elsewhere",
+          "statement": "The cited paper reproduces this curve; it was produced in Garcia et al. 2025, MNRAS 536, 119 (arXiv:2407.06254; doi:10.1093/mnras/stae2587).",
+          "primarySource": "Garcia et al. 2025, MNRAS 536, 119 (arXiv:2407.06254; doi:10.1093/mnras/stae2587)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "SIMBA at $z=0-5$ \\protect\\citep[adopted from][]{2025MNRAS.536..119G} || We also include results from the SIMBA cosmological simulations, using the compilation of \\citet{2025MNRAS.536..119G} for the largest ($100\\,\\rm{Mpc}$) SIMBA box",
+            "where": "arXiv:2606.25995 source, main.tex, line 362; 389"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12151,7 +12191,7 @@
       "scatter": null,
       "selection": {
         "population": "star-forming galaxies",
-        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. SIMBA medians supplied to Sharda et al. by A. Garcia; selection and aperture follow Garcia et al. 2025, not re-derived."
+        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. SIMBA medians supplied to Sharda et al. by A. Garcia; selection and aperture follow Garcia et al. 2025, not re-derived. Attribution note (sim-highline): the record warning says definitions \"follow the paper's re-analysis\"; for SIMBA the paper instead uses the selection of Garcia+25 (resolution of 100 star and 500 gas particles, sSFR within 0.5 dex of the SFMS)."
       },
       "definitions": {
         "metallicityQuantity": "gas-O/H",
@@ -12168,7 +12208,17 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/SIMBA_z=4_mass.npy",
         "checksumSha256": "73f4ec53a0af19c766d3dbc25d711227b51a24c1d665ddabedaf3d0ca91477c6",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "attribution": {
+          "kind": "curve-produced-elsewhere",
+          "statement": "The cited paper reproduces this curve; it was produced in Garcia et al. 2025, MNRAS 536, 119 (arXiv:2407.06254; doi:10.1093/mnras/stae2587).",
+          "primarySource": "Garcia et al. 2025, MNRAS 536, 119 (arXiv:2407.06254; doi:10.1093/mnras/stae2587)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "SIMBA at $z=0-5$ \\protect\\citep[adopted from][]{2025MNRAS.536..119G} || We also include results from the SIMBA cosmological simulations, using the compilation of \\citet{2025MNRAS.536..119G} for the largest ($100\\,\\rm{Mpc}$) SIMBA box",
+            "where": "arXiv:2606.25995 source, main.tex, line 362; 389"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12256,7 +12306,7 @@
       "scatter": null,
       "selection": {
         "population": "star-forming galaxies",
-        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. SIMBA medians supplied to Sharda et al. by A. Garcia; selection and aperture follow Garcia et al. 2025, not re-derived."
+        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. SIMBA medians supplied to Sharda et al. by A. Garcia; selection and aperture follow Garcia et al. 2025, not re-derived. Attribution note (sim-highline): the record warning says definitions \"follow the paper's re-analysis\"; for SIMBA the paper instead uses the selection of Garcia+25 (resolution of 100 star and 500 gas particles, sSFR within 0.5 dex of the SFMS)."
       },
       "definitions": {
         "metallicityQuantity": "gas-O/H",
@@ -12273,7 +12323,17 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/SIMBA_z=5_mass.npy",
         "checksumSha256": "f0487e3e6c95c92d3318dad18df431dfadbb35f24de0ab0c4eafce094ffaebcc",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "attribution": {
+          "kind": "curve-produced-elsewhere",
+          "statement": "The cited paper reproduces this curve; it was produced in Garcia et al. 2025, MNRAS 536, 119 (arXiv:2407.06254; doi:10.1093/mnras/stae2587).",
+          "primarySource": "Garcia et al. 2025, MNRAS 536, 119 (arXiv:2407.06254; doi:10.1093/mnras/stae2587)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "SIMBA at $z=0-5$ \\protect\\citep[adopted from][]{2025MNRAS.536..119G} || We also include results from the SIMBA cosmological simulations, using the compilation of \\citet{2025MNRAS.536..119G} for the largest ($100\\,\\rm{Mpc}$) SIMBA box",
+            "where": "arXiv:2606.25995 source, main.tex, line 362; 389"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12349,7 +12409,7 @@
       "scatter": null,
       "selection": {
         "population": "star-forming galaxies",
-        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. SIMBA medians supplied to Sharda et al. by A. Garcia; selection and aperture follow Garcia et al. 2025, not re-derived."
+        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. SIMBA medians supplied to Sharda et al. by A. Garcia; selection and aperture follow Garcia et al. 2025, not re-derived. Attribution note (sim-highline): the record warning says definitions \"follow the paper's re-analysis\"; for SIMBA the paper instead uses the selection of Garcia+25 (resolution of 100 star and 500 gas particles, sSFR within 0.5 dex of the SFMS)."
       },
       "definitions": {
         "metallicityQuantity": "gas-O/H",
@@ -12366,7 +12426,17 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/SIMBA_z=6_mass.npy",
         "checksumSha256": "d11745f7005e984257fbc2d44e145c3047db350b737c3093cee309fc36f9f7ac",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "attribution": {
+          "kind": "curve-produced-elsewhere",
+          "statement": "The cited paper reproduces this curve; it was produced in Garcia et al. 2025, MNRAS 536, 119 (arXiv:2407.06254; doi:10.1093/mnras/stae2587).",
+          "primarySource": "Garcia et al. 2025, MNRAS 536, 119 (arXiv:2407.06254; doi:10.1093/mnras/stae2587)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "SIMBA at $z=0-5$ \\protect\\citep[adopted from][]{2025MNRAS.536..119G} || We also include results from the SIMBA cosmological simulations, using the compilation of \\citet{2025MNRAS.536..119G} for the largest ($100\\,\\rm{Mpc}$) SIMBA box",
+            "where": "arXiv:2606.25995 source, main.tex, line 362; 389"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12434,7 +12504,7 @@
       "scatter": null,
       "selection": {
         "population": "star-forming galaxies",
-        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. SIMBA medians supplied to Sharda et al. by A. Garcia; selection and aperture follow Garcia et al. 2025, not re-derived."
+        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. SIMBA medians supplied to Sharda et al. by A. Garcia; selection and aperture follow Garcia et al. 2025, not re-derived. Attribution note (sim-highline): the record warning says definitions \"follow the paper's re-analysis\"; for SIMBA the paper instead uses the selection of Garcia+25 (resolution of 100 star and 500 gas particles, sSFR within 0.5 dex of the SFMS)."
       },
       "definitions": {
         "metallicityQuantity": "gas-O/H",
@@ -12451,7 +12521,17 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/SIMBA_z=7_mass.npy",
         "checksumSha256": "f4f78eb150a98643722e9da0c7b33e9a595b19e91df9306fa68e34d7620bd66d",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "attribution": {
+          "kind": "curve-produced-elsewhere",
+          "statement": "The cited paper reproduces this curve; it was produced in Garcia et al. 2025, MNRAS 536, 119 (arXiv:2407.06254; doi:10.1093/mnras/stae2587).",
+          "primarySource": "Garcia et al. 2025, MNRAS 536, 119 (arXiv:2407.06254; doi:10.1093/mnras/stae2587)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "SIMBA at $z=0-5$ \\protect\\citep[adopted from][]{2025MNRAS.536..119G} || We also include results from the SIMBA cosmological simulations, using the compilation of \\citet{2025MNRAS.536..119G} for the largest ($100\\,\\rm{Mpc}$) SIMBA box",
+            "where": "arXiv:2606.25995 source, main.tex, line 362; 389"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12503,7 +12583,7 @@
       "scatter": null,
       "selection": {
         "population": "star-forming galaxies",
-        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. SIMBA medians supplied to Sharda et al. by A. Garcia; selection and aperture follow Garcia et al. 2025, not re-derived."
+        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. SIMBA medians supplied to Sharda et al. by A. Garcia; selection and aperture follow Garcia et al. 2025, not re-derived. Attribution note (sim-highline): the record warning says definitions \"follow the paper's re-analysis\"; for SIMBA the paper instead uses the selection of Garcia+25 (resolution of 100 star and 500 gas particles, sSFR within 0.5 dex of the SFMS)."
       },
       "definitions": {
         "metallicityQuantity": "gas-O/H",
@@ -12520,7 +12600,17 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/SIMBA_z=8_mass.npy",
         "checksumSha256": "33cf2922dacb619f617a884071972411a21928f9d4be15f87c0a9abcebffd7b2",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "attribution": {
+          "kind": "curve-produced-elsewhere",
+          "statement": "The cited paper reproduces this curve; it was produced in Garcia et al. 2025, MNRAS 536, 119 (arXiv:2407.06254; doi:10.1093/mnras/stae2587).",
+          "primarySource": "Garcia et al. 2025, MNRAS 536, 119 (arXiv:2407.06254; doi:10.1093/mnras/stae2587)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "SIMBA at $z=0-5$ \\protect\\citep[adopted from][]{2025MNRAS.536..119G} || We also include results from the SIMBA cosmological simulations, using the compilation of \\citet{2025MNRAS.536..119G} for the largest ($100\\,\\rm{Mpc}$) SIMBA box",
+            "where": "arXiv:2606.25995 source, main.tex, line 362; 389"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12628,7 +12718,7 @@
       "scatter": null,
       "selection": {
         "population": "star-forming galaxies",
-        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. FIREbox z=0 relation as tabulated in the Sharda et al. repository; original analysis choices not re-derived."
+        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. FIREbox z=0 relation as tabulated in the Sharda et al. repository; original analysis choices not re-derived. Attribution note (sim-highline): wording is \"include ... from\" (SIMBA is \"adopted from\"); the paper uses \"we obtain\" only for EAGLE and TNG (line 387). Feldmann+23 aperture/dust-depletion choices are described at line 389."
       },
       "definitions": {
         "metallicityQuantity": "gas-O/H",
@@ -12645,7 +12735,17 @@
         "compilation": "https://github.com/psharda/colibre_mzr_sharda26 @ b685ae661ef4637697bb2d50af7d61e3fed18e6f",
         "sourceMember": "simulated_data/FIREbox_z=0_mzr.csv",
         "checksumSha256": "4b3e7c5c177e49742c20e89bc095595a33720c115958651a9f254ccfdf9d6eaf",
-        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence"
+        "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
+        "attribution": {
+          "kind": "curve-produced-elsewhere",
+          "statement": "The cited paper reproduces this curve; it was produced in Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325; doi:10.1093/mnras/stad1205).",
+          "primarySource": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325; doi:10.1093/mnras/stad1205)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "At $z=0$, we further include the median MZR from the FIREBox simulations \\citep[][]{2023MNRAS.522.3831F} || \\citet{2023MNRAS.522.3831F} only study the $z=0$ MZR in the FIREBox simulations (also caption: FIREBox at $z=0$ \\protect\\citep[][]{2023MNRAS.522.3831F})",
+            "where": "arXiv:2606.25995 source, main.tex, line 389; 403; 362"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12691,7 +12791,7 @@
       "scatter": null,
       "selection": {
         "population": "star-forming galaxies",
-        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. Best-fit relation valid for 3 < z < 12 as transcribed in the Sharda et al. notebook; the plotted mass range per redshift follows that notebook."
+        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. Best-fit relation valid for 3 < z < 12 as transcribed in the Sharda et al. notebook; the plotted mass range per redshift follows that notebook. Attribution note (sim-highline): the caption cites McClymont+26 for THESAN-Zoom, the text cites Marszewski+24 (the FIRE-2 paper) for the same relations; the paper is internally inconsistent, so the primary source is not decided."
       },
       "definitions": {
         "metallicityQuantity": "gas-O/H",
@@ -12711,7 +12811,21 @@
         "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
         "definitionFills": [
           "sharda26-thesanzoom-mzr-mass"
-        ]
+        ],
+        "attribution": {
+          "kind": "curve-produced-elsewhere",
+          "statement": "The cited paper reproduces this curve; it was produced in a paper that could not be settled (candidates: McClymont et al. 2026, MNRAS (arXiv:2507.08787; cited in the figure caption as 2026MNRAS.tmp...20M); Marszewski et al. 2024 (arXiv:2403.08853; cited in the running text, line 396); Kannan et al. 2025 (arXiv:2502.20437; \"following figure 4b\")).",
+          "confidence": "inferred",
+          "evidence": {
+            "quote": "We include the best-fit MZR relations spanning $3 < z < 12$ and $6 \\leq \\log_{10}\\,M_{\\star}/\\rm{M_{\\odot}} \\leq 11$ from \\citet{2024ApJ...967L..41M}, but limit the MZR to the maximum stellar masses available at each redshift \\citep[following][figure 4b]{2025OJAp....8E.153K}",
+            "where": "arXiv:2606.25995 source, main.tex, line 396; caption 362"
+          },
+          "candidates": [
+            "McClymont et al. 2026, MNRAS (arXiv:2507.08787; cited in the figure caption as 2026MNRAS.tmp...20M)",
+            "Marszewski et al. 2024 (arXiv:2403.08853; cited in the running text, line 396)",
+            "Kannan et al. 2025 (arXiv:2502.20437; \"following figure 4b\")"
+          ]
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12757,7 +12871,7 @@
       "scatter": null,
       "selection": {
         "population": "star-forming galaxies",
-        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. Best-fit relation valid for 3 < z < 12 as transcribed in the Sharda et al. notebook; the plotted mass range per redshift follows that notebook."
+        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. Best-fit relation valid for 3 < z < 12 as transcribed in the Sharda et al. notebook; the plotted mass range per redshift follows that notebook. Attribution note (sim-highline): the caption cites McClymont+26 for THESAN-Zoom, the text cites Marszewski+24 (the FIRE-2 paper) for the same relations; the paper is internally inconsistent, so the primary source is not decided."
       },
       "definitions": {
         "metallicityQuantity": "gas-O/H",
@@ -12777,7 +12891,21 @@
         "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
         "definitionFills": [
           "sharda26-thesanzoom-mzr-mass"
-        ]
+        ],
+        "attribution": {
+          "kind": "curve-produced-elsewhere",
+          "statement": "The cited paper reproduces this curve; it was produced in a paper that could not be settled (candidates: McClymont et al. 2026, MNRAS (arXiv:2507.08787; cited in the figure caption as 2026MNRAS.tmp...20M); Marszewski et al. 2024 (arXiv:2403.08853; cited in the running text, line 396); Kannan et al. 2025 (arXiv:2502.20437; \"following figure 4b\")).",
+          "confidence": "inferred",
+          "evidence": {
+            "quote": "We include the best-fit MZR relations spanning $3 < z < 12$ and $6 \\leq \\log_{10}\\,M_{\\star}/\\rm{M_{\\odot}} \\leq 11$ from \\citet{2024ApJ...967L..41M}, but limit the MZR to the maximum stellar masses available at each redshift \\citep[following][figure 4b]{2025OJAp....8E.153K}",
+            "where": "arXiv:2606.25995 source, main.tex, line 396; caption 362"
+          },
+          "candidates": [
+            "McClymont et al. 2026, MNRAS (arXiv:2507.08787; cited in the figure caption as 2026MNRAS.tmp...20M)",
+            "Marszewski et al. 2024 (arXiv:2403.08853; cited in the running text, line 396)",
+            "Kannan et al. 2025 (arXiv:2502.20437; \"following figure 4b\")"
+          ]
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12823,7 +12951,7 @@
       "scatter": null,
       "selection": {
         "population": "star-forming galaxies",
-        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. Best-fit relation valid for 3 < z < 12 as transcribed in the Sharda et al. notebook; the plotted mass range per redshift follows that notebook."
+        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. Best-fit relation valid for 3 < z < 12 as transcribed in the Sharda et al. notebook; the plotted mass range per redshift follows that notebook. Attribution note (sim-highline): the caption cites McClymont+26 for THESAN-Zoom, the text cites Marszewski+24 (the FIRE-2 paper) for the same relations; the paper is internally inconsistent, so the primary source is not decided."
       },
       "definitions": {
         "metallicityQuantity": "gas-O/H",
@@ -12843,7 +12971,21 @@
         "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
         "definitionFills": [
           "sharda26-thesanzoom-mzr-mass"
-        ]
+        ],
+        "attribution": {
+          "kind": "curve-produced-elsewhere",
+          "statement": "The cited paper reproduces this curve; it was produced in a paper that could not be settled (candidates: McClymont et al. 2026, MNRAS (arXiv:2507.08787; cited in the figure caption as 2026MNRAS.tmp...20M); Marszewski et al. 2024 (arXiv:2403.08853; cited in the running text, line 396); Kannan et al. 2025 (arXiv:2502.20437; \"following figure 4b\")).",
+          "confidence": "inferred",
+          "evidence": {
+            "quote": "We include the best-fit MZR relations spanning $3 < z < 12$ and $6 \\leq \\log_{10}\\,M_{\\star}/\\rm{M_{\\odot}} \\leq 11$ from \\citet{2024ApJ...967L..41M}, but limit the MZR to the maximum stellar masses available at each redshift \\citep[following][figure 4b]{2025OJAp....8E.153K}",
+            "where": "arXiv:2606.25995 source, main.tex, line 396; caption 362"
+          },
+          "candidates": [
+            "McClymont et al. 2026, MNRAS (arXiv:2507.08787; cited in the figure caption as 2026MNRAS.tmp...20M)",
+            "Marszewski et al. 2024 (arXiv:2403.08853; cited in the running text, line 396)",
+            "Kannan et al. 2025 (arXiv:2502.20437; \"following figure 4b\")"
+          ]
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12889,7 +13031,7 @@
       "scatter": null,
       "selection": {
         "population": "star-forming galaxies",
-        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. Best-fit relation valid for 3 < z < 12 as transcribed in the Sharda et al. notebook; the plotted mass range per redshift follows that notebook."
+        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. Best-fit relation valid for 3 < z < 12 as transcribed in the Sharda et al. notebook; the plotted mass range per redshift follows that notebook. Attribution note (sim-highline): the caption cites McClymont+26 for THESAN-Zoom, the text cites Marszewski+24 (the FIRE-2 paper) for the same relations; the paper is internally inconsistent, so the primary source is not decided."
       },
       "definitions": {
         "metallicityQuantity": "gas-O/H",
@@ -12909,7 +13051,21 @@
         "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
         "definitionFills": [
           "sharda26-thesanzoom-mzr-mass"
-        ]
+        ],
+        "attribution": {
+          "kind": "curve-produced-elsewhere",
+          "statement": "The cited paper reproduces this curve; it was produced in a paper that could not be settled (candidates: McClymont et al. 2026, MNRAS (arXiv:2507.08787; cited in the figure caption as 2026MNRAS.tmp...20M); Marszewski et al. 2024 (arXiv:2403.08853; cited in the running text, line 396); Kannan et al. 2025 (arXiv:2502.20437; \"following figure 4b\")).",
+          "confidence": "inferred",
+          "evidence": {
+            "quote": "We include the best-fit MZR relations spanning $3 < z < 12$ and $6 \\leq \\log_{10}\\,M_{\\star}/\\rm{M_{\\odot}} \\leq 11$ from \\citet{2024ApJ...967L..41M}, but limit the MZR to the maximum stellar masses available at each redshift \\citep[following][figure 4b]{2025OJAp....8E.153K}",
+            "where": "arXiv:2606.25995 source, main.tex, line 396; caption 362"
+          },
+          "candidates": [
+            "McClymont et al. 2026, MNRAS (arXiv:2507.08787; cited in the figure caption as 2026MNRAS.tmp...20M)",
+            "Marszewski et al. 2024 (arXiv:2403.08853; cited in the running text, line 396)",
+            "Kannan et al. 2025 (arXiv:2502.20437; \"following figure 4b\")"
+          ]
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12951,7 +13107,7 @@
       "scatter": null,
       "selection": {
         "population": "star-forming galaxies",
-        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. Linear fit as transcribed in the Sharda et al. notebook; mass range restricted to where FIRE-2 has more than 5 galaxies."
+        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. Linear fit as transcribed in the Sharda et al. notebook; mass range restricted to where FIRE-2 has more than 5 galaxies. Attribution note (sim-highline): sourceMember is the notebook cell for Figure 5 (hard-coded fit parameters); the repository also holds the same fit from the original paper in marszewski24-fire2-mzr-evolution.json."
       },
       "definitions": {
         "metallicityQuantity": "gas-O/H",
@@ -12971,7 +13127,17 @@
         "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
         "definitionFills": [
           "sharda26-fire2-mzr-mass"
-        ]
+        ],
+        "attribution": {
+          "kind": "curve-produced-elsewhere",
+          "statement": "The cited paper reproduces this curve; it was produced in Marszewski et al. 2024, ApJL 967, L41 (arXiv:2403.08853; doi:10.3847/2041-8213/ad4cee).",
+          "primarySource": "Marszewski et al. 2024, ApJL 967, L41 (arXiv:2403.08853; doi:10.3847/2041-8213/ad4cee)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The median MZRs are presented in \\citet{2024ApJ...967L..41M}, who estimate the stellar masses and mass-weighted metallicities using all particles within 20 per cent of the virial radius of each subhalo",
+            "where": "arXiv:2606.25995 source, main.tex, line 394; 362"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -13013,7 +13179,7 @@
       "scatter": null,
       "selection": {
         "population": "star-forming galaxies",
-        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. Linear fit as transcribed in the Sharda et al. notebook; mass range restricted to where FIRE-2 has more than 5 galaxies."
+        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. Linear fit as transcribed in the Sharda et al. notebook; mass range restricted to where FIRE-2 has more than 5 galaxies. Attribution note (sim-highline): sourceMember is the notebook cell for Figure 5 (hard-coded fit parameters); the repository also holds the same fit from the original paper in marszewski24-fire2-mzr-evolution.json."
       },
       "definitions": {
         "metallicityQuantity": "gas-O/H",
@@ -13033,7 +13199,17 @@
         "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
         "definitionFills": [
           "sharda26-fire2-mzr-mass"
-        ]
+        ],
+        "attribution": {
+          "kind": "curve-produced-elsewhere",
+          "statement": "The cited paper reproduces this curve; it was produced in Marszewski et al. 2024, ApJL 967, L41 (arXiv:2403.08853; doi:10.3847/2041-8213/ad4cee).",
+          "primarySource": "Marszewski et al. 2024, ApJL 967, L41 (arXiv:2403.08853; doi:10.3847/2041-8213/ad4cee)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The median MZRs are presented in \\citet{2024ApJ...967L..41M}, who estimate the stellar masses and mass-weighted metallicities using all particles within 20 per cent of the virial radius of each subhalo",
+            "where": "arXiv:2606.25995 source, main.tex, line 394; 362"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -13075,7 +13251,7 @@
       "scatter": null,
       "selection": {
         "population": "star-forming galaxies",
-        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. Linear fit as transcribed in the Sharda et al. notebook; mass range restricted to where FIRE-2 has more than 5 galaxies."
+        "warning": "Median mass-weighted ISM oxygen abundance of star-forming galaxies as computed for Sharda et al. 2026 (ISM: nH > 0.1 cm^-3, T < 10^4.5 K). Bins kept only with >= 20 galaxies and M* >= 10 baryonic particle masses, matching the paper's resolution criterion. Definitions for non-COLIBRE runs follow the paper's re-analysis, not the original simulation papers. Linear fit as transcribed in the Sharda et al. notebook; mass range restricted to where FIRE-2 has more than 5 galaxies. Attribution note (sim-highline): sourceMember is the notebook cell for Figure 5 (hard-coded fit parameters); the repository also holds the same fit from the original paper in marszewski24-fire2-mzr-evolution.json."
       },
       "definitions": {
         "metallicityQuantity": "gas-O/H",
@@ -13095,7 +13271,17 @@
         "terms": "third-party: GPL-2.0 (Sharda et al. 2026 data release); not covered by the CC BY 4.0 dataset licence",
         "definitionFills": [
           "sharda26-fire2-mzr-mass"
-        ]
+        ],
+        "attribution": {
+          "kind": "curve-produced-elsewhere",
+          "statement": "The cited paper reproduces this curve; it was produced in Marszewski et al. 2024, ApJL 967, L41 (arXiv:2403.08853; doi:10.3847/2041-8213/ad4cee).",
+          "primarySource": "Marszewski et al. 2024, ApJL 967, L41 (arXiv:2403.08853; doi:10.3847/2041-8213/ad4cee)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The median MZRs are presented in \\citet{2024ApJ...967L..41M}, who estimate the stellar masses and mass-weighted metallicities using all particles within 20 per cent of the virial radius of each subhalo",
+            "where": "arXiv:2606.25995 source, main.tex, line 394; 362"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,

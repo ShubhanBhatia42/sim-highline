@@ -1,0 +1,260 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "veale17.massive-atlas3d.fslow.etg.9bins",
+      "source": "Veale et al. 2017 (MASSIVE+ATLAS3D)",
+      "run": "ETGs, 9 mass bins, f_slow",
+      "kind": "observation",
+      "relation": "fslow",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0.03,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass estimated from the K-band magnitude M_K",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "fraction of slow rotators among early-type galaxies in the mass bin, f_slow = N_slow/N_total",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": 10.03,
+        "xMax": 12.076
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 10.03,
+            "y": 0.1622,
+            "xLow": 9.92,
+            "xHigh": 10.14,
+            "count": 37
+          },
+          {
+            "x": 10.25,
+            "y": 0.0698,
+            "xLow": 10.14,
+            "xHigh": 10.36,
+            "count": 43
+          },
+          {
+            "x": 10.47,
+            "y": 0.0784,
+            "xLow": 10.36,
+            "xHigh": 10.58,
+            "count": 51
+          },
+          {
+            "x": 10.734,
+            "y": 0.0882,
+            "xLow": 10.58,
+            "xHigh": 10.888,
+            "count": 68
+          },
+          {
+            "x": 11.064,
+            "y": 0.1795,
+            "xLow": 10.888,
+            "xHigh": 11.24,
+            "count": 39
+          },
+          {
+            "x": 11.458,
+            "y": 0.4,
+            "xLow": 11.24,
+            "xHigh": 11.676,
+            "count": 20
+          },
+          {
+            "x": 11.733,
+            "y": 0.7273,
+            "xLow": 11.676,
+            "xHigh": 11.79,
+            "count": 44
+          },
+          {
+            "x": 11.878,
+            "y": 0.8182,
+            "xLow": 11.79,
+            "xHigh": 11.966,
+            "count": 22
+          },
+          {
+            "x": 12.076,
+            "y": 0.8889,
+            "xLow": 11.966,
+            "xHigh": 12.186,
+            "count": 9
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "early-type galaxies only: MASSIVE priority sample (M_K<-25.5, 75 galaxies, volume limited) + ATLAS3D early-type sample; late types are not included",
+        "warning": "Nine mass bins combining ATLAS3D (log M* 9.9-11.7) and MASSIVE (11.7-12.2) early-type galaxies; x is the bin centre in the figure's M_K-derived mass, xLow/xHigh the bin edges. Only early-type galaxies enter: this is NOT the slow-rotator fraction of all galaxies. Counts are small at low mass (3/43, 4/51, 6/37, 6/68): binomial errors are not given in the paper. zMax=0.03 is a rounding of D<108 Mpc (MASSIVE) assuming H0~70, not a paper statement."
+      },
+      "definitions": {
+        "massDefinition": "K-band luminosity proxy: M_* from M_K via equation 2 of Ma+14, taken from eq. 2 of Cappellari+13 (massive_vii.tex lines 223-224)",
+        "imf": "unspecified",
+        "cosmology": "unspecified",
+        "population": "early-type galaxies (MASSIVE + ATLAS3D)",
+        "projection": "2D observed line-of-sight IFS velocity and dispersion maps; circular bins for MASSIVE, elliptical apertures for ATLAS3D (line 514); many ATLAS3D galaxies do not reach R_e (half to between 0.5 R_e and R_e)",
+        "slowRotatorCriterion": "slow rotator if lambda_e < 0.31 sqrt(epsilon) (Emsellem+11 cutoff used 'hereafter', massive_vii.tex lines 516 and 519); no separate epsilon < 0.4 limit is stated",
+        "spinDefinition": "lambda(<R) = <R|V|>/<R sqrt(V^2+sigma^2)>, lambda_e = lambda(<R_e); angle brackets are luminosity-weighted averages over all IFS bins within R (massive_vii.tex lines 506-508)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Veale et al. 2017, MNRAS 471, 1428 (arXiv:1703.08573), Fig. 'lam-mk' (spin parameter and slow rotator fraction versus M*)",
+        "doi": "10.1093/mnras/stx1639",
+        "url": "https://arxiv.org/abs/1703.08573",
+        "retrieved": "2026-10-18",
+        "figure": "Fig. lam-mk: spin parameter (top) and slow rotator fraction (bottom) versus M*",
+        "panel": "both panels",
+        "checksumSha256": "3fc7afbff693a2d8865928d7115126bb82e9de6002c9f9f43743d204bc858214",
+        "sourceMember": "plotting/figs-rotation.pdf page 2",
+        "sourceArchiveSha256": "2192c63cfb45e775308ca313cfbc5b3e92a6519b1fff8de724d0971c91ca4a1c",
+        "extractionMethod": "vector paths of the figure PDF (PyMuPDF): step-line segments, marker centres and the n/N text labels",
+        "axisCalibrationPixels": "x: top log axis, decade labels 10^10-10^12 validated on the minor ticks; y: major ticks + numeric labels; f_slow geometry equals the printed n/N to <0.003",
+        "digitizationUncertaintyDex": 0.003
+      },
+      "calibration": "validation",
+      "rankable": false,
+      "notes": "y = n_slow/N printed on the figure (e.g. 6/68, 8/9); the plotted step heights agree with n/N to <0.003. MASSIVE bins re-derived from the paper's table: 58 slow of 75, top bin 8/9."
+    },
+    {
+      "id": "veale17.massive-atlas3d.lambdar.etg.mean9bins",
+      "source": "Veale et al. 2017 (MASSIVE+ATLAS3D)",
+      "run": "ETGs, 9 mass bins, mean lambda_e",
+      "kind": "observation",
+      "relation": "lambdar",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0.03,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass estimated from the K-band magnitude M_K",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "mean (not median) lambda_e of the early-type galaxies in the mass bin, lambda_e = lambda(<R_e)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": 10.03,
+        "xMax": 12.076
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 10.03,
+            "y": 0.3413,
+            "xLow": 9.92,
+            "xHigh": 10.14,
+            "count": 37
+          },
+          {
+            "x": 10.25,
+            "y": 0.4108,
+            "xLow": 10.14,
+            "xHigh": 10.36,
+            "count": 43
+          },
+          {
+            "x": 10.47,
+            "y": 0.4666,
+            "xLow": 10.36,
+            "xHigh": 10.58,
+            "count": 51
+          },
+          {
+            "x": 10.734,
+            "y": 0.4743,
+            "xLow": 10.58,
+            "xHigh": 10.888,
+            "count": 68
+          },
+          {
+            "x": 11.064,
+            "y": 0.3656,
+            "xLow": 10.888,
+            "xHigh": 11.24,
+            "count": 39
+          },
+          {
+            "x": 11.458,
+            "y": 0.2338,
+            "xLow": 11.24,
+            "xHigh": 11.676,
+            "count": 20
+          },
+          {
+            "x": 11.733,
+            "y": 0.1443,
+            "xLow": 11.676,
+            "xHigh": 11.79,
+            "count": 44
+          },
+          {
+            "x": 11.878,
+            "y": 0.0962,
+            "xLow": 11.79,
+            "xHigh": 11.966,
+            "count": 22
+          },
+          {
+            "x": 12.076,
+            "y": 0.0742,
+            "xLow": 11.966,
+            "xHigh": 12.186,
+            "count": 9
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "early-type galaxies only: MASSIVE priority sample (M_K<-25.5, 75 galaxies, volume limited) + ATLAS3D early-type sample; late types are not included",
+        "warning": "Nine mass bins combining ATLAS3D (log M* 9.9-11.7) and MASSIVE (11.7-12.2) early-type galaxies; x is the bin centre in the figure's M_K-derived mass, xLow/xHigh the bin edges. Only early-type galaxies enter: this is NOT the slow-rotator fraction of all galaxies. Counts are small at low mass (3/43, 4/51, 6/37, 6/68): binomial errors are not given in the paper. zMax=0.03 is a rounding of D<108 Mpc (MASSIVE) assuming H0~70, not a paper statement. The statistic is the MEAN lambda_e per bin (the paper calls it the average), not the median used by the relation's y definition."
+      },
+      "definitions": {
+        "massDefinition": "K-band luminosity proxy: M_* from M_K via equation 2 of Ma+14, taken from eq. 2 of Cappellari+13 (massive_vii.tex lines 223-224)",
+        "imf": "unspecified",
+        "cosmology": "unspecified",
+        "population": "early-type galaxies (MASSIVE + ATLAS3D)",
+        "projection": "2D projected (IFS), within R_e",
+        "spinDefinition": "lambda(<R) = <R|V|>/<R sqrt(V^2+sigma^2)>, lambda_e = lambda(<R_e); angle brackets are luminosity-weighted averages over all IFS bins within R (massive_vii.tex lines 506-508)",
+        "slowRotatorCriterion": "slow rotator if lambda_e < 0.31 sqrt(epsilon) (Emsellem+11 cutoff used 'hereafter', massive_vii.tex lines 516 and 519); no separate epsilon < 0.4 limit is stated",
+        "lambdaStatistic": "mean"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Veale et al. 2017, MNRAS 471, 1428 (arXiv:1703.08573), Fig. 'lam-mk' (spin parameter and slow rotator fraction versus M*)",
+        "doi": "10.1093/mnras/stx1639",
+        "url": "https://arxiv.org/abs/1703.08573",
+        "retrieved": "2026-10-18",
+        "figure": "Fig. lam-mk: spin parameter (top) and slow rotator fraction (bottom) versus M*",
+        "panel": "both panels",
+        "checksumSha256": "3fc7afbff693a2d8865928d7115126bb82e9de6002c9f9f43743d204bc858214",
+        "sourceMember": "plotting/figs-rotation.pdf page 2",
+        "sourceArchiveSha256": "2192c63cfb45e775308ca313cfbc5b3e92a6519b1fff8de724d0971c91ca4a1c",
+        "extractionMethod": "vector paths of the figure PDF (PyMuPDF): step-line segments, marker centres and the n/N text labels",
+        "axisCalibrationPixels": "x: top log axis, decade labels 10^10-10^12 validated on the minor ticks; y: major ticks + numeric labels; f_slow geometry equals the printed n/N to <0.003",
+        "digitizationUncertaintyDex": 0.003
+      },
+      "calibration": "validation",
+      "rankable": false,
+      "notes": "Marker centres of the coloured <lambda_e> symbols; the top MASSIVE bin reproduces the mean lambda_e of the 9 most massive table galaxies (0.074); the two lower MASSIVE bins agree with the table to <0.02 (one tied-mass swap)."
+    }
+  ]
+}

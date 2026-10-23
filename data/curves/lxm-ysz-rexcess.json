@@ -1,0 +1,2022 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "pratt09.rexcess.lxm.bol-L1.points",
+      "source": "Pratt et al. 2009 (REXCESS)",
+      "run": "bol-L1: bolometric [0.01-100] keV, with core (R < R500)",
+      "kind": "observation",
+      "relation": "lxm",
+      "epoch": {
+        "zRepresentative": 0.1181,
+        "zMin": 0.0564,
+        "zMax": 0.1832,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside the radius at which the mean density is 500 times the critical density at the cluster redshift; computed from the tabulated R500 and z; R500 iterated from the M500-Y_X relation)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 X-ray luminosity L1 in the bolometric [0.01-100] keV band within R < R500; rest frame, not E(z)-scaled",
+        "yUnit": "log10(erg s^-1)"
+      },
+      "domain": {
+        "xMin": 13.9924,
+        "xMax": 14.8936
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": 13.9924,
+            "y": 43.8865,
+            "yLow": 43.8808,
+            "yHigh": 43.8921
+          },
+          {
+            "x": 14.0028,
+            "y": 43.7076,
+            "yLow": 43.699,
+            "yHigh": 43.716
+          },
+          {
+            "x": 14.0031,
+            "y": 43.9085,
+            "yLow": 43.9031,
+            "yHigh": 43.9138
+          },
+          {
+            "x": 14.0841,
+            "y": 43.7853,
+            "yLow": 43.7782,
+            "yHigh": 43.7924
+          },
+          {
+            "x": 14.1057,
+            "y": 43.6532,
+            "yLow": 43.6435,
+            "yHigh": 43.6628
+          },
+          {
+            "x": 14.1182,
+            "y": 44.0128,
+            "yLow": 44.0086,
+            "yHigh": 44.017
+          },
+          {
+            "x": 14.1235,
+            "y": 43.8865,
+            "yLow": 43.8808,
+            "yHigh": 43.8921
+          },
+          {
+            "x": 14.1857,
+            "y": 44.301,
+            "yLow": 44.2967,
+            "yHigh": 44.3054
+          },
+          {
+            "x": 14.2212,
+            "y": 44.2504,
+            "yLow": 44.2455,
+            "yHigh": 44.2553
+          },
+          {
+            "x": 14.2652,
+            "y": 44.1399,
+            "yLow": 44.1367,
+            "yHigh": 44.143
+          },
+          {
+            "x": 14.321,
+            "y": 44.2742,
+            "yLow": 44.2718,
+            "yHigh": 44.2765
+          },
+          {
+            "x": 14.3453,
+            "y": 44.574,
+            "yLow": 44.5729,
+            "yHigh": 44.5752
+          },
+          {
+            "x": 14.3468,
+            "y": 44.5514,
+            "yLow": 44.549,
+            "yHigh": 44.5539
+          },
+          {
+            "x": 14.3506,
+            "y": 44.1644,
+            "yLow": 44.1584,
+            "yHigh": 44.1703
+          },
+          {
+            "x": 14.4055,
+            "y": 44.3636,
+            "yLow": 44.3598,
+            "yHigh": 44.3674
+          },
+          {
+            "x": 14.4187,
+            "y": 44.8704,
+            "yLow": 44.8692,
+            "yHigh": 44.8716
+          },
+          {
+            "x": 14.4211,
+            "y": 44.3766,
+            "yLow": 44.3729,
+            "yHigh": 44.3802
+          },
+          {
+            "x": 14.4903,
+            "y": 44.6149,
+            "yLow": 44.6128,
+            "yHigh": 44.617
+          },
+          {
+            "x": 14.5461,
+            "y": 44.7868,
+            "yLow": 44.7846,
+            "yHigh": 44.7889
+          },
+          {
+            "x": 14.5713,
+            "y": 44.8142,
+            "yLow": 44.8116,
+            "yHigh": 44.8169
+          },
+          {
+            "x": 14.5713,
+            "y": 44.9795,
+            "yLow": 44.9777,
+            "yHigh": 44.9814
+          },
+          {
+            "x": 14.5771,
+            "y": 44.616,
+            "yLow": 44.6107,
+            "yHigh": 44.6212
+          },
+          {
+            "x": 14.6144,
+            "y": 44.699,
+            "yLow": 44.6964,
+            "yHigh": 44.7016
+          },
+          {
+            "x": 14.6144,
+            "y": 44.7101,
+            "yLow": 44.7076,
+            "yHigh": 44.7126
+          },
+          {
+            "x": 14.6223,
+            "y": 45.063,
+            "yLow": 45.0573,
+            "yHigh": 45.0686
+          },
+          {
+            "x": 14.673,
+            "y": 44.9745,
+            "yLow": 44.9717,
+            "yHigh": 44.9773
+          },
+          {
+            "x": 14.6804,
+            "y": 44.9528,
+            "yLow": 44.9509,
+            "yHigh": 44.9547
+          },
+          {
+            "x": 14.7074,
+            "y": 45.3235,
+            "yLow": 45.322,
+            "yHigh": 45.3249
+          },
+          {
+            "x": 14.8429,
+            "y": 45.2822,
+            "yLow": 45.2797,
+            "yHigh": 45.2847
+          },
+          {
+            "x": 14.8457,
+            "y": 45.276,
+            "yLow": 45.2737,
+            "yHigh": 45.2783
+          },
+          {
+            "x": 14.8936,
+            "y": 45.557,
+            "yLow": 45.5561,
+            "yHigh": 45.558
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "31 REXCESS clusters",
+        "warning": "Per-cluster L1 [bolometric [0.01-100] keV, R < R500] of the 31 REXCESS clusters in units of 10^44 erg/s from the paper's table (all quantities computed for Omega_M=0.3, Omega_Lambda=0.7, h0=0.7); error bars are the table's statistical errors; the paper states the uncertainties are negligible compared with the intrinsic scatter. M500 is not tabulated and is computed from R500 and z. Luminosities are raw (no Malmquist-bias correction). In the table column definitions: L1 is interior to R500 (with core), L2 is in the [0.15-1] R500 aperture (core excised)."
+      },
+      "definitions": {
+        "haloMassDefinition": "M500crit",
+        "massMethod": "M500-Y_X relation (Arnaud+07), calibrated on hydrostatic masses of relaxed clusters; computed from R500 iterated with it",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "sampleSelection": "REXCESS: 31 nearby clusters selected from REFLEX by X-ray luminosity only (\"selected by luminosity only, in such a way as to have close to homogeneous coverage of luminosity space\"), 0.0564 <= z <= 0.1832; 'Pratt+09: M_Y = mass from the M500-Y_X relation of Arnaud+07'",
+        "population": "all",
+        "xrayBand": "bolometric [0.01-100] keV",
+        "coreTreatment": "with core",
+        "luminosityAperture": "R < R500 (R500 = radius of density contrast 500)",
+        "luminosityScaling": "none (physical luminosity)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Pratt et al. 2009, A&A 498, 361 (arXiv:0809.3784)",
+        "doi": "10.1051/0004-6361/200810994",
+        "url": "https://arxiv.org/abs/0809.3784",
+        "retrieved": "2026-10-18",
+        "figure": "table:tab1 (Cluster properties; bolometric [0.01-100] keV)",
+        "sourceMember": "0944.tex",
+        "sourceArchiveSha256": "d3e149ed63839e172348b14a97b7a9221549631534be33a001b83d177e5c66ea",
+        "extractionMethod": "values parsed from the LaTeX table(s); M500 computed from tabulated R500 and z with the paper's definition (footnote of Sect. Scaling in Pratt+09)"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "One point per cluster (31). Transcription cross-checked: M500 from R500 agrees with the M500-Y_X relation used by the papers (mean -0.0080, max 0.0193 dex); the relation refit from these points reproduces the published fit (see fit records)."
+    },
+    {
+      "id": "pratt09.rexcess.lxm.bol-L2.points",
+      "source": "Pratt et al. 2009 (REXCESS)",
+      "run": "bol-L2: bolometric [0.01-100] keV, core-excised ([0.15-1] R500)",
+      "kind": "observation",
+      "relation": "lxm",
+      "epoch": {
+        "zRepresentative": 0.1181,
+        "zMin": 0.0564,
+        "zMax": 0.1832,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside the radius at which the mean density is 500 times the critical density at the cluster redshift; computed from the tabulated R500 and z; R500 iterated from the M500-Y_X relation)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 X-ray luminosity L2 in the bolometric [0.01-100] keV band within 0.15-1 R500; rest frame, not E(z)-scaled",
+        "yUnit": "log10(erg s^-1)"
+      },
+      "domain": {
+        "xMin": 13.9924,
+        "xMax": 14.8936
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": 13.9924,
+            "y": 43.5682,
+            "yLow": 43.5563,
+            "yHigh": 43.5798
+          },
+          {
+            "x": 14.0028,
+            "y": 43.4914,
+            "yLow": 43.4771,
+            "yHigh": 43.5051
+          },
+          {
+            "x": 14.0031,
+            "y": 43.6812,
+            "yLow": 43.6721,
+            "yHigh": 43.6902
+          },
+          {
+            "x": 14.0841,
+            "y": 43.6021,
+            "yLow": 43.5911,
+            "yHigh": 43.6128
+          },
+          {
+            "x": 14.1057,
+            "y": 43.5682,
+            "yLow": 43.5563,
+            "yHigh": 43.5798
+          },
+          {
+            "x": 14.1182,
+            "y": 43.7853,
+            "yLow": 43.7782,
+            "yHigh": 43.7924
+          },
+          {
+            "x": 14.1235,
+            "y": 43.7324,
+            "yLow": 43.7243,
+            "yHigh": 43.7404
+          },
+          {
+            "x": 14.1857,
+            "y": 43.9868,
+            "yLow": 43.9823,
+            "yHigh": 43.9912
+          },
+          {
+            "x": 14.2212,
+            "y": 44,
+            "yLow": 43.9912,
+            "yHigh": 44.0086
+          },
+          {
+            "x": 14.2652,
+            "y": 43.9191,
+            "yLow": 43.9138,
+            "yHigh": 43.9243
+          },
+          {
+            "x": 14.321,
+            "y": 44.0645,
+            "yLow": 44.0607,
+            "yHigh": 44.0682
+          },
+          {
+            "x": 14.3453,
+            "y": 44.2304,
+            "yLow": 44.2279,
+            "yHigh": 44.233
+          },
+          {
+            "x": 14.3468,
+            "y": 44.1987,
+            "yLow": 44.1931,
+            "yHigh": 44.2041
+          },
+          {
+            "x": 14.3506,
+            "y": 44.0755,
+            "yLow": 44.0682,
+            "yHigh": 44.0828
+          },
+          {
+            "x": 14.4055,
+            "y": 44.248,
+            "yLow": 44.243,
+            "yHigh": 44.2529
+          },
+          {
+            "x": 14.4187,
+            "y": 44.4771,
+            "yLow": 44.4742,
+            "yHigh": 44.48
+          },
+          {
+            "x": 14.4211,
+            "y": 44.2742,
+            "yLow": 44.2695,
+            "yHigh": 44.2788
+          },
+          {
+            "x": 14.4903,
+            "y": 44.4425,
+            "yLow": 44.4393,
+            "yHigh": 44.4456
+          },
+          {
+            "x": 14.5461,
+            "y": 44.5682,
+            "yLow": 44.5647,
+            "yHigh": 44.5717
+          },
+          {
+            "x": 14.5713,
+            "y": 44.6096,
+            "yLow": 44.6053,
+            "yHigh": 44.6138
+          },
+          {
+            "x": 14.5713,
+            "y": 44.6294,
+            "yLow": 44.6253,
+            "yHigh": 44.6335
+          },
+          {
+            "x": 14.5771,
+            "y": 44.5024,
+            "yLow": 44.4955,
+            "yHigh": 44.5092
+          },
+          {
+            "x": 14.6144,
+            "y": 44.5888,
+            "yLow": 44.5855,
+            "yHigh": 44.5922
+          },
+          {
+            "x": 14.6144,
+            "y": 44.6435,
+            "yLow": 44.6405,
+            "yHigh": 44.6464
+          },
+          {
+            "x": 14.6223,
+            "y": 44.7202,
+            "yLow": 44.7067,
+            "yHigh": 44.7332
+          },
+          {
+            "x": 14.673,
+            "y": 44.7482,
+            "yLow": 44.7435,
+            "yHigh": 44.7528
+          },
+          {
+            "x": 14.6804,
+            "y": 44.7604,
+            "yLow": 44.7574,
+            "yHigh": 44.7634
+          },
+          {
+            "x": 14.7074,
+            "y": 44.8762,
+            "yLow": 44.8722,
+            "yHigh": 44.8802
+          },
+          {
+            "x": 14.8429,
+            "y": 45.092,
+            "yLow": 45.0885,
+            "yHigh": 45.0955
+          },
+          {
+            "x": 14.8457,
+            "y": 45.0565,
+            "yLow": 45.0531,
+            "yHigh": 45.0599
+          },
+          {
+            "x": 14.8936,
+            "y": 45.1798,
+            "yLow": 45.1778,
+            "yHigh": 45.1818
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "31 REXCESS clusters",
+        "warning": "Per-cluster L2 [bolometric [0.01-100] keV, 0.15-1 R500] of the 31 REXCESS clusters in units of 10^44 erg/s from the paper's table (all quantities computed for Omega_M=0.3, Omega_Lambda=0.7, h0=0.7); error bars are the table's statistical errors; the paper states the uncertainties are negligible compared with the intrinsic scatter. M500 is not tabulated and is computed from R500 and z. Luminosities are raw (no Malmquist-bias correction). In the table column definitions: L1 is interior to R500 (with core), L2 is in the [0.15-1] R500 aperture (core excised)."
+      },
+      "definitions": {
+        "haloMassDefinition": "M500crit",
+        "massMethod": "M500-Y_X relation (Arnaud+07), calibrated on hydrostatic masses of relaxed clusters; computed from R500 iterated with it",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "sampleSelection": "REXCESS: 31 nearby clusters selected from REFLEX by X-ray luminosity only (\"selected by luminosity only, in such a way as to have close to homogeneous coverage of luminosity space\"), 0.0564 <= z <= 0.1832; 'Pratt+09: M_Y = mass from the M500-Y_X relation of Arnaud+07'",
+        "population": "all",
+        "xrayBand": "bolometric [0.01-100] keV",
+        "coreTreatment": "core-excised",
+        "luminosityAperture": "0.15-1 R500 (R500 = radius of density contrast 500)",
+        "luminosityScaling": "none (physical luminosity)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Pratt et al. 2009, A&A 498, 361 (arXiv:0809.3784)",
+        "doi": "10.1051/0004-6361/200810994",
+        "url": "https://arxiv.org/abs/0809.3784",
+        "retrieved": "2026-10-18",
+        "figure": "table:tab1 (Cluster properties; bolometric [0.01-100] keV)",
+        "sourceMember": "0944.tex",
+        "sourceArchiveSha256": "d3e149ed63839e172348b14a97b7a9221549631534be33a001b83d177e5c66ea",
+        "extractionMethod": "values parsed from the LaTeX table(s); M500 computed from tabulated R500 and z with the paper's definition (footnote of Sect. Scaling in Pratt+09)"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "One point per cluster (31). Transcription cross-checked: M500 from R500 agrees with the M500-Y_X relation used by the papers (mean -0.0080, max 0.0193 dex); the relation refit from these points reproduces the published fit (see fit records)."
+    },
+    {
+      "id": "pratt09.rexcess.lxm.soft-L1.points",
+      "source": "Pratt et al. 2009 (REXCESS)",
+      "run": "soft-L1: [0.1-2.4] keV (ROSAT band), with core (R < R500)",
+      "kind": "observation",
+      "relation": "lxm",
+      "epoch": {
+        "zRepresentative": 0.1181,
+        "zMin": 0.0564,
+        "zMax": 0.1832,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside the radius at which the mean density is 500 times the critical density at the cluster redshift; computed from the tabulated R500 and z; R500 iterated from the M500-Y_X relation)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 X-ray luminosity L[0.1-2.4]_1 in the [0.1-2.4] keV (ROSAT band) band within R < R500; rest frame, not E(z)-scaled",
+        "yUnit": "log10(erg s^-1)"
+      },
+      "domain": {
+        "xMin": 13.9924,
+        "xMax": 14.8936
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": 13.9924,
+            "y": 43.7076,
+            "yLow": 43.699,
+            "yHigh": 43.716
+          },
+          {
+            "x": 14.0028,
+            "y": 43.5185,
+            "yLow": 43.5051,
+            "yHigh": 43.5315
+          },
+          {
+            "x": 14.0031,
+            "y": 43.7404
+          },
+          {
+            "x": 14.0841,
+            "y": 43.5911,
+            "yLow": 43.5798,
+            "yHigh": 43.6021
+          },
+          {
+            "x": 14.1057,
+            "y": 43.4624
+          },
+          {
+            "x": 14.1182,
+            "y": 43.8062,
+            "yLow": 43.7993,
+            "yHigh": 43.8129
+          },
+          {
+            "x": 14.1235,
+            "y": 43.6902,
+            "yLow": 43.6812,
+            "yHigh": 43.699
+          },
+          {
+            "x": 14.1857,
+            "y": 44.1271,
+            "yLow": 44.1239,
+            "yHigh": 44.1303
+          },
+          {
+            "x": 14.2212,
+            "y": 44.0253,
+            "yLow": 44.0212,
+            "yHigh": 44.0294
+          },
+          {
+            "x": 14.2652,
+            "y": 43.9191,
+            "yLow": 43.9138,
+            "yHigh": 43.9243
+          },
+          {
+            "x": 14.321,
+            "y": 44.0086,
+            "yLow": 44.0043,
+            "yHigh": 44.0128
+          },
+          {
+            "x": 14.3453,
+            "y": 44.3304,
+            "yLow": 44.3284,
+            "yHigh": 44.3324
+          },
+          {
+            "x": 14.3468,
+            "y": 44.3139,
+            "yLow": 44.3118,
+            "yHigh": 44.316
+          },
+          {
+            "x": 14.3506,
+            "y": 43.8976,
+            "yLow": 43.8921,
+            "yHigh": 43.9031
+          },
+          {
+            "x": 14.4055,
+            "y": 44.1139,
+            "yLow": 44.1106,
+            "yHigh": 44.1173
+          },
+          {
+            "x": 14.4187,
+            "y": 44.6274,
+            "yLow": 44.6263,
+            "yHigh": 44.6284
+          },
+          {
+            "x": 14.4211,
+            "y": 44.0934,
+            "yLow": 44.0899,
+            "yHigh": 44.0969
+          },
+          {
+            "x": 14.4903,
+            "y": 44.3181,
+            "yLow": 44.316,
+            "yHigh": 44.3201
+          },
+          {
+            "x": 14.5461,
+            "y": 44.4742,
+            "yLow": 44.4728,
+            "yHigh": 44.4757
+          },
+          {
+            "x": 14.5713,
+            "y": 44.4669,
+            "yLow": 44.4639,
+            "yHigh": 44.4698
+          },
+          {
+            "x": 14.5713,
+            "y": 44.6739,
+            "yLow": 44.6721,
+            "yHigh": 44.6758
+          },
+          {
+            "x": 14.5771,
+            "y": 44.2923,
+            "yLow": 44.2878,
+            "yHigh": 44.2967
+          },
+          {
+            "x": 14.6144,
+            "y": 44.3541,
+            "yLow": 44.3502,
+            "yHigh": 44.3579
+          },
+          {
+            "x": 14.6144,
+            "y": 44.4065,
+            "yLow": 44.4048,
+            "yHigh": 44.4082
+          },
+          {
+            "x": 14.6223,
+            "y": 44.7243,
+            "yLow": 44.7185,
+            "yHigh": 44.73
+          },
+          {
+            "x": 14.673,
+            "y": 44.616,
+            "yLow": 44.6128,
+            "yHigh": 44.6191
+          },
+          {
+            "x": 14.6804,
+            "y": 44.5888,
+            "yLow": 44.5866,
+            "yHigh": 44.5911
+          },
+          {
+            "x": 14.7074,
+            "y": 45.0103,
+            "yLow": 45.009,
+            "yHigh": 45.0116
+          },
+          {
+            "x": 14.8429,
+            "y": 44.8573,
+            "yLow": 44.8549,
+            "yHigh": 44.8597
+          },
+          {
+            "x": 14.8457,
+            "y": 44.8791,
+            "yLow": 44.8768,
+            "yHigh": 44.8814
+          },
+          {
+            "x": 14.8936,
+            "y": 45.0962,
+            "yLow": 45.0952,
+            "yHigh": 45.0973
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "31 REXCESS clusters",
+        "warning": "Per-cluster L[0.1-2.4]_1 [[0.1-2.4] keV (ROSAT band), R < R500] of the 31 REXCESS clusters in units of 10^44 erg/s from the paper's table (all quantities computed for Omega_M=0.3, Omega_Lambda=0.7, h0=0.7); error bars are the table's statistical errors; the paper states the uncertainties are negligible compared with the intrinsic scatter. M500 is not tabulated and is computed from R500 and z. Luminosities are raw (no Malmquist-bias correction). In the table column definitions: L1 is interior to R500 (with core), L2 is in the [0.15-1] R500 aperture (core excised)."
+      },
+      "definitions": {
+        "haloMassDefinition": "M500crit",
+        "massMethod": "M500-Y_X relation (Arnaud+07), calibrated on hydrostatic masses of relaxed clusters; computed from R500 iterated with it",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "sampleSelection": "REXCESS: 31 nearby clusters selected from REFLEX by X-ray luminosity only (\"selected by luminosity only, in such a way as to have close to homogeneous coverage of luminosity space\"), 0.0564 <= z <= 0.1832; 'Pratt+09: M_Y = mass from the M500-Y_X relation of Arnaud+07'",
+        "population": "all",
+        "xrayBand": "[0.1-2.4] keV (ROSAT band)",
+        "coreTreatment": "with core",
+        "luminosityAperture": "R < R500 (R500 = radius of density contrast 500)",
+        "luminosityScaling": "none (physical luminosity)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Pratt et al. 2009, A&A 498, 361 (arXiv:0809.3784)",
+        "doi": "10.1051/0004-6361/200810994",
+        "url": "https://arxiv.org/abs/0809.3784",
+        "retrieved": "2026-10-18",
+        "figure": "table:tabappx (Cluster properties in the soft X-ray band suitable for surveys)",
+        "sourceMember": "0944.tex",
+        "sourceArchiveSha256": "d3e149ed63839e172348b14a97b7a9221549631534be33a001b83d177e5c66ea",
+        "extractionMethod": "values parsed from the LaTeX table(s); M500 computed from tabulated R500 and z with the paper's definition (footnote of Sect. Scaling in Pratt+09)"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "One point per cluster (31). Transcription cross-checked: M500 from R500 agrees with the M500-Y_X relation used by the papers (mean -0.0080, max 0.0193 dex); the relation refit from these points reproduces the published fit (see fit records)."
+    },
+    {
+      "id": "pratt09.rexcess.lxm.soft-L2.points",
+      "source": "Pratt et al. 2009 (REXCESS)",
+      "run": "soft-L2: [0.1-2.4] keV (ROSAT band), core-excised ([0.15-1] R500)",
+      "kind": "observation",
+      "relation": "lxm",
+      "epoch": {
+        "zRepresentative": 0.1181,
+        "zMin": 0.0564,
+        "zMax": 0.1832,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside the radius at which the mean density is 500 times the critical density at the cluster redshift; computed from the tabulated R500 and z; R500 iterated from the M500-Y_X relation)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 X-ray luminosity L[0.1-2.4]_2 in the [0.1-2.4] keV (ROSAT band) band within 0.15-1 R500; rest frame, not E(z)-scaled",
+        "yUnit": "log10(erg s^-1)"
+      },
+      "domain": {
+        "xMin": 13.9924,
+        "xMax": 14.8936
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": 13.9924,
+            "y": 43.3979
+          },
+          {
+            "x": 14.0028,
+            "y": 43.2788
+          },
+          {
+            "x": 14.0031,
+            "y": 43.5185
+          },
+          {
+            "x": 14.0841,
+            "y": 43.415,
+            "yLow": 43.3979,
+            "yHigh": 43.4314
+          },
+          {
+            "x": 14.1057,
+            "y": 43.3979
+          },
+          {
+            "x": 14.1182,
+            "y": 43.5911
+          },
+          {
+            "x": 14.1235,
+            "y": 43.5563,
+            "yLow": 43.5441,
+            "yHigh": 43.5682
+          },
+          {
+            "x": 14.1857,
+            "y": 43.7993,
+            "yLow": 43.7924,
+            "yHigh": 43.8062
+          },
+          {
+            "x": 14.2212,
+            "y": 43.7924,
+            "yLow": 43.7853,
+            "yHigh": 43.7993
+          },
+          {
+            "x": 14.2652,
+            "y": 43.7076
+          },
+          {
+            "x": 14.321,
+            "y": 43.8129,
+            "yLow": 43.8062,
+            "yHigh": 43.8195
+          },
+          {
+            "x": 14.3453,
+            "y": 43.9868,
+            "yLow": 43.9823,
+            "yHigh": 43.9912
+          },
+          {
+            "x": 14.3468,
+            "y": 43.959,
+            "yLow": 43.9542,
+            "yHigh": 43.9638
+          },
+          {
+            "x": 14.3506,
+            "y": 43.8129,
+            "yLow": 43.8062,
+            "yHigh": 43.8195
+          },
+          {
+            "x": 14.4055,
+            "y": 44.0086,
+            "yLow": 44.0043,
+            "yHigh": 44.0128
+          },
+          {
+            "x": 14.4187,
+            "y": 44.2304,
+            "yLow": 44.2279,
+            "yHigh": 44.233
+          },
+          {
+            "x": 14.4211,
+            "y": 43.9912,
+            "yLow": 43.9868,
+            "yHigh": 43.9956
+          },
+          {
+            "x": 14.4903,
+            "y": 44.1614,
+            "yLow": 44.1584,
+            "yHigh": 44.1644
+          },
+          {
+            "x": 14.5461,
+            "y": 44.2765,
+            "yLow": 44.2742,
+            "yHigh": 44.2788
+          },
+          {
+            "x": 14.5713,
+            "y": 44.2833,
+            "yLow": 44.2788,
+            "yHigh": 44.2878
+          },
+          {
+            "x": 14.5713,
+            "y": 44.316,
+            "yLow": 44.3118,
+            "yHigh": 44.3201
+          },
+          {
+            "x": 14.5771,
+            "y": 44.1987,
+            "yLow": 44.1931,
+            "yHigh": 44.2041
+          },
+          {
+            "x": 14.6144,
+            "y": 44.2455,
+            "yLow": 44.2405,
+            "yHigh": 44.2504
+          },
+          {
+            "x": 14.6144,
+            "y": 44.3444,
+            "yLow": 44.3424,
+            "yHigh": 44.3464
+          },
+          {
+            "x": 14.6223,
+            "y": 44.3636,
+            "yLow": 44.3522,
+            "yHigh": 44.3747
+          },
+          {
+            "x": 14.673,
+            "y": 44.3874,
+            "yLow": 44.382,
+            "yHigh": 44.3927
+          },
+          {
+            "x": 14.6804,
+            "y": 44.4116,
+            "yLow": 44.4082,
+            "yHigh": 44.415
+          },
+          {
+            "x": 14.7074,
+            "y": 44.5289,
+            "yLow": 44.525,
+            "yHigh": 44.5328
+          },
+          {
+            "x": 14.8429,
+            "y": 44.6955,
+            "yLow": 44.692,
+            "yHigh": 44.699
+          },
+          {
+            "x": 14.8457,
+            "y": 44.6599,
+            "yLow": 44.6571,
+            "yHigh": 44.6628
+          },
+          {
+            "x": 14.8936,
+            "y": 44.7396,
+            "yLow": 44.738,
+            "yHigh": 44.7412
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "31 REXCESS clusters",
+        "warning": "Per-cluster L[0.1-2.4]_2 [[0.1-2.4] keV (ROSAT band), 0.15-1 R500] of the 31 REXCESS clusters in units of 10^44 erg/s from the paper's table (all quantities computed for Omega_M=0.3, Omega_Lambda=0.7, h0=0.7); error bars are the table's statistical errors; the paper states the uncertainties are negligible compared with the intrinsic scatter. M500 is not tabulated and is computed from R500 and z. Luminosities are raw (no Malmquist-bias correction). In the table column definitions: L1 is interior to R500 (with core), L2 is in the [0.15-1] R500 aperture (core excised)."
+      },
+      "definitions": {
+        "haloMassDefinition": "M500crit",
+        "massMethod": "M500-Y_X relation (Arnaud+07), calibrated on hydrostatic masses of relaxed clusters; computed from R500 iterated with it",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "sampleSelection": "REXCESS: 31 nearby clusters selected from REFLEX by X-ray luminosity only (\"selected by luminosity only, in such a way as to have close to homogeneous coverage of luminosity space\"), 0.0564 <= z <= 0.1832; 'Pratt+09: M_Y = mass from the M500-Y_X relation of Arnaud+07'",
+        "population": "all",
+        "xrayBand": "[0.1-2.4] keV (ROSAT band)",
+        "coreTreatment": "core-excised",
+        "luminosityAperture": "0.15-1 R500 (R500 = radius of density contrast 500)",
+        "luminosityScaling": "none (physical luminosity)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Pratt et al. 2009, A&A 498, 361 (arXiv:0809.3784)",
+        "doi": "10.1051/0004-6361/200810994",
+        "url": "https://arxiv.org/abs/0809.3784",
+        "retrieved": "2026-10-18",
+        "figure": "table:tabappx (Cluster properties in the soft X-ray band suitable for surveys)",
+        "sourceMember": "0944.tex",
+        "sourceArchiveSha256": "d3e149ed63839e172348b14a97b7a9221549631534be33a001b83d177e5c66ea",
+        "extractionMethod": "values parsed from the LaTeX table(s); M500 computed from tabulated R500 and z with the paper's definition (footnote of Sect. Scaling in Pratt+09)"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "One point per cluster (31). Transcription cross-checked: M500 from R500 agrees with the M500-Y_X relation used by the papers (mean -0.0080, max 0.0193 dex); the relation refit from these points reproduces the published fit (see fit records)."
+    },
+    {
+      "id": "arnaud10.rexcess.ysz.ysph500.points",
+      "source": "Arnaud et al. 2010 (REXCESS)",
+      "run": "Y_sph(R500), 31 REXCESS clusters",
+      "kind": "observation",
+      "relation": "ysz",
+      "epoch": {
+        "zRepresentative": 0.1181,
+        "zMin": 0.0564,
+        "zMax": 0.1832,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside the radius at which the mean density is 500 times the critical density at the cluster redshift; computed from the tabulated R500 and z; R500 iterated from the M500-Y_X relation)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 spherically integrated Compton parameter Y_sph(R500) = (sigma_T/m_e c^2) int_0^R500 4 pi P(r) r^2 dr, physical (not E(z)-scaled)",
+        "yUnit": "log10(Mpc^2)"
+      },
+      "domain": {
+        "xMin": 13.9822,
+        "xMax": 14.9246
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": 13.9822,
+            "y": -5.6253,
+            "yLow": -5.6576,
+            "yHigh": -5.5952
+          },
+          {
+            "x": 13.986,
+            "y": -5.644,
+            "yLow": -5.6615,
+            "yHigh": -5.6271
+          },
+          {
+            "x": 14.0012,
+            "y": -5.5735,
+            "yLow": -5.5901,
+            "yHigh": -5.5575
+          },
+          {
+            "x": 14.085,
+            "y": -5.4461,
+            "yLow": -5.466,
+            "yHigh": -5.4271
+          },
+          {
+            "x": 14.1083,
+            "y": -5.3862,
+            "yLow": -5.4023,
+            "yHigh": -5.3706
+          },
+          {
+            "x": 14.1185,
+            "y": -5.3979,
+            "yLow": -5.4191,
+            "yHigh": -5.3778
+          },
+          {
+            "x": 14.126,
+            "y": -5.3197,
+            "yLow": -5.3382,
+            "yHigh": -5.3019
+          },
+          {
+            "x": 14.1928,
+            "y": -5.2132,
+            "yLow": -5.2321,
+            "yHigh": -5.1952
+          },
+          {
+            "x": 14.2086,
+            "y": -5.2007,
+            "yLow": -5.2269,
+            "yHigh": -5.1759
+          },
+          {
+            "x": 14.2774,
+            "y": -5.0969,
+            "yLow": -5.1186,
+            "yHigh": -5.0762
+          },
+          {
+            "x": 14.3244,
+            "y": -5.0044,
+            "yLow": -5.0205,
+            "yHigh": -4.9889
+          },
+          {
+            "x": 14.3533,
+            "y": -4.945,
+            "yLow": -4.965,
+            "yHigh": -4.9259
+          },
+          {
+            "x": 14.354,
+            "y": -4.9404,
+            "yLow": -4.9602,
+            "yHigh": -4.9215
+          },
+          {
+            "x": 14.3567,
+            "y": -4.9212,
+            "yLow": -4.9382,
+            "yHigh": -4.9048
+          },
+          {
+            "x": 14.4125,
+            "y": -4.8256,
+            "yLow": -4.8416,
+            "yHigh": -4.8102
+          },
+          {
+            "x": 14.4286,
+            "y": -4.8097,
+            "yLow": -4.8242,
+            "yHigh": -4.7956
+          },
+          {
+            "x": 14.4318,
+            "y": -4.7886,
+            "yLow": -4.8049,
+            "yHigh": -4.7729
+          },
+          {
+            "x": 14.5165,
+            "y": -4.6554,
+            "yLow": -4.672,
+            "yHigh": -4.6394
+          },
+          {
+            "x": 14.5568,
+            "y": -4.5832,
+            "yLow": -4.5962,
+            "yHigh": -4.5706
+          },
+          {
+            "x": 14.5846,
+            "y": -4.5528,
+            "yLow": -4.5702,
+            "yHigh": -4.5361
+          },
+          {
+            "x": 14.5875,
+            "y": -4.5045,
+            "yLow": -4.5243,
+            "yHigh": -4.4855
+          },
+          {
+            "x": 14.5963,
+            "y": -4.5143,
+            "yLow": -4.5376,
+            "yHigh": -4.4921
+          },
+          {
+            "x": 14.6207,
+            "y": -4.466,
+            "yLow": -4.52,
+            "yHigh": -4.4179
+          },
+          {
+            "x": 14.6347,
+            "y": -4.4283,
+            "yLow": -4.4425,
+            "yHigh": -4.4145
+          },
+          {
+            "x": 14.6413,
+            "y": -4.4101,
+            "yLow": -4.4306,
+            "yHigh": -4.3904
+          },
+          {
+            "x": 14.6923,
+            "y": -4.3063,
+            "yLow": -4.3325,
+            "yHigh": -4.2815
+          },
+          {
+            "x": 14.6967,
+            "y": -4.3429,
+            "yLow": -4.3565,
+            "yHigh": -4.3298
+          },
+          {
+            "x": 14.7305,
+            "y": -4.2526,
+            "yLow": -4.2708,
+            "yHigh": -4.2351
+          },
+          {
+            "x": 14.8669,
+            "y": -4.0545,
+            "yLow": -4.067,
+            "yHigh": -4.0424
+          },
+          {
+            "x": 14.8679,
+            "y": -4.0031,
+            "yLow": -4.0241,
+            "yHigh": -3.983
+          },
+          {
+            "x": 14.9246,
+            "y": -3.9355,
+            "yLow": -3.9469,
+            "yHigh": -3.9245
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "31 REXCESS clusters",
+        "warning": "Y_sph(R500) per cluster from the REXCESS pressure profiles (31 rows, including RXC J2157.4-0747 that the paper calls bimodal and excludes from the profile analysis) in units of 10^-5 Mpc^2; error bars are the table's 1-sigma errors. Y_sph is the SPHERICAL integral (proportional to the gas thermal energy), not the cylindrical Y_SZ D_A^2. R500 and M500 are from the M500-Y_X relation (hydrostatic-calibrated relaxed clusters), so M500 and Y are not independent of Y_X. M500 is computed from R500 and z."
+      },
+      "definitions": {
+        "haloMassDefinition": "M500crit",
+        "massMethod": "M500-Y_X relation (Arnaud+07), calibrated on hydrostatic masses of relaxed clusters; computed from R500 iterated with it",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "sampleSelection": "REXCESS: 31 nearby clusters selected from REFLEX by X-ray luminosity only (\"selected by luminosity only, in such a way as to have close to homogeneous coverage of luminosity space\"), 0.0564 <= z <= 0.1832; 'Pratt+09: M_Y = mass from the M500-Y_X relation of Arnaud+07'",
+        "population": "all",
+        "szScaling": "none (physical Y_sph); the paper's relation uses h(z)^(-2/3) Y_sph",
+        "szAperture": "spherical, R500",
+        "szDefinition": "Y_sph (spherical), not Y_SZ D_A^2 (cylindrical)",
+        "pressureProfile": "measured REXCESS pressure profiles (deprojected X-ray electron density times spectroscopic temperature)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Arnaud et al. 2010, A&A 517, A92 (arXiv:0910.1234)",
+        "doi": "10.1051/0004-6361/200913416",
+        "url": "https://arxiv.org/abs/0910.1234",
+        "retrieved": "2026-10-18",
+        "figure": "table:pnfw (Cluster physical parameters; column Y_sph(R500))",
+        "sourceMember": "prexcess_sub.tex",
+        "sourceArchiveSha256": "b9a965ef37d1ecedeb5f6fdb6f3c1d6beff0d62f6b5f383c937c3e63ff4833b9",
+        "extractionMethod": "values parsed from the LaTeX table(s); M500 computed from tabulated R500 and z with the paper's definition (footnote of Sect. Scaling in Pratt+09)"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "One point per cluster (31). Transcription cross-checked: M500 from R500 agrees with the M500-Y_X relation used by the papers (mean -0.0080, max 0.0193 dex); the relation refit from these points reproduces the published fit (see fit records)."
+    },
+    {
+      "id": "pratt09.rexcess.lxm.bol-L1.bcesyx",
+      "source": "Pratt et al. 2009 (REXCESS fit)",
+      "run": "bol-L1: bolometric [0.01-100] keV, with core (R < R500), BCES (Y|X)",
+      "kind": "observation",
+      "relation": "lxm",
+      "epoch": {
+        "zRepresentative": 0.1181,
+        "zNominal": 0.1181,
+        "zMin": 0.0564,
+        "zMax": 0.1832,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside the radius at which the mean density is 500 times the critical density at the cluster redshift; computed from the tabulated R500 and z; R500 iterated from the M500-Y_X relation)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 X-ray luminosity L1 (bolometric [0.01-100] keV, R < R500); the published h(z)^(-7/3) scaling is re-applied at the epoch, so this is the physical luminosity",
+        "yUnit": "log10(erg s^-1)"
+      },
+      "domain": {
+        "xMin": 13.99,
+        "xMax": 14.9
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "h(z)^(-7/3) L = C (M500 / 2e14 Msun)^alpha, C = 1.81 x 10^44 erg/s, alpha = 1.81  [BCES (Y|X); Pratt+09 table lxrel (bolometric)]",
+        "expression": "(7/6)*log10(0.3*(1+z)**3+0.7)+logC+alpha*(x-logM0)",
+        "parameters": {
+          "logC": 44.25768,
+          "alpha": 1.81,
+          "logM0": 14.30103
+        },
+        "ageCosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "REXCESS clusters",
+        "warning": "Published power-law fit of the raw REXCESS L1-M_Y relation (bolometric [0.01-100] keV, with core (R < R500)); fit method BCES (Y|X). Malmquist-bias-corrected rows of the same table are not stored. M is M_Y, the M500 derived from Y_X with the relation of Arnaud+07, so L-M is a Y_X-mass relation. Intrinsic scatter is not given for L-M because M is derived from Y_X (table footnote a)."
+      },
+      "definitions": {
+        "haloMassDefinition": "M500crit",
+        "massMethod": "M500-Y_X relation (Arnaud+07), calibrated on hydrostatic masses of relaxed clusters; computed from R500 iterated with it",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "sampleSelection": "REXCESS: 31 nearby clusters selected from REFLEX by X-ray luminosity only (\"selected by luminosity only, in such a way as to have close to homogeneous coverage of luminosity space\"), 0.0564 <= z <= 0.1832; 'Pratt+09: M_Y = mass from the M500-Y_X relation of Arnaud+07'",
+        "population": "all",
+        "xrayBand": "bolometric [0.01-100] keV",
+        "coreTreatment": "with core",
+        "luminosityAperture": "R < R500",
+        "luminosityScaling": "h(z)^-7/3 = E(z)^-7/3 applied in the fit (E^2 = 0.3 (1+z)^3 + 0.7)",
+        "fitMethod": "BCES (Y|X)",
+        "malmquistBiasCorrection": "none (raw relation of the REXCESS sample)",
+        "massDefinition": "M500 from the M500-Y_X relation (M_Y)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Pratt et al. 2009, A&A 498, 361 (arXiv:0809.3784)",
+        "doi": "10.1051/0004-6361/200810994",
+        "url": "https://arxiv.org/abs/0809.3784",
+        "retrieved": "2026-10-18",
+        "sourceArchiveSha256": "d3e149ed63839e172348b14a97b7a9221549631534be33a001b83d177e5c66ea"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Verified: refitting the 31 table values (M500 computed from R500, z) with ordinary least squares in log-log gives alpha = 1.811, C = 1.816 x 10^44 erg/s against the paper's 1.81, 1.81 (negligible measurement errors, so BCES reduces to these)."
+    },
+    {
+      "id": "pratt09.rexcess.lxm.bol-L1.bcesorth",
+      "source": "Pratt et al. 2009 (REXCESS fit)",
+      "run": "bol-L1: bolometric [0.01-100] keV, with core (R < R500), BCES orthogonal",
+      "kind": "observation",
+      "relation": "lxm",
+      "epoch": {
+        "zRepresentative": 0.1181,
+        "zNominal": 0.1181,
+        "zMin": 0.0564,
+        "zMax": 0.1832,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside the radius at which the mean density is 500 times the critical density at the cluster redshift; computed from the tabulated R500 and z; R500 iterated from the M500-Y_X relation)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 X-ray luminosity L1 (bolometric [0.01-100] keV, R < R500); the published h(z)^(-7/3) scaling is re-applied at the epoch, so this is the physical luminosity",
+        "yUnit": "log10(erg s^-1)"
+      },
+      "domain": {
+        "xMin": 13.99,
+        "xMax": 14.9
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "h(z)^(-7/3) L = C (M500 / 2e14 Msun)^alpha, C = 1.74 x 10^44 erg/s, alpha = 1.96  [BCES orthogonal; Pratt+09 table lxrel (bolometric)]",
+        "expression": "(7/6)*log10(0.3*(1+z)**3+0.7)+logC+alpha*(x-logM0)",
+        "parameters": {
+          "logC": 44.24055,
+          "alpha": 1.96,
+          "logM0": 14.30103
+        },
+        "ageCosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "REXCESS clusters",
+        "warning": "Published power-law fit of the raw REXCESS L1-M_Y relation (bolometric [0.01-100] keV, with core (R < R500)); fit method BCES orthogonal. Malmquist-bias-corrected rows of the same table are not stored. M is M_Y, the M500 derived from Y_X with the relation of Arnaud+07, so L-M is a Y_X-mass relation. Intrinsic scatter is not given for L-M because M is derived from Y_X (table footnote a)."
+      },
+      "definitions": {
+        "haloMassDefinition": "M500crit",
+        "massMethod": "M500-Y_X relation (Arnaud+07), calibrated on hydrostatic masses of relaxed clusters; computed from R500 iterated with it",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "sampleSelection": "REXCESS: 31 nearby clusters selected from REFLEX by X-ray luminosity only (\"selected by luminosity only, in such a way as to have close to homogeneous coverage of luminosity space\"), 0.0564 <= z <= 0.1832; 'Pratt+09: M_Y = mass from the M500-Y_X relation of Arnaud+07'",
+        "population": "all",
+        "xrayBand": "bolometric [0.01-100] keV",
+        "coreTreatment": "with core",
+        "luminosityAperture": "R < R500",
+        "luminosityScaling": "h(z)^-7/3 = E(z)^-7/3 applied in the fit (E^2 = 0.3 (1+z)^3 + 0.7)",
+        "fitMethod": "BCES orthogonal",
+        "malmquistBiasCorrection": "none (raw relation of the REXCESS sample)",
+        "massDefinition": "M500 from the M500-Y_X relation (M_Y)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Pratt et al. 2009, A&A 498, 361 (arXiv:0809.3784)",
+        "doi": "10.1051/0004-6361/200810994",
+        "url": "https://arxiv.org/abs/0809.3784",
+        "retrieved": "2026-10-18",
+        "sourceArchiveSha256": "d3e149ed63839e172348b14a97b7a9221549631534be33a001b83d177e5c66ea"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Verified: refitting the 31 table values (M500 computed from R500, z) with orthogonal regression gives alpha = 1.960, C = 1.745 x 10^44 erg/s against the paper's 1.96, 1.74 (negligible measurement errors, so BCES reduces to these)."
+    },
+    {
+      "id": "pratt09.rexcess.lxm.bol-L2.bcesyx",
+      "source": "Pratt et al. 2009 (REXCESS fit)",
+      "run": "bol-L2: bolometric [0.01-100] keV, core-excised ([0.15-1] R500), BCES (Y|X)",
+      "kind": "observation",
+      "relation": "lxm",
+      "epoch": {
+        "zRepresentative": 0.1181,
+        "zNominal": 0.1181,
+        "zMin": 0.0564,
+        "zMax": 0.1832,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside the radius at which the mean density is 500 times the critical density at the cluster redshift; computed from the tabulated R500 and z; R500 iterated from the M500-Y_X relation)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 X-ray luminosity L2 (bolometric [0.01-100] keV, 0.15-1 R500); the published h(z)^(-7/3) scaling is re-applied at the epoch, so this is the physical luminosity",
+        "yUnit": "log10(erg s^-1)"
+      },
+      "domain": {
+        "xMin": 13.99,
+        "xMax": 14.9
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "h(z)^(-7/3) L = C (M500 / 2e14 Msun)^alpha, C = 1.09 x 10^44 erg/s, alpha = 1.77  [BCES (Y|X); Pratt+09 table lxrel (bolometric)]",
+        "expression": "(7/6)*log10(0.3*(1+z)**3+0.7)+logC+alpha*(x-logM0)",
+        "parameters": {
+          "logC": 44.03743,
+          "alpha": 1.77,
+          "logM0": 14.30103
+        },
+        "ageCosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "REXCESS clusters",
+        "warning": "Published power-law fit of the raw REXCESS L2-M_Y relation (bolometric [0.01-100] keV, core-excised ([0.15-1] R500)); fit method BCES (Y|X). Malmquist-bias-corrected rows of the same table are not stored. M is M_Y, the M500 derived from Y_X with the relation of Arnaud+07, so L-M is a Y_X-mass relation. Intrinsic scatter is not given for L-M because M is derived from Y_X (table footnote a)."
+      },
+      "definitions": {
+        "haloMassDefinition": "M500crit",
+        "massMethod": "M500-Y_X relation (Arnaud+07), calibrated on hydrostatic masses of relaxed clusters; computed from R500 iterated with it",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "sampleSelection": "REXCESS: 31 nearby clusters selected from REFLEX by X-ray luminosity only (\"selected by luminosity only, in such a way as to have close to homogeneous coverage of luminosity space\"), 0.0564 <= z <= 0.1832; 'Pratt+09: M_Y = mass from the M500-Y_X relation of Arnaud+07'",
+        "population": "all",
+        "xrayBand": "bolometric [0.01-100] keV",
+        "coreTreatment": "core-excised",
+        "luminosityAperture": "0.15-1 R500",
+        "luminosityScaling": "h(z)^-7/3 = E(z)^-7/3 applied in the fit (E^2 = 0.3 (1+z)^3 + 0.7)",
+        "fitMethod": "BCES (Y|X)",
+        "malmquistBiasCorrection": "none (raw relation of the REXCESS sample)",
+        "massDefinition": "M500 from the M500-Y_X relation (M_Y)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Pratt et al. 2009, A&A 498, 361 (arXiv:0809.3784)",
+        "doi": "10.1051/0004-6361/200810994",
+        "url": "https://arxiv.org/abs/0809.3784",
+        "retrieved": "2026-10-18",
+        "sourceArchiveSha256": "d3e149ed63839e172348b14a97b7a9221549631534be33a001b83d177e5c66ea"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Verified: refitting the 31 table values (M500 computed from R500, z) with ordinary least squares in log-log gives alpha = 1.770, C = 1.089 x 10^44 erg/s against the paper's 1.77, 1.09 (negligible measurement errors, so BCES reduces to these)."
+    },
+    {
+      "id": "pratt09.rexcess.lxm.bol-L2.bcesorth",
+      "source": "Pratt et al. 2009 (REXCESS fit)",
+      "run": "bol-L2: bolometric [0.01-100] keV, core-excised ([0.15-1] R500), BCES orthogonal",
+      "kind": "observation",
+      "relation": "lxm",
+      "epoch": {
+        "zRepresentative": 0.1181,
+        "zNominal": 0.1181,
+        "zMin": 0.0564,
+        "zMax": 0.1832,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside the radius at which the mean density is 500 times the critical density at the cluster redshift; computed from the tabulated R500 and z; R500 iterated from the M500-Y_X relation)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 X-ray luminosity L2 (bolometric [0.01-100] keV, 0.15-1 R500); the published h(z)^(-7/3) scaling is re-applied at the epoch, so this is the physical luminosity",
+        "yUnit": "log10(erg s^-1)"
+      },
+      "domain": {
+        "xMin": 13.99,
+        "xMax": 14.9
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "h(z)^(-7/3) L = C (M500 / 2e14 Msun)^alpha, C = 1.08 x 10^44 erg/s, alpha = 1.8  [BCES orthogonal; Pratt+09 table lxrel (bolometric)]",
+        "expression": "(7/6)*log10(0.3*(1+z)**3+0.7)+logC+alpha*(x-logM0)",
+        "parameters": {
+          "logC": 44.03342,
+          "alpha": 1.8,
+          "logM0": 14.30103
+        },
+        "ageCosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "REXCESS clusters",
+        "warning": "Published power-law fit of the raw REXCESS L2-M_Y relation (bolometric [0.01-100] keV, core-excised ([0.15-1] R500)); fit method BCES orthogonal. Malmquist-bias-corrected rows of the same table are not stored. M is M_Y, the M500 derived from Y_X with the relation of Arnaud+07, so L-M is a Y_X-mass relation. Intrinsic scatter is not given for L-M because M is derived from Y_X (table footnote a)."
+      },
+      "definitions": {
+        "haloMassDefinition": "M500crit",
+        "massMethod": "M500-Y_X relation (Arnaud+07), calibrated on hydrostatic masses of relaxed clusters; computed from R500 iterated with it",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "sampleSelection": "REXCESS: 31 nearby clusters selected from REFLEX by X-ray luminosity only (\"selected by luminosity only, in such a way as to have close to homogeneous coverage of luminosity space\"), 0.0564 <= z <= 0.1832; 'Pratt+09: M_Y = mass from the M500-Y_X relation of Arnaud+07'",
+        "population": "all",
+        "xrayBand": "bolometric [0.01-100] keV",
+        "coreTreatment": "core-excised",
+        "luminosityAperture": "0.15-1 R500",
+        "luminosityScaling": "h(z)^-7/3 = E(z)^-7/3 applied in the fit (E^2 = 0.3 (1+z)^3 + 0.7)",
+        "fitMethod": "BCES orthogonal",
+        "malmquistBiasCorrection": "none (raw relation of the REXCESS sample)",
+        "massDefinition": "M500 from the M500-Y_X relation (M_Y)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Pratt et al. 2009, A&A 498, 361 (arXiv:0809.3784)",
+        "doi": "10.1051/0004-6361/200810994",
+        "url": "https://arxiv.org/abs/0809.3784",
+        "retrieved": "2026-10-18",
+        "sourceArchiveSha256": "d3e149ed63839e172348b14a97b7a9221549631534be33a001b83d177e5c66ea"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Verified: refitting the 31 table values (M500 computed from R500, z) with orthogonal regression gives alpha = 1.798, C = 1.081 x 10^44 erg/s against the paper's 1.8, 1.08 (negligible measurement errors, so BCES reduces to these)."
+    },
+    {
+      "id": "pratt09.rexcess.lxm.soft-L1.bcesyx",
+      "source": "Pratt et al. 2009 (REXCESS fit)",
+      "run": "soft-L1: [0.1-2.4] keV (ROSAT band), with core (R < R500), BCES (Y|X)",
+      "kind": "observation",
+      "relation": "lxm",
+      "epoch": {
+        "zRepresentative": 0.1181,
+        "zNominal": 0.1181,
+        "zMin": 0.0564,
+        "zMax": 0.1832,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside the radius at which the mean density is 500 times the critical density at the cluster redshift; computed from the tabulated R500 and z; R500 iterated from the M500-Y_X relation)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 X-ray luminosity L[0.1-2.4]_1 ([0.1-2.4] keV (ROSAT band), R < R500); the published h(z)^(-7/3) scaling is re-applied at the epoch, so this is the physical luminosity",
+        "yUnit": "log10(erg s^-1)"
+      },
+      "domain": {
+        "xMin": 13.99,
+        "xMax": 14.9
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "h(z)^(-7/3) L = C (M500 / 2e14 Msun)^alpha, C = 1.03 x 10^44 erg/s, alpha = 1.53  [BCES (Y|X); Pratt+09 table lxrelsoft ([0.1-2.4] keV)]",
+        "expression": "(7/6)*log10(0.3*(1+z)**3+0.7)+logC+alpha*(x-logM0)",
+        "parameters": {
+          "logC": 44.01284,
+          "alpha": 1.53,
+          "logM0": 14.30103
+        },
+        "ageCosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "REXCESS clusters",
+        "warning": "Published power-law fit of the raw REXCESS L[0.1-2.4]_1-M_Y relation ([0.1-2.4] keV (ROSAT band), with core (R < R500)); fit method BCES (Y|X). Malmquist-bias-corrected rows of the same table are not stored. M is M_Y, the M500 derived from Y_X with the relation of Arnaud+07, so L-M is a Y_X-mass relation. Intrinsic scatter is not given for L-M because M is derived from Y_X (table footnote a)."
+      },
+      "definitions": {
+        "haloMassDefinition": "M500crit",
+        "massMethod": "M500-Y_X relation (Arnaud+07), calibrated on hydrostatic masses of relaxed clusters; computed from R500 iterated with it",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "sampleSelection": "REXCESS: 31 nearby clusters selected from REFLEX by X-ray luminosity only (\"selected by luminosity only, in such a way as to have close to homogeneous coverage of luminosity space\"), 0.0564 <= z <= 0.1832; 'Pratt+09: M_Y = mass from the M500-Y_X relation of Arnaud+07'",
+        "population": "all",
+        "xrayBand": "[0.1-2.4] keV (ROSAT band)",
+        "coreTreatment": "with core",
+        "luminosityAperture": "R < R500",
+        "luminosityScaling": "h(z)^-7/3 = E(z)^-7/3 applied in the fit (E^2 = 0.3 (1+z)^3 + 0.7)",
+        "fitMethod": "BCES (Y|X)",
+        "malmquistBiasCorrection": "none (raw relation of the REXCESS sample)",
+        "massDefinition": "M500 from the M500-Y_X relation (M_Y)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Pratt et al. 2009, A&A 498, 361 (arXiv:0809.3784)",
+        "doi": "10.1051/0004-6361/200810994",
+        "url": "https://arxiv.org/abs/0809.3784",
+        "retrieved": "2026-10-18",
+        "sourceArchiveSha256": "d3e149ed63839e172348b14a97b7a9221549631534be33a001b83d177e5c66ea"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Verified: refitting the 31 table values (M500 computed from R500, z) with ordinary least squares in log-log gives alpha = 1.527, C = 1.033 x 10^44 erg/s against the paper's 1.53, 1.03 (negligible measurement errors, so BCES reduces to these)."
+    },
+    {
+      "id": "pratt09.rexcess.lxm.soft-L1.bcesorth",
+      "source": "Pratt et al. 2009 (REXCESS fit)",
+      "run": "soft-L1: [0.1-2.4] keV (ROSAT band), with core (R < R500), BCES orthogonal",
+      "kind": "observation",
+      "relation": "lxm",
+      "epoch": {
+        "zRepresentative": 0.1181,
+        "zNominal": 0.1181,
+        "zMin": 0.0564,
+        "zMax": 0.1832,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside the radius at which the mean density is 500 times the critical density at the cluster redshift; computed from the tabulated R500 and z; R500 iterated from the M500-Y_X relation)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 X-ray luminosity L[0.1-2.4]_1 ([0.1-2.4] keV (ROSAT band), R < R500); the published h(z)^(-7/3) scaling is re-applied at the epoch, so this is the physical luminosity",
+        "yUnit": "log10(erg s^-1)"
+      },
+      "domain": {
+        "xMin": 13.99,
+        "xMax": 14.9
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "h(z)^(-7/3) L = C (M500 / 2e14 Msun)^alpha, C = 0.98 x 10^44 erg/s, alpha = 1.71  [BCES orthogonal; Pratt+09 table lxrelsoft ([0.1-2.4] keV)]",
+        "expression": "(7/6)*log10(0.3*(1+z)**3+0.7)+logC+alpha*(x-logM0)",
+        "parameters": {
+          "logC": 43.99123,
+          "alpha": 1.71,
+          "logM0": 14.30103
+        },
+        "ageCosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "REXCESS clusters",
+        "warning": "Published power-law fit of the raw REXCESS L[0.1-2.4]_1-M_Y relation ([0.1-2.4] keV (ROSAT band), with core (R < R500)); fit method BCES orthogonal. Malmquist-bias-corrected rows of the same table are not stored. M is M_Y, the M500 derived from Y_X with the relation of Arnaud+07, so L-M is a Y_X-mass relation. Intrinsic scatter is not given for L-M because M is derived from Y_X (table footnote a)."
+      },
+      "definitions": {
+        "haloMassDefinition": "M500crit",
+        "massMethod": "M500-Y_X relation (Arnaud+07), calibrated on hydrostatic masses of relaxed clusters; computed from R500 iterated with it",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "sampleSelection": "REXCESS: 31 nearby clusters selected from REFLEX by X-ray luminosity only (\"selected by luminosity only, in such a way as to have close to homogeneous coverage of luminosity space\"), 0.0564 <= z <= 0.1832; 'Pratt+09: M_Y = mass from the M500-Y_X relation of Arnaud+07'",
+        "population": "all",
+        "xrayBand": "[0.1-2.4] keV (ROSAT band)",
+        "coreTreatment": "with core",
+        "luminosityAperture": "R < R500",
+        "luminosityScaling": "h(z)^-7/3 = E(z)^-7/3 applied in the fit (E^2 = 0.3 (1+z)^3 + 0.7)",
+        "fitMethod": "BCES orthogonal",
+        "malmquistBiasCorrection": "none (raw relation of the REXCESS sample)",
+        "massDefinition": "M500 from the M500-Y_X relation (M_Y)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Pratt et al. 2009, A&A 498, 361 (arXiv:0809.3784)",
+        "doi": "10.1051/0004-6361/200810994",
+        "url": "https://arxiv.org/abs/0809.3784",
+        "retrieved": "2026-10-18",
+        "sourceArchiveSha256": "d3e149ed63839e172348b14a97b7a9221549631534be33a001b83d177e5c66ea"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Verified: refitting the 31 table values (M500 computed from R500, z) with orthogonal regression gives alpha = 1.706, C = 0.985 x 10^44 erg/s against the paper's 1.71, 0.98 (negligible measurement errors, so BCES reduces to these)."
+    },
+    {
+      "id": "pratt09.rexcess.lxm.soft-L2.bcesyx",
+      "source": "Pratt et al. 2009 (REXCESS fit)",
+      "run": "soft-L2: [0.1-2.4] keV (ROSAT band), core-excised ([0.15-1] R500), BCES (Y|X)",
+      "kind": "observation",
+      "relation": "lxm",
+      "epoch": {
+        "zRepresentative": 0.1181,
+        "zNominal": 0.1181,
+        "zMin": 0.0564,
+        "zMax": 0.1832,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside the radius at which the mean density is 500 times the critical density at the cluster redshift; computed from the tabulated R500 and z; R500 iterated from the M500-Y_X relation)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 X-ray luminosity L[0.1-2.4]_2 ([0.1-2.4] keV (ROSAT band), 0.15-1 R500); the published h(z)^(-7/3) scaling is re-applied at the epoch, so this is the physical luminosity",
+        "yUnit": "log10(erg s^-1)"
+      },
+      "domain": {
+        "xMin": 13.99,
+        "xMax": 14.9
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "h(z)^(-7/3) L = C (M500 / 2e14 Msun)^alpha, C = 0.63 x 10^44 erg/s, alpha = 1.49  [BCES (Y|X); Pratt+09 table lxrelsoft ([0.1-2.4] keV)]",
+        "expression": "(7/6)*log10(0.3*(1+z)**3+0.7)+logC+alpha*(x-logM0)",
+        "parameters": {
+          "logC": 43.79934,
+          "alpha": 1.49,
+          "logM0": 14.30103
+        },
+        "ageCosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "REXCESS clusters",
+        "warning": "Published power-law fit of the raw REXCESS L[0.1-2.4]_2-M_Y relation ([0.1-2.4] keV (ROSAT band), core-excised ([0.15-1] R500)); fit method BCES (Y|X). Malmquist-bias-corrected rows of the same table are not stored. M is M_Y, the M500 derived from Y_X with the relation of Arnaud+07, so L-M is a Y_X-mass relation. Intrinsic scatter is not given for L-M because M is derived from Y_X (table footnote a). The row is printed in the paper as 'L[0.1-2.4]_1-M_Y' but sits in the 0.15<R<R500 block of the survey-band table (a typo); it is read as L[0.1-2.4]_2 and the refit of the L_2 values reproduces it."
+      },
+      "definitions": {
+        "haloMassDefinition": "M500crit",
+        "massMethod": "M500-Y_X relation (Arnaud+07), calibrated on hydrostatic masses of relaxed clusters; computed from R500 iterated with it",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "sampleSelection": "REXCESS: 31 nearby clusters selected from REFLEX by X-ray luminosity only (\"selected by luminosity only, in such a way as to have close to homogeneous coverage of luminosity space\"), 0.0564 <= z <= 0.1832; 'Pratt+09: M_Y = mass from the M500-Y_X relation of Arnaud+07'",
+        "population": "all",
+        "xrayBand": "[0.1-2.4] keV (ROSAT band)",
+        "coreTreatment": "core-excised",
+        "luminosityAperture": "0.15-1 R500",
+        "luminosityScaling": "h(z)^-7/3 = E(z)^-7/3 applied in the fit (E^2 = 0.3 (1+z)^3 + 0.7)",
+        "fitMethod": "BCES (Y|X)",
+        "malmquistBiasCorrection": "none (raw relation of the REXCESS sample)",
+        "massDefinition": "M500 from the M500-Y_X relation (M_Y)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Pratt et al. 2009, A&A 498, 361 (arXiv:0809.3784)",
+        "doi": "10.1051/0004-6361/200810994",
+        "url": "https://arxiv.org/abs/0809.3784",
+        "retrieved": "2026-10-18",
+        "sourceArchiveSha256": "d3e149ed63839e172348b14a97b7a9221549631534be33a001b83d177e5c66ea"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Verified: refitting the 31 table values (M500 computed from R500, z) with ordinary least squares in log-log gives alpha = 1.488, C = 0.627 x 10^44 erg/s against the paper's 1.49, 0.63 (negligible measurement errors, so BCES reduces to these)."
+    },
+    {
+      "id": "pratt09.rexcess.lxm.soft-L2.bcesorth",
+      "source": "Pratt et al. 2009 (REXCESS fit)",
+      "run": "soft-L2: [0.1-2.4] keV (ROSAT band), core-excised ([0.15-1] R500), BCES orthogonal",
+      "kind": "observation",
+      "relation": "lxm",
+      "epoch": {
+        "zRepresentative": 0.1181,
+        "zNominal": 0.1181,
+        "zMin": 0.0564,
+        "zMax": 0.1832,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside the radius at which the mean density is 500 times the critical density at the cluster redshift; computed from the tabulated R500 and z; R500 iterated from the M500-Y_X relation)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 X-ray luminosity L[0.1-2.4]_2 ([0.1-2.4] keV (ROSAT band), 0.15-1 R500); the published h(z)^(-7/3) scaling is re-applied at the epoch, so this is the physical luminosity",
+        "yUnit": "log10(erg s^-1)"
+      },
+      "domain": {
+        "xMin": 13.99,
+        "xMax": 14.9
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "h(z)^(-7/3) L = C (M500 / 2e14 Msun)^alpha, C = 0.62 x 10^44 erg/s, alpha = 1.52  [BCES orthogonal; Pratt+09 table lxrelsoft ([0.1-2.4] keV)]",
+        "expression": "(7/6)*log10(0.3*(1+z)**3+0.7)+logC+alpha*(x-logM0)",
+        "parameters": {
+          "logC": 43.79239,
+          "alpha": 1.52,
+          "logM0": 14.30103
+        },
+        "ageCosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "REXCESS clusters",
+        "warning": "Published power-law fit of the raw REXCESS L[0.1-2.4]_2-M_Y relation ([0.1-2.4] keV (ROSAT band), core-excised ([0.15-1] R500)); fit method BCES orthogonal. Malmquist-bias-corrected rows of the same table are not stored. M is M_Y, the M500 derived from Y_X with the relation of Arnaud+07, so L-M is a Y_X-mass relation. Intrinsic scatter is not given for L-M because M is derived from Y_X (table footnote a). The row is printed in the paper as 'L[0.1-2.4]_1-M_Y' but sits in the 0.15<R<R500 block of the survey-band table (a typo); it is read as L[0.1-2.4]_2 and the refit of the L_2 values reproduces it."
+      },
+      "definitions": {
+        "haloMassDefinition": "M500crit",
+        "massMethod": "M500-Y_X relation (Arnaud+07), calibrated on hydrostatic masses of relaxed clusters; computed from R500 iterated with it",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "sampleSelection": "REXCESS: 31 nearby clusters selected from REFLEX by X-ray luminosity only (\"selected by luminosity only, in such a way as to have close to homogeneous coverage of luminosity space\"), 0.0564 <= z <= 0.1832; 'Pratt+09: M_Y = mass from the M500-Y_X relation of Arnaud+07'",
+        "population": "all",
+        "xrayBand": "[0.1-2.4] keV (ROSAT band)",
+        "coreTreatment": "core-excised",
+        "luminosityAperture": "0.15-1 R500",
+        "luminosityScaling": "h(z)^-7/3 = E(z)^-7/3 applied in the fit (E^2 = 0.3 (1+z)^3 + 0.7)",
+        "fitMethod": "BCES orthogonal",
+        "malmquistBiasCorrection": "none (raw relation of the REXCESS sample)",
+        "massDefinition": "M500 from the M500-Y_X relation (M_Y)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Pratt et al. 2009, A&A 498, 361 (arXiv:0809.3784)",
+        "doi": "10.1051/0004-6361/200810994",
+        "url": "https://arxiv.org/abs/0809.3784",
+        "retrieved": "2026-10-18",
+        "sourceArchiveSha256": "d3e149ed63839e172348b14a97b7a9221549631534be33a001b83d177e5c66ea"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Verified: refitting the 31 table values (M500 computed from R500, z) with orthogonal regression gives alpha = 1.523, C = 0.621 x 10^44 erg/s against the paper's 1.52, 0.62 (negligible measurement errors, so BCES reduces to these)."
+    },
+    {
+      "id": "arnaud10.rexcess.ysz.ysph500.fit",
+      "source": "Arnaud et al. 2010 (REXCESS fit)",
+      "run": "Y_sph(R500)-M500, fit to the REXCESS data",
+      "kind": "observation",
+      "relation": "ysz",
+      "epoch": {
+        "zRepresentative": 0.1181,
+        "zNominal": 0.1181,
+        "zMin": 0.0564,
+        "zMax": 0.1832,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside the radius at which the mean density is 500 times the critical density at the cluster redshift; computed from the tabulated R500 and z; R500 iterated from the M500-Y_X relation)",
+        "xUnit": "log10(Msun)",
+        "yUnit": "log10(Mpc^2)",
+        "yDefinition": "log10 spherically integrated Compton parameter Y_sph(R500); the published h(z)^(-2/3) scaling is re-applied at the epoch, so this is the physical Y_sph"
+      },
+      "domain": {
+        "xMin": 13.99,
+        "xMax": 14.9
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "h(z)^(-2/3) Y_sph(R500) = 10^-4.739 [M500 / (3e14 h70^-1 Msun)]^1.790 h70^-5/2 Mpc^2  (Arnaud+10 eq. mysz500)",
+        "expression": "(1/3)*log10(0.3*(1+z)**3+0.7)+logA+alpha*(x-logM0)",
+        "parameters": {
+          "logA": -4.739,
+          "alpha": 1.79,
+          "logM0": 14.47712
+        },
+        "ageCosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "REXCESS clusters",
+        "warning": "Published power-law fit to the REXCESS Y_sph(R500) - M500 data. Y_sph is the spherical integral inside R500, not Y_SZ D_A^2. M500 comes from the M500-Y_X relation, so the relation 'does not contain more information than the Y_sph-Y_X relation' (paper). The paper's units carry h70 factors (h70 = 1 here)."
+      },
+      "definitions": {
+        "haloMassDefinition": "M500crit",
+        "massMethod": "M500-Y_X relation (Arnaud+07), calibrated on hydrostatic masses of relaxed clusters; computed from R500 iterated with it",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "sampleSelection": "REXCESS: 31 nearby clusters selected from REFLEX by X-ray luminosity only (\"selected by luminosity only, in such a way as to have close to homogeneous coverage of luminosity space\"), 0.0564 <= z <= 0.1832; 'Pratt+09: M_Y = mass from the M500-Y_X relation of Arnaud+07'",
+        "population": "all",
+        "szScaling": "h(z)^(-2/3) = E(z)^(-2/3) applied in the fit (E^2 = 0.3 (1+z)^3 + 0.7)",
+        "szAperture": "spherical, R500",
+        "szDefinition": "Y_sph (spherical)",
+        "h70": "H0 = 70, so h70 = 1 and units are Msun and Mpc^2"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Arnaud et al. 2010, A&A 517, A92 (arXiv:0910.1234)",
+        "doi": "10.1051/0004-6361/200913416",
+        "url": "https://arxiv.org/abs/0910.1234",
+        "retrieved": "2026-10-18",
+        "sourceArchiveSha256": "b9a965ef37d1ecedeb5f6fdb6f3c1d6beff0d62f6b5f383c937c3e63ff4833b9"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Verified: refitting the 31 table values (M500 from R500 and z, Y_sph(R500) / E(z)^(2/3)) with orthogonal regression gives slope 1.791 and log A = -4.739 (OLS: 1.789, -4.739), against the paper's 1.790 +/- 0.015 and -4.739 +/- 0.003."
+    },
+    {
+      "id": "arnaud10.rexcess.ysz.ycyl500.universal",
+      "source": "Arnaud et al. 2010 (universal profile)",
+      "run": "Y_SZ D_A^2-M500, universal GNFW pressure profile, cylindrical, R500 aperture (Y_SZ D_A^2 within R500)",
+      "kind": "observation",
+      "relation": "ysz",
+      "epoch": {
+        "zRepresentative": 0.1181,
+        "zNominal": 0.1181,
+        "zMin": 0.0564,
+        "zMax": 0.1832,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside the radius at which the mean density is 500 times the critical density at the cluster redshift; computed from the tabulated R500 and z; R500 iterated from the M500-Y_X relation)",
+        "xUnit": "log10(Msun)",
+        "yUnit": "log10(Mpc^2)",
+        "yDefinition": "log10 Y_SZ D_A^2, cylindrical, R500 aperture (Y_SZ D_A^2 within R500); the published h(z)^(-2/3) scaling is re-applied at the epoch, so this is the physical value"
+      },
+      "domain": {
+        "xMin": 13.99,
+        "xMax": 14.9
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "h(z)^(-2/3) Y_SZ D_A^2 = B (M500 / (3e14 h70^-1 Msun))^1.78 h70^-1 Mpc^2, log10 B = -4.665 (2.925e-5 x J(1) = 0.7398)  (Arnaud+10 eqs. mysz, Jx)",
+        "expression": "(1/3)*log10(0.3*(1+z)**3+0.7)+logB+alpha*(x-logM0)",
+        "parameters": {
+          "logB": -4.665,
+          "alpha": 1.78,
+          "logM0": 14.47712
+        },
+        "ageCosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "REXCESS clusters",
+        "warning": "Model relation built by the authors from the universal GNFW pressure profile (REXCESS data plus simulations at large radii) with the mass scaling slope fixed to 1.78 from the M500-Y_X relation; extent R_b = 5 R500 assumed for the cylindrical integral. The paper estimates an uncertainty of +/-0.06 on the slope and +/-0.024 dex on the normalisation. Not a direct measurement of Y_SZ."
+      },
+      "definitions": {
+        "haloMassDefinition": "M500crit",
+        "massMethod": "M500-Y_X relation (Arnaud+07), calibrated on hydrostatic masses of relaxed clusters; computed from R500 iterated with it",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "sampleSelection": "REXCESS: 31 nearby clusters selected from REFLEX by X-ray luminosity only (\"selected by luminosity only, in such a way as to have close to homogeneous coverage of luminosity space\"), 0.0564 <= z <= 0.1832; 'Pratt+09: M_Y = mass from the M500-Y_X relation of Arnaud+07'",
+        "population": "all",
+        "szScaling": "h(z)^(-2/3) = E(z)^(-2/3) applied in the fit",
+        "szAperture": "cylindrical, R500 aperture (Y_SZ D_A^2 within R500)",
+        "szDefinition": "Y_SZ D_A^2 (cylindrical) derived from the universal pressure profile with the slope fixed at 1.78",
+        "h70": "H0 = 70, so h70 = 1"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Arnaud et al. 2010, A&A 517, A92 (arXiv:0910.1234)",
+        "doi": "10.1051/0004-6361/200913416",
+        "url": "https://arxiv.org/abs/0910.1234",
+        "retrieved": "2026-10-18",
+        "sourceArchiveSha256": "b9a965ef37d1ecedeb5f6fdb6f3c1d6beff0d62f6b5f383c937c3e63ff4833b9"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Verified: the normalisation reproduces the quoted number log B = -4.665 from 2.925e-5 x 0.7398 to 4 digits (quoted constants of the paper: eq. y500, J(1), I(5))."
+    },
+    {
+      "id": "arnaud10.rexcess.ysz.ytot.universal",
+      "source": "Arnaud et al. 2010 (universal profile)",
+      "run": "Y_SZ D_A^2-M500, universal GNFW pressure profile, total signal, cylindrical aperture 5 R500 (equivalently Y_sph(5 R500))",
+      "kind": "observation",
+      "relation": "ysz",
+      "epoch": {
+        "zRepresentative": 0.1181,
+        "zNominal": 0.1181,
+        "zMin": 0.0564,
+        "zMax": 0.1832,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside the radius at which the mean density is 500 times the critical density at the cluster redshift; computed from the tabulated R500 and z; R500 iterated from the M500-Y_X relation)",
+        "xUnit": "log10(Msun)",
+        "yUnit": "log10(Mpc^2)",
+        "yDefinition": "log10 Y_SZ D_A^2, total signal, cylindrical aperture 5 R500 (equivalently Y_sph(5 R500)); the published h(z)^(-2/3) scaling is re-applied at the epoch, so this is the physical value"
+      },
+      "domain": {
+        "xMin": 13.99,
+        "xMax": 14.9
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "h(z)^(-2/3) Y_SZ D_A^2 = B (M500 / (3e14 h70^-1 Msun))^1.78 h70^-1 Mpc^2, log10 B = -4.491 (2.925e-5 x I(5) = 1.1037)  (Arnaud+10 eqs. mysz, Jx)",
+        "expression": "(1/3)*log10(0.3*(1+z)**3+0.7)+logB+alpha*(x-logM0)",
+        "parameters": {
+          "logB": -4.491,
+          "alpha": 1.78,
+          "logM0": 14.47712
+        },
+        "ageCosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "REXCESS clusters",
+        "warning": "Model relation built by the authors from the universal GNFW pressure profile (REXCESS data plus simulations at large radii) with the mass scaling slope fixed to 1.78 from the M500-Y_X relation; extent R_b = 5 R500 assumed for the cylindrical integral. The paper estimates an uncertainty of +/-0.06 on the slope and +/-0.024 dex on the normalisation. Not a direct measurement of Y_SZ."
+      },
+      "definitions": {
+        "haloMassDefinition": "M500crit",
+        "massMethod": "M500-Y_X relation (Arnaud+07), calibrated on hydrostatic masses of relaxed clusters; computed from R500 iterated with it",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "sampleSelection": "REXCESS: 31 nearby clusters selected from REFLEX by X-ray luminosity only (\"selected by luminosity only, in such a way as to have close to homogeneous coverage of luminosity space\"), 0.0564 <= z <= 0.1832; 'Pratt+09: M_Y = mass from the M500-Y_X relation of Arnaud+07'",
+        "population": "all",
+        "szScaling": "h(z)^(-2/3) = E(z)^(-2/3) applied in the fit",
+        "szAperture": "total signal, cylindrical aperture 5 R500 (equivalently Y_sph(5 R500))",
+        "szDefinition": "Y_SZ D_A^2 (cylindrical) derived from the universal pressure profile with the slope fixed at 1.78",
+        "h70": "H0 = 70, so h70 = 1"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Arnaud et al. 2010, A&A 517, A92 (arXiv:0910.1234)",
+        "doi": "10.1051/0004-6361/200913416",
+        "url": "https://arxiv.org/abs/0910.1234",
+        "retrieved": "2026-10-18",
+        "sourceArchiveSha256": "b9a965ef37d1ecedeb5f6fdb6f3c1d6beff0d62f6b5f383c937c3e63ff4833b9"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Verified: the normalisation reproduces the quoted number log B = -4.491 from 2.925e-5 x 1.1037 to 4 digits (quoted constants of the paper: eq. y500, J(1), I(5))."
+    }
+  ]
+}

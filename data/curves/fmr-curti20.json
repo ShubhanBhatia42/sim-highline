@@ -1,0 +1,209 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "curti20.sdss.fmr.mu0.55.global",
+      "source": "Curti et al. 2020",
+      "run": "global sample, alpha=0.55",
+      "kind": "observation",
+      "relation": "fmr",
+      "epoch": {
+        "zRepresentative": 0.027,
+        "zMin": 0.027,
+        "zMax": 0.027,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "mu_0.55 = log10(M*/Msun) - 0.55 log10(SFR/(Msun/yr)); MPA-JHU total stellar mass, total (aperture-corrected) Halpha SFR",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "12+log10(O/H), gas-phase, Te-anchored strong-line calibrations (Curti+17), median of M*-SFR bins",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 8.38,
+        "xMax": 11.29
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "12+log(O/H) = Z0 - (gamma/beta) log10(1 + (10^mu / 10^mu0)^-beta), mu = mu_0.55; Z0=8.78, mu0=10.14, gamma=0.3, beta=2.4",
+        "expression": "Z0-(gamma/beta)*Math.log10(1+Math.pow(10,-beta*(x-mu0)))",
+        "parameters": {
+          "Z0": 8.78,
+          "mu0": 10.14,
+          "gamma": 0.3,
+          "beta": 2.4,
+          "Z0Error": 0.004,
+          "mu0Error": 0.03,
+          "gammaError": 0.01,
+          "betaError": 0.4
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all star-forming SDSS galaxies (SDSS DR7 MPA-JHU, BPT star-forming, z>0.027)",
+        "warning": "Fit to median metallicities in M*-SFR bins using the MZR functional form with mu_alpha in place of M*. The paper's main FMR is Z(M*, SFR) and is not stored. x range = extent of the best-fit curve drawn in the paper's figure (not stated in the text). The redshift upper limit of the sample is not stated in this paper, so the epoch block carries only the stated lower limit z>0.027. The paper's table labels the sSFR split in Gyr^-1 while its text and caption use yr^-1 (log sSFR = -9.5): the text and caption were followed."
+      },
+      "definitions": {
+        "muAlpha": 0.55,
+        "metallicityQuantity": "gas-O/H",
+        "metallicityCalibration": "Te-anchored-strong-line (Curti+17)",
+        "sfrTimescaleMyr": "unspecified",
+        "sfrIndicator": "Halpha extinction-corrected in the fibre (Kennicutt & Evans 2012 calibration), MPA-JHU aperture corrections to total SFR",
+        "imf": "chabrier03",
+        "massDefinition": "sed-total",
+        "population": "star-forming"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Curti et al. 2020, MNRAS 491, 944 (arXiv:1910.00597), Appendix A and its table of 2D projections of the FMR",
+        "doi": "10.1093/mnras/stz2910",
+        "url": "https://arxiv.org/abs/1910.00597",
+        "retrieved": "2026-10-18",
+        "sourceMember": "fmr_new_paper.tex",
+        "figureMember": "figures/fmr_proj_final_MCMC.pdf",
+        "figureSha256": "deba722d34f07476a0ce7ccde845b28f9cddb1596e7502d7e93d8b6c23c3becb",
+        "sourceArchiveSha256": "6c6089bd07d4a5c1466489c56f9c4570a191391535fd9ec86b8742ddb34cd1a4"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Parameters as published (Appendix A table). curti20.sdss.fmr.mu0.55.global: drawn best-fit curve (50 vertices, x 8.38..11.29) minus transcribed expression: max |diff| = 0.0007 dex (rms 0.0004); ends: drawn 8.251,8.780 vs expression 8.251,8.780"
+    },
+    {
+      "id": "curti20.sdss.fmr.mu0.22.low-ssfr",
+      "source": "Curti et al. 2020",
+      "run": "sSFR < 10^-9.5 yr^-1, alpha=0.22",
+      "kind": "observation",
+      "relation": "fmr",
+      "epoch": {
+        "zRepresentative": 0.027,
+        "zMin": 0.027,
+        "zMax": 0.027,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "mu_0.22 = log10(M*/Msun) - 0.22 log10(SFR/(Msun/yr)); MPA-JHU total stellar mass, total (aperture-corrected) Halpha SFR",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "12+log10(O/H), gas-phase, Te-anchored strong-line calibrations (Curti+17), median of M*-SFR bins",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 8.64,
+        "xMax": 11.52
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "12+log(O/H) = Z0 - (gamma/beta) log10(1 + (10^mu / 10^mu0)^-beta), mu = mu_0.22; Z0=8.796, mu0=10.1, gamma=0.25, beta=1.1",
+        "expression": "Z0-(gamma/beta)*Math.log10(1+Math.pow(10,-beta*(x-mu0)))",
+        "parameters": {
+          "Z0": 8.796,
+          "mu0": 10.1,
+          "gamma": 0.25,
+          "beta": 1.1,
+          "Z0Error": 0.005,
+          "mu0Error": 0.1,
+          "gammaError": 0.03,
+          "betaError": 0.2
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming SDSS galaxies with log sSFR < -9.5 (yr^-1) (SDSS DR7 MPA-JHU, BPT star-forming, z>0.027)",
+        "warning": "Fit to median metallicities in M*-SFR bins using the MZR functional form with mu_alpha in place of M*. The paper's main FMR is Z(M*, SFR) and is not stored. x range = extent of the best-fit curve drawn in the paper's figure (not stated in the text). The redshift upper limit of the sample is not stated in this paper, so the epoch block carries only the stated lower limit z>0.027. The paper's table labels the sSFR split in Gyr^-1 while its text and caption use yr^-1 (log sSFR = -9.5): the text and caption were followed."
+      },
+      "definitions": {
+        "muAlpha": 0.22,
+        "metallicityQuantity": "gas-O/H",
+        "metallicityCalibration": "Te-anchored-strong-line (Curti+17)",
+        "sfrTimescaleMyr": "unspecified",
+        "sfrIndicator": "Halpha extinction-corrected in the fibre (Kennicutt & Evans 2012 calibration), MPA-JHU aperture corrections to total SFR",
+        "imf": "chabrier03",
+        "massDefinition": "sed-total",
+        "population": "star-forming"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Curti et al. 2020, MNRAS 491, 944 (arXiv:1910.00597), Appendix A and its table of 2D projections of the FMR",
+        "doi": "10.1093/mnras/stz2910",
+        "url": "https://arxiv.org/abs/1910.00597",
+        "retrieved": "2026-10-18",
+        "sourceMember": "fmr_new_paper.tex",
+        "figureMember": "figures/fmr_proj_lowfinal_MCMC.pdf",
+        "figureSha256": "7e52c550b0358666d571a1dd00b58de2c116d1c895a9959c06c519d9dfe3bb2a",
+        "sourceArchiveSha256": "6c6089bd07d4a5c1466489c56f9c4570a191391535fd9ec86b8742ddb34cd1a4"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Parameters as published (Appendix A table). curti20.sdss.fmr.mu0.22.low-ssfr: drawn best-fit curve (50 vertices, x 8.64..11.52) minus transcribed expression: max |diff| = 0.0126 dex (rms 0.0071); ends: drawn 8.441,8.794 vs expression 8.429,8.793"
+    },
+    {
+      "id": "curti20.sdss.fmr.mu0.65.high-ssfr",
+      "source": "Curti et al. 2020",
+      "run": "sSFR > 10^-9.5 yr^-1, alpha=0.65",
+      "kind": "observation",
+      "relation": "fmr",
+      "epoch": {
+        "zRepresentative": 0.027,
+        "zMin": 0.027,
+        "zMax": 0.027,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "mu_0.65 = log10(M*/Msun) - 0.65 log10(SFR/(Msun/yr)); MPA-JHU total stellar mass, total (aperture-corrected) Halpha SFR",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "12+log10(O/H), gas-phase, Te-anchored strong-line calibrations (Curti+17), median of M*-SFR bins",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 8.41,
+        "xMax": 10.33
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "12+log(O/H) = Z0 - (gamma/beta) log10(1 + (10^mu / 10^mu0)^-beta), mu = mu_0.65; Z0=8.74, mu0=9.9, gamma=0.32, beta=5.0",
+        "expression": "Z0-(gamma/beta)*Math.log10(1+Math.pow(10,-beta*(x-mu0)))",
+        "parameters": {
+          "Z0": 8.74,
+          "mu0": 9.9,
+          "gamma": 0.32,
+          "beta": 5,
+          "Z0Error": 0.04,
+          "mu0Error": 0.1,
+          "gammaError": 0.01,
+          "betaError": 3
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming SDSS galaxies with log sSFR > -9.5 (yr^-1) (SDSS DR7 MPA-JHU, BPT star-forming, z>0.027)",
+        "warning": "Fit to median metallicities in M*-SFR bins using the MZR functional form with mu_alpha in place of M*. The paper's main FMR is Z(M*, SFR) and is not stored. x range = extent of the best-fit curve drawn in the paper's figure (not stated in the text). The redshift upper limit of the sample is not stated in this paper, so the epoch block carries only the stated lower limit z>0.027. The paper's table labels the sSFR split in Gyr^-1 while its text and caption use yr^-1 (log sSFR = -9.5): the text and caption were followed."
+      },
+      "definitions": {
+        "muAlpha": 0.65,
+        "metallicityQuantity": "gas-O/H",
+        "metallicityCalibration": "Te-anchored-strong-line (Curti+17)",
+        "sfrTimescaleMyr": "unspecified",
+        "sfrIndicator": "Halpha extinction-corrected in the fibre (Kennicutt & Evans 2012 calibration), MPA-JHU aperture corrections to total SFR",
+        "imf": "chabrier03",
+        "massDefinition": "sed-total",
+        "population": "star-forming"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Curti et al. 2020, MNRAS 491, 944 (arXiv:1910.00597), Appendix A and its table of 2D projections of the FMR",
+        "doi": "10.1093/mnras/stz2910",
+        "url": "https://arxiv.org/abs/1910.00597",
+        "retrieved": "2026-10-18",
+        "sourceMember": "fmr_new_paper.tex",
+        "figureMember": "figures/fmr_proj_highfinal_MCMC.pdf",
+        "figureSha256": "13fd97fba985b36d98c6823774002efaa7da0fa53a586a55d32ca82540a7231b",
+        "sourceArchiveSha256": "6c6089bd07d4a5c1466489c56f9c4570a191391535fd9ec86b8742ddb34cd1a4"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Parameters as published (Appendix A table). curti20.sdss.fmr.mu0.65.high-ssfr: drawn best-fit curve (50 vertices, x 8.41..10.33) minus transcribed expression: max |diff| = 0.0127 dex (rms 0.0093); ends: drawn 8.250,8.736 vs expression 8.263,8.740"
+    }
+  ]
+}

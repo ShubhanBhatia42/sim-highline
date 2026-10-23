@@ -4273,8 +4273,8 @@
         "yUnit": "log10(Mpc^-3 dex^-1)"
       },
       "domain": {
-        "xMin": 7.778506,
-        "xMax": 10.778506
+        "xMin": 7.560968,
+        "xMax": 10.560968
       },
       "representation": {
         "type": "points",
@@ -4282,43 +4282,43 @@
         "connect": false,
         "points": [
           {
-            "x": 7.778506,
+            "x": 7.560968,
             "y": -1.942759,
             "yLow": -2.083206,
             "yHigh": -1.844709
           },
           {
-            "x": 8.278506,
+            "x": 8.060968,
             "y": -2.002759,
             "yLow": -2.143206,
             "yHigh": -1.896802
           },
           {
-            "x": 8.778506,
+            "x": 8.560968,
             "y": -2.342759,
             "yLow": -2.469603,
             "yHigh": -2.252762
           },
           {
-            "x": 9.278506,
+            "x": 9.060968,
             "y": -2.572759,
             "yLow": -2.699603,
             "yHigh": -2.482762
           },
           {
-            "x": 9.778506,
+            "x": 9.560968,
             "y": -3.182759,
             "yLow": -3.337249,
             "yHigh": -3.076802
           },
           {
-            "x": 10.278506,
+            "x": 10.060968,
             "y": -3.842759,
             "yLow": -4.170286,
             "yHigh": -3.678252
           },
           {
-            "x": 10.778506,
+            "x": 10.560968,
             "y": -4.472759,
             "yHigh": -4.268999
           }
@@ -4327,7 +4327,7 @@
       "scatter": null,
       "selection": {
         "population": "all",
-        "warning": "Assuming Chabrier IMF (converted from Salpeter). h-corrected for SWIFT using Cosmology: Planck15."
+        "warning": "Assuming Chabrier IMF (converted from Salpeter). h-corrected for SWIFT using Cosmology: Planck15. Corrected by sim-highline: the stellar masses are on a Salpeter IMF but were labelled Chabrier: the compilation's script comment says 'converted from Salpeter' and applies no conversion, so log M is shifted by log10(0.606) = -0.2175 dex to a Chabrier IMF (the h conversion it did apply is correct)."
       },
       "definitions": {
         "massDefinition": "sed-total",
@@ -4347,7 +4347,15 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassFunction/Gonzalez2011.hdf5",
-        "checksumSha256": "71aa2f9533ff49afacccc246f33aed2290a572a48827d6bca20283bbac12fa0f"
+        "checksumSha256": "71aa2f9533ff49afacccc246f33aed2290a572a48827d6bca20283bbac12fa0f",
+        "corrections": [
+          {
+            "id": "gonzalez11-salpeter",
+            "summary": "the stellar masses are on a Salpeter IMF but were labelled Chabrier: the compilation's script comment says 'converted from Salpeter' and applies no conversion, so log M is shifted by log10(0.606) = -0.2175 dex to a Chabrier IMF (the h conversion it did apply is correct).",
+            "dxDex": -0.217538,
+            "pointsBefore": "280ce1491ec67ebab773312af6fcfeae846f15514ec6c7e52628a357b6a4ed10"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
@@ -4373,8 +4381,8 @@
         "yUnit": "log10(Mpc^-3 dex^-1)"
       },
       "domain": {
-        "xMin": 7.778506,
-        "xMax": 10.778506
+        "xMin": 7.560968,
+        "xMax": 10.560968
       },
       "representation": {
         "type": "points",
@@ -4382,43 +4390,43 @@
         "connect": false,
         "points": [
           {
-            "x": 7.778506,
+            "x": 7.560968,
             "y": -2.252759,
             "yLow": -2.520781,
             "yHigh": -2.102166
           },
           {
-            "x": 8.278506,
+            "x": 8.060968,
             "y": -2.312759,
             "yLow": -2.580781,
             "yHigh": -2.162166
           },
           {
-            "x": 8.778506,
+            "x": 8.560968,
             "y": -2.642759,
             "yLow": -2.892629,
             "yHigh": -2.513911
           },
           {
-            "x": 9.278506,
+            "x": 9.060968,
             "y": -2.882759,
             "yLow": -3.098455,
             "yHigh": -2.739294
           },
           {
-            "x": 9.778506,
+            "x": 9.560968,
             "y": -3.502759,
             "yLow": -3.789724,
             "yHigh": -3.359294
           },
           {
-            "x": 10.278506,
+            "x": 10.060968,
             "y": -4.162759,
             "yLow": -4.58492,
             "yHigh": -3.98477
           },
           {
-            "x": 10.778506,
+            "x": 10.560968,
             "y": -4.852759,
             "yHigh": -4.607282
           }
@@ -4427,7 +4435,7 @@
       "scatter": null,
       "selection": {
         "population": "all",
-        "warning": "Assuming Chabrier IMF (converted from Salpeter). h-corrected for SWIFT using Cosmology: Planck15."
+        "warning": "Assuming Chabrier IMF (converted from Salpeter). h-corrected for SWIFT using Cosmology: Planck15. Corrected by sim-highline: the stellar masses are on a Salpeter IMF but were labelled Chabrier: the compilation's script comment says 'converted from Salpeter' and applies no conversion, so log M is shifted by log10(0.606) = -0.2175 dex to a Chabrier IMF (the h conversion it did apply is correct)."
       },
       "definitions": {
         "massDefinition": "sed-total",
@@ -4447,7 +4455,15 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassFunction/Gonzalez2011.hdf5",
-        "checksumSha256": "71aa2f9533ff49afacccc246f33aed2290a572a48827d6bca20283bbac12fa0f"
+        "checksumSha256": "71aa2f9533ff49afacccc246f33aed2290a572a48827d6bca20283bbac12fa0f",
+        "corrections": [
+          {
+            "id": "gonzalez11-salpeter",
+            "summary": "the stellar masses are on a Salpeter IMF but were labelled Chabrier: the compilation's script comment says 'converted from Salpeter' and applies no conversion, so log M is shifted by log10(0.606) = -0.2175 dex to a Chabrier IMF (the h conversion it did apply is correct).",
+            "dxDex": -0.217538,
+            "pointsBefore": "6dd62ef0a3d848f510b88344f8216e2d0c02200330ff5bf6c3c5bcbbc83e6a70"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
@@ -4473,8 +4489,8 @@
         "yUnit": "log10(Mpc^-3 dex^-1)"
       },
       "domain": {
-        "xMin": 7.778506,
-        "xMax": 10.778506
+        "xMin": 7.560968,
+        "xMax": 10.560968
       },
       "representation": {
         "type": "points",
@@ -4482,43 +4498,43 @@
         "connect": false,
         "points": [
           {
-            "x": 7.778506,
+            "x": 7.560968,
             "y": -2.132759,
             "yLow": -2.482082,
             "yHigh": -1.948182
           },
           {
-            "x": 8.278506,
+            "x": 8.060968,
             "y": -2.202759,
             "yLow": -2.530286,
             "yHigh": -2.018182
           },
           {
-            "x": 8.778506,
+            "x": 8.560968,
             "y": -2.592759,
             "yLow": -2.879724,
             "yHigh": -2.428252
           },
           {
-            "x": 9.278506,
+            "x": 9.060968,
             "y": -2.852759,
             "yLow": -3.159532,
             "yHigh": -2.695153
           },
           {
-            "x": 9.778506,
+            "x": 9.560968,
             "y": -3.562759,
             "yLow": -3.890286,
             "yHigh": -3.391458
           },
           {
-            "x": 10.278506,
+            "x": 10.060968,
             "y": -4.262759,
             "yLow": -4.806091,
             "yHigh": -4.046666
           },
           {
-            "x": 10.778506,
+            "x": 10.560968,
             "y": -5.012759,
             "yHigh": -4.739761
           }
@@ -4527,7 +4543,7 @@
       "scatter": null,
       "selection": {
         "population": "all",
-        "warning": "Assuming Chabrier IMF (converted from Salpeter). h-corrected for SWIFT using Cosmology: Planck15."
+        "warning": "Assuming Chabrier IMF (converted from Salpeter). h-corrected for SWIFT using Cosmology: Planck15. Corrected by sim-highline: the stellar masses are on a Salpeter IMF but were labelled Chabrier: the compilation's script comment says 'converted from Salpeter' and applies no conversion, so log M is shifted by log10(0.606) = -0.2175 dex to a Chabrier IMF (the h conversion it did apply is correct)."
       },
       "definitions": {
         "massDefinition": "sed-total",
@@ -4547,7 +4563,15 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassFunction/Gonzalez2011.hdf5",
-        "checksumSha256": "71aa2f9533ff49afacccc246f33aed2290a572a48827d6bca20283bbac12fa0f"
+        "checksumSha256": "71aa2f9533ff49afacccc246f33aed2290a572a48827d6bca20283bbac12fa0f",
+        "corrections": [
+          {
+            "id": "gonzalez11-salpeter",
+            "summary": "the stellar masses are on a Salpeter IMF but were labelled Chabrier: the compilation's script comment says 'converted from Salpeter' and applies no conversion, so log M is shifted by log10(0.606) = -0.2175 dex to a Chabrier IMF (the h conversion it did apply is correct).",
+            "dxDex": -0.217538,
+            "pointsBefore": "8c5c67d603c0ebfd13d7e4307992840641383cd85fc5c8a3a06edc7fba2b590e"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
@@ -4573,8 +4597,8 @@
         "yUnit": "log10(Mpc^-3 dex^-1)"
       },
       "domain": {
-        "xMin": 7.778506,
-        "xMax": 10.278506
+        "xMin": 7.560968,
+        "xMax": 10.060968
       },
       "representation": {
         "type": "points",
@@ -4582,37 +4606,37 @@
         "connect": false,
         "points": [
           {
-            "x": 7.778506,
+            "x": 7.560968,
             "y": -2.192759,
             "yLow": -3.184193,
             "yHigh": -1.904049
           },
           {
-            "x": 8.278506,
+            "x": 8.060968,
             "y": -2.272759,
             "yLow": -3.175787,
             "yHigh": -2.005128
           },
           {
-            "x": 8.778506,
+            "x": 8.560968,
             "y": -2.742759,
             "yLow": -3.509586,
             "yHigh": -2.491637
           },
           {
-            "x": 9.278506,
+            "x": 9.060968,
             "y": -3.052759,
             "yLow": -3.716057,
             "yHigh": -2.801637
           },
           {
-            "x": 9.778506,
+            "x": 9.560968,
             "y": -3.842759,
             "yLow": -4.672369,
             "yHigh": -3.580561
           },
           {
-            "x": 10.278506,
+            "x": 10.060968,
             "y": -4.572759,
             "yHigh": -4.29446
           }
@@ -4621,7 +4645,7 @@
       "scatter": null,
       "selection": {
         "population": "all",
-        "warning": "Assuming Chabrier IMF (converted from Salpeter). h-corrected for SWIFT using Cosmology: Planck15."
+        "warning": "Assuming Chabrier IMF (converted from Salpeter). h-corrected for SWIFT using Cosmology: Planck15. Corrected by sim-highline: the stellar masses are on a Salpeter IMF but were labelled Chabrier: the compilation's script comment says 'converted from Salpeter' and applies no conversion, so log M is shifted by log10(0.606) = -0.2175 dex to a Chabrier IMF (the h conversion it did apply is correct)."
       },
       "definitions": {
         "massDefinition": "sed-total",
@@ -4641,7 +4665,15 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassFunction/Gonzalez2011.hdf5",
-        "checksumSha256": "71aa2f9533ff49afacccc246f33aed2290a572a48827d6bca20283bbac12fa0f"
+        "checksumSha256": "71aa2f9533ff49afacccc246f33aed2290a572a48827d6bca20283bbac12fa0f",
+        "corrections": [
+          {
+            "id": "gonzalez11-salpeter",
+            "summary": "the stellar masses are on a Salpeter IMF but were labelled Chabrier: the compilation's script comment says 'converted from Salpeter' and applies no conversion, so log M is shifted by log10(0.606) = -0.2175 dex to a Chabrier IMF (the h conversion it did apply is correct).",
+            "dxDex": -0.217538,
+            "pointsBefore": "cf8af089e9395a0a3bf70350fc7890d70419081b762ab4bdf5bfa1d85d98ad4a"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
@@ -4772,7 +4804,7 @@
       "scatter": null,
       "selection": {
         "population": "unspecified",
-        "warning": "Assuming Chabrier IMF (2003), and a standard LCDM cosmology with H=70km/s/Mpc and O_L = 0.7. Supplied h-free so no corrections have been made."
+        "warning": "Assuming Chabrier IMF (2003), and a standard LCDM cosmology with H=70km/s/Mpc and O_L = 0.7. Supplied h-free so no corrections have been made. Corrected by sim-highline: the raw file states that the values were extracted by hand from a figure, so the curve is a figure read and is now context only; the paper could not be located to check it."
       },
       "definitions": {
         "massDefinition": "sed-total",
@@ -4786,17 +4818,24 @@
         "sfrStatistic": "unspecified"
       },
       "provenance": {
-        "tier": "published-table",
+        "tier": "digitized-figure",
         "citation": "Davies et al. (2016) [2016MNRAS.461..458D]",
         "doi": null,
         "url": "https://ui.adsabs.harvard.edu/abs/2016MNRAS.461..458D",
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassStarFormationRate/Davies2016_z0p1.hdf5",
-        "checksumSha256": "41d502fc6729ec10bdac41ba2b75bc0e6925e95245406d5b1b3a26a97e6c7bd8"
+        "checksumSha256": "41d502fc6729ec10bdac41ba2b75bc0e6925e95245406d5b1b3a26a97e6c7bd8",
+        "corrections": [
+          {
+            "id": "digitized-davies16",
+            "summary": "the raw file states that the values were extracted by hand from a figure, so the curve is a figure read and is now context only; the paper could not be located to check it.",
+            "pointsBefore": "e26161d952e362659abfaf22beae3e16beb114dab273a80b1736b40318f63299"
+          }
+        ]
       },
       "calibration": "validation",
-      "rankable": true,
+      "rankable": false,
       "notes": "Ingested from the converted VELOCIraptor comparison-data HDF5; unit and h conversions were applied by that compilation's per-dataset scripts as described in the warning text."
     },
     {
@@ -4852,14 +4891,18 @@
       "scatter": null,
       "selection": {
         "population": "all",
-        "warning": "Assuming Chabrier IMF. z=0.05 - 0.32. No h-correction was required as data was supplied h-free. This catalogue includes all galaxies, including quenched."
+        "warning": "Assuming Chabrier IMF. z=0.05 - 0.32. No h-correction was required as data was supplied h-free. This catalogue includes all galaxies, including quenched. Corrected by sim-highline: the numbers are as published at H0 = 70 km/s/Mpc (Omega_m = 0.3); the compilation did not convert them to Planck15 although its warning said so, or declared no cosmology, so the cosmology of the record is now stated as it is. Masses (and number densities) differ by up to 0.03 dex from a Planck15 basis; the comparison logic notes this. Checked by sim-highline against the paper, not changed: the raw five-row table is not a table in the paper (hand-extracted values) and the values were not compared with the paper; the 'all galaxies' curve lies about 1.2 dex below the GSWLC-2 median of all galaxies at the same mass."
       },
       "definitions": {
         "massDefinition": "sed-total",
         "imf": "chabrier03",
         "population": "all",
         "sfrTimescaleMyr": "unspecified",
-        "sfrStatistic": "unspecified"
+        "sfrStatistic": "unspecified",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
       },
       "provenance": {
         "tier": "published-table",
@@ -4869,7 +4912,19 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassSpecificStarFormationRate/Bauer2013_AllGalaxies.hdf5",
-        "checksumSha256": "f356b6a850738c5fef326d12f762f1a0d4f7a20cacdd6df8c2e16f2366be6eaa"
+        "checksumSha256": "f356b6a850738c5fef326d12f762f1a0d4f7a20cacdd6df8c2e16f2366be6eaa",
+        "corrections": [
+          {
+            "id": "cosmology-label-h70",
+            "summary": "the numbers are as published at H0 = 70 km/s/Mpc (Omega_m = 0.3); the compilation did not convert them to Planck15 although its warning said so, or declared no cosmology, so the cosmology of the record is now stated as it is. Masses (and number densities) differ by up to 0.03 dex from a Planck15 basis; the comparison logic notes this.",
+            "pointsBefore": "4ddd895c174d3c6935d30f01803231377a991183fd272e581b58b2f37d81aeb8"
+          },
+          {
+            "id": "flag-bauer13-origin",
+            "summary": "the raw five-row table is not a table in the paper (hand-extracted values) and the values were not compared with the paper; the 'all galaxies' curve lies about 1.2 dex below the GSWLC-2 median of all galaxies at the same mass.",
+            "pointsBefore": "4ddd895c174d3c6935d30f01803231377a991183fd272e581b58b2f37d81aeb8"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
@@ -4938,14 +4993,18 @@
       "scatter": null,
       "selection": {
         "population": "star-forming",
-        "warning": "Assuming Chabrier IMF. z=0.05 - 0.32. No h-correction was required as data was supplied h-free. This catalogue includes star-forming galaxies only."
+        "warning": "Assuming Chabrier IMF. z=0.05 - 0.32. No h-correction was required as data was supplied h-free. This catalogue includes star-forming galaxies only. Corrected by sim-highline: the numbers are as published at H0 = 70 km/s/Mpc (Omega_m = 0.3); the compilation did not convert them to Planck15 although its warning said so, or declared no cosmology, so the cosmology of the record is now stated as it is. Masses (and number densities) differ by up to 0.03 dex from a Planck15 basis; the comparison logic notes this. Checked by sim-highline against the paper, not changed: the raw five-row table is not a table in the paper (hand-extracted values) and the values were not compared with the paper; the 'all galaxies' curve lies about 1.2 dex below the GSWLC-2 median of all galaxies at the same mass."
       },
       "definitions": {
         "massDefinition": "sed-total",
         "imf": "chabrier03",
         "population": "star-forming",
         "sfrTimescaleMyr": "unspecified",
-        "sfrStatistic": "unspecified"
+        "sfrStatistic": "unspecified",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
       },
       "provenance": {
         "tier": "published-table",
@@ -4955,7 +5014,19 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassSpecificStarFormationRate/Bauer2013_StarForming.hdf5",
-        "checksumSha256": "b251bc8eee5b50305a3f98c95f6c112858a4b9252e7fdecd29806d2f8acada75"
+        "checksumSha256": "b251bc8eee5b50305a3f98c95f6c112858a4b9252e7fdecd29806d2f8acada75",
+        "corrections": [
+          {
+            "id": "cosmology-label-h70",
+            "summary": "the numbers are as published at H0 = 70 km/s/Mpc (Omega_m = 0.3); the compilation did not convert them to Planck15 although its warning said so, or declared no cosmology, so the cosmology of the record is now stated as it is. Masses (and number densities) differ by up to 0.03 dex from a Planck15 basis; the comparison logic notes this.",
+            "pointsBefore": "91fb53cb8181ee1ff3b5e15c5b37a8cb9e32ad624e7f0191dd00b78dd44fd295"
+          },
+          {
+            "id": "flag-bauer13-origin",
+            "summary": "the raw five-row table is not a table in the paper (hand-extracted values) and the values were not compared with the paper; the 'all galaxies' curve lies about 1.2 dex below the GSWLC-2 median of all galaxies at the same mass.",
+            "pointsBefore": "91fb53cb8181ee1ff3b5e15c5b37a8cb9e32ad624e7f0191dd00b78dd44fd295"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
@@ -5101,15 +5172,19 @@
       },
       "scatter": null,
       "selection": {
-        "population": "unspecified",
-        "warning": "Assuming Chabrier IMF. z=0.01 - 0.2. No h-correction was required as data was supplied h-free. "
+        "population": "star-forming",
+        "warning": "Assuming Chabrier IMF. z=0.01 - 0.2. No h-correction was required as data was supplied h-free.  Corrected by sim-highline: the numbers are as published at H0 = 70 km/s/Mpc (Omega_m = 0.3); the compilation did not convert them to Planck15 although its warning said so, or declared no cosmology, so the cosmology of the record is now stated as it is. Masses (and number densities) differ by up to 0.03 dex from a Planck15 basis; the comparison logic notes this. Corrected by sim-highline: the curve is the median of the star-forming sequence, not of an unspecified population."
       },
       "definitions": {
         "massDefinition": "sed-total",
         "imf": "chabrier03",
-        "population": "unspecified",
+        "population": "star-forming",
         "sfrTimescaleMyr": "unspecified",
-        "sfrStatistic": "unspecified"
+        "sfrStatistic": "unspecified",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
       },
       "provenance": {
         "tier": "published-table",
@@ -5120,7 +5195,19 @@
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassSpecificStarFormationRate/Chang2015.hdf5",
         "checksumSha256": "1a54bf1824673b89b93b425e3f0c75f27268322c065d1facf7d5e3af4d56abd7",
-        "upstreamCitation": "Chang et al. (2015) (SDSS) [2013MNRAS.434..209B]"
+        "upstreamCitation": "Chang et al. (2015) (SDSS) [2013MNRAS.434..209B]",
+        "corrections": [
+          {
+            "id": "cosmology-label-h70",
+            "summary": "the numbers are as published at H0 = 70 km/s/Mpc (Omega_m = 0.3); the compilation did not convert them to Planck15 although its warning said so, or declared no cosmology, so the cosmology of the record is now stated as it is. Masses (and number densities) differ by up to 0.03 dex from a Planck15 basis; the comparison logic notes this.",
+            "pointsBefore": "22a382934a42cbd47ee6e9a9624daf11889fefbd5a012a998a1c0efab3bb5449"
+          },
+          {
+            "id": "label-chang15-population",
+            "summary": "the curve is the median of the star-forming sequence, not of an unspecified population.",
+            "pointsBefore": "22a382934a42cbd47ee6e9a9624daf11889fefbd5a012a998a1c0efab3bb5449"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
@@ -5297,7 +5384,7 @@
       "scatter": null,
       "selection": {
         "population": "all",
-        "warning": "Assuming Chabrier IMF (2003), assumes a standard LCDM cosmology with H=70 km/s/Mpc and O_lambda=0.7. Provided h-free so no h-correction made. This data is for the r-band only."
+        "warning": "Assuming Chabrier IMF (2003), assumes a standard LCDM cosmology with H=70 km/s/Mpc and O_lambda=0.7. Provided h-free so no h-correction made. This data is for the r-band only. Checked by sim-highline against the paper, not changed: the curve is binned medians of a per-galaxy file that is not in the paper and could not be traced; the compilation's remark that the data are h-free is wrong (the paper adopts H0 = 70, as the record declares), and the lowest four bins below log M* 9.4 hold only 3, 19, 33 and 77 galaxies, outside the paper's mass-limited sample."
       },
       "definitions": {
         "massDefinition": "sed-total",
@@ -5317,7 +5404,14 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassGalaxySize/Lange2015rBand.hdf5",
-        "checksumSha256": "b6d7c6196b09a84f7dc99f128a89e0138b185db261a8e35c379a208c88b9ae80"
+        "checksumSha256": "b6d7c6196b09a84f7dc99f128a89e0138b185db261a8e35c379a208c88b9ae80",
+        "corrections": [
+          {
+            "id": "flag-lange15-trace",
+            "summary": "the curve is binned medians of a per-galaxy file that is not in the paper and could not be traced; the compilation's remark that the data are h-free is wrong (the paper adopts H0 = 70, as the record declares), and the lowest four bins below log M* 9.4 hold only 3, 19, 33 and 77 galaxies, outside the paper's mass-limited sample.",
+            "pointsBefore": "ba16ffc5a2978534dbcaa85dbd67ab9cdd01d177752e1ec84abc078c10311929"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
@@ -5595,7 +5689,7 @@
       "scatter": null,
       "selection": {
         "population": "star-forming",
-        "warning": "Assuming Chabrier IMF (2003), exponentially declining SFH, and a standardLCDM cosmology with H=70km/s/Mpc and O_L = 0.7. Supplied h-free so nocorrections have been made. Includes SFing galaxies only."
+        "warning": "Assuming Chabrier IMF (2003), exponentially declining SFH, and a standardLCDM cosmology with H=70km/s/Mpc and O_L = 0.7. Supplied h-free so nocorrections have been made. Includes SFing galaxies only. Corrected by sim-highline: the size is the mass-based half-mass radius r50 of resolved stellar mass maps, which the paper states."
       },
       "definitions": {
         "massDefinition": "sed-total",
@@ -5604,7 +5698,7 @@
           "H0": 70,
           "Om": 0.3
         },
-        "sizeDefinition": "unspecified",
+        "sizeDefinition": "stellar-half-mass",
         "population": "star-forming"
       },
       "provenance": {
@@ -5615,7 +5709,14 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassGalaxySize/Mosleh2020_SF.hdf5",
-        "checksumSha256": "e7775cb4dd5c82a01298e6d3737e4aef7cb7f9a30edb2af35e5cb09e8bc0db7f"
+        "checksumSha256": "e7775cb4dd5c82a01298e6d3737e4aef7cb7f9a30edb2af35e5cb09e8bc0db7f",
+        "corrections": [
+          {
+            "id": "label-mosleh20-size",
+            "summary": "the size is the mass-based half-mass radius r50 of resolved stellar mass maps, which the paper states.",
+            "pointsBefore": "eadde6265cdd6ff386b4779347351a2f84f89cc864ee42de294fd4a423c7997e"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
@@ -6023,7 +6124,7 @@
       "scatter": null,
       "selection": {
         "population": "quiescent",
-        "warning": "Assuming Chabrier IMF (2003), exponentially declining SFH, and a standardLCDM cosmology with H=70km/s/Mpc and O_L = 0.7. Supplied h-free so nocorrections have been made. Includes quiescent galaxies only."
+        "warning": "Assuming Chabrier IMF (2003), exponentially declining SFH, and a standardLCDM cosmology with H=70km/s/Mpc and O_L = 0.7. Supplied h-free so nocorrections have been made. Includes quiescent galaxies only. Corrected by sim-highline: the size is the mass-based half-mass radius r50 of resolved stellar mass maps, which the paper states."
       },
       "definitions": {
         "massDefinition": "sed-total",
@@ -6032,7 +6133,7 @@
           "H0": 70,
           "Om": 0.3
         },
-        "sizeDefinition": "unspecified",
+        "sizeDefinition": "stellar-half-mass",
         "population": "quiescent"
       },
       "provenance": {
@@ -6043,7 +6144,14 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassGalaxySize/Mosleh2020_Q.hdf5",
-        "checksumSha256": "85b9f6760cbe1d97a6cd5fdd9099406e3f754d176ad11164fb9795cfe852e60e"
+        "checksumSha256": "85b9f6760cbe1d97a6cd5fdd9099406e3f754d176ad11164fb9795cfe852e60e",
+        "corrections": [
+          {
+            "id": "label-mosleh20-size",
+            "summary": "the size is the mass-based half-mass radius r50 of resolved stellar mass maps, which the paper states.",
+            "pointsBefore": "1dbcbf02df1a675f43e0f254ac07990f286d0924e720763196fda52aa6fa2b76"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
@@ -6716,7 +6824,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Behroozi2013Ratio.hdf5",
-        "checksumSha256": "8476eaa70d85efed14ca996b135dba922b4c2839c28757a0f712328f8a47af05"
+        "checksumSha256": "8476eaa70d85efed14ca996b135dba922b4c2839c28757a0f712328f8a47af05",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2013ApJ...770...57B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Fit obtained directly from Peter Behroozi's webpage.",
+            "where": "this record's own provenance in comparison-data.json, line 6703"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -8803,7 +8921,7 @@
       "scatter": null,
       "selection": {
         "population": "centrals",
-        "warning": "Fit obtained directly from paper using the smhmr module in velociraptor-python. No cosmology correction needed. Shows the ratio betweeen stellar mass and halo mass"
+        "warning": "Fit obtained directly from paper using the smhmr module in velociraptor-python. No cosmology correction needed. Shows the ratio betweeen stellar mass and halo mass Attribution note (sim-highline): curve generated by software implementing the published fit, not a table in the paper."
       },
       "definitions": {
         "imf": "chabrier03",
@@ -8819,7 +8937,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Moster2013Ratio.hdf5",
-        "checksumSha256": "70d706afddf938a91dc66c1eafcf6cc92d121cb3cea09375746e1fba8543f12c"
+        "checksumSha256": "70d706afddf938a91dc66c1eafcf6cc92d121cb3cea09375746e1fba8543f12c",
+        "attribution": {
+          "kind": "evaluated-from-published-fit-by-code",
+          "statement": "Generated by the compilation's software from the published fit, not a table in the cited paper.",
+          "primarySource": "ADS bibcode 2013MNRAS.428.3121M",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Fit obtained directly from paper using the smhmr module in velociraptor-python.",
+            "where": "this record's own provenance in comparison-data.json, line 6726"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -9048,7 +9176,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Behroozi2019Ratio.hdf5",
-        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581"
+        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 9035"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -9283,7 +9421,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Behroozi2019Ratio.hdf5",
-        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581"
+        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 9270"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -9516,7 +9664,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Behroozi2019Ratio.hdf5",
-        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581"
+        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 9503"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -9751,7 +9909,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Behroozi2019Ratio.hdf5",
-        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581"
+        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 9738"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -9986,7 +10154,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Behroozi2019Ratio.hdf5",
-        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581"
+        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 9973"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -10221,7 +10399,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Behroozi2019Ratio.hdf5",
-        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581"
+        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 10208"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -10456,7 +10644,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Behroozi2019Ratio.hdf5",
-        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581"
+        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 10443"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -10679,7 +10877,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Behroozi2019Ratio.hdf5",
-        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581"
+        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 10666"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -10900,7 +11108,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Behroozi2019Ratio.hdf5",
-        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581"
+        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 10887"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -11119,7 +11337,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Behroozi2019Ratio.hdf5",
-        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581"
+        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 11106"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -11334,7 +11562,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Behroozi2019Ratio.hdf5",
-        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581"
+        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 11321"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -11549,7 +11787,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Behroozi2019Ratio.hdf5",
-        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581"
+        "checksumSha256": "9c7d8bddb3c238e75df51bbf01abddb69b6d2fd3da3c6626555312fda1317581",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 11536"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -11856,7 +12104,7 @@
       "scatter": null,
       "selection": {
         "population": "centrals",
-        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is M200. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed."
+        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is M200. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed. Attribution note (sim-highline): the numbers are not from the cited paper; the compilation reduced EAGLE catalogues/snapshots itself. Cited paper describes the simulation only."
       },
       "definitions": {
         "massDefinition": "aperture-30pkpc",
@@ -11873,7 +12121,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Schaye2015_Ref_100_M200_Ratio.hdf5",
-        "checksumSha256": "e3dd73b9783acd0649bc2f1f4464fe88154f877652f9cba04c6f2222e11a13fc"
+        "checksumSha256": "e3dd73b9783acd0649bc2f1f4464fe88154f877652f9cba04c6f2222e11a13fc",
+        "attribution": {
+          "kind": "computed-by-compilation-maintainers",
+          "statement": "Not the plotted curve of the cited paper: the maintainers of the comparison-data compilation computed it from the simulation's public catalogue. The cited paper describes the simulation only.",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Medians obtained directly from the subfind catalogs.",
+            "where": "this record's own provenance in comparison-data.json, line 11859"
+          }
+        }
       },
       "calibration": "calibration-adjacent",
       "rankable": true,
@@ -12059,7 +12316,7 @@
       "scatter": null,
       "selection": {
         "population": "centrals",
-        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is M200. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed."
+        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is M200. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed. Attribution note (sim-highline): the numbers are not from the cited paper; the compilation reduced EAGLE catalogues/snapshots itself. Cited paper describes the simulation only."
       },
       "definitions": {
         "massDefinition": "aperture-30pkpc",
@@ -12076,7 +12333,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Schaye2015_Ref_100_M200_Ratio.hdf5",
-        "checksumSha256": "e3dd73b9783acd0649bc2f1f4464fe88154f877652f9cba04c6f2222e11a13fc"
+        "checksumSha256": "e3dd73b9783acd0649bc2f1f4464fe88154f877652f9cba04c6f2222e11a13fc",
+        "attribution": {
+          "kind": "computed-by-compilation-maintainers",
+          "statement": "Not the plotted curve of the cited paper: the maintainers of the comparison-data compilation computed it from the simulation's public catalogue. The cited paper describes the simulation only.",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Medians obtained directly from the subfind catalogs.",
+            "where": "this record's own provenance in comparison-data.json, line 12062"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12258,7 +12524,7 @@
       "scatter": null,
       "selection": {
         "population": "centrals",
-        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is M200. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed."
+        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is M200. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed. Attribution note (sim-highline): the numbers are not from the cited paper; the compilation reduced EAGLE catalogues/snapshots itself. Cited paper describes the simulation only."
       },
       "definitions": {
         "massDefinition": "aperture-30pkpc",
@@ -12275,7 +12541,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Schaye2015_Ref_100_M200_Ratio.hdf5",
-        "checksumSha256": "e3dd73b9783acd0649bc2f1f4464fe88154f877652f9cba04c6f2222e11a13fc"
+        "checksumSha256": "e3dd73b9783acd0649bc2f1f4464fe88154f877652f9cba04c6f2222e11a13fc",
+        "attribution": {
+          "kind": "computed-by-compilation-maintainers",
+          "statement": "Not the plotted curve of the cited paper: the maintainers of the comparison-data compilation computed it from the simulation's public catalogue. The cited paper describes the simulation only.",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Medians obtained directly from the subfind catalogs.",
+            "where": "this record's own provenance in comparison-data.json, line 12261"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12449,7 +12724,7 @@
       "scatter": null,
       "selection": {
         "population": "centrals",
-        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is M200. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed."
+        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is M200. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed. Attribution note (sim-highline): the numbers are not from the cited paper; the compilation reduced EAGLE catalogues/snapshots itself. Cited paper describes the simulation only."
       },
       "definitions": {
         "massDefinition": "aperture-30pkpc",
@@ -12466,7 +12741,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Schaye2015_Ref_100_M200_Ratio.hdf5",
-        "checksumSha256": "e3dd73b9783acd0649bc2f1f4464fe88154f877652f9cba04c6f2222e11a13fc"
+        "checksumSha256": "e3dd73b9783acd0649bc2f1f4464fe88154f877652f9cba04c6f2222e11a13fc",
+        "attribution": {
+          "kind": "computed-by-compilation-maintainers",
+          "statement": "Not the plotted curve of the cited paper: the maintainers of the comparison-data compilation computed it from the simulation's public catalogue. The cited paper describes the simulation only.",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Medians obtained directly from the subfind catalogs.",
+            "where": "this record's own provenance in comparison-data.json, line 12452"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12623,7 +12907,7 @@
       "scatter": null,
       "selection": {
         "population": "centrals",
-        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is M200. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed."
+        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is M200. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed. Attribution note (sim-highline): the numbers are not from the cited paper; the compilation reduced EAGLE catalogues/snapshots itself. Cited paper describes the simulation only."
       },
       "definitions": {
         "massDefinition": "aperture-30pkpc",
@@ -12640,7 +12924,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Schaye2015_Ref_100_M200_Ratio.hdf5",
-        "checksumSha256": "e3dd73b9783acd0649bc2f1f4464fe88154f877652f9cba04c6f2222e11a13fc"
+        "checksumSha256": "e3dd73b9783acd0649bc2f1f4464fe88154f877652f9cba04c6f2222e11a13fc",
+        "attribution": {
+          "kind": "computed-by-compilation-maintainers",
+          "statement": "Not the plotted curve of the cited paper: the maintainers of the comparison-data compilation computed it from the simulation's public catalogue. The cited paper describes the simulation only.",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Medians obtained directly from the subfind catalogs.",
+            "where": "this record's own provenance in comparison-data.json, line 12626"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12784,7 +13077,7 @@
       "scatter": null,
       "selection": {
         "population": "centrals",
-        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is M200. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed."
+        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is M200. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed. Attribution note (sim-highline): the numbers are not from the cited paper; the compilation reduced EAGLE catalogues/snapshots itself. Cited paper describes the simulation only."
       },
       "definitions": {
         "massDefinition": "aperture-30pkpc",
@@ -12801,7 +13094,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Schaye2015_Ref_100_M200_Ratio.hdf5",
-        "checksumSha256": "e3dd73b9783acd0649bc2f1f4464fe88154f877652f9cba04c6f2222e11a13fc"
+        "checksumSha256": "e3dd73b9783acd0649bc2f1f4464fe88154f877652f9cba04c6f2222e11a13fc",
+        "attribution": {
+          "kind": "computed-by-compilation-maintainers",
+          "statement": "Not the plotted curve of the cited paper: the maintainers of the comparison-data compilation computed it from the simulation's public catalogue. The cited paper describes the simulation only.",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Medians obtained directly from the subfind catalogs.",
+            "where": "this record's own provenance in comparison-data.json, line 12787"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -12935,7 +13237,7 @@
       "scatter": null,
       "selection": {
         "population": "centrals",
-        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is M200. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed."
+        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is M200. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed. Attribution note (sim-highline): the numbers are not from the cited paper; the compilation reduced EAGLE catalogues/snapshots itself. Cited paper describes the simulation only."
       },
       "definitions": {
         "massDefinition": "aperture-30pkpc",
@@ -12952,7 +13254,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Schaye2015_Ref_100_M200_Ratio.hdf5",
-        "checksumSha256": "e3dd73b9783acd0649bc2f1f4464fe88154f877652f9cba04c6f2222e11a13fc"
+        "checksumSha256": "e3dd73b9783acd0649bc2f1f4464fe88154f877652f9cba04c6f2222e11a13fc",
+        "attribution": {
+          "kind": "computed-by-compilation-maintainers",
+          "statement": "Not the plotted curve of the cited paper: the maintainers of the comparison-data compilation computed it from the simulation's public catalogue. The cited paper describes the simulation only.",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Medians obtained directly from the subfind catalogs.",
+            "where": "this record's own provenance in comparison-data.json, line 12938"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -13054,7 +13365,7 @@
       "scatter": null,
       "selection": {
         "population": "centrals",
-        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is M200. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed."
+        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is M200. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed. Attribution note (sim-highline): the numbers are not from the cited paper; the compilation reduced EAGLE catalogues/snapshots itself. Cited paper describes the simulation only."
       },
       "definitions": {
         "massDefinition": "aperture-30pkpc",
@@ -13071,7 +13382,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Schaye2015_Ref_100_M200_Ratio.hdf5",
-        "checksumSha256": "e3dd73b9783acd0649bc2f1f4464fe88154f877652f9cba04c6f2222e11a13fc"
+        "checksumSha256": "e3dd73b9783acd0649bc2f1f4464fe88154f877652f9cba04c6f2222e11a13fc",
+        "attribution": {
+          "kind": "computed-by-compilation-maintainers",
+          "statement": "Not the plotted curve of the cited paper: the maintainers of the comparison-data compilation computed it from the simulation's public catalogue. The cited paper describes the simulation only.",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Medians obtained directly from the subfind catalogs.",
+            "where": "this record's own provenance in comparison-data.json, line 13057"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -13256,7 +13576,7 @@
       "scatter": null,
       "selection": {
         "population": "centrals",
-        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is MBN98. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed."
+        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is MBN98. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed. Attribution note (sim-highline): the numbers are not from the cited paper; the compilation reduced EAGLE catalogues/snapshots itself. Cited paper describes the simulation only."
       },
       "definitions": {
         "massDefinition": "aperture-30pkpc",
@@ -13273,7 +13593,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Schaye2015_Ref_100_MBN98_Ratio.hdf5",
-        "checksumSha256": "9bf4e100ba026946d9fc069d960f27b7858c463dd239b69cba1c4619f63db34b"
+        "checksumSha256": "9bf4e100ba026946d9fc069d960f27b7858c463dd239b69cba1c4619f63db34b",
+        "attribution": {
+          "kind": "computed-by-compilation-maintainers",
+          "statement": "Not the plotted curve of the cited paper: the maintainers of the comparison-data compilation computed it from the simulation's public catalogue. The cited paper describes the simulation only.",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Medians obtained directly from the subfind catalogs.",
+            "where": "this record's own provenance in comparison-data.json, line 13259"
+          }
+        }
       },
       "calibration": "calibration-adjacent",
       "rankable": true,
@@ -13456,7 +13785,7 @@
       "scatter": null,
       "selection": {
         "population": "centrals",
-        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is MBN98. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed."
+        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is MBN98. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed. Attribution note (sim-highline): the numbers are not from the cited paper; the compilation reduced EAGLE catalogues/snapshots itself. Cited paper describes the simulation only."
       },
       "definitions": {
         "massDefinition": "aperture-30pkpc",
@@ -13473,7 +13802,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Schaye2015_Ref_100_MBN98_Ratio.hdf5",
-        "checksumSha256": "9bf4e100ba026946d9fc069d960f27b7858c463dd239b69cba1c4619f63db34b"
+        "checksumSha256": "9bf4e100ba026946d9fc069d960f27b7858c463dd239b69cba1c4619f63db34b",
+        "attribution": {
+          "kind": "computed-by-compilation-maintainers",
+          "statement": "Not the plotted curve of the cited paper: the maintainers of the comparison-data compilation computed it from the simulation's public catalogue. The cited paper describes the simulation only.",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Medians obtained directly from the subfind catalogs.",
+            "where": "this record's own provenance in comparison-data.json, line 13459"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -13655,7 +13993,7 @@
       "scatter": null,
       "selection": {
         "population": "centrals",
-        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is MBN98. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed."
+        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is MBN98. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed. Attribution note (sim-highline): the numbers are not from the cited paper; the compilation reduced EAGLE catalogues/snapshots itself. Cited paper describes the simulation only."
       },
       "definitions": {
         "massDefinition": "aperture-30pkpc",
@@ -13672,7 +14010,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Schaye2015_Ref_100_MBN98_Ratio.hdf5",
-        "checksumSha256": "9bf4e100ba026946d9fc069d960f27b7858c463dd239b69cba1c4619f63db34b"
+        "checksumSha256": "9bf4e100ba026946d9fc069d960f27b7858c463dd239b69cba1c4619f63db34b",
+        "attribution": {
+          "kind": "computed-by-compilation-maintainers",
+          "statement": "Not the plotted curve of the cited paper: the maintainers of the comparison-data compilation computed it from the simulation's public catalogue. The cited paper describes the simulation only.",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Medians obtained directly from the subfind catalogs.",
+            "where": "this record's own provenance in comparison-data.json, line 13658"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -13846,7 +14193,7 @@
       "scatter": null,
       "selection": {
         "population": "centrals",
-        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is MBN98. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed."
+        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is MBN98. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed. Attribution note (sim-highline): the numbers are not from the cited paper; the compilation reduced EAGLE catalogues/snapshots itself. Cited paper describes the simulation only."
       },
       "definitions": {
         "massDefinition": "aperture-30pkpc",
@@ -13863,7 +14210,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Schaye2015_Ref_100_MBN98_Ratio.hdf5",
-        "checksumSha256": "9bf4e100ba026946d9fc069d960f27b7858c463dd239b69cba1c4619f63db34b"
+        "checksumSha256": "9bf4e100ba026946d9fc069d960f27b7858c463dd239b69cba1c4619f63db34b",
+        "attribution": {
+          "kind": "computed-by-compilation-maintainers",
+          "statement": "Not the plotted curve of the cited paper: the maintainers of the comparison-data compilation computed it from the simulation's public catalogue. The cited paper describes the simulation only.",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Medians obtained directly from the subfind catalogs.",
+            "where": "this record's own provenance in comparison-data.json, line 13849"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -14020,7 +14376,7 @@
       "scatter": null,
       "selection": {
         "population": "centrals",
-        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is MBN98. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed."
+        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is MBN98. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed. Attribution note (sim-highline): the numbers are not from the cited paper; the compilation reduced EAGLE catalogues/snapshots itself. Cited paper describes the simulation only."
       },
       "definitions": {
         "massDefinition": "aperture-30pkpc",
@@ -14037,7 +14393,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Schaye2015_Ref_100_MBN98_Ratio.hdf5",
-        "checksumSha256": "9bf4e100ba026946d9fc069d960f27b7858c463dd239b69cba1c4619f63db34b"
+        "checksumSha256": "9bf4e100ba026946d9fc069d960f27b7858c463dd239b69cba1c4619f63db34b",
+        "attribution": {
+          "kind": "computed-by-compilation-maintainers",
+          "statement": "Not the plotted curve of the cited paper: the maintainers of the comparison-data compilation computed it from the simulation's public catalogue. The cited paper describes the simulation only.",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Medians obtained directly from the subfind catalogs.",
+            "where": "this record's own provenance in comparison-data.json, line 14023"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -14186,7 +14551,7 @@
       "scatter": null,
       "selection": {
         "population": "centrals",
-        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is MBN98. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed."
+        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is MBN98. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed. Attribution note (sim-highline): the numbers are not from the cited paper; the compilation reduced EAGLE catalogues/snapshots itself. Cited paper describes the simulation only."
       },
       "definitions": {
         "massDefinition": "aperture-30pkpc",
@@ -14203,7 +14568,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Schaye2015_Ref_100_MBN98_Ratio.hdf5",
-        "checksumSha256": "9bf4e100ba026946d9fc069d960f27b7858c463dd239b69cba1c4619f63db34b"
+        "checksumSha256": "9bf4e100ba026946d9fc069d960f27b7858c463dd239b69cba1c4619f63db34b",
+        "attribution": {
+          "kind": "computed-by-compilation-maintainers",
+          "statement": "Not the plotted curve of the cited paper: the maintainers of the comparison-data compilation computed it from the simulation's public catalogue. The cited paper describes the simulation only.",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Medians obtained directly from the subfind catalogs.",
+            "where": "this record's own provenance in comparison-data.json, line 14189"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -14337,7 +14711,7 @@
       "scatter": null,
       "selection": {
         "population": "centrals",
-        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is MBN98. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed."
+        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is MBN98. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed. Attribution note (sim-highline): the numbers are not from the cited paper; the compilation reduced EAGLE catalogues/snapshots itself. Cited paper describes the simulation only."
       },
       "definitions": {
         "massDefinition": "aperture-30pkpc",
@@ -14354,7 +14728,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Schaye2015_Ref_100_MBN98_Ratio.hdf5",
-        "checksumSha256": "9bf4e100ba026946d9fc069d960f27b7858c463dd239b69cba1c4619f63db34b"
+        "checksumSha256": "9bf4e100ba026946d9fc069d960f27b7858c463dd239b69cba1c4619f63db34b",
+        "attribution": {
+          "kind": "computed-by-compilation-maintainers",
+          "statement": "Not the plotted curve of the cited paper: the maintainers of the comparison-data compilation computed it from the simulation's public catalogue. The cited paper describes the simulation only.",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Medians obtained directly from the subfind catalogs.",
+            "where": "this record's own provenance in comparison-data.json, line 14340"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -14459,7 +14842,7 @@
       "scatter": null,
       "selection": {
         "population": "centrals",
-        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is MBN98. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed."
+        "warning": "Medians obtained directly from the subfind catalogs. Central galaxies only. Halos with 0 stellar mass included. Halo mass definition is MBN98. Stellar masses use a 30kpc spherical aperture. No cosmology correction needed. Attribution note (sim-highline): the numbers are not from the cited paper; the compilation reduced EAGLE catalogues/snapshots itself. Cited paper describes the simulation only."
       },
       "definitions": {
         "massDefinition": "aperture-30pkpc",
@@ -14476,7 +14859,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassHaloMass/Schaye2015_Ref_100_MBN98_Ratio.hdf5",
-        "checksumSha256": "9bf4e100ba026946d9fc069d960f27b7858c463dd239b69cba1c4619f63db34b"
+        "checksumSha256": "9bf4e100ba026946d9fc069d960f27b7858c463dd239b69cba1c4619f63db34b",
+        "attribution": {
+          "kind": "computed-by-compilation-maintainers",
+          "statement": "Not the plotted curve of the cited paper: the maintainers of the comparison-data compilation computed it from the simulation's public catalogue. The cited paper describes the simulation only.",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Medians obtained directly from the subfind catalogs.",
+            "where": "this record's own provenance in comparison-data.json, line 14462"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -14678,7 +15070,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019.hdf5",
-        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e"
+        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 14666"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -14886,7 +15288,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019.hdf5",
-        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e"
+        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 14874"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -15086,7 +15498,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019.hdf5",
-        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e"
+        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 15074"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -15284,7 +15706,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019.hdf5",
-        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e"
+        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 15272"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -15480,7 +15912,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019.hdf5",
-        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e"
+        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 15468"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -15678,7 +16120,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019.hdf5",
-        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e"
+        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 15666"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -15874,7 +16326,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019.hdf5",
-        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e"
+        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 15862"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -16072,7 +16534,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019.hdf5",
-        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e"
+        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 16060"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -16264,7 +16736,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019.hdf5",
-        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e"
+        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 16252"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -16450,7 +16932,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019.hdf5",
-        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e"
+        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 16438"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -16634,7 +17126,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019.hdf5",
-        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e"
+        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 16622"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -16796,7 +17298,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019.hdf5",
-        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e"
+        "checksumSha256": "e322bbd09bf399bd3b276c770a26444eba3fcc1573bd059931eaaa0806c3204e",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 16784"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -17010,7 +17522,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019_centrals.hdf5",
-        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2"
+        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 16998"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -17224,7 +17746,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019_centrals.hdf5",
-        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2"
+        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 17212"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -17426,7 +17958,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019_centrals.hdf5",
-        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2"
+        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 17414"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -17630,7 +18172,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019_centrals.hdf5",
-        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2"
+        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 17618"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -17828,7 +18380,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019_centrals.hdf5",
-        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2"
+        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 17816"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -18026,7 +18588,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019_centrals.hdf5",
-        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2"
+        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 18014"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -18218,7 +18790,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019_centrals.hdf5",
-        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2"
+        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 18206"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -18422,7 +19004,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019_centrals.hdf5",
-        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2"
+        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 18410"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -18614,7 +19206,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019_centrals.hdf5",
-        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2"
+        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 18602"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -18800,7 +19402,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019_centrals.hdf5",
-        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2"
+        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 18788"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -18980,7 +19592,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019_centrals.hdf5",
-        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2"
+        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 18968"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -19118,7 +19740,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Behroozi2019_centrals.hdf5",
-        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2"
+        "checksumSha256": "21299609556b35b86aa5189f6aab04be6846b1f8b0b00fa98b995a27787ecfb2",
+        "attribution": {
+          "kind": "author-web-page-via-compilation",
+          "statement": "The numbers come from the author's web page, through the comparison-data compilation, not from a table in the cited paper.",
+          "primarySource": "ADS bibcode 2019MNRAS.488.3143B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "The data is taken from https://www.peterbehroozi.com/data.html.",
+            "where": "this record's own provenance in comparison-data.json, line 19106"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -19209,7 +19841,7 @@
       "scatter": null,
       "selection": {
         "population": "all",
-        "warning": "Assuming Kroupa IMF. z=0.01 - 0.2. No h-correction was required as data was supplied h-free. Adopts cosmological parameters of h=0.7, omega0=0.3 omegaL=0.7."
+        "warning": "Assuming Kroupa IMF. z=0.01 - 0.2. No h-correction was required as data was supplied h-free. Adopts cosmological parameters of h=0.7, omega0=0.3 omegaL=0.7. Corrected by sim-highline: the cited paper (the SFR density of SDSS Stripe 82) contains no passive fraction against stellar mass, so the origin of the 13 values is unknown; the curve is context only until its source is found."
       },
       "definitions": {
         "imf": "kroupa01",
@@ -19224,10 +19856,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Gilbank2010.hdf5",
-        "checksumSha256": "1c936214f827a3441c3bf168750d6dab6efa3ecc6a387c3aa663734aaf6a9275"
+        "checksumSha256": "1c936214f827a3441c3bf168750d6dab6efa3ecc6a387c3aa663734aaf6a9275",
+        "corrections": [
+          {
+            "id": "flag-gilbank10-origin",
+            "summary": "the cited paper (the SFR density of SDSS Stripe 82) contains no passive fraction against stellar mass, so the origin of the 13 values is unknown; the curve is context only until its source is found.",
+            "pointsBefore": "50124f645054c50a6592b92bf77ea44002e7fb2b4bc5bc6324e235a687930f1e"
+          }
+        ]
       },
       "calibration": "validation",
-      "rankable": true,
+      "rankable": false,
       "notes": "Ingested from the converted VELOCIraptor comparison-data HDF5; unit and h conversions were applied by that compilation's per-dataset scripts as described in the warning text."
     },
     {
@@ -19395,12 +20034,16 @@
       "scatter": null,
       "selection": {
         "population": "all",
-        "warning": "Assuming Chabrier IMF. z=0.01 - 0.2. No h-correction was required as data was supplied h-free. Adopts cosmological parameters of h=0.7, omega0=0.3 omegaL=0.7."
+        "warning": "Assuming Chabrier IMF. z=0.01 - 0.2. No h-correction was required as data was supplied h-free. Adopts cosmological parameters of h=0.7, omega0=0.3 omegaL=0.7. Corrected by sim-highline: the numbers are as published at H0 = 70 km/s/Mpc (Omega_m = 0.3); the compilation did not convert them to Planck15 although its warning said so, or declared no cosmology, so the cosmology of the record is now stated as it is. Masses (and number densities) differ by up to 0.03 dex from a Planck15 basis; the comparison logic notes this."
       },
       "definitions": {
         "imf": "chabrier03",
         "quenchingCriterion": "unspecified",
-        "population": "all"
+        "population": "all",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
       },
       "provenance": {
         "tier": "published-table",
@@ -19410,7 +20053,14 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassPassiveFraction/Moustakas2013.hdf5",
-        "checksumSha256": "b6b7ffd1ae85adaaf76ea8c190b293faa5af945c876cbab10f38e45588968781"
+        "checksumSha256": "b6b7ffd1ae85adaaf76ea8c190b293faa5af945c876cbab10f38e45588968781",
+        "corrections": [
+          {
+            "id": "cosmology-label-h70",
+            "summary": "the numbers are as published at H0 = 70 km/s/Mpc (Omega_m = 0.3); the compilation did not convert them to Planck15 although its warning said so, or declared no cosmology, so the cosmology of the record is now stated as it is. Masses (and number densities) differ by up to 0.03 dex from a Planck15 basis; the comparison logic notes this.",
+            "pointsBefore": "5f568d0a0f824e9a1826988a8ea48bb5c5601bbcab278bd6a5d6c418875978b8"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
@@ -21595,14 +22245,18 @@
       "scatter": null,
       "selection": {
         "population": "star-forming",
-        "warning": "Fits to the stacks obtained assuming a Kroupa IMF. The metallicity is expressed as 12 + log10(O/H). In these units the solar metallicity is 8.69.A correction of 0.912 on the stellar masses has been applied to convert from Kroupa to the Chabrier IMF."
+        "warning": "Fits to the stacks obtained assuming a Kroupa IMF. The metallicity is expressed as 12 + log10(O/H). In these units the solar metallicity is 8.69.A correction of 0.912 on the stellar masses has been applied to convert from Kroupa to the Chabrier IMF. Corrected by sim-highline: the numbers are as published at H0 = 70 km/s/Mpc (Omega_m = 0.3); the compilation did not convert them to Planck15 although its warning said so, or declared no cosmology, so the cosmology of the record is now stated as it is. Masses (and number densities) differ by up to 0.03 dex from a Planck15 basis; the comparison logic notes this. Checked by sim-highline against the paper, not changed: the record's warning gives a solar oxygen abundance of 8.69 but the paper uses 8.86, and the paper states no IMF (its masses come from Kauffmann+03)."
       },
       "definitions": {
         "massDefinition": "sed-total",
         "imf": "chabrier03",
         "metallicityQuantity": "gas-O/H",
         "metallicityCalibration": "Te-stacked",
-        "population": "star-forming"
+        "population": "star-forming",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
       },
       "provenance": {
         "tier": "published-table",
@@ -21612,7 +22266,19 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassGasMetallicity/Andrews2013_Data.hdf5",
-        "checksumSha256": "e8f8ffe6d50350bbc9e4fc12e1cf239edcf454407211b2ed2bcabde2e358342f"
+        "checksumSha256": "e8f8ffe6d50350bbc9e4fc12e1cf239edcf454407211b2ed2bcabde2e358342f",
+        "corrections": [
+          {
+            "id": "cosmology-label-h70",
+            "summary": "the numbers are as published at H0 = 70 km/s/Mpc (Omega_m = 0.3); the compilation did not convert them to Planck15 although its warning said so, or declared no cosmology, so the cosmology of the record is now stated as it is. Masses (and number densities) differ by up to 0.03 dex from a Planck15 basis; the comparison logic notes this.",
+            "pointsBefore": "6ca63f97ed56bb5f01be60e8a76679d5f5c7c7b777c8d98c6618a41120117fcd"
+          },
+          {
+            "id": "flag-andrews13-solar",
+            "summary": "the record's warning gives a solar oxygen abundance of 8.69 but the paper uses 8.86, and the paper states no IMF (its masses come from Kauffmann+03).",
+            "pointsBefore": "6ca63f97ed56bb5f01be60e8a76679d5f5c7c7b777c8d98c6618a41120117fcd"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
@@ -22396,7 +23062,7 @@
       "scatter": null,
       "selection": {
         "population": "all",
-        "warning": "Baldry et al 2012, Table 1, Chabrier IMF. Below 10^8 solar mass, these are lower limits. Total stellar mass density of 2.3e8 Msun / Mpc^3. Poisson errors. h-corrected for SWIFT using Cosmology: Planck15."
+        "warning": "Baldry et al 2012, Table 1, Chabrier IMF. Below 10^8 solar mass, these are lower limits. Total stellar mass density of 2.3e8 Msun / Mpc^3. Poisson errors. h-corrected for SWIFT using Cosmology: Planck15. Corrected by sim-highline: the record said H0 = 70 but the stored values are the paper's Table 1 converted to Planck15 (x +0.0285 dex, log Phi -0.0427 dex, to 1e-6 dex); the label now matches the numbers."
       },
       "definitions": {
         "massDefinition": "sed-total",
@@ -22416,7 +23082,14 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassFunction/Baldry2012.hdf5",
-        "checksumSha256": "56ea454e4e04399dbe5266048cff4b7fe030f416418a867e023d63e46d71694a"
+        "checksumSha256": "56ea454e4e04399dbe5266048cff4b7fe030f416418a867e023d63e46d71694a",
+        "corrections": [
+          {
+            "id": "cosmology-label-baldry12",
+            "summary": "the record said H0 = 70 but the stored values are the paper's Table 1 converted to Planck15 (x +0.0285 dex, log Phi -0.0427 dex, to 1e-6 dex); the label now matches the numbers.",
+            "pointsBefore": "b449c56c79ab1c32503bba105045ee5662cda3ccda99fd0cedee88521e5052d0"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
@@ -24500,7 +25173,7 @@
       "scatter": null,
       "selection": {
         "population": "unspecified",
-        "warning": "Data obtained summing up all the gas particles in the snapshots. No cosmology correction needed."
+        "warning": "Data obtained summing up all the gas particles in the snapshots. No cosmology correction needed. Attribution note (sim-highline): the numbers are not from the cited paper; the compilation reduced EAGLE catalogues/snapshots itself. Cited paper describes the simulation only."
       },
       "definitions": {
         "densityFrame": "comoving",
@@ -24515,7 +25188,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/MetalMassDensity/Schaye2015_gas.hdf5",
-        "checksumSha256": "127f54d4590c2852e39ac5912879b60404a67570c023640ecb4740375ae353d7"
+        "checksumSha256": "127f54d4590c2852e39ac5912879b60404a67570c023640ecb4740375ae353d7",
+        "attribution": {
+          "kind": "computed-by-compilation-maintainers",
+          "statement": "Not the plotted curve of the cited paper: the maintainers of the comparison-data compilation computed it from the simulation's public catalogue. The cited paper describes the simulation only.",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Data obtained summing up all the gas particles in the snapshots.",
+            "where": "this record's own provenance in comparison-data.json, line 24503"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -24658,7 +25340,7 @@
       "scatter": null,
       "selection": {
         "population": "unspecified",
-        "warning": "Data obtained summing up all the star particles in the snapshots. No cosmology correction needed."
+        "warning": "Data obtained summing up all the star particles in the snapshots. No cosmology correction needed. Attribution note (sim-highline): the numbers are not from the cited paper; the compilation reduced EAGLE catalogues/snapshots itself. Cited paper describes the simulation only."
       },
       "definitions": {
         "densityFrame": "comoving",
@@ -24673,7 +25355,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/MetalMassDensity/Schaye2015_stars.hdf5",
-        "checksumSha256": "0cc91c58200301122353df2697b49f8d5d0b6ea271744d7b0dd76b3ee4ea9b16"
+        "checksumSha256": "0cc91c58200301122353df2697b49f8d5d0b6ea271744d7b0dd76b3ee4ea9b16",
+        "attribution": {
+          "kind": "computed-by-compilation-maintainers",
+          "statement": "Not the plotted curve of the cited paper: the maintainers of the comparison-data compilation computed it from the simulation's public catalogue. The cited paper describes the simulation only.",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Data obtained summing up all the star particles in the snapshots.",
+            "where": "this record's own provenance in comparison-data.json, line 24661"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -24816,7 +25507,7 @@
       "scatter": null,
       "selection": {
         "population": "unspecified",
-        "warning": "Data obtained summing up all the star particles in the snapshots. No cosmology correction needed."
+        "warning": "Data obtained summing up all the star particles in the snapshots. No cosmology correction needed. Attribution note (sim-highline): the numbers are not from the cited paper; the compilation reduced EAGLE catalogues/snapshots itself. Cited paper describes the simulation only."
       },
       "definitions": {
         "massDefinition": "all star particles",
@@ -24831,7 +25522,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/StellarMassDensity/Schaye2015_Ref12.hdf5",
-        "checksumSha256": "880131ede88c592edaa50e3801be308d05ee6e4065682176ac7f69bb1e9f4de3"
+        "checksumSha256": "880131ede88c592edaa50e3801be308d05ee6e4065682176ac7f69bb1e9f4de3",
+        "attribution": {
+          "kind": "computed-by-compilation-maintainers",
+          "statement": "Not the plotted curve of the cited paper: the maintainers of the comparison-data compilation computed it from the simulation's public catalogue. The cited paper describes the simulation only.",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Data obtained summing up all the star particles in the snapshots.",
+            "where": "this record's own provenance in comparison-data.json, line 24819"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -25380,7 +26080,7 @@
       "axes": {
         "xDefinition": "log10 stellar mass",
         "xUnit": "log10(Msun)",
-        "yDefinition": "log10 halo Vmax",
+        "yDefinition": "log10 rotation velocity V80 of observed disks",
         "yUnit": "log10(km/s)"
       },
       "domain": {
@@ -25909,11 +26609,15 @@
       "scatter": null,
       "selection": {
         "population": "unspecified",
-        "warning": "Best-fit (eq. 39) to the data of 189 local galaxies. No cosmology correction needed as variables provided as physical. Converted Kroupa to Chabrier IMF using ratio 0.912."
+        "warning": "Best-fit (eq. 39) to the data of 189 local galaxies. No cosmology correction needed as variables provided as physical. Converted Kroupa to Chabrier IMF using ratio 0.912. Corrected by sim-highline: the numbers are as published at H0 = 70 km/s/Mpc (Omega_m = 0.3); the compilation did not convert them to Planck15 although its warning said so, or declared no cosmology, so the cosmology of the record is now stated as it is. Masses (and number densities) differ by up to 0.03 dex from a Planck15 basis; the comparison logic notes this. Corrected by sim-highline: the velocity is the observed disk rotation velocity V80, not a halo Vmax."
       },
       "definitions": {
-        "velocityDefinition": "halo Vmax (lensing-informed)",
-        "imf": "chabrier03"
+        "velocityDefinition": "rotation velocity V80 at the radius containing 80 per cent of the i-band light (observed disks)",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
       },
       "provenance": {
         "tier": "published-table",
@@ -25923,7 +26627,19 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/TullyFisherRelation/Reyes2011.hdf5",
-        "checksumSha256": "5a3804a8f4a4d39ff54a16357fbf16b4dc7179a42cc56707cc5e3ca64f0a336c"
+        "checksumSha256": "5a3804a8f4a4d39ff54a16357fbf16b4dc7179a42cc56707cc5e3ca64f0a336c",
+        "corrections": [
+          {
+            "id": "cosmology-label-h70",
+            "summary": "the numbers are as published at H0 = 70 km/s/Mpc (Omega_m = 0.3); the compilation did not convert them to Planck15 although its warning said so, or declared no cosmology, so the cosmology of the record is now stated as it is. Masses (and number densities) differ by up to 0.03 dex from a Planck15 basis; the comparison logic notes this.",
+            "pointsBefore": "bffe63f3f0e63d3b1837ca8d2f605c0513422001d205f51973e8244e8222b7b7"
+          },
+          {
+            "id": "label-reyes11-velocity",
+            "summary": "the velocity is the observed disk rotation velocity V80, not a halo Vmax.",
+            "pointsBefore": "bffe63f3f0e63d3b1837ca8d2f605c0513422001d205f51973e8244e8222b7b7"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
@@ -25945,7 +26661,7 @@
       "axes": {
         "xDefinition": "log10 stellar mass",
         "xUnit": "log10(Msun)",
-        "yDefinition": "log10 halo Vmax",
+        "yDefinition": "log10 maximum circular velocity Vm of observed disks",
         "yUnit": "log10(km/s)"
       },
       "domain": {
@@ -26474,24 +27190,46 @@
       "scatter": null,
       "selection": {
         "population": "unspecified",
-        "warning": "Fit obtained directly from paper using webplotdigitizer. No cosmology correction needed as variables provided as physical. Extracted using 76 galaxies. Converted Chabrier IMF and use an additional correction from Appendix A1 of Li & White (2009)."
+        "warning": "Fit obtained directly from paper using webplotdigitizer. No cosmology correction needed as variables provided as physical. Extracted using 76 galaxies. Converted Chabrier IMF and use an additional correction from Appendix A1 of Li & White (2009). Corrected by sim-highline: the velocity is the observed disk Vm, not a halo Vmax. Corrected by sim-highline: the compilation's script says the fit was 'obtained directly from paper using webplotdigitizer' and then applies a '-0.15 dex IMF correction (private communication)' and a 0.922/0.130 linear map that the cited appendix does not contain, so the curve is read from a figure with an unsupported mass transform and is now context only (the y values equal the paper's Table 1 fit). Attribution note (sim-highline): the compilation digitized a figure; this is a digitized curve even though the tier says published-table."
       },
       "definitions": {
-        "velocityDefinition": "halo Vmax (model-converted)",
+        "velocityDefinition": "maximum circular velocity Vm of the observed rotation curves (disks), not a halo Vmax",
         "imf": "chabrier03"
       },
       "provenance": {
-        "tier": "published-table",
+        "tier": "digitized-figure",
         "citation": "Avila-Reese et al. (2008) (Fit) [2008AJ....136.1340A]",
         "doi": null,
         "url": "https://ui.adsabs.harvard.edu/abs/2008AJ....136.1340A",
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/TullyFisherRelation/AvilaReese2008.hdf5",
-        "checksumSha256": "b992aca953a9e0a43b7cd7adfc8939cbb76475b31d1f90982eeb77dd33ea005a"
+        "checksumSha256": "b992aca953a9e0a43b7cd7adfc8939cbb76475b31d1f90982eeb77dd33ea005a",
+        "corrections": [
+          {
+            "id": "label-avilareese08-velocity",
+            "summary": "the velocity is the observed disk Vm, not a halo Vmax.",
+            "pointsBefore": "d3610463b4c13d77dd5e9b5de0ea596fb8ed61e4e6cf2f48b5f20fd084ae3dd9"
+          },
+          {
+            "id": "digitized-avilareese08",
+            "summary": "the compilation's script says the fit was 'obtained directly from paper using webplotdigitizer' and then applies a '-0.15 dex IMF correction (private communication)' and a 0.922/0.130 linear map that the cited appendix does not contain, so the curve is read from a figure with an unsupported mass transform and is now context only (the y values equal the paper's Table 1 fit).",
+            "pointsBefore": "d3610463b4c13d77dd5e9b5de0ea596fb8ed61e4e6cf2f48b5f20fd084ae3dd9"
+          }
+        ],
+        "attribution": {
+          "kind": "digitized-by-compilation",
+          "statement": "Read from the paper's figure by the compilation with WebPlotDigitizer, although the record's tier says published-table.",
+          "primarySource": "ADS bibcode 2008AJ....136.1340A",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Fit obtained directly from paper using webplotdigitizer.",
+            "where": "this record's own provenance in comparison-data.json, line 25933"
+          }
+        }
       },
       "calibration": "validation",
-      "rankable": true,
+      "rankable": false,
       "notes": "Ingested from the converted VELOCIraptor comparison-data HDF5; unit and h conversions were applied by that compilation's per-dataset scripts as described in the warning text."
     },
     {
@@ -26867,7 +27605,7 @@
       "scatter": null,
       "selection": {
         "population": "unspecified",
-        "warning": "Halo mass functions at z=0 from the colossus package (Diemer+18) assuming a 'planck13' cosmology. Corrected to h-free units and dn/dlog10(M) (from dn/dln(M))."
+        "warning": "Halo mass functions at z=0 from the colossus package (Diemer+18) assuming a 'planck13' cosmology. Corrected to h-free units and dn/dlog10(M) (from dn/dln(M)). Attribution note (sim-highline): curve generated by software implementing the published fit, not a table in the paper."
       },
       "definitions": {
         "haloMassDefinition": "unspecified",
@@ -26881,7 +27619,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/HaloMassFunction/Tinker2008.hdf5",
-        "checksumSha256": "f01e949b8d81913779c4aa667eb6b1d0501e8005ec1189b8a22bf5a00f7b5841"
+        "checksumSha256": "f01e949b8d81913779c4aa667eb6b1d0501e8005ec1189b8a22bf5a00f7b5841",
+        "attribution": {
+          "kind": "evaluated-from-published-fit-by-code",
+          "statement": "Generated by the compilation's software from the published fit, not a table in the cited paper.",
+          "primarySource": "ADS bibcode 2008ApJ...688..709T",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Halo mass functions at z=0 from the colossus package (Diemer+18) assuming a 'planck13' cosmology.",
+            "where": "this record's own provenance in comparison-data.json, line 26870"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -27260,7 +28008,7 @@
       "scatter": null,
       "selection": {
         "population": "unspecified",
-        "warning": "Halo mass functions at z=0 from the colossus package (Diemer+18) assuming a 'planck13' cosmology. Corrected to h-free units and dn/dlog10(M) (from dn/dln(M))."
+        "warning": "Halo mass functions at z=0 from the colossus package (Diemer+18) assuming a 'planck13' cosmology. Corrected to h-free units and dn/dlog10(M) (from dn/dln(M)). Attribution note (sim-highline): curve generated by software implementing the published fit, not a table in the paper."
       },
       "definitions": {
         "haloMassDefinition": "unspecified",
@@ -27274,7 +28022,17 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/HaloMassFunction/Bocquet2016.hdf5",
-        "checksumSha256": "cd9d15c4818392e3f9b628b7faee28d0df67fd4e23846c47c3f7dfe40ba855f8"
+        "checksumSha256": "cd9d15c4818392e3f9b628b7faee28d0df67fd4e23846c47c3f7dfe40ba855f8",
+        "attribution": {
+          "kind": "evaluated-from-published-fit-by-code",
+          "statement": "Generated by the compilation's software from the published fit, not a table in the cited paper.",
+          "primarySource": "ADS bibcode 2016MNRAS.456.2361B",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Halo mass functions at z=0 from the colossus package (Diemer+18) assuming a 'planck13' cosmology.",
+            "where": "this record's own provenance in comparison-data.json, line 27263"
+          }
+        }
       },
       "calibration": "validation",
       "rankable": true,
@@ -27349,15 +28107,15 @@
       "scatter": null,
       "selection": {
         "population": "unspecified",
-        "warning": "Data obtained assuming a Chabrier IMF and h = 0.7. Objects with stellar mass > 10^8 Msun are considered. h-corrected for SWIFT using cosmology: Planck15.  [sim-highline: 3 interval(s) not bracketing the central value were dropped rather than reordered.]"
+        "warning": "Data obtained assuming a Chabrier IMF and h = 0.7. Objects with stellar mass > 10^8 Msun are considered. h-corrected for SWIFT using cosmology: Planck15.  [sim-highline: 3 interval(s) not bracketing the central value were dropped rather than reordered.] Corrected by sim-highline: the numbers are as published at H0 = 70 km/s/Mpc (Omega_m = 0.3); the compilation did not convert them to Planck15 although its warning said so, or declared no cosmology, so the cosmology of the record is now stated as it is. Masses (and number densities) differ by up to 0.03 dex from a Planck15 basis; the comparison logic notes this. Checked by sim-highline against the paper, not changed: the lower error bars were not converted from Kroupa to Chabrier as the central values were (0.04 dex too high; 3 of 7 intervals are dropped for that reason)."
       },
       "definitions": {
         "massDefinition": "galaxies above 1e8 Msun",
         "imf": "chabrier03",
         "densityFrame": "comoving",
         "cosmology": {
-          "H0": 67.74,
-          "Om": 0.3075
+          "H0": 70,
+          "Om": 0.3
         }
       },
       "provenance": {
@@ -27368,7 +28126,19 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/StellarMassDensity/Muzzin2013.hdf5",
-        "checksumSha256": "d4d08ec665907c649e7159a3b18961406d641be847e107efef3bde067373acef"
+        "checksumSha256": "d4d08ec665907c649e7159a3b18961406d641be847e107efef3bde067373acef",
+        "corrections": [
+          {
+            "id": "cosmology-label-h70",
+            "summary": "the numbers are as published at H0 = 70 km/s/Mpc (Omega_m = 0.3); the compilation did not convert them to Planck15 although its warning said so, or declared no cosmology, so the cosmology of the record is now stated as it is. Masses (and number densities) differ by up to 0.03 dex from a Planck15 basis; the comparison logic notes this.",
+            "pointsBefore": "21dde43972672f81dd9723f75152bd077ac1e7a453d1441fee1db9f1a6481747"
+          },
+          {
+            "id": "flag-muzzin13-errors",
+            "summary": "the lower error bars were not converted from Kroupa to Chabrier as the central values were (0.04 dex too high; 3 of 7 intervals are dropped for that reason).",
+            "pointsBefore": "21dde43972672f81dd9723f75152bd077ac1e7a453d1441fee1db9f1a6481747"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
@@ -27511,7 +28281,7 @@
       "scatter": null,
       "selection": {
         "population": "unspecified",
-        "warning": "Data obtained summing up all the star particles in the snapshots. No cosmology correction needed."
+        "warning": "Data obtained summing up all the star particles in the snapshots. No cosmology correction needed. Attribution note (sim-highline): the numbers are not from the cited paper; the compilation reduced EAGLE catalogues/snapshots itself. Cited paper describes the simulation only."
       },
       "definitions": {
         "massDefinition": "all star particles",
@@ -27526,7 +28296,16 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/StellarMassDensity/Schaye2015_Ref100.hdf5",
-        "checksumSha256": "fe190dde13a24c4da85704e6f51866786ffee7c7dd2db87a0dee3ce588befef6"
+        "checksumSha256": "fe190dde13a24c4da85704e6f51866786ffee7c7dd2db87a0dee3ce588befef6",
+        "attribution": {
+          "kind": "computed-by-compilation-maintainers",
+          "statement": "Not the plotted curve of the cited paper: the maintainers of the comparison-data compilation computed it from the simulation's public catalogue. The cited paper describes the simulation only.",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Data obtained summing up all the star particles in the snapshots.",
+            "where": "this record's own provenance in comparison-data.json, line 27514"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -27661,7 +28440,7 @@
       "scatter": null,
       "selection": {
         "population": "all",
-        "warning": "Data obtained assuming a Kroupa IMF and h=0.7. h-corrected for SWIFT using cosmology: Planck15. The metallicity is expressed in units of solar metallicity, using Z=0.02. The error bars given the 16th and 84th percentile of the distribution. This has been corrected to use Z_solar=0.0126. There is also a correction of 0.912 on the stellar masses to convert from Kroupa to the Chabrier IMF."
+        "warning": "Data obtained assuming a Kroupa IMF and h=0.7. h-corrected for SWIFT using cosmology: Planck15. The metallicity is expressed in units of solar metallicity, using Z=0.02. The error bars given the 16th and 84th percentile of the distribution. This has been corrected to use Z_solar=0.0126. There is also a correction of 0.912 on the stellar masses to convert from Kroupa to the Chabrier IMF. Checked by sim-highline against the paper, not changed: the paper states no IMF, no Hubble parameter and no solar metallicity; the compilation's Kroupa label, the h = 0.7 mass shift (-0.0115 dex) and, for the metallicity curve, a rescaling of the solar metallicity (+0.2007 dex in log Z) rest on assumptions that are not in the paper."
       },
       "definitions": {
         "massDefinition": "sed-total",
@@ -27682,7 +28461,14 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassStellarMetallicity/Gallazzi2005_Data.hdf5",
-        "checksumSha256": "9984ed18b630335578c9f89cb15fa83c90a2765ab9778a8b7d017808e33a1994"
+        "checksumSha256": "9984ed18b630335578c9f89cb15fa83c90a2765ab9778a8b7d017808e33a1994",
+        "corrections": [
+          {
+            "id": "flag-gallazzi05-conventions",
+            "summary": "the paper states no IMF, no Hubble parameter and no solar metallicity; the compilation's Kroupa label, the h = 0.7 mass shift (-0.0115 dex) and, for the metallicity curve, a rescaling of the solar metallicity (+0.2007 dex in log Z) rest on assumptions that are not in the paper.",
+            "pointsBefore": "cea1e2b8262eb0aa7a02b928027808cf023444289d4afc884bfe50ff5c988b0e"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
@@ -27931,10 +28717,10 @@
       "scatter": null,
       "selection": {
         "population": "dwarfs",
-        "warning": "Data obtained assuming a Kroupa IMF and 12+log10(Fe/H)_sun = 7.52. The metallicity is expressed in units of solar metallicity. There is also a correction of 0.912 on the stellar masses to convert from Kroupa to the Chabrier IMF."
+        "warning": "Data obtained assuming a Kroupa IMF and 12+log10(Fe/H)_sun = 7.52. The metallicity is expressed in units of solar metallicity. There is also a correction of 0.912 on the stellar masses to convert from Kroupa to the Chabrier IMF. Corrected by sim-highline: the stellar masses are V-band luminosity times a mass-to-light ratio, not SED-fitted total masses. Checked by sim-highline against the paper, not changed: the compilation shifted log M by -0.040 dex (Kroupa to Chabrier) but the paper states no IMF and its mass-to-light source is Chabrier-based, so the shift is unsupported."
       },
       "definitions": {
-        "massDefinition": "sed-total",
+        "massDefinition": "stellar luminosity (V band) times a stellar mass-to-light ratio (Woo+08 or Martin+08), not an SED mass",
         "imf": "chabrier03",
         "metallicityQuantity": "stellar-Z",
         "metallicityCalibration": "resolved-star [Fe/H]",
@@ -27951,6 +28737,18 @@
         "checksumSha256": "eb32e224cc9ab50cee88e1761030170c915777b2c0fc6ba284cbc84d87ec515b",
         "definitionFills": [
           "vcd-kirby13-imf"
+        ],
+        "corrections": [
+          {
+            "id": "label-kirby13-mass",
+            "summary": "the stellar masses are V-band luminosity times a mass-to-light ratio, not SED-fitted total masses.",
+            "pointsBefore": "61036fad23ce78dd11fdc34f99a7121b5cb0c36d3208de13aa1b0f04d8972ac7"
+          },
+          {
+            "id": "flag-kirby13-imf",
+            "summary": "the compilation shifted log M by -0.040 dex (Kroupa to Chabrier) but the paper states no IMF and its mass-to-light source is Chabrier-based, so the shift is unsupported.",
+            "pointsBefore": "61036fad23ce78dd11fdc34f99a7121b5cb0c36d3208de13aa1b0f04d8972ac7"
+          }
         ]
       },
       "calibration": "validation",
@@ -28086,7 +28884,7 @@
       "scatter": null,
       "selection": {
         "population": "all",
-        "warning": "Data obtained assuming a Kroupa IMF and h=0.7. h-corrected for SWIFT using cosmology: Planck15. There is also a correction of 0.912 on the stellar masses to convert from Kroupa to the Chabrier IMF."
+        "warning": "Data obtained assuming a Kroupa IMF and h=0.7. h-corrected for SWIFT using cosmology: Planck15. There is also a correction of 0.912 on the stellar masses to convert from Kroupa to the Chabrier IMF. Checked by sim-highline against the paper, not changed: the paper states no IMF, no Hubble parameter and no solar metallicity; the compilation's Kroupa label, the h = 0.7 mass shift (-0.0115 dex) and, for the metallicity curve, a rescaling of the solar metallicity (+0.2007 dex in log Z) rest on assumptions that are not in the paper."
       },
       "definitions": {
         "massDefinition": "sed-total",
@@ -28106,7 +28904,14 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyStellarMassStellarAges/Gallazzi2005_Data.hdf5",
-        "checksumSha256": "da9e4daa166331e0ffac9824906abf8360995ae072cc2a43ae5b86c5d3dc640d"
+        "checksumSha256": "da9e4daa166331e0ffac9824906abf8360995ae072cc2a43ae5b86c5d3dc640d",
+        "corrections": [
+          {
+            "id": "flag-gallazzi05-conventions",
+            "summary": "the paper states no IMF, no Hubble parameter and no solar metallicity; the compilation's Kroupa label, the h = 0.7 mass shift (-0.0115 dex) and, for the metallicity curve, a rescaling of the solar metallicity (+0.2007 dex in log Z) rest on assumptions that are not in the paper.",
+            "pointsBefore": "d0bd69da4ad78e8f664526eeca4e61406b60f0d4e183870e66cfc79a6209ecc7"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
@@ -28545,12 +29350,16 @@
       "scatter": null,
       "selection": {
         "population": "unspecified",
-        "warning": "Best-fit Schechter function to the data from 15855 galaxies"
+        "warning": "Best-fit Schechter function to the data from 15855 galaxies Corrected by sim-highline: the numbers are as published at H0 = 70 km/s/Mpc (Omega_m = 0.3); the compilation did not convert them to Planck15 although its warning said so, or declared no cosmology, so the cosmology of the record is now stated as it is. Masses (and number densities) differ by up to 0.03 dex from a Planck15 basis; the comparison logic notes this."
       },
       "definitions": {
         "gasDefinition": "HI",
         "gasMethod": "21cm",
-        "densityFrame": "comoving"
+        "densityFrame": "comoving",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        }
       },
       "provenance": {
         "tier": "published-table",
@@ -28560,7 +29369,14 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyHIMassFunction/Haynes2011.hdf5",
-        "checksumSha256": "940c2f2d38002494c8264bee4abad13aaa5e8a7d69cf4c8111a9c69b751ff457"
+        "checksumSha256": "940c2f2d38002494c8264bee4abad13aaa5e8a7d69cf4c8111a9c69b751ff457",
+        "corrections": [
+          {
+            "id": "cosmology-label-h70",
+            "summary": "the numbers are as published at H0 = 70 km/s/Mpc (Omega_m = 0.3); the compilation did not convert them to Planck15 although its warning said so, or declared no cosmology, so the cosmology of the record is now stated as it is. Masses (and number densities) differ by up to 0.03 dex from a Planck15 basis; the comparison logic notes this.",
+            "pointsBefore": "5d1353bc9adc6374ede74c214618f213f14970e7741cea5058cbe81d5cd4cfb7"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,
@@ -28999,12 +29815,15 @@
       "scatter": null,
       "selection": {
         "population": "unspecified",
-        "warning": "Best-fit Schechter function to the data from 1000 galaxies"
+        "warning": "Best-fit Schechter function to the data from 1000 galaxies Corrected by sim-highline: the numbers are as published in h_75 units at H0 = 75 km/s/Mpc and were not converted (the script's h = 0.7 is unused); stellar-mass-like axis 0.088 dex and log number density 0.133 dex from a Planck15 basis."
       },
       "definitions": {
         "gasDefinition": "HI",
         "gasMethod": "21cm",
-        "densityFrame": "comoving"
+        "densityFrame": "comoving",
+        "cosmology": {
+          "H0": 75
+        }
       },
       "provenance": {
         "tier": "published-table",
@@ -29014,7 +29833,14 @@
         "retrieved": "2026-10-05",
         "compilation": "VELOCIraptor/SWIFT observational comparison data, https://github.com/calvin-sykes/velociraptor-comparison-data @ fc740f4d0856efd711f03242d40c03caea969a20",
         "sourceMember": "data/GalaxyHIMassFunction/Zwaan2003.hdf5",
-        "checksumSha256": "122cbb95dd3eb51a9fac7b9c8a9a209ea472efefb079db2eda2dc5874f7fe33e"
+        "checksumSha256": "122cbb95dd3eb51a9fac7b9c8a9a209ea472efefb079db2eda2dc5874f7fe33e",
+        "corrections": [
+          {
+            "id": "cosmology-label-zwaan03-h75",
+            "summary": "the numbers are as published in h_75 units at H0 = 75 km/s/Mpc and were not converted (the script's h = 0.7 is unused); stellar-mass-like axis 0.088 dex and log number density 0.133 dex from a Planck15 basis.",
+            "pointsBefore": "bc625243bbb4659063974e6ce05ea63a7552e4cdc2d805c69e6d8688dde8b8cb"
+          }
+        ]
       },
       "calibration": "validation",
       "rankable": true,

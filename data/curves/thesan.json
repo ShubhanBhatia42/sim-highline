@@ -144,7 +144,7 @@
       },
       "selection": {
         "population": "THESAN-1 galaxies",
-        "warning": "Simulation volume limits the rare high-mass tail.",
+        "warning": "Simulation volume limits the rare high-mass tail. Attribution note (sim-highline): record citation lists \"Kannan et al. 2022; Garaldi et al. 2024; THESAN data release\"; the data page says which paper each file belongs to.",
         "aperture": "inner 30 physical kpc for StellarMass and SFR, per THESAN release changelog"
       },
       "provenance": {
@@ -153,7 +153,17 @@
         "doi": null,
         "url": "https://www.thesan-project.com/thesan/quantities/smf_Thesan1.dat",
         "retrieved": "2026-10-02",
-        "checksumSha256": "f77d25d9bec671c2d52198242c72f3445619b2bbd7d4247cd412067ff73c4ae5"
+        "checksumSha256": "f77d25d9bec671c2d52198242c72f3445619b2bbd7d4247cd412067ff73c4ae5",
+        "attribution": {
+          "kind": "citation-lists-both-papers",
+          "statement": "The data release lists several papers; this quantity belongs to Kannan et al. 2022 (arXiv:2110.00584).",
+          "primarySource": "Kannan et al. 2022 (arXiv:2110.00584)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Predictions for common physical quantities from THESAN-1 are summarised below in machine-readable format. ... Star-formation rate density sfrd_Thesan1.dat Kannan et al. 2022; Stellar-to-halo mass relation (SHMR) smhm_Thesan1.dat Kannan et al. 2022; Stellar mass function smf_Thesan1.dat Kannan et al. 2022; Galaxy main sequence gms_Thesan1.dat Garaldi et al. 2024; Mass-metallicity relation mzr_Thesan1.dat Garaldi et al. 2024; UV luminosity function uvlf_Thesan1.dat Kannan et al. 2022 (https://www.thesan-project.com/thesan/data.html, retrieved 2026-10-20)",
+            "where": "THESAN data release page (https://www.thesan-project.com/thesan/data.html)"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -301,7 +311,7 @@
       },
       "selection": {
         "population": "THESAN-1 galaxies",
-        "warning": "Simulation volume limits the rare high-mass tail.",
+        "warning": "Simulation volume limits the rare high-mass tail. Attribution note (sim-highline): record citation lists \"Kannan et al. 2022; Garaldi et al. 2024; THESAN data release\"; the data page says which paper each file belongs to.",
         "aperture": "inner 30 physical kpc for StellarMass and SFR, per THESAN release changelog"
       },
       "provenance": {
@@ -310,7 +320,17 @@
         "doi": null,
         "url": "https://www.thesan-project.com/thesan/quantities/smf_Thesan1.dat",
         "retrieved": "2026-10-02",
-        "checksumSha256": "f77d25d9bec671c2d52198242c72f3445619b2bbd7d4247cd412067ff73c4ae5"
+        "checksumSha256": "f77d25d9bec671c2d52198242c72f3445619b2bbd7d4247cd412067ff73c4ae5",
+        "attribution": {
+          "kind": "citation-lists-both-papers",
+          "statement": "The data release lists several papers; this quantity belongs to Kannan et al. 2022 (arXiv:2110.00584).",
+          "primarySource": "Kannan et al. 2022 (arXiv:2110.00584)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Predictions for common physical quantities from THESAN-1 are summarised below in machine-readable format. ... Star-formation rate density sfrd_Thesan1.dat Kannan et al. 2022; Stellar-to-halo mass relation (SHMR) smhm_Thesan1.dat Kannan et al. 2022; Stellar mass function smf_Thesan1.dat Kannan et al. 2022; Galaxy main sequence gms_Thesan1.dat Garaldi et al. 2024; Mass-metallicity relation mzr_Thesan1.dat Garaldi et al. 2024; UV luminosity function uvlf_Thesan1.dat Kannan et al. 2022 (https://www.thesan-project.com/thesan/data.html, retrieved 2026-10-20)",
+            "where": "THESAN data release page (https://www.thesan-project.com/thesan/data.html)"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -452,7 +472,7 @@
       },
       "selection": {
         "population": "THESAN-1 galaxies",
-        "warning": "Simulation volume limits the rare high-mass tail.",
+        "warning": "Simulation volume limits the rare high-mass tail. Attribution note (sim-highline): record citation lists \"Kannan et al. 2022; Garaldi et al. 2024; THESAN data release\"; the data page says which paper each file belongs to.",
         "aperture": "inner 30 physical kpc for StellarMass and SFR, per THESAN release changelog"
       },
       "provenance": {
@@ -461,7 +481,17 @@
         "doi": null,
         "url": "https://www.thesan-project.com/thesan/quantities/smf_Thesan1.dat",
         "retrieved": "2026-10-02",
-        "checksumSha256": "f77d25d9bec671c2d52198242c72f3445619b2bbd7d4247cd412067ff73c4ae5"
+        "checksumSha256": "f77d25d9bec671c2d52198242c72f3445619b2bbd7d4247cd412067ff73c4ae5",
+        "attribution": {
+          "kind": "citation-lists-both-papers",
+          "statement": "The data release lists several papers; this quantity belongs to Kannan et al. 2022 (arXiv:2110.00584).",
+          "primarySource": "Kannan et al. 2022 (arXiv:2110.00584)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Predictions for common physical quantities from THESAN-1 are summarised below in machine-readable format. ... Star-formation rate density sfrd_Thesan1.dat Kannan et al. 2022; Stellar-to-halo mass relation (SHMR) smhm_Thesan1.dat Kannan et al. 2022; Stellar mass function smf_Thesan1.dat Kannan et al. 2022; Galaxy main sequence gms_Thesan1.dat Garaldi et al. 2024; Mass-metallicity relation mzr_Thesan1.dat Garaldi et al. 2024; UV luminosity function uvlf_Thesan1.dat Kannan et al. 2022 (https://www.thesan-project.com/thesan/data.html, retrieved 2026-10-20)",
+            "where": "THESAN data release page (https://www.thesan-project.com/thesan/data.html)"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -591,7 +621,7 @@
       },
       "selection": {
         "population": "THESAN-1 galaxies",
-        "warning": "Simulation volume limits the rare high-mass tail.",
+        "warning": "Simulation volume limits the rare high-mass tail. Attribution note (sim-highline): record citation lists \"Kannan et al. 2022; Garaldi et al. 2024; THESAN data release\"; the data page says which paper each file belongs to.",
         "aperture": "inner 30 physical kpc for StellarMass and SFR, per THESAN release changelog"
       },
       "provenance": {
@@ -600,7 +630,17 @@
         "doi": null,
         "url": "https://www.thesan-project.com/thesan/quantities/smf_Thesan1.dat",
         "retrieved": "2026-10-02",
-        "checksumSha256": "f77d25d9bec671c2d52198242c72f3445619b2bbd7d4247cd412067ff73c4ae5"
+        "checksumSha256": "f77d25d9bec671c2d52198242c72f3445619b2bbd7d4247cd412067ff73c4ae5",
+        "attribution": {
+          "kind": "citation-lists-both-papers",
+          "statement": "The data release lists several papers; this quantity belongs to Kannan et al. 2022 (arXiv:2110.00584).",
+          "primarySource": "Kannan et al. 2022 (arXiv:2110.00584)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Predictions for common physical quantities from THESAN-1 are summarised below in machine-readable format. ... Star-formation rate density sfrd_Thesan1.dat Kannan et al. 2022; Stellar-to-halo mass relation (SHMR) smhm_Thesan1.dat Kannan et al. 2022; Stellar mass function smf_Thesan1.dat Kannan et al. 2022; Galaxy main sequence gms_Thesan1.dat Garaldi et al. 2024; Mass-metallicity relation mzr_Thesan1.dat Garaldi et al. 2024; UV luminosity function uvlf_Thesan1.dat Kannan et al. 2022 (https://www.thesan-project.com/thesan/data.html, retrieved 2026-10-20)",
+            "where": "THESAN data release page (https://www.thesan-project.com/thesan/data.html)"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -718,7 +758,7 @@
       },
       "selection": {
         "population": "THESAN-1 galaxies",
-        "warning": "Simulation volume limits the rare high-mass tail.",
+        "warning": "Simulation volume limits the rare high-mass tail. Attribution note (sim-highline): record citation lists \"Kannan et al. 2022; Garaldi et al. 2024; THESAN data release\"; the data page says which paper each file belongs to.",
         "aperture": "inner 30 physical kpc for StellarMass and SFR, per THESAN release changelog"
       },
       "provenance": {
@@ -727,7 +767,17 @@
         "doi": null,
         "url": "https://www.thesan-project.com/thesan/quantities/smf_Thesan1.dat",
         "retrieved": "2026-10-02",
-        "checksumSha256": "f77d25d9bec671c2d52198242c72f3445619b2bbd7d4247cd412067ff73c4ae5"
+        "checksumSha256": "f77d25d9bec671c2d52198242c72f3445619b2bbd7d4247cd412067ff73c4ae5",
+        "attribution": {
+          "kind": "citation-lists-both-papers",
+          "statement": "The data release lists several papers; this quantity belongs to Kannan et al. 2022 (arXiv:2110.00584).",
+          "primarySource": "Kannan et al. 2022 (arXiv:2110.00584)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Predictions for common physical quantities from THESAN-1 are summarised below in machine-readable format. ... Star-formation rate density sfrd_Thesan1.dat Kannan et al. 2022; Stellar-to-halo mass relation (SHMR) smhm_Thesan1.dat Kannan et al. 2022; Stellar mass function smf_Thesan1.dat Kannan et al. 2022; Galaxy main sequence gms_Thesan1.dat Garaldi et al. 2024; Mass-metallicity relation mzr_Thesan1.dat Garaldi et al. 2024; UV luminosity function uvlf_Thesan1.dat Kannan et al. 2022 (https://www.thesan-project.com/thesan/data.html, retrieved 2026-10-20)",
+            "where": "THESAN data release page (https://www.thesan-project.com/thesan/data.html)"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -839,7 +889,7 @@
       },
       "selection": {
         "population": "THESAN-1 galaxies",
-        "warning": "Not directly comparable to strong-line 12+log(O/H).",
+        "warning": "Not directly comparable to strong-line 12+log(O/H). Attribution note (sim-highline): record citation lists \"Kannan et al. 2022; Garaldi et al. 2024; THESAN data release\"; the data page says which paper each file belongs to.",
         "aperture": "inner 30 physical kpc for StellarMass and SFR, per THESAN release changelog"
       },
       "provenance": {
@@ -848,7 +898,17 @@
         "doi": null,
         "url": "https://www.thesan-project.com/thesan/quantities/mzr_Thesan1.dat",
         "retrieved": "2026-10-02",
-        "checksumSha256": "562cd9915e581d2ef744624b36549b59499e857fc65661956d979845e93ddd64"
+        "checksumSha256": "562cd9915e581d2ef744624b36549b59499e857fc65661956d979845e93ddd64",
+        "attribution": {
+          "kind": "citation-lists-both-papers",
+          "statement": "The data release lists several papers; this quantity belongs to Garaldi et al. 2024 (arXiv id not stated on the data page).",
+          "primarySource": "Garaldi et al. 2024 (arXiv id not stated on the data page)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Predictions for common physical quantities from THESAN-1 are summarised below in machine-readable format. ... Star-formation rate density sfrd_Thesan1.dat Kannan et al. 2022; Stellar-to-halo mass relation (SHMR) smhm_Thesan1.dat Kannan et al. 2022; Stellar mass function smf_Thesan1.dat Kannan et al. 2022; Galaxy main sequence gms_Thesan1.dat Garaldi et al. 2024; Mass-metallicity relation mzr_Thesan1.dat Garaldi et al. 2024; UV luminosity function uvlf_Thesan1.dat Kannan et al. 2022 (https://www.thesan-project.com/thesan/data.html, retrieved 2026-10-20)",
+            "where": "THESAN data release page (https://www.thesan-project.com/thesan/data.html)"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": false,
@@ -961,7 +1021,7 @@
       },
       "selection": {
         "population": "THESAN-1 galaxies",
-        "warning": "Not directly comparable to strong-line 12+log(O/H).",
+        "warning": "Not directly comparable to strong-line 12+log(O/H). Attribution note (sim-highline): record citation lists \"Kannan et al. 2022; Garaldi et al. 2024; THESAN data release\"; the data page says which paper each file belongs to.",
         "aperture": "inner 30 physical kpc for StellarMass and SFR, per THESAN release changelog"
       },
       "provenance": {
@@ -970,7 +1030,17 @@
         "doi": null,
         "url": "https://www.thesan-project.com/thesan/quantities/mzr_Thesan1.dat",
         "retrieved": "2026-10-02",
-        "checksumSha256": "562cd9915e581d2ef744624b36549b59499e857fc65661956d979845e93ddd64"
+        "checksumSha256": "562cd9915e581d2ef744624b36549b59499e857fc65661956d979845e93ddd64",
+        "attribution": {
+          "kind": "citation-lists-both-papers",
+          "statement": "The data release lists several papers; this quantity belongs to Garaldi et al. 2024 (arXiv id not stated on the data page).",
+          "primarySource": "Garaldi et al. 2024 (arXiv id not stated on the data page)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Predictions for common physical quantities from THESAN-1 are summarised below in machine-readable format. ... Star-formation rate density sfrd_Thesan1.dat Kannan et al. 2022; Stellar-to-halo mass relation (SHMR) smhm_Thesan1.dat Kannan et al. 2022; Stellar mass function smf_Thesan1.dat Kannan et al. 2022; Galaxy main sequence gms_Thesan1.dat Garaldi et al. 2024; Mass-metallicity relation mzr_Thesan1.dat Garaldi et al. 2024; UV luminosity function uvlf_Thesan1.dat Kannan et al. 2022 (https://www.thesan-project.com/thesan/data.html, retrieved 2026-10-20)",
+            "where": "THESAN data release page (https://www.thesan-project.com/thesan/data.html)"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1077,7 +1147,7 @@
       },
       "selection": {
         "population": "THESAN-1 galaxies",
-        "warning": "Not directly comparable to strong-line 12+log(O/H).",
+        "warning": "Not directly comparable to strong-line 12+log(O/H). Attribution note (sim-highline): record citation lists \"Kannan et al. 2022; Garaldi et al. 2024; THESAN data release\"; the data page says which paper each file belongs to.",
         "aperture": "inner 30 physical kpc for StellarMass and SFR, per THESAN release changelog"
       },
       "provenance": {
@@ -1086,7 +1156,17 @@
         "doi": null,
         "url": "https://www.thesan-project.com/thesan/quantities/mzr_Thesan1.dat",
         "retrieved": "2026-10-02",
-        "checksumSha256": "562cd9915e581d2ef744624b36549b59499e857fc65661956d979845e93ddd64"
+        "checksumSha256": "562cd9915e581d2ef744624b36549b59499e857fc65661956d979845e93ddd64",
+        "attribution": {
+          "kind": "citation-lists-both-papers",
+          "statement": "The data release lists several papers; this quantity belongs to Garaldi et al. 2024 (arXiv id not stated on the data page).",
+          "primarySource": "Garaldi et al. 2024 (arXiv id not stated on the data page)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Predictions for common physical quantities from THESAN-1 are summarised below in machine-readable format. ... Star-formation rate density sfrd_Thesan1.dat Kannan et al. 2022; Stellar-to-halo mass relation (SHMR) smhm_Thesan1.dat Kannan et al. 2022; Stellar mass function smf_Thesan1.dat Kannan et al. 2022; Galaxy main sequence gms_Thesan1.dat Garaldi et al. 2024; Mass-metallicity relation mzr_Thesan1.dat Garaldi et al. 2024; UV luminosity function uvlf_Thesan1.dat Kannan et al. 2022 (https://www.thesan-project.com/thesan/data.html, retrieved 2026-10-20)",
+            "where": "THESAN data release page (https://www.thesan-project.com/thesan/data.html)"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1181,7 +1261,7 @@
       },
       "selection": {
         "population": "THESAN-1 galaxies",
-        "warning": "Not directly comparable to strong-line 12+log(O/H).",
+        "warning": "Not directly comparable to strong-line 12+log(O/H). Attribution note (sim-highline): record citation lists \"Kannan et al. 2022; Garaldi et al. 2024; THESAN data release\"; the data page says which paper each file belongs to.",
         "aperture": "inner 30 physical kpc for StellarMass and SFR, per THESAN release changelog"
       },
       "provenance": {
@@ -1190,7 +1270,17 @@
         "doi": null,
         "url": "https://www.thesan-project.com/thesan/quantities/mzr_Thesan1.dat",
         "retrieved": "2026-10-02",
-        "checksumSha256": "562cd9915e581d2ef744624b36549b59499e857fc65661956d979845e93ddd64"
+        "checksumSha256": "562cd9915e581d2ef744624b36549b59499e857fc65661956d979845e93ddd64",
+        "attribution": {
+          "kind": "citation-lists-both-papers",
+          "statement": "The data release lists several papers; this quantity belongs to Garaldi et al. 2024 (arXiv id not stated on the data page).",
+          "primarySource": "Garaldi et al. 2024 (arXiv id not stated on the data page)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Predictions for common physical quantities from THESAN-1 are summarised below in machine-readable format. ... Star-formation rate density sfrd_Thesan1.dat Kannan et al. 2022; Stellar-to-halo mass relation (SHMR) smhm_Thesan1.dat Kannan et al. 2022; Stellar mass function smf_Thesan1.dat Kannan et al. 2022; Galaxy main sequence gms_Thesan1.dat Garaldi et al. 2024; Mass-metallicity relation mzr_Thesan1.dat Garaldi et al. 2024; UV luminosity function uvlf_Thesan1.dat Kannan et al. 2022 (https://www.thesan-project.com/thesan/data.html, retrieved 2026-10-20)",
+            "where": "THESAN data release page (https://www.thesan-project.com/thesan/data.html)"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1279,7 +1369,7 @@
       },
       "selection": {
         "population": "THESAN-1 galaxies",
-        "warning": "Not directly comparable to strong-line 12+log(O/H).",
+        "warning": "Not directly comparable to strong-line 12+log(O/H). Attribution note (sim-highline): record citation lists \"Kannan et al. 2022; Garaldi et al. 2024; THESAN data release\"; the data page says which paper each file belongs to.",
         "aperture": "inner 30 physical kpc for StellarMass and SFR, per THESAN release changelog"
       },
       "provenance": {
@@ -1288,7 +1378,17 @@
         "doi": null,
         "url": "https://www.thesan-project.com/thesan/quantities/mzr_Thesan1.dat",
         "retrieved": "2026-10-02",
-        "checksumSha256": "562cd9915e581d2ef744624b36549b59499e857fc65661956d979845e93ddd64"
+        "checksumSha256": "562cd9915e581d2ef744624b36549b59499e857fc65661956d979845e93ddd64",
+        "attribution": {
+          "kind": "citation-lists-both-papers",
+          "statement": "The data release lists several papers; this quantity belongs to Garaldi et al. 2024 (arXiv id not stated on the data page).",
+          "primarySource": "Garaldi et al. 2024 (arXiv id not stated on the data page)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Predictions for common physical quantities from THESAN-1 are summarised below in machine-readable format. ... Star-formation rate density sfrd_Thesan1.dat Kannan et al. 2022; Stellar-to-halo mass relation (SHMR) smhm_Thesan1.dat Kannan et al. 2022; Stellar mass function smf_Thesan1.dat Kannan et al. 2022; Galaxy main sequence gms_Thesan1.dat Garaldi et al. 2024; Mass-metallicity relation mzr_Thesan1.dat Garaldi et al. 2024; UV luminosity function uvlf_Thesan1.dat Kannan et al. 2022 (https://www.thesan-project.com/thesan/data.html, retrieved 2026-10-20)",
+            "where": "THESAN data release page (https://www.thesan-project.com/thesan/data.html)"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": false,
@@ -1401,7 +1501,7 @@
       },
       "selection": {
         "population": "THESAN-1 galaxies",
-        "warning": "Published table does not specify an observationally matched SFR averaging timescale.",
+        "warning": "Published table does not specify an observationally matched SFR averaging timescale. Attribution note (sim-highline): record citation lists \"Kannan et al. 2022; Garaldi et al. 2024; THESAN data release\"; the data page says which paper each file belongs to.",
         "aperture": "inner 30 physical kpc for StellarMass and SFR, per THESAN release changelog"
       },
       "provenance": {
@@ -1413,7 +1513,17 @@
         "checksumSha256": "688ac4a4ff056a598bec96b427be06bf81e8170bc7f552e898521b0b55db08a8",
         "definitionFills": [
           "garaldi24-thesan1-sfms-sfr"
-        ]
+        ],
+        "attribution": {
+          "kind": "citation-lists-both-papers",
+          "statement": "The data release lists several papers; this quantity belongs to Garaldi et al. 2024 (arXiv id not stated on the data page).",
+          "primarySource": "Garaldi et al. 2024 (arXiv id not stated on the data page)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Predictions for common physical quantities from THESAN-1 are summarised below in machine-readable format. ... Star-formation rate density sfrd_Thesan1.dat Kannan et al. 2022; Stellar-to-halo mass relation (SHMR) smhm_Thesan1.dat Kannan et al. 2022; Stellar mass function smf_Thesan1.dat Kannan et al. 2022; Galaxy main sequence gms_Thesan1.dat Garaldi et al. 2024; Mass-metallicity relation mzr_Thesan1.dat Garaldi et al. 2024; UV luminosity function uvlf_Thesan1.dat Kannan et al. 2022 (https://www.thesan-project.com/thesan/data.html, retrieved 2026-10-20)",
+            "where": "THESAN data release page (https://www.thesan-project.com/thesan/data.html)"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1526,7 +1636,7 @@
       },
       "selection": {
         "population": "THESAN-1 galaxies",
-        "warning": "Published table does not specify an observationally matched SFR averaging timescale.",
+        "warning": "Published table does not specify an observationally matched SFR averaging timescale. Attribution note (sim-highline): record citation lists \"Kannan et al. 2022; Garaldi et al. 2024; THESAN data release\"; the data page says which paper each file belongs to.",
         "aperture": "inner 30 physical kpc for StellarMass and SFR, per THESAN release changelog"
       },
       "provenance": {
@@ -1538,7 +1648,17 @@
         "checksumSha256": "688ac4a4ff056a598bec96b427be06bf81e8170bc7f552e898521b0b55db08a8",
         "definitionFills": [
           "garaldi24-thesan1-sfms-sfr"
-        ]
+        ],
+        "attribution": {
+          "kind": "citation-lists-both-papers",
+          "statement": "The data release lists several papers; this quantity belongs to Garaldi et al. 2024 (arXiv id not stated on the data page).",
+          "primarySource": "Garaldi et al. 2024 (arXiv id not stated on the data page)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Predictions for common physical quantities from THESAN-1 are summarised below in machine-readable format. ... Star-formation rate density sfrd_Thesan1.dat Kannan et al. 2022; Stellar-to-halo mass relation (SHMR) smhm_Thesan1.dat Kannan et al. 2022; Stellar mass function smf_Thesan1.dat Kannan et al. 2022; Galaxy main sequence gms_Thesan1.dat Garaldi et al. 2024; Mass-metallicity relation mzr_Thesan1.dat Garaldi et al. 2024; UV luminosity function uvlf_Thesan1.dat Kannan et al. 2022 (https://www.thesan-project.com/thesan/data.html, retrieved 2026-10-20)",
+            "where": "THESAN data release page (https://www.thesan-project.com/thesan/data.html)"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1645,7 +1765,7 @@
       },
       "selection": {
         "population": "THESAN-1 galaxies",
-        "warning": "Published table does not specify an observationally matched SFR averaging timescale.",
+        "warning": "Published table does not specify an observationally matched SFR averaging timescale. Attribution note (sim-highline): record citation lists \"Kannan et al. 2022; Garaldi et al. 2024; THESAN data release\"; the data page says which paper each file belongs to.",
         "aperture": "inner 30 physical kpc for StellarMass and SFR, per THESAN release changelog"
       },
       "provenance": {
@@ -1657,7 +1777,17 @@
         "checksumSha256": "688ac4a4ff056a598bec96b427be06bf81e8170bc7f552e898521b0b55db08a8",
         "definitionFills": [
           "garaldi24-thesan1-sfms-sfr"
-        ]
+        ],
+        "attribution": {
+          "kind": "citation-lists-both-papers",
+          "statement": "The data release lists several papers; this quantity belongs to Garaldi et al. 2024 (arXiv id not stated on the data page).",
+          "primarySource": "Garaldi et al. 2024 (arXiv id not stated on the data page)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Predictions for common physical quantities from THESAN-1 are summarised below in machine-readable format. ... Star-formation rate density sfrd_Thesan1.dat Kannan et al. 2022; Stellar-to-halo mass relation (SHMR) smhm_Thesan1.dat Kannan et al. 2022; Stellar mass function smf_Thesan1.dat Kannan et al. 2022; Galaxy main sequence gms_Thesan1.dat Garaldi et al. 2024; Mass-metallicity relation mzr_Thesan1.dat Garaldi et al. 2024; UV luminosity function uvlf_Thesan1.dat Kannan et al. 2022 (https://www.thesan-project.com/thesan/data.html, retrieved 2026-10-20)",
+            "where": "THESAN data release page (https://www.thesan-project.com/thesan/data.html)"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1752,7 +1882,7 @@
       },
       "selection": {
         "population": "THESAN-1 galaxies",
-        "warning": "Published table does not specify an observationally matched SFR averaging timescale.",
+        "warning": "Published table does not specify an observationally matched SFR averaging timescale. Attribution note (sim-highline): record citation lists \"Kannan et al. 2022; Garaldi et al. 2024; THESAN data release\"; the data page says which paper each file belongs to.",
         "aperture": "inner 30 physical kpc for StellarMass and SFR, per THESAN release changelog"
       },
       "provenance": {
@@ -1764,7 +1894,17 @@
         "checksumSha256": "688ac4a4ff056a598bec96b427be06bf81e8170bc7f552e898521b0b55db08a8",
         "definitionFills": [
           "garaldi24-thesan1-sfms-sfr"
-        ]
+        ],
+        "attribution": {
+          "kind": "citation-lists-both-papers",
+          "statement": "The data release lists several papers; this quantity belongs to Garaldi et al. 2024 (arXiv id not stated on the data page).",
+          "primarySource": "Garaldi et al. 2024 (arXiv id not stated on the data page)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Predictions for common physical quantities from THESAN-1 are summarised below in machine-readable format. ... Star-formation rate density sfrd_Thesan1.dat Kannan et al. 2022; Stellar-to-halo mass relation (SHMR) smhm_Thesan1.dat Kannan et al. 2022; Stellar mass function smf_Thesan1.dat Kannan et al. 2022; Galaxy main sequence gms_Thesan1.dat Garaldi et al. 2024; Mass-metallicity relation mzr_Thesan1.dat Garaldi et al. 2024; UV luminosity function uvlf_Thesan1.dat Kannan et al. 2022 (https://www.thesan-project.com/thesan/data.html, retrieved 2026-10-20)",
+            "where": "THESAN data release page (https://www.thesan-project.com/thesan/data.html)"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -1853,7 +1993,7 @@
       },
       "selection": {
         "population": "THESAN-1 galaxies",
-        "warning": "Published table does not specify an observationally matched SFR averaging timescale.",
+        "warning": "Published table does not specify an observationally matched SFR averaging timescale. Attribution note (sim-highline): record citation lists \"Kannan et al. 2022; Garaldi et al. 2024; THESAN data release\"; the data page says which paper each file belongs to.",
         "aperture": "inner 30 physical kpc for StellarMass and SFR, per THESAN release changelog"
       },
       "provenance": {
@@ -1865,7 +2005,17 @@
         "checksumSha256": "688ac4a4ff056a598bec96b427be06bf81e8170bc7f552e898521b0b55db08a8",
         "definitionFills": [
           "garaldi24-thesan1-sfms-sfr"
-        ]
+        ],
+        "attribution": {
+          "kind": "citation-lists-both-papers",
+          "statement": "The data release lists several papers; this quantity belongs to Garaldi et al. 2024 (arXiv id not stated on the data page).",
+          "primarySource": "Garaldi et al. 2024 (arXiv id not stated on the data page)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Predictions for common physical quantities from THESAN-1 are summarised below in machine-readable format. ... Star-formation rate density sfrd_Thesan1.dat Kannan et al. 2022; Stellar-to-halo mass relation (SHMR) smhm_Thesan1.dat Kannan et al. 2022; Stellar mass function smf_Thesan1.dat Kannan et al. 2022; Galaxy main sequence gms_Thesan1.dat Garaldi et al. 2024; Mass-metallicity relation mzr_Thesan1.dat Garaldi et al. 2024; UV luminosity function uvlf_Thesan1.dat Kannan et al. 2022 (https://www.thesan-project.com/thesan/data.html, retrieved 2026-10-20)",
+            "where": "THESAN data release page (https://www.thesan-project.com/thesan/data.html)"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": true,
@@ -2008,7 +2158,7 @@
       },
       "selection": {
         "population": "THESAN-1 haloes",
-        "warning": "Halo mass convention must be matched before ranking.",
+        "warning": "Halo mass convention must be matched before ranking. Attribution note (sim-highline): record citation lists \"Kannan et al. 2022; Garaldi et al. 2024; THESAN data release\"; the data page says which paper each file belongs to.",
         "aperture": "inner 30 physical kpc for StellarMass and SFR, per THESAN release changelog"
       },
       "provenance": {
@@ -2017,7 +2167,17 @@
         "doi": null,
         "url": "https://www.thesan-project.com/thesan/quantities/smhm_Thesan1.dat",
         "retrieved": "2026-10-02",
-        "checksumSha256": "b3a1777d89746734dd1d09c17328e0f6344acea78e061ce80fc36cdf931df9bb"
+        "checksumSha256": "b3a1777d89746734dd1d09c17328e0f6344acea78e061ce80fc36cdf931df9bb",
+        "attribution": {
+          "kind": "citation-lists-both-papers",
+          "statement": "The data release lists several papers; this quantity belongs to Kannan et al. 2022 (arXiv:2110.00584).",
+          "primarySource": "Kannan et al. 2022 (arXiv:2110.00584)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Predictions for common physical quantities from THESAN-1 are summarised below in machine-readable format. ... Star-formation rate density sfrd_Thesan1.dat Kannan et al. 2022; Stellar-to-halo mass relation (SHMR) smhm_Thesan1.dat Kannan et al. 2022; Stellar mass function smf_Thesan1.dat Kannan et al. 2022; Galaxy main sequence gms_Thesan1.dat Garaldi et al. 2024; Mass-metallicity relation mzr_Thesan1.dat Garaldi et al. 2024; UV luminosity function uvlf_Thesan1.dat Kannan et al. 2022 (https://www.thesan-project.com/thesan/data.html, retrieved 2026-10-20)",
+            "where": "THESAN data release page (https://www.thesan-project.com/thesan/data.html)"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": false,
@@ -2153,7 +2313,7 @@
       },
       "selection": {
         "population": "THESAN-1 haloes",
-        "warning": "Halo mass convention must be matched before ranking.",
+        "warning": "Halo mass convention must be matched before ranking. Attribution note (sim-highline): record citation lists \"Kannan et al. 2022; Garaldi et al. 2024; THESAN data release\"; the data page says which paper each file belongs to.",
         "aperture": "inner 30 physical kpc for StellarMass and SFR, per THESAN release changelog"
       },
       "provenance": {
@@ -2162,7 +2322,17 @@
         "doi": null,
         "url": "https://www.thesan-project.com/thesan/quantities/smhm_Thesan1.dat",
         "retrieved": "2026-10-02",
-        "checksumSha256": "b3a1777d89746734dd1d09c17328e0f6344acea78e061ce80fc36cdf931df9bb"
+        "checksumSha256": "b3a1777d89746734dd1d09c17328e0f6344acea78e061ce80fc36cdf931df9bb",
+        "attribution": {
+          "kind": "citation-lists-both-papers",
+          "statement": "The data release lists several papers; this quantity belongs to Kannan et al. 2022 (arXiv:2110.00584).",
+          "primarySource": "Kannan et al. 2022 (arXiv:2110.00584)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Predictions for common physical quantities from THESAN-1 are summarised below in machine-readable format. ... Star-formation rate density sfrd_Thesan1.dat Kannan et al. 2022; Stellar-to-halo mass relation (SHMR) smhm_Thesan1.dat Kannan et al. 2022; Stellar mass function smf_Thesan1.dat Kannan et al. 2022; Galaxy main sequence gms_Thesan1.dat Garaldi et al. 2024; Mass-metallicity relation mzr_Thesan1.dat Garaldi et al. 2024; UV luminosity function uvlf_Thesan1.dat Kannan et al. 2022 (https://www.thesan-project.com/thesan/data.html, retrieved 2026-10-20)",
+            "where": "THESAN data release page (https://www.thesan-project.com/thesan/data.html)"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": false,
@@ -2304,7 +2474,7 @@
       },
       "selection": {
         "population": "THESAN-1 haloes",
-        "warning": "Halo mass convention must be matched before ranking.",
+        "warning": "Halo mass convention must be matched before ranking. Attribution note (sim-highline): record citation lists \"Kannan et al. 2022; Garaldi et al. 2024; THESAN data release\"; the data page says which paper each file belongs to.",
         "aperture": "inner 30 physical kpc for StellarMass and SFR, per THESAN release changelog"
       },
       "provenance": {
@@ -2313,7 +2483,17 @@
         "doi": null,
         "url": "https://www.thesan-project.com/thesan/quantities/smhm_Thesan1.dat",
         "retrieved": "2026-10-02",
-        "checksumSha256": "b3a1777d89746734dd1d09c17328e0f6344acea78e061ce80fc36cdf931df9bb"
+        "checksumSha256": "b3a1777d89746734dd1d09c17328e0f6344acea78e061ce80fc36cdf931df9bb",
+        "attribution": {
+          "kind": "citation-lists-both-papers",
+          "statement": "The data release lists several papers; this quantity belongs to Kannan et al. 2022 (arXiv:2110.00584).",
+          "primarySource": "Kannan et al. 2022 (arXiv:2110.00584)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Predictions for common physical quantities from THESAN-1 are summarised below in machine-readable format. ... Star-formation rate density sfrd_Thesan1.dat Kannan et al. 2022; Stellar-to-halo mass relation (SHMR) smhm_Thesan1.dat Kannan et al. 2022; Stellar mass function smf_Thesan1.dat Kannan et al. 2022; Galaxy main sequence gms_Thesan1.dat Garaldi et al. 2024; Mass-metallicity relation mzr_Thesan1.dat Garaldi et al. 2024; UV luminosity function uvlf_Thesan1.dat Kannan et al. 2022 (https://www.thesan-project.com/thesan/data.html, retrieved 2026-10-20)",
+            "where": "THESAN data release page (https://www.thesan-project.com/thesan/data.html)"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": false,
@@ -2449,7 +2629,7 @@
       },
       "selection": {
         "population": "THESAN-1 haloes",
-        "warning": "Halo mass convention must be matched before ranking.",
+        "warning": "Halo mass convention must be matched before ranking. Attribution note (sim-highline): record citation lists \"Kannan et al. 2022; Garaldi et al. 2024; THESAN data release\"; the data page says which paper each file belongs to.",
         "aperture": "inner 30 physical kpc for StellarMass and SFR, per THESAN release changelog"
       },
       "provenance": {
@@ -2458,7 +2638,17 @@
         "doi": null,
         "url": "https://www.thesan-project.com/thesan/quantities/smhm_Thesan1.dat",
         "retrieved": "2026-10-02",
-        "checksumSha256": "b3a1777d89746734dd1d09c17328e0f6344acea78e061ce80fc36cdf931df9bb"
+        "checksumSha256": "b3a1777d89746734dd1d09c17328e0f6344acea78e061ce80fc36cdf931df9bb",
+        "attribution": {
+          "kind": "citation-lists-both-papers",
+          "statement": "The data release lists several papers; this quantity belongs to Kannan et al. 2022 (arXiv:2110.00584).",
+          "primarySource": "Kannan et al. 2022 (arXiv:2110.00584)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Predictions for common physical quantities from THESAN-1 are summarised below in machine-readable format. ... Star-formation rate density sfrd_Thesan1.dat Kannan et al. 2022; Stellar-to-halo mass relation (SHMR) smhm_Thesan1.dat Kannan et al. 2022; Stellar mass function smf_Thesan1.dat Kannan et al. 2022; Galaxy main sequence gms_Thesan1.dat Garaldi et al. 2024; Mass-metallicity relation mzr_Thesan1.dat Garaldi et al. 2024; UV luminosity function uvlf_Thesan1.dat Kannan et al. 2022 (https://www.thesan-project.com/thesan/data.html, retrieved 2026-10-20)",
+            "where": "THESAN data release page (https://www.thesan-project.com/thesan/data.html)"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": false,
@@ -2588,7 +2778,7 @@
       },
       "selection": {
         "population": "THESAN-1 haloes",
-        "warning": "Halo mass convention must be matched before ranking.",
+        "warning": "Halo mass convention must be matched before ranking. Attribution note (sim-highline): record citation lists \"Kannan et al. 2022; Garaldi et al. 2024; THESAN data release\"; the data page says which paper each file belongs to.",
         "aperture": "inner 30 physical kpc for StellarMass and SFR, per THESAN release changelog"
       },
       "provenance": {
@@ -2597,7 +2787,17 @@
         "doi": null,
         "url": "https://www.thesan-project.com/thesan/quantities/smhm_Thesan1.dat",
         "retrieved": "2026-10-02",
-        "checksumSha256": "b3a1777d89746734dd1d09c17328e0f6344acea78e061ce80fc36cdf931df9bb"
+        "checksumSha256": "b3a1777d89746734dd1d09c17328e0f6344acea78e061ce80fc36cdf931df9bb",
+        "attribution": {
+          "kind": "citation-lists-both-papers",
+          "statement": "The data release lists several papers; this quantity belongs to Kannan et al. 2022 (arXiv:2110.00584).",
+          "primarySource": "Kannan et al. 2022 (arXiv:2110.00584)",
+          "confidence": "stated",
+          "evidence": {
+            "quote": "Predictions for common physical quantities from THESAN-1 are summarised below in machine-readable format. ... Star-formation rate density sfrd_Thesan1.dat Kannan et al. 2022; Stellar-to-halo mass relation (SHMR) smhm_Thesan1.dat Kannan et al. 2022; Stellar mass function smf_Thesan1.dat Kannan et al. 2022; Galaxy main sequence gms_Thesan1.dat Garaldi et al. 2024; Mass-metallicity relation mzr_Thesan1.dat Garaldi et al. 2024; UV luminosity function uvlf_Thesan1.dat Kannan et al. 2022 (https://www.thesan-project.com/thesan/data.html, retrieved 2026-10-20)",
+            "where": "THESAN data release page (https://www.thesan-project.com/thesan/data.html)"
+          }
+        }
       },
       "calibration": "prediction",
       "rankable": false,

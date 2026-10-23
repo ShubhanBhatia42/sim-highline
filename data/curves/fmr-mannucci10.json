@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "mannucci10.sdss.fmr.mu0.32.poly4",
+      "source": "Mannucci et al. 2010",
+      "run": "SDSS median polynomial",
+      "kind": "observation",
+      "relation": "fmr",
+      "epoch": {
+        "zRepresentative": 0.185,
+        "zMin": 0.07,
+        "zMax": 0.3,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "mu_0.32 = log10(M*/Msun) - 0.32 log10(SFR/(Msun/yr)); total stellar mass (Kauffmann+03, scaled 1.06 from Kroupa to Chabrier), SFR from fibre Halpha",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "12+log10(O/H), gas-phase oxygen abundance (Nagao+06, Maiolino+08 strong-line calibration)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 9.23,
+        "xMax": 11.43
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "12+log(O/H) = 8.90 + 0.39x - 0.20x^2 - 0.077x^3 + 0.064x^4, x = mu_0.32 - 10",
+        "expression": "8.90+0.39*(x-10)-0.20*Math.pow(x-10,2)-0.077*Math.pow(x-10,3)+0.064*Math.pow(x-10,4)",
+        "parameters": {}
+      },
+      "scatter": {
+        "value": 0.05,
+        "unit": "dex",
+        "meaning": "residual dispersion of individual SDSS galaxies around the 3D FMR in the central part, as stated for the FMR (not for this projection)"
+      },
+      "selection": {
+        "population": "SDSS DR7 emission-line galaxies, AGN removed (BPT), H-alpha S/N>25, 0.07<z<0.30; fit to the median metallicity in mu_0.32",
+        "warning": "Fit to the medians of SDSS galaxies in mu_0.32. x range is the span of mu_0.32 over the cells of the paper's Table 1 (computed from bin centres, not stated by the paper). zRepresentative 0.185 is the midpoint of the 0.07-0.30 selection window, not a measured median. The paper's 3 arcsec fibre SFRs are not aperture corrected."
+      },
+      "definitions": {
+        "muAlpha": 0.32,
+        "metallicityQuantity": "gas-O/H",
+        "metallicityCalibration": "Nagao+06 / Maiolino+08 strong-line calibrations (average of N2 and R23 metallicities)",
+        "sfrTimescaleMyr": "unspecified",
+        "sfrIndicator": "Halpha (3 arcsec fibre, Balmer-decrement dust correction, Kennicutt 1998 conversion)",
+        "imf": "chabrier03",
+        "massDefinition": "sed-total",
+        "population": "star-forming"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Mannucci et al. 2010, MNRAS 408, 2115 (arXiv:1005.0006)",
+        "doi": "10.1111/j.1365-2966.2010.17291.x",
+        "url": "https://arxiv.org/abs/1005.0006",
+        "retrieved": "2026-10-18",
+        "sourceMember": "fmr4.tex",
+        "sourceArchiveSha256": "1edb3e3bd44d9d843d249e2aa1b0fd463bc6f916517607665a82cca95512f560"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Polynomial as published (eq. 'cfr2', first). poly(10)=8.900 (quoted constant term 8.90); poly(10.8)=9.0708 -> 9.07 vs quoted plateau 9.07; poly over 10.7-11.4 in 0.1 steps = [9.06, 9.07, 9.07, 9.08, 9.08, 9.08, 9.08, 9.09]. Table 1: 185 median cells, mu_0.32 span 9.23..11.43, N-weighted rms of polynomial minus cell median = 0.0153 dex."
+    },
+    {
+      "id": "mannucci10.sdss-highz.fmr.mu0.32.linear-lowmu",
+      "source": "Mannucci et al. 2010",
+      "run": "linear branch mu<10.2",
+      "kind": "observation",
+      "relation": "fmr",
+      "epoch": {
+        "zRepresentative": 0.07,
+        "zMin": 0.07,
+        "zMax": 2.5,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "mu_0.32 = log10(M*/Msun) - 0.32 log10(SFR/(Msun/yr)); total stellar mass (Kauffmann+03, scaled 1.06 from Kroupa to Chabrier), SFR from fibre Halpha",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "12+log10(O/H), gas-phase oxygen abundance (Nagao+06, Maiolino+08 strong-line calibration)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 9.23,
+        "xMax": 10.2
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "12+log(O/H) = 8.90 + 0.47x, x = mu_0.32 - 10, valid for mu_0.32 < 10.2",
+        "expression": "8.90+0.47*(x-10)",
+        "parameters": {}
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming galaxies of any mass and SFR, SDSS plus the z=0.5-2.5 literature samples compiled in the paper",
+        "warning": "Published as the relation followed 'at any redshift up to z=2.5'; the paper gives no relation for 10.2<mu_0.32<10.5. Evolution is stored as analytic-evolution with zRepresentative = zMin because the expression has no redshift dependence."
+      },
+      "definitions": {
+        "muAlpha": 0.32,
+        "metallicityQuantity": "gas-O/H",
+        "metallicityCalibration": "Nagao+06 / Maiolino+08 strong-line calibrations (average of N2 and R23 metallicities)",
+        "sfrTimescaleMyr": "unspecified",
+        "sfrIndicator": "Halpha (3 arcsec fibre, Balmer-decrement dust correction, Kennicutt 1998 conversion)",
+        "imf": "chabrier03",
+        "massDefinition": "sed-total",
+        "population": "star-forming"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Mannucci et al. 2010, MNRAS 408, 2115 (arXiv:1005.0006)",
+        "doi": "10.1111/j.1365-2966.2010.17291.x",
+        "url": "https://arxiv.org/abs/1005.0006",
+        "retrieved": "2026-10-18",
+        "sourceMember": "fmr4.tex",
+        "sourceArchiveSha256": "1edb3e3bd44d9d843d249e2aa1b0fd463bc6f916517607665a82cca95512f560"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Linear branch as published. Table 1 cells with mu<10.2 and N>200: least-squares slope dZ/dmu = 0.390 (the paper's linear branch, 0.47, was fitted to the SDSS plus high-z samples, so the SDSS-only slope is not expected to equal it); N-weighted rms of 8.90+0.47x minus the Table 1 cell medians with mu<10.2 = 0.025 dex"
+    },
+    {
+      "id": "mannucci10.sdss-highz.fmr.mu0.32.plateau",
+      "source": "Mannucci et al. 2010",
+      "run": "plateau branch mu>10.5",
+      "kind": "observation",
+      "relation": "fmr",
+      "epoch": {
+        "zRepresentative": 0.07,
+        "zMin": 0.07,
+        "zMax": 2.5,
+        "mode": "analytic-evolution",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "mu_0.32 = log10(M*/Msun) - 0.32 log10(SFR/(Msun/yr)); total stellar mass (Kauffmann+03, scaled 1.06 from Kroupa to Chabrier), SFR from fibre Halpha",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "12+log10(O/H), gas-phase oxygen abundance (Nagao+06, Maiolino+08 strong-line calibration)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 10.5,
+        "xMax": 11.43
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "12+log(O/H) = 9.07, valid for mu_0.32 > 10.5",
+        "expression": "9.07",
+        "parameters": {}
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming galaxies of any mass and SFR, SDSS plus the z=0.5-2.5 literature samples compiled in the paper",
+        "warning": "Constant branch of the same published relation; see the linear-lowmu record. Upper x limit is the span of mu_0.32 over the cells of the paper's Table 1."
+      },
+      "definitions": {
+        "muAlpha": 0.32,
+        "metallicityQuantity": "gas-O/H",
+        "metallicityCalibration": "Nagao+06 / Maiolino+08 strong-line calibrations (average of N2 and R23 metallicities)",
+        "sfrTimescaleMyr": "unspecified",
+        "sfrIndicator": "Halpha (3 arcsec fibre, Balmer-decrement dust correction, Kennicutt 1998 conversion)",
+        "imf": "chabrier03",
+        "massDefinition": "sed-total",
+        "population": "star-forming"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Mannucci et al. 2010, MNRAS 408, 2115 (arXiv:1005.0006)",
+        "doi": "10.1111/j.1365-2966.2010.17291.x",
+        "url": "https://arxiv.org/abs/1005.0006",
+        "retrieved": "2026-10-18",
+        "sourceMember": "fmr4.tex",
+        "sourceArchiveSha256": "1edb3e3bd44d9d843d249e2aa1b0fd463bc6f916517607665a82cca95512f560"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Plateau as published. Table 1 cells with mu>10.5 (77 cells): N-weighted mean median-metallicity = 9.0583 vs quoted 9.07 (agreement to 0.015 dex only; the plateau value is a rounded fit parameter); the SDSS polynomial evaluates to 9.07 at mu_0.32=10.8."
+    }
+  ]
+}

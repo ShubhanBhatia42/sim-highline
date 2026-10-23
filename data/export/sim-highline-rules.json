@@ -280,6 +280,167 @@
     "bhMassMethod",
     "population"
    ]
+  },
+  "fmr": {
+   "hard": [
+    "muAlpha",
+    "metallicityQuantity"
+   ],
+   "soft": [
+    "metallicityCalibration",
+    "sfrIndicator",
+    "sfrTimescaleMyr",
+    "imf",
+    "massDefinition",
+    "population"
+   ]
+  },
+  "ks": {
+   "hard": [
+    "gasDefinition",
+    "areaScale"
+   ],
+   "soft": [
+    "sfrIndicator",
+    "coConversion",
+    "heliumIncluded",
+    "imf",
+    "population"
+   ]
+  },
+  "wp": {
+   "hard": [
+    "sampleSelection",
+    "lengthUnit"
+   ],
+   "soft": [
+    "piMax",
+    "cosmology"
+   ]
+  },
+  "hod": {
+   "hard": [
+    "galaxyType",
+    "haloMassDefinition"
+   ],
+   "soft": [
+    "sampleSelection"
+   ]
+  },
+  "colour": {
+   "hard": [
+    "colourBand",
+    "dustTreatment"
+   ],
+   "soft": [
+    "population",
+    "massDefinition",
+    "imf"
+   ]
+  },
+  "sigmam": {
+   "hard": [
+    "sigmaDimension"
+   ],
+   "soft": [
+    "sigmaDefinition",
+    "sigmaWeighting",
+    "massDefinition",
+    "imf",
+    "population",
+    "cosmology"
+   ]
+  },
+  "sigma1": {
+   "hard": [
+    "sigma1Definition"
+   ],
+   "soft": [
+    "massDefinition",
+    "imf",
+    "population",
+    "cosmology"
+   ]
+  },
+  "lxm": {
+   "hard": [
+    "xrayBand",
+    "coreTreatment",
+    "haloMassDefinition"
+   ],
+   "soft": []
+  },
+  "ysz": {
+   "hard": [
+    "haloMassDefinition",
+    "szScaling"
+   ],
+   "soft": []
+  },
+  "agnlf": {
+   "hard": [
+    "luminosityBand",
+    "lfConvention",
+    "densityFrame"
+   ],
+   "soft": [
+    "bolometricCorrection",
+    "obscurationCorrection",
+    "population",
+    "cosmology"
+   ]
+  },
+  "bhad": {
+   "hard": [
+    "densityFrame",
+    "bhadDefinition"
+   ],
+   "soft": [
+    "luminosityBand",
+    "radiativeEfficiency",
+    "obscurationCorrection",
+    "cosmology"
+   ]
+  },
+  "lambdar": {
+   "hard": [
+    "lambdaStatistic",
+    "projection"
+   ],
+   "soft": [
+    "spinDefinition",
+    "massDefinition",
+    "imf",
+    "population"
+   ]
+  },
+  "fslow": {
+   "hard": [
+    "slowRotatorCriterion"
+   ],
+   "soft": [
+    "spinDefinition",
+    "projection",
+    "massDefinition",
+    "imf",
+    "population"
+   ]
+  },
+  "elf": {
+   "hard": [
+    "line",
+    "dustCorrection"
+   ],
+   "soft": [
+    "densityFrame"
+   ]
+  },
+  "uvbeta": {
+   "hard": [
+    "betaWindow",
+    "dustTreatment"
+   ],
+   "soft": []
   }
  }
 }

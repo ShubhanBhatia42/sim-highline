@@ -1,8 +1,8 @@
 {
  "schemaVersion": "1.0.0",
  "method": "Offset of each curve from the median of other sources' curves (interpolating peers only inside their published range) at the same relation, units and z within 0.15; at least 3 peer sources per point. Flag: |median offset| >= 0.7 dex and robust z >= 3.0 within the relation.",
- "nScreened": 888,
- "nFlagged": 9,
+ "nScreened": 900,
+ "nFlagged": 10,
  "systematic": [
   {
    "source": "SPHINX20",
@@ -56,7 +56,7 @@
    "nPoints": 43,
    "xUnit": "log10(Msun)",
    "yUnit": "log10(Mpc^-3 dex^-1)",
-   "robustZ": -4.178,
+   "robustZ": -4.352,
    "flag": true,
    "population": "all galaxies",
    "recordWarning": "Solid segment only of the curve in Schaye et al. 2023 (MNRAS 526, 4978) Fig. 8 left-top panel, above the resolution-dependent lower mass limit for calibration; the dotted low-mass part is omitted. L1_m10: box 1000 cMpc, fiducial galaxy form"
@@ -68,14 +68,30 @@
    "run": "all galaxies",
    "kind": "observation",
    "z": 0.2,
-   "medianOffsetDex": -1.174,
+   "medianOffsetDex": -1.139,
    "nPoints": 5,
    "xUnit": "log10(Msun)",
    "yUnit": "log10(yr^-1)",
-   "robustZ": -15.844,
+   "robustZ": -11.732,
    "flag": true,
    "population": "all",
-   "recordWarning": "Assuming Chabrier IMF. z=0.05 - 0.32. No h-correction was required as data was supplied h-free. This catalogue includes all galaxies, including quenched."
+   "recordWarning": "Assuming Chabrier IMF. z=0.05 - 0.32. No h-correction was required as data was supplied h-free. This catalogue includes all galaxies, including quenched. Corrected by sim-highline: the numbers are as published at H0 = 70 km/s/Mpc (Omega_m ="
+  },
+  {
+   "id": "baker25.qsmf.z2.5-3",
+   "relation": "gsmf",
+   "source": "Baker et al. 2025 (quiescent, JWST)",
+   "run": null,
+   "kind": "observation",
+   "z": 2.75,
+   "medianOffsetDex": -0.847,
+   "nPoints": 6,
+   "xUnit": "log10(Msun)",
+   "yUnit": "log10(Mpc^-3 dex^-1)",
+   "robustZ": -3.09,
+   "flag": true,
+   "population": "massive quiescent galaxies",
+   "recordWarning": "phi_low/phi_high are treated as offsets from phi (they are smaller than phi in every row). Quiescent-only mass function: not comparable with total GSMFs."
   },
   {
    "id": "camels.simba.ssfr-dist.cv.z0",
@@ -88,7 +104,7 @@
    "nPoints": 10,
    "xUnit": "log10(Msun)",
    "yUnit": "log10(yr^-1)",
-   "robustZ": -11.995,
+   "robustZ": -9.109,
    "flag": true,
    "population": "all subhaloes with at least one star particle and stellar mass between 1e9 and 10^11.5 Msun, pooled over the 27 seeds",
    "recordWarning": "Pooled over 27 boxes of 25 Mpc/h (total comoving volume 1395796 Mpc^3); the distribution is of galaxies, not volume-weighted beyond that. Galaxies with zero instantaneous SFR, and those below the lowest sSFR bin, are in the lowest row and c"

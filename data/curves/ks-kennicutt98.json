@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "kennicutt98.galaxies.ks.global-total-gas.eq4",
+      "source": "Kennicutt 1998",
+      "run": "global Schmidt law, normal disks + circumnuclear starbursts",
+      "kind": "observation",
+      "relation": "ks",
+      "epoch": {
+        "zRepresentative": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 disk-averaged gas surface density: HI+H2 for 61 normal spirals (mean within the RC2 radius), H2 only for 36 circumnuclear starbursts (mean within the central molecular disk, ~1 kpc); hydrogen only, constant N(H2)=2.8e20 Ico",
+        "xUnit": "log10(Msun pc^-2)",
+        "yDefinition": "log10 disk-averaged SFR surface density (Halpha for the normal disks, FIR for the starbursts; Salpeter IMF 0.1-100 Msun)",
+        "yUnit": "log10(Msun yr^-1 kpc^-2)"
+      },
+      "domain": {
+        "xMin": 0.25,
+        "xMax": 4.76
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "Sigma_SFR = 2.5e-4 (Sigma_gas / 1 Msun pc^-2)^1.4 Msun yr^-1 kpc^-2, i.e. log Sigma_SFR = log10(2.5e-4) + 1.4 log Sigma_gas",
+        "expression": "Math.log10(2.5e-4)+1.4*x",
+        "parameters": {
+          "A": 0.00025,
+          "AError": 0.00007,
+          "N": 1.4,
+          "NError": 0.15
+        }
+      },
+      "scatter": {
+        "value": 0.3,
+        "unit": "dex",
+        "meaning": "0.3 dex is the random error in SFRs and gas densities assumed by the paper for its formal fit errors; the dispersion of the composite sample about eq. 4 computed from Tables 1-2 is 0.36 dex rms"
+      },
+      "selection": {
+        "population": "61 normal spiral galaxies plus 36 infrared-selected circumnuclear starbursts (galaxy-integrated / disk-averaged points)",
+        "warning": "Total-gas Schmidt law of the combined sample: the gas is HI+H2 for the normal disks but H2 alone for the starbursts (HI ignored), the CO-to-H2 factor is constant, and the SFR indicator differs between the two samples (Halpha vs FIR). x range is the span of the points tabulated in the paper's Tables 1 and 2, computed by the ingest script from the PostScript tables (the paper states no validity range for eq. 4). Not a resolved (sub-kpc) relation; do not compare with patch-scale simulation KS laws without the areaScale caveat."
+      },
+      "definitions": {
+        "gasDefinition": "HI+H2 (normal disks); H2 only (starbursts)",
+        "areaScale": "galaxy-integrated: disk-averaged within the RC2 radius (normal disks), central molecular disk of ~1 kpc (starbursts)",
+        "sfrIndicator": "Halpha extinction-corrected by 1.1 mag, L(Ha)/1.26e41 erg/s (normal disks); L_FIR/2.2e43 erg/s (starbursts)",
+        "sfrTimescaleMyr": "heterogeneous",
+        "imf": "salpeter55",
+        "coConversion": "N(H2) = 2.8e20 Ico cm^-2 (K km/s)^-1, constant",
+        "heliumIncluded": "no (hydrogen only; the paper offsets its efficiency lines by 1.37 'to include helium and heavy elements')",
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Kennicutt 1998, ApJ 498, 541 (arXiv:astro-ph/9712213), eq. 4",
+        "doi": "10.1086/305588",
+        "url": "https://arxiv.org/abs/astro-ph/9712213",
+        "retrieved": "2026-10-18",
+        "sourceMember": "text.tex",
+        "sourceArchiveSha256": "069587057710af0e84eb61e9271903294dc2aa81c5bf48bc24b7e62901130520"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Equation (4) as published. Tables 1-2 parsed: 58 normal disks (log Sigma_gas, log Sigma_SFR) + 34 starbursts (log Sigma_H2, log Sigma_SFR) (92 points) OLS bisector, all points: slope 1.384, intercept -3.578 (paper: N=1.40+-0.05; eq. 4 intercept log10(2.5e-4)=-3.602); starbursts only: slope 1.362 (paper 1.40+-0.13) eq. 4 minus tabulated log Sigma_SFR: mean -0.004 dex, rms 0.355 dex (disks +0.024, starbursts -0.052) x span of the tabulated points: log Sigma_gas = 0.25..4.76"
+    }
+  ]
+}

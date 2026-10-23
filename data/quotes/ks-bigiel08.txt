@@ -1,0 +1,22 @@
+bigiel_sflaw.tex:780: \Sigma_{\rm SFR} = a~\left( \frac{\Sigma_{\rm HI,H2,gas}}{10~{\rm M}_{\odot}~{\rm pc}^{-2}} \right)^{N}~.
+bigiel_sflaw.tex:785: $\Sigma_{\rm SFR}$ at the fiducial gas surface density of $10$~M$_{\odot}$~pc$^{-2}$.
+bigiel_sflaw.tex:794: most fits in the literature quote `$A$' at $1$~M$_{\odot}$~pc$^{-2}$ rather than our fiducial $10$~M$_{\odot}$~pc$^{-2}$.
+bigiel_sflaw.tex:1226: The best fit parameters are $N = 1.01$ and $A = -2.12$; the RMS scatter of $\Sigma_{\rm SFR}$ about the fit is $0.19$~dex
+bigiel_sflaw.tex:1253: We thus derive a best fit molecular Schmidt law of
+bigiel_sflaw.tex:1255: \Sigma_{\rm SFR} = 10^{-2.1 \pm 0.2} \Sigma_{\rm H2}^{1.0 \pm 0.2}.
+bigiel_sflaw.tex:1222: we show the results of a power law fit to $\Sigma_{\rm SFR}$ vs. $\Sigma_{\rm H2}$ for CO data from HERACLES/BIMA SONG in spiral galaxies (where $\Sigma_{\rm gas} \approx \Sigma_{\rm H2}$).
+bigiel_sflaw.tex:798: We fit $\Sigma_{\rm SFR}$ vs. $\Sigma_{\rm H2}$ (middle panel) in the regime $\Sigma_{\rm H2} > 3$~M$_{\sun}$\,pc$^{-2}$ for the HERACLES data
+bigiel_sflaw.tex:500: These quantities all have units of M$_{\odot}$~pc$^{-2}$ and are {\em hydrogen} surface densities, i.e., they do not include any contribution from helium.
+bigiel_sflaw.tex:507: we adopt a CO-to-H$_2$ conversion factor of $2.0 \times 10^{20}$
+bigiel_sflaw.tex:507: We assume a ratio $I(2\rightarrow1) / I(1\rightarrow0) = 0.8$
+bigiel_sflaw.tex:544: =&3.2 \times 10^{-3} I_{24} \left[{\rm MJy~ster}^{-1}\right] \\ \nonumber &+& 8.1 \times 10^{-2} I_{FUV} \left[{\rm MJy~ster}^{-1}\right]~,
+bigiel_sflaw.tex:565: i.e., a Kroupa-type two-component IMF that extends to 120\,M$_\odot$.
+bigiel_sflaw.tex:567: one should multiply our $\Sigma_{\rm SFR}$ by a factor of 1.59.
+bigiel_sflaw.tex:580: In addition to sampling our data on a pixel-by-pixel basis at 750~pc resolution
+bigiel_sflaw.tex:356: Because our analysis is restricted to the regime within the optical radius $r_{25}$
+bigiel_sflaw.tex:783: using the ordinary least--squares (OLS) bisector.
+bigiel_sflaw.tex:1230: The derived mean H$_{2}$ gas depletion time (including helium) is $2.0 \cdot 10^9$~yrs
+Fig. 9 top-left drawn fit line: slope 1.006, value at log Sigma_H2 = 1: -2.118; at the frame edges (x=-1.00, 2.53) the published expression gives -4.140, -0.575 vs drawn -4.130, -0.579
+calibration validated by the drawn 1%/10%/100% constant-SFE lines (unit slope, offsets log10(frac)-2+log10(1.36)); y scale 34.675 pt/dex, x scale 70.0 pt/dex
+data cells of the panel span log Sigma_H2 = 0.53..2.25; fit performed for Sigma_H2 > 3 Msun/pc^2 (log = 0.477)
+NOTE: the displayed ensemble equation Sigma_SFR = 10^-2.1 Sigma_H2^1.0 omits the 10 Msun/pc^2 normalisation of eq. 'power-law'; the figure confirms the normalised form

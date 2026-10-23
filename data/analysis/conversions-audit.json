@@ -1,5 +1,5 @@
 {
- "records": 1736,
+ "records": 1859,
  "exactReexpressions": {
   "timeToRedshift": {
    "label": "cosmic time on the x axis turned into redshift (flat LCDM age relation)",
@@ -24,14 +24,14 @@
   },
   "perGyr": {
    "label": "a specific star formation rate per Gyr turned into per year",
-   "records": 31,
+   "records": 32,
    "bySource": {
     "FLAMINGO": 16,
     "EAGLE": 4,
     "NewHorizon": 4,
     "COLIBRE": 3,
+    "SIMBA": 2,
     "Horizon-AGN": 2,
-    "SIMBA": 1,
     "IllustrisTNG": 1
    }
   },
@@ -41,10 +41,11 @@
    "bySource": {
     "Magneticum Pathfinder": 18,
     "Illustris": 11,
-    "NIHAO zoom suite": 8,
+    "NIHAO zoom suite": 7,
     "IllustrisTNG": 6,
     "ASTRID": 5,
-    "EAGLE": 3
+    "EAGLE": 3,
+    "SIMBA": 1
    }
   },
   "perDex": {
@@ -98,10 +99,10 @@
  },
  "definitionFills": {
   "rules": 60,
-  "records": 458,
+  "records": 459,
   "papersReadWithoutResult": 23
  },
- "correctionsLogged": 9,
+ "correctionsLogged": 14,
  "onScreenImfOffsetsDex": {
   "kroupa01": 0.0,
   "chabrier03": -0.04,

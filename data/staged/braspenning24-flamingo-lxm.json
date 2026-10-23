@@ -1,0 +1,1705 @@
+{
+ "schemaVersion": "1.0.0",
+ "records": [
+  {
+   "id": "braspenning24.flamingo-l1-m10.lxm.z0",
+   "source": "FLAMINGO",
+   "run": "L1_m10",
+   "kind": "simulation",
+   "relation": "lxm",
+   "epoch": {
+    "zRepresentative": 0.0,
+    "zNominal": 0.0,
+    "zMin": 0.0,
+    "zMax": 0.0,
+    "mode": "published-epoch",
+    "snapshot": null
+   },
+   "axes": {
+    "xDefinition": "log10 M500c (spherical overdensity, 500 times the critical density)",
+    "xUnit": "log10(Msun)",
+    "yDefinition": "log10 median X-ray luminosity L_X,500c E(z)^-2 (0.5-2.0 keV band, within R500c, core included) as plotted; at z=0 E(z)=1 so this is the physical luminosity",
+    "yUnit": "log10(erg s^-1)"
+   },
+   "domain": {
+    "xMin": 13.043,
+    "xMax": 14.996
+   },
+   "representation": {
+    "type": "points",
+    "intervalKind": "unspecified",
+    "connect": true,
+    "points": [
+     {
+      "x": 13.043,
+      "y": 41.4709
+     },
+     {
+      "x": 13.127,
+      "y": 41.5795
+     },
+     {
+      "x": 13.213,
+      "y": 41.7216
+     },
+     {
+      "x": 13.299,
+      "y": 41.8582
+     },
+     {
+      "x": 13.385,
+      "y": 42.0176
+     },
+     {
+      "x": 13.472,
+      "y": 42.1729
+     },
+     {
+      "x": 13.558,
+      "y": 42.3197
+     },
+     {
+      "x": 13.645,
+      "y": 42.4795
+     },
+     {
+      "x": 13.731,
+      "y": 42.627
+     },
+     {
+      "x": 13.818,
+      "y": 42.7844
+     },
+     {
+      "x": 13.903,
+      "y": 42.945
+     },
+     {
+      "x": 13.989,
+      "y": 43.1096
+     },
+     {
+      "x": 14.076,
+      "y": 43.2726
+     },
+     {
+      "x": 14.16,
+      "y": 43.4425
+     },
+     {
+      "x": 14.245,
+      "y": 43.5928
+     },
+     {
+      "x": 14.332,
+      "y": 43.753
+     },
+     {
+      "x": 14.419,
+      "y": 43.9146
+     },
+     {
+      "x": 14.502,
+      "y": 44.0679
+     },
+     {
+      "x": 14.587,
+      "y": 44.1978
+     },
+     {
+      "x": 14.676,
+      "y": 44.3551
+     },
+     {
+      "x": 14.765,
+      "y": 44.4472
+     },
+     {
+      "x": 14.847,
+      "y": 44.582
+     },
+     {
+      "x": 14.996,
+      "y": 44.7924
+     }
+    ]
+   },
+   "scatter": null,
+   "selection": {
+    "population": "all haloes with M500c > 10^13 Msun (groups and clusters)",
+    "warning": "Median relation read from the vector paths of the top-right panel of the paper's Fig. on the evolution of the scaling relations; run L1_m10 (1 Gpc box, low resolution), z = 0 (identified from the colour bar). all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K. The paper gives the power-law fit only for the z=0 fiducial run (Table slope_and_norm: alpha = 1.75, beta = 42.24 for log L = alpha log M500c + beta between 10^13.5 and 10^15 Msun); no table of the curves. The 16th-84th percentile band (z=0 only) is not extracted. Luminosity: ROSAT-band emissivity from Cloudy tables summed over particles inside R500c."
+   },
+   "definitions": {
+    "xrayBand": "0.5-2.0 keV (ROSAT band)",
+    "coreTreatment": "with core",
+    "haloMassDefinition": "M500crit",
+    "luminosityAperture": "within R500c (3D, spherical)",
+    "luminosityScaling": "E(z)^-2 (=1 at z=0)",
+    "statistic": "median",
+    "cosmology": {
+     "H0": 68.1,
+     "Om": 0.306
+    },
+    "cosmologyNote": "FLAMINGO D3A cosmology as in Schaye+23 (as used by the repository's FLAMINGO records); not restated numerically in Braspenning+24",
+    "sampleSelection": "all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K",
+    "massDefinition": "not applicable (halo mass M500c)",
+    "population": "all"
+   },
+   "provenance": {
+    "tier": "digitized-figure",
+    "citation": "Braspenning et al. 2024, MNRAS 533, 2656 (arXiv:2312.08277), Fig. 'scaling_relations_evolution' (top right)",
+    "doi": "10.1093/mnras/stae1436",
+    "url": "https://arxiv.org/abs/2312.08277",
+    "retrieved": "2026-10-18",
+    "figure": "Fig. scaling_relations_evolution (4 panels; top right: L_X-M500c)",
+    "panel": "top right",
+    "checksumSha256": "4ac17b4450992afa81609d7144ae7fc12c27da5f79f407fb3763d5252d471a90",
+    "sourceMember": "figures/4diffpanel_scaling_relations_Redshift_2.00WithoutRecentAGNHeating_redshifts.pdf (L1_m10, line style [ 9.6 2.4 1.5 2.4 ] 0, colour of z = 0)",
+    "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), log axes calibrated on the major ticks (decade labels 10^13-10^15 Msun and 10^41-10^45 erg/s asserted from the text layer)",
+    "axisCalibrationPixels": "x: 3 major ticks fitted to 13, 14, 15; y: 5 major ticks fitted to 45 ... 41; frame left edge = 10^13 Msun",
+    "digitizationUncertaintyDex": 0.01
+   },
+   "calibration": "prediction",
+   "rankable": false,
+   "notes": "PARTIAL verification (fiducial L1_m9, z=0): fit of log L = alpha (log M500c - 13.5) + beta over 10^13.5-10^15 Msun to the digitized vertices gives alpha = 1.713, beta = 42.27 against the paper's table 1.75, 42.24; the paper does not define m_500c, the 10^13.5 Msun pivot is inferred (10^13 or 10^14 give beta off by ~0.8); the same line read from the model-variation figure differs by <= 0.000 dex. Redshift of the line from the colour bar (pixel colours at z = 0, 1, 2 equal the line colours exactly)."
+  },
+  {
+   "id": "braspenning24.flamingo-l1-m8.lxm.z0",
+   "source": "FLAMINGO",
+   "run": "L1_m8",
+   "kind": "simulation",
+   "relation": "lxm",
+   "epoch": {
+    "zRepresentative": 0.0,
+    "zNominal": 0.0,
+    "zMin": 0.0,
+    "zMax": 0.0,
+    "mode": "published-epoch",
+    "snapshot": null
+   },
+   "axes": {
+    "xDefinition": "log10 M500c (spherical overdensity, 500 times the critical density)",
+    "xUnit": "log10(Msun)",
+    "yDefinition": "log10 median X-ray luminosity L_X,500c E(z)^-2 (0.5-2.0 keV band, within R500c, core included) as plotted; at z=0 E(z)=1 so this is the physical luminosity",
+    "yUnit": "log10(erg s^-1)"
+   },
+   "domain": {
+    "xMin": 13.041,
+    "xMax": 14.986
+   },
+   "representation": {
+    "type": "points",
+    "intervalKind": "unspecified",
+    "connect": true,
+    "points": [
+     {
+      "x": 13.041,
+      "y": 41.0176
+     },
+     {
+      "x": 13.127,
+      "y": 41.2343
+     },
+     {
+      "x": 13.213,
+      "y": 41.4494
+     },
+     {
+      "x": 13.3,
+      "y": 41.6631
+     },
+     {
+      "x": 13.385,
+      "y": 41.8687
+     },
+     {
+      "x": 13.472,
+      "y": 42.0709
+     },
+     {
+      "x": 13.558,
+      "y": 42.261
+     },
+     {
+      "x": 13.644,
+      "y": 42.4436
+     },
+     {
+      "x": 13.731,
+      "y": 42.6292
+     },
+     {
+      "x": 13.817,
+      "y": 42.7944
+     },
+     {
+      "x": 13.903,
+      "y": 42.9592
+     },
+     {
+      "x": 13.988,
+      "y": 43.1155
+     },
+     {
+      "x": 14.075,
+      "y": 43.2685
+     },
+     {
+      "x": 14.159,
+      "y": 43.4151
+     },
+     {
+      "x": 14.247,
+      "y": 43.55
+     },
+     {
+      "x": 14.333,
+      "y": 43.7005
+     },
+     {
+      "x": 14.418,
+      "y": 43.8388
+     },
+     {
+      "x": 14.504,
+      "y": 43.9654
+     },
+     {
+      "x": 14.591,
+      "y": 44.09
+     },
+     {
+      "x": 14.678,
+      "y": 44.2129
+     },
+     {
+      "x": 14.767,
+      "y": 44.3167
+     },
+     {
+      "x": 14.845,
+      "y": 44.4155
+     },
+     {
+      "x": 14.986,
+      "y": 44.6278
+     }
+    ]
+   },
+   "scatter": null,
+   "selection": {
+    "population": "all haloes with M500c > 10^13 Msun (groups and clusters)",
+    "warning": "Median relation read from the vector paths of the top-right panel of the paper's Fig. on the evolution of the scaling relations; run L1_m8 (1 Gpc box, high resolution), z = 0 (identified from the colour bar). all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K. The paper gives the power-law fit only for the z=0 fiducial run (Table slope_and_norm: alpha = 1.75, beta = 42.24 for log L = alpha log M500c + beta between 10^13.5 and 10^15 Msun); no table of the curves. The 16th-84th percentile band (z=0 only) is not extracted. Luminosity: ROSAT-band emissivity from Cloudy tables summed over particles inside R500c."
+   },
+   "definitions": {
+    "xrayBand": "0.5-2.0 keV (ROSAT band)",
+    "coreTreatment": "with core",
+    "haloMassDefinition": "M500crit",
+    "luminosityAperture": "within R500c (3D, spherical)",
+    "luminosityScaling": "E(z)^-2 (=1 at z=0)",
+    "statistic": "median",
+    "cosmology": {
+     "H0": 68.1,
+     "Om": 0.306
+    },
+    "cosmologyNote": "FLAMINGO D3A cosmology as in Schaye+23 (as used by the repository's FLAMINGO records); not restated numerically in Braspenning+24",
+    "sampleSelection": "all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K",
+    "massDefinition": "not applicable (halo mass M500c)",
+    "population": "all"
+   },
+   "provenance": {
+    "tier": "digitized-figure",
+    "citation": "Braspenning et al. 2024, MNRAS 533, 2656 (arXiv:2312.08277), Fig. 'scaling_relations_evolution' (top right)",
+    "doi": "10.1093/mnras/stae1436",
+    "url": "https://arxiv.org/abs/2312.08277",
+    "retrieved": "2026-10-18",
+    "figure": "Fig. scaling_relations_evolution (4 panels; top right: L_X-M500c)",
+    "panel": "top right",
+    "checksumSha256": "4ac17b4450992afa81609d7144ae7fc12c27da5f79f407fb3763d5252d471a90",
+    "sourceMember": "figures/4diffpanel_scaling_relations_Redshift_2.00WithoutRecentAGNHeating_redshifts.pdf (L1_m8, line style [ 1.5 2.475 ] 0, colour of z = 0)",
+    "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), log axes calibrated on the major ticks (decade labels 10^13-10^15 Msun and 10^41-10^45 erg/s asserted from the text layer)",
+    "axisCalibrationPixels": "x: 3 major ticks fitted to 13, 14, 15; y: 5 major ticks fitted to 45 ... 41; frame left edge = 10^13 Msun",
+    "digitizationUncertaintyDex": 0.01
+   },
+   "calibration": "prediction",
+   "rankable": false,
+   "notes": "PARTIAL verification (fiducial L1_m9, z=0): fit of log L = alpha (log M500c - 13.5) + beta over 10^13.5-10^15 Msun to the digitized vertices gives alpha = 1.713, beta = 42.27 against the paper's table 1.75, 42.24; the paper does not define m_500c, the 10^13.5 Msun pivot is inferred (10^13 or 10^14 give beta off by ~0.8); the same line read from the model-variation figure differs by <= 0.000 dex. Redshift of the line from the colour bar (pixel colours at z = 0, 1, 2 equal the line colours exactly)."
+  },
+  {
+   "id": "braspenning24.flamingo-l1-m9.lxm.z0",
+   "source": "FLAMINGO",
+   "run": "L1_m9",
+   "kind": "simulation",
+   "relation": "lxm",
+   "epoch": {
+    "zRepresentative": 0.0,
+    "zNominal": 0.0,
+    "zMin": 0.0,
+    "zMax": 0.0,
+    "mode": "published-epoch",
+    "snapshot": null
+   },
+   "axes": {
+    "xDefinition": "log10 M500c (spherical overdensity, 500 times the critical density)",
+    "xUnit": "log10(Msun)",
+    "yDefinition": "log10 median X-ray luminosity L_X,500c E(z)^-2 (0.5-2.0 keV band, within R500c, core included) as plotted; at z=0 E(z)=1 so this is the physical luminosity",
+    "yUnit": "log10(erg s^-1)"
+   },
+   "domain": {
+    "xMin": 13.041,
+    "xMax": 14.987
+   },
+   "representation": {
+    "type": "points",
+    "intervalKind": "unspecified",
+    "connect": true,
+    "points": [
+     {
+      "x": 13.041,
+      "y": 41.0322
+     },
+     {
+      "x": 13.127,
+      "y": 41.2347
+     },
+     {
+      "x": 13.213,
+      "y": 41.4403
+     },
+     {
+      "x": 13.299,
+      "y": 41.6478
+     },
+     {
+      "x": 13.385,
+      "y": 41.8507
+     },
+     {
+      "x": 13.471,
+      "y": 42.0546
+     },
+     {
+      "x": 13.557,
+      "y": 42.2532
+     },
+     {
+      "x": 13.645,
+      "y": 42.4453
+     },
+     {
+      "x": 13.73,
+      "y": 42.638
+     },
+     {
+      "x": 13.817,
+      "y": 42.8144
+     },
+     {
+      "x": 13.902,
+      "y": 42.9898
+     },
+     {
+      "x": 13.991,
+      "y": 43.152
+     },
+     {
+      "x": 14.074,
+      "y": 43.3028
+     },
+     {
+      "x": 14.16,
+      "y": 43.4668
+     },
+     {
+      "x": 14.25,
+      "y": 43.6066
+     },
+     {
+      "x": 14.334,
+      "y": 43.7597
+     },
+     {
+      "x": 14.416,
+      "y": 43.9044
+     },
+     {
+      "x": 14.506,
+      "y": 44.0363
+     },
+     {
+      "x": 14.59,
+      "y": 44.1602
+     },
+     {
+      "x": 14.677,
+      "y": 44.3052
+     },
+     {
+      "x": 14.771,
+      "y": 44.3953
+     },
+     {
+      "x": 14.849,
+      "y": 44.5046
+     },
+     {
+      "x": 14.987,
+      "y": 44.7246
+     }
+    ]
+   },
+   "scatter": null,
+   "selection": {
+    "population": "all haloes with M500c > 10^13 Msun (groups and clusters)",
+    "warning": "Median relation read from the vector paths of the top-right panel of the paper's Fig. on the evolution of the scaling relations; run L1_m9 (1 Gpc box, fiducial resolution, fiducial model), z = 0 (identified from the colour bar). all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K. The paper gives the power-law fit only for the z=0 fiducial run (Table slope_and_norm: alpha = 1.75, beta = 42.24 for log L = alpha log M500c + beta between 10^13.5 and 10^15 Msun); no table of the curves. The 16th-84th percentile band (z=0 only) is not extracted. Luminosity: ROSAT-band emissivity from Cloudy tables summed over particles inside R500c."
+   },
+   "definitions": {
+    "xrayBand": "0.5-2.0 keV (ROSAT band)",
+    "coreTreatment": "with core",
+    "haloMassDefinition": "M500crit",
+    "luminosityAperture": "within R500c (3D, spherical)",
+    "luminosityScaling": "E(z)^-2 (=1 at z=0)",
+    "statistic": "median",
+    "cosmology": {
+     "H0": 68.1,
+     "Om": 0.306
+    },
+    "cosmologyNote": "FLAMINGO D3A cosmology as in Schaye+23 (as used by the repository's FLAMINGO records); not restated numerically in Braspenning+24",
+    "sampleSelection": "all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K",
+    "massDefinition": "not applicable (halo mass M500c)",
+    "population": "all"
+   },
+   "provenance": {
+    "tier": "digitized-figure",
+    "citation": "Braspenning et al. 2024, MNRAS 533, 2656 (arXiv:2312.08277), Fig. 'scaling_relations_evolution' (top right)",
+    "doi": "10.1093/mnras/stae1436",
+    "url": "https://arxiv.org/abs/2312.08277",
+    "retrieved": "2026-10-18",
+    "figure": "Fig. scaling_relations_evolution (4 panels; top right: L_X-M500c)",
+    "panel": "top right",
+    "checksumSha256": "4ac17b4450992afa81609d7144ae7fc12c27da5f79f407fb3763d5252d471a90",
+    "sourceMember": "figures/4diffpanel_scaling_relations_Redshift_2.00WithoutRecentAGNHeating_redshifts.pdf (L1_m9, line style [] 0, colour of z = 0)",
+    "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), log axes calibrated on the major ticks (decade labels 10^13-10^15 Msun and 10^41-10^45 erg/s asserted from the text layer)",
+    "axisCalibrationPixels": "x: 3 major ticks fitted to 13, 14, 15; y: 5 major ticks fitted to 45 ... 41; frame left edge = 10^13 Msun",
+    "digitizationUncertaintyDex": 0.01
+   },
+   "calibration": "prediction",
+   "rankable": false,
+   "notes": "PARTIAL verification (fiducial L1_m9, z=0): fit of log L = alpha (log M500c - 13.5) + beta over 10^13.5-10^15 Msun to the digitized vertices gives alpha = 1.713, beta = 42.27 against the paper's table 1.75, 42.24; the paper does not define m_500c, the 10^13.5 Msun pivot is inferred (10^13 or 10^14 give beta off by ~0.8); the same line read from the model-variation figure differs by <= 0.000 dex. Redshift of the line from the colour bar (pixel colours at z = 0, 1, 2 equal the line colours exactly)."
+  },
+  {
+   "id": "braspenning24.flamingo-l2p8-m9.lxm.z0",
+   "source": "FLAMINGO",
+   "run": "L2p8_m9",
+   "kind": "simulation",
+   "relation": "lxm",
+   "epoch": {
+    "zRepresentative": 0.0,
+    "zNominal": 0.0,
+    "zMin": 0.0,
+    "zMax": 0.0,
+    "mode": "published-epoch",
+    "snapshot": null
+   },
+   "axes": {
+    "xDefinition": "log10 M500c (spherical overdensity, 500 times the critical density)",
+    "xUnit": "log10(Msun)",
+    "yDefinition": "log10 median X-ray luminosity L_X,500c E(z)^-2 (0.5-2.0 keV band, within R500c, core included) as plotted; at z=0 E(z)=1 so this is the physical luminosity",
+    "yUnit": "log10(erg s^-1)"
+   },
+   "domain": {
+    "xMin": 13.041,
+    "xMax": 15.295
+   },
+   "representation": {
+    "type": "points",
+    "intervalKind": "unspecified",
+    "connect": true,
+    "points": [
+     {
+      "x": 13.041,
+      "y": 41.0315
+     },
+     {
+      "x": 13.127,
+      "y": 41.236
+     },
+     {
+      "x": 13.213,
+      "y": 41.4419
+     },
+     {
+      "x": 13.299,
+      "y": 41.6478
+     },
+     {
+      "x": 13.385,
+      "y": 41.8557
+     },
+     {
+      "x": 13.472,
+      "y": 42.0592
+     },
+     {
+      "x": 13.558,
+      "y": 42.2571
+     },
+     {
+      "x": 13.644,
+      "y": 42.4503
+     },
+     {
+      "x": 13.73,
+      "y": 42.6385
+     },
+     {
+      "x": 13.816,
+      "y": 42.8152
+     },
+     {
+      "x": 13.903,
+      "y": 42.9869
+     },
+     {
+      "x": 13.989,
+      "y": 43.153
+     },
+     {
+      "x": 14.075,
+      "y": 43.3107
+     },
+     {
+      "x": 14.16,
+      "y": 43.4632
+     },
+     {
+      "x": 14.246,
+      "y": 43.6104
+     },
+     {
+      "x": 14.333,
+      "y": 43.7544
+     },
+     {
+      "x": 14.418,
+      "y": 43.8953
+     },
+     {
+      "x": 14.505,
+      "y": 44.0314
+     },
+     {
+      "x": 14.591,
+      "y": 44.1649
+     },
+     {
+      "x": 14.677,
+      "y": 44.2973
+     },
+     {
+      "x": 14.762,
+      "y": 44.4201
+     },
+     {
+      "x": 14.847,
+      "y": 44.533
+     },
+     {
+      "x": 14.933,
+      "y": 44.6474
+     },
+     {
+      "x": 15.014,
+      "y": 44.7602
+     },
+     {
+      "x": 15.104,
+      "y": 44.883
+     },
+     {
+      "x": 15.197,
+      "y": 44.9645
+     },
+     {
+      "x": 15.295,
+      "y": 45.0954
+     }
+    ]
+   },
+   "scatter": null,
+   "selection": {
+    "population": "all haloes with M500c > 10^13 Msun (groups and clusters)",
+    "warning": "Median relation read from the vector paths of the top-right panel of the paper's Fig. on the evolution of the scaling relations; run L2p8_m9 (2.8 Gpc box, fiducial resolution, fiducial model), z = 0 (identified from the colour bar). all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K. The paper gives the power-law fit only for the z=0 fiducial run (Table slope_and_norm: alpha = 1.75, beta = 42.24 for log L = alpha log M500c + beta between 10^13.5 and 10^15 Msun); no table of the curves. The 16th-84th percentile band (z=0 only) is not extracted. Luminosity: ROSAT-band emissivity from Cloudy tables summed over particles inside R500c."
+   },
+   "definitions": {
+    "xrayBand": "0.5-2.0 keV (ROSAT band)",
+    "coreTreatment": "with core",
+    "haloMassDefinition": "M500crit",
+    "luminosityAperture": "within R500c (3D, spherical)",
+    "luminosityScaling": "E(z)^-2 (=1 at z=0)",
+    "statistic": "median",
+    "cosmology": {
+     "H0": 68.1,
+     "Om": 0.306
+    },
+    "cosmologyNote": "FLAMINGO D3A cosmology as in Schaye+23 (as used by the repository's FLAMINGO records); not restated numerically in Braspenning+24",
+    "sampleSelection": "all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K",
+    "massDefinition": "not applicable (halo mass M500c)",
+    "population": "all"
+   },
+   "provenance": {
+    "tier": "digitized-figure",
+    "citation": "Braspenning et al. 2024, MNRAS 533, 2656 (arXiv:2312.08277), Fig. 'scaling_relations_evolution' (top right)",
+    "doi": "10.1093/mnras/stae1436",
+    "url": "https://arxiv.org/abs/2312.08277",
+    "retrieved": "2026-10-18",
+    "figure": "Fig. scaling_relations_evolution (4 panels; top right: L_X-M500c)",
+    "panel": "top right",
+    "checksumSha256": "4ac17b4450992afa81609d7144ae7fc12c27da5f79f407fb3763d5252d471a90",
+    "sourceMember": "figures/4diffpanel_scaling_relations_Redshift_2.00WithoutRecentAGNHeating_redshifts.pdf (L2p8_m9, line style [ 5.55 2.4 ] 0, colour of z = 0)",
+    "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), log axes calibrated on the major ticks (decade labels 10^13-10^15 Msun and 10^41-10^45 erg/s asserted from the text layer)",
+    "axisCalibrationPixels": "x: 3 major ticks fitted to 13, 14, 15; y: 5 major ticks fitted to 45 ... 41; frame left edge = 10^13 Msun",
+    "digitizationUncertaintyDex": 0.01
+   },
+   "calibration": "prediction",
+   "rankable": false,
+   "notes": "PARTIAL verification (fiducial L1_m9, z=0): fit of log L = alpha (log M500c - 13.5) + beta over 10^13.5-10^15 Msun to the digitized vertices gives alpha = 1.713, beta = 42.27 against the paper's table 1.75, 42.24; the paper does not define m_500c, the 10^13.5 Msun pivot is inferred (10^13 or 10^14 give beta off by ~0.8); the same line read from the model-variation figure differs by <= 0.000 dex. Redshift of the line from the colour bar (pixel colours at z = 0, 1, 2 equal the line colours exactly)."
+  },
+  {
+   "id": "braspenning24.flamingo-l1-m10.lxm.z1",
+   "source": "FLAMINGO",
+   "run": "L1_m10",
+   "kind": "simulation",
+   "relation": "lxm",
+   "epoch": {
+    "zRepresentative": 1.0,
+    "zNominal": 1.0,
+    "zMin": 1.0,
+    "zMax": 1.0,
+    "mode": "published-epoch",
+    "snapshot": null
+   },
+   "axes": {
+    "xDefinition": "log10 M500c (spherical overdensity, 500 times the critical density)",
+    "xUnit": "log10(Msun)",
+    "yDefinition": "log10 median X-ray luminosity L_X,500c E(z)^-2 (0.5-2.0 keV band, within R500c, core included) as plotted; E(z)^-2 scaled, i.e. NOT the physical luminosity (multiply by E(z)^2)",
+    "yUnit": "log10(erg s^-1)"
+   },
+   "domain": {
+    "xMin": 13.041,
+    "xMax": 14.468
+   },
+   "representation": {
+    "type": "points",
+    "intervalKind": "unspecified",
+    "connect": true,
+    "points": [
+     {
+      "x": 13.041,
+      "y": 41.6179
+     },
+     {
+      "x": 13.127,
+      "y": 41.7393
+     },
+     {
+      "x": 13.212,
+      "y": 41.8756
+     },
+     {
+      "x": 13.299,
+      "y": 42.0189
+     },
+     {
+      "x": 13.385,
+      "y": 42.1535
+     },
+     {
+      "x": 13.468,
+      "y": 42.2901
+     },
+     {
+      "x": 13.558,
+      "y": 42.4492
+     },
+     {
+      "x": 13.642,
+      "y": 42.6037
+     },
+     {
+      "x": 13.73,
+      "y": 42.7716
+     },
+     {
+      "x": 13.815,
+      "y": 42.9253
+     },
+     {
+      "x": 13.902,
+      "y": 43.1003
+     },
+     {
+      "x": 13.987,
+      "y": 43.2428
+     },
+     {
+      "x": 14.071,
+      "y": 43.4094
+     },
+     {
+      "x": 14.159,
+      "y": 43.5737
+     },
+     {
+      "x": 14.246,
+      "y": 43.7346
+     },
+     {
+      "x": 14.33,
+      "y": 43.8811
+     },
+     {
+      "x": 14.468,
+      "y": 44.1372
+     }
+    ]
+   },
+   "scatter": null,
+   "selection": {
+    "population": "all haloes with M500c > 10^13 Msun (groups and clusters)",
+    "warning": "Median relation read from the vector paths of the top-right panel of the paper's Fig. on the evolution of the scaling relations; run L1_m10 (1 Gpc box, low resolution), z = 1 (identified from the colour bar). all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K. The paper gives the power-law fit only for the z=0 fiducial run (Table slope_and_norm: alpha = 1.75, beta = 42.24 for log L = alpha log M500c + beta between 10^13.5 and 10^15 Msun); no table of the curves. The 16th-84th percentile band (z=0 only) is not extracted. Luminosity: ROSAT-band emissivity from Cloudy tables summed over particles inside R500c."
+   },
+   "definitions": {
+    "xrayBand": "0.5-2.0 keV (ROSAT band)",
+    "coreTreatment": "with core",
+    "haloMassDefinition": "M500crit",
+    "luminosityAperture": "within R500c (3D, spherical)",
+    "luminosityScaling": "E(z)^-2 applied (E(z)=H(z)/H0)",
+    "statistic": "median",
+    "cosmology": {
+     "H0": 68.1,
+     "Om": 0.306
+    },
+    "cosmologyNote": "FLAMINGO D3A cosmology as in Schaye+23 (as used by the repository's FLAMINGO records); not restated numerically in Braspenning+24",
+    "sampleSelection": "all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K",
+    "massDefinition": "not applicable (halo mass M500c)",
+    "population": "all"
+   },
+   "provenance": {
+    "tier": "digitized-figure",
+    "citation": "Braspenning et al. 2024, MNRAS 533, 2656 (arXiv:2312.08277), Fig. 'scaling_relations_evolution' (top right)",
+    "doi": "10.1093/mnras/stae1436",
+    "url": "https://arxiv.org/abs/2312.08277",
+    "retrieved": "2026-10-18",
+    "figure": "Fig. scaling_relations_evolution (4 panels; top right: L_X-M500c)",
+    "panel": "top right",
+    "checksumSha256": "4ac17b4450992afa81609d7144ae7fc12c27da5f79f407fb3763d5252d471a90",
+    "sourceMember": "figures/4diffpanel_scaling_relations_Redshift_2.00WithoutRecentAGNHeating_redshifts.pdf (L1_m10, line style [ 9.6 2.4 1.5 2.4 ] 0, colour of z = 1)",
+    "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), log axes calibrated on the major ticks (decade labels 10^13-10^15 Msun and 10^41-10^45 erg/s asserted from the text layer)",
+    "axisCalibrationPixels": "x: 3 major ticks fitted to 13, 14, 15; y: 5 major ticks fitted to 45 ... 41; frame left edge = 10^13 Msun",
+    "digitizationUncertaintyDex": 0.01
+   },
+   "calibration": "prediction",
+   "rankable": false,
+   "notes": "PARTIAL verification (fiducial L1_m9, z=0): fit of log L = alpha (log M500c - 13.5) + beta over 10^13.5-10^15 Msun to the digitized vertices gives alpha = 1.713, beta = 42.27 against the paper's table 1.75, 42.24; the paper does not define m_500c, the 10^13.5 Msun pivot is inferred (10^13 or 10^14 give beta off by ~0.8); the same line read from the model-variation figure differs by <= 0.000 dex. Redshift of the line from the colour bar (pixel colours at z = 0, 1, 2 equal the line colours exactly)."
+  },
+  {
+   "id": "braspenning24.flamingo-l1-m8.lxm.z1",
+   "source": "FLAMINGO",
+   "run": "L1_m8",
+   "kind": "simulation",
+   "relation": "lxm",
+   "epoch": {
+    "zRepresentative": 1.0,
+    "zNominal": 1.0,
+    "zMin": 1.0,
+    "zMax": 1.0,
+    "mode": "published-epoch",
+    "snapshot": null
+   },
+   "axes": {
+    "xDefinition": "log10 M500c (spherical overdensity, 500 times the critical density)",
+    "xUnit": "log10(Msun)",
+    "yDefinition": "log10 median X-ray luminosity L_X,500c E(z)^-2 (0.5-2.0 keV band, within R500c, core included) as plotted; E(z)^-2 scaled, i.e. NOT the physical luminosity (multiply by E(z)^2)",
+    "yUnit": "log10(erg s^-1)"
+   },
+   "domain": {
+    "xMin": 13.041,
+    "xMax": 14.473
+   },
+   "representation": {
+    "type": "points",
+    "intervalKind": "unspecified",
+    "connect": true,
+    "points": [
+     {
+      "x": 13.041,
+      "y": 41.3458
+     },
+     {
+      "x": 13.127,
+      "y": 41.5503
+     },
+     {
+      "x": 13.212,
+      "y": 41.7571
+     },
+     {
+      "x": 13.299,
+      "y": 41.9508
+     },
+     {
+      "x": 13.385,
+      "y": 42.1368
+     },
+     {
+      "x": 13.471,
+      "y": 42.3163
+     },
+     {
+      "x": 13.557,
+      "y": 42.4782
+     },
+     {
+      "x": 13.641,
+      "y": 42.6386
+     },
+     {
+      "x": 13.728,
+      "y": 42.7901
+     },
+     {
+      "x": 13.818,
+      "y": 42.9417
+     },
+     {
+      "x": 13.906,
+      "y": 43.0901
+     },
+     {
+      "x": 13.982,
+      "y": 43.2274
+     },
+     {
+      "x": 14.068,
+      "y": 43.3491
+     },
+     {
+      "x": 14.159,
+      "y": 43.4966
+     },
+     {
+      "x": 14.247,
+      "y": 43.6452
+     },
+     {
+      "x": 14.325,
+      "y": 43.7776
+     },
+     {
+      "x": 14.473,
+      "y": 44.0485
+     }
+    ]
+   },
+   "scatter": null,
+   "selection": {
+    "population": "all haloes with M500c > 10^13 Msun (groups and clusters)",
+    "warning": "Median relation read from the vector paths of the top-right panel of the paper's Fig. on the evolution of the scaling relations; run L1_m8 (1 Gpc box, high resolution), z = 1 (identified from the colour bar). all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K. The paper gives the power-law fit only for the z=0 fiducial run (Table slope_and_norm: alpha = 1.75, beta = 42.24 for log L = alpha log M500c + beta between 10^13.5 and 10^15 Msun); no table of the curves. The 16th-84th percentile band (z=0 only) is not extracted. Luminosity: ROSAT-band emissivity from Cloudy tables summed over particles inside R500c."
+   },
+   "definitions": {
+    "xrayBand": "0.5-2.0 keV (ROSAT band)",
+    "coreTreatment": "with core",
+    "haloMassDefinition": "M500crit",
+    "luminosityAperture": "within R500c (3D, spherical)",
+    "luminosityScaling": "E(z)^-2 applied (E(z)=H(z)/H0)",
+    "statistic": "median",
+    "cosmology": {
+     "H0": 68.1,
+     "Om": 0.306
+    },
+    "cosmologyNote": "FLAMINGO D3A cosmology as in Schaye+23 (as used by the repository's FLAMINGO records); not restated numerically in Braspenning+24",
+    "sampleSelection": "all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K",
+    "massDefinition": "not applicable (halo mass M500c)",
+    "population": "all"
+   },
+   "provenance": {
+    "tier": "digitized-figure",
+    "citation": "Braspenning et al. 2024, MNRAS 533, 2656 (arXiv:2312.08277), Fig. 'scaling_relations_evolution' (top right)",
+    "doi": "10.1093/mnras/stae1436",
+    "url": "https://arxiv.org/abs/2312.08277",
+    "retrieved": "2026-10-18",
+    "figure": "Fig. scaling_relations_evolution (4 panels; top right: L_X-M500c)",
+    "panel": "top right",
+    "checksumSha256": "4ac17b4450992afa81609d7144ae7fc12c27da5f79f407fb3763d5252d471a90",
+    "sourceMember": "figures/4diffpanel_scaling_relations_Redshift_2.00WithoutRecentAGNHeating_redshifts.pdf (L1_m8, line style [ 1.5 2.475 ] 0, colour of z = 1)",
+    "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), log axes calibrated on the major ticks (decade labels 10^13-10^15 Msun and 10^41-10^45 erg/s asserted from the text layer)",
+    "axisCalibrationPixels": "x: 3 major ticks fitted to 13, 14, 15; y: 5 major ticks fitted to 45 ... 41; frame left edge = 10^13 Msun",
+    "digitizationUncertaintyDex": 0.01
+   },
+   "calibration": "prediction",
+   "rankable": false,
+   "notes": "PARTIAL verification (fiducial L1_m9, z=0): fit of log L = alpha (log M500c - 13.5) + beta over 10^13.5-10^15 Msun to the digitized vertices gives alpha = 1.713, beta = 42.27 against the paper's table 1.75, 42.24; the paper does not define m_500c, the 10^13.5 Msun pivot is inferred (10^13 or 10^14 give beta off by ~0.8); the same line read from the model-variation figure differs by <= 0.000 dex. Redshift of the line from the colour bar (pixel colours at z = 0, 1, 2 equal the line colours exactly)."
+  },
+  {
+   "id": "braspenning24.flamingo-l1-m9.lxm.z1",
+   "source": "FLAMINGO",
+   "run": "L1_m9",
+   "kind": "simulation",
+   "relation": "lxm",
+   "epoch": {
+    "zRepresentative": 1.0,
+    "zNominal": 1.0,
+    "zMin": 1.0,
+    "zMax": 1.0,
+    "mode": "published-epoch",
+    "snapshot": null
+   },
+   "axes": {
+    "xDefinition": "log10 M500c (spherical overdensity, 500 times the critical density)",
+    "xUnit": "log10(Msun)",
+    "yDefinition": "log10 median X-ray luminosity L_X,500c E(z)^-2 (0.5-2.0 keV band, within R500c, core included) as plotted; E(z)^-2 scaled, i.e. NOT the physical luminosity (multiply by E(z)^2)",
+    "yUnit": "log10(erg s^-1)"
+   },
+   "domain": {
+    "xMin": 13.04,
+    "xMax": 14.476
+   },
+   "representation": {
+    "type": "points",
+    "intervalKind": "unspecified",
+    "connect": true,
+    "points": [
+     {
+      "x": 13.04,
+      "y": 41.3517
+     },
+     {
+      "x": 13.126,
+      "y": 41.5567
+     },
+     {
+      "x": 13.212,
+      "y": 41.7597
+     },
+     {
+      "x": 13.298,
+      "y": 41.9661
+     },
+     {
+      "x": 13.386,
+      "y": 42.1545
+     },
+     {
+      "x": 13.471,
+      "y": 42.3362
+     },
+     {
+      "x": 13.559,
+      "y": 42.5206
+     },
+     {
+      "x": 13.642,
+      "y": 42.6882
+     },
+     {
+      "x": 13.728,
+      "y": 42.8535
+     },
+     {
+      "x": 13.817,
+      "y": 43.0127
+     },
+     {
+      "x": 13.905,
+      "y": 43.1687
+     },
+     {
+      "x": 13.986,
+      "y": 43.3064
+     },
+     {
+      "x": 14.072,
+      "y": 43.4449
+     },
+     {
+      "x": 14.158,
+      "y": 43.5814
+     },
+     {
+      "x": 14.247,
+      "y": 43.7407
+     },
+     {
+      "x": 14.324,
+      "y": 43.8445
+     },
+     {
+      "x": 14.476,
+      "y": 44.1063
+     }
+    ]
+   },
+   "scatter": null,
+   "selection": {
+    "population": "all haloes with M500c > 10^13 Msun (groups and clusters)",
+    "warning": "Median relation read from the vector paths of the top-right panel of the paper's Fig. on the evolution of the scaling relations; run L1_m9 (1 Gpc box, fiducial resolution, fiducial model), z = 1 (identified from the colour bar). all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K. The paper gives the power-law fit only for the z=0 fiducial run (Table slope_and_norm: alpha = 1.75, beta = 42.24 for log L = alpha log M500c + beta between 10^13.5 and 10^15 Msun); no table of the curves. The 16th-84th percentile band (z=0 only) is not extracted. Luminosity: ROSAT-band emissivity from Cloudy tables summed over particles inside R500c."
+   },
+   "definitions": {
+    "xrayBand": "0.5-2.0 keV (ROSAT band)",
+    "coreTreatment": "with core",
+    "haloMassDefinition": "M500crit",
+    "luminosityAperture": "within R500c (3D, spherical)",
+    "luminosityScaling": "E(z)^-2 applied (E(z)=H(z)/H0)",
+    "statistic": "median",
+    "cosmology": {
+     "H0": 68.1,
+     "Om": 0.306
+    },
+    "cosmologyNote": "FLAMINGO D3A cosmology as in Schaye+23 (as used by the repository's FLAMINGO records); not restated numerically in Braspenning+24",
+    "sampleSelection": "all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K",
+    "massDefinition": "not applicable (halo mass M500c)",
+    "population": "all"
+   },
+   "provenance": {
+    "tier": "digitized-figure",
+    "citation": "Braspenning et al. 2024, MNRAS 533, 2656 (arXiv:2312.08277), Fig. 'scaling_relations_evolution' (top right)",
+    "doi": "10.1093/mnras/stae1436",
+    "url": "https://arxiv.org/abs/2312.08277",
+    "retrieved": "2026-10-18",
+    "figure": "Fig. scaling_relations_evolution (4 panels; top right: L_X-M500c)",
+    "panel": "top right",
+    "checksumSha256": "4ac17b4450992afa81609d7144ae7fc12c27da5f79f407fb3763d5252d471a90",
+    "sourceMember": "figures/4diffpanel_scaling_relations_Redshift_2.00WithoutRecentAGNHeating_redshifts.pdf (L1_m9, line style [] 0, colour of z = 1)",
+    "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), log axes calibrated on the major ticks (decade labels 10^13-10^15 Msun and 10^41-10^45 erg/s asserted from the text layer)",
+    "axisCalibrationPixels": "x: 3 major ticks fitted to 13, 14, 15; y: 5 major ticks fitted to 45 ... 41; frame left edge = 10^13 Msun",
+    "digitizationUncertaintyDex": 0.01
+   },
+   "calibration": "prediction",
+   "rankable": false,
+   "notes": "PARTIAL verification (fiducial L1_m9, z=0): fit of log L = alpha (log M500c - 13.5) + beta over 10^13.5-10^15 Msun to the digitized vertices gives alpha = 1.713, beta = 42.27 against the paper's table 1.75, 42.24; the paper does not define m_500c, the 10^13.5 Msun pivot is inferred (10^13 or 10^14 give beta off by ~0.8); the same line read from the model-variation figure differs by <= 0.000 dex. Redshift of the line from the colour bar (pixel colours at z = 0, 1, 2 equal the line colours exactly)."
+  },
+  {
+   "id": "braspenning24.flamingo-l2p8-m9.lxm.z1",
+   "source": "FLAMINGO",
+   "run": "L2p8_m9",
+   "kind": "simulation",
+   "relation": "lxm",
+   "epoch": {
+    "zRepresentative": 1.0,
+    "zNominal": 1.0,
+    "zMin": 1.0,
+    "zMax": 1.0,
+    "mode": "published-epoch",
+    "snapshot": null
+   },
+   "axes": {
+    "xDefinition": "log10 M500c (spherical overdensity, 500 times the critical density)",
+    "xUnit": "log10(Msun)",
+    "yDefinition": "log10 median X-ray luminosity L_X,500c E(z)^-2 (0.5-2.0 keV band, within R500c, core included) as plotted; E(z)^-2 scaled, i.e. NOT the physical luminosity (multiply by E(z)^2)",
+    "yUnit": "log10(erg s^-1)"
+   },
+   "domain": {
+    "xMin": 13.04,
+    "xMax": 14.715
+   },
+   "representation": {
+    "type": "points",
+    "intervalKind": "unspecified",
+    "connect": true,
+    "points": [
+     {
+      "x": 13.04,
+      "y": 41.35
+     },
+     {
+      "x": 13.127,
+      "y": 41.5598
+     },
+     {
+      "x": 13.212,
+      "y": 41.7656
+     },
+     {
+      "x": 13.299,
+      "y": 41.9661
+     },
+     {
+      "x": 13.385,
+      "y": 42.1582
+     },
+     {
+      "x": 13.471,
+      "y": 42.3438
+     },
+     {
+      "x": 13.557,
+      "y": 42.521
+     },
+     {
+      "x": 13.643,
+      "y": 42.6913
+     },
+     {
+      "x": 13.729,
+      "y": 42.8544
+     },
+     {
+      "x": 13.815,
+      "y": 43.0109
+     },
+     {
+      "x": 13.9,
+      "y": 43.1621
+     },
+     {
+      "x": 13.986,
+      "y": 43.309
+     },
+     {
+      "x": 14.073,
+      "y": 43.4513
+     },
+     {
+      "x": 14.158,
+      "y": 43.5913
+     },
+     {
+      "x": 14.245,
+      "y": 43.7283
+     },
+     {
+      "x": 14.33,
+      "y": 43.8611
+     },
+     {
+      "x": 14.413,
+      "y": 43.9976
+     },
+     {
+      "x": 14.499,
+      "y": 44.1247
+     },
+     {
+      "x": 14.588,
+      "y": 44.2644
+     },
+     {
+      "x": 14.715,
+      "y": 44.471
+     }
+    ]
+   },
+   "scatter": null,
+   "selection": {
+    "population": "all haloes with M500c > 10^13 Msun (groups and clusters)",
+    "warning": "Median relation read from the vector paths of the top-right panel of the paper's Fig. on the evolution of the scaling relations; run L2p8_m9 (2.8 Gpc box, fiducial resolution, fiducial model), z = 1 (identified from the colour bar). all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K. The paper gives the power-law fit only for the z=0 fiducial run (Table slope_and_norm: alpha = 1.75, beta = 42.24 for log L = alpha log M500c + beta between 10^13.5 and 10^15 Msun); no table of the curves. The 16th-84th percentile band (z=0 only) is not extracted. Luminosity: ROSAT-band emissivity from Cloudy tables summed over particles inside R500c."
+   },
+   "definitions": {
+    "xrayBand": "0.5-2.0 keV (ROSAT band)",
+    "coreTreatment": "with core",
+    "haloMassDefinition": "M500crit",
+    "luminosityAperture": "within R500c (3D, spherical)",
+    "luminosityScaling": "E(z)^-2 applied (E(z)=H(z)/H0)",
+    "statistic": "median",
+    "cosmology": {
+     "H0": 68.1,
+     "Om": 0.306
+    },
+    "cosmologyNote": "FLAMINGO D3A cosmology as in Schaye+23 (as used by the repository's FLAMINGO records); not restated numerically in Braspenning+24",
+    "sampleSelection": "all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K",
+    "massDefinition": "not applicable (halo mass M500c)",
+    "population": "all"
+   },
+   "provenance": {
+    "tier": "digitized-figure",
+    "citation": "Braspenning et al. 2024, MNRAS 533, 2656 (arXiv:2312.08277), Fig. 'scaling_relations_evolution' (top right)",
+    "doi": "10.1093/mnras/stae1436",
+    "url": "https://arxiv.org/abs/2312.08277",
+    "retrieved": "2026-10-18",
+    "figure": "Fig. scaling_relations_evolution (4 panels; top right: L_X-M500c)",
+    "panel": "top right",
+    "checksumSha256": "4ac17b4450992afa81609d7144ae7fc12c27da5f79f407fb3763d5252d471a90",
+    "sourceMember": "figures/4diffpanel_scaling_relations_Redshift_2.00WithoutRecentAGNHeating_redshifts.pdf (L2p8_m9, line style [ 5.55 2.4 ] 0, colour of z = 1)",
+    "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), log axes calibrated on the major ticks (decade labels 10^13-10^15 Msun and 10^41-10^45 erg/s asserted from the text layer)",
+    "axisCalibrationPixels": "x: 3 major ticks fitted to 13, 14, 15; y: 5 major ticks fitted to 45 ... 41; frame left edge = 10^13 Msun",
+    "digitizationUncertaintyDex": 0.01
+   },
+   "calibration": "prediction",
+   "rankable": false,
+   "notes": "PARTIAL verification (fiducial L1_m9, z=0): fit of log L = alpha (log M500c - 13.5) + beta over 10^13.5-10^15 Msun to the digitized vertices gives alpha = 1.713, beta = 42.27 against the paper's table 1.75, 42.24; the paper does not define m_500c, the 10^13.5 Msun pivot is inferred (10^13 or 10^14 give beta off by ~0.8); the same line read from the model-variation figure differs by <= 0.000 dex. Redshift of the line from the colour bar (pixel colours at z = 0, 1, 2 equal the line colours exactly)."
+  },
+  {
+   "id": "braspenning24.flamingo-l1-m10.lxm.z2",
+   "source": "FLAMINGO",
+   "run": "L1_m10",
+   "kind": "simulation",
+   "relation": "lxm",
+   "epoch": {
+    "zRepresentative": 2.0,
+    "zNominal": 2.0,
+    "zMin": 2.0,
+    "zMax": 2.0,
+    "mode": "published-epoch",
+    "snapshot": null
+   },
+   "axes": {
+    "xDefinition": "log10 M500c (spherical overdensity, 500 times the critical density)",
+    "xUnit": "log10(Msun)",
+    "yDefinition": "log10 median X-ray luminosity L_X,500c E(z)^-2 (0.5-2.0 keV band, within R500c, core included) as plotted; E(z)^-2 scaled, i.e. NOT the physical luminosity (multiply by E(z)^2)",
+    "yUnit": "log10(erg s^-1)"
+   },
+   "domain": {
+    "xMin": 13.039,
+    "xMax": 13.954
+   },
+   "representation": {
+    "type": "points",
+    "intervalKind": "unspecified",
+    "connect": true,
+    "points": [
+     {
+      "x": 13.039,
+      "y": 41.4963
+     },
+     {
+      "x": 13.125,
+      "y": 41.6655
+     },
+     {
+      "x": 13.211,
+      "y": 41.8481
+     },
+     {
+      "x": 13.295,
+      "y": 42.0157
+     },
+     {
+      "x": 13.382,
+      "y": 42.1966
+     },
+     {
+      "x": 13.471,
+      "y": 42.3743
+     },
+     {
+      "x": 13.553,
+      "y": 42.5397
+     },
+     {
+      "x": 13.645,
+      "y": 42.7322
+     },
+     {
+      "x": 13.725,
+      "y": 42.9127
+     },
+     {
+      "x": 13.814,
+      "y": 43.0822
+     },
+     {
+      "x": 13.954,
+      "y": 43.3878
+     }
+    ]
+   },
+   "scatter": null,
+   "selection": {
+    "population": "all haloes with M500c > 10^13 Msun (groups and clusters)",
+    "warning": "Median relation read from the vector paths of the top-right panel of the paper's Fig. on the evolution of the scaling relations; run L1_m10 (1 Gpc box, low resolution), z = 2 (identified from the colour bar). all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K. The paper gives the power-law fit only for the z=0 fiducial run (Table slope_and_norm: alpha = 1.75, beta = 42.24 for log L = alpha log M500c + beta between 10^13.5 and 10^15 Msun); no table of the curves. The 16th-84th percentile band (z=0 only) is not extracted. Luminosity: ROSAT-band emissivity from Cloudy tables summed over particles inside R500c."
+   },
+   "definitions": {
+    "xrayBand": "0.5-2.0 keV (ROSAT band)",
+    "coreTreatment": "with core",
+    "haloMassDefinition": "M500crit",
+    "luminosityAperture": "within R500c (3D, spherical)",
+    "luminosityScaling": "E(z)^-2 applied (E(z)=H(z)/H0)",
+    "statistic": "median",
+    "cosmology": {
+     "H0": 68.1,
+     "Om": 0.306
+    },
+    "cosmologyNote": "FLAMINGO D3A cosmology as in Schaye+23 (as used by the repository's FLAMINGO records); not restated numerically in Braspenning+24",
+    "sampleSelection": "all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K",
+    "massDefinition": "not applicable (halo mass M500c)",
+    "population": "all"
+   },
+   "provenance": {
+    "tier": "digitized-figure",
+    "citation": "Braspenning et al. 2024, MNRAS 533, 2656 (arXiv:2312.08277), Fig. 'scaling_relations_evolution' (top right)",
+    "doi": "10.1093/mnras/stae1436",
+    "url": "https://arxiv.org/abs/2312.08277",
+    "retrieved": "2026-10-18",
+    "figure": "Fig. scaling_relations_evolution (4 panels; top right: L_X-M500c)",
+    "panel": "top right",
+    "checksumSha256": "4ac17b4450992afa81609d7144ae7fc12c27da5f79f407fb3763d5252d471a90",
+    "sourceMember": "figures/4diffpanel_scaling_relations_Redshift_2.00WithoutRecentAGNHeating_redshifts.pdf (L1_m10, line style [ 9.6 2.4 1.5 2.4 ] 0, colour of z = 2)",
+    "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), log axes calibrated on the major ticks (decade labels 10^13-10^15 Msun and 10^41-10^45 erg/s asserted from the text layer)",
+    "axisCalibrationPixels": "x: 3 major ticks fitted to 13, 14, 15; y: 5 major ticks fitted to 45 ... 41; frame left edge = 10^13 Msun",
+    "digitizationUncertaintyDex": 0.01
+   },
+   "calibration": "prediction",
+   "rankable": false,
+   "notes": "PARTIAL verification (fiducial L1_m9, z=0): fit of log L = alpha (log M500c - 13.5) + beta over 10^13.5-10^15 Msun to the digitized vertices gives alpha = 1.713, beta = 42.27 against the paper's table 1.75, 42.24; the paper does not define m_500c, the 10^13.5 Msun pivot is inferred (10^13 or 10^14 give beta off by ~0.8); the same line read from the model-variation figure differs by <= 0.000 dex. Redshift of the line from the colour bar (pixel colours at z = 0, 1, 2 equal the line colours exactly)."
+  },
+  {
+   "id": "braspenning24.flamingo-l1-m8.lxm.z2",
+   "source": "FLAMINGO",
+   "run": "L1_m8",
+   "kind": "simulation",
+   "relation": "lxm",
+   "epoch": {
+    "zRepresentative": 2.0,
+    "zNominal": 2.0,
+    "zMin": 2.0,
+    "zMax": 2.0,
+    "mode": "published-epoch",
+    "snapshot": null
+   },
+   "axes": {
+    "xDefinition": "log10 M500c (spherical overdensity, 500 times the critical density)",
+    "xUnit": "log10(Msun)",
+    "yDefinition": "log10 median X-ray luminosity L_X,500c E(z)^-2 (0.5-2.0 keV band, within R500c, core included) as plotted; E(z)^-2 scaled, i.e. NOT the physical luminosity (multiply by E(z)^2)",
+    "yUnit": "log10(erg s^-1)"
+   },
+   "domain": {
+    "xMin": 13.039,
+    "xMax": 13.947
+   },
+   "representation": {
+    "type": "points",
+    "intervalKind": "unspecified",
+    "connect": true,
+    "points": [
+     {
+      "x": 13.039,
+      "y": 41.3525
+     },
+     {
+      "x": 13.125,
+      "y": 41.5519
+     },
+     {
+      "x": 13.212,
+      "y": 41.7561
+     },
+     {
+      "x": 13.295,
+      "y": 41.9458
+     },
+     {
+      "x": 13.384,
+      "y": 42.1329
+     },
+     {
+      "x": 13.467,
+      "y": 42.3051
+     },
+     {
+      "x": 13.554,
+      "y": 42.4872
+     },
+     {
+      "x": 13.644,
+      "y": 42.6475
+     },
+     {
+      "x": 13.729,
+      "y": 42.82
+     },
+     {
+      "x": 13.816,
+      "y": 42.9692
+     },
+     {
+      "x": 13.947,
+      "y": 43.3114
+     }
+    ]
+   },
+   "scatter": null,
+   "selection": {
+    "population": "all haloes with M500c > 10^13 Msun (groups and clusters)",
+    "warning": "Median relation read from the vector paths of the top-right panel of the paper's Fig. on the evolution of the scaling relations; run L1_m8 (1 Gpc box, high resolution), z = 2 (identified from the colour bar). all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K. The paper gives the power-law fit only for the z=0 fiducial run (Table slope_and_norm: alpha = 1.75, beta = 42.24 for log L = alpha log M500c + beta between 10^13.5 and 10^15 Msun); no table of the curves. The 16th-84th percentile band (z=0 only) is not extracted. Luminosity: ROSAT-band emissivity from Cloudy tables summed over particles inside R500c."
+   },
+   "definitions": {
+    "xrayBand": "0.5-2.0 keV (ROSAT band)",
+    "coreTreatment": "with core",
+    "haloMassDefinition": "M500crit",
+    "luminosityAperture": "within R500c (3D, spherical)",
+    "luminosityScaling": "E(z)^-2 applied (E(z)=H(z)/H0)",
+    "statistic": "median",
+    "cosmology": {
+     "H0": 68.1,
+     "Om": 0.306
+    },
+    "cosmologyNote": "FLAMINGO D3A cosmology as in Schaye+23 (as used by the repository's FLAMINGO records); not restated numerically in Braspenning+24",
+    "sampleSelection": "all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K",
+    "massDefinition": "not applicable (halo mass M500c)",
+    "population": "all"
+   },
+   "provenance": {
+    "tier": "digitized-figure",
+    "citation": "Braspenning et al. 2024, MNRAS 533, 2656 (arXiv:2312.08277), Fig. 'scaling_relations_evolution' (top right)",
+    "doi": "10.1093/mnras/stae1436",
+    "url": "https://arxiv.org/abs/2312.08277",
+    "retrieved": "2026-10-18",
+    "figure": "Fig. scaling_relations_evolution (4 panels; top right: L_X-M500c)",
+    "panel": "top right",
+    "checksumSha256": "4ac17b4450992afa81609d7144ae7fc12c27da5f79f407fb3763d5252d471a90",
+    "sourceMember": "figures/4diffpanel_scaling_relations_Redshift_2.00WithoutRecentAGNHeating_redshifts.pdf (L1_m8, line style [ 1.5 2.475 ] 0, colour of z = 2)",
+    "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), log axes calibrated on the major ticks (decade labels 10^13-10^15 Msun and 10^41-10^45 erg/s asserted from the text layer)",
+    "axisCalibrationPixels": "x: 3 major ticks fitted to 13, 14, 15; y: 5 major ticks fitted to 45 ... 41; frame left edge = 10^13 Msun",
+    "digitizationUncertaintyDex": 0.01
+   },
+   "calibration": "prediction",
+   "rankable": false,
+   "notes": "PARTIAL verification (fiducial L1_m9, z=0): fit of log L = alpha (log M500c - 13.5) + beta over 10^13.5-10^15 Msun to the digitized vertices gives alpha = 1.713, beta = 42.27 against the paper's table 1.75, 42.24; the paper does not define m_500c, the 10^13.5 Msun pivot is inferred (10^13 or 10^14 give beta off by ~0.8); the same line read from the model-variation figure differs by <= 0.000 dex. Redshift of the line from the colour bar (pixel colours at z = 0, 1, 2 equal the line colours exactly)."
+  },
+  {
+   "id": "braspenning24.flamingo-l1-m9.lxm.z2",
+   "source": "FLAMINGO",
+   "run": "L1_m9",
+   "kind": "simulation",
+   "relation": "lxm",
+   "epoch": {
+    "zRepresentative": 2.0,
+    "zNominal": 2.0,
+    "zMin": 2.0,
+    "zMax": 2.0,
+    "mode": "published-epoch",
+    "snapshot": null
+   },
+   "axes": {
+    "xDefinition": "log10 M500c (spherical overdensity, 500 times the critical density)",
+    "xUnit": "log10(Msun)",
+    "yDefinition": "log10 median X-ray luminosity L_X,500c E(z)^-2 (0.5-2.0 keV band, within R500c, core included) as plotted; E(z)^-2 scaled, i.e. NOT the physical luminosity (multiply by E(z)^2)",
+    "yUnit": "log10(erg s^-1)"
+   },
+   "domain": {
+    "xMin": 13.039,
+    "xMax": 13.944
+   },
+   "representation": {
+    "type": "points",
+    "intervalKind": "unspecified",
+    "connect": true,
+    "points": [
+     {
+      "x": 13.039,
+      "y": 41.4039
+     },
+     {
+      "x": 13.125,
+      "y": 41.6132
+     },
+     {
+      "x": 13.212,
+      "y": 41.8169
+     },
+     {
+      "x": 13.297,
+      "y": 42.0199
+     },
+     {
+      "x": 13.385,
+      "y": 42.2168
+     },
+     {
+      "x": 13.471,
+      "y": 42.4014
+     },
+     {
+      "x": 13.558,
+      "y": 42.5904
+     },
+     {
+      "x": 13.645,
+      "y": 42.7758
+     },
+     {
+      "x": 13.726,
+      "y": 42.9342
+     },
+     {
+      "x": 13.812,
+      "y": 43.0917
+     },
+     {
+      "x": 13.944,
+      "y": 43.3753
+     }
+    ]
+   },
+   "scatter": null,
+   "selection": {
+    "population": "all haloes with M500c > 10^13 Msun (groups and clusters)",
+    "warning": "Median relation read from the vector paths of the top-right panel of the paper's Fig. on the evolution of the scaling relations; run L1_m9 (1 Gpc box, fiducial resolution, fiducial model), z = 2 (identified from the colour bar). all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K. The paper gives the power-law fit only for the z=0 fiducial run (Table slope_and_norm: alpha = 1.75, beta = 42.24 for log L = alpha log M500c + beta between 10^13.5 and 10^15 Msun); no table of the curves. The 16th-84th percentile band (z=0 only) is not extracted. Luminosity: ROSAT-band emissivity from Cloudy tables summed over particles inside R500c."
+   },
+   "definitions": {
+    "xrayBand": "0.5-2.0 keV (ROSAT band)",
+    "coreTreatment": "with core",
+    "haloMassDefinition": "M500crit",
+    "luminosityAperture": "within R500c (3D, spherical)",
+    "luminosityScaling": "E(z)^-2 applied (E(z)=H(z)/H0)",
+    "statistic": "median",
+    "cosmology": {
+     "H0": 68.1,
+     "Om": 0.306
+    },
+    "cosmologyNote": "FLAMINGO D3A cosmology as in Schaye+23 (as used by the repository's FLAMINGO records); not restated numerically in Braspenning+24",
+    "sampleSelection": "all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K",
+    "massDefinition": "not applicable (halo mass M500c)",
+    "population": "all"
+   },
+   "provenance": {
+    "tier": "digitized-figure",
+    "citation": "Braspenning et al. 2024, MNRAS 533, 2656 (arXiv:2312.08277), Fig. 'scaling_relations_evolution' (top right)",
+    "doi": "10.1093/mnras/stae1436",
+    "url": "https://arxiv.org/abs/2312.08277",
+    "retrieved": "2026-10-18",
+    "figure": "Fig. scaling_relations_evolution (4 panels; top right: L_X-M500c)",
+    "panel": "top right",
+    "checksumSha256": "4ac17b4450992afa81609d7144ae7fc12c27da5f79f407fb3763d5252d471a90",
+    "sourceMember": "figures/4diffpanel_scaling_relations_Redshift_2.00WithoutRecentAGNHeating_redshifts.pdf (L1_m9, line style [] 0, colour of z = 2)",
+    "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), log axes calibrated on the major ticks (decade labels 10^13-10^15 Msun and 10^41-10^45 erg/s asserted from the text layer)",
+    "axisCalibrationPixels": "x: 3 major ticks fitted to 13, 14, 15; y: 5 major ticks fitted to 45 ... 41; frame left edge = 10^13 Msun",
+    "digitizationUncertaintyDex": 0.01
+   },
+   "calibration": "prediction",
+   "rankable": false,
+   "notes": "PARTIAL verification (fiducial L1_m9, z=0): fit of log L = alpha (log M500c - 13.5) + beta over 10^13.5-10^15 Msun to the digitized vertices gives alpha = 1.713, beta = 42.27 against the paper's table 1.75, 42.24; the paper does not define m_500c, the 10^13.5 Msun pivot is inferred (10^13 or 10^14 give beta off by ~0.8); the same line read from the model-variation figure differs by <= 0.000 dex. Redshift of the line from the colour bar (pixel colours at z = 0, 1, 2 equal the line colours exactly)."
+  },
+  {
+   "id": "braspenning24.flamingo-l2p8-m9.lxm.z2",
+   "source": "FLAMINGO",
+   "run": "L2p8_m9",
+   "kind": "simulation",
+   "relation": "lxm",
+   "epoch": {
+    "zRepresentative": 2.0,
+    "zNominal": 2.0,
+    "zMin": 2.0,
+    "zMax": 2.0,
+    "mode": "published-epoch",
+    "snapshot": null
+   },
+   "axes": {
+    "xDefinition": "log10 M500c (spherical overdensity, 500 times the critical density)",
+    "xUnit": "log10(Msun)",
+    "yDefinition": "log10 median X-ray luminosity L_X,500c E(z)^-2 (0.5-2.0 keV band, within R500c, core included) as plotted; E(z)^-2 scaled, i.e. NOT the physical luminosity (multiply by E(z)^2)",
+    "yUnit": "log10(erg s^-1)"
+   },
+   "domain": {
+    "xMin": 13.039,
+    "xMax": 14.271
+   },
+   "representation": {
+    "type": "points",
+    "intervalKind": "unspecified",
+    "connect": true,
+    "points": [
+     {
+      "x": 13.039,
+      "y": 41.4045
+     },
+     {
+      "x": 13.125,
+      "y": 41.6109
+     },
+     {
+      "x": 13.211,
+      "y": 41.8159
+     },
+     {
+      "x": 13.297,
+      "y": 42.0157
+     },
+     {
+      "x": 13.382,
+      "y": 42.2091
+     },
+     {
+      "x": 13.468,
+      "y": 42.3989
+     },
+     {
+      "x": 13.555,
+      "y": 42.5826
+     },
+     {
+      "x": 13.641,
+      "y": 42.7583
+     },
+     {
+      "x": 13.726,
+      "y": 42.923
+     },
+     {
+      "x": 13.813,
+      "y": 43.0989
+     },
+     {
+      "x": 13.9,
+      "y": 43.2637
+     },
+     {
+      "x": 13.983,
+      "y": 43.3983
+     },
+     {
+      "x": 14.075,
+      "y": 43.572
+     },
+     {
+      "x": 14.15,
+      "y": 43.7089
+     },
+     {
+      "x": 14.271,
+      "y": 43.9511
+     }
+    ]
+   },
+   "scatter": null,
+   "selection": {
+    "population": "all haloes with M500c > 10^13 Msun (groups and clusters)",
+    "warning": "Median relation read from the vector paths of the top-right panel of the paper's Fig. on the evolution of the scaling relations; run L2p8_m9 (2.8 Gpc box, fiducial resolution, fiducial model), z = 2 (identified from the colour bar). all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K. The paper gives the power-law fit only for the z=0 fiducial run (Table slope_and_norm: alpha = 1.75, beta = 42.24 for log L = alpha log M500c + beta between 10^13.5 and 10^15 Msun); no table of the curves. The 16th-84th percentile band (z=0 only) is not extracted. Luminosity: ROSAT-band emissivity from Cloudy tables summed over particles inside R500c."
+   },
+   "definitions": {
+    "xrayBand": "0.5-2.0 keV (ROSAT band)",
+    "coreTreatment": "with core",
+    "haloMassDefinition": "M500crit",
+    "luminosityAperture": "within R500c (3D, spherical)",
+    "luminosityScaling": "E(z)^-2 applied (E(z)=H(z)/H0)",
+    "statistic": "median",
+    "cosmology": {
+     "H0": 68.1,
+     "Om": 0.306
+    },
+    "cosmologyNote": "FLAMINGO D3A cosmology as in Schaye+23 (as used by the repository's FLAMINGO records); not restated numerically in Braspenning+24",
+    "sampleSelection": "all haloes with M500c > 10^13 Msun from the FLAMINGO halo catalogues (VELOCIraptor + SOAP); median L_X in mass bins; gas excluding star-forming particles, particles heated by AGN in the last 15 Myr and particles with T < 10^5 K",
+    "massDefinition": "not applicable (halo mass M500c)",
+    "population": "all"
+   },
+   "provenance": {
+    "tier": "digitized-figure",
+    "citation": "Braspenning et al. 2024, MNRAS 533, 2656 (arXiv:2312.08277), Fig. 'scaling_relations_evolution' (top right)",
+    "doi": "10.1093/mnras/stae1436",
+    "url": "https://arxiv.org/abs/2312.08277",
+    "retrieved": "2026-10-18",
+    "figure": "Fig. scaling_relations_evolution (4 panels; top right: L_X-M500c)",
+    "panel": "top right",
+    "checksumSha256": "4ac17b4450992afa81609d7144ae7fc12c27da5f79f407fb3763d5252d471a90",
+    "sourceMember": "figures/4diffpanel_scaling_relations_Redshift_2.00WithoutRecentAGNHeating_redshifts.pdf (L2p8_m9, line style [ 5.55 2.4 ] 0, colour of z = 2)",
+    "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), log axes calibrated on the major ticks (decade labels 10^13-10^15 Msun and 10^41-10^45 erg/s asserted from the text layer)",
+    "axisCalibrationPixels": "x: 3 major ticks fitted to 13, 14, 15; y: 5 major ticks fitted to 45 ... 41; frame left edge = 10^13 Msun",
+    "digitizationUncertaintyDex": 0.01
+   },
+   "calibration": "prediction",
+   "rankable": false,
+   "notes": "PARTIAL verification (fiducial L1_m9, z=0): fit of log L = alpha (log M500c - 13.5) + beta over 10^13.5-10^15 Msun to the digitized vertices gives alpha = 1.713, beta = 42.27 against the paper's table 1.75, 42.24; the paper does not define m_500c, the 10^13.5 Msun pivot is inferred (10^13 or 10^14 give beta off by ~0.8); the same line read from the model-variation figure differs by <= 0.000 dex. Redshift of the line from the colour bar (pixel colours at z = 0, 1, 2 equal the line colours exactly)."
+  }
+ ]
+}

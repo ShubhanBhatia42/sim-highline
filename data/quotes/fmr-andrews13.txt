@@ -1,0 +1,17 @@
+ms.tex:173: \mu_\alpha \equiv \mathrm{log}(M_\star) - \alpha \mathrm{log(SFR)},
+ms.tex:1359: The scatter in metallicity at fixed $\mu_\alpha$ is minimized for $\alpha$~=~0.66
+ms.tex:1331: The coefficient (0.66) on log(SFR) in the abscissa minimizes the scatter in the FMR
+ms.tex:1333: The black line shows a linear fit to the data, with a slope of 0.43.
+ms.tex:1377: The scatter in the direct method FMR ($\sigma$~=~0.13~dex;
+ms.tex:83: We employed the direct method to measure the metallicities of $\sim$200,000 star-forming galaxies from the SDSS that were stacked in bins of
+ms.tex:435: We adopt the total stellar mass \citep{kauffmann2003a} and the total SFR \citep{brinchmann2004, salim2007} values from the MPA-JHU catalog, as opposed to these quantities calculated only for the light within the fiber.
+ms.tex:432: galaxies binned in 0.1 dex in \mstar\ from log(\mstar/\msun)~=~7.0~to~11.0 {\it and} 0.5 dex in SFR from log(SFR/[\msun~ yr$^{-1}$])~=~$-$2.0~to~2.0
+ms.tex:342: 0.027~<~$z$~<~0.25 to ensure that the \oii\ line and the \oiia\ lines fall within the wavelength range of the SDSS spectrograph
+ms.tex:346: We discard galaxies classified as AGN because AGN emission line ratios may produce spurious metallicity measurements.
+ms.tex:838: we form a ``composite'' metallicity calibration
+ms.tex:318: the solar oxygen abundance of 12~+~log(O/H)~=~8.86 from \citet{delahaye2006}
+ms.tex:858: The metallicities of the stacks are presented in Table \ref{table:metallicity}.
+ms.tex:1367: for the stacks with log(SFR)~>~$-$1.0 (the same SFR range as the stacks with direct method metallicities)
+Fig. 12: 116 drawn markers all within 0.0078 dex of a table stack (x from BIN CENTRES: median 0.0036; with x from the tabulated median M* and SFR the median distance is 0.032 and the max 0.114); 1 of 117 table stacks has no marker (bin M*, SFR limits ('8.6', '8.7', '-1.5', '-1.0'), log O/H 8.22, x 9.475)
+drawn black fit line: slope 0.432 (paper: 0.43), value at mu_0.66=9.0: 8.461; rms of the 117 tabulated stacks about it: 0.129 dex (paper: sigma = 0.13 dex)
+alpha minimizing the rms scatter about a linear fit of the 117 stack centres (0.02 grid): 0.68 (paper: 0.66)

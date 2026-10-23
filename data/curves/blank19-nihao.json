@@ -22,8 +22,8 @@
         "yUnit": "dex"
       },
       "domain": {
-        "xMin": 11.915,
-        "xMax": 13.435
+        "xMin": 11.92,
+        "xMax": 13.55
       },
       "representation": {
         "type": "points",
@@ -31,203 +31,211 @@
         "connect": false,
         "points": [
           {
-            "x": 11.915,
-            "y": -1.6042
+            "x": 11.92,
+            "y": -1.61
           },
           {
-            "x": 11.944,
-            "y": -1.3726
+            "x": 11.94,
+            "y": -1.37
           },
           {
-            "x": 11.971,
-            "y": -1.5526
+            "x": 11.97,
+            "y": -1.55
           },
           {
-            "x": 11.982,
-            "y": -1.5615
+            "x": 11.98,
+            "y": -1.56
           },
           {
-            "x": 12.003,
-            "y": -1.6962
+            "x": 12,
+            "y": -1.69
           },
           {
-            "x": 12.031,
-            "y": -1.5682
+            "x": 12.03,
+            "y": -1.57
           },
           {
-            "x": 12.058,
-            "y": -1.4464
+            "x": 12.06,
+            "y": -1.45
           },
           {
-            "x": 12.279,
-            "y": -1.6236
+            "x": 12.28,
+            "y": -1.62
           },
           {
-            "x": 12.303,
-            "y": -1.389
+            "x": 12.3,
+            "y": -1.57
           },
           {
-            "x": 12.305,
-            "y": -1.5718
+            "x": 12.3,
+            "y": -1.39
           },
           {
-            "x": 12.348,
-            "y": -1.7984
+            "x": 12.35,
+            "y": -1.8
           },
           {
-            "x": 12.488,
-            "y": -1.5558
+            "x": 12.49,
+            "y": -1.56
           },
           {
-            "x": 12.506,
-            "y": -1.6791
+            "x": 12.51,
+            "y": -1.68
           },
           {
-            "x": 12.553,
-            "y": -1.7253
+            "x": 12.55,
+            "y": -1.72
           },
           {
-            "x": 12.597,
-            "y": -1.6672
+            "x": 12.6,
+            "y": -1.72
           },
           {
-            "x": 12.601,
-            "y": -1.7243
+            "x": 12.6,
+            "y": -1.67
           },
           {
-            "x": 12.609,
-            "y": -1.5136
+            "x": 12.61,
+            "y": -1.51
           },
           {
-            "x": 12.622,
-            "y": -1.3878
+            "x": 12.62,
+            "y": -1.39
           },
           {
-            "x": 12.649,
-            "y": -1.8186
+            "x": 12.65,
+            "y": -1.82
           },
           {
-            "x": 12.656,
-            "y": -1.6499
+            "x": 12.66,
+            "y": -1.65
           },
           {
-            "x": 12.666,
-            "y": -1.7088
+            "x": 12.67,
+            "y": -1.71
           },
           {
-            "x": 12.726,
-            "y": -1.5745
+            "x": 12.73,
+            "y": -1.58
           },
           {
-            "x": 12.738,
-            "y": -1.6539
+            "x": 12.74,
+            "y": -1.66
           },
           {
-            "x": 12.739,
-            "y": -1.5686
+            "x": 12.74,
+            "y": -1.57
           },
           {
-            "x": 12.787,
-            "y": -1.6203
+            "x": 12.79,
+            "y": -1.62
           },
           {
-            "x": 12.802,
-            "y": -1.7697
+            "x": 12.8,
+            "y": -1.77
           },
           {
-            "x": 12.814,
-            "y": -1.8663
+            "x": 12.81,
+            "y": -1.86
           },
           {
-            "x": 12.815,
-            "y": -1.6558
+            "x": 12.81,
+            "y": -1.65
           },
           {
-            "x": 12.826,
-            "y": -1.2884
+            "x": 12.83,
+            "y": -1.29
           },
           {
-            "x": 12.837,
-            "y": -1.2831
+            "x": 12.84,
+            "y": -1.29
           },
           {
-            "x": 12.861,
-            "y": -1.6403
+            "x": 12.86,
+            "y": -1.64
           },
           {
-            "x": 12.922,
-            "y": -1.5863
+            "x": 12.92,
+            "y": -1.58
           },
           {
-            "x": 12.983,
-            "y": -1.5742
+            "x": 12.98,
+            "y": -1.57
           },
           {
-            "x": 12.995,
-            "y": -1.8172
+            "x": 13,
+            "y": -1.82
           },
           {
-            "x": 13.033,
-            "y": -1.6728
+            "x": 13.03,
+            "y": -1.67
           },
           {
-            "x": 13.079,
-            "y": -1.6651
+            "x": 13.08,
+            "y": -1.67
           },
           {
-            "x": 13.094,
-            "y": -1.5175
+            "x": 13.09,
+            "y": -1.51
           },
           {
-            "x": 13.135,
-            "y": -1.8196
+            "x": 13.14,
+            "y": -1.82
           },
           {
-            "x": 13.144,
-            "y": -1.2836
+            "x": 13.14,
+            "y": -1.28
           },
           {
-            "x": 13.164,
-            "y": -1.7391
+            "x": 13.16,
+            "y": -1.73
           },
           {
-            "x": 13.179,
-            "y": -1.5909
+            "x": 13.18,
+            "y": -1.59
           },
           {
-            "x": 13.226,
-            "y": -1.8338
+            "x": 13.23,
+            "y": -1.84
           },
           {
-            "x": 13.262,
-            "y": -1.6274
+            "x": 13.26,
+            "y": -1.63
           },
           {
-            "x": 13.287,
-            "y": -1.6087
+            "x": 13.29,
+            "y": -1.61
           },
           {
-            "x": 13.343,
-            "y": -1.753
+            "x": 13.34,
+            "y": -1.75
           },
           {
-            "x": 13.357,
-            "y": -1.8845
+            "x": 13.36,
+            "y": -1.89
           },
           {
-            "x": 13.391,
-            "y": -1.8845
+            "x": 13.39,
+            "y": -1.88
           },
           {
-            "x": 13.435,
-            "y": -1.7761
+            "x": 13.44,
+            "y": -1.78
+          },
+          {
+            "x": 13.51,
+            "y": -2.06
+          },
+          {
+            "x": 13.55,
+            "y": -1.74
           }
         ]
       },
       "scatter": null,
       "selection": {
         "population": "individual zoom galaxies (not volume complete)",
-        "warning": "Marker centres of the simulated galaxies read from the vector paths of Blank et al. 2019 Fig. 1 (z=0); no table is published. Zoom selections are not volume complete, so the sample is not rankable. Plotted M* converted to the M*/M200 ratio by subtracting log10 M200. Marker centres, so the points are the plotted values, not binned medians."
+        "warning": "Per-galaxy values from the table of galaxies of Blank et al. 2019 (label tab:galaxies, arXiv source library.tex), the 50 galaxies simulated with black holes; values as printed to 2 decimals, the numbers plotted in Fig. 1 (z=0 panel). The ratio M*/M200 is computed here as log M* minus log M200 from the two rounded table columns (rounding error up to 0.01 dex). Two galaxies (g3.26e13, g3.89e13; log M200 = 13.51, 13.55) lie beyond the right edge of the plotted M200 axis of Fig. 1 (13.48) and were not drawn there. Zoom selections are not volume complete, so the sample is not rankable. Stellar mass is the mass of all stars within 0.2 R200."
       },
       "definitions": {
         "imf": "chabrier03",
@@ -241,25 +249,21 @@
         "population": "zoom-centrals"
       },
       "provenance": {
-        "tier": "digitized-figure",
-        "citation": "Blank et al. 2019, MNRAS 487, 5476, Fig. 1 (arXiv source numbering), z=0 panel",
+        "tier": "published-table",
+        "citation": "Blank et al. 2019, MNRAS 487, 5476, table of galaxies and their properties (label tab:galaxies, arXiv source), the values plotted in Fig. 1, z=0 panel",
         "doi": "10.1093/mnras/stz1688",
         "url": "https://arxiv.org/abs/1906.06955",
-        "retrieved": "2026-10-05",
-        "figure": "Figure 1",
-        "panel": "z=0",
-        "checksumSha256": "d4c1b6563a41e9e66085354ef2f593cc82de0c7f1baa30c2c53cc7cec9f37222",
-        "sourceMember": "plot_msmhx4.pdf (converted from plot_msmhx4.eps)",
-        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
-        "axisCalibrationPixels": "x: labelled decades from the bottom-row panels (shared by column); y: labelled decades from the left-column panels (shared by row); both snapped to tick marks",
-        "digitizationUncertaintyDex": 0.01,
+        "retrieved": "2026-10-18",
+        "checksumSha256": "95428970f12d147e24bc0d1d62a6aae1081ce15f3b2c203da1d0b863e5d76db8",
+        "sourceMember": "library.tex, table tab:galaxies (rows at lines 685-749 of the arXiv source)",
+        "extractionMethod": "parsed from the arXiv LaTeX table 'tab:galaxies' (61 rows, the 50 with a black hole mass used): x = log(M_200), y = log(M_star) - log(M_200)",
         "definitionFills": [
           "blank19-nihao-mass"
         ]
       },
       "calibration": "unknown",
       "rankable": false,
-      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+      "notes": "Values of the paper's table of galaxies, equal to the earlier figure read to <0.01 dex; not rankable because the zoom sample is not volume complete."
     },
     {
       "id": "blank19.nihao-bh.shmr-fit.z0",
@@ -2890,7 +2894,7 @@
         "yUnit": "log10(Msun)"
       },
       "domain": {
-        "xMin": 10.306,
+        "xMin": 10.31,
         "xMax": 11.86
       },
       "representation": {
@@ -2899,211 +2903,211 @@
         "connect": false,
         "points": [
           {
-            "x": 10.306,
-            "y": 7.6129
+            "x": 10.31,
+            "y": 7.41
           },
           {
-            "x": 10.311,
-            "y": 7.4111
+            "x": 10.31,
+            "y": 7.61
           },
           {
-            "x": 10.418,
-            "y": 7.802
+            "x": 10.42,
+            "y": 7.78
           },
           {
-            "x": 10.421,
-            "y": 7.7767
+            "x": 10.42,
+            "y": 7.8
           },
           {
-            "x": 10.463,
-            "y": 7.552
+            "x": 10.46,
+            "y": 7.55
           },
           {
-            "x": 10.549,
-            "y": 8.1938
+            "x": 10.55,
+            "y": 8.19
           },
           {
-            "x": 10.571,
-            "y": 7.8427
+            "x": 10.57,
+            "y": 7.84
           },
           {
-            "x": 10.612,
-            "y": 7.8552
+            "x": 10.61,
+            "y": 7.86
           },
           {
-            "x": 10.656,
-            "y": 8.2454
+            "x": 10.66,
+            "y": 8.25
           },
           {
-            "x": 10.733,
-            "y": 8.2958
+            "x": 10.73,
+            "y": 8.3
           },
           {
-            "x": 10.827,
-            "y": 8.4681
+            "x": 10.83,
+            "y": 8.47
           },
           {
-            "x": 10.828,
-            "y": 8.8399
+            "x": 10.83,
+            "y": 8.69
           },
           {
-            "x": 10.831,
-            "y": 8.6907
+            "x": 10.83,
+            "y": 8.84
           },
           {
-            "x": 10.876,
-            "y": 8.6898
+            "x": 10.88,
+            "y": 8.69
           },
           {
-            "x": 10.915,
-            "y": 8.1158
+            "x": 10.91,
+            "y": 8.12
           },
           {
             "x": 10.93,
-            "y": 8.656
+            "y": 8.39
           },
           {
-            "x": 10.932,
-            "y": 8.3944
+            "x": 10.93,
+            "y": 8.66
           },
           {
-            "x": 10.947,
-            "y": 8.7897
+            "x": 10.95,
+            "y": 8.79
           },
           {
-            "x": 10.957,
-            "y": 8.5828
+            "x": 10.96,
+            "y": 8.58
           },
           {
-            "x": 11.006,
-            "y": 8.7023
+            "x": 11.01,
+            "y": 8.7
           },
           {
-            "x": 11.032,
-            "y": 8.9028
+            "x": 11.03,
+            "y": 8.9
           },
           {
-            "x": 11.084,
-            "y": 9.3238
+            "x": 11.08,
+            "y": 9.32
           },
           {
-            "x": 11.095,
-            "y": 8.7276
+            "x": 11.1,
+            "y": 8.73
           },
           {
-            "x": 11.152,
-            "y": 8.7534
+            "x": 11.15,
+            "y": 8.75
           },
           {
-            "x": 11.159,
-            "y": 8.853
+            "x": 11.16,
+            "y": 8.85
           },
           {
-            "x": 11.167,
-            "y": 8.9394
+            "x": 11.17,
+            "y": 8.8
           },
           {
-            "x": 11.171,
-            "y": 8.799
+            "x": 11.17,
+            "y": 8.94
           },
           {
-            "x": 11.178,
-            "y": 9.1835
+            "x": 11.18,
+            "y": 9.18
           },
           {
-            "x": 11.221,
-            "y": 9.0017
+            "x": 11.22,
+            "y": 9
           },
           {
-            "x": 11.234,
-            "y": 9.1353
+            "x": 11.23,
+            "y": 9.14
           },
           {
-            "x": 11.316,
-            "y": 8.9211
+            "x": 11.32,
+            "y": 8.92
           },
           {
-            "x": 11.336,
-            "y": 9.177
+            "x": 11.34,
+            "y": 9.18
           },
           {
             "x": 11.36,
-            "y": 9.1699
+            "y": 9.17
           },
           {
-            "x": 11.392,
-            "y": 9.2945
+            "x": 11.39,
+            "y": 9.29
           },
           {
-            "x": 11.408,
-            "y": 9.1551
+            "x": 11.41,
+            "y": 9.16
           },
           {
-            "x": 11.414,
-            "y": 9.4574
+            "x": 11.41,
+            "y": 9.46
           },
           {
-            "x": 11.425,
-            "y": 9.2487
+            "x": 11.43,
+            "y": 9.25
           },
           {
-            "x": 11.445,
-            "y": 9.524
+            "x": 11.45,
+            "y": 9.52
           },
           {
-            "x": 11.473,
-            "y": 9.4547
+            "x": 11.47,
+            "y": 9.45
           },
           {
-            "x": 11.506,
-            "y": 9.451
+            "x": 11.51,
+            "y": 9.45
           },
           {
-            "x": 11.538,
-            "y": 8.8341
+            "x": 11.54,
+            "y": 8.83
           },
           {
-            "x": 11.554,
-            "y": 9.0567
+            "x": 11.55,
+            "y": 9.06
           },
           {
-            "x": 11.577,
-            "y": 9.2397
-          },
-          {
-            "x": 11.588,
-            "y": 9.5883
+            "x": 11.58,
+            "y": 9.24
           },
           {
             "x": 11.59,
-            "y": 9.5361
+            "y": 9.54
           },
           {
-            "x": 11.635,
-            "y": 9.4547
+            "x": 11.59,
+            "y": 9.59
           },
           {
-            "x": 11.659,
-            "y": 9.4678
+            "x": 11.63,
+            "y": 9.45
           },
           {
-            "x": 11.678,
-            "y": 9.3336
+            "x": 11.66,
+            "y": 9.47
           },
           {
-            "x": 11.805,
-            "y": 9.7022
+            "x": 11.68,
+            "y": 9.33
+          },
+          {
+            "x": 11.81,
+            "y": 9.7
           },
           {
             "x": 11.86,
-            "y": 8.9417
+            "y": 8.94
           }
         ]
       },
       "scatter": null,
       "selection": {
         "population": "individual zoom galaxies (not volume complete)",
-        "warning": "Marker centres of the simulated galaxies read from the vector paths of Blank et al. 2019 Fig. 3 (z=0); no table is published. Zoom selections are not volume complete, so the sample is not rankable. Marker centres, so the points are the plotted values, not binned medians."
+        "warning": "Per-galaxy values from the table of galaxies of Blank et al. 2019 (label tab:galaxies, arXiv source library.tex), the 50 galaxies simulated with black holes; values as printed to 2 decimals, the numbers plotted in Fig. 3 (z=0 panel). Zoom selections are not volume complete, so the sample is not rankable. Stellar mass is the mass of all stars within 0.2 R200."
       },
       "definitions": {
         "imf": "chabrier03",
@@ -3116,25 +3120,21 @@
         "population": "zoom-centrals"
       },
       "provenance": {
-        "tier": "digitized-figure",
-        "citation": "Blank et al. 2019, MNRAS 487, 5476, Fig. 3 (arXiv source numbering), z=0 panel",
+        "tier": "published-table",
+        "citation": "Blank et al. 2019, MNRAS 487, 5476, table of galaxies and their properties (label tab:galaxies, arXiv source), the values plotted in Fig. 3, z=0 panel",
         "doi": "10.1093/mnras/stz1688",
         "url": "https://arxiv.org/abs/1906.06955",
-        "retrieved": "2026-10-05",
-        "figure": "Figure 3",
-        "panel": "z=0",
-        "checksumSha256": "cd2216136c7958d106773d7a2c8eec8685804c4c08379ef6df6fa14b43b513d0",
-        "sourceMember": "plot_mbhmsx4.pdf (converted from plot_mbhmsx4.eps)",
-        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
-        "axisCalibrationPixels": "x: labelled decades from the bottom-row panels (shared by column); y: labelled decades from the left-column panels (shared by row); both snapped to tick marks",
-        "digitizationUncertaintyDex": 0.01,
+        "retrieved": "2026-10-18",
+        "checksumSha256": "95428970f12d147e24bc0d1d62a6aae1081ce15f3b2c203da1d0b863e5d76db8",
+        "sourceMember": "library.tex, table tab:galaxies (rows at lines 685-749 of the arXiv source)",
+        "extractionMethod": "parsed from the arXiv LaTeX table 'tab:galaxies' (61 rows, the 50 with a black hole mass used): x = log(M_star), y = log(M_BH)",
         "definitionFills": [
           "blank19-nihao-mass"
         ]
       },
       "calibration": "unknown",
       "rankable": false,
-      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+      "notes": "Values of the paper's table of galaxies, equal to the earlier figure read to <0.01 dex; not rankable because the zoom sample is not volume complete."
     },
     {
       "id": "blank19.nihao-bh.bh-fit.z0",

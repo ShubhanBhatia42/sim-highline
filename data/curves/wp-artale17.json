@@ -1,0 +1,175 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "artale17.eagle.wp.mstar-gt-8p66.z0p1",
+      "source": "EAGLE",
+      "run": "Ref-L100N1504, M* > 10^8.66 h^-2 Msun",
+      "kind": "simulation",
+      "relation": "wp",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 projected separation r_p",
+        "xUnit": "log10(h^-1 Mpc)",
+        "yDefinition": "log10 projected correlation function w_p(r_p) (the figure plots log10(w_p/r_p); w_p is recovered by adding log10 r_p)",
+        "yUnit": "log10(h^-1 Mpc)"
+      },
+      "domain": {
+        "xMin": -1.44,
+        "xMax": 0.999
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": -1.44,
+            "y": 2.8737,
+            "yLow": 2.7761,
+            "yHigh": 2.9533
+          },
+          {
+            "x": -1.288,
+            "y": 2.7895,
+            "yLow": 2.6832,
+            "yHigh": 2.8747
+          },
+          {
+            "x": -1.135,
+            "y": 2.717,
+            "yLow": 2.6116,
+            "yHigh": 2.8017
+          },
+          {
+            "x": -0.983,
+            "y": 2.6471,
+            "yLow": 2.5378,
+            "yHigh": 2.7344
+          },
+          {
+            "x": -0.83,
+            "y": 2.5583,
+            "yLow": 2.4393,
+            "yHigh": 2.6516
+          },
+          {
+            "x": -0.678,
+            "y": 2.4677,
+            "yLow": 2.3399,
+            "yHigh": 2.5663
+          },
+          {
+            "x": -0.525,
+            "y": 2.3628,
+            "yLow": 2.2232,
+            "yHigh": 2.4682
+          },
+          {
+            "x": -0.373,
+            "y": 2.2417,
+            "yLow": 2.0866,
+            "yHigh": 2.3557
+          },
+          {
+            "x": -0.22,
+            "y": 2.1021,
+            "yLow": 1.9297,
+            "yHigh": 2.2251
+          },
+          {
+            "x": -0.068,
+            "y": 1.9582,
+            "yLow": 1.7519,
+            "yHigh": 2.0974
+          },
+          {
+            "x": 0.084,
+            "y": 1.822,
+            "yLow": 1.5643,
+            "yHigh": 1.9826
+          },
+          {
+            "x": 0.237,
+            "y": 1.6713,
+            "yLow": 1.3045,
+            "yHigh": 1.8672
+          },
+          {
+            "x": 0.389,
+            "y": 1.5258,
+            "yLow": 0.9526,
+            "yHigh": 1.7645
+          },
+          {
+            "x": 0.542,
+            "y": 1.3452,
+            "yLow": 0.8451,
+            "yHigh": 1.6446
+          },
+          {
+            "x": 0.694,
+            "y": 1.1699,
+            "yLow": 0.3966,
+            "yHigh": 1.506
+          },
+          {
+            "x": 0.847,
+            "y": 0.8627,
+            "yLow": 0.1627,
+            "yHigh": 1.3005
+          },
+          {
+            "x": 0.999,
+            "y": 0.5548,
+            "yLow": 0.406,
+            "yHigh": 1.0872
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all EAGLE galaxies with M* > 10^8.66 h^-2 Msun",
+        "warning": "Curve read from the vector paths of the bottom panel (log10(w_p/r_p) versus log10 r_p) of the figure of Artale et al. 2017 (MNRAS 470, 1771) that compares the z=0.1 EAGLE projected correlation function with the Zehavi+11 power-law fit; w_p = (w_p/r_p) r_p exactly. The plotted line joins 17 binned values; vertical error bars are the jackknife errors of the paper (JN), read from the vector strokes where drawn. The paper states that the EAGLE selection differs in detail from the SDSS samples and that the 100 Mpc box suppresses clustering beyond ~5 h^-1 Mpc. The paper gives no table of these values."
+      },
+      "definitions": {
+        "sampleSelection": "EAGLE galaxies at z=0.1 with M* > 10^8.66 h^-2 Msun (stellar mass within a 3D spherical aperture of 30 kpc), simulation Ref-L100N1504 (L = 67.77 h^-1 Mpc); w_p integrated to pi_max ~ 34 Mpc/h",
+        "piMax": 34,
+        "lengthUnit": "h^-1 Mpc",
+        "projection": "w_p(r_p) = 2 int_0^pi_max xi(r_p, pi) d(pi) with the redshift-space xi(r_p, pi) (paper eq. wp_rp), averaged over three orthogonal projection directions",
+        "massDefinition": "aperture-30pkpc",
+        "massThreshold": "M* > 10^8.66 h^-2 Msun",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "population": "all"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Artale et al. 2017, MNRAS 470, 1771 (arXiv:1611.05064), figure of the z=0.1 EAGLE two-point function (bottom panel, w_p)",
+        "doi": "10.1093/mnras/stx1263",
+        "url": "https://arxiv.org/abs/1611.05064",
+        "retrieved": "2026-10-18",
+        "figure": "Fig. 'xi_mstar' (file Wp-1halo2halo-Ms-gt-9.0-z0.1-JN-2.eps)",
+        "panel": "bottom panel",
+        "checksumSha256": "675e1a653ff66f86c9e6854699e165da80ad23a6f757b06bb23779942426d1c1",
+        "sourceMember": "Wp-1halo2halo-Ms-gt-9.0-z0.1-JN-2.eps",
+        "extractionMethod": "vector path vertices from the figure (EPS converted with ghostscript, PyMuPDF get_drawings); axes calibrated by hand on the 6 pt major ticks (outlined labels)",
+        "axisCalibrationPixels": "x ticks -1.5 ... 1.0 (step 0.5) and y ticks 5 ... -2 (step 1) fitted linearly; validated by the red reference curve: eq. (wp_ref) with r0=5.33, gamma=1.8 reproduced at 26 vertices to <0.005 dex",
+        "digitizationUncertaintyDex": 0.01
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. Cosmology of EAGLE: Planck 2013 (Omega_b=0.0482, Omega_dark=0.2588, Omega_Lambda=0.693, h=0.677) as quoted in the paper; sum Omega_m = 0.307."
+    }
+  ]
+}

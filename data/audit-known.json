@@ -60,6 +60,11 @@
       "code": "cross-source-offset",
       "idPrefix": "rodriguezgomez22.tng100.jstar.kappa_rot.early",
       "reason": "Compared against a different population (P(Late) late-type) of the same run: early-type kappa_rot < 0.5 galaxies have lower j_stars than late-type ones by construction."
+    },
+    {
+      "code": "duplicate-data",
+      "idPrefix": "zehavi11.sdss.hod.",
+      "reason": "The mean number of all galaxies per halo equals the mean number of central galaxies at low halo mass, where there are no satellites, so the first points of the two curves are the same by construction."
     }
   ]
 }

@@ -3590,8 +3590,8 @@
       "epoch": {
         "zRepresentative": 10,
         "zNominal": 10,
-        "zMin": 5.592177484748817,
-        "zMax": 15.154076265043987,
+        "zMin": 5.5969,
+        "zMax": 14.9031,
         "mode": "published-epoch",
         "snapshot": null
       },
@@ -3602,8 +3602,8 @@
         "yUnit": "log10(Msun yr^-1 cMpc^-3)"
       },
       "domain": {
-        "xMin": 5.592,
-        "xMax": 15.154
+        "xMin": 5.5969,
+        "xMax": 14.9031
       },
       "representation": {
         "type": "points",
@@ -3611,291 +3611,207 @@
         "connect": true,
         "points": [
           {
-            "x": 5.592,
-            "y": -1.5625
+            "x": 5.5969,
+            "y": -1.5577
           },
           {
-            "x": 5.646,
-            "y": -1.5932
+            "x": 5.7908,
+            "y": -1.6095
           },
           {
-            "x": 5.674,
-            "y": -1.5831
+            "x": 5.9847,
+            "y": -1.6567
           },
           {
-            "x": 5.728,
-            "y": -1.5967
+            "x": 6.1786,
+            "y": -1.6997
           },
           {
-            "x": 5.784,
-            "y": -1.6204
+            "x": 6.3724,
+            "y": -1.7423
           },
           {
-            "x": 5.84,
-            "y": -1.6282
+            "x": 6.5663,
+            "y": -1.7903
           },
           {
-            "x": 5.896,
-            "y": -1.6496
+            "x": 6.7602,
+            "y": -1.8304
           },
           {
-            "x": 5.952,
-            "y": -1.6467
+            "x": 6.9541,
+            "y": -1.8708
           },
           {
-            "x": 5.981,
-            "y": -1.6605
+            "x": 7.148,
+            "y": -1.9076
           },
           {
-            "x": 6.038,
-            "y": -1.6773
+            "x": 7.3418,
+            "y": -1.9452
           },
           {
-            "x": 6.096,
-            "y": -1.6811
+            "x": 7.5357,
+            "y": -1.985
           },
           {
-            "x": 6.154,
-            "y": -1.6952
+            "x": 7.7296,
+            "y": -2.0176
           },
           {
-            "x": 6.213,
-            "y": -1.7148
+            "x": 7.9235,
+            "y": -2.0506
           },
           {
-            "x": 6.273,
-            "y": -1.7304
+            "x": 8.1173,
+            "y": -2.0804
           },
           {
-            "x": 6.332,
-            "y": -1.7371
+            "x": 8.3112,
+            "y": -2.1072
           },
           {
-            "x": 6.393,
-            "y": -1.7518
+            "x": 8.5051,
+            "y": -2.134
           },
           {
-            "x": 6.453,
-            "y": -1.7679
+            "x": 8.699,
+            "y": -2.1625
           },
           {
-            "x": 6.515,
-            "y": -1.7815
+            "x": 8.8929,
+            "y": -2.1851
           },
           {
-            "x": 6.576,
-            "y": -1.7978
+            "x": 9.0867,
+            "y": -2.2106
           },
           {
-            "x": 6.67,
-            "y": -1.8149
+            "x": 9.2806,
+            "y": -2.2336
           },
           {
-            "x": 6.733,
-            "y": -1.8272
+            "x": 9.4745,
+            "y": -2.257
           },
           {
-            "x": 6.797,
-            "y": -1.8418
+            "x": 9.6684,
+            "y": -2.2809
           },
           {
-            "x": 6.861,
-            "y": -1.8508
+            "x": 9.8622,
+            "y": -2.3049
           },
           {
-            "x": 6.925,
-            "y": -1.8739
+            "x": 10.0561,
+            "y": -2.3311
           },
           {
-            "x": 7.023,
-            "y": -1.8875
+            "x": 10.25,
+            "y": -2.3554
           },
           {
-            "x": 7.089,
-            "y": -1.8977
+            "x": 10.4439,
+            "y": -2.381
           },
           {
-            "x": 7.256,
-            "y": -1.9321
+            "x": 10.6378,
+            "y": -2.4072
           },
           {
-            "x": 7.324,
-            "y": -1.9464
+            "x": 10.8316,
+            "y": -2.4348
           },
           {
-            "x": 7.427,
-            "y": -1.9669
+            "x": 11.0255,
+            "y": -2.4637
           },
           {
-            "x": 7.496,
-            "y": -1.9818
+            "x": 11.2194,
+            "y": -2.4921
           },
           {
-            "x": 7.601,
-            "y": -1.998
+            "x": 11.4133,
+            "y": -2.5228
           },
           {
-            "x": 7.672,
-            "y": -2.0106
+            "x": 11.6071,
+            "y": -2.5538
           },
           {
-            "x": 7.779,
-            "y": -2.0285
+            "x": 11.801,
+            "y": -2.5867
           },
           {
-            "x": 7.888,
-            "y": -2.0504
+            "x": 11.9949,
+            "y": -2.6209
           },
           {
-            "x": 7.961,
-            "y": -2.0573
+            "x": 12.1888,
+            "y": -2.6547
           },
           {
-            "x": 8.071,
-            "y": -2.0952
+            "x": 12.3827,
+            "y": -2.6909
           },
           {
-            "x": 8.183,
-            "y": -2.0948
+            "x": 12.5765,
+            "y": -2.7278
           },
           {
-            "x": 8.297,
-            "y": -2.1074
+            "x": 12.7704,
+            "y": -2.7663
           },
           {
-            "x": 8.412,
-            "y": -2.1261
+            "x": 12.9643,
+            "y": -2.8043
           },
           {
-            "x": 8.528,
-            "y": -2.1385
+            "x": 13.1582,
+            "y": -2.8456
           },
           {
-            "x": 8.646,
-            "y": -2.1543
+            "x": 13.352,
+            "y": -2.8858
           },
           {
-            "x": 8.765,
-            "y": -2.1714
+            "x": 13.5459,
+            "y": -2.9274
           },
           {
-            "x": 8.885,
-            "y": -2.1863
+            "x": 13.7398,
+            "y": -2.9702
           },
           {
-            "x": 9.007,
-            "y": -2.2029
+            "x": 13.9337,
+            "y": -3.0123
           },
           {
-            "x": 9.131,
-            "y": -2.2189
+            "x": 14.1276,
+            "y": -3.0616
           },
           {
-            "x": 9.298,
-            "y": -2.2394
+            "x": 14.3214,
+            "y": -3.1016
           },
           {
-            "x": 9.426,
-            "y": -2.2534
+            "x": 14.5153,
+            "y": -3.1481
           },
           {
-            "x": 9.554,
-            "y": -2.2691
+            "x": 14.7092,
+            "y": -3.191
           },
           {
-            "x": 9.729,
-            "y": -2.2903
-          },
-          {
-            "x": 9.861,
-            "y": -2.3067
-          },
-          {
-            "x": 10.04,
-            "y": -2.3302
-          },
-          {
-            "x": 10.223,
-            "y": -2.3518
-          },
-          {
-            "x": 10.408,
-            "y": -2.3758
-          },
-          {
-            "x": 10.596,
-            "y": -2.4014
-          },
-          {
-            "x": 10.787,
-            "y": -2.4282
-          },
-          {
-            "x": 10.982,
-            "y": -2.4562
-          },
-          {
-            "x": 11.18,
-            "y": -2.486
-          },
-          {
-            "x": 11.432,
-            "y": -2.5251
-          },
-          {
-            "x": 11.637,
-            "y": -2.5637
-          },
-          {
-            "x": 11.898,
-            "y": -2.6025
-          },
-          {
-            "x": 12.165,
-            "y": -2.6496
-          },
-          {
-            "x": 12.382,
-            "y": -2.6897
-          },
-          {
-            "x": 12.715,
-            "y": -2.7533
-          },
-          {
-            "x": 12.998,
-            "y": -2.8101
-          },
-          {
-            "x": 13.288,
-            "y": -2.8794
-          },
-          {
-            "x": 13.643,
-            "y": -2.9474
-          },
-          {
-            "x": 14.007,
-            "y": -3.0292
-          },
-          {
-            "x": 14.38,
-            "y": -3.1163
-          },
-          {
-            "x": 14.762,
-            "y": -3.2087
-          },
-          {
-            "x": 15.154,
-            "y": -3.3155
+            "x": 14.9031,
+            "y": -3.2397
           }
         ]
       },
       "scatter": null,
       "selection": {
         "population": "all galaxies in the box",
-        "warning": "Total cosmic SFR density of THESAN-1 versus redshift, read from the vector paths of Kannan et al. 2022. The halo-mass-split contributions (thin dashed, dash-dot, dotted lines) are not extracted. The paper notes the SFRD is converged below z=8 only; lower-resolution runs fall an order of magnitude short at high z."
+        "warning": "Total cosmic SFR density of THESAN-1 versus redshift from the file released by the THESAN project (49 redshifts, which are the centres of equal bins of 0.194 in z between z = 5.5 and 15; the file header gives only 'SFRD [Msun/yr/Mpc^3]'). The unit is comoving: the file equals the total curve of the paper's figure, whose axis is labelled cMpc-3. The halo-mass-split contributions are not in the file. The paper notes the SFRD is converged below z=8 only; lower-resolution runs fall an order of magnitude short at high z."
       },
       "definitions": {
         "imf": "chabrier03",
@@ -3910,25 +3826,21 @@
         "dustCorrection": "none"
       },
       "provenance": {
-        "tier": "digitized-figure",
-        "citation": "Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), evolution of the star formation rate density",
+        "tier": "official-table",
+        "citation": "Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), THESAN data release file sfrd_Thesan1.dat (assigned to Kannan et al. 2022 on https://www.thesan-project.com/thesan/data.html), evolution of the star formation rate density",
         "doi": "10.1093/mnras/stab3710",
-        "url": "https://arxiv.org/abs/2110.00584",
-        "retrieved": "2026-10-05",
-        "figure": "Evolution of the star formation rate density",
-        "panel": "total (thick solid line)",
-        "checksumSha256": "4868e39b9a9e5fe140b6a87f735ae6a0df0837a8202d04f5919888a10a01c7bb",
-        "sourceMember": "figures/sfrbin.pdf",
-        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
-        "axisCalibrationPixels": "x and y: numeric tick labels snapped to tick marks (frame from the long axis strokes)",
-        "digitizationUncertaintyDex": 0.01,
+        "url": "https://www.thesan-project.com/thesan/quantities/sfrd_Thesan1.dat",
+        "retrieved": "2026-10-18",
+        "checksumSha256": "7cb854c975c9ad218f28e77cf8c169f71c75d2d36f9521edcbaeebcf3805f509",
+        "sourceMember": "sfrd_Thesan1.dat",
+        "extractionMethod": "released two-column ASCII file read as is: column 1 = redshift, column 2 = SFRD [Msun/yr/Mpc^3], converted to log10; 49 rows, sorted by increasing redshift",
         "definitionFills": [
           "kannan22-thesan-sfrd"
         ]
       },
       "calibration": "prediction",
       "rankable": false,
-      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+      "notes": "Numbers released by the THESAN project; they agree with the earlier figure read to a median of 0.003 dex. Not rankable: single 95.5 cMpc box, converged only below z=8, aggregation and bin averaging not stated in the file."
     },
     {
       "id": "kannan22.thesan.sfrd.t2",
