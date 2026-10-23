@@ -27,6 +27,11 @@ for v in oracle["verdicts"]:
     if (got["verdict"], len(got["blockers"]), len(got["caveats"])) != (v["verdict"], v["nb"], v["nc"]):
         bad.append((v, got["verdict"], len(got["blockers"]), len(got["caveats"])))
 assert not bad, f"{len(bad)} of {len(oracle['verdicts'])} pairs disagree with the website rules, first: {bad[0]}"
+for other in ("bird22.astrid.shmr.z3", "vcd.behroozi-et-al-2019-universemachine.bn98-peak.shmr.z0"):  # the DARWIN-1 halo mass is the FoF total mass: not comparable with another definition, in the website rules and in this package alike
+    got = sim_highline.compatible(records["darwin1.catalogue.shmr.z0.19"], records[other], R)
+    assert got["verdict"] == "not-comparable" and any(b.startswith("haloMassDefinition:") for b in got["blockers"]), (other, got)
+    assert any(v["a"] == "darwin1.catalogue.shmr.z0.19" and v["b"] == other and v["verdict"] == "not-comparable" for v in oracle["verdicts"]), f"the oracle must contain the DARWIN pair against {other}"
+assert sim_highline.compatible(records["darwin1.catalogue.shmr.z0.19"], records["darwin1.catalogue.shmr.z0.25"], R)["verdict"] == "comparable"
 kinds = {v["verdict"] for v in oracle["verdicts"]}
 assert {"comparable", "comparable-with-caveats", "not-comparable"} <= kinds, f"oracle sample did not exercise every verdict: {kinds}"
 

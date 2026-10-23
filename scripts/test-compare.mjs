@@ -50,6 +50,21 @@ const bn98 = compatible(eagle("Ref-L100N1504 BN98", 0), b19);
 assert.equal(bn98.verdict, "comparable-with-caveats", "EAGLE BN98 SHMR must be comparable to UniverseMachine with caveats");
 assert(bn98.caveats.some(c => c.startsWith("haloMassHistory")), "current vs peak halo mass must surface");
 assert.equal(compatible(eagle("Ref-L100N1504 M200crit", 0), b19).verdict, "not-comparable", "M200crit must not be scored against BN98 haloes");
+{ // DARWIN-1's halo mass is the Friends-of-Friends group mass of the catalogue (no M200,c): it must never be scored against another halo-mass definition, and may be compared with itself
+  const darwin = (await load("darwin-catalogue")), shmr = z => darwin.find(r => r.id === `darwin1.catalogue.shmr.z${z}`);
+  const d0 = shmr("0.19"), d1 = shmr("0.25"), m200 = eagle("Ref-L100N1504 M200crit", 0), astrid = (await load("bird22-astrid")).find(r => r.id === "bird22.astrid.shmr.z3");
+  assert(d0 && d1 && m200 && astrid, "records for the DARWIN halo-mass comparability check must exist");
+  assert.equal(d0.definitions.haloMassDefinition, "FoF-total-mass-all-species", "the catalogue halo mass must be recorded as the FoF total mass");
+  for (const [name, other] of [["M200crit (EAGLE)", m200], ["BN98 (Behroozi+19)", b19], ["FOF of another code (ASTRID)", astrid]]) {
+    const v = compatible(d0, other);
+    assert.equal(v.verdict, "not-comparable", `DARWIN FoF halo mass must not be scored against ${name}`);
+    assert(v.blockers.some(b => b.startsWith("haloMassDefinition:")), `the blocker against ${name} must name the halo-mass definition: ${v.blockers}`);
+    assert.equal(compatible(other, d0).verdict, "not-comparable", `the verdict must not depend on the order (${name})`);
+  }
+  const self = compatible(d0, d1);
+  assert.equal(self.blockers.length, 0, "two DARWIN FoF relations are on the same halo-mass definition");
+  assert.equal(self.verdict, "comparable", "same code, same definitions, 0.06 apart in redshift");
+}
 const lange = vcd.find(r => r.source.startsWith("Lange") && r.run === "r band");
 assert.equal(compatible(eagle("Ref-L025N0376", 0.1006) || vcd.find(r => r.source === "EAGLE" && r.relation === "size"), lange).verdict, "not-comparable", "3D half-mass radii must not be scored against half-light radii");
 assert(eagle("Ref-L025N0376", vcd.find(r => r.source === "EAGLE" && r.relation === "size").epoch.zRepresentative).calibration === "target", "EAGLE z~0.1 sizes were a calibration target");
