@@ -1616,6 +1616,2844 @@
       "calibration": "prediction",
       "rankable": true,
       "notes": "Counted from the catalogue, not read from a figure. The paper's own mass function (Fig. 7, four redshifts) is in the dataset as digitized curves."
+    },
+    {
+      "id": "darwin1.catalogue.shmr.z0.19",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 0.1904,
+        "zNominal": 0.19,
+        "zMin": 0.1904,
+        "zMax": 0.1904,
+        "mode": "snapshot",
+        "snapshot": 1001
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 mass of the Friends-of-Friends halo (all particles of the group: dark matter, gas, stars and black holes; adaptive linking length), not M200,c",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio, M*/M_FoF of the central galaxy (M*: total mass of the star particles bound to it; M_FoF: mass of the Friends-of-Friends halo)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 10.83335,
+        "xMax": 13.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 10.83335,
+            "y": -2.066941,
+            "yLow": -2.49482,
+            "yHigh": -1.663232,
+            "count": 3129
+          },
+          {
+            "x": 11.16665,
+            "y": -1.825538,
+            "yLow": -2.202125,
+            "yHigh": -1.540592,
+            "count": 1429
+          },
+          {
+            "x": 11.5,
+            "y": -1.84949,
+            "yLow": -2.172609,
+            "yHigh": -1.582439,
+            "count": 885
+          },
+          {
+            "x": 11.83335,
+            "y": -1.769792,
+            "yLow": -2.026571,
+            "yHigh": -1.563394,
+            "count": 474
+          },
+          {
+            "x": 12.16665,
+            "y": -1.720652,
+            "yLow": -1.965077,
+            "yHigh": -1.53713,
+            "count": 263
+          },
+          {
+            "x": 12.5,
+            "y": -1.627273,
+            "yLow": -1.862667,
+            "yHigh": -1.444571,
+            "count": 114
+          },
+          {
+            "x": 12.83335,
+            "y": -1.70625,
+            "yLow": -1.8725,
+            "yHigh": -1.44,
+            "count": 45
+          },
+          {
+            "x": 13.16665,
+            "y": -1.775,
+            "yLow": -2.062,
+            "yHigh": -1.519,
+            "count": 36
+          },
+          {
+            "x": 13.5,
+            "y": -1.75,
+            "yLow": -2.036,
+            "yHigh": -1.614,
+            "count": 16
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the stellar-to-halo mass ratio of the central galaxies in each halo-mass bin"
+      },
+      "selection": {
+        "population": "the central galaxy of every Friends-of-Friends halo, in the halo-mass bins in which every halo hosts a galaxy (at least 10 halos per bin)",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 1001 (z = 0.190). Halo mass is the Friends-of-Friends group mass `halo/mtot` (all particle species of the group, Msun/h divided by h = 0.674), not the M200,c of the paper's Fig. 10: the catalogue has no M200,c, so this relation is not comparable with M200-based ones. Stellar mass is the total stellar mass `sub/mstar` bound to the central galaxy. The catalogue has no central flag: the central is the galaxy (substructure with star particles) of largest stellar mass in the halo, as the finder's own paper (Kim et al. 2023, ApJ 951, 137) classifies the most massive galaxy of a halo as the central; Lee et al. 2026 say only 'the central galaxy, as identified by PGalF'. Taking the galaxy of largest total mass instead changes the central of 59 of 96593 halos with a galaxy and the bin medians by at most 0.001 dex. Only bins of 1/3 dex from 10^10.67 Msun upward, in which every halo hosts a galaxy (no selection on stellar mass), are kept: 9 bins with 10 or more centrals, 6402 centrals. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of the stellar-to-halo mass ratio (the median is exact to about one grid cell). Cosmic variance of one box not included. Compared with the paper's Fig. 10, a raster image (its solid median line for the z = 0.19 panel read on axes calibrated from the tick marks and turned into a stellar-to-halo mass ratio, at 8 bin centres of this curve; internal check only): the paper's median ratio is higher than this curve's by 0.03 to 0.08 dex (median 0.07); the line is about 0.06 dex thick. The paper's halo mass is M200,c, which for the same halo is lower than its FoF mass, so the same galaxy has a higher ratio to M200,c than to the FoF mass: the offset has that sign, but this cause was not tested (the catalogue has no M200,c)."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "haloMassDefinition": "FoF-total-mass-all-species",
+        "haloMassHistory": "current",
+        "population": "central galaxies",
+        "galaxyType": "central"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/1001/catalog_1001.hdf5 (halo/mtot, sub/halo_index, sub/mstar, sub/nstar)",
+        "checksumSha256": "cfffc7c8c3e64e045f9afa57e9ac37f0ebdee00732c0228b48615a6dbd51c071",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); central = largest stellar mass of the halo",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 10, M200,c on the x axis) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.shmr.z0.25",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 0.2517,
+        "zNominal": 0.25,
+        "zMin": 0.2517,
+        "zMax": 0.2517,
+        "mode": "snapshot",
+        "snapshot": 944
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 mass of the Friends-of-Friends halo (all particles of the group: dark matter, gas, stars and black holes; adaptive linking length), not M200,c",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio, M*/M_FoF of the central galaxy (M*: total mass of the star particles bound to it; M_FoF: mass of the Friends-of-Friends halo)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 10.83335,
+        "xMax": 13.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 10.83335,
+            "y": -2.059896,
+            "yLow": -2.490436,
+            "yHigh": -1.664239,
+            "count": 3169
+          },
+          {
+            "x": 11.16665,
+            "y": -1.83848,
+            "yLow": -2.218,
+            "yHigh": -1.557521,
+            "count": 1423
+          },
+          {
+            "x": 11.5,
+            "y": -1.84717,
+            "yLow": -2.1676,
+            "yHigh": -1.59102,
+            "count": 920
+          },
+          {
+            "x": 11.83335,
+            "y": -1.773333,
+            "yLow": -2.036593,
+            "yHigh": -1.57248,
+            "count": 464
+          },
+          {
+            "x": 12.16665,
+            "y": -1.727174,
+            "yLow": -1.974571,
+            "yHigh": -1.532706,
+            "count": 257
+          },
+          {
+            "x": 12.5,
+            "y": -1.6375,
+            "yLow": -1.8885,
+            "yHigh": -1.449556,
+            "count": 112
+          },
+          {
+            "x": 12.83335,
+            "y": -1.725,
+            "yLow": -1.912,
+            "yHigh": -1.451,
+            "count": 44
+          },
+          {
+            "x": 13.16665,
+            "y": -1.741667,
+            "yLow": -2.022,
+            "yHigh": -1.512,
+            "count": 39
+          },
+          {
+            "x": 13.5,
+            "y": -1.8375,
+            "yLow": -2.076667,
+            "yHigh": -1.656667,
+            "count": 15
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the stellar-to-halo mass ratio of the central galaxies in each halo-mass bin"
+      },
+      "selection": {
+        "population": "the central galaxy of every Friends-of-Friends halo, in the halo-mass bins in which every halo hosts a galaxy (at least 10 halos per bin)",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 944 (z = 0.252). Halo mass is the Friends-of-Friends group mass `halo/mtot` (all particle species of the group, Msun/h divided by h = 0.674), not the M200,c of the paper's Fig. 10: the catalogue has no M200,c, so this relation is not comparable with M200-based ones. Stellar mass is the total stellar mass `sub/mstar` bound to the central galaxy. The catalogue has no central flag: the central is the galaxy (substructure with star particles) of largest stellar mass in the halo, as the finder's own paper (Kim et al. 2023, ApJ 951, 137) classifies the most massive galaxy of a halo as the central; Lee et al. 2026 say only 'the central galaxy, as identified by PGalF'. Taking the galaxy of largest total mass instead changes the central of 73 of 96760 halos with a galaxy and the bin medians by at most 0.002 dex. Only bins of 1/3 dex from 10^10.67 Msun upward, in which every halo hosts a galaxy (no selection on stellar mass), are kept: 9 bins with 10 or more centrals, 6453 centrals. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of the stellar-to-halo mass ratio (the median is exact to about one grid cell). Cosmic variance of one box not included."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "haloMassDefinition": "FoF-total-mass-all-species",
+        "haloMassHistory": "current",
+        "population": "central galaxies",
+        "galaxyType": "central"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/0944/catalog_0944.hdf5 (halo/mtot, sub/halo_index, sub/mstar, sub/nstar)",
+        "checksumSha256": "ca694563033844df744e9fa884b252e5f83e73a6ce55c0c8e12676d83306712c",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); central = largest stellar mass of the halo",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 10, M200,c on the x axis) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.shmr.z0.5",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 0.5003,
+        "zNominal": 0.5,
+        "zMin": 0.5003,
+        "zMax": 0.5003,
+        "mode": "snapshot",
+        "snapshot": 786
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 mass of the Friends-of-Friends halo (all particles of the group: dark matter, gas, stars and black holes; adaptive linking length), not M200,c",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio, M*/M_FoF of the central galaxy (M*: total mass of the star particles bound to it; M_FoF: mass of the Friends-of-Friends halo)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 11.16665,
+        "xMax": 13.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 11.16665,
+            "y": -1.849444,
+            "yLow": -2.223667,
+            "yHigh": -1.594509,
+            "count": 1206
+          },
+          {
+            "x": 11.5,
+            "y": -1.874351,
+            "yLow": -2.152649,
+            "yHigh": -1.6542,
+            "count": 869
+          },
+          {
+            "x": 11.83335,
+            "y": -1.81131,
+            "yLow": -2.093,
+            "yHigh": -1.610824,
+            "count": 471
+          },
+          {
+            "x": 12.16665,
+            "y": -1.758333,
+            "yLow": -1.986211,
+            "yHigh": -1.5408,
+            "count": 239
+          },
+          {
+            "x": 12.5,
+            "y": -1.736111,
+            "yLow": -2.019,
+            "yHigh": -1.495667,
+            "count": 103
+          },
+          {
+            "x": 12.83335,
+            "y": -1.741667,
+            "yLow": -1.9256,
+            "yHigh": -1.502444,
+            "count": 59
+          },
+          {
+            "x": 13.16665,
+            "y": -1.8125,
+            "yLow": -2.104,
+            "yHigh": -1.65575,
+            "count": 37
+          },
+          {
+            "x": 13.5,
+            "y": -1.891667,
+            "yLow": -2.162,
+            "yHigh": -1.769,
+            "count": 11
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the stellar-to-halo mass ratio of the central galaxies in each halo-mass bin"
+      },
+      "selection": {
+        "population": "the central galaxy of every Friends-of-Friends halo, in the halo-mass bins in which every halo hosts a galaxy (at least 10 halos per bin)",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 786 (z = 0.500). Halo mass is the Friends-of-Friends group mass `halo/mtot` (all particle species of the group, Msun/h divided by h = 0.674), not the M200,c of the paper's Fig. 10: the catalogue has no M200,c, so this relation is not comparable with M200-based ones. Stellar mass is the total stellar mass `sub/mstar` bound to the central galaxy. The catalogue has no central flag: the central is the galaxy (substructure with star particles) of largest stellar mass in the halo, as the finder's own paper (Kim et al. 2023, ApJ 951, 137) classifies the most massive galaxy of a halo as the central; Lee et al. 2026 say only 'the central galaxy, as identified by PGalF'. Taking the galaxy of largest total mass instead changes the central of 68 of 98276 halos with a galaxy and the bin medians by at most 0.033 dex. Only bins of 1/3 dex from 10^11.00 Msun upward, in which every halo hosts a galaxy (no selection on stellar mass), are kept: 8 bins with 10 or more centrals, 3001 centrals. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of the stellar-to-halo mass ratio (the median is exact to about one grid cell). Cosmic variance of one box not included."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "haloMassDefinition": "FoF-total-mass-all-species",
+        "haloMassHistory": "current",
+        "population": "central galaxies",
+        "galaxyType": "central"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/0786/catalog_0786.hdf5 (halo/mtot, sub/halo_index, sub/mstar, sub/nstar)",
+        "checksumSha256": "06a644d32b4e734c8f05b670685384d64028f9528816ec9d5085d2cb0e37c395",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); central = largest stellar mass of the halo",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 10, M200,c on the x axis) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.shmr.z1",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 1.0021,
+        "zNominal": 1,
+        "zMin": 1.0021,
+        "zMax": 1.0021,
+        "mode": "snapshot",
+        "snapshot": 475
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 mass of the Friends-of-Friends halo (all particles of the group: dark matter, gas, stars and black holes; adaptive linking length), not M200,c",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio, M*/M_FoF of the central galaxy (M*: total mass of the star particles bound to it; M_FoF: mass of the Friends-of-Friends halo)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 11.5,
+        "xMax": 13.16665
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 11.5,
+            "y": -1.961458,
+            "yLow": -2.2194,
+            "yHigh": -1.720138,
+            "count": 921
+          },
+          {
+            "x": 11.83335,
+            "y": -1.89593,
+            "yLow": -2.150947,
+            "yHigh": -1.670387,
+            "count": 479
+          },
+          {
+            "x": 12.16665,
+            "y": -1.815,
+            "yLow": -2.131385,
+            "yHigh": -1.5792,
+            "count": 199
+          },
+          {
+            "x": 12.5,
+            "y": -1.783333,
+            "yLow": -2.1236,
+            "yHigh": -1.580333,
+            "count": 104
+          },
+          {
+            "x": 12.83335,
+            "y": -1.860714,
+            "yLow": -2.0488,
+            "yHigh": -1.628,
+            "count": 57
+          },
+          {
+            "x": 13.16665,
+            "y": -1.858333,
+            "yLow": -2.078,
+            "yHigh": -1.6165,
+            "count": 27
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the stellar-to-halo mass ratio of the central galaxies in each halo-mass bin"
+      },
+      "selection": {
+        "population": "the central galaxy of every Friends-of-Friends halo, in the halo-mass bins in which every halo hosts a galaxy (at least 10 halos per bin)",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 475 (z = 1.002). Halo mass is the Friends-of-Friends group mass `halo/mtot` (all particle species of the group, Msun/h divided by h = 0.674), not the M200,c of the paper's Fig. 10: the catalogue has no M200,c, so this relation is not comparable with M200-based ones. Stellar mass is the total stellar mass `sub/mstar` bound to the central galaxy. The catalogue has no central flag: the central is the galaxy (substructure with star particles) of largest stellar mass in the halo, as the finder's own paper (Kim et al. 2023, ApJ 951, 137) classifies the most massive galaxy of a halo as the central; Lee et al. 2026 say only 'the central galaxy, as identified by PGalF'. Taking the galaxy of largest total mass instead changes the central of 77 of 101456 halos with a galaxy and the bin medians by at most 0.002 dex. Only bins of 1/3 dex from 10^11.33 Msun upward, in which every halo hosts a galaxy (no selection on stellar mass), are kept: 6 bins with 10 or more centrals, 1794 centrals. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of the stellar-to-halo mass ratio (the median is exact to about one grid cell). Cosmic variance of one box not included."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "haloMassDefinition": "FoF-total-mass-all-species",
+        "haloMassHistory": "current",
+        "population": "central galaxies",
+        "galaxyType": "central"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/0475/catalog_0475.hdf5 (halo/mtot, sub/halo_index, sub/mstar, sub/nstar)",
+        "checksumSha256": "92be4f22b6860c4224a9eb28bf0049d1fcf14728a516690442f813f845a4fd7e",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); central = largest stellar mass of the halo",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 10, M200,c on the x axis) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.shmr.z2",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 1.99,
+        "zNominal": 2,
+        "zMin": 1.99,
+        "zMax": 1.99,
+        "mode": "snapshot",
+        "snapshot": 178
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 mass of the Friends-of-Friends halo (all particles of the group: dark matter, gas, stars and black holes; adaptive linking length), not M200,c",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio, M*/M_FoF of the central galaxy (M*: total mass of the star particles bound to it; M_FoF: mass of the Friends-of-Friends halo)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 10.83335,
+        "xMax": 12.83335
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 10.83335,
+            "y": -2.174023,
+            "yLow": -2.461091,
+            "yHigh": -1.918872,
+            "count": 2103
+          },
+          {
+            "x": 11.16665,
+            "y": -2.081579,
+            "yLow": -2.377304,
+            "yHigh": -1.863176,
+            "count": 634
+          },
+          {
+            "x": 11.5,
+            "y": -2.130597,
+            "yLow": -2.396,
+            "yHigh": -1.908259,
+            "count": 812
+          },
+          {
+            "x": 11.83335,
+            "y": -2.065217,
+            "yLow": -2.3032,
+            "yHigh": -1.829379,
+            "count": 344
+          },
+          {
+            "x": 12.16665,
+            "y": -2.036111,
+            "yLow": -2.27,
+            "yHigh": -1.802857,
+            "count": 155
+          },
+          {
+            "x": 12.5,
+            "y": -1.9875,
+            "yLow": -2.2805,
+            "yHigh": -1.709333,
+            "count": 66
+          },
+          {
+            "x": 12.83335,
+            "y": -2.0125,
+            "yLow": -2.252,
+            "yHigh": -1.774,
+            "count": 31
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the stellar-to-halo mass ratio of the central galaxies in each halo-mass bin"
+      },
+      "selection": {
+        "population": "the central galaxy of every Friends-of-Friends halo, in the halo-mass bins in which every halo hosts a galaxy (at least 10 halos per bin)",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 178 (z = 1.990). Halo mass is the Friends-of-Friends group mass `halo/mtot` (all particle species of the group, Msun/h divided by h = 0.674), not the M200,c of the paper's Fig. 10: the catalogue has no M200,c, so this relation is not comparable with M200-based ones. Stellar mass is the total stellar mass `sub/mstar` bound to the central galaxy. The catalogue has no central flag: the central is the galaxy (substructure with star particles) of largest stellar mass in the halo, as the finder's own paper (Kim et al. 2023, ApJ 951, 137) classifies the most massive galaxy of a halo as the central; Lee et al. 2026 say only 'the central galaxy, as identified by PGalF'. Taking the galaxy of largest total mass instead changes the central of 83 of 112690 halos with a galaxy and the bin medians by at most 0.013 dex. Only bins of 1/3 dex from 10^10.67 Msun upward, in which every halo hosts a galaxy (no selection on stellar mass), are kept: 7 bins with 10 or more centrals, 4151 centrals. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of the stellar-to-halo mass ratio (the median is exact to about one grid cell). Cosmic variance of one box not included."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "haloMassDefinition": "FoF-total-mass-all-species",
+        "haloMassHistory": "current",
+        "population": "central galaxies",
+        "galaxyType": "central"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/0178/catalog_0178.hdf5 (halo/mtot, sub/halo_index, sub/mstar, sub/nstar)",
+        "checksumSha256": "06dda90cf7c75d51fb2b45c5fa02aef1238614b8463fd3df5a966d66b33904f7",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); central = largest stellar mass of the halo",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 10, M200,c on the x axis) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.shmr.z2.1",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 2.0869,
+        "zNominal": 2.1,
+        "zMin": 2.0869,
+        "zMax": 2.0869,
+        "mode": "snapshot",
+        "snapshot": 164
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 mass of the Friends-of-Friends halo (all particles of the group: dark matter, gas, stars and black holes; adaptive linking length), not M200,c",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio, M*/M_FoF of the central galaxy (M*: total mass of the star particles bound to it; M_FoF: mass of the Friends-of-Friends halo)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 11.5,
+        "xMax": 12.83335
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 11.5,
+            "y": -2.165323,
+            "yLow": -2.434419,
+            "yHigh": -1.935532,
+            "count": 790
+          },
+          {
+            "x": 11.83335,
+            "y": -2.081481,
+            "yLow": -2.3175,
+            "yHigh": -1.855667,
+            "count": 340
+          },
+          {
+            "x": 12.16665,
+            "y": -2.040625,
+            "yLow": -2.3455,
+            "yHigh": -1.807556,
+            "count": 146
+          },
+          {
+            "x": 12.5,
+            "y": -2.008333,
+            "yLow": -2.273,
+            "yHigh": -1.7508,
+            "count": 63
+          },
+          {
+            "x": 12.83335,
+            "y": -2.0625,
+            "yLow": -2.25,
+            "yHigh": -1.85,
+            "count": 25
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the stellar-to-halo mass ratio of the central galaxies in each halo-mass bin"
+      },
+      "selection": {
+        "population": "the central galaxy of every Friends-of-Friends halo, in the halo-mass bins in which every halo hosts a galaxy (at least 10 halos per bin)",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 164 (z = 2.087). Halo mass is the Friends-of-Friends group mass `halo/mtot` (all particle species of the group, Msun/h divided by h = 0.674), not the M200,c of the paper's Fig. 10: the catalogue has no M200,c, so this relation is not comparable with M200-based ones. Stellar mass is the total stellar mass `sub/mstar` bound to the central galaxy. The catalogue has no central flag: the central is the galaxy (substructure with star particles) of largest stellar mass in the halo, as the finder's own paper (Kim et al. 2023, ApJ 951, 137) classifies the most massive galaxy of a halo as the central; Lee et al. 2026 say only 'the central galaxy, as identified by PGalF'. Taking the galaxy of largest total mass instead changes the central of 70 of 114193 halos with a galaxy and the bin medians by at most 0.001 dex. Only bins of 1/3 dex from 10^11.33 Msun upward, in which every halo hosts a galaxy (no selection on stellar mass), are kept: 5 bins with 10 or more centrals, 1370 centrals. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of the stellar-to-halo mass ratio (the median is exact to about one grid cell). Cosmic variance of one box not included."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "haloMassDefinition": "FoF-total-mass-all-species",
+        "haloMassHistory": "current",
+        "population": "central galaxies",
+        "galaxyType": "central"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/0164/catalog_0164.hdf5 (halo/mtot, sub/halo_index, sub/mstar, sub/nstar)",
+        "checksumSha256": "359ed96fd4672e0c186e2e6dd37775e3712edcd1e7d946825ded2e818d97e1c0",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); central = largest stellar mass of the halo",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 10, M200,c on the x axis) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.shmr.z3",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 3.002,
+        "zNominal": 3,
+        "zMin": 3.002,
+        "zMax": 3.002,
+        "mode": "snapshot",
+        "snapshot": 81
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 mass of the Friends-of-Friends halo (all particles of the group: dark matter, gas, stars and black holes; adaptive linking length), not M200,c",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio, M*/M_FoF of the central galaxy (M*: total mass of the star particles bound to it; M_FoF: mass of the Friends-of-Friends halo)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 11.16665,
+        "xMax": 12.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 11.16665,
+            "y": -2.189205,
+            "yLow": -2.559857,
+            "yHigh": -1.974649,
+            "count": 489
+          },
+          {
+            "x": 11.5,
+            "y": -2.325658,
+            "yLow": -2.620778,
+            "yHigh": -2.08904,
+            "count": 547
+          },
+          {
+            "x": 11.83335,
+            "y": -2.247917,
+            "yLow": -2.531333,
+            "yHigh": -1.98072,
+            "count": 221
+          },
+          {
+            "x": 12.16665,
+            "y": -2.2,
+            "yLow": -2.544,
+            "yHigh": -1.945667,
+            "count": 78
+          },
+          {
+            "x": 12.5,
+            "y": -2.25,
+            "yLow": -2.581,
+            "yHigh": -2.019,
+            "count": 36
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the stellar-to-halo mass ratio of the central galaxies in each halo-mass bin"
+      },
+      "selection": {
+        "population": "the central galaxy of every Friends-of-Friends halo, in the halo-mass bins in which every halo hosts a galaxy (at least 10 halos per bin)",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 81 (z = 3.002). Halo mass is the Friends-of-Friends group mass `halo/mtot` (all particle species of the group, Msun/h divided by h = 0.674), not the M200,c of the paper's Fig. 10: the catalogue has no M200,c, so this relation is not comparable with M200-based ones. Stellar mass is the total stellar mass `sub/mstar` bound to the central galaxy. The catalogue has no central flag: the central is the galaxy (substructure with star particles) of largest stellar mass in the halo, as the finder's own paper (Kim et al. 2023, ApJ 951, 137) classifies the most massive galaxy of a halo as the central; Lee et al. 2026 say only 'the central galaxy, as identified by PGalF'. Taking the galaxy of largest total mass instead changes the central of 59 of 137865 halos with a galaxy and the bin medians by at most 0.013 dex. Only bins of 1/3 dex from 10^11.00 Msun upward, in which every halo hosts a galaxy (no selection on stellar mass), are kept: 5 bins with 10 or more centrals, 1378 centrals. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of the stellar-to-halo mass ratio (the median is exact to about one grid cell). Cosmic variance of one box not included. Compared with the paper's Fig. 10, a raster image (its solid median line for the z = 3 panel read on axes calibrated from the tick marks and turned into a stellar-to-halo mass ratio, at 5 bin centres of this curve; internal check only): the paper's median ratio is higher than this curve's by 0.07 to 0.17 dex (median 0.15); the line is about 0.06 dex thick. The paper's halo mass is M200,c, which for the same halo is lower than its FoF mass, so the same galaxy has a higher ratio to M200,c than to the FoF mass: the offset has that sign, but this cause was not tested (the catalogue has no M200,c)."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "haloMassDefinition": "FoF-total-mass-all-species",
+        "haloMassHistory": "current",
+        "population": "central galaxies",
+        "galaxyType": "central"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/0081/catalog_0081.hdf5 (halo/mtot, sub/halo_index, sub/mstar, sub/nstar)",
+        "checksumSha256": "8ab0bf9391e775f2325011dffd036e5a0532460568099741090b4e5423986010",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); central = largest stellar mass of the halo",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 10, M200,c on the x axis) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.shmr.z4",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 3.9914,
+        "zNominal": 4,
+        "zMin": 3.9914,
+        "zMax": 3.9914,
+        "mode": "snapshot",
+        "snapshot": 54
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 mass of the Friends-of-Friends halo (all particles of the group: dark matter, gas, stars and black holes; adaptive linking length), not M200,c",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio, M*/M_FoF of the central galaxy (M*: total mass of the star particles bound to it; M_FoF: mass of the Friends-of-Friends halo)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 11.16665,
+        "xMax": 12.16665
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 11.16665,
+            "y": -2.289474,
+            "yLow": -2.746,
+            "yHigh": -2.0576,
+            "count": 330
+          },
+          {
+            "x": 11.5,
+            "y": -2.395833,
+            "yLow": -2.758333,
+            "yHigh": -2.1275,
+            "count": 300
+          },
+          {
+            "x": 11.83335,
+            "y": -2.34,
+            "yLow": -2.73575,
+            "yHigh": -2.0455,
+            "count": 108
+          },
+          {
+            "x": 12.16665,
+            "y": -2.335,
+            "yLow": -2.7215,
+            "yHigh": -2.071333,
+            "count": 33
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the stellar-to-halo mass ratio of the central galaxies in each halo-mass bin"
+      },
+      "selection": {
+        "population": "the central galaxy of every Friends-of-Friends halo, in the halo-mass bins in which every halo hosts a galaxy (at least 10 halos per bin)",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 54 (z = 3.991). Halo mass is the Friends-of-Friends group mass `halo/mtot` (all particle species of the group, Msun/h divided by h = 0.674), not the M200,c of the paper's Fig. 10: the catalogue has no M200,c, so this relation is not comparable with M200-based ones. Stellar mass is the total stellar mass `sub/mstar` bound to the central galaxy. The catalogue has no central flag: the central is the galaxy (substructure with star particles) of largest stellar mass in the halo, as the finder's own paper (Kim et al. 2023, ApJ 951, 137) classifies the most massive galaxy of a halo as the central; Lee et al. 2026 say only 'the central galaxy, as identified by PGalF'. Taking the galaxy of largest total mass instead changes the central of 38 of 154710 halos with a galaxy and the bin medians by at most 0.000 dex. Only bins of 1/3 dex from 10^11.00 Msun upward, in which every halo hosts a galaxy (no selection on stellar mass), are kept: 4 bins with 10 or more centrals, 781 centrals. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of the stellar-to-halo mass ratio (the median is exact to about one grid cell). Cosmic variance of one box not included."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "haloMassDefinition": "FoF-total-mass-all-species",
+        "haloMassHistory": "current",
+        "population": "central galaxies",
+        "galaxyType": "central"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/0054/catalog_0054.hdf5 (halo/mtot, sub/halo_index, sub/mstar, sub/nstar)",
+        "checksumSha256": "5952dc529929f7f3cd507116292dd782292dedf5a3dcf8671a17fbb386b17ccb",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); central = largest stellar mass of the halo",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 10, M200,c on the x axis) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.shmr.z5",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 5.0154,
+        "zNominal": 5,
+        "zMin": 5.0154,
+        "zMax": 5.0154,
+        "mode": "snapshot",
+        "snapshot": 46
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 mass of the Friends-of-Friends halo (all particles of the group: dark matter, gas, stars and black holes; adaptive linking length), not M200,c",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio, M*/M_FoF of the central galaxy (M*: total mass of the star particles bound to it; M_FoF: mass of the Friends-of-Friends halo)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 10.83335,
+        "xMax": 11.83335
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 10.83335,
+            "y": -2.4,
+            "yLow": -2.912759,
+            "yHigh": -2.21807,
+            "count": 760
+          },
+          {
+            "x": 11.16665,
+            "y": -2.539286,
+            "yLow": -2.968667,
+            "yHigh": -2.149333,
+            "count": 143
+          },
+          {
+            "x": 11.5,
+            "y": -2.653125,
+            "yLow": -3.031,
+            "yHigh": -2.363,
+            "count": 97
+          },
+          {
+            "x": 11.83335,
+            "y": -2.583333,
+            "yLow": -2.8495,
+            "yHigh": -2.2804,
+            "count": 44
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the stellar-to-halo mass ratio of the central galaxies in each halo-mass bin"
+      },
+      "selection": {
+        "population": "the central galaxy of every Friends-of-Friends halo, in the halo-mass bins in which every halo hosts a galaxy (at least 10 halos per bin)",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 46 (z = 5.015). Halo mass is the Friends-of-Friends group mass `halo/mtot` (all particle species of the group, Msun/h divided by h = 0.674), not the M200,c of the paper's Fig. 10: the catalogue has no M200,c, so this relation is not comparable with M200-based ones. Stellar mass is the total stellar mass `sub/mstar` bound to the central galaxy. The catalogue has no central flag: the central is the galaxy (substructure with star particles) of largest stellar mass in the halo, as the finder's own paper (Kim et al. 2023, ApJ 951, 137) classifies the most massive galaxy of a halo as the central; Lee et al. 2026 say only 'the central galaxy, as identified by PGalF'. Taking the galaxy of largest total mass instead changes the central of 21 of 148554 halos with a galaxy and the bin medians by at most 0.017 dex. Only bins of 1/3 dex from 10^10.67 Msun upward, in which every halo hosts a galaxy (no selection on stellar mass), are kept: 4 bins with 10 or more centrals, 1053 centrals. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of the stellar-to-halo mass ratio (the median is exact to about one grid cell). Cosmic variance of one box not included."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "haloMassDefinition": "FoF-total-mass-all-species",
+        "haloMassHistory": "current",
+        "population": "central galaxies",
+        "galaxyType": "central"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/0046/catalog_0046.hdf5 (halo/mtot, sub/halo_index, sub/mstar, sub/nstar)",
+        "checksumSha256": "827e4115e47978e033c8cc589d9661cf01a789cceadfbe4cc2dadea1a6a17965",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); central = largest stellar mass of the halo",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 10, M200,c on the x axis) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.shmr.z8",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 7.9864,
+        "zNominal": 8,
+        "zMin": 7.9864,
+        "zMax": 7.9864,
+        "mode": "snapshot",
+        "snapshot": 29
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 mass of the Friends-of-Friends halo (all particles of the group: dark matter, gas, stars and black holes; adaptive linking length), not M200,c",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio, M*/M_FoF of the central galaxy (M*: total mass of the star particles bound to it; M_FoF: mass of the Friends-of-Friends halo)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 10.16665,
+        "xMax": 11.16665
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 10.16665,
+            "y": -2.632745,
+            "yLow": -2.813118,
+            "yHigh": -2.469812,
+            "count": 1998
+          },
+          {
+            "x": 10.5,
+            "y": -2.528618,
+            "yLow": -2.695333,
+            "yHigh": -2.383364,
+            "count": 521
+          },
+          {
+            "x": 10.83335,
+            "y": -2.428571,
+            "yLow": -2.656,
+            "yHigh": -2.276,
+            "count": 104
+          },
+          {
+            "x": 11.16665,
+            "y": -2.875,
+            "yLow": -3.149,
+            "yHigh": -2.217333,
+            "count": 19
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the stellar-to-halo mass ratio of the central galaxies in each halo-mass bin"
+      },
+      "selection": {
+        "population": "the central galaxy of every Friends-of-Friends halo, in the halo-mass bins in which every halo hosts a galaxy (at least 10 halos per bin)",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 29 (z = 7.986). Halo mass is the Friends-of-Friends group mass `halo/mtot` (all particle species of the group, Msun/h divided by h = 0.674), not the M200,c of the paper's Fig. 10: the catalogue has no M200,c, so this relation is not comparable with M200-based ones. Stellar mass is the total stellar mass `sub/mstar` bound to the central galaxy. The catalogue has no central flag: the central is the galaxy (substructure with star particles) of largest stellar mass in the halo, as the finder's own paper (Kim et al. 2023, ApJ 951, 137) classifies the most massive galaxy of a halo as the central; Lee et al. 2026 say only 'the central galaxy, as identified by PGalF'. Taking the galaxy of largest total mass instead changes the central of 1 of 68675 halos with a galaxy and the bin medians by at most 0.000 dex. Only bins of 1/3 dex from 10^10.00 Msun upward, in which every halo hosts a galaxy (no selection on stellar mass), are kept: 4 bins with 10 or more centrals, 2645 centrals. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of the stellar-to-halo mass ratio (the median is exact to about one grid cell). Cosmic variance of one box not included."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "haloMassDefinition": "FoF-total-mass-all-species",
+        "haloMassHistory": "current",
+        "population": "central galaxies",
+        "galaxyType": "central"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/0029/catalog_0029.hdf5 (halo/mtot, sub/halo_index, sub/mstar, sub/nstar)",
+        "checksumSha256": "7df0a515af838b0e7506445f5f35f59afd8a4dd2bc98a2984e5d2b8dc0884664",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); central = largest stellar mass of the halo",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 10, M200,c on the x axis) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.shmr.z10",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 10.1138,
+        "zNominal": 10,
+        "zMin": 10.1138,
+        "zMax": 10.1138,
+        "mode": "snapshot",
+        "snapshot": 20
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 mass of the Friends-of-Friends halo (all particles of the group: dark matter, gas, stars and black holes; adaptive linking length), not M200,c",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 stellar-to-halo mass ratio, M*/M_FoF of the central galaxy (M*: total mass of the star particles bound to it; M_FoF: mass of the Friends-of-Friends halo)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 10.16665,
+        "xMax": 10.83335
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 10.16665,
+            "y": -2.59375,
+            "yLow": -2.770909,
+            "yHigh": -2.461143,
+            "count": 405
+          },
+          {
+            "x": 10.5,
+            "y": -2.492188,
+            "yLow": -2.678,
+            "yHigh": -2.380333,
+            "count": 79
+          },
+          {
+            "x": 10.83335,
+            "y": -2.4625,
+            "yLow": -3.212,
+            "yHigh": -2.369,
+            "count": 11
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the stellar-to-halo mass ratio of the central galaxies in each halo-mass bin"
+      },
+      "selection": {
+        "population": "the central galaxy of every Friends-of-Friends halo, in the halo-mass bins in which every halo hosts a galaxy (at least 10 halos per bin)",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 20 (z = 10.114). Halo mass is the Friends-of-Friends group mass `halo/mtot` (all particle species of the group, Msun/h divided by h = 0.674), not the M200,c of the paper's Fig. 10: the catalogue has no M200,c, so this relation is not comparable with M200-based ones. Stellar mass is the total stellar mass `sub/mstar` bound to the central galaxy. The catalogue has no central flag: the central is the galaxy (substructure with star particles) of largest stellar mass in the halo, as the finder's own paper (Kim et al. 2023, ApJ 951, 137) classifies the most massive galaxy of a halo as the central; Lee et al. 2026 say only 'the central galaxy, as identified by PGalF'. Taking the galaxy of largest total mass instead changes the central of 0 of 24982 halos with a galaxy and the bin medians by at most 0.000 dex. Only bins of 1/3 dex from 10^10.00 Msun upward, in which every halo hosts a galaxy (no selection on stellar mass), are kept: 3 bins with 10 or more centrals, 496 centrals. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of the stellar-to-halo mass ratio (the median is exact to about one grid cell). Cosmic variance of one box not included."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "haloMassDefinition": "FoF-total-mass-all-species",
+        "haloMassHistory": "current",
+        "population": "central galaxies",
+        "galaxyType": "central"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/0020/catalog_0020.hdf5 (halo/mtot, sub/halo_index, sub/mstar, sub/nstar)",
+        "checksumSha256": "690e2995964b575a62d821dc8e41801a8bd3247daac3db07df0e905bca0fe3d0",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); central = largest stellar mass of the halo",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 10, M200,c on the x axis) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.bh.z0.19",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "bh",
+      "epoch": {
+        "zRepresentative": 0.1904,
+        "zNominal": 0.19,
+        "zMin": 0.1904,
+        "zMax": 0.1904,
+        "mode": "snapshot",
+        "snapshot": 1001
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 stellar mass (total mass of the star particles of the self-bound substructure)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 black hole mass of the galaxy (total mass of all black hole particles of the substructure)",
+        "yUnit": "log10(Msun)"
+      },
+      "domain": {
+        "xMin": 7.16665,
+        "xMax": 11.83335
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.16665,
+            "y": 4.728033,
+            "yLow": 4.708971,
+            "yHigh": 4.747096,
+            "count": 1109
+          },
+          {
+            "x": 7.5,
+            "y": 4.72836,
+            "yLow": 4.709075,
+            "yHigh": 4.747644,
+            "count": 2583
+          },
+          {
+            "x": 7.83335,
+            "y": 4.729695,
+            "yLow": 4.709502,
+            "yHigh": 4.749888,
+            "count": 4130
+          },
+          {
+            "x": 8.16665,
+            "y": 4.736664,
+            "yLow": 4.711732,
+            "yHigh": 5.043725,
+            "count": 4297
+          },
+          {
+            "x": 8.5,
+            "y": 5.011737,
+            "yLow": 4.717932,
+            "yHigh": 5.349906,
+            "count": 3927
+          },
+          {
+            "x": 8.83335,
+            "y": 5.195887,
+            "yLow": 4.73892,
+            "yHigh": 5.920595,
+            "count": 3386
+          },
+          {
+            "x": 9.16665,
+            "y": 5.592708,
+            "yLow": 5.037982,
+            "yHigh": 6.469321,
+            "count": 2721
+          },
+          {
+            "x": 9.5,
+            "y": 6.007589,
+            "yLow": 5.451886,
+            "yHigh": 6.7706,
+            "count": 1929
+          },
+          {
+            "x": 9.83335,
+            "y": 6.579464,
+            "yLow": 5.871935,
+            "yHigh": 7.261,
+            "count": 1135
+          },
+          {
+            "x": 10.16665,
+            "y": 7.138889,
+            "yLow": 6.465714,
+            "yHigh": 7.891429,
+            "count": 570
+          },
+          {
+            "x": 10.5,
+            "y": 7.589286,
+            "yLow": 6.893,
+            "yHigh": 8.241,
+            "count": 309
+          },
+          {
+            "x": 10.83335,
+            "y": 8.2375,
+            "yLow": 7.731,
+            "yHigh": 8.7276,
+            "count": 164
+          },
+          {
+            "x": 11.16665,
+            "y": 8.536364,
+            "yLow": 8.076,
+            "yHigh": 9.024,
+            "count": 94
+          },
+          {
+            "x": 11.5,
+            "y": 8.908333,
+            "yLow": 8.342,
+            "yHigh": 9.279,
+            "count": 49
+          },
+          {
+            "x": 11.83335,
+            "y": 9.25,
+            "yLow": 8.51,
+            "yHigh": 9.54,
+            "count": 20
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the black hole masses of the galaxies in each stellar-mass bin"
+      },
+      "selection": {
+        "population": "all galaxies with at least 100 star particles and at least one black hole particle, centrals and satellites",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 1001 (z = 0.190). Population: every galaxy (self-bound substructure with at least 100 star particles, stellar mass `sub/mstar`) that holds at least one black hole particle (`sub/nMBH` >= 1), centrals and satellites alike (the catalogue has no flag for either); 26427 galaxies. Galaxies without a black hole particle are not in the relation: 36% of the galaxies of 10^7 to 10^8 Msun and 99% of those above 10^9.3 Msun hold one, so this is the relation of black hole hosts, not of all galaxies. Black hole mass is `sub/mMBH`, the total mass of all black hole particles of the substructure (Msun/h divided by h = 0.674): a galaxy with several black hole particles counts their sum (0% of the hosts of 10^7 to 10^8 Msun and 99% of those above 10^10 Msun have two or more, on average 29.7 particles above 10^10 Msun). The catalogue does not give the mass of the most massive particle alone; it lies between the sum divided by the number of particles and the sum. Black holes are seeded at 5e4 Msun (Lee et al. 2026), so the median is close to the seed mass (10^4.70 Msun) at the lowest stellar masses. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of black hole mass (the median is exact to about one grid cell). Cosmic variance of one box not included. Compared with the paper's Fig. 11, a raster image, lower panel, z = 0.19 (internal check only): the figure's grey DARWIN-1 dots and the same galaxies drawn as dots of the same size on the same calibrated axes, bins of 1/3 dex of stellar mass from 10^7 Msun (13 bins, pixels hidden under other symbols ignored in both): the 50th percentile of the dot pixels differs by +0.01 dex at the median over the bins, by at most 0.10 dex, and all of the 5th, 25th, 50th, 75th and 95th percentiles agree within 0.2 dex in 12 of 13 bins. With only the galaxies that hold exactly one black hole particle, 5 bins have dots in the figure and no galaxy here (10^10.2 to 10^11.5 Msun), so the figure's population includes galaxies with several black hole particles; whether the paper sums their masses or takes the most massive one is not stated, and the sum reproduces the figure."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "bhMassMethod": "intrinsic-sum-of-bh-particles",
+        "population": "bh-hosts"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/1001/catalog_1001.hdf5 (sub/mstar, sub/nstar, sub/mMBH, sub/nMBH)",
+        "checksumSha256": "cfffc7c8c3e64e045f9afa57e9ac37f0ebdee00732c0228b48615a6dbd51c071",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); black hole mass = sum over the black hole particles of the substructure",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 11) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.bh.z0.25",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "bh",
+      "epoch": {
+        "zRepresentative": 0.2517,
+        "zNominal": 0.25,
+        "zMin": 0.2517,
+        "zMax": 0.2517,
+        "mode": "snapshot",
+        "snapshot": 944
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 stellar mass (total mass of the star particles of the self-bound substructure)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 black hole mass of the galaxy (total mass of all black hole particles of the substructure)",
+        "yUnit": "log10(Msun)"
+      },
+      "domain": {
+        "xMin": 7.16665,
+        "xMax": 11.83335
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.16665,
+            "y": 4.728408,
+            "yLow": 4.709091,
+            "yHigh": 4.747725,
+            "count": 1167
+          },
+          {
+            "x": 7.5,
+            "y": 4.728099,
+            "yLow": 4.708992,
+            "yHigh": 4.747206,
+            "count": 2711
+          },
+          {
+            "x": 7.83335,
+            "y": 4.729706,
+            "yLow": 4.709506,
+            "yHigh": 4.749905,
+            "count": 4400
+          },
+          {
+            "x": 8.16665,
+            "y": 4.73677,
+            "yLow": 4.711767,
+            "yHigh": 5.044667,
+            "count": 4486
+          },
+          {
+            "x": 8.5,
+            "y": 5.014077,
+            "yLow": 4.718464,
+            "yHigh": 5.400229,
+            "count": 4046
+          },
+          {
+            "x": 8.83335,
+            "y": 5.215132,
+            "yLow": 4.740379,
+            "yHigh": 5.955444,
+            "count": 3513
+          },
+          {
+            "x": 9.16665,
+            "y": 5.601225,
+            "yLow": 5.045573,
+            "yHigh": 6.47097,
+            "count": 2777
+          },
+          {
+            "x": 9.5,
+            "y": 6.014894,
+            "yLow": 5.481679,
+            "yHigh": 6.791941,
+            "count": 1878
+          },
+          {
+            "x": 9.83335,
+            "y": 6.599107,
+            "yLow": 5.920118,
+            "yHigh": 7.245267,
+            "count": 1099
+          },
+          {
+            "x": 10.16665,
+            "y": 7.197059,
+            "yLow": 6.493778,
+            "yHigh": 7.917,
+            "count": 568
+          },
+          {
+            "x": 10.5,
+            "y": 7.63125,
+            "yLow": 6.942,
+            "yHigh": 8.2864,
+            "count": 296
+          },
+          {
+            "x": 10.83335,
+            "y": 8.233333,
+            "yLow": 7.7155,
+            "yHigh": 8.697,
+            "count": 164
+          },
+          {
+            "x": 11.16665,
+            "y": 8.625,
+            "yLow": 8.206667,
+            "yHigh": 9.08,
+            "count": 90
+          },
+          {
+            "x": 11.5,
+            "y": 8.9375,
+            "yLow": 8.392,
+            "yHigh": 9.304,
+            "count": 49
+          },
+          {
+            "x": 11.83335,
+            "y": 9.1875,
+            "yLow": 7.836,
+            "yHigh": 9.514,
+            "count": 17
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the black hole masses of the galaxies in each stellar-mass bin"
+      },
+      "selection": {
+        "population": "all galaxies with at least 100 star particles and at least one black hole particle, centrals and satellites",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 944 (z = 0.252). Population: every galaxy (self-bound substructure with at least 100 star particles, stellar mass `sub/mstar`) that holds at least one black hole particle (`sub/nMBH` >= 1), centrals and satellites alike (the catalogue has no flag for either); 27265 galaxies. Galaxies without a black hole particle are not in the relation: 37% of the galaxies of 10^7 to 10^8 Msun and 99% of those above 10^9.3 Msun hold one, so this is the relation of black hole hosts, not of all galaxies. Black hole mass is `sub/mMBH`, the total mass of all black hole particles of the substructure (Msun/h divided by h = 0.674): a galaxy with several black hole particles counts their sum (0% of the hosts of 10^7 to 10^8 Msun and 99% of those above 10^10 Msun have two or more, on average 30.6 particles above 10^10 Msun). The catalogue does not give the mass of the most massive particle alone; it lies between the sum divided by the number of particles and the sum. Black holes are seeded at 5e4 Msun (Lee et al. 2026), so the median is close to the seed mass (10^4.70 Msun) at the lowest stellar masses. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of black hole mass (the median is exact to about one grid cell). Cosmic variance of one box not included."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "bhMassMethod": "intrinsic-sum-of-bh-particles",
+        "population": "bh-hosts"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/0944/catalog_0944.hdf5 (sub/mstar, sub/nstar, sub/mMBH, sub/nMBH)",
+        "checksumSha256": "ca694563033844df744e9fa884b252e5f83e73a6ce55c0c8e12676d83306712c",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); black hole mass = sum over the black hole particles of the substructure",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 11) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.bh.z0.5",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "bh",
+      "epoch": {
+        "zRepresentative": 0.5003,
+        "zNominal": 0.5,
+        "zMin": 0.5003,
+        "zMax": 0.5003,
+        "mode": "snapshot",
+        "snapshot": 786
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 stellar mass (total mass of the star particles of the self-bound substructure)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 black hole mass of the galaxy (total mass of all black hole particles of the substructure)",
+        "yUnit": "log10(Msun)"
+      },
+      "domain": {
+        "xMin": 7.16665,
+        "xMax": 11.83335
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.16665,
+            "y": 4.728565,
+            "yLow": 4.709141,
+            "yHigh": 4.74799,
+            "count": 1354
+          },
+          {
+            "x": 7.5,
+            "y": 4.727991,
+            "yLow": 4.708957,
+            "yHigh": 4.747025,
+            "count": 3341
+          },
+          {
+            "x": 7.83335,
+            "y": 4.729863,
+            "yLow": 4.709556,
+            "yHigh": 5.00135,
+            "count": 5318
+          },
+          {
+            "x": 8.16665,
+            "y": 4.737761,
+            "yLow": 4.712083,
+            "yHigh": 5.047921,
+            "count": 5214
+          },
+          {
+            "x": 8.5,
+            "y": 5.026258,
+            "yLow": 4.721496,
+            "yHigh": 5.436274,
+            "count": 4326
+          },
+          {
+            "x": 8.83335,
+            "y": 5.330802,
+            "yLow": 5.001733,
+            "yHigh": 6.033535,
+            "count": 3476
+          },
+          {
+            "x": 9.16665,
+            "y": 5.755063,
+            "yLow": 5.2994,
+            "yHigh": 6.511018,
+            "count": 2768
+          },
+          {
+            "x": 9.5,
+            "y": 6.253659,
+            "yLow": 5.703143,
+            "yHigh": 6.895545,
+            "count": 1706
+          },
+          {
+            "x": 9.83335,
+            "y": 6.773256,
+            "yLow": 6.17487,
+            "yHigh": 7.458476,
+            "count": 984
+          },
+          {
+            "x": 10.16665,
+            "y": 7.382143,
+            "yLow": 6.759778,
+            "yHigh": 8.027846,
+            "count": 561
+          },
+          {
+            "x": 10.5,
+            "y": 7.845,
+            "yLow": 7.297,
+            "yHigh": 8.5106,
+            "count": 243
+          },
+          {
+            "x": 10.83335,
+            "y": 8.3,
+            "yLow": 7.789,
+            "yHigh": 8.8165,
+            "count": 148
+          },
+          {
+            "x": 11.16665,
+            "y": 8.6875,
+            "yLow": 8.2335,
+            "yHigh": 9.105333,
+            "count": 73
+          },
+          {
+            "x": 11.5,
+            "y": 9.075,
+            "yLow": 8.638,
+            "yHigh": 9.356,
+            "count": 36
+          },
+          {
+            "x": 11.83335,
+            "y": 9.391667,
+            "yLow": 7.694,
+            "yHigh": 9.612,
+            "count": 11
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the black hole masses of the galaxies in each stellar-mass bin"
+      },
+      "selection": {
+        "population": "all galaxies with at least 100 star particles and at least one black hole particle, centrals and satellites",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 786 (z = 0.500). Population: every galaxy (self-bound substructure with at least 100 star particles, stellar mass `sub/mstar`) that holds at least one black hole particle (`sub/nMBH` >= 1), centrals and satellites alike (the catalogue has no flag for either); 29560 galaxies. Galaxies without a black hole particle are not in the relation: 40% of the galaxies of 10^7 to 10^8 Msun and 99% of those above 10^9.3 Msun hold one, so this is the relation of black hole hosts, not of all galaxies. Black hole mass is `sub/mMBH`, the total mass of all black hole particles of the substructure (Msun/h divided by h = 0.674): a galaxy with several black hole particles counts their sum (0% of the hosts of 10^7 to 10^8 Msun and 100% of those above 10^10 Msun have two or more, on average 36.1 particles above 10^10 Msun). The catalogue does not give the mass of the most massive particle alone; it lies between the sum divided by the number of particles and the sum. Black holes are seeded at 5e4 Msun (Lee et al. 2026), so the median is close to the seed mass (10^4.70 Msun) at the lowest stellar masses. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of black hole mass (the median is exact to about one grid cell). Cosmic variance of one box not included."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "bhMassMethod": "intrinsic-sum-of-bh-particles",
+        "population": "bh-hosts"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/0786/catalog_0786.hdf5 (sub/mstar, sub/nstar, sub/mMBH, sub/nMBH)",
+        "checksumSha256": "06a644d32b4e734c8f05b670685384d64028f9528816ec9d5085d2cb0e37c395",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); black hole mass = sum over the black hole particles of the substructure",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 11) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.bh.z1",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "bh",
+      "epoch": {
+        "zRepresentative": 1.0021,
+        "zNominal": 1,
+        "zMin": 1.0021,
+        "zMax": 1.0021,
+        "mode": "snapshot",
+        "snapshot": 475
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 stellar mass (total mass of the star particles of the self-bound substructure)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 black hole mass of the galaxy (total mass of all black hole particles of the substructure)",
+        "yUnit": "log10(Msun)"
+      },
+      "domain": {
+        "xMin": 7.16665,
+        "xMax": 11.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.16665,
+            "y": 4.7282,
+            "yLow": 4.709024,
+            "yHigh": 4.747376,
+            "count": 1833
+          },
+          {
+            "x": 7.5,
+            "y": 4.728299,
+            "yLow": 4.709056,
+            "yHigh": 4.747543,
+            "count": 4623
+          },
+          {
+            "x": 7.83335,
+            "y": 4.731182,
+            "yLow": 4.709978,
+            "yHigh": 5.015182,
+            "count": 6502
+          },
+          {
+            "x": 8.16665,
+            "y": 4.743932,
+            "yLow": 4.714058,
+            "yHigh": 5.177616,
+            "count": 5843
+          },
+          {
+            "x": 8.5,
+            "y": 5.158871,
+            "yLow": 4.731097,
+            "yHigh": 5.541707,
+            "count": 4509
+          },
+          {
+            "x": 8.83335,
+            "y": 5.522689,
+            "yLow": 5.161967,
+            "yHigh": 6.169672,
+            "count": 3500
+          },
+          {
+            "x": 9.16665,
+            "y": 6.103846,
+            "yLow": 5.634941,
+            "yHigh": 6.660667,
+            "count": 2390
+          },
+          {
+            "x": 9.5,
+            "y": 6.614286,
+            "yLow": 6.122368,
+            "yHigh": 7.180556,
+            "count": 1450
+          },
+          {
+            "x": 9.83335,
+            "y": 7.105303,
+            "yLow": 6.659862,
+            "yHigh": 7.7907,
+            "count": 767
+          },
+          {
+            "x": 10.16665,
+            "y": 7.6125,
+            "yLow": 7.118857,
+            "yHigh": 8.2136,
+            "count": 433
+          },
+          {
+            "x": 10.5,
+            "y": 8.040625,
+            "yLow": 7.533143,
+            "yHigh": 8.552,
+            "count": 179
+          },
+          {
+            "x": 10.83335,
+            "y": 8.4375,
+            "yLow": 7.7955,
+            "yHigh": 8.994667,
+            "count": 104
+          },
+          {
+            "x": 11.16665,
+            "y": 8.775,
+            "yLow": 8.357,
+            "yHigh": 9.209,
+            "count": 58
+          },
+          {
+            "x": 11.5,
+            "y": 9.125,
+            "yLow": 8.586,
+            "yHigh": 9.464,
+            "count": 17
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the black hole masses of the galaxies in each stellar-mass bin"
+      },
+      "selection": {
+        "population": "all galaxies with at least 100 star particles and at least one black hole particle, centrals and satellites",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 475 (z = 1.002). Population: every galaxy (self-bound substructure with at least 100 star particles, stellar mass `sub/mstar`) that holds at least one black hole particle (`sub/nMBH` >= 1), centrals and satellites alike (the catalogue has no flag for either); 32213 galaxies. Galaxies without a black hole particle are not in the relation: 41% of the galaxies of 10^7 to 10^8 Msun and 100% of those above 10^9.3 Msun hold one, so this is the relation of black hole hosts, not of all galaxies. Black hole mass is `sub/mMBH`, the total mass of all black hole particles of the substructure (Msun/h divided by h = 0.674): a galaxy with several black hole particles counts their sum (1% of the hosts of 10^7 to 10^8 Msun and 100% of those above 10^10 Msun have two or more, on average 53.7 particles above 10^10 Msun). The catalogue does not give the mass of the most massive particle alone; it lies between the sum divided by the number of particles and the sum. Black holes are seeded at 5e4 Msun (Lee et al. 2026), so the median is close to the seed mass (10^4.70 Msun) at the lowest stellar masses. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of black hole mass (the median is exact to about one grid cell). Cosmic variance of one box not included."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "bhMassMethod": "intrinsic-sum-of-bh-particles",
+        "population": "bh-hosts"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/0475/catalog_0475.hdf5 (sub/mstar, sub/nstar, sub/mMBH, sub/nMBH)",
+        "checksumSha256": "92be4f22b6860c4224a9eb28bf0049d1fcf14728a516690442f813f845a4fd7e",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); black hole mass = sum over the black hole particles of the substructure",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 11) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.bh.z2",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "bh",
+      "epoch": {
+        "zRepresentative": 1.99,
+        "zNominal": 2,
+        "zMin": 1.99,
+        "zMax": 1.99,
+        "mode": "snapshot",
+        "snapshot": 178
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 stellar mass (total mass of the star particles of the self-bound substructure)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 black hole mass of the galaxy (total mass of all black hole particles of the substructure)",
+        "yUnit": "log10(Msun)"
+      },
+      "domain": {
+        "xMin": 7.16665,
+        "xMax": 10.83335
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.16665,
+            "y": 4.728633,
+            "yLow": 4.709163,
+            "yHigh": 4.748103,
+            "count": 3255
+          },
+          {
+            "x": 7.5,
+            "y": 4.729435,
+            "yLow": 4.709419,
+            "yHigh": 4.74945,
+            "count": 6903
+          },
+          {
+            "x": 7.83335,
+            "y": 4.738749,
+            "yLow": 4.7124,
+            "yHigh": 5.043986,
+            "count": 6981
+          },
+          {
+            "x": 8.16665,
+            "y": 5.048043,
+            "yLow": 4.72951,
+            "yHigh": 5.44544,
+            "count": 5629
+          },
+          {
+            "x": 8.5,
+            "y": 5.517273,
+            "yLow": 5.164149,
+            "yHigh": 6.06,
+            "count": 3880
+          },
+          {
+            "x": 8.83335,
+            "y": 6.095792,
+            "yLow": 5.662694,
+            "yHigh": 6.597882,
+            "count": 2359
+          },
+          {
+            "x": 9.16665,
+            "y": 6.578804,
+            "yLow": 6.159106,
+            "yHigh": 7.315226,
+            "count": 1291
+          },
+          {
+            "x": 9.5,
+            "y": 7.114,
+            "yLow": 6.6419,
+            "yHigh": 7.907,
+            "count": 786
+          },
+          {
+            "x": 9.83335,
+            "y": 7.721429,
+            "yLow": 7.076462,
+            "yHigh": 8.282,
+            "count": 418
+          },
+          {
+            "x": 10.16665,
+            "y": 8.18125,
+            "yLow": 7.515333,
+            "yHigh": 8.618545,
+            "count": 187
+          },
+          {
+            "x": 10.5,
+            "y": 8.607143,
+            "yLow": 8.128,
+            "yHigh": 8.9235,
+            "count": 82
+          },
+          {
+            "x": 10.83335,
+            "y": 8.783333,
+            "yLow": 8.354,
+            "yHigh": 9.148,
+            "count": 38
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the black hole masses of the galaxies in each stellar-mass bin"
+      },
+      "selection": {
+        "population": "all galaxies with at least 100 star particles and at least one black hole particle, centrals and satellites",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 178 (z = 1.990). Population: every galaxy (self-bound substructure with at least 100 star particles, stellar mass `sub/mstar`) that holds at least one black hole particle (`sub/nMBH` >= 1), centrals and satellites alike (the catalogue has no flag for either); 31819 galaxies. Galaxies without a black hole particle are not in the relation: 44% of the galaxies of 10^7 to 10^8 Msun and 100% of those above 10^9.3 Msun hold one, so this is the relation of black hole hosts, not of all galaxies. Black hole mass is `sub/mMBH`, the total mass of all black hole particles of the substructure (Msun/h divided by h = 0.674): a galaxy with several black hole particles counts their sum (2% of the hosts of 10^7 to 10^8 Msun and 100% of those above 10^10 Msun have two or more, on average 111 particles above 10^10 Msun). The catalogue does not give the mass of the most massive particle alone; it lies between the sum divided by the number of particles and the sum. Black holes are seeded at 5e4 Msun (Lee et al. 2026), so the median is close to the seed mass (10^4.70 Msun) at the lowest stellar masses. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of black hole mass (the median is exact to about one grid cell). Cosmic variance of one box not included."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "bhMassMethod": "intrinsic-sum-of-bh-particles",
+        "population": "bh-hosts"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/0178/catalog_0178.hdf5 (sub/mstar, sub/nstar, sub/mMBH, sub/nMBH)",
+        "checksumSha256": "06dda90cf7c75d51fb2b45c5fa02aef1238614b8463fd3df5a966d66b33904f7",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); black hole mass = sum over the black hole particles of the substructure",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 11) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.bh.z2.1",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "bh",
+      "epoch": {
+        "zRepresentative": 2.0869,
+        "zNominal": 2.1,
+        "zMin": 2.0869,
+        "zMax": 2.0869,
+        "mode": "snapshot",
+        "snapshot": 164
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 stellar mass (total mass of the star particles of the self-bound substructure)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 black hole mass of the galaxy (total mass of all black hole particles of the substructure)",
+        "yUnit": "log10(Msun)"
+      },
+      "domain": {
+        "xMin": 7.16665,
+        "xMax": 10.83335
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.16665,
+            "y": 4.728408,
+            "yLow": 4.709091,
+            "yHigh": 4.747725,
+            "count": 3601
+          },
+          {
+            "x": 7.5,
+            "y": 4.729641,
+            "yLow": 4.709485,
+            "yHigh": 4.749797,
+            "count": 7345
+          },
+          {
+            "x": 7.83335,
+            "y": 4.739723,
+            "yLow": 4.712711,
+            "yHigh": 5.045911,
+            "count": 7066
+          },
+          {
+            "x": 8.16665,
+            "y": 5.155824,
+            "yLow": 4.731753,
+            "yHigh": 5.466605,
+            "count": 5537
+          },
+          {
+            "x": 8.5,
+            "y": 5.574675,
+            "yLow": 5.172982,
+            "yHigh": 6.103228,
+            "count": 3852
+          },
+          {
+            "x": 8.83335,
+            "y": 6.127412,
+            "yLow": 5.715386,
+            "yHigh": 6.6624,
+            "count": 2163
+          },
+          {
+            "x": 9.16665,
+            "y": 6.631548,
+            "yLow": 6.199357,
+            "yHigh": 7.397333,
+            "count": 1179
+          },
+          {
+            "x": 9.5,
+            "y": 7.192857,
+            "yLow": 6.705455,
+            "yHigh": 7.957273,
+            "count": 740
+          },
+          {
+            "x": 9.83335,
+            "y": 7.746429,
+            "yLow": 7.150833,
+            "yHigh": 8.341429,
+            "count": 370
+          },
+          {
+            "x": 10.16665,
+            "y": 8.242857,
+            "yLow": 7.58,
+            "yHigh": 8.632222,
+            "count": 170
+          },
+          {
+            "x": 10.5,
+            "y": 8.608333,
+            "yLow": 8.07,
+            "yHigh": 8.922,
+            "count": 80
+          },
+          {
+            "x": 10.83335,
+            "y": 8.7875,
+            "yLow": 8.557,
+            "yHigh": 9.136,
+            "count": 33
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the black hole masses of the galaxies in each stellar-mass bin"
+      },
+      "selection": {
+        "population": "all galaxies with at least 100 star particles and at least one black hole particle, centrals and satellites",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 164 (z = 2.087). Population: every galaxy (self-bound substructure with at least 100 star particles, stellar mass `sub/mstar`) that holds at least one black hole particle (`sub/nMBH` >= 1), centrals and satellites alike (the catalogue has no flag for either); 32143 galaxies. Galaxies without a black hole particle are not in the relation: 46% of the galaxies of 10^7 to 10^8 Msun and 100% of those above 10^9.3 Msun hold one, so this is the relation of black hole hosts, not of all galaxies. Black hole mass is `sub/mMBH`, the total mass of all black hole particles of the substructure (Msun/h divided by h = 0.674): a galaxy with several black hole particles counts their sum (3% of the hosts of 10^7 to 10^8 Msun and 100% of those above 10^10 Msun have two or more, on average 115 particles above 10^10 Msun). The catalogue does not give the mass of the most massive particle alone; it lies between the sum divided by the number of particles and the sum. Black holes are seeded at 5e4 Msun (Lee et al. 2026), so the median is close to the seed mass (10^4.70 Msun) at the lowest stellar masses. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of black hole mass (the median is exact to about one grid cell). Cosmic variance of one box not included. Compared with the paper's Fig. 11, a raster image, upper panel, labelled z = 2-3, for which the paper takes DARWIN-1 at z = 2.1 (internal check only): the figure's grey DARWIN-1 dots and the same galaxies drawn as dots of the same size on the same calibrated axes, bins of 1/3 dex of stellar mass from 10^7 Msun (12 bins, pixels hidden under other symbols ignored in both): the 50th percentile of the dot pixels differs by -0.01 dex at the median over the bins, by at most 0.28 dex, and all of the 5th, 25th, 50th, 75th and 95th percentiles agree within 0.2 dex in 9 of 12 bins. With only the galaxies that hold exactly one black hole particle, 5 bins have dots in the figure and no galaxy here (10^9.5 to 10^10.8 Msun), so the figure's population includes galaxies with several black hole particles; whether the paper sums their masses or takes the most massive one is not stated, and the sum reproduces the figure."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "bhMassMethod": "intrinsic-sum-of-bh-particles",
+        "population": "bh-hosts"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/0164/catalog_0164.hdf5 (sub/mstar, sub/nstar, sub/mMBH, sub/nMBH)",
+        "checksumSha256": "359ed96fd4672e0c186e2e6dd37775e3712edcd1e7d946825ded2e818d97e1c0",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); black hole mass = sum over the black hole particles of the substructure",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 11) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.bh.z3",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "bh",
+      "epoch": {
+        "zRepresentative": 3.002,
+        "zNominal": 3,
+        "zMin": 3.002,
+        "zMax": 3.002,
+        "mode": "snapshot",
+        "snapshot": 81
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 stellar mass (total mass of the star particles of the self-bound substructure)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 black hole mass of the galaxy (total mass of all black hole particles of the substructure)",
+        "yUnit": "log10(Msun)"
+      },
+      "domain": {
+        "xMin": 7.16665,
+        "xMax": 10.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.16665,
+            "y": 4.727946,
+            "yLow": 4.708943,
+            "yHigh": 4.746949,
+            "count": 5853
+          },
+          {
+            "x": 7.5,
+            "y": 4.730375,
+            "yLow": 4.70972,
+            "yHigh": 5.006735,
+            "count": 8483
+          },
+          {
+            "x": 7.83335,
+            "y": 5.006288,
+            "yLow": 4.71713,
+            "yHigh": 5.19403,
+            "count": 6897
+          },
+          {
+            "x": 8.16665,
+            "y": 5.40543,
+            "yLow": 5.013497,
+            "yHigh": 5.919322,
+            "count": 4795
+          },
+          {
+            "x": 8.5,
+            "y": 5.954945,
+            "yLow": 5.447733,
+            "yHigh": 6.742286,
+            "count": 2564
+          },
+          {
+            "x": 8.83335,
+            "y": 6.552143,
+            "yLow": 6.021941,
+            "yHigh": 7.478762,
+            "count": 1137
+          },
+          {
+            "x": 9.16665,
+            "y": 7.347368,
+            "yLow": 6.526133,
+            "yHigh": 8.011556,
+            "count": 674
+          },
+          {
+            "x": 9.5,
+            "y": 7.91375,
+            "yLow": 7.216286,
+            "yHigh": 8.371455,
+            "count": 333
+          },
+          {
+            "x": 9.83335,
+            "y": 8.316667,
+            "yLow": 7.800286,
+            "yHigh": 8.6148,
+            "count": 144
+          },
+          {
+            "x": 10.16665,
+            "y": 8.63125,
+            "yLow": 8.195333,
+            "yHigh": 8.866,
+            "count": 67
+          },
+          {
+            "x": 10.5,
+            "y": 8.833333,
+            "yLow": 8.572,
+            "yHigh": 9.206,
+            "count": 18
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the black hole masses of the galaxies in each stellar-mass bin"
+      },
+      "selection": {
+        "population": "all galaxies with at least 100 star particles and at least one black hole particle, centrals and satellites",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 81 (z = 3.002). Population: every galaxy (self-bound substructure with at least 100 star particles, stellar mass `sub/mstar`) that holds at least one black hole particle (`sub/nMBH` >= 1), centrals and satellites alike (the catalogue has no flag for either); 30971 galaxies. Galaxies without a black hole particle are not in the relation: 56% of the galaxies of 10^7 to 10^8 Msun and 100% of those above 10^9.3 Msun hold one, so this is the relation of black hole hosts, not of all galaxies. Black hole mass is `sub/mMBH`, the total mass of all black hole particles of the substructure (Msun/h divided by h = 0.674): a galaxy with several black hole particles counts their sum (7% of the hosts of 10^7 to 10^8 Msun and 100% of those above 10^10 Msun have two or more, on average 178 particles above 10^10 Msun). The catalogue does not give the mass of the most massive particle alone; it lies between the sum divided by the number of particles and the sum. Black holes are seeded at 5e4 Msun (Lee et al. 2026), so the median is close to the seed mass (10^4.70 Msun) at the lowest stellar masses. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of black hole mass (the median is exact to about one grid cell). Cosmic variance of one box not included."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "bhMassMethod": "intrinsic-sum-of-bh-particles",
+        "population": "bh-hosts"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/0081/catalog_0081.hdf5 (sub/mstar, sub/nstar, sub/mMBH, sub/nMBH)",
+        "checksumSha256": "8ab0bf9391e775f2325011dffd036e5a0532460568099741090b4e5423986010",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); black hole mass = sum over the black hole particles of the substructure",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 11) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.bh.z4",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "bh",
+      "epoch": {
+        "zRepresentative": 3.9914,
+        "zNominal": 4,
+        "zMin": 3.9914,
+        "zMax": 3.9914,
+        "mode": "snapshot",
+        "snapshot": 54
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 stellar mass (total mass of the star particles of the self-bound substructure)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 black hole mass of the galaxy (total mass of all black hole particles of the substructure)",
+        "yUnit": "log10(Msun)"
+      },
+      "domain": {
+        "xMin": 7.16665,
+        "xMax": 10.16665
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.16665,
+            "y": 4.732831,
+            "yLow": 4.710506,
+            "yHigh": 5.032923,
+            "count": 545
+          },
+          {
+            "x": 7.5,
+            "y": 4.738974,
+            "yLow": 4.712472,
+            "yHigh": 5.157194,
+            "count": 2142
+          },
+          {
+            "x": 7.83335,
+            "y": 5.040896,
+            "yLow": 4.723456,
+            "yHigh": 5.7236,
+            "count": 3448
+          },
+          {
+            "x": 8.16665,
+            "y": 5.711685,
+            "yLow": 5.024393,
+            "yHigh": 6.812545,
+            "count": 2717
+          },
+          {
+            "x": 8.5,
+            "y": 6.637,
+            "yLow": 5.497,
+            "yHigh": 7.497938,
+            "count": 1227
+          },
+          {
+            "x": 8.83335,
+            "y": 7.38875,
+            "yLow": 6.281667,
+            "yHigh": 7.988824,
+            "count": 555
+          },
+          {
+            "x": 9.16665,
+            "y": 7.94,
+            "yLow": 7.4216,
+            "yHigh": 8.356,
+            "count": 276
+          },
+          {
+            "x": 9.5,
+            "y": 8.3375,
+            "yLow": 7.904,
+            "yHigh": 8.6168,
+            "count": 127
+          },
+          {
+            "x": 9.83335,
+            "y": 8.59,
+            "yLow": 8.366,
+            "yHigh": 8.7585,
+            "count": 52
+          },
+          {
+            "x": 10.16665,
+            "y": 8.9,
+            "yLow": 8.714,
+            "yHigh": 9.222,
+            "count": 16
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the black hole masses of the galaxies in each stellar-mass bin"
+      },
+      "selection": {
+        "population": "all galaxies with at least 100 star particles and at least one black hole particle, centrals and satellites",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 54 (z = 3.991). Population: every galaxy (self-bound substructure with at least 100 star particles, stellar mass `sub/mstar`) that holds at least one black hole particle (`sub/nMBH` >= 1), centrals and satellites alike (the catalogue has no flag for either); 11109 galaxies. Galaxies without a black hole particle are not in the relation: 20% of the galaxies of 10^7 to 10^8 Msun and 100% of those above 10^9.3 Msun hold one, so this is the relation of black hole hosts, not of all galaxies. Black hole mass is `sub/mMBH`, the total mass of all black hole particles of the substructure (Msun/h divided by h = 0.674): a galaxy with several black hole particles counts their sum (9% of the hosts of 10^7 to 10^8 Msun and 100% of those above 10^10 Msun have two or more, on average 239 particles above 10^10 Msun). The catalogue does not give the mass of the most massive particle alone; it lies between the sum divided by the number of particles and the sum. Black holes are seeded at 5e4 Msun (Lee et al. 2026), so the median is close to the seed mass (10^4.70 Msun) at the lowest stellar masses. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of black hole mass (the median is exact to about one grid cell). Cosmic variance of one box not included."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "bhMassMethod": "intrinsic-sum-of-bh-particles",
+        "population": "bh-hosts"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/0054/catalog_0054.hdf5 (sub/mstar, sub/nstar, sub/mMBH, sub/nMBH)",
+        "checksumSha256": "5952dc529929f7f3cd507116292dd782292dedf5a3dcf8671a17fbb386b17ccb",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); black hole mass = sum over the black hole particles of the substructure",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 11) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.bh.z5",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "bh",
+      "epoch": {
+        "zRepresentative": 5.0154,
+        "zNominal": 5,
+        "zMin": 5.0154,
+        "zMax": 5.0154,
+        "mode": "snapshot",
+        "snapshot": 46
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 stellar mass (total mass of the star particles of the self-bound substructure)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 black hole mass of the galaxy (total mass of all black hole particles of the substructure)",
+        "yUnit": "log10(Msun)"
+      },
+      "domain": {
+        "xMin": 7.16665,
+        "xMax": 9.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.16665,
+            "y": 4.733512,
+            "yLow": 4.710724,
+            "yHigh": 5.028274,
+            "count": 1185
+          },
+          {
+            "x": 7.5,
+            "y": 5.008408,
+            "yLow": 4.71727,
+            "yHigh": 5.340531,
+            "count": 3046
+          },
+          {
+            "x": 7.83335,
+            "y": 5.417782,
+            "yLow": 4.740687,
+            "yHigh": 6.465647,
+            "count": 3021
+          },
+          {
+            "x": 8.16665,
+            "y": 6.308824,
+            "yLow": 5.162234,
+            "yHigh": 7.357818,
+            "count": 1524
+          },
+          {
+            "x": 8.5,
+            "y": 7.366667,
+            "yLow": 5.834182,
+            "yHigh": 7.922,
+            "count": 572
+          },
+          {
+            "x": 8.83335,
+            "y": 8.01,
+            "yLow": 7.162667,
+            "yHigh": 8.390222,
+            "count": 186
+          },
+          {
+            "x": 9.16665,
+            "y": 8.455,
+            "yLow": 8.101,
+            "yHigh": 8.699333,
+            "count": 69
+          },
+          {
+            "x": 9.5,
+            "y": 8.583333,
+            "yLow": 8.388,
+            "yHigh": 8.924,
+            "count": 22
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the black hole masses of the galaxies in each stellar-mass bin"
+      },
+      "selection": {
+        "population": "all galaxies with at least 100 star particles and at least one black hole particle, centrals and satellites",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 46 (z = 5.015). Population: every galaxy (self-bound substructure with at least 100 star particles, stellar mass `sub/mstar`) that holds at least one black hole particle (`sub/nMBH` >= 1), centrals and satellites alike (the catalogue has no flag for either); 9636 galaxies. Galaxies without a black hole particle are not in the relation: 31% of the galaxies of 10^7 to 10^8 Msun and 100% of those above 10^9.3 Msun hold one, so this is the relation of black hole hosts, not of all galaxies. Black hole mass is `sub/mMBH`, the total mass of all black hole particles of the substructure (Msun/h divided by h = 0.674): a galaxy with several black hole particles counts their sum (10% of the hosts of 10^7 to 10^8 Msun and 100% of those above 10^10 Msun have two or more, on average 314 particles above 10^10 Msun). The catalogue does not give the mass of the most massive particle alone; it lies between the sum divided by the number of particles and the sum. Black holes are seeded at 5e4 Msun (Lee et al. 2026), so the median is close to the seed mass (10^4.70 Msun) at the lowest stellar masses. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of black hole mass (the median is exact to about one grid cell). Cosmic variance of one box not included."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "bhMassMethod": "intrinsic-sum-of-bh-particles",
+        "population": "bh-hosts"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/0046/catalog_0046.hdf5 (sub/mstar, sub/nstar, sub/mMBH, sub/nMBH)",
+        "checksumSha256": "827e4115e47978e033c8cc589d9661cf01a789cceadfbe4cc2dadea1a6a17965",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); black hole mass = sum over the black hole particles of the substructure",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 11) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.bh.z6",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "bh",
+      "epoch": {
+        "zRepresentative": 5.9311,
+        "zNominal": 6,
+        "zMin": 5.9311,
+        "zMax": 5.9311,
+        "mode": "snapshot",
+        "snapshot": 40
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 stellar mass (total mass of the star particles of the self-bound substructure)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 black hole mass of the galaxy (total mass of all black hole particles of the substructure)",
+        "yUnit": "log10(Msun)"
+      },
+      "domain": {
+        "xMin": 7.16665,
+        "xMax": 9.16665
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.16665,
+            "y": 4.73705,
+            "yLow": 4.711856,
+            "yHigh": 5.040548,
+            "count": 2346
+          },
+          {
+            "x": 7.5,
+            "y": 5.041093,
+            "yLow": 4.722917,
+            "yHigh": 5.662429,
+            "count": 3088
+          },
+          {
+            "x": 7.83335,
+            "y": 5.614394,
+            "yLow": 5.001894,
+            "yHigh": 6.819,
+            "count": 2185
+          },
+          {
+            "x": 8.16665,
+            "y": 6.729688,
+            "yLow": 5.195467,
+            "yHigh": 7.510737,
+            "count": 937
+          },
+          {
+            "x": 8.5,
+            "y": 7.521429,
+            "yLow": 6.0685,
+            "yHigh": 7.9876,
+            "count": 278
+          },
+          {
+            "x": 8.83335,
+            "y": 8.1625,
+            "yLow": 7.559,
+            "yHigh": 8.466,
+            "count": 71
+          },
+          {
+            "x": 9.16665,
+            "y": 8.625,
+            "yLow": 8.484,
+            "yHigh": 8.791,
+            "count": 21
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the black hole masses of the galaxies in each stellar-mass bin"
+      },
+      "selection": {
+        "population": "all galaxies with at least 100 star particles and at least one black hole particle, centrals and satellites",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 40 (z = 5.931). Population: every galaxy (self-bound substructure with at least 100 star particles, stellar mass `sub/mstar`) that holds at least one black hole particle (`sub/nMBH` >= 1), centrals and satellites alike (the catalogue has no flag for either); 8931 galaxies. Galaxies without a black hole particle are not in the relation: 47% of the galaxies of 10^7 to 10^8 Msun and 100% of those above 10^9.3 Msun hold one, so this is the relation of black hole hosts, not of all galaxies. Black hole mass is `sub/mMBH`, the total mass of all black hole particles of the substructure (Msun/h divided by h = 0.674): a galaxy with several black hole particles counts their sum (11% of the hosts of 10^7 to 10^8 Msun and 100% of those above 10^10 Msun have two or more, on average 0 particles above 10^10 Msun). The catalogue does not give the mass of the most massive particle alone; it lies between the sum divided by the number of particles and the sum. Black holes are seeded at 5e4 Msun (Lee et al. 2026), so the median is close to the seed mass (10^4.70 Msun) at the lowest stellar masses. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of black hole mass (the median is exact to about one grid cell). Cosmic variance of one box not included."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "bhMassMethod": "intrinsic-sum-of-bh-particles",
+        "population": "bh-hosts"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/0040/catalog_0040.hdf5 (sub/mstar, sub/nstar, sub/mMBH, sub/nMBH)",
+        "checksumSha256": "7b2f9c941ff967f15e2f18662101e8850fab1efe1ed0b1aafe27a097aea6adef",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); black hole mass = sum over the black hole particles of the substructure",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 11) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.bh.z8",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "bh",
+      "epoch": {
+        "zRepresentative": 7.9864,
+        "zNominal": 8,
+        "zMin": 7.9864,
+        "zMax": 7.9864,
+        "mode": "snapshot",
+        "snapshot": 29
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 stellar mass (total mass of the star particles of the self-bound substructure)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 black hole mass of the galaxy (total mass of all black hole particles of the substructure)",
+        "yUnit": "log10(Msun)"
+      },
+      "domain": {
+        "xMin": 7.16665,
+        "xMax": 8.83335
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.16665,
+            "y": 5.011044,
+            "yLow": 4.717651,
+            "yHigh": 5.334791,
+            "count": 1176
+          },
+          {
+            "x": 7.5,
+            "y": 5.322403,
+            "yLow": 4.735107,
+            "yHigh": 6.022091,
+            "count": 983
+          },
+          {
+            "x": 7.83335,
+            "y": 5.8325,
+            "yLow": 5.014524,
+            "yHigh": 6.943333,
+            "count": 545
+          },
+          {
+            "x": 8.16665,
+            "y": 6.708333,
+            "yLow": 5.3308,
+            "yHigh": 7.4855,
+            "count": 201
+          },
+          {
+            "x": 8.5,
+            "y": 7.675,
+            "yLow": 6.812,
+            "yHigh": 8.2315,
+            "count": 53
+          },
+          {
+            "x": 8.83335,
+            "y": 8.3125,
+            "yLow": 7.536,
+            "yHigh": 8.564,
+            "count": 17
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the black hole masses of the galaxies in each stellar-mass bin"
+      },
+      "selection": {
+        "population": "all galaxies with at least 100 star particles and at least one black hole particle, centrals and satellites",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 29 (z = 7.986). Population: every galaxy (self-bound substructure with at least 100 star particles, stellar mass `sub/mstar`) that holds at least one black hole particle (`sub/nMBH` >= 1), centrals and satellites alike (the catalogue has no flag for either); 2976 galaxies. Galaxies without a black hole particle are not in the relation: 49% of the galaxies of 10^7 to 10^8 Msun and 0% of those above 10^9.3 Msun hold one, so this is the relation of black hole hosts, not of all galaxies. Black hole mass is `sub/mMBH`, the total mass of all black hole particles of the substructure (Msun/h divided by h = 0.674): a galaxy with several black hole particles counts their sum (15% of the hosts of 10^7 to 10^8 Msun and 100% of those above 10^10 Msun have two or more, on average 0 particles above 10^10 Msun). The catalogue does not give the mass of the most massive particle alone; it lies between the sum divided by the number of particles and the sum. Black holes are seeded at 5e4 Msun (Lee et al. 2026), so the median is close to the seed mass (10^4.70 Msun) at the lowest stellar masses. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of black hole mass (the median is exact to about one grid cell). Cosmic variance of one box not included."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "bhMassMethod": "intrinsic-sum-of-bh-particles",
+        "population": "bh-hosts"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/0029/catalog_0029.hdf5 (sub/mstar, sub/nstar, sub/mMBH, sub/nMBH)",
+        "checksumSha256": "7df0a515af838b0e7506445f5f35f59afd8a4dd2bc98a2984e5d2b8dc0884664",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); black hole mass = sum over the black hole particles of the substructure",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 11) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
+    },
+    {
+      "id": "darwin1.catalogue.bh.z10",
+      "source": "DARWIN",
+      "run": "DARWIN-1 (65.5 cMpc box)",
+      "kind": "simulation",
+      "relation": "bh",
+      "epoch": {
+        "zRepresentative": 10.1138,
+        "zNominal": 10,
+        "zMin": 10.1138,
+        "zMax": 10.1138,
+        "mode": "snapshot",
+        "snapshot": 20
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "axes": {
+        "xDefinition": "log10 stellar mass (total mass of the star particles of the self-bound substructure)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 black hole mass of the galaxy (total mass of all black hole particles of the substructure)",
+        "yUnit": "log10(Msun)"
+      },
+      "domain": {
+        "xMin": 7.5,
+        "xMax": 8.16665
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.5,
+            "y": 5.006667,
+            "yLow": 4.717103,
+            "yHigh": 5.477,
+            "count": 62
+          },
+          {
+            "x": 7.83335,
+            "y": 5.183333,
+            "yLow": 4.736364,
+            "yHigh": 6.25,
+            "count": 50
+          },
+          {
+            "x": 8.16665,
+            "y": 6.225,
+            "yLow": 5.0455,
+            "yHigh": 7.518,
+            "count": 29
+          }
+        ]
+      },
+      "scatter": {
+        "unit": "dex",
+        "meaning": "the 16th to 84th percentile of the black hole masses of the galaxies in each stellar-mass bin"
+      },
+      "selection": {
+        "population": "all galaxies with at least 100 star particles and at least one black hole particle, centrals and satellites",
+        "warning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 20 (z = 10.114). Population: every galaxy (self-bound substructure with at least 100 star particles, stellar mass `sub/mstar`) that holds at least one black hole particle (`sub/nMBH` >= 1), centrals and satellites alike (the catalogue has no flag for either); 154 galaxies. Galaxies without a black hole particle are not in the relation: 8% of the galaxies of 10^7 to 10^8 Msun and 0% of those above 10^9.3 Msun hold one, so this is the relation of black hole hosts, not of all galaxies. Black hole mass is `sub/mMBH`, the total mass of all black hole particles of the substructure (Msun/h divided by h = 0.674): a galaxy with several black hole particles counts their sum (9% of the hosts of 10^7 to 10^8 Msun and 100% of those above 10^10 Msun have two or more, on average 0 particles above 10^10 Msun). The catalogue does not give the mass of the most massive particle alone; it lies between the sum divided by the number of particles and the sum. Black holes are seeded at 5e4 Msun (Lee et al. 2026), so the median is close to the seed mass (10^4.70 Msun) at the lowest stellar masses. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of black hole mass (the median is exact to about one grid cell). Cosmic variance of one box not included."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.4,
+          "Om": 0.315
+        },
+        "massDefinition": "total-bound-subhalo",
+        "bhMassMethod": "intrinsic-sum-of-bh-particles",
+        "population": "bh-hosts"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI; run described by Lee et al. 2026, arXiv:2610.25786); counts by this project",
+        "doi": null,
+        "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+        "retrieved": "2026-10-23",
+        "sourceMember": "Darwin1/0020/catalog_0020.hdf5 (sub/mstar, sub/nstar, sub/mMBH, sub/nMBH)",
+        "checksumSha256": "690e2995964b575a62d821dc8e41801a8bd3247daac3db07df0e905bca0fe3d0",
+        "extractionMethod": "scripts/ingest_darwin1_catalogue.py --relations (HTTP range requests of the arrays; counts on a two-dimensional grid in data/ensembles/darwin1-shmr-bh.json); black hole mass = sum over the black hole particles of the substructure",
+        "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested"
+      },
+      "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 11) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."
     }
   ]
 }
