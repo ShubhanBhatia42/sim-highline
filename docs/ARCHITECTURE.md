@@ -36,6 +36,7 @@ scripts/build-highline.mjs, build-site.mjs, build-static.mjs   → dist/   (high
 |---|---|
 | the data | `validate-curves`, `validate-manifest`, `test-curves`, `audit-curves`, `test_claims.py`, `screen_outliers.py` |
 | the export and the package | `test-export`, `test_sim_highline_loader.py`, `test_cli.py` |
+| the observer layer | `test-observer`, `test_observer.py`, `test_observer_layer.py` |
 | the studies | `test_harmonization.py`, `test_model_form.py`, `test_joint_reachability.py` (about 2 minutes on four cores), `test_calibration.py`, `test_registration.py`, `test_parity.py` |
 | the pages | `test-site`, `lint.mjs`, `check_prose.py`, `test-determinism` |
 | the browser | `test-ui`, `test-journeys`, `test-yourrun`, `test-dials`, `test-layouts`, `test-keyboard`, `test-resilience`, `test-performance`, `test-parity` |

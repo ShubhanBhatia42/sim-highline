@@ -346,6 +346,261 @@ def compare_run(x, y, relation, z, definitions=None, y_low=None, y_high=None, si
     return out.assign(_has=out["n_bins"] > 0, _a=out["median_dy"].abs()).sort_values(["_has", "_a"], ascending=[False, True]).drop(columns=["_has", "_a"]).reset_index(drop=True)
 
 
+# ---------------------------------------------------------------------------------------------------------------------
+# Observer layer: what a survey does to a simulated catalogue that the simulation does not do itself.
+# Mirrors observer-lib.js step for step (camelCase names there); scripts/test_observer.py and scripts/test-observer.mjs
+# compare the two on one fixture. Not a calibrated model of any survey. Docs: docs/OBSERVER-LAYER.md.
+# "points" are the project's record format: a list of dicts {x, y, yLow?, yHigh?, count?}, x = log10(stellar mass / Msun),
+# y = log10 of a number density per dex. Every function returns new points and never changes its input.
+# ---------------------------------------------------------------------------------------------------------------------
+OBSERVER_DEFAULTS = {"step": 0.005, "nsig": 8, "edgeFit": 3, "edgeFlag": 0.05, "maxGap": 1.0, "sigmaMin": 0.001, "sigmaProbe": 0.05, "sigmaMargin": 3.0}
+
+
+def _finite(v):
+    return isinstance(v, (int, float)) and math.isfinite(v)
+
+
+def _clean_points(points, max_gap):
+    p = sorted((q for q in points if _finite(q.get("x")) and _finite(q.get("y"))), key=lambda q: q["x"])
+    if len(p) < 2:
+        raise ValueError("need at least two points with finite x and y")
+    for a, b in zip(p, p[1:]):
+        if b["x"] == a["x"]:
+            raise ValueError(f"duplicate x = {b['x']}")
+        if b["x"] - a["x"] > max_gap:
+            raise ValueError(f"gap of {b['x'] - a['x']:.3f} dex between x = {a['x']} and {b['x']} is larger than maxGap = {max_gap}; split the curve at the gap")
+    return p
+
+
+def _spec_function(spec, field, what):
+    """A scatter or a floor may be a number, a function of log10 mass, or a table {'x': [...], field: [...]} read by linear interpolation and held constant outside."""
+    if isinstance(spec, (int, float)) and not isinstance(spec, bool):
+        if not math.isfinite(spec):
+            raise ValueError(f"{what} must be finite")
+        return lambda m: np.full(np.shape(m), float(spec))
+    if callable(spec):
+        return lambda m: np.array([spec(float(v)) for v in np.atleast_1d(m)], float).reshape(np.shape(m))
+    if isinstance(spec, dict) and len(spec.get("x", [])) and len(spec.get("x", [])) == len(spec.get(field, [])):
+        tx, tv = np.asarray(spec["x"], float), np.asarray(spec[field], float)
+        return lambda m: np.interp(m, tx, tv)
+    raise ValueError(f"{what} must be a number, a function of log10 mass or a table {{'x': [...], '{field}': [...]}}")
+
+
+def poisson_bands(points):
+    """Poisson bands for points that carry a count and no band: for N counts the 1-sigma interval of the density is n(1 +- 1/sqrt(N)), written in log10;
+    the lower bound is NaN when N <= 1 because the logarithm is then undefined. Points that already have a band are left alone."""
+    out = []
+    for p in points:
+        q = dict(p)
+        if not (_finite(p.get("yLow")) or _finite(p.get("yHigh"))) and _finite(p.get("count")) and p["count"] > 0:
+            e = 1.0 / math.sqrt(p["count"])
+            q["yHigh"] = p["y"] + math.log10(1 + e)
+            q["yLow"] = p["y"] + math.log10(1 - e) if e < 1 else float("nan")
+        out.append(q)
+    return out
+
+
+def scatter_points(points, sigma, **opts):
+    """Gaussian scatter in log10 stellar mass applied to a stellar mass function given as points. Same algorithm as scatterPoints in observer-lib.js.
+
+    Model: each galaxy of true log mass m is observed at m + e, e ~ Normal(0, sigma(m)^2), sigma a function of the TRUE mass (a number gives a constant scatter). The observed density per dex
+    at x is  n_obs(x) = integral n(m) N(x - m; sigma(m)) dm;  the kernel integrates to one for every m, so number is conserved.
+    Discretisation: log10 n is interpolated linearly in x between the points and continued beyond the first and last point as a straight line with the slope of a least-squares fit to the nearest
+    `edgeFit` points (the slope above the last point is never positive). The integral is a sum over a uniform grid of spacing h = min(step, sigma_min_found / 2) centred on each output x and reaching
+    `nsig` sigma either way (defaults 0.005 dex and 8, so the kernel sums to 1 to better than 1e-12); sigma_min_found is the smallest sigma met when sigma is read every `sigmaProbe` dex over the data
+    range +- `sigmaMargin` dex. sigma below `sigmaMin` (0.001 dex) is raised to it. sigma == 0 returns the input. Output x are the input x.
+    sigma: number, function of log10 mass, or table {'x': [...], 'sigma': [...]}.
+    Assumptions: the density is smooth between points; the scatter is Gaussian in log mass and independent of everything else; the continuation beyond the data is a guess, so every output carries
+    edgeShare (the fraction of the scattered density that came from the continuation) and edge = edgeShare > edgeFlag.
+    Uncertainty: y_out = sum_j a_j y_j with a_j the share of the scattered density that comes from the interval around input point j (the shares sum to one), so independent input errors give
+    s_out = sqrt(sum a_j^2 s_j^2), separately for the upper and the lower error. Points with only a count get Poisson bands first. Not propagated: the uncertainty of sigma, of the continuation slope
+    and of the interpolation, and the correlation between neighbouring outputs. count_out = count * n_out / n_in. A density is transformed, not a catalogue: no noise is added to galaxies."""
+    o = {**OBSERVER_DEFAULTS, **opts}
+    if isinstance(sigma, (int, float)) and sigma < 0:
+        raise ValueError("sigma must be >= 0")
+    base = _clean_points(points, o["maxGap"])
+    if isinstance(sigma, (int, float)) and sigma == 0:
+        return [{**p, "edgeShare": 0.0, "edge": False} for p in base]
+    sig = _spec_function(sigma, "sigma", "sigma")
+    src = base if o.get("poisson") is False else poisson_bands(base)
+    xs = np.array([p["x"] for p in src], float)
+    ys = np.array([p["y"] for p in src], float)
+    N = len(xs)
+    kfit = max(2, min(o["edgeFit"], N))
+
+    def slope(a, b):
+        mx, my = a.mean(), b.mean()
+        return float(((a - mx) * (b - my)).sum() / ((a - mx) ** 2).sum())
+
+    s_lo = slope(xs[:kfit], ys[:kfit])
+    s_hi = min(0.0, slope(xs[N - kfit:], ys[N - kfit:]))
+    probe = []
+    m = xs[0] - o["sigmaMargin"]
+    while m <= xs[-1] + o["sigmaMargin"] + 1e-9:
+        probe.append(m)
+        m += o["sigmaProbe"]
+    sp = np.maximum(sig(np.array(probe)), o["sigmaMin"])
+    if not np.isfinite(sp).all():
+        raise ValueError("sigma returned a non-finite value")
+    h = min(o["step"], float(sp.min()) / 2)
+    K = int(math.ceil(o["nsig"] * float(sp.max()) / h))
+
+    def band(key, sign):
+        e = np.array([sign * (p[key] - p["y"]) if _finite(p.get(key)) else np.nan for p in src])
+        ok = np.isfinite(e)
+        if not ok.any():
+            return None
+        return np.where(ok, e, np.interp(xs, xs[ok], e[ok]))
+
+    up, dn = band("yHigh", 1), band("yLow", -1)
+    ks = np.arange(-K, K + 1)
+    out = []
+    for p in src:
+        d = ks * h
+        m = p["x"] + d
+        s = np.maximum(sig(m), o["sigmaMin"])
+        keep = np.abs(d) <= o["nsig"] * s
+        d, m, s = d[keep], m[keep], s[keep]
+        w = h * np.exp(-0.5 * (d / s) ** 2) / (s * math.sqrt(2 * math.pi))
+        below, above = m < xs[0], m > xs[-1]
+        j = np.clip(np.searchsorted(xs, m, side="right") - 1, 0, N - 2)
+        t = np.clip((m - xs[j]) / (xs[j + 1] - xs[j]), 0.0, 1.0)
+        y = ys[j] + t * (ys[j + 1] - ys[j])
+        y = np.where(below, ys[0] + s_lo * (m - xs[0]), y)
+        y = np.where(above, ys[-1] + s_hi * (m - xs[-1]), y)
+        f = w * np.power(10.0, y)
+        num = float(f.sum())
+        ext = float(f[below | above].sum())
+        A = np.zeros(N)
+        outside = below | above
+        wj = np.where(outside, 1.0, 1 - t)
+        wj1 = np.where(outside, 0.0, t)
+        jj = np.where(below, 0, np.where(above, N - 1, j))
+        np.add.at(A, jj, f * wj)
+        np.add.at(A, np.minimum(jj + 1, N - 1), f * wj1)
+        a = A / num
+        q = {"x": p["x"], "y": math.log10(num)}
+        if up is not None:
+            q["yHigh"] = q["y"] + float(np.sqrt((a * a * up * up).sum()))
+        if dn is not None:
+            q["yLow"] = q["y"] - float(np.sqrt((a * a * dn * dn).sum()))
+        if _finite(p.get("count")):
+            q["count"] = p["count"] * num / 10.0 ** p["y"]
+        q["edgeShare"] = ext / num
+        q["edge"] = q["edgeShare"] > o["edgeFlag"]
+        out.append(q)
+    return out
+
+
+def shift_points(points, offset):
+    """A systematic offset in the measured mass: observed log mass = true log mass + offset (dex). A density per dex does not change when the mass axis is translated, so x moves and y, the bands and
+    the counts stay. Assumes the same offset at every mass (no mass-dependent offset, no change of slope). Apply after scatter."""
+    if not _finite(offset):
+        raise ValueError("offset must be a finite number of dex")
+    return [{**p, "x": p["x"] + offset} for p in points]
+
+
+def completeness_cut(points, m_lim):
+    """Hard limiting mass: points with x < m_lim are removed (a survey that corrects for completeness above its limit and publishes nothing below it)."""
+    if not _finite(m_lim):
+        raise ValueError("m_lim must be a finite log10 mass")
+    return [dict(p) for p in points if p["x"] >= m_lim]
+
+
+def completeness_fraction(x, m50, width):
+    """Smooth completeness C(x) = 1 / (1 + exp(-(x - m50) / width)): a logistic in observed log mass, half complete at m50, scale `width` dex (10 to 90 per cent in 4.4 width). A convenient shape, not a measured curve."""
+    if not width > 0:
+        raise ValueError("width must be > 0")
+    return 1.0 / (1.0 + math.exp(-(x - m50) / width))
+
+
+def completeness_weight(points, m50, width):
+    """The density an UNCORRECTED catalogue would show: C times the true density, so y gets + log10 C; the bands get the same shift (their relative size is kept; no new Poisson noise is derived) and count is multiplied by C.
+    Acts on the observed mass, so apply after scatter and offset."""
+    out = []
+    for p in points:
+        c = completeness_fraction(p["x"], m50, width)
+        l = math.log10(c)
+        q = {**p, "y": p["y"] + l, "completeness": c}
+        if _finite(p.get("yLow")):
+            q["yLow"] = p["yLow"] + l
+        if _finite(p.get("yHigh")):
+            q["yHigh"] = p["yHigh"] + l
+        if _finite(p.get("count")):
+            q["count"] = p["count"] * c
+        out.append(q)
+    return out
+
+
+def observe(points, sigma=None, offset=0.0, m_lim=None, completeness=None, **opts):
+    """Scatter, then the systematic offset, then completeness on the measured mass (the order a survey applies them). completeness = (m50, width) for the smooth version; m_lim for the hard cut.
+    Returns (points, steps), steps being one line per operation applied."""
+    steps = []
+    p = [dict(q) for q in points]
+    if sigma is not None and sigma != 0:
+        p = scatter_points(p, sigma, **opts)
+        steps.append(f"Gaussian scatter {sigma} dex in log mass" if isinstance(sigma, (int, float)) else "Gaussian scatter, mass-dependent")
+    if offset:
+        p = shift_points(p, offset)
+        steps.append(f"mass offset {offset:+g} dex")
+    if completeness is not None:
+        p = completeness_weight(p, completeness[0], completeness[1])
+        steps.append(f"smooth completeness, half at log M = {completeness[0]}, scale {completeness[1]} dex")
+    if m_lim is not None:
+        p = completeness_cut(p, m_lim)
+        steps.append(f"limiting mass log M = {m_lim}")
+    return p, steps
+
+
+def ssfr_floor_points(points, floor):
+    """Detection floor for a specific star formation rate (sSFR) curve: y is log10 sSFR per year, with a 16 to 84 per cent band (yLow, yHigh). A point whose MEDIAN is below floor(x) is removed (the typical galaxy
+    there is undetected, so no median can be measured); for the others the lower band is raised to the floor and the point is marked clipped = True. This does not recompute the median of the detected galaxies,
+    which is higher than the median of all of them (ssfr_floor_row does that when the counts are known). floor: number, function of x, or table {'x': [...], 'floor': [...]}, in log10 per year."""
+    f = _spec_function(floor, "floor", "floor")
+    out = []
+    for p in points:
+        fl = float(f(np.array([p["x"]]))[0])
+        if not math.isfinite(fl):
+            raise ValueError("floor returned a non-finite value")
+        if p["y"] < fl:
+            continue
+        q = dict(p)
+        if _finite(p.get("yLow")) and p["yLow"] < fl:
+            q["yLow"] = fl
+            q["clipped"] = True
+        out.append(q)
+    return out
+
+
+def _row_quantile(row, edges, total, q):
+    target = q * total
+    cum = 0.0
+    for j, c in enumerate(row):
+        if c > 0 and cum + c >= target:
+            t = (target - cum) / c
+            return edges[j] + min(1.0, max(0.0, t)) * (edges[j + 1] - edges[j])
+        cum += c
+    return edges[-1]
+
+
+def ssfr_floor_row(row, y_edges, floor_log, levels=(0.16, 0.5, 0.84)):
+    """For one row of per-galaxy counts over sSFR edges (a record's representation.distribution): drop the counts below the floor (the bin that holds the floor keeps its upper share, galaxies being spread evenly
+    within a bin, as in compare.js) and return the detected fraction and the quantiles of the detected galaxies (linear within a bin, the rule of compare.js distQuantile)."""
+    if len(row) + 1 != len(y_edges):
+        raise ValueError("y_edges must have one more entry than row")
+    kept = []
+    for c, lo, hi in zip(row, y_edges[:-1], y_edges[1:]):
+        kept.append(0.0 if hi <= floor_log else c if lo >= floor_log else c * (hi - floor_log) / (hi - lo))
+    total, det = float(sum(row)), float(sum(kept))
+    return {"total": total, "detected": det, "fractionDetected": det / total if total > 0 else float("nan"), "levels": list(levels),
+            "quantiles": [_row_quantile(kept, y_edges, det, q) if det > 0 else float("nan") for q in levels]}
+
+
+def sfr_floor_to_ssfr(sfr_min_log, log_m):
+    """A floor in SFR (log10 Msun/yr) is an sSFR floor of sfr_min_log - log10 M at mass log10 M."""
+    return sfr_min_log - log_m
+
+
 def read_curve(path_or_text):
     """Read a curve from a file or text: comma, semicolon (with decimal commas), tab or space separated rows; a byte-order mark; comment lines starting with #; an optional header; a units row; missing values.
     Returns x, y and a 1-sigma error array (NaN where there is none)."""
