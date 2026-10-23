@@ -250,11 +250,19 @@ Every tier B unit is in `data/analysis/resolution.json`. The largest rms shifts 
 * Without the epochs at z > 2: {'converged': 2, 'resolution-dependent': 26, 'cannot tell': 2}.
 * The rms shift on the finer curve's own points in place of the coarser's is in `data/analysis/resolution.json` (`sensitivity.S1_fine_grid_rms_dex`).
 
-## 12. Deviations from the protocol
+## 12. Expectations written in advance
 
-* The table formatting of the report was corrected after the run (unit names with the pipe character broke one table; a variant column was added to the comparison table); no number was recomputed, and the first output is in the version history.
+Protocol section 8 recorded what was expected before the run. Counts, from the numbers above:
 
-## 13. What this cannot say
+* Expected: steps whose parameters the authors recalibrated are close. By the rule, 2 of 24 such steps are converged.
+* Expected: the code distance exceeds most resolution shifts where the joint study's retuned distance is large, and not where it is small. Of the 2 comparisons with a retuned distance of at least 1 noise unit, 1 have a resolution shift at least as large as the compared distance; of the 17 with a smaller distance, 15.
+* Expected: star formation histories change more at high redshift than at low redshift. Not tested separately.
+
+## 13. Deviations from the protocol
+
+* The wording and layout of the report were revised after the run (unit names with the pipe character broke one table; a variant column was added to the comparison table; a section setting the expectations of the protocol against the counts was added); no number was recomputed, and the first output is in the version history.
+
+## 14. What this cannot say
 
 * It is not a convergence test of CAMELS: CAMELS is not run at a second resolution here, and SIMBA has no evaluable pair in the dataset. The shifts are those of other models, from their papers.
 * Each pair compares two curves of one paper, so the galaxy finder, aperture and mass definition are that paper's. Different papers use different ones; nothing here compares across papers, and the noise unit from CAMELS Subfind catalogues is only a yardstick for them.
@@ -262,6 +270,6 @@ Every tier B unit is in `data/analysis/resolution.json`. The largest rms shifts 
 * Where the authors recalibrate at each resolution, a small shift reflects that recalibration.
 * Epochs and relations within a ladder are correlated; the counts are counts of reported rows, not independent tests.
 
-## 14. Reproduce
+## 15. Reproduce
 
 `python3 scripts/analyze_resolution.py` rewrites this file and `data/analysis/resolution.json` (a few seconds; deterministic); `python3 scripts/test_resolution.py` checks the machinery on synthetic records and that the saved output is not stale.
