@@ -1410,6 +1410,59 @@
         "mzr"
       ],
       "note": "The DARWIN-1 galaxy catalogues are public (the data page states that only these are on offer; other data on request). A catalogue-derived stellar mass function, stellar mass-halo mass relation and sizes would replace the figure reads with computed numbers; no adapter has been written, and the files' fields have not been inspected."
+    },
+    {
+      "id": "uvbeta-observations-hst-jwst",
+      "suite": "observations",
+      "status": "ingested",
+      "access": "arXiv LaTeX tables",
+      "url": "https://arxiv.org/abs/1306.2950",
+      "relations": [
+        "uvbeta"
+      ],
+      "redshifts": "z 3.8-12",
+      "adapter": "scripts/transcribe_uvbeta_bouwens.py; scripts/transcribe_uvbeta_topping24.py",
+      "note": "Biweight-mean beta against M_UV from Bouwens+12 and Bouwens+14 (HST, z 3.8-8) and median beta in bins of M_UV with the paper's linear fits from Topping+24 (JWST/JADES, z 5.9-12). Sources considered and not ingested are listed in docs/changelog-fragments/uv-slope.md."
+    },
+    {
+      "id": "uvbetam-observations-finkelstein12",
+      "suite": "observations",
+      "status": "ingested",
+      "access": "arXiv LaTeX table",
+      "url": "https://arxiv.org/abs/1110.3785",
+      "relations": [
+        "uvbetam"
+      ],
+      "redshifts": "z 4-8",
+      "adapter": "scripts/transcribe_uvbetam_finkelstein12.py",
+      "note": "Median beta in three bins of stellar mass (Table 5 of Finkelstein+12). The paper's table against M_UV is binned in L/L* and is not stored."
+    },
+    {
+      "id": "shen20-tng-uvbeta",
+      "suite": "IllustrisTNG",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2002.10474",
+      "relations": [
+        "uvbeta"
+      ],
+      "redshifts": "z 4-6",
+      "adapter": "scripts/digitize_tng_uvbeta_shen20.py",
+      "note": "beta against M_UV for star-forming galaxies of TNG50, TNG100 and TNG300 combined, with all dust and without the resolved dust (unresolved birth-cloud dust remains), 1 sigma dispersion for the first. The paper's beta against stellar mass is not drawn."
+    },
+    {
+      "id": "wu20-simba-uvbeta",
+      "suite": "SIMBA",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1911.06330",
+      "relations": [
+        "uvbeta",
+        "uvbetam"
+      ],
+      "redshifts": "z 6",
+      "adapter": "scripts/digitize_simba_uvbeta_wu20.py",
+      "note": "SIMBA-25 and SIMBA-50 at z = 6: beta against M_1500 for four dust treatments (combined) and for the two boxes with the Calzetti law and its 1 sigma spread, and beta against stellar mass for four dust treatments. z = 8 is not drawn."
     }
   ]
 }
