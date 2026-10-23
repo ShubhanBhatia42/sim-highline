@@ -1379,6 +1379,37 @@
       "redshifts": "z 0.5, 2, 4",
       "adapter": "scripts/digitize_tng50_size_pillepich19.py",
       "note": "TNG50-1 median 3D stellar half-mass and 2D face-on V-band half-light radius of star-forming galaxies versus stellar mass within 30 pkpc."
+    },
+    {
+      "id": "lee26-darwin-figures",
+      "suite": "DARWIN",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDFs",
+      "url": "https://arxiv.org/abs/2610.25786",
+      "relations": [
+        "sfrd",
+        "gsmf",
+        "size",
+        "mzr",
+        "ks"
+      ],
+      "redshifts": "0.2-14 (SFRD); 5, 3, 1, 0.25 (GSMF); 4.5, 2, 0.2 (size); 4.5 (O/H); 2-5 (K-S)",
+      "adapter": "scripts/digitize_darwin_lee26.py",
+      "note": "Five of the paper's eight results figures are vector images and are read; the tick labels are outlined paths, so the axes are calibrated from tick marks with the labels read from the rendered figure and checked against numbers the paper prints. The stellar mass-halo mass relation, local stellar metallicity and black hole mass figures are raster images in the source and are not read."
+    },
+    {
+      "id": "darwin1-catalogs",
+      "suite": "DARWIN",
+      "status": "discovered",
+      "access": "public FoF and galaxy catalogues (HDF5), one file per snapshot, z = 16 to 0.19 (snapshot 1001)",
+      "url": "https://darwin.kasi.re.kr/data_darwin1.html",
+      "relations": [
+        "gsmf",
+        "shmr",
+        "size",
+        "mzr"
+      ],
+      "note": "The DARWIN-1 galaxy catalogues are public (the data page states that only these are on offer; other data on request). A catalogue-derived stellar mass function, stellar mass-halo mass relation and sizes would replace the figure reads with computed numbers; no adapter has been written, and the files' fields have not been inspected."
     }
   ]
 }

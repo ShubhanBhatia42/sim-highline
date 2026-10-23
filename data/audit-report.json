@@ -1,11 +1,11 @@
 {
- "total": 1859,
+ "total": 1872,
  "known": 24,
  "errors": 0,
  "warnings": 0,
- "info": 210,
+ "info": 211,
  "byCode": {
-  "info:no-cosmology": 193,
+  "info:no-cosmology": 194,
   "info:no-mass-definition": 17,
   "known:x-out-of-range": 1,
   "known:y-out-of-range": 6,
@@ -146,9 +146,9 @@
     "aperture-50pkpc",
     "aperture-100pkpc",
     "total-bound-subhalo",
+    "unspecified",
     "caesar-6dfof-galaxy-total",
     "bound to a Subfind subhalo, within the variable BaryMP aperture (Stevens+14; 'inherent' definition of Stevens+19)",
-    "unspecified",
     "aperture-Rg",
     "aperture-2rhalf-stars",
     "total-subhalo",
@@ -196,6 +196,7 @@
     "-",
     "bound-within-Rvir",
     "aperture-0.2Rvir",
+    "unspecified",
     "aperture-30pkpc",
     "aperture-Reff-stars",
     "caesar-6dfof-galaxy-total"
@@ -232,6 +233,14 @@
     "aperture-30pkpc",
     "caesar-6dfof-galaxy-total",
     "bound to a Subfind subhalo, within the variable BaryMP aperture (Stevens+14; 'inherent' definition of Stevens+19)"
+   ]
+  },
+  "ks": {
+   "yUnit": [
+    "log10(Msun yr^-1 kpc^-2)"
+   ],
+   "massDefinitions": [
+    "-"
    ]
   },
   "h2-fraction": {
@@ -1568,6 +1577,15 @@
    "file": "comparison-data.json",
    "relation": "smd",
    "source": "EAGLE",
+   "msg": "definitions.cosmology missing"
+  },
+  {
+   "sev": "info",
+   "code": "no-cosmology",
+   "id": "lee26.darwin2.ks-galaxies.z0-5",
+   "file": "darwin-lee26.json",
+   "relation": "ks",
+   "source": "DARWIN",
    "msg": "definitions.cosmology missing"
   },
   {

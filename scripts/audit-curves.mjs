@@ -71,7 +71,7 @@ for (const [k, rs] of groups) for (let i = 0; i < rs.length; i++) for (let j = i
 }
 function idOf(name) { return name; }
 function simFor(name) {
-  const map = { "IllustrisTNG": ["tng100", "tng50", "tng300"], "Illustris": ["illustris"], "EAGLE": ["eagle"], "COLIBRE": ["colibre"], "FLAMINGO": ["flamingo"], "SIMBA": ["simba"], "Horizon-AGN": ["horizon"], "NewHorizon": ["newhorizon"], "Romulus25": ["romulus25"], "ASTRID": ["astrid"], "BlueTides": ["bluetides"], "FIRE-2": ["fire2"], "FIREbox": ["firebox"], "FLARES": ["flares"], "NIHAO zoom suite": ["nihao"], "Magneticum Pathfinder": ["magneticum"], "SPHINX20": ["sphinx20"], "THESAN-1": ["thesan"], "THESAN-zoom": ["thesan-zoom"] };
+  const map = { "IllustrisTNG": ["tng100", "tng50", "tng300"], "Illustris": ["illustris"], "EAGLE": ["eagle"], "COLIBRE": ["colibre"], "FLAMINGO": ["flamingo"], "SIMBA": ["simba"], "Horizon-AGN": ["horizon"], "NewHorizon": ["newhorizon"], "DARWIN": ["darwin"], "Romulus25": ["romulus25"], "ASTRID": ["astrid"], "BlueTides": ["bluetides"], "FIRE-2": ["fire2"], "FIREbox": ["firebox"], "FLARES": ["flares"], "NIHAO zoom suite": ["nihao"], "Magneticum Pathfinder": ["magneticum"], "SPHINX20": ["sphinx20"], "THESAN-1": ["thesan"], "THESAN-zoom": ["thesan-zoom"] };
   const ids = map[name] || [];
   const ss = ids.map(i => sims.find(s => s.id === i)).filter(Boolean);
   if (!ss.length) return null;

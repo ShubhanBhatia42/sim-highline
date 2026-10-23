@@ -616,6 +616,32 @@
       ],
       "source": "https://github.com/HarleyKatz/SPHINX-20-data",
       "notes": "Public data-release sample (Katz et al. 2023); selected, not volume complete."
+    },
+    {
+      "id": "darwin",
+      "family": "independent",
+      "regime": "full box (DARWIN-1: 65.5 cMpc, 500 pc) and zoom-ins (DARWIN-2: 24 field regions and a Milky Way analog, 62.5 pc)",
+      "boxMpc": [
+        65.536
+      ],
+      "baryonMassMsun": [],
+      "redshiftRange": [
+        0.19,
+        14.0
+      ],
+      "access": "digitized-figure",
+      "calibration": [
+        "stellar mass growth at z = 0 (supernova boost exponent)"
+      ],
+      "relations": [
+        "sfrd",
+        "gsmf",
+        "size",
+        "mzr",
+        "ks"
+      ],
+      "source": "https://arxiv.org/abs/2610.25786",
+      "redshiftRangeBasis": "Lee et al. 2026 (arXiv:2610.25786): DARWIN-1 has reached z = 0.19 (Sect. 2); the star formation rate density curve extends to z = 14, the highest redshift drawn. DARWIN-2 galaxies are plotted at z = 2 to 5."
     }
   ]
 }

@@ -508,6 +508,26 @@
           "arxiv": "2503.01949"
         }
       ]
+    },
+    "DARWIN": {
+      "source": "DARWIN",
+      "short": "DARWIN",
+      "code": "RAMSES",
+      "codeRef": "RAMSES",
+      "method": "AMR",
+      "methodDetail": "Adaptive mesh refinement (a hybrid MPI + OpenMP RAMSES with the physics of the project; DARWIN-2 adds radiative transfer in three photon bands)",
+      "setup": "DARWIN-1: a periodic box of 65.5 cMpc with 1024^3 dark matter particles (8.9e6 Msun) and a fixed minimum cell size of 500 pc (proper), star particles of 1e5 Msun, run to z = 0.19. DARWIN-2: zoom-ins on 24 field regions and a Milky Way analog with its filament at 62.5 pc, star particles of 1e4 Msun, with radiative transfer.",
+      "physics": "Gravo-turbulent star formation (DARWIN-2) or a fixed efficiency (DARWIN-1), mechanical supernova feedback with a metallicity-dependent boost, Type Ia supernovae, Kroupa IMF, black holes seeded and grown with the Dubois et al. 2021 model.",
+      "introduced": 2026,
+      "introducedNote": "first paper (arXiv:2610.25786)",
+      "team": "DARWIN collaboration (more than 20 young scientists at seven Korean institutes; first paper led by Jaehyun Lee)",
+      "purpose": "Dwarf galaxy formation and evolution in diverse environments: a full box, high-resolution zoom-ins of field regions and a Milky Way analog, and (planned) single dwarf galaxies at under 10 pc.",
+      "papers": [
+        {
+          "cite": "Lee et al. 2026, the DARWIN project (submitted to ApJ)",
+          "arxiv": "2610.25786"
+        }
+      ]
     }
   }
 }

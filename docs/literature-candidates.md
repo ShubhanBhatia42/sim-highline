@@ -26,6 +26,7 @@ The 111 are the distinct DOIs or URLs of papers and data releases that already s
 | COLIBRE | [2607.27319](https://arxiv.org/abs/2607.27319) | 2026 | Davies | The influence of feedback on the baryonic content of haloes in the COLIBRE simulations | baryonic content of haloes (feedback) |
 | COLIBRE | [2608.19007](https://arxiv.org/abs/2608.19007) | 2026 | Chaikin | The progenitors of $z\gtrsim10$ JWST galaxies in the COLIBRE simulations | progenitors of z>=10 JWST galaxies |
 | COLIBRE | [2608.12132](https://arxiv.org/abs/2608.12132) | 2026 | Zegveld | The effect of galaxy interactions on star formation rates in the COLIBRE simulations | galaxy interactions and SFR |
+| DARWIN | [2610.25786](https://arxiv.org/abs/2610.25786) | 2026 | Lee | The DARWIN Project: Cosmological Simulations of Galaxy Formation down to Dwarf Scales in Diverse Environments | overview (ingested; five vector figures read, three raster figures not) |
 | EAGLE | [1407.7040](https://arxiv.org/abs/1407.7040) | 2014 | Schaye | The EAGLE project: Simulating the evolution and assembly of galaxies and their environments | overview |
 | EAGLE | [1501.01311](https://arxiv.org/abs/1501.01311) | 2015 | Crain | The EAGLE simulations of galaxy formation: calibration of subgrid physics and model variations | calibration and model variations |
 | EAGLE | [1510.01320](https://arxiv.org/abs/1510.01320) | 2015 | McAlpine | The EAGLE simulations of galaxy formation: public release of halo and galaxy catalogues | public catalogue release |

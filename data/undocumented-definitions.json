@@ -1,10 +1,10 @@
 {
  "summary": {
-  "simulationRecords": 1490,
+  "simulationRecords": 1503,
   "recordsWithRecoveredDefinition": 458,
-  "undocumentedValues": 369,
+  "undocumentedValues": 375,
   "sourceReadNotStated": 343,
-  "sourceNotYetRead": 25,
+  "sourceNotYetRead": 31,
   "noPaperToRead": 1
  },
  "groups": [
@@ -378,6 +378,15 @@
    "status": "source read, not stated"
   },
   {
+   "source": "DARWIN",
+   "relation": "gsmf",
+   "key": "massDefinition",
+   "arxiv": "2610.25786",
+   "citation": "Lee et al. 2026 (The DARWIN Project; arXiv:2610.25786, submitted to ApJ)",
+   "records": 4,
+   "status": "source not yet read for this key"
+  },
+  {
    "source": "EAGLE",
    "relation": "smd",
    "key": "massDefinition",
@@ -412,6 +421,15 @@
    "citation": "Pillepich et al. 2018, MNRAS 473, 4077 (doi:10.1093/mnras/stx2656; arXiv:1703.02970), the ",
    "records": 3,
    "status": "source read, not stated"
+  },
+  {
+   "source": "DARWIN",
+   "relation": "mzr",
+   "key": "massDefinition",
+   "arxiv": "2610.25786",
+   "citation": "Lee et al. 2026 (The DARWIN Project; arXiv:2610.25786, submitted to ApJ)",
+   "records": 2,
+   "status": "source not yet read for this key"
   },
   {
    "source": "Illustris",

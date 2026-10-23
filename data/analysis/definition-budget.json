@@ -38,27 +38,27 @@
    "relation": "gsmf",
    "z": 1,
    "suites": [
-    "Horizon-AGN",
-    "Illustris",
-    "IllustrisTNG",
-    "Magneticum Pathfinder"
+    "COLIBRE",
+    "DARWIN",
+    "EAGLE",
+    "NewHorizon"
    ],
-   "records": 11,
-   "pairs": 38,
+   "records": 12,
+   "pairs": 23,
    "counts": {
-    "matched": 4,
-    "differing": 2,
-    "unknown": 32,
+    "matched": 0,
+    "differing": 14,
+    "unknown": 9,
     "mismatch": 0
    },
    "median_abs_dy": {
-    "matched": 0.1592,
-    "differing": 0.1625,
-    "unknown": 0.2406,
+    "matched": null,
+    "differing": 0.1,
+    "unknown": 0.1533,
     "mismatch": null
    },
-   "documented_fraction": 0.818,
-   "excess_differing_minus_matched": 0.0033
+   "documented_fraction": 0.917,
+   "excess_differing_minus_matched": null
   },
   {
    "relation": "gsmf",
@@ -624,6 +624,7 @@
    "z": 0,
    "suites": [
     "COLIBRE",
+    "DARWIN",
     "EAGLE",
     "FLAMINGO",
     "Horizon-AGN",
@@ -631,21 +632,21 @@
     "IllustrisTNG",
     "Magneticum Pathfinder"
    ],
-   "records": 30,
-   "pairs": 283,
+   "records": 31,
+   "pairs": 313,
    "counts": {
     "matched": 3,
     "differing": 0,
     "unknown": 0,
-    "mismatch": 280
+    "mismatch": 310
    },
    "median_abs_dy": {
     "matched": 0.2886,
     "differing": null,
     "unknown": null,
-    "mismatch": 0.1818
+    "mismatch": 0.1777
    },
-   "documented_fraction": 0.975,
+   "documented_fraction": 0.976,
    "excess_differing_minus_matched": null
   },
   {
@@ -682,6 +683,7 @@
    "z": 2,
    "suites": [
     "COLIBRE",
+    "DARWIN",
     "EAGLE",
     "Horizon-AGN",
     "Illustris",
@@ -689,21 +691,21 @@
     "Magneticum Pathfinder",
     "NewHorizon"
    ],
-   "records": 22,
-   "pairs": 187,
+   "records": 24,
+   "pairs": 223,
    "counts": {
     "matched": 3,
     "differing": 0,
     "unknown": 0,
-    "mismatch": 184
+    "mismatch": 220
    },
    "median_abs_dy": {
     "matched": 0.2443,
     "differing": null,
     "unknown": null,
-    "mismatch": 0.1914
+    "mismatch": 0.226
    },
-   "documented_fraction": 0.943,
+   "documented_fraction": 0.948,
    "excess_differing_minus_matched": null
   },
   {
@@ -3516,12 +3518,12 @@
   ]
  },
  "summary": {
-  "pairs": 2173,
+  "pairs": 2224,
   "byClass": {
-   "matched": 97,
-   "differing": 370,
-   "unknown": 402,
-   "mismatch": 1304
+   "matched": 93,
+   "differing": 382,
+   "unknown": 379,
+   "mismatch": 1370
   },
   "testsRun": 17,
   "testsBelow0.05": 1,
