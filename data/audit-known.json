@@ -65,6 +65,11 @@
       "code": "duplicate-data",
       "idPrefix": "zehavi11.sdss.hod.",
       "reason": "The mean number of all galaxies per halo equals the mean number of central galaxies at low halo mass, where there are no satellites, so the first points of the two curves are the same by construction."
+    },
+    {
+      "code": "cross-source-offset",
+      "idPrefix": "wu20.simba.uvbeta.z6.combined",
+      "reason": "Compared against the Calzetti-law curve of one box of the same paper: the combined curves apply other dust laws (SMC, Salmon et al. 2016) or none to the same galaxies, so the offset in beta is the effect of the law, not a disagreement between sources."
     }
   ]
 }
