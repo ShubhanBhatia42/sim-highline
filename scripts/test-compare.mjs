@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import vm from "node:vm";
 
 const context = { globalThis: {} };
-vm.runInNewContext(await readFile(new URL("../compare.js", import.meta.url), "utf8"), context);
+vm.runInNewContext(await readFile(new URL("../compare.js", import.meta.url), "utf8"), context, { filename: new URL("../compare.js", import.meta.url).href }); // the file name lets scripts/coverage.sh attribute coverage to the file
 const { compatible, residuals, summarize, evaluator, MIN_BINS } = context.globalThis.SimHighlineCompare;
 const load = async name => JSON.parse(await readFile(new URL(`../data/curves/${name}.json`, import.meta.url), "utf8")).records;
 const [core, thesan, magneticum, cosmosweb, literature, vcd, sharda] = await Promise.all(["core", "thesan", "magneticum", "cosmosweb", "literature", "comparison-data", "colibre-mzr"].map(load));

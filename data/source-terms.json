@@ -25,6 +25,12 @@
       "match": "wetzel",
       "terms": "source tables: CC-BY-4.0 (paper tables)",
       "note": "FIRE-2 public data release tables."
+    },
+    {
+      "id": "darwin1-catalogue",
+      "match": "darwin\\.kasi\\.re\\.kr|archive\\.kasi\\.re\\.kr",
+      "terms": "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23); counts derived by sim-highline from the public catalogues, permission not yet requested",
+      "note": "Applies to the galaxy stellar mass functions counted from the DARWIN-1 catalogues."
     }
   ]
 }

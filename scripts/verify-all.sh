@@ -6,6 +6,7 @@ set -euo pipefail
 SLOW="test_joint_reachability test_model_form test_harmonization test_quenching_shape"
 stamp_of() { cat scripts/*.py data/ensembles/*.json data/analysis/*.json data/retune/retune.json 2>/dev/null | sha256sum | cut -d' ' -f1; }
 python3 scripts/ingest_camels_distributions.py --records
+python3 scripts/ingest_darwin1_catalogue.py --records
 node scripts/derive-distributions.mjs
 python3 scripts/ingest_camels_conversions.py --derive
 python3 scripts/make-conversions-doc.py
@@ -55,6 +56,7 @@ node scripts/test-site.mjs
 node scripts/test-usage-counts.mjs
 node scripts/lint.mjs
 python3 scripts/check_prose.py
+python3 scripts/audit_conversions.py   # refreshes the record counts; the comparison-compilation numbers are kept unless a clone of that repository is given
 python3 scripts/audit_conversions.py --check
 python3 scripts/make-codemeta.py
 python3 scripts/make-scripts-index.py

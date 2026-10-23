@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import vm from "node:vm";
 const ctx = { globalThis: {} };
-for (const f of ["compare.js", "export-lib.js"]) vm.runInNewContext(await readFile(new URL(`../${f}`, import.meta.url), "utf8"), ctx);
+for (const f of ["compare.js", "export-lib.js"]) vm.runInNewContext(await readFile(new URL(`../${f}`, import.meta.url), "utf8"), ctx, { filename: new URL(`../${f}`, import.meta.url).href }); // the file name lets scripts/coverage.sh attribute coverage to the file
 const X = ctx.globalThis.SimHighlineExport;
 const base = (id, extra = {}) => ({ id, kind: "simulation", source: "S", run: "R, with \"comma\"", relation: "sfms", epoch: { zRepresentative: 2, zMin: 2, zMax: 2 }, axes: { xUnit: "log10(Msun)", yUnit: "dex", xDefinition: "x", yDefinition: "y" },
   domain: { xMin: 8, xMax: 10 }, representation: { type: "points", intervalKind: "uncertainty", connect: true, points: [{ x: 8, y: 1, yLow: 0.5, yHigh: 1.5 }, { x: 9, y: 2 }] }, definitions: { imf: "chabrier03", massDefinition: "aperture-30pkpc", cosmology: { H0: 70, Om: 0.3 } },

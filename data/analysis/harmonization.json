@@ -110,6 +110,21 @@
    "mean_shift_aperture_dex": -0.0128
   },
   {
+   "suite": "DARWIN",
+   "record": "darwin1.catalogue.gsmf.z0.19",
+   "run": "DARWIN-1 (65.5 cMpc box)",
+   "z": 0.1904,
+   "imf": "kroupa01",
+   "mass_definition": "total-bound-subhalo",
+   "aperture_class": "total",
+   "stated_scatter_dex": 0.0,
+   "levels_defined": 10,
+   "phi_lowest_defined": -4.25,
+   "mean_shift_imf_dex": -0.025,
+   "mean_shift_scatter_dex": 0.0,
+   "mean_shift_aperture_dex": 0.0145
+  },
+  {
    "suite": "EAGLE",
    "record": "furlong15.eagle-ref.gsmf.z0.1",
    "run": "Ref-L100N1504",
@@ -221,33 +236,33 @@
  "levels": [
   {
    "phi": -2.0,
-   "suites": 6,
-   "sd_raw_dex": 0.4064,
-   "sd_harmonized_dex": 0.351
+   "suites": 7,
+   "sd_raw_dex": 0.3712,
+   "sd_harmonized_dex": 0.3212
   },
   {
    "phi": -2.25,
-   "suites": 6,
-   "sd_raw_dex": 0.2615,
-   "sd_harmonized_dex": 0.2145
+   "suites": 7,
+   "sd_raw_dex": 0.254,
+   "sd_harmonized_dex": 0.209
   },
   {
    "phi": -2.5,
-   "suites": 7,
-   "sd_raw_dex": 0.1397,
-   "sd_harmonized_dex": 0.108
+   "suites": 8,
+   "sd_raw_dex": 0.1635,
+   "sd_harmonized_dex": 0.1331
   },
   {
    "phi": -2.75,
-   "suites": 7,
-   "sd_raw_dex": 0.1453,
-   "sd_harmonized_dex": 0.1003
+   "suites": 8,
+   "sd_raw_dex": 0.1465,
+   "sd_harmonized_dex": 0.1017
   },
   {
    "phi": -3.0,
-   "suites": 7,
-   "sd_raw_dex": 0.1266,
-   "sd_harmonized_dex": 0.0939
+   "suites": 8,
+   "sd_raw_dex": 0.1172,
+   "sd_harmonized_dex": 0.0875
   },
   {
    "phi": -3.25,
@@ -564,89 +579,89 @@
  ],
  "E1": {
   "R": {
-   "all": 0.1507996559,
-   "body": 0.3115621015,
+   "all": 0.1371645876,
+   "body": 0.3089293548,
    "tail": -0.3510469038
   },
   "ci95": {
    "all": [
-    -1.0408,
-    0.5063
+    -0.8918,
+    0.5117
    ],
    "body": [
-    0.0,
-    0.5722
+    0.0153,
+    0.5593
    ],
    "tail": [
-    -7.4002,
-    0.6503
+    -6.8081,
+    0.6563
    ]
   },
   "boot_fraction_positive": {
-   "all": 0.664,
-   "body": 0.9745,
-   "tail": 0.311
+   "all": 0.6735,
+   "body": 0.984,
+   "tail": 0.3184
   },
   "permutation": {
    "n": 2000,
-   "mean": -0.2686,
-   "p95": 0.3023,
-   "p_value": 0.1109
+   "mean": -0.2621,
+   "p95": 0.2222,
+   "p_value": 0.083
   }
  },
  "operators": {
   "imf only": {
-   "R": 0.3028,
+   "R": 0.2595,
    "ci95": [
     0.0,
-    0.5648
+    0.5157
    ]
   },
   "scatter only": {
-   "R": -0.3181,
+   "R": -0.3255,
    "ci95": [
-    -1.7294,
+    -1.1292,
     0.0
    ]
   },
   "aperture only": {
-   "R": -0.0011,
+   "R": 0.0071,
    "ci95": [
-    -0.0298,
-    0.0268
+    -0.0181,
+    0.0575
    ]
   },
   "without imf": {
-   "R": -0.1911,
+   "R": -0.1954,
    "ci95": [
-    -1.3427,
-    0.0
+    -0.9136,
+    0.0343
    ]
   },
   "without scatter": {
-   "R": 0.2866,
+   "R": 0.2833,
    "ci95": [
-    -0.0051,
-    0.54
+    -0.0037,
+    0.5319
    ]
   },
   "without aperture": {
-   "R": 0.0526,
+   "R": -0.0049,
    "ci95": [
-    -1.3511,
-    0.5073
+    -0.937,
+    0.4603
    ]
   },
   "all three": {
-   "R": 0.1508,
+   "R": 0.1372,
    "ci95": [
-    -1.1259,
-    0.4958
+    -0.8685,
+    0.5012
    ]
   }
  },
  "E2": {
-  "R_ub": 0.1573,
+  "R_ub": 0.144,
   "assignment": {
    "FIREbox": "100",
    "Horizon-AGN": "30",
@@ -658,73 +673,75 @@
    "Magneticum Pathfinder"
   ],
   "null_n": 255,
-  "null_p95": 0.2797,
-  "null_max": 0.2797,
-  "null_median": 0.2367,
+  "null_p95": 0.2661,
+  "null_max": 0.2661,
+  "null_median": 0.2096,
   "exceeds_null": false
  },
  "E4": [
   {
    "lambda": 0.0,
    "draws": 100,
-   "R_true_mean": -0.0139,
-   "R_recovered_mean": -0.0071,
-   "recovery_rmse": 0.0885,
-   "detection_rate": 0.0
+   "R_true_mean": -0.0025,
+   "R_recovered_mean": -0.0047,
+   "recovery_rmse": 0.0775,
+   "detection_rate": 0.01
   },
   {
    "lambda": 0.5,
    "draws": 100,
-   "R_true_mean": -0.0079,
-   "R_recovered_mean": 0.0015,
-   "recovery_rmse": 0.087,
-   "detection_rate": 0.02
+   "R_true_mean": 0.0221,
+   "R_recovered_mean": 0.0152,
+   "recovery_rmse": 0.0685,
+   "detection_rate": 0.03
   },
   {
    "lambda": 1.0,
    "draws": 100,
-   "R_true_mean": 0.0085,
-   "R_recovered_mean": 0.0098,
-   "recovery_rmse": 0.0661,
-   "detection_rate": 0.01
+   "R_true_mean": 0.0137,
+   "R_recovered_mean": 0.0099,
+   "recovery_rmse": 0.0672,
+   "detection_rate": 0.03
   },
   {
    "lambda": 2.0,
    "draws": 100,
-   "R_true_mean": 0.0453,
-   "R_recovered_mean": 0.0244,
-   "recovery_rmse": 0.0972,
-   "detection_rate": 0.05
+   "R_true_mean": 0.0488,
+   "R_recovered_mean": 0.0248,
+   "recovery_rmse": 0.0883,
+   "detection_rate": 0.02
   }
  ],
  "sensitivity": {
-  "S1_reference_50pkpc": 0.0213,
-  "S2_map_applied_by_abundance": -0.0998,
-  "S3_levels_phi_ge_-3.75": 0.2166,
-  "S4_imf_offsets_plus_0.05": 0.08,
-  "S4_imf_offsets_minus_0.05": 0.1961,
+  "S1_reference_50pkpc": 0.003,
+  "S2_map_applied_by_abundance": -0.0461,
+  "S3_levels_phi_ge_-3.75": 0.2068,
+  "S4_imf_offsets_plus_0.05": 0.083,
+  "S4_imf_offsets_minus_0.05": 0.1611,
   "S5_random_fiducial_run": {
    "draws": 200,
-   "median": 0.1542,
+   "median": 0.1645,
    "ci95": [
-    0.0431,
-    0.3144
+    0.032,
+    0.3117
    ],
    "fraction_positive": 1.0
   },
   "S6_leave_one_suite_out": {
-   "COLIBRE": 0.1691,
-   "EAGLE": -0.0132,
-   "FIREbox": 0.2259,
-   "FLAMINGO": 0.3044,
-   "Horizon-AGN": -0.1788,
-   "Illustris": 0.2435,
-   "IllustrisTNG": 0.155,
-   "Magneticum Pathfinder": 0.146
+   "COLIBRE": 0.1562,
+   "DARWIN": 0.1508,
+   "EAGLE": -0.0285,
+   "FIREbox": 0.1961,
+   "FLAMINGO": 0.3015,
+   "Horizon-AGN": -0.205,
+   "Illustris": 0.23,
+   "IllustrisTNG": 0.1418,
+   "Magneticum Pathfinder": 0.1341
   },
   "S7_include_unstated_normalisation": {
    "suites": [
     "COLIBRE",
+    "DARWIN",
     "EAGLE",
     "FIREbox",
     "FLAMINGO",
@@ -734,38 +751,38 @@
     "Magneticum Pathfinder",
     "SIMBA"
    ],
-   "R": 0.164,
+   "R": 0.1553,
    "ci95": [
-    -0.4226,
-    0.4617
+    -0.4043,
+    0.4644
    ]
   },
   "S8_convolve_all_to_sigma_0.3": {
-   "R": 0.2764,
+   "R": 0.2915,
    "ci95": [
-    -0.0849,
-    0.6109
+    -0.065,
+    0.6245
    ],
-   "placebo_smoothing_only_R": -0.0378
+   "placebo_smoothing_only_R": 0.0199
   },
   "S9_deconvolution_error_0.03": {
-   "median": 0.1473,
+   "median": 0.137,
    "ci95": [
-    0.1144,
-    0.1755
+    0.1014,
+    0.1733
    ]
   }
  },
  "verdicts": {
   "E1": {
    "supported": false,
-   "R": 0.1507996559,
-   "ci95_lower": -1.0408,
-   "permutation_p": 0.1109,
+   "R": 0.1371645876,
+   "ci95_lower": -0.8918,
+   "permutation_p": 0.083,
    "sign_consistent_S1_S2": false
   },
   "E2": {
-   "R_ub": 0.1573,
+   "R_ub": 0.144,
    "exceeds_null": false
   },
   "E3": {
@@ -778,7 +795,7 @@
   },
   "E4": {
    "smallest_lambda_detected_in_80_percent": null,
-   "false_positive_rate_at_lambda_0": 0.0
+   "false_positive_rate_at_lambda_0": 0.01
   }
  },
  "deviations": [

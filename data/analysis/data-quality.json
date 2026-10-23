@@ -1,5 +1,5 @@
 {
- "n_records": 1872,
+ "n_records": 1883,
  "n_sources": 129,
  "tiers": [
   {
@@ -41,8 +41,8 @@
   {
    "kind": "simulation",
    "tier": "catalog-derived",
-   "records": 210,
-   "rankable": 210
+   "records": 221,
+   "rankable": 221
   },
   {
    "kind": "simulation",
@@ -71,8 +71,8 @@
  ],
  "digitized": {
   "n": 822,
-  "share_of_simulation_curves": 0.5469061876247505,
-  "n_simulation_curves": 1503,
+  "share_of_simulation_curves": 0.5429326287978864,
+  "n_simulation_curves": 1514,
   "declared_uncertainty_dex": {
    "n": 822,
    "median": 0.01,
@@ -331,7 +331,7 @@
   "n": 1
  },
  "terms": {
-  "records_with_terms": 336,
+  "records_with_terms": 347,
   "by_terms": [
    [
     "third-party: source repository has no licence file (Garcia et al. 2024)",
@@ -346,11 +346,15 @@
     88
    ],
    [
+    "third-party: the DARWIN-1 data page states no licence or terms of use (checked 2026-10-23)",
+    11
+   ],
+   [
     "source tables: CC-BY-4.0 (paper tables)",
     3
    ]
   ],
-  "permission_not_requested": 146
+  "permission_not_requested": 157
  },
  "thin": {
   "epochs": [
@@ -428,11 +432,11 @@
     "0.1": 11,
     "0.5": 8,
     "1": 9,
-    "2": 8,
+    "2": 9,
     "3": 7,
-    "4": 10,
-    "6": 10,
-    "8": 9
+    "4": 11,
+    "6": 11,
+    "8": 10
    },
    "h2-fraction": {
     "0.1": 3,
@@ -619,7 +623,7 @@
  "vocabulary": {
   "population": {
    "distinct": 70,
-   "records": 1782,
+   "records": 1793,
    "near_duplicates": [
     {
      "spellings": [
@@ -627,7 +631,7 @@
       "all galaxies"
      ],
      "records": [
-      781,
+      792,
       119
      ]
     },
@@ -655,7 +659,7 @@
   },
   "massDefinition": {
    "distinct": 49,
-   "records": 1551,
+   "records": 1562,
    "near_duplicates": [
     {
      "spellings": [
@@ -671,12 +675,12 @@
   },
   "imf": {
    "distinct": 4,
-   "records": 1767,
+   "records": 1778,
    "near_duplicates": []
   },
   "densityFrame": {
    "distinct": 2,
-   "records": 632,
+   "records": 643,
    "near_duplicates": []
   },
   "sizeDefinition": {
@@ -700,7 +704,7 @@
   }
  },
  "checksums": {
-  "with_checksum": 1711,
-  "records": 1872
+  "with_checksum": 1722,
+  "records": 1883
  }
 }

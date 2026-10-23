@@ -6,11 +6,11 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 | tier | tasks | done | partly | waiting for a person | not done |
 |---|---|---|---|---|---|
-| 1 Quick (under 15 min) | 46 | 43 | 0 | 3 | 0 |
-| 2 Solid (about an hour) | 121 | 111 | 5 | 3 | 2 |
-| 3 Big (several hours) | 23 | 21 | 1 | 0 | 1 |
+| 1 Quick (under 15 min) | 46 | 44 | 0 | 2 | 0 |
+| 2 Solid (about an hour) | 121 | 113 | 4 | 2 | 2 |
+| 3 Big (several hours) | 23 | 22 | 0 | 0 | 1 |
 | 4 Needs other people or days | 10 | 0 | 0 | 10 | 0 |
-| all | 200 | 175 | 6 | 16 | 3 |
+| all | 200 | 179 | 4 | 14 | 3 |
 
 ## Step 1. Say what great means, and how we will know
 
@@ -147,7 +147,7 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 ## Step 6. Make it fast, robust and accessible
 
-*Works on a phone, on a slow connection, with a keyboard, in dark mode.* (18 of 20 done)
+*Works on a phone, on a slow connection, with a keyboard, in dark mode.* (19 of 20 done)
 
 - [x] **6.01** · tier 1 · Build · Measure the real transfer size and load time of every page — scripts/test-performance.mjs: slow 4G plus 4x slower processor; Explorer 5.1 s, front page 2.9 s, dials page 3.3 s, a study page 1.3 s; budgets enforced in the test
 - [-] **6.02** · tier 3 · Build · Split the Explorer's data so the first view appears fast, if the measurement says it is needed — Measured instead of assumed: the Explorer was 8.1 s on the throttled phone; embedding its data as JSON text brought that to 5.1 s, inside the budget, so splitting the data was not needed
@@ -163,7 +163,7 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 - [x] **6.12** · tier 2 · Build · Generate share-preview images from the real charts at build time — Every page has share title, description and a 1200x630 preview made from the real chart (scripts/make-og-images.mjs); tested in test-site
 - [x] **6.13** · tier 2 · Build · Check the Explorer works offline once loaded — test-resilience.mjs: reduced motion respected on 4 pages; Explorer and dials page keep working offline after load; blocked web fonts
 - [x] **6.14** · tier 1 · Build · Fix the clipped legend footer in the Explorer — Legend key pinned to the bottom of the legend
-- [~] **6.15** · tier 2 · Build · Run the browser tests in Firefox and WebKit as well — Firefox and WebKit wired into CI as a non-blocking job (PW_BROWSER); not run here, no such browsers installed
+- [x] **6.15** · tier 2 · Build · Run the browser tests in Firefox and WebKit as well — the CI jobs other-browsers (firefox) and other-browsers (webkit) run the suites (PW_BROWSER); both passed on commit 61d2a45 (2026-10-23). They cannot run in the authoring environment, where only Chromium is installed
 - [x] **6.16** · tier 2 · Build · Check very wide screens — scripts/test-layouts.mjs: 17 pages x 320/390/768/1440/2560 px, light and dark, no sideways scroll; screenshots looked at
 - [x] **6.17** · tier 2 · Build · Throttle the network and measure time to first interaction — scripts/test-performance.mjs: slow 4G plus 4x slower processor; Explorer 5.1 s, front page 2.9 s, dials page 3.3 s, a study page 1.3 s; budgets enforced in the test
 - [x] **6.18** · tier 1 · Build · Add a helpful 404 page — 404.html built, base set from the mount point, links tested from a nested address
@@ -195,7 +195,7 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 ## Step 8. Keep it healthy to maintain
 
-*Fast tests, pinned tools, one-command releases, nothing that quietly rots.* (17 of 20 done)
+*Fast tests, pinned tools, one-command releases, nothing that quietly rots.* (18 of 20 done)
 
 - [x] **8.01** · tier 3 · Build · Cut the S4 test from seven minutes to under two without losing its checks — joint-reachability test 10 min -> 1 min 45 s on four cores: bit-identical refactor of the feature code (verified) + the four synthetic runs side by side; all assertions kept
 - [x] **8.02** · tier 1 · Build · Pin tool versions and add lock files — .nvmrc, engines, requirements-lock.txt, environment.yml, package-lock.json. GitHub Actions are pinned by major tag, not commit hash
@@ -207,7 +207,7 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 - [x] **8.08** · tier 2 · Build · Add a JavaScript and HTML lint to CI — scripts/lint.mjs in verify-all: every script parses, Python compiles, JSON parses, built pages balanced with unique ids; mutation-tested
 - [x] **8.09** · tier 1 · Build · Add issue labels and forms for feedback and new curves — Issue forms: bug, feedback (added to curve-error, source-suggestion). Labels are created on first use by GitHub only if they exist; none created from here
 - [x] **8.10** · tier 2 · Build · Write a release script: bump, regenerate, tag, notes in one command — scripts/release.sh: bump, changelog, rebuild, verify, prints commit/tag commands; never pushes. File edits dry-run tested, full run not executed
-- [!] **8.11** · tier 2 · Build · Tag the release and create GitHub release notes — A tag belongs on main after the merge; the release script prints the commands. Needs the maintainer to merge
+- [!] **8.11** · tier 2 · Build · Tag the release and create GitHub release notes — main carries the work (2026-10-23); creating a tag or a release is refused for the automated session (HTTP 403), so the maintainer publishes it (docs/SEND-THIS-WEEK.md, item 1)
 - [!] **8.12** · tier 4 · Maintainer · Archive the new version on Zenodo — Needs the maintainer; nothing here can do it
 - [x] **8.13** · tier 2 · Build · Remove dead code and dead pages — Audit: no dead pages; 10 unreferenced scripts are tests (run by glob) or one-off ingestion scripts kept as provenance; screenshots script wired into npm
 - [x] **8.14** · tier 2 · Build · Check repository size and that no large raw files are tracked — Packed repository 5.3 MiB; largest tracked file 9 MB; pre-commit refuses files over 12 MB
@@ -215,7 +215,7 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 - [x] **8.16** · tier 1 · Build · Add short commands for common tasks — Makefile and npm scripts
 - [x] **8.17** · tier 2 · Build · Review the static site for secrets and data leaks — Scanned tracked files and built pages for tokens, keys, local paths and emails: only the maintainer's own address in CITATION.cff
 - [x] **8.18** · tier 2 · Build · Add a weekly scheduled check for broken links and data rot — .github/workflows/rot.yml weekly: links behind records and on pages, offline chain on today's tools, opens an issue
-- [~] **8.19** · tier 3 · Build · Report test coverage for the Python and JavaScript — scripts/coverage.sh: Python core modules 67% (analysis of the model form 95%, joint reachability 40%); JavaScript only logic.js measured (65%); compare.js and export-lib.js are not instrumented
+- [x] **8.19** · tier 3 · Build · Report test coverage for the Python and JavaScript — scripts/coverage.sh: Python core modules 67% (analysis of the model form 95%, joint reachability 40%); JavaScript lines: compare.js 77%, export-lib.js 100%, highline/logic.js 65% (the files are loaded in a vm context, which now has its file name so that coverage is attributed to it)
 - [x] **8.20** · tier 2 · Build · Check the build is deterministic: same input, same output twice — test-determinism.mjs: 170 files in dist/ byte-identical across two builds
 
 ## Step 9. Get it in front of people
@@ -241,20 +241,20 @@ Ten steps, 200 tasks. Tier 1 is quick, tier 2 about an hour, tier 3 several hour
 
 ## Step 10. Review, measure and decide
 
-*Fresh eyes, a final check on the live site, and a dated decision using the criteria set in step 1.* (13 of 18 done)
+*Fresh eyes, a final check on the live site, and a dated decision using the criteria set in step 1.* (15 of 18 done)
 
 - [x] **10.01** · tier 3 · Build · Get an independent fresh-eyes review of the whole product from a separate reviewer — Independent-style review by a separate reviewer (not an outside expert): docs/INDEPENDENT-REVIEW.md. It found a real export bug, a wrong redshift range and several overstated claims
 - [x] **10.02** · tier 3 · Build · Fix everything the review marks as must-fix — All 5 must-fix and 9 of 14 should-fix items fixed or disclosed (table in docs/INDEPENDENT-REVIEW.md); 5 not done and listed there
-- [!] **10.03** · tier 2 · Build · Do a final check of the live site — Same as 10.12: the live site is main, which does not yet have this work; check after the merge
+- [x] **10.03** · tier 2 · Build · Do a final check of the live site — 2026-10-23, after main moved to 61d2a45: the Explorer, the data export manifest (1872 records), the summary, FAQ, quality and study pages return 200 and carry the new records; the pages workflow and all verify jobs passed
 - [x] **10.04** · tier 1 · Build · Update the README and changelog for the release — README and CHANGELOG updated (Unreleased section); version not bumped because the DOI is per release and needs the maintainer's Zenodo deposit
-- [!] **10.05** · tier 2 · Build · Bump the version and tag the release — scripts/release.sh X.Y.Z is ready; the bump, tag and DOI belong after the merge to main and the Zenodo deposit, which need the maintainer
+- [!] **10.05** · tier 2 · Build · Bump the version and tag the release — scripts/release.sh X.Y.Z is ready; the bump, tag and DOI need the maintainer, who also chooses the number: 0.24.0 as it stands in the files, or 0.25.0 for the work listed under Unreleased in the changelog
 - [x] **10.06** · tier 2 · Build · Write the honest retrospective — docs/RETROSPECTIVE.md
 - [x] **10.07** · tier 1 · Build · List the numbers to look at on the review date — docs/REVIEW-DAY.md
 - [x] **10.08** · tier 2 · Build · Publish the roadmap with final status: done, not done, blocked — docs/ROADMAP.md rendered with final status; the private page is the artifact below
 - [!] **10.09** · tier 4 · Maintainer · On the review date, apply the kill criteria — Needs the maintainer; nothing here can do it
 - [x] **10.10** · tier 2 · Build · Re-measure the front page: time to first meaningful action — Slow phone profile (slow 4G, 4x slower processor): front page first paint with readable text and clickable links at 0.9 s (fonts finish at about 3 s); study page 1.1 s; dials page 0.9 s first paint, 3.2 s usable; Explorer 0.85 s loader, 5.4 s usable
 - [x] **10.11** · tier 2 · Build · Re-run every test suite from a clean checkout — Fresh clone of the pushed branch, npm ci, verify-all (4 min 18 s, generated files unchanged), all 10 browser suites and the determinism test passed. (This did not catch the export bug found by the independent review; see 10.01)
-- [!] **10.12** · tier 1 · Build · Confirm the live site matches the release — The live site is still the old build of main (0.23.0 without the faq, summary, tests of this push: /site/summary.html and /site/faq.html return 404). It can be confirmed only after the merge to main
+- [x] **10.12** · tier 1 · Build · Confirm the live site matches the release — the live site is main at 61d2a45 (2026-10-23): the export manifest on the site says 1872 records and the Explorer contains the DARWIN records and the precompiled expressions. The release itself (tag, GitHub release, DOI) is task 8.11
 - [x] **10.13** · tier 2 · Build · Check that nothing on the site claims more than the evidence — Scanned pages, README, drafts and note for overclaiming words (novel, first, proves, definitive...): none left; novelty is explicitly not claimed. The independent review's claims audit is the second check
 - [~] **10.14** · tier 2 · Build · Re-read every study page as a sceptic and tighten — The reviewer re-read the study pages as a sceptic; wording tightened (plain-words blocks, abstracts, glossary). A human sceptic has not read them
 - [x] **10.15** · tier 1 · Build · Archive scratch files and make the repository tidy — Only ignored build and cache directories remain; scratch work lives outside the repository
