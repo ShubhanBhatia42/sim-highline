@@ -62,7 +62,7 @@ assert.equal(compatible(eagle("Ref-L100N1504 M200crit", 0), b19).verdict, "not-c
     assert.equal(compatible(other, d0).verdict, "not-comparable", `the verdict must not depend on the order (${name})`);
   }
   const self = compatible(d0, d1);
-  assert.deepEqual(self.blockers, [], "two DARWIN FoF relations are on the same halo-mass definition");
+  assert.equal(self.blockers.length, 0, "two DARWIN FoF relations are on the same halo-mass definition");
   assert.equal(self.verdict, "comparable", "same code, same definitions, 0.06 apart in redshift");
 }
 const lange = vcd.find(r => r.source.startsWith("Lange") && r.run === "r band");

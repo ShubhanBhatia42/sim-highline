@@ -638,7 +638,9 @@
         "gsmf",
         "size",
         "mzr",
-        "ks"
+        "ks",
+        "shmr",
+        "bh"
       ],
       "source": "https://arxiv.org/abs/2610.25786",
       "redshiftRangeBasis": "Lee et al. 2026 (arXiv:2610.25786): DARWIN-1 has reached z = 0.19 (Sect. 2); the star formation rate density curve extends to z = 14, the highest redshift drawn. DARWIN-2 galaxies are plotted at z = 2 to 5."
