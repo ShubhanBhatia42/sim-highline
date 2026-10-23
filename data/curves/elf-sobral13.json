@@ -1,0 +1,635 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "sobral13.hizels.elf.halpha.z0.4",
+      "source": "Sobral et al. 2013 (HiZELS)",
+      "run": "H-alpha luminosity function, binned (Table 4, corrected phi)",
+      "kind": "observation",
+      "relation": "elf",
+      "epoch": {
+        "zRepresentative": 0.4,
+        "zNominal": 0.4,
+        "zMin": 0.391,
+        "zMax": 0.411,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 H-alpha line luminosity, corrected for [NII] contamination and for dust extinction (A(Halpha) = 1 mag)",
+        "xUnit": "log10(erg s^-1)",
+        "yDefinition": "log10 comoving number density of H-alpha emitters per dex of luminosity (the paper's phi corr: corrected for incompleteness and for the filter profile)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 40.5,
+        "xMax": 42.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 40.5,
+            "y": -1.66,
+            "yLow": -1.7,
+            "yHigh": -1.62
+          },
+          {
+            "x": 40.6,
+            "y": -1.7,
+            "yLow": -1.74,
+            "yHigh": -1.66
+          },
+          {
+            "x": 40.7,
+            "y": -1.81,
+            "yLow": -1.85,
+            "yHigh": -1.77
+          },
+          {
+            "x": 40.8,
+            "y": -1.93,
+            "yLow": -1.98,
+            "yHigh": -1.88
+          },
+          {
+            "x": 40.9,
+            "y": -1.96,
+            "yLow": -2.03,
+            "yHigh": -1.89
+          },
+          {
+            "x": 41.0,
+            "y": -2.03,
+            "yLow": -2.1,
+            "yHigh": -1.96
+          },
+          {
+            "x": 41.1,
+            "y": -2.12,
+            "yLow": -2.21,
+            "yHigh": -2.03
+          },
+          {
+            "x": 41.2,
+            "y": -2.27,
+            "yLow": -2.35,
+            "yHigh": -2.19
+          },
+          {
+            "x": 41.3,
+            "y": -2.29,
+            "yLow": -2.38,
+            "yHigh": -2.2
+          },
+          {
+            "x": 41.4,
+            "y": -2.42,
+            "yLow": -2.52,
+            "yHigh": -2.32
+          },
+          {
+            "x": 41.5,
+            "y": -2.46,
+            "yLow": -2.57,
+            "yHigh": -2.35
+          },
+          {
+            "x": 41.6,
+            "y": -2.57,
+            "yLow": -2.7,
+            "yHigh": -2.44
+          },
+          {
+            "x": 41.7,
+            "y": -2.69,
+            "yLow": -2.88,
+            "yHigh": -2.5
+          },
+          {
+            "x": 41.8,
+            "y": -2.73,
+            "yLow": -2.9,
+            "yHigh": -2.56
+          },
+          {
+            "x": 41.9,
+            "y": -2.88,
+            "yLow": -3.08,
+            "yHigh": -2.68
+          },
+          {
+            "x": 42.0,
+            "y": -3.03,
+            "yLow": -3.38,
+            "yHigh": -2.68
+          },
+          {
+            "x": 42.2,
+            "y": -3.56,
+            "yLow": -4.07,
+            "yHigh": -3.05
+          },
+          {
+            "x": 42.5,
+            "y": -3.71,
+            "yLow": -4.42,
+            "yHigh": -3.0
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "narrow-band selected H-alpha emitters (rest-frame EW(Halpha+[NII]) > 25 A), COSMOS and UDS fields",
+        "warning": "Luminosities carry a constant A(Halpha) = 1 mag for every galaxy and a statistical [NII] correction (median [NII]/(Halpha+[NII]) about 0.25), not a measurement per galaxy; the paper notes the bright end deviates from a Schechter function where AGN dominate, and the points are not AGN-corrected. Errors are Poisson plus 20 per cent of the completeness correction."
+      },
+      "definitions": {
+        "line": "H-alpha (without [NII])",
+        "dustCorrection": "intrinsic",
+        "dustCorrectionMethod": "constant A(Halpha) = 1 mag applied to every galaxy",
+        "densityFrame": "comoving",
+        "apertureDefinition": "fixed 3 arcsec diameter aperture at z = 0.4 (about 16 kpc, the same physical area as 2 arcsec at higher redshift)",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "population": "narrow-band selected H-alpha emitters, EW(Halpha+[NII]) > 25 A rest frame (star-forming galaxies and AGN)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Sobral et al. 2013, MNRAS 428, 1128 (arXiv:1202.3436), Table 4",
+        "doi": "10.1093/mnras/sts096",
+        "url": "https://arxiv.org/abs/1202.3436",
+        "retrieved": "2026-10-23",
+        "sourceMember": "FAINT_END_C_VARIANCE.tex",
+        "sourceArchiveSha256": "d9542ddbc0c42dbb6d3d3d8d350db74a4e553a921a2c757cc6a9751225c79748",
+        "quotes": {
+          "line_and_dust": "FAINT_END_C_VARIANCE.tex:437",
+          "nii": "FAINT_END_C_VARIANCE.tex:348",
+          "dust_constant": "FAINT_END_C_VARIANCE.tex:386",
+          "cosmology": "FAINT_END_C_VARIANCE.tex:159",
+          "aperture": [
+            "FAINT_END_C_VARIANCE.tex:168",
+            "FAINT_END_C_VARIANCE.tex:189"
+          ],
+          "comoving": "FAINT_END_C_VARIANCE.tex:374",
+          "selection": "FAINT_END_C_VARIANCE.tex:235",
+          "errors": "FAINT_END_C_VARIANCE.tex:401"
+        },
+        "definitionBasis": "densityFrame is stated as '(co-moving)' for the NB_H volume (z = 1.47) in the volume section; the other epochs' volumes are computed in the same paragraph in the same way (read, not stated)"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Table 4 transcribed (18 bins, 797 sources of 1742 Halpha emitters in Table 3). Checks: the Table 5 Schechter fit (log L*=41.95, log phi*=-3.12, alpha=-1.75) reproduces the points to rms 0.90 times the printed error (rms 0.26 dex); at this epoch the printed Schechter parameters integrate to log rho_L(41.6) = 38.62, 0.37 dex below the 38.99 printed in Table 5, so that check is not used here (the paper does not say why; the points themselves agree with the printed fit); the points and the fit give the same luminosity density over the bins (log rho 39.25 and 39.11)."
+    },
+    {
+      "id": "sobral13.hizels.elf.halpha.z0.84",
+      "source": "Sobral et al. 2013 (HiZELS)",
+      "run": "H-alpha luminosity function, binned (Table 4, corrected phi)",
+      "kind": "observation",
+      "relation": "elf",
+      "epoch": {
+        "zRepresentative": 0.84,
+        "zNominal": 0.84,
+        "zMin": 0.83,
+        "zMax": 0.86,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 H-alpha line luminosity, corrected for [NII] contamination and for dust extinction (A(Halpha) = 1 mag)",
+        "xUnit": "log10(erg s^-1)",
+        "yDefinition": "log10 comoving number density of H-alpha emitters per dex of luminosity (the paper's phi corr: corrected for incompleteness and for the filter profile)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 41.7,
+        "xMax": 42.9
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 41.7,
+            "y": -1.93,
+            "yLow": -1.96,
+            "yHigh": -1.9
+          },
+          {
+            "x": 41.85,
+            "y": -2.02,
+            "yLow": -2.05,
+            "yHigh": -1.99
+          },
+          {
+            "x": 42.0,
+            "y": -2.18,
+            "yLow": -2.22,
+            "yHigh": -2.14
+          },
+          {
+            "x": 42.15,
+            "y": -2.43,
+            "yLow": -2.49,
+            "yHigh": -2.37
+          },
+          {
+            "x": 42.3,
+            "y": -2.73,
+            "yLow": -2.9,
+            "yHigh": -2.56
+          },
+          {
+            "x": 42.45,
+            "y": -3.01,
+            "yLow": -3.18,
+            "yHigh": -2.84
+          },
+          {
+            "x": 42.6,
+            "y": -3.27,
+            "yLow": -3.48,
+            "yHigh": -3.06
+          },
+          {
+            "x": 42.75,
+            "y": -3.79,
+            "yLow": -4.34,
+            "yHigh": -3.24
+          },
+          {
+            "x": 42.9,
+            "y": -4.13,
+            "yLow": -5.64,
+            "yHigh": -2.62
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "narrow-band selected H-alpha emitters (rest-frame EW(Halpha+[NII]) > 25 A), COSMOS and UDS fields",
+        "warning": "Luminosities carry a constant A(Halpha) = 1 mag for every galaxy and a statistical [NII] correction (median [NII]/(Halpha+[NII]) about 0.25), not a measurement per galaxy; the paper notes the bright end deviates from a Schechter function where AGN dominate, and the points are not AGN-corrected. Errors are Poisson plus 20 per cent of the completeness correction."
+      },
+      "definitions": {
+        "line": "H-alpha (without [NII])",
+        "dustCorrection": "intrinsic",
+        "dustCorrectionMethod": "constant A(Halpha) = 1 mag applied to every galaxy",
+        "densityFrame": "comoving",
+        "apertureDefinition": "fixed 2 arcsec diameter aperture (about 16 kpc); 3 arcsec at z = 0.4 to cover the same physical area",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "population": "narrow-band selected H-alpha emitters, EW(Halpha+[NII]) > 25 A rest frame (star-forming galaxies and AGN)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Sobral et al. 2013, MNRAS 428, 1128 (arXiv:1202.3436), Table 4",
+        "doi": "10.1093/mnras/sts096",
+        "url": "https://arxiv.org/abs/1202.3436",
+        "retrieved": "2026-10-23",
+        "sourceMember": "FAINT_END_C_VARIANCE.tex",
+        "sourceArchiveSha256": "d9542ddbc0c42dbb6d3d3d8d350db74a4e553a921a2c757cc6a9751225c79748",
+        "quotes": {
+          "line_and_dust": "FAINT_END_C_VARIANCE.tex:437",
+          "nii": "FAINT_END_C_VARIANCE.tex:348",
+          "dust_constant": "FAINT_END_C_VARIANCE.tex:386",
+          "cosmology": "FAINT_END_C_VARIANCE.tex:159",
+          "aperture": [
+            "FAINT_END_C_VARIANCE.tex:168",
+            "FAINT_END_C_VARIANCE.tex:189"
+          ],
+          "comoving": "FAINT_END_C_VARIANCE.tex:374",
+          "selection": "FAINT_END_C_VARIANCE.tex:235",
+          "errors": "FAINT_END_C_VARIANCE.tex:401"
+        },
+        "definitionBasis": "densityFrame is stated as '(co-moving)' for the NB_H volume (z = 1.47) in the volume section; the other epochs' volumes are computed in the same paragraph in the same way (read, not stated)"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Table 4 transcribed (9 bins, 633 sources of 637 Halpha emitters in Table 3). Checks: the Table 5 Schechter fit (log L*=42.25, log phi*=-2.47, alpha=-1.56) reproduces the points to rms 0.61 times the printed error (rms 0.11 dex); the same fit integrated above 10^41.6 erg/s gives log rho_L = 39.74 against 39.75 printed in Table 5; the points and the fit give the same luminosity density over the bins (log rho 39.72 and 39.73)."
+    },
+    {
+      "id": "sobral13.hizels.elf.halpha.z1.47",
+      "source": "Sobral et al. 2013 (HiZELS)",
+      "run": "H-alpha luminosity function, binned (Table 4, corrected phi)",
+      "kind": "observation",
+      "relation": "elf",
+      "epoch": {
+        "zRepresentative": 1.47,
+        "zNominal": 1.47,
+        "zMin": 1.45,
+        "zMax": 1.482,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 H-alpha line luminosity, corrected for [NII] contamination and for dust extinction (A(Halpha) = 1 mag)",
+        "xUnit": "log10(erg s^-1)",
+        "yDefinition": "log10 comoving number density of H-alpha emitters per dex of luminosity (the paper's phi corr: corrected for incompleteness and for the filter profile)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 42.1,
+        "xMax": 43.4
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 42.1,
+            "y": -2.13,
+            "yLow": -2.23,
+            "yHigh": -2.03
+          },
+          {
+            "x": 42.2,
+            "y": -2.25,
+            "yLow": -2.34,
+            "yHigh": -2.16
+          },
+          {
+            "x": 42.3,
+            "y": -2.34,
+            "yLow": -2.4,
+            "yHigh": -2.28
+          },
+          {
+            "x": 42.4,
+            "y": -2.47,
+            "yLow": -2.52,
+            "yHigh": -2.42
+          },
+          {
+            "x": 42.5,
+            "y": -2.62,
+            "yLow": -2.67,
+            "yHigh": -2.57
+          },
+          {
+            "x": 42.6,
+            "y": -2.73,
+            "yLow": -2.77,
+            "yHigh": -2.69
+          },
+          {
+            "x": 42.7,
+            "y": -2.91,
+            "yLow": -2.99,
+            "yHigh": -2.83
+          },
+          {
+            "x": 42.8,
+            "y": -3.18,
+            "yLow": -3.29,
+            "yHigh": -3.07
+          },
+          {
+            "x": 42.9,
+            "y": -3.55,
+            "yLow": -3.73,
+            "yHigh": -3.37
+          },
+          {
+            "x": 43.0,
+            "y": -3.81,
+            "yLow": -4.07,
+            "yHigh": -3.55
+          },
+          {
+            "x": 43.1,
+            "y": -4.22,
+            "yLow": -4.6,
+            "yHigh": -3.84
+          },
+          {
+            "x": 43.2,
+            "y": -4.55,
+            "yLow": -5.1,
+            "yHigh": -4.0
+          },
+          {
+            "x": 43.4,
+            "y": -4.86,
+            "yLow": -5.41,
+            "yHigh": -4.31
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "narrow-band selected H-alpha emitters (rest-frame EW(Halpha+[NII]) > 25 A), COSMOS and UDS fields",
+        "warning": "Luminosities carry a constant A(Halpha) = 1 mag for every galaxy and a statistical [NII] correction (median [NII]/(Halpha+[NII]) about 0.25), not a measurement per galaxy; the paper notes the bright end deviates from a Schechter function where AGN dominate, and the points are not AGN-corrected. Errors are Poisson plus 20 per cent of the completeness correction."
+      },
+      "definitions": {
+        "line": "H-alpha (without [NII])",
+        "dustCorrection": "intrinsic",
+        "dustCorrectionMethod": "constant A(Halpha) = 1 mag applied to every galaxy",
+        "densityFrame": "comoving",
+        "apertureDefinition": "fixed 2 arcsec diameter aperture (about 16 kpc); 3 arcsec at z = 0.4 to cover the same physical area",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "population": "narrow-band selected H-alpha emitters, EW(Halpha+[NII]) > 25 A rest frame (star-forming galaxies and AGN)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Sobral et al. 2013, MNRAS 428, 1128 (arXiv:1202.3436), Table 4",
+        "doi": "10.1093/mnras/sts096",
+        "url": "https://arxiv.org/abs/1202.3436",
+        "retrieved": "2026-10-23",
+        "sourceMember": "FAINT_END_C_VARIANCE.tex",
+        "sourceArchiveSha256": "d9542ddbc0c42dbb6d3d3d8d350db74a4e553a921a2c757cc6a9751225c79748",
+        "quotes": {
+          "line_and_dust": "FAINT_END_C_VARIANCE.tex:437",
+          "nii": "FAINT_END_C_VARIANCE.tex:348",
+          "dust_constant": "FAINT_END_C_VARIANCE.tex:386",
+          "cosmology": "FAINT_END_C_VARIANCE.tex:159",
+          "aperture": [
+            "FAINT_END_C_VARIANCE.tex:168",
+            "FAINT_END_C_VARIANCE.tex:189"
+          ],
+          "comoving": "FAINT_END_C_VARIANCE.tex:374",
+          "selection": "FAINT_END_C_VARIANCE.tex:235",
+          "errors": "FAINT_END_C_VARIANCE.tex:401"
+        },
+        "definitionBasis": "densityFrame is stated as '(co-moving)' for the NB_H volume (z = 1.47) in the volume section; the other epochs' volumes are computed in the same paragraph in the same way (read, not stated)"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Table 4 transcribed (13 bins, 499 sources of 515 Halpha emitters in Table 3). Checks: the Table 5 Schechter fit (log L*=42.56, log phi*=-2.61, alpha=-1.62) reproduces the points to rms 0.61 times the printed error (rms 0.26 dex); the same fit integrated above 10^41.6 erg/s gives log rho_L = 40.04 against 40.03 printed in Table 5; the points and the fit give the same luminosity density over the bins (log rho 39.83 and 39.84)."
+    },
+    {
+      "id": "sobral13.hizels.elf.halpha.z2.23",
+      "source": "Sobral et al. 2013 (HiZELS)",
+      "run": "H-alpha luminosity function, binned (Table 4, corrected phi)",
+      "kind": "observation",
+      "relation": "elf",
+      "epoch": {
+        "zRepresentative": 2.23,
+        "zNominal": 2.23,
+        "zMin": 2.215,
+        "zMax": 2.247,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 H-alpha line luminosity, corrected for [NII] contamination and for dust extinction (A(Halpha) = 1 mag)",
+        "xUnit": "log10(erg s^-1)",
+        "yDefinition": "log10 comoving number density of H-alpha emitters per dex of luminosity (the paper's phi corr: corrected for incompleteness and for the filter profile)",
+        "yUnit": "log10(Mpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 42.0,
+        "xMax": 43.6
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 42.0,
+            "y": -1.93,
+            "yLow": -2.12,
+            "yHigh": -1.74
+          },
+          {
+            "x": 42.15,
+            "y": -2.07,
+            "yLow": -2.23,
+            "yHigh": -1.91
+          },
+          {
+            "x": 42.3,
+            "y": -2.19,
+            "yLow": -2.26,
+            "yHigh": -2.12
+          },
+          {
+            "x": 42.4,
+            "y": -2.31,
+            "yLow": -2.36,
+            "yHigh": -2.26
+          },
+          {
+            "x": 42.5,
+            "y": -2.41,
+            "yLow": -2.46,
+            "yHigh": -2.36
+          },
+          {
+            "x": 42.6,
+            "y": -2.5,
+            "yLow": -2.54,
+            "yHigh": -2.46
+          },
+          {
+            "x": 42.7,
+            "y": -2.59,
+            "yLow": -2.64,
+            "yHigh": -2.54
+          },
+          {
+            "x": 42.8,
+            "y": -2.73,
+            "yLow": -2.79,
+            "yHigh": -2.67
+          },
+          {
+            "x": 42.9,
+            "y": -2.88,
+            "yLow": -3.02,
+            "yHigh": -2.74
+          },
+          {
+            "x": 43.0,
+            "y": -3.09,
+            "yLow": -3.26,
+            "yHigh": -2.92
+          },
+          {
+            "x": 43.1,
+            "y": -3.33,
+            "yLow": -3.55,
+            "yHigh": -3.11
+          },
+          {
+            "x": 43.2,
+            "y": -3.67,
+            "yLow": -3.98,
+            "yHigh": -3.36
+          },
+          {
+            "x": 43.3,
+            "y": -4.01,
+            "yLow": -4.52,
+            "yHigh": -3.5
+          },
+          {
+            "x": 43.4,
+            "y": -4.22,
+            "yLow": -4.9,
+            "yHigh": -3.54
+          },
+          {
+            "x": 43.6,
+            "y": -4.63,
+            "yLow": -5.04,
+            "yHigh": -4.22
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "narrow-band selected H-alpha emitters (rest-frame EW(Halpha+[NII]) > 25 A), COSMOS and UDS fields",
+        "warning": "Luminosities carry a constant A(Halpha) = 1 mag for every galaxy and a statistical [NII] correction (median [NII]/(Halpha+[NII]) about 0.25), not a measurement per galaxy; the paper notes the bright end deviates from a Schechter function where AGN dominate, and the points are not AGN-corrected. Errors are Poisson plus 20 per cent of the completeness correction."
+      },
+      "definitions": {
+        "line": "H-alpha (without [NII])",
+        "dustCorrection": "intrinsic",
+        "dustCorrectionMethod": "constant A(Halpha) = 1 mag applied to every galaxy",
+        "densityFrame": "comoving",
+        "apertureDefinition": "fixed 2 arcsec diameter aperture (about 16 kpc); 3 arcsec at z = 0.4 to cover the same physical area",
+        "cosmology": {
+          "H0": 70,
+          "Om": 0.3
+        },
+        "population": "narrow-band selected H-alpha emitters, EW(Halpha+[NII]) > 25 A rest frame (star-forming galaxies and AGN)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Sobral et al. 2013, MNRAS 428, 1128 (arXiv:1202.3436), Table 4",
+        "doi": "10.1093/mnras/sts096",
+        "url": "https://arxiv.org/abs/1202.3436",
+        "retrieved": "2026-10-23",
+        "sourceMember": "FAINT_END_C_VARIANCE.tex",
+        "sourceArchiveSha256": "d9542ddbc0c42dbb6d3d3d8d350db74a4e553a921a2c757cc6a9751225c79748",
+        "quotes": {
+          "line_and_dust": "FAINT_END_C_VARIANCE.tex:437",
+          "nii": "FAINT_END_C_VARIANCE.tex:348",
+          "dust_constant": "FAINT_END_C_VARIANCE.tex:386",
+          "cosmology": "FAINT_END_C_VARIANCE.tex:159",
+          "aperture": [
+            "FAINT_END_C_VARIANCE.tex:168",
+            "FAINT_END_C_VARIANCE.tex:189"
+          ],
+          "comoving": "FAINT_END_C_VARIANCE.tex:374",
+          "selection": "FAINT_END_C_VARIANCE.tex:235",
+          "errors": "FAINT_END_C_VARIANCE.tex:401"
+        },
+        "definitionBasis": "densityFrame is stated as '(co-moving)' for the NB_H volume (z = 1.47) in the volume section; the other epochs' volumes are computed in the same paragraph in the same way (read, not stated)"
+      },
+      "calibration": "validation",
+      "rankable": true,
+      "notes": "Table 4 transcribed (15 bins, 797 sources of 817 Halpha emitters in Table 3). Checks: the Table 5 Schechter fit (log L*=42.87, log phi*=-2.78, alpha=-1.59) reproduces the points to rms 0.44 times the printed error (rms 0.15 dex); the same fit integrated above 10^41.6 erg/s gives log rho_L = 40.25 against 40.26 printed in Table 5; the points and the fit give the same luminosity density over the bins (log rho 40.16 and 40.16)."
+    }
+  ]
+}
