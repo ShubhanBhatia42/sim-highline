@@ -10,7 +10,7 @@ data/ensembles/*.json       CAMELS summaries of 1,000 simulations per code (inge
         ├─ scripts/export-dataset.mjs                  → data/export/  CSV and JSON, the files people download
         ├─ scripts/build-curve-index.mjs               → data/curve-index.js  (what the Explorer embeds)
         │
-        ├─ scripts/analyze_*.py   the four studies, each with a protocol in docs/PROTOCOL-*.md written first
+        ├─ scripts/analyze_*.py   the studies, each with a protocol in docs/PROTOCOL-*.md written first
         │        └→ data/analysis/*.json  and  docs/ANALYSIS-*.md  (generated; never edited by hand)
         ├─ scripts/explore_*.py   checks made after a registered run (robustness, a third code, tuning to observations); exploratory
         ├─ scripts/export_retune_data.py  → data/retune/retune.json   emulator coefficients and curves for the dials page

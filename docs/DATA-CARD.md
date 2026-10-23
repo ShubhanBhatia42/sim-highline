@@ -16,7 +16,7 @@
 
 **Quality control.** Calibration assertions in every digitizer, in-script spot checks against published numbers, a repository-wide audit with an accepted-issues file, deterministic regeneration of every digitized record, unit tests for the extraction helper, the exporter and the loader, and a stable expert-audit sample.
 
-**Versioning.** `data/release.json` holds the dataset version; `CHANGELOG.md` records changes. A DOI is not yet minted.
+**Versioning.** `data/release.json` holds the dataset version; `CHANGELOG.md` records changes. The dataset is archived on Zenodo under the DOI in `CITATION.cff` (10.5281/zenodo.23217259), which lists the archived versions; a version is archived when the maintainer publishes its GitHub release (`docs/RELEASE-CHECKLIST.md`), and the newest version here may not be archived yet.
 
 **Third-party terms.** 230 records carry a `terms` value because their sources state a licence that is not CC BY (Sharda+26, GPL-2.0) or none (Garcia+24); see `docs/SOURCE-TERMS.md`.
 

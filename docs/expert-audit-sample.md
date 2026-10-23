@@ -13,7 +13,7 @@ For each record: open the cited figure or table, confirm (1) the curve is the on
 | COLIBRE | `chaikin26.colibre.smd.l400m7.50pkpc-m8` | smd | 4 | digitized-figure | Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, cosmic stellar mass density |
 | COLIBRE | `chaikin26.colibre.quenched.m7.z1` | quenched | 1 | digitized-figure | Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, quenched fraction, z=1 |
 | EAGLE | `lagos17.eagle.jstar.z0.5` | jstar | 0.5 | digitized-figure | Lagos et al. 2017, MNRAS 464, 3850 (arXiv:1609.01739), j_stars-M_stars relation at several redshifts, z=0.5 |
-| EAGLE | `furlong15.eagle-recal.gsmf.z0.5` | gsmf | 0.5 | digitized-figure | Furlong et al. 2015, MNRAS 450, 4486, Fig. 2 (arXiv source numbering) panel 2 |
+| EAGLE | `artale18.eagle.hod.n0p0316.central.measured, Fig. HOD-ND right` | hod | 0 | digitized-figure | Artale et al. 2018, MNRAS 480, 3978 (arXiv:1805.06938) |
 | FIRE-2 | `marszewski24.fire2.gas.z9` | gas | 9 | digitized-figure | Marszewski et al. 2024, ApJL 967, L41 (arXiv:2403.08853), gas fractions in stellar mass bins, z=9 |
 | FIRE-2 | `ma18.fire2.smd.mstar-gt-1e6` | smd | 7 | digitized-figure | Ma et al. 2018, MNRAS 478, 1694 (arXiv:1706.06605), stellar mass density from z=5 to 12 |
 | FIREbox | `feldmann23.firebox.gsmf.z4` | gsmf | 4 | digitized-figure | Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), stellar mass function at z=4 |
@@ -41,6 +41,6 @@ For each record: open the cited figure or table, confirm (1) the curve is the on
 | SPHINX20 | `katz23.sphinx20.uvlf.z10` | uvlf | 10 | digitized-figure | Katz et al. 2023, OJAp 6 (arXiv:2309.03269), UV luminosity function of SPHINX20 galaxies |
 | SPHINX20 | `katz23.sphinx20.size.uv-1500A.z10` | size | 10 | catalog-derived | SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline |
 | THESAN-1 | `kannan22.thesan.uvlf.t1.z7` | uvlf | 7 | digitized-figure | Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), UV luminosity functions at z=6-10, z=7 |
-| THESAN-1 | `kannan22.thesan.sfrd.t1` | sfrd | 10 | digitized-figure | Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), evolution of the star formation rate density |
+| THESAN-1 | `thesan1.shmr.z9.official` | shmr | 9 | official-table | Kannan et al. 2022; Garaldi et al. 2024; THESAN data release |
 | THESAN-zoom | `kannan25.thesanzoom.gsmf.z8` | gsmf | 8 | digitized-figure | Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), galaxy stellar mass function, 7.5 <= z < 8.5 |
 | THESAN-zoom | `kannan25.thesanzoom.uvlf.fiducial.z10` | uvlf | 10 | digitized-figure | Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), UV luminosity function, 9.5 <= z < 10.5 |
