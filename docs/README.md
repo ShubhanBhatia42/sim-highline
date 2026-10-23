@@ -33,11 +33,13 @@ Fifty documents is too many to find anything in, so here they are by what you wa
 | Can two simulated universes agree on everything at once? | [PROTOCOL-joint-reachability.md](PROTOCOL-joint-reachability.md) | [ANALYSIS-joint-reachability.md](ANALYSIS-joint-reachability.md) *(generated)* | [POWER-joint-reachability.md](POWER-joint-reachability.md), [CHOICES-joint-reachability.md](CHOICES-joint-reachability.md), [RESOLUTION.md](RESOLUTION.md) |
 | (the same, checked after the registered run; exploratory) | | [ROBUSTNESS-joint-reachability.md](ROBUSTNESS-joint-reachability.md), [ANALYSIS-third-code.md](ANALYSIS-third-code.md), [ANALYSIS-tune-to-observations.md](ANALYSIS-tune-to-observations.md), [ANALYSIS-minimiser-check.md](ANALYSIS-minimiser-check.md), [RANKING-observables.md](RANKING-observables.md) *(all generated)* | [RESEARCH-NOTE.md](RESEARCH-NOTE.md), [RELATED-WORK.md](RELATED-WORK.md) |
 | Does the shape of the star-formation distribution separate the two codes? (the fifth study, smaller) | [PROTOCOL-quenching-shape.md](PROTOCOL-quenching-shape.md) (with an amendment made before any distance existed) | [ANALYSIS-quenching-shape.md](ANALYSIS-quenching-shape.md) *(generated)* | [CHECKS-quenching-shape.md](CHECKS-quenching-shape.md) *(generated; made after the run)* |
+| How much does a model's published output change with resolution? (the sixth study, smaller; an internal check) | [PROTOCOL-resolution.md](PROTOCOL-resolution.md) | [ANALYSIS-resolution.md](ANALYSIS-resolution.md) *(generated)* | [CHECKS-resolution.md](CHECKS-resolution.md) *(generated; made after the run)* |
 
 ## How the project works
 
 - [ARCHITECTURE.md](ARCHITECTURE.md): how the pieces fit, in one page.
 - [DECISIONS.md](DECISIONS.md): what was decided, why, and what would reverse it.
+- [changelog-fragments/](changelog-fragments/): changelog fragments written during parallel work, folded into CHANGELOG.md by the coordinator.
 - [PROJECT.md](PROJECT.md): purpose, success measures and the stopping rule.
 - [GOVERNANCE.md](GOVERNANCE.md): who looks after the project, what a backup maintainer would need, what is already redundant.
 - [QUESTIONS.md](QUESTIONS.md): the ten questions a researcher brings; each is a test.

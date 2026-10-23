@@ -2,6 +2,7 @@ import { copyFile, readdir, readFile, writeFile, mkdir } from "node:fs/promises"
 import vm from "node:vm";
 import { jointStats } from "./site-joint.mjs";
 import { shapeStats } from "./site-shape.mjs";
+import { resolutionStats } from "./site-resolution.mjs";
 import { withCsp } from "./csp.mjs";
 const root = new URL("../", import.meta.url);
 const read = async p => readFile(new URL(p, root), "utf8");
@@ -430,6 +431,11 @@ Object.assign(stats, Object.fromEntries(Object.entries(jointStats(JR, undefined,
   const QSR = await read("data/analysis/quenching-shape.json").then(t => JSON.parse(t), () => null), QSC = await read("data/analysis/quenching-shape-checks.json").then(t => JSON.parse(t), () => null);
   Object.assign(stats, shapeStats(QSR, QSC));
 }
+// ---- resolution (the sixth study): generated from data/analysis/resolution.json (and the checks made after the run)
+{
+  const RSR = await read("data/analysis/resolution.json").then(t => JSON.parse(t), () => null), RSC = await read("data/analysis/resolution-checks.json").then(t => JSON.parse(t), () => null);
+  Object.assign(stats, resolutionStats(RSR, RSC));
+}
 stats.repo = stats.repo || "https://github.com/ShubhanBhatia42/sim-highline";
 stats.siteUrl = "shubhanbhatia42.github.io/sim-highline";
 
@@ -472,7 +478,7 @@ stats.siteUrl = "shubhanbhatia42.github.io/sim-highline";
 }
 // ---- the dated registration trail (data/registration-trail.json, from scripts/make_registration_trail.py)
 {
-  const TR = JSON.parse(await read("data/registration-trail.json")), NAMES = { harmonization: "Can matching definitions close the gap?", "model-form": "What can retuning change in cosmic star formation?", "joint-reachability": "Can two universes agree on everything at once?", "quenching-shape": "Does the shape of star formation tell the codes apart?" };
+  const TR = JSON.parse(await read("data/registration-trail.json")), NAMES = { harmonization: "Can matching definitions close the gap?", "model-form": "What can retuning change in cosmic star formation?", "joint-reachability": "Can two universes agree on everything at once?", "quenching-shape": "Does the shape of star formation tell the codes apart?", resolution: "How much does a model's output change with resolution?" };
   const d = x => x.slice(0, 10), link = c => `<a href="${release.repo}/commit/${c.hash}"><code>${c.short}</code></a>`;
   stats.trailRows = Object.entries(TR).map(([k, t]) => { const p = t.protocol_commits, r = t.result_first_commit; return `<tr><td>${esc(NAMES[k] || k)}</td><td>${d(p[0].date)} ${link(p[0])}</td><td>${p.length > 1 ? p.slice(1).map(c => `${d(c.date)} ${link(c)}`).join(", ") : "none"}</td><td>${r ? `${d(r.date)} ${link(r)}` : "–"}</td></tr>`; }).join("");
 }
@@ -486,7 +492,8 @@ const STUDIES = [
   { id: "S3", href: "study-sfh.html", title: "What can retuning change in cosmic star formation?", q: "Do simulations disagree more in the early Universe, and can retuning remove the difference between two codes?", status: "Pre-registered · result", head: `Funnel ${stats.mfSuccess}, factor ${stats.mfFactor}; retuning: ${stats.mfDfid} to ${stats.mfD} dex (${stats.mfReach})`,
     abs: `Published curves of ${stats.mfNFamAll} model families, the authors' own variants and ${stats.camelsN} CAMELS simulations of IllustrisTNG and SIMBA. Across the ${stats.mfNFam} families defined in both redshift bands the spread is ${stats.mfSdLow} dex at z = 0.5 to 3 and ${stats.mfSdHigh} dex at z = 5 to 7.5 (funnel ${stats.mfSuccess}). Retuning four feedback parameters per code brings the two codes from ${stats.mfDfid} to ${stats.mfD} dex rms (${stats.mfReach}).` },
   { id: "S4", href: "study-joint.html", title: "Can two universes agree on everything at once?", q: "Can retuning make two feedback models agree on every galaxy observable at once?", status: stats.jrStatus, head: JR ? stats.jrHead : "—", todo: !JR, abs: stats.jrAbsShort },
-  { id: "S5", href: "study-shape.html", title: "Does the shape of star formation tell the codes apart?", q: "Does the share of galaxies in the green valley, and the width of the star-forming sequence, separate the two codes beyond the quenched fraction and the main sequence?", status: stats.qsTodo ? "Pre-registered · pending" : stats.qsStatus, head: stats.qsTodo ? "—" : stats.qsHead, todo: !!stats.qsTodo, abs: stats.qsTodo ? "" : stats.qsAbs }
+  { id: "S5", href: "study-shape.html", title: "Does the shape of star formation tell the codes apart?", q: "Does the share of galaxies in the green valley, and the width of the star-forming sequence, separate the two codes beyond the quenched fraction and the main sequence?", status: stats.qsTodo ? "Pre-registered · pending" : stats.qsStatus, head: stats.qsTodo ? "—" : stats.qsHead, todo: !!stats.qsTodo, abs: stats.qsTodo ? "" : stats.qsAbs },
+  { id: "S6", href: "study-resolution.html", title: "How much does a model's output change with resolution?", q: "How far do published curves of one model move when only the resolution changes, measured in CAMELS noise units and against the distance between IllustrisTNG and SIMBA?", status: stats.rsTodo ? "Pre-registered · pending" : stats.rsStatus, head: stats.rsTodo ? "—" : stats.rsHead, todo: !!stats.rsTodo, abs: stats.rsTodo ? "" : stats.rsAbs }
 ];
 // plain-language result of each study, in one sentence and a short paragraph; numbers come from the same stats as the abstracts
 stats.plainDefsOne = `Only ${stats.fMatchedPct} of ${stats.fPairs} pairs of curves from different simulations measure the same thing in the same way.`;
@@ -539,7 +546,7 @@ const DATASET_LD = `\n<script type="application/ld+json">${JSON.stringify({
   distribution: Object.entries(manifest.files).filter(([f]) => /\.(csv|json|bib)$/.test(f)).map(([f, m]) => ({ "@type": "DataDownload", name: f, contentUrl: `${SITE_URL}/data/export/${f}`, encodingFormat: MIME[f.slice(f.lastIndexOf("."))] || "application/octet-stream", contentSize: `${m.bytes} B`, sha256: m.sha256 }))
 }).replace(/</g, "\\u003c")}</script>`;
 await mkdir(new URL("dist/site/", root), { recursive: true });
-const PAGES = ["index.html", "studies.html", "study-definitions.html", "study-harmonization.html", "study-sfh.html", "study-joint.html", "study-shape.html", "retune.html", "data.html", "methods.html", "sources.html", "findings.html", "glossary.html", "faq.html", "changes.html", "quality.html", "summary.html"];
+const PAGES = ["index.html", "studies.html", "study-definitions.html", "study-harmonization.html", "study-sfh.html", "study-joint.html", "study-shape.html", "study-resolution.html", "retune.html", "data.html", "methods.html", "sources.html", "findings.html", "glossary.html", "faq.html", "changes.html", "quality.html", "summary.html"];
 for (const page of PAGES) {
   let html = await read(`site/src/${page}`);
   const title = (html.match(/<title>([^<]*)<\/title>/) || [])[1], desc = (html.match(/<meta name="description" content="([^"]*)"/) || [])[1];
@@ -558,7 +565,7 @@ for (const page of PAGES) {
 <ul class="flat">
 <li><a href="../highline.html"><b>Explorer</b></a>: look up a relation and see every published simulation and observation on one plot.</li>
 <li><a href="retune.html"><b>Dials</b></a>: turn the feedback dials of two simulated universes and watch the galaxies change.</li>
-<li><a href="studies.html"><b>Studies</b></a>: the five questions asked of the data, with the rules written before the answers.</li>
+<li><a href="studies.html"><b>Studies</b></a>: the six questions asked of the data, with the rules written before the answers.</li>
 <li><a href="data.html"><b>Data</b></a>: download the curves as CSV or JSON, or load them in Python.</li>
 <li><a href="faq.html"><b>Questions</b></a> · <a href="glossary.html">glossary</a> · <a href="quality.html">how much to trust the data</a></li>
 </ul>

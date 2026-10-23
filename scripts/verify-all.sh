@@ -30,6 +30,8 @@ python3 scripts/analyze_harmonization.py > /dev/null
 if [ "${FULL:-0}" = "1" ]; then python3 scripts/analyze_model_form.py > /dev/null; fi
 # the quenching-shape analysis is a one-time registered run (docs/PROTOCOL-quenching-shape.md); FULL=1 reruns it, scripts/test_quenching_shape.py checks that its saved output is not stale
 if [ "${FULL:-0}" = "1" ]; then python3 scripts/analyze_quenching_shape.py > /dev/null; fi
+# the resolution analysis is a one-time registered run (docs/PROTOCOL-resolution.md); FULL=1 reruns it and its after-the-run checks, scripts/test_resolution.py checks that its saved output is not stale
+if [ "${FULL:-0}" = "1" ]; then python3 scripts/analyze_resolution.py > /dev/null && python3 scripts/check_resolution.py > /dev/null; fi
 python3 scripts/screen_outliers.py
 node scripts/report-undocumented.mjs
 node scripts/build-curve-index.mjs

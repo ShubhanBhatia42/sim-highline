@@ -1,0 +1,52 @@
+// Text and table rows of the resolution study page (site/src/study-resolution.html), generated from data/analysis/resolution.json (and the checks made after the run, if present). Nothing is typed here that a number could change.
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const md = t => esc(t).replace(/(\d) %/g, "$1%").replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/`([^`]+)`/g, "<code>$1</code>");
+const f = (v, d = 2) => (v == null || !Number.isFinite(v) ? "–" : v.toFixed(d));
+const LAD = { "tng-l25n": "IllustrisTNG model, 25 Mpc/h box", "illustris-l25n": "Illustris model, 25 Mpc/h box", "colibre-l025-gsmf": "COLIBRE, 25 Mpc box", "flamingo-l1": "FLAMINGO, 1 Gpc box", thesan: "THESAN", "colibre-boxes": "COLIBRE, three boxes", "colibre-quenched": "COLIBRE (quenched fraction)", "colibre-mzr": "COLIBRE (metallicity)",
+  "eagle-furlong15": "EAGLE Ref and Recal (mass function, quenched)", "eagle-schaye15": "EAGLE Ref and Recal (black holes, star formation)", "eagle-crain17": "EAGLE Ref and Recal (HI)", "eagle-lagos15": "EAGLE Ref and Recal (H2)", "eagle-mzr": "EAGLE (metallicity)", "tng-donnari21": "TNG300 and TNG50 (quenched)", "tng-mzr": "TNG300 and TNG50 (metallicity)",
+  magneticum: "Magneticum boxes", "illustris-sparre15": "Illustris-1 and its low-resolution run", "colibre-l050-gsmf": "COLIBRE, 50 Mpc box", "colibre-l100-gsmf": "COLIBRE, 100 Mpc box", "colibre-l200-gsmf": "COLIBRE, 200 Mpc box" };
+const relName = u => u.relation + (u.ladder === "flamingo-l1" && ["size", "ssfr", "quenched"].includes(u.relation) ? " " + u.stem.split(".").pop() : "");
+const lad = n => LAD[n] || n;
+const unitRow = u => `<tr><td>${esc(lad(u.ladder))}</td><td>${esc(relName(u))}</td><td>${esc(u.rung_a)} → ${esc(u.rung_b)}${u.ladder === "magneticum" ? ` (${esc(u.token_a)} → ${esc(u.token_b)})` : ""}</td><td>${esc(u.kind)}</td><td class="n">${u.n_epoch_pairs}</td><td>${esc(u.basis || "–")}</td><td class="n">${f(u.R)}</td><td class="n">${f(u.Rc)}</td><td class="n">${f(u.rms_dex, 3)}</td><td class="n">${f(u.mean_dex, 3)}</td><td>${esc(u.label)}${u.qualifier ? ` <span class="dim">(${esc(u.qualifier)})</span>` : ""}</td></tr>`;
+
+export function resolutionStats(R, CK) {
+  if (!R) return { rsTodo: true };
+  const P1 = R.P1, P2 = R.P2, t = P1.total, A = R.units.filter(u => u.tier === "A" && u.kind === "adjacent"), nLad = new Set(A.map(u => u.ladder)).size;
+  const pairs = R.ladders.reduce((s, l) => s + l.n_epoch_pairs_built, 0), nLadAll = R.ladders.filter(l => l.n_units).length, conv = t.converged || 0, dep = t["resolution-dependent"] || 0, ct = t["cannot tell"] || 0;
+  const bad = Object.entries(R.checks).filter(([, c]) => c.passed === false).map(([k]) => k);
+  const step = R.camels_resolution_step;
+  const gs = CK ? CK.rows.filter(r => r.relation === "gsmf") : [], tail = CK ? CK.rows.filter(r => r.relation !== "sfrd" && r.tail_share_of_squared_shift != null) : [];
+  const nTail = tail.filter(r => r.tail_share_of_squared_shift > 0.5).length;
+  const out = {
+    rsTodo: false,
+    rsTypical: f(R.meta.y0, 2),
+    rsExpect: (R.expectations || []).map(e => `<li>${esc(e)}</li>`).join(""),
+    rsStatus: "Pre-registered · result",
+    rsHead: `${dep} of ${P1.n_units} same-box steps change more than the CAMELS noise; ${P2.n_ratio_at_least_1} of ${P2.n} are at least the TNG–SIMBA distance`,
+    rsAbs: `Published curves of one model at two resolutions, from the dataset's own records: ${pairs} pairs of curves could be built, in ${nLadAll} sets of runs. In the ${P1.n_units} steps between adjacent resolutions with a box stated to be the same (${nLad} sets of runs), the rule fixed in advance gives ${conv} converged, ${dep} resolution-dependent and ${ct} that cannot be told. For the ${P2.n} steps with a counterpart in the joint study, the change is at least as large as the distance between IllustrisTNG and SIMBA in ${P2.n_ratio_at_least_1}. Internal check; CAMELS itself is not run at a second resolution.`,
+    rsStatusShort: `${dep} of ${P1.n_units} resolution-dependent; ${P2.n_ratio_at_least_1} of ${P2.n} at least the code distance`,
+    rsHeadline: [
+      `<li><b>What could be built.</b> ${pairs} pairs of curves of the same model at two resolutions, with equal definitions and a comparable epoch, in ${nLadAll} sets of runs. In ${nLad} of them (${A.length} steps between adjacent resolutions) the box is stated to be the same. Another ${R.supplementary.n_epoch_pairs} pairs of COLIBRE in other boxes come from the public data file of its paper.</li>`,
+      `<li><b>By the rule fixed in advance</b>, of the ${P1.n_units} steps with a common box, ${conv} are converged (the change is below one noise unit), ${dep} are resolution-dependent and ${ct} cannot be told. ${P1.n_on_reference} rest on the CAMELS noise of the matching observable and mass bins; the others on a typical CAMELS noise.</li>`,
+      `<li><b>Against the distance between the codes.</b> ${P2.n} of these steps have a counterpart in the joint study. In ${P2.n_ratio_at_least_1} of them the change between two resolutions is at least as large as the distance between IllustrisTNG and SIMBA for that kind of observable; the median ratio is ${f(P2.median_ratio)}.</li>`].join(""),
+    rsPairsN: String(pairs), rsUnitsN: String(R.units.length), rsLadN: String(nLadAll),
+    rsLadderRows: R.ladders.map(l => `<tr><td>${esc(lad(l.name))}</td><td>${l.tier === "A" ? "A" : "B"}</td><td>${esc(l.box)}</td><td>${esc(l.parameters)}</td><td>${esc(l.rungs.join(", "))}</td><td class="n">${l.n_epoch_pairs_built}</td><td class="n">${l.n_epoch_pairs_refused}</td><td>${esc(l.relations.join(", "))}</td></tr>`).join(""),
+    rsP1Rows: Object.entries(P1.per_ladder).sort().map(([k, v]) => `<tr><td>${esc(lad(k))}</td><td class="n">${v.converged || 0}</td><td class="n">${v["resolution-dependent"] || 0}</td><td class="n">${v["cannot tell"] || 0}</td></tr>`).join("") + `<tr><td><b>all</b></td><td class="n">${conv}</td><td class="n">${dep}</td><td class="n">${ct}</td></tr>`,
+    rsP2Rows: P2.rows.map(r => `<tr><td>${esc(lad(r.ladder))}</td><td>${esc(r.relation_label || r.relation)}</td><td>${esc(r.rungs.replace(">", " → "))}</td><td>${esc(r.parameters)}</td><td class="n">${f(r.Rc)}</td><td class="n">${f(r.D)}</td><td class="n">${f(r.D_fiducial)}</td><td>${r.compared_with === "D" ? "retuned" : "fiducial"}</td><td class="n">${f(r.ratio)}</td></tr>`).join(""),
+    rsP2Line: `${P2.n_ratio_at_least_1} of ${P2.n} steps have a ratio of at least 1; the median ratio is ${f(P2.median_ratio)}.`,
+    rsStepRows: step.map(u => `<tr><td>${esc(u.name)}</td><td class="n">${f(u.R)}</td><td class="n">${f(u.rms_dex, 3)}</td><td class="n">${f(u.mean_dex, 3)}</td><td class="n">${f(u.max_abs_dex, 3)}</td><td>${esc(u.label)}</td></tr>`).join(""),
+    rsTierARows: R.units.filter(u => u.tier === "A").map(unitRow).join(""),
+    rsTierBRows: Object.entries(R.units.filter(u => u.tier === "B" && u.kind === "adjacent").reduce((m, u) => { (m[u.ladder] = m[u.ladder] || { c: 0, t: 0, big: 0 }); m[u.ladder][u.label === "converged" ? "c" : "t"]++; m[u.ladder].big = Math.max(m[u.ladder].big, u.rms_dex || 0); return m; }, {})).sort().map(([k, v]) => `<tr><td>${esc(lad(k))}</td><td class="n">${v.c}</td><td class="n">${v.t}</td><td class="n">${f(v.big, 2)}</td></tr>`).join(""),
+    rsSuppRows: R.supplementary.units.map(unitRow).join(""),
+    rsNotBuilt: R.not_built.map(n => `<li>${esc(n.what)}: ${esc(n.why)}.</li>`).join(""),
+    rsSources: R.sources.map(s => `<li><b>${esc(s.source)}</b>: ${esc(s.statement)}. ${s.usable ? "Used." : "Not used."}</li>`).join(""),
+    rsDev: (R.deviations.length ? R.deviations : ["None."]).map(d => `<li>${md(d)}</li>`).join(""),
+    rsChecks: `Reference noise rebuilt from the joint study's own functions: seed noise reproduced ${R.checks.C1.passed ? "(check passed)" : "(CHECK FAILED)"}; the public COLIBRE file is the one the dataset's records were made from ${R.checks.C2.passed ? "(check passed)" : "(CHECK FAILED)"}. The typical noise scale used where an observable has no counterpart is ${f(R.meta.y0, 3)}.`,
+    rsSensLine: `At the margin 0.5 the tier A counts are ${R.sensitivity.S2_label_counts["0.5"].converged} converged and ${R.sensitivity.S2_label_counts["0.5"]["resolution-dependent"]} resolution-dependent; at the margin 2, ${R.sensitivity.S2_label_counts["2"].converged} and ${R.sensitivity.S2_label_counts["2"]["resolution-dependent"]}; without the epochs above z = 2, ${R.sensitivity.S3_label_counts_z_le_2.converged} and ${R.sensitivity.S3_label_counts_z_le_2["resolution-dependent"]} (and ${R.sensitivity.S3_label_counts_z_le_2["cannot tell"]} that cannot be told).`,
+    rsTailRows: gs.map(r => `<tr><td>${esc(r.name)}</td><td class="n">${f(r.rms_dex, 3)}</td><td class="n">${f(r.tail_share_of_squared_shift)}</td><td class="n">${f(r.rms_without_tail, 3)}</td><td class="n">${f(r.median_equivalent_mass_shift_dex, 3)}</td></tr>`).join(""),
+    rsTailLine: CK ? `Made after the run, to help read it, and deciding nothing: for ${nTail} of ${tail.length} steps on mass-binned curves, more than half of the squared change lies in the top quarter of the mass range. For a mass function that is the steep high-mass end, where a small change in mass is a large change in density and a 25 Mpc/h box has few galaxies.` : "",
+    plainResolutionOne: `Published curves of the same model at two resolutions differ by more than the run-to-run noise of CAMELS in ${dep} of ${P1.n_units} comparisons made in a common box.`,
+    plainResolution: `We looked in the dataset for the same model published at two resolutions with the same definitions. ${pairs} pairs of curves could be built, and ${P1.n_units} steps in ${nLad} sets of runs share a box, so a change can be put down to resolution. By the rule fixed in advance, ${conv} are converged and ${dep} change by more than the margin${ct ? ` (${ct} cannot be told)` : ""}. One noise unit is small (typically ${f(R.meta.y0, 2)} dex), so that is a strict test, and at twice the margin ${R.sensitivity.S2_label_counts["2"].converged} are converged. For ${P2.n_ratio_at_least_1} of ${P2.n} steps the change is at least as large as the distance between IllustrisTNG and SIMBA. CAMELS itself was not run at another resolution, so this does not say what CAMELS would give.`,
+  };
+  return out;
+}
