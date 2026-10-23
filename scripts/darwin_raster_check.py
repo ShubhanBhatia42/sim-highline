@@ -1,6 +1,6 @@
 """Checks of the DARWIN-1 catalogue relations against the two raster figures of Lee et al. 2026 (arXiv:2610.25786): Fig. 10 (stellar mass against halo mass, files figures/mstar_mhalo.png) and Fig. 11 (black hole mass against stellar mass, figures/mbh_mstar.png).
 Used by scripts/ingest_darwin1_catalogue.py (stage 1b). A raster figure is never digitized into records; it is only a yardstick, and the axes are calibrated from the major tick marks (decades read from the rendered figure: the labelled ticks run 10^9 to 10^15 and 10^12 to 10^6 in Fig. 10, 10^7 to 10^12 and 10^10 to 10^6 in Fig. 11).
-Stellar mass against halo mass: the figure draws the median of the DARWIN-1 galaxies as a solid dark-grey line; it is found as the long connected pieces of that colour (the dashed 16th and 84th percentile lines are short pieces and are dropped; where another line crosses it the line is interrupted) and read at the bin centres of the catalogue curve.
+Stellar mass against halo mass: the figure draws the median of the DARWIN-1 galaxies as a solid dark-grey line; it is found as the long connected pieces of that colour (the dashed 16th and 84th percentile lines are short pieces and are dropped; where another line crosses it the line is interrupted) and read at the bin centres of the catalogue curve. The dataset's axis is the stellar-to-halo mass ratio, so the line is turned into a ratio (stellar mass minus halo mass at the column where it is read) and compared with the catalogue's median ratio.
 Black hole mass against stellar mass: the figure draws every DARWIN-1 galaxy as a light-grey dot of radius 3 pixels (the area of the isolated dots is 26 to 28 pixels). The same dots are drawn from the catalogue galaxies on the same calibrated axes, the pixels the figure hides under other symbols are hidden in both, and the 5th, 25th, 50th, 75th and 95th percentile of the occupied dot pixels in each stellar-mass bin are compared (the same overlap bias is in both, so the comparison is like for like; it is not a comparison of medians of galaxies)."""
 import hashlib
 from pathlib import Path
@@ -121,8 +121,8 @@ def shmr_median_lines(png):
 
 
 def check_shmr(png, curves, tol_dex=0.012):
-    """curves: {"z3": [(logMhalo bin centre, n halos, median logMstar, complete), ...], "z0.19": [...]}; the panels are z = 3 (upper) and z = 0.19 (lower).
-    Returns for each panel the table of the paper's median line minus the catalogue median at the bin centres where the line was found."""
+    """curves: {"z3": [(logMhalo bin centre, n centrals, median log10(M*/Mhalo), complete), ...], "z0.19": [...]}; the panels are z = 3 (upper) and z = 0.19 (lower).
+    Returns for each panel the table of the paper's median line (as log10 ratio) minus the catalogue median at the bin centres where the line was found."""
     cal, lines = shmr_median_lines(png)
     res = {}
     for k, key in enumerate(("z3", "z0.19")):
@@ -133,7 +133,7 @@ def check_shmr(png, curves, tol_dex=0.012):
             near = np.abs(lx - xc) < tol_dex
             if not near.any():
                 continue
-            paper = float(ly[near].mean())
+            paper = float((ly[near] - lx[near]).mean())
             bins.append({"logMhalo": round(xc, 3), "n": int(n), "complete": bool(complete), "catalogue": round(med, 3), "paper": round(paper, 3), "paperMinusCatalogue": round(paper - med, 3)})
         d = np.array([b["paperMinusCatalogue"] for b in bins]); dc = np.array([b["paperMinusCatalogue"] for b in bins if b["complete"]])
         res[key] = {"binsCompared": len(bins), "binsCompleteCompared": int(len(dc)), "paperMinusCatalogueMedian": round(float(np.median(d)), 3) if len(d) else None, "paperMinusCatalogueMin": round(float(d.min()), 3) if len(d) else None, "paperMinusCatalogueMax": round(float(d.max()), 3) if len(d) else None,
