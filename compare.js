@@ -44,7 +44,8 @@ const RULES={
   lambdar:{hard:["lambdaStatistic","projection"],soft:["spinDefinition","massDefinition","imf","population"]},
   fslow:{hard:["slowRotatorCriterion"],soft:["spinDefinition","projection","massDefinition","imf","population"]},
   elf:{hard:["line","dustCorrection"],soft:["densityFrame"]},
-  uvbeta:{hard:["betaWindow","dustTreatment"],soft:[]}
+  uvbeta:{hard:["betaWindow","dustTreatment"],soft:[]},
+  uvbetam:{hard:["betaWindow","dustTreatment"],soft:["massDefinition","imf","population"]}
 };
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 const IMF_DEX={kroupa01:0,chabrier03:-0.04,salpeter55:0.1775};  /* data/imf-offsets.json documents where these come from; scripts/test-compare.mjs keeps the two equal */
