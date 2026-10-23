@@ -20,6 +20,7 @@ export function resolutionStats(R, CK) {
   const out = {
     rsTodo: false,
     rsTypical: f(R.meta.y0, 2),
+    rsExpect: (R.expectations || []).map(e => `<li>${esc(e)}</li>`).join(""),
     rsStatus: "Pre-registered · result",
     rsHead: `${dep} of ${P1.n_units} same-box steps change more than the CAMELS noise; ${P2.n_ratio_at_least_1} of ${P2.n} are at least the TNG–SIMBA distance`,
     rsAbs: `Published curves of one model at two resolutions, from the dataset's own records: ${pairs} pairs of curves could be built, in ${nLadAll} sets of runs. In the ${P1.n_units} steps between adjacent resolutions with a box stated to be the same (${nLad} sets of runs), the rule fixed in advance gives ${conv} converged, ${dep} resolution-dependent and ${ct} that cannot be told. For the ${P2.n} steps with a counterpart in the joint study, the change is at least as large as the distance between IllustrisTNG and SIMBA in ${P2.n_ratio_at_least_1}. Internal check; CAMELS itself is not run at a second resolution.`,

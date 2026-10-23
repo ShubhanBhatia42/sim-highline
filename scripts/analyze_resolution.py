@@ -498,6 +498,17 @@ def headline(res):
 EXTRA_DEVIATIONS = []
 
 
+def expectations(res):
+    """What protocol section 8 expected, set against what came out (counts only; written after the run, no number is recomputed)."""
+    A = [u for u in res["units"] if u["tier"] == "A" and u["kind"] == "adjacent"]
+    rec = [u for u in A if u["parameters"] == "recalibrated"]
+    rows = res["P2"]["rows"]
+    big, small = [r for r in rows if r["D"] >= 1.0], [r for r in rows if r["D"] < 1.0]
+    return [f"Expected: steps whose parameters the authors recalibrated are close. By the rule, {sum(1 for u in rec if u['label'] == 'converged')} of {len(rec)} such steps are converged.",
+            f"Expected: the code distance exceeds most resolution shifts where the joint study's retuned distance is large, and not where it is small. Of the {len(big)} comparisons with a retuned distance of at least 1 noise unit, {sum(1 for r in big if r['ratio'] >= 1)} have a resolution shift at least as large as the compared distance; of the {len(small)} with a smaller distance, {sum(1 for r in small if r['ratio'] >= 1)}.",
+            "Expected: star formation histories change more at high redshift than at low redshift. Not tested separately."]
+
+
 def deviations(res):
     d = []
     if not res["checks"]["C1"]["passed"]:
@@ -577,14 +588,15 @@ def render(res):
           f"* Label counts of the tier A adjacent units at the margin 0.5: {res['sensitivity']['S2_label_counts']['0.5']}; at the margin 2: {res['sensitivity']['S2_label_counts']['2']}.",
           f"* Without the epochs at z > 2: {res['sensitivity']['S3_label_counts_z_le_2']}.",
           "* The rms shift on the finer curve's own points in place of the coarser's is in `data/analysis/resolution.json` (`sensitivity.S1_fine_grid_rms_dex`).", "",
-          "## 12. Deviations from the protocol", ""] + ([f"* {d}" for d in res["deviations"]] if res["deviations"] else ["None."]) + ["",
-          "## 13. What this cannot say", "",
+          "## 12. Expectations written in advance", "", "Protocol section 8 recorded what was expected before the run. Counts, from the numbers above:", ""] + [f"* {e}" for e in res.get("expectations", [])] + ["",
+          "## 13. Deviations from the protocol", ""] + ([f"* {d}" for d in res["deviations"]] if res["deviations"] else ["None."]) + ["",
+          "## 14. What this cannot say", "",
           "* It is not a convergence test of CAMELS: CAMELS is not run at a second resolution here, and SIMBA has no evaluable pair in the dataset. The shifts are those of other models, from their papers.",
           "* Each pair compares two curves of one paper, so the galaxy finder, aperture and mass definition are that paper's. Different papers use different ones; nothing here compares across papers, and the noise unit from CAMELS Subfind catalogues is only a yardstick for them.",
           "* Most curves keep only what lies above the authors' resolution limit, so the shifts below that limit, where resolution matters most, are not in the data and the numbers here understate the effect there.",
           "* Where the authors recalibrate at each resolution, a small shift reflects that recalibration.",
           "* Epochs and relations within a ladder are correlated; the counts are counts of reported rows, not independent tests.", "",
-          "## 14. Reproduce", "", "`python3 scripts/analyze_resolution.py` rewrites this file and `data/analysis/resolution.json` (a few seconds; deterministic); `python3 scripts/test_resolution.py` checks the machinery on synthetic records and that the saved output is not stale.", ""]
+          "## 15. Reproduce", "", "`python3 scripts/analyze_resolution.py` rewrites this file and `data/analysis/resolution.json` (a few seconds; deterministic); `python3 scripts/test_resolution.py` checks the machinery on synthetic records and that the saved output is not stale.", ""]
     return "\n".join(L)
 
 
@@ -598,6 +610,7 @@ def assemble(**kw):
     res["protocol"] = PROTOCOL
     res["parameters"] = {"margin": MARGIN, "dz_epoch": DZ_EPOCH, "dz_snapshot": DZ_SNAP, "min_points": MIN_PTS, "digitization_default": DIG_DEFAULT, "min_particles_supplementary": MIN_PARTICLES}
     res["deviations"] = deviations(res)
+    res["expectations"] = expectations(res)
     res["headline"] = headline(res)
     return to_plain(res)
 
@@ -607,7 +620,7 @@ def write_outputs(res):
     (ROOT / "docs" / "ANALYSIS-resolution.md").write_text(render(res))
 
 
-REWORDED = "The table formatting of the report was corrected after the run (unit names with the pipe character broke one table; a variant column was added to the comparison table); no number was recomputed, and the first output is in the version history."
+REWORDED = "The wording and layout of the report were revised after the run (unit names with the pipe character broke one table; a variant column was added to the comparison table; a section setting the expectations of the protocol against the counts was added); no number was recomputed, and the first output is in the version history."
 
 
 def rerender():
@@ -619,6 +632,7 @@ def rerender():
     for n in res["camels_resolution_step"]:
         u = by_id[n["id"]]
         n["name"] = f"{u['ladder']}: {u['rung_a']} > {u['rung_b']}, {u['relation']}"
+    res["expectations"] = expectations(res)
     res["deviations"] = [d for d in deviations(res) if d != REWORDED] + [REWORDED]
     res["headline"] = headline(res)
     write_outputs(res)

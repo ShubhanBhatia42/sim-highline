@@ -13180,11 +13180,16 @@
   "min_particles_supplementary": 100
  },
  "deviations": [
-  "The table formatting of the report was corrected after the run (unit names with the pipe character broke one table; a variant column was added to the comparison table); no number was recomputed, and the first output is in the version history."
+  "The wording and layout of the report were revised after the run (unit names with the pipe character broke one table; a variant column was added to the comparison table; a section setting the expectations of the protocol against the counts was added); no number was recomputed, and the first output is in the version history."
  ],
  "headline": [
   "**Pairs.** 332 epoch-pairs of the same model at two resolutions with equal definitions and a comparable epoch could be built from the dataset, in 132 units (ladder, step, relation) in 17 ladders; 30 adjacent-step units in 5 ladders (five were registered) have a box stated to be the same (tier A), where the shift can be read as resolution. Another 63 epoch-pairs of COLIBRE in other boxes come from the public file (supplementary).",
   "**P1.** Of the 30 tier A adjacent-step units, 2 are converged (shift below one noise unit), 28 resolution-dependent and 0 cannot be told; 19 rest on the CAMELS noise scale, the others on the typical-noise yardstick.",
   "**P2.** For the 19 units with a counterpart in the joint-reachability study, the resolution shift is at least as large as the TNG-SIMBA distance of that observable in 16; the median ratio of shift to distance is 2.09."
+ ],
+ "expectations": [
+  "Expected: steps whose parameters the authors recalibrated are close. By the rule, 2 of 24 such steps are converged.",
+  "Expected: the code distance exceeds most resolution shifts where the joint study's retuned distance is large, and not where it is small. Of the 2 comparisons with a retuned distance of at least 1 noise unit, 1 have a resolution shift at least as large as the compared distance; of the 17 with a smaller distance, 15.",
+  "Expected: star formation histories change more at high redshift than at low redshift. Not tested separately."
  ]
 }
