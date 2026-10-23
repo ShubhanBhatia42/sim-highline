@@ -1,4 +1,4 @@
-// What happens when things go wrong: broken data says so in words, no JavaScript says so, a lost connection after loading changes nothing, and blocked web fonts do not break a page.
+// What happens when things go wrong: broken data says so in words, a relation's data file that is missing, damaged, wrong or slow says so with a way to try again, no JavaScript says so, a lost connection after loading keeps what is loaded working, and blocked web fonts do not break a page.
 import assert from "node:assert/strict";
 import http from "node:http";
 import { readFile } from "node:fs/promises";
@@ -8,8 +8,16 @@ import { launchBrowser } from "./browser-options.mjs";
 const DIST = new URL("../dist/", import.meta.url).pathname;
 const TYPES = { ".html": "text/html", ".js": "text/javascript", ".json": "application/json", ".css": "text/css", ".csv": "text/csv" };
 let corrupt = false;
+let fault = null, held = []; // fault = { rel, mode: "missing" | "damaged" | "wrong" | "stall" } for the Explorer's per-relation data files
 const server = http.createServer(async (req, res) => {
   const p = decodeURIComponent(new URL(req.url, "http://x").pathname);
+  const dm = p.match(/^\/highline-data\/([a-z0-9-]+)\.json$/);
+  if (fault && dm && dm[1] === fault.rel) {
+    if (fault.mode === "missing") { res.writeHead(404, { "content-type": "text/plain" }); res.end("not found"); return; }
+    if (fault.mode === "stall") { held.push(res); return; }
+    const b = await readFile(path.join(DIST, fault.mode === "wrong" ? "highline-data/gsmf.json" : p));
+    res.writeHead(200, { "content-type": "application/json" }); res.end(fault.mode === "damaged" ? b.subarray(0, Math.floor(b.length / 2)) : b); return;
+  }
   try {
     const f = path.join(DIST, p.endsWith("/") ? p + "index.html" : p); let b = await readFile(f);
     if (corrupt && p === "/highline.html") b = Buffer.from(b.toString().replace('id="curves-data">', 'id="curves-data">{broken'));
@@ -36,17 +44,77 @@ await step("broken data: the Explorer says it could not start, with a way on", a
   assert.match(t, /could not start/); assert.match(t, /data page/);
   assert.equal(await page.locator("#boot a").count(), 2);
 });
+const dataStep = (name, fn) => step(name, async ctx => { try { await fn(ctx); } finally { fault = null; for (const r of held.splice(0)) { try { r.destroy(); } catch { /* gone */ } } } });
+await dataStep("a relation's data file is missing: the plot area says so, the other relations still work, Try again brings it back", async ctx => {
+  const page = await ctx.newPage(); await page.goto(`${BASE}/highline.html#r=gsmf&z=0.1`); await ready(page);
+  fault = { rel: "sfms", mode: "missing" };
+  await page.click("button[data-r=sfms]");
+  await page.waitForSelector("#empty .dstat button", { timeout: 10000 });
+  const t = await page.locator("#empty .dstat").innerText();
+  assert.match(t, /Star-forming main sequence/); assert.match(t, /could not be loaded/); assert.match(t, /404/);
+  assert.equal(await page.locator("#stage path").count(), 0, "no stale curves of the previous relation are left under the message");
+  await page.click("button[data-r=gsmf]"); await page.waitForFunction(() => document.querySelectorAll("#stage path").length > 5 && /Stellar mass function/.test(document.getElementById("shTitle").textContent));
+  await page.click("button[data-r=sfms]"); await page.waitForSelector("#empty .dstat button");
+  fault = null; await page.click("#empty .dstat button");
+  await page.waitForFunction(() => document.querySelectorAll("#stage path").length > 5 && /main sequence/i.test(document.getElementById("shTitle").textContent) && document.getElementById("empty").hidden, null, { timeout: 15000 });
+});
+await dataStep("the first relation's data file is damaged: the opening screen says so and Try again starts the Explorer", async ctx => {
+  fault = { rel: "sfms", mode: "damaged" };
+  const page = await ctx.newPage(); await page.goto(`${BASE}/highline.html#r=sfms&z=0`);
+  await page.waitForSelector("#boot.failed button", { timeout: 15000 });
+  const t = await page.locator("#boot").innerText();
+  assert.match(t, /could not be loaded/); assert.match(t, /damaged/);
+  fault = null; await page.click("#boot button");
+  await ready(page);
+  assert.match(await page.locator("#shTitle").innerText(), /main sequence/i);
+});
+await dataStep("a data file that belongs to another version of the page is refused, not drawn", async ctx => {
+  const page = await ctx.newPage(); await page.goto(`${BASE}/highline.html#r=gsmf&z=0.1`); await ready(page);
+  fault = { rel: "size", mode: "wrong" };
+  await page.click("button[data-r=size]");
+  await page.waitForSelector("#empty .dstat button", { timeout: 10000 });
+  assert.match(await page.locator("#empty .dstat").innerText(), /does not belong to this version of the page/);
+  assert.equal(await page.locator("#stage path").count(), 0);
+});
+await dataStep("a slow data file: the page says it is still loading and offers Try again; Try again fetches it again", async ctx => {
+  const page = await ctx.newPage(); await page.goto(`${BASE}/highline.html#r=gsmf&z=0.1`); await ready(page);
+  fault = { rel: "shmr", mode: "stall" };
+  await page.click("button[data-r=shmr]");
+  assert.match(await page.locator("#empty .dstat").innerText(), /Loading the data for/);
+  await page.waitForFunction(() => /Still loading the data/.test(document.querySelector("#empty .dstat")?.textContent || ""), null, { timeout: 15000 });
+  assert.equal(await page.locator("#empty .dstat button").count(), 1);
+  fault = null; await page.click("#empty .dstat button");
+  await page.waitForFunction(() => document.querySelectorAll("#stage path").length > 5 && /halo/i.test(document.getElementById("shTitle").textContent), null, { timeout: 15000 });
+});
+await dataStep("the views that read many relations fetch them first, and say so when one cannot be had", async ctx => {
+  const page = await ctx.newPage(); await page.goto(`${BASE}/highline.html#r=gsmf&z=0.1&m=spread`);
+  await page.waitForFunction(() => !document.getElementById("boot") && document.querySelectorAll("#spread table.sp td[data-r]").length > 10, null, { timeout: 60000 });
+  const page2 = await ctx.newPage(); fault = { rel: "mzr", mode: "missing" };
+  await page2.goto(`${BASE}/highline.html#r=gsmf&z=0.1&m=tension`);
+  await page2.waitForSelector("#boot.failed button", { timeout: 30000 });
+  assert.match(await page2.locator("#boot").innerText(), /could not be loaded/);
+  fault = null; await page2.click("#boot button");
+  await page2.waitForFunction(() => !document.getElementById("boot") && document.querySelectorAll("#tension td[data-r]").length > 5, null, { timeout: 60000 });
+});
 await step("no JavaScript: the Explorer says what it needs", async ctx => {
   const page = await ctx.newPage(); await page.goto(`${BASE}/highline.html`);
   assert.match(await page.locator("noscript").first().innerHTML(), /needs JavaScript/);
 }, { javaScriptEnabled: false });
-await step("connection lost after loading: the Explorer keeps working", async ctx => {
+await step("connection lost after loading: what is loaded keeps working, a relation not loaded yet says so and recovers", async ctx => {
   const page = await ctx.newPage(); await page.goto(`${BASE}/highline.html#r=gsmf&z=0.1`); await ready(page);
   await ctx.setOffline(true);
-  await page.evaluate(() => { location.hash = "#r=sfms&z=0"; });
-  await page.waitForFunction(() => /main sequence/i.test(document.getElementById("shTitle").textContent));
+  await page.evaluate(() => { location.hash = "#r=gsmf&z=2"; });
+  await page.waitForFunction(() => /z = 2/.test(document.getElementById("shTitle").textContent));
   await page.click("#mEvol"); await page.waitForTimeout(500);
-  assert.ok(await page.locator("#stage path").count() > 3, "still draws after switching view while offline");
+  assert.ok(await page.locator("#stage path").count() > 3, "still draws the loaded relation after switching view while offline");
+  await page.click("#mPlot");
+  await page.evaluate(() => { location.hash = "#r=sfms&z=0"; });
+  await page.waitForSelector(".dstat button", { timeout: 15000 });
+  assert.match(await page.locator(".dstat").innerText(), /could not be loaded/);
+  assert.match(await page.locator("#shTitle").innerText(), /main sequence/i, "the title names the relation that is on its way");
+  await ctx.setOffline(false);
+  await page.click(".dstat button");
+  await page.waitForFunction(() => document.querySelectorAll("#stage path").length > 5 && !document.querySelector(".dstat"), null, { timeout: 15000 });
 });
 await step("connection lost after loading: the dials page keeps working", async ctx => {
   const page = await ctx.newPage(); await page.goto(`${BASE}/site/retune.html`); await page.waitForSelector(".rt-panel");
@@ -94,4 +162,4 @@ await step("an address that does not exist gets a helpful page whose links lead 
 });
 await browser.close(); server.close();
 if (failures.length) { console.log(failures.join("\n")); process.exit(1); }
-console.log(`resilience: ${n} checks passed (broken data, no JavaScript, offline after load, blocked fonts, reduced motion, content security policy, 404 page)`);
+console.log(`resilience: ${n} checks passed (broken data, a relation's data file missing / damaged / wrong / slow, no JavaScript, offline after load, blocked fonts, reduced motion, content security policy, 404 page)`);
