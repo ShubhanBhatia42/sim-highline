@@ -84,6 +84,7 @@ await step("Coverage and Tension are opaque tables with the chart hidden", async
   await settle(page);
   for (const [btn, sel] of [["#mTension", "#tension"], ["#mAtlas", "#atlas"]]) {
     await page.click(btn);
+    await page.waitForSelector(sel + " table", { timeout: 30000 }).catch(() => {}); // the Tension view fetches the relations it compares first; a missing table is still reported below
     const r = await page.evaluate(s => ({ plot: getComputedStyle(document.getElementById("plot")).display, bg: getComputedStyle(document.querySelector(s)).backgroundColor, table: !!document.querySelector(s + " table"), footer: getComputedStyle(document.querySelector("footer")).display }), sel);
     assert.equal(r.plot, "none", `${btn}: chart must be hidden`);
     assert(!/rgba\(0, 0, 0, 0\)/.test(r.bg), `${btn}: table background must be opaque`);
