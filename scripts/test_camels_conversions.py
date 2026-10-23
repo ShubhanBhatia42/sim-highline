@@ -152,6 +152,20 @@ class FourthCode(unittest.TestCase):
         self.assertAlmostEqual(other[0]["median"], np.log10(0.8), places=3)       # the first three keep their own value
 
 
+class Document(unittest.TestCase):
+    def test_every_code_has_a_row_in_every_table(self):
+        """docs/CONVERSIONS.md is generated from data/conversions.json: each code must have a row in every table (13 conversions, the redshift table and the mass-function table), so a stale or incomplete page fails here."""
+        text = (HERE.parent / "docs" / "CONVERSIONS.md").read_text()
+        for code in C.SUITES:
+            rows = text.count(f"\n| {code} |")
+            self.assertEqual(rows, 13 + 1 + 2, code)           # 13 conversion tables, the redshift table, two rows in the mass-function table
+
+    def test_the_old_statement_that_no_fourth_code_exists_is_gone(self):
+        text = (HERE.parent / "docs" / "CONVERSIONS.md").read_text()
+        self.assertNotIn("with no group or subhalo catalogues", text)
+        self.assertIn("FOF_Subfind", text)
+
+
 class Published(unittest.TestCase):
     def test_four_codes_and_where_they_were_read(self):
         self.assertEqual(list(DATA["suites"]), list(C.SUITES))
