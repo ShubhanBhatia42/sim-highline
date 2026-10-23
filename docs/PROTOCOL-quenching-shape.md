@@ -74,4 +74,11 @@ S1 without the two lowest mass bins of each family (lower resolution); S2 `gv` a
 
 ## 10. Amendments
 
-None.
+**A1 (2026-10-23, before any distance, verdict or emulator was computed for the Latin-hypercube simulations; the ingest was still running).** Found while testing the analysis code on synthetic two-code worlds. Section 4 judges "shape adds separation" by the 5th percentile of D(sf2+shape) − D(sf2), the difference of the raw between-code distances in the same split, and the same for the joint set. In a synthetic world where the two codes are identical, that difference is positive in every split (median about 0.04 noise units): adding outputs raises a raw minimised distance a little even when there is nothing to find, and the same-code controls rise by the same amount. The rule as written would call identical codes "shape adds separation". The rule is therefore replaced by one that compares each difference with the same-code controls of the same split:
+
+* for split k, let δ_k be the difference of the raw between-code distances (bigger set minus base set) and c_k the mean of the two same-code controls' differences (TNG halves and SIMBA halves, bigger set minus base set), all in the same split; the quantity judged is the excess e_k = δ_k − c_k;
+* "shape adds separation" if the 5th percentile of e exceeds 0 **and** the verdict of the bigger set is at least as strong as that of the base set (strength: removable < unresolved < structural);
+* "shape adds nothing detectable" if the 95th percentile of e is below 0.1 noise units;
+* otherwise unresolved. If both of the first two conditions hold (a small but consistent excess) the first is reported and the report says that both held.
+
+The unadjusted differences, for the between-code pair and for each control, are still reported beside it, as section 4 already required. Nothing else in the protocol changes. The synthetic worlds used for this test are those of `scripts/test_quenching_shape.py`; they are not a calibration of the estimators (section 6).
