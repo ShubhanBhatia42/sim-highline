@@ -24,3 +24,7 @@ These are pointers, not checked quotations (the full texts have not been read fo
 ## What to do about it
 
 A reader who needs the result to hold at higher resolution should not use this project for that. The useful next test is the same analysis on a set of runs at a second resolution of the same model, which CAMELS does not provide.
+
+## Since this note
+
+The sixth study (`PROTOCOL-resolution.md`, `ANALYSIS-resolution.md`) measures how far published curves of other models move between two resolutions of the same model, in CAMELS noise units and against the TNG-SIMBA distance. It is an internal check on the dataset's own records: CAMELS is still not run at a second resolution, and the statements above about what was not measured still hold for CAMELS itself.
