@@ -277,7 +277,7 @@ def shmr_records(ens):
         nb, x_first = len(pts), round(HALO_LO + k0 * HALO_STEP * HALO_COARSE, 2)
         alt = r["altCentral"]
         cmp_note = ""
-        if snap in panel_of.values():
+        if snap in panel_of:
             p = chk[panel_of[snap]]
             cmp_note = (f" Compared with the paper's Fig. 10, a raster image (its solid median line for the z = {zn:g} panel read on axes calibrated from the tick marks and turned into a stellar-to-halo mass ratio, at {p['binsCompleteCompared']} bin centres of this curve; internal check only): the paper's median ratio is higher than this curve's by "
                         f"{p['completeMin']:.2f} to {p['completeMax']:.2f} dex (median {p['completeMedian']:.2f}); the line is about 0.06 dex thick. The paper's halo mass is M200,c, which for the same halo is lower than its FoF mass, so the same galaxy has a higher ratio to M200,c than to the FoF mass: the offset has that sign, but this cause was not tested (the catalogue has no M200,c).")
@@ -318,7 +318,7 @@ def bh_records(ens):
         f_lo = hosts[lo_sel].sum() / max(gal[lo_sel].sum(), 1); f_hi = hosts[hi_sel].sum() / max(gal[hi_sel].sum(), 1)
         multi_lo = 1 - one[lo_sel].sum() / max(hosts[lo_sel].sum(), 1); multi_top = 1 - one[top_sel].sum() / max(hosts[top_sel].sum(), 1); mean_top = parts[top_sel].sum() / max(hosts[top_sel].sum(), 1)
         cmp_note = ""
-        if snap in panel_of.values():
+        if snap in panel_of:
             p = chk[panel_of[snap]]
             a, b = p["A"], p["B"]
             near = sum(1 for x in a["bins"] if x["maxAbsDiffAll"] <= 0.2)
