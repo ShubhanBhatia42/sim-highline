@@ -706,7 +706,7 @@ function renderChip(){
   if(state.mode==="evol")t=`Value at fixed x; points are published epochs, lines only join consecutive ones`;
   else if(state.resid&&state.ref)t=`Residuals vs ${esc(ulabel(state.ref))} <button id="chipX">exit</button>`;
   else if(state.evo)t=`All epochs of ${esc(ulabel(state.evo))} <span class="ramp" style="display:inline-flex"><span>z low</span><i></i><span>high</span></span> <button id="chipX">exit</button>`;
-  else if(ns===0)t=`No simulation has been added for this relation yet: showing the observations only (see What exists)`;
+  else if(ns===0)t=`No simulation yet: observations only`;
   else if(ns<3)t=`Sparse so far: ${ns} simulation${ns>1?"s":""} (see What exists)`;
   c.innerHTML=t;c.classList.toggle("on",!!t);const b=$("chipX");if(b)b.onclick=()=>{state.resid=false;state.evo=null;renderAll(true)};
 }
