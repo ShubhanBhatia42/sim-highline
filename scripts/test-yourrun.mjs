@@ -99,7 +99,7 @@ await step("the example plots at least five points for every relation in the app
     const dots = await page.locator("#stage .userdot").count();
     if (dots < 5) bad.push(`${rel}: ${dots} points`);
   }
-  assert.deepEqual(bad, [], "relations where the example fails");
+  assert.deepEqual(bad, [], "relations where the example fails: " + bad.join("; "));
 });
 
 await step("a residual plot appears when a curve is comparable", async page => {

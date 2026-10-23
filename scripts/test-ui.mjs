@@ -42,6 +42,23 @@ await step("app loads with a title, curves, and no errors", async () => {
   await ctx.close();
 });
 
+await step("every published expression is drawn under the page's content security policy (no eval)", async () => {
+  // Playwright's page.evaluate is exempt from the page's policy, so this cannot try new Function itself: it checks the mechanism instead (the policy has no 'unsafe-eval'; every parametric record has a precompiled function; nothing the page itself tried to compile failed)
+  const { page, ctx } = await open("/highline.html#r=sfms&z=0.1");
+  await settle(page);
+  const res = await page.evaluate(() => {
+    const par = ALL.filter(r => r.representation.type === "parametric");
+    const key = r => Object.entries(r.representation.parameters || {}).filter(([, v]) => typeof v === "number").map(([k]) => k).join(",") + "|" + r.representation.expression;
+    return { n: par.length, missing: par.filter(r => typeof window.SIMHIGHLINE_EXPR[key(r)] !== "function").map(r => r.id), failedToCompile: [...evalCache.values()].filter(v => v === null).length, compiled: evalCache.size, csp: document.querySelector('meta[http-equiv="Content-Security-Policy"]').content };
+  });
+  assert(!/unsafe-eval/.test(res.csp), "the policy must not allow eval");
+  assert(res.n >= 100, `${res.n} parametric records`);
+  assert.deepEqual(res.missing, [], "parametric records without a precompiled expression: " + res.missing.slice(0, 5).join(", "));
+  assert(res.compiled > 0, "the page evaluated no expression at all");
+  assert.equal(res.failedToCompile, 0, "expressions the page failed to compile");
+  await ctx.close();
+});
+
 await step("every relation renders at several epochs without errors", async () => {
   const { page, ctx, errors } = await open("/highline.html");
   await settle(page);
