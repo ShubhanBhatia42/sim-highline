@@ -568,6 +568,7 @@ const onData=fn=>{if(!dataWait(fn))fn()};
 function dataChanged(){
   if(dataMissing().length){dataStatus();return}
   const b=$("boot");if(b&&b.dataset.dl){delete b.dataset.dl;b.classList.remove("dl","failed");b.setAttribute("role","status");b.querySelector("p").textContent="Loading the dataset…"}
+  const e=$("empty");if(e.querySelector(".dstat")){e.hidden=true;e.textContent=""}
   const ws=dataWaiters;dataWaiters=[];
   for(const fn of ws){try{fn()}catch(e){setTimeout(()=>{throw e})}}
   if(state.panel)try{renderPanel()}catch(e){setTimeout(()=>{throw e})}
