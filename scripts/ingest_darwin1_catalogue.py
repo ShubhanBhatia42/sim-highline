@@ -6,7 +6,7 @@ Stellar-to-halo mass relation and black hole mass relation (12 snapshots: the 11
 Not derivable from the catalogue: sizes (no radii among the columns), gas-phase or stellar metallicities (no abundances), see data/sources-catalogue.json.
 Stage 1 (network, a few minutes): python3 scripts/ingest_darwin1_catalogue.py   writes data/ensembles/darwin1-gsmf.json (counts on a fine mass grid, what was read, and the comparison with the paper's Fig. 7)
 Stage 1b (network, about 15 minutes): python3 scripts/ingest_darwin1_catalogue.py --relations [--source DIR]   writes data/ensembles/darwin1-shmr-bh.json (counts on two-dimensional grids, and the comparison with the paper's raster Figs. 10 and 11, DIR = the arXiv source of 2610.25786, fetched when not given)
-Stage 2 (offline, run by verify-all.sh): python3 scripts/ingest_darwin1_catalogue.py --records   writes data/curves/darwin-catalogue.json (then node scripts/derive-distributions.mjs adds the medians and bands of the two-dimensional records)
+Stage 2 (offline, run by verify-all.sh): python3 scripts/ingest_darwin1_catalogue.py --records   writes data/curves/darwin-catalogue.json (the halo-mass and black hole records are the median and the 16th to 84th percentile of the galaxies in each bin, taken from the counts in data/ensembles/darwin1-shmr-bh.json)
 The comparison with the paper (stage 1) is the evidence that the column and the volume are read correctly: it counts the galaxies in the bins of the digitized curves of Fig. 7 (data/curves/darwin-lee26.json) and compares them with the counts those curves imply (a bin with n galaxies in the volume V has number density n/(V dM))."""
 import argparse
 import hashlib
@@ -39,7 +39,7 @@ PANELS = {"z5": 46, "z3": 81, "z1": 475, "z0.25": 944}
 ENS2 = ROOT / "data" / "ensembles" / "darwin1-shmr-bh.json"
 SNAPS_REL = sorted(SNAPS + [(164, 2.086860, 2.1)], key=lambda t: t[1])
 HALO_LO, HALO_STEP, HALO_N, HALO_COARSE = 6.0, 1 / 6, 54, 2  # log10(M_FoF/Msun) 6 to 15; 2 fine bins make one bin of 1/3 dex
-MS_LO, MS_STEP, MS_N = 4.5, 0.05, 160  # log10(M*/Msun) of the central galaxy, 4.5 to 12.5
+RT_LO, RT_STEP, RT_N = -7.0, 0.05, 140  # log10 of the stellar-to-halo mass ratio of the central galaxy (stellar mass over FoF mass), -7 to 0
 GX_LO, GX_STEP, GX_N, GX_COARSE = 6.0, 1 / 6, 40, 2  # log10(M*/Msun) of the galaxies of the black hole relation, 6 to 12.67
 BH_LO, BH_STEP, BH_N = 4.5, 0.05, 120  # log10(M_BH/Msun), 4.5 to 10.5 (the seed mass is 5e4 Msun = 10^4.70)
 FIG_SHMR = {"z3": 81, "z0.19": 1001}  # the two panels of the paper's Fig. 10
@@ -147,11 +147,20 @@ def stage2():
         ens2 = json.loads(ENS2.read_text())
         recs += shmr_records(ens2) + bh_records(ens2)
     OUT.write_text(json.dumps({"schemaVersion": "1.0.0", "records": recs}, indent=2) + "\n")
-    print(f"wrote {len(recs)} catalogue records to {OUT} ({n_gsmf} mass functions, {len(recs) - n_gsmf} two-dimensional records of the halo-mass and black hole relations; derive-distributions.mjs adds their medians)")
+    print(f"wrote {len(recs)} catalogue records to {OUT} ({n_gsmf} mass functions, {len(recs) - n_gsmf} records of the halo-mass and black hole relations)")
 
 
 def edges_of(lo, step, n):
     return [round(lo + step * i, 4) for i in range(n + 1)]
+
+
+def central_galaxies(halo_index, is_galaxy, key):
+    """Index of the central galaxy of every halo that has a galaxy (in ascending halo order): the galaxy with the largest `key`, ties (equal masses) to the higher index."""
+    idx = np.nonzero(is_galaxy)[0]
+    idx = idx[np.lexsort((idx, key[idx], halo_index[idx]))]
+    last = np.ones(len(idx), bool)
+    last[:-1] = halo_index[idx][1:] != halo_index[idx][:-1]
+    return idx[last]
 
 
 def read_rel(snap):
@@ -167,24 +176,23 @@ def read_rel(snap):
             a = {k: h[k][()] for k in names}
     for k in names:
         sha.update(np.ascontiguousarray(a[k]).tobytes())
-    hm, hi, ms, mt, ns, mb, nb = (a[k] for k in names)
+    return count_rel(snap, a, url, info, sha.hexdigest())
+
+
+def count_rel(snap, a, url, info, sha256):
+    """Counts of the halo-mass relation and of the black hole relation from the arrays of one snapshot (offline once the arrays are read)."""
+    hm, hi, ms, mt, ns, mb, nb = (a[k] for k in ("halo/mtot", "sub/halo_index", "sub/mstar", "sub/mtot", "sub/nstar", "sub/mMBH", "sub/nMBH"))
     ms64, mt64 = ms.astype(np.float64), mt.astype(np.float64)
     gal = (ns > 0) & (ms > 0)
 
-    def central(key):  # the galaxy of each halo with the largest `key`, ties to the lower index
-        idx = np.nonzero(gal)[0]
-        idx = idx[np.lexsort((idx, key[idx], hi[idx]))]
-        last = np.ones(len(idx), bool)
-        last[:-1] = hi[idx][1:] != hi[idx][:-1]
-        return idx[last]
-    cen, alt = central(ms64), central(mt64)  # the central is the galaxy of largest stellar mass; the alternative is the galaxy of largest total mass
+    cen, alt = central_galaxies(hi, gal, ms64), central_galaxies(hi, gal, mt64)  # the central is the galaxy of largest stellar mass; the alternative is the galaxy of largest total mass
     ok_h = hm > 0
     hlog = np.log10(hm[ok_h].astype(np.float64) / H)
-    xe, ye = edges_of(HALO_LO, HALO_STEP, HALO_N), edges_of(MS_LO, MS_STEP, MS_N)
-    hx, cy = np.log10(hm[hi[cen]].astype(np.float64) / H), np.log10(ms64[cen] / H)
+    xe, ye = edges_of(HALO_LO, HALO_STEP, HALO_N), edges_of(RT_LO, RT_STEP, RT_N)
+    hx, cy = np.log10(hm[hi[cen]].astype(np.float64) / H), np.log10(ms64[cen] / hm[hi[cen]].astype(np.float64))  # h cancels in the ratio
     shmr = {"nHalos": int(ok_h.sum()), "nHalosWithGalaxy": int(len(cen)), "nOutsideGrid": int(((cy < ye[0]) | (cy >= ye[-1])).sum()),
             "halos": np.histogram(hlog, bins=xe)[0].astype(int).tolist(), "halosWithGalaxy": np.histogram(hx, bins=xe)[0].astype(int).tolist(), "counts": D.bin_counts(hx, cy, xe, ye).astype(int).tolist()}
-    cnt_alt = D.bin_counts(np.log10(hm[hi[alt]].astype(np.float64) / H), np.log10(ms64[alt] / H), xe, ye)
+    cnt_alt = D.bin_counts(np.log10(hm[hi[alt]].astype(np.float64) / H), np.log10(ms64[alt] / hm[hi[alt]].astype(np.float64)), xe, ye)
     shmr["altCentral"] = {"definition": "the galaxy of largest total mass (sub/mtot) of the halo", "nHalosDiffering": int((cen != alt).sum()), **alt_difference(np.array(shmr["counts"]), cnt_alt)}
     gx_e, bh_e = edges_of(GX_LO, GX_STEP, GX_N), edges_of(BH_LO, BH_STEP, BH_N)
     xs = np.log10(ms64[gal] / H)
@@ -195,7 +203,7 @@ def read_rel(snap):
     bh = {"nGalaxies": int(gal.sum()), "nWithBH": int(has.sum()), "nWithOneBH": int(one.sum()), "nOutsideGrid": int((inx & ((by < bh_e[0]) | (by >= bh_e[-1]))).sum()), "nBelowGalaxyGrid": int((bx < gx_e[0]).sum()),
           "galaxies": np.histogram(xs, bins=gx_e)[0].astype(int).tolist(), "withBH": np.histogram(bx, bins=gx_e)[0].astype(int).tolist(), "withOneBH": np.histogram(np.log10(ms64[one] / H), bins=gx_e)[0].astype(int).tolist(),
           "bhParticles": np.histogram(bx, bins=gx_e, weights=nb[has].astype(np.float64))[0].round().astype(int).tolist(), "counts": D.bin_counts(bx, by, gx_e, bh_e).astype(int).tolist()}
-    rec = {"snapshot": snap, "url": url, "contentLength": int(info.get("size") or 0), "etag": str(info.get("ETag") or info.get("etag") or ""), "nSubstructures": int(len(ms)), "sha256": sha.hexdigest(), "shmr": shmr, "bh": bh}
+    rec = {"snapshot": snap, "url": url, "contentLength": int(info.get("size") or 0), "etag": str(info.get("ETag") or info.get("etag") or ""), "nSubstructures": int(len(ms)), "sha256": sha256, "shmr": shmr, "bh": bh}
     gal_fig = {"A": (bx, by), "B": (np.log10(ms64[one] / H), np.log10(mb[one].astype(np.float64) / H))} if snap in FIG_BH.values() else None
     return rec, gal_fig
 
@@ -221,7 +229,7 @@ def x_range_complete(halos, with_galaxy):
 def alt_difference(cnt, cnt_alt):
     """Largest difference of the median, and of the 16th and 84th percentiles, between two choices of central, over the coarse halo-mass bins that hold 10 or more centrals in both."""
     a, b = coarse_2d(cnt, HALO_COARSE), coarse_2d(cnt_alt, HALO_COARSE)
-    d = {"xEdges": edges_of(HALO_LO, HALO_STEP * HALO_COARSE, a.shape[0]), "yEdges": edges_of(MS_LO, MS_STEP, MS_N), "thresholds": []}
+    d = {"xEdges": edges_of(HALO_LO, HALO_STEP * HALO_COARSE, a.shape[0]), "yEdges": edges_of(RT_LO, RT_STEP, RT_N), "thresholds": []}
     sa, sb = D.stats({**d, "counts": a.tolist()}), D.stats({**d, "counts": b.tolist()})
     diffs = [[abs(sa["quantiles"][k][i] - sb["quantiles"][k][i]) for k in (1, 2, 3)] for i in range(a.shape[0]) if sa["quantiles"][2][i] is not None and sb["quantiles"][2][i] is not None]
     return {"binsCompared": len(diffs), "maxAbsDiffMedianDex": round(max(x[1] for x in diffs), 4), "maxAbsDiff16and84Dex": round(max(max(x[0], x[2]) for x in diffs), 4)}
@@ -231,16 +239,15 @@ def shmr_curve_for_check(r):
     """The catalogue curve of one snapshot as the saved counts give it: bin centre, number of centrals, median, and whether every halo of the bin hosts a galaxy."""
     k0, top, h, g = x_range_complete(r["shmr"]["halos"], r["shmr"]["halosWithGalaxy"])
     c = coarse_2d(r["shmr"]["counts"], HALO_COARSE)
-    st = D.stats({"xEdges": edges_of(HALO_LO, HALO_STEP * HALO_COARSE, c.shape[0]), "yEdges": edges_of(MS_LO, MS_STEP, MS_N), "counts": c.tolist(), "thresholds": []})
+    st = D.stats({"xEdges": edges_of(HALO_LO, HALO_STEP * HALO_COARSE, c.shape[0]), "yEdges": edges_of(RT_LO, RT_STEP, RT_N), "counts": c.tolist(), "thresholds": []})
     return [(st["xCentres"][i], st["n"][i], st["quantiles"][2][i], bool(i >= k0)) for i in range(c.shape[0]) if st["quantiles"][2][i] is not None]
 
 
-def trimmed(counts, k0, k1, x_lo, x_step, y_lo, y_step):
-    """Counts of the coarse x bins k0 to k1 with the empty rows at both ends of the y axis dropped: (xEdges, yEdges, counts)."""
+def median_points(counts, k0, k1, x_lo, x_step, y_lo, y_step):
+    """The median and the 16th to 84th percentile of the galaxies in each coarse x bin k0 to k1 with 10 or more galaxies, from the counts on the fine y grid (the same quantile function as compare.js, scripts/distribution_stats.py), as ordinary points."""
     c = np.asarray(counts)[k0:k1 + 1]
-    rows = np.nonzero(c.sum(axis=0))[0]
-    j0, j1 = int(rows.min()), int(rows.max())
-    return edges_of(x_lo + k0 * x_step, x_step, k1 - k0 + 1), edges_of(y_lo + j0 * y_step, y_step, j1 - j0 + 1), c[:, j0:j1 + 1].astype(int).tolist()
+    st = D.stats({"xEdges": edges_of(x_lo + k0 * x_step, x_step, k1 - k0 + 1), "yEdges": edges_of(y_lo, y_step, c.shape[1]), "counts": c.astype(int).tolist(), "thresholds": []})
+    return [{"x": st["xCentres"][i], "y": st["quantiles"][2][i], "yLow": st["quantiles"][1][i], "yHigh": st["quantiles"][3][i], "count": int(st["n"][i])} for i in range(c.shape[0]) if st["quantiles"][2][i] is not None]
 
 
 def base_record(rid, relation, snap, z, zn, ens):
@@ -264,30 +271,30 @@ def shmr_records(ens):
         r = s["shmr"]
         k0, top, h, g = x_range_complete(r["halos"], r["halosWithGalaxy"])
         c = coarse_2d(r["counts"], HALO_COARSE)
-        if int((c[k0:top + 1].sum(axis=1) >= 10).sum()) < 3:
+        if len(median_points(c, k0, top, HALO_LO, HALO_STEP * HALO_COARSE, RT_LO, RT_STEP)) < 3:
             continue
-        xe, ye, counts = trimmed(c, k0, top, HALO_LO, HALO_STEP * HALO_COARSE, MS_LO, MS_STEP)
-        nb = int((c[k0:top + 1].sum(axis=1) >= 10).sum())
+        pts = median_points(c, k0, top, HALO_LO, HALO_STEP * HALO_COARSE, RT_LO, RT_STEP)
+        nb, x_first = len(pts), round(HALO_LO + k0 * HALO_STEP * HALO_COARSE, 2)
         alt = r["altCentral"]
         cmp_note = ""
         if snap in panel_of.values():
             p = chk[panel_of[snap]]
-            cmp_note = (f" Compared with the paper's Fig. 10, a raster image (its solid median line for the z = {zn:g} panel read on axes calibrated from the tick marks, at {p['binsCompleteCompared']} bin centres of this curve; internal check only): the paper's median stellar mass is higher than this curve's by "
-                        f"{p['completeMin']:.2f} to {p['completeMax']:.2f} dex (median {p['completeMedian']:.2f}); the line is about 0.06 dex thick. The paper's halo mass is M200,c, and the same halos have a lower M200,c than FoF mass, which would lift a rising curve by about this much, but this cause was not tested (the catalogue has no M200,c).")
+            cmp_note = (f" Compared with the paper's Fig. 10, a raster image (its solid median line for the z = {zn:g} panel read on axes calibrated from the tick marks and turned into a stellar-to-halo mass ratio, at {p['binsCompleteCompared']} bin centres of this curve; internal check only): the paper's median ratio is higher than this curve's by "
+                        f"{p['completeMin']:.2f} to {p['completeMax']:.2f} dex (median {p['completeMedian']:.2f}); the line is about 0.06 dex thick. The paper's halo mass is M200,c, which for the same halo is lower than its FoF mass, so the same galaxy has a higher ratio to M200,c than to the FoF mass: the offset has that sign, but this cause was not tested (the catalogue has no M200,c).")
         rec = base_record(f"darwin1.catalogue.shmr.z{zn:g}", "shmr", snap, z, zn, ens)
         rec.update({
-            "axes": {"xDefinition": "log10 mass of the Friends-of-Friends halo (all particles of the group: dark matter, gas, stars and black holes; adaptive linking length), not M200,c", "xUnit": "log10(Msun)", "yDefinition": "log10 stellar mass of the central galaxy (total mass of the star particles bound to it)", "yUnit": "log10(Msun)"},
-            "domain": {"xMin": round(xe[0] + HALO_STEP, 4), "xMax": round(xe[-1] - HALO_STEP, 4)},
-            "representation": {"type": "distribution", "xEdges": xe, "yEdges": ye, "counts": counts, "weighting": "number"},
-            "scatter": {"unit": "dex", "meaning": "the 16th to 84th percentile of the central galaxies in each halo-mass bin"},
+            "axes": {"xDefinition": "log10 mass of the Friends-of-Friends halo (all particles of the group: dark matter, gas, stars and black holes; adaptive linking length), not M200,c", "xUnit": "log10(Msun)", "yDefinition": "log10 stellar-to-halo mass ratio, M*/M_FoF of the central galaxy (M*: total mass of the star particles bound to it; M_FoF: mass of the Friends-of-Friends halo)", "yUnit": "dex"},
+            "domain": {"xMin": pts[0]["x"], "xMax": pts[-1]["x"]},
+            "representation": {"type": "points", "intervalKind": "scatter", "connect": True, "points": pts},
+            "scatter": {"unit": "dex", "meaning": "the 16th to 84th percentile of the stellar-to-halo mass ratio of the central galaxies in each halo-mass bin"},
             "selection": {"population": "the central galaxy of every Friends-of-Friends halo, in the halo-mass bins in which every halo hosts a galaxy (at least 10 halos per bin)", "warning": (
                 f"Counted by this project from the public DARWIN-1 catalogue of snapshot {snap} (z = {z:.3f}). Halo mass is the Friends-of-Friends group mass `halo/mtot` (all particle species of the group, Msun/h divided by h = 0.674), not the M200,c of the paper's Fig. 10: the catalogue has no M200,c, so this relation is not comparable with M200-based ones. "
                 f"Stellar mass is the total stellar mass `sub/mstar` bound to the central galaxy. The catalogue has no central flag: the central is the galaxy (substructure with star particles) of largest stellar mass in the halo, as the finder's own paper (Kim et al. 2023, ApJ 951, 137) classifies the most massive galaxy of a halo as the central; Lee et al. 2026 say only 'the central galaxy, as identified by PGalF'. "
                 f"Taking the galaxy of largest total mass instead changes the central of {alt['nHalosDiffering']} of {r['nHalosWithGalaxy']} halos with a galaxy and the bin medians by at most {alt['maxAbsDiffMedianDex']:.3f} dex. "
-                f"Only bins of 1/3 dex from 10^{xe[0]:.2f} Msun upward, in which every halo hosts a galaxy (no selection on stellar mass), are kept: {nb} bins with 10 or more centrals, {int(c[k0:top + 1].sum())} centrals. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of stellar mass. Cosmic variance of one box not included.{cmp_note}")},
+                f"Only bins of 1/3 dex from 10^{x_first:.2f} Msun upward, in which every halo hosts a galaxy (no selection on stellar mass), are kept: {nb} bins with 10 or more centrals, {int(c[k0:top + 1].sum())} centrals. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of the stellar-to-halo mass ratio (the median is exact to about one grid cell). Cosmic variance of one box not included.{cmp_note}")},
             "definitions": {"imf": "kroupa01", "cosmology": {"H0": 67.4, "Om": OM}, "massDefinition": "total-bound-subhalo", "haloMassDefinition": "FoF-total-mass-all-species", "haloMassHistory": "current", "population": "central-galaxies", "galaxyType": "central"},
             "provenance": provenance_of(snap, s, ens, "halo/mtot, sub/halo_index, sub/mstar, sub/nstar", "central = largest stellar mass of the halo"),
-            "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 10, M200,c on the x axis) is a raster image and is not in the dataset. Per-galaxy distribution: the median and 16 to 84 per cent band shown as a curve are derived from the counts (scripts/derive-distributions.mjs)."})
+            "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 10, M200,c on the x axis) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."})
         recs.append(rec)
     return recs
 
@@ -302,11 +309,10 @@ def bh_records(ens):
         r = s["bh"]
         c = coarse_2d(r["counts"], GX_COARSE)
         n_x = c.sum(axis=1)
-        if int((n_x[first:] >= 10).sum()) < 3:
+        k1 = int(np.nonzero(n_x[first:] > 0)[0].max()) + first if n_x[first:].sum() else first
+        if len(median_points(c, first, k1, GX_LO, GX_STEP * GX_COARSE, BH_LO, BH_STEP)) < 3:
             continue
-        k1 = int(np.nonzero(n_x[first:] > 0)[0].max()) + first
-        xe, ye, counts = trimmed(c, first, k1, GX_LO, GX_STEP * GX_COARSE, BH_LO, BH_STEP)
-        nb = int((n_x[first:] >= 10).sum())
+        pts = median_points(c, first, k1, GX_LO, GX_STEP * GX_COARSE, BH_LO, BH_STEP)
         gal = np.asarray(r["galaxies"]).reshape(-1, GX_COARSE).sum(axis=1); hosts = np.asarray(r["withBH"]).reshape(-1, GX_COARSE).sum(axis=1); one = np.asarray(r["withOneBH"]).reshape(-1, GX_COARSE).sum(axis=1); parts = np.asarray(r["bhParticles"]).reshape(-1, GX_COARSE).sum(axis=1)
         lo_sel, hi_sel, top_sel = slice(first, first + 3), slice(first + 7, None), slice(first + 9, None)  # 10^7 to 10^8, above 10^9.33, above 10^10
         f_lo = hosts[lo_sel].sum() / max(gal[lo_sel].sum(), 1); f_hi = hosts[hi_sel].sum() / max(gal[hi_sel].sum(), 1)
@@ -324,17 +330,17 @@ def bh_records(ens):
         rec = base_record(f"darwin1.catalogue.bh.z{zn:g}", "bh", snap, z, zn, ens)
         rec.update({
             "axes": {"xDefinition": "log10 stellar mass (total mass of the star particles of the self-bound substructure)", "xUnit": "log10(Msun)", "yDefinition": "log10 black hole mass of the galaxy (total mass of all black hole particles of the substructure)", "yUnit": "log10(Msun)"},
-            "domain": {"xMin": round(xe[0] + GX_STEP, 4), "xMax": round(xe[-1] - GX_STEP, 4)},
-            "representation": {"type": "distribution", "xEdges": xe, "yEdges": ye, "counts": counts, "weighting": "number"},
+            "domain": {"xMin": pts[0]["x"], "xMax": pts[-1]["x"]},
+            "representation": {"type": "points", "intervalKind": "scatter", "connect": True, "points": pts},
             "scatter": {"unit": "dex", "meaning": "the 16th to 84th percentile of the black hole masses of the galaxies in each stellar-mass bin"},
             "selection": {"population": "all galaxies with at least 100 star particles and at least one black hole particle, centrals and satellites", "warning": (
                 f"Counted by this project from the public DARWIN-1 catalogue of snapshot {snap} (z = {z:.3f}). Population: every galaxy (self-bound substructure with at least 100 star particles, stellar mass `sub/mstar`) that holds at least one black hole particle (`sub/nMBH` >= 1), centrals and satellites alike (the catalogue has no flag for either); "
                 f"{int(n_x[first:].sum())} galaxies. Galaxies without a black hole particle are not in the relation: {f_lo:.0%} of the galaxies of 10^7 to 10^8 Msun and {f_hi:.0%} of those above 10^9.3 Msun hold one, so this is the relation of black hole hosts, not of all galaxies. "
-                f"Black hole mass is `sub/mMBH`, the total mass of all black hole particles of the substructure (Msun/h divided by h = 0.674): a galaxy with several black hole particles counts their sum ({multi_lo:.0%} of the hosts of 10^7 to 10^8 Msun and {multi_top:.0%} of those above 10^10 Msun have two or more, on average {mean_top:.1f} particles above 10^10 Msun). "
-                f"The catalogue does not give the mass of the most massive particle alone; it lies between the sum divided by the number of particles and the sum. Black holes are seeded at 5e4 Msun (Lee et al. 2026), so the median is close to the seed mass (10^4.70 Msun) at the lowest stellar masses. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of black hole mass. Cosmic variance of one box not included.{cmp_note}")},
+                f"Black hole mass is `sub/mMBH`, the total mass of all black hole particles of the substructure (Msun/h divided by h = 0.674): a galaxy with several black hole particles counts their sum ({multi_lo:.0%} of the hosts of 10^7 to 10^8 Msun and {multi_top:.0%} of those above 10^10 Msun have two or more, on average {mean_top:.3g} particles above 10^10 Msun). "
+                f"The catalogue does not give the mass of the most massive particle alone; it lies between the sum divided by the number of particles and the sum. Black holes are seeded at 5e4 Msun (Lee et al. 2026), so the median is close to the seed mass (10^4.70 Msun) at the lowest stellar masses. Median and 16th to 84th percentile are taken from counts on a 0.05 dex grid of black hole mass (the median is exact to about one grid cell). Cosmic variance of one box not included.{cmp_note}")},
             "definitions": {"imf": "kroupa01", "cosmology": {"H0": 67.4, "Om": OM}, "massDefinition": "total-bound-subhalo", "bhMassMethod": "intrinsic-sum-of-bh-particles", "population": "bh-hosts"},
             "provenance": provenance_of(snap, s, ens, "sub/mstar, sub/nstar, sub/mMBH, sub/nMBH", "black hole mass = sum over the black hole particles of the substructure"),
-            "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 11) is a raster image and is not in the dataset. Per-galaxy distribution: the median and 16 to 84 per cent band shown as a curve are derived from the counts (scripts/derive-distributions.mjs)."})
+            "notes": "Counted from the catalogue, not read from a figure. The paper's own relation (Fig. 11) is a raster image and is not in the dataset. The curve is the median of the galaxies in each bin with the 16th to 84th percentile band, taken from counts on a fine grid (data/ensembles/darwin1-shmr-bh.json), 10 or more galaxies per bin."})
         recs.append(rec)
     return recs
 
@@ -355,7 +361,7 @@ def stage1b(source):
              "shmr": {"snapshots": FIG_SHMR, **R.check_shmr(figs["mstar_mhalo.png"], curves)},
              "bh": {"snapshots": FIG_BH, **R.check_bh(figs["mbh_mstar.png"], {k: fig_gal[str(sn)] for k, sn in FIG_BH.items()}, bh_edges)}}
     ens = {"schemaVersion": "1.0.0", "source": "DARWIN-1 public galaxy/halo catalogues (DARWIN project, KASI), " + PAGE, "retrieved": date.today().isoformat(), "h": H, "Om": OM, "boxCMpc": BOX_CMPC,
-           "grids": {"haloLogMin": HALO_LO, "haloStep": HALO_STEP, "haloN": HALO_N, "mstarLogMin": MS_LO, "mstarStep": MS_STEP, "mstarN": MS_N, "galaxyLogMin": GX_LO, "galaxyStep": GX_STEP, "galaxyN": GX_N, "bhLogMin": BH_LO, "bhStep": BH_STEP, "bhN": BH_N},
+           "grids": {"haloLogMin": HALO_LO, "haloStep": HALO_STEP, "haloN": HALO_N, "ratioLogMin": RT_LO, "ratioStep": RT_STEP, "ratioN": RT_N, "galaxyLogMin": GX_LO, "galaxyStep": GX_STEP, "galaxyN": GX_N, "bhLogMin": BH_LO, "bhStep": BH_STEP, "bhN": BH_N},
            "snapshots": snaps, "figureCheck": check}
     ENS2.write_text(json.dumps(ens, separators=(",", ":")) + "\n")
     for k in FIG_SHMR:
