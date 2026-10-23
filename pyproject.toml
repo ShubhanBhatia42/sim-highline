@@ -15,6 +15,9 @@ keywords = ["astronomy", "galaxy formation", "cosmological simulations", "scalin
 classifiers = ["Intended Audience :: Science/Research", "Topic :: Scientific/Engineering :: Astronomy", "Programming Language :: Python :: 3"]
 dependencies = ["numpy", "pandas"]
 
+[project.optional-dependencies]
+derive = ["h5py"]
+
 [project.scripts]
 sim-highline = "sim_highline:main"
 
@@ -26,10 +29,10 @@ path = "data/release.json"
 pattern = '"version":\s*"(?P<version>[^"]+)"'
 
 [tool.hatch.build.targets.wheel]
-include = ["sim_highline.py"]
+include = ["sim_highline.py", "sim_highline_derive.py"]
 
 [tool.hatch.build.targets.wheel.force-include]
 "data/export" = "sim_highline_data"
 
 [tool.hatch.build.targets.sdist]
-include = ["sim_highline.py", "data/export", "data/release.json", "README.md", "LICENSE", "LICENSE-DATA.md", "CITATION.cff", "pyproject.toml"]
+include = ["sim_highline.py", "sim_highline_derive.py", "data/export", "data/release.json", "README.md", "LICENSE", "LICENSE-DATA.md", "CITATION.cff", "pyproject.toml"]
