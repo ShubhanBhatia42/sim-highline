@@ -1,6 +1,6 @@
 // Speed budget, measured the way a visitor on a modest phone would meet it: pages are served gzip-compressed (as GitHub Pages does), the network is throttled to a slow 4G connection and the processor to a quarter of this machine's speed.
 // Prints the measured numbers and fails if a budget is exceeded. Needs dist/ and Playwright.
-// The Explorer fetches its curves one relation at a time (docs/ARCHITECTURE.md): the first row is a visit that opens the largest relation (the stellar mass function), "then" rows add what opening a second relation costs, and the last Explorer row is the view that reads every relation. Budgets are about 15 per cent above what was measured when the lazy loading went in (first visit 799 kB before it).
+// The Explorer fetches its curves one relation at a time (docs/ARCHITECTURE.md): the first row is a visit that opens the largest relation (the stellar mass function), "then" rows add what opening a second relation costs, and the last Explorer row is the view that reads every relation. Budgets are about 15 per cent above what was measured when the lazy loading went in (first visit 799 kB and 7.4 s before it; 225 kB and 3.3 s after, measured on this machine).
 import assert from "node:assert/strict";
 import http from "node:http";
 import zlib from "node:zlib";
@@ -24,9 +24,9 @@ await new Promise(r => server.listen(0, "127.0.0.1", r));
 const BASE = `http://127.0.0.1:${server.address().port}`;
 const browser = await chromium.launch(launchOptions());
 const BUDGET = [
-  { name: "Explorer", url: "/highline.html#r=gsmf&z=0.1", ready: () => !document.getElementById("boot") && document.querySelectorAll("#stage path").length > 5, maxKB: 260, maxMs: 9000,
-    then: { name: "the mass-size relation", click: "button[data-r=size]", ready: () => /Mass.size/.test(document.getElementById("shTitle").textContent) && document.querySelectorAll("#stage path").length > 5, maxKB: 80, maxMs: 4000 } },
-  { name: "Explorer, disagreement view (reads every relation)", url: "/highline.html#r=gsmf&z=0.1&m=spread", ready: () => !document.getElementById("boot") && document.querySelectorAll("#spread table.sp td[data-r]").length > 10, maxKB: 900, maxMs: 30000 },
+  { name: "Explorer", url: "/highline.html#r=gsmf&z=0.1", ready: () => !document.getElementById("boot") && document.querySelectorAll("#stage path").length > 5, maxKB: 260, maxMs: 5000,
+    then: { name: "the mass-size relation", select: "size", ready: () => /Mass.size/.test(document.getElementById("shTitle").textContent) && document.querySelectorAll("#stage path").length > 5, maxKB: 80, maxMs: 3000 } },
+  { name: "Explorer, disagreement view (reads every relation)", url: "/highline.html#r=gsmf&z=0.1&m=spread", ready: () => !document.getElementById("boot") && document.querySelectorAll("#spread table.sp td[data-r]").length > 10, maxKB: 880, maxMs: 12000 },
   { name: "Front page", url: "/site/index.html", ready: () => document.querySelector("h1") && document.fonts.status !== "loading", maxKB: 60, maxMs: 3500 },
   { name: "Dials page", url: "/site/retune.html", ready: () => document.querySelectorAll(".rt-panel").length >= 10, maxKB: 150, maxMs: 6000 },
   { name: "A study page", url: "/site/study-joint.html", ready: () => document.querySelector("h1"), maxKB: 60, maxMs: 3500 },
@@ -51,7 +51,7 @@ for (const b of BUDGET) {
   if (b.then) {
     for (const k of Object.keys(sizes)) delete sizes[k];
     const t1 = Date.now();
-    await page.click(b.then.click);
+    await page.selectOption("#relSel", b.then.select); // the phone layout has the relation menu, not the side list
     await page.waitForFunction(b.then.ready, null, { timeout: 60000, polling: 100 });
     const ms2 = Date.now() - t1, kb2 = Math.round(Object.values(sizes).reduce((s, v) => s + v, 0) / 1000);
     rows.push(`${b.name}, then ${b.then.name}: ${(ms2 / 1000).toFixed(1)} s to drawn, ${kb2} kB transferred (budget ${b.then.maxMs / 1000} s, ${b.then.maxKB} kB)`);
