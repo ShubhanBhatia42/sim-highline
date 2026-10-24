@@ -1,0 +1,22 @@
+FAINT_END_C_VARIANCE.tex:437: L$_{\rm \bf H\alpha}$ has been corrected for both [N{\sc ii}] contamination and for dust extinction (using A$_{\rm H\alpha}=1$\,mag).
+FAINT_END_C_VARIANCE.tex:348: A correction for the [N{\sc ii}] line contamination is therefore done, following the relation given in S12.
+FAINT_END_C_VARIANCE.tex:386: a simple 1 mag of extinction is applied for the four redshifts and for all observed luminosities.
+FAINT_END_C_VARIANCE.tex:159: An H$_0=70$\,km\,s$^{-1}$\,Mpc$^{-1}$, $\Omega_M=0.3$ and $\Omega_{\Lambda}=0.7$ cosmology is used.
+FAINT_END_C_VARIANCE.tex:168: The $3''$ apertures are used to select and measure H$\alpha$ line fluxes: at $z=0.4$ the 3$''$ apertures measure the same physical area as 2$''$ apertures at $z=0.8,1.47,2.23$
+FAINT_END_C_VARIANCE.tex:189: Photometry was measured in apertures of $2''$ diameter which at $z=0.8-2.2$ recover H$\alpha$ fluxes over $\approx16$\,kpc.
+FAINT_END_C_VARIANCE.tex:374: the H$\alpha$ survey probes a (co-moving) volume of $3.3\times10^5$\,Mpc$^3$\,deg$^{-2}$.
+FAINT_END_C_VARIANCE.tex:235: corresponding to a $z=2.23$ rest-frame EW limit of 25\,\AA \ for H$\alpha$+[N{\sc ii}]; this is the same rest-frame equivalent width used at all redshifts.
+FAINT_END_C_VARIANCE.tex:408: In the $\log$ form, the Schechter function is given by:
+FAINT_END_C_VARIANCE.tex:401: Errors are Poissonian, but they include a further 20\% of the total completeness corrections added in quadrature.
+FAINT_END_C_VARIANCE.tex:424: At the very bright end ($L>4L^*$), and particularly at $z>1$, there seems to be a deviation from a Schechter function.
+FAINT_END_C_VARIANCE.tex:424: which become dominant at the highest luminosities
+FAINT_END_C_VARIANCE.tex:306: A total of 1742 H$\alpha$ emitters at $z=0.4$ are selected.
+FAINT_END_C_VARIANCE.tex:310: A total of 637 H$\alpha$ emitters at $z=0.84$ are selected.
+FAINT_END_C_VARIANCE.tex:60: NB921 & 0.9196 &132 & 0.401$\pm$0.010 & 5.13 \\
+FAINT_END_C_VARIANCE.tex:61: NB$_{\rm J}$ & 1.211 & 150 & 0.845$\pm$0.015 & 14.65 \\
+FAINT_END_C_VARIANCE.tex:62: NB$_{\rm H}$ &1.617 & 211 & 1.466$\pm$0.016 & 33.96 \\
+FAINT_END_C_VARIANCE.tex:63: NB$_{\rm K}$ & 2.121 & 210 & 2.231$\pm$0.016 & 38.31 \\
+check z=0.4: {"sources": 797, "emitters": 1742, "rms_fit": 0.265, "mean_fit": 0.147, "chi_rms": 0.9, "rho_points_on_bins": 39.25, "rho_fit_on_bins": 39.11, "rho_fit_above_41p6": 38.62, "rho_printed": 38.99}
+check z=0.84: {"sources": 633, "emitters": 637, "rms_fit": 0.108, "mean_fit": 0.009, "chi_rms": 0.61, "rho_points_on_bins": 39.72, "rho_fit_on_bins": 39.73, "rho_fit_above_41p6": 39.74, "rho_printed": 39.75}
+check z=1.47: {"sources": 499, "emitters": 515, "rms_fit": 0.261, "mean_fit": 0.033, "chi_rms": 0.61, "rho_points_on_bins": 39.83, "rho_fit_on_bins": 39.84, "rho_fit_above_41p6": 40.04, "rho_printed": 40.03}
+check z=2.23: {"sources": 797, "emitters": 817, "rms_fit": 0.154, "mean_fit": 0.016, "chi_rms": 0.44, "rho_points_on_bins": 40.16, "rho_fit_on_bins": 40.16, "rho_fit_above_41p6": 40.25, "rho_printed": 40.26}

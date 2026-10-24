@@ -2,11 +2,11 @@
   "schemaVersion": "1.0.0",
   "generatedAt": "2026-10-18",
   "totals": {
-    "records": 1906,
-    "sources": 129,
-    "relations": 41,
-    "rankable": 880,
-    "contextOnly": 1026
+    "records": 1943,
+    "sources": 134,
+    "relations": 43,
+    "rankable": 901,
+    "contextOnly": 1042
   },
   "byRelation": {
     "age": {
@@ -1568,6 +1568,71 @@
         "published-table"
       ]
     },
+    "uvbeta": {
+      "records": 28,
+      "epochs": [
+        3.8,
+        4,
+        5,
+        5.86,
+        5.9,
+        6,
+        7,
+        7.28,
+        8,
+        9.41,
+        12.02
+      ],
+      "epochRanges": [
+        "11.4:14.25",
+        "3.8:3.8",
+        "4:4",
+        "5.05:6.84",
+        "5.9:5.9",
+        "5:5",
+        "6.07:8.59",
+        "6:6",
+        "7:7",
+        "8.2:11.25",
+        "8:8"
+      ],
+      "relations": [
+        "uvbeta"
+      ],
+      "rankable": 16,
+      "contextOnly": 12,
+      "tiers": [
+        "digitized-figure",
+        "published-fit",
+        "published-table"
+      ]
+    },
+    "uvbetam": {
+      "records": 9,
+      "epochs": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "epochRanges": [
+        "4:4",
+        "5:5",
+        "6:6",
+        "7:7",
+        "8:8"
+      ],
+      "relations": [
+        "uvbetam"
+      ],
+      "rankable": 5,
+      "contextOnly": 4,
+      "tiers": [
+        "digitized-figure",
+        "published-table"
+      ]
+    },
     "uvlf": {
       "records": 110,
       "epochs": [
@@ -2186,6 +2251,54 @@
         "published-table"
       ]
     },
+    "Bouwens et al. 2012": {
+      "records": 4,
+      "epochs": [
+        3.8,
+        5,
+        5.9,
+        7
+      ],
+      "epochRanges": [
+        "3.8:3.8",
+        "5.9:5.9",
+        "5:5",
+        "7:7"
+      ],
+      "relations": [
+        "uvbeta"
+      ],
+      "rankable": 4,
+      "contextOnly": 0,
+      "tiers": [
+        "published-table"
+      ]
+    },
+    "Bouwens et al. 2014": {
+      "records": 5,
+      "epochs": [
+        3.8,
+        5,
+        5.9,
+        7,
+        8
+      ],
+      "epochRanges": [
+        "3.8:3.8",
+        "5.9:5.9",
+        "5:5",
+        "7:7",
+        "8:8"
+      ],
+      "relations": [
+        "uvbeta"
+      ],
+      "rankable": 5,
+      "contextOnly": 0,
+      "tiers": [
+        "published-table"
+      ]
+    },
     "Bouwens et al. 2015 (UV-derived)": {
       "records": 4,
       "epochs": [
@@ -2799,6 +2912,31 @@
         "published-fit"
       ]
     },
+    "Finkelstein et al. 2012": {
+      "records": 5,
+      "epochs": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "epochRanges": [
+        "4:4",
+        "5:5",
+        "6:6",
+        "7:7",
+        "8:8"
+      ],
+      "relations": [
+        "uvbetam"
+      ],
+      "rankable": 5,
+      "contextOnly": 0,
+      "tiers": [
+        "published-table"
+      ]
+    },
     "FIRE-2": {
       "records": 29,
       "epochs": [
@@ -3368,7 +3506,7 @@
       ]
     },
     "IllustrisTNG": {
-      "records": 199,
+      "records": 205,
       "epochs": [
         0,
         0.1,
@@ -3438,10 +3576,11 @@
         "shmr",
         "size",
         "ssfr",
+        "uvbeta",
         "zstar"
       ],
       "rankable": 71,
-      "contextOnly": 128,
+      "contextOnly": 134,
       "tiers": [
         "catalog-derived",
         "digitized-figure",
@@ -4303,7 +4442,7 @@
       ]
     },
     "SIMBA": {
-      "records": 75,
+      "records": 85,
       "epochs": [
         0,
         0.1,
@@ -4345,10 +4484,12 @@
         "mzr",
         "sfms",
         "sfrd",
-        "ssfr"
+        "ssfr",
+        "uvbeta",
+        "uvbetam"
       ],
       "rankable": 33,
-      "contextOnly": 42,
+      "contextOnly": 52,
       "tiers": [
         "catalog-derived",
         "digitized-figure",
@@ -4662,6 +4803,50 @@
         "sfms"
       ],
       "rankable": 2,
+      "contextOnly": 0,
+      "tiers": [
+        "published-fit"
+      ]
+    },
+    "Topping et al. 2024": {
+      "records": 4,
+      "epochs": [
+        5.86,
+        7.28,
+        9.41,
+        12.02
+      ],
+      "epochRanges": [
+        "11.4:14.25",
+        "5.05:6.84",
+        "6.07:8.59",
+        "8.2:11.25"
+      ],
+      "relations": [
+        "uvbeta"
+      ],
+      "rankable": 4,
+      "contextOnly": 0,
+      "tiers": [
+        "published-table"
+      ]
+    },
+    "Topping et al. 2024 (linear fit)": {
+      "records": 3,
+      "epochs": [
+        5.86,
+        7.28,
+        9.41
+      ],
+      "epochRanges": [
+        "5.05:6.84",
+        "6.07:8.59",
+        "8.2:11.25"
+      ],
+      "relations": [
+        "uvbeta"
+      ],
+      "rankable": 3,
       "contextOnly": 0,
       "tiers": [
         "published-fit"

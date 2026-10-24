@@ -1,0 +1,1126 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "katz23.sphinx20.elf.halpha.intrinsic.z4.64",
+      "source": "SPHINX20",
+      "run": "SPHINX20 H-alpha luminosity function, intrinsic (derived from the data release)",
+      "kind": "simulation",
+      "relation": "elf",
+      "epoch": {
+        "zRepresentative": 4.64,
+        "zNominal": 4.64,
+        "zMin": 4.64,
+        "zMax": 4.64,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 H-alpha (6563 A) line luminosity of the galaxy, intrinsic (before dust)",
+        "xUnit": "log10(erg s^-1)",
+        "yDefinition": "log10 comoving number density of galaxies per dex of line luminosity, bins of 0.25 dex",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 41.625,
+        "xMax": 43.125
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 41.625,
+            "y": -1.5607,
+            "yLow": -1.6236,
+            "yHigh": -1.5057,
+            "count": 55
+          },
+          {
+            "x": 41.875,
+            "y": -1.9031,
+            "yLow": -2,
+            "yHigh": -1.8239,
+            "count": 25
+          },
+          {
+            "x": 42.125,
+            "y": -2.0223,
+            "yLow": -2.1355,
+            "yHigh": -1.9326,
+            "count": 19
+          },
+          {
+            "x": 42.375,
+            "y": -2.0458,
+            "yLow": -2.1625,
+            "yHigh": -1.9538,
+            "count": 18
+          },
+          {
+            "x": 42.625,
+            "y": -2.699,
+            "yLow": -3,
+            "yHigh": -2.5229,
+            "count": 4
+          },
+          {
+            "x": 42.875,
+            "y": -2.699,
+            "yLow": -3,
+            "yHigh": -2.5229,
+            "count": 4
+          },
+          {
+            "x": 43.125,
+            "y": -2.8239,
+            "yLow": -3.1979,
+            "yHigh": -2.626,
+            "count": 3
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "SPHINX20 data-release galaxies (SFR averaged over 10 Myr >= 0.3 Msun/yr)",
+        "warning": "Computed by sim-highline from the per-galaxy table of the public release, not read from the paper's figure. Only galaxies with SFR(10 Myr) >= 0.3 Msun/yr are in the release, so the faint end is incomplete: bins at and below the turnover of the intrinsic function are not written. The 20 cMpc box has few bright galaxies (bins hold as few as 3) and one realisation of the density field. Error bars are the square root of the count. The paper plots a third version, reddening-corrected with the Balmer decrement; it is not a record here."
+      },
+      "definitions": {
+        "line": "H-alpha (without [NII])",
+        "imf": "unspecified",
+        "dustCorrection": "intrinsic",
+        "dustCorrectionMethod": "none (line luminosity before dust)",
+        "densityFrame": "comoving",
+        "apertureDefinition": "all gas and stellar particles within the halo virial radius",
+        "cosmology": {
+          "H0": 67.11,
+          "Om": 0.3175
+        },
+        "population": "galaxies with SFR(10 Myr) >= 0.3 Msun/yr in the 20 cMpc box (the data-release selection)"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); luminosity functions derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-23",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "paper": "arXiv:2309.03269",
+        "definitionBasis": "imf: the paper names the BPASS v2.2.1 stellar population model but gives no sentence on its IMF, so it stays unspecified. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
+        "quotes": {
+          "box": "main.tex:119",
+          "cosmology": "main.tex:122",
+          "galaxy": "main.tex:124",
+          "selection": "main.tex:76",
+          "dust_model": "main.tex:197",
+          "line_columns": "main.tex:245",
+          "galaxies": "main.tex:203",
+          "plotted_function": "main.tex:613",
+          "turnover": "main.tex:613",
+          "sight_lines": "main.tex:620",
+          "ebv": "main.tex:253"
+        },
+        "checkAgainstFigure": {
+          "figure": "Line luminosity functions for Halpha (top)",
+          "checksumSha256": "7c0f3c16cc33dcc1cb9d2bca4eb01e0fe63200eb7747099d080861e19366c4d1",
+          "sourceMember": "figures/Halpha_lum_func.pdf",
+          "kHalpha": 2.2,
+          "rmsDex": 0.015,
+          "bins": 250
+        }
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9."
+    },
+    {
+      "id": "katz23.sphinx20.elf.halpha.attenuated.z4.64",
+      "source": "SPHINX20",
+      "run": "SPHINX20 H-alpha luminosity function, dust attenuated, mean over ten sight lines (derived from the data release)",
+      "kind": "simulation",
+      "relation": "elf",
+      "epoch": {
+        "zRepresentative": 4.64,
+        "zNominal": 4.64,
+        "zMin": 4.64,
+        "zMax": 4.64,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 H-alpha (6563 A) line luminosity of the galaxy, dust attenuated along a sight line",
+        "xUnit": "log10(erg s^-1)",
+        "yDefinition": "log10 comoving number density of galaxies per dex of line luminosity, bins of 0.25 dex; mean over the ten sight lines",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 41.625,
+        "xMax": 41.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 41.625,
+            "y": -2.2255,
+            "count": 11.9,
+            "yLow": -2.301,
+            "yHigh": -2.1549
+          },
+          {
+            "x": 41.875,
+            "y": -2.4815,
+            "count": 6.6,
+            "yLow": -2.6021,
+            "yHigh": -2.3468
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "smallest of the ten sight-line functions",
+        "upper": "largest of the ten sight-line functions"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies (SFR averaged over 10 Myr >= 0.3 Msun/yr)",
+        "warning": "Computed by sim-highline from the per-galaxy table of the public release, not read from the paper's figure. Only galaxies with SFR(10 Myr) >= 0.3 Msun/yr are in the release, so the faint end is incomplete: bins at and below the turnover of the intrinsic function are not written. The 20 cMpc box has few bright galaxies (bins hold as few as 3) and one realisation of the density field. The band is the range over the ten sight lines, where all ten have a galaxy in the bin. The paper plots a third version, reddening-corrected with the Balmer decrement; it is not a record here."
+      },
+      "definitions": {
+        "line": "H-alpha (without [NII])",
+        "imf": "unspecified",
+        "dustCorrection": "attenuated",
+        "dustCorrectionMethod": "dust radiative transfer with the SMC dust model (RASCAS), mean over ten sight lines",
+        "densityFrame": "comoving",
+        "apertureDefinition": "all gas and stellar particles within the halo virial radius",
+        "cosmology": {
+          "H0": 67.11,
+          "Om": 0.3175
+        },
+        "population": "galaxies with SFR(10 Myr) >= 0.3 Msun/yr in the 20 cMpc box (the data-release selection)"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); luminosity functions derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-23",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "paper": "arXiv:2309.03269",
+        "definitionBasis": "imf: the paper names the BPASS v2.2.1 stellar population model but gives no sentence on its IMF, so it stays unspecified. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
+        "quotes": {
+          "box": "main.tex:119",
+          "cosmology": "main.tex:122",
+          "galaxy": "main.tex:124",
+          "selection": "main.tex:76",
+          "dust_model": "main.tex:197",
+          "line_columns": "main.tex:245",
+          "galaxies": "main.tex:203",
+          "plotted_function": "main.tex:613",
+          "turnover": "main.tex:613",
+          "sight_lines": "main.tex:620",
+          "ebv": "main.tex:253"
+        },
+        "checkAgainstFigure": {
+          "figure": "Line luminosity functions for Halpha (top)",
+          "checksumSha256": "7c0f3c16cc33dcc1cb9d2bca4eb01e0fe63200eb7747099d080861e19366c4d1",
+          "sourceMember": "figures/Halpha_lum_func.pdf",
+          "kHalpha": 2.2,
+          "rmsDex": 0.015,
+          "bins": 250
+        }
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9."
+    },
+    {
+      "id": "katz23.sphinx20.elf.halpha.intrinsic.z5",
+      "source": "SPHINX20",
+      "run": "SPHINX20 H-alpha luminosity function, intrinsic (derived from the data release)",
+      "kind": "simulation",
+      "relation": "elf",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 H-alpha (6563 A) line luminosity of the galaxy, intrinsic (before dust)",
+        "xUnit": "log10(erg s^-1)",
+        "yDefinition": "log10 comoving number density of galaxies per dex of line luminosity, bins of 0.25 dex",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 41.625,
+        "xMax": 43.125
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 41.625,
+            "y": -1.6198,
+            "yLow": -1.6875,
+            "yHigh": -1.5612,
+            "count": 48
+          },
+          {
+            "x": 41.875,
+            "y": -1.8697,
+            "yLow": -1.9625,
+            "yHigh": -1.7932,
+            "count": 27
+          },
+          {
+            "x": 42.125,
+            "y": -1.9393,
+            "yLow": -2.0409,
+            "yHigh": -1.8571,
+            "count": 23
+          },
+          {
+            "x": 42.375,
+            "y": -2.3979,
+            "yLow": -2.5874,
+            "yHigh": -2.2665,
+            "count": 8
+          },
+          {
+            "x": 42.625,
+            "y": -2.3979,
+            "yLow": -2.5874,
+            "yHigh": -2.2665,
+            "count": 8
+          },
+          {
+            "x": 42.875,
+            "y": -2.8239,
+            "yLow": -3.1979,
+            "yHigh": -2.626,
+            "count": 3
+          },
+          {
+            "x": 43.125,
+            "y": -2.8239,
+            "yLow": -3.1979,
+            "yHigh": -2.626,
+            "count": 3
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "SPHINX20 data-release galaxies (SFR averaged over 10 Myr >= 0.3 Msun/yr)",
+        "warning": "Computed by sim-highline from the per-galaxy table of the public release, not read from the paper's figure. Only galaxies with SFR(10 Myr) >= 0.3 Msun/yr are in the release, so the faint end is incomplete: bins at and below the turnover of the intrinsic function are not written. The 20 cMpc box has few bright galaxies (bins hold as few as 3) and one realisation of the density field. Error bars are the square root of the count. The paper plots a third version, reddening-corrected with the Balmer decrement; it is not a record here."
+      },
+      "definitions": {
+        "line": "H-alpha (without [NII])",
+        "imf": "unspecified",
+        "dustCorrection": "intrinsic",
+        "dustCorrectionMethod": "none (line luminosity before dust)",
+        "densityFrame": "comoving",
+        "apertureDefinition": "all gas and stellar particles within the halo virial radius",
+        "cosmology": {
+          "H0": 67.11,
+          "Om": 0.3175
+        },
+        "population": "galaxies with SFR(10 Myr) >= 0.3 Msun/yr in the 20 cMpc box (the data-release selection)"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); luminosity functions derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-23",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "paper": "arXiv:2309.03269",
+        "definitionBasis": "imf: the paper names the BPASS v2.2.1 stellar population model but gives no sentence on its IMF, so it stays unspecified. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
+        "quotes": {
+          "box": "main.tex:119",
+          "cosmology": "main.tex:122",
+          "galaxy": "main.tex:124",
+          "selection": "main.tex:76",
+          "dust_model": "main.tex:197",
+          "line_columns": "main.tex:245",
+          "galaxies": "main.tex:203",
+          "plotted_function": "main.tex:613",
+          "turnover": "main.tex:613",
+          "sight_lines": "main.tex:620",
+          "ebv": "main.tex:253"
+        },
+        "checkAgainstFigure": {
+          "figure": "Line luminosity functions for Halpha (top)",
+          "checksumSha256": "7c0f3c16cc33dcc1cb9d2bca4eb01e0fe63200eb7747099d080861e19366c4d1",
+          "sourceMember": "figures/Halpha_lum_func.pdf",
+          "kHalpha": 2.2,
+          "rmsDex": 0.015,
+          "bins": 250
+        }
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9."
+    },
+    {
+      "id": "katz23.sphinx20.elf.halpha.attenuated.z5",
+      "source": "SPHINX20",
+      "run": "SPHINX20 H-alpha luminosity function, dust attenuated, mean over ten sight lines (derived from the data release)",
+      "kind": "simulation",
+      "relation": "elf",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 H-alpha (6563 A) line luminosity of the galaxy, dust attenuated along a sight line",
+        "xUnit": "log10(erg s^-1)",
+        "yDefinition": "log10 comoving number density of galaxies per dex of line luminosity, bins of 0.25 dex; mean over the ten sight lines",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 41.625,
+        "xMax": 41.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 41.625,
+            "y": -2.1024,
+            "count": 15.8,
+            "yLow": -2.1871,
+            "yHigh": -2
+          },
+          {
+            "x": 41.875,
+            "y": -2.71,
+            "count": 3.9,
+            "yLow": -3.301,
+            "yHigh": -2.5229
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "smallest of the ten sight-line functions",
+        "upper": "largest of the ten sight-line functions"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies (SFR averaged over 10 Myr >= 0.3 Msun/yr)",
+        "warning": "Computed by sim-highline from the per-galaxy table of the public release, not read from the paper's figure. Only galaxies with SFR(10 Myr) >= 0.3 Msun/yr are in the release, so the faint end is incomplete: bins at and below the turnover of the intrinsic function are not written. The 20 cMpc box has few bright galaxies (bins hold as few as 3) and one realisation of the density field. The band is the range over the ten sight lines, where all ten have a galaxy in the bin. The paper plots a third version, reddening-corrected with the Balmer decrement; it is not a record here."
+      },
+      "definitions": {
+        "line": "H-alpha (without [NII])",
+        "imf": "unspecified",
+        "dustCorrection": "attenuated",
+        "dustCorrectionMethod": "dust radiative transfer with the SMC dust model (RASCAS), mean over ten sight lines",
+        "densityFrame": "comoving",
+        "apertureDefinition": "all gas and stellar particles within the halo virial radius",
+        "cosmology": {
+          "H0": 67.11,
+          "Om": 0.3175
+        },
+        "population": "galaxies with SFR(10 Myr) >= 0.3 Msun/yr in the 20 cMpc box (the data-release selection)"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); luminosity functions derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-23",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "paper": "arXiv:2309.03269",
+        "definitionBasis": "imf: the paper names the BPASS v2.2.1 stellar population model but gives no sentence on its IMF, so it stays unspecified. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
+        "quotes": {
+          "box": "main.tex:119",
+          "cosmology": "main.tex:122",
+          "galaxy": "main.tex:124",
+          "selection": "main.tex:76",
+          "dust_model": "main.tex:197",
+          "line_columns": "main.tex:245",
+          "galaxies": "main.tex:203",
+          "plotted_function": "main.tex:613",
+          "turnover": "main.tex:613",
+          "sight_lines": "main.tex:620",
+          "ebv": "main.tex:253"
+        },
+        "checkAgainstFigure": {
+          "figure": "Line luminosity functions for Halpha (top)",
+          "checksumSha256": "7c0f3c16cc33dcc1cb9d2bca4eb01e0fe63200eb7747099d080861e19366c4d1",
+          "sourceMember": "figures/Halpha_lum_func.pdf",
+          "kHalpha": 2.2,
+          "rmsDex": 0.015,
+          "bins": 250
+        }
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9."
+    },
+    {
+      "id": "katz23.sphinx20.elf.halpha.intrinsic.z6",
+      "source": "SPHINX20",
+      "run": "SPHINX20 H-alpha luminosity function, intrinsic (derived from the data release)",
+      "kind": "simulation",
+      "relation": "elf",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 H-alpha (6563 A) line luminosity of the galaxy, intrinsic (before dust)",
+        "xUnit": "log10(erg s^-1)",
+        "yDefinition": "log10 comoving number density of galaxies per dex of line luminosity, bins of 0.25 dex",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 41.625,
+        "xMax": 42.625
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 41.625,
+            "y": -1.8539,
+            "yLow": -1.9448,
+            "yHigh": -1.7787,
+            "count": 28
+          },
+          {
+            "x": 41.875,
+            "y": -2.0458,
+            "yLow": -2.1625,
+            "yHigh": -1.9538,
+            "count": 18
+          },
+          {
+            "x": 42.125,
+            "y": -2.0969,
+            "yLow": -2.2218,
+            "yHigh": -2,
+            "count": 16
+          },
+          {
+            "x": 42.375,
+            "y": -2.3468,
+            "yLow": -2.5229,
+            "yHigh": -2.2218,
+            "count": 9
+          },
+          {
+            "x": 42.625,
+            "y": -2.699,
+            "yLow": -3,
+            "yHigh": -2.5229,
+            "count": 4
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "SPHINX20 data-release galaxies (SFR averaged over 10 Myr >= 0.3 Msun/yr)",
+        "warning": "Computed by sim-highline from the per-galaxy table of the public release, not read from the paper's figure. Only galaxies with SFR(10 Myr) >= 0.3 Msun/yr are in the release, so the faint end is incomplete: bins at and below the turnover of the intrinsic function are not written. The 20 cMpc box has few bright galaxies (bins hold as few as 3) and one realisation of the density field. Error bars are the square root of the count. The paper plots a third version, reddening-corrected with the Balmer decrement; it is not a record here."
+      },
+      "definitions": {
+        "line": "H-alpha (without [NII])",
+        "imf": "unspecified",
+        "dustCorrection": "intrinsic",
+        "dustCorrectionMethod": "none (line luminosity before dust)",
+        "densityFrame": "comoving",
+        "apertureDefinition": "all gas and stellar particles within the halo virial radius",
+        "cosmology": {
+          "H0": 67.11,
+          "Om": 0.3175
+        },
+        "population": "galaxies with SFR(10 Myr) >= 0.3 Msun/yr in the 20 cMpc box (the data-release selection)"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); luminosity functions derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-23",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "paper": "arXiv:2309.03269",
+        "definitionBasis": "imf: the paper names the BPASS v2.2.1 stellar population model but gives no sentence on its IMF, so it stays unspecified. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
+        "quotes": {
+          "box": "main.tex:119",
+          "cosmology": "main.tex:122",
+          "galaxy": "main.tex:124",
+          "selection": "main.tex:76",
+          "dust_model": "main.tex:197",
+          "line_columns": "main.tex:245",
+          "galaxies": "main.tex:203",
+          "plotted_function": "main.tex:613",
+          "turnover": "main.tex:613",
+          "sight_lines": "main.tex:620",
+          "ebv": "main.tex:253"
+        },
+        "checkAgainstFigure": {
+          "figure": "Line luminosity functions for Halpha (top)",
+          "checksumSha256": "7c0f3c16cc33dcc1cb9d2bca4eb01e0fe63200eb7747099d080861e19366c4d1",
+          "sourceMember": "figures/Halpha_lum_func.pdf",
+          "kHalpha": 2.2,
+          "rmsDex": 0.015,
+          "bins": 250
+        }
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9."
+    },
+    {
+      "id": "katz23.sphinx20.elf.halpha.attenuated.z6",
+      "source": "SPHINX20",
+      "run": "SPHINX20 H-alpha luminosity function, dust attenuated, mean over ten sight lines (derived from the data release)",
+      "kind": "simulation",
+      "relation": "elf",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 H-alpha (6563 A) line luminosity of the galaxy, dust attenuated along a sight line",
+        "xUnit": "log10(erg s^-1)",
+        "yDefinition": "log10 comoving number density of galaxies per dex of line luminosity, bins of 0.25 dex; mean over the ten sight lines",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 41.625,
+        "xMax": 41.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 41.625,
+            "y": -2.2882,
+            "count": 10.3,
+            "yLow": -2.4559,
+            "yHigh": -2.1549
+          },
+          {
+            "x": 41.875,
+            "y": -2.5686,
+            "count": 5.4,
+            "yLow": -2.8239,
+            "yHigh": -2.3979
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "smallest of the ten sight-line functions",
+        "upper": "largest of the ten sight-line functions"
+      },
+      "selection": {
+        "population": "SPHINX20 data-release galaxies (SFR averaged over 10 Myr >= 0.3 Msun/yr)",
+        "warning": "Computed by sim-highline from the per-galaxy table of the public release, not read from the paper's figure. Only galaxies with SFR(10 Myr) >= 0.3 Msun/yr are in the release, so the faint end is incomplete: bins at and below the turnover of the intrinsic function are not written. The 20 cMpc box has few bright galaxies (bins hold as few as 3) and one realisation of the density field. The band is the range over the ten sight lines, where all ten have a galaxy in the bin. The paper plots a third version, reddening-corrected with the Balmer decrement; it is not a record here."
+      },
+      "definitions": {
+        "line": "H-alpha (without [NII])",
+        "imf": "unspecified",
+        "dustCorrection": "attenuated",
+        "dustCorrectionMethod": "dust radiative transfer with the SMC dust model (RASCAS), mean over ten sight lines",
+        "densityFrame": "comoving",
+        "apertureDefinition": "all gas and stellar particles within the halo virial radius",
+        "cosmology": {
+          "H0": 67.11,
+          "Om": 0.3175
+        },
+        "population": "galaxies with SFR(10 Myr) >= 0.3 Msun/yr in the 20 cMpc box (the data-release selection)"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); luminosity functions derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-23",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "paper": "arXiv:2309.03269",
+        "definitionBasis": "imf: the paper names the BPASS v2.2.1 stellar population model but gives no sentence on its IMF, so it stays unspecified. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
+        "quotes": {
+          "box": "main.tex:119",
+          "cosmology": "main.tex:122",
+          "galaxy": "main.tex:124",
+          "selection": "main.tex:76",
+          "dust_model": "main.tex:197",
+          "line_columns": "main.tex:245",
+          "galaxies": "main.tex:203",
+          "plotted_function": "main.tex:613",
+          "turnover": "main.tex:613",
+          "sight_lines": "main.tex:620",
+          "ebv": "main.tex:253"
+        },
+        "checkAgainstFigure": {
+          "figure": "Line luminosity functions for Halpha (top)",
+          "checksumSha256": "7c0f3c16cc33dcc1cb9d2bca4eb01e0fe63200eb7747099d080861e19366c4d1",
+          "sourceMember": "figures/Halpha_lum_func.pdf",
+          "kHalpha": 2.2,
+          "rmsDex": 0.015,
+          "bins": 250
+        }
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9."
+    },
+    {
+      "id": "katz23.sphinx20.elf.halpha.intrinsic.z7",
+      "source": "SPHINX20",
+      "run": "SPHINX20 H-alpha luminosity function, intrinsic (derived from the data release)",
+      "kind": "simulation",
+      "relation": "elf",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 H-alpha (6563 A) line luminosity of the galaxy, intrinsic (before dust)",
+        "xUnit": "log10(erg s^-1)",
+        "yDefinition": "log10 comoving number density of galaxies per dex of line luminosity, bins of 0.25 dex",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 41.625,
+        "xMax": 42.375
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 41.625,
+            "y": -1.9208,
+            "yLow": -2.02,
+            "yHigh": -1.8401,
+            "count": 24
+          },
+          {
+            "x": 41.875,
+            "y": -2.301,
+            "yLow": -2.4661,
+            "yHigh": -2.1817,
+            "count": 10
+          },
+          {
+            "x": 42.125,
+            "y": -2.3468,
+            "yLow": -2.5229,
+            "yHigh": -2.2218,
+            "count": 9
+          },
+          {
+            "x": 42.375,
+            "y": -2.8239,
+            "yLow": -3.1979,
+            "yHigh": -2.626,
+            "count": 3
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "SPHINX20 data-release galaxies (SFR averaged over 10 Myr >= 0.3 Msun/yr)",
+        "warning": "Computed by sim-highline from the per-galaxy table of the public release, not read from the paper's figure. Only galaxies with SFR(10 Myr) >= 0.3 Msun/yr are in the release, so the faint end is incomplete: bins at and below the turnover of the intrinsic function are not written. The 20 cMpc box has few bright galaxies (bins hold as few as 3) and one realisation of the density field. Error bars are the square root of the count. The paper plots a third version, reddening-corrected with the Balmer decrement; it is not a record here."
+      },
+      "definitions": {
+        "line": "H-alpha (without [NII])",
+        "imf": "unspecified",
+        "dustCorrection": "intrinsic",
+        "dustCorrectionMethod": "none (line luminosity before dust)",
+        "densityFrame": "comoving",
+        "apertureDefinition": "all gas and stellar particles within the halo virial radius",
+        "cosmology": {
+          "H0": 67.11,
+          "Om": 0.3175
+        },
+        "population": "galaxies with SFR(10 Myr) >= 0.3 Msun/yr in the 20 cMpc box (the data-release selection)"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); luminosity functions derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-23",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "paper": "arXiv:2309.03269",
+        "definitionBasis": "imf: the paper names the BPASS v2.2.1 stellar population model but gives no sentence on its IMF, so it stays unspecified. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
+        "quotes": {
+          "box": "main.tex:119",
+          "cosmology": "main.tex:122",
+          "galaxy": "main.tex:124",
+          "selection": "main.tex:76",
+          "dust_model": "main.tex:197",
+          "line_columns": "main.tex:245",
+          "galaxies": "main.tex:203",
+          "plotted_function": "main.tex:613",
+          "turnover": "main.tex:613",
+          "sight_lines": "main.tex:620",
+          "ebv": "main.tex:253"
+        },
+        "checkAgainstFigure": {
+          "figure": "Line luminosity functions for Halpha (top)",
+          "checksumSha256": "7c0f3c16cc33dcc1cb9d2bca4eb01e0fe63200eb7747099d080861e19366c4d1",
+          "sourceMember": "figures/Halpha_lum_func.pdf",
+          "kHalpha": 2.2,
+          "rmsDex": 0.015,
+          "bins": 250
+        }
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9."
+    },
+    {
+      "id": "katz23.sphinx20.elf.halpha.intrinsic.z8",
+      "source": "SPHINX20",
+      "run": "SPHINX20 H-alpha luminosity function, intrinsic (derived from the data release)",
+      "kind": "simulation",
+      "relation": "elf",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 H-alpha (6563 A) line luminosity of the galaxy, intrinsic (before dust)",
+        "xUnit": "log10(erg s^-1)",
+        "yDefinition": "log10 comoving number density of galaxies per dex of line luminosity, bins of 0.25 dex",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 41.625,
+        "xMax": 42.125
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 41.625,
+            "y": -2.0223,
+            "yLow": -2.1355,
+            "yHigh": -1.9326,
+            "count": 19
+          },
+          {
+            "x": 41.875,
+            "y": -2.699,
+            "yLow": -3,
+            "yHigh": -2.5229,
+            "count": 4
+          },
+          {
+            "x": 42.125,
+            "y": -2.8239,
+            "yLow": -3.1979,
+            "yHigh": -2.626,
+            "count": 3
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "SPHINX20 data-release galaxies (SFR averaged over 10 Myr >= 0.3 Msun/yr)",
+        "warning": "Computed by sim-highline from the per-galaxy table of the public release, not read from the paper's figure. Only galaxies with SFR(10 Myr) >= 0.3 Msun/yr are in the release, so the faint end is incomplete: bins at and below the turnover of the intrinsic function are not written. The 20 cMpc box has few bright galaxies (bins hold as few as 3) and one realisation of the density field. Error bars are the square root of the count. The paper plots a third version, reddening-corrected with the Balmer decrement; it is not a record here."
+      },
+      "definitions": {
+        "line": "H-alpha (without [NII])",
+        "imf": "unspecified",
+        "dustCorrection": "intrinsic",
+        "dustCorrectionMethod": "none (line luminosity before dust)",
+        "densityFrame": "comoving",
+        "apertureDefinition": "all gas and stellar particles within the halo virial radius",
+        "cosmology": {
+          "H0": 67.11,
+          "Om": 0.3175
+        },
+        "population": "galaxies with SFR(10 Myr) >= 0.3 Msun/yr in the 20 cMpc box (the data-release selection)"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); luminosity functions derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-23",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "paper": "arXiv:2309.03269",
+        "definitionBasis": "imf: the paper names the BPASS v2.2.1 stellar population model but gives no sentence on its IMF, so it stays unspecified. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
+        "quotes": {
+          "box": "main.tex:119",
+          "cosmology": "main.tex:122",
+          "galaxy": "main.tex:124",
+          "selection": "main.tex:76",
+          "dust_model": "main.tex:197",
+          "line_columns": "main.tex:245",
+          "galaxies": "main.tex:203",
+          "plotted_function": "main.tex:613",
+          "turnover": "main.tex:613",
+          "sight_lines": "main.tex:620",
+          "ebv": "main.tex:253"
+        },
+        "checkAgainstFigure": {
+          "figure": "Line luminosity functions for Halpha (top)",
+          "checksumSha256": "7c0f3c16cc33dcc1cb9d2bca4eb01e0fe63200eb7747099d080861e19366c4d1",
+          "sourceMember": "figures/Halpha_lum_func.pdf",
+          "kHalpha": 2.2,
+          "rmsDex": 0.015,
+          "bins": 250
+        }
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9."
+    },
+    {
+      "id": "katz23.sphinx20.elf.halpha.intrinsic.z9",
+      "source": "SPHINX20",
+      "run": "SPHINX20 H-alpha luminosity function, intrinsic (derived from the data release)",
+      "kind": "simulation",
+      "relation": "elf",
+      "epoch": {
+        "zRepresentative": 9,
+        "zNominal": 9,
+        "zMin": 9,
+        "zMax": 9,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 H-alpha (6563 A) line luminosity of the galaxy, intrinsic (before dust)",
+        "xUnit": "log10(erg s^-1)",
+        "yDefinition": "log10 comoving number density of galaxies per dex of line luminosity, bins of 0.25 dex",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 41.625,
+        "xMax": 41.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 41.625,
+            "y": -2.2596,
+            "yLow": -2.4155,
+            "yHigh": -2.1452,
+            "count": 11
+          },
+          {
+            "x": 41.875,
+            "y": -2.699,
+            "yLow": -3,
+            "yHigh": -2.5229,
+            "count": 4
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "SPHINX20 data-release galaxies (SFR averaged over 10 Myr >= 0.3 Msun/yr)",
+        "warning": "Computed by sim-highline from the per-galaxy table of the public release, not read from the paper's figure. Only galaxies with SFR(10 Myr) >= 0.3 Msun/yr are in the release, so the faint end is incomplete: bins at and below the turnover of the intrinsic function are not written. The 20 cMpc box has few bright galaxies (bins hold as few as 3) and one realisation of the density field. Error bars are the square root of the count. The paper plots a third version, reddening-corrected with the Balmer decrement; it is not a record here."
+      },
+      "definitions": {
+        "line": "H-alpha (without [NII])",
+        "imf": "unspecified",
+        "dustCorrection": "intrinsic",
+        "dustCorrectionMethod": "none (line luminosity before dust)",
+        "densityFrame": "comoving",
+        "apertureDefinition": "all gas and stellar particles within the halo virial radius",
+        "cosmology": {
+          "H0": 67.11,
+          "Om": 0.3175
+        },
+        "population": "galaxies with SFR(10 Myr) >= 0.3 Msun/yr in the 20 cMpc box (the data-release selection)"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); luminosity functions derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-23",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "paper": "arXiv:2309.03269",
+        "definitionBasis": "imf: the paper names the BPASS v2.2.1 stellar population model but gives no sentence on its IMF, so it stays unspecified. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
+        "quotes": {
+          "box": "main.tex:119",
+          "cosmology": "main.tex:122",
+          "galaxy": "main.tex:124",
+          "selection": "main.tex:76",
+          "dust_model": "main.tex:197",
+          "line_columns": "main.tex:245",
+          "galaxies": "main.tex:203",
+          "plotted_function": "main.tex:613",
+          "turnover": "main.tex:613",
+          "sight_lines": "main.tex:620",
+          "ebv": "main.tex:253"
+        },
+        "checkAgainstFigure": {
+          "figure": "Line luminosity functions for Halpha (top)",
+          "checksumSha256": "7c0f3c16cc33dcc1cb9d2bca4eb01e0fe63200eb7747099d080861e19366c4d1",
+          "sourceMember": "figures/Halpha_lum_func.pdf",
+          "kHalpha": 2.2,
+          "rmsDex": 0.015,
+          "bins": 250
+        }
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9."
+    },
+    {
+      "id": "katz23.sphinx20.elf.halpha.intrinsic.z10",
+      "source": "SPHINX20",
+      "run": "SPHINX20 H-alpha luminosity function, intrinsic (derived from the data release)",
+      "kind": "simulation",
+      "relation": "elf",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 H-alpha (6563 A) line luminosity of the galaxy, intrinsic (before dust)",
+        "xUnit": "log10(erg s^-1)",
+        "yDefinition": "log10 comoving number density of galaxies per dex of line luminosity, bins of 0.25 dex",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 41.625,
+        "xMax": 41.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 41.625,
+            "y": -2.2596,
+            "yLow": -2.4155,
+            "yHigh": -2.1452,
+            "count": 11
+          },
+          {
+            "x": 41.875,
+            "y": -2.8239,
+            "yLow": -3.1979,
+            "yHigh": -2.626,
+            "count": 3
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "SPHINX20 data-release galaxies (SFR averaged over 10 Myr >= 0.3 Msun/yr)",
+        "warning": "Computed by sim-highline from the per-galaxy table of the public release, not read from the paper's figure. Only galaxies with SFR(10 Myr) >= 0.3 Msun/yr are in the release, so the faint end is incomplete: bins at and below the turnover of the intrinsic function are not written. The 20 cMpc box has few bright galaxies (bins hold as few as 3) and one realisation of the density field. Error bars are the square root of the count. The paper plots a third version, reddening-corrected with the Balmer decrement; it is not a record here."
+      },
+      "definitions": {
+        "line": "H-alpha (without [NII])",
+        "imf": "unspecified",
+        "dustCorrection": "intrinsic",
+        "dustCorrectionMethod": "none (line luminosity before dust)",
+        "densityFrame": "comoving",
+        "apertureDefinition": "all gas and stellar particles within the halo virial radius",
+        "cosmology": {
+          "H0": 67.11,
+          "Om": 0.3175
+        },
+        "population": "galaxies with SFR(10 Myr) >= 0.3 Msun/yr in the 20 cMpc box (the data-release selection)"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); luminosity functions derived by sim-highline",
+        "doi": null,
+        "url": "https://github.com/HarleyKatz/SPHINX-20-data",
+        "retrieved": "2026-10-23",
+        "compilation": "https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2",
+        "sourceMember": "data/all_basic_data.csv",
+        "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
+        "paper": "arXiv:2309.03269",
+        "definitionBasis": "imf: the paper names the BPASS v2.2.1 stellar population model but gives no sentence on its IMF, so it stays unspecified. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
+        "quotes": {
+          "box": "main.tex:119",
+          "cosmology": "main.tex:122",
+          "galaxy": "main.tex:124",
+          "selection": "main.tex:76",
+          "dust_model": "main.tex:197",
+          "line_columns": "main.tex:245",
+          "galaxies": "main.tex:203",
+          "plotted_function": "main.tex:613",
+          "turnover": "main.tex:613",
+          "sight_lines": "main.tex:620",
+          "ebv": "main.tex:253"
+        },
+        "checkAgainstFigure": {
+          "figure": "Line luminosity functions for Halpha (top)",
+          "checksumSha256": "7c0f3c16cc33dcc1cb9d2bca4eb01e0fe63200eb7747099d080861e19366c4d1",
+          "sourceMember": "figures/Halpha_lum_func.pdf",
+          "kHalpha": 2.2,
+          "rmsDex": 0.015,
+          "bins": 250
+        }
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9."
+    }
+  ]
+}

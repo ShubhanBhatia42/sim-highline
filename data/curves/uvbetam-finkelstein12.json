@@ -8,10 +8,10 @@
       "kind": "observation",
       "relation": "uvbetam",
       "epoch": {
-        "zRepresentative": 4.0,
-        "zNominal": 4.0,
-        "zMin": 4.0,
-        "zMax": 4.0,
+        "zRepresentative": 4,
+        "zNominal": 4,
+        "zMin": 4,
+        "zMax": 4,
         "mode": "observational-bin",
         "snapshot": null
       },
@@ -89,10 +89,10 @@
       "kind": "observation",
       "relation": "uvbetam",
       "epoch": {
-        "zRepresentative": 5.0,
-        "zNominal": 5.0,
-        "zMin": 5.0,
-        "zMax": 5.0,
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
         "mode": "observational-bin",
         "snapshot": null
       },
@@ -170,10 +170,10 @@
       "kind": "observation",
       "relation": "uvbetam",
       "epoch": {
-        "zRepresentative": 6.0,
-        "zNominal": 6.0,
-        "zMin": 6.0,
-        "zMax": 6.0,
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
         "mode": "observational-bin",
         "snapshot": null
       },
@@ -251,10 +251,10 @@
       "kind": "observation",
       "relation": "uvbetam",
       "epoch": {
-        "zRepresentative": 7.0,
-        "zNominal": 7.0,
-        "zMin": 7.0,
-        "zMax": 7.0,
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
         "mode": "observational-bin",
         "snapshot": null
       },
@@ -332,10 +332,10 @@
       "kind": "observation",
       "relation": "uvbetam",
       "epoch": {
-        "zRepresentative": 8.0,
-        "zNominal": 8.0,
-        "zMin": 8.0,
-        "zMax": 8.0,
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
         "mode": "observational-bin",
         "snapshot": null
       },

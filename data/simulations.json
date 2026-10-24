@@ -612,7 +612,8 @@
         "zstar",
         "shmr",
         "size",
-        "uvlf"
+        "uvlf",
+        "elf"
       ],
       "source": "https://github.com/HarleyKatz/SPHINX-20-data",
       "notes": "Public data-release sample (Katz et al. 2023); selected, not volume complete."

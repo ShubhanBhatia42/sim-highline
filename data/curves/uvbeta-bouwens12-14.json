@@ -122,7 +122,7 @@
         "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band fluxes",
         "xVariable": "M_UV",
         "cosmology": {
-          "H0": 70.0,
+          "H0": 70,
           "Om": 0.3
         },
         "population": "Lyman-break dropout samples",
@@ -150,10 +150,10 @@
       "kind": "observation",
       "relation": "uvbeta",
       "epoch": {
-        "zRepresentative": 5.0,
-        "zNominal": 5.0,
-        "zMin": 5.0,
-        "zMax": 5.0,
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
         "mode": "observational-bin",
         "snapshot": null
       },
@@ -252,7 +252,7 @@
         "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band fluxes",
         "xVariable": "M_UV",
         "cosmology": {
-          "H0": 70.0,
+          "H0": 70,
           "Om": 0.3
         },
         "population": "Lyman-break dropout samples",
@@ -295,7 +295,7 @@
       },
       "domain": {
         "xMin": -21.75,
-        "xMax": -17.0
+        "xMax": -17
       },
       "representation": {
         "type": "points",
@@ -357,7 +357,7 @@
             "yHigh": -2.1
           },
           {
-            "x": -17.0,
+            "x": -17,
             "y": -2.24,
             "yLow": -2.44,
             "yHigh": -2.04
@@ -376,7 +376,7 @@
         "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band fluxes",
         "xVariable": "M_UV",
         "cosmology": {
-          "H0": 70.0,
+          "H0": 70,
           "Om": 0.3
         },
         "population": "Lyman-break dropout samples",
@@ -404,10 +404,10 @@
       "kind": "observation",
       "relation": "uvbeta",
       "epoch": {
-        "zRepresentative": 7.0,
-        "zNominal": 7.0,
-        "zMin": 7.0,
-        "zMax": 7.0,
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
         "mode": "observational-bin",
         "snapshot": null
       },
@@ -464,7 +464,7 @@
         "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band fluxes",
         "xVariable": "M_UV",
         "cosmology": {
-          "H0": 70.0,
+          "H0": 70,
           "Om": 0.3
         },
         "population": "Lyman-break dropout samples",
@@ -492,10 +492,10 @@
       "kind": "observation",
       "relation": "uvbeta",
       "epoch": {
-        "zRepresentative": 8.0,
-        "zNominal": 8.0,
-        "zMin": 8.0,
-        "zMax": 8.0,
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
         "mode": "observational-bin",
         "snapshot": null
       },
@@ -540,7 +540,7 @@
         "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band fluxes",
         "xVariable": "M_UV",
         "cosmology": {
-          "H0": 70.0,
+          "H0": 70,
           "Om": 0.3
         },
         "population": "Lyman-break dropout samples",
@@ -640,7 +640,7 @@
         "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band fluxes",
         "xVariable": "M_UV",
         "cosmology": {
-          "H0": 70.0,
+          "H0": 70,
           "Om": 0.3
         },
         "population": "Lyman-break dropout samples",
@@ -668,10 +668,10 @@
       "kind": "observation",
       "relation": "uvbeta",
       "epoch": {
-        "zRepresentative": 5.0,
-        "zNominal": 5.0,
-        "zMin": 5.0,
-        "zMax": 5.0,
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
         "mode": "observational-bin",
         "snapshot": null
       },
@@ -734,7 +734,7 @@
         "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band fluxes",
         "xVariable": "M_UV",
         "cosmology": {
-          "H0": 70.0,
+          "H0": 70,
           "Om": 0.3
         },
         "population": "Lyman-break dropout samples",
@@ -794,7 +794,7 @@
             "x": -20.5,
             "y": -2.08,
             "yLow": -2.16,
-            "yHigh": -2.0
+            "yHigh": -2
           },
           {
             "x": -19.5,
@@ -828,7 +828,7 @@
         "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band fluxes",
         "xVariable": "M_UV",
         "cosmology": {
-          "H0": 70.0,
+          "H0": 70,
           "Om": 0.3
         },
         "population": "Lyman-break dropout samples",
@@ -856,10 +856,10 @@
       "kind": "observation",
       "relation": "uvbeta",
       "epoch": {
-        "zRepresentative": 7.0,
-        "zNominal": 7.0,
-        "zMin": 7.0,
-        "zMax": 7.0,
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
         "mode": "observational-bin",
         "snapshot": null
       },
@@ -916,7 +916,7 @@
         "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band fluxes",
         "xVariable": "M_UV",
         "cosmology": {
-          "H0": 70.0,
+          "H0": 70,
           "Om": 0.3
         },
         "population": "Lyman-break dropout samples",

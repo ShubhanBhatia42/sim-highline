@@ -42,6 +42,21 @@ await step("app loads with a title, curves, and no errors", async () => {
   await ctx.close();
 });
 
+await step("the emission-line luminosity function draws its observations and its simulation, and names the line in the legend", async () => {
+  for (const [z, prefix] of [["0.84", "sobral13.hizels.elf"], ["5.3", "covelopaz25.fresco-congress.elf"], ["5", "katz23.sphinx20.elf"], ["5", "covelopaz25.fresco-congress.elf"]]) {
+    const { page, ctx, errors } = await open(`/highline.html#r=elf&z=${z}`);
+    await settle(page);
+    assert.equal(await page.textContent("#shTitle"), `Emission-line luminosity function at z = ${z}`);
+    assert((await page.locator(`#stage path[data-id^="${prefix}"]`).count()) >= 1, `no ${prefix} curve at z = ${z}`);
+    assert.deepEqual(errors, []);
+    await ctx.close();
+  }
+  const { page, ctx } = await open("/highline.html#r=elf&z=0.84");
+  await settle(page);
+  assert((await page.locator('#presets button[data-r="elf"]').count()) === 1, "the relation rail must list the emission-line luminosity function");
+  await ctx.close();
+});
+
 await step("every published expression is drawn under the page's content security policy (no eval)", async () => {
   // Playwright's page.evaluate is exempt from the page's policy, so this cannot try new Function itself: it checks the mechanism instead (the policy has no 'unsafe-eval'; every parametric record has a precompiled function; nothing the page itself tried to compile failed)
   const { page, ctx } = await open("/highline.html#r=sfms&z=0.1");

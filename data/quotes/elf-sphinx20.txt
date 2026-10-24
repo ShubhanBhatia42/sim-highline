@@ -1,0 +1,14 @@
+main.tex:119: with a volume of 20$^3$ co-moving Mpc$^3$.
+main.tex:122: $\Omega_{\rm m} = 0.3175$, $\Omega_{\Lambda} = 0.6825$, $\Omega_{\rm b} = 0.049$, $\sigma_8 = 0.83$, $H_0 = 67.11 \ \ {\rm km\ s^{-1}\ Mpc^{-1}}$.
+main.tex:124: For each halo, we designate its occupant galaxy to consist of all gas and stellar particles enclosed within its virial radius.
+main.tex:76: for each galaxy in \sphinxtw{} with a star formation rate $\geq0.3\ {\rm M_{\odot}\ yr^{-1}}$.
+main.tex:197: Dust is assigned to all gas cells using the Small Magellanic Cloud (SMC) dust model described in \cite{Laursen_2009}.
+main.tex:245: Intrinsic for all emission lines listed in Table~\ref{tab:emission_lines}, dust attenuated along ten sight lines for H$\alpha$
+main.tex:203: As our data set contains 1,380 galaxies, viewing each along ten sight lines results in 13,800 total spectra
+main.tex:613: we show reddening corrected H$\alpha$ (top) and [O~III]~$\lambda$5007 (bottom) luminosity functions at multiple redshifts
+main.tex:613: We note that the turnover at the faint-end of the luminosity function is due to our SFR cut rather than a physical effect
+main.tex:620: For each redshift, we show a luminosity function for each of the ten different sight lines to demonstrate the expected variance with viewing angle.
+main.tex:253: Computed from the Balmer decrement (H$\alpha$ and H$\beta$)
+check: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover
+release: https://github.com/HarleyKatz/SPHINX-20-data @ 526ebb5c90294414fc7914200478c49a99c86fd2, all_basic_data.csv sha256 3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85
+figure: figures/Halpha_lum_func.pdf sha256 7c0f3c16cc33dcc1cb9d2bca4eb01e0fe63200eb7747099d080861e19366c4d1

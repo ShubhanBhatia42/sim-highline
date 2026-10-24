@@ -133,3 +133,27 @@ console.log(`Comparison tests passed: THESAN z=6 vs COSMOS-Web median ${stats.me
   }
   assert.equal(v("quiescent", "passive").verdict, "comparable", "'quiescent' and 'passive' are the same population");
 }
+
+// emission-line luminosity functions: the line and the dust treatment decide whether two curves can be compared
+{
+  const [sobral, covelo, sphinx] = await Promise.all(["elf-sobral13", "elf-covelopaz25", "elf-sphinx20"].map(load));
+  const sob = sobral.find(r => r.epoch.zRepresentative === 0.84), cov = covelo.find(r => r.epoch.zRepresentative === 5.3);
+  const intr = sphinx.find(r => r.id.endsWith("intrinsic.z5")), att = sphinx.find(r => r.id.endsWith("attenuated.z5"));
+  assert(sob && cov && intr && att, "the emission-line records must exist");
+  const fair = compatible(sob, intr);
+  assert.equal(fair.verdict, "comparable-with-caveats", "a dust-corrected observation and an intrinsic simulation are comparable, with caveats");
+  for (const key of ["dustCorrectionMethod", "apertureDefinition", "H0"]) assert(fair.caveats.some(c => c.startsWith(key)), `${key} difference must surface`);
+  assert(fair.caveats.some(c => /line luminosity/.test(c)), "the cosmology caveat for a luminosity function must speak of line luminosity, not mass");
+  const unfair = compatible(sob, cov);
+  assert.equal(unfair.verdict, "not-comparable", "a dust-corrected and an uncorrected H-alpha function must not be compared");
+  assert(unfair.blockers.some(b => b.startsWith("dustCorrection:")), "the dust treatment must be the stated reason");
+  assert.equal(compatible(cov, att).verdict, "comparable-with-caveats", "an observed function and a dust-attenuated simulation are comparable, with caveats");
+  assert.equal(compatible(cov, intr).verdict, "not-comparable", "an observed function and an intrinsic simulation function are not comparable");
+  const other = JSON.parse(JSON.stringify(sob)); other.definitions.line = "[OIII] 5007";
+  assert(compatible(sob, other).blockers.some(b => b.startsWith("line:")), "different lines must block");
+  const blend = JSON.parse(JSON.stringify(sob)); blend.definitions.line = "H-alpha + [NII] blend";
+  assert.equal(compatible(sob, blend).verdict, "not-comparable", "H-alpha alone and H-alpha blended with [NII] must block");
+  const unknown = JSON.parse(JSON.stringify(sob)); unknown.definitions.line = "unspecified";
+  assert(compatible(sob, unknown).blockers.some(b => b.includes("line not documented")), "an unstated line must block");
+  assert(sphinx.every(r => r.definitions.dustCorrection === (r.id.includes(".attenuated.") ? "attenuated" : "intrinsic")), "SPHINX20 intrinsic and attenuated records carry their dust treatment");
+}
