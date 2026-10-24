@@ -14,7 +14,7 @@ const server = http.createServer(async (req, res) => {
 await new Promise(r => server.listen(0, "127.0.0.1", r));
 const BASE = `http://127.0.0.1:${server.address().port}`;
 const browser = await launchBrowser();
-const PAGES = ["index.html", "highline.html#r=gsmf&z=0.1", "site/index.html", "site/retune.html", "site/studies.html", "site/study-joint.html", "site/study-definitions.html", "site/study-harmonization.html", "site/study-sfh.html", "site/findings.html", "site/data.html", "site/methods.html", "site/sources.html", "site/quality.html", "site/glossary.html", "site/faq.html", "site/changes.html", "site/summary.html"];
+const PAGES = ["index.html", "highline.html#r=gsmf&z=0.1", "site/index.html", "site/retune.html", "site/studies.html", "site/study-joint.html", "site/study-definitions.html", "site/study-harmonization.html", "site/study-sfh.html", "site/seeding.html", "site/findings.html", "site/data.html", "site/methods.html", "site/sources.html", "site/quality.html", "site/glossary.html", "site/faq.html", "site/changes.html", "site/summary.html"];
 const WIDTHS = [320, 390, 768, 1440, 2560];
 const CAN_PDF = browserName() === "chromium";  // page.pdf exists only in Chromium; elsewhere the sheet-width and colour checks still run
 const SHOTS = process.env.SHOTS; if (SHOTS) await mkdir(SHOTS, { recursive: true });

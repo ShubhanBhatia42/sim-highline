@@ -3,7 +3,7 @@ import { readFile, access } from "node:fs/promises";
 const root = new URL("../dist/", import.meta.url);
 const manifest = JSON.parse(await readFile(new URL("../data/export/sim-highline-manifest.json", import.meta.url), "utf8"));
 const release = JSON.parse(await readFile(new URL("../data/release.json", import.meta.url), "utf8"));
-const PAGES = ["index", "studies", "study-definitions", "study-harmonization", "study-sfh", "study-joint", "study-shape", "retune", "data", "methods", "sources", "glossary", "faq", "changes", "quality", "summary"];
+const PAGES = ["index", "studies", "study-definitions", "study-harmonization", "study-sfh", "study-joint", "study-shape", "seeding", "retune", "data", "methods", "sources", "glossary", "faq", "changes", "quality", "summary"];
 const html = {};
 for (const page of [...PAGES, "findings"]) {
   const h = html[page] = await readFile(new URL(`site/${page}.html`, root), "utf8");
@@ -55,6 +55,42 @@ for (const page of ["index", "data"]) {
   assert(d["@type"] === "Dataset" && d.name && d.description.length > 80 && d.license && d.identifier.includes(release.doi) && d.creator.name && d.version === release.version, `${page}: dataset metadata fields`);
   assert(d.distribution.length >= 5, `${page}: downloads listed`);
   for (const x of d.distribution) await access(new URL(x.contentUrl.replace("https://shubhanbhatia42.github.io/sim-highline/", ""), root)).catch(() => assert.fail(`${page}: listed download ${x.contentUrl} is not in the build`));
+}
+// the page that explains the black hole seeding difference: quotations, numbers and links all come from saved files, and the page says what it is
+{
+  const SRC = JSON.parse(await readFile(new URL("../data/seeding-sources.json", import.meta.url), "utf8")), page = html.seeding;
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  assert(SRC.quotes.length >= 6 && SRC.repository.length >= 2, "seeding: sources registry too small");
+  for (const q of SRC.quotes) {
+    assert(SRC.papers[q.paper] && /^\d{4}\.\d{4,5}$/.test(SRC.papers[q.paper].arxiv) && /^[0-9a-f]{64}$/.test(SRC.papers[q.paper].eprintSha256) && q.where && q.text.length > 5 && q.latex.length > 5, `seeding: quote ${q.id} lacks its paper, place or source text`);
+    assert(page.includes(esc(q.text)), `seeding: the quotation ${q.id} is missing from the page`);
+    assert(page.includes(`href="https://arxiv.org/abs/${SRC.papers[q.paper].arxiv}"`), `seeding: no link to arXiv:${SRC.papers[q.paper].arxiv}`);
+  }
+  for (const q of SRC.repository) {
+    assert((await readFile(new URL(`../${q.file}`, import.meta.url), "utf8")).includes(q.text), `seeding: the quotation ${q.id} is not word for word in ${q.file}`);
+    assert(page.includes(esc(q.text)), `seeding: the quotation ${q.id} is missing from the page`);
+  }
+  // numbers: re-derived here from the saved results, so a page that disagrees with them fails
+  const R = JSON.parse(await readFile(new URL("../data/analysis/joint-reachability.json", import.meta.url), "utf8")), CG = JSON.parse(await readFile(new URL("../data/ensembles/camels-galaxies.json", import.meta.url), "utf8"));
+  const f1 = v => v.toFixed(1), mean = a => a.reduce((t, v) => t + v, 0) / a.length;
+  const cv = code => { const v = Object.values(CG.suites[code].CV).map(s => s.snaps["090"].values.bhocc[0]).filter(x => x != null); return mean(v); };
+  assert(page.includes(`${Math.round(100 * cv("IllustrisTNG"))}% of IllustrisTNG galaxies in the lowest mass bin hold a black hole and ${Math.round(100 * cv("SIMBA"))}% of SIMBA galaxies do`), "seeding: lowest-bin occupation does not match the catalogues");
+  for (const [label, v] of [["Without black hole occupation the all-at-once distance is", R.sensitivity.S7a_no_bhocc.D], ["without occupation and black hole mass it is", R.sensitivity.S7b_no_bhocc_no_bhms.D], ["The codes stay", R.splits.all.between.p50]]) assert(page.includes(`${label} ${f1(v)}`), `seeding: "${label}" must be followed by ${f1(v)}`);
+  assert(page.includes(`takes the all-at-once distance from ${f1(R.splits.all.between.p50)} to ${f1(R.sensitivity.S8_no_two_lowest_mass_bins.D)}`), "seeding: the two-lowest-bins sensitivity differs from the saved result");
+  const nRem = Object.entries(R.verdicts.J2).filter(([, v]) => v === "removable").length;
+  assert(page.includes(`can close ${nRem} of the ${Object.keys(R.verdicts.J2).length} properties`), "seeding: count of removable properties differs from the saved verdicts");
+  assert((page.match(/<tr><td>[^<]+<\/td><td>(structural|removable|unresolved)<\/td>/g) || []).length === Object.keys(R.verdicts.J2).length, "seeding: one table row per property");
+  const bhRows = page.match(/<tr><td>Black hole[^<]*<\/td><td>[a-z]+<\/td><td class="n">[\d.]+<\/td><td class="n">\d+%<\/td><td>yes<\/td>/g) || [];
+  assert(bhRows.length === 2, "seeding: the two properties that compare seeding rules are marked");
+  // what the page says it is, and what it must not say
+  assert(/No outside expert has reviewed/.test(page) && /internal result/.test(page) && /does not claim that the result, or the explanation, is new/.test(page), "seeding: must say it is an internal, unreviewed explanation and makes no novelty claim");
+  assert(!/\b(novel|first[- ]ever|first to|unprecedented|ground-?breaking|new method|new approach)\b/i.test(page), "seeding: novelty wording");
+  assert(!/\bclaude\b|anthropic|\bAI\b|language model|\bGPT\b/i.test(page), "seeding: no mention of AI assistants or models");
+  assert(!/\bS[1-9][a-z]?\b/.test(page.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<svg[\s\S]*?<\/svg>/g, "").replace(/<[^>]+>/g, " ")), "seeding: no study-code names such as S7a in the text");
+  // linked from where it belongs
+  for (const p of ["study-joint", "retune", "glossary", "faq", "studies"]) assert(html[p].includes('href="seeding.html"'), `${p}: must link to the seeding page`);
+  for (const p of PAGES) assert(html[p].includes('<a href="seeding.html">Black hole seeding</a>'), `${p}: footer navigation must list the seeding page`);
+  assert(/<a href="studies\.html"[^>]*aria-current="page"|aria-current="page"[^>]*>Studies/.test(html.seeding), "seeding: the Studies section must be marked current");
 }
 // the old pages are gone and the old findings URL redirects
 for (const gone of ["about", "use-cases"]) await access(new URL(`site/${gone}.html`, root)).then(() => assert.fail(`${gone}.html must be removed`), () => {});

@@ -1,0 +1,90 @@
+{
+  "note": "Sources for the page site/src/seeding.html. Every statement about how IllustrisTNG and SIMBA seed black holes is a sentence from one of the papers below (field 'text'; field 'latex' is the same sentence as it stands in the TeX source of the arXiv version, with only the markup of mathematics and citations changed in 'text'), or a sentence of a file in this repository (checked word for word by scripts/test-site.mjs). The papers were read on the date given; the SHA-256 is that of the arXiv source archive that was read. Nothing else about seeding is stated on the page. Not reviewed by anyone outside the project.",
+  "retrieved": "2026-10-23",
+  "papers": {
+    "camels": {
+      "cite": "Villaescusa-Navarro et al. 2021, ApJ 915, 71 (the CAMELS paper)",
+      "arxiv": "2010.00619",
+      "why": "It is the source named for the catalogues in data/ensembles/camels-galaxies.json, so it describes the two models as they were run in the experiment this study uses.",
+      "eprintSha256": "d135837b37d56a586e54f09d4bb76cdb1d1cefaf032e59b8f7cd7808c2d6275e"
+    },
+    "weinberger": {
+      "cite": "Weinberger et al. 2017 (the black hole model of IllustrisTNG)",
+      "arxiv": "1607.03486",
+      "why": "It is listed as a paper of IllustrisTNG in data/simulation-profiles.json.",
+      "eprintSha256": "7db366373c5be0ba002d0fbb1af0a1106655ba66571771ff952fdf0c08af84ca"
+    },
+    "dave": {
+      "cite": "Davé et al. 2019, MNRAS 486, 2827 (the SIMBA paper)",
+      "arxiv": "1901.10203",
+      "why": "It is listed as the overview paper of SIMBA in data/simulation-profiles.json.",
+      "eprintSha256": "592fda461eb7915dda5add5069b6158bffa1ef5fcef17e9c9684f93be0634bd6"
+    }
+  },
+  "parameters": {
+    "IllustrisTNG": { "seedMass": 800000, "seedMassUnit": "Msun/h", "haloMassThreshold": 50000000000, "haloMassThresholdUnit": "Msun/h", "quote": "camels-tng" },
+    "SIMBA": { "seedMass": 10000, "seedMassUnit": "Msun/h", "stellarMassThresholdLog10": 9.5, "quote": "camels-simba" }
+  },
+  "hubble": { "h": 0.6711, "quote": "camels-h" },
+  "seedingFamilies": { "families": ["bhocc", "bhms"], "quote": "protocol-seeding" },
+  "quotes": [
+    {
+      "id": "camels-h", "paper": "camels", "where": "Section \"Simulations\", introduction (the cosmological parameters that are fixed in all simulations)",
+      "text": "h=0.6711",
+      "latex": "$h=0.6711$"
+    },
+    {
+      "id": "camels-tng", "paper": "camels", "where": "Section \"Simulations\", subsection \"IllustrisTNG\"",
+      "text": "SMBH particles with initial mass M_seed = 8×10⁵ M☉ h⁻¹ are seeded in halos with mass M_FoF > 5×10¹⁰ M☉ h⁻¹.",
+      "latex": "SMBH particles with initial mass $M_{\\rm seed} = 8\\times10^5$\\,\\Msunh~are seeded in halos with mass $M_{\\rm FoF}> 5\\times10^{10}$\\,\\Msunh."
+    },
+    {
+      "id": "weinberger-rule", "paper": "weinberger", "where": "Section \"Accretion estimate and seeding of black holes\"",
+      "text": "In our cosmological simulations, a black hole with mass M_seed is placed at the centre of a halo whenever the on-the-fly friend-of-friends halo finder identifies a halo more massive than a threshold mass M_FOF that does not yet contain a black hole.",
+      "latex": "In our cosmological simulations, a black hole with mass $M_\\text{seed}$ is placed at the centre of a halo whenever the on-the-fly friend-of-friends halo finder identifies a halo more massive than a threshold mass $M_\\text{FOF}$ that does not yet contain a black hole."
+    },
+    {
+      "id": "weinberger-free", "paper": "weinberger", "where": "Section \"Accretion estimate and seeding of black holes\"",
+      "text": "Given the significant theoretical uncertainties in the early growth of SMBHs [citation omitted], we consider the seed mass as a poorly constrained free parameter.",
+      "latex": "Given the significant theoretical uncertainties in the early growth of SMBHs \\citep[e.g.][]{2010A&ARv..18..279V}, we consider the seed mass as a poorly constrained free parameter."
+    },
+    {
+      "id": "camels-simba", "paper": "camels", "where": "Section \"Simulations\", subsection \"SIMBA\"",
+      "text": "Black holes with initial mass M_seed = 10⁴ M☉ h⁻¹ are seeded in galaxies with M⋆ ≳ 10^9.5 M☉ by means of the on-the-fly FoF, with the M⋆ threshold for seeding motivated by FIRE simulations showing that stellar feedback strongly suppresses black hole growth in lower mass galaxies [citations omitted].",
+      "latex": "Black holes with initial mass $M_{\\rm seed} = 10^4$\\,\\Msunh~are seeded in galaxies with $M_{\\star} \\gtrsim 10^{9.5}$\\,\\Msun~by means of the on-the-fly FoF, with the $M_{\\star}$ threshold for seeding motivated by FIRE simulations showing that stellar feedback strongly suppresses black hole growth in lower mass galaxies"
+    },
+    {
+      "id": "dave-rule", "paper": "dave", "where": "Section \"Black hole seeding and dynamics\"",
+      "text": "If a galaxy reaches a stellar mass M⋆ > γ_BH × M_seed and it does not already contain a black hole particle, then the star particle closest to the center of mass of the galaxy is converted into a black hole particle. For our fiducial simulations, we employ M_seed = 10⁴ M☉/h and γ_BH = 3×10⁵, which places black holes in galaxies with M⋆ ≳ 10^9.5 M☉.",
+      "latex": "If a galaxy reaches a stellar mass $M_{*} > \\gamma_{\\rm BH} \\times M_{\\rm seed}$ and it does not already contain a black hole particle, then the star particle closest to the center of mass of the galaxy is converted into a black hole particle.  For our fiducial simulations, we employ $M_{\\rm seed} = 10^4$\\,M$_{\\odot}/h$~and $\\gamma_{\\rm BH} = 3\\times10^5$, which places black holes in galaxies with $M_{*} \\gtrsim 10^{9.5}$\\,M$_{\\odot}$."
+    },
+    {
+      "id": "camels-bhmass", "paper": "camels", "where": "Section \"Cosmological and astrophysical properties\", paragraph \"Galaxy black hole masses\"",
+      "text": "We find good agreement between the median black hole masses of both simulation suites; however those for the SIMBA set drop quickly for stellar masses below ~5×10⁹ h⁻¹ M☉, owing to the black hole seeding model [citations omitted]; this feature is not observed in the IllustrisTNG set.",
+      "latex": "We find good agreement between the median black hole masses of both simulation suites; however those for the SIMBA set drop quickly for stellar masses below $\\sim5\\times10^9~h^{-1}M_\\odot$, owing to the black hole seeding model \\citep{SIMBA,Thomas2019}; this feature is not observed in the IllustrisTNG set."
+    },
+    {
+      "id": "camels-dials", "paper": "camels", "where": "Section \"Simulations\", introduction",
+      "text": "In the hydrodynamic simulations, besides Ω_m, σ_8, and the initial random seed, we also vary the value of four astrophysical parameters related to stellar and AGN feedback. [...] While we do not consider parameter variations for other key baryonic processes, we explore variations over a broad range of efficiencies for some of the most important and uncertain feedback processes in galaxy formation: galactic winds driven by supernovae (SNe) and kinetic feedback from massive black holes.",
+      "latex": "In the hydrodynamic simulations, besides $\\Omega_{\\rm m}$, $\\sigma_8$, and the initial random seed, we also vary the value of four astrophysical parameters related to stellar and AGN feedback.|While we do not consider parameter variations for other key baryonic processes, we explore variations over a broad range of efficiencies for some of the most important and uncertain feedback processes in galaxy formation: galactic winds driven by supernovae (SNe) and kinetic feedback from massive black holes."
+    }
+  ],
+  "repository": [
+    {
+      "id": "protocol-seeding", "file": "docs/PROTOCOL-joint-reachability.md", "where": "amendment A1, limitations added (written before the result)",
+      "text": "Black hole occupation and mass compare seeding prescriptions (TNG seeds at 8e5/h Msun, SIMBA at much lighter masses), a discrete model choice that no dial changes, so the structural verdict of those families is expected by construction"
+    },
+    {
+      "id": "protocol-inputs", "file": "docs/PROTOCOL-joint-reachability.md", "where": "amendment A1, input facts seen in the internal review",
+      "text": "the smallest non-zero value is 1.2e6 Msun (TNG, seed 8e5/h) and 2.8e4 Msun (SIMBA), and the black hole occupation among M* > 1e9 is 0.88 and 0.33 at LH_0"
+    },
+    {
+      "id": "analysis-more-than-form", "file": "docs/ANALYSIS-joint-reachability.md", "where": "section 9, limitations",
+      "text": "the codes differ in more than subgrid form: hydro solver, star formation algorithm, yields, wind treatment"
+    },
+    {
+      "id": "resolution-rule", "file": "docs/RESOLUTION.md", "where": "first paragraph",
+      "text": "black holes are planted by a rule that depends on resolution"
+    }
+  ]
+}
