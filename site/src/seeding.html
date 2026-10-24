@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How two simulation codes plant black holes</title>
+<meta name="description" content="A plain-words explanation of how IllustrisTNG and SIMBA put black holes into their galaxies, what the all-at-once study found about it, and what the study could not show. Quotes the papers; an internal result that no outside expert has reviewed.">
+{{head}}
+</head>
+<body>
+{{header}}
+<main id="main" class="wrap page" tabindex="-1">
+<div class="doc">
+<nav class="idx" aria-label="On this page">
+<p class="lab">Contents</p>
+<ol>
+<li><a href="#meaning"><span>§1</span>What seeding means</a></li>
+<li><a href="#codes"><span>§2</span>The two rules</a></li>
+<li><a href="#data"><span>§3</span>What the catalogues show</a></li>
+<li><a href="#found"><span>§4</span>What the study found</a></li>
+<li><a href="#notshown"><span>§5</span>What it could not show</a></li>
+<li><a href="#sources"><span>§6</span>Sources</a></li>
+</ol>
+<p class="back"><a href="study-joint.html">The study</a> · <a href="retune.html">Dials</a> · <a href="glossary.html">Glossary</a></p>
+</nav>
+<div class="c">
+
+<div class="title">
+<p class="lab kicker">Explanation · IllustrisTNG and SIMBA in CAMELS</p>
+<h1>How the two codes plant their black holes, and why it matters for the result</h1>
+<div class="plain"><p class="lab">In plain words</p><p class="one">{{plainSeedOne}}</p><p>{{plainSeed}}</p></div>
+</div>
+
+<p class="limits-first"><b>What this page is.</b> An explanation of one internal result of this project (the <a href="study-joint.html">all-at-once study</a>). No outside expert has reviewed the result or this page. It does not claim that the result, or the explanation, is new: the CAMELS papers already report that the two codes differ, and the seeding rules below are the model authors' own. Every statement about how the codes seed black holes is a quotation from a paper or from a file of this repository, with its place; a statement that is in none of them is left out.</p>
+
+<section class="sec" id="meaning" aria-labelledby="meaning-h">
+<h2 id="meaning-h"><span class="sn">§1</span>What seeding means</h2>
+<p>A galaxy simulation follows gas, stars and dark matter. The two models here also include central black holes. In both, the code places a black hole particle into the simulation by a rule, once a halo or a galaxy passes a size threshold. That step is called seeding. Here is how the authors of each model describe it.</p>
+{{seedQTngRule}}
+{{seedQSimbaRule}}
+<p>The rule has two settings: how heavy the first black hole is (the seed mass), and how big a halo or galaxy must be before it gets one (the threshold). Both values are set by the model authors. The IllustrisTNG authors say of the seed mass:</p>
+{{seedQTngFree}}
+</section>
+
+<section class="sec" id="codes" aria-labelledby="codes-h">
+<h2 id="codes-h"><span class="sn">§2</span>The two rules side by side</h2>
+<p>The CAMELS paper describes both models as they were run in the experiment this study uses. For IllustrisTNG:</p>
+{{seedQTngCamels}}
+<p>And for SIMBA:</p>
+{{seedQSimbaCamels}}
+<div class="tw sm"><table class="dense"><thead><tr><th></th><th>IllustrisTNG</th><th>SIMBA</th></tr></thead><tbody>
+<tr><td>What gets a black hole</td><td>a halo (a friends-of-friends group)</td><td>a galaxy, by its stellar mass</td></tr>
+<tr><td>Threshold</td><td>halo mass above {{seedTngHalo}}</td><td>stellar mass above about {{seedSimbaStar}}</td></tr>
+<tr><td>Seed mass</td><td>{{seedTngSeed}}, which is {{seedTngSeedAbs}} for h = {{seedH}}</td><td>{{seedSimbaSeed}}, which is {{seedSimbaSeedAbs}} for h = {{seedH}}</td></tr>
+</tbody></table></div>
+<p>The seed masses differ by a factor of {{seedRatio}}. The value of h is the one the CAMELS paper fixes in all its simulations; the conversion is the only arithmetic on this page that is not a quotation.</p>
+{{seedQH}}
+<p>Notice that one rule looks at the mass of the halo and the other at the stellar mass of the galaxy. The SIMBA authors give their reason for a threshold in stellar mass in the quotation above: it is motivated by other simulations. This page does not say why the IllustrisTNG authors chose theirs, because none of the sources quoted here does.</p>
+<p>The four dials of the experiment are feedback parameters, not seeding parameters. The CAMELS paper says which parameters it varies:</p>
+{{seedQDials}}
+<p>The project's own protocol, written before the result existed, says the same thing in its own words:</p>
+{{seedQProtocol}}
+</section>
+
+<section class="sec" id="data" aria-labelledby="data-h">
+<h2 id="data-h"><span class="sn">§3</span>What the saved catalogues show</h2>
+<p>If the rules are different, the catalogues should show it. They do. The figure counts, in each bin of stellar mass, the share of galaxies that hold a black hole.</p>
+<figure class="fig">
+<div class="chart">{{seedFig}}</div>
+<figcaption><span class="fl">Fig. 1</span><span>{{seedFigCap}}</span></figcaption>
+</figure>
+<p>In the lowest mass bin, {{seedLowTng}} of IllustrisTNG galaxies hold a black hole and {{seedLowSimba}} of SIMBA galaxies do; in the next bin the shares are {{seedLow2Tng}} and {{seedLow2Simba}}. From log stellar mass {{seedHiFrom}} upward, at least {{seedHiSimba}} of SIMBA galaxies hold one, against {{seedHiTngLo}} to {{seedHiTngHi}} for IllustrisTNG. {{seedBand}}</p>
+<p>The CAMELS paper reports the matching feature in black hole masses:</p>
+{{seedQBhMass}}
+<p>The protocol's input check of the two catalogues found the smallest non-zero black hole masses and the occupation in one simulation (LH_0, whose parameters are not the fiducial ones):</p>
+{{seedQInputs}}
+<p>The smallest IllustrisTNG value agrees, to the precision printed, with the paper's seed mass converted above. The smallest SIMBA value is larger than the paper's seed mass, and this page does not explain the difference.</p>
+</section>
+
+<section class="sec" id="found" aria-labelledby="found-h">
+<h2 id="found-h"><span class="sn">§4</span>What the study found</h2>
+<p>The study asked whether retuning each code's four dials can make the two agree on galaxy properties. Distances are in noise units: one unit is the scatter between one run of each code. Details are on the <a href="study-joint.html">study page</a>.</p>
+<ul class="flat">
+<li><b>All properties at once.</b> The codes stay {{seedJoint}} noise units apart (half-sample range {{seedJointLo}} to {{seedJointHi}}), far above the margin of 1.</li>
+<li><b>Black hole occupation is the largest single piece.</b> Fitted alone, the two codes stay {{seedOccAlone}} apart at the best dial setting found, against {{seedOccFid}} at the default dials ({{seedOccAloneRaw}} before the emulators' own error is removed). Its blocks carry {{seedOccShare}} of the squared all-at-once distance. {{seedOccNative}}</li>
+<li><b>It is not the whole story.</b> Without black hole occupation the all-at-once distance is {{seedNoOcc}}; without occupation and black hole mass it is {{seedNoBoth}}. Both stay above 1 (point estimates on all simulations).</li>
+<li><b>Black hole mass among galaxies that have one can be matched.</b> Alone it is {{seedMassAlone}}, below the margin. The dials can set the typical mass of a black hole; they cannot make the fraction of galaxies that hold one agree.</li>
+<li><b>Gas metallicity also stays apart</b>, by {{seedMzrAlone}} when fitted alone and with {{seedMzrShare}} of the all-at-once squared distance. It is not one of the two properties that compare seeding rules, and no quotation here explains it.</li>
+</ul>
+<div class="tw"><table class="dense"><thead><tr><th>Property</th><th>Fitted alone</th><th class="n">Distance alone</th><th class="n">Share of all-at-once</th><th>Compares seeding rules</th></tr></thead><tbody>{{seedFamRows}}</tbody></table></div>
+<p class="dim">Distance alone: the best the dials of both codes can do for that property, in noise units, with the emulators' own error removed. Share: the part of the squared all-at-once distance that comes from the property's blocks at the best joint setting. "Compares seeding rules" is the protocol's own statement quoted in §2, not a result.</p>
+<p>{{seedThird}}</p>
+</section>
+
+<section class="sec" id="notshown" aria-labelledby="notshown-h">
+<h2 id="notshown-h"><span class="sn">§5</span>What the study could not show</h2>
+<ul class="flat">
+<li><b>That seeding causes the difference.</b> No run changed a seeding rule. The experiment varies four feedback parameters and, in the words quoted in §2, does not vary other baryonic processes. The protocol records that a structural verdict for the two properties that compare seeding rules is "expected by construction", so the result for them says little beyond the fact that the rules differ. The analysis file adds that the codes also differ in other ways:</li>
+</ul>
+{{seedQMore}}
+<ul class="flat">
+<li><b>How much of the {{seedJoint}} would remain with the same rule in both codes.</b> Leaving the occupation output out ({{seedNoOcc}}) is not the same as running both codes with one rule. Nobody has done that run here.</li>
+<li><b>Whether the difference is physical or comes from resolution.</b> The experiment is at one resolution (25 Mpc/h boxes with 256³ particles of each kind). The repository's resolution note says:</li>
+</ul>
+{{seedQRes}}
+<ul class="flat">
+<li>Dropping the two lowest stellar-mass bins of every property takes the all-at-once distance from {{seedJoint}} to {{seedNoLow}}. Those are the two bins where SIMBA's occupation is {{seedLowSimba}} and {{seedLow2Simba}}, but the same cut applies to all properties, so the study does not say how much of the drop is occupation. No run at another resolution exists to test it.</li>
+<li><b>Anything about real black holes.</b> The comparison is between two simulations, deliberately without observations. Neither rule is shown to be more realistic than the other.</li>
+<li><b>Anything about other codes.</b> The third-code check above is exploratory, uses three codes from the one CAMELS project, and does not describe Astrid's rule.</li>
+<li><b>That the sources describe the runs exactly.</b> The quotations are from the papers' descriptions of the models. They were not checked for this page against the configuration files of the CAMELS runs.</li>
+<li><b>Review.</b> The registered protocol was reviewed internally only. No outside expert has reviewed the result, the quotations' use here, or this page.</li>
+</ul>
+</section>
+
+<section class="sec" id="sources" aria-labelledby="sources-h">
+<h2 id="sources-h"><span class="sn">§6</span>Sources and how this page is made</h2>
+<p>The {{seedNQuotes}} quotations on this page are stored in <a href="{{repo}}/blob/main/data/seeding-sources.json">data/seeding-sources.json</a>, each with the paper or file and the place it comes from. For the papers, the entry also holds the sentence as it stands in the TeX source of the arXiv version. The papers were read on {{seedRetrieved}}:</p>
+<ul class="flat">{{seedPapers}}</ul>
+<p>The quotations from this repository are compared with the files word for word by the site test. The numbers on this page are computed by the site build from <code>data/analysis/joint-reachability.json</code>, <code>data/retune/retune.json</code>, <code>data/analysis/third-code.json</code> and <code>data/ensembles/camels-galaxies.json</code>; none is typed here. A reader who knows these codes can check each quotation against its paper, and the most useful correction would be a statement from the model authors about how the rules apply in the CAMELS runs.</p>
+</section>
+
+</div>
+</div>
+</main>
+{{footer}}
+</body>
+</html>

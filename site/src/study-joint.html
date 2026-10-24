@@ -41,6 +41,7 @@
 <div><dt>Analysis</dt><dd><a href="{{repo}}/blob/main/docs/ANALYSIS-joint-reachability.md">ANALYSIS-joint-reachability.md</a></dd></div>
 <div><dt>Calibration</dt><dd><a href="{{repo}}/blob/main/docs/POWER-joint-reachability.md">POWER-joint-reachability.md</a></dd></div>
 <div><dt>Try it</dt><dd><a href="retune.html">The dials page</a></dd></div>
+<div><dt>Explained</dt><dd><a href="seeding.html">How the two codes plant black holes</a></dd></div>
 <div><dt>Dataset</dt><dd>v{{version}}</dd></div>
 </dl>
 </div>
@@ -129,7 +130,7 @@
 <section class="sec" id="limits" aria-labelledby="limits-h">
 <h2 id="limits-h"><span class="sn">§7</span>Limits</h2>
 <ul class="flat">
-<li><b>Two codes, and more than subgrid form.</b> The result is about this pair, not about structural uncertainty in general; what separates them includes the hydrodynamic solver, the star formation algorithm and the yields, not only the feedback prescriptions. Black hole occupation and mass compare seeding prescriptions (a discrete model choice that no dial changes), so a structural verdict there is expected by construction; the sensitivity analyses give the result without them.</li>
+<li><b>Two codes, and more than subgrid form.</b> The result is about this pair, not about structural uncertainty in general; what separates them includes the hydrodynamic solver, the star formation algorithm and the yields, not only the feedback prescriptions. Black hole occupation and mass compare seeding prescriptions (a discrete model choice that no dial changes), so a structural verdict there is expected by construction (<a href="seeding.html">what that means, with the sources quoted</a>); the sensitivity analyses give the result without them.</li>
 <li><b>CAMELS resolution.</b> 25 Mpc/h boxes, 256³ elements: few galaxies above 10<sup>11</sup> M<sub>☉</sub>, a mass limit of 10<sup>9</sup> M<sub>☉</sub>, almost nothing at z ≥ 3; star formation and black hole growth depend on resolution in both codes.</li>
 <li><b>The reachable set depends on the prior, and the minimiser sits at its edge.</b> The four factors span the ranges the CAMELS team chose, not the ranges the code authors would accept; the search reaches the corners of the design, where the emulators are least constrained and noisier than their cross-validation error says. The distances are therefore corrected for the emulators' variance at the minimiser (estimated in every split), and the verdicts with the range cut to 75% are reported.</li>
 <li><b>The distance depends on the observables and weights.</b> Equal weight per block; the margin of 1 is the scatter between two seeds, a unit and not a physical tolerance. Per-family distances are in the table so that other weights can be read off.</li>
