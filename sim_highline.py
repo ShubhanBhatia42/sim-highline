@@ -478,7 +478,7 @@ def compare_records_cli(records, relations=None, top=5, csv=None, rankable_only=
             print(f"  {title}: {len(g)} published curves near this epoch, {len(fair)} fair to compare")
             for _, c in fair.head(top).iterrows():
                 tag = "comparable" if c["verdict"] == "comparable" else "comparable with caveats"
-                print(f"    {c['source']} {c['run'] if isinstance(c['run'], str) else ''} (z = {c['z']:.3g}, {c['tier']}): {tag}; yours minus theirs: median {c['median_dy']:+.2f}, rms {c['rms_dy']:.2f} {yunit} over {int(c['n_bins'])} shared points")
+                print(f"    {(c['source'] + ' ' + (c['run'] if isinstance(c['run'], str) else '')).strip()} (z = {c['z']:.3g}, {c['tier']}): {tag}; yours minus theirs: median {c['median_dy']:+.2f}, rms {c['rms_dy']:.2f} {yunit} over {int(c['n_bins'])} shared points")
                 for cav in c["caveat_list"]:
                     print(f"        caveat: {plain_reason(cav, mine, name, R)}")
             if len(fair) > top:

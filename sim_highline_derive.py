@@ -936,7 +936,12 @@ def derive_run(fmt, catalogs, *, source=None, run=None, imf=None, baryon_particl
     if snapshot is not None and len(paths) > 1:
         problems.append("snapshot: --snapshot names one snapshot, so it can be used with one catalogue only.")
     st = {"imf": imf, "mbar": baryon_particle_mass if baryon_particle_mass and baryon_particle_mass > 0 else 1.0, "h": h, "omega_m": omega_m, "box_mpc": box_mpc, "units": units, "aperture": aperture, "snapshot": snapshot}
-    epochs = _PREP[fmt]([p for p in paths if p.exists()], st, problems, facts) if all(p.exists() for p in paths) and paths else []
+    epochs = []
+    if paths and all(p.exists() for p in paths):
+        try:
+            epochs = _PREP[fmt](paths, st, problems, facts)
+        except (KeyError, OSError, ValueError, IndexError) as ex:
+            problems.append(f"catalog: could not be read as a {fmt} catalogue ({type(ex).__name__}: {ex}). Check that --catalog is a {fmt} catalogue of the layout this format reads (docs/DERIVE-CLI.md lists it).")
     if not problems and not epochs:
         problems.append("catalog: nothing could be read from the catalogue(s).")
     seen = {}
