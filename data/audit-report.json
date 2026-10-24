@@ -1,5 +1,5 @@
 {
- "total": 1883,
+ "total": 1906,
  "known": 24,
  "errors": 0,
  "warnings": 0,
@@ -34,6 +34,7 @@
     "sphere-0.2R200",
     "aperture-50pkpc",
     "aperture-30pkpc",
+    "total-bound-subhalo",
     "aperture-Reff-stars",
     "spherical-90pc-of-20kpc",
     "sphere-0.1Rvir",
@@ -66,6 +67,7 @@
    "massDefinitions": [
     "sphere-0.2R200",
     "total-subhalo",
+    "total-bound-subhalo",
     "unspecified",
     "aperture-0.1Rvir",
     "sum of star particles x 0.6 (Munshi+13 correction)",

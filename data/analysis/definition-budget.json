@@ -78,16 +78,16 @@
    "counts": {
     "matched": 0,
     "differing": 23,
-    "unknown": 9,
-    "mismatch": 0
+    "unknown": 0,
+    "mismatch": 9
    },
    "median_abs_dy": {
     "matched": null,
     "differing": 0.1491,
-    "unknown": 0.1533,
-    "mismatch": null
+    "unknown": null,
+    "mismatch": 0.1533
    },
-   "documented_fraction": 0.923,
+   "documented_fraction": 0.942,
    "excess_differing_minus_matched": null
   },
   {
@@ -113,7 +113,7 @@
     "unknown": null,
     "mismatch": null
    },
-   "documented_fraction": 0.944,
+   "documented_fraction": 0.958,
    "excess_differing_minus_matched": null
   },
   {
@@ -130,17 +130,17 @@
    "pairs": 30,
    "counts": {
     "matched": 0,
-    "differing": 30,
+    "differing": 20,
     "unknown": 0,
-    "mismatch": 0
+    "mismatch": 10
    },
    "median_abs_dy": {
     "matched": null,
-    "differing": 0.222,
+    "differing": 0.1973,
     "unknown": null,
-    "mismatch": null
+    "mismatch": 0.4687
    },
-   "documented_fraction": 0.949,
+   "documented_fraction": 0.962,
    "excess_differing_minus_matched": null
   },
   {
@@ -158,22 +158,22 @@
    "pairs": 43,
    "counts": {
     "matched": 3,
-    "differing": 40,
+    "differing": 31,
     "unknown": 0,
-    "mismatch": 0
+    "mismatch": 9
    },
    "median_abs_dy": {
     "matched": 0.1347,
-    "differing": 0.2509,
+    "differing": 0.2234,
     "unknown": null,
-    "mismatch": null
+    "mismatch": 0.4411
    },
    "documented_fraction": 1.0,
-   "excess_differing_minus_matched": 0.1162,
-   "p_permutation": 0.099,
+   "excess_differing_minus_matched": 0.0887,
+   "p_permutation": 0.1799,
    "ci95_excess": [
-    0.0217,
-    0.4881
+    -0.0159,
+    0.2132
    ]
   },
   {
@@ -511,6 +511,7 @@
    "z": 0,
    "suites": [
     "COLIBRE",
+    "DARWIN",
     "EAGLE",
     "FIRE-2",
     "FLAMINGO",
@@ -519,32 +520,33 @@
     "Magneticum Pathfinder",
     "NIHAO zoom suite"
    ],
-   "records": 24,
-   "pairs": 234,
+   "records": 25,
+   "pairs": 257,
    "counts": {
     "matched": 8,
     "differing": 70,
     "unknown": 0,
-    "mismatch": 156
+    "mismatch": 179
    },
    "median_abs_dy": {
     "matched": 0.1721,
     "differing": 0.2031,
     "unknown": null,
-    "mismatch": 0.2103
+    "mismatch": 0.2032
    },
    "documented_fraction": 1.0,
    "excess_differing_minus_matched": 0.031,
-   "p_permutation": 0.2724,
+   "p_permutation": 0.2754,
    "ci95_excess": [
-    -0.204,
-    0.1385
+    -0.1832,
+    0.1403
    ]
   },
   {
    "relation": "shmr",
    "z": 1,
    "suites": [
+    "DARWIN",
     "EAGLE",
     "FIRE-2",
     "Illustris",
@@ -553,19 +555,19 @@
     "NIHAO zoom suite",
     "NewHorizon"
    ],
-   "records": 15,
-   "pairs": 87,
+   "records": 16,
+   "pairs": 101,
    "counts": {
     "matched": 2,
     "differing": 26,
     "unknown": 0,
-    "mismatch": 59
+    "mismatch": 73
    },
    "median_abs_dy": {
     "matched": 0.1171,
     "differing": 0.293,
     "unknown": null,
-    "mismatch": 0.2391
+    "mismatch": 0.2375
    },
    "documented_fraction": 1.0,
    "excess_differing_minus_matched": 0.1759
@@ -574,25 +576,26 @@
    "relation": "shmr",
    "z": 2,
    "suites": [
+    "DARWIN",
     "EAGLE",
     "Illustris",
     "Magneticum Pathfinder",
     "NIHAO zoom suite",
     "NewHorizon"
    ],
-   "records": 13,
-   "pairs": 60,
+   "records": 15,
+   "pairs": 84,
    "counts": {
     "matched": 0,
     "differing": 17,
     "unknown": 0,
-    "mismatch": 43
+    "mismatch": 67
    },
    "median_abs_dy": {
     "matched": null,
     "differing": 0.2769,
     "unknown": null,
-    "mismatch": 0.2795
+    "mismatch": 0.2987
    },
    "documented_fraction": 1.0,
    "excess_differing_minus_matched": null
@@ -602,27 +605,28 @@
    "z": 4,
    "suites": [
     "ASTRID",
+    "DARWIN",
     "EAGLE",
     "Illustris",
     "Magneticum Pathfinder",
     "NIHAO zoom suite",
     "NewHorizon"
    ],
-   "records": 13,
-   "pairs": 56,
+   "records": 14,
+   "pairs": 67,
    "counts": {
     "matched": 0,
     "differing": 16,
     "unknown": 0,
-    "mismatch": 40
+    "mismatch": 51
    },
    "median_abs_dy": {
     "matched": null,
     "differing": 0.3532,
     "unknown": null,
-    "mismatch": 0.2991
+    "mismatch": 0.3209
    },
-   "documented_fraction": 0.985,
+   "documented_fraction": 0.986,
    "excess_differing_minus_matched": null
   },
   {
@@ -818,7 +822,7 @@
    },
    "documented_fraction": 1.0,
    "excess_differing_minus_matched": -0.0591,
-   "p_permutation": 0.7991,
+   "p_permutation": 0.7961,
    "ci95_excess": [
     -0.0818,
     0.123
@@ -850,7 +854,7 @@
    },
    "documented_fraction": 1.0,
    "excess_differing_minus_matched": -0.0868,
-   "p_permutation": 0.946,
+   "p_permutation": 0.9445,
    "ci95_excess": [
     -0.1564,
     0.147
@@ -882,7 +886,7 @@
    },
    "documented_fraction": 1.0,
    "excess_differing_minus_matched": -0.0818,
-   "p_permutation": 0.9345,
+   "p_permutation": 0.938,
    "ci95_excess": [
     -0.1427,
     0.1496
@@ -915,10 +919,10 @@
    },
    "documented_fraction": 0.978,
    "excess_differing_minus_matched": -0.023,
-   "p_permutation": 0.4543,
+   "p_permutation": 0.4548,
    "ci95_excess": [
-    -0.124,
-    0.1075
+    -0.1526,
+    0.2085
    ]
   },
   {
@@ -947,7 +951,7 @@
    },
    "documented_fraction": 0.96,
    "excess_differing_minus_matched": 0.1839,
-   "p_permutation": 0.2424,
+   "p_permutation": 0.2524,
    "ci95_excess": [
     -0.1369,
     0.4113
@@ -957,6 +961,7 @@
    "relation": "bh",
    "z": 0,
    "suites": [
+    "DARWIN",
     "EAGLE",
     "FLAMINGO",
     "Horizon-AGN",
@@ -967,57 +972,28 @@
     "Romulus25",
     "SIMBA"
    ],
-   "records": 19,
-   "pairs": 136,
+   "records": 20,
+   "pairs": 154,
    "counts": {
     "matched": 0,
-    "differing": 53,
-    "unknown": 83,
+    "differing": 65,
+    "unknown": 89,
     "mismatch": 0
    },
    "median_abs_dy": {
     "matched": null,
-    "differing": 0.514,
-    "unknown": 0.5218,
+    "differing": 0.499,
+    "unknown": 0.5121,
     "mismatch": null
    },
-   "documented_fraction": 0.868,
+   "documented_fraction": 0.875,
    "excess_differing_minus_matched": null
   },
   {
    "relation": "bh",
    "z": 1,
    "suites": [
-    "EAGLE",
-    "Horizon-AGN",
-    "Illustris",
-    "IllustrisTNG",
-    "Magneticum Pathfinder",
-    "NIHAO zoom suite",
-    "NewHorizon",
-    "SIMBA"
-   ],
-   "records": 13,
-   "pairs": 59,
-   "counts": {
-    "matched": 0,
-    "differing": 6,
-    "unknown": 53,
-    "mismatch": 0
-   },
-   "median_abs_dy": {
-    "matched": null,
-    "differing": 0.1865,
-    "unknown": 0.3391,
-    "mismatch": null
-   },
-   "documented_fraction": 0.788,
-   "excess_differing_minus_matched": null
-  },
-  {
-   "relation": "bh",
-   "z": 2,
-   "suites": [
+    "DARWIN",
     "EAGLE",
     "Horizon-AGN",
     "Illustris",
@@ -1028,17 +1004,17 @@
     "SIMBA"
    ],
    "records": 14,
-   "pairs": 68,
+   "pairs": 71,
    "counts": {
     "matched": 0,
-    "differing": 8,
+    "differing": 11,
     "unknown": 60,
     "mismatch": 0
    },
    "median_abs_dy": {
     "matched": null,
-    "differing": 1.2523,
-    "unknown": 0.5506,
+    "differing": 0.2032,
+    "unknown": 0.3169,
     "mismatch": null
    },
    "documented_fraction": 0.804,
@@ -1046,8 +1022,9 @@
   },
   {
    "relation": "bh",
-   "z": 4,
+   "z": 2,
    "suites": [
+    "DARWIN",
     "EAGLE",
     "Horizon-AGN",
     "Illustris",
@@ -1057,21 +1034,52 @@
     "NewHorizon",
     "SIMBA"
    ],
-   "records": 13,
-   "pairs": 58,
+   "records": 16,
+   "pairs": 90,
    "counts": {
     "matched": 0,
-    "differing": 8,
-    "unknown": 50,
+    "differing": 16,
+    "unknown": 74,
     "mismatch": 0
    },
    "median_abs_dy": {
     "matched": null,
-    "differing": 1.1572,
-    "unknown": 1.206,
+    "differing": 1.2523,
+    "unknown": 0.6205,
     "mismatch": null
    },
-   "documented_fraction": 0.788,
+   "documented_fraction": 0.828,
+   "excess_differing_minus_matched": null
+  },
+  {
+   "relation": "bh",
+   "z": 4,
+   "suites": [
+    "DARWIN",
+    "EAGLE",
+    "Horizon-AGN",
+    "Illustris",
+    "IllustrisTNG",
+    "Magneticum Pathfinder",
+    "NIHAO zoom suite",
+    "NewHorizon",
+    "SIMBA"
+   ],
+   "records": 14,
+   "pairs": 67,
+   "counts": {
+    "matched": 0,
+    "differing": 10,
+    "unknown": 57,
+    "mismatch": 0
+   },
+   "median_abs_dy": {
+    "matched": null,
+    "differing": 1.3311,
+    "unknown": 1.3759,
+    "mismatch": null
+   },
+   "documented_fraction": 0.804,
    "excess_differing_minus_matched": null
   }
  ],
@@ -1418,6 +1426,31 @@
     0.0564,
     0.326
    ]
+  },
+  {
+   "relation": "shmr",
+   "z": 0,
+   "suites": [
+    "DARWIN",
+    "EAGLE",
+    "NIHAO zoom suite"
+   ],
+   "records": 6,
+   "pairs": 9,
+   "counts": {
+    "matched": 0,
+    "differing": 2,
+    "unknown": 0,
+    "mismatch": 7
+   },
+   "median_abs_dy": {
+    "matched": null,
+    "differing": 0.2503,
+    "unknown": null,
+    "mismatch": 0.263
+   },
+   "documented_fraction": 1.0,
+   "excess_differing_minus_matched": null
   },
   {
    "relation": "size",
@@ -3550,12 +3583,12 @@
   ]
  },
  "summary": {
-  "pairs": 2355,
+  "pairs": 2488,
   "byClass": {
    "matched": 90,
-   "differing": 581,
-   "unknown": 314,
-   "mismatch": 1370
+   "differing": 589,
+   "unknown": 339,
+   "mismatch": 1470
   },
   "testsRun": 18,
   "testsBelow0.05": 1,

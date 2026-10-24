@@ -14,7 +14,8 @@
  "rules": {
   "gsmf": {
    "hard": [
-    "densityFrame"
+    "densityFrame",
+    "population"
    ],
    "soft": [
     "imf",

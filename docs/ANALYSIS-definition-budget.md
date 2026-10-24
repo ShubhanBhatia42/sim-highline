@@ -8,7 +8,7 @@ How much of the disagreement between simulations at fixed stellar mass (or halo 
 
 ## What the data allow
 
-Of 2355 usable cross-suite record pairs (7 relations, 5 epochs), 4% have every documented key equal (matched), 25% differ in a documented soft key, 13% cannot be classified because a definition is undocumented in at least one record, and 58% differ in a hard key (for example different size definitions) and are not comparable at all.
+Of 2488 usable cross-suite record pairs (7 relations, 5 epochs), 4% have every documented key equal (matched), 24% differ in a documented soft key, 14% cannot be classified because a definition is undocumented in at least one record, and 59% differ in a hard key (for example different size definitions) and are not comparable at all.
 
 Of 18 epoch-by-relation permutation tests with enough matched and differing pairs, 1 have p < 0.05; 0.9 would be expected by chance alone. After Bonferroni correction 0 remain. The honest reading is that the present records neither show nor rule out a definitional contribution; the binding constraint is documentation, not physics.
 
@@ -17,10 +17,10 @@ Of 18 epoch-by-relation permutation tests with enough matched and differing pair
 | relation | z | suites | pairs (matched / differing / unknown / not comparable) | median abs dy: matched | differing | unknown | excess | p |
 |---|---|---|---|---|---|---|---|---|
 | gsmf | 0 | 3 | 135 (5 / 130 / 0 / 0) | 0.13 | 0.14 | - | 0.01 | 0.2799 |
-| gsmf | 1 | 4 | 32 (0 / 23 / 9 / 0) | - | 0.15 | 0.15 | - | - |
+| gsmf | 1 | 4 | 32 (0 / 23 / 0 / 9) | - | 0.15 | - | - | - |
 | gsmf | 2 | 4 | 23 (0 / 23 / 0 / 0) | - | 0.14 | - | - | - |
-| gsmf | 4 | 5 | 30 (0 / 30 / 0 / 0) | - | 0.22 | - | - | - |
-| gsmf | 6 | 6 | 43 (3 / 40 / 0 / 0) | 0.13 | 0.25 | - | 0.12 | 0.099 |
+| gsmf | 4 | 5 | 30 (0 / 20 / 0 / 10) | - | 0.20 | - | - | - |
+| gsmf | 6 | 6 | 43 (3 / 31 / 0 / 9) | 0.13 | 0.22 | - | 0.09 | 0.1799 |
 | mzr | 0 | 6 | 74 (9 / 18 / 15 / 32) | 0.33 | 0.21 | 0.32 | -0.11 | 0.5562 |
 | mzr | 1 | 6 | 76 (9 / 22 / 7 / 38) | 0.21 | 0.12 | 0.46 | -0.09 | 0.5072 |
 | mzr | 2 | 5 | 36 (3 / 11 / 3 / 19) | 0.14 | 0.15 | 0.47 | 0.01 | 0.4658 |
@@ -31,25 +31,25 @@ Of 18 epoch-by-relation permutation tests with enough matched and differing pair
 | sfms | 2 | 6 | 54 (3 / 3 / 8 / 40) | 0.06 | 0.19 | 0.28 | 0.13 | 0.1099 |
 | sfms | 4 | 6 | 42 (3 / 3 / 5 / 31) | 0.07 | 0.19 | 0.09 | 0.13 | 0.1504 |
 | sfms | 6 | 7 | 25 (3 / 5 / 0 / 17) | 0.08 | 0.30 | - | 0.21 | 0.017 |
-| shmr | 0 | 8 | 234 (8 / 70 / 0 / 156) | 0.17 | 0.20 | - | 0.03 | 0.2724 |
-| shmr | 1 | 7 | 87 (2 / 26 / 0 / 59) | 0.12 | 0.29 | - | 0.18 | - |
-| shmr | 2 | 5 | 60 (0 / 17 / 0 / 43) | - | 0.28 | - | - | - |
-| shmr | 4 | 6 | 56 (0 / 16 / 0 / 40) | - | 0.35 | - | - | - |
+| shmr | 0 | 9 | 257 (8 / 70 / 0 / 179) | 0.17 | 0.20 | - | 0.03 | 0.2754 |
+| shmr | 1 | 8 | 101 (2 / 26 / 0 / 73) | 0.12 | 0.29 | - | 0.18 | - |
+| shmr | 2 | 6 | 84 (0 / 17 / 0 / 67) | - | 0.28 | - | - | - |
+| shmr | 4 | 7 | 67 (0 / 16 / 0 / 51) | - | 0.35 | - | - | - |
 | shmr | 6 | 3 | 3 (0 / 0 / 2 / 1) | - | - | 0.74 | - | - |
 | size | 0 | 8 | 313 (3 / 0 / 0 / 310) | 0.29 | - | - | - | - |
 | size | 1 | 7 | 210 (3 / 0 / 0 / 207) | 0.30 | - | - | - | - |
 | size | 2 | 8 | 223 (3 / 0 / 0 / 220) | 0.24 | - | - | - | - |
 | size | 4 | 6 | 32 (3 / 0 / 0 / 29) | 0.14 | - | - | - | - |
 | size | 6 | 4 | 6 (3 / 0 / 0 / 3) | 0.11 | - | - | - | - |
-| zstar | 0 | 4 | 9 (3 / 6 / 0 / 0) | 0.23 | 0.17 | - | -0.06 | 0.7991 |
-| zstar | 1 | 5 | 17 (3 / 14 / 0 / 0) | 0.20 | 0.12 | - | -0.09 | 0.946 |
-| zstar | 2 | 5 | 21 (3 / 18 / 0 / 0) | 0.19 | 0.11 | - | -0.08 | 0.9345 |
-| zstar | 4 | 6 | 24 (3 / 13 / 0 / 8) | 0.19 | 0.16 | - | -0.02 | 0.4543 |
-| zstar | 6 | 5 | 10 (3 / 3 / 0 / 4) | 0.21 | 0.39 | - | 0.18 | 0.2424 |
-| bh | 0 | 9 | 136 (0 / 53 / 83 / 0) | - | 0.51 | 0.52 | - | - |
-| bh | 1 | 8 | 59 (0 / 6 / 53 / 0) | - | 0.19 | 0.34 | - | - |
-| bh | 2 | 8 | 68 (0 / 8 / 60 / 0) | - | 1.25 | 0.55 | - | - |
-| bh | 4 | 8 | 58 (0 / 8 / 50 / 0) | - | 1.16 | 1.21 | - | - |
+| zstar | 0 | 4 | 9 (3 / 6 / 0 / 0) | 0.23 | 0.17 | - | -0.06 | 0.7961 |
+| zstar | 1 | 5 | 17 (3 / 14 / 0 / 0) | 0.20 | 0.12 | - | -0.09 | 0.9445 |
+| zstar | 2 | 5 | 21 (3 / 18 / 0 / 0) | 0.19 | 0.11 | - | -0.08 | 0.938 |
+| zstar | 4 | 6 | 24 (3 / 13 / 0 / 8) | 0.19 | 0.16 | - | -0.02 | 0.4548 |
+| zstar | 6 | 5 | 10 (3 / 3 / 0 / 4) | 0.21 | 0.39 | - | 0.18 | 0.2524 |
+| bh | 0 | 10 | 154 (0 / 65 / 89 / 0) | - | 0.50 | 0.51 | - | - |
+| bh | 1 | 9 | 71 (0 / 11 / 60 / 0) | - | 0.20 | 0.32 | - | - |
+| bh | 2 | 9 | 90 (0 / 16 / 74 / 0) | - | 1.25 | 0.62 | - | - |
+| bh | 4 | 9 | 67 (0 / 10 / 57 / 0) | - | 1.33 | 1.38 | - | - |
 
 Units: dex in the relation's y axis (log10). excess = median(differing) - median(matched).
 

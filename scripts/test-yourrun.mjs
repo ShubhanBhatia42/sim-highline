@@ -130,6 +130,7 @@ await step("the whole flow works from the keyboard", async page => {
 
 await step("what would make more curves fair: the panel's claim is true when that answer is declared, and nothing is applied for the user", async page => {
   for (const [rel, key] of [["gsmf", "densityFrame"], ["sfms", "population"], ["mzr", "metallicityQuantity"]]) {
+    const ctx2 = await browser.newContext({ viewport: { width: 1280, height: 900 }, acceptDownloads: true }), page = await ctx2.newPage();  // a fresh browser context per relation: definitions declared for one must not carry over to the next
     await open(page, `r=${rel}&z=0.1&pn=mine`);
     await page.click("#uEx");
     if (rel === "gsmf") { await page.selectOption('select[data-def="population"]', "all"); await page.waitForTimeout(200); }  // a mass function needs its population declared as well; no single answer would make a curve fair while two hard keys are open
@@ -151,6 +152,7 @@ await step("what would make more curves fair: the panel's claim is true when tha
     await page.selectOption(`select[data-def="${key}"]`, opt);
     await page.waitForTimeout(200);
     { const after = await fairCount(); assert.equal(after - before, gain, `${rel}: declaring ${key} = ${opt} adds exactly the ${gain} curves the panel promised (panel: ${m[0]}; fair before ${before}, after ${after})`); }
+    await ctx2.close();
   }
 });
 
