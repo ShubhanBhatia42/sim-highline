@@ -14,7 +14,7 @@ const server = http.createServer(async (req, res) => {
 await new Promise(r => server.listen(0, "127.0.0.1", r));
 const BASE = `http://127.0.0.1:${server.address().port}`;
 const browser = await launchBrowser();
-const PAGES = ["highline.html#r=gsmf&z=0.1", "site/index.html", "site/retune.html", "site/studies.html", "site/study-joint.html", "site/data.html", "site/methods.html", "site/quality.html", "site/faq.html", "site/glossary.html", "404.html"];
+const PAGES = ["highline.html#r=gsmf&z=0.1", "site/index.html", "site/retune.html", "site/studies.html", "site/study-joint.html", "site/seeding.html", "site/data.html", "site/methods.html", "site/quality.html", "site/faq.html", "site/glossary.html", "404.html"];
 const problems = []; let stops = 0;
 const probe = () => {
   const e = document.activeElement; if (!e || e === document.body) return null;
