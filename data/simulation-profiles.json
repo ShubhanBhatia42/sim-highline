@@ -549,6 +549,27 @@
         }
       ],
       "publicData": "Galaxy catalogues at z = 6, 7, 8 and 10 on VizieR (VI/146)."
+    },
+    "The Three Hundred": {
+      "source": "The Three Hundred",
+      "short": "Three Hundred",
+      "code": "GADGET-X and GADGET-MUSIC (GADGET-3 based SPH)",
+      "codeRef": "Gadget",
+      "method": "SPH",
+      "methodDetail": "Two SPH codes on the GADGET-3 gravity solver: GADGET-X (SPH with thermal diffusion, time-dependent artificial viscosity and a Wendland C4 kernel, with AGN feedback) and GADGET-MUSIC (classic entropy-conserving SPH, no AGN)",
+      "setup": "324 spherical re-simulation regions of 15 h^-1 Mpc radius, each centred on one of the most massive clusters of the 1 h^-1 Gpc MultiDark MDPL2 box (M200 above 6.42e14 h^-1 Msun at z = 0), with dark matter and gas particles of 12.7e8 and 2.36e8 h^-1 Msun (1.5e9 h^-1 Msun combined) and a Plummer-equivalent softening of 6.5 h^-1 kpc; 128 snapshots from z = 17 to 0.",
+      "physics": "GADGET-X: metal-dependent cooling, Chabrier IMF, kinetic winds of 350 km/s, black hole seeding and AGN feedback. GADGET-MUSIC: metal-independent cooling, Salpeter IMF, winds of 400 km/s, a two-phase star formation model and no black holes.",
+      "introduced": 2018,
+      "introducedNote": "project paper (arXiv:1809.04622)",
+      "team": "The Three Hundred collaboration (the 2018 paper is led by Weiguang Cui and Alexander Knebe)",
+      "purpose": "A catalogue of full-physics re-simulations of 324 massive galaxy clusters and the many haloes around them, with matching semi-analytic galaxy models, for cosmological and astrophysical applications.",
+      "papers": [
+        {
+          "cite": "Cui et al. 2018, The Three Hundred project",
+          "arxiv": "1809.04622"
+        }
+      ],
+      "publicData": "Not public: the paper says access to the data (about 50 TB of simulation data and 4 TB of halo catalogues) is granted on request."
     }
   }
 }
