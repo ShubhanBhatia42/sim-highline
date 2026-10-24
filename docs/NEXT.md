@@ -36,9 +36,9 @@ Ask a CAMELS team member to read `docs/RESEARCH-NOTE.md` and `docs/ANALYSIS-quen
 
 ## 6. Smaller things
 
-- **The Explorer is at its size budget.** The page transfers 799 kB against a budget of 800 kB (`scripts/test-performance.mjs`), so the next batch of records fails the check. The embedded curve index is 693 kB compressed, of which the plotted points are 403 kB. Options: load the index per relation instead of all at once (the lasting fix, a few hours); round plotted values to 3 decimals (saves about 60 kB, but the Explorer would then differ from the downloads in the fourth decimal); or raise the budget (about half a second more on the throttled phone for each 100 kB). It is a choice about the promise made to phone users.
+- **Explorer size.** Fixed in this round: the curves load one relation at a time, a first visit transfers 225 kB against a 260 kB budget, and the view that reads every relation 770 kB against 880 kB (`docs/ARCHITECTURE.md`). The headroom is about 35 kB for a first visit; the thin index that every visit loads (45 kB) grows with each record, so the budget will need watching as the dataset grows.
 - A real figure-export of the dials page in the paper's style (the current PNG export is screenshot quality).
 - A page that explains the black hole seeding difference between the codes in plain words, since it carries the main result.
 - Reading the Explorer aloud with a screen reader; the automated accessibility checks pass but a human check has not been done.
 - Coverage of `compare.js` and `export-lib.js` (they are not instrumented).
-- Relations with no records yet: emission-line luminosity functions and UV slopes (planned, not started).
+- Relations only partly covered: emission-line luminosity functions have H-alpha only (17 records; [OIII] and [OII] are not done, and an IllustrisTNG H-alpha function, Hirschmann+23, is a vector figure not yet read); UV slopes have 37 records (FLARES' UV-slope figures and several observational compilations are not read). `docs/EXPANDING-COVERAGE.md` lists what was rejected and why.
