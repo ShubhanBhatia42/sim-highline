@@ -406,7 +406,7 @@ const REL={
   btfr:{t:"Baryonic Tully–Fisher",c:"BTFR",x:"log V [km s⁻¹]",y:"log M_bar [M☉]",anchor:"SPARC"},
   stfr:{t:"Stellar Tully–Fisher",c:"STFR",x:MASS,y:"log V [km s⁻¹]",anchor:"Reyes"},
   uvlf:{t:"UV luminosity function",c:"UVLF",x:"M_UV [AB mag]",y:"log Φ [cMpc⁻³ mag⁻¹]",xrev:1,xlin:1,anchor:"Bouwens et al. 2021$"},
-  elf:{t:"Emission-line luminosity function",c:"Line LF",x:"log L_line [erg s⁻¹]",y:"log Φ [cMpc⁻³ dex⁻¹]",anchor:"Sobral|Covelo-Paz"},
+  elf:{t:"Emission-line luminosity function",c:"Line LF",x:"log L_line [erg s⁻¹]",y:"log Φ [cMpc⁻³ dex⁻¹]",anchor:"Sobral|Covelo-Paz",obsz:1},
   sfrd:{t:"Cosmic SFR density",c:"SFRD",x:"redshift z",y:"log ρ_SFR [M☉ yr⁻¹ cMpc⁻³]",xz:1,xlin:1,anchor:"Madau"},
   smd:{t:"Cosmic stellar mass density",c:"SMD",x:"redshift z",y:"log ρ★ [M☉ cMpc⁻³]",xz:1,xlin:1,anchor:"Muzzin"},
   sfrf:{t:"SFR function",c:"SFRF",x:"log SFR [M☉ yr⁻¹]",y:"log Φ [cMpc⁻³ dex⁻¹]"},
@@ -473,9 +473,9 @@ function unitOn(u,rel=state.rel){return state.runPref.has(u)?state.runPref.get(u
 function stops(rel){
   if(REL[rel]?.xz)return [0];
   const s=[...new Set(sims.filter(r=>r.relation===rel&&(state.variants||isPrimary(unitOf(r),rel)||state.runPref.get(unitOf(r)))).map(r=>+r.epoch.zRepresentative.toFixed(2)))].sort((a,b)=>a-b);
-  if(s.length)return s;
-  /* a relation with observations only (no simulation yet) is stepped through the epochs of its observations; an analytic fit contributes whole redshifts inside its range */
-  const o=new Set();for(const r of obs)if(r.relation===rel){if(r.epoch.mode==="analytic-evolution"){for(let z=Math.ceil(r.epoch.zMin);z<=r.epoch.zMax;z++)o.add(z)}else o.add(+r.epoch.zRepresentative.toFixed(2))}
+  if(s.length&&!REL[rel]?.obsz)return s;
+  /* a relation with observations only (no simulation yet) is stepped through the epochs of its observations; an analytic fit contributes whole redshifts inside its range. obsz: the observations are stepped through as well as the simulations, for a relation whose observations sit at epochs where no simulation has published it */
+  const o=new Set(s);for(const r of obs)if(r.relation===rel){if(r.epoch.mode==="analytic-evolution"){for(let z=Math.ceil(r.epoch.zMin);z<=r.epoch.zMax;z++)o.add(z)}else o.add(+r.epoch.zRepresentative.toFixed(2))}
   return [...o].sort((a,b)=>a-b);
 }
 function nearestStop(rel,z){return nearest(stops(rel),z)}
