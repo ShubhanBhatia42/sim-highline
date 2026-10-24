@@ -24,7 +24,7 @@ x, y, e = sh.read_curve(ROOT / "tests" / "user-curves" / "2-semicolon-decimal-co
 assert abs(x[0] - 8.0) < 1e-9 and abs(y[0] + 0.67) < 1e-9 and abs(e[0] - 0.05) < 1e-9, "decimal commas"
 
 # the command line
-r = subprocess.run([sys.executable, str(ROOT / "sim_highline.py"), "compare", str(ROOT / "tests/user-curves/3-bom-crlf-header.csv"), "--relation", "gsmf", "--z", "0.1", "--define", "imf=chabrier03", "--define", "densityFrame=comoving", "--top", "3"], capture_output=True, text=True)
+r = subprocess.run([sys.executable, str(ROOT / "sim_highline.py"), "compare", str(ROOT / "tests/user-curves/3-bom-crlf-header.csv"), "--relation", "gsmf", "--z", "0.1", "--define", "imf=chabrier03", "--define", "densityFrame=comoving", "--define", "population=all", "--top", "3"], capture_output=True, text=True)
 assert r.returncode == 0, r.stderr[-300:]
 assert "7 points read" in r.stdout and "Your run is" in r.stdout, r.stdout[:300]
 r = subprocess.run([sys.executable, str(ROOT / "sim_highline.py"), "compare", str(ROOT / "tests/user-curves/3-bom-crlf-header.csv"), "--relation", "gsmf", "--z", "0.1"], capture_output=True, text=True)

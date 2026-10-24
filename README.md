@@ -9,7 +9,7 @@
 
 **A curated dataset of galaxy scaling relations from cosmological simulations, an instrument for retuning two feedback models against each other, and five pre-registered studies of how far simulated galaxy populations can and cannot be made to agree.**
 
-> **Beta, not reviewed by anyone outside the project.** More than half of the simulation curves (54 %) were read from published figures by script; every record carries its source, definitions and evidence tier, but **no record has been checked by an outside expert yet**. Where an author or collaboration publishes its own table, use that. Some records come from third-party releases with their own terms (`terms` column; `docs/SOURCE-TERMS.md`).
+> **Beta, not reviewed by anyone outside the project.** More than half of the simulation curves (53 %) were read from published figures by script; every record carries its source, definitions and evidence tier, but **no record has been checked by an outside expert yet**. Where an author or collaboration publishes its own table, use that. Some records come from third-party releases with their own terms (`terms` column; `docs/SOURCE-TERMS.md`).
 >
 > **Corrections and takedowns:** if you are an author or data owner and want a record corrected, attributed differently or removed, open an issue (the "Curve error" form) or use the contact in `CITATION.cff`. Requests are handled promptly and removal is not contested.
 
@@ -127,7 +127,7 @@ Units are log10, physical and h-free as published (no simulation curve is conver
 import sim_highline
 df = sim_highline.load()
 out = sim_highline.compare_run(x, y, "gsmf", z=0.1, sigma=err,
-        definitions={"imf": "chabrier03", "massDefinition": "aperture-50pkpc", "densityFrame": "comoving"}, df=df)
+        definitions={"imf": "chabrier03", "massDefinition": "aperture-50pkpc", "densityFrame": "comoving", "population": "all"}, df=df)
 ```
 
 One row per published curve at that epoch: definition verdict and reasons (the same rules as the website, exported in `sim-highline-rules.json` and checked against the JavaScript by a parity test), and the median, mean and rms offset of your curve in the relation's y units. Undeclared definitions can never be called comparable.

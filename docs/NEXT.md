@@ -25,14 +25,14 @@ Ask a CAMELS team member to read `docs/RESEARCH-NOTE.md` and `docs/ANALYSIS-quen
 
 ## 4. Science not done
 
-- **Resolution.** The largest open weakness of the joint-reachability result is the 25 Mpc/h box at 256^3. A set of runs of one model at a second resolution would turn the caveat into a measurement. The same holds for the shape study, whose lowest mass bins rest on few particles.
-- **More codes.** The measured conversions cover IllustrisTNG, SIMBA and Astrid. The public Swift-EAGLE runs have only particle snapshots, no catalogues, so they need a halo finder before an aperture can be measured. Magneticum and others are outside CAMELS.
-- **Survey selection effects.** Converting a catalogue stellar mass into what a survey would measure (SED fitting, fibre apertures, completeness) needs mock observations and was not attempted.
+- **Resolution.** `docs/ANALYSIS-resolution.md` measures how published curves of one model change between resolutions (28 of 30 same-box steps exceed the CAMELS noise at the registered, strict margin; at twice the margin 12 do not). It uses other papers' runs. What remains open is CAMELS itself: a box of the same model at a second resolution needs compute, and is the only way to measure the resolution of the model the studies use.
+- **More codes.** The measured conversions cover IllustrisTNG, SIMBA, Astrid and Swift-EAGLE (its catalogues are in the `FOF_Subfind` tree of the CAMELS server; an earlier note here that there were none was wrong). The other CAMELS suites are private (a form), EAGLE and Magneticum need an account, TNG and Illustris need a key; FLAMINGO SOAP access and the Horizon-AGN and SIMBA main-run sites could not be settled from here (`docs/EXPANDING-COVERAGE.md`).
+- **Survey selection effects.** A library for scatter in stellar mass, offsets, completeness and a detection floor exists (`docs/OBSERVER-LAYER.md`) with a measurement of how much of a simulation-observation offset a given scatter could absorb. It is not a model of any survey, it is not in the Explorer yet, and fibre apertures and SED-fitting systematics are not modelled.
 - **A third code on the dials page.** Astrid is ingested and analysed (exploratory); adding it needs the outputs all three codes have, so the page would lose coverage.
 
 ## 5. The digitized curves
 
-54 % of simulation curves are read from figures. Each table an author releases replaces a digitized curve and raises the share of the data that is solid; the data-quality page lists which curves with a matching table are replaced and which are not (for example the COLIBRE mass function in a 50 pkpc aperture). The bottleneck is asking. DARWIN is the example of the other route: its catalogues are public, and the mass function is counted from them (it reproduces the paper's figure); the same catalogues could give a black hole mass relation, but the central/satellite definition and the black hole particle sums would have to be checked first, and they hold no radii or metallicities.
+53 % of simulation curves are read from figures. Each table an author releases replaces a digitized curve and raises the share of the data that is solid; the data-quality page lists which curves with a matching table are replaced and which are not (for example the COLIBRE mass function in a 50 pkpc aperture). The bottleneck is asking. DARWIN is the example of the other route: its catalogues are public, and the mass function is counted from them (it reproduces the paper's figure); the same catalogues could give a black hole mass relation, but the central/satellite definition and the black hole particle sums would have to be checked first, and they hold no radii or metallicities.
 
 ## 6. Smaller things
 
