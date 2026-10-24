@@ -1,0 +1,1755 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "wu20.simba.uvbeta.z6.combined.nodust",
+      "source": "SIMBA",
+      "run": "SIMBA-25 and SIMBA-50 combined, no dust",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 6.0,
+        "zNominal": 6.0,
+        "zMin": 6.0,
+        "zMax": 6.0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, boxcar filter 400 A wide, dust attenuated with the law of the curve)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (power law through the rest-frame magnitudes at 1500, 2300 and 2800 A)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -22.75,
+        "xMax": -16.45
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.75,
+            "y": -2.346
+          },
+          {
+            "x": -21.85,
+            "y": -2.402
+          },
+          {
+            "x": -20.95,
+            "y": -2.325
+          },
+          {
+            "x": -20.05,
+            "y": -2.4
+          },
+          {
+            "x": -19.15,
+            "y": -2.376
+          },
+          {
+            "x": -18.25,
+            "y": -2.379
+          },
+          {
+            "x": -17.35,
+            "y": -2.3695
+          },
+          {
+            "x": -16.45,
+            "y": -2.354
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of SIMBA-25 and SIMBA-50 at z = 6",
+        "warning": "Combined SIMBA-25 and SIMBA-50 UV slope against M_1500 at z = 6, no dust; vertices of the plotted line at the bin centres, no error bars are drawn in this panel. The observations drawn in the panel are not extracted here (the Bouwens et al. 2014 table is in the dataset). For the dust laws other than Calzetti the paper does not restate which galaxies enter the relation."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the magnitudes at rest-frame 1500, 2300 and 2800 A",
+        "betaMethod": "power law through three synthetic rest-frame magnitudes (the paper: fitting the spectrum directly gives very similar results)",
+        "imf": "chabrier03",
+        "cosmology": "unspecified",
+        "aperture": "all star particles of the Caesar galaxy (a 6-D friends-of-friends group); no radius is stated",
+        "population": "galaxies with at least 32 star particles; for beta only M_UV <= -16 (SIMBA-25) and M_UV <= -18 (SIMBA-50) with the Calzetti law (the paper does not restate the cut for the other laws)",
+        "statistic": "unspecified (the paper says 'relations' and gives the 1 sigma spread; mean or median is not stated)",
+        "stellarPopulation": "FSPS with MIST isochrones and the MILES library, nebular emission from a Cloudy table",
+        "dustTreatment": "intrinsic",
+        "dustModel": "no dust: the extinction-free spectrum (stellar population plus nebular emission)",
+        "xVariable": "M_UV (M_1500)",
+        "uvBand": "rest-frame 1500 A, boxcar 400 A wide"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wu et al. 2020, MNRAS 494, 5636 (arXiv:1911.06330), Combined beta - M_1500 relations at z = 6 (beta-MUV_extinction.pdf)",
+        "doi": "10.1093/mnras/staa1044",
+        "url": "https://arxiv.org/abs/1911.06330",
+        "retrieved": "2026-10-23",
+        "figure": "Combined beta - M_1500 relations at z = 6",
+        "panel": "z = 6, no dust (combined)",
+        "checksumSha256": "8960e668eea316843c9897f133a08335e60de679ac5ee1c6242e5c0fb487c427",
+        "sourceMember": "figures/beta-MUV_extinction.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              74.88,
+              -23.0
+            ],
+            [
+              133.92,
+              -22.0
+            ],
+            [
+              192.96,
+              -21.0
+            ],
+            [
+              252.0,
+              -20.0
+            ],
+            [
+              311.04,
+              -19.0
+            ],
+            [
+              370.08,
+              -18.0
+            ],
+            [
+              429.12,
+              -17.0
+            ],
+            [
+              488.16,
+              -16.0
+            ],
+            [
+              547.2,
+              -15.0
+            ]
+          ],
+          "yTicks": [
+            [
+              9.72,
+              -0.8
+            ],
+            [
+              39.24,
+              -1.0
+            ],
+            [
+              68.76,
+              -1.2
+            ],
+            [
+              98.28,
+              -1.4
+            ],
+            [
+              127.8,
+              -1.6
+            ],
+            [
+              157.32,
+              -1.8
+            ],
+            [
+              186.84,
+              -2.0
+            ],
+            [
+              216.36,
+              -2.2
+            ],
+            [
+              245.88,
+              -2.4
+            ],
+            [
+              275.4,
+              -2.6
+            ]
+          ]
+        },
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "951c26052ed7af95d5e7b29f0b0f0faa3000014589a7e7380a2a98eae0ff766a"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "wu20.simba.uvbeta.z6.combined.calz00",
+      "source": "SIMBA",
+      "run": "SIMBA-25 and SIMBA-50 combined, Calzetti00",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 6.0,
+        "zNominal": 6.0,
+        "zMin": 6.0,
+        "zMax": 6.0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, boxcar filter 400 A wide, dust attenuated with the law of the curve)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (power law through the rest-frame magnitudes at 1500, 2300 and 2800 A)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.85,
+        "xMax": -16.45
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -21.85,
+            "y": -1.501
+          },
+          {
+            "x": -20.95,
+            "y": -1.8575
+          },
+          {
+            "x": -20.05,
+            "y": -1.973
+          },
+          {
+            "x": -19.15,
+            "y": -2.046
+          },
+          {
+            "x": -18.25,
+            "y": -2.086
+          },
+          {
+            "x": -17.35,
+            "y": -2.114
+          },
+          {
+            "x": -16.45,
+            "y": -2.194
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of SIMBA-25 and SIMBA-50 at z = 6",
+        "warning": "Combined SIMBA-25 and SIMBA-50 UV slope against M_1500 at z = 6, Calzetti00; vertices of the plotted line at the bin centres, no error bars are drawn in this panel. The observations drawn in the panel are not extracted here (the Bouwens et al. 2014 table is in the dataset). For the dust laws other than Calzetti the paper does not restate which galaxies enter the relation."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the magnitudes at rest-frame 1500, 2300 and 2800 A",
+        "betaMethod": "power law through three synthetic rest-frame magnitudes (the paper: fitting the spectrum directly gives very similar results)",
+        "imf": "chabrier03",
+        "cosmology": "unspecified",
+        "aperture": "all star particles of the Caesar galaxy (a 6-D friends-of-friends group); no radius is stated",
+        "population": "galaxies with at least 32 star particles; for beta only M_UV <= -16 (SIMBA-25) and M_UV <= -18 (SIMBA-50) with the Calzetti law (the paper does not restate the cut for the other laws)",
+        "statistic": "unspecified (the paper says 'relations' and gives the 1 sigma spread; mean or median is not stated)",
+        "stellarPopulation": "FSPS with MIST isochrones and the MILES library, nebular emission from a Cloudy table",
+        "dustTreatment": "attenuated",
+        "dustModel": "Calzetti et al. 2000 law; A_V of each star particle from the metal column density along its line of sight (Milky Way relation), scaled by the dust-to-metal ratio of the sight line",
+        "xVariable": "M_UV (M_1500)",
+        "uvBand": "rest-frame 1500 A, boxcar 400 A wide"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wu et al. 2020, MNRAS 494, 5636 (arXiv:1911.06330), Combined beta - M_1500 relations at z = 6 (beta-MUV_extinction.pdf)",
+        "doi": "10.1093/mnras/staa1044",
+        "url": "https://arxiv.org/abs/1911.06330",
+        "retrieved": "2026-10-23",
+        "figure": "Combined beta - M_1500 relations at z = 6",
+        "panel": "z = 6, Calzetti00 (combined)",
+        "checksumSha256": "8960e668eea316843c9897f133a08335e60de679ac5ee1c6242e5c0fb487c427",
+        "sourceMember": "figures/beta-MUV_extinction.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              74.88,
+              -23.0
+            ],
+            [
+              133.92,
+              -22.0
+            ],
+            [
+              192.96,
+              -21.0
+            ],
+            [
+              252.0,
+              -20.0
+            ],
+            [
+              311.04,
+              -19.0
+            ],
+            [
+              370.08,
+              -18.0
+            ],
+            [
+              429.12,
+              -17.0
+            ],
+            [
+              488.16,
+              -16.0
+            ],
+            [
+              547.2,
+              -15.0
+            ]
+          ],
+          "yTicks": [
+            [
+              9.72,
+              -0.8
+            ],
+            [
+              39.24,
+              -1.0
+            ],
+            [
+              68.76,
+              -1.2
+            ],
+            [
+              98.28,
+              -1.4
+            ],
+            [
+              127.8,
+              -1.6
+            ],
+            [
+              157.32,
+              -1.8
+            ],
+            [
+              186.84,
+              -2.0
+            ],
+            [
+              216.36,
+              -2.2
+            ],
+            [
+              245.88,
+              -2.4
+            ],
+            [
+              275.4,
+              -2.6
+            ]
+          ]
+        },
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "951c26052ed7af95d5e7b29f0b0f0faa3000014589a7e7380a2a98eae0ff766a"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "wu20.simba.uvbeta.z6.combined.salm16",
+      "source": "SIMBA",
+      "run": "SIMBA-25 and SIMBA-50 combined, Salmon16",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 6.0,
+        "zNominal": 6.0,
+        "zMin": 6.0,
+        "zMax": 6.0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, boxcar filter 400 A wide, dust attenuated with the law of the curve)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (power law through the rest-frame magnitudes at 1500, 2300 and 2800 A)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.85,
+        "xMax": -16.45
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -21.85,
+            "y": -1.8945
+          },
+          {
+            "x": -20.95,
+            "y": -2.0485
+          },
+          {
+            "x": -20.05,
+            "y": -2.146
+          },
+          {
+            "x": -19.15,
+            "y": -2.235
+          },
+          {
+            "x": -18.25,
+            "y": -2.2765
+          },
+          {
+            "x": -17.35,
+            "y": -2.29
+          },
+          {
+            "x": -16.45,
+            "y": -2.336
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of SIMBA-25 and SIMBA-50 at z = 6",
+        "warning": "Combined SIMBA-25 and SIMBA-50 UV slope against M_1500 at z = 6, Salmon16; vertices of the plotted line at the bin centres, no error bars are drawn in this panel. The observations drawn in the panel are not extracted here (the Bouwens et al. 2014 table is in the dataset). For the dust laws other than Calzetti the paper does not restate which galaxies enter the relation."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the magnitudes at rest-frame 1500, 2300 and 2800 A",
+        "betaMethod": "power law through three synthetic rest-frame magnitudes (the paper: fitting the spectrum directly gives very similar results)",
+        "imf": "chabrier03",
+        "cosmology": "unspecified",
+        "aperture": "all star particles of the Caesar galaxy (a 6-D friends-of-friends group); no radius is stated",
+        "population": "galaxies with at least 32 star particles; for beta only M_UV <= -16 (SIMBA-25) and M_UV <= -18 (SIMBA-50) with the Calzetti law (the paper does not restate the cut for the other laws)",
+        "statistic": "unspecified (the paper says 'relations' and gives the 1 sigma spread; mean or median is not stated)",
+        "stellarPopulation": "FSPS with MIST isochrones and the MILES library, nebular emission from a Cloudy table",
+        "dustTreatment": "attenuated",
+        "dustModel": "Salmon et al. 2016 law (the Calzetti law times (lambda / 5500 A)^delta, delta = 0.62 log E(B-V) + 0.26); A_V as for the Calzetti case",
+        "xVariable": "M_UV (M_1500)",
+        "uvBand": "rest-frame 1500 A, boxcar 400 A wide"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wu et al. 2020, MNRAS 494, 5636 (arXiv:1911.06330), Combined beta - M_1500 relations at z = 6 (beta-MUV_extinction.pdf)",
+        "doi": "10.1093/mnras/staa1044",
+        "url": "https://arxiv.org/abs/1911.06330",
+        "retrieved": "2026-10-23",
+        "figure": "Combined beta - M_1500 relations at z = 6",
+        "panel": "z = 6, Salmon16 (combined)",
+        "checksumSha256": "8960e668eea316843c9897f133a08335e60de679ac5ee1c6242e5c0fb487c427",
+        "sourceMember": "figures/beta-MUV_extinction.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              74.88,
+              -23.0
+            ],
+            [
+              133.92,
+              -22.0
+            ],
+            [
+              192.96,
+              -21.0
+            ],
+            [
+              252.0,
+              -20.0
+            ],
+            [
+              311.04,
+              -19.0
+            ],
+            [
+              370.08,
+              -18.0
+            ],
+            [
+              429.12,
+              -17.0
+            ],
+            [
+              488.16,
+              -16.0
+            ],
+            [
+              547.2,
+              -15.0
+            ]
+          ],
+          "yTicks": [
+            [
+              9.72,
+              -0.8
+            ],
+            [
+              39.24,
+              -1.0
+            ],
+            [
+              68.76,
+              -1.2
+            ],
+            [
+              98.28,
+              -1.4
+            ],
+            [
+              127.8,
+              -1.6
+            ],
+            [
+              157.32,
+              -1.8
+            ],
+            [
+              186.84,
+              -2.0
+            ],
+            [
+              216.36,
+              -2.2
+            ],
+            [
+              245.88,
+              -2.4
+            ],
+            [
+              275.4,
+              -2.6
+            ]
+          ]
+        },
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "951c26052ed7af95d5e7b29f0b0f0faa3000014589a7e7380a2a98eae0ff766a"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "wu20.simba.uvbeta.z6.combined.smc",
+      "source": "SIMBA",
+      "run": "SIMBA-25 and SIMBA-50 combined, SMC",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 6.0,
+        "zNominal": 6.0,
+        "zMin": 6.0,
+        "zMax": 6.0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, boxcar filter 400 A wide, dust attenuated with the law of the curve)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (power law through the rest-frame magnitudes at 1500, 2300 and 2800 A)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.85,
+        "xMax": -16.45
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -21.85,
+            "y": -1.036
+          },
+          {
+            "x": -20.95,
+            "y": -1.422
+          },
+          {
+            "x": -20.05,
+            "y": -1.471
+          },
+          {
+            "x": -19.15,
+            "y": -1.679
+          },
+          {
+            "x": -18.25,
+            "y": -1.7045
+          },
+          {
+            "x": -17.35,
+            "y": -1.76
+          },
+          {
+            "x": -16.45,
+            "y": -1.9125
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of SIMBA-25 and SIMBA-50 at z = 6",
+        "warning": "Combined SIMBA-25 and SIMBA-50 UV slope against M_1500 at z = 6, SMC; vertices of the plotted line at the bin centres, no error bars are drawn in this panel. The observations drawn in the panel are not extracted here (the Bouwens et al. 2014 table is in the dataset). For the dust laws other than Calzetti the paper does not restate which galaxies enter the relation."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the magnitudes at rest-frame 1500, 2300 and 2800 A",
+        "betaMethod": "power law through three synthetic rest-frame magnitudes (the paper: fitting the spectrum directly gives very similar results)",
+        "imf": "chabrier03",
+        "cosmology": "unspecified",
+        "aperture": "all star particles of the Caesar galaxy (a 6-D friends-of-friends group); no radius is stated",
+        "population": "galaxies with at least 32 star particles; for beta only M_UV <= -16 (SIMBA-25) and M_UV <= -18 (SIMBA-50) with the Calzetti law (the paper does not restate the cut for the other laws)",
+        "statistic": "unspecified (the paper says 'relations' and gives the 1 sigma spread; mean or median is not stated)",
+        "stellarPopulation": "FSPS with MIST isochrones and the MILES library, nebular emission from a Cloudy table",
+        "dustTreatment": "attenuated",
+        "dustModel": "SMC extinction law (Gordon et al. 2003); A_V as for the Calzetti case",
+        "xVariable": "M_UV (M_1500)",
+        "uvBand": "rest-frame 1500 A, boxcar 400 A wide"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wu et al. 2020, MNRAS 494, 5636 (arXiv:1911.06330), Combined beta - M_1500 relations at z = 6 (beta-MUV_extinction.pdf)",
+        "doi": "10.1093/mnras/staa1044",
+        "url": "https://arxiv.org/abs/1911.06330",
+        "retrieved": "2026-10-23",
+        "figure": "Combined beta - M_1500 relations at z = 6",
+        "panel": "z = 6, SMC (combined)",
+        "checksumSha256": "8960e668eea316843c9897f133a08335e60de679ac5ee1c6242e5c0fb487c427",
+        "sourceMember": "figures/beta-MUV_extinction.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              74.88,
+              -23.0
+            ],
+            [
+              133.92,
+              -22.0
+            ],
+            [
+              192.96,
+              -21.0
+            ],
+            [
+              252.0,
+              -20.0
+            ],
+            [
+              311.04,
+              -19.0
+            ],
+            [
+              370.08,
+              -18.0
+            ],
+            [
+              429.12,
+              -17.0
+            ],
+            [
+              488.16,
+              -16.0
+            ],
+            [
+              547.2,
+              -15.0
+            ]
+          ],
+          "yTicks": [
+            [
+              9.72,
+              -0.8
+            ],
+            [
+              39.24,
+              -1.0
+            ],
+            [
+              68.76,
+              -1.2
+            ],
+            [
+              98.28,
+              -1.4
+            ],
+            [
+              127.8,
+              -1.6
+            ],
+            [
+              157.32,
+              -1.8
+            ],
+            [
+              186.84,
+              -2.0
+            ],
+            [
+              216.36,
+              -2.2
+            ],
+            [
+              245.88,
+              -2.4
+            ],
+            [
+              275.4,
+              -2.6
+            ]
+          ]
+        },
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "951c26052ed7af95d5e7b29f0b0f0faa3000014589a7e7380a2a98eae0ff766a"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "wu20.simba.uvbeta.z6.m25.calz00",
+      "source": "SIMBA",
+      "run": "SIMBA-25 (25 Mpc/h box), Calzetti00",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 6.0,
+        "zNominal": 6.0,
+        "zMin": 6.0,
+        "zMax": 6.0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, boxcar filter 400 A wide, dust attenuated with the law of the curve)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (power law through the rest-frame magnitudes at 1500, 2300 and 2800 A)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -20.95,
+        "xMax": -16.45
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": -20.95,
+            "y": -1.8575,
+            "yLow": -2.0877,
+            "yHigh": -1.5649
+          },
+          {
+            "x": -20.05,
+            "y": -1.973,
+            "yLow": -2.0922,
+            "yHigh": -1.8089
+          },
+          {
+            "x": -19.15,
+            "y": -2.046,
+            "yLow": -2.1258,
+            "yHigh": -1.8714
+          },
+          {
+            "x": -18.25,
+            "y": -2.086,
+            "yLow": -2.2006,
+            "yHigh": -1.9552
+          },
+          {
+            "x": -17.35,
+            "y": -2.114,
+            "yLow": -2.2507,
+            "yHigh": -1.9803
+          },
+          {
+            "x": -16.45,
+            "y": -2.194,
+            "yLow": -2.3387,
+            "yHigh": -2.0196
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of SIMBA-25 and SIMBA-50 at z = 6",
+        "warning": "UV slope against M_1500 at z = 6 in SIMBA-25 (25 Mpc/h box) with the Calzetti law; the bars are the 1 sigma spread of beta within the galaxy sample (the paper's caption); only galaxies with M_UV <= -16 enter (the paper's cut for the Calzetti law)."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the magnitudes at rest-frame 1500, 2300 and 2800 A",
+        "betaMethod": "power law through three synthetic rest-frame magnitudes (the paper: fitting the spectrum directly gives very similar results)",
+        "imf": "chabrier03",
+        "cosmology": "unspecified",
+        "aperture": "all star particles of the Caesar galaxy (a 6-D friends-of-friends group); no radius is stated",
+        "population": "galaxies with at least 32 star particles; for beta only M_UV <= -16 (SIMBA-25) and M_UV <= -18 (SIMBA-50) with the Calzetti law (the paper does not restate the cut for the other laws)",
+        "statistic": "unspecified (the paper says 'relations' and gives the 1 sigma spread; mean or median is not stated)",
+        "stellarPopulation": "FSPS with MIST isochrones and the MILES library, nebular emission from a Cloudy table",
+        "dustTreatment": "attenuated",
+        "dustModel": "Calzetti et al. 2000 law; A_V of each star particle from the metal column density along its line of sight (Milky Way relation), scaled by the dust-to-metal ratio of the sight line",
+        "xVariable": "M_UV (M_1500)",
+        "uvBand": "rest-frame 1500 A, boxcar 400 A wide"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wu et al. 2020, MNRAS 494, 5636 (arXiv:1911.06330), Top panel: beta - M_1500 relations of SIMBA-25 and SIMBA-50 (beta-MUV.pdf)",
+        "doi": "10.1093/mnras/staa1044",
+        "url": "https://arxiv.org/abs/1911.06330",
+        "retrieved": "2026-10-23",
+        "figure": "Top panel: beta - M_1500 relations of SIMBA-25 and SIMBA-50",
+        "panel": "z = 6, SIMBA-25 (25 Mpc/h box), Calzetti00",
+        "checksumSha256": "8aca3cb749beaeac4fdbe58b1e9a2540a5b511ac14b2e922331146e2a83d989a",
+        "sourceMember": "figures/beta-MUV.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              74.88,
+              -23.0
+            ],
+            [
+              133.92,
+              -22.0
+            ],
+            [
+              192.96,
+              -21.0
+            ],
+            [
+              252.0,
+              -20.0
+            ],
+            [
+              311.04,
+              -19.0
+            ],
+            [
+              370.08,
+              -18.0
+            ],
+            [
+              429.12,
+              -17.0
+            ],
+            [
+              488.16,
+              -16.0
+            ],
+            [
+              547.2,
+              -15.0
+            ]
+          ],
+          "yTicks": [
+            [
+              9.72,
+              -0.8
+            ],
+            [
+              39.24,
+              -1.0
+            ],
+            [
+              68.76,
+              -1.2
+            ],
+            [
+              98.28,
+              -1.4
+            ],
+            [
+              127.8,
+              -1.6
+            ],
+            [
+              157.32,
+              -1.8
+            ],
+            [
+              186.84,
+              -2.0
+            ],
+            [
+              216.36,
+              -2.2
+            ],
+            [
+              245.88,
+              -2.4
+            ],
+            [
+              275.4,
+              -2.6
+            ]
+          ]
+        },
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "951c26052ed7af95d5e7b29f0b0f0faa3000014589a7e7380a2a98eae0ff766a"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "wu20.simba.uvbeta.z6.m50.calz00",
+      "source": "SIMBA",
+      "run": "SIMBA-50 (50 Mpc/h box), Calzetti00",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 6.0,
+        "zNominal": 6.0,
+        "zMin": 6.0,
+        "zMax": 6.0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (rest-frame 1500 A, boxcar filter 400 A wide, dust attenuated with the law of the curve)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (power law through the rest-frame magnitudes at 1500, 2300 and 2800 A)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.937,
+        "xMax": -18.438
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": -21.937,
+            "y": -1.501,
+            "yLow": -1.7846,
+            "yHigh": -1.3235
+          },
+          {
+            "x": -21.062,
+            "y": -1.9005,
+            "yLow": -1.9453,
+            "yHigh": -1.8042
+          },
+          {
+            "x": -20.188,
+            "y": -1.905,
+            "yLow": -2.1006,
+            "yHigh": -1.5789
+          },
+          {
+            "x": -19.313,
+            "y": -2.036,
+            "yLow": -2.2523,
+            "yHigh": -1.8487
+          },
+          {
+            "x": -18.438,
+            "y": -2.1545,
+            "yLow": -2.301,
+            "yHigh": -1.966
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of SIMBA-25 and SIMBA-50 at z = 6",
+        "warning": "UV slope against M_1500 at z = 6 in SIMBA-50 (50 Mpc/h box) with the Calzetti law; the bars are the 1 sigma spread of beta within the galaxy sample (the paper's caption); only galaxies with M_UV <= -18 enter (the paper's cut for the Calzetti law)."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the magnitudes at rest-frame 1500, 2300 and 2800 A",
+        "betaMethod": "power law through three synthetic rest-frame magnitudes (the paper: fitting the spectrum directly gives very similar results)",
+        "imf": "chabrier03",
+        "cosmology": "unspecified",
+        "aperture": "all star particles of the Caesar galaxy (a 6-D friends-of-friends group); no radius is stated",
+        "population": "galaxies with at least 32 star particles; for beta only M_UV <= -16 (SIMBA-25) and M_UV <= -18 (SIMBA-50) with the Calzetti law (the paper does not restate the cut for the other laws)",
+        "statistic": "unspecified (the paper says 'relations' and gives the 1 sigma spread; mean or median is not stated)",
+        "stellarPopulation": "FSPS with MIST isochrones and the MILES library, nebular emission from a Cloudy table",
+        "dustTreatment": "attenuated",
+        "dustModel": "Calzetti et al. 2000 law; A_V of each star particle from the metal column density along its line of sight (Milky Way relation), scaled by the dust-to-metal ratio of the sight line",
+        "xVariable": "M_UV (M_1500)",
+        "uvBand": "rest-frame 1500 A, boxcar 400 A wide"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wu et al. 2020, MNRAS 494, 5636 (arXiv:1911.06330), Top panel: beta - M_1500 relations of SIMBA-25 and SIMBA-50 (beta-MUV.pdf)",
+        "doi": "10.1093/mnras/staa1044",
+        "url": "https://arxiv.org/abs/1911.06330",
+        "retrieved": "2026-10-23",
+        "figure": "Top panel: beta - M_1500 relations of SIMBA-25 and SIMBA-50",
+        "panel": "z = 6, SIMBA-50 (50 Mpc/h box), Calzetti00",
+        "checksumSha256": "8aca3cb749beaeac4fdbe58b1e9a2540a5b511ac14b2e922331146e2a83d989a",
+        "sourceMember": "figures/beta-MUV.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              74.88,
+              -23.0
+            ],
+            [
+              133.92,
+              -22.0
+            ],
+            [
+              192.96,
+              -21.0
+            ],
+            [
+              252.0,
+              -20.0
+            ],
+            [
+              311.04,
+              -19.0
+            ],
+            [
+              370.08,
+              -18.0
+            ],
+            [
+              429.12,
+              -17.0
+            ],
+            [
+              488.16,
+              -16.0
+            ],
+            [
+              547.2,
+              -15.0
+            ]
+          ],
+          "yTicks": [
+            [
+              9.72,
+              -0.8
+            ],
+            [
+              39.24,
+              -1.0
+            ],
+            [
+              68.76,
+              -1.2
+            ],
+            [
+              98.28,
+              -1.4
+            ],
+            [
+              127.8,
+              -1.6
+            ],
+            [
+              157.32,
+              -1.8
+            ],
+            [
+              186.84,
+              -2.0
+            ],
+            [
+              216.36,
+              -2.2
+            ],
+            [
+              245.88,
+              -2.4
+            ],
+            [
+              275.4,
+              -2.6
+            ]
+          ]
+        },
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "951c26052ed7af95d5e7b29f0b0f0faa3000014589a7e7380a2a98eae0ff766a"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "wu20.simba.uvbetam.z6.combined.nodust",
+      "source": "SIMBA",
+      "run": "SIMBA-25 and SIMBA-50 combined, no dust",
+      "kind": "simulation",
+      "relation": "uvbetam",
+      "epoch": {
+        "zRepresentative": 6.0,
+        "zNominal": 6.0,
+        "zMin": 6.0,
+        "zMax": 6.0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass of the galaxy (the paper does not state the aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (power law through the rest-frame magnitudes at 1500, 2300 and 2800 A)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": 7.2,
+        "xMax": 10.8
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.2,
+            "y": -2.435
+          },
+          {
+            "x": 7.6,
+            "y": -2.348
+          },
+          {
+            "x": 8.0,
+            "y": -2.284
+          },
+          {
+            "x": 8.4,
+            "y": -2.318
+          },
+          {
+            "x": 8.8,
+            "y": -2.3355
+          },
+          {
+            "x": 9.2,
+            "y": -2.304
+          },
+          {
+            "x": 9.6,
+            "y": -2.3035
+          },
+          {
+            "x": 10.0,
+            "y": -2.19
+          },
+          {
+            "x": 10.4,
+            "y": -2.2075
+          },
+          {
+            "x": 10.8,
+            "y": -1.9935
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of SIMBA-25 and SIMBA-50 at z = 6",
+        "warning": "Combined SIMBA-25 and SIMBA-50 UV slope against stellar mass at z = 6, no dust; vertices of the plotted line, no error bars. The paper does not restate the M_UV cut for this figure, and its caption says the observations 'indicate much steeper changes of beta with stellar mass'. The Finkelstein et al. 2012 points drawn in the panel are not extracted here (the table is in the dataset)."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the magnitudes at rest-frame 1500, 2300 and 2800 A",
+        "betaMethod": "power law through three synthetic rest-frame magnitudes (the paper: fitting the spectrum directly gives very similar results)",
+        "imf": "chabrier03",
+        "cosmology": "unspecified",
+        "aperture": "all star particles of the Caesar galaxy (a 6-D friends-of-friends group); no radius is stated",
+        "population": "galaxies with at least 32 star particles; for beta only M_UV <= -16 (SIMBA-25) and M_UV <= -18 (SIMBA-50) with the Calzetti law (the paper does not restate the cut for the other laws)",
+        "statistic": "unspecified (the paper says 'relations' and gives the 1 sigma spread; mean or median is not stated)",
+        "stellarPopulation": "FSPS with MIST isochrones and the MILES library, nebular emission from a Cloudy table",
+        "dustTreatment": "intrinsic",
+        "dustModel": "no dust: the extinction-free spectrum (stellar population plus nebular emission)",
+        "xVariable": "stellar mass",
+        "massDefinition": "unspecified (galaxies from the Caesar 6-D friends-of-friends finder; the mass aperture is not stated)",
+        "uvBand": "rest-frame 1500 A, boxcar 400 A wide"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wu et al. 2020, MNRAS 494, 5636 (arXiv:1911.06330), Combined beta - stellar mass relations at z = 6 (beta-Mstar_extinction.pdf)",
+        "doi": "10.1093/mnras/staa1044",
+        "url": "https://arxiv.org/abs/1911.06330",
+        "retrieved": "2026-10-23",
+        "figure": "Combined beta - stellar mass relations at z = 6",
+        "panel": "z = 6, no dust (combined)",
+        "checksumSha256": "0fbbead121f5bd42195fa6d27818d53cf477118c2f33b834d5df09e2f36e7957",
+        "sourceMember": "figures/beta-Mstar_extinction.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              74.88,
+              7.0
+            ],
+            [
+              133.92,
+              7.5
+            ],
+            [
+              192.96,
+              8.0
+            ],
+            [
+              252.0,
+              8.5
+            ],
+            [
+              311.04,
+              9.0
+            ],
+            [
+              370.08,
+              9.5
+            ],
+            [
+              429.12,
+              10.0
+            ],
+            [
+              488.16,
+              10.5
+            ],
+            [
+              547.2,
+              11.0
+            ]
+          ],
+          "yTicks": [
+            [
+              58.03,
+              -1.0
+            ],
+            [
+              118.41,
+              -1.5
+            ],
+            [
+              178.79,
+              -2.0
+            ],
+            [
+              239.17,
+              -2.5
+            ]
+          ]
+        },
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "951c26052ed7af95d5e7b29f0b0f0faa3000014589a7e7380a2a98eae0ff766a"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "wu20.simba.uvbetam.z6.combined.calz00",
+      "source": "SIMBA",
+      "run": "SIMBA-25 and SIMBA-50 combined, Calzetti00",
+      "kind": "simulation",
+      "relation": "uvbetam",
+      "epoch": {
+        "zRepresentative": 6.0,
+        "zNominal": 6.0,
+        "zMin": 6.0,
+        "zMax": 6.0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass of the galaxy (the paper does not state the aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (power law through the rest-frame magnitudes at 1500, 2300 and 2800 A)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": 7.2,
+        "xMax": 10.8
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.2,
+            "y": -2.294
+          },
+          {
+            "x": 7.6,
+            "y": -2.149
+          },
+          {
+            "x": 8.0,
+            "y": -2.042
+          },
+          {
+            "x": 8.4,
+            "y": -2.043
+          },
+          {
+            "x": 8.8,
+            "y": -2.0145
+          },
+          {
+            "x": 9.2,
+            "y": -1.916
+          },
+          {
+            "x": 9.6,
+            "y": -1.837
+          },
+          {
+            "x": 10.0,
+            "y": -1.788
+          },
+          {
+            "x": 10.4,
+            "y": -1.3305
+          },
+          {
+            "x": 10.8,
+            "y": -1.3705
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of SIMBA-25 and SIMBA-50 at z = 6",
+        "warning": "Combined SIMBA-25 and SIMBA-50 UV slope against stellar mass at z = 6, Calzetti00; vertices of the plotted line, no error bars. The paper does not restate the M_UV cut for this figure, and its caption says the observations 'indicate much steeper changes of beta with stellar mass'. The Finkelstein et al. 2012 points drawn in the panel are not extracted here (the table is in the dataset)."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the magnitudes at rest-frame 1500, 2300 and 2800 A",
+        "betaMethod": "power law through three synthetic rest-frame magnitudes (the paper: fitting the spectrum directly gives very similar results)",
+        "imf": "chabrier03",
+        "cosmology": "unspecified",
+        "aperture": "all star particles of the Caesar galaxy (a 6-D friends-of-friends group); no radius is stated",
+        "population": "galaxies with at least 32 star particles; for beta only M_UV <= -16 (SIMBA-25) and M_UV <= -18 (SIMBA-50) with the Calzetti law (the paper does not restate the cut for the other laws)",
+        "statistic": "unspecified (the paper says 'relations' and gives the 1 sigma spread; mean or median is not stated)",
+        "stellarPopulation": "FSPS with MIST isochrones and the MILES library, nebular emission from a Cloudy table",
+        "dustTreatment": "attenuated",
+        "dustModel": "Calzetti et al. 2000 law; A_V of each star particle from the metal column density along its line of sight (Milky Way relation), scaled by the dust-to-metal ratio of the sight line",
+        "xVariable": "stellar mass",
+        "massDefinition": "unspecified (galaxies from the Caesar 6-D friends-of-friends finder; the mass aperture is not stated)",
+        "uvBand": "rest-frame 1500 A, boxcar 400 A wide"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wu et al. 2020, MNRAS 494, 5636 (arXiv:1911.06330), Combined beta - stellar mass relations at z = 6 (beta-Mstar_extinction.pdf)",
+        "doi": "10.1093/mnras/staa1044",
+        "url": "https://arxiv.org/abs/1911.06330",
+        "retrieved": "2026-10-23",
+        "figure": "Combined beta - stellar mass relations at z = 6",
+        "panel": "z = 6, Calzetti00 (combined)",
+        "checksumSha256": "0fbbead121f5bd42195fa6d27818d53cf477118c2f33b834d5df09e2f36e7957",
+        "sourceMember": "figures/beta-Mstar_extinction.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              74.88,
+              7.0
+            ],
+            [
+              133.92,
+              7.5
+            ],
+            [
+              192.96,
+              8.0
+            ],
+            [
+              252.0,
+              8.5
+            ],
+            [
+              311.04,
+              9.0
+            ],
+            [
+              370.08,
+              9.5
+            ],
+            [
+              429.12,
+              10.0
+            ],
+            [
+              488.16,
+              10.5
+            ],
+            [
+              547.2,
+              11.0
+            ]
+          ],
+          "yTicks": [
+            [
+              58.03,
+              -1.0
+            ],
+            [
+              118.41,
+              -1.5
+            ],
+            [
+              178.79,
+              -2.0
+            ],
+            [
+              239.17,
+              -2.5
+            ]
+          ]
+        },
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "951c26052ed7af95d5e7b29f0b0f0faa3000014589a7e7380a2a98eae0ff766a"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "wu20.simba.uvbetam.z6.combined.salm16",
+      "source": "SIMBA",
+      "run": "SIMBA-25 and SIMBA-50 combined, Salmon16",
+      "kind": "simulation",
+      "relation": "uvbetam",
+      "epoch": {
+        "zRepresentative": 6.0,
+        "zNominal": 6.0,
+        "zMin": 6.0,
+        "zMax": 6.0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass of the galaxy (the paper does not state the aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (power law through the rest-frame magnitudes at 1500, 2300 and 2800 A)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": 7.2,
+        "xMax": 10.8
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.2,
+            "y": -2.422
+          },
+          {
+            "x": 7.6,
+            "y": -2.296
+          },
+          {
+            "x": 8.0,
+            "y": -2.192
+          },
+          {
+            "x": 8.4,
+            "y": -2.202
+          },
+          {
+            "x": 8.8,
+            "y": -2.1815
+          },
+          {
+            "x": 9.2,
+            "y": -2.106
+          },
+          {
+            "x": 9.6,
+            "y": -2.0305
+          },
+          {
+            "x": 10.0,
+            "y": -1.976
+          },
+          {
+            "x": 10.4,
+            "y": -1.5925
+          },
+          {
+            "x": 10.8,
+            "y": -1.576
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of SIMBA-25 and SIMBA-50 at z = 6",
+        "warning": "Combined SIMBA-25 and SIMBA-50 UV slope against stellar mass at z = 6, Salmon16; vertices of the plotted line, no error bars. The paper does not restate the M_UV cut for this figure, and its caption says the observations 'indicate much steeper changes of beta with stellar mass'. The Finkelstein et al. 2012 points drawn in the panel are not extracted here (the table is in the dataset)."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the magnitudes at rest-frame 1500, 2300 and 2800 A",
+        "betaMethod": "power law through three synthetic rest-frame magnitudes (the paper: fitting the spectrum directly gives very similar results)",
+        "imf": "chabrier03",
+        "cosmology": "unspecified",
+        "aperture": "all star particles of the Caesar galaxy (a 6-D friends-of-friends group); no radius is stated",
+        "population": "galaxies with at least 32 star particles; for beta only M_UV <= -16 (SIMBA-25) and M_UV <= -18 (SIMBA-50) with the Calzetti law (the paper does not restate the cut for the other laws)",
+        "statistic": "unspecified (the paper says 'relations' and gives the 1 sigma spread; mean or median is not stated)",
+        "stellarPopulation": "FSPS with MIST isochrones and the MILES library, nebular emission from a Cloudy table",
+        "dustTreatment": "attenuated",
+        "dustModel": "Salmon et al. 2016 law (the Calzetti law times (lambda / 5500 A)^delta, delta = 0.62 log E(B-V) + 0.26); A_V as for the Calzetti case",
+        "xVariable": "stellar mass",
+        "massDefinition": "unspecified (galaxies from the Caesar 6-D friends-of-friends finder; the mass aperture is not stated)",
+        "uvBand": "rest-frame 1500 A, boxcar 400 A wide"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wu et al. 2020, MNRAS 494, 5636 (arXiv:1911.06330), Combined beta - stellar mass relations at z = 6 (beta-Mstar_extinction.pdf)",
+        "doi": "10.1093/mnras/staa1044",
+        "url": "https://arxiv.org/abs/1911.06330",
+        "retrieved": "2026-10-23",
+        "figure": "Combined beta - stellar mass relations at z = 6",
+        "panel": "z = 6, Salmon16 (combined)",
+        "checksumSha256": "0fbbead121f5bd42195fa6d27818d53cf477118c2f33b834d5df09e2f36e7957",
+        "sourceMember": "figures/beta-Mstar_extinction.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              74.88,
+              7.0
+            ],
+            [
+              133.92,
+              7.5
+            ],
+            [
+              192.96,
+              8.0
+            ],
+            [
+              252.0,
+              8.5
+            ],
+            [
+              311.04,
+              9.0
+            ],
+            [
+              370.08,
+              9.5
+            ],
+            [
+              429.12,
+              10.0
+            ],
+            [
+              488.16,
+              10.5
+            ],
+            [
+              547.2,
+              11.0
+            ]
+          ],
+          "yTicks": [
+            [
+              58.03,
+              -1.0
+            ],
+            [
+              118.41,
+              -1.5
+            ],
+            [
+              178.79,
+              -2.0
+            ],
+            [
+              239.17,
+              -2.5
+            ]
+          ]
+        },
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "951c26052ed7af95d5e7b29f0b0f0faa3000014589a7e7380a2a98eae0ff766a"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "wu20.simba.uvbetam.z6.combined.smc",
+      "source": "SIMBA",
+      "run": "SIMBA-25 and SIMBA-50 combined, SMC",
+      "kind": "simulation",
+      "relation": "uvbetam",
+      "epoch": {
+        "zRepresentative": 6.0,
+        "zNominal": 6.0,
+        "zMin": 6.0,
+        "zMax": 6.0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass of the galaxy (the paper does not state the aperture)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (power law through the rest-frame magnitudes at 1500, 2300 and 2800 A)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": 7.2,
+        "xMax": 10.8
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 7.2,
+            "y": -2.0385
+          },
+          {
+            "x": 7.6,
+            "y": -1.834
+          },
+          {
+            "x": 8.0,
+            "y": -1.719
+          },
+          {
+            "x": 8.4,
+            "y": -1.669
+          },
+          {
+            "x": 8.8,
+            "y": -1.6035
+          },
+          {
+            "x": 9.2,
+            "y": -1.497
+          },
+          {
+            "x": 9.6,
+            "y": -1.451
+          },
+          {
+            "x": 10.0,
+            "y": -1.347
+          },
+          {
+            "x": 10.4,
+            "y": -0.5895
+          },
+          {
+            "x": 10.8,
+            "y": -0.8655
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of SIMBA-25 and SIMBA-50 at z = 6",
+        "warning": "Combined SIMBA-25 and SIMBA-50 UV slope against stellar mass at z = 6, SMC; vertices of the plotted line, no error bars. The paper does not restate the M_UV cut for this figure, and its caption says the observations 'indicate much steeper changes of beta with stellar mass'. The Finkelstein et al. 2012 points drawn in the panel are not extracted here (the table is in the dataset)."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the magnitudes at rest-frame 1500, 2300 and 2800 A",
+        "betaMethod": "power law through three synthetic rest-frame magnitudes (the paper: fitting the spectrum directly gives very similar results)",
+        "imf": "chabrier03",
+        "cosmology": "unspecified",
+        "aperture": "all star particles of the Caesar galaxy (a 6-D friends-of-friends group); no radius is stated",
+        "population": "galaxies with at least 32 star particles; for beta only M_UV <= -16 (SIMBA-25) and M_UV <= -18 (SIMBA-50) with the Calzetti law (the paper does not restate the cut for the other laws)",
+        "statistic": "unspecified (the paper says 'relations' and gives the 1 sigma spread; mean or median is not stated)",
+        "stellarPopulation": "FSPS with MIST isochrones and the MILES library, nebular emission from a Cloudy table",
+        "dustTreatment": "attenuated",
+        "dustModel": "SMC extinction law (Gordon et al. 2003); A_V as for the Calzetti case",
+        "xVariable": "stellar mass",
+        "massDefinition": "unspecified (galaxies from the Caesar 6-D friends-of-friends finder; the mass aperture is not stated)",
+        "uvBand": "rest-frame 1500 A, boxcar 400 A wide"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wu et al. 2020, MNRAS 494, 5636 (arXiv:1911.06330), Combined beta - stellar mass relations at z = 6 (beta-Mstar_extinction.pdf)",
+        "doi": "10.1093/mnras/staa1044",
+        "url": "https://arxiv.org/abs/1911.06330",
+        "retrieved": "2026-10-23",
+        "figure": "Combined beta - stellar mass relations at z = 6",
+        "panel": "z = 6, SMC (combined)",
+        "checksumSha256": "0fbbead121f5bd42195fa6d27818d53cf477118c2f33b834d5df09e2f36e7957",
+        "sourceMember": "figures/beta-Mstar_extinction.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              74.88,
+              7.0
+            ],
+            [
+              133.92,
+              7.5
+            ],
+            [
+              192.96,
+              8.0
+            ],
+            [
+              252.0,
+              8.5
+            ],
+            [
+              311.04,
+              9.0
+            ],
+            [
+              370.08,
+              9.5
+            ],
+            [
+              429.12,
+              10.0
+            ],
+            [
+              488.16,
+              10.5
+            ],
+            [
+              547.2,
+              11.0
+            ]
+          ],
+          "yTicks": [
+            [
+              58.03,
+              -1.0
+            ],
+            [
+              118.41,
+              -1.5
+            ],
+            [
+              178.79,
+              -2.0
+            ],
+            [
+              239.17,
+              -2.5
+            ]
+          ]
+        },
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "951c26052ed7af95d5e7b29f0b0f0faa3000014589a7e7380a2a98eae0ff766a"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

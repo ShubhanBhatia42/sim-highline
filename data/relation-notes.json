@@ -846,6 +846,88 @@
         }
       ]
     },
+    "uvbeta": {
+      "title": "UV continuum slope against UV magnitude",
+      "paragraph": "The UV continuum slope beta is the power-law index of a galaxy's rest-frame ultraviolet light, f_lambda proportional to lambda^beta, plotted here against absolute UV magnitude. In local starbursts it tracks the dust attenuation (Meurer et al. 1999), which is why the review of Madau & Dickinson (2014) uses it to correct UV luminosity densities for dust. At redshifts 4 to 8 brighter galaxies are redder: Bouwens et al. (2014) find d beta / d M_UV of about -0.1 to -0.2 per magnitude from HST broad-band fluxes, and Topping et al. (2024) find slopes of -0.06 to -0.12 with JWST at median redshifts 5.9 to 9.4. Simulations with dust give a similar trend whose size depends on the dust law: Shen et al. (2020) find IllustrisTNG flatter than observed, too blue at the bright end, and Wu et al. (2020) find that SIMBA with a Calzetti law agrees with the observations at z = 6 while an SMC law is about 0.4 too red. With no dust the simulated slope is flat, near -2.1 to -2.4, so most of the trend in these models is dust. A comparison is fair only when the dust treatment (attenuated or intrinsic), the way beta is measured (a power law through chosen filters or through a wavelength window) and the magnitude and galaxies used all match; each record states these as its paper does, and a value the paper does not give stays unspecified and is not counted as a match.",
+      "refs": [
+        {
+          "arxiv": "astro-ph/9903054",
+          "doi": "10.1086/307523",
+          "role": "past: observation",
+          "cite": "Meurer et al. 1999, ApJ 521, 64",
+          "key": "meurer99"
+        },
+        {
+          "arxiv": "1403.0007",
+          "doi": "10.1146/annurev-astro-081811-125615",
+          "role": "review",
+          "cite": "Madau & Dickinson 2014, ARA&A 52, 415",
+          "key": "madau14"
+        },
+        {
+          "arxiv": "1306.2950",
+          "doi": "10.1088/0004-637X/793/2/115",
+          "role": "present: observation",
+          "cite": "Bouwens et al. 2014, ApJ 793, 115",
+          "key": "bouwens14"
+        },
+        {
+          "arxiv": "2307.08835",
+          "doi": "10.1093/mnras/stae800",
+          "role": "present: observation",
+          "cite": "Topping et al. 2024, MNRAS 529, 4087",
+          "key": "topping24"
+        },
+        {
+          "arxiv": "2002.10474",
+          "doi": "10.1093/mnras/staa1423",
+          "role": "simulation vs data",
+          "cite": "Shen et al. 2020, MNRAS 495, 4747",
+          "key": "shen20"
+        },
+        {
+          "arxiv": "1911.06330",
+          "doi": "10.1093/mnras/staa1044",
+          "role": "simulation vs data",
+          "cite": "Wu et al. 2020, MNRAS 494, 5636",
+          "key": "wu20"
+        }
+      ]
+    },
+    "uvbetam": {
+      "title": "UV continuum slope against stellar mass",
+      "paragraph": "The same slope beta, the index of f_lambda proportional to lambda^beta in the rest-frame ultraviolet, can be plotted against stellar mass instead of UV magnitude. Because beta follows the dust attenuation in starbursts (Meurer et al. 1999) and the mass-metallicity relation links mass to dust, more massive galaxies are expected to be redder. Finkelstein et al. (2012) measured the median beta in three bins of stellar mass from log M of 7 to 10 at redshifts 4 to 8 and found redder slopes at higher mass, with slopes of 0.17 to 0.46 per dex at z = 4 to 7; they caution that low-mass red galaxies are harder to detect and that masses from rest-UV photometry alone are uncertain. Wu et al. (2020) compare SIMBA at z = 6 with those points and note that the observations indicate much steeper changes of beta with stellar mass than the simulation gives. The review of Madau & Dickinson (2014) discusses the slope as a dust correction in the cosmic star formation history. Records here differ in how mass is obtained (an SED fit to rest-UV photometry in the observations, the galaxy's star particles in the simulation), in the dust treatment and in how beta is measured, and these must match before an offset between a simulation and the data is read as physics.",
+      "refs": [
+        {
+          "arxiv": "astro-ph/9903054",
+          "doi": "10.1086/307523",
+          "role": "past: observation",
+          "cite": "Meurer et al. 1999, ApJ 521, 64",
+          "key": "meurer99"
+        },
+        {
+          "arxiv": "1403.0007",
+          "doi": "10.1146/annurev-astro-081811-125615",
+          "role": "review",
+          "cite": "Madau & Dickinson 2014, ARA&A 52, 415",
+          "key": "madau14"
+        },
+        {
+          "arxiv": "1110.3785",
+          "doi": "10.1088/0004-637X/756/2/164",
+          "role": "present: observation",
+          "cite": "Finkelstein et al. 2012, ApJ 756, 164",
+          "key": "finkelstein12"
+        },
+        {
+          "arxiv": "1911.06330",
+          "doi": "10.1093/mnras/staa1044",
+          "role": "simulation vs data",
+          "cite": "Wu et al. 2020, MNRAS 494, 5636",
+          "key": "wu20"
+        }
+      ]
+    },
     "sfrd": {
       "title": "Cosmic star-formation rate density",
       "paragraph": "The cosmic star-formation rate density is the star-formation rate summed over all galaxies per unit comoving volume, plotted against redshift. Observationally it rises to a peak near z~2 and declines by about an order of magnitude to the present; the standard compilation of UV and infrared surveys and its fitting function is Madau & Dickinson 2014, which assumes a Salpeter IMF. At z>8 only UV estimates exist and they depend on the dust correction and on how far down the luminosity function is integrated: Harikane et al. 2023 find a decline from z~9 to 12 and perhaps 16, and Donnan et al. 2024 confirm a gradual decline out to z~12. In simulations it is the least ambiguous quantity to extract, but it integrates over everything including galaxies below any observational limit. ASTRID shows a whole-box total and a subset above 0.3 solar masses per year that diverge at high redshift (Bird et al. 2022), THESAN runs of lower resolution lose an order of magnitude at z>10 because they miss low-mass halos (Kannan et al. 2022), and EAGLE follows the observed shape but lies below the compilation near the peak, which is why the paper also plots the curve raised by 0.2 dex (Furlong et al. 2015). Convert to a common IMF before reading offsets as physics.",

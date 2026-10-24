@@ -312,6 +312,31 @@
       "facility": "JWST/NIRCam imaging (PRIMER, JADES, NGDEEP)",
       "measures": "UV luminosity function at z=9-14.5 from about 370 arcmin^2."
     },
+    "Bouwens et al. 2014": {
+      "kind": "survey",
+      "facility": "HST ACS and WFC3/IR imaging of the HUDF/XDF, HUDF09, ERS and CANDELS fields",
+      "measures": "Biweight-mean UV-continuum slope beta of more than 4000 Lyman-break galaxies at z ~ 4 to 8 in bins of UV luminosity, from a power-law fit to the broad-band fluxes redward of Lyman-alpha."
+    },
+    "Bouwens et al. 2012": {
+      "kind": "survey",
+      "facility": "HST ACS and WFC3/IR imaging of the HUDF09, ERS and CANDELS-South fields",
+      "measures": "Biweight-mean UV-continuum slope beta of Lyman-break galaxies at z ~ 4 to 7 in bins of UV luminosity, corrected for selection effects and measurement errors."
+    },
+    "Topping et al. 2024": {
+      "kind": "survey",
+      "facility": "JWST NIRCam imaging of the JADES fields (GOODS-S and GOODS-N)",
+      "measures": "Median UV-continuum slope beta of dropout-selected galaxies at median photometric redshifts 5.9 to 12 in bins of UV magnitude, from a power-law fit to the rest-UV NIRCam fluxes."
+    },
+    "Topping et al. 2024 (linear fit)": {
+      "kind": "survey",
+      "facility": "JWST NIRCam imaging of the JADES fields (GOODS-S and GOODS-N)",
+      "measures": "The paper's linear fit of the binned median UV-continuum slope against M_UV, for the F775W, F090W and F115W dropout samples."
+    },
+    "Finkelstein et al. 2012": {
+      "kind": "survey",
+      "facility": "HST WFC3/IR imaging from CANDELS, HUDF09 and ERS in GOODS-South",
+      "measures": "Median UV-continuum slope beta of Lyman-break galaxies at z = 4 to 8 in three bins of stellar mass, measured on the best-fit SED of each galaxy."
+    },
     "Madau & Dickinson 2014": {
       "kind": "compilation",
       "facility": "Compilation of UV and infrared surveys (review)",
