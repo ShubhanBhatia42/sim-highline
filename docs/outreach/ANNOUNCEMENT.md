@@ -8,7 +8,7 @@ sim-highline: put your simulated galaxy curve next to every published simulation
 
 ## Short (a post, a Slack message)
 
-I have built sim-highline, a free tool for comparing simulated galaxy scaling relations with each other and with observations. 1,943 curves from 20 simulations and 114 observational and empirical sources, each with the definitions (mass aperture, IMF, population) that decide whether two curves can fairly be compared. You can paste your own simulation's curve and see which published curves it is comparable with, and turn the four feedback dials of IllustrisTNG and SIMBA (from 2,054 CAMELS runs) to see what moves. Nothing leaves your browser. It is an unreviewed beta: 54% of the simulation curves were read from published figures by one person, and I would like to hear where it is wrong. https://shubhanbhatia42.github.io/sim-highline/
+I have built sim-highline, a free tool for comparing simulated galaxy scaling relations with each other and with observations. 1,960 curves from 20 simulations and 116 observational and empirical sources, each with the definitions (mass aperture, IMF, population) that decide whether two curves can fairly be compared. You can paste your own simulation's curve and see which published curves it is comparable with, and turn the four feedback dials of IllustrisTNG and SIMBA (from 2,054 CAMELS runs) to see what moves. Nothing leaves your browser. It is an unreviewed beta: 54% of the simulation curves were read from published figures by one person, and I would like to hear where it is wrong. https://shubhanbhatia42.github.io/sim-highline/
 
 ## Longer (an email to colleagues)
 

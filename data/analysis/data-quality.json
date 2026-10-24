@@ -1,6 +1,6 @@
 {
- "n_records": 1943,
- "n_sources": 134,
+ "n_records": 1960,
+ "n_sources": 136,
  "tiers": [
   {
    "kind": "empirical-model",
@@ -35,14 +35,14 @@
   {
    "kind": "observation",
    "tier": "published-table",
-   "records": 194,
-   "rankable": 193
+   "records": 201,
+   "rankable": 200
   },
   {
    "kind": "simulation",
    "tier": "catalog-derived",
-   "records": 244,
-   "rankable": 244
+   "records": 254,
+   "rankable": 254
   },
   {
    "kind": "simulation",
@@ -71,8 +71,8 @@
  ],
  "digitized": {
   "n": 838,
-  "share_of_simulation_curves": 0.5396007726980039,
-  "n_simulation_curves": 1553,
+  "share_of_simulation_curves": 0.5361484325015995,
+  "n_simulation_curves": 1563,
   "declared_uncertainty_dex": {
    "n": 838,
    "median": 0.01,
@@ -408,6 +408,16 @@
     "6": 0,
     "8": 0
    },
+   "elf": {
+    "0.1": 0,
+    "0.5": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "6": 1,
+    "8": 1
+   },
    "fmr": {
     "0.1": 4,
     "0.5": 0,
@@ -642,8 +652,8 @@
  },
  "vocabulary": {
   "population": {
-   "distinct": 75,
-   "records": 1853,
+   "distinct": 78,
+   "records": 1870,
    "near_duplicates": [
     {
      "spellings": [
@@ -695,12 +705,12 @@
   },
   "imf": {
    "distinct": 4,
-   "records": 1822,
+   "records": 1832,
    "near_duplicates": []
   },
   "densityFrame": {
    "distinct": 2,
-   "records": 643,
+   "records": 660,
    "near_duplicates": []
   },
   "sizeDefinition": {
@@ -724,7 +734,7 @@
   }
  },
  "checksums": {
-  "with_checksum": 1782,
-  "records": 1943
+  "with_checksum": 1792,
+  "records": 1960
  }
 }

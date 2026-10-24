@@ -1,6 +1,6 @@
 {
- "total": 1906,
- "known": 24,
+ "total": 1960,
+ "known": 25,
  "errors": 0,
  "warnings": 0,
  "info": 211,
@@ -11,7 +11,7 @@
   "known:y-out-of-range": 6,
   "known:quenched-decreases": 2,
   "known:duplicate-data": 14,
-  "known:cross-source-offset": 1
+  "known:cross-source-offset": 2
  },
  "yUnitsByRelation": {
   "sfrd": {
@@ -279,6 +279,14 @@
     "baryonic mass within r_star"
    ]
   },
+  "elf": {
+   "yUnit": [
+    "log10(cMpc^-3 dex^-1)"
+   ],
+   "massDefinitions": [
+    "-"
+   ]
+  },
   "fmr": {
    "yUnit": [
     "dex"
@@ -315,12 +323,28 @@
     "-"
    ]
   },
+  "uvbeta": {
+   "yUnit": [
+    "dimensionless"
+   ],
+   "massDefinitions": [
+    "-"
+   ]
+  },
   "wp": {
    "yUnit": [
     "log10(h^-1 Mpc)"
    ],
    "massDefinitions": [
     "aperture-30pkpc"
+   ]
+  },
+  "uvbetam": {
+   "yUnit": [
+    "dimensionless"
+   ],
+   "massDefinitions": [
+    "unspecified (galaxies from the Caesar 6-D friends-of-friends finder; the mass aperture is not stated)"
    ]
   }
  },
@@ -564,6 +588,38 @@
    "n": 15,
    "medianOffset": -0.032,
    "maxAbs": 1.77
+  },
+  {
+   "a": "wu20.simba.uvbeta.z6.combined.nodust",
+   "b": "wu20.simba.uvbeta.z6.m25.calz00",
+   "relation": "uvbeta",
+   "n": 6,
+   "medianOffset": -0.293,
+   "maxAbs": 0.468
+  },
+  {
+   "a": "wu20.simba.uvbeta.z6.combined.calz00",
+   "b": "wu20.simba.uvbeta.z6.m25.calz00",
+   "relation": "uvbeta",
+   "n": 6,
+   "medianOffset": 0,
+   "maxAbs": 0
+  },
+  {
+   "a": "wu20.simba.uvbeta.z6.combined.salm16",
+   "b": "wu20.simba.uvbeta.z6.m25.calz00",
+   "relation": "uvbeta",
+   "n": 6,
+   "medianOffset": -0.176,
+   "maxAbs": 0.191
+  },
+  {
+   "a": "wu20.simba.uvbeta.z6.combined.smc",
+   "b": "wu20.simba.uvbeta.z6.m25.calz00",
+   "relation": "uvbeta",
+   "n": 6,
+   "medianOffset": 0.381,
+   "maxAbs": 0.502
   }
  ],
  "issues": [
@@ -2705,6 +2761,16 @@
    "source": "IllustrisTNG",
    "msg": "median offset -0.34 vs rodriguezgomez22.tng100.jstar.plate.late.z0 over 8 points",
    "reason": "Compared against a different population (P(Late) late-type) of the same run: early-type kappa_rot < 0.5 galaxies have lower j_stars than late-type ones by construction."
+  },
+  {
+   "sev": "known",
+   "code": "cross-source-offset",
+   "id": "wu20.simba.uvbeta.z6.combined.smc",
+   "file": "wu20-simba-uvbeta.json",
+   "relation": "uvbeta",
+   "source": "SIMBA",
+   "msg": "median offset 0.38 vs wu20.simba.uvbeta.z6.m25.calz00 over 6 points",
+   "reason": "Compared against the Calzetti-law curve of one box of the same paper: the combined curves apply other dust laws (SMC, Salmon et al. 2016) or none to the same galaxies, so the offset in beta is the effect of the law, not a disagreement between sources."
   }
  ]
 }

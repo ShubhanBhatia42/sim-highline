@@ -6,8 +6,8 @@
     "code": "MIT",
     "data": "CC-BY-4.0"
   },
-  "nRecords": 1943,
-  "nPoints": 70662,
+  "nRecords": 1960,
+  "nPoints": 70768,
   "nDistributionRecords": 34,
   "nDistributionCells": 7253,
   "nParametric": 149,
@@ -80,24 +80,24 @@
   },
   "files": {
     "sim-highline-records.csv": {
-      "sha256": "730a9ef3111c5f2237871922aa6472b2d25ec04e37101e28528f37020c46268c",
-      "bytes": 1795135
+      "sha256": "f9421bd4400ca748db57979e2d801ca9a346abdd2c36c70dd33c1dec2964de4b",
+      "bytes": 1818548
     },
     "sim-highline-points.csv": {
-      "sha256": "b8f794fee922184e10c09ff83b4242e9e593f8a85795810371d919ce1a947f44",
-      "bytes": 4294627
+      "sha256": "bbc9a5036b7891f60e495d8fc0eb2100c4116e874f603541a1e8a1359435901a",
+      "bytes": 4301902
     },
     "sim-highline-distributions.csv": {
       "sha256": "164aa7f255d113534f334d83adad119cea4db29ef0f77af7f52c71a79453eec7",
       "bytes": 418015
     },
     "sim-highline-records.json": {
-      "sha256": "3004358438f899d94039a79ee635bf281b096dbe25fbaeb54bfaf588283323ad",
-      "bytes": 6316741
+      "sha256": "f1e503cb69c1911fafb6f329c5d5a8e6040aaf138af4d67f3090d9bd7a1a131a",
+      "bytes": 6382826
     },
     "sim-highline-citations.bib": {
-      "sha256": "1c11e3cc6416b9cb5380586ed7df5f14d1ffd061f6431cf3d5e488ba3eb5ed5b",
-      "bytes": 37486
+      "sha256": "5eea11fb1982dad1c46bf12d893084a647b6a0d712d9ad60c8e42bd32c71e311",
+      "bytes": 37859
     },
     "sim-highline-conversions.json": {
       "sha256": "d833fe04453db71ad8c460add0315c17bcf7f5de89b9e9d84f8fa70b6075dca7",
@@ -108,8 +108,8 @@
       "bytes": 20866
     },
     "sim-highline-rules.json": {
-      "sha256": "a47f39439b4fbf61ab1e8b328b7da5a79668992b46fcd952d36e76f5914a5e3b",
-      "bytes": 9348
+      "sha256": "e78740ed0baa4a2ed301399f23d315eb0c51e08b832d8599cea7a1055c624f06",
+      "bytes": 9499
     }
   }
 }

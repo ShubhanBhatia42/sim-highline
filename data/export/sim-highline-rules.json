@@ -433,7 +433,11 @@
     "dustCorrection"
    ],
    "soft": [
-    "densityFrame"
+    "densityFrame",
+    "apertureDefinition",
+    "cosmology",
+    "population",
+    "dustCorrectionMethod"
    ]
   },
   "uvbeta": {
@@ -514,6 +518,7 @@
   "szScaling": "Redshift scaling of the Compton-Y relation",
   "uvBand": "Rest-frame UV band",
   "velocityDefinition": "Which velocity (circular, rotation, maximum)",
-  "xrayBand": "X-ray band"
+  "xrayBand": "X-ray band",
+  "dustCorrectionMethod": "How the dust correction was made"
  }
 }

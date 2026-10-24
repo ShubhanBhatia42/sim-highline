@@ -1,7 +1,7 @@
 {
  "schemaVersion": "1.0.0",
  "method": "Offset of each curve from the median of other sources' curves (interpolating peers only inside their published range) at the same relation, units and z within 0.15; at least 3 peer sources per point. Flag: |median offset| >= 0.7 dex and robust z >= 3.0 within the relation.",
- "nScreened": 998,
+ "nScreened": 1010,
  "nFlagged": 13,
  "systematic": [
   {
