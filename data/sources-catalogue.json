@@ -1464,6 +1464,20 @@
         "shmr"
       ],
       "note": "Stated in the paper's introduction; no public release was found."
+    },
+    {
+      "id": "kugel23-flamingo-calibration-figs",
+      "suite": "FLAMINGO",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2306.05492",
+      "relations": [
+        "gsmf",
+        "fgas500"
+      ],
+      "redshifts": "0 (stellar mass function), 0.1 (gas fraction)",
+      "adapter": "scripts/digitize_flamingo_kugel23.py",
+      "note": "The best-fitting calibration simulations (high, intermediate and low resolution in 100, 200 and 400 Mpc boxes) drawn in red in Fig. 8 against the two calibration targets. Axes are checked against the particle masses of Table 1, the mass ranges of Table 3, the X-ray gas fractions of Table 5 drawn in the figure and the stated binning. The stellar masses carry the 0.07 dex random error the paper adds before counting, and the curves are the calibration targets, so they are not predictions. The emulator curves and the observations are not stored."
     }
   ]
 }

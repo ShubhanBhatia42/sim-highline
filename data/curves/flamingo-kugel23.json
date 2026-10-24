@@ -1,0 +1,722 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "kugel23.flamingo.gsmf.m8.z0",
+      "source": "FLAMINGO",
+      "run": "FLAMINGO calibration run, m8 (100 Mpc)^3, best-fitting subgrid parameters",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0.0,
+        "zNominal": 0.0,
+        "zMin": 0.0,
+        "zMax": 0.0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within a 3D aperture of 50 kpc (a lognormal mass error, 0.07 dex at z = 0, is added to every simulated mass before counting)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 number density per dex of stellar mass (the axis reads Mpc^-3; the boxes are given in comoving Mpc)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 9.202,
+        "xMax": 12.015
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.202,
+            "y": -1.8568
+          },
+          {
+            "x": 9.478,
+            "y": -2.0763
+          },
+          {
+            "x": 9.604,
+            "y": -2.1585
+          },
+          {
+            "x": 9.746,
+            "y": -2.2381
+          },
+          {
+            "x": 9.845,
+            "y": -2.285
+          },
+          {
+            "x": 9.979,
+            "y": -2.267
+          },
+          {
+            "x": 10.125,
+            "y": -2.3229
+          },
+          {
+            "x": 10.255,
+            "y": -2.3466
+          },
+          {
+            "x": 10.389,
+            "y": -2.331
+          },
+          {
+            "x": 10.524,
+            "y": -2.2445
+          },
+          {
+            "x": 10.662,
+            "y": -2.2439
+          },
+          {
+            "x": 10.796,
+            "y": -2.3076
+          },
+          {
+            "x": 10.93,
+            "y": -2.427
+          },
+          {
+            "x": 11.096,
+            "y": -2.6997
+          },
+          {
+            "x": 11.21,
+            "y": -2.8789
+          },
+          {
+            "x": 11.368,
+            "y": -3.1774
+          },
+          {
+            "x": 11.486,
+            "y": -3.42
+          },
+          {
+            "x": 11.609,
+            "y": -3.7014
+          },
+          {
+            "x": 11.743,
+            "y": -3.6563
+          },
+          {
+            "x": 11.762,
+            "y": -3.7032
+          },
+          {
+            "x": 11.885,
+            "y": -4.0059
+          },
+          {
+            "x": 12.015,
+            "y": -4.4343
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the calibration volume (VELOCIraptor subhaloes)",
+        "warning": "Galaxy stellar mass function at z = 0 of the FLAMINGO m8 calibration simulation run with the best-fitting subgrid parameters in a (100 Mpc)^3 volume (1.34e+08 Msun baryonic particles), read from the red path of Fig. 8 of Kugel et al. 2023 and cut at the 10-particle limit (M* = 9.13; fainter bins are drawn dotted and grey). The simulated masses are 3D 50 kpc aperture masses to which a random lognormal error of 0.07 dex (z = 0) is added, as the paper does to mimic observational errors (an Eddington-like bias), so the high-mass end is steeper-looking than the plain aperture masses give. The model was fitted to this curve between log M* = 8.67 and 11.5, so it is not a prediction there. The paper does not say whether satellites and subhaloes without stars enter the count. The box is small, so the highest-mass bins hold few galaxies. The paper says the Chabrier (2003) IMF is used for the stars."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc, 3D, with a lognormal mass error added",
+        "densityFrame": "comoving",
+        "population": "galaxies of the calibration volume (VELOCIraptor subhaloes)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kugel et al. 2023, MNRAS 526, 6103 (FLAMINGO calibration; arXiv:2306.05492), Fig. 8, left column",
+        "doi": "10.1093/mnras/stad2540",
+        "url": "https://arxiv.org/abs/2306.05492",
+        "retrieved": "2026-10-24",
+        "figure": "Fig. 8 (best-fitting models against the SMF and the gas fractions)",
+        "panel": "m8 stellar mass function, red path",
+        "checksumSha256": "3b0bd6d938fcf3677a6dc58a2304e80c149c4248cc88bd5fe07a218fd2e4337b",
+        "sourceMember": "Images/Fiducial_models.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: linear axis in log M* (labelled ticks 8 to 12); y: linear axis in log number density (labelled ticks 1.5 to 5.0 with drawn minus signs); each panel calibrated on its own labels and checked against the 10-particle line, the stated binning and the Table 3 mass range",
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "8a8100a9595b69e6e689ea6352804acda487b63bd464c798f4d2e71fcbf82699"
+      },
+      "calibration": "target",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision."
+    },
+    {
+      "id": "kugel23.flamingo.fgas500.m8.z0p1",
+      "source": "FLAMINGO",
+      "run": "FLAMINGO calibration run, m8 (100 Mpc)^3, best-fitting subgrid parameters",
+      "kind": "simulation",
+      "relation": "fgas500",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500c (mass inside R500c, the radius enclosing 500 times the critical density)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 gas fraction inside R500c (gas mass over M500c) normalised by the cosmic baryon fraction Omega_b/Omega_m = 0.0486/0.306 of the simulation",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 13.059,
+        "xMax": 13.853
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 13.059,
+            "y": -0.7872
+          },
+          {
+            "x": 13.185,
+            "y": -0.6731
+          },
+          {
+            "x": 13.269,
+            "y": -0.6128
+          },
+          {
+            "x": 13.397,
+            "y": -0.51
+          },
+          {
+            "x": 13.57,
+            "y": -0.4077
+          },
+          {
+            "x": 13.716,
+            "y": -0.3392
+          },
+          {
+            "x": 13.853,
+            "y": -0.2895
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "haloes of the calibration volume (bins hold at least ten haloes)",
+        "warning": "Median gas fraction inside R500c at z = 0.1 against M500c of the FLAMINGO m8 calibration simulation run with the best-fitting subgrid parameters in a (100 Mpc)^3 volume, read from the red path of Fig. 8 of Kugel et al. 2023 (adaptive bins of at least ten haloes between 1e13 and 1e15 Msun; the statistic is not stated: the paper takes the median and the 16th-84th percentiles of each bin for the fit) and divided by Omega_b/Omega_m = 0.0486/0.306. The model was fitted to X-ray gas fractions at z = 0.1 up to M500c = 10^13.73 Msun and to weak lensing at z = 0.3, so this curve is a calibration target, not a prediction, and the observations it was fitted to carry a hydrostatic mass bias that the paper fits (b = 0.743). The small box holds few clusters, so the highest bins are noisy."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "apertureDefinition": "R500crit",
+        "fgasNormalisation": "Omega_b/Omega_m of the simulation (0.0486/0.306 = 0.159)",
+        "massMethod": "simulation: gas mass inside R500c over M500c (VELOCIraptor haloes; the paper does not say which gas phases are counted)",
+        "population": "haloes of the calibration volume (bins hold at least ten haloes)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kugel et al. 2023, MNRAS 526, 6103 (FLAMINGO calibration; arXiv:2306.05492), Fig. 8, right column",
+        "doi": "10.1093/mnras/stad2540",
+        "url": "https://arxiv.org/abs/2306.05492",
+        "retrieved": "2026-10-24",
+        "figure": "Fig. 8 (best-fitting models against the SMF and the gas fractions)",
+        "panel": "m8 gas fraction, red path",
+        "checksumSha256": "3b0bd6d938fcf3677a6dc58a2304e80c149c4248cc88bd5fe07a218fd2e4337b",
+        "sourceMember": "Images/Fiducial_models.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: linear axis in log M500c (labelled ticks 13.0 to 15.0); y: linear axis in f_gas (labelled ticks 0.00 to 0.14); each panel calibrated on its own labels and checked against the Table 5 X-ray data drawn in the panel (shifted by the Table 6 bias), the stated binning and the Table 3 mass range; f_gas is divided by Omega_b/Omega_m = 0.0486/0.306 (section 2)",
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "8a8100a9595b69e6e689ea6352804acda487b63bd464c798f4d2e71fcbf82699"
+      },
+      "calibration": "target",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision."
+    },
+    {
+      "id": "kugel23.flamingo.gsmf.m9.z0",
+      "source": "FLAMINGO",
+      "run": "FLAMINGO calibration run, m9 (200 Mpc)^3, best-fitting subgrid parameters",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0.0,
+        "zNominal": 0.0,
+        "zMin": 0.0,
+        "zMax": 0.0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within a 3D aperture of 50 kpc (a lognormal mass error, 0.07 dex at z = 0, is added to every simulated mass before counting)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 number density per dex of stellar mass (the axis reads Mpc^-3; the boxes are given in comoving Mpc)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 10.043,
+        "xMax": 11.963
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 10.043,
+            "y": -2.1777
+          },
+          {
+            "x": 10.187,
+            "y": -2.206
+          },
+          {
+            "x": 10.462,
+            "y": -2.3225
+          },
+          {
+            "x": 10.604,
+            "y": -2.3907
+          },
+          {
+            "x": 10.74,
+            "y": -2.4348
+          },
+          {
+            "x": 10.87,
+            "y": -2.5019
+          },
+          {
+            "x": 11.009,
+            "y": -2.6324
+          },
+          {
+            "x": 11.144,
+            "y": -2.8178
+          },
+          {
+            "x": 11.28,
+            "y": -3.0688
+          },
+          {
+            "x": 11.419,
+            "y": -3.4134
+          },
+          {
+            "x": 11.555,
+            "y": -3.845
+          },
+          {
+            "x": 11.694,
+            "y": -4.1399
+          },
+          {
+            "x": 11.824,
+            "y": -4.5065
+          },
+          {
+            "x": 11.833,
+            "y": -4.567
+          },
+          {
+            "x": 11.963,
+            "y": -5.5644
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the calibration volume (VELOCIraptor subhaloes)",
+        "warning": "Galaxy stellar mass function at z = 0 of the FLAMINGO m9 calibration simulation run with the best-fitting subgrid parameters in a (200 Mpc)^3 volume (1.07e+09 Msun baryonic particles), read from the red path of Fig. 8 of Kugel et al. 2023 and cut at the 10-particle limit (M* = 10.03; fainter bins are drawn dotted and grey). The simulated masses are 3D 50 kpc aperture masses to which a random lognormal error of 0.07 dex (z = 0) is added, as the paper does to mimic observational errors (an Eddington-like bias), so the high-mass end is steeper-looking than the plain aperture masses give. The model was fitted to this curve between log M* = 9.92 and 11.5, so it is not a prediction there. The paper does not say whether satellites and subhaloes without stars enter the count. The box is small, so the highest-mass bins hold few galaxies. The paper says the Chabrier (2003) IMF is used for the stars."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc, 3D, with a lognormal mass error added",
+        "densityFrame": "comoving",
+        "population": "galaxies of the calibration volume (VELOCIraptor subhaloes)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kugel et al. 2023, MNRAS 526, 6103 (FLAMINGO calibration; arXiv:2306.05492), Fig. 8, left column",
+        "doi": "10.1093/mnras/stad2540",
+        "url": "https://arxiv.org/abs/2306.05492",
+        "retrieved": "2026-10-24",
+        "figure": "Fig. 8 (best-fitting models against the SMF and the gas fractions)",
+        "panel": "m9 stellar mass function, red path",
+        "checksumSha256": "3b0bd6d938fcf3677a6dc58a2304e80c149c4248cc88bd5fe07a218fd2e4337b",
+        "sourceMember": "Images/Fiducial_models.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: linear axis in log M* (labelled ticks 8 to 12); y: linear axis in log number density (labelled ticks 1.5 to 5.0 with drawn minus signs); each panel calibrated on its own labels and checked against the 10-particle line, the stated binning and the Table 3 mass range",
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "8a8100a9595b69e6e689ea6352804acda487b63bd464c798f4d2e71fcbf82699"
+      },
+      "calibration": "target",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision."
+    },
+    {
+      "id": "kugel23.flamingo.fgas500.m9.z0p1",
+      "source": "FLAMINGO",
+      "run": "FLAMINGO calibration run, m9 (200 Mpc)^3, best-fitting subgrid parameters",
+      "kind": "simulation",
+      "relation": "fgas500",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500c (mass inside R500c, the radius enclosing 500 times the critical density)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 gas fraction inside R500c (gas mass over M500c) normalised by the cosmic baryon fraction Omega_b/Omega_m = 0.0486/0.306 of the simulation",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 13.049,
+        "xMax": 14.3
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 13.049,
+            "y": -0.8127
+          },
+          {
+            "x": 13.163,
+            "y": -0.7089
+          },
+          {
+            "x": 13.261,
+            "y": -0.6497
+          },
+          {
+            "x": 13.349,
+            "y": -0.5894
+          },
+          {
+            "x": 13.462,
+            "y": -0.503
+          },
+          {
+            "x": 13.557,
+            "y": -0.4621
+          },
+          {
+            "x": 13.677,
+            "y": -0.3689
+          },
+          {
+            "x": 13.771,
+            "y": -0.3189
+          },
+          {
+            "x": 13.88,
+            "y": -0.2987
+          },
+          {
+            "x": 14.012,
+            "y": -0.2348
+          },
+          {
+            "x": 14.112,
+            "y": -0.2312
+          },
+          {
+            "x": 14.23,
+            "y": -0.187
+          },
+          {
+            "x": 14.3,
+            "y": -0.17
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "haloes of the calibration volume (bins hold at least ten haloes)",
+        "warning": "Median gas fraction inside R500c at z = 0.1 against M500c of the FLAMINGO m9 calibration simulation run with the best-fitting subgrid parameters in a (200 Mpc)^3 volume, read from the red path of Fig. 8 of Kugel et al. 2023 (adaptive bins of at least ten haloes between 1e13 and 1e15 Msun; the statistic is not stated: the paper takes the median and the 16th-84th percentiles of each bin for the fit) and divided by Omega_b/Omega_m = 0.0486/0.306. The model was fitted to X-ray gas fractions at z = 0.1 up to M500c = 10^14.36 Msun and to weak lensing at z = 0.3, so this curve is a calibration target, not a prediction, and the observations it was fitted to carry a hydrostatic mass bias that the paper fits (b = 0.743). The small box holds few clusters, so the highest bins are noisy."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "apertureDefinition": "R500crit",
+        "fgasNormalisation": "Omega_b/Omega_m of the simulation (0.0486/0.306 = 0.159)",
+        "massMethod": "simulation: gas mass inside R500c over M500c (VELOCIraptor haloes; the paper does not say which gas phases are counted)",
+        "population": "haloes of the calibration volume (bins hold at least ten haloes)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kugel et al. 2023, MNRAS 526, 6103 (FLAMINGO calibration; arXiv:2306.05492), Fig. 8, right column",
+        "doi": "10.1093/mnras/stad2540",
+        "url": "https://arxiv.org/abs/2306.05492",
+        "retrieved": "2026-10-24",
+        "figure": "Fig. 8 (best-fitting models against the SMF and the gas fractions)",
+        "panel": "m9 gas fraction, red path",
+        "checksumSha256": "3b0bd6d938fcf3677a6dc58a2304e80c149c4248cc88bd5fe07a218fd2e4337b",
+        "sourceMember": "Images/Fiducial_models.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: linear axis in log M500c (labelled ticks 13.0 to 15.0); y: linear axis in f_gas (labelled ticks 0.00 to 0.14); each panel calibrated on its own labels and checked against the Table 5 X-ray data drawn in the panel (shifted by the Table 6 bias), the stated binning and the Table 3 mass range; f_gas is divided by Omega_b/Omega_m = 0.0486/0.306 (section 2)",
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "8a8100a9595b69e6e689ea6352804acda487b63bd464c798f4d2e71fcbf82699"
+      },
+      "calibration": "target",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision."
+    },
+    {
+      "id": "kugel23.flamingo.gsmf.m10.z0",
+      "source": "FLAMINGO",
+      "run": "FLAMINGO calibration run, m10 (400 Mpc)^3, best-fitting subgrid parameters",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 0.0,
+        "zNominal": 0.0,
+        "zMin": 0.0,
+        "zMax": 0.0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass within a 3D aperture of 50 kpc (a lognormal mass error, 0.07 dex at z = 0, is added to every simulated mass before counting)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 number density per dex of stellar mass (the axis reads Mpc^-3; the boxes are given in comoving Mpc)",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 10.933,
+        "xMax": 11.851
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 10.933,
+            "y": -3.0232
+          },
+          {
+            "x": 11.067,
+            "y": -2.9226
+          },
+          {
+            "x": 11.201,
+            "y": -2.943
+          },
+          {
+            "x": 11.338,
+            "y": -3.1362
+          },
+          {
+            "x": 11.474,
+            "y": -3.5606
+          },
+          {
+            "x": 11.613,
+            "y": -4.1954
+          },
+          {
+            "x": 11.747,
+            "y": -4.989
+          },
+          {
+            "x": 11.851,
+            "y": -5.9132
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "galaxies of the calibration volume (VELOCIraptor subhaloes)",
+        "warning": "Galaxy stellar mass function at z = 0 of the FLAMINGO m10 calibration simulation run with the best-fitting subgrid parameters in a (400 Mpc)^3 volume (8.56e+09 Msun baryonic particles), read from the red path of Fig. 8 of Kugel et al. 2023 and cut at the 10-particle limit (M* = 10.93; fainter bins are drawn dotted and grey). The simulated masses are 3D 50 kpc aperture masses to which a random lognormal error of 0.07 dex (z = 0) is added, as the paper does to mimic observational errors (an Eddington-like bias), so the high-mass end is steeper-looking than the plain aperture masses give. The model was fitted to this curve between log M* = 11.17 and 11.5, so it is not a prediction there. The paper does not say whether satellites and subhaloes without stars enter the count. The box is small, so the highest-mass bins hold few galaxies. The paper says the Chabrier (2003) IMF is used for the stars."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "massDefinition": "aperture-50pkpc, 3D, with a lognormal mass error added",
+        "densityFrame": "comoving",
+        "population": "galaxies of the calibration volume (VELOCIraptor subhaloes)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kugel et al. 2023, MNRAS 526, 6103 (FLAMINGO calibration; arXiv:2306.05492), Fig. 8, left column",
+        "doi": "10.1093/mnras/stad2540",
+        "url": "https://arxiv.org/abs/2306.05492",
+        "retrieved": "2026-10-24",
+        "figure": "Fig. 8 (best-fitting models against the SMF and the gas fractions)",
+        "panel": "m10 stellar mass function, red path",
+        "checksumSha256": "3b0bd6d938fcf3677a6dc58a2304e80c149c4248cc88bd5fe07a218fd2e4337b",
+        "sourceMember": "Images/Fiducial_models.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: linear axis in log M* (labelled ticks 8 to 12); y: linear axis in log number density (labelled ticks 1.5 to 5.0 with drawn minus signs); each panel calibrated on its own labels and checked against the 10-particle line, the stated binning and the Table 3 mass range",
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "8a8100a9595b69e6e689ea6352804acda487b63bd464c798f4d2e71fcbf82699"
+      },
+      "calibration": "target",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision."
+    },
+    {
+      "id": "kugel23.flamingo.fgas500.m10.z0p1",
+      "source": "FLAMINGO",
+      "run": "FLAMINGO calibration run, m10 (400 Mpc)^3, best-fitting subgrid parameters",
+      "kind": "simulation",
+      "relation": "fgas500",
+      "epoch": {
+        "zRepresentative": 0.1,
+        "zNominal": 0.1,
+        "zMin": 0.1,
+        "zMax": 0.1,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500c (mass inside R500c, the radius enclosing 500 times the critical density)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 gas fraction inside R500c (gas mass over M500c) normalised by the cosmic baryon fraction Omega_b/Omega_m = 0.0486/0.306 of the simulation",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 13.046,
+        "xMax": 14.579
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": 13.046,
+            "y": -0.5471
+          },
+          {
+            "x": 13.153,
+            "y": -0.537
+          },
+          {
+            "x": 13.255,
+            "y": -0.5095
+          },
+          {
+            "x": 13.35,
+            "y": -0.4764
+          },
+          {
+            "x": 13.449,
+            "y": -0.4645
+          },
+          {
+            "x": 13.563,
+            "y": -0.423
+          },
+          {
+            "x": 13.657,
+            "y": -0.3866
+          },
+          {
+            "x": 13.756,
+            "y": -0.3463
+          },
+          {
+            "x": 13.853,
+            "y": -0.3203
+          },
+          {
+            "x": 13.962,
+            "y": -0.2781
+          },
+          {
+            "x": 14.055,
+            "y": -0.252
+          },
+          {
+            "x": 14.161,
+            "y": -0.2091
+          },
+          {
+            "x": 14.253,
+            "y": -0.1817
+          },
+          {
+            "x": 14.376,
+            "y": -0.1715
+          },
+          {
+            "x": 14.474,
+            "y": -0.1595
+          },
+          {
+            "x": 14.579,
+            "y": -0.1222
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "haloes of the calibration volume (bins hold at least ten haloes)",
+        "warning": "Median gas fraction inside R500c at z = 0.1 against M500c of the FLAMINGO m10 calibration simulation run with the best-fitting subgrid parameters in a (400 Mpc)^3 volume, read from the red path of Fig. 8 of Kugel et al. 2023 (adaptive bins of at least ten haloes between 1e13 and 1e15 Msun; the statistic is not stated: the paper takes the median and the 16th-84th percentiles of each bin for the fit) and divided by Omega_b/Omega_m = 0.0486/0.306. The model was fitted to X-ray gas fractions at z = 0.1 up to M500c = 10^14.53 Msun and to weak lensing at z = 0.3, so this curve is a calibration target, not a prediction, and the observations it was fitted to carry a hydrostatic mass bias that the paper fits (b = 0.743). The small box holds few clusters, so the highest bins are noisy."
+      },
+      "definitions": {
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 68.1,
+          "Om": 0.306
+        },
+        "apertureDefinition": "R500crit",
+        "fgasNormalisation": "Omega_b/Omega_m of the simulation (0.0486/0.306 = 0.159)",
+        "massMethod": "simulation: gas mass inside R500c over M500c (VELOCIraptor haloes; the paper does not say which gas phases are counted)",
+        "population": "haloes of the calibration volume (bins hold at least ten haloes)"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Kugel et al. 2023, MNRAS 526, 6103 (FLAMINGO calibration; arXiv:2306.05492), Fig. 8, right column",
+        "doi": "10.1093/mnras/stad2540",
+        "url": "https://arxiv.org/abs/2306.05492",
+        "retrieved": "2026-10-24",
+        "figure": "Fig. 8 (best-fitting models against the SMF and the gas fractions)",
+        "panel": "m10 gas fraction, red path",
+        "checksumSha256": "3b0bd6d938fcf3677a6dc58a2304e80c149c4248cc88bd5fe07a218fd2e4337b",
+        "sourceMember": "Images/Fiducial_models.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: linear axis in log M500c (labelled ticks 13.0 to 15.0); y: linear axis in f_gas (labelled ticks 0.00 to 0.14); each panel calibrated on its own labels and checked against the Table 5 X-ray data drawn in the panel (shifted by the Table 6 bias), the stated binning and the Table 3 mass range; f_gas is divided by Omega_b/Omega_m = 0.0486/0.306 (section 2)",
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "8a8100a9595b69e6e689ea6352804acda487b63bd464c798f4d2e71fcbf82699"
+      },
+      "calibration": "target",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision."
+    }
+  ]
+}

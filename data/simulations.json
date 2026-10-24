@@ -210,7 +210,8 @@
       "relations": [
         "gsmf",
         "shmr",
-        "clusters"
+        "clusters",
+        "fgas500"
       ],
       "source": "https://flamingo.strw.leidenuniv.nl/"
     },
