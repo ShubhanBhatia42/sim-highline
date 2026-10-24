@@ -87,7 +87,7 @@ for z in (6, 7, 8, 10):
     lm = np.log10(Ms[star])
     mh_s = Mh[star]
     edges = np.arange(5.0, 11.01, 0.25)
-    pts, first_ok = [], None
+    pts = []
     for lo, hi in zip(edges[:-1], edges[1:]):
         sel = (lm >= lo) & (lm < hi)
         n = int(sel.sum())

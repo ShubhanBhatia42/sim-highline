@@ -539,7 +539,7 @@
       "setup": "A periodic, constrained realization of the Local Universe in a box of 94.44 cMpc (64 h^-1 Mpc) with 4096^3 cells and as many dark matter particles (4.07e5 Msun), cell size 23 ckpc (3.3 kpc proper at z = 6), run from z = 150 to z = 5.8; star particles form in multiples of 11,732 Msun.",
       "physics": "Star formation at 2 percent efficiency per free-fall time above 50 times the mean gas density, supernova feedback (10 percent of the stellar mass, 1e51 erg after a 10 Myr massive-star lifetime), a stellar ionizing emissivity with a birthplace escape fraction of 0.42 and the galactic escape fraction left to the radiative transfer; no AGN and no chemical enrichment.",
       "introduced": 2018,
-      "introducedNote": "CoDa II paper (arXiv:1811.11192); the first Cosmic Dawn run is arXiv:1511.00011",
+      "introducedNote": "CoDa II paper (arXiv:1811.11192); the earlier Cosmic Dawn run (CoDa I) is arXiv:1511.00011",
       "team": "CoDa collaboration (the CoDa II paper is led by Pierre Ocvirk)",
       "purpose": "Model global and local reionization and the galaxies that cause it, with radiation and galaxy formation coupled, in a volume constrained to reproduce the large-scale structure of the Local Universe.",
       "papers": [
