@@ -192,7 +192,7 @@
       "codeRef": "SWIFT",
       "method": "SPH",
       "methodDetail": "Smoothed particle hydrodynamics with the SPHENIX scheme in the SWIFT code",
-      "setup": "Boxes up to 1.0 and 2.8 Gpc at several resolutions (the runs used here include L1_m8, L1_m9, L1_m10 and L2p8_m9), plus model and cosmology variations.",
+      "setup": "Boxes up to 1.0 and 2.8 Gpc at several resolutions (the runs used here include L1_m8, L1_m9, L1_m10 and L2p8_m9), plus model and cosmology variations and the 100, 200 and 400 Mpc calibration runs of Kugel et al. 2023.",
       "physics": "Subgrid stellar and AGN feedback calibrated with machine learning to the observed z≈0 galaxy stellar mass function and cluster gas fractions.",
       "introduced": 2023,
       "introducedNote": "overview paper",
