@@ -241,6 +241,16 @@ d = TMP / "eagle-nocol.csv"
 d.write_text("\n".join(l for l in EAG.read_text().splitlines()).replace("Mass_Star", "Mstar"))
 refuses("eagle", d, "lacks the columns", **EAGLE_KW)
 
+# a file that is not the catalogue it is said to be is a refusal with a message, not a traceback
+refuses("caesar", ROOT / "README.md", "could not be read as a caesar catalogue")
+d = copy_of(SOAP, "nocentral_0050.hdf5")
+h5_edit(d, lambda h: h["InputHalos"].__delitem__("IsCentral"))
+refuses("soap", d, "could not be read as a soap catalogue", aperture="50kpc")
+d = TMP / "sub-notfile"
+(d / "groups_099").mkdir(parents=True)
+(d / "groups_099" / "groups_099.hdf5").write_text("this is not an HDF5 file")
+refuses("subfind", d, "could not be read as a subfind catalogue")
+
 # a mixture of catalogues with different cosmologies is not one run
 d = copy_of(SOAP, "halo_properties_0051.hdf5")
 h5_edit(d, lambda h: (h["Cosmology"].attrs.__setitem__("h", [0.7]), h["Header"].attrs.__setitem__("Redshift", [1.0])))
