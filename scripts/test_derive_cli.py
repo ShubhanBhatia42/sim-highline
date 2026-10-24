@@ -108,6 +108,10 @@ dist = [x for x in eag["records"] if x["id"].endswith(".dist.z0")]
 assert len(dist) == 1 and dist[0]["run"] == "L25 (per-galaxy distribution)" and "distribution" in dist[0]["representation"] and dist[0]["representation"]["distribution"]["summary"]["thresholds"] == [-11.0, -10.5]
 assert not any(x["id"].endswith(".dist.z0") for x in sd.derive_run("eagle", EAG, **BASE, **EAGLE_KW)["records"]), "the distribution record is opt-in"
 
+for name, p in (("subfind", sub), ("caesar", cae), ("soap", soap), ("eagle", eag)):
+    assert all(x["definitions"].get("population") for x in p["records"]), f"{name}: every record states which galaxies it counts (population is a comparability key)"
+assert by_relation(sub)["gsmf"]["definitions"]["population"] == "all" and by_relation(sub)["sfms"]["definitions"]["population"] == "star-forming"
+
 # ---- 2. the records pass the project's own checks: the tool's validator, the schema, and scripts/validate-curves.mjs (which also recomputes each distribution with compare.js) ------------------------------
 for name, p in (("subfind", sub), ("caesar", cae), ("soap", soap), ("eagle", eag)):
     assert sd.validate_records(p["records"]) == [], (name, sd.validate_records(p["records"]))
