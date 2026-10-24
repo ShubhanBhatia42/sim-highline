@@ -6,11 +6,11 @@
     "code": "MIT",
     "data": "CC-BY-4.0"
   },
-  "nRecords": 1906,
-  "nPoints": 70253,
+  "nRecords": 1943,
+  "nPoints": 70662,
   "nDistributionRecords": 34,
   "nDistributionCells": 7253,
-  "nParametric": 146,
+  "nParametric": 149,
   "parametricSampling": "40 points over the record domain at zRepresentative; the published expression is evaluated, nothing else is generated",
   "columns": {
     "records": [
@@ -80,24 +80,24 @@
   },
   "files": {
     "sim-highline-records.csv": {
-      "sha256": "b036abbe84851d9163f596f63154447cc35d0d2fb976b8656a7b6d1c26381818",
-      "bytes": 1730907
+      "sha256": "730a9ef3111c5f2237871922aa6472b2d25ec04e37101e28528f37020c46268c",
+      "bytes": 1795135
     },
     "sim-highline-points.csv": {
-      "sha256": "3db17caf2bbe7ba721af6afae0b0b0c4095533255d9a4d9fd39cc0b309afe120",
-      "bytes": 4271841
+      "sha256": "b8f794fee922184e10c09ff83b4242e9e593f8a85795810371d919ce1a947f44",
+      "bytes": 4294627
     },
     "sim-highline-distributions.csv": {
       "sha256": "164aa7f255d113534f334d83adad119cea4db29ef0f77af7f52c71a79453eec7",
       "bytes": 418015
     },
     "sim-highline-records.json": {
-      "sha256": "ec2a0fe7d33ac4af8f16d163dbecaf42eb558a1c22f2c95f3f02db24ddcf44a3",
-      "bytes": 6197556
+      "sha256": "3004358438f899d94039a79ee635bf281b096dbe25fbaeb54bfaf588283323ad",
+      "bytes": 6316741
     },
     "sim-highline-citations.bib": {
-      "sha256": "556550ef247d3ca394fa93f41813a158474d57afadeb22e63b77a8e354d84fb1",
-      "bytes": 36343
+      "sha256": "1c11e3cc6416b9cb5380586ed7df5f14d1ffd061f6431cf3d5e488ba3eb5ed5b",
+      "bytes": 37486
     },
     "sim-highline-conversions.json": {
       "sha256": "d833fe04453db71ad8c460add0315c17bcf7f5de89b9e9d84f8fa70b6075dca7",
@@ -108,8 +108,8 @@
       "bytes": 20866
     },
     "sim-highline-rules.json": {
-      "sha256": "0402480f2c9407d5a57129e6430349a249edf1604c767b7db5ebdf5180ae8b05",
-      "bytes": 6035
+      "sha256": "a47f39439b4fbf61ab1e8b328b7da5a79668992b46fcd952d36e76f5914a5e3b",
+      "bytes": 9348
     }
   }
 }

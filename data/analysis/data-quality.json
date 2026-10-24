@@ -1,6 +1,6 @@
 {
- "n_records": 1906,
- "n_sources": 129,
+ "n_records": 1943,
+ "n_sources": 134,
  "tiers": [
   {
    "kind": "empirical-model",
@@ -29,14 +29,14 @@
   {
    "kind": "observation",
    "tier": "published-fit",
-   "records": 110,
-   "rankable": 104
+   "records": 113,
+   "rankable": 107
   },
   {
    "kind": "observation",
    "tier": "published-table",
-   "records": 176,
-   "rankable": 175
+   "records": 194,
+   "rankable": 193
   },
   {
    "kind": "simulation",
@@ -47,7 +47,7 @@
   {
    "kind": "simulation",
    "tier": "digitized-figure",
-   "records": 822,
+   "records": 838,
    "rankable": 0
   },
   {
@@ -70,18 +70,18 @@
   }
  ],
  "digitized": {
-  "n": 822,
-  "share_of_simulation_curves": 0.534808067664281,
-  "n_simulation_curves": 1537,
+  "n": 838,
+  "share_of_simulation_curves": 0.5396007726980039,
+  "n_simulation_curves": 1553,
   "declared_uncertainty_dex": {
-   "n": 822,
+   "n": 838,
    "median": 0.01,
    "max": 0.05
   },
   "extraction_methods": [
    [
     "vector path vertices from the figure PDF (PyMuPDF get_drawin",
-    810
+    826
    ],
    [
     "vector path vertices (EPS converted with ghostscript",
@@ -588,6 +588,26 @@
     "6": 0,
     "8": 0
    },
+   "uvbeta": {
+    "0.1": 0,
+    "0.5": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 1,
+    "6": 2,
+    "8": 0
+   },
+   "uvbetam": {
+    "0.1": 0,
+    "0.5": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "6": 1,
+    "8": 0
+   },
    "uvlf": {
     "0.1": 0,
     "0.5": 0,
@@ -622,8 +642,8 @@
  },
  "vocabulary": {
   "population": {
-   "distinct": 70,
-   "records": 1816,
+   "distinct": 75,
+   "records": 1853,
    "near_duplicates": [
     {
      "spellings": [
@@ -658,8 +678,8 @@
    ]
   },
   "massDefinition": {
-   "distinct": 49,
-   "records": 1585,
+   "distinct": 51,
+   "records": 1594,
    "near_duplicates": [
     {
      "spellings": [
@@ -675,7 +695,7 @@
   },
   "imf": {
    "distinct": 4,
-   "records": 1801,
+   "records": 1822,
    "near_duplicates": []
   },
   "densityFrame": {
@@ -704,7 +724,7 @@
   }
  },
  "checksums": {
-  "with_checksum": 1745,
-  "records": 1906
+  "with_checksum": 1782,
+  "records": 1943
  }
 }
