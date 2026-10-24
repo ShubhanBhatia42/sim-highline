@@ -8,10 +8,10 @@
       "kind": "simulation",
       "relation": "gsmf",
       "epoch": {
-        "zRepresentative": 0.0,
-        "zNominal": 0.0,
-        "zMin": 0.0,
-        "zMax": 0.0,
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
         "mode": "published-epoch",
         "snapshot": null
       },
@@ -255,10 +255,10 @@
       "kind": "simulation",
       "relation": "gsmf",
       "epoch": {
-        "zRepresentative": 0.0,
-        "zNominal": 0.0,
-        "zMin": 0.0,
-        "zMax": 0.0,
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
         "mode": "published-epoch",
         "snapshot": null
       },
@@ -498,10 +498,10 @@
       "kind": "simulation",
       "relation": "gsmf",
       "epoch": {
-        "zRepresentative": 0.0,
-        "zNominal": 0.0,
-        "zMin": 0.0,
-        "zMax": 0.0,
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
         "mode": "published-epoch",
         "snapshot": null
       },
