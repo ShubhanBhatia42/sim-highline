@@ -1927,6 +1927,40 @@
           "key": "trayford15"
         }
       ]
+    },
+    "elf": {
+      "title": "Emission-line luminosity function",
+      "paragraph": "The emission-line luminosity function counts galaxies per unit comoving volume per dex of the luminosity of one line, here H-alpha. H-alpha comes from gas ionised by young stars and traces recent star formation, but the luminosity depends on how it was obtained: with or without the neighbouring [NII] lines, and with or without a dust correction. Kennicutt & Evans (2012) review the techniques and calibrations for measuring star formation rates. The HiZELS narrow-band surveys give the function at z = 0.40, 0.84, 1.47 and 2.23, corrected for [NII] and for a constant 1 magnitude of extinction; Sobral et al. (2013) find a faint-end slope near -1.6 at all four epochs and a characteristic luminosity that rises by a factor of about ten from z = 0 to z = 2.2. Covelo-Paz et al. (2025) measure the observed, uncorrected function from JWST grism spectra of 1050 emitters at 3.7 < z < 6.7 and compare it with three simulations, finding good agreement at z of about 4 to 6 and that SPHINX lies below their function where the two overlap. Hirschmann et al. (2023) predict the H-alpha, [OIII]+H-beta and [OII] functions of IllustrisTNG from z of about 0 to 6, without dust attenuation outside H II regions, and compare them with dust-corrected observations. Compare curves only with the same line, the same dust treatment (observed, corrected by a fixed number of magnitudes or by the Balmer decrement, or modelled) and the same aperture; the 1 magnitude correction of Sobral et al. alone is 0.4 dex.",
+      "refs": [
+        {
+          "arxiv": "1204.3552",
+          "doi": "10.1146/annurev-astro-081811-125610",
+          "role": "review",
+          "cite": "Kennicutt & Evans 2012, ARA&A 50, 531",
+          "key": "kennicutt12"
+        },
+        {
+          "arxiv": "1202.3436",
+          "doi": "10.1093/mnras/sts096",
+          "role": "observation",
+          "cite": "Sobral et al. 2013, MNRAS 428, 1128",
+          "key": "sobral13"
+        },
+        {
+          "arxiv": "2409.17241",
+          "doi": "10.1051/0004-6361/202452363",
+          "role": "observation",
+          "cite": "Covelo-Paz et al. 2025, A&A 694, A178",
+          "key": "covelopaz25"
+        },
+        {
+          "arxiv": "2212.02522",
+          "doi": "10.1093/mnras/stad2955",
+          "role": "simulation vs data",
+          "cite": "Hirschmann et al. 2023, MNRAS 526, 3610",
+          "key": "hirschmann23"
+        }
+      ]
     }
   }
 }
