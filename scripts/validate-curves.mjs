@@ -11,7 +11,7 @@ const directory = new URL("../data/curves/", import.meta.url);
 const extra = process.argv.slice(2).filter(a => a.endsWith(".json")).map(a => pathToFileURL(path.resolve(a)));
 const files = (await readdir(directory)).filter(file => file.endsWith(".json"));
 const sources = [...files.map(file => [file, new URL(file, directory)]), ...extra.map(u => [u.pathname, u])];
-const allowedRelations = new Set(["sfms","ssfr","gsmf","quenched","mzr","gas","hi-fraction","h2-fraction","shmr","size","jstar","btfr","bh","bhsigma","smd","bhmd","zstar","age","himf","sfrf","uvlf","sfrd","fgas500","metald","dmf","dtg","stfr","hmf","fmr","ks","wp","hod","colour","sigmam","sigma1","lxm","ysz","agnlf","bhad","lambdar","fslow","elf","uvbeta"]);
+const allowedRelations = new Set(["sfms","ssfr","gsmf","quenched","mzr","gas","hi-fraction","h2-fraction","shmr","size","jstar","btfr","bh","bhsigma","smd","bhmd","zstar","age","himf","sfrf","uvlf","sfrd","fgas500","metald","dmf","dtg","stfr","hmf","fmr","ks","wp","hod","colour","sigmam","sigma1","lxm","ysz","agnlf","bhad","lambdar","fslow","elf","uvbeta","uvbetam"]);
 const allowedTiers = new Set(["catalog-derived","official-table","published-table","published-fit","digitized-figure"]);
 const ids = new Set();
 const evidenceKeys = new Set();

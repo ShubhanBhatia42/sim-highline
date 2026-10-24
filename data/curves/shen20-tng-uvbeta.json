@@ -1,0 +1,1343 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "shen20.tng.uvbeta.z4.alldust",
+      "source": "IllustrisTNG",
+      "run": "IllustrisTNG (TNG50, TNG100 and TNG300 combined after resolution correction), relation with all dust attenuation",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 4.0,
+        "zNominal": 4.0,
+        "zMin": 4.0,
+        "zMax": 4.0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute rest-frame UV magnitude M_UV (dust attenuated unless the paper says otherwise)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (power-law fit from 1450 to 3000 A)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -22.783,
+        "xMax": -16.522
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.783,
+            "y": -1.8252,
+            "yLow": -1.9138,
+            "yHigh": -1.7365
+          },
+          {
+            "x": -22.435,
+            "y": -1.8584,
+            "yLow": -1.9585,
+            "yHigh": -1.7584
+          },
+          {
+            "x": -22.087,
+            "y": -1.8909,
+            "yLow": -1.9878,
+            "yHigh": -1.794
+          },
+          {
+            "x": -21.739,
+            "y": -1.9068,
+            "yLow": -2.0269,
+            "yHigh": -1.7866
+          },
+          {
+            "x": -21.391,
+            "y": -1.9213,
+            "yLow": -2.0471,
+            "yHigh": -1.7955
+          },
+          {
+            "x": -21.043,
+            "y": -1.9396,
+            "yLow": -2.0486,
+            "yHigh": -1.8307
+          },
+          {
+            "x": -20.696,
+            "y": -1.9381,
+            "yLow": -2.0606,
+            "yHigh": -1.8155
+          },
+          {
+            "x": -20.348,
+            "y": -1.9412,
+            "yLow": -2.073,
+            "yHigh": -1.8094
+          },
+          {
+            "x": -20.0,
+            "y": -1.9514,
+            "yLow": -2.0835,
+            "yHigh": -1.8192
+          },
+          {
+            "x": -19.652,
+            "y": -1.9977,
+            "yLow": -2.132,
+            "yHigh": -1.8634
+          },
+          {
+            "x": -19.304,
+            "y": -2.0155,
+            "yLow": -2.1088,
+            "yHigh": -1.9221
+          },
+          {
+            "x": -18.957,
+            "y": -2.0419,
+            "yLow": -2.1304,
+            "yHigh": -1.9533
+          },
+          {
+            "x": -18.609,
+            "y": -2.0532,
+            "yLow": -2.157,
+            "yHigh": -1.9495
+          },
+          {
+            "x": -18.261,
+            "y": -2.0485,
+            "yLow": -2.1558,
+            "yHigh": -1.9412
+          },
+          {
+            "x": -17.913,
+            "y": -2.0646,
+            "yLow": -2.1787,
+            "yHigh": -1.9505
+          },
+          {
+            "x": -17.565,
+            "y": -2.0704,
+            "yLow": -2.1729,
+            "yHigh": -1.9678
+          },
+          {
+            "x": -17.217,
+            "y": -2.0717,
+            "yLow": -2.1836,
+            "yHigh": -1.9597
+          },
+          {
+            "x": -16.87,
+            "y": -2.0983,
+            "yLow": -2.2152,
+            "yHigh": -1.9815
+          },
+          {
+            "x": -16.522,
+            "y": -2.118,
+            "yLow": -2.2435,
+            "yHigh": -1.9924
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming galaxies, log10(sSFR / yr^-1) > -9.0",
+        "warning": "UV slope against M_UV for star-forming galaxies of TNG50, TNG100 and TNG300 combined, relation with all dust attenuation (blue); the circles are the plotted bins and the bars are the 1 sigma dispersion; the first circle of the figure (M_UV about -16.2) sits on the frame edge and is not read; the paper's M_UV is the dust-attenuated magnitude unless it says otherwise (not stated separately for this curve). Observational points drawn in the same panel are not extracted here (the tables of those papers are in the dataset)."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the galaxy UV SED from 1450 A to 3000 A",
+        "xVariable": "M_UV",
+        "uvBand": "1450-1550 A (the paper: the range where the rest-frame UV luminosity is measured)",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to the synthetic SED (no photometry)",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "imf": "unspecified",
+        "population": "star-forming galaxies, log10(sSFR / yr^-1) > -9.0",
+        "aperture": "integrated flux of the whole galaxy, mock detector 1 physical Mpc away along the +z axis of the simulation box (one viewing direction)",
+        "statistic": "unspecified (the caption says 'relations' and '1 sigma dispersion'; mean or median is not stated for this figure)",
+        "dustTreatment": "attenuated",
+        "dustModel": "all dust: resolved dust from Monte Carlo radiative transfer (SKIRT, Model C of Vogelsberger et al. 2020) plus the unresolved birth-cloud dust of the MAPPINGS-III library"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Shen et al. 2020, MNRAS 495, 4747 (arXiv:2002.10474), figure of the predicted beta versus M_UV relations at z = 4-6 (UV-beta-0.pdf)",
+        "doi": "10.1093/mnras/staa1423",
+        "url": "https://arxiv.org/abs/2002.10474",
+        "retrieved": "2026-10-23",
+        "figure": "Predicted UV continuum slope beta versus M_UV relations at z = 4-6",
+        "panel": "z = 4, relation with all dust attenuation (blue)",
+        "checksumSha256": "ea1db9295c6b27d957a9962fb107e7fdcb79ee5de5ee6ac008918fefaed0189d",
+        "sourceMember": "figures/UV-beta-0.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              212.3,
+              -17.0
+            ],
+            [
+              329.18,
+              -18.0
+            ],
+            [
+              446.05,
+              -19.0
+            ],
+            [
+              562.93,
+              -20.0
+            ],
+            [
+              679.81,
+              -21.0
+            ],
+            [
+              796.68,
+              -22.0
+            ],
+            [
+              913.56,
+              -23.0
+            ]
+          ],
+          "yTicks": [
+            [
+              65.88,
+              -1.6
+            ],
+            [
+              185.4,
+              -1.8
+            ],
+            [
+              304.92,
+              -2.0
+            ],
+            [
+              424.44,
+              -2.2
+            ],
+            [
+              543.96,
+              -2.4
+            ]
+          ]
+        },
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "dbf9e80699fbc9cc02a48c03fc6e854d6e2d42978ced306dc30747bbb9cdcb74"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "shen20.tng.uvbeta.z4.nodust",
+      "source": "IllustrisTNG",
+      "run": "IllustrisTNG (TNG50, TNG100 and TNG300 combined after resolution correction), relation without the resolved dust attenuation",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 4.0,
+        "zNominal": 4.0,
+        "zMin": 4.0,
+        "zMax": 4.0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute rest-frame UV magnitude M_UV (dust attenuated unless the paper says otherwise)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (power-law fit from 1450 to 3000 A)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -23.478,
+        "xMax": -16.522
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -23.478,
+            "y": -2.109
+          },
+          {
+            "x": -23.13,
+            "y": -2.0996
+          },
+          {
+            "x": -22.783,
+            "y": -2.102
+          },
+          {
+            "x": -22.435,
+            "y": -2.1131
+          },
+          {
+            "x": -22.087,
+            "y": -2.128
+          },
+          {
+            "x": -21.739,
+            "y": -2.1356
+          },
+          {
+            "x": -21.391,
+            "y": -2.1356
+          },
+          {
+            "x": -21.043,
+            "y": -2.1533
+          },
+          {
+            "x": -20.696,
+            "y": -2.157
+          },
+          {
+            "x": -20.348,
+            "y": -2.1616
+          },
+          {
+            "x": -20.0,
+            "y": -2.1653
+          },
+          {
+            "x": -19.652,
+            "y": -2.1713
+          },
+          {
+            "x": -19.304,
+            "y": -2.1598
+          },
+          {
+            "x": -18.957,
+            "y": -2.1545
+          },
+          {
+            "x": -18.609,
+            "y": -2.1558
+          },
+          {
+            "x": -18.261,
+            "y": -2.1705
+          },
+          {
+            "x": -17.913,
+            "y": -2.1688
+          },
+          {
+            "x": -17.565,
+            "y": -2.1639
+          },
+          {
+            "x": -17.217,
+            "y": -2.1686
+          },
+          {
+            "x": -16.87,
+            "y": -2.1738
+          },
+          {
+            "x": -16.522,
+            "y": -2.1759
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming galaxies, log10(sSFR / yr^-1) > -9.0",
+        "warning": "UV slope against M_UV for star-forming galaxies of TNG50, TNG100 and TNG300 combined, relation without the resolved dust attenuation (black); the paper's M_UV is the dust-attenuated magnitude unless it says otherwise (not stated separately for this curve). Observational points drawn in the same panel are not extracted here (the tables of those papers are in the dataset)."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the galaxy UV SED from 1450 A to 3000 A",
+        "xVariable": "M_UV",
+        "uvBand": "1450-1550 A (the paper: the range where the rest-frame UV luminosity is measured)",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to the synthetic SED (no photometry)",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "imf": "unspecified",
+        "population": "star-forming galaxies, log10(sSFR / yr^-1) > -9.0",
+        "aperture": "integrated flux of the whole galaxy, mock detector 1 physical Mpc away along the +z axis of the simulation box (one viewing direction)",
+        "statistic": "unspecified (the caption says 'relations' and '1 sigma dispersion'; mean or median is not stated for this figure)",
+        "dustTreatment": "birth-cloud dust only (the paper's 'intrinsic': no resolved dust; the unresolved dust of the MAPPINGS-III library is always present)",
+        "dustModel": "no resolved dust; unresolved birth-cloud dust of the MAPPINGS-III library remains"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Shen et al. 2020, MNRAS 495, 4747 (arXiv:2002.10474), figure of the predicted beta versus M_UV relations at z = 4-6 (UV-beta-0.pdf)",
+        "doi": "10.1093/mnras/staa1423",
+        "url": "https://arxiv.org/abs/2002.10474",
+        "retrieved": "2026-10-23",
+        "figure": "Predicted UV continuum slope beta versus M_UV relations at z = 4-6",
+        "panel": "z = 4, relation without the resolved dust attenuation (black)",
+        "checksumSha256": "ea1db9295c6b27d957a9962fb107e7fdcb79ee5de5ee6ac008918fefaed0189d",
+        "sourceMember": "figures/UV-beta-0.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              212.3,
+              -17.0
+            ],
+            [
+              329.18,
+              -18.0
+            ],
+            [
+              446.05,
+              -19.0
+            ],
+            [
+              562.93,
+              -20.0
+            ],
+            [
+              679.81,
+              -21.0
+            ],
+            [
+              796.68,
+              -22.0
+            ],
+            [
+              913.56,
+              -23.0
+            ]
+          ],
+          "yTicks": [
+            [
+              65.88,
+              -1.6
+            ],
+            [
+              185.4,
+              -1.8
+            ],
+            [
+              304.92,
+              -2.0
+            ],
+            [
+              424.44,
+              -2.2
+            ],
+            [
+              543.96,
+              -2.4
+            ]
+          ]
+        },
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "dbf9e80699fbc9cc02a48c03fc6e854d6e2d42978ced306dc30747bbb9cdcb74"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "shen20.tng.uvbeta.z5.alldust",
+      "source": "IllustrisTNG",
+      "run": "IllustrisTNG (TNG50, TNG100 and TNG300 combined after resolution correction), relation with all dust attenuation",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 5.0,
+        "zNominal": 5.0,
+        "zMin": 5.0,
+        "zMax": 5.0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute rest-frame UV magnitude M_UV (dust attenuated unless the paper says otherwise)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (power-law fit from 1450 to 3000 A)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -22.783,
+        "xMax": -16.522
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.783,
+            "y": -1.9131,
+            "yLow": -1.9851,
+            "yHigh": -1.8411
+          },
+          {
+            "x": -22.435,
+            "y": -1.9403,
+            "yLow": -2.0209,
+            "yHigh": -1.8598
+          },
+          {
+            "x": -22.087,
+            "y": -1.9383,
+            "yLow": -2.0316,
+            "yHigh": -1.8449
+          },
+          {
+            "x": -21.739,
+            "y": -1.9611,
+            "yLow": -2.0711,
+            "yHigh": -1.851
+          },
+          {
+            "x": -21.391,
+            "y": -1.971,
+            "yLow": -2.0861,
+            "yHigh": -1.8559
+          },
+          {
+            "x": -21.043,
+            "y": -1.9541,
+            "yLow": -2.0708,
+            "yHigh": -1.8373
+          },
+          {
+            "x": -20.696,
+            "y": -1.9953,
+            "yLow": -2.1266,
+            "yHigh": -1.864
+          },
+          {
+            "x": -20.348,
+            "y": -2.0002,
+            "yLow": -2.1175,
+            "yHigh": -1.8828
+          },
+          {
+            "x": -20.0,
+            "y": -2.0212,
+            "yLow": -2.1337,
+            "yHigh": -1.9086
+          },
+          {
+            "x": -19.652,
+            "y": -2.0304,
+            "yLow": -2.1239,
+            "yHigh": -1.9369
+          },
+          {
+            "x": -19.304,
+            "y": -2.0447,
+            "yLow": -2.1396,
+            "yHigh": -1.9499
+          },
+          {
+            "x": -18.957,
+            "y": -2.0847,
+            "yLow": -2.1663,
+            "yHigh": -2.0031
+          },
+          {
+            "x": -18.609,
+            "y": -2.0943,
+            "yLow": -2.1897,
+            "yHigh": -1.9989
+          },
+          {
+            "x": -18.261,
+            "y": -2.0895,
+            "yLow": -2.1804,
+            "yHigh": -1.9986
+          },
+          {
+            "x": -17.913,
+            "y": -2.1226,
+            "yLow": -2.2254,
+            "yHigh": -2.0198
+          },
+          {
+            "x": -17.565,
+            "y": -2.1294,
+            "yLow": -2.2372,
+            "yHigh": -2.0216
+          },
+          {
+            "x": -17.217,
+            "y": -2.1426,
+            "yLow": -2.2481,
+            "yHigh": -2.0372
+          },
+          {
+            "x": -16.87,
+            "y": -2.162,
+            "yLow": -2.2679,
+            "yHigh": -2.056
+          },
+          {
+            "x": -16.522,
+            "y": -2.1821,
+            "yLow": -2.2888,
+            "yHigh": -2.0754
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming galaxies, log10(sSFR / yr^-1) > -9.0",
+        "warning": "UV slope against M_UV for star-forming galaxies of TNG50, TNG100 and TNG300 combined, relation with all dust attenuation (blue); the circles are the plotted bins and the bars are the 1 sigma dispersion; the first circle of the figure (M_UV about -16.2) sits on the frame edge and is not read; the paper's M_UV is the dust-attenuated magnitude unless it says otherwise (not stated separately for this curve). Observational points drawn in the same panel are not extracted here (the tables of those papers are in the dataset)."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the galaxy UV SED from 1450 A to 3000 A",
+        "xVariable": "M_UV",
+        "uvBand": "1450-1550 A (the paper: the range where the rest-frame UV luminosity is measured)",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to the synthetic SED (no photometry)",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "imf": "unspecified",
+        "population": "star-forming galaxies, log10(sSFR / yr^-1) > -9.0",
+        "aperture": "integrated flux of the whole galaxy, mock detector 1 physical Mpc away along the +z axis of the simulation box (one viewing direction)",
+        "statistic": "unspecified (the caption says 'relations' and '1 sigma dispersion'; mean or median is not stated for this figure)",
+        "dustTreatment": "attenuated",
+        "dustModel": "all dust: resolved dust from Monte Carlo radiative transfer (SKIRT, Model C of Vogelsberger et al. 2020) plus the unresolved birth-cloud dust of the MAPPINGS-III library"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Shen et al. 2020, MNRAS 495, 4747 (arXiv:2002.10474), figure of the predicted beta versus M_UV relations at z = 4-6 (UV-beta-1.pdf)",
+        "doi": "10.1093/mnras/staa1423",
+        "url": "https://arxiv.org/abs/2002.10474",
+        "retrieved": "2026-10-23",
+        "figure": "Predicted UV continuum slope beta versus M_UV relations at z = 4-6",
+        "panel": "z = 5, relation with all dust attenuation (blue)",
+        "checksumSha256": "9281c5482cffcee38213ed36f6b2e5529764a72acb0d68515411034f740372fe",
+        "sourceMember": "figures/UV-beta-1.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              212.3,
+              -17.0
+            ],
+            [
+              329.18,
+              -18.0
+            ],
+            [
+              446.05,
+              -19.0
+            ],
+            [
+              562.93,
+              -20.0
+            ],
+            [
+              679.81,
+              -21.0
+            ],
+            [
+              796.68,
+              -22.0
+            ],
+            [
+              913.56,
+              -23.0
+            ]
+          ],
+          "yTicks": [
+            [
+              65.88,
+              -1.6
+            ],
+            [
+              185.4,
+              -1.8
+            ],
+            [
+              304.92,
+              -2.0
+            ],
+            [
+              424.44,
+              -2.2
+            ],
+            [
+              543.96,
+              -2.4
+            ]
+          ]
+        },
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "dbf9e80699fbc9cc02a48c03fc6e854d6e2d42978ced306dc30747bbb9cdcb74"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "shen20.tng.uvbeta.z5.nodust",
+      "source": "IllustrisTNG",
+      "run": "IllustrisTNG (TNG50, TNG100 and TNG300 combined after resolution correction), relation without the resolved dust attenuation",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 5.0,
+        "zNominal": 5.0,
+        "zMin": 5.0,
+        "zMax": 5.0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute rest-frame UV magnitude M_UV (dust attenuated unless the paper says otherwise)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (power-law fit from 1450 to 3000 A)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -23.478,
+        "xMax": -16.522
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -23.478,
+            "y": -2.1409
+          },
+          {
+            "x": -23.13,
+            "y": -2.1538
+          },
+          {
+            "x": -22.783,
+            "y": -2.1629
+          },
+          {
+            "x": -22.435,
+            "y": -2.1845
+          },
+          {
+            "x": -22.087,
+            "y": -2.1945
+          },
+          {
+            "x": -21.739,
+            "y": -2.193
+          },
+          {
+            "x": -21.391,
+            "y": -2.1823
+          },
+          {
+            "x": -21.043,
+            "y": -2.1704
+          },
+          {
+            "x": -20.696,
+            "y": -2.19
+          },
+          {
+            "x": -20.348,
+            "y": -2.19
+          },
+          {
+            "x": -20.0,
+            "y": -2.1948
+          },
+          {
+            "x": -19.652,
+            "y": -2.1935
+          },
+          {
+            "x": -19.304,
+            "y": -2.1891
+          },
+          {
+            "x": -18.957,
+            "y": -2.1851
+          },
+          {
+            "x": -18.609,
+            "y": -2.1977
+          },
+          {
+            "x": -18.261,
+            "y": -2.1969
+          },
+          {
+            "x": -17.913,
+            "y": -2.1995
+          },
+          {
+            "x": -17.565,
+            "y": -2.209
+          },
+          {
+            "x": -17.217,
+            "y": -2.2065
+          },
+          {
+            "x": -16.87,
+            "y": -2.2154
+          },
+          {
+            "x": -16.522,
+            "y": -2.2218
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming galaxies, log10(sSFR / yr^-1) > -9.0",
+        "warning": "UV slope against M_UV for star-forming galaxies of TNG50, TNG100 and TNG300 combined, relation without the resolved dust attenuation (black); the paper's M_UV is the dust-attenuated magnitude unless it says otherwise (not stated separately for this curve). Observational points drawn in the same panel are not extracted here (the tables of those papers are in the dataset)."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the galaxy UV SED from 1450 A to 3000 A",
+        "xVariable": "M_UV",
+        "uvBand": "1450-1550 A (the paper: the range where the rest-frame UV luminosity is measured)",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to the synthetic SED (no photometry)",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "imf": "unspecified",
+        "population": "star-forming galaxies, log10(sSFR / yr^-1) > -9.0",
+        "aperture": "integrated flux of the whole galaxy, mock detector 1 physical Mpc away along the +z axis of the simulation box (one viewing direction)",
+        "statistic": "unspecified (the caption says 'relations' and '1 sigma dispersion'; mean or median is not stated for this figure)",
+        "dustTreatment": "birth-cloud dust only (the paper's 'intrinsic': no resolved dust; the unresolved dust of the MAPPINGS-III library is always present)",
+        "dustModel": "no resolved dust; unresolved birth-cloud dust of the MAPPINGS-III library remains"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Shen et al. 2020, MNRAS 495, 4747 (arXiv:2002.10474), figure of the predicted beta versus M_UV relations at z = 4-6 (UV-beta-1.pdf)",
+        "doi": "10.1093/mnras/staa1423",
+        "url": "https://arxiv.org/abs/2002.10474",
+        "retrieved": "2026-10-23",
+        "figure": "Predicted UV continuum slope beta versus M_UV relations at z = 4-6",
+        "panel": "z = 5, relation without the resolved dust attenuation (black)",
+        "checksumSha256": "9281c5482cffcee38213ed36f6b2e5529764a72acb0d68515411034f740372fe",
+        "sourceMember": "figures/UV-beta-1.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              212.3,
+              -17.0
+            ],
+            [
+              329.18,
+              -18.0
+            ],
+            [
+              446.05,
+              -19.0
+            ],
+            [
+              562.93,
+              -20.0
+            ],
+            [
+              679.81,
+              -21.0
+            ],
+            [
+              796.68,
+              -22.0
+            ],
+            [
+              913.56,
+              -23.0
+            ]
+          ],
+          "yTicks": [
+            [
+              65.88,
+              -1.6
+            ],
+            [
+              185.4,
+              -1.8
+            ],
+            [
+              304.92,
+              -2.0
+            ],
+            [
+              424.44,
+              -2.2
+            ],
+            [
+              543.96,
+              -2.4
+            ]
+          ]
+        },
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "dbf9e80699fbc9cc02a48c03fc6e854d6e2d42978ced306dc30747bbb9cdcb74"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "shen20.tng.uvbeta.z6.alldust",
+      "source": "IllustrisTNG",
+      "run": "IllustrisTNG (TNG50, TNG100 and TNG300 combined after resolution correction), relation with all dust attenuation",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 6.0,
+        "zNominal": 6.0,
+        "zMin": 6.0,
+        "zMax": 6.0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute rest-frame UV magnitude M_UV (dust attenuated unless the paper says otherwise)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (power-law fit from 1450 to 3000 A)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -22.783,
+        "xMax": -16.522
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.783,
+            "y": -2.0525,
+            "yLow": -2.1572,
+            "yHigh": -1.9479
+          },
+          {
+            "x": -22.435,
+            "y": -2.0616,
+            "yLow": -2.1532,
+            "yHigh": -1.9699
+          },
+          {
+            "x": -22.087,
+            "y": -2.0829,
+            "yLow": -2.1896,
+            "yHigh": -1.9761
+          },
+          {
+            "x": -21.739,
+            "y": -2.0613,
+            "yLow": -2.164,
+            "yHigh": -1.9587
+          },
+          {
+            "x": -21.391,
+            "y": -2.063,
+            "yLow": -2.1723,
+            "yHigh": -1.9537
+          },
+          {
+            "x": -21.043,
+            "y": -2.0718,
+            "yLow": -2.1689,
+            "yHigh": -1.9746
+          },
+          {
+            "x": -20.696,
+            "y": -2.0832,
+            "yLow": -2.1818,
+            "yHigh": -1.9846
+          },
+          {
+            "x": -20.348,
+            "y": -2.1397,
+            "yLow": -2.2519,
+            "yHigh": -2.0275
+          },
+          {
+            "x": -20.0,
+            "y": -2.1728,
+            "yLow": -2.2802,
+            "yHigh": -2.0655
+          },
+          {
+            "x": -19.652,
+            "y": -2.2122,
+            "yLow": -2.2748,
+            "yHigh": -2.1495
+          },
+          {
+            "x": -19.304,
+            "y": -2.2059,
+            "yLow": -2.2651,
+            "yHigh": -2.1467
+          },
+          {
+            "x": -18.957,
+            "y": -2.2246,
+            "yLow": -2.3094,
+            "yHigh": -2.1398
+          },
+          {
+            "x": -18.609,
+            "y": -2.2195,
+            "yLow": -2.2946,
+            "yHigh": -2.1444
+          },
+          {
+            "x": -18.261,
+            "y": -2.2402,
+            "yLow": -2.3197,
+            "yHigh": -2.1606
+          },
+          {
+            "x": -17.913,
+            "y": -2.2632,
+            "yLow": -2.3424,
+            "yHigh": -2.184
+          },
+          {
+            "x": -17.565,
+            "y": -2.2756,
+            "yLow": -2.3562,
+            "yHigh": -2.195
+          },
+          {
+            "x": -17.217,
+            "y": -2.2969,
+            "yLow": -2.3633,
+            "yHigh": -2.2304
+          },
+          {
+            "x": -16.87,
+            "y": -2.3026,
+            "yLow": -2.3717,
+            "yHigh": -2.2334
+          },
+          {
+            "x": -16.522,
+            "y": -2.3123,
+            "yLow": -2.3756,
+            "yHigh": -2.2489
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming galaxies, log10(sSFR / yr^-1) > -9.0",
+        "warning": "UV slope against M_UV for star-forming galaxies of TNG50, TNG100 and TNG300 combined, relation with all dust attenuation (blue); the circles are the plotted bins and the bars are the 1 sigma dispersion; the first circle of the figure (M_UV about -16.2) sits on the frame edge and is not read; the paper's M_UV is the dust-attenuated magnitude unless it says otherwise (not stated separately for this curve). Observational points drawn in the same panel are not extracted here (the tables of those papers are in the dataset)."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the galaxy UV SED from 1450 A to 3000 A",
+        "xVariable": "M_UV",
+        "uvBand": "1450-1550 A (the paper: the range where the rest-frame UV luminosity is measured)",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to the synthetic SED (no photometry)",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "imf": "unspecified",
+        "population": "star-forming galaxies, log10(sSFR / yr^-1) > -9.0",
+        "aperture": "integrated flux of the whole galaxy, mock detector 1 physical Mpc away along the +z axis of the simulation box (one viewing direction)",
+        "statistic": "unspecified (the caption says 'relations' and '1 sigma dispersion'; mean or median is not stated for this figure)",
+        "dustTreatment": "attenuated",
+        "dustModel": "all dust: resolved dust from Monte Carlo radiative transfer (SKIRT, Model C of Vogelsberger et al. 2020) plus the unresolved birth-cloud dust of the MAPPINGS-III library"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Shen et al. 2020, MNRAS 495, 4747 (arXiv:2002.10474), figure of the predicted beta versus M_UV relations at z = 4-6 (UV-beta-2.pdf)",
+        "doi": "10.1093/mnras/staa1423",
+        "url": "https://arxiv.org/abs/2002.10474",
+        "retrieved": "2026-10-23",
+        "figure": "Predicted UV continuum slope beta versus M_UV relations at z = 4-6",
+        "panel": "z = 6, relation with all dust attenuation (blue)",
+        "checksumSha256": "249a1bc62702a5a672c18f81338aa6ebec80c7f74d694bec4ce6c735671bf997",
+        "sourceMember": "figures/UV-beta-2.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              212.3,
+              -17.0
+            ],
+            [
+              329.18,
+              -18.0
+            ],
+            [
+              446.05,
+              -19.0
+            ],
+            [
+              562.93,
+              -20.0
+            ],
+            [
+              679.81,
+              -21.0
+            ],
+            [
+              796.68,
+              -22.0
+            ],
+            [
+              913.56,
+              -23.0
+            ]
+          ],
+          "yTicks": [
+            [
+              65.88,
+              -1.6
+            ],
+            [
+              185.4,
+              -1.8
+            ],
+            [
+              304.92,
+              -2.0
+            ],
+            [
+              424.44,
+              -2.2
+            ],
+            [
+              543.96,
+              -2.4
+            ]
+          ]
+        },
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "dbf9e80699fbc9cc02a48c03fc6e854d6e2d42978ced306dc30747bbb9cdcb74"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    },
+    {
+      "id": "shen20.tng.uvbeta.z6.nodust",
+      "source": "IllustrisTNG",
+      "run": "IllustrisTNG (TNG50, TNG100 and TNG300 combined after resolution correction), relation without the resolved dust attenuation",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 6.0,
+        "zNominal": 6.0,
+        "zMin": 6.0,
+        "zMax": 6.0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute rest-frame UV magnitude M_UV (dust attenuated unless the paper says otherwise)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (power-law fit from 1450 to 3000 A)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -23.478,
+        "xMax": -16.522
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -23.478,
+            "y": -2.2862
+          },
+          {
+            "x": -23.13,
+            "y": -2.2989
+          },
+          {
+            "x": -22.783,
+            "y": -2.3
+          },
+          {
+            "x": -22.435,
+            "y": -2.3048
+          },
+          {
+            "x": -22.087,
+            "y": -2.304
+          },
+          {
+            "x": -21.739,
+            "y": -2.3009
+          },
+          {
+            "x": -21.391,
+            "y": -2.2932
+          },
+          {
+            "x": -21.043,
+            "y": -2.3091
+          },
+          {
+            "x": -20.696,
+            "y": -2.3042
+          },
+          {
+            "x": -20.348,
+            "y": -2.3159
+          },
+          {
+            "x": -20.0,
+            "y": -2.3163
+          },
+          {
+            "x": -19.652,
+            "y": -2.3067
+          },
+          {
+            "x": -19.304,
+            "y": -2.3051
+          },
+          {
+            "x": -18.957,
+            "y": -2.3171
+          },
+          {
+            "x": -18.609,
+            "y": -2.3098
+          },
+          {
+            "x": -18.261,
+            "y": -2.3183
+          },
+          {
+            "x": -17.913,
+            "y": -2.3238
+          },
+          {
+            "x": -17.565,
+            "y": -2.3245
+          },
+          {
+            "x": -17.217,
+            "y": -2.3279
+          },
+          {
+            "x": -16.87,
+            "y": -2.3285
+          },
+          {
+            "x": -16.522,
+            "y": -2.3288
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "star-forming galaxies, log10(sSFR / yr^-1) > -9.0",
+        "warning": "UV slope against M_UV for star-forming galaxies of TNG50, TNG100 and TNG300 combined, relation without the resolved dust attenuation (black); the paper's M_UV is the dust-attenuated magnitude unless it says otherwise (not stated separately for this curve). Observational points drawn in the same panel are not extracted here (the tables of those papers are in the dataset)."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the galaxy UV SED from 1450 A to 3000 A",
+        "xVariable": "M_UV",
+        "uvBand": "1450-1550 A (the paper: the range where the rest-frame UV luminosity is measured)",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to the synthetic SED (no photometry)",
+        "cosmology": {
+          "H0": 67.74,
+          "Om": 0.3089
+        },
+        "imf": "unspecified",
+        "population": "star-forming galaxies, log10(sSFR / yr^-1) > -9.0",
+        "aperture": "integrated flux of the whole galaxy, mock detector 1 physical Mpc away along the +z axis of the simulation box (one viewing direction)",
+        "statistic": "unspecified (the caption says 'relations' and '1 sigma dispersion'; mean or median is not stated for this figure)",
+        "dustTreatment": "birth-cloud dust only (the paper's 'intrinsic': no resolved dust; the unresolved dust of the MAPPINGS-III library is always present)",
+        "dustModel": "no resolved dust; unresolved birth-cloud dust of the MAPPINGS-III library remains"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Shen et al. 2020, MNRAS 495, 4747 (arXiv:2002.10474), figure of the predicted beta versus M_UV relations at z = 4-6 (UV-beta-2.pdf)",
+        "doi": "10.1093/mnras/staa1423",
+        "url": "https://arxiv.org/abs/2002.10474",
+        "retrieved": "2026-10-23",
+        "figure": "Predicted UV continuum slope beta versus M_UV relations at z = 4-6",
+        "panel": "z = 6, relation without the resolved dust attenuation (black)",
+        "checksumSha256": "249a1bc62702a5a672c18f81338aa6ebec80c7f74d694bec4ce6c735671bf997",
+        "sourceMember": "figures/UV-beta-2.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              212.3,
+              -17.0
+            ],
+            [
+              329.18,
+              -18.0
+            ],
+            [
+              446.05,
+              -19.0
+            ],
+            [
+              562.93,
+              -20.0
+            ],
+            [
+              679.81,
+              -21.0
+            ],
+            [
+              796.68,
+              -22.0
+            ],
+            [
+              913.56,
+              -23.0
+            ]
+          ],
+          "yTicks": [
+            [
+              65.88,
+              -1.6
+            ],
+            [
+              185.4,
+              -1.8
+            ],
+            [
+              304.92,
+              -2.0
+            ],
+            [
+              424.44,
+              -2.2
+            ],
+            [
+              543.96,
+              -2.4
+            ]
+          ]
+        },
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "dbf9e80699fbc9cc02a48c03fc6e854d6e2d42978ced306dc30747bbb9cdcb74"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision, so uncertainty is the plotted line, not marker tracing."
+    }
+  ]
+}

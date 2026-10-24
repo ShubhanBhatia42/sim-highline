@@ -1,0 +1,941 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "bouwens14.uvbeta.z4",
+      "source": "Bouwens et al. 2014",
+      "run": "Bouwens et al. 2014",
+      "kind": "observation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 3.8,
+        "zNominal": 3.8,
+        "zMin": 3.8,
+        "zMax": 3.8,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB; the geometric mean of the luminosities in the bands used to derive beta for Bouwens+12, the rest-frame UV luminosity for Bouwens+14)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (biweight mean of the individual galaxies in the M_UV bin)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.75,
+        "xMax": -15.75
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -21.75,
+            "y": -1.54,
+            "yLow": -1.61,
+            "yHigh": -1.47
+          },
+          {
+            "x": -21.25,
+            "y": -1.61,
+            "yLow": -1.65,
+            "yHigh": -1.57
+          },
+          {
+            "x": -20.75,
+            "y": -1.7,
+            "yLow": -1.73,
+            "yHigh": -1.67
+          },
+          {
+            "x": -20.25,
+            "y": -1.8,
+            "yLow": -1.82,
+            "yHigh": -1.78
+          },
+          {
+            "x": -19.75,
+            "y": -1.81,
+            "yLow": -1.84,
+            "yHigh": -1.78
+          },
+          {
+            "x": -19.25,
+            "y": -1.9,
+            "yLow": -1.92,
+            "yHigh": -1.88
+          },
+          {
+            "x": -18.75,
+            "y": -1.97,
+            "yLow": -2.03,
+            "yHigh": -1.91
+          },
+          {
+            "x": -18.25,
+            "y": -1.99,
+            "yLow": -2.05,
+            "yHigh": -1.93
+          },
+          {
+            "x": -17.75,
+            "y": -2.09,
+            "yLow": -2.17,
+            "yHigh": -2.01
+          },
+          {
+            "x": -17.25,
+            "y": -2.09,
+            "yLow": -2.16,
+            "yHigh": -2.02
+          },
+          {
+            "x": -16.75,
+            "y": -2.23,
+            "yLow": -2.33,
+            "yHigh": -2.13
+          },
+          {
+            "x": -16.25,
+            "y": -2.15,
+            "yLow": -2.27,
+            "yHigh": -2.03
+          },
+          {
+            "x": -15.75,
+            "y": -2.15,
+            "yLow": -2.27,
+            "yHigh": -2.03
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "Lyman-break galaxies at z ~ 4 (HST ACS+WFC3/IR, HUDF/XDF, ERS, CANDELS)",
+        "warning": "Biweight-mean beta of the galaxies in each M_UV bin, from the table of the paper; the plotted band is the random error (1 sigma) and the paper adds a systematic error of 0.06 not drawn. z ~ 4 here is the mean redshift 3.8 of the dropout sample."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to PSF-matched broad-band fluxes: i775 I814 z850 Y105 J125 (the deepest fields: i775 I814 z850 J125)",
+        "dustTreatment": "attenuated",
+        "dustModel": "observed light: dust attenuation is whatever the galaxies have",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band fluxes",
+        "xVariable": "M_UV",
+        "cosmology": {
+          "H0": 70.0,
+          "Om": 0.3
+        },
+        "population": "Lyman-break dropout samples",
+        "aperture": "photometry PSF-matched to the H160 band (the paper: 'All the photometry used for the beta determinations are PSF-matched to the H160 band')"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Bouwens et al. 2014, ApJ 793, 115 (arXiv:1306.2950), table of the biweight mean, median and inverse-variance-weighted mean beta as a function of M_UV",
+        "doi": "10.1088/0004-637X/793/2/115",
+        "url": "https://arxiv.org/abs/1306.2950",
+        "retrieved": "2026-10-23",
+        "figure": "Table: biweight mean beta versus M_UV (z ~ 4 to 8)",
+        "checksumSha256": "d9e8e1f07982f76aea9c03328446975c540750b12ad2671757acdd22d41e0ae2",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values asserted against the printed numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens14.uvbeta.z5",
+      "source": "Bouwens et al. 2014",
+      "run": "Bouwens et al. 2014",
+      "kind": "observation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 5.0,
+        "zNominal": 5.0,
+        "zMin": 5.0,
+        "zMax": 5.0,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB; the geometric mean of the luminosities in the bands used to derive beta for Bouwens+12, the rest-frame UV luminosity for Bouwens+14)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (biweight mean of the individual galaxies in the M_UV bin)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.75,
+        "xMax": -16.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -21.75,
+            "y": -1.36,
+            "yLow": -1.84,
+            "yHigh": -0.88
+          },
+          {
+            "x": -21.25,
+            "y": -1.62,
+            "yLow": -1.73,
+            "yHigh": -1.51
+          },
+          {
+            "x": -20.75,
+            "y": -1.74,
+            "yLow": -1.79,
+            "yHigh": -1.69
+          },
+          {
+            "x": -20.25,
+            "y": -1.85,
+            "yLow": -1.9,
+            "yHigh": -1.8
+          },
+          {
+            "x": -19.75,
+            "y": -1.82,
+            "yLow": -1.86,
+            "yHigh": -1.78
+          },
+          {
+            "x": -19.25,
+            "y": -2.01,
+            "yLow": -2.08,
+            "yHigh": -1.94
+          },
+          {
+            "x": -18.75,
+            "y": -2.12,
+            "yLow": -2.22,
+            "yHigh": -2.02
+          },
+          {
+            "x": -18.25,
+            "y": -2.16,
+            "yLow": -2.25,
+            "yHigh": -2.07
+          },
+          {
+            "x": -17.75,
+            "y": -2.09,
+            "yLow": -2.19,
+            "yHigh": -1.99
+          },
+          {
+            "x": -17.25,
+            "y": -2.27,
+            "yLow": -2.41,
+            "yHigh": -2.13
+          },
+          {
+            "x": -16.5,
+            "y": -2.16,
+            "yLow": -2.33,
+            "yHigh": -1.99
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "Lyman-break galaxies at z ~ 5 (HST ACS+WFC3/IR, HUDF/XDF, ERS, CANDELS)",
+        "warning": "Biweight-mean beta of the galaxies in each M_UV bin, from the table of the paper; the plotted band is the random error (1 sigma) and the paper adds a systematic error of 0.06 not drawn. z ~ 5."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to PSF-matched broad-band fluxes: z850 Y105 J125 H160 (the deepest fields: z850 Y105 H160)",
+        "dustTreatment": "attenuated",
+        "dustModel": "observed light: dust attenuation is whatever the galaxies have",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band fluxes",
+        "xVariable": "M_UV",
+        "cosmology": {
+          "H0": 70.0,
+          "Om": 0.3
+        },
+        "population": "Lyman-break dropout samples",
+        "aperture": "photometry PSF-matched to the H160 band (the paper: 'All the photometry used for the beta determinations are PSF-matched to the H160 band')"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Bouwens et al. 2014, ApJ 793, 115 (arXiv:1306.2950), table of the biweight mean, median and inverse-variance-weighted mean beta as a function of M_UV",
+        "doi": "10.1088/0004-637X/793/2/115",
+        "url": "https://arxiv.org/abs/1306.2950",
+        "retrieved": "2026-10-23",
+        "figure": "Table: biweight mean beta versus M_UV (z ~ 4 to 8)",
+        "checksumSha256": "d9e8e1f07982f76aea9c03328446975c540750b12ad2671757acdd22d41e0ae2",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values asserted against the printed numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens14.uvbeta.z6",
+      "source": "Bouwens et al. 2014",
+      "run": "Bouwens et al. 2014",
+      "kind": "observation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 5.9,
+        "zNominal": 5.9,
+        "zMin": 5.9,
+        "zMax": 5.9,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB; the geometric mean of the luminosities in the bands used to derive beta for Bouwens+12, the rest-frame UV luminosity for Bouwens+14)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (biweight mean of the individual galaxies in the M_UV bin)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.75,
+        "xMax": -17.0
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -21.75,
+            "y": -1.55,
+            "yLow": -1.72,
+            "yHigh": -1.38
+          },
+          {
+            "x": -21.25,
+            "y": -1.58,
+            "yLow": -1.68,
+            "yHigh": -1.48
+          },
+          {
+            "x": -20.75,
+            "y": -1.74,
+            "yLow": -1.84,
+            "yHigh": -1.64
+          },
+          {
+            "x": -20.25,
+            "y": -1.9,
+            "yLow": -1.99,
+            "yHigh": -1.81
+          },
+          {
+            "x": -19.75,
+            "y": -1.9,
+            "yLow": -2.03,
+            "yHigh": -1.77
+          },
+          {
+            "x": -19.25,
+            "y": -2.22,
+            "yLow": -2.4,
+            "yHigh": -2.04
+          },
+          {
+            "x": -18.75,
+            "y": -2.26,
+            "yLow": -2.4,
+            "yHigh": -2.12
+          },
+          {
+            "x": -18.25,
+            "y": -2.19,
+            "yLow": -2.41,
+            "yHigh": -1.97
+          },
+          {
+            "x": -17.75,
+            "y": -2.4,
+            "yLow": -2.7,
+            "yHigh": -2.1
+          },
+          {
+            "x": -17.0,
+            "y": -2.24,
+            "yLow": -2.44,
+            "yHigh": -2.04
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "Lyman-break galaxies at z ~ 6 (HST ACS+WFC3/IR, HUDF/XDF, ERS, CANDELS)",
+        "warning": "Biweight-mean beta of the galaxies in each M_UV bin, from the table of the paper; the plotted band is the random error (1 sigma) and the paper adds a systematic error of 0.08 not drawn. z ~ 6."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to PSF-matched broad-band fluxes: Y105 J125 H160 (the deepest fields: Y105 H160)",
+        "dustTreatment": "attenuated",
+        "dustModel": "observed light: dust attenuation is whatever the galaxies have",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band fluxes",
+        "xVariable": "M_UV",
+        "cosmology": {
+          "H0": 70.0,
+          "Om": 0.3
+        },
+        "population": "Lyman-break dropout samples",
+        "aperture": "photometry PSF-matched to the H160 band (the paper: 'All the photometry used for the beta determinations are PSF-matched to the H160 band')"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Bouwens et al. 2014, ApJ 793, 115 (arXiv:1306.2950), table of the biweight mean, median and inverse-variance-weighted mean beta as a function of M_UV",
+        "doi": "10.1088/0004-637X/793/2/115",
+        "url": "https://arxiv.org/abs/1306.2950",
+        "retrieved": "2026-10-23",
+        "figure": "Table: biweight mean beta versus M_UV (z ~ 4 to 8)",
+        "checksumSha256": "d9e8e1f07982f76aea9c03328446975c540750b12ad2671757acdd22d41e0ae2",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values asserted against the printed numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens14.uvbeta.z7",
+      "source": "Bouwens et al. 2014",
+      "run": "Bouwens et al. 2014",
+      "kind": "observation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 7.0,
+        "zNominal": 7.0,
+        "zMin": 7.0,
+        "zMax": 7.0,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB; the geometric mean of the luminosities in the bands used to derive beta for Bouwens+12, the rest-frame UV luminosity for Bouwens+14)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (biweight mean of the individual galaxies in the M_UV bin)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.25,
+        "xMax": -17.35
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -21.25,
+            "y": -1.75,
+            "yLow": -1.93,
+            "yHigh": -1.57
+          },
+          {
+            "x": -19.95,
+            "y": -1.89,
+            "yLow": -2.02,
+            "yHigh": -1.76
+          },
+          {
+            "x": -18.65,
+            "y": -2.3,
+            "yLow": -2.48,
+            "yHigh": -2.12
+          },
+          {
+            "x": -17.35,
+            "y": -2.42,
+            "yLow": -2.7,
+            "yHigh": -2.14
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "Lyman-break galaxies at z ~ 7 (HST ACS+WFC3/IR, HUDF/XDF, ERS, CANDELS)",
+        "warning": "Biweight-mean beta of the galaxies in each M_UV bin, from the table of the paper; the plotted band is the random error (1 sigma) and the paper adds a systematic error of 0.13 not drawn. The bins are 1.3 mag wide."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to broad-band fluxes: J125 and H160 (J125 JH140 H160 over the HUDF)",
+        "dustTreatment": "attenuated",
+        "dustModel": "observed light: dust attenuation is whatever the galaxies have",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band fluxes",
+        "xVariable": "M_UV",
+        "cosmology": {
+          "H0": 70.0,
+          "Om": 0.3
+        },
+        "population": "Lyman-break dropout samples",
+        "aperture": "photometry PSF-matched to the H160 band (the paper: 'All the photometry used for the beta determinations are PSF-matched to the H160 band')"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Bouwens et al. 2014, ApJ 793, 115 (arXiv:1306.2950), table of the biweight mean, median and inverse-variance-weighted mean beta as a function of M_UV",
+        "doi": "10.1088/0004-637X/793/2/115",
+        "url": "https://arxiv.org/abs/1306.2950",
+        "retrieved": "2026-10-23",
+        "figure": "Table: biweight mean beta versus M_UV (z ~ 4 to 8)",
+        "checksumSha256": "d9e8e1f07982f76aea9c03328446975c540750b12ad2671757acdd22d41e0ae2",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values asserted against the printed numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens14.uvbeta.z8",
+      "source": "Bouwens et al. 2014",
+      "run": "Bouwens et al. 2014",
+      "kind": "observation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 8.0,
+        "zNominal": 8.0,
+        "zMin": 8.0,
+        "zMax": 8.0,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB; the geometric mean of the luminosities in the bands used to derive beta for Bouwens+12, the rest-frame UV luminosity for Bouwens+14)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (biweight mean of the individual galaxies in the M_UV bin)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -19.95,
+        "xMax": -18.65
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -19.95,
+            "y": -2.3,
+            "yLow": -2.31,
+            "yHigh": -2.29
+          },
+          {
+            "x": -18.65,
+            "y": -1.41,
+            "yLow": -2.01,
+            "yHigh": -0.81
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "Lyman-break galaxies at z ~ 8 (HST ACS+WFC3/IR, HUDF/XDF, ERS, CANDELS)",
+        "warning": "Biweight-mean beta of the galaxies in each M_UV bin, from the table of the paper; the plotted band is the random error (1 sigma) and the paper adds a systematic error of 0.27 not drawn. Two bins only (2 and 4 galaxies); the paper says the z ~ 8 results are 'quite uncertain and do not provide a useful constraint' and that the error of the first bin (+-0.01) is clearly too low because the two galaxies have the same beta. The single z ~ 8.5 bin (M_UV = -18.5, beta = -2.06) is not stored as a curve."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to the JH140 and H160 band fluxes (the paper's primary method at z ~ 8)",
+        "dustTreatment": "attenuated",
+        "dustModel": "observed light: dust attenuation is whatever the galaxies have",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band fluxes",
+        "xVariable": "M_UV",
+        "cosmology": {
+          "H0": 70.0,
+          "Om": 0.3
+        },
+        "population": "Lyman-break dropout samples",
+        "aperture": "photometry PSF-matched to the H160 band (the paper: 'All the photometry used for the beta determinations are PSF-matched to the H160 band')"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Bouwens et al. 2014, ApJ 793, 115 (arXiv:1306.2950), table of the biweight mean, median and inverse-variance-weighted mean beta as a function of M_UV",
+        "doi": "10.1088/0004-637X/793/2/115",
+        "url": "https://arxiv.org/abs/1306.2950",
+        "retrieved": "2026-10-23",
+        "figure": "Table: biweight mean beta versus M_UV (z ~ 4 to 8)",
+        "checksumSha256": "d9e8e1f07982f76aea9c03328446975c540750b12ad2671757acdd22d41e0ae2",
+        "sourceMember": "ms.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values asserted against the printed numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens12.uvbeta.z4",
+      "source": "Bouwens et al. 2012",
+      "run": "Bouwens et al. 2012",
+      "kind": "observation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 3.8,
+        "zNominal": 3.8,
+        "zMin": 3.8,
+        "zMax": 3.8,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB; the geometric mean of the luminosities in the bands used to derive beta for Bouwens+12, the rest-frame UV luminosity for Bouwens+14)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (biweight mean of the individual galaxies in the M_UV bin)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.5,
+        "xMax": -16.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -21.5,
+            "y": -1.74,
+            "yLow": -1.78,
+            "yHigh": -1.7
+          },
+          {
+            "x": -20.5,
+            "y": -1.88,
+            "yLow": -1.9,
+            "yHigh": -1.86
+          },
+          {
+            "x": -19.5,
+            "y": -2.01,
+            "yLow": -2.03,
+            "yHigh": -1.99
+          },
+          {
+            "x": -18.5,
+            "y": -2.16,
+            "yLow": -2.19,
+            "yHigh": -2.13
+          },
+          {
+            "x": -17.5,
+            "y": -2.24,
+            "yLow": -2.3,
+            "yHigh": -2.18
+          },
+          {
+            "x": -16.5,
+            "y": -2.2,
+            "yLow": -2.27,
+            "yHigh": -2.13
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "Lyman-break galaxies at z ~ 4 (HST ACS+WFC3/IR, HUDF/XDF, ERS, CANDELS)",
+        "warning": "Biweight-mean beta of the galaxies in each M_UV bin, from the table of the paper; the plotted band is the random error (1 sigma) and the paper adds a systematic error of 0.10 not drawn. Corrected by the authors for selection effects and measurement errors; the 2014 paper of the same group revises these values."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to broad-band fluxes: i775 z850 Y105 J125 (mean rest-frame wavelength 2041 A)",
+        "dustTreatment": "attenuated",
+        "dustModel": "observed light: dust attenuation is whatever the galaxies have",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band fluxes",
+        "xVariable": "M_UV",
+        "cosmology": {
+          "H0": 70.0,
+          "Om": 0.3
+        },
+        "population": "Lyman-break dropout samples",
+        "aperture": "photometry PSF-matched to the WFC3/IR H160 band, using typical Kron-style apertures (the paper's table note)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Bouwens et al. 2012, ApJ 754, 83 (arXiv:1109.0994), table of the biweight mean UV-continuum slope as a function of UV luminosity",
+        "doi": "10.1088/0004-637X/754/2/83",
+        "url": "https://arxiv.org/abs/1109.0994",
+        "retrieved": "2026-10-23",
+        "figure": "Table: biweight mean beta and scatter versus M_UV",
+        "checksumSha256": "570eff4cc726f0135d3e0b12780e9940421d6ceea9d1d348b5ac9d3ce64a9f24",
+        "sourceMember": "nbeta.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values asserted against the printed numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens12.uvbeta.z5",
+      "source": "Bouwens et al. 2012",
+      "run": "Bouwens et al. 2012",
+      "kind": "observation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 5.0,
+        "zNominal": 5.0,
+        "zMin": 5.0,
+        "zMax": 5.0,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB; the geometric mean of the luminosities in the bands used to derive beta for Bouwens+12, the rest-frame UV luminosity for Bouwens+14)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (biweight mean of the individual galaxies in the M_UV bin)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.5,
+        "xMax": -17.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -21.5,
+            "y": -1.63,
+            "yLow": -1.71,
+            "yHigh": -1.55
+          },
+          {
+            "x": -20.5,
+            "y": -1.93,
+            "yLow": -1.98,
+            "yHigh": -1.88
+          },
+          {
+            "x": -19.5,
+            "y": -2.14,
+            "yLow": -2.18,
+            "yHigh": -2.1
+          },
+          {
+            "x": -18.5,
+            "y": -2.17,
+            "yLow": -2.23,
+            "yHigh": -2.11
+          },
+          {
+            "x": -17.5,
+            "y": -2.35,
+            "yLow": -2.46,
+            "yHigh": -2.24
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "Lyman-break galaxies at z ~ 5 (HST ACS+WFC3/IR, HUDF/XDF, ERS, CANDELS)",
+        "warning": "Biweight-mean beta of the galaxies in each M_UV bin, from the table of the paper; the plotted band is the random error (1 sigma) and the paper adds a systematic error of 0.10 not drawn. Corrected by the authors for selection effects and measurement errors; the 2014 paper of the same group revises these values."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to broad-band fluxes: z850 Y105 J125 H160 (mean rest-frame wavelength 1997 A)",
+        "dustTreatment": "attenuated",
+        "dustModel": "observed light: dust attenuation is whatever the galaxies have",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band fluxes",
+        "xVariable": "M_UV",
+        "cosmology": {
+          "H0": 70.0,
+          "Om": 0.3
+        },
+        "population": "Lyman-break dropout samples",
+        "aperture": "photometry PSF-matched to the WFC3/IR H160 band, using typical Kron-style apertures (the paper's table note)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Bouwens et al. 2012, ApJ 754, 83 (arXiv:1109.0994), table of the biweight mean UV-continuum slope as a function of UV luminosity",
+        "doi": "10.1088/0004-637X/754/2/83",
+        "url": "https://arxiv.org/abs/1109.0994",
+        "retrieved": "2026-10-23",
+        "figure": "Table: biweight mean beta and scatter versus M_UV",
+        "checksumSha256": "570eff4cc726f0135d3e0b12780e9940421d6ceea9d1d348b5ac9d3ce64a9f24",
+        "sourceMember": "nbeta.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values asserted against the printed numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens12.uvbeta.z6",
+      "source": "Bouwens et al. 2012",
+      "run": "Bouwens et al. 2012",
+      "kind": "observation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 5.9,
+        "zNominal": 5.9,
+        "zMin": 5.9,
+        "zMax": 5.9,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB; the geometric mean of the luminosities in the bands used to derive beta for Bouwens+12, the rest-frame UV luminosity for Bouwens+14)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (biweight mean of the individual galaxies in the M_UV bin)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.5,
+        "xMax": -17.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -21.5,
+            "y": -1.78,
+            "yLow": -1.89,
+            "yHigh": -1.67
+          },
+          {
+            "x": -20.5,
+            "y": -2.08,
+            "yLow": -2.16,
+            "yHigh": -2.0
+          },
+          {
+            "x": -19.5,
+            "y": -2.3,
+            "yLow": -2.43,
+            "yHigh": -2.17
+          },
+          {
+            "x": -18.5,
+            "y": -2.3,
+            "yLow": -2.41,
+            "yHigh": -2.19
+          },
+          {
+            "x": -17.5,
+            "y": -2.54,
+            "yLow": -2.71,
+            "yHigh": -2.37
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "Lyman-break galaxies at z ~ 6 (HST ACS+WFC3/IR, HUDF/XDF, ERS, CANDELS)",
+        "warning": "Biweight-mean beta of the galaxies in each M_UV bin, from the table of the paper; the plotted band is the random error (1 sigma) and the paper adds a systematic error of 0.14 not drawn. Corrected by the authors for selection effects and measurement errors; the 2014 paper of the same group revises these values."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to broad-band fluxes: Y105 J125 H160 (mean rest-frame wavelength 1846 A)",
+        "dustTreatment": "attenuated",
+        "dustModel": "observed light: dust attenuation is whatever the galaxies have",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band fluxes",
+        "xVariable": "M_UV",
+        "cosmology": {
+          "H0": 70.0,
+          "Om": 0.3
+        },
+        "population": "Lyman-break dropout samples",
+        "aperture": "photometry PSF-matched to the WFC3/IR H160 band, using typical Kron-style apertures (the paper's table note)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Bouwens et al. 2012, ApJ 754, 83 (arXiv:1109.0994), table of the biweight mean UV-continuum slope as a function of UV luminosity",
+        "doi": "10.1088/0004-637X/754/2/83",
+        "url": "https://arxiv.org/abs/1109.0994",
+        "retrieved": "2026-10-23",
+        "figure": "Table: biweight mean beta and scatter versus M_UV",
+        "checksumSha256": "570eff4cc726f0135d3e0b12780e9940421d6ceea9d1d348b5ac9d3ce64a9f24",
+        "sourceMember": "nbeta.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values asserted against the printed numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    },
+    {
+      "id": "bouwens12.uvbeta.z7",
+      "source": "Bouwens et al. 2012",
+      "run": "Bouwens et al. 2012",
+      "kind": "observation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 7.0,
+        "zNominal": 7.0,
+        "zMin": 7.0,
+        "zMax": 7.0,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (rest-frame UV, AB; the geometric mean of the luminosities in the bands used to derive beta for Bouwens+12, the rest-frame UV luminosity for Bouwens+14)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (biweight mean of the individual galaxies in the M_UV bin)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.25,
+        "xMax": -18.25
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -21.25,
+            "y": -1.89,
+            "yLow": -1.99,
+            "yHigh": -1.79
+          },
+          {
+            "x": -20.25,
+            "y": -2.25,
+            "yLow": -2.38,
+            "yHigh": -2.12
+          },
+          {
+            "x": -19.25,
+            "y": -2.15,
+            "yLow": -2.27,
+            "yHigh": -2.03
+          },
+          {
+            "x": -18.25,
+            "y": -2.68,
+            "yLow": -2.87,
+            "yHigh": -2.49
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "Lyman-break galaxies at z ~ 7 (HST ACS+WFC3/IR, HUDF/XDF, ERS, CANDELS)",
+        "warning": "Biweight-mean beta of the galaxies in each M_UV bin, from the table of the paper; the plotted band is the random error (1 sigma) and the paper adds a systematic error of 0.28 not drawn. Corrected by the authors for selection effects and measurement errors; the 2014 paper of the same group revises these values."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to broad-band fluxes: J125 H160 (mean rest-frame wavelength 1731 A)",
+        "dustTreatment": "attenuated",
+        "dustModel": "observed light: dust attenuation is whatever the galaxies have",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band fluxes",
+        "xVariable": "M_UV",
+        "cosmology": {
+          "H0": 70.0,
+          "Om": 0.3
+        },
+        "population": "Lyman-break dropout samples",
+        "aperture": "photometry PSF-matched to the WFC3/IR H160 band, using typical Kron-style apertures (the paper's table note)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Bouwens et al. 2012, ApJ 754, 83 (arXiv:1109.0994), table of the biweight mean UV-continuum slope as a function of UV luminosity",
+        "doi": "10.1088/0004-637X/754/2/83",
+        "url": "https://arxiv.org/abs/1109.0994",
+        "retrieved": "2026-10-23",
+        "figure": "Table: biweight mean beta and scatter versus M_UV",
+        "checksumSha256": "570eff4cc726f0135d3e0b12780e9940421d6ceea9d1d348b5ac9d3ce64a9f24",
+        "sourceMember": "nbeta.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values asserted against the printed numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block."
+    }
+  ]
+}

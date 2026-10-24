@@ -44,7 +44,8 @@ const RULES={
   lambdar:{hard:["lambdaStatistic","projection"],soft:["spinDefinition","massDefinition","imf","population"]},
   fslow:{hard:["slowRotatorCriterion"],soft:["spinDefinition","projection","massDefinition","imf","population"]},
   elf:{hard:["line","dustCorrection"],soft:["densityFrame"]},
-  uvbeta:{hard:["betaWindow","dustTreatment"],soft:[]}
+  uvbeta:{hard:["betaWindow","dustTreatment"],soft:[]},
+  uvbetam:{hard:["betaWindow","dustTreatment"],soft:["massDefinition","imf","population"]}
 };
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 /* Which galaxies a curve covers, so that spelling variants ("all", "all galaxies", "all galaxies (PGalF)"; "quiescent", "passive") are one population while a quiescent, centrals-only, zoom or selection-based curve is another. A text with any word that is not a plain descriptor stays as written. scripts/test-compare.mjs and sim_highline.population_class keep the two ports equal. */

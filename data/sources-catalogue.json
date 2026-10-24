@@ -1411,6 +1411,59 @@
       "note": "The galaxy stellar mass function is counted from the public DARWIN-1 galaxy catalogues (substructures with star particles, stellar mass `sub/mstar` in Msun/h, 100 or more star particles) at eleven snapshots. At the paper's four panels the counts agree with the digitized curves of its Fig. 7 within 0.033 dex (8 %) in every bin of 100 or more galaxies (identical at z = 5); above 3e11 Msun at z = 1 and 0.25 the catalogue holds more galaxies than the figure implies, which the paper says depends on the mass definition. Also counted from them: the stellar-to-halo mass ratio of central galaxies (11 records, z = 0.19 to 10) and the black hole mass against stellar mass (12 records, z = 0.19 to 10, with snapshot 164 at z = 2.09 for the paper's z = 2.1 panel). Halo mass is the Friends-of-Friends group mass `halo/mtot`, because the catalogue has no M200 or virial mass; it is recorded under its own halo-mass definition (FoF-total-mass-all-species), so the comparability rules never score it against M200-based or other halo-mass definitions. The catalogue has no central flag; the central is the galaxy of largest stellar mass in the FoF halo, as the finder's own paper (Kim et al. 2023) classifies the most massive galaxy of a halo (the choice of largest total mass instead moves no bin median by more than 0.034 dex, in any snapshot). Only halo-mass bins in which every FoF halo hosts a galaxy are kept. Against the paper's raster Fig. 10 (median line read on calibrated axes, internal check only) the paper's median stellar-to-halo ratio is higher by 0.07 to 0.17 dex at z = 3 (5 bins) and 0.03 to 0.08 dex at z = 0.19 (8 bins), the sign expected from its M200,c being lower than the FoF mass (not tested). Black hole mass is `sub/mMBH`, the sum over the black hole particles of the substructure, for every galaxy with 100 or more star particles and at least one black hole particle, centrals and satellites; galaxies without a black hole particle are not in the relation. Drawn as dots on the paper's raster Fig. 11, the catalogue galaxies reproduce the figure's dots: the 50th percentile of the dot pixels agrees within 0.1 dex in 10 of 12 stellar-mass bins at z = 2.1 and 11 of 13 at z = 0.19 (largest 0.28 and 0.10 dex); galaxies with exactly one black hole particle cannot, because above about 10^10 Msun almost every galaxy has several. Whether the paper sums the particles or takes the most massive is not stated. Not derivable from the catalogue: sizes, gas-phase metallicities and stellar metallicities. The 39 datasets of every one of the 12 snapshots checked (halo, sub and unbound groups) are counts, masses, positions and velocities of the dark matter, gas, star and black hole particles, `halo/nsub` and the `halo_index` links: no radius, no abundance or metal mass, no star formation rate, no M200 or virial radius.",
       "redshifts": "10, 8, 6, 5, 4, 3, 2, 1, 0.5, 0.25, 0.19",
       "adapter": "scripts/ingest_darwin1_catalogue.py"
+    },
+    {
+      "id": "uvbeta-observations-hst-jwst",
+      "suite": "observations",
+      "status": "ingested",
+      "access": "arXiv LaTeX tables",
+      "url": "https://arxiv.org/abs/1306.2950",
+      "relations": [
+        "uvbeta"
+      ],
+      "redshifts": "z 3.8-12",
+      "adapter": "scripts/transcribe_uvbeta_bouwens.py; scripts/transcribe_uvbeta_topping24.py",
+      "note": "Biweight-mean beta against M_UV from Bouwens+12 and Bouwens+14 (HST, z 3.8-8) and median beta in bins of M_UV with the paper's linear fits from Topping+24 (JWST/JADES, z 5.9-12). Sources considered and not ingested are listed in docs/changelog-fragments/uv-slope.md."
+    },
+    {
+      "id": "uvbetam-observations-finkelstein12",
+      "suite": "observations",
+      "status": "ingested",
+      "access": "arXiv LaTeX table",
+      "url": "https://arxiv.org/abs/1110.3785",
+      "relations": [
+        "uvbetam"
+      ],
+      "redshifts": "z 4-8",
+      "adapter": "scripts/transcribe_uvbetam_finkelstein12.py",
+      "note": "Median beta in three bins of stellar mass (Table 5 of Finkelstein+12). The paper's table against M_UV is binned in L/L* and is not stored."
+    },
+    {
+      "id": "shen20-tng-uvbeta",
+      "suite": "IllustrisTNG",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2002.10474",
+      "relations": [
+        "uvbeta"
+      ],
+      "redshifts": "z 4-6",
+      "adapter": "scripts/digitize_tng_uvbeta_shen20.py",
+      "note": "beta against M_UV for star-forming galaxies of TNG50, TNG100 and TNG300 combined, with all dust and without the resolved dust (unresolved birth-cloud dust remains), 1 sigma dispersion for the first. The paper's beta against stellar mass is not drawn."
+    },
+    {
+      "id": "wu20-simba-uvbeta",
+      "suite": "SIMBA",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/1911.06330",
+      "relations": [
+        "uvbeta",
+        "uvbetam"
+      ],
+      "redshifts": "z 6",
+      "adapter": "scripts/digitize_simba_uvbeta_wu20.py",
+      "note": "SIMBA-25 and SIMBA-50 at z = 6: beta against M_1500 for four dust treatments (combined) and for the two boxes with the Calzetti law and its 1 sigma spread, and beta against stellar mass for four dust treatments. z = 8 is not drawn."
     }
   ]
 }

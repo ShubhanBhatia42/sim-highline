@@ -1,0 +1,550 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "topping24.uvbeta.f775w.binned",
+      "source": "Topping et al. 2024",
+      "run": "Topping et al. 2024",
+      "kind": "observation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 5.86,
+        "zNominal": 5.86,
+        "zMin": 5.05,
+        "zMax": 6.84,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (median of the galaxies in the bin; the paper does not state the wavelength it is measured at)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (median of the galaxies in the M_UV bin)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -20.24,
+        "xMax": -17.19
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -20.24,
+            "y": -2.12,
+            "yLow": -2.18,
+            "yHigh": -2.06
+          },
+          {
+            "x": -19.47,
+            "y": -2.2,
+            "yLow": -2.24,
+            "yHigh": -2.15
+          },
+          {
+            "x": -18.59,
+            "y": -2.3,
+            "yLow": -2.35,
+            "yHigh": -2.25
+          },
+          {
+            "x": -17.87,
+            "y": -2.38,
+            "yLow": -2.45,
+            "yHigh": -2.31
+          },
+          {
+            "x": -17.19,
+            "y": -2.38,
+            "yLow": -2.51,
+            "yHigh": -2.26
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "F775W dropout galaxies, median photometric redshift 5.86 (range 5.05-6.84)",
+        "warning": "Median beta in bins of M_UV for the F775W dropout sample (46, 71, 89, 98, 43 galaxies per bin, brightest first); the plotted band is the 68 per cent bootstrap interval of the median. "
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to NIRCam fluxes spanning the rest-UV, filters chosen by photometric redshift (z<5.4: F090W F115W F150W; 5.4-7.4: F115W F150W F200W; 7.4-9.8: F150W F200W F277W; 9.8-13.2: F200W F277W F356W; >=13.2: F277W F356W F444W)",
+        "dustTreatment": "attenuated",
+        "dustModel": "observed light: dust attenuation is whatever the galaxies have",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band NIRCam fluxes",
+        "xVariable": "M_UV",
+        "uvBand": "unspecified",
+        "cosmology": {
+          "H0": 70.0,
+          "Om": 0.3
+        },
+        "population": "dropout-selected galaxies in JADES (GOODS-S and GOODS-N)",
+        "aperture": "Kron apertures in each filter (photometric fluxes, not a fixed aperture)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Topping et al. 2024, MNRAS 529, 4087 (arXiv:2307.08835), table of median UV slopes in bins of UV luminosity",
+        "doi": "10.1093/mnras/stae800",
+        "url": "https://arxiv.org/abs/2307.08835",
+        "retrieved": "2026-10-23",
+        "figure": "Table: median UV slopes for each dropout sample divided into bins of UV luminosity",
+        "checksumSha256": "f10ba1cddf4e441046ef9b28411b20531cceae8a76c9f6b9f22819b860b0fcea",
+        "sourceMember": "main.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values asserted against the printed numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block. The uncertainty of M_UV in each bin (16th to 84th percentile of the galaxies) is in the paper's table and is not stored."
+    },
+    {
+      "id": "topping24.uvbeta.f090w.binned",
+      "source": "Topping et al. 2024",
+      "run": "Topping et al. 2024",
+      "kind": "observation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 7.28,
+        "zNominal": 7.28,
+        "zMin": 6.07,
+        "zMax": 8.59,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (median of the galaxies in the bin; the paper does not state the wavelength it is measured at)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (median of the galaxies in the M_UV bin)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -19.95,
+        "xMax": -17.4
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -19.95,
+            "y": -2.16,
+            "yLow": -2.24,
+            "yHigh": -2.1
+          },
+          {
+            "x": -19.27,
+            "y": -2.25,
+            "yLow": -2.29,
+            "yHigh": -2.21
+          },
+          {
+            "x": -18.57,
+            "y": -2.33,
+            "yLow": -2.37,
+            "yHigh": -2.29
+          },
+          {
+            "x": -17.89,
+            "y": -2.37,
+            "yLow": -2.41,
+            "yHigh": -2.33
+          },
+          {
+            "x": -17.4,
+            "y": -2.41,
+            "yLow": -2.51,
+            "yHigh": -2.31
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "F090W dropout galaxies, median photometric redshift 7.28 (range 6.07-8.59)",
+        "warning": "Median beta in bins of M_UV for the F090W dropout sample (53, 86, 160, 221, 136 galaxies per bin, brightest first); the plotted band is the 68 per cent bootstrap interval of the median. "
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to NIRCam fluxes spanning the rest-UV, filters chosen by photometric redshift (z<5.4: F090W F115W F150W; 5.4-7.4: F115W F150W F200W; 7.4-9.8: F150W F200W F277W; 9.8-13.2: F200W F277W F356W; >=13.2: F277W F356W F444W)",
+        "dustTreatment": "attenuated",
+        "dustModel": "observed light: dust attenuation is whatever the galaxies have",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band NIRCam fluxes",
+        "xVariable": "M_UV",
+        "uvBand": "unspecified",
+        "cosmology": {
+          "H0": 70.0,
+          "Om": 0.3
+        },
+        "population": "dropout-selected galaxies in JADES (GOODS-S and GOODS-N)",
+        "aperture": "Kron apertures in each filter (photometric fluxes, not a fixed aperture)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Topping et al. 2024, MNRAS 529, 4087 (arXiv:2307.08835), table of median UV slopes in bins of UV luminosity",
+        "doi": "10.1093/mnras/stae800",
+        "url": "https://arxiv.org/abs/2307.08835",
+        "retrieved": "2026-10-23",
+        "figure": "Table: median UV slopes for each dropout sample divided into bins of UV luminosity",
+        "checksumSha256": "f10ba1cddf4e441046ef9b28411b20531cceae8a76c9f6b9f22819b860b0fcea",
+        "sourceMember": "main.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values asserted against the printed numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block. The uncertainty of M_UV in each bin (16th to 84th percentile of the galaxies) is in the paper's table and is not stored."
+    },
+    {
+      "id": "topping24.uvbeta.f115w.binned",
+      "source": "Topping et al. 2024",
+      "run": "Topping et al. 2024",
+      "kind": "observation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 9.41,
+        "zNominal": 9.41,
+        "zMin": 8.2,
+        "zMax": 11.25,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (median of the galaxies in the bin; the paper does not state the wavelength it is measured at)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (median of the galaxies in the M_UV bin)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -19.99,
+        "xMax": -17.98
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -19.99,
+            "y": -2.28,
+            "yLow": -2.35,
+            "yHigh": -2.22
+          },
+          {
+            "x": -18.93,
+            "y": -2.33,
+            "yLow": -2.41,
+            "yHigh": -2.24
+          },
+          {
+            "x": -17.98,
+            "y": -2.41,
+            "yLow": -2.48,
+            "yHigh": -2.34
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "F115W dropout galaxies, median photometric redshift 9.41 (range 8.2-11.25)",
+        "warning": "Median beta in bins of M_UV for the F115W dropout sample (37, 78, 117 galaxies per bin, brightest first); the plotted band is the 68 per cent bootstrap interval of the median. "
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to NIRCam fluxes spanning the rest-UV, filters chosen by photometric redshift (z<5.4: F090W F115W F150W; 5.4-7.4: F115W F150W F200W; 7.4-9.8: F150W F200W F277W; 9.8-13.2: F200W F277W F356W; >=13.2: F277W F356W F444W)",
+        "dustTreatment": "attenuated",
+        "dustModel": "observed light: dust attenuation is whatever the galaxies have",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band NIRCam fluxes",
+        "xVariable": "M_UV",
+        "uvBand": "unspecified",
+        "cosmology": {
+          "H0": 70.0,
+          "Om": 0.3
+        },
+        "population": "dropout-selected galaxies in JADES (GOODS-S and GOODS-N)",
+        "aperture": "Kron apertures in each filter (photometric fluxes, not a fixed aperture)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Topping et al. 2024, MNRAS 529, 4087 (arXiv:2307.08835), table of median UV slopes in bins of UV luminosity",
+        "doi": "10.1093/mnras/stae800",
+        "url": "https://arxiv.org/abs/2307.08835",
+        "retrieved": "2026-10-23",
+        "figure": "Table: median UV slopes for each dropout sample divided into bins of UV luminosity",
+        "checksumSha256": "f10ba1cddf4e441046ef9b28411b20531cceae8a76c9f6b9f22819b860b0fcea",
+        "sourceMember": "main.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values asserted against the printed numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block. The uncertainty of M_UV in each bin (16th to 84th percentile of the galaxies) is in the paper's table and is not stored."
+    },
+    {
+      "id": "topping24.uvbeta.f150w.binned",
+      "source": "Topping et al. 2024",
+      "run": "Topping et al. 2024",
+      "kind": "observation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 12.02,
+        "zNominal": 12.02,
+        "zMin": 11.4,
+        "zMax": 14.25,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (median of the galaxies in the bin; the paper does not state the wavelength it is measured at)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (median of the galaxies in the M_UV bin)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -18.61,
+        "xMax": -18.61
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": false,
+        "points": [
+          {
+            "x": -18.61,
+            "y": -2.48,
+            "yLow": -2.62,
+            "yHigh": -2.36
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "F150W dropout galaxies, median photometric redshift 12.02 (range 11.4-14.25)",
+        "warning": "Median beta in bins of M_UV for the F150W dropout sample (24 galaxies per bin, brightest first); the plotted band is the 68 per cent bootstrap interval of the median. The paper gives a single bin for this sample (24 galaxies), so there is no relation to draw, only one point."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to NIRCam fluxes spanning the rest-UV, filters chosen by photometric redshift (z<5.4: F090W F115W F150W; 5.4-7.4: F115W F150W F200W; 7.4-9.8: F150W F200W F277W; 9.8-13.2: F200W F277W F356W; >=13.2: F277W F356W F444W)",
+        "dustTreatment": "attenuated",
+        "dustModel": "observed light: dust attenuation is whatever the galaxies have",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band NIRCam fluxes",
+        "xVariable": "M_UV",
+        "uvBand": "unspecified",
+        "cosmology": {
+          "H0": 70.0,
+          "Om": 0.3
+        },
+        "population": "dropout-selected galaxies in JADES (GOODS-S and GOODS-N)",
+        "aperture": "Kron apertures in each filter (photometric fluxes, not a fixed aperture)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Topping et al. 2024, MNRAS 529, 4087 (arXiv:2307.08835), table of median UV slopes in bins of UV luminosity",
+        "doi": "10.1093/mnras/stae800",
+        "url": "https://arxiv.org/abs/2307.08835",
+        "retrieved": "2026-10-23",
+        "figure": "Table: median UV slopes for each dropout sample divided into bins of UV luminosity",
+        "checksumSha256": "f10ba1cddf4e441046ef9b28411b20531cceae8a76c9f6b9f22819b860b0fcea",
+        "sourceMember": "main.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table and parsed by script; values asserted against the printed numbers in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Observational constraint; the paper's own definitions are in the definitions block. The uncertainty of M_UV in each bin (16th to 84th percentile of the galaxies) is in the paper's table and is not stored."
+    },
+    {
+      "id": "topping24.uvbeta.f775w.fit",
+      "source": "Topping et al. 2024 (linear fit)",
+      "run": "Topping et al. 2024",
+      "kind": "observation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 5.86,
+        "zNominal": 5.86,
+        "zMin": 5.05,
+        "zMax": 6.84,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (median of the galaxies in the bin; the paper does not state the wavelength it is measured at)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (median of the galaxies in the M_UV bin)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -20.24,
+        "xMax": -17.19
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "beta = (dbeta/dM_UV) (M_UV + 19) + beta_0 (the paper's linear fit to the median beta in the M_UV bins)",
+        "expression": "slope*(x+19)+b0",
+        "parameters": {
+          "slope": -0.11,
+          "b0": -2.25
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "F775W dropout galaxies, median photometric redshift 5.86",
+        "warning": "The paper's linear fit to the binned medians: d beta/d M_UV = -0.11 +- 0.02, beta_0 = -2.25 +- 0.03 at M_UV = -19, drawn over the range of the bin medians."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to NIRCam fluxes spanning the rest-UV, filters chosen by photometric redshift (z<5.4: F090W F115W F150W; 5.4-7.4: F115W F150W F200W; 7.4-9.8: F150W F200W F277W; 9.8-13.2: F200W F277W F356W; >=13.2: F277W F356W F444W)",
+        "dustTreatment": "attenuated",
+        "dustModel": "observed light: dust attenuation is whatever the galaxies have",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band NIRCam fluxes",
+        "xVariable": "M_UV",
+        "uvBand": "unspecified",
+        "cosmology": {
+          "H0": 70.0,
+          "Om": 0.3
+        },
+        "population": "dropout-selected galaxies in JADES (GOODS-S and GOODS-N)",
+        "aperture": "Kron apertures in each filter (photometric fluxes, not a fixed aperture)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Topping et al. 2024, MNRAS 529, 4087 (arXiv:2307.08835), table of best-fit linear relations",
+        "doi": "10.1093/mnras/stae800",
+        "url": "https://arxiv.org/abs/2307.08835",
+        "retrieved": "2026-10-23",
+        "figure": "Table: best-fit linear relations to UV slopes in bins of M_UV",
+        "checksumSha256": "f10ba1cddf4e441046ef9b28411b20531cceae8a76c9f6b9f22819b860b0fcea",
+        "sourceMember": "main.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table; asserted against the printed numbers and against the binned medians in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Published fit; the intercept is at M_UV = -19."
+    },
+    {
+      "id": "topping24.uvbeta.f090w.fit",
+      "source": "Topping et al. 2024 (linear fit)",
+      "run": "Topping et al. 2024",
+      "kind": "observation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 7.28,
+        "zNominal": 7.28,
+        "zMin": 6.07,
+        "zMax": 8.59,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (median of the galaxies in the bin; the paper does not state the wavelength it is measured at)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (median of the galaxies in the M_UV bin)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -19.95,
+        "xMax": -17.4
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "beta = (dbeta/dM_UV) (M_UV + 19) + beta_0 (the paper's linear fit to the median beta in the M_UV bins)",
+        "expression": "slope*(x+19)+b0",
+        "parameters": {
+          "slope": -0.12,
+          "b0": -2.26
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "F090W dropout galaxies, median photometric redshift 7.28",
+        "warning": "The paper's linear fit to the binned medians: d beta/d M_UV = -0.12 +- 0.02, beta_0 = -2.26 +- 0.03 at M_UV = -19, drawn over the range of the bin medians."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to NIRCam fluxes spanning the rest-UV, filters chosen by photometric redshift (z<5.4: F090W F115W F150W; 5.4-7.4: F115W F150W F200W; 7.4-9.8: F150W F200W F277W; 9.8-13.2: F200W F277W F356W; >=13.2: F277W F356W F444W)",
+        "dustTreatment": "attenuated",
+        "dustModel": "observed light: dust attenuation is whatever the galaxies have",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band NIRCam fluxes",
+        "xVariable": "M_UV",
+        "uvBand": "unspecified",
+        "cosmology": {
+          "H0": 70.0,
+          "Om": 0.3
+        },
+        "population": "dropout-selected galaxies in JADES (GOODS-S and GOODS-N)",
+        "aperture": "Kron apertures in each filter (photometric fluxes, not a fixed aperture)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Topping et al. 2024, MNRAS 529, 4087 (arXiv:2307.08835), table of best-fit linear relations",
+        "doi": "10.1093/mnras/stae800",
+        "url": "https://arxiv.org/abs/2307.08835",
+        "retrieved": "2026-10-23",
+        "figure": "Table: best-fit linear relations to UV slopes in bins of M_UV",
+        "checksumSha256": "f10ba1cddf4e441046ef9b28411b20531cceae8a76c9f6b9f22819b860b0fcea",
+        "sourceMember": "main.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table; asserted against the printed numbers and against the binned medians in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Published fit; the intercept is at M_UV = -19."
+    },
+    {
+      "id": "topping24.uvbeta.f115w.fit",
+      "source": "Topping et al. 2024 (linear fit)",
+      "run": "Topping et al. 2024",
+      "kind": "observation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 9.41,
+        "zNominal": 9.41,
+        "zMin": 8.2,
+        "zMax": 11.25,
+        "mode": "observational-bin",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV (median of the galaxies in the bin; the paper does not state the wavelength it is measured at)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (median of the galaxies in the M_UV bin)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -19.99,
+        "xMax": -17.98
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "beta = (dbeta/dM_UV) (M_UV + 19) + beta_0 (the paper's linear fit to the median beta in the M_UV bins)",
+        "expression": "slope*(x+19)+b0",
+        "parameters": {
+          "slope": -0.06,
+          "b0": -2.33
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "F115W dropout galaxies, median photometric redshift 9.41",
+        "warning": "The paper's linear fit to the binned medians: d beta/d M_UV = -0.06 +- 0.05, beta_0 = -2.33 +- 0.05 at M_UV = -19, drawn over the range of the bin medians."
+      },
+      "definitions": {
+        "betaWindow": "power-law fit to NIRCam fluxes spanning the rest-UV, filters chosen by photometric redshift (z<5.4: F090W F115W F150W; 5.4-7.4: F115W F150W F200W; 7.4-9.8: F150W F200W F277W; 9.8-13.2: F200W F277W F356W; >=13.2: F277W F356W F444W)",
+        "dustTreatment": "attenuated",
+        "dustModel": "observed light: dust attenuation is whatever the galaxies have",
+        "betaMethod": "power-law fit f_lambda ~ lambda^beta to broad-band NIRCam fluxes",
+        "xVariable": "M_UV",
+        "uvBand": "unspecified",
+        "cosmology": {
+          "H0": 70.0,
+          "Om": 0.3
+        },
+        "population": "dropout-selected galaxies in JADES (GOODS-S and GOODS-N)",
+        "aperture": "Kron apertures in each filter (photometric fluxes, not a fixed aperture)"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Topping et al. 2024, MNRAS 529, 4087 (arXiv:2307.08835), table of best-fit linear relations",
+        "doi": "10.1093/mnras/stae800",
+        "url": "https://arxiv.org/abs/2307.08835",
+        "retrieved": "2026-10-23",
+        "figure": "Table: best-fit linear relations to UV slopes in bins of M_UV",
+        "checksumSha256": "f10ba1cddf4e441046ef9b28411b20531cceae8a76c9f6b9f22819b860b0fcea",
+        "sourceMember": "main.tex",
+        "extractionMethod": "transcribed from the arXiv LaTeX source of the paper's table; asserted against the printed numbers and against the binned medians in the script"
+      },
+      "calibration": "target",
+      "rankable": true,
+      "notes": "Published fit; the intercept is at M_UV = -19."
+    }
+  ]
+}
