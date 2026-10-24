@@ -40,7 +40,7 @@
           {
             "x": 41.875,
             "y": -1.9031,
-            "yLow": -2.0,
+            "yLow": -2,
             "yHigh": -1.8239,
             "count": 25
           },
@@ -61,14 +61,14 @@
           {
             "x": 42.625,
             "y": -2.699,
-            "yLow": -3.0,
+            "yLow": -3,
             "yHigh": -2.5229,
             "count": 4
           },
           {
             "x": 42.875,
             "y": -2.699,
-            "yLow": -3.0,
+            "yLow": -3,
             "yHigh": -2.5229,
             "count": 4
           },
@@ -246,10 +246,10 @@
       "kind": "simulation",
       "relation": "elf",
       "epoch": {
-        "zRepresentative": 5.0,
-        "zNominal": 5.0,
-        "zMin": 5.0,
-        "zMax": 5.0,
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
         "mode": "published-epoch",
         "snapshot": null
       },
@@ -381,10 +381,10 @@
       "kind": "simulation",
       "relation": "elf",
       "epoch": {
-        "zRepresentative": 5.0,
-        "zNominal": 5.0,
-        "zMin": 5.0,
-        "zMax": 5.0,
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
         "mode": "published-epoch",
         "snapshot": null
       },
@@ -408,7 +408,7 @@
             "y": -2.1024,
             "count": 15.8,
             "yLow": -2.1871,
-            "yHigh": -2.0
+            "yHigh": -2
           },
           {
             "x": 41.875,
@@ -484,10 +484,10 @@
       "kind": "simulation",
       "relation": "elf",
       "epoch": {
-        "zRepresentative": 6.0,
-        "zNominal": 6.0,
-        "zMin": 6.0,
-        "zMax": 6.0,
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
         "mode": "published-epoch",
         "snapshot": null
       },
@@ -524,7 +524,7 @@
             "x": 42.125,
             "y": -2.0969,
             "yLow": -2.2218,
-            "yHigh": -2.0,
+            "yHigh": -2,
             "count": 16
           },
           {
@@ -537,7 +537,7 @@
           {
             "x": 42.625,
             "y": -2.699,
-            "yLow": -3.0,
+            "yLow": -3,
             "yHigh": -2.5229,
             "count": 4
           }
@@ -605,10 +605,10 @@
       "kind": "simulation",
       "relation": "elf",
       "epoch": {
-        "zRepresentative": 6.0,
-        "zNominal": 6.0,
-        "zMin": 6.0,
-        "zMax": 6.0,
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
         "mode": "published-epoch",
         "snapshot": null
       },
@@ -708,10 +708,10 @@
       "kind": "simulation",
       "relation": "elf",
       "epoch": {
-        "zRepresentative": 7.0,
-        "zNominal": 7.0,
-        "zMin": 7.0,
-        "zMax": 7.0,
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
         "mode": "published-epoch",
         "snapshot": null
       },
@@ -822,10 +822,10 @@
       "kind": "simulation",
       "relation": "elf",
       "epoch": {
-        "zRepresentative": 8.0,
-        "zNominal": 8.0,
-        "zMin": 8.0,
-        "zMax": 8.0,
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
         "mode": "published-epoch",
         "snapshot": null
       },
@@ -854,7 +854,7 @@
           {
             "x": 41.875,
             "y": -2.699,
-            "yLow": -3.0,
+            "yLow": -3,
             "yHigh": -2.5229,
             "count": 4
           },
@@ -929,10 +929,10 @@
       "kind": "simulation",
       "relation": "elf",
       "epoch": {
-        "zRepresentative": 9.0,
-        "zNominal": 9.0,
-        "zMin": 9.0,
-        "zMax": 9.0,
+        "zRepresentative": 9,
+        "zNominal": 9,
+        "zMin": 9,
+        "zMax": 9,
         "mode": "published-epoch",
         "snapshot": null
       },
@@ -961,7 +961,7 @@
           {
             "x": 41.875,
             "y": -2.699,
-            "yLow": -3.0,
+            "yLow": -3,
             "yHigh": -2.5229,
             "count": 4
           }
@@ -1029,10 +1029,10 @@
       "kind": "simulation",
       "relation": "elf",
       "epoch": {
-        "zRepresentative": 10.0,
-        "zNominal": 10.0,
-        "zMin": 10.0,
-        "zMax": 10.0,
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
         "mode": "published-epoch",
         "snapshot": null
       },
