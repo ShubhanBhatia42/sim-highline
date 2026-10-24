@@ -45,6 +45,19 @@ EDGES = np.arange(40.0, 44.51, 0.5)
 CEN = (EDGES[:-1] + EDGES[1:]) / 2
 ZS = [4.64, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
 NDIR = 10
+
+
+def js_numbers(o):
+    """Integer-valued floats are written as integers, as the JavaScript step that normalises the records writes them (41.0 -> 41)."""
+    if isinstance(o, float) and o.is_integer():
+        return int(o)
+    if isinstance(o, dict):
+        return {k: js_numbers(v) for k, v in o.items()}
+    if isinstance(o, list):
+        return [js_numbers(v) for v in o]
+    return o
+
+
 log = []
 norm = lambda a: re.sub(r"\s+", " ", a).strip()
 flat, idx = "", []
@@ -230,7 +243,7 @@ for z in ZS:
         })
 print({r['id']: len(r['representation']['points']) for r in records})
 assert len(records) >= 4, len(records)
-OUT.write_text(json.dumps({"schemaVersion": "1.0.0", "records": records}, indent=2) + "\n")
+OUT.write_text(json.dumps(js_numbers({"schemaVersion": "1.0.0", "records": records}), indent=2) + "\n")
 QUOTES.write_text("\n".join(log + ["check: " + CHECK, f"release: {URL} @ {commit}, all_basic_data.csv sha256 {DIGEST}", f"figure: figures/Halpha_lum_func.pdf sha256 {FIG_SHA}"]) + "\n")
 print(CHECK)
 print("turnover bins:", {z: float(CEN[turn[z]]) for z in ZS})

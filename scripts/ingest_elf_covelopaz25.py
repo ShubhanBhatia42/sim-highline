@@ -38,6 +38,17 @@ def fetch(arxiv_id, dest):
     tarfile.open(fileobj=io.BytesIO(blob)).extractall(dest)
 
 
+def js_numbers(o):
+    """Integer-valued floats are written as integers, as the JavaScript step that normalises the records writes them (41.0 -> 41)."""
+    if isinstance(o, float) and o.is_integer():
+        return int(o)
+    if isinstance(o, dict):
+        return {k: js_numbers(v) for k, v in o.items()}
+    if isinstance(o, list):
+        return [js_numbers(v) for v in o]
+    return o
+
+
 fetch(ARXIV, SRC)
 ARCHIVE_SHA = hashlib.sha256(Path(str(SRC) + ".tar").read_bytes()).hexdigest() if Path(str(SRC) + ".tar").exists() else None
 text = TEX.read_text(errors="replace")
@@ -156,7 +167,7 @@ for zz in (4.45, 5.3, 6.15):
     })
 assert len(records) == 3
 OUT.parent.mkdir(parents=True, exist_ok=True)
-OUT.write_text(json.dumps({"schemaVersion": "1.0.0", "records": records}, indent=2) + "\n")
+OUT.write_text(json.dumps(js_numbers({"schemaVersion": "1.0.0", "records": records}), indent=2) + "\n")
 QUOTES.parent.mkdir(parents=True, exist_ok=True)
 QUOTES.write_text("\n".join(log + ["check z=%g: %s" % (k, json.dumps(v)) for k, v in checks.items()]) + "\n")
 for k, v in checks.items():
