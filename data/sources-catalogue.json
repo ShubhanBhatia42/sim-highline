@@ -1437,6 +1437,33 @@
       "redshifts": "6, 7, 8, 10",
       "adapter": "scripts/ingest_coda2_vizier.py",
       "note": "Halo mass, stellar mass inside r200, SFR over 10 Myr and dust-free M_AB1600 of every friends-of-friends halo above 1e8 Msun; the stellar mass function and the stellar mass-halo mass relation are counted from it. Checked against the paper's printed fractions of the star formation rate in galaxies brighter than M_AB1600 = -17 and -13. Star formation rates (10 Myr, in steps of one star particle) are too coarse for a star-forming main sequence and are not stored."
+    },
+    {
+      "id": "cui18-three-hundred-figs",
+      "suite": "The Three Hundred",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDFs and a LaTeX table",
+      "url": "https://arxiv.org/abs/1809.04622",
+      "relations": [
+        "ysz",
+        "fgas500"
+      ],
+      "redshifts": "0",
+      "adapter": "scripts/digitize_three_hundred_cui18.py",
+      "note": "Gas fraction inside R500 (Fig. 5, left panel) and the Y500-M500 relation (Fig. 10) with the Table 7 power-law fits, for GADGET-MUSIC and GADGET-X. Axes are checked against the Planck 2014 line, the Table 7 fits, the 5/3 self-similar line, the Table A1 completeness limit and the cosmic baryon fraction. Not read: the stellar fraction panel (no matching relation), the central stellar-to-halo mass relation (no printed number to check the axes against) and the satellite mass function (counts per cluster, not a number density)."
+    },
+    {
+      "id": "three-hundred-data",
+      "suite": "The Three Hundred",
+      "status": "request-only",
+      "access": "the authors grant access on request (about 50 TB of simulation data and 4 TB of halo catalogues)",
+      "url": "https://arxiv.org/abs/1809.04622",
+      "relations": [
+        "ysz",
+        "fgas500",
+        "shmr"
+      ],
+      "note": "Stated in the paper's introduction; no public release was found."
     }
   ]
 }

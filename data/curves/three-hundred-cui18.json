@@ -1,0 +1,686 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "cui18.three-hundred.ysz.gadgetx.fit",
+      "source": "The Three Hundred",
+      "run": "GADGET-X (324 regions, comprehensive sample), power-law fit",
+      "kind": "simulation",
+      "relation": "ysz",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside R500, the radius enclosing 500 times the critical density; plotted in h^-1 Msun and converted with h = 0.678)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 d_A^2 Y500 (integrated Compton parameter inside R500, E(z) = 1 at z = 0)",
+        "yUnit": "log10(Mpc^2)"
+      },
+      "domain": {
+        "xMin": 13.23,
+        "xMax": 15.43
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "d_A^2 Y500 = 10^-4.18 (M500 / 6e14 Msun)^1.63 Mpc^2  (Table 7 of Cui+18, eq. 7; the normalising mass has no h)",
+        "expression": "logA+alpha*(x-logM0)",
+        "parameters": {
+          "logA": -4.18,
+          "alpha": 1.63,
+          "logM0": 14.77815
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all haloes of the comprehensive sample",
+        "warning": "Power-law fit of GADGET-X (SPH with thermal diffusion and artificial viscosity, AGN feedback; Chabrier IMF; Table 2) to the binned d_A^2 Y500 - M500 data of the comprehensive sample (the fit uses the individual clusters, so it is not a line through the plotted medians; the paper says the fit lines are offset from the medians). Parameters as printed in Table 7: A = -4.18 +/- 0.07, B = 1.63 (+/- 0.29). The domain is the span of the plotted mass bins (the paper says the relation extends down to M500 = 1e13 h^-1 Msun and gives no fitted range). z = 0 only."
+      },
+      "definitions": {
+        "haloMassDefinition": "M500crit",
+        "massMethod": "halo mass inside R500 from the AHF halo finder (all particles; simulation, not an observational proxy)",
+        "cosmology": {
+          "H0": 67.8,
+          "Om": 0.307
+        },
+        "sampleSelection": "comprehensive sample: all uncontaminated haloes of the 324 re-simulated regions; mass-complete only above M500 = 4.60e14 h^-1 Msun, the fit is weighted by the completeness below it",
+        "population": "all haloes of the comprehensive sample",
+        "szScaling": "none (z = 0 only, 'for which E(z) = 1')",
+        "szAperture": "projected (cylindrical) aperture of radius R500, x-y projection",
+        "szDefinition": "d_A^2 Y500, the Compton y parameter of the SPH gas particles (with the simulation's smoothing kernel) integrated over the aperture",
+        "imf": "chabrier03"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Cui et al. 2018, MNRAS 480, 2898 (The Three Hundred project; arXiv:1809.04622), Table 7 (fitted parameters of the Y500-M500 relation) and Fig. 10",
+        "doi": "10.1093/mnras/sty2111",
+        "url": "https://arxiv.org/abs/1809.04622",
+        "retrieved": "2026-10-24",
+        "checksumSha256": "2fb230932e7f4c281af21dacbdbb7778d820e9579aae7a196150cc70b62a106f",
+        "sourceMember": "paper.tex (Table 7) and plots/YM_relation-full.pdf (fit line checked against the printed parameters)",
+        "sourceTexSha256": "f144ee9c7660a3ee56c90cde46ff21ca41d53fddafa486ba351bdfe8e97e7e71",
+        "extractionMethod": "parameters transcribed from the LaTeX table; the drawn fit line of the figure was read from its vector path and agrees with them (see the script)"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Published fit, not the simulation's plotted medians."
+    },
+    {
+      "id": "cui18.three-hundred.ysz.gadgetx.medians",
+      "source": "The Three Hundred",
+      "run": "GADGET-X (324 regions, comprehensive sample), binned medians",
+      "kind": "simulation",
+      "relation": "ysz",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside R500, the radius enclosing 500 times the critical density; plotted in h^-1 Msun and converted with h = 0.678)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 d_A^2 Y500 (integrated Compton parameter inside R500, E(z) = 1 at z = 0)",
+        "yUnit": "log10(Mpc^2)"
+      },
+      "domain": {
+        "xMin": 13.23,
+        "xMax": 15.43
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 13.23,
+            "y": -6.8879,
+            "yHigh": -6.7591
+          },
+          {
+            "x": 13.43,
+            "y": -6.5273,
+            "yLow": -6.8954,
+            "yHigh": -6.4099
+          },
+          {
+            "x": 13.63,
+            "y": -6.167,
+            "yLow": -6.4538,
+            "yHigh": -6.0725
+          },
+          {
+            "x": 13.83,
+            "y": -5.8006,
+            "yLow": -6.1239,
+            "yHigh": -5.6951
+          },
+          {
+            "x": 14.03,
+            "y": -5.4691,
+            "yLow": -5.7076,
+            "yHigh": -5.3688
+          },
+          {
+            "x": 14.23,
+            "y": -5.1168,
+            "yLow": -5.2969,
+            "yHigh": -5.0202
+          },
+          {
+            "x": 14.43,
+            "y": -4.7963,
+            "yLow": -4.9605,
+            "yHigh": -4.704
+          },
+          {
+            "x": 14.63,
+            "y": -4.3733,
+            "yLow": -4.5743,
+            "yHigh": -4.2588
+          },
+          {
+            "x": 14.83,
+            "y": -4.0618,
+            "yLow": -4.1459,
+            "yHigh": -3.9775
+          },
+          {
+            "x": 15.03,
+            "y": -3.8352,
+            "yLow": -3.9967,
+            "yHigh": -3.756
+          },
+          {
+            "x": 15.23,
+            "y": -3.5397,
+            "yLow": -3.7638,
+            "yHigh": -3.4681
+          },
+          {
+            "x": 15.43,
+            "y": -3.181,
+            "yLow": -3.2106,
+            "yHigh": -3.159
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "all haloes of the comprehensive sample",
+        "warning": "Median d_A^2 Y500 in 0.2 dex bins of M500 for GADGET-X (SPH with thermal diffusion and artificial viscosity, AGN feedback; Chabrier IMF; Table 2), read from the markers and error bars of Fig. 10 (error bars are the 16th and 84th percentiles; a bar end below the lower axis limit is not drawn and is left out). Below M500 = 4.60e14 h^-1 Msun (log 14.66) the sample is not mass complete and its haloes lie in denser environments than a complete sample (the paper). The GADGET-X symbols are drawn 0.04 dex left of the GADGET-MUSIC bin centres; x is stored as drawn. The Nagarajan et al. (2018) line is not used: as drawn it lies -0.115 dex from the A = -4.16, B = 1.51 of its legend with the same axes, which the paper does not explain."
+      },
+      "definitions": {
+        "haloMassDefinition": "M500crit",
+        "massMethod": "halo mass inside R500 from the AHF halo finder (all particles; simulation, not an observational proxy)",
+        "cosmology": {
+          "H0": 67.8,
+          "Om": 0.307
+        },
+        "sampleSelection": "comprehensive sample: all uncontaminated haloes of the 324 re-simulated regions; mass-complete only above M500 = 4.60e14 h^-1 Msun, the fit is weighted by the completeness below it",
+        "population": "all haloes of the comprehensive sample",
+        "szScaling": "none (z = 0 only, 'for which E(z) = 1')",
+        "szAperture": "projected (cylindrical) aperture of radius R500, x-y projection",
+        "szDefinition": "d_A^2 Y500, the Compton y parameter of the SPH gas particles (with the simulation's smoothing kernel) integrated over the aperture",
+        "imf": "chabrier03"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Cui et al. 2018, MNRAS 480, 2898 (The Three Hundred project; arXiv:1809.04622), Fig. 10 (Y500-M500 relation)",
+        "doi": "10.1093/mnras/sty2111",
+        "url": "https://arxiv.org/abs/1809.04622",
+        "retrieved": "2026-10-24",
+        "figure": "Fig. 10 (Y500-M500 relation)",
+        "panel": "gadgetx markers and error bars",
+        "checksumSha256": "2fb230932e7f4c281af21dacbdbb7778d820e9579aae7a196150cc70b62a106f",
+        "sourceMember": "plots/YM_relation-full.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: log axis (labelled decades 10^13 to 10^15 from the text layer; minor ticks at log10 2 to 9); y: log axis (labelled decades 10^-7 to 10^-3, minus signs drawn as filled bars); both validated by the drawn Planck (2014) line (A = -4.19, B = 1.79 printed in the legend), the two Table 7 fit lines, the 5/3 self-similar line and the vertical line at the Table A1 completeness limit; the masses are drawn in h^-1 Msun and converted with h = 0.678",
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "f144ee9c7660a3ee56c90cde46ff21ca41d53fddafa486ba351bdfe8e97e7e71"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision."
+    },
+    {
+      "id": "cui18.three-hundred.ysz.music.fit",
+      "source": "The Three Hundred",
+      "run": "GADGET-MUSIC (324 regions, comprehensive sample), power-law fit",
+      "kind": "simulation",
+      "relation": "ysz",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside R500, the radius enclosing 500 times the critical density; plotted in h^-1 Msun and converted with h = 0.678)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 d_A^2 Y500 (integrated Compton parameter inside R500, E(z) = 1 at z = 0)",
+        "yUnit": "log10(Mpc^2)"
+      },
+      "domain": {
+        "xMin": 13.27,
+        "xMax": 15.47
+      },
+      "representation": {
+        "type": "parametric",
+        "equation": "d_A^2 Y500 = 10^-4.26 (M500 / 6e14 Msun)^1.62 Mpc^2  (Table 7 of Cui+18, eq. 7; the normalising mass has no h)",
+        "expression": "logA+alpha*(x-logM0)",
+        "parameters": {
+          "logA": -4.26,
+          "alpha": 1.62,
+          "logM0": 14.77815
+        }
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all haloes of the comprehensive sample",
+        "warning": "Power-law fit of GADGET-MUSIC (classic entropy-conserving SPH, no AGN; Salpeter IMF; Table 2) to the binned d_A^2 Y500 - M500 data of the comprehensive sample (the fit uses the individual clusters, so it is not a line through the plotted medians; the paper says the fit lines are offset from the medians). Parameters as printed in Table 7: A = -4.26 +/- 0.07, B = 1.62 (+/- 0.31). The domain is the span of the plotted mass bins (the paper says the relation extends down to M500 = 1e13 h^-1 Msun and gives no fitted range). z = 0 only."
+      },
+      "definitions": {
+        "haloMassDefinition": "M500crit",
+        "massMethod": "halo mass inside R500 from the AHF halo finder (all particles; simulation, not an observational proxy)",
+        "cosmology": {
+          "H0": 67.8,
+          "Om": 0.307
+        },
+        "sampleSelection": "comprehensive sample: all uncontaminated haloes of the 324 re-simulated regions; mass-complete only above M500 = 4.60e14 h^-1 Msun, the fit is weighted by the completeness below it",
+        "population": "all haloes of the comprehensive sample",
+        "szScaling": "none (z = 0 only, 'for which E(z) = 1')",
+        "szAperture": "projected (cylindrical) aperture of radius R500, x-y projection",
+        "szDefinition": "d_A^2 Y500, the Compton y parameter of the SPH gas particles (with the simulation's smoothing kernel) integrated over the aperture",
+        "imf": "salpeter55"
+      },
+      "provenance": {
+        "tier": "published-fit",
+        "citation": "Cui et al. 2018, MNRAS 480, 2898 (The Three Hundred project; arXiv:1809.04622), Table 7 (fitted parameters of the Y500-M500 relation) and Fig. 10",
+        "doi": "10.1093/mnras/sty2111",
+        "url": "https://arxiv.org/abs/1809.04622",
+        "retrieved": "2026-10-24",
+        "checksumSha256": "2fb230932e7f4c281af21dacbdbb7778d820e9579aae7a196150cc70b62a106f",
+        "sourceMember": "paper.tex (Table 7) and plots/YM_relation-full.pdf (fit line checked against the printed parameters)",
+        "sourceTexSha256": "f144ee9c7660a3ee56c90cde46ff21ca41d53fddafa486ba351bdfe8e97e7e71",
+        "extractionMethod": "parameters transcribed from the LaTeX table; the drawn fit line of the figure was read from its vector path and agrees with them (see the script)"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Published fit, not the simulation's plotted medians."
+    },
+    {
+      "id": "cui18.three-hundred.ysz.music.medians",
+      "source": "The Three Hundred",
+      "run": "GADGET-MUSIC (324 regions, comprehensive sample), binned medians",
+      "kind": "simulation",
+      "relation": "ysz",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside R500, the radius enclosing 500 times the critical density; plotted in h^-1 Msun and converted with h = 0.678)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 d_A^2 Y500 (integrated Compton parameter inside R500, E(z) = 1 at z = 0)",
+        "yUnit": "log10(Mpc^2)"
+      },
+      "domain": {
+        "xMin": 13.27,
+        "xMax": 15.47
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 13.27,
+            "y": -6.8066,
+            "yLow": -7.1007,
+            "yHigh": -6.6932
+          },
+          {
+            "x": 13.47,
+            "y": -6.4829,
+            "yLow": -6.7839,
+            "yHigh": -6.3845
+          },
+          {
+            "x": 13.67,
+            "y": -6.1369,
+            "yLow": -6.4176,
+            "yHigh": -6.0399
+          },
+          {
+            "x": 13.87,
+            "y": -5.7855,
+            "yLow": -6.0402,
+            "yHigh": -5.6837
+          },
+          {
+            "x": 14.07,
+            "y": -5.462,
+            "yLow": -5.678,
+            "yHigh": -5.362
+          },
+          {
+            "x": 14.27,
+            "y": -5.1022,
+            "yLow": -5.2578,
+            "yHigh": -5.0032
+          },
+          {
+            "x": 14.47,
+            "y": -4.8306,
+            "yLow": -5.0629,
+            "yHigh": -4.7402
+          },
+          {
+            "x": 14.67,
+            "y": -4.3917,
+            "yLow": -4.518,
+            "yHigh": -4.2809
+          },
+          {
+            "x": 14.87,
+            "y": -4.1109,
+            "yLow": -4.2307,
+            "yHigh": -4.0352
+          },
+          {
+            "x": 15.07,
+            "y": -3.8472,
+            "yLow": -3.9969,
+            "yHigh": -3.7672
+          },
+          {
+            "x": 15.27,
+            "y": -3.582,
+            "yLow": -3.7309,
+            "yHigh": -3.5589
+          },
+          {
+            "x": 15.47,
+            "y": -3.2494,
+            "yLow": -3.2947,
+            "yHigh": -3.2177
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "all haloes of the comprehensive sample",
+        "warning": "Median d_A^2 Y500 in 0.2 dex bins of M500 for GADGET-MUSIC (classic entropy-conserving SPH, no AGN; Salpeter IMF; Table 2), read from the markers and error bars of Fig. 10 (error bars are the 16th and 84th percentiles; a bar end below the lower axis limit is not drawn and is left out). Below M500 = 4.60e14 h^-1 Msun (log 14.66) the sample is not mass complete and its haloes lie in denser environments than a complete sample (the paper). The Nagarajan et al. (2018) line is not used: as drawn it lies -0.115 dex from the A = -4.16, B = 1.51 of its legend with the same axes, which the paper does not explain."
+      },
+      "definitions": {
+        "haloMassDefinition": "M500crit",
+        "massMethod": "halo mass inside R500 from the AHF halo finder (all particles; simulation, not an observational proxy)",
+        "cosmology": {
+          "H0": 67.8,
+          "Om": 0.307
+        },
+        "sampleSelection": "comprehensive sample: all uncontaminated haloes of the 324 re-simulated regions; mass-complete only above M500 = 4.60e14 h^-1 Msun, the fit is weighted by the completeness below it",
+        "population": "all haloes of the comprehensive sample",
+        "szScaling": "none (z = 0 only, 'for which E(z) = 1')",
+        "szAperture": "projected (cylindrical) aperture of radius R500, x-y projection",
+        "szDefinition": "d_A^2 Y500, the Compton y parameter of the SPH gas particles (with the simulation's smoothing kernel) integrated over the aperture",
+        "imf": "salpeter55"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Cui et al. 2018, MNRAS 480, 2898 (The Three Hundred project; arXiv:1809.04622), Fig. 10 (Y500-M500 relation)",
+        "doi": "10.1093/mnras/sty2111",
+        "url": "https://arxiv.org/abs/1809.04622",
+        "retrieved": "2026-10-24",
+        "figure": "Fig. 10 (Y500-M500 relation)",
+        "panel": "music markers and error bars",
+        "checksumSha256": "2fb230932e7f4c281af21dacbdbb7778d820e9579aae7a196150cc70b62a106f",
+        "sourceMember": "plots/YM_relation-full.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: log axis (labelled decades 10^13 to 10^15 from the text layer; minor ticks at log10 2 to 9); y: log axis (labelled decades 10^-7 to 10^-3, minus signs drawn as filled bars); both validated by the drawn Planck (2014) line (A = -4.19, B = 1.79 printed in the legend), the two Table 7 fit lines, the 5/3 self-similar line and the vertical line at the Table A1 completeness limit; the masses are drawn in h^-1 Msun and converted with h = 0.678",
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "f144ee9c7660a3ee56c90cde46ff21ca41d53fddafa486ba351bdfe8e97e7e71"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision."
+    },
+    {
+      "id": "cui18.three-hundred.fgas500.music",
+      "source": "The Three Hundred",
+      "run": "GADGET-MUSIC (324 regions, comprehensive sample), binned medians",
+      "kind": "simulation",
+      "relation": "fgas500",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside R500, the radius enclosing 500 times the critical density; plotted in h^-1 Msun and converted with h = 0.678)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 gas fraction within R500 (gas mass over M500) normalised by the cosmic baryon fraction Omega_b/Omega_m = 0.048/0.307 of the simulation",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 13.269,
+        "xMax": 15.069
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 13.269,
+            "y": -0.2249,
+            "yLow": -0.2673,
+            "yHigh": -0.1946
+          },
+          {
+            "x": 13.469,
+            "y": -0.2102,
+            "yLow": -0.2435,
+            "yHigh": -0.183
+          },
+          {
+            "x": 13.669,
+            "y": -0.195,
+            "yLow": -0.2261,
+            "yHigh": -0.1695
+          },
+          {
+            "x": 13.869,
+            "y": -0.1853,
+            "yLow": -0.2146,
+            "yHigh": -0.1584
+          },
+          {
+            "x": 14.069,
+            "y": -0.1767,
+            "yLow": -0.1957,
+            "yHigh": -0.157
+          },
+          {
+            "x": 14.269,
+            "y": -0.1631,
+            "yLow": -0.1821,
+            "yHigh": -0.1413
+          },
+          {
+            "x": 14.469,
+            "y": -0.1595,
+            "yLow": -0.1876,
+            "yHigh": -0.1393
+          },
+          {
+            "x": 14.669,
+            "y": -0.1558,
+            "yLow": -0.1834,
+            "yHigh": -0.1336
+          },
+          {
+            "x": 14.869,
+            "y": -0.145,
+            "yLow": -0.1627,
+            "yHigh": -0.1267
+          },
+          {
+            "x": 15.069,
+            "y": -0.1383,
+            "yLow": -0.1505,
+            "yHigh": -0.1234
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "all haloes of the comprehensive sample",
+        "warning": "Median gas fraction inside R500 in 0.2 dex bins of M500 for GADGET-MUSIC (classic entropy-conserving SPH, no AGN; Salpeter IMF; Table 2), from the markers and error bars of the left panel of Fig. 5 (16th-84th percentiles), divided by Omega_b/Omega_m = 0.048/0.307. Below M500 = 4.60e14 h^-1 Msun (log 14.66, the dashed vertical line) the sample is not mass complete and its haloes lie in denser environments than a complete sample (the paper). The paper does not say which gas phases enter the gas mass."
+      },
+      "definitions": {
+        "apertureDefinition": "R500crit",
+        "fgasNormalisation": "Omega_b/Omega_m of the simulation (0.048/0.307 = 0.156)",
+        "massMethod": "simulation: gas particles inside R500 over the halo M500 (AHF)",
+        "cosmology": {
+          "H0": 67.8,
+          "Om": 0.307
+        },
+        "population": "all haloes of the comprehensive sample",
+        "imf": "salpeter55"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Cui et al. 2018, MNRAS 480, 2898 (The Three Hundred project; arXiv:1809.04622), Fig. 5 (baryonic fractions, gas panel)",
+        "doi": "10.1093/mnras/sty2111",
+        "url": "https://arxiv.org/abs/1809.04622",
+        "retrieved": "2026-10-24",
+        "figure": "Fig. 5 (baryonic fractions, gas panel)",
+        "panel": "GADGET-MUSIC medians and 16th-84th percentile bars, left panel",
+        "checksumSha256": "1c3c5c7fde7a651398f0cf410e37c1e6a267675cf6c8b96bc315b957d2a7836d",
+        "sourceMember": "plots/Baryonic-fractions-hydro-full.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: linear axis in log M500 (labelled ticks 13.0 to 15.0); y: log axis with one labelled decade (10^-1) and the minor ticks at log10 2 to 9 fixing the scale; checked against the drawn cosmic baryon fraction line (0.048/0.307, Table 1) and the vertical line at the Table A1 completeness limit (4.60e14 h^-1 Msun); the gas fraction is divided by Omega_b/Omega_m = 0.048/0.307 and the masses converted with h = 0.678",
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "f144ee9c7660a3ee56c90cde46ff21ca41d53fddafa486ba351bdfe8e97e7e71"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. The right panel (stellar fraction) is not read."
+    },
+    {
+      "id": "cui18.three-hundred.fgas500.gadgetx",
+      "source": "The Three Hundred",
+      "run": "GADGET-X (324 regions, comprehensive sample), binned medians",
+      "kind": "simulation",
+      "relation": "fgas500",
+      "epoch": {
+        "zRepresentative": 0,
+        "zNominal": 0,
+        "zMin": 0,
+        "zMax": 0,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 M500 (mass inside R500, the radius enclosing 500 times the critical density; plotted in h^-1 Msun and converted with h = 0.678)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 gas fraction within R500 (gas mass over M500) normalised by the cosmic baryon fraction Omega_b/Omega_m = 0.048/0.307 of the simulation",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 13.269,
+        "xMax": 15.069
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 13.269,
+            "y": -0.3389,
+            "yLow": -0.4369,
+            "yHigh": -0.2692
+          },
+          {
+            "x": 13.469,
+            "y": -0.2682,
+            "yLow": -0.3421,
+            "yHigh": -0.2098
+          },
+          {
+            "x": 13.669,
+            "y": -0.211,
+            "yLow": -0.2676,
+            "yHigh": -0.159
+          },
+          {
+            "x": 13.869,
+            "y": -0.1575,
+            "yLow": -0.206,
+            "yHigh": -0.1183
+          },
+          {
+            "x": 14.069,
+            "y": -0.1309,
+            "yLow": -0.1672,
+            "yHigh": -0.1012
+          },
+          {
+            "x": 14.269,
+            "y": -0.1063,
+            "yLow": -0.1339,
+            "yHigh": -0.081
+          },
+          {
+            "x": 14.469,
+            "y": -0.0946,
+            "yLow": -0.1285,
+            "yHigh": -0.0668
+          },
+          {
+            "x": 14.669,
+            "y": -0.0856,
+            "yLow": -0.1109,
+            "yHigh": -0.057
+          },
+          {
+            "x": 14.869,
+            "y": -0.0693,
+            "yLow": -0.0897,
+            "yHigh": -0.0529
+          },
+          {
+            "x": 15.069,
+            "y": -0.0665,
+            "yLow": -0.0795,
+            "yHigh": -0.0501
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "all haloes of the comprehensive sample",
+        "warning": "Median gas fraction inside R500 in 0.2 dex bins of M500 for GADGET-X (SPH with thermal diffusion and artificial viscosity, AGN feedback; Chabrier IMF; Table 2), from the markers and error bars of the left panel of Fig. 5 (16th-84th percentiles), divided by Omega_b/Omega_m = 0.048/0.307. Below M500 = 4.60e14 h^-1 Msun (log 14.66, the dashed vertical line) the sample is not mass complete and its haloes lie in denser environments than a complete sample (the paper). The paper does not say which gas phases enter the gas mass."
+      },
+      "definitions": {
+        "apertureDefinition": "R500crit",
+        "fgasNormalisation": "Omega_b/Omega_m of the simulation (0.048/0.307 = 0.156)",
+        "massMethod": "simulation: gas particles inside R500 over the halo M500 (AHF)",
+        "cosmology": {
+          "H0": 67.8,
+          "Om": 0.307
+        },
+        "population": "all haloes of the comprehensive sample",
+        "imf": "chabrier03"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Cui et al. 2018, MNRAS 480, 2898 (The Three Hundred project; arXiv:1809.04622), Fig. 5 (baryonic fractions, gas panel)",
+        "doi": "10.1093/mnras/sty2111",
+        "url": "https://arxiv.org/abs/1809.04622",
+        "retrieved": "2026-10-24",
+        "figure": "Fig. 5 (baryonic fractions, gas panel)",
+        "panel": "GADGET-X medians and 16th-84th percentile bars, left panel",
+        "checksumSha256": "1c3c5c7fde7a651398f0cf410e37c1e6a267675cf6c8b96bc315b957d2a7836d",
+        "sourceMember": "plots/Baryonic-fractions-hydro-full.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": "x: linear axis in log M500 (labelled ticks 13.0 to 15.0); y: log axis with one labelled decade (10^-1) and the minor ticks at log10 2 to 9 fixing the scale; checked against the drawn cosmic baryon fraction line (0.048/0.307, Table 1) and the vertical line at the Table A1 completeness limit (4.60e14 h^-1 Msun); the gas fraction is divided by Omega_b/Omega_m = 0.048/0.307 and the masses converted with h = 0.678",
+        "digitizationUncertaintyDex": 0.01,
+        "sourceTexSha256": "f144ee9c7660a3ee56c90cde46ff21ca41d53fddafa486ba351bdfe8e97e7e71"
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. The right panel (stellar fraction) is not read."
+    }
+  ]
+}

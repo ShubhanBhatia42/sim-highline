@@ -9,7 +9,7 @@ import sys
 LIGHT = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#4a3aa7", "#e34948"]
 DARK = ["#3987e5", "#d95926", "#199e70", "#c98500", "#d55181", "#008300", "#9085e9", "#e66767"]
 FAMILIES = [["SIMBA", "ASTRID"], ["IllustrisTNG", "Illustris"], ["EAGLE", "COLIBRE", "FLAMINGO"], ["FIRE-2", "FIREbox"], ["NIHAO zoom suite", "Romulus25"],
-            ["FLARES", "BlueTides", "Magneticum Pathfinder"], ["THESAN-1", "THESAN-zoom", "SPHINX20", "CoDa II"], ["Horizon-AGN", "NewHorizon", "DARWIN"]]
+            ["FLARES", "BlueTides", "Magneticum Pathfinder", "The Three Hundred"], ["THESAN-1", "THESAN-zoom", "SPHINX20", "CoDa II"], ["Horizon-AGN", "NewHorizon", "DARWIN"]]
 STEP = 0.11
 
 
