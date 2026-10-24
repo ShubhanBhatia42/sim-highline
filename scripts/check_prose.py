@@ -1,4 +1,4 @@
-"""Reads the built pages (dist/site and dist/404.html) as a reader would and reports: repeated words, mixed British and American spelling, the reading level of the front page and of each study's plain-words paragraph, sentences that are very long, and inconsistent number and unit formats. Fails on repeated words, mixed spellings and formats, and a front page that needs more than a school-leaving reading level.
+"""Reads the built pages (dist/site and dist/404.html) as a reader would and reports: repeated words, mixed British and American spelling, the reading level of the front page and of each study's plain-words paragraph, sentences that are very long, and inconsistent number and unit formats. Fails on repeated words, mixed spellings and formats, a front page and a seeding-explanation page that need more than a school-leaving reading level, and novelty claims ("novel", "first to", "new method"). Quotations (blockquote) keep their authors' wording and spelling and are not checked.
 Usage: python3 scripts/check_prose.py [--report]   (--report prints the long sentences and every finding)"""
 import html
 import re
@@ -12,7 +12,7 @@ SKIP = {"findings.html", "changes.html"}
 
 def text_of(path):
     h = path.read_text()
-    h = re.sub(r"<(script|style|svg|noscript|pre|code|table)\b.*?</\1>", " ", h, flags=re.S)
+    h = re.sub(r"<(script|style|svg|noscript|pre|code|table|blockquote)\b.*?</\1>", " ", h, flags=re.S)
     m = re.search(r"<main.*?</main>", h, re.S)
     h = m.group(0) if m else h
     h = re.sub(r"<(br|/p|/li|/h\d|/dd|/dt|/div|/tr)[^>]*>", "\n", h)
@@ -76,13 +76,22 @@ if sp and nsp:
 # reading level
 front = fk_grade(texts["index.html"])
 plain = {}
-for name in ("study-definitions.html", "study-harmonization.html", "study-sfh.html", "study-joint.html", "study-shape.html"):
+for name in ("study-definitions.html", "study-harmonization.html", "study-sfh.html", "study-joint.html", "study-shape.html", "seeding.html"):
     m = re.search(r'<div class="plain">(.*?)</div>', (ROOT / "dist" / "site" / name).read_text(), re.S)
     plain[name] = fk_grade(html.unescape(re.sub(r"<[^>]+>", " ", m.group(1)))) if m else None
 if front > 14:
     problems.append(f"front page reading level is grade {front:.1f} (limit 14)")
+seed = fk_grade(texts["seeding.html"])
+if seed > 14:
+    problems.append(f"seeding explanation reading level is grade {seed:.1f} (limit 14)")
+if plain["seeding.html"] is None:
+    problems.append("seeding.html: no plain-words box")
+NOVELTY = re.compile(r"\b(novel|first[- ]ever|first to|first time|unprecedented|ground-?breaking|never (?:been )?done|new method|new approach|state of the art)\b", re.I)
+for name, t in texts.items():
+    for m in NOVELTY.finditer(t):
+        problems.append(f"{name}: novelty wording '{m.group(0)}' near: {t[max(0, m.start() - 50):m.end() + 50].strip()!r}")
 long = [(len(s.split()), name, s) for name, t in texts.items() for s in sentences(t) if len(s.split()) > 55]
-print(f"prose: {len(texts)} pages; front page reading level grade {front:.1f} (Flesch-Kincaid); plain-words paragraphs " + ", ".join(f"{k.replace('study-', '').replace('.html', '')} {v:.0f}" for k, v in plain.items() if v is not None) + f"; {len(long)} sentences over 55 words; {len(problems)} problems")
+print(f"prose: {len(texts)} pages; front page reading level grade {front:.1f} (Flesch-Kincaid); seeding page grade {seed:.1f}; plain-words paragraphs " + ", ".join(f"{k.replace('study-', '').replace('.html', '')} {v:.0f}" for k, v in plain.items() if v is not None) + f"; {len(long)} sentences over 55 words; {len(problems)} problems")
 if "--report" in sys.argv:
     for n in notes:
         print("  note:", n)

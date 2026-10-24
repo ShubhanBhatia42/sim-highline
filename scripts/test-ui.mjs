@@ -296,7 +296,7 @@ await step("hovering a legend row emphasises one curve and dims the rest", async
   await ctx.close();
 });
 
-const SITE = ["index", "studies", "study-definitions", "study-harmonization", "study-sfh", "study-joint", "study-shape", "retune", "data", "methods", "sources", "glossary", "faq", "changes", "quality"];
+const SITE = ["index", "studies", "study-definitions", "study-harmonization", "study-sfh", "study-joint", "study-shape", "seeding", "retune", "data", "methods", "sources", "glossary", "faq", "changes", "quality"];
 for (const w of [375, 1280]) for (const f of SITE) await step(`site ${f} at ${w}px: one h1, no horizontal overflow`, async () => {
   const { page, ctx, errors } = await open(`/site/${f}.html`, { w, h: 800 });
   const r = await page.evaluate(() => ({ h1: document.querySelectorAll("h1").length, sw: document.documentElement.scrollWidth, iw: innerWidth }));

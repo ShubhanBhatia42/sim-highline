@@ -2,6 +2,7 @@ import { copyFile, readdir, readFile, writeFile, mkdir } from "node:fs/promises"
 import vm from "node:vm";
 import { jointStats } from "./site-joint.mjs";
 import { shapeStats } from "./site-shape.mjs";
+import { seedingStats } from "./site-seeding.mjs";
 import { withCsp } from "./csp.mjs";
 const root = new URL("../", import.meta.url);
 const read = async p => readFile(new URL(p, root), "utf8");
@@ -397,6 +398,9 @@ Object.assign(stats, Object.fromEntries(Object.entries(jointStats(JR, undefined,
   stats.rtValRows = V ? Object.entries(V).filter(([k]) => k !== "n_test").map(([f, r]) => `<tr><td>${esc(FN[f] || f)}</td><td>${r.unit === "dex" ? "dex" : "fraction"}</td>${["IllustrisTNG", "SIMBA"].map(c => `<td class="n">${r[c].cv_rmse_median.toFixed(3)}</td><td class="n">${r[c].ratio_median.toFixed(2)}</td>`).join("")}</tr>`).join("") : "";
   stats.rtValN = V ? `${V.n_test.IllustrisTNG} (IllustrisTNG) and ${V.n_test.SIMBA} (SIMBA)` : "";
 }
+// ---- the explanation of the black hole seeding difference: numbers from the saved results, quotations from data/seeding-sources.json
+if (!JR) throw new Error("the seeding page needs data/analysis/joint-reachability.json");
+Object.assign(stats, seedingStats({ JR, RT: RT && !RT.pending ? RT : null, CG: JSON.parse(await read("data/ensembles/camels-galaxies.json")), TC: await read("data/analysis/third-code.json").then(t => JSON.parse(t), () => null), SRC: JSON.parse(await read("data/seeding-sources.json")) }));
 // ---- checks made after the registered run: generated from the exploratory outputs when they exist
 {
   const j = async f => read(f).then(t => JSON.parse(t), () => null);
@@ -516,7 +520,7 @@ const HEAD = (title, desc, img = "og-default.png") => `<link rel="preconnect" hr
 <script>try{var t=localStorage.getItem("sh-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 <style>${stats.css}</style>`;
 const MENU = [["../highline.html", "Explorer", null], ["retune.html", "Dials", "retune"], ["studies.html", "Studies", "studies"], ["data.html", "Data", "data"], ["methods.html", "Methods", "methods"]];
-const SECTION = page => /^study-/.test(page) || page === "studies.html" ? "studies" : page === "retune.html" ? "retune" : ["data.html", "sources.html"].includes(page) ? "data" : page === "methods.html" ? "methods" : null;
+const SECTION = page => /^study-/.test(page) || page === "studies.html" || page === "seeding.html" ? "studies" : page === "retune.html" ? "retune" : ["data.html", "sources.html"].includes(page) ? "data" : page === "methods.html" ? "methods" : null;
 const HEADER = page => `<a class="skip" href="#main">Skip to the content</a>
 <header class="top"><div class="wrap bar"><a class="mark" href="index.html" aria-label="sim-highline home">sim-highline</a><nav class="menu" aria-label="Main">${MENU.map(([h, t, k]) => `<a href="${h}"${k && k === SECTION(page) ? ' aria-current="page"' : ""}>${t}</a>`).join("")}</nav><span class="sp"></span><a class="chip" href="https://doi.org/${release.doi}" title="dataset v${release.version}, doi:${release.doi}">v${release.version} · doi</a><button class="ico" id="theme" type="button" aria-label="Switch theme"></button></div>
 <div class="status"><div class="wrap"><span><b>${stats.records}</b> records</span><span><b>${stats.suites}</b> simulations</span><span><b>${stats.obsSources}</b> observational and empirical sources</span><span><b>${stats.relations}</b> relations</span><span>z <b>${stats.zMin}–${stats.zMax}</b></span><span class="opt">released <b>${release.released}</b></span></div></div></header>`;
@@ -526,7 +530,7 @@ const FOOTER = () => `<footer class="foot"><div class="wrap">
 <p>Cite as: ${esc(lastParts.join(" "))}, ${esc(first[0])}. (${stats.year}). <em>${esc(release.title)}</em> (v${release.version}). Zenodo. <a href="https://doi.org/${release.doi}">doi:${release.doi}</a>. Cite the original papers as well: every record carries its citation and DOI.</p>
 <p>Code ${esc(release.license.code)}; data ${esc(release.license.data.replace("CC-BY-4.0", "CC BY 4.0"))}, third-party inputs keep their own terms (<a href="${release.repo}/blob/main/docs/SOURCE-TERMS.md">SOURCE-TERMS.md</a>). Maintained by ${esc(release.author)}.</p>
 <p class="tell"><b>Was something confusing, wrong or missing?</b> <a id="tellus" href="${release.repo}/issues/new?template=feedback.yml">Tell us in two sentences</a>. This needs a GitHub account; without one, write to the maintainer at the address in <a href="${release.repo}/blob/main/CITATION.cff">CITATION.cff</a>.</p>
-<p class="links"><a href="../highline.html">Explorer</a><a href="retune.html">Dials</a><a href="studies.html">Studies</a><a href="data.html">Data</a><a href="methods.html">Methods</a><a href="glossary.html">Glossary</a><a href="faq.html">FAQ</a><a href="quality.html">Data quality</a><a href="changes.html">What is new</a><a id="reportlink" href="${release.repo}/issues/new?template=bug.yml">Report a problem</a><a id="feedbacklink" href="${release.repo}/issues/new?template=feedback.yml">Give feedback</a><a href="${release.repo}">Repository</a><a href="${release.repo}/blob/main/CHANGELOG.md">Changelog</a><a href="${release.repo}/blob/main/CITATION.cff">CITATION.cff</a><a href="${release.repo}/blob/main/LICENSE">LICENSE</a><a href="${release.repo}/blob/main/LICENSE-DATA.md">LICENSE-DATA</a></p>
+<p class="links"><a href="../highline.html">Explorer</a><a href="retune.html">Dials</a><a href="studies.html">Studies</a><a href="data.html">Data</a><a href="methods.html">Methods</a><a href="seeding.html">Black hole seeding</a><a href="glossary.html">Glossary</a><a href="faq.html">FAQ</a><a href="quality.html">Data quality</a><a href="changes.html">What is new</a><a id="reportlink" href="${release.repo}/issues/new?template=bug.yml">Report a problem</a><a id="feedbacklink" href="${release.repo}/issues/new?template=feedback.yml">Give feedback</a><a href="${release.repo}">Repository</a><a href="${release.repo}/blob/main/CHANGELOG.md">Changelog</a><a href="${release.repo}/blob/main/CITATION.cff">CITATION.cff</a><a href="${release.repo}/blob/main/LICENSE">LICENSE</a><a href="${release.repo}/blob/main/LICENSE-DATA.md">LICENSE-DATA</a></p>
 </div></footer>${THEME_JS}`;
 
 // structured metadata so that dataset search understands what this is (schema.org Dataset), from the release and the export manifest
@@ -539,7 +543,7 @@ const DATASET_LD = `\n<script type="application/ld+json">${JSON.stringify({
   distribution: Object.entries(manifest.files).filter(([f]) => /\.(csv|json|bib)$/.test(f)).map(([f, m]) => ({ "@type": "DataDownload", name: f, contentUrl: `${SITE_URL}/data/export/${f}`, encodingFormat: MIME[f.slice(f.lastIndexOf("."))] || "application/octet-stream", contentSize: `${m.bytes} B`, sha256: m.sha256 }))
 }).replace(/</g, "\\u003c")}</script>`;
 await mkdir(new URL("dist/site/", root), { recursive: true });
-const PAGES = ["index.html", "studies.html", "study-definitions.html", "study-harmonization.html", "study-sfh.html", "study-joint.html", "study-shape.html", "retune.html", "data.html", "methods.html", "sources.html", "findings.html", "glossary.html", "faq.html", "changes.html", "quality.html", "summary.html"];
+const PAGES = ["index.html", "studies.html", "study-definitions.html", "study-harmonization.html", "study-sfh.html", "study-joint.html", "study-shape.html", "seeding.html", "retune.html", "data.html", "methods.html", "sources.html", "findings.html", "glossary.html", "faq.html", "changes.html", "quality.html", "summary.html"];
 for (const page of PAGES) {
   let html = await read(`site/src/${page}`);
   const title = (html.match(/<title>([^<]*)<\/title>/) || [])[1], desc = (html.match(/<meta name="description" content="([^"]*)"/) || [])[1];

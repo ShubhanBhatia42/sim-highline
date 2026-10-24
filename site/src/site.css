@@ -254,6 +254,8 @@ pre[tabindex]:focus-visible{outline-offset:0}
   .tw,.sm{overflow:visible}table{font-size:9pt}
   h1,h2,h3{break-after:avoid}
   .sec{break-inside:auto}figure,.fig,table,.limits-first{break-inside:avoid}
+code.hx{overflow-wrap:anywhere;word-break:break-all}
+blockquote.src{margin:1rem 0 1.2rem;padding:.1rem 0 .1rem 1rem;border-left:3px solid var(--rule-strong);max-width:46rem;break-inside:avoid}blockquote.src p{margin:0 0 .35rem;font-style:italic}blockquote.src footer{font:400 13.5px/1.4 var(--sans,inherit);color:var(--cream3,inherit)}
 }
 
 /* ---- retune instrument ---- */
