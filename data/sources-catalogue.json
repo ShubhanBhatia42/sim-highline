@@ -686,9 +686,11 @@
         "sfms",
         "zstar",
         "shmr",
-        "size"
+        "size",
+        "elf"
       ],
-      "redshifts": "4.64-10"
+      "redshifts": "4.64-10",
+      "note": "Per-galaxy table (halo and stellar properties, intrinsic and dust-attenuated line luminosities along ten sight lines). The H-alpha luminosity functions (relation elf) are computed from it by scripts/ingest_elf_sphinx20.py."
     },
     {
       "id": "garcia24-fmr-catalogues",
@@ -1410,6 +1412,32 @@
         "mzr"
       ],
       "note": "The DARWIN-1 galaxy catalogues are public (the data page states that only these are on offer; other data on request). A catalogue-derived stellar mass function, stellar mass-halo mass relation and sizes would replace the figure reads with computed numbers; no adapter has been written, and the files' fields have not been inspected."
+    },
+    {
+      "id": "sobral13-hizels-halpha-lf",
+      "suite": "observations (HiZELS)",
+      "status": "ingested",
+      "access": "arXiv source, table 4",
+      "url": "https://arxiv.org/abs/1202.3436",
+      "relations": [
+        "elf"
+      ],
+      "redshifts": "z 0.40, 0.84, 1.47, 2.23",
+      "adapter": "scripts/ingest_elf_sobral13.py",
+      "note": "H-alpha luminosity functions from the paper's table of binned values (corrected for [NII] and for A(Halpha) = 1 mag); the Schechter fits of the paper's Table 5 are used as checks."
+    },
+    {
+      "id": "covelopaz25-fresco-halpha-lf",
+      "suite": "observations (FRESCO, CONGRESS)",
+      "status": "ingested",
+      "access": "arXiv source, table 3",
+      "url": "https://arxiv.org/abs/2409.17241",
+      "relations": [
+        "elf"
+      ],
+      "redshifts": "z 4.45, 5.30, 6.15",
+      "adapter": "scripts/ingest_elf_covelopaz25.py",
+      "note": "Observed (not dust-corrected) H-alpha luminosity functions from JWST grism spectra, from the paper's table; the Schechter fits of its Table 4 are used as checks."
     }
   ]
 }
