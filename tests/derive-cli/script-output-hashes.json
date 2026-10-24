@@ -1,0 +1,67 @@
+{
+  "note": "sha256 of the output of each derive script (retrieval date masked as DATE) on the fixtures in this folder, recorded from the scripts as they were before their code moved into sim_highline_derive.py (commit 61d2a45); scripts/test_derive_cli.py fails if the scripts now write anything else. {fx} is this folder.",
+  "cases": [
+    {
+      "script": "derive_subfind_relations.py",
+      "args": [
+        "MYRUN",
+        "{fx}/subfind",
+        "--snaps",
+        "99",
+        "--source",
+        "My source",
+        "--mbar",
+        "1e6",
+        "--h",
+        "0.6774",
+        "--Om",
+        "0.3089",
+        "--url",
+        "https://example.org/"
+      ],
+      "out": "subfind-myrun.json",
+      "sha256": "84ab3d1e26ad523776b3f6dcfe585612c7c56122ef4eead6bde95844f036336d",
+      "records": 10
+    },
+    {
+      "script": "derive_soap_relations.py",
+      "args": [
+        "flamingo",
+        "L25",
+        "1e6",
+        "{fx}/soap/halo_properties_0050.hdf5"
+      ],
+      "out": "soap-flamingo-l25.json",
+      "sha256": "d614700a838d9a25b5f8ba80e248b035b641d178809cdc2e40cf4292e50d93f2",
+      "records": 7
+    },
+    {
+      "script": "derive_caesar_relations.py",
+      "args": [
+        "m50n512",
+        "{fx}/caesar/m50n512_040.hdf5",
+        "--source",
+        "SYNTH",
+        "--mbar",
+        "1e6"
+      ],
+      "out": "caesar-synth-m50n512.json",
+      "sha256": "4d39e958c534b83995455b7222e7ecca9c49db34b12bf8d9d6e4c91db14f9b04",
+      "records": 8
+    },
+    {
+      "script": "derive_eagle_relations.py",
+      "args": [
+        "RefL0100N1504",
+        "--user",
+        "u",
+        "--password",
+        "p"
+      ],
+      "out": "eagle-refl0100n1504.json",
+      "stub": "eagle",
+      "sha256": "7e3745b17d598b379737cd99b08cccbb46d7879b51bbe6c304f20fe73198210b",
+      "records": 16
+    }
+  ]
+}

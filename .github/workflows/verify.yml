@@ -35,6 +35,14 @@ jobs:
           pip wheel . --no-deps -w /tmp/wheel
           pip install --no-deps --target /tmp/site /tmp/wheel/*.whl
           cd /tmp && PYTHONPATH=/tmp/site python -c "import sim_highline as s; df = s.load(); print(df.attrs['version'], len(df))"
+      - name: The installed command derives and compares, and refuses what it cannot know
+        run: |
+          cd /tmp
+          CAT="$GITHUB_WORKSPACE/tests/derive-cli/eagle/eagle-export.csv"
+          export PYTHONPATH=/tmp/site
+          /tmp/site/bin/sim-highline derive --format eagle --catalog "$CAT" --source CI --run synthetic --imf chabrier03 --baryon-particle-mass 1e6 --h 0.6777 --omega-m 0.307 --box-mpc 25 --units eagle-database --aperture 30pkpc --out /tmp/run.json --compare --top 1
+          if /tmp/site/bin/sim-highline derive --format eagle --catalog "$CAT" --source CI --run synthetic --baryon-particle-mass 1e6 --out /tmp/refused.json; then echo "::error::derive accepted an under-specified catalogue"; exit 1; fi
+          test ! -e /tmp/refused.json
       - name: Digitizer regression
         if: github.event_name == 'workflow_dispatch' && inputs.regress
         run: python3 scripts/regress_digitizers.py

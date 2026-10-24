@@ -29,7 +29,9 @@ requirements:
 test:
   imports:
     - sim_highline
+    - sim_highline_derive
   commands:
+    - sim-highline derive --help
     - python -c "import sim_highline as s; df = s.load(); print(df.attrs['version'], len(df))"
 
 about:

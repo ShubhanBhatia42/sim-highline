@@ -317,14 +317,14 @@ def summarize(res, min_bins=3):
             "mean_abs_sigma": float((np.abs(d) / sig).mean()) if weighted.all() else float("nan")}
 
 
-def compare_run(x, y, relation, z, definitions=None, y_low=None, y_high=None, sigma=None, linear=False, df=None, rankable_only=False, include_observations=True, name="your run"):
+def compare_run(x, y, relation, z, definitions=None, y_low=None, y_high=None, sigma=None, linear=False, df=None, rankable_only=False, include_observations=True, name="your run", detail=False):
     """Compare your own curve with every published curve of one relation at one epoch, as the website's My run tab does.
 
     x, y: your points (log10 as plotted, or plain values with linear=True); optional y_low/y_high or a symmetric 1-sigma `sigma`.
     definitions: what your numbers mean, keyed like the dataset's definition columns (imf, massDefinition, densityFrame, population, ...).
     Undeclared keys can never be matched, so with no definitions no curve is called comparable.
     Returns a DataFrame, one row per published curve: verdict, blockers, caveats, median/mean/rms offset (yours minus the curve, in y units), n shared bins.
-    Nothing is interpolated beyond the range of either curve."""
+    Nothing is interpolated beyond the range of either curve. detail=True adds the columns blocker_list and caveat_list (the reasons as lists, not joined text)."""
     x, y = np.asarray(x, float), np.asarray(y, float)
     lo = np.full(len(y), np.nan) if y_low is None else np.asarray(y_low, float)
     hi = np.full(len(y), np.nan) if y_high is None else np.asarray(y_high, float)
@@ -364,7 +364,8 @@ def compare_run(x, y, relation, z, definitions=None, y_low=None, y_high=None, si
         rows.append({"record_id": rid, "kind": first["kind"], "source": first["source"], "run": first["run"], "tier": first["tier"], "z": float(first["z"]),
                      "verdict": v["verdict"], "blockers": "; ".join(v["blockers"]), "caveats": "; ".join(v["caveats"]),
                      "median_dy": sm["median"] if sm else np.nan, "mean_dy": sm["mean"] if sm else np.nan, "rms_dy": sm["rms"] if sm else np.nan,
-                     "n_bins": sm["n"] if sm else 0, "mean_abs_sigma": sm["mean_abs_sigma"] if sm else np.nan})
+                     "n_bins": sm["n"] if sm else 0, "mean_abs_sigma": sm["mean_abs_sigma"] if sm else np.nan,
+                     **({"blocker_list": v["blockers"], "caveat_list": v["caveats"]} if detail else {})})
     out = pd.DataFrame(rows)
     if out.empty:
         return out
@@ -663,22 +664,156 @@ def describe(res, relation, z):
             f"The closest is {best['source']} {best['run'] or ''} (rms {best['rms_dy']:.2f} over {int(best['n_bins'])} shared points).{thin}").replace("  ", " ")
 
 
+def load_run(path):
+    """Records of one run from a JSON file in the project's record format ({"schemaVersion", "records"}, as `sim-highline derive` writes) or a bare list of records."""
+    try:
+        data = json.loads(Path(path).read_text(encoding="utf-8-sig"))
+    except (OSError, ValueError) as e:
+        raise SystemExit(f"{path}: cannot read as JSON ({e})")
+    recs = data.get("records") if isinstance(data, dict) else data
+    if not isinstance(recs, list) or not recs or not all(isinstance(r, dict) and "relation" in r and "epoch" in r and "representation" in r for r in recs):
+        raise SystemExit(f"{path}: not a file of records (expected {{\"schemaVersion\": ..., \"records\": [...]}} with relation, epoch and representation in each record; see schemas/curve-schema.json)")
+    return recs
+
+
+def _gloss(R, key):
+    """' (plain name)' of a comparability key from the labels the website uses (exported with the rules), or nothing when the data files predate them."""
+    lab = (R.get("labels") or {}).get(key)
+    return f" ({lab})" if lab else ""
+
+
+def plain_reason(item, mine, who, R):
+    """A blocker or caveat of `compatible`, in a sentence that says whose definition is missing or different. `mine`: your definitions; `who`: the name your run goes by in the item."""
+    m = re.fullmatch(r"(\w+) not documented(?: for (.+))?", item)
+    if m:
+        key = m.group(1)
+        yours = m.group(2) == who if m.group(2) else mine.get(key) in (None, "unspecified", "heterogeneous")
+        return f"{key} not documented{_gloss(R, key)}: " + ("your records do not state it" if yours else "the published curve does not state it")
+    m = re.fullmatch(r"(\w+): (.+) vs (.+)", item)
+    if m and m.group(1) in {k for r in R["rules"].values() for k in r["hard"] + r["soft"]}:
+        return f"{m.group(1)} differs{_gloss(R, m.group(1))}: yours is {m.group(2)}, the published curve's is {m.group(3)}"
+    m = re.fullmatch(r"H0 (\S+) vs (\S+): up to (\S+) dex if not converted", item)
+    if m:
+        if m.group(1) == m.group(2):
+            return f"cosmology: the Hubble constant is the same ({m.group(1)}); only the matter density differs, which does not shift these quantities"
+        return f"cosmology: H0 is {m.group(1)} in yours and {m.group(2)} in the published curve, up to {m.group(3)} dex if not converted"
+    if re.fullmatch(r".+: record marked context only", item):
+        return "the published curve is marked context only (not for ranking)"
+    return item
+
+
+def compare_records(records, relations=None, df=None, rankable_only=False):
+    """Compare each record of a run (as written by `sim-highline derive`, or any record with points) with the published curves of its relation near its epoch, by `compare_run`:
+    the same comparability rules as the website, the same epoch window, the same offsets. Returns a list of {record, relation, z, table}; `table` is the compare_run table with the reasons as lists."""
+    df = load() if df is None else df
+    out = []
+    for r in records:
+        if relations and r["relation"] not in relations:
+            continue
+        rep = r["representation"]
+        pts = [p for p in rep.get("points", []) if all(isinstance(p.get(k), (int, float)) for k in ("x", "y")) and not p.get("limit")] if rep.get("type") == "points" else []
+        if len(pts) < 3:
+            out.append({"record": r, "relation": r["relation"], "z": r["epoch"]["zRepresentative"], "table": None, "why": f"{len(pts)} usable points (at least 3 are needed)" if rep.get("type") == "points" else f"a {rep.get('type')} curve is not compared"})
+            continue
+        unc = rep.get("intervalKind") == "uncertainty"
+        lo = [p.get("yLow", float("nan")) for p in pts] if unc else None
+        hi = [p.get("yHigh", float("nan")) for p in pts] if unc else None
+        z = r["epoch"]["zRepresentative"]
+        res = compare_run([p["x"] for p in pts], [p["y"] for p in pts], r["relation"], z, definitions=r.get("definitions") or {}, y_low=lo, y_high=hi,
+                          df=df, rankable_only=rankable_only, name=f"{r['source']} {r.get('run') or ''}".strip(), detail=True)
+        out.append({"record": r, "relation": r["relation"], "z": z, "table": res})
+    return out
+
+
+def compare_records_cli(records, relations=None, top=5, csv=None, rankable_only=False, df=None):
+    """Print, per relation and epoch, the nearest published observations and simulations that the comparison rules allow, and in plain words why the others do not."""
+    from collections import Counter
+    df = load() if df is None else df
+    R = rules(df.attrs.get("base"))
+    wanted = [x for s in (relations or []) for x in s.split(",") if x]
+    have = sorted({r["relation"] for r in records})
+    missing = [w for w in wanted if w not in have]
+    if missing:
+        raise SystemExit(f"no record of relation {', '.join(missing)} in the run (it has: {', '.join(have)})")
+    results = compare_records(records, wanted or None, df=df, rankable_only=rankable_only)
+    frames = []
+    for item in sorted(results, key=lambda i: (i["relation"], i["z"])):
+        r, res = item["record"], item["table"]
+        name = f"{r['source']} {r.get('run') or ''}".strip()
+        yunit = r.get("axes", {}).get("yUnit", "y units")
+        mine = r.get("definitions") or {}
+        print(f"\n{item['relation']} at z = {item['z']:.4g}: {name} ({r['id']})")
+        if res is None:
+            print(f"  not compared: {item['why']}")
+            continue
+        if res.empty:
+            print(f"  no published curve of {item['relation']} within the epoch window of z = {item['z']:.4g}")
+            continue
+        frames.append(res.assign(run_record=r["id"]))
+        for kind, title in (("observation", "observations"), ("simulation", "simulations"), ("empirical-model", "empirical models")):
+            g = res[res["kind"] == kind]
+            if g.empty:
+                continue
+            fair = g[(g["verdict"] != "not-comparable") & (g["n_bins"] > 0)].sort_values(["rms_dy"])
+            print(f"  {title}: {len(g)} published curves near this epoch, {len(fair)} fair to compare")
+            for _, c in fair.head(top).iterrows():
+                tag = "comparable" if c["verdict"] == "comparable" else "comparable with caveats"
+                print(f"    {(c['source'] + ' ' + (c['run'] if isinstance(c['run'], str) else '')).strip()} (z = {c['z']:.3g}, {c['tier']}): {tag}; yours minus theirs: median {c['median_dy']:+.2f}, rms {c['rms_dy']:.2f} {yunit} over {int(c['n_bins'])} shared points")
+                for cav in c["caveat_list"]:
+                    print(f"        caveat: {plain_reason(cav, mine, name, R)}")
+            if len(fair) > top:
+                print(f"    ... and {len(fair) - top} more fair to compare (--top {len(fair)} shows them)")
+            rest = g.drop(fair.index)
+            if len(rest):
+                reasons = Counter()
+                for _, c in rest.iterrows():
+                    rs = [plain_reason(b, mine, name, R) for b in c["blocker_list"]]
+                    if not rs and c["n_bins"] == 0:
+                        rs = [f"shares fewer than {R['minBins']} points with your curve (the mass ranges barely overlap)"]
+                    reasons.update(set(rs) or {"no reason recorded"})
+                print(f"    not fair to compare: {len(rest)}. Most common reasons (a curve can have several):")
+                for text, n in reasons.most_common(3):
+                    print(f"      {n} curve{'s' if n != 1 else ''}: {text}")
+    if csv and frames:
+        pd.concat(frames).drop(columns=["blocker_list", "caveat_list"]).to_csv(csv, index=False)
+        print(f"\nfull table written to {csv}")
+
+
 def main(argv=None):
-    """Command line: sim-highline compare my.csv --relation gsmf --z 0.1 --define imf=chabrier03 --define densityFrame=comoving"""
+    """Command line.
+    sim-highline derive --format subfind --catalog groups_099/ --source MySim --run L25 --imf chabrier03 --baryon-particle-mass 1.4e6 --out run.json
+    sim-highline compare run.json [--relation gsmf ...]
+    sim-highline compare my.csv --relation gsmf --z 0.1 --define imf=chabrier03 --define densityFrame=comoving"""
     import argparse
-    ap = argparse.ArgumentParser(prog="sim-highline", description="Compare your own curve with every published curve of a relation, as the website does.")
+    ap = argparse.ArgumentParser(prog="sim-highline", description="Derive the standard relations from your own catalogue and compare them (or any curve of yours) with the published curves, with the definitions and rules of the website.")
     sub = ap.add_subparsers(dest="cmd", required=True)
-    c = sub.add_parser("compare", help="compare a curve file with the published curves at one epoch")
-    c.add_argument("file", help="CSV or text file: x, y and an optional 1-sigma error per row (log10 values unless --linear)")
-    c.add_argument("--relation", required=True, help="relation code, for example gsmf, sfms, mzr, size, shmr, bh")
-    c.add_argument("--z", type=float, required=True, help="redshift of your curve")
-    c.add_argument("--define", action="append", default=[], metavar="KEY=VALUE", help="what your numbers mean, for example imf=chabrier03; repeat for each definition")
-    c.add_argument("--linear", action="store_true", help="the values are linear, not log10")
+    d = sub.add_parser("derive", help="derive records of the standard relations from a simulation catalogue you hold; refuses to guess a definition it cannot know", description="Derive records of the standard relations (stellar mass function, star-forming main sequence, sSFR, quenched fraction, size, halo mass, black holes, metallicity) from a catalogue, with the cuts and definitions of the dataset. Whatever the catalogue does not say and you do not state (units, h, box size, IMF, mass aperture, particle mass) stops the run with a list of what to add; nothing is assumed.")
+    import sim_highline_derive
+    sim_highline_derive.add_derive_arguments(d)
+    c = sub.add_parser("compare", help="compare a run.json written by `derive` (or a curve file) with the published curves")
+    c.add_argument("file", help="run.json (records in the project's format; each record carries its own epoch and definitions) or a CSV or text file: x, y and an optional 1-sigma error per row (log10 values unless --linear)")
+    c.add_argument("--relation", action="append", default=[], help="relation code, for example gsmf, sfms, mzr, size, shmr, bh; repeat to compare several. For a run.json the default is every relation in it; for a curve file it is required (one)")
+    c.add_argument("--z", type=float, help="redshift of your curve (curve files only; a run.json carries its own)")
+    c.add_argument("--define", action="append", default=[], metavar="KEY=VALUE", help="what your numbers mean, for example imf=chabrier03; repeat for each definition (curve files only)")
+    c.add_argument("--linear", action="store_true", help="the values are linear, not log10 (curve files only)")
     c.add_argument("--rankable-only", action="store_true", help="leave out curves that are context only")
     c.add_argument("--name", default="your run")
     c.add_argument("--csv", help="write the full table to this CSV file")
-    c.add_argument("--top", type=int, default=15, help="rows to print")
+    c.add_argument("--top", type=int, default=None, help="rows to print (default 15 for a curve file, 5 per list for a run.json)")
     a = ap.parse_args(argv)
+    if a.cmd == "derive":
+        raise SystemExit(sim_highline_derive.run_derive_cli(a))
+    if Path(a.file).suffix.lower() == ".json":
+        extra = [f for f, v in (("--z", a.z), ("--define", a.define), ("--linear", a.linear)) if v]
+        if extra:
+            raise SystemExit(f"{', '.join(extra)} apply to curve files only: the records in {a.file} carry their own epoch, definitions and units")
+        records = load_run(a.file)
+        print(f"{len(records)} records read from {a.file}; relations: {', '.join(sorted({r['relation'] for r in records}))}")
+        compare_records_cli(records, relations=a.relation, top=5 if a.top is None else a.top, csv=a.csv, rankable_only=a.rankable_only)
+        return
+    if len(a.relation) != 1 or a.z is None:
+        raise SystemExit("a curve file needs exactly one --relation and a --z (a run.json written by `sim-highline derive` carries its own)")
+    a.relation, a.top = a.relation[0], 15 if a.top is None else a.top
     x, y, e = read_curve(a.file)
     if len(x) < 3:
         raise SystemExit(f"{a.file}: fewer than three numeric rows were read")
