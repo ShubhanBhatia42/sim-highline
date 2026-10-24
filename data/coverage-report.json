@@ -2,10 +2,10 @@
   "schemaVersion": "1.0.0",
   "generatedAt": "2026-10-18",
   "totals": {
-    "records": 1943,
-    "sources": 134,
-    "relations": 43,
-    "rankable": 901,
+    "records": 1960,
+    "sources": 136,
+    "relations": 44,
+    "rankable": 918,
     "contextOnly": 1042
   },
   "byRelation": {
@@ -310,6 +310,50 @@
       "rankable": 2,
       "contextOnly": 0,
       "tiers": [
+        "published-table"
+      ]
+    },
+    "elf": {
+      "records": 17,
+      "epochs": [
+        0.4,
+        0.84,
+        1.47,
+        2.23,
+        4.45,
+        4.64,
+        5,
+        5.3,
+        6,
+        6.15,
+        7,
+        8,
+        9,
+        10
+      ],
+      "epochRanges": [
+        "0.391:0.411",
+        "0.83:0.86",
+        "1.45:1.482",
+        "10:10",
+        "2.215:2.247",
+        "3.8:5.1",
+        "4.64:4.64",
+        "4.9:5.7",
+        "5.7:6.6",
+        "5:5",
+        "6:6",
+        "7:7",
+        "8:8",
+        "9:9"
+      ],
+      "relations": [
+        "elf"
+      ],
+      "rankable": 17,
+      "contextOnly": 0,
+      "tiers": [
+        "catalog-derived",
         "published-table"
       ]
     },
@@ -2582,6 +2626,27 @@
         "official-table"
       ]
     },
+    "Covelo-Paz et al. 2025 (FRESCO, CONGRESS)": {
+      "records": 3,
+      "epochs": [
+        4.45,
+        5.3,
+        6.15
+      ],
+      "epochRanges": [
+        "3.8:5.1",
+        "4.9:5.7",
+        "5.7:6.6"
+      ],
+      "relations": [
+        "elf"
+      ],
+      "rankable": 3,
+      "contextOnly": 0,
+      "tiers": [
+        "published-table"
+      ]
+    },
     "Curti et al. 2020": {
       "records": 4,
       "epochs": [
@@ -4520,6 +4585,29 @@
         "published-table"
       ]
     },
+    "Sobral et al. 2013 (HiZELS)": {
+      "records": 4,
+      "epochs": [
+        0.4,
+        0.84,
+        1.47,
+        2.23
+      ],
+      "epochRanges": [
+        "0.391:0.411",
+        "0.83:0.86",
+        "1.45:1.482",
+        "2.215:2.247"
+      ],
+      "relations": [
+        "elf"
+      ],
+      "rankable": 4,
+      "contextOnly": 0,
+      "tiers": [
+        "published-table"
+      ]
+    },
     "Sobral2013": {
       "records": 4,
       "epochs": [
@@ -4578,7 +4666,7 @@
       ]
     },
     "SPHINX20": {
-      "records": 41,
+      "records": 51,
       "epochs": [
         4.64,
         5,
@@ -4598,13 +4686,14 @@
         "9:9"
       ],
       "relations": [
+        "elf",
         "sfms",
         "shmr",
         "size",
         "uvlf",
         "zstar"
       ],
-      "rankable": 34,
+      "rankable": 44,
       "contextOnly": 7,
       "tiers": [
         "catalog-derived",
