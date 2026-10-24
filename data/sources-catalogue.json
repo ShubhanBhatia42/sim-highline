@@ -1410,6 +1410,33 @@
         "mzr"
       ],
       "note": "The DARWIN-1 galaxy catalogues are public (the data page states that only these are on offer; other data on request). A catalogue-derived stellar mass function, stellar mass-halo mass relation and sizes would replace the figure reads with computed numbers; no adapter has been written, and the files' fields have not been inspected."
+    },
+    {
+      "id": "ocvirk20-coda2-lf-table",
+      "suite": "CoDa II",
+      "status": "ingested",
+      "access": "LaTeX table in the arXiv source",
+      "url": "https://arxiv.org/abs/1811.11192",
+      "relations": [
+        "uvlf"
+      ],
+      "redshifts": "6, 7, 8, 10",
+      "adapter": "scripts/transcribe_coda2_ocvirk20_uvlf.py",
+      "note": "The appendix table of intrinsic UV luminosity functions (median, average, minimum and maximum of five sub-boxes, M_AB1600 = -24 to -3); the median with the minimum-maximum envelope is stored. It differs from a count of the public catalogue by a constant 0.044 dex at the bright end and by up to 0.5 dex at the faint end; not reconciled."
+    },
+    {
+      "id": "ocvirk20-coda2-vizier",
+      "suite": "CoDa II",
+      "status": "ingested",
+      "access": "public catalogue files on VizieR VI/146 (no credentials), one file per snapshot",
+      "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/VI/146",
+      "relations": [
+        "gsmf",
+        "shmr"
+      ],
+      "redshifts": "6, 7, 8, 10",
+      "adapter": "scripts/ingest_coda2_vizier.py",
+      "note": "Halo mass, stellar mass inside r200, SFR over 10 Myr and dust-free M_AB1600 of every friends-of-friends halo above 1e8 Msun; the stellar mass function and the stellar mass-halo mass relation are counted from it. Checked against the paper's printed fractions of the star formation rate in galaxies brighter than M_AB1600 = -17 and -13. Star formation rates (10 Myr, in steps of one star particle) are too coarse for a star-forming main sequence and are not stored."
     }
   ]
 }

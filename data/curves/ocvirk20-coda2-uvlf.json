@@ -1,0 +1,1023 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "ocvirk20.coda2.uvlf.z6",
+      "source": "CoDa II",
+      "run": "CoDa II (94.44 cMpc box, 4096^3 cells), median of five sub-boxes",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_AB1600 (intrinsic, no dust; AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude (median of five sub-boxes)",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22.5,
+        "xMax": -5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.5,
+            "y": -4.88,
+            "yHigh": -4.58
+          },
+          {
+            "x": -22,
+            "y": -4.41,
+            "yHigh": -4.11
+          },
+          {
+            "x": -21.5,
+            "y": -4.18,
+            "yLow": -4.41,
+            "yHigh": -3.93
+          },
+          {
+            "x": -21,
+            "y": -3.74,
+            "yLow": -4.18,
+            "yHigh": -3.65
+          },
+          {
+            "x": -20.5,
+            "y": -3.44,
+            "yLow": -3.74,
+            "yHigh": -3.28
+          },
+          {
+            "x": -20,
+            "y": -3.18,
+            "yLow": -3.5,
+            "yHigh": -3.06
+          },
+          {
+            "x": -19.5,
+            "y": -2.95,
+            "yLow": -3.36,
+            "yHigh": -2.87
+          },
+          {
+            "x": -19,
+            "y": -2.67,
+            "yLow": -2.86,
+            "yHigh": -2.55
+          },
+          {
+            "x": -18.5,
+            "y": -2.45,
+            "yLow": -2.73,
+            "yHigh": -2.39
+          },
+          {
+            "x": -18,
+            "y": -2.32,
+            "yLow": -2.51,
+            "yHigh": -2.22
+          },
+          {
+            "x": -17.5,
+            "y": -2.13,
+            "yLow": -2.31,
+            "yHigh": -2.07
+          },
+          {
+            "x": -17,
+            "y": -2.01,
+            "yLow": -2.16,
+            "yHigh": -1.87
+          },
+          {
+            "x": -16.5,
+            "y": -1.84,
+            "yLow": -1.98,
+            "yHigh": -1.73
+          },
+          {
+            "x": -16,
+            "y": -1.68,
+            "yLow": -1.84,
+            "yHigh": -1.59
+          },
+          {
+            "x": -15.5,
+            "y": -1.55,
+            "yLow": -1.69,
+            "yHigh": -1.44
+          },
+          {
+            "x": -15,
+            "y": -1.42,
+            "yLow": -1.55,
+            "yHigh": -1.32
+          },
+          {
+            "x": -14.5,
+            "y": -1.3,
+            "yLow": -1.41,
+            "yHigh": -1.2
+          },
+          {
+            "x": -14,
+            "y": -1.18,
+            "yLow": -1.3,
+            "yHigh": -1.1
+          },
+          {
+            "x": -13.5,
+            "y": -1.08,
+            "yLow": -1.19,
+            "yHigh": -0.99
+          },
+          {
+            "x": -13,
+            "y": -0.98,
+            "yLow": -1.08,
+            "yHigh": -0.89
+          },
+          {
+            "x": -12.5,
+            "y": -0.9,
+            "yLow": -0.98,
+            "yHigh": -0.81
+          },
+          {
+            "x": -12,
+            "y": -0.84,
+            "yLow": -0.88,
+            "yHigh": -0.74
+          },
+          {
+            "x": -11.5,
+            "y": -0.81,
+            "yLow": -0.83,
+            "yHigh": -0.7
+          },
+          {
+            "x": -11,
+            "y": -0.79,
+            "yLow": -0.8,
+            "yHigh": -0.69
+          },
+          {
+            "x": -10.5,
+            "y": -0.88,
+            "yLow": -0.89,
+            "yHigh": -0.77
+          },
+          {
+            "x": -10,
+            "y": -0.95,
+            "yLow": -0.97,
+            "yHigh": -0.85
+          },
+          {
+            "x": -9.5,
+            "y": -0.93,
+            "yLow": -0.97,
+            "yHigh": -0.84
+          },
+          {
+            "x": -9,
+            "y": -0.97,
+            "yLow": -1.02,
+            "yHigh": -0.86
+          },
+          {
+            "x": -8.5,
+            "y": -0.95,
+            "yLow": -1.01,
+            "yHigh": -0.83
+          },
+          {
+            "x": -8,
+            "y": -0.95,
+            "yLow": -1.01,
+            "yHigh": -0.82
+          },
+          {
+            "x": -7.5,
+            "y": -0.97,
+            "yLow": -1.08,
+            "yHigh": -0.83
+          },
+          {
+            "x": -7,
+            "y": -1.04,
+            "yLow": -1.16,
+            "yHigh": -0.88
+          },
+          {
+            "x": -6.5,
+            "y": -1.14,
+            "yLow": -1.28,
+            "yHigh": -0.95
+          },
+          {
+            "x": -6,
+            "y": -1.16,
+            "yLow": -1.26,
+            "yHigh": -0.95
+          },
+          {
+            "x": -5.5,
+            "y": -1.56,
+            "yLow": -1.65,
+            "yHigh": -1.28
+          },
+          {
+            "x": -5,
+            "y": -3.23,
+            "yLow": -3.45,
+            "yHigh": -2.76
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies of the constrained Local-Universe box (halos above 1e8 Msun)",
+        "warning": "Intrinsic (dust-free) UV luminosity function of the CoDa II box at z = 6 in 0.5 mag bins, as tabulated in the appendix of Ocvirk et al. 2020: the line is the median of the luminosity functions of five independent, equal sub-boxes (each 1/5 of the volume, about 168,000 cMpc^3), the band is their minimum and maximum, which shows the variance between volumes of that size and is not an uncertainty of the median. Bins where the median or the minimum is zero in the table are empty there (the log is undefined), so the curve starts at M_AB1600 = -22.5 and the band has no lower edge in the sparse bins. The box is a constrained realization of the Local Universe (a Virgo, Local Group and Fornax progenitor region), not a random volume. Magnitudes use the BPASS Z = 0.001 binary population model with a Kroupa IMF and no dust; the observed luminosity function would be fainter."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.7,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1600 A, AB",
+        "dustCorrection": "none (intrinsic)",
+        "population": "all galaxies (friends-of-friends halos of at least 1e8 Msun, 246 dark matter particles; all star particles of each halo)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Ocvirk et al. 2020, MNRAS 496, 4087 (doi 10.1093/mnras/staa1266), appendix table of CoDa II UV luminosity functions at four epochs",
+        "doi": "10.1093/mnras/staa1266",
+        "url": "https://arxiv.org/abs/1811.11192",
+        "retrieved": "2026-10-24",
+        "checksumSha256": "b3c73b1bf4fae0eaa238167c244d93ba5b6896a1544475e6db6a7265a45484cd",
+        "sourceMember": "LFs4paper.tex (arXiv source), columns (1) median, (3) minimum and (4) maximum",
+        "extractionMethod": "transcribed from the arXiv LaTeX table and parsed by script; checked against numbers printed in the text (see the script)"
+      },
+      "calibration": "calibration-adjacent",
+      "rankable": true,
+      "notes": "Values as tabulated by the authors. The paper tuned the star formation efficiency (0.02) to the observed cosmic star formation rate density and the escape fraction (0.42) to a reionization redshift near 6, so the luminosity function is not a pure prediction. A single galaxy in one sub-box bin is 10^-4.88 = 1.32e-05 per mag per cMpc^3, so V x dM = 75,858 cMpc^3 mag; with the stated sub-box volume of 168,460 cMpc^3 that is a bin of 0.45 mag, not the 0.5 mag spacing of the table (the paper does not explain the difference of about 10 percent). Counting the public catalogue (VizieR VI/146, scripts/ingest_coda2_vizier.py) in 0.5 mag bins on the table's labels gives values 0.044 dex lower than the table's average column for every bin brighter than M_AB1600 = -11.5 with 30 or more galaxies (scatter 0.003 dex; a factor 1.107 in volume) and values lower by 0.1 to 0.5 dex at fainter magnitudes; this is not reconciled, and the tabulated values are stored as printed."
+    },
+    {
+      "id": "ocvirk20.coda2.uvlf.z7",
+      "source": "CoDa II",
+      "run": "CoDa II (94.44 cMpc box, 4096^3 cells), median of five sub-boxes",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_AB1600 (intrinsic, no dust; AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude (median of five sub-boxes)",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -22,
+        "xMax": -5.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": -22,
+            "y": -4.88,
+            "yHigh": -4.58
+          },
+          {
+            "x": -21.5,
+            "y": -4.88,
+            "yHigh": -4.41
+          },
+          {
+            "x": -21,
+            "y": -4.28,
+            "yLow": -4.58,
+            "yHigh": -4.04
+          },
+          {
+            "x": -20.5,
+            "y": -3.98,
+            "yLow": -4.88,
+            "yHigh": -3.8
+          },
+          {
+            "x": -20,
+            "y": -3.6,
+            "yLow": -3.88,
+            "yHigh": -3.5
+          },
+          {
+            "x": -19.5,
+            "y": -3.38,
+            "yLow": -3.65,
+            "yHigh": -3.25
+          },
+          {
+            "x": -19,
+            "y": -3.04,
+            "yLow": -3.38,
+            "yHigh": -2.9
+          },
+          {
+            "x": -18.5,
+            "y": -2.74,
+            "yLow": -3,
+            "yHigh": -2.67
+          },
+          {
+            "x": -18,
+            "y": -2.59,
+            "yLow": -2.73,
+            "yHigh": -2.49
+          },
+          {
+            "x": -17.5,
+            "y": -2.38,
+            "yLow": -2.6,
+            "yHigh": -2.3
+          },
+          {
+            "x": -17,
+            "y": -2.23,
+            "yLow": -2.37,
+            "yHigh": -2.11
+          },
+          {
+            "x": -16.5,
+            "y": -2.05,
+            "yLow": -2.22,
+            "yHigh": -1.95
+          },
+          {
+            "x": -16,
+            "y": -1.88,
+            "yLow": -2.03,
+            "yHigh": -1.78
+          },
+          {
+            "x": -15.5,
+            "y": -1.74,
+            "yLow": -1.89,
+            "yHigh": -1.62
+          },
+          {
+            "x": -15,
+            "y": -1.57,
+            "yLow": -1.71,
+            "yHigh": -1.48
+          },
+          {
+            "x": -14.5,
+            "y": -1.45,
+            "yLow": -1.57,
+            "yHigh": -1.34
+          },
+          {
+            "x": -14,
+            "y": -1.32,
+            "yLow": -1.43,
+            "yHigh": -1.22
+          },
+          {
+            "x": -13.5,
+            "y": -1.19,
+            "yLow": -1.29,
+            "yHigh": -1.08
+          },
+          {
+            "x": -13,
+            "y": -1.07,
+            "yLow": -1.17,
+            "yHigh": -0.97
+          },
+          {
+            "x": -12.5,
+            "y": -0.96,
+            "yLow": -1.05,
+            "yHigh": -0.84
+          },
+          {
+            "x": -12,
+            "y": -0.87,
+            "yLow": -0.93,
+            "yHigh": -0.75
+          },
+          {
+            "x": -11.5,
+            "y": -0.81,
+            "yLow": -0.86,
+            "yHigh": -0.67
+          },
+          {
+            "x": -11,
+            "y": -0.77,
+            "yLow": -0.79,
+            "yHigh": -0.61
+          },
+          {
+            "x": -10.5,
+            "y": -0.87,
+            "yLow": -0.88,
+            "yHigh": -0.7
+          },
+          {
+            "x": -10,
+            "y": -0.95,
+            "yLow": -0.97,
+            "yHigh": -0.78
+          },
+          {
+            "x": -9.5,
+            "y": -0.96,
+            "yLow": -1,
+            "yHigh": -0.79
+          },
+          {
+            "x": -9,
+            "y": -1.01,
+            "yLow": -1.07,
+            "yHigh": -0.83
+          },
+          {
+            "x": -8.5,
+            "y": -1,
+            "yLow": -1.08,
+            "yHigh": -0.83
+          },
+          {
+            "x": -8,
+            "y": -1.05,
+            "yLow": -1.14,
+            "yHigh": -0.86
+          },
+          {
+            "x": -7.5,
+            "y": -1.14,
+            "yLow": -1.25,
+            "yHigh": -0.94
+          },
+          {
+            "x": -7,
+            "y": -1.26,
+            "yLow": -1.39,
+            "yHigh": -1.07
+          },
+          {
+            "x": -6.5,
+            "y": -1.45,
+            "yLow": -1.6,
+            "yHigh": -1.23
+          },
+          {
+            "x": -6,
+            "y": -1.56,
+            "yLow": -1.66,
+            "yHigh": -1.32
+          },
+          {
+            "x": -5.5,
+            "y": -2.5,
+            "yLow": -2.65,
+            "yHigh": -2.18
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies of the constrained Local-Universe box (halos above 1e8 Msun)",
+        "warning": "Intrinsic (dust-free) UV luminosity function of the CoDa II box at z = 7 in 0.5 mag bins, as tabulated in the appendix of Ocvirk et al. 2020: the line is the median of the luminosity functions of five independent, equal sub-boxes (each 1/5 of the volume, about 168,000 cMpc^3), the band is their minimum and maximum, which shows the variance between volumes of that size and is not an uncertainty of the median. Bins where the median or the minimum is zero in the table are empty there (the log is undefined), so the curve starts at M_AB1600 = -22 and the band has no lower edge in the sparse bins. The box is a constrained realization of the Local Universe (a Virgo, Local Group and Fornax progenitor region), not a random volume. Magnitudes use the BPASS Z = 0.001 binary population model with a Kroupa IMF and no dust; the observed luminosity function would be fainter."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.7,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1600 A, AB",
+        "dustCorrection": "none (intrinsic)",
+        "population": "all galaxies (friends-of-friends halos of at least 1e8 Msun, 246 dark matter particles; all star particles of each halo)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Ocvirk et al. 2020, MNRAS 496, 4087 (doi 10.1093/mnras/staa1266), appendix table of CoDa II UV luminosity functions at four epochs",
+        "doi": "10.1093/mnras/staa1266",
+        "url": "https://arxiv.org/abs/1811.11192",
+        "retrieved": "2026-10-24",
+        "checksumSha256": "b3c73b1bf4fae0eaa238167c244d93ba5b6896a1544475e6db6a7265a45484cd",
+        "sourceMember": "LFs4paper.tex (arXiv source), columns (1) median, (3) minimum and (4) maximum",
+        "extractionMethod": "transcribed from the arXiv LaTeX table and parsed by script; checked against numbers printed in the text (see the script)"
+      },
+      "calibration": "calibration-adjacent",
+      "rankable": true,
+      "notes": "Values as tabulated by the authors. The paper tuned the star formation efficiency (0.02) to the observed cosmic star formation rate density and the escape fraction (0.42) to a reionization redshift near 6, so the luminosity function is not a pure prediction. A single galaxy in one sub-box bin is 10^-4.88 = 1.32e-05 per mag per cMpc^3, so V x dM = 75,858 cMpc^3 mag; with the stated sub-box volume of 168,460 cMpc^3 that is a bin of 0.45 mag, not the 0.5 mag spacing of the table (the paper does not explain the difference of about 10 percent). Counting the public catalogue (VizieR VI/146, scripts/ingest_coda2_vizier.py) in 0.5 mag bins on the table's labels gives values 0.044 dex lower than the table's average column for every bin brighter than M_AB1600 = -11.5 with 30 or more galaxies (scatter 0.003 dex; a factor 1.107 in volume) and values lower by 0.1 to 0.5 dex at fainter magnitudes; this is not reconciled, and the tabulated values are stored as printed."
+    },
+    {
+      "id": "ocvirk20.coda2.uvlf.z8",
+      "source": "CoDa II",
+      "run": "CoDa II (94.44 cMpc box, 4096^3 cells), median of five sub-boxes",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_AB1600 (intrinsic, no dust; AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude (median of five sub-boxes)",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -21,
+        "xMax": -5.5
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": -21,
+            "y": -4.88,
+            "yHigh": -4.41
+          },
+          {
+            "x": -20.5,
+            "y": -4.88,
+            "yLow": -4.88,
+            "yHigh": -4.18
+          },
+          {
+            "x": -20,
+            "y": -4.28,
+            "yLow": -4.41,
+            "yHigh": -3.98
+          },
+          {
+            "x": -19.5,
+            "y": -3.98,
+            "yLow": -4.11,
+            "yHigh": -3.71
+          },
+          {
+            "x": -19,
+            "y": -3.49,
+            "yLow": -3.93,
+            "yHigh": -3.35
+          },
+          {
+            "x": -18.5,
+            "y": -3.16,
+            "yLow": -3.39,
+            "yHigh": -3.06
+          },
+          {
+            "x": -18,
+            "y": -2.85,
+            "yLow": -3.08,
+            "yHigh": -2.81
+          },
+          {
+            "x": -17.5,
+            "y": -2.74,
+            "yLow": -2.89,
+            "yHigh": -2.6
+          },
+          {
+            "x": -17,
+            "y": -2.51,
+            "yLow": -2.64,
+            "yHigh": -2.43
+          },
+          {
+            "x": -16.5,
+            "y": -2.31,
+            "yLow": -2.48,
+            "yHigh": -2.2
+          },
+          {
+            "x": -16,
+            "y": -2.16,
+            "yLow": -2.31,
+            "yHigh": -2.01
+          },
+          {
+            "x": -15.5,
+            "y": -1.95,
+            "yLow": -2.11,
+            "yHigh": -1.84
+          },
+          {
+            "x": -15,
+            "y": -1.81,
+            "yLow": -1.93,
+            "yHigh": -1.69
+          },
+          {
+            "x": -14.5,
+            "y": -1.63,
+            "yLow": -1.79,
+            "yHigh": -1.53
+          },
+          {
+            "x": -14,
+            "y": -1.5,
+            "yLow": -1.59,
+            "yHigh": -1.38
+          },
+          {
+            "x": -13.5,
+            "y": -1.35,
+            "yLow": -1.45,
+            "yHigh": -1.24
+          },
+          {
+            "x": -13,
+            "y": -1.21,
+            "yLow": -1.31,
+            "yHigh": -1.1
+          },
+          {
+            "x": -12.5,
+            "y": -1.09,
+            "yLow": -1.18,
+            "yHigh": -0.96
+          },
+          {
+            "x": -12,
+            "y": -1,
+            "yLow": -1.06,
+            "yHigh": -0.84
+          },
+          {
+            "x": -11.5,
+            "y": -0.92,
+            "yLow": -0.96,
+            "yHigh": -0.75
+          },
+          {
+            "x": -11,
+            "y": -0.88,
+            "yLow": -0.89,
+            "yHigh": -0.68
+          },
+          {
+            "x": -10.5,
+            "y": -0.97,
+            "yLow": -0.97,
+            "yHigh": -0.77
+          },
+          {
+            "x": -10,
+            "y": -1.07,
+            "yLow": -1.1,
+            "yHigh": -0.87
+          },
+          {
+            "x": -9.5,
+            "y": -1.1,
+            "yLow": -1.13,
+            "yHigh": -0.88
+          },
+          {
+            "x": -9,
+            "y": -1.15,
+            "yLow": -1.21,
+            "yHigh": -0.94
+          },
+          {
+            "x": -8.5,
+            "y": -1.17,
+            "yLow": -1.26,
+            "yHigh": -0.97
+          },
+          {
+            "x": -8,
+            "y": -1.22,
+            "yLow": -1.32,
+            "yHigh": -1.02
+          },
+          {
+            "x": -7.5,
+            "y": -1.35,
+            "yLow": -1.48,
+            "yHigh": -1.14
+          },
+          {
+            "x": -7,
+            "y": -1.55,
+            "yLow": -1.71,
+            "yHigh": -1.32
+          },
+          {
+            "x": -6.5,
+            "y": -1.8,
+            "yLow": -1.96,
+            "yHigh": -1.55
+          },
+          {
+            "x": -6,
+            "y": -2.09,
+            "yLow": -2.21,
+            "yHigh": -1.81
+          },
+          {
+            "x": -5.5,
+            "y": -3.6,
+            "yLow": -3.84,
+            "yHigh": -3.39
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies of the constrained Local-Universe box (halos above 1e8 Msun)",
+        "warning": "Intrinsic (dust-free) UV luminosity function of the CoDa II box at z = 8 in 0.5 mag bins, as tabulated in the appendix of Ocvirk et al. 2020: the line is the median of the luminosity functions of five independent, equal sub-boxes (each 1/5 of the volume, about 168,000 cMpc^3), the band is their minimum and maximum, which shows the variance between volumes of that size and is not an uncertainty of the median. Bins where the median or the minimum is zero in the table are empty there (the log is undefined), so the curve starts at M_AB1600 = -21 and the band has no lower edge in the sparse bins. The box is a constrained realization of the Local Universe (a Virgo, Local Group and Fornax progenitor region), not a random volume. Magnitudes use the BPASS Z = 0.001 binary population model with a Kroupa IMF and no dust; the observed luminosity function would be fainter."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.7,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1600 A, AB",
+        "dustCorrection": "none (intrinsic)",
+        "population": "all galaxies (friends-of-friends halos of at least 1e8 Msun, 246 dark matter particles; all star particles of each halo)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Ocvirk et al. 2020, MNRAS 496, 4087 (doi 10.1093/mnras/staa1266), appendix table of CoDa II UV luminosity functions at four epochs",
+        "doi": "10.1093/mnras/staa1266",
+        "url": "https://arxiv.org/abs/1811.11192",
+        "retrieved": "2026-10-24",
+        "checksumSha256": "b3c73b1bf4fae0eaa238167c244d93ba5b6896a1544475e6db6a7265a45484cd",
+        "sourceMember": "LFs4paper.tex (arXiv source), columns (1) median, (3) minimum and (4) maximum",
+        "extractionMethod": "transcribed from the arXiv LaTeX table and parsed by script; checked against numbers printed in the text (see the script)"
+      },
+      "calibration": "calibration-adjacent",
+      "rankable": true,
+      "notes": "Values as tabulated by the authors. The paper tuned the star formation efficiency (0.02) to the observed cosmic star formation rate density and the escape fraction (0.42) to a reionization redshift near 6, so the luminosity function is not a pure prediction. A single galaxy in one sub-box bin is 10^-4.88 = 1.32e-05 per mag per cMpc^3, so V x dM = 75,858 cMpc^3 mag; with the stated sub-box volume of 168,460 cMpc^3 that is a bin of 0.45 mag, not the 0.5 mag spacing of the table (the paper does not explain the difference of about 10 percent). Counting the public catalogue (VizieR VI/146, scripts/ingest_coda2_vizier.py) in 0.5 mag bins on the table's labels gives values 0.044 dex lower than the table's average column for every bin brighter than M_AB1600 = -11.5 with 30 or more galaxies (scatter 0.003 dex; a factor 1.107 in volume) and values lower by 0.1 to 0.5 dex at fainter magnitudes; this is not reconciled, and the tabulated values are stored as printed."
+    },
+    {
+      "id": "ocvirk20.coda2.uvlf.z10",
+      "source": "CoDa II",
+      "run": "CoDa II (94.44 cMpc box, 4096^3 cells), median of five sub-boxes",
+      "kind": "simulation",
+      "relation": "uvlf",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_AB1600 (intrinsic, no dust; AB)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "log10 UV luminosity function per magnitude (median of five sub-boxes)",
+        "yUnit": "log10(cMpc^-3 mag^-1)"
+      },
+      "domain": {
+        "xMin": -19.5,
+        "xMax": -6
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": -19.5,
+            "y": -4.88,
+            "yHigh": -4.58
+          },
+          {
+            "x": -19,
+            "y": -4.41,
+            "yLow": -4.58,
+            "yHigh": -4.41
+          },
+          {
+            "x": -18.5,
+            "y": -4.28,
+            "yLow": -4.58,
+            "yHigh": -4.11
+          },
+          {
+            "x": -18,
+            "y": -3.88,
+            "yLow": -4.11,
+            "yHigh": -3.74
+          },
+          {
+            "x": -17.5,
+            "y": -3.71,
+            "yLow": -3.77,
+            "yHigh": -3.44
+          },
+          {
+            "x": -17,
+            "y": -3.27,
+            "yLow": -3.47,
+            "yHigh": -3.15
+          },
+          {
+            "x": -16.5,
+            "y": -3,
+            "yLow": -3.3,
+            "yHigh": -2.87
+          },
+          {
+            "x": -16,
+            "y": -2.81,
+            "yLow": -2.93,
+            "yHigh": -2.72
+          },
+          {
+            "x": -15.5,
+            "y": -2.54,
+            "yLow": -2.7,
+            "yHigh": -2.45
+          },
+          {
+            "x": -15,
+            "y": -2.41,
+            "yLow": -2.56,
+            "yHigh": -2.24
+          },
+          {
+            "x": -14.5,
+            "y": -2.2,
+            "yLow": -2.32,
+            "yHigh": -2.05
+          },
+          {
+            "x": -14,
+            "y": -2.01,
+            "yLow": -2.11,
+            "yHigh": -1.86
+          },
+          {
+            "x": -13.5,
+            "y": -1.82,
+            "yLow": -1.97,
+            "yHigh": -1.68
+          },
+          {
+            "x": -13,
+            "y": -1.65,
+            "yLow": -1.75,
+            "yHigh": -1.51
+          },
+          {
+            "x": -12.5,
+            "y": -1.5,
+            "yLow": -1.58,
+            "yHigh": -1.34
+          },
+          {
+            "x": -12,
+            "y": -1.39,
+            "yLow": -1.43,
+            "yHigh": -1.2
+          },
+          {
+            "x": -11.5,
+            "y": -1.31,
+            "yLow": -1.33,
+            "yHigh": -1.11
+          },
+          {
+            "x": -11,
+            "y": -1.24,
+            "yLow": -1.26,
+            "yHigh": -1.02
+          },
+          {
+            "x": -10.5,
+            "y": -1.32,
+            "yLow": -1.34,
+            "yHigh": -1.09
+          },
+          {
+            "x": -10,
+            "y": -1.48,
+            "yLow": -1.53,
+            "yHigh": -1.24
+          },
+          {
+            "x": -9.5,
+            "y": -1.51,
+            "yLow": -1.58,
+            "yHigh": -1.28
+          },
+          {
+            "x": -9,
+            "y": -1.63,
+            "yLow": -1.7,
+            "yHigh": -1.38
+          },
+          {
+            "x": -8.5,
+            "y": -1.7,
+            "yLow": -1.78,
+            "yHigh": -1.44
+          },
+          {
+            "x": -8,
+            "y": -1.79,
+            "yLow": -1.92,
+            "yHigh": -1.54
+          },
+          {
+            "x": -7.5,
+            "y": -2.01,
+            "yLow": -2.17,
+            "yHigh": -1.76
+          },
+          {
+            "x": -7,
+            "y": -2.32,
+            "yLow": -2.55,
+            "yHigh": -2.03
+          },
+          {
+            "x": -6.5,
+            "y": -2.9,
+            "yLow": -3.05,
+            "yHigh": -2.51
+          },
+          {
+            "x": -6,
+            "y": -3.84,
+            "yLow": -4.18,
+            "yHigh": -3.47
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all galaxies of the constrained Local-Universe box (halos above 1e8 Msun)",
+        "warning": "Intrinsic (dust-free) UV luminosity function of the CoDa II box at z = 10 in 0.5 mag bins, as tabulated in the appendix of Ocvirk et al. 2020: the line is the median of the luminosity functions of five independent, equal sub-boxes (each 1/5 of the volume, about 168,000 cMpc^3), the band is their minimum and maximum, which shows the variance between volumes of that size and is not an uncertainty of the median. Bins where the median or the minimum is zero in the table are empty there (the log is undefined), so the curve starts at M_AB1600 = -19.5 and the band has no lower edge in the sparse bins. The box is a constrained realization of the Local Universe (a Virgo, Local Group and Fornax progenitor region), not a random volume. Magnitudes use the BPASS Z = 0.001 binary population model with a Kroupa IMF and no dust; the observed luminosity function would be fainter."
+      },
+      "definitions": {
+        "imf": "kroupa01",
+        "cosmology": {
+          "H0": 67.7,
+          "Om": 0.307
+        },
+        "densityFrame": "comoving",
+        "uvBand": "rest-frame 1600 A, AB",
+        "dustCorrection": "none (intrinsic)",
+        "population": "all galaxies (friends-of-friends halos of at least 1e8 Msun, 246 dark matter particles; all star particles of each halo)"
+      },
+      "provenance": {
+        "tier": "published-table",
+        "citation": "Ocvirk et al. 2020, MNRAS 496, 4087 (doi 10.1093/mnras/staa1266), appendix table of CoDa II UV luminosity functions at four epochs",
+        "doi": "10.1093/mnras/staa1266",
+        "url": "https://arxiv.org/abs/1811.11192",
+        "retrieved": "2026-10-24",
+        "checksumSha256": "b3c73b1bf4fae0eaa238167c244d93ba5b6896a1544475e6db6a7265a45484cd",
+        "sourceMember": "LFs4paper.tex (arXiv source), columns (1) median, (3) minimum and (4) maximum",
+        "extractionMethod": "transcribed from the arXiv LaTeX table and parsed by script; checked against numbers printed in the text (see the script)"
+      },
+      "calibration": "calibration-adjacent",
+      "rankable": true,
+      "notes": "Values as tabulated by the authors. The paper tuned the star formation efficiency (0.02) to the observed cosmic star formation rate density and the escape fraction (0.42) to a reionization redshift near 6, so the luminosity function is not a pure prediction. A single galaxy in one sub-box bin is 10^-4.88 = 1.32e-05 per mag per cMpc^3, so V x dM = 75,858 cMpc^3 mag; with the stated sub-box volume of 168,460 cMpc^3 that is a bin of 0.45 mag, not the 0.5 mag spacing of the table (the paper does not explain the difference of about 10 percent). Counting the public catalogue (VizieR VI/146, scripts/ingest_coda2_vizier.py) in 0.5 mag bins on the table's labels gives values 0.044 dex lower than the table's average column for every bin brighter than M_AB1600 = -11.5 with 30 or more galaxies (scatter 0.003 dex; a factor 1.107 in volume) and values lower by 0.1 to 0.5 dex at fainter magnitudes; this is not reconciled, and the tabulated values are stored as printed."
+    }
+  ]
+}
