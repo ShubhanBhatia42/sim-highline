@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { readFile, access } from "node:fs/promises";
+import { createHash } from "node:crypto";
 const root = new URL("../dist/", import.meta.url);
 const manifest = JSON.parse(await readFile(new URL("../data/export/sim-highline-manifest.json", import.meta.url), "utf8"));
 const release = JSON.parse(await readFile(new URL("../data/release.json", import.meta.url), "utf8"));
@@ -52,7 +53,7 @@ for (const f of ["default", "explorer", "retune", "study-joint"]) {
 for (const page of ["index", "data"]) {
   const m = html[page].match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/); assert(m, `${page}: dataset metadata missing`);
   const d = JSON.parse(m[1]);
-  assert(d["@type"] === "Dataset" && d.name && d.description.length > 80 && d.license && d.identifier.includes(release.doi) && d.creator.name && d.version === release.version, `${page}: dataset metadata fields`);
+  assert(d["@type"] === "Dataset" && d.name && d.description.length > 80 && d.license && d.identifier.includes(release.doi) && [].concat(d.creator)[0].name && d.version === release.version, `${page}: dataset metadata fields`);
   assert(d.distribution.length >= 5, `${page}: downloads listed`);
   for (const x of d.distribution) await access(new URL(x.contentUrl.replace("https://shubhanbhatia42.github.io/sim-highline/", ""), root)).catch(() => assert.fail(`${page}: listed download ${x.contentUrl} is not in the build`));
 }
@@ -91,6 +92,81 @@ for (const page of ["index", "data"]) {
   for (const p of ["study-joint", "retune", "glossary", "faq", "studies"]) assert(html[p].includes('href="seeding.html"'), `${p}: must link to the seeding page`);
   for (const p of PAGES) assert(html[p].includes('<a href="seeding.html">Black hole seeding</a>'), `${p}: footer navigation must list the seeding page`);
   assert(/<a href="studies\.html"[^>]*aria-current="page"|aria-current="page"[^>]*>Studies/.test(html.seeding), "seeding: the Studies section must be marked current");
+}
+// discoverability: canonical and share tags on every page, sitemap, robots.txt, Atom feed, schema.org Dataset, Croissant and the index of the export; every file or link they list must exist
+{
+  const SITE = "https://shubhanbhatia42.github.io/sim-highline", sha = b => createHash("sha256").update(b).digest("hex");
+  const rd = async p => readFile(new URL(p, root), "utf8"), exists = p => access(new URL(p, root)).then(() => true, () => false);
+  const local = u => { assert(u.startsWith(SITE + "/"), `not on this site: ${u}`); return u.slice(SITE.length + 1); };
+  const cov = JSON.parse(await readFile(new URL("../data/coverage-report.json", import.meta.url), "utf8")), cff = await readFile(new URL("../CITATION.cff", import.meta.url), "utf8"), changelog = await readFile(new URL("../CHANGELOG.md", import.meta.url), "utf8");
+  // canonical, og:url, one of each, absolute, equal; the feed is announced; no request is made by any of it
+  for (const p of [...PAGES, "findings"]) {
+    const h = html[p], canon = [...h.matchAll(/<link rel="canonical" href="([^"]+)"/g)].map(m => m[1]), ogu = [...h.matchAll(/<meta property="og:url" content="([^"]+)"/g)].map(m => m[1]);
+    assert.equal(canon.length, 1, `${p}: exactly one canonical link`);
+    assert.equal(canon[0], p === "findings" ? `${SITE}/site/studies.html` : `${SITE}/site/${p}.html`, `${p}: canonical address`);
+    assert.deepEqual(ogu, [canon[0]], `${p}: og:url must equal the canonical address`);
+    assert(h.includes(`<link rel="alternate" type="application/atom+xml" title="sim-highline releases" href="${SITE}/feed.xml">`), `${p}: feed not announced`);
+    assert(!/<script[^>]+src="https?:/i.test(h) && !/gtag\(|google-analytics|googletagmanager|plausible\.io|matomo|hotjar|segment\.com/i.test(h), `${p}: no analytics and no external script`);
+  }
+  for (const [file, want] of [["index.html", `${SITE}/site/index.html`], ["highline.html", `${SITE}/highline.html`]]) {
+    const h = await rd(file); assert.equal([...h.matchAll(/<link rel="canonical" href="([^"]+)"/g)].map(m => m[1]).join(), want, `${file}: canonical`);
+  }
+  assert((await rd("highline.html")).includes(`<meta property="og:url" content="${SITE}/highline.html">`), "highline.html: og:url");
+  const nf = await rd("404.html"); assert(/name="robots" content="noindex"/.test(nf) && !/rel="canonical"/.test(nf), "404: noindex and no canonical");
+  // sitemap and robots
+  const sm = await rd("sitemap.xml"), locs = [...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
+  assert.equal(new Set(locs).size, locs.length, "sitemap: no duplicate address");
+  for (const u of locs) assert(await exists(local(u)), `sitemap lists ${u}, which is not in the build`);
+  for (const want of [...PAGES.map(p => `${SITE}/site/${p}.html`), `${SITE}/highline.html`]) assert(locs.includes(want), `sitemap: ${want} is missing`);
+  assert(!locs.some(u => u.endsWith("findings.html")), "sitemap: the redirect page is not listed");
+  assert(/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/.test(sm) && sm.includes('xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'), "sitemap: namespace and dates");
+  const rb = await rd("robots.txt"); assert(/^User-agent: \*$/m.test(rb) && rb.includes(`Sitemap: ${SITE}/sitemap.xml`) && !/^Disallow: \/\s*$/m.test(rb), "robots.txt: allows crawling and names the sitemap");
+  // Atom feed from CHANGELOG.md: one entry per released version, well formed
+  const feed = await rd("feed.xml"), versions = [...changelog.matchAll(/^## (\d+\.\d+\.\d+) \((\d{4}-\d{2}-\d{2})\)/gm)].map(m => m[1]);
+  assert(versions.length >= 5, "changelog: released versions found");
+  const ents = feed.split("<entry>").slice(1);
+  assert.equal(ents.length, Math.min(25, versions.length), "feed: one entry per released version (at most 25)");
+  assert.equal((feed.match(/<\/entry>/g) || []).length, ents.length, "feed: entries closed");
+  assert(!/&(?!amp;|lt;|gt;|quot;|apos;|#\d+;)/.test(feed), "feed: unescaped ampersand");
+  versions.slice(0, ents.length).forEach((v, i) => assert(ents[i].includes(`<title>sim-highline ${v}</title>`) && /<updated>\d{4}-\d{2}-\d{2}T00:00:00Z<\/updated>/.test(ents[i]) && ents[i].includes("&lt;li&gt;"), `feed: entry ${i} must be version ${v} with its changes`));
+  assert.equal(new Set([...feed.matchAll(/<id>([^<]+)<\/id>/g)].map(m => m[1])).size, ents.length + 1, "feed: unique ids");
+  assert(!feed.includes("Unreleased") && feed.includes(`<id>${SITE}/feed.xml</id>`) && feed.includes('xmlns="http://www.w3.org/2005/Atom"'), "feed: header");
+  // the CSV files as published, their header, and the checksums of everything listed
+  const csvHead = async f => { let t = await rd(`data/export/${f}`); let c = 0; while (t.startsWith("#")) { c++; t = t.slice(t.indexOf("\n") + 1); } return { header: t.slice(0, t.indexOf("\n")).split(","), comments: c }; };
+  const fileOk = async (url, bytes, hash, what) => { const b = await readFile(new URL(local(url), root)); assert.equal(b.length, bytes, `${what}: size of ${url}`); assert.equal(sha(b), hash, `${what}: sha256 of ${url}`); };
+  // schema.org Dataset
+  const ld = JSON.parse(html.data.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+  const given = [...cff.matchAll(/given-names:\s*"?([^"\n]+)"?\s*\n/g)].map(m => m[1].trim()), fams = [...cff.matchAll(/family-names:\s*"?([^"\n]+)"?/g)].map(m => m[1].trim());
+  assert(fams.length >= 1 && given.length === fams.length, "CITATION.cff: authors found");
+  assert.deepEqual([].concat(ld.creator).map(c => c.name), fams.map((f, i) => `${given[i]} ${f}`), "Dataset: creators are those of CITATION.cff");
+  assert(ld.identifier === `https://doi.org/${release.doi}` && ld.license.includes("creativecommons.org/licenses/by/4.0") && ld.version === release.version && ld.datePublished === release.released, "Dataset: DOI, licence, version, date");
+  assert.equal(ld.variableMeasured.length, Object.keys(cov.byRelation).length, "Dataset: one variableMeasured per relation");
+  for (const v of ld.variableMeasured) assert(v["@type"] === "PropertyValue" && v.propertyID in cov.byRelation && v.name && new RegExp(`^${cov.byRelation[v.propertyID].records} records?, ${cov.byRelation[v.propertyID].rankable} usable`).test(v.description), `Dataset: variable ${v.propertyID}`);
+  for (const d of ld.distribution) { const m = manifest.files[d.name]; if (m) { assert.equal(d.sha256, m.sha256, `Dataset: ${d.name} sha256 is the manifest's`); assert.equal(d.contentSize, `${m.bytes} B`); } await fileOk(d.contentUrl, Number(d.contentSize.replace(/ B$/, "")), d.sha256, "Dataset"); }
+  for (const f of Object.keys(manifest.files).filter(f => /\.(csv|json|bib)$/.test(f))) assert(ld.distribution.some(d => d.name === f), `Dataset: ${f} not listed`);
+  assert(ld.distribution.some(d => d.name === "sim-highline-croissant.json") && ld.distribution.some(d => d.name === "index.json"), "Dataset: Croissant and index listed");
+  // Croissant (mlcommons)
+  const cr = JSON.parse(await rd("data/export/sim-highline-croissant.json"));
+  assert(cr["@type"] === "sc:Dataset" && cr.conformsTo === "http://mlcommons.org/croissant/1.0" && cr.name && cr.description.length > 80 && cr.license && cr.url && cr.version === release.version && cr.creator.length, "Croissant: required dataset properties");
+  for (const k of ["cr", "sc", "dct", "recordSet", "field", "fileObject", "dataType", "extract", "source", "column", "citeAs", "conformsTo", "key", "data", "@vocab", "@language"]) assert(k in cr["@context"], `Croissant: @context lacks ${k}`);
+  const fo = new Map(cr.distribution.map(d => [d["@id"], d]));
+  assert.equal(fo.size, cr.distribution.length, "Croissant: unique file ids");
+  for (const d of cr.distribution) { assert(d["@type"] === "cr:FileObject" && d.encodingFormat === "text/csv" && d.name === d["@id"], `Croissant: file object ${d["@id"]}`); assert.equal(d.sha256, manifest.files[d.name].sha256, `Croissant: ${d.name} sha256 is the manifest's`); await fileOk(d.contentUrl, Number(d.contentSize.replace(/ B$/, "")), d.sha256, "Croissant"); }
+  assert.equal(fo.size, Object.keys(manifest.files).filter(f => f.endsWith(".csv")).length, "Croissant: every CSV export is described");
+  const ids = new Set(), TYPES = new Set(["sc:Text", "sc:Integer", "sc:Float", "sc:Boolean", "sc:Date"]);
+  for (const rs of cr.recordSet) {
+    const file = [...new Set(rs.field.map(f => f.source.fileObject["@id"]))]; assert.equal(file.length, 1, `Croissant: ${rs.name} reads one file`);
+    const { header, comments } = await csvHead(file[0]); assert(cr.description.includes(`${rs.name}: ${comments}`) && comments >= 1, `Croissant: the number of comment lines before the header of ${rs.name} is stated`);
+    assert.deepEqual(rs.field.map(f => f.name), header, `Croissant: ${rs.name} fields are the CSV columns, in order`);
+    for (const f of rs.field) { assert(!ids.has(f["@id"]) && f["@id"] === `${rs["@id"]}/${f.name}` && f["@type"] === "cr:Field" && TYPES.has(f.dataType) && fo.has(f.source.fileObject["@id"]) && f.source.extract.column === f.name, `Croissant: field ${f["@id"]}`); ids.add(f["@id"]); }
+    if (rs.key) assert(ids.has(rs.key["@id"]), `Croissant: key of ${rs.name} is a field`);
+  }
+  // index of the export
+  const ix = JSON.parse(await rd("data/export/index.json"));
+  assert(ix.version === release.version && ix.doi === release.doi && ix.counts.records === manifest.nRecords && ix.relations.length === Object.keys(cov.byRelation).length, "index.json: version, DOI and counts come from the saved files");
+  for (const f of ix.files) { assert(f.path === `data/export/${f.name}` && f.url === `${SITE}/${f.path}`, `index.json: ${f.name} address`); await fileOk(f.url, f.bytes, f.sha256, "index.json"); if (manifest.files[f.name]) assert.equal(f.sha256, manifest.files[f.name].sha256); }
+  for (const f of Object.keys(manifest.files)) assert(ix.files.some(x => x.name === f), `index.json: ${f} not listed`);
+  for (const u of [ix.discovery.sitemap, ix.discovery.feed, ix.discovery.croissant]) assert(await exists(local(u)), `index.json: ${u} is not in the build`);
 }
 // the old pages are gone and the old findings URL redirects
 for (const gone of ["about", "use-cases"]) await access(new URL(`site/${gone}.html`, root)).then(() => assert.fail(`${gone}.html must be removed`), () => {});

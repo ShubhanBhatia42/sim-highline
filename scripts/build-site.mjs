@@ -3,6 +3,7 @@ import vm from "node:vm";
 import { jointStats } from "./site-joint.mjs";
 import { shapeStats } from "./site-shape.mjs";
 import { seedingStats } from "./site-seeding.mjs";
+import { dataFiles, datasetLd, siteFiles } from "./site-discovery.mjs";
 import { withCsp } from "./csp.mjs";
 const root = new URL("../", import.meta.url);
 const read = async p => readFile(new URL(p, root), "utf8");
@@ -21,6 +22,7 @@ const obsProf = JSON.parse(await read("data/observation-profiles.json")).sources
 const manifest = JSON.parse(await read("data/export/sim-highline-manifest.json"));
 const cov = JSON.parse(await read("data/coverage-report.json"));
 const camels = JSON.parse(await read("data/ensembles/camels-sfrd.json"));
+const FILE_INFO = {}; // descriptions of the export files, filled where the data page table is built
 const sims = all.filter(r => r.kind === "simulation"), obs = all.filter(r => r.kind !== "simulation");
 const uniq = a => [...new Set(a)];
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -384,6 +386,7 @@ stats.camelsBox = camels.boxMpcPerH; stats.camelsBins = camels.zCentres.length;
     "sim-highline-citations.bib": "BibTeX for every paper and data release behind a record.",
     "sim-highline-rules.json": "The comparison rules: hard and soft definition keys per relation."
   };
+  Object.assign(FILE_INFO, FILEINFO);
   const size = b => b > 1e6 ? `${(b / 1e6).toFixed(1)} MB` : `${Math.round(b / 1e3)} kB`;
   stats.fileRows = Object.entries(manifest.files).map(([f, m]) => `<tr><td class="mono"><a href="../data/export/${esc(f)}">${esc(f)}</a></td><td>${esc(FILEINFO[f] || "")}</td><td class="n">${size(m.bytes)}</td><td class="mono"><span title="${m.sha256}">${m.sha256.slice(0, 10)}…</span></td></tr>`).join("");
   stats.columnList = (manifest.columns.records || []).map(c => `<code>${esc(c)}</code>`).join(", ");
@@ -512,11 +515,12 @@ const FONTS = "https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz
 const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230c1016'/%3E%3Cpath d='M5 24H13V17H19V9H27' fill='none' stroke='%23ffffff' stroke-width='2.4' stroke-linejoin='miter'/%3E%3C/svg%3E";
 const SITE_URL = "https://shubhanbhatia42.github.io/sim-highline";
 const OG = { "study-joint.html": "og-study-joint.png", "retune.html": "og-retune.png" };
-const HEAD = (title, desc, img = "og-default.png") => `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+const CANON = { "findings.html": "studies.html" }; // a redirect page names its target as the canonical address
+const HEAD = (title, desc, img = "og-default.png", page = "") => `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="${FONTS}" rel="stylesheet">
 <link rel="icon" href="${FAVICON}">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0b0e12" media="(prefers-color-scheme: dark)">
-<meta property="og:type" content="website"><meta property="og:site_name" content="sim-highline"><meta property="og:title" content="${title}"><meta property="og:description" content="${desc}"><meta property="og:image" content="${SITE_URL}/site/${img}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="${esc(title)}: a chart from the page beside its title"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website"><meta property="og:site_name" content="sim-highline"><meta property="og:title" content="${title}"><meta property="og:description" content="${desc}"><meta property="og:image" content="${SITE_URL}/site/${img}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="${esc(title)}: a chart from the page beside its title"><meta name="twitter:card" content="summary_large_image">${page ? `<link rel="canonical" href="${SITE_URL}/site/${CANON[page] || page}"><meta property="og:url" content="${SITE_URL}/site/${CANON[page] || page}">` : ""}<link rel="alternate" type="application/atom+xml" title="sim-highline releases" href="${SITE_URL}/feed.xml">
 <script>try{var t=localStorage.getItem("sh-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 <style>${stats.css}</style>`;
 const MENU = [["../highline.html", "Explorer", null], ["retune.html", "Dials", "retune"], ["studies.html", "Studies", "studies"], ["data.html", "Data", "data"], ["methods.html", "Methods", "methods"]];
@@ -533,24 +537,28 @@ const FOOTER = () => `<footer class="foot"><div class="wrap">
 <p class="links"><a href="../highline.html">Explorer</a><a href="retune.html">Dials</a><a href="studies.html">Studies</a><a href="data.html">Data</a><a href="methods.html">Methods</a><a href="seeding.html">Black hole seeding</a><a href="glossary.html">Glossary</a><a href="faq.html">FAQ</a><a href="quality.html">Data quality</a><a href="changes.html">What is new</a><a id="reportlink" href="${release.repo}/issues/new?template=bug.yml">Report a problem</a><a id="feedbacklink" href="${release.repo}/issues/new?template=feedback.yml">Give feedback</a><a href="${release.repo}">Repository</a><a href="${release.repo}/blob/main/CHANGELOG.md">Changelog</a><a href="${release.repo}/blob/main/CITATION.cff">CITATION.cff</a><a href="${release.repo}/blob/main/LICENSE">LICENSE</a><a href="${release.repo}/blob/main/LICENSE-DATA.md">LICENSE-DATA</a></p>
 </div></footer>${THEME_JS}`;
 
-// structured metadata so that dataset search understands what this is (schema.org Dataset), from the release and the export manifest
-const MIME = { ".csv": "text/csv", ".json": "application/json", ".bib": "application/x-bibtex", ".py": "text/x-python" };
-const DATASET_LD = `\n<script type="application/ld+json">${JSON.stringify({
-  "@context": "https://schema.org", "@type": "Dataset", name: release.title, description: "Galaxy scaling relations from cosmological simulations and observations: " + stats.records + " curves from " + stats.suites + " simulations and " + stats.obsSources + " observational and empirical sources, each with its definitions (mass aperture, IMF, population), source and a note on whether it can be compared fairly with the others.",
-  url: `${SITE_URL}/site/data.html`, sameAs: `https://doi.org/${release.doi}`, identifier: `https://doi.org/${release.doi}`, version: release.version, datePublished: release.released, license: "https://creativecommons.org/licenses/by/4.0/", isAccessibleForFree: true,
-  creator: { "@type": "Person", name: release.author }, keywords: ["galaxy formation", "cosmological simulations", "scaling relations", "stellar mass function", "star formation", "black holes", "IllustrisTNG", "SIMBA", "CAMELS"],
-  citation: `https://doi.org/${release.doi}`, isBasedOn: release.repo,
-  distribution: Object.entries(manifest.files).filter(([f]) => /\.(csv|json|bib)$/.test(f)).map(([f, m]) => ({ "@type": "DataDownload", name: f, contentUrl: `${SITE_URL}/data/export/${f}`, encodingFormat: MIME[f.slice(f.lastIndexOf("."))] || "application/octet-stream", contentSize: `${m.bytes} B`, sha256: m.sha256 }))
-}).replace(/</g, "\\u003c")}</script>`;
+// structured metadata so that dataset search understands what this is (schema.org Dataset), a Croissant file for the CSV exports and a machine-readable index, all from the release, CITATION.cff, the coverage report and the export manifest (scripts/site-discovery.mjs)
+const DESCRIPTION = "Galaxy scaling relations from cosmological simulations and observations: " + stats.records + " curves from " + stats.suites + " simulations and " + stats.obsSources + " observational and empirical sources, each with its definitions (mass aperture, IMF, population), source and a note on whether it can be compared fairly with the others.";
+const KEYWORDS = ["galaxy formation", "cosmological simulations", "scaling relations", "stellar mass function", "star formation", "black holes", "IllustrisTNG", "SIMBA", "CAMELS"];
+const csvTexts = Object.fromEntries(await Promise.all(Object.keys(manifest.files).filter(f => f.endsWith(".csv")).map(async f => [f, await read(`data/export/${f}`)])));
+const DISC = dataFiles({ release, manifest, cov, notes, cff: await read("CITATION.cff"), SITE_URL, texts: csvTexts, fileInfo: FILE_INFO, keywords: KEYWORDS, description: DESCRIPTION });
+const DATASET_LD = `\n<script type="application/ld+json">${JSON.stringify(datasetLd({ release, manifest, SITE_URL, description: DESCRIPTION, keywords: KEYWORDS, creator: DISC.creator, relations: DISC.relations, croissant: DISC.croissant, croissantMeta: DISC.croissantMeta, indexMeta: DISC.indexMeta })).replace(/</g, "\\u003c")}</script>`;
 await mkdir(new URL("dist/site/", root), { recursive: true });
 const PAGES = ["index.html", "studies.html", "study-definitions.html", "study-harmonization.html", "study-sfh.html", "study-joint.html", "study-shape.html", "seeding.html", "retune.html", "data.html", "methods.html", "sources.html", "findings.html", "glossary.html", "faq.html", "changes.html", "quality.html", "summary.html"];
 for (const page of PAGES) {
   let html = await read(`site/src/${page}`);
   const title = (html.match(/<title>([^<]*)<\/title>/) || [])[1], desc = (html.match(/<meta name="description" content="([^"]*)"/) || [])[1];
   if (!title || !desc) throw new Error(`${page}: <title> and <meta name="description"> are required`);
-  stats.head = HEAD(title, desc, OG[page]) + (page === "index.html" || page === "data.html" ? DATASET_LD : ""); stats.header = HEADER(page); stats.footer = FOOTER();
+  stats.head = HEAD(title, desc, OG[page], page) + (page === "index.html" || page === "data.html" ? DATASET_LD : ""); stats.header = HEADER(page); stats.footer = FOOTER();
   html = html.replace(/\{\{(\w+)\}\}/g, (m, k) => { if (!(k in stats)) throw new Error(`unknown placeholder ${m} in ${page}`); return String(stats[k]); });
   await writeFile(new URL(`dist/site/${page}`, root), page === "findings.html" ? html : withCsp(html));
+}
+// discoverability files: sitemap, robots.txt, the Atom feed of the changelog, the Croissant file and the index of the export
+{
+  const F = siteFiles({ SITE_URL, pages: PAGES.filter(p => !(p in CANON)), release, changelog: await read("CHANGELOG.md") });
+  await writeFile(new URL("dist/sitemap.xml", root), F.sitemap); await writeFile(new URL("dist/robots.txt", root), F.robots); await writeFile(new URL("dist/feed.xml", root), F.feed);
+  await mkdir(new URL("dist/data/export/", root), { recursive: true });
+  await writeFile(new URL(`dist/data/export/${DISC.croissant.name}`, root), DISC.croissant.text); await writeFile(new URL(`dist/data/export/${DISC.index.name}`, root), DISC.index.text);
 }
 // the page the host serves for an address that does not exist (GitHub Pages serves 404.html from the site root); links are relative to site/ and the base is set from where the site is mounted
 {
