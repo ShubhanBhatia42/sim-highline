@@ -270,7 +270,7 @@
     el("label", { for: "rt-fitfam" }, "Property"), fitFam, el("label", { for: "rt-fittext" }, "Your curve"), fitText, el("label", { class: "rt-chk" }, fitLin, "y values are linear, not log10"), fitBtn,
     el("label", { for: "rt-obs" }, "or an observed curve"), obsSel, obsGo, fitMsg);
   ctrl.append(fit);
-  const outputs = el("div", { class: "rt-actions rt-out" }, btn("Copy link to this setting", () => copyLink(), "plain"), btn("Download the numbers (CSV)", () => csv(), "plain"), btn("Download the figure (PNG)", () => png(), "plain"));
+  const outputs = el("div", { class: "rt-actions rt-out" }, btn("Copy link to this setting", () => copyLink(), "plain"), btn("Download the numbers (CSV)", () => csv(), "plain"), btn("Download the figure (SVG)", () => svgDownload(), "plain"), btn("Download the figure (PNG)", () => png(), "plain"));
   ctrl.append(outputs);
   function copyLink() {
     const u = location.href.split("#")[0] + "#" + hashString();
@@ -288,24 +288,6 @@
     const head = `# sim-highline v${D.version} dials page. IllustrisTNG dials (x0.25..x4 and x0.5..x2 as coordinates -1..1): ${state.a.IllustrisTNG.map(v => v.toFixed(2)).join(" ")}; SIMBA: ${state.a.SIMBA.map(v => v.toFixed(2)).join(" ")}. Emulated means; units are those of each property (log10 or fraction).\n`;
     const a = el("a", { href: URL.createObjectURL(new Blob([head + rows.join("\n") + "\n"], { type: "text/csv" })), download: "sim-highline-dials.csv" }); document.body.append(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
   }
-  function png() {
-    const figs = [...panels.querySelectorAll("figure.rt-panel")], cols = Math.min(3, Math.max(1, figs.length)), cw = 330, ch = 232, W = cols * cw + 24, rowsN = Math.ceil(figs.length / cols), H = rowsN * ch + 110;
-    const P = ["fill", "stroke", "stroke-width", "stroke-dasharray", "opacity", "fill-opacity", "stroke-opacity", "font-family", "font-size", "font-weight", "text-anchor", "display"];
-    const bg = getComputedStyle(document.body).backgroundColor, fg = getComputedStyle(document.body).color;
-    let g = "";
-    figs.forEach((fig, n) => {
-      const s = fig.querySelector("svg"), c = s.cloneNode(true), a = s.querySelectorAll("*"), b = c.querySelectorAll("*");
-      a.forEach((e, i) => { const cs = getComputedStyle(e); let st = ""; for (const p of P) st += `${p}:${cs.getPropertyValue(p)};`; if (b[i]) b[i].setAttribute("style", st); });
-      c.setAttribute("x", 12 + (n % cols) * cw); c.setAttribute("y", 88 + Math.floor(n / cols) * ch + 22); c.setAttribute("width", cw); c.setAttribute("height", ch - 22);
-      g += `<text x="${12 + (n % cols) * cw}" y="${88 + Math.floor(n / cols) * ch + 14}" font-family="Georgia,serif" font-size="13" fill="${fg}">${fig.querySelector("b").textContent} (${fig.querySelector(".rt-d").textContent})</text>` + new XMLSerializer().serializeToString(c);
-    });
-    const esc = t => String(t).replace(/[&<>]/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[m]));
-    const big = stick.querySelector(".rt-big").textContent;
-    const words = big.match(/.{1,92}(\s|$)/g) || [big];
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><rect width="${W}" height="${H}" fill="${bg}"/><text x="12" y="26" font-family="Georgia,serif" font-size="18" fill="${fg}">${esc(words[0])}</text><text x="12" y="48" font-family="Georgia,serif" font-size="18" fill="${fg}">${esc(words[1] || "")}</text><text x="12" y="70" font-family="monospace" font-size="11" fill="${fg}">TNG: ${esc(mult("IllustrisTNG"))}</text><text x="12" y="84" font-family="monospace" font-size="11" fill="${fg}">SIMBA: ${esc(mult("SIMBA"))}</text>${g}</svg>`;
-    const img = new Image(); img.onload = () => { const cv = document.createElement("canvas"); cv.width = W * 2; cv.height = H * 2; const x = cv.getContext("2d"); x.scale(2, 2); x.drawImage(img, 0, 0); cv.toBlob(bl => { const a = el("a", { href: URL.createObjectURL(bl), download: "sim-highline-dials.png" }); document.body.append(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500); }, "image/png"); };
-    img.onerror = () => toast("The figure could not be rendered in this browser"); img.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
-  }
   function sync() {
     for (const c of CODES) D.params.forEach((p, j) => { const x = state.a[c][j], u = ui[`${c}${j}`]; u.input.value = x; u.out.textContent = "×" + f2(Math.pow(p.base, x), 2); u.input.setAttribute("aria-valuetext", "×" + f2(Math.pow(p.base, x), 2)); u.box.classList.toggle("edge", Math.abs(x) >= 0.9); });
     try { history.replaceState(null, "", "#" + hashString()); } catch (e) { /* no history in some embeds */ }
@@ -313,7 +295,8 @@
   /* ---- panels */
   const W = 330, H = 200, L = 46, R = 10, T = 8, B = 34;
   function nice(lo, hi) { const span = hi - lo || 1, raw = span / 4, p = Math.pow(10, Math.floor(Math.log10(raw))), m = raw / p, st = (m < 1.5 ? 1 : m < 3.5 ? 2 : m < 7.5 ? 5 : 10) * p, a = Math.floor(lo / st) * st, b = Math.ceil(hi / st) * st, t = []; for (let v = a; v <= b + 1e-9; v += st) t.push(+v.toFixed(6)); return { a, b, t }; }
-  function panel(fam) {
+  /* what one panel shows now: the emulated curves, the published curves, the ranges and the scales. panel() draws it into the page and figureSvg() into the exported figure, so the two cannot differ. */
+  function model(fam) {
     const key = fam + "|" + state.snap, ids = D.blocks[key];
     if (!ids) return null;
     const meta = D.families[fam], iarr = Int32Array.from(ids), yT = predict("IllustrisTNG", state.a.IllustrisTNG, iarr), yS = predict("SIMBA", state.a.SIMBA, iarr);
@@ -326,6 +309,15 @@
     const path = (px, py) => px.map((x, i) => (Number.isFinite(py[i]) ? `${i && Number.isFinite(py[i - 1]) ? "L" : "M"}${sx(x).toFixed(1)},${sy(py[i]).toFixed(1)}` : "")).join("");
     const band = (px, lo, hi) => { const a = px.map((x, i) => `${sx(x).toFixed(1)},${sy(hi[i]).toFixed(1)}`), b = px.map((x, i) => `${sx(x).toFixed(1)},${sy(lo[i]).toFixed(1)}`).reverse(); return `M${a.join("L")}L${b.join("L")}Z`; };
     const unit = (D.native && D.native[fam] && D.native[fam].unit) === "fraction" ? "" : " dex";
+    const set = { idx: iarr, w2: Float64Array.from(ids.map(i => 1 / (SCALE[i] ** 2))) }, d = dist(yT, yS, set);
+    let ss = 0; for (let k = 0; k < yT.length; k++) ss += (yT[k] - yS[k]) ** 2; const nat = Math.sqrt(ss / yT.length);
+    const nOut = meta.kind === "points" ? 0 : ovs.filter(o => !o.x.some((x, k) => x >= xr[0] && x <= xr[1] && o.y[k] >= yr.a && o.y[k] <= yr.b)).length;
+    return { fam, ids, meta, iarr, yT, yS, xs, ovs, xr, yr, sx, sy, path, band, unit, d, nat, nOut };
+  }
+  function panel(fam) {
+    const m = model(fam);
+    if (!m) return null;
+    const { ids, meta, iarr, yT, yS, xs, ovs, xr, yr, sx, sy, path, band, unit, d, nat, nOut } = m;
     const g = svgEl("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": `${meta.title} at z = ${f2(D.snapshots.find(s => s.id === state.snap).z)}: IllustrisTNG and SIMBA emulated curves` });
     const axes = svgEl("g", { class: "axis" });
     for (const t of yr.t) axes.append(svgEl("line", { x1: L, x2: W - R, y1: sy(t), y2: sy(t) }), svgEl("text", { x: L - 6, y: sy(t) + 4, "text-anchor": "end" }, String(+t.toPrecision(3))));
@@ -349,10 +341,91 @@
       const bw = (W - L - R) / Math.max(ids.length, 1);
       ids.forEach((i, k) => g.append(svgEl("rect", { x: sx(xs[k]) - bw / 2, y: T, width: bw, height: H - T - B, fill: "transparent" }, svgEl("title", {}, `${meta.x} ${xs[k]}: TNG ${f2(yT[k], 3)}, SIMBA ${f2(yS[k], 3)}, difference ${f2(yT[k] - yS[k], 3)}`))));
     }
-    const set = { idx: iarr, w2: Float64Array.from(ids.map(i => 1 / (SCALE[i] ** 2))) }, d = dist(yT, yS, set);
-    let ss = 0; for (let k = 0; k < yT.length; k++) ss += (yT[k] - yS[k]) ** 2; const nat = Math.sqrt(ss / yT.length);
-    const nOut = meta.kind === "points" ? 0 : ovs.filter(o => !o.x.some((x, k) => x >= xr[0] && x <= xr[1] && o.y[k] >= yr.a && o.y[k] <= yr.b)).length;
     return el("figure", { class: "rt-panel" + (d >= D.margin ? " far" : ""), "data-family": fam }, el("figcaption", { class: "rt-cap" }, el("b", {}, meta.title), nOut ? el("span", { class: "rt-n" }, `${nOut} published outside the frame`) : "", el("span", { class: "rt-d", title: "gap between the two curves; 1 = as far apart as two runs of the same code that differ only in their random seed. After it: the rms difference in the property's own units." }, `gap ${f2(d)} · ${f2(nat, 2)}${unit}`)), el("p", { class: "rt-sub" }, FRIENDLY[fam] || "", state.explain && PHYS[fam] ? el("span", { class: "rt-phys" }, " " + PHYS[fam]) : ""), g);
+  }
+  /* ---- the figure: one vector drawing of what the page shows now, for the SVG and PNG downloads. Each panel is drawn from the same model() as on the page, with axes, ticks, units, the emulated curves,
+     the published curves and your curve; the colours are those of the theme in use, all text is text, and the footer gives the dial settings and the sources of the published curves drawn. */
+  function figureSvg() {
+    const cs = getComputedStyle(document.documentElement), v = (n, d) => cs.getPropertyValue(n).trim() || d;
+    const C = { bg: v("--bg", "#ffffff"), ink: v("--ink", "#0c1016"), ink2: v("--ink2", "#3d4653"), ink3: v("--ink3", "#5f6977"), rule: v("--rule", "#dde1e6"), far: v("--orange", "#c4421a"), IllustrisTNG: v("--c-illustristng", "#eb6834"), SIMBA: v("--c-simba", "#2a78d6") };
+    const MONO = "ui-monospace,Menlo,Consolas,monospace", SERIF = "Georgia,'Times New Roman',serif", SANS = "Helvetica,Arial,sans-serif";
+    const esc = t => String(t).replace(/[&<>"]/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[m])), n1 = x => (+x).toFixed(1);
+    const wrap = (text, n) => { const out = []; let cur = ""; for (const w of String(text).split(" ")) { if (cur && (cur + " " + w).length > n) { out.push(cur); cur = w; } else cur = cur ? cur + " " + w : w; } if (cur) out.push(cur); return out; };
+    const txt = (x, y, s, o = {}) => `<text x="${n1(x)}" y="${n1(y)}" font-family="${o.f || SANS}" font-size="${o.s || 11}"${o.w ? ` font-weight="${o.w}"` : ""}${o.a ? ` text-anchor="${o.a}"` : ""} fill="${o.c || C.ink2}">${esc(s)}</text>`;
+    const ms = FAMS.filter(f => f !== "hmf" || state.controls).map(model).filter(Boolean), z = D.snapshots.find(s => s.id === state.snap).z;
+    const cols = Math.min(3, Math.max(1, ms.length)), PW = W + 24, PH = 44 + H + 14, Wt = cols * PW + 24, rowsN = Math.ceil(ms.length / cols);
+    /* header: title, the sentence the page shows, the dial settings, the key */
+    let y = 26, head = txt(12, y, `Turn the physics dials: IllustrisTNG and SIMBA at z = ${f2(z)}`, { f: SERIF, s: 17, w: 600, c: C.ink });
+    const big = (stick.querySelector(".rt-big") || { textContent: "" }).textContent;
+    for (const l of wrap(big, Math.floor((Wt - 24) / 6.7))) { y += 19; head += txt(12, y, l, { f: SERIF, s: 13.5, c: C.ink }); }
+    y += 8;
+    for (const c of CODES) for (const l of wrap(`${c}: ${mult(c)}`, Math.floor((Wt - 24) / 6.4))) { y += 15; head += txt(12, y, l, { f: MONO, s: 10.5, c: C.ink2 }); }
+    const ovAll = state.overlays ? ms.flatMap(m => m.ovs) : [], userDrawn = !!state.user && ms.some(m => m.fam === state.user.fam && state.user.snap === state.snap);
+    const key = [["line", C.IllustrisTNG, 2.2, "", "IllustrisTNG, emulated mean"], ["line", C.SIMBA, 2.2, "", "SIMBA, emulated mean"], ["band", C.ink3, 0, "", "narrow band: seed-to-seed scatter of one box"], ["line", C.ink3, 0.9, "1 3", "dotted: emulator error"], ["wide", C.ink3, 0, "", "pale band: reached by moving all four dials (5th to 95th percentile)"]];
+    if (ovAll.some(o => o.kind !== "observation")) key.push(["line", C.ink3, 1, "", "published simulation curve"]);
+    if (ovAll.some(o => o.kind === "observation")) key.push(["line", C.ink, 1.4, "", "published observation"]);
+    if (ovAll.some(o => o.tier === "digitized-figure")) key.push(["line", C.ink, 1, "2 3", "dotted: read from a published figure"]);
+    if (userDrawn) key.push(["line", C.ink, 2, "6 4", `your curve (${state.user.name})`]);
+    y += 10; let kx = 12, ky = y + 4, keyS = "";
+    for (const [k, col, sw, da, t] of key) {
+      const w = 30 + t.length * 5.9 + 14;
+      if (kx > 12 && kx + w > Wt - 12) { kx = 12; ky += 16; }
+      if (k === "line") keyS += `<line x1="${kx}" x2="${kx + 22}" y1="${ky - 3.5}" y2="${ky - 3.5}" stroke="${col}" stroke-width="${sw}"${da ? ` stroke-dasharray="${da}"` : ""}/>`;
+      else keyS += `<rect x="${kx}" y="${ky - 8}" width="22" height="${k === "band" ? 5 : 9}" fill="${col}" opacity="${k === "band" ? 0.3 : 0.14}"/>`;
+      keyS += txt(kx + 28, ky, t, { s: 10.5 }); kx += w;
+    }
+    const top = ky + 22;
+    /* panels */
+    const clipRect = `x="${L}" y="${T}" width="${W - L - R}" height="${H - T - B}"`;
+    const panelSvg = (m, ox, oy) => {
+      const { fam, ids, meta, yT, yS, xs, ovs, xr, yr, sx, sy, path, band, unit, d, nat, nOut } = m, far = d >= D.margin, plot = [];
+      let s = `<g transform="translate(${ox} ${oy})">` + txt(0, 14, meta.title, { f: SERIF, s: 13, w: 600, c: C.ink }) + txt(0, 28, `gap ${f2(d)} · ${f2(nat, 2)}${unit}${nOut ? ` · ${nOut} published outside the frame` : ""}`, { f: MONO, s: 10, w: far ? 700 : 400, c: far ? C.far : C.ink2 }) + txt(0, 41, meta.y, { f: MONO, s: 9.5, c: C.ink3 });
+      s += `<g transform="translate(0 44)">`;
+      for (const t of yr.t) plot.push(`<line x1="${L}" x2="${W - R}" y1="${n1(sy(t))}" y2="${n1(sy(t))}" stroke="${C.rule}"/>`, `<line x1="${L - 4}" x2="${L}" y1="${n1(sy(t))}" y2="${n1(sy(t))}" stroke="${C.ink3}"/>`, txt(L - 7, sy(t) + 3.5, String(+t.toPrecision(3)), { f: MONO, s: 10, a: "end", c: C.ink3 }));
+      const xt = meta.kind === "points" ? ids.map((_, i) => i) : nice(xr[0], xr[1]).t.filter(t => t >= xr[0] && t <= xr[1]);
+      for (const t of xt) plot.push(`<line x1="${n1(sx(t))}" x2="${n1(sx(t))}" y1="${H - B}" y2="${H - B + 4}" stroke="${C.ink3}"/>`, txt(sx(t), H - B + 15, meta.kind === "points" ? meta.labels[t] : String(t), { f: MONO, s: 10, a: "middle", c: C.ink3 }));
+      plot.push(`<line x1="${L}" x2="${W - R}" y1="${H - B}" y2="${H - B}" stroke="${C.ink3}"/><line x1="${L}" x2="${L}" y1="${T}" y2="${H - B}" stroke="${C.ink3}"/>`, txt((L + W - R) / 2, H - 3, meta.x, { f: MONO, s: 10, a: "middle", c: C.ink2 }));
+      if (meta.kind === "points") {
+        ids.forEach((i, k) => { for (const c of CODES) plot.push(`<line x1="${n1(sx(k) + (c === "SIMBA" ? 6 : -6))}" x2="${n1(sx(k) + (c === "SIMBA" ? 6 : -6))}" y1="${n1(sy(REACH[c].lo[i]))}" y2="${n1(sy(REACH[c].hi[i]))}" stroke="${C[c]}" stroke-width="7" opacity="0.18"/>`); });
+        ids.forEach((i, k) => plot.push(`<circle cx="${n1(sx(k) - 6)}" cy="${n1(sy(yT[k]))}" r="4.5" fill="${C.IllustrisTNG}"/><circle cx="${n1(sx(k) + 6)}" cy="${n1(sy(yS[k]))}" r="4.5" fill="${C.SIMBA}"/>`));
+      } else {
+        plot.push(`<clipPath id="fc-${fam}"><rect ${clipRect}/></clipPath><g clip-path="url(#fc-${fam})">`);
+        for (const o of ovs) plot.push(`<path d="${path(o.x.filter((x, k) => Number.isFinite(o.y[k])), o.y.filter(Number.isFinite))}" fill="none" stroke="${o.kind === "observation" ? C.ink : C.ink3}" stroke-width="${o.kind === "observation" ? 1.4 : 1}"${o.tier === "digitized-figure" ? ' stroke-dasharray="2 3"' : ""} opacity="${o.kind === "observation" ? 0.85 : 0.45}"/>`);
+        if (state.user && state.user.fam === fam && state.user.snap === state.snap) plot.push(`<path d="${path(state.user.pts.map(p => p.x), state.user.pts.map(p => p.y))}" fill="none" stroke="${C.ink}" stroke-width="2" stroke-dasharray="6 4"/>`);
+        plot.push("</g>");
+        for (const c of CODES) plot.push(`<path d="${band(xs, ids.map(i => REACH[c].lo[i]), ids.map(i => REACH[c].hi[i]))}" fill="${C[c]}" opacity="0.1"/>`);
+        for (const [c, yy] of [["IllustrisTNG", yT], ["SIMBA", yS]]) {
+          plot.push(`<path d="${band(xs, ids.map((i, k) => yy[k] - D.codes[c].seed[i]), ids.map((i, k) => yy[k] + D.codes[c].seed[i]))}" fill="${C[c]}" opacity="0.22"/><path d="${path(xs, Array.from(yy))}" fill="none" stroke="${C[c]}" stroke-width="2.2"/>`);
+          for (const sgn of [-1, 1]) plot.push(`<path d="${path(xs, ids.map((i, k) => yy[k] + sgn * D.codes[c].emulator_error[i]))}" fill="none" stroke="${C[c]}" stroke-width="0.9" stroke-dasharray="1 3"/>`);
+        }
+      }
+      return s + plot.join("") + "</g></g>";
+    };
+    let body = "";
+    ms.forEach((m, i) => { body += panelSvg(m, 12 + (i % cols) * PW, top + Math.floor(i / cols) * PH); });
+    /* footer: what was drawn and where the published curves come from */
+    const srcOf = kind => [...new Set(ovAll.filter(o => (o.kind === "observation") === (kind === "observation")).map(o => o.source))].sort();
+    const obsS = srcOf("observation"), simS = srcOf("simulation"), chars = Math.floor((Wt - 24) / 5.9), foot = [];
+    foot.push(["b", `sim-highline v${D.version} · dials page · ${new Date().toISOString().slice(0, 10)}`]);
+    foot.push(...wrap(`IllustrisTNG and SIMBA curves are polynomial emulators fitted to 1,000 CAMELS simulations per code at the fiducial cosmology (25 Mpc/h boxes), evaluated at the dial settings above; they are not simulations run at these settings.`, chars).map(t => ["n", t]));
+    if (!state.overlays) foot.push(["n", "Published curves: not drawn."]);
+    else if (ovAll.length) {
+      foot.push(...wrap(`Published curves drawn (${ovAll.length}; their definitions differ from the CAMELS catalogues, so they are context, not a test; each record's citation is in the dataset, data/export/sim-highline-records.csv).`, chars).map(t => ["n", t]));
+      if (obsS.length) foot.push(...wrap(`Observations: ${obsS.join("; ")}.`, chars).map(t => ["n", t]));
+      if (simS.length) foot.push(...wrap(`Simulations: ${simS.join("; ")}.`, chars).map(t => ["n", t]));
+    } else foot.push(["n", "Published curves: none for these properties at this redshift."]);
+    foot.push(...wrap(`Link to this setting: ${location.href.split("#")[0]}#${hashString()}`, chars).map(t => ["n", t]));
+    const fy = top + rowsN * PH + 8, Ht = fy + 12 + foot.length * 15 + 8;
+    const fs = foot.map(([k, t], i) => txt(12, fy + 14 + i * 15, t, k === "b" ? { s: 11, w: 600, c: C.ink } : { s: 10.5, c: C.ink2 })).join("");
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${Wt}" height="${Ht}" viewBox="0 0 ${Wt} ${Ht}" role="img" aria-label="Turn the physics dials: ${ms.length} panels at z = ${f2(z)}"><rect width="100%" height="100%" fill="${C.bg}"/>${head}${keyS}${body}<line x1="12" x2="${Wt - 12}" y1="${fy}" y2="${fy}" stroke="${C.rule}"/>${fs}</svg>`;
+    return { svg, w: Wt, h: Ht };
+  }
+  const saveBlob = (blob, name) => { const a = el("a", { href: URL.createObjectURL(blob), download: name }); document.body.append(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500); };
+  const svgDownload = () => saveBlob(new Blob([figureSvg().svg], { type: "image/svg+xml" }), "sim-highline-dials.svg");
+  function png() {
+    const f = figureSvg(), img = new Image();
+    img.onload = () => { const cv = document.createElement("canvas"); cv.width = f.w * 2; cv.height = f.h * 2; const x = cv.getContext("2d"); x.scale(2, 2); x.drawImage(img, 0, 0); cv.toBlob(bl => saveBlob(bl, "sim-highline-dials.png"), "image/png"); };
+    img.onerror = () => toast("The figure could not be rendered in this browser"); img.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(f.svg);
   }
   function render() {
     panels.replaceChildren(...FAMS.filter(f => (f !== "hmf" || state.controls)).map(panel).filter(Boolean));
