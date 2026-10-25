@@ -546,6 +546,11 @@
       "kind": "survey",
       "facility": "JWST NIRCam grism (FRESCO F444W and CONGRESS F356W), GOODS-North and GOODS-South",
       "measures": "Observed H-alpha luminosity function at z about 4.45, 5.3 and 6.15 from 1050 spectroscopically confirmed emitters."
+    },
+    "Khostovan et al. 2015 (HiZELS)": {
+      "kind": "survey",
+      "facility": "HiZELS narrow-band imaging (UKIRT WFCAM), COSMOS and UDS",
+      "measures": "H-beta+[OIII] luminosity function at z = 0.84, 1.42, 2.23 and 3.24 and [OII] luminosity function at z = 1.47, 2.25, 3.34 and 4.69 from narrow-band emitters, corrected for completeness and filter profile, not corrected for dust or AGN."
     }
   }
 }
