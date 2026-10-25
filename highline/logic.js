@@ -111,5 +111,66 @@
 
   const pickAnchor = (cands, re, z) => cands.filter(r => re.test(r.source)).sort((p, q) => Math.abs(p.epoch.zRepresentative - z) - Math.abs(q.epoch.zRepresentative - z))[0] || null;
 
-  g.SimHighlineLogic = { VARIANT, FIDUCIAL, TIER_RANK, unitOf, tol, primaryUnits, nearest, medianOffset, pickAnchor, parseUserCurve, inspectUserCurve, spread };
+  /* The caveat line of a figure and of its methods text: which of the plotted curves may be read against each other. It is generated from the comparison rules (compare.js) and is never typed per relation.
+     recs = the records plotted (duplicates are ignored); C = SimHighlineCompare; opts = { name(record): how a curve is called, imfConverted: true when the plot converts the IMF }.
+     Curves with the same definitions that the rules look at form one group, and C.compatible is called for every pair of groups (and for a group of several curves with itself, which finds definitions that are not stated).
+     A blocker of compatible is a hard difference (the curves should not be read as like for like), a caveat a soft one (a smaller difference, left as published). The key of a message is the word before its first colon.
+     Returns { n, like, hard, soft, context, undocumented, short, long }: hard and soft are lists of { key, label, groups: [{ value, names }] }, short a list of sentences for a figure footer, long a paragraph for a methods text. */
+  function plotCaveats(recs, C, opts = {}) {
+    const name = opts.name || (r => r.source), uniq = [...new Map((recs || []).filter(r => r && r.id).map(r => [r.id, r])).values()];
+    const out = { n: uniq.length, like: false, hard: [], soft: [], context: [], undocumented: [], short: [], long: "" };
+    if (uniq.length < 2) { out.long = uniq.length ? "Only one curve is plotted, so there is nothing to compare it with." : "No curve is plotted."; out.short = [out.long]; return out; }
+    const rule = C.RULES[uniq[0].relation] || { hard: [], soft: [] }, keys = [...rule.hard, ...rule.soft], known = new Set(keys), unset = v => v == null || v === "unspecified" || v === "heterogeneous";
+    const show = (r, k) => { const v = r.definitions && r.definitions[k]; if (unset(v)) return "not stated"; if (k === "population") return String(C.populationClass(v)); if (typeof v === "object") return k === "cosmology" ? `H0 ${v.H0}, Om ${v.Om}` : JSON.stringify(v); return String(v); };
+    const classes = new Map();
+    for (const r of uniq) { const s = JSON.stringify([!!r.rankable, !r.definitions, ...keys.map(k => r.definitions && r.definitions[k])]); (classes.get(s) || classes.set(s, []).get(s)).push(r); }
+    const groups = [...classes.values()], hardKeys = new Set(), softKeys = new Set();
+    const keyOf = m => { const t = /^([A-Za-z0-9]+)(?::| not documented)/.exec(m); return t && known.has(t[1]) ? t[1] : /^H0 /.test(m) ? "cosmology" : null; };
+    for (let i = 0; i < groups.length; i++) for (let j = i; j < groups.length; j++) {
+      if (i === j && groups[i].length < 2) continue;
+      let v; try { v = C.compatible(groups[i][0], groups[j][0]); } catch (e) { continue; }
+      for (const m of v.blockers) { const k = keyOf(m); if (k) hardKeys.add(k); }
+      for (const m of v.caveats) { const k = keyOf(m); if (k) softKeys.add(k); }
+    }
+    const label = k => (C.KEY_LABEL && C.KEY_LABEL[k]) || k, lc = s => (/^[A-Z][a-z]/.test(s) ? s[0].toLowerCase() + s.slice(1) : s);
+    const detail = k => {
+      const m = new Map();
+      for (const r of uniq) { const v = show(r, k); (m.get(v) || m.set(v, new Set()).get(v)).add(name(r)); }
+      return { key: k, label: label(k), groups: [...m].map(([value, s]) => ({ value, names: [...s].sort() })).sort((a, b) => b.names.length - a.names.length || a.value.localeCompare(b.value)) };
+    };
+    out.hard = rule.hard.filter(k => hardKeys.has(k)).map(detail);
+    out.soft = rule.soft.filter(k => softKeys.has(k)).map(detail);
+    out.context = [...new Set(uniq.filter(r => !r.rankable).map(name))].sort();
+    out.undocumented = [...new Set(uniq.filter(r => !r.definitions).map(name))].sort();
+    out.like = !out.hard.length && !out.soft.length && !out.context.length && !out.undocumented.length;
+    const list = (a, n) => (n && a.length > n ? a.slice(0, n).join(", ") + ` and ${a.length - n} more` : a.join(", "));
+    /* one definition as a sentence: "Which galaxies are included: all (A, B) against star-forming (C)"; n = names shown per group and m = groups shown (0 = all) */
+    const seg = (d, n, m) => {
+      if (d.groups.length === 1 && d.groups[0].value === "not stated") return `${d.label}: not stated for ${list(d.groups[0].names, n)}`;
+      const shown = m ? d.groups.slice(0, m) : d.groups, rest = d.groups.length - shown.length;
+      return `${d.label}: ${shown.map(x => `${x.value} (${list(x.names, n)})`).join(" against ")}${rest > 0 ? ` and ${rest} more value${rest > 1 ? "s" : ""}` : ""}`;
+    };
+    const imf = d => (d.key === "imf" && opts.imfConverted ? `${seg(d, 0, 0)}; converted to Chabrier in this plot where the IMF is stated` : seg(d, 0, 0));
+    const long = [], short = [];
+    if (out.like) {
+      long.push(`All ${out.n} plotted curves are like for like: ${rule.hard.length ? `the definitions that must agree for this relation (${rule.hard.map(k => lc(label(k))).join(", ")}) agree` : "this relation has no definition that must agree"}, and none of the smaller differences the rules check is recorded.`);
+      short.push(`All ${out.n} plotted curves are like for like on the definitions compared for this relation.`);
+    } else {
+      if (out.hard.length) {
+        long.push(`Not like for like: ${out.hard.map(d => seg(d, 0, 0)).join(". ")}. Curves in different groups should not be read against each other as like for like.`);
+        short.push(`Not like for like. ${out.hard.map(d => seg(d, 2, 3)).join(". ")}.`);
+      } else if (!out.context.length && !out.undocumented.length) { long.push("The definitions that must agree for this relation agree."); short.push("The definitions that must agree for this relation agree."); }
+      if (out.context.length) { long.push(`Context only, not rankable: ${list(out.context, 0)}.`); short.push(`Context only, not rankable: ${list(out.context, 4)}.`); }
+      if (out.undocumented.length) { long.push(`No structured definitions are recorded for ${list(out.undocumented, 0)}.`); short.push(`No definitions recorded for ${list(out.undocumented, 4)}.`); }
+      if (out.soft.length) {
+        long.push(`Smaller differences remain, left as published: ${out.soft.map(imf).join(". ")}.`);
+        short.push(`Smaller differences remain: ${out.soft.map(d => lc(d.label)).join("; ")}.`);
+      }
+    }
+    out.long = long.join(" ");
+    out.short = short;
+    return out;
+  }
+
+  g.SimHighlineLogic = { VARIANT, FIDUCIAL, TIER_RANK, unitOf, tol, primaryUnits, nearest, medianOffset, pickAnchor, parseUserCurve, inspectUserCurve, spread, plotCaveats };
 })(typeof window !== "undefined" ? window : globalThis);
