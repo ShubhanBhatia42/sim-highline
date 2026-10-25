@@ -1507,6 +1507,19 @@
       "note": "H-alpha luminosity functions of TNG50, TNG100 and TNG300 galaxies above stellar-mass cuts (25 curves), without dust attenuation outside H II regions, read from the paper vector figure (digitized, not rankable); points at and below each curve peak are left out because the paper says the peaks are resolution limits. The [OIII]+H-beta and [OII] panels of the same figure are not read."
     },
     {
+      "id": "khostovan15-hizels-oii-hbeta-lf",
+      "suite": "observations (HiZELS)",
+      "status": "ingested",
+      "access": "arXiv source, binned tables",
+      "url": "https://arxiv.org/abs/1503.00004",
+      "relations": [
+        "elf"
+      ],
+      "redshifts": "z 0.84 to 3.24 (H-beta+[OIII]); z 1.47 to 4.69 ([OII])",
+      "adapter": "scripts/ingest_elf_khostovan15.py",
+      "note": "H-beta+[OIII] (blend) and [OII] luminosity functions from the paper tables (completeness and filter-profile corrected, not corrected for dust or AGN); the Schechter parameters and the printed luminosity densities are used as checks. The printed half widths of two bins at z = 3.34 do not match the printed densities (noted in the record)."
+    },
+    {
       "id": "ocvirk20-coda2-lf-table",
       "suite": "CoDa II",
       "status": "ingested",
