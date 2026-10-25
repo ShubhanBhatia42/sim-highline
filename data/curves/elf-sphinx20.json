@@ -88,7 +88,7 @@
       },
       "definitions": {
         "line": "H-alpha (without [NII])",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "dustCorrection": "intrinsic",
         "dustCorrectionMethod": "none (line luminosity before dust)",
         "densityFrame": "comoving",
@@ -109,7 +109,7 @@
         "sourceMember": "data/all_basic_data.csv",
         "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
         "paper": "arXiv:2309.03269",
-        "definitionBasis": "imf: the paper names the BPASS v2.2.1 stellar population model but gives no sentence on its IMF, so it stays unspecified. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
+        "definitionBasis": "imf: the paper's caveats paragraph says 'we have chosen a specific stellar IMF (Kroupa-like)'; it is filled as Kroupa (2001), the nearest entry of the vocabulary, by data/definition-fills.json, as for the other SPHINX20 records (an earlier version of this note said the paper gave no sentence on the IMF; it does). The IMF is not a comparison key of this relation. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
         "quotes": {
           "box": "main.tex:119",
           "cosmology": "main.tex:122",
@@ -121,7 +121,8 @@
           "plotted_function": "main.tex:613",
           "turnover": "main.tex:613",
           "sight_lines": "main.tex:620",
-          "ebv": "main.tex:253"
+          "ebv": "main.tex:253",
+          "imf": "main.tex:763"
         },
         "checkAgainstFigure": {
           "figure": "Line luminosity functions for Halpha (top)",
@@ -130,11 +131,14 @@
           "kHalpha": 2.2,
           "rmsDex": 0.015,
           "bins": 250
-        }
+        },
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
-      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9."
+      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. The fitted coefficient is used only in that check; no value in this record depends on it (the record counts galaxies by the release's own intrinsic or dust-attenuated column). Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9. Re-derived from the release with separate code on 2026-10-25 (internal check; counts identical in every bin of every record, see scripts/check_sphinx20_release.py)."
     },
     {
       "id": "katz23.sphinx20.elf.halpha.attenuated.z4.64",
@@ -191,7 +195,7 @@
       },
       "definitions": {
         "line": "H-alpha (without [NII])",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "dustCorrection": "attenuated",
         "dustCorrectionMethod": "dust radiative transfer with the SMC dust model (RASCAS), mean over ten sight lines",
         "densityFrame": "comoving",
@@ -212,7 +216,7 @@
         "sourceMember": "data/all_basic_data.csv",
         "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
         "paper": "arXiv:2309.03269",
-        "definitionBasis": "imf: the paper names the BPASS v2.2.1 stellar population model but gives no sentence on its IMF, so it stays unspecified. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
+        "definitionBasis": "imf: the paper's caveats paragraph says 'we have chosen a specific stellar IMF (Kroupa-like)'; it is filled as Kroupa (2001), the nearest entry of the vocabulary, by data/definition-fills.json, as for the other SPHINX20 records (an earlier version of this note said the paper gave no sentence on the IMF; it does). The IMF is not a comparison key of this relation. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
         "quotes": {
           "box": "main.tex:119",
           "cosmology": "main.tex:122",
@@ -224,7 +228,8 @@
           "plotted_function": "main.tex:613",
           "turnover": "main.tex:613",
           "sight_lines": "main.tex:620",
-          "ebv": "main.tex:253"
+          "ebv": "main.tex:253",
+          "imf": "main.tex:763"
         },
         "checkAgainstFigure": {
           "figure": "Line luminosity functions for Halpha (top)",
@@ -233,11 +238,14 @@
           "kHalpha": 2.2,
           "rmsDex": 0.015,
           "bins": 250
-        }
+        },
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
-      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9."
+      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. The fitted coefficient is used only in that check; no value in this record depends on it (the record counts galaxies by the release's own intrinsic or dust-attenuated column). Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9. Re-derived from the release with separate code on 2026-10-25 (internal check; counts identical in every bin of every record, see scripts/check_sphinx20_release.py)."
     },
     {
       "id": "katz23.sphinx20.elf.halpha.intrinsic.z5",
@@ -326,7 +334,7 @@
       },
       "definitions": {
         "line": "H-alpha (without [NII])",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "dustCorrection": "intrinsic",
         "dustCorrectionMethod": "none (line luminosity before dust)",
         "densityFrame": "comoving",
@@ -347,7 +355,7 @@
         "sourceMember": "data/all_basic_data.csv",
         "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
         "paper": "arXiv:2309.03269",
-        "definitionBasis": "imf: the paper names the BPASS v2.2.1 stellar population model but gives no sentence on its IMF, so it stays unspecified. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
+        "definitionBasis": "imf: the paper's caveats paragraph says 'we have chosen a specific stellar IMF (Kroupa-like)'; it is filled as Kroupa (2001), the nearest entry of the vocabulary, by data/definition-fills.json, as for the other SPHINX20 records (an earlier version of this note said the paper gave no sentence on the IMF; it does). The IMF is not a comparison key of this relation. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
         "quotes": {
           "box": "main.tex:119",
           "cosmology": "main.tex:122",
@@ -359,7 +367,8 @@
           "plotted_function": "main.tex:613",
           "turnover": "main.tex:613",
           "sight_lines": "main.tex:620",
-          "ebv": "main.tex:253"
+          "ebv": "main.tex:253",
+          "imf": "main.tex:763"
         },
         "checkAgainstFigure": {
           "figure": "Line luminosity functions for Halpha (top)",
@@ -368,11 +377,14 @@
           "kHalpha": 2.2,
           "rmsDex": 0.015,
           "bins": 250
-        }
+        },
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
-      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9."
+      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. The fitted coefficient is used only in that check; no value in this record depends on it (the record counts galaxies by the release's own intrinsic or dust-attenuated column). Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9. Re-derived from the release with separate code on 2026-10-25 (internal check; counts identical in every bin of every record, see scripts/check_sphinx20_release.py)."
     },
     {
       "id": "katz23.sphinx20.elf.halpha.attenuated.z5",
@@ -429,7 +441,7 @@
       },
       "definitions": {
         "line": "H-alpha (without [NII])",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "dustCorrection": "attenuated",
         "dustCorrectionMethod": "dust radiative transfer with the SMC dust model (RASCAS), mean over ten sight lines",
         "densityFrame": "comoving",
@@ -450,7 +462,7 @@
         "sourceMember": "data/all_basic_data.csv",
         "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
         "paper": "arXiv:2309.03269",
-        "definitionBasis": "imf: the paper names the BPASS v2.2.1 stellar population model but gives no sentence on its IMF, so it stays unspecified. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
+        "definitionBasis": "imf: the paper's caveats paragraph says 'we have chosen a specific stellar IMF (Kroupa-like)'; it is filled as Kroupa (2001), the nearest entry of the vocabulary, by data/definition-fills.json, as for the other SPHINX20 records (an earlier version of this note said the paper gave no sentence on the IMF; it does). The IMF is not a comparison key of this relation. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
         "quotes": {
           "box": "main.tex:119",
           "cosmology": "main.tex:122",
@@ -462,7 +474,8 @@
           "plotted_function": "main.tex:613",
           "turnover": "main.tex:613",
           "sight_lines": "main.tex:620",
-          "ebv": "main.tex:253"
+          "ebv": "main.tex:253",
+          "imf": "main.tex:763"
         },
         "checkAgainstFigure": {
           "figure": "Line luminosity functions for Halpha (top)",
@@ -471,11 +484,14 @@
           "kHalpha": 2.2,
           "rmsDex": 0.015,
           "bins": 250
-        }
+        },
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
-      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9."
+      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. The fitted coefficient is used only in that check; no value in this record depends on it (the record counts galaxies by the release's own intrinsic or dust-attenuated column). Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9. Re-derived from the release with separate code on 2026-10-25 (internal check; counts identical in every bin of every record, see scripts/check_sphinx20_release.py)."
     },
     {
       "id": "katz23.sphinx20.elf.halpha.intrinsic.z6",
@@ -550,7 +566,7 @@
       },
       "definitions": {
         "line": "H-alpha (without [NII])",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "dustCorrection": "intrinsic",
         "dustCorrectionMethod": "none (line luminosity before dust)",
         "densityFrame": "comoving",
@@ -571,7 +587,7 @@
         "sourceMember": "data/all_basic_data.csv",
         "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
         "paper": "arXiv:2309.03269",
-        "definitionBasis": "imf: the paper names the BPASS v2.2.1 stellar population model but gives no sentence on its IMF, so it stays unspecified. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
+        "definitionBasis": "imf: the paper's caveats paragraph says 'we have chosen a specific stellar IMF (Kroupa-like)'; it is filled as Kroupa (2001), the nearest entry of the vocabulary, by data/definition-fills.json, as for the other SPHINX20 records (an earlier version of this note said the paper gave no sentence on the IMF; it does). The IMF is not a comparison key of this relation. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
         "quotes": {
           "box": "main.tex:119",
           "cosmology": "main.tex:122",
@@ -583,7 +599,8 @@
           "plotted_function": "main.tex:613",
           "turnover": "main.tex:613",
           "sight_lines": "main.tex:620",
-          "ebv": "main.tex:253"
+          "ebv": "main.tex:253",
+          "imf": "main.tex:763"
         },
         "checkAgainstFigure": {
           "figure": "Line luminosity functions for Halpha (top)",
@@ -592,11 +609,14 @@
           "kHalpha": 2.2,
           "rmsDex": 0.015,
           "bins": 250
-        }
+        },
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
-      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9."
+      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. The fitted coefficient is used only in that check; no value in this record depends on it (the record counts galaxies by the release's own intrinsic or dust-attenuated column). Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9. Re-derived from the release with separate code on 2026-10-25 (internal check; counts identical in every bin of every record, see scripts/check_sphinx20_release.py)."
     },
     {
       "id": "katz23.sphinx20.elf.halpha.attenuated.z6",
@@ -653,7 +673,7 @@
       },
       "definitions": {
         "line": "H-alpha (without [NII])",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "dustCorrection": "attenuated",
         "dustCorrectionMethod": "dust radiative transfer with the SMC dust model (RASCAS), mean over ten sight lines",
         "densityFrame": "comoving",
@@ -674,7 +694,7 @@
         "sourceMember": "data/all_basic_data.csv",
         "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
         "paper": "arXiv:2309.03269",
-        "definitionBasis": "imf: the paper names the BPASS v2.2.1 stellar population model but gives no sentence on its IMF, so it stays unspecified. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
+        "definitionBasis": "imf: the paper's caveats paragraph says 'we have chosen a specific stellar IMF (Kroupa-like)'; it is filled as Kroupa (2001), the nearest entry of the vocabulary, by data/definition-fills.json, as for the other SPHINX20 records (an earlier version of this note said the paper gave no sentence on the IMF; it does). The IMF is not a comparison key of this relation. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
         "quotes": {
           "box": "main.tex:119",
           "cosmology": "main.tex:122",
@@ -686,7 +706,8 @@
           "plotted_function": "main.tex:613",
           "turnover": "main.tex:613",
           "sight_lines": "main.tex:620",
-          "ebv": "main.tex:253"
+          "ebv": "main.tex:253",
+          "imf": "main.tex:763"
         },
         "checkAgainstFigure": {
           "figure": "Line luminosity functions for Halpha (top)",
@@ -695,11 +716,14 @@
           "kHalpha": 2.2,
           "rmsDex": 0.015,
           "bins": 250
-        }
+        },
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
-      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9."
+      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. The fitted coefficient is used only in that check; no value in this record depends on it (the record counts galaxies by the release's own intrinsic or dust-attenuated column). Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9. Re-derived from the release with separate code on 2026-10-25 (internal check; counts identical in every bin of every record, see scripts/check_sphinx20_release.py)."
     },
     {
       "id": "katz23.sphinx20.elf.halpha.intrinsic.z7",
@@ -767,7 +791,7 @@
       },
       "definitions": {
         "line": "H-alpha (without [NII])",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "dustCorrection": "intrinsic",
         "dustCorrectionMethod": "none (line luminosity before dust)",
         "densityFrame": "comoving",
@@ -788,7 +812,7 @@
         "sourceMember": "data/all_basic_data.csv",
         "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
         "paper": "arXiv:2309.03269",
-        "definitionBasis": "imf: the paper names the BPASS v2.2.1 stellar population model but gives no sentence on its IMF, so it stays unspecified. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
+        "definitionBasis": "imf: the paper's caveats paragraph says 'we have chosen a specific stellar IMF (Kroupa-like)'; it is filled as Kroupa (2001), the nearest entry of the vocabulary, by data/definition-fills.json, as for the other SPHINX20 records (an earlier version of this note said the paper gave no sentence on the IMF; it does). The IMF is not a comparison key of this relation. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
         "quotes": {
           "box": "main.tex:119",
           "cosmology": "main.tex:122",
@@ -800,7 +824,8 @@
           "plotted_function": "main.tex:613",
           "turnover": "main.tex:613",
           "sight_lines": "main.tex:620",
-          "ebv": "main.tex:253"
+          "ebv": "main.tex:253",
+          "imf": "main.tex:763"
         },
         "checkAgainstFigure": {
           "figure": "Line luminosity functions for Halpha (top)",
@@ -809,11 +834,14 @@
           "kHalpha": 2.2,
           "rmsDex": 0.015,
           "bins": 250
-        }
+        },
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
-      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9."
+      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. The fitted coefficient is used only in that check; no value in this record depends on it (the record counts galaxies by the release's own intrinsic or dust-attenuated column). Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9. Re-derived from the release with separate code on 2026-10-25 (internal check; counts identical in every bin of every record, see scripts/check_sphinx20_release.py)."
     },
     {
       "id": "katz23.sphinx20.elf.halpha.intrinsic.z8",
@@ -874,7 +902,7 @@
       },
       "definitions": {
         "line": "H-alpha (without [NII])",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "dustCorrection": "intrinsic",
         "dustCorrectionMethod": "none (line luminosity before dust)",
         "densityFrame": "comoving",
@@ -895,7 +923,7 @@
         "sourceMember": "data/all_basic_data.csv",
         "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
         "paper": "arXiv:2309.03269",
-        "definitionBasis": "imf: the paper names the BPASS v2.2.1 stellar population model but gives no sentence on its IMF, so it stays unspecified. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
+        "definitionBasis": "imf: the paper's caveats paragraph says 'we have chosen a specific stellar IMF (Kroupa-like)'; it is filled as Kroupa (2001), the nearest entry of the vocabulary, by data/definition-fills.json, as for the other SPHINX20 records (an earlier version of this note said the paper gave no sentence on the IMF; it does). The IMF is not a comparison key of this relation. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
         "quotes": {
           "box": "main.tex:119",
           "cosmology": "main.tex:122",
@@ -907,7 +935,8 @@
           "plotted_function": "main.tex:613",
           "turnover": "main.tex:613",
           "sight_lines": "main.tex:620",
-          "ebv": "main.tex:253"
+          "ebv": "main.tex:253",
+          "imf": "main.tex:763"
         },
         "checkAgainstFigure": {
           "figure": "Line luminosity functions for Halpha (top)",
@@ -916,11 +945,14 @@
           "kHalpha": 2.2,
           "rmsDex": 0.015,
           "bins": 250
-        }
+        },
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
-      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9."
+      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. The fitted coefficient is used only in that check; no value in this record depends on it (the record counts galaxies by the release's own intrinsic or dust-attenuated column). Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9. Re-derived from the release with separate code on 2026-10-25 (internal check; counts identical in every bin of every record, see scripts/check_sphinx20_release.py)."
     },
     {
       "id": "katz23.sphinx20.elf.halpha.intrinsic.z9",
@@ -974,7 +1006,7 @@
       },
       "definitions": {
         "line": "H-alpha (without [NII])",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "dustCorrection": "intrinsic",
         "dustCorrectionMethod": "none (line luminosity before dust)",
         "densityFrame": "comoving",
@@ -995,7 +1027,7 @@
         "sourceMember": "data/all_basic_data.csv",
         "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
         "paper": "arXiv:2309.03269",
-        "definitionBasis": "imf: the paper names the BPASS v2.2.1 stellar population model but gives no sentence on its IMF, so it stays unspecified. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
+        "definitionBasis": "imf: the paper's caveats paragraph says 'we have chosen a specific stellar IMF (Kroupa-like)'; it is filled as Kroupa (2001), the nearest entry of the vocabulary, by data/definition-fills.json, as for the other SPHINX20 records (an earlier version of this note said the paper gave no sentence on the IMF; it does). The IMF is not a comparison key of this relation. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
         "quotes": {
           "box": "main.tex:119",
           "cosmology": "main.tex:122",
@@ -1007,7 +1039,8 @@
           "plotted_function": "main.tex:613",
           "turnover": "main.tex:613",
           "sight_lines": "main.tex:620",
-          "ebv": "main.tex:253"
+          "ebv": "main.tex:253",
+          "imf": "main.tex:763"
         },
         "checkAgainstFigure": {
           "figure": "Line luminosity functions for Halpha (top)",
@@ -1016,11 +1049,14 @@
           "kHalpha": 2.2,
           "rmsDex": 0.015,
           "bins": 250
-        }
+        },
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
-      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9."
+      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. The fitted coefficient is used only in that check; no value in this record depends on it (the record counts galaxies by the release's own intrinsic or dust-attenuated column). Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9. Re-derived from the release with separate code on 2026-10-25 (internal check; counts identical in every bin of every record, see scripts/check_sphinx20_release.py)."
     },
     {
       "id": "katz23.sphinx20.elf.halpha.intrinsic.z10",
@@ -1074,7 +1110,7 @@
       },
       "definitions": {
         "line": "H-alpha (without [NII])",
-        "imf": "unspecified",
+        "imf": "kroupa01",
         "dustCorrection": "intrinsic",
         "dustCorrectionMethod": "none (line luminosity before dust)",
         "densityFrame": "comoving",
@@ -1095,7 +1131,7 @@
         "sourceMember": "data/all_basic_data.csv",
         "checksumSha256": "3379131d054752a4abd8248d86898117e20ed3da2ff0c30d5acbdf6c144d9e85",
         "paper": "arXiv:2309.03269",
-        "definitionBasis": "imf: the paper names the BPASS v2.2.1 stellar population model but gives no sentence on its IMF, so it stays unspecified. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
+        "definitionBasis": "imf: the paper's caveats paragraph says 'we have chosen a specific stellar IMF (Kroupa-like)'; it is filled as Kroupa (2001), the nearest entry of the vocabulary, by data/definition-fills.json, as for the other SPHINX20 records (an earlier version of this note said the paper gave no sentence on the IMF; it does). The IMF is not a comparison key of this relation. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.",
         "quotes": {
           "box": "main.tex:119",
           "cosmology": "main.tex:122",
@@ -1107,7 +1143,8 @@
           "plotted_function": "main.tex:613",
           "turnover": "main.tex:613",
           "sight_lines": "main.tex:620",
-          "ebv": "main.tex:253"
+          "ebv": "main.tex:253",
+          "imf": "main.tex:763"
         },
         "checkAgainstFigure": {
           "figure": "Line luminosity functions for Halpha (top)",
@@ -1116,11 +1153,14 @@
           "kHalpha": 2.2,
           "rmsDex": 0.015,
           "bins": 250
-        }
+        },
+        "definitionFills": [
+          "katz23-sphinx20-imf"
+        ]
       },
       "calibration": "prediction",
       "rankable": true,
-      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9."
+      "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: the release's columns reproduce the function the paper plots (reddening-corrected, ten sight lines) to 0.015 dex rms over 250 plotted bins (mean -0.004) with a fitted k(Halpha) = 2.2; the plotted function lies between the dust-attenuated and intrinsic functions in 106 bin-and-sight-line cases above the turnover. The fitted coefficient is used only in that check; no value in this record depends on it (the record counts galaxies by the release's own intrinsic or dust-attenuated column). Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9. Re-derived from the release with separate code on 2026-10-25 (internal check; counts identical in every bin of every record, see scripts/check_sphinx20_release.py)."
     }
   ]
 }
