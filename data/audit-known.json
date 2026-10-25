@@ -70,6 +70,16 @@
       "code": "cross-source-offset",
       "idPrefix": "wu20.simba.uvbeta.z6.combined",
       "reason": "Compared against the Calzetti-law curve of one box of the same paper: the combined curves apply other dust laws (SMC, Salmon et al. 2016) or none to the same galaxies, so the offset in beta is the effect of the law, not a disagreement between sources."
+    },
+    {
+      "code": "cross-source-offset",
+      "idPrefix": "wilkins22.flares.uvbeta.dust",
+      "reason": "Compared against the stellar-only and stellar-plus-nebular curves of the same galaxies of the same paper: the offset in beta (0.3 to 0.55) is the effect of the dust that the solid curve includes and the others do not, so it is not a disagreement between sources."
+    },
+    {
+      "code": "cross-source-offset",
+      "idPrefix": "vijayan21.flares.uvbeta.",
+      "reason": "Compared against the stellar-only and stellar-plus-nebular curves of FLARES V (the same simulation, no dust): the offset in beta (0.4 to 0.6) is the effect of the dust that this dust-attenuated curve includes, not a disagreement between sources."
     }
   ]
 }
