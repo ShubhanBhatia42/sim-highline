@@ -590,7 +590,7 @@ for (const page of PAGES) {
 <ul class="flat">
 <li><a href="../highline.html"><b>Explorer</b></a>: look up a relation and see every published simulation and observation on one plot.</li>
 <li><a href="retune.html"><b>Dials</b></a>: turn the feedback dials of two simulated universes and watch the galaxies change.</li>
-<li><a href="studies.html"><b>Studies</b></a>: the six questions asked of the data, with the rules written before the answers.</li>
+<li><a href="studies.html"><b>Studies</b></a>: the six questions asked of the data; for the pre-registered studies the rules were written before the answers.</li>
 <li><a href="data.html"><b>Data</b></a>: download the curves as CSV or JSON, or load them in Python.</li>
 <li><a href="faq.html"><b>Questions</b></a> · <a href="glossary.html">glossary</a> · <a href="quality.html">how much to trust the data</a></li>
 </ul>
