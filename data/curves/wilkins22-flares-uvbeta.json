@@ -1,0 +1,2795 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "wilkins22.flares.uvbeta.dust.z15",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), stellar plus nebular emission and dust (solid line)",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 15,
+        "zNominal": 15,
+        "zMin": 15,
+        "zMax": 15,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV converted from the plotted far-UV luminosity L_FUV (the paper does not say whether it is the intrinsic or the dust-attenuated luminosity; AB, 10 pc)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta, median of galaxies in bins of L_FUV: stellar plus nebular emission, attenuated by dust (the paper: 'that which would be observed')",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -20.593,
+        "xMax": -17.468
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -20.593,
+            "y": -1.9518
+          },
+          {
+            "x": -19.968,
+            "y": -2.1816
+          },
+          {
+            "x": -19.343,
+            "y": -2.285
+          },
+          {
+            "x": -18.718,
+            "y": -2.3901
+          },
+          {
+            "x": -18.093,
+            "y": -2.3927
+          },
+          {
+            "x": -17.468,
+            "y": -2.3979
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "FLARES galaxies of the 40 resimulated regions; whether the median is weighted by the region weights is not stated",
+        "warning": "Median beta of the FLARES galaxies at z = 15 in bins of L_FUV (the figure has no band or error bars), stellar plus nebular emission, attenuated by dust (the paper: 'that which would be observed'), read from the vector paths of Wilkins et al. 2023 and converted to M_UV with the exact AB conversion M_UV = 51.5948 - 2.5 log10(L_FUV / erg s^-1 Hz^-1). The paper does not give the wavelength window of beta (betaWindow unspecified) and does not say whether the plotted L_FUV is intrinsic or dust attenuated, so a comparison with observed M_UV may shift the bright end by the far-UV attenuation. The bright-end bins hold few galaxies."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "attenuated",
+        "dustModel": "line-of-sight dust model of the FLARES SED modelling (read, not restated in this paper)",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "stellar plus nebular emission, attenuated by dust (the paper: 'that which would be observed')",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "far-UV luminosity L_FUV converted to M_UV",
+        "uvBand": "far-UV (1500 A), L_FUV",
+        "statistic": "median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wilkins et al. 2023, MNRAS 519, 3118 (arXiv:2204.09431), UV continuum slope against far-UV luminosity, stellar plus nebular emission and dust (solid line), z=15",
+        "doi": "10.1093/mnras/stac3280",
+        "url": "https://arxiv.org/abs/2204.09431",
+        "retrieved": "2026-10-25",
+        "figure": "Average UV continuum slope against UV luminosity and redshift",
+        "panel": "z=15, stellar plus nebular emission and dust (solid line)",
+        "checksumSha256": "d33df324aae1a8aeed5ca5101078a989986fd2718ba75bc4725e613d593ac3c9",
+        "sourceMember": "figures/beta2.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              76.49,
+              28
+            ],
+            [
+              157.95,
+              29
+            ],
+            [
+              239.4,
+              30
+            ]
+          ],
+          "yTicks": [
+            [
+              25.65,
+              -1.6
+            ],
+            [
+              54.66,
+              -1.8
+            ],
+            [
+              83.67,
+              -2
+            ],
+            [
+              112.67,
+              -2.2
+            ],
+            [
+              141.68,
+              -2.4
+            ],
+            [
+              170.69,
+              -2.6
+            ],
+            [
+              199.7,
+              -2.8
+            ]
+          ],
+          "labels": "x: numeric tick labels 28 to 30; y: labels 1.6 to 2.8 read with the separate minus glyph"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "treatments": "observational.tex:99",
+          "caption": "observational.tex:110",
+          "faint": "observational.tex:97",
+          "bright": "observational.tex:97",
+          "stellar": "observational.tex:99",
+          "dust": "observational.tex:99"
+        },
+        "definitionBasis": "dustTreatment and the stellar-population content are from the figure caption ('the solid line also including dust (i.e. that which would be observed)'). betaWindow and betaMethod: not stated in this paper. imf and cosmology: as in the other FLARES records of this dataset (the paper's SED-modelling section refers to FLARES II)."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. The paper prints numbers that the extracted curves reproduce: 18 curves: six redshifts, three treatments; solid curves below L_FUV = 10^28.5: median -2.39, range -2.41 to -2.29 (paper: about -2.4); solid curves at L_FUV = 10^29 to 10^29.3 (z = 10 to 13): median -1.94 (paper: about -2); dotted curves at the faint end: lowest value -2.87 (paper: about -2.8); dotted curves of z = 10 and 11 above 10^29.3: -2.52, -2.76, -2.57, -2.36, mean -2.55 (paper: about -2.5 at 10^29.5); dashed curves up to 10^29: median -2.54 (paper: about -2.5); dust minus nebular curve at L_FUV = 10^29 to 10^29.1: mean 0.55 over 8 values (paper: dust reddens the slope by about 0.5)."
+    },
+    {
+      "id": "wilkins22.flares.uvbeta.nebular.z15",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), stellar plus nebular emission (dashed line)",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 15,
+        "zNominal": 15,
+        "zMin": 15,
+        "zMax": 15,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV converted from the plotted far-UV luminosity L_FUV (the paper does not say whether it is the intrinsic or the dust-attenuated luminosity; AB, 10 pc)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta, median of galaxies in bins of L_FUV: starlight reprocessed by gas: stellar plus nebular emission, no dust",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -20.593,
+        "xMax": -17.468
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -20.593,
+            "y": -2.5291
+          },
+          {
+            "x": -19.968,
+            "y": -2.5498
+          },
+          {
+            "x": -19.343,
+            "y": -2.5492
+          },
+          {
+            "x": -18.718,
+            "y": -2.5413
+          },
+          {
+            "x": -18.093,
+            "y": -2.5616
+          },
+          {
+            "x": -17.468,
+            "y": -2.5841
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "FLARES galaxies of the 40 resimulated regions; whether the median is weighted by the region weights is not stated",
+        "warning": "Median beta of the FLARES galaxies at z = 15 in bins of L_FUV (the figure has no band or error bars), starlight reprocessed by gas: stellar plus nebular emission, no dust, read from the vector paths of Wilkins et al. 2023 and converted to M_UV with the exact AB conversion M_UV = 51.5948 - 2.5 log10(L_FUV / erg s^-1 Hz^-1). The paper does not give the wavelength window of beta (betaWindow unspecified) and does not say whether the plotted L_FUV is intrinsic or dust attenuated, so a comparison with observed M_UV may shift the bright end by the far-UV attenuation. The bright-end bins hold few galaxies."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "intrinsic",
+        "dustModel": "no dust",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "starlight reprocessed by gas: stellar plus nebular emission, no dust",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "far-UV luminosity L_FUV converted to M_UV",
+        "uvBand": "far-UV (1500 A), L_FUV",
+        "statistic": "median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wilkins et al. 2023, MNRAS 519, 3118 (arXiv:2204.09431), UV continuum slope against far-UV luminosity, stellar plus nebular emission (dashed line), z=15",
+        "doi": "10.1093/mnras/stac3280",
+        "url": "https://arxiv.org/abs/2204.09431",
+        "retrieved": "2026-10-25",
+        "figure": "Average UV continuum slope against UV luminosity and redshift",
+        "panel": "z=15, stellar plus nebular emission (dashed line)",
+        "checksumSha256": "d33df324aae1a8aeed5ca5101078a989986fd2718ba75bc4725e613d593ac3c9",
+        "sourceMember": "figures/beta2.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              76.49,
+              28
+            ],
+            [
+              157.95,
+              29
+            ],
+            [
+              239.4,
+              30
+            ]
+          ],
+          "yTicks": [
+            [
+              25.65,
+              -1.6
+            ],
+            [
+              54.66,
+              -1.8
+            ],
+            [
+              83.67,
+              -2
+            ],
+            [
+              112.67,
+              -2.2
+            ],
+            [
+              141.68,
+              -2.4
+            ],
+            [
+              170.69,
+              -2.6
+            ],
+            [
+              199.7,
+              -2.8
+            ]
+          ],
+          "labels": "x: numeric tick labels 28 to 30; y: labels 1.6 to 2.8 read with the separate minus glyph"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "treatments": "observational.tex:99",
+          "caption": "observational.tex:110",
+          "faint": "observational.tex:97",
+          "bright": "observational.tex:97",
+          "stellar": "observational.tex:99",
+          "dust": "observational.tex:99"
+        },
+        "definitionBasis": "dustTreatment and the stellar-population content are from the figure caption ('the solid line also including dust (i.e. that which would be observed)'). betaWindow and betaMethod: not stated in this paper. imf and cosmology: as in the other FLARES records of this dataset (the paper's SED-modelling section refers to FLARES II)."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. The paper prints numbers that the extracted curves reproduce: 18 curves: six redshifts, three treatments; solid curves below L_FUV = 10^28.5: median -2.39, range -2.41 to -2.29 (paper: about -2.4); solid curves at L_FUV = 10^29 to 10^29.3 (z = 10 to 13): median -1.94 (paper: about -2); dotted curves at the faint end: lowest value -2.87 (paper: about -2.8); dotted curves of z = 10 and 11 above 10^29.3: -2.52, -2.76, -2.57, -2.36, mean -2.55 (paper: about -2.5 at 10^29.5); dashed curves up to 10^29: median -2.54 (paper: about -2.5); dust minus nebular curve at L_FUV = 10^29 to 10^29.1: mean 0.55 over 8 values (paper: dust reddens the slope by about 0.5)."
+    },
+    {
+      "id": "wilkins22.flares.uvbeta.stellar.z15",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), stellar continuum only (dotted line)",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 15,
+        "zNominal": 15,
+        "zMin": 15,
+        "zMax": 15,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV converted from the plotted far-UV luminosity L_FUV (the paper does not say whether it is the intrinsic or the dust-attenuated luminosity; AB, 10 pc)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta, median of galaxies in bins of L_FUV: unprocessed starlight: stellar emission only, no nebular emission, no dust",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -20.593,
+        "xMax": -17.468
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -20.593,
+            "y": -2.6633
+          },
+          {
+            "x": -19.968,
+            "y": -2.7978
+          },
+          {
+            "x": -19.343,
+            "y": -2.8183
+          },
+          {
+            "x": -18.718,
+            "y": -2.8644
+          },
+          {
+            "x": -18.093,
+            "y": -2.8379
+          },
+          {
+            "x": -17.468,
+            "y": -2.7567
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "FLARES galaxies of the 40 resimulated regions; whether the median is weighted by the region weights is not stated",
+        "warning": "Median beta of the FLARES galaxies at z = 15 in bins of L_FUV (the figure has no band or error bars), unprocessed starlight: stellar emission only, no nebular emission, no dust, read from the vector paths of Wilkins et al. 2023 and converted to M_UV with the exact AB conversion M_UV = 51.5948 - 2.5 log10(L_FUV / erg s^-1 Hz^-1). The paper does not give the wavelength window of beta (betaWindow unspecified) and does not say whether the plotted L_FUV is intrinsic or dust attenuated, so a comparison with observed M_UV may shift the bright end by the far-UV attenuation. The bright-end bins hold few galaxies."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "intrinsic",
+        "dustModel": "no dust",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "unprocessed starlight: stellar emission only, no nebular emission, no dust",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "far-UV luminosity L_FUV converted to M_UV",
+        "uvBand": "far-UV (1500 A), L_FUV",
+        "statistic": "median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wilkins et al. 2023, MNRAS 519, 3118 (arXiv:2204.09431), UV continuum slope against far-UV luminosity, stellar continuum only (dotted line), z=15",
+        "doi": "10.1093/mnras/stac3280",
+        "url": "https://arxiv.org/abs/2204.09431",
+        "retrieved": "2026-10-25",
+        "figure": "Average UV continuum slope against UV luminosity and redshift",
+        "panel": "z=15, stellar continuum only (dotted line)",
+        "checksumSha256": "d33df324aae1a8aeed5ca5101078a989986fd2718ba75bc4725e613d593ac3c9",
+        "sourceMember": "figures/beta2.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              76.49,
+              28
+            ],
+            [
+              157.95,
+              29
+            ],
+            [
+              239.4,
+              30
+            ]
+          ],
+          "yTicks": [
+            [
+              25.65,
+              -1.6
+            ],
+            [
+              54.66,
+              -1.8
+            ],
+            [
+              83.67,
+              -2
+            ],
+            [
+              112.67,
+              -2.2
+            ],
+            [
+              141.68,
+              -2.4
+            ],
+            [
+              170.69,
+              -2.6
+            ],
+            [
+              199.7,
+              -2.8
+            ]
+          ],
+          "labels": "x: numeric tick labels 28 to 30; y: labels 1.6 to 2.8 read with the separate minus glyph"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "treatments": "observational.tex:99",
+          "caption": "observational.tex:110",
+          "faint": "observational.tex:97",
+          "bright": "observational.tex:97",
+          "stellar": "observational.tex:99",
+          "dust": "observational.tex:99"
+        },
+        "definitionBasis": "dustTreatment and the stellar-population content are from the figure caption ('the solid line also including dust (i.e. that which would be observed)'). betaWindow and betaMethod: not stated in this paper. imf and cosmology: as in the other FLARES records of this dataset (the paper's SED-modelling section refers to FLARES II)."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. The paper prints numbers that the extracted curves reproduce: 18 curves: six redshifts, three treatments; solid curves below L_FUV = 10^28.5: median -2.39, range -2.41 to -2.29 (paper: about -2.4); solid curves at L_FUV = 10^29 to 10^29.3 (z = 10 to 13): median -1.94 (paper: about -2); dotted curves at the faint end: lowest value -2.87 (paper: about -2.8); dotted curves of z = 10 and 11 above 10^29.3: -2.52, -2.76, -2.57, -2.36, mean -2.55 (paper: about -2.5 at 10^29.5); dashed curves up to 10^29: median -2.54 (paper: about -2.5); dust minus nebular curve at L_FUV = 10^29 to 10^29.1: mean 0.55 over 8 values (paper: dust reddens the slope by about 0.5)."
+    },
+    {
+      "id": "wilkins22.flares.uvbeta.dust.z14",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), stellar plus nebular emission and dust (solid line)",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 14,
+        "zNominal": 14,
+        "zMin": 14,
+        "zMax": 14,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV converted from the plotted far-UV luminosity L_FUV (the paper does not say whether it is the intrinsic or the dust-attenuated luminosity; AB, 10 pc)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta, median of galaxies in bins of L_FUV: stellar plus nebular emission, attenuated by dust (the paper: 'that which would be observed')",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.218,
+        "xMax": -17.468
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -21.218,
+            "y": -1.8407
+          },
+          {
+            "x": -20.593,
+            "y": -1.8843
+          },
+          {
+            "x": -19.968,
+            "y": -2.2414
+          },
+          {
+            "x": -19.343,
+            "y": -2.332
+          },
+          {
+            "x": -18.718,
+            "y": -2.3902
+          },
+          {
+            "x": -18.093,
+            "y": -2.3999
+          },
+          {
+            "x": -17.468,
+            "y": -2.4113
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "FLARES galaxies of the 40 resimulated regions; whether the median is weighted by the region weights is not stated",
+        "warning": "Median beta of the FLARES galaxies at z = 14 in bins of L_FUV (the figure has no band or error bars), stellar plus nebular emission, attenuated by dust (the paper: 'that which would be observed'), read from the vector paths of Wilkins et al. 2023 and converted to M_UV with the exact AB conversion M_UV = 51.5948 - 2.5 log10(L_FUV / erg s^-1 Hz^-1). The paper does not give the wavelength window of beta (betaWindow unspecified) and does not say whether the plotted L_FUV is intrinsic or dust attenuated, so a comparison with observed M_UV may shift the bright end by the far-UV attenuation. The bright-end bins hold few galaxies."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "attenuated",
+        "dustModel": "line-of-sight dust model of the FLARES SED modelling (read, not restated in this paper)",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "stellar plus nebular emission, attenuated by dust (the paper: 'that which would be observed')",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "far-UV luminosity L_FUV converted to M_UV",
+        "uvBand": "far-UV (1500 A), L_FUV",
+        "statistic": "median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wilkins et al. 2023, MNRAS 519, 3118 (arXiv:2204.09431), UV continuum slope against far-UV luminosity, stellar plus nebular emission and dust (solid line), z=14",
+        "doi": "10.1093/mnras/stac3280",
+        "url": "https://arxiv.org/abs/2204.09431",
+        "retrieved": "2026-10-25",
+        "figure": "Average UV continuum slope against UV luminosity and redshift",
+        "panel": "z=14, stellar plus nebular emission and dust (solid line)",
+        "checksumSha256": "d33df324aae1a8aeed5ca5101078a989986fd2718ba75bc4725e613d593ac3c9",
+        "sourceMember": "figures/beta2.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              76.49,
+              28
+            ],
+            [
+              157.95,
+              29
+            ],
+            [
+              239.4,
+              30
+            ]
+          ],
+          "yTicks": [
+            [
+              25.65,
+              -1.6
+            ],
+            [
+              54.66,
+              -1.8
+            ],
+            [
+              83.67,
+              -2
+            ],
+            [
+              112.67,
+              -2.2
+            ],
+            [
+              141.68,
+              -2.4
+            ],
+            [
+              170.69,
+              -2.6
+            ],
+            [
+              199.7,
+              -2.8
+            ]
+          ],
+          "labels": "x: numeric tick labels 28 to 30; y: labels 1.6 to 2.8 read with the separate minus glyph"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "treatments": "observational.tex:99",
+          "caption": "observational.tex:110",
+          "faint": "observational.tex:97",
+          "bright": "observational.tex:97",
+          "stellar": "observational.tex:99",
+          "dust": "observational.tex:99"
+        },
+        "definitionBasis": "dustTreatment and the stellar-population content are from the figure caption ('the solid line also including dust (i.e. that which would be observed)'). betaWindow and betaMethod: not stated in this paper. imf and cosmology: as in the other FLARES records of this dataset (the paper's SED-modelling section refers to FLARES II)."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. The paper prints numbers that the extracted curves reproduce: 18 curves: six redshifts, three treatments; solid curves below L_FUV = 10^28.5: median -2.39, range -2.41 to -2.29 (paper: about -2.4); solid curves at L_FUV = 10^29 to 10^29.3 (z = 10 to 13): median -1.94 (paper: about -2); dotted curves at the faint end: lowest value -2.87 (paper: about -2.8); dotted curves of z = 10 and 11 above 10^29.3: -2.52, -2.76, -2.57, -2.36, mean -2.55 (paper: about -2.5 at 10^29.5); dashed curves up to 10^29: median -2.54 (paper: about -2.5); dust minus nebular curve at L_FUV = 10^29 to 10^29.1: mean 0.55 over 8 values (paper: dust reddens the slope by about 0.5)."
+    },
+    {
+      "id": "wilkins22.flares.uvbeta.nebular.z14",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), stellar plus nebular emission (dashed line)",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 14,
+        "zNominal": 14,
+        "zMin": 14,
+        "zMax": 14,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV converted from the plotted far-UV luminosity L_FUV (the paper does not say whether it is the intrinsic or the dust-attenuated luminosity; AB, 10 pc)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta, median of galaxies in bins of L_FUV: starlight reprocessed by gas: stellar plus nebular emission, no dust",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.218,
+        "xMax": -17.468
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -21.218,
+            "y": -2.537
+          },
+          {
+            "x": -20.593,
+            "y": -2.5446
+          },
+          {
+            "x": -19.968,
+            "y": -2.5399
+          },
+          {
+            "x": -19.343,
+            "y": -2.5447
+          },
+          {
+            "x": -18.718,
+            "y": -2.5409
+          },
+          {
+            "x": -18.093,
+            "y": -2.5514
+          },
+          {
+            "x": -17.468,
+            "y": -2.5725
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "FLARES galaxies of the 40 resimulated regions; whether the median is weighted by the region weights is not stated",
+        "warning": "Median beta of the FLARES galaxies at z = 14 in bins of L_FUV (the figure has no band or error bars), starlight reprocessed by gas: stellar plus nebular emission, no dust, read from the vector paths of Wilkins et al. 2023 and converted to M_UV with the exact AB conversion M_UV = 51.5948 - 2.5 log10(L_FUV / erg s^-1 Hz^-1). The paper does not give the wavelength window of beta (betaWindow unspecified) and does not say whether the plotted L_FUV is intrinsic or dust attenuated, so a comparison with observed M_UV may shift the bright end by the far-UV attenuation. The bright-end bins hold few galaxies."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "intrinsic",
+        "dustModel": "no dust",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "starlight reprocessed by gas: stellar plus nebular emission, no dust",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "far-UV luminosity L_FUV converted to M_UV",
+        "uvBand": "far-UV (1500 A), L_FUV",
+        "statistic": "median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wilkins et al. 2023, MNRAS 519, 3118 (arXiv:2204.09431), UV continuum slope against far-UV luminosity, stellar plus nebular emission (dashed line), z=14",
+        "doi": "10.1093/mnras/stac3280",
+        "url": "https://arxiv.org/abs/2204.09431",
+        "retrieved": "2026-10-25",
+        "figure": "Average UV continuum slope against UV luminosity and redshift",
+        "panel": "z=14, stellar plus nebular emission (dashed line)",
+        "checksumSha256": "d33df324aae1a8aeed5ca5101078a989986fd2718ba75bc4725e613d593ac3c9",
+        "sourceMember": "figures/beta2.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              76.49,
+              28
+            ],
+            [
+              157.95,
+              29
+            ],
+            [
+              239.4,
+              30
+            ]
+          ],
+          "yTicks": [
+            [
+              25.65,
+              -1.6
+            ],
+            [
+              54.66,
+              -1.8
+            ],
+            [
+              83.67,
+              -2
+            ],
+            [
+              112.67,
+              -2.2
+            ],
+            [
+              141.68,
+              -2.4
+            ],
+            [
+              170.69,
+              -2.6
+            ],
+            [
+              199.7,
+              -2.8
+            ]
+          ],
+          "labels": "x: numeric tick labels 28 to 30; y: labels 1.6 to 2.8 read with the separate minus glyph"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "treatments": "observational.tex:99",
+          "caption": "observational.tex:110",
+          "faint": "observational.tex:97",
+          "bright": "observational.tex:97",
+          "stellar": "observational.tex:99",
+          "dust": "observational.tex:99"
+        },
+        "definitionBasis": "dustTreatment and the stellar-population content are from the figure caption ('the solid line also including dust (i.e. that which would be observed)'). betaWindow and betaMethod: not stated in this paper. imf and cosmology: as in the other FLARES records of this dataset (the paper's SED-modelling section refers to FLARES II)."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. The paper prints numbers that the extracted curves reproduce: 18 curves: six redshifts, three treatments; solid curves below L_FUV = 10^28.5: median -2.39, range -2.41 to -2.29 (paper: about -2.4); solid curves at L_FUV = 10^29 to 10^29.3 (z = 10 to 13): median -1.94 (paper: about -2); dotted curves at the faint end: lowest value -2.87 (paper: about -2.8); dotted curves of z = 10 and 11 above 10^29.3: -2.52, -2.76, -2.57, -2.36, mean -2.55 (paper: about -2.5 at 10^29.5); dashed curves up to 10^29: median -2.54 (paper: about -2.5); dust minus nebular curve at L_FUV = 10^29 to 10^29.1: mean 0.55 over 8 values (paper: dust reddens the slope by about 0.5)."
+    },
+    {
+      "id": "wilkins22.flares.uvbeta.stellar.z14",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), stellar continuum only (dotted line)",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 14,
+        "zNominal": 14,
+        "zMin": 14,
+        "zMax": 14,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV converted from the plotted far-UV luminosity L_FUV (the paper does not say whether it is the intrinsic or the dust-attenuated luminosity; AB, 10 pc)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta, median of galaxies in bins of L_FUV: unprocessed starlight: stellar emission only, no nebular emission, no dust",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.218,
+        "xMax": -17.468
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -21.218,
+            "y": -2.6829
+          },
+          {
+            "x": -20.593,
+            "y": -2.7083
+          },
+          {
+            "x": -19.968,
+            "y": -2.8055
+          },
+          {
+            "x": -19.343,
+            "y": -2.8464
+          },
+          {
+            "x": -18.718,
+            "y": -2.8691
+          },
+          {
+            "x": -18.093,
+            "y": -2.8336
+          },
+          {
+            "x": -17.468,
+            "y": -2.7474
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "FLARES galaxies of the 40 resimulated regions; whether the median is weighted by the region weights is not stated",
+        "warning": "Median beta of the FLARES galaxies at z = 14 in bins of L_FUV (the figure has no band or error bars), unprocessed starlight: stellar emission only, no nebular emission, no dust, read from the vector paths of Wilkins et al. 2023 and converted to M_UV with the exact AB conversion M_UV = 51.5948 - 2.5 log10(L_FUV / erg s^-1 Hz^-1). The paper does not give the wavelength window of beta (betaWindow unspecified) and does not say whether the plotted L_FUV is intrinsic or dust attenuated, so a comparison with observed M_UV may shift the bright end by the far-UV attenuation. The bright-end bins hold few galaxies."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "intrinsic",
+        "dustModel": "no dust",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "unprocessed starlight: stellar emission only, no nebular emission, no dust",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "far-UV luminosity L_FUV converted to M_UV",
+        "uvBand": "far-UV (1500 A), L_FUV",
+        "statistic": "median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wilkins et al. 2023, MNRAS 519, 3118 (arXiv:2204.09431), UV continuum slope against far-UV luminosity, stellar continuum only (dotted line), z=14",
+        "doi": "10.1093/mnras/stac3280",
+        "url": "https://arxiv.org/abs/2204.09431",
+        "retrieved": "2026-10-25",
+        "figure": "Average UV continuum slope against UV luminosity and redshift",
+        "panel": "z=14, stellar continuum only (dotted line)",
+        "checksumSha256": "d33df324aae1a8aeed5ca5101078a989986fd2718ba75bc4725e613d593ac3c9",
+        "sourceMember": "figures/beta2.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              76.49,
+              28
+            ],
+            [
+              157.95,
+              29
+            ],
+            [
+              239.4,
+              30
+            ]
+          ],
+          "yTicks": [
+            [
+              25.65,
+              -1.6
+            ],
+            [
+              54.66,
+              -1.8
+            ],
+            [
+              83.67,
+              -2
+            ],
+            [
+              112.67,
+              -2.2
+            ],
+            [
+              141.68,
+              -2.4
+            ],
+            [
+              170.69,
+              -2.6
+            ],
+            [
+              199.7,
+              -2.8
+            ]
+          ],
+          "labels": "x: numeric tick labels 28 to 30; y: labels 1.6 to 2.8 read with the separate minus glyph"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "treatments": "observational.tex:99",
+          "caption": "observational.tex:110",
+          "faint": "observational.tex:97",
+          "bright": "observational.tex:97",
+          "stellar": "observational.tex:99",
+          "dust": "observational.tex:99"
+        },
+        "definitionBasis": "dustTreatment and the stellar-population content are from the figure caption ('the solid line also including dust (i.e. that which would be observed)'). betaWindow and betaMethod: not stated in this paper. imf and cosmology: as in the other FLARES records of this dataset (the paper's SED-modelling section refers to FLARES II)."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. The paper prints numbers that the extracted curves reproduce: 18 curves: six redshifts, three treatments; solid curves below L_FUV = 10^28.5: median -2.39, range -2.41 to -2.29 (paper: about -2.4); solid curves at L_FUV = 10^29 to 10^29.3 (z = 10 to 13): median -1.94 (paper: about -2); dotted curves at the faint end: lowest value -2.87 (paper: about -2.8); dotted curves of z = 10 and 11 above 10^29.3: -2.52, -2.76, -2.57, -2.36, mean -2.55 (paper: about -2.5 at 10^29.5); dashed curves up to 10^29: median -2.54 (paper: about -2.5); dust minus nebular curve at L_FUV = 10^29 to 10^29.1: mean 0.55 over 8 values (paper: dust reddens the slope by about 0.5)."
+    },
+    {
+      "id": "wilkins22.flares.uvbeta.dust.z13",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), stellar plus nebular emission and dust (solid line)",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 13,
+        "zNominal": 13,
+        "zMin": 13,
+        "zMax": 13,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV converted from the plotted far-UV luminosity L_FUV (the paper does not say whether it is the intrinsic or the dust-attenuated luminosity; AB, 10 pc)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta, median of galaxies in bins of L_FUV: stellar plus nebular emission, attenuated by dust (the paper: 'that which would be observed')",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.218,
+        "xMax": -17.468
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -21.218,
+            "y": -1.828
+          },
+          {
+            "x": -20.593,
+            "y": -2.0007
+          },
+          {
+            "x": -19.968,
+            "y": -2.1766
+          },
+          {
+            "x": -19.343,
+            "y": -2.3352
+          },
+          {
+            "x": -18.718,
+            "y": -2.3854
+          },
+          {
+            "x": -18.093,
+            "y": -2.3976
+          },
+          {
+            "x": -17.468,
+            "y": -2.4143
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "FLARES galaxies of the 40 resimulated regions; whether the median is weighted by the region weights is not stated",
+        "warning": "Median beta of the FLARES galaxies at z = 13 in bins of L_FUV (the figure has no band or error bars), stellar plus nebular emission, attenuated by dust (the paper: 'that which would be observed'), read from the vector paths of Wilkins et al. 2023 and converted to M_UV with the exact AB conversion M_UV = 51.5948 - 2.5 log10(L_FUV / erg s^-1 Hz^-1). The paper does not give the wavelength window of beta (betaWindow unspecified) and does not say whether the plotted L_FUV is intrinsic or dust attenuated, so a comparison with observed M_UV may shift the bright end by the far-UV attenuation. The bright-end bins hold few galaxies."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "attenuated",
+        "dustModel": "line-of-sight dust model of the FLARES SED modelling (read, not restated in this paper)",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "stellar plus nebular emission, attenuated by dust (the paper: 'that which would be observed')",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "far-UV luminosity L_FUV converted to M_UV",
+        "uvBand": "far-UV (1500 A), L_FUV",
+        "statistic": "median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wilkins et al. 2023, MNRAS 519, 3118 (arXiv:2204.09431), UV continuum slope against far-UV luminosity, stellar plus nebular emission and dust (solid line), z=13",
+        "doi": "10.1093/mnras/stac3280",
+        "url": "https://arxiv.org/abs/2204.09431",
+        "retrieved": "2026-10-25",
+        "figure": "Average UV continuum slope against UV luminosity and redshift",
+        "panel": "z=13, stellar plus nebular emission and dust (solid line)",
+        "checksumSha256": "d33df324aae1a8aeed5ca5101078a989986fd2718ba75bc4725e613d593ac3c9",
+        "sourceMember": "figures/beta2.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              76.49,
+              28
+            ],
+            [
+              157.95,
+              29
+            ],
+            [
+              239.4,
+              30
+            ]
+          ],
+          "yTicks": [
+            [
+              25.65,
+              -1.6
+            ],
+            [
+              54.66,
+              -1.8
+            ],
+            [
+              83.67,
+              -2
+            ],
+            [
+              112.67,
+              -2.2
+            ],
+            [
+              141.68,
+              -2.4
+            ],
+            [
+              170.69,
+              -2.6
+            ],
+            [
+              199.7,
+              -2.8
+            ]
+          ],
+          "labels": "x: numeric tick labels 28 to 30; y: labels 1.6 to 2.8 read with the separate minus glyph"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "treatments": "observational.tex:99",
+          "caption": "observational.tex:110",
+          "faint": "observational.tex:97",
+          "bright": "observational.tex:97",
+          "stellar": "observational.tex:99",
+          "dust": "observational.tex:99"
+        },
+        "definitionBasis": "dustTreatment and the stellar-population content are from the figure caption ('the solid line also including dust (i.e. that which would be observed)'). betaWindow and betaMethod: not stated in this paper. imf and cosmology: as in the other FLARES records of this dataset (the paper's SED-modelling section refers to FLARES II)."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. The paper prints numbers that the extracted curves reproduce: 18 curves: six redshifts, three treatments; solid curves below L_FUV = 10^28.5: median -2.39, range -2.41 to -2.29 (paper: about -2.4); solid curves at L_FUV = 10^29 to 10^29.3 (z = 10 to 13): median -1.94 (paper: about -2); dotted curves at the faint end: lowest value -2.87 (paper: about -2.8); dotted curves of z = 10 and 11 above 10^29.3: -2.52, -2.76, -2.57, -2.36, mean -2.55 (paper: about -2.5 at 10^29.5); dashed curves up to 10^29: median -2.54 (paper: about -2.5); dust minus nebular curve at L_FUV = 10^29 to 10^29.1: mean 0.55 over 8 values (paper: dust reddens the slope by about 0.5)."
+    },
+    {
+      "id": "wilkins22.flares.uvbeta.nebular.z13",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), stellar plus nebular emission (dashed line)",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 13,
+        "zNominal": 13,
+        "zMin": 13,
+        "zMax": 13,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV converted from the plotted far-UV luminosity L_FUV (the paper does not say whether it is the intrinsic or the dust-attenuated luminosity; AB, 10 pc)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta, median of galaxies in bins of L_FUV: starlight reprocessed by gas: stellar plus nebular emission, no dust",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.218,
+        "xMax": -17.468
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -21.218,
+            "y": -2.5105
+          },
+          {
+            "x": -20.593,
+            "y": -2.5393
+          },
+          {
+            "x": -19.968,
+            "y": -2.5453
+          },
+          {
+            "x": -19.343,
+            "y": -2.54
+          },
+          {
+            "x": -18.718,
+            "y": -2.5358
+          },
+          {
+            "x": -18.093,
+            "y": -2.5535
+          },
+          {
+            "x": -17.468,
+            "y": -2.5652
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "FLARES galaxies of the 40 resimulated regions; whether the median is weighted by the region weights is not stated",
+        "warning": "Median beta of the FLARES galaxies at z = 13 in bins of L_FUV (the figure has no band or error bars), starlight reprocessed by gas: stellar plus nebular emission, no dust, read from the vector paths of Wilkins et al. 2023 and converted to M_UV with the exact AB conversion M_UV = 51.5948 - 2.5 log10(L_FUV / erg s^-1 Hz^-1). The paper does not give the wavelength window of beta (betaWindow unspecified) and does not say whether the plotted L_FUV is intrinsic or dust attenuated, so a comparison with observed M_UV may shift the bright end by the far-UV attenuation. The bright-end bins hold few galaxies."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "intrinsic",
+        "dustModel": "no dust",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "starlight reprocessed by gas: stellar plus nebular emission, no dust",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "far-UV luminosity L_FUV converted to M_UV",
+        "uvBand": "far-UV (1500 A), L_FUV",
+        "statistic": "median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wilkins et al. 2023, MNRAS 519, 3118 (arXiv:2204.09431), UV continuum slope against far-UV luminosity, stellar plus nebular emission (dashed line), z=13",
+        "doi": "10.1093/mnras/stac3280",
+        "url": "https://arxiv.org/abs/2204.09431",
+        "retrieved": "2026-10-25",
+        "figure": "Average UV continuum slope against UV luminosity and redshift",
+        "panel": "z=13, stellar plus nebular emission (dashed line)",
+        "checksumSha256": "d33df324aae1a8aeed5ca5101078a989986fd2718ba75bc4725e613d593ac3c9",
+        "sourceMember": "figures/beta2.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              76.49,
+              28
+            ],
+            [
+              157.95,
+              29
+            ],
+            [
+              239.4,
+              30
+            ]
+          ],
+          "yTicks": [
+            [
+              25.65,
+              -1.6
+            ],
+            [
+              54.66,
+              -1.8
+            ],
+            [
+              83.67,
+              -2
+            ],
+            [
+              112.67,
+              -2.2
+            ],
+            [
+              141.68,
+              -2.4
+            ],
+            [
+              170.69,
+              -2.6
+            ],
+            [
+              199.7,
+              -2.8
+            ]
+          ],
+          "labels": "x: numeric tick labels 28 to 30; y: labels 1.6 to 2.8 read with the separate minus glyph"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "treatments": "observational.tex:99",
+          "caption": "observational.tex:110",
+          "faint": "observational.tex:97",
+          "bright": "observational.tex:97",
+          "stellar": "observational.tex:99",
+          "dust": "observational.tex:99"
+        },
+        "definitionBasis": "dustTreatment and the stellar-population content are from the figure caption ('the solid line also including dust (i.e. that which would be observed)'). betaWindow and betaMethod: not stated in this paper. imf and cosmology: as in the other FLARES records of this dataset (the paper's SED-modelling section refers to FLARES II)."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. The paper prints numbers that the extracted curves reproduce: 18 curves: six redshifts, three treatments; solid curves below L_FUV = 10^28.5: median -2.39, range -2.41 to -2.29 (paper: about -2.4); solid curves at L_FUV = 10^29 to 10^29.3 (z = 10 to 13): median -1.94 (paper: about -2); dotted curves at the faint end: lowest value -2.87 (paper: about -2.8); dotted curves of z = 10 and 11 above 10^29.3: -2.52, -2.76, -2.57, -2.36, mean -2.55 (paper: about -2.5 at 10^29.5); dashed curves up to 10^29: median -2.54 (paper: about -2.5); dust minus nebular curve at L_FUV = 10^29 to 10^29.1: mean 0.55 over 8 values (paper: dust reddens the slope by about 0.5)."
+    },
+    {
+      "id": "wilkins22.flares.uvbeta.stellar.z13",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), stellar continuum only (dotted line)",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 13,
+        "zNominal": 13,
+        "zMin": 13,
+        "zMax": 13,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV converted from the plotted far-UV luminosity L_FUV (the paper does not say whether it is the intrinsic or the dust-attenuated luminosity; AB, 10 pc)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta, median of galaxies in bins of L_FUV: unprocessed starlight: stellar emission only, no nebular emission, no dust",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.218,
+        "xMax": -17.468
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -21.218,
+            "y": -2.6643
+          },
+          {
+            "x": -20.593,
+            "y": -2.682
+          },
+          {
+            "x": -19.968,
+            "y": -2.7467
+          },
+          {
+            "x": -19.343,
+            "y": -2.8028
+          },
+          {
+            "x": -18.718,
+            "y": -2.8505
+          },
+          {
+            "x": -18.093,
+            "y": -2.8252
+          },
+          {
+            "x": -17.468,
+            "y": -2.752
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "FLARES galaxies of the 40 resimulated regions; whether the median is weighted by the region weights is not stated",
+        "warning": "Median beta of the FLARES galaxies at z = 13 in bins of L_FUV (the figure has no band or error bars), unprocessed starlight: stellar emission only, no nebular emission, no dust, read from the vector paths of Wilkins et al. 2023 and converted to M_UV with the exact AB conversion M_UV = 51.5948 - 2.5 log10(L_FUV / erg s^-1 Hz^-1). The paper does not give the wavelength window of beta (betaWindow unspecified) and does not say whether the plotted L_FUV is intrinsic or dust attenuated, so a comparison with observed M_UV may shift the bright end by the far-UV attenuation. The bright-end bins hold few galaxies."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "intrinsic",
+        "dustModel": "no dust",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "unprocessed starlight: stellar emission only, no nebular emission, no dust",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "far-UV luminosity L_FUV converted to M_UV",
+        "uvBand": "far-UV (1500 A), L_FUV",
+        "statistic": "median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wilkins et al. 2023, MNRAS 519, 3118 (arXiv:2204.09431), UV continuum slope against far-UV luminosity, stellar continuum only (dotted line), z=13",
+        "doi": "10.1093/mnras/stac3280",
+        "url": "https://arxiv.org/abs/2204.09431",
+        "retrieved": "2026-10-25",
+        "figure": "Average UV continuum slope against UV luminosity and redshift",
+        "panel": "z=13, stellar continuum only (dotted line)",
+        "checksumSha256": "d33df324aae1a8aeed5ca5101078a989986fd2718ba75bc4725e613d593ac3c9",
+        "sourceMember": "figures/beta2.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              76.49,
+              28
+            ],
+            [
+              157.95,
+              29
+            ],
+            [
+              239.4,
+              30
+            ]
+          ],
+          "yTicks": [
+            [
+              25.65,
+              -1.6
+            ],
+            [
+              54.66,
+              -1.8
+            ],
+            [
+              83.67,
+              -2
+            ],
+            [
+              112.67,
+              -2.2
+            ],
+            [
+              141.68,
+              -2.4
+            ],
+            [
+              170.69,
+              -2.6
+            ],
+            [
+              199.7,
+              -2.8
+            ]
+          ],
+          "labels": "x: numeric tick labels 28 to 30; y: labels 1.6 to 2.8 read with the separate minus glyph"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "treatments": "observational.tex:99",
+          "caption": "observational.tex:110",
+          "faint": "observational.tex:97",
+          "bright": "observational.tex:97",
+          "stellar": "observational.tex:99",
+          "dust": "observational.tex:99"
+        },
+        "definitionBasis": "dustTreatment and the stellar-population content are from the figure caption ('the solid line also including dust (i.e. that which would be observed)'). betaWindow and betaMethod: not stated in this paper. imf and cosmology: as in the other FLARES records of this dataset (the paper's SED-modelling section refers to FLARES II)."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. The paper prints numbers that the extracted curves reproduce: 18 curves: six redshifts, three treatments; solid curves below L_FUV = 10^28.5: median -2.39, range -2.41 to -2.29 (paper: about -2.4); solid curves at L_FUV = 10^29 to 10^29.3 (z = 10 to 13): median -1.94 (paper: about -2); dotted curves at the faint end: lowest value -2.87 (paper: about -2.8); dotted curves of z = 10 and 11 above 10^29.3: -2.52, -2.76, -2.57, -2.36, mean -2.55 (paper: about -2.5 at 10^29.5); dashed curves up to 10^29: median -2.54 (paper: about -2.5); dust minus nebular curve at L_FUV = 10^29 to 10^29.1: mean 0.55 over 8 values (paper: dust reddens the slope by about 0.5)."
+    },
+    {
+      "id": "wilkins22.flares.uvbeta.dust.z12",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), stellar plus nebular emission and dust (solid line)",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 12,
+        "zNominal": 12,
+        "zMin": 12,
+        "zMax": 12,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV converted from the plotted far-UV luminosity L_FUV (the paper does not say whether it is the intrinsic or the dust-attenuated luminosity; AB, 10 pc)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta, median of galaxies in bins of L_FUV: stellar plus nebular emission, attenuated by dust (the paper: 'that which would be observed')",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.218,
+        "xMax": -17.468
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -21.218,
+            "y": -2.0033
+          },
+          {
+            "x": -20.593,
+            "y": -2.0217
+          },
+          {
+            "x": -19.968,
+            "y": -2.1415
+          },
+          {
+            "x": -19.343,
+            "y": -2.3134
+          },
+          {
+            "x": -18.718,
+            "y": -2.3882
+          },
+          {
+            "x": -18.093,
+            "y": -2.3987
+          },
+          {
+            "x": -17.468,
+            "y": -2.4042
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "FLARES galaxies of the 40 resimulated regions; whether the median is weighted by the region weights is not stated",
+        "warning": "Median beta of the FLARES galaxies at z = 12 in bins of L_FUV (the figure has no band or error bars), stellar plus nebular emission, attenuated by dust (the paper: 'that which would be observed'), read from the vector paths of Wilkins et al. 2023 and converted to M_UV with the exact AB conversion M_UV = 51.5948 - 2.5 log10(L_FUV / erg s^-1 Hz^-1). The paper does not give the wavelength window of beta (betaWindow unspecified) and does not say whether the plotted L_FUV is intrinsic or dust attenuated, so a comparison with observed M_UV may shift the bright end by the far-UV attenuation. The bright-end bins hold few galaxies."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "attenuated",
+        "dustModel": "line-of-sight dust model of the FLARES SED modelling (read, not restated in this paper)",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "stellar plus nebular emission, attenuated by dust (the paper: 'that which would be observed')",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "far-UV luminosity L_FUV converted to M_UV",
+        "uvBand": "far-UV (1500 A), L_FUV",
+        "statistic": "median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wilkins et al. 2023, MNRAS 519, 3118 (arXiv:2204.09431), UV continuum slope against far-UV luminosity, stellar plus nebular emission and dust (solid line), z=12",
+        "doi": "10.1093/mnras/stac3280",
+        "url": "https://arxiv.org/abs/2204.09431",
+        "retrieved": "2026-10-25",
+        "figure": "Average UV continuum slope against UV luminosity and redshift",
+        "panel": "z=12, stellar plus nebular emission and dust (solid line)",
+        "checksumSha256": "d33df324aae1a8aeed5ca5101078a989986fd2718ba75bc4725e613d593ac3c9",
+        "sourceMember": "figures/beta2.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              76.49,
+              28
+            ],
+            [
+              157.95,
+              29
+            ],
+            [
+              239.4,
+              30
+            ]
+          ],
+          "yTicks": [
+            [
+              25.65,
+              -1.6
+            ],
+            [
+              54.66,
+              -1.8
+            ],
+            [
+              83.67,
+              -2
+            ],
+            [
+              112.67,
+              -2.2
+            ],
+            [
+              141.68,
+              -2.4
+            ],
+            [
+              170.69,
+              -2.6
+            ],
+            [
+              199.7,
+              -2.8
+            ]
+          ],
+          "labels": "x: numeric tick labels 28 to 30; y: labels 1.6 to 2.8 read with the separate minus glyph"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "treatments": "observational.tex:99",
+          "caption": "observational.tex:110",
+          "faint": "observational.tex:97",
+          "bright": "observational.tex:97",
+          "stellar": "observational.tex:99",
+          "dust": "observational.tex:99"
+        },
+        "definitionBasis": "dustTreatment and the stellar-population content are from the figure caption ('the solid line also including dust (i.e. that which would be observed)'). betaWindow and betaMethod: not stated in this paper. imf and cosmology: as in the other FLARES records of this dataset (the paper's SED-modelling section refers to FLARES II)."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. The paper prints numbers that the extracted curves reproduce: 18 curves: six redshifts, three treatments; solid curves below L_FUV = 10^28.5: median -2.39, range -2.41 to -2.29 (paper: about -2.4); solid curves at L_FUV = 10^29 to 10^29.3 (z = 10 to 13): median -1.94 (paper: about -2); dotted curves at the faint end: lowest value -2.87 (paper: about -2.8); dotted curves of z = 10 and 11 above 10^29.3: -2.52, -2.76, -2.57, -2.36, mean -2.55 (paper: about -2.5 at 10^29.5); dashed curves up to 10^29: median -2.54 (paper: about -2.5); dust minus nebular curve at L_FUV = 10^29 to 10^29.1: mean 0.55 over 8 values (paper: dust reddens the slope by about 0.5)."
+    },
+    {
+      "id": "wilkins22.flares.uvbeta.nebular.z12",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), stellar plus nebular emission (dashed line)",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 12,
+        "zNominal": 12,
+        "zMin": 12,
+        "zMax": 12,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV converted from the plotted far-UV luminosity L_FUV (the paper does not say whether it is the intrinsic or the dust-attenuated luminosity; AB, 10 pc)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta, median of galaxies in bins of L_FUV: starlight reprocessed by gas: stellar plus nebular emission, no dust",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.218,
+        "xMax": -17.468
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -21.218,
+            "y": -2.5022
+          },
+          {
+            "x": -20.593,
+            "y": -2.5198
+          },
+          {
+            "x": -19.968,
+            "y": -2.5308
+          },
+          {
+            "x": -19.343,
+            "y": -2.5357
+          },
+          {
+            "x": -18.718,
+            "y": -2.5365
+          },
+          {
+            "x": -18.093,
+            "y": -2.5482
+          },
+          {
+            "x": -17.468,
+            "y": -2.5586
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "FLARES galaxies of the 40 resimulated regions; whether the median is weighted by the region weights is not stated",
+        "warning": "Median beta of the FLARES galaxies at z = 12 in bins of L_FUV (the figure has no band or error bars), starlight reprocessed by gas: stellar plus nebular emission, no dust, read from the vector paths of Wilkins et al. 2023 and converted to M_UV with the exact AB conversion M_UV = 51.5948 - 2.5 log10(L_FUV / erg s^-1 Hz^-1). The paper does not give the wavelength window of beta (betaWindow unspecified) and does not say whether the plotted L_FUV is intrinsic or dust attenuated, so a comparison with observed M_UV may shift the bright end by the far-UV attenuation. The bright-end bins hold few galaxies."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "intrinsic",
+        "dustModel": "no dust",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "starlight reprocessed by gas: stellar plus nebular emission, no dust",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "far-UV luminosity L_FUV converted to M_UV",
+        "uvBand": "far-UV (1500 A), L_FUV",
+        "statistic": "median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wilkins et al. 2023, MNRAS 519, 3118 (arXiv:2204.09431), UV continuum slope against far-UV luminosity, stellar plus nebular emission (dashed line), z=12",
+        "doi": "10.1093/mnras/stac3280",
+        "url": "https://arxiv.org/abs/2204.09431",
+        "retrieved": "2026-10-25",
+        "figure": "Average UV continuum slope against UV luminosity and redshift",
+        "panel": "z=12, stellar plus nebular emission (dashed line)",
+        "checksumSha256": "d33df324aae1a8aeed5ca5101078a989986fd2718ba75bc4725e613d593ac3c9",
+        "sourceMember": "figures/beta2.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              76.49,
+              28
+            ],
+            [
+              157.95,
+              29
+            ],
+            [
+              239.4,
+              30
+            ]
+          ],
+          "yTicks": [
+            [
+              25.65,
+              -1.6
+            ],
+            [
+              54.66,
+              -1.8
+            ],
+            [
+              83.67,
+              -2
+            ],
+            [
+              112.67,
+              -2.2
+            ],
+            [
+              141.68,
+              -2.4
+            ],
+            [
+              170.69,
+              -2.6
+            ],
+            [
+              199.7,
+              -2.8
+            ]
+          ],
+          "labels": "x: numeric tick labels 28 to 30; y: labels 1.6 to 2.8 read with the separate minus glyph"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "treatments": "observational.tex:99",
+          "caption": "observational.tex:110",
+          "faint": "observational.tex:97",
+          "bright": "observational.tex:97",
+          "stellar": "observational.tex:99",
+          "dust": "observational.tex:99"
+        },
+        "definitionBasis": "dustTreatment and the stellar-population content are from the figure caption ('the solid line also including dust (i.e. that which would be observed)'). betaWindow and betaMethod: not stated in this paper. imf and cosmology: as in the other FLARES records of this dataset (the paper's SED-modelling section refers to FLARES II)."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. The paper prints numbers that the extracted curves reproduce: 18 curves: six redshifts, three treatments; solid curves below L_FUV = 10^28.5: median -2.39, range -2.41 to -2.29 (paper: about -2.4); solid curves at L_FUV = 10^29 to 10^29.3 (z = 10 to 13): median -1.94 (paper: about -2); dotted curves at the faint end: lowest value -2.87 (paper: about -2.8); dotted curves of z = 10 and 11 above 10^29.3: -2.52, -2.76, -2.57, -2.36, mean -2.55 (paper: about -2.5 at 10^29.5); dashed curves up to 10^29: median -2.54 (paper: about -2.5); dust minus nebular curve at L_FUV = 10^29 to 10^29.1: mean 0.55 over 8 values (paper: dust reddens the slope by about 0.5)."
+    },
+    {
+      "id": "wilkins22.flares.uvbeta.stellar.z12",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), stellar continuum only (dotted line)",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 12,
+        "zNominal": 12,
+        "zMin": 12,
+        "zMax": 12,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV converted from the plotted far-UV luminosity L_FUV (the paper does not say whether it is the intrinsic or the dust-attenuated luminosity; AB, 10 pc)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta, median of galaxies in bins of L_FUV: unprocessed starlight: stellar emission only, no nebular emission, no dust",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.218,
+        "xMax": -17.468
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -21.218,
+            "y": -2.6685
+          },
+          {
+            "x": -20.593,
+            "y": -2.6488
+          },
+          {
+            "x": -19.968,
+            "y": -2.7406
+          },
+          {
+            "x": -19.343,
+            "y": -2.7835
+          },
+          {
+            "x": -18.718,
+            "y": -2.8446
+          },
+          {
+            "x": -18.093,
+            "y": -2.8197
+          },
+          {
+            "x": -17.468,
+            "y": -2.7464
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "FLARES galaxies of the 40 resimulated regions; whether the median is weighted by the region weights is not stated",
+        "warning": "Median beta of the FLARES galaxies at z = 12 in bins of L_FUV (the figure has no band or error bars), unprocessed starlight: stellar emission only, no nebular emission, no dust, read from the vector paths of Wilkins et al. 2023 and converted to M_UV with the exact AB conversion M_UV = 51.5948 - 2.5 log10(L_FUV / erg s^-1 Hz^-1). The paper does not give the wavelength window of beta (betaWindow unspecified) and does not say whether the plotted L_FUV is intrinsic or dust attenuated, so a comparison with observed M_UV may shift the bright end by the far-UV attenuation. The bright-end bins hold few galaxies."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "intrinsic",
+        "dustModel": "no dust",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "unprocessed starlight: stellar emission only, no nebular emission, no dust",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "far-UV luminosity L_FUV converted to M_UV",
+        "uvBand": "far-UV (1500 A), L_FUV",
+        "statistic": "median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wilkins et al. 2023, MNRAS 519, 3118 (arXiv:2204.09431), UV continuum slope against far-UV luminosity, stellar continuum only (dotted line), z=12",
+        "doi": "10.1093/mnras/stac3280",
+        "url": "https://arxiv.org/abs/2204.09431",
+        "retrieved": "2026-10-25",
+        "figure": "Average UV continuum slope against UV luminosity and redshift",
+        "panel": "z=12, stellar continuum only (dotted line)",
+        "checksumSha256": "d33df324aae1a8aeed5ca5101078a989986fd2718ba75bc4725e613d593ac3c9",
+        "sourceMember": "figures/beta2.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              76.49,
+              28
+            ],
+            [
+              157.95,
+              29
+            ],
+            [
+              239.4,
+              30
+            ]
+          ],
+          "yTicks": [
+            [
+              25.65,
+              -1.6
+            ],
+            [
+              54.66,
+              -1.8
+            ],
+            [
+              83.67,
+              -2
+            ],
+            [
+              112.67,
+              -2.2
+            ],
+            [
+              141.68,
+              -2.4
+            ],
+            [
+              170.69,
+              -2.6
+            ],
+            [
+              199.7,
+              -2.8
+            ]
+          ],
+          "labels": "x: numeric tick labels 28 to 30; y: labels 1.6 to 2.8 read with the separate minus glyph"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "treatments": "observational.tex:99",
+          "caption": "observational.tex:110",
+          "faint": "observational.tex:97",
+          "bright": "observational.tex:97",
+          "stellar": "observational.tex:99",
+          "dust": "observational.tex:99"
+        },
+        "definitionBasis": "dustTreatment and the stellar-population content are from the figure caption ('the solid line also including dust (i.e. that which would be observed)'). betaWindow and betaMethod: not stated in this paper. imf and cosmology: as in the other FLARES records of this dataset (the paper's SED-modelling section refers to FLARES II)."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. The paper prints numbers that the extracted curves reproduce: 18 curves: six redshifts, three treatments; solid curves below L_FUV = 10^28.5: median -2.39, range -2.41 to -2.29 (paper: about -2.4); solid curves at L_FUV = 10^29 to 10^29.3 (z = 10 to 13): median -1.94 (paper: about -2); dotted curves at the faint end: lowest value -2.87 (paper: about -2.8); dotted curves of z = 10 and 11 above 10^29.3: -2.52, -2.76, -2.57, -2.36, mean -2.55 (paper: about -2.5 at 10^29.5); dashed curves up to 10^29: median -2.54 (paper: about -2.5); dust minus nebular curve at L_FUV = 10^29 to 10^29.1: mean 0.55 over 8 values (paper: dust reddens the slope by about 0.5)."
+    },
+    {
+      "id": "wilkins22.flares.uvbeta.dust.z11",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), stellar plus nebular emission and dust (solid line)",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 11,
+        "zNominal": 11,
+        "zMin": 11,
+        "zMax": 11,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV converted from the plotted far-UV luminosity L_FUV (the paper does not say whether it is the intrinsic or the dust-attenuated luminosity; AB, 10 pc)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta, median of galaxies in bins of L_FUV: stellar plus nebular emission, attenuated by dust (the paper: 'that which would be observed')",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -22.468,
+        "xMax": -17.468
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.468,
+            "y": -1.9832
+          },
+          {
+            "x": -21.843,
+            "y": -1.7095
+          },
+          {
+            "x": -21.218,
+            "y": -1.9501
+          },
+          {
+            "x": -20.593,
+            "y": -2.0182
+          },
+          {
+            "x": -19.968,
+            "y": -2.1629
+          },
+          {
+            "x": -19.343,
+            "y": -2.3114
+          },
+          {
+            "x": -18.718,
+            "y": -2.3808
+          },
+          {
+            "x": -18.093,
+            "y": -2.3955
+          },
+          {
+            "x": -17.468,
+            "y": -2.4007
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "FLARES galaxies of the 40 resimulated regions; whether the median is weighted by the region weights is not stated",
+        "warning": "Median beta of the FLARES galaxies at z = 11 in bins of L_FUV (the figure has no band or error bars), stellar plus nebular emission, attenuated by dust (the paper: 'that which would be observed'), read from the vector paths of Wilkins et al. 2023 and converted to M_UV with the exact AB conversion M_UV = 51.5948 - 2.5 log10(L_FUV / erg s^-1 Hz^-1). The paper does not give the wavelength window of beta (betaWindow unspecified) and does not say whether the plotted L_FUV is intrinsic or dust attenuated, so a comparison with observed M_UV may shift the bright end by the far-UV attenuation. The bright-end bins hold few galaxies."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "attenuated",
+        "dustModel": "line-of-sight dust model of the FLARES SED modelling (read, not restated in this paper)",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "stellar plus nebular emission, attenuated by dust (the paper: 'that which would be observed')",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "far-UV luminosity L_FUV converted to M_UV",
+        "uvBand": "far-UV (1500 A), L_FUV",
+        "statistic": "median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wilkins et al. 2023, MNRAS 519, 3118 (arXiv:2204.09431), UV continuum slope against far-UV luminosity, stellar plus nebular emission and dust (solid line), z=11",
+        "doi": "10.1093/mnras/stac3280",
+        "url": "https://arxiv.org/abs/2204.09431",
+        "retrieved": "2026-10-25",
+        "figure": "Average UV continuum slope against UV luminosity and redshift",
+        "panel": "z=11, stellar plus nebular emission and dust (solid line)",
+        "checksumSha256": "d33df324aae1a8aeed5ca5101078a989986fd2718ba75bc4725e613d593ac3c9",
+        "sourceMember": "figures/beta2.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              76.49,
+              28
+            ],
+            [
+              157.95,
+              29
+            ],
+            [
+              239.4,
+              30
+            ]
+          ],
+          "yTicks": [
+            [
+              25.65,
+              -1.6
+            ],
+            [
+              54.66,
+              -1.8
+            ],
+            [
+              83.67,
+              -2
+            ],
+            [
+              112.67,
+              -2.2
+            ],
+            [
+              141.68,
+              -2.4
+            ],
+            [
+              170.69,
+              -2.6
+            ],
+            [
+              199.7,
+              -2.8
+            ]
+          ],
+          "labels": "x: numeric tick labels 28 to 30; y: labels 1.6 to 2.8 read with the separate minus glyph"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "treatments": "observational.tex:99",
+          "caption": "observational.tex:110",
+          "faint": "observational.tex:97",
+          "bright": "observational.tex:97",
+          "stellar": "observational.tex:99",
+          "dust": "observational.tex:99"
+        },
+        "definitionBasis": "dustTreatment and the stellar-population content are from the figure caption ('the solid line also including dust (i.e. that which would be observed)'). betaWindow and betaMethod: not stated in this paper. imf and cosmology: as in the other FLARES records of this dataset (the paper's SED-modelling section refers to FLARES II)."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. The paper prints numbers that the extracted curves reproduce: 18 curves: six redshifts, three treatments; solid curves below L_FUV = 10^28.5: median -2.39, range -2.41 to -2.29 (paper: about -2.4); solid curves at L_FUV = 10^29 to 10^29.3 (z = 10 to 13): median -1.94 (paper: about -2); dotted curves at the faint end: lowest value -2.87 (paper: about -2.8); dotted curves of z = 10 and 11 above 10^29.3: -2.52, -2.76, -2.57, -2.36, mean -2.55 (paper: about -2.5 at 10^29.5); dashed curves up to 10^29: median -2.54 (paper: about -2.5); dust minus nebular curve at L_FUV = 10^29 to 10^29.1: mean 0.55 over 8 values (paper: dust reddens the slope by about 0.5)."
+    },
+    {
+      "id": "wilkins22.flares.uvbeta.nebular.z11",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), stellar plus nebular emission (dashed line)",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 11,
+        "zNominal": 11,
+        "zMin": 11,
+        "zMax": 11,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV converted from the plotted far-UV luminosity L_FUV (the paper does not say whether it is the intrinsic or the dust-attenuated luminosity; AB, 10 pc)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta, median of galaxies in bins of L_FUV: starlight reprocessed by gas: stellar plus nebular emission, no dust",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -22.468,
+        "xMax": -17.468
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.468,
+            "y": -2.5435
+          },
+          {
+            "x": -21.843,
+            "y": -2.4671
+          },
+          {
+            "x": -21.218,
+            "y": -2.4956
+          },
+          {
+            "x": -20.593,
+            "y": -2.5098
+          },
+          {
+            "x": -19.968,
+            "y": -2.5271
+          },
+          {
+            "x": -19.343,
+            "y": -2.5181
+          },
+          {
+            "x": -18.718,
+            "y": -2.5266
+          },
+          {
+            "x": -18.093,
+            "y": -2.5393
+          },
+          {
+            "x": -17.468,
+            "y": -2.5463
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "FLARES galaxies of the 40 resimulated regions; whether the median is weighted by the region weights is not stated",
+        "warning": "Median beta of the FLARES galaxies at z = 11 in bins of L_FUV (the figure has no band or error bars), starlight reprocessed by gas: stellar plus nebular emission, no dust, read from the vector paths of Wilkins et al. 2023 and converted to M_UV with the exact AB conversion M_UV = 51.5948 - 2.5 log10(L_FUV / erg s^-1 Hz^-1). The paper does not give the wavelength window of beta (betaWindow unspecified) and does not say whether the plotted L_FUV is intrinsic or dust attenuated, so a comparison with observed M_UV may shift the bright end by the far-UV attenuation. The bright-end bins hold few galaxies."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "intrinsic",
+        "dustModel": "no dust",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "starlight reprocessed by gas: stellar plus nebular emission, no dust",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "far-UV luminosity L_FUV converted to M_UV",
+        "uvBand": "far-UV (1500 A), L_FUV",
+        "statistic": "median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wilkins et al. 2023, MNRAS 519, 3118 (arXiv:2204.09431), UV continuum slope against far-UV luminosity, stellar plus nebular emission (dashed line), z=11",
+        "doi": "10.1093/mnras/stac3280",
+        "url": "https://arxiv.org/abs/2204.09431",
+        "retrieved": "2026-10-25",
+        "figure": "Average UV continuum slope against UV luminosity and redshift",
+        "panel": "z=11, stellar plus nebular emission (dashed line)",
+        "checksumSha256": "d33df324aae1a8aeed5ca5101078a989986fd2718ba75bc4725e613d593ac3c9",
+        "sourceMember": "figures/beta2.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              76.49,
+              28
+            ],
+            [
+              157.95,
+              29
+            ],
+            [
+              239.4,
+              30
+            ]
+          ],
+          "yTicks": [
+            [
+              25.65,
+              -1.6
+            ],
+            [
+              54.66,
+              -1.8
+            ],
+            [
+              83.67,
+              -2
+            ],
+            [
+              112.67,
+              -2.2
+            ],
+            [
+              141.68,
+              -2.4
+            ],
+            [
+              170.69,
+              -2.6
+            ],
+            [
+              199.7,
+              -2.8
+            ]
+          ],
+          "labels": "x: numeric tick labels 28 to 30; y: labels 1.6 to 2.8 read with the separate minus glyph"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "treatments": "observational.tex:99",
+          "caption": "observational.tex:110",
+          "faint": "observational.tex:97",
+          "bright": "observational.tex:97",
+          "stellar": "observational.tex:99",
+          "dust": "observational.tex:99"
+        },
+        "definitionBasis": "dustTreatment and the stellar-population content are from the figure caption ('the solid line also including dust (i.e. that which would be observed)'). betaWindow and betaMethod: not stated in this paper. imf and cosmology: as in the other FLARES records of this dataset (the paper's SED-modelling section refers to FLARES II)."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. The paper prints numbers that the extracted curves reproduce: 18 curves: six redshifts, three treatments; solid curves below L_FUV = 10^28.5: median -2.39, range -2.41 to -2.29 (paper: about -2.4); solid curves at L_FUV = 10^29 to 10^29.3 (z = 10 to 13): median -1.94 (paper: about -2); dotted curves at the faint end: lowest value -2.87 (paper: about -2.8); dotted curves of z = 10 and 11 above 10^29.3: -2.52, -2.76, -2.57, -2.36, mean -2.55 (paper: about -2.5 at 10^29.5); dashed curves up to 10^29: median -2.54 (paper: about -2.5); dust minus nebular curve at L_FUV = 10^29 to 10^29.1: mean 0.55 over 8 values (paper: dust reddens the slope by about 0.5)."
+    },
+    {
+      "id": "wilkins22.flares.uvbeta.stellar.z11",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), stellar continuum only (dotted line)",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 11,
+        "zNominal": 11,
+        "zMin": 11,
+        "zMax": 11,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV converted from the plotted far-UV luminosity L_FUV (the paper does not say whether it is the intrinsic or the dust-attenuated luminosity; AB, 10 pc)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta, median of galaxies in bins of L_FUV: unprocessed starlight: stellar emission only, no nebular emission, no dust",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -22.468,
+        "xMax": -17.468
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.468,
+            "y": -2.7582
+          },
+          {
+            "x": -21.843,
+            "y": -2.5177
+          },
+          {
+            "x": -21.218,
+            "y": -2.6101
+          },
+          {
+            "x": -20.593,
+            "y": -2.6314
+          },
+          {
+            "x": -19.968,
+            "y": -2.7091
+          },
+          {
+            "x": -19.343,
+            "y": -2.7395
+          },
+          {
+            "x": -18.718,
+            "y": -2.8253
+          },
+          {
+            "x": -18.093,
+            "y": -2.8093
+          },
+          {
+            "x": -17.468,
+            "y": -2.7387
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "FLARES galaxies of the 40 resimulated regions; whether the median is weighted by the region weights is not stated",
+        "warning": "Median beta of the FLARES galaxies at z = 11 in bins of L_FUV (the figure has no band or error bars), unprocessed starlight: stellar emission only, no nebular emission, no dust, read from the vector paths of Wilkins et al. 2023 and converted to M_UV with the exact AB conversion M_UV = 51.5948 - 2.5 log10(L_FUV / erg s^-1 Hz^-1). The paper does not give the wavelength window of beta (betaWindow unspecified) and does not say whether the plotted L_FUV is intrinsic or dust attenuated, so a comparison with observed M_UV may shift the bright end by the far-UV attenuation. The bright-end bins hold few galaxies."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "intrinsic",
+        "dustModel": "no dust",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "unprocessed starlight: stellar emission only, no nebular emission, no dust",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "far-UV luminosity L_FUV converted to M_UV",
+        "uvBand": "far-UV (1500 A), L_FUV",
+        "statistic": "median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wilkins et al. 2023, MNRAS 519, 3118 (arXiv:2204.09431), UV continuum slope against far-UV luminosity, stellar continuum only (dotted line), z=11",
+        "doi": "10.1093/mnras/stac3280",
+        "url": "https://arxiv.org/abs/2204.09431",
+        "retrieved": "2026-10-25",
+        "figure": "Average UV continuum slope against UV luminosity and redshift",
+        "panel": "z=11, stellar continuum only (dotted line)",
+        "checksumSha256": "d33df324aae1a8aeed5ca5101078a989986fd2718ba75bc4725e613d593ac3c9",
+        "sourceMember": "figures/beta2.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              76.49,
+              28
+            ],
+            [
+              157.95,
+              29
+            ],
+            [
+              239.4,
+              30
+            ]
+          ],
+          "yTicks": [
+            [
+              25.65,
+              -1.6
+            ],
+            [
+              54.66,
+              -1.8
+            ],
+            [
+              83.67,
+              -2
+            ],
+            [
+              112.67,
+              -2.2
+            ],
+            [
+              141.68,
+              -2.4
+            ],
+            [
+              170.69,
+              -2.6
+            ],
+            [
+              199.7,
+              -2.8
+            ]
+          ],
+          "labels": "x: numeric tick labels 28 to 30; y: labels 1.6 to 2.8 read with the separate minus glyph"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "treatments": "observational.tex:99",
+          "caption": "observational.tex:110",
+          "faint": "observational.tex:97",
+          "bright": "observational.tex:97",
+          "stellar": "observational.tex:99",
+          "dust": "observational.tex:99"
+        },
+        "definitionBasis": "dustTreatment and the stellar-population content are from the figure caption ('the solid line also including dust (i.e. that which would be observed)'). betaWindow and betaMethod: not stated in this paper. imf and cosmology: as in the other FLARES records of this dataset (the paper's SED-modelling section refers to FLARES II)."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. The paper prints numbers that the extracted curves reproduce: 18 curves: six redshifts, three treatments; solid curves below L_FUV = 10^28.5: median -2.39, range -2.41 to -2.29 (paper: about -2.4); solid curves at L_FUV = 10^29 to 10^29.3 (z = 10 to 13): median -1.94 (paper: about -2); dotted curves at the faint end: lowest value -2.87 (paper: about -2.8); dotted curves of z = 10 and 11 above 10^29.3: -2.52, -2.76, -2.57, -2.36, mean -2.55 (paper: about -2.5 at 10^29.5); dashed curves up to 10^29: median -2.54 (paper: about -2.5); dust minus nebular curve at L_FUV = 10^29 to 10^29.1: mean 0.55 over 8 values (paper: dust reddens the slope by about 0.5)."
+    },
+    {
+      "id": "wilkins22.flares.uvbeta.dust.z10",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), stellar plus nebular emission and dust (solid line)",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV converted from the plotted far-UV luminosity L_FUV (the paper does not say whether it is the intrinsic or the dust-attenuated luminosity; AB, 10 pc)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta, median of galaxies in bins of L_FUV: stellar plus nebular emission, attenuated by dust (the paper: 'that which would be observed')",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -22.468,
+        "xMax": -17.468
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.468,
+            "y": -1.8477
+          },
+          {
+            "x": -21.843,
+            "y": -1.8862
+          },
+          {
+            "x": -21.218,
+            "y": -1.9331
+          },
+          {
+            "x": -20.593,
+            "y": -2.0301
+          },
+          {
+            "x": -19.968,
+            "y": -2.1905
+          },
+          {
+            "x": -19.343,
+            "y": -2.3048
+          },
+          {
+            "x": -18.718,
+            "y": -2.3708
+          },
+          {
+            "x": -18.093,
+            "y": -2.389
+          },
+          {
+            "x": -17.468,
+            "y": -2.394
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "FLARES galaxies of the 40 resimulated regions; whether the median is weighted by the region weights is not stated",
+        "warning": "Median beta of the FLARES galaxies at z = 10 in bins of L_FUV (the figure has no band or error bars), stellar plus nebular emission, attenuated by dust (the paper: 'that which would be observed'), read from the vector paths of Wilkins et al. 2023 and converted to M_UV with the exact AB conversion M_UV = 51.5948 - 2.5 log10(L_FUV / erg s^-1 Hz^-1). The paper does not give the wavelength window of beta (betaWindow unspecified) and does not say whether the plotted L_FUV is intrinsic or dust attenuated, so a comparison with observed M_UV may shift the bright end by the far-UV attenuation. The bright-end bins hold few galaxies."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "attenuated",
+        "dustModel": "line-of-sight dust model of the FLARES SED modelling (read, not restated in this paper)",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "stellar plus nebular emission, attenuated by dust (the paper: 'that which would be observed')",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "far-UV luminosity L_FUV converted to M_UV",
+        "uvBand": "far-UV (1500 A), L_FUV",
+        "statistic": "median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wilkins et al. 2023, MNRAS 519, 3118 (arXiv:2204.09431), UV continuum slope against far-UV luminosity, stellar plus nebular emission and dust (solid line), z=10",
+        "doi": "10.1093/mnras/stac3280",
+        "url": "https://arxiv.org/abs/2204.09431",
+        "retrieved": "2026-10-25",
+        "figure": "Average UV continuum slope against UV luminosity and redshift",
+        "panel": "z=10, stellar plus nebular emission and dust (solid line)",
+        "checksumSha256": "d33df324aae1a8aeed5ca5101078a989986fd2718ba75bc4725e613d593ac3c9",
+        "sourceMember": "figures/beta2.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              76.49,
+              28
+            ],
+            [
+              157.95,
+              29
+            ],
+            [
+              239.4,
+              30
+            ]
+          ],
+          "yTicks": [
+            [
+              25.65,
+              -1.6
+            ],
+            [
+              54.66,
+              -1.8
+            ],
+            [
+              83.67,
+              -2
+            ],
+            [
+              112.67,
+              -2.2
+            ],
+            [
+              141.68,
+              -2.4
+            ],
+            [
+              170.69,
+              -2.6
+            ],
+            [
+              199.7,
+              -2.8
+            ]
+          ],
+          "labels": "x: numeric tick labels 28 to 30; y: labels 1.6 to 2.8 read with the separate minus glyph"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "treatments": "observational.tex:99",
+          "caption": "observational.tex:110",
+          "faint": "observational.tex:97",
+          "bright": "observational.tex:97",
+          "stellar": "observational.tex:99",
+          "dust": "observational.tex:99"
+        },
+        "definitionBasis": "dustTreatment and the stellar-population content are from the figure caption ('the solid line also including dust (i.e. that which would be observed)'). betaWindow and betaMethod: not stated in this paper. imf and cosmology: as in the other FLARES records of this dataset (the paper's SED-modelling section refers to FLARES II)."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. The paper prints numbers that the extracted curves reproduce: 18 curves: six redshifts, three treatments; solid curves below L_FUV = 10^28.5: median -2.39, range -2.41 to -2.29 (paper: about -2.4); solid curves at L_FUV = 10^29 to 10^29.3 (z = 10 to 13): median -1.94 (paper: about -2); dotted curves at the faint end: lowest value -2.87 (paper: about -2.8); dotted curves of z = 10 and 11 above 10^29.3: -2.52, -2.76, -2.57, -2.36, mean -2.55 (paper: about -2.5 at 10^29.5); dashed curves up to 10^29: median -2.54 (paper: about -2.5); dust minus nebular curve at L_FUV = 10^29 to 10^29.1: mean 0.55 over 8 values (paper: dust reddens the slope by about 0.5)."
+    },
+    {
+      "id": "wilkins22.flares.uvbeta.nebular.z10",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), stellar plus nebular emission (dashed line)",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV converted from the plotted far-UV luminosity L_FUV (the paper does not say whether it is the intrinsic or the dust-attenuated luminosity; AB, 10 pc)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta, median of galaxies in bins of L_FUV: starlight reprocessed by gas: stellar plus nebular emission, no dust",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -22.468,
+        "xMax": -17.468
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.468,
+            "y": -2.3321
+          },
+          {
+            "x": -21.843,
+            "y": -2.4753
+          },
+          {
+            "x": -21.218,
+            "y": -2.5075
+          },
+          {
+            "x": -20.593,
+            "y": -2.5097
+          },
+          {
+            "x": -19.968,
+            "y": -2.518
+          },
+          {
+            "x": -19.343,
+            "y": -2.515
+          },
+          {
+            "x": -18.718,
+            "y": -2.5116
+          },
+          {
+            "x": -18.093,
+            "y": -2.5315
+          },
+          {
+            "x": -17.468,
+            "y": -2.5359
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "FLARES galaxies of the 40 resimulated regions; whether the median is weighted by the region weights is not stated",
+        "warning": "Median beta of the FLARES galaxies at z = 10 in bins of L_FUV (the figure has no band or error bars), starlight reprocessed by gas: stellar plus nebular emission, no dust, read from the vector paths of Wilkins et al. 2023 and converted to M_UV with the exact AB conversion M_UV = 51.5948 - 2.5 log10(L_FUV / erg s^-1 Hz^-1). The paper does not give the wavelength window of beta (betaWindow unspecified) and does not say whether the plotted L_FUV is intrinsic or dust attenuated, so a comparison with observed M_UV may shift the bright end by the far-UV attenuation. The bright-end bins hold few galaxies."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "intrinsic",
+        "dustModel": "no dust",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "starlight reprocessed by gas: stellar plus nebular emission, no dust",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "far-UV luminosity L_FUV converted to M_UV",
+        "uvBand": "far-UV (1500 A), L_FUV",
+        "statistic": "median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wilkins et al. 2023, MNRAS 519, 3118 (arXiv:2204.09431), UV continuum slope against far-UV luminosity, stellar plus nebular emission (dashed line), z=10",
+        "doi": "10.1093/mnras/stac3280",
+        "url": "https://arxiv.org/abs/2204.09431",
+        "retrieved": "2026-10-25",
+        "figure": "Average UV continuum slope against UV luminosity and redshift",
+        "panel": "z=10, stellar plus nebular emission (dashed line)",
+        "checksumSha256": "d33df324aae1a8aeed5ca5101078a989986fd2718ba75bc4725e613d593ac3c9",
+        "sourceMember": "figures/beta2.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              76.49,
+              28
+            ],
+            [
+              157.95,
+              29
+            ],
+            [
+              239.4,
+              30
+            ]
+          ],
+          "yTicks": [
+            [
+              25.65,
+              -1.6
+            ],
+            [
+              54.66,
+              -1.8
+            ],
+            [
+              83.67,
+              -2
+            ],
+            [
+              112.67,
+              -2.2
+            ],
+            [
+              141.68,
+              -2.4
+            ],
+            [
+              170.69,
+              -2.6
+            ],
+            [
+              199.7,
+              -2.8
+            ]
+          ],
+          "labels": "x: numeric tick labels 28 to 30; y: labels 1.6 to 2.8 read with the separate minus glyph"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "treatments": "observational.tex:99",
+          "caption": "observational.tex:110",
+          "faint": "observational.tex:97",
+          "bright": "observational.tex:97",
+          "stellar": "observational.tex:99",
+          "dust": "observational.tex:99"
+        },
+        "definitionBasis": "dustTreatment and the stellar-population content are from the figure caption ('the solid line also including dust (i.e. that which would be observed)'). betaWindow and betaMethod: not stated in this paper. imf and cosmology: as in the other FLARES records of this dataset (the paper's SED-modelling section refers to FLARES II)."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. The paper prints numbers that the extracted curves reproduce: 18 curves: six redshifts, three treatments; solid curves below L_FUV = 10^28.5: median -2.39, range -2.41 to -2.29 (paper: about -2.4); solid curves at L_FUV = 10^29 to 10^29.3 (z = 10 to 13): median -1.94 (paper: about -2); dotted curves at the faint end: lowest value -2.87 (paper: about -2.8); dotted curves of z = 10 and 11 above 10^29.3: -2.52, -2.76, -2.57, -2.36, mean -2.55 (paper: about -2.5 at 10^29.5); dashed curves up to 10^29: median -2.54 (paper: about -2.5); dust minus nebular curve at L_FUV = 10^29 to 10^29.1: mean 0.55 over 8 values (paper: dust reddens the slope by about 0.5)."
+    },
+    {
+      "id": "wilkins22.flares.uvbeta.stellar.z10",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), stellar continuum only (dotted line)",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_UV converted from the plotted far-UV luminosity L_FUV (the paper does not say whether it is the intrinsic or the dust-attenuated luminosity; AB, 10 pc)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta, median of galaxies in bins of L_FUV: unprocessed starlight: stellar emission only, no nebular emission, no dust",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -22.468,
+        "xMax": -17.468
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "unspecified",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.468,
+            "y": -2.361
+          },
+          {
+            "x": -21.843,
+            "y": -2.5696
+          },
+          {
+            "x": -21.218,
+            "y": -2.6224
+          },
+          {
+            "x": -20.593,
+            "y": -2.6576
+          },
+          {
+            "x": -19.968,
+            "y": -2.7117
+          },
+          {
+            "x": -19.343,
+            "y": -2.7469
+          },
+          {
+            "x": -18.718,
+            "y": -2.8034
+          },
+          {
+            "x": -18.093,
+            "y": -2.8007
+          },
+          {
+            "x": -17.468,
+            "y": -2.7423
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "FLARES galaxies of the 40 resimulated regions; whether the median is weighted by the region weights is not stated",
+        "warning": "Median beta of the FLARES galaxies at z = 10 in bins of L_FUV (the figure has no band or error bars), unprocessed starlight: stellar emission only, no nebular emission, no dust, read from the vector paths of Wilkins et al. 2023 and converted to M_UV with the exact AB conversion M_UV = 51.5948 - 2.5 log10(L_FUV / erg s^-1 Hz^-1). The paper does not give the wavelength window of beta (betaWindow unspecified) and does not say whether the plotted L_FUV is intrinsic or dust attenuated, so a comparison with observed M_UV may shift the bright end by the far-UV attenuation. The bright-end bins hold few galaxies."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "intrinsic",
+        "dustModel": "no dust",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "unprocessed starlight: stellar emission only, no nebular emission, no dust",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "far-UV luminosity L_FUV converted to M_UV",
+        "uvBand": "far-UV (1500 A), L_FUV",
+        "statistic": "median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Wilkins et al. 2023, MNRAS 519, 3118 (arXiv:2204.09431), UV continuum slope against far-UV luminosity, stellar continuum only (dotted line), z=10",
+        "doi": "10.1093/mnras/stac3280",
+        "url": "https://arxiv.org/abs/2204.09431",
+        "retrieved": "2026-10-25",
+        "figure": "Average UV continuum slope against UV luminosity and redshift",
+        "panel": "z=10, stellar continuum only (dotted line)",
+        "checksumSha256": "d33df324aae1a8aeed5ca5101078a989986fd2718ba75bc4725e613d593ac3c9",
+        "sourceMember": "figures/beta2.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xTicks": [
+            [
+              76.49,
+              28
+            ],
+            [
+              157.95,
+              29
+            ],
+            [
+              239.4,
+              30
+            ]
+          ],
+          "yTicks": [
+            [
+              25.65,
+              -1.6
+            ],
+            [
+              54.66,
+              -1.8
+            ],
+            [
+              83.67,
+              -2
+            ],
+            [
+              112.67,
+              -2.2
+            ],
+            [
+              141.68,
+              -2.4
+            ],
+            [
+              170.69,
+              -2.6
+            ],
+            [
+              199.7,
+              -2.8
+            ]
+          ],
+          "labels": "x: numeric tick labels 28 to 30; y: labels 1.6 to 2.8 read with the separate minus glyph"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "treatments": "observational.tex:99",
+          "caption": "observational.tex:110",
+          "faint": "observational.tex:97",
+          "bright": "observational.tex:97",
+          "stellar": "observational.tex:99",
+          "dust": "observational.tex:99"
+        },
+        "definitionBasis": "dustTreatment and the stellar-population content are from the figure caption ('the solid line also including dust (i.e. that which would be observed)'). betaWindow and betaMethod: not stated in this paper. imf and cosmology: as in the other FLARES records of this dataset (the paper's SED-modelling section refers to FLARES II)."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. The paper prints numbers that the extracted curves reproduce: 18 curves: six redshifts, three treatments; solid curves below L_FUV = 10^28.5: median -2.39, range -2.41 to -2.29 (paper: about -2.4); solid curves at L_FUV = 10^29 to 10^29.3 (z = 10 to 13): median -1.94 (paper: about -2); dotted curves at the faint end: lowest value -2.87 (paper: about -2.8); dotted curves of z = 10 and 11 above 10^29.3: -2.52, -2.76, -2.57, -2.36, mean -2.55 (paper: about -2.5 at 10^29.5); dashed curves up to 10^29: median -2.54 (paper: about -2.5); dust minus nebular curve at L_FUV = 10^29 to 10^29.1: mean 0.55 over 8 values (paper: dust reddens the slope by about 0.5)."
+    }
+  ]
+}

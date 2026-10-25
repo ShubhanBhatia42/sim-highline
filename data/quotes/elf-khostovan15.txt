@@ -1,0 +1,24 @@
+oii_lf.tex:315: To simplify the use of our LFs by others in future studies, we present all the LF parameter results as uncorrected for dust and AGN contribution.
+oii_lf.tex:315: Lastly, the LF results are not corrected for dust extinction, except when measuring the star-formation rate densities.
+oii_lf.tex:139: Because the H$\beta$ and [O\rom{3}] emission lines are close to each other, photo-$z$ and color-color selections can not distinguish between them.
+oii_lf.tex:139: to ensure we are not biasing our measurements based on such assumptions, we present the results as the combined measurement of \hb.
+oii_lf.tex:145: we assume $\Lambda$CDM cosmology with $H_0 = 70$ km s$^{-1}$ Mpc$^{-1}$, $\Omega_\mathrm{m} = 0.3$, and $\Omega_\Lambda = 0.7$
+oii_lf.tex:286: We report the probed comoving volume per square degree in table \ref{table:filter_probed}.
+oii_lf.tex:263: We use the traditional $V_{max}$ estimator to create our binned data.
+oii_lf.tex:313: We keep $\alpha$ fixed to a constant value of $-1.6$ and $-1.3$ for \hb~ and \oii, respectively, as we are not able to fully constrain the faint-end.
+oii_lf.tex:662: The errors here are Poissonian but with 20\% of the corrections added in quadrature.
+oii_lf.tex:298: The Schechter function is defined in its log-form as:
+oii_lf.tex:244: We select our emitter candidates by defining a range in the distribution of $z_{phot}$
+oii_lf.tex: filter table row NB921 & 0.9196 & 132 & $0.84\pm0.01$ & 1.79& $1.47\pm0.02$& 3.75\\
+oii_lf.tex: filter table row NBJ & 1.211 & 150 & $1.42\pm0.01$ & 3.11 & $2.25\pm0.02$ &4.83\\
+oii_lf.tex: filter table row NBH & 1.617 & 211 & $2.23\pm0.02$ & 5.05 &$3.34\pm0.03$ & 6.53\\
+oii_lf.tex: filter table row NBK & 2.121 & 210 & $3.24\pm0.02$ & 4.87 & $4.69\pm0.03$ & 5.68\\
+oii_lf.tex: the table of selected emitters gives totals 2477, 371, 271, 179 (H-beta+[OIII]) and 3285, 137, 35, 18 ([OII])
+check hb z=0.84: {"bins": 8, "emitters_in_bins": 1669, "emitters_total": 2477, "max_dphi_obs": 0.005, "chi_rms": 1.83, "chi_max": 2.84, "rho_gamma": 39.59, "rho_printed": 39.58}
+check hb z=1.42: {"bins": 4, "emitters_in_bins": 371, "emitters_total": 371, "max_dphi_obs": 0.005, "chi_rms": 1.19, "chi_max": 1.58, "rho_gamma": 39.8, "rho_printed": 39.8}
+check hb z=2.23: {"bins": 4, "emitters_in_bins": 181, "emitters_total": 271, "max_dphi_obs": 0.004, "chi_rms": 1.18, "chi_max": 1.66, "rho_gamma": 39.98, "rho_printed": 39.98}
+check hb z=3.24: {"bins": 4, "emitters_in_bins": 153, "emitters_total": 179, "max_dphi_obs": 0.002, "chi_rms": 0.72, "chi_max": 0.93, "rho_gamma": 39.87, "rho_printed": 39.87}
+check oii z=1.47: {"bins": 7, "emitters_in_bins": 1466, "emitters_total": 3285, "max_dphi_obs": 0.005, "chi_rms": 0.51, "chi_max": 1.07, "rho_gamma": 39.72, "rho_printed": 39.72}
+check oii z=2.25: {"bins": 3, "emitters_in_bins": 132, "emitters_total": 137, "max_dphi_obs": 0.004, "chi_rms": 1.51, "chi_max": 2.24, "rho_gamma": 39.97, "rho_printed": 39.98}
+check oii z=3.34: {"bins": 3, "emitters_in_bins": 21, "emitters_total": 35, "max_dphi_obs": 0.0, "chi_rms": 0.53, "chi_max": 0.74, "rho_gamma": 39.73, "rho_printed": 39.74}
+check oii z=4.69: {"bins": 3, "emitters_in_bins": 17, "emitters_total": 18, "max_dphi_obs": 0.004, "chi_rms": 0.28, "chi_max": 0.43, "rho_gamma": 39.35, "rho_printed": 39.35}

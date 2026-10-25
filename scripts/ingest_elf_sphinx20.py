@@ -84,6 +84,7 @@ q_llf = quote(r"we show reddening corrected H$\alpha$ (top) and [O~III]~$\lambda
 q_cut = quote(r"We note that the turnover at the faint-end of the luminosity function is due to our SFR cut rather than a physical effect")
 q_ten = quote(r"For each redshift, we show a luminosity function for each of the ten different sight lines to demonstrate the expected variance with viewing angle.")
 q_ebv = quote(r"Computed from the Balmer decrement (H$\alpha$ and H$\beta$)")
+q_imf = quote(r"we have chosen a specific stellar IMF (Kroupa-like), a stellar population synthesis library")
 
 # ---------------------------------------------------------------- check 1: the table
 assert len(rows) == 1380, len(rows)
@@ -235,11 +236,11 @@ for z in ZS:
             },
             "provenance": {"tier": "catalog-derived", "citation": "SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); luminosity functions derived by sim-highline", "doi": None,
                            "url": URL, "retrieved": RETRIEVED, "compilation": f"{URL} @ {commit}", "sourceMember": "data/all_basic_data.csv", "checksumSha256": DIGEST,
-                           "paper": "arXiv:2309.03269", "definitionBasis": "imf: the paper names the BPASS v2.2.1 stellar population model but gives no sentence on its IMF, so it stays unspecified. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.", "quotes": {"box": q_box, "cosmology": q_cosmo, "galaxy": q_gal, "selection": q_sfr, "dust_model": q_dust, "line_columns": q_lines, "galaxies": q_n,
-                                                                   "plotted_function": q_llf, "turnover": q_cut, "sight_lines": q_ten, "ebv": q_ebv},
+                           "paper": "arXiv:2309.03269", "definitionBasis": "imf: the paper's caveats paragraph says 'we have chosen a specific stellar IMF (Kroupa-like)'; it is filled as Kroupa (2001), the nearest entry of the vocabulary, by data/definition-fills.json, as for the other SPHINX20 records (an earlier version of this note said the paper gave no sentence on the IMF; it does). The IMF is not a comparison key of this relation. line: the release lists H I 6562.80 and [N II] 6548/6583 as separate lines.", "quotes": {"box": q_box, "cosmology": q_cosmo, "galaxy": q_gal, "selection": q_sfr, "dust_model": q_dust, "line_columns": q_lines, "galaxies": q_n,
+                                                                   "plotted_function": q_llf, "turnover": q_cut, "sight_lines": q_ten, "ebv": q_ebv, "imf": q_imf},
                            "checkAgainstFigure": {"figure": "Line luminosity functions for Halpha (top)", "checksumSha256": FIG_SHA, "sourceMember": "figures/Halpha_lum_func.pdf", "kHalpha": KHA, "rmsDex": round(RMS, 3), "bins": NPLOT}},
             "calibration": "prediction", "rankable": True,
-            "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: " + CHECK + ". Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9.",
+            "notes": "RAMSES-RT radiation hydrodynamics of reionization in a 20 cMpc box. Volume (20 cMpc)^3 and bin width 0.25 dex (the check against the figure uses the paper's 0.5 dex bins). Checks: " + CHECK + ". The fitted coefficient is used only in that check; no value in this record depends on it (the record counts galaxies by the release's own intrinsic or dust-attenuated column). Intrinsic Halpha is the release column HI_6562.8_int; attenuated is HI_6562.8_dir_0..9. Re-derived from the release with separate code on 2026-10-25 (internal check; counts identical in every bin of every record, see scripts/check_sphinx20_release.py).",
         })
 print({r['id']: len(r['representation']['points']) for r in records})
 assert len(records) >= 4, len(records)

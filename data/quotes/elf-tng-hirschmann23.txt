@@ -1,0 +1,26 @@
+Overview_TNG.tex:740: we do not consider attenuation by dust outside \hii\ regions and compare our predictions with observed emission-line ratios corrected for this effect
+Overview_TNG.tex:1705: (all corrected for attenuation by dust; different grey- and black-line styles)
+Overview_TNG.tex:617: which, when combined, constitute the total nebular emission of the galaxy
+Overview_TNG.tex:624: all `bound' gas cells and star particles (as identified by the Subfind algorithm;
+Overview_TNG.tex:1698: galaxies more massive than $10^8\, \Msun$, $3 \times 10^9 \, \Msun$ and $10^{10} \, \Msun$, respectively, at $z=0.1,$ 0.5, 1, 1.5, 2, 3, 4, 5 and 6 (different panels, as indicated).
+Overview_TNG.tex:542: For all these galaxies and their progenitors at $z>0$, nebular emission
+Overview_TNG.tex:538: TNG50 has $\sim8,800$ galaxies with stellar masses greater than $10^8 \Msun$, TNG100 $\sim18,000$ galaxies with stellar masses greater than $3\times 10^{9} \Msun$ and TNG300 $\sim47,000$ galaxies with stellar masses greater than $10^{10} \Msun$.
+Overview_TNG.tex:1706: The peaks in the TNG100 and TNG300 luminosity functions arise from the resolution limits; galaxy number densities below the peak are incomplete and hence not meaningful.
+Overview_TNG.tex:733: \hb, \oiii, \oi, \ha, \nii\ and \sii\,
+Overview_TNG.tex:562: a standard \citet{Chabrier03} initial mass function (IMF) truncated at 0.1 and 300\,$\Msun$
+Overview_TNG.tex:462: $\sigma_8 = 0.8159$, $\Omega_{\mathrm{m}}=0.3089$, $\Omega_{\Lambda}=0.6911$ and $h= 0.6774$
+Overview_TNG.tex:465: TNG300, TNG100 and TNG50 comprise volumes of 302.6$^3$, 106.5$^3$ and 51.7$^3$ cMpc$^3$, respectively
+Overview_TNG.tex:1801: by a factor of $\sim30$ between $z=3$ and $z=6$ at $\lha = 10^{42}$\,erg\,s$^{-1}$
+Overview_TNG.tex:1701: Dashed coloured lines show the results obtained when considering only the contribution by \hii\ regions to the luminosity of each galaxy.
+check: all nine panels have the same tick geometry: 42.75 pt per dex in log L, 45.35 pt per dex in log phi; major ticks equally spaced to 0.000 pt
+check: x label glyphs of the lower-left panel centre on the major ticks of 42, 43 and 44 within 0.62 pt
+check: 26 solid and 26 dashed curves: TNG50 in 9 panels, TNG100 in 9, TNG300 in 8
+check: in 26 of the 26 panels the H II-region-only (dashed) curve carries 0.71 to 1.11 of the luminosity density of the solid curve above its peak (the text: the bulk of the H-alpha luminosity arises from H II regions)
+check: TNG50 z = 0.1: the plotted function integrated over log L = 40.63 to 42.91 and times (51.7 cMpc)^3 gives 2,444 galaxies against the printed about 8,800 above the mass cut at z = 0 (ratio 0.28; an upper bound only: the faint part below 10^40.6 erg/s is not drawn)
+check: TNG100 z = 0.1: the plotted function integrated over log L = 40.54 to 43.04 and times (106.5 cMpc)^3 gives 8,307 galaxies against the printed about 18,000 above the mass cut at z = 0 (ratio 0.46; an upper bound only: the faint part below 10^40.5 erg/s is not drawn)
+check: TNG300 z = 0.1: the plotted function integrated over log L = 40.67 to 42.77 and times (302.6 cMpc)^3 gives 18,233 galaxies against the printed about 47,000 above the mass cut at z = 0 (ratio 0.39; an upper bound only: the faint part below 10^40.7 erg/s is not drawn)
+check: at log L = 42 the density falls between z = 3 and z = 6 by a factor of 39 in TNG100 and 14 in TNG50 (the text: a factor of about 30, simulation not named)
+check: light-grey dashed (Sobral et al. 2013/2015) curves drawn in the panels z = [1.0, 1.5, 2.0]
+check: z = 1.5 panel: the drawn HiZELS curve has the shape of the Table 5 Schechter function at z = 1.47 (log L* = 42.56, alpha = -1.62): difference constant to 0.0004 dex over 5 vertices spanning log L = 41.0 to 43.0 and 2.4 dex in phi; the constant offset of +0.088 dex in normalisation is not reconciled (the figure's curves are labelled Sobral+13/15)
+check: z = 1 panel: the two faintest vertices of the drawn HiZELS curve lie within 0.005 dex of the Table 5 Schechter function at z = 0.84 (the brighter vertices differ by up to 0.29 dex: the drawn curve is not exactly that function)
+figure: Ha_lumfct_IllustrisTNG_allz_Nov21.eps sha256 dad4ab574cf35b13f6d1fff1263ea5d507cdc8866dfed9d22c486e76469ae58b
