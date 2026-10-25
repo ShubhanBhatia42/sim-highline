@@ -5,7 +5,7 @@ import path from "node:path";
 
 const ROOT = new URL("../", import.meta.url).pathname;
 const problems = []; const counts = { js: 0, py: 0, html: 0, json: 0 };
-async function walk(dir, skip = /^(node_modules|\.git|dist|__pycache__)$/) {
+async function walk(dir, skip = /^(node_modules|\.git|\.claude|dist|__pycache__)$/) {
   const out = [];
   for (const e of await readdir(dir, { withFileTypes: true })) {
     if (skip.test(e.name)) continue;
