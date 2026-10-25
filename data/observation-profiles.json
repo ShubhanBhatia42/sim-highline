@@ -130,12 +130,12 @@
     "Baker et al. 2025 (quiescent, JWST)": {
       "kind": "survey",
       "facility": "JWST",
-      "measures": "Massive quiescent galaxies at z=2-7."
+      "measures": "Massive quiescent galaxies at z = 2-7."
     },
     "Curti et al. 2024 (JADES)": {
       "kind": "survey",
       "facility": "JWST / JADES",
-      "measures": "Mass-metallicity relation at z=3-6, as compiled in the COLIBRE data release repository."
+      "measures": "Mass-metallicity relation at z = 3-6, as compiled in the COLIBRE data release repository."
     },
     "Lam et al. 2026 (JADES stacks)": {
       "kind": "survey",
@@ -310,7 +310,7 @@
     "Donnan et al. 2024": {
       "kind": "survey",
       "facility": "JWST/NIRCam imaging (PRIMER, JADES, NGDEEP)",
-      "measures": "UV luminosity function at z=9-14.5 from about 370 arcmin^2."
+      "measures": "UV luminosity function at z = 9-14.5 from about 370 arcmin^2."
     },
     "Bouwens et al. 2014": {
       "kind": "survey",
@@ -364,7 +364,7 @@
     },
     "Deshmukh et al. 2018": {
       "kind": "survey",
-      "facility": "Spitzer Matching survey of the UltraVISTA Ultra-deep Stripes (SMUVS), about 66,000 sources at z=2-6",
+      "facility": "Spitzer Matching survey of the UltraVISTA Ultra-deep Stripes (SMUVS), about 66,000 sources at z = 2-6",
       "measures": "Galaxy stellar mass function split into dusty, non-dusty and passive galaxies."
     },
     "JWST+ground MZR compilation (Sharda+26 repository)": {
@@ -379,7 +379,7 @@
     },
     "Lin et al. 2012": {
       "kind": "survey",
-      "facility": "Massive galaxy clusters at z<0.25 (this record), from the paper's z=0-0.6 sample",
+      "facility": "Massive galaxy clusters at z<0.25 (this record), from the paper's z = 0-0.6 sample",
       "measures": "Baryon content (gas fraction) of massive clusters."
     },
     "Mosleh et al. 2020": {

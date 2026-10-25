@@ -14,8 +14,8 @@
 <nav class="idx" aria-label="On this page">
 <p class="lab">Contents</p>
 <ol>
-<li><a href="#index"><span>§1</span>Index</a></li>
-<li><a href="#registration"><span>§2</span>Registration</a></li>
+<li><a href="#index"><span aria-hidden="true">§1</span>Index</a></li>
+<li><a href="#registration"><span aria-hidden="true">§2</span>How studies are registered</a></li>
 </ol>
 </nav>
 <div class="c">
@@ -23,29 +23,29 @@
 <div class="title">
 <p class="lab kicker">Studies</p>
 <h1>Studies</h1>
-<p class="standfirst">Analyses that use the dataset to ask a question with an answer. Each has a protocol, a generated analysis document, a stated power and its limits; each is regenerated from the data by one script.</p>
+<p class="standfirst">Analyses that use the dataset to ask a question with an answer. Each has a protocol, a generated analysis document, a stated power and stated limits, and one script regenerates it from the data.</p>
 </div>
 
 <section class="sec" id="index" aria-labelledby="index-h">
-<h2 id="index-h"><span class="sn">§1</span>Index</h2>
+<h2 id="index-h"><span class="sn" aria-hidden="true">§1</span>Index</h2>
 <div class="tw">{{studiesFull}}</div>
 <p>Not a study but an explanation: <a href="seeding.html">how the two codes plant their black holes</a>, the rule behind the property that stays apart in the all-at-once study.</p>
 <p class="dim" style="font-size:15px">Headline numbers are read from <code>data/analysis/*.json</code> when this page is built. Dataset v{{version}}.</p>
 </section>
 
 <section class="sec" id="registration" aria-labelledby="registration-h">
-<h2 id="registration-h"><span class="sn">§2</span>How studies are registered</h2>
+<h2 id="registration-h"><span class="sn" aria-hidden="true">§2</span>How studies are registered</h2>
 <ul class="flat">
-<li><b>Protocol first.</b> A pre-registered study has a protocol document committed to the repository before its outcome statistics are computed. It fixes the data, the statistic, the decision rule and the sensitivity analyses.</li>
-<li><b>What had been looked at.</b> The protocol says what had been examined when it was written (which curves existed, how each suite documents its definitions), so that the reader can judge what the rule could still have been tuned to.</li>
-<li><b>Amendments are dated.</b> A change after the protocol is committed is an amendment with its date and a statement of what had been seen when it was made. The protocols of the cosmic star formation study and the all-at-once study were each amended once, before the run, after an internal review (not by an outside expert).</li>
+<li><b>Protocol first.</b> A pre-registered study has a protocol committed to the repository before any outcome statistic is computed. The protocol fixes the data, the statistic, the decision rule and the sensitivity analyses.</li>
+<li><b>What had been looked at.</b> The protocol says what had been examined when it was written (which curves existed, how each simulation documents its definitions), so the reader can judge what the rule could still have been tuned to.</li>
+<li><b>Amendments are dated.</b> A change after the protocol is committed is an amendment, dated, with a statement of what had been seen when it was made. The protocols of the cosmic star formation study and the all-at-once study were each amended once, before the run, after an internal review (not by an outside expert).</li>
 <li><b>Generated analysis.</b> The analysis document is written by the analysis script from the data, with every departure from the protocol listed as a deviation. The numbers on the study pages are read from the script’s JSON output, not typed.</li>
 <li><b>Power.</b> Where a decision rule can be calibrated, its false-positive rate and power are checked on synthetic data before the real data are read (cosmic star formation and all-at-once studies), or reported with the result (mass-function study). The all-at-once calibration uses synthetic worlds with the real block layout whose true distance is known.</li>
 <li><b>Null results are reported.</b> A rule that is not met is reported as not met, with the interval, and the page says what the test could and could not have seen.</li>
 <li><b>The definitions study has no protocol.</b> It is a descriptive analysis; its limits motivated the mass-function study.</li>
 </ul>
 <h3>The dated trail</h3>
-<p>The commit history shows the order. For each pre-registered study: when its protocol was committed, when each amendment was, and when the result file first appeared. The hash is the commit's fingerprint; the amendments say what had been looked at when they were written.</p>
+<p>The commit history shows the order. The table gives, for each pre-registered study, when its protocol was committed, when each amendment was, and when the result file first appeared. The hash is the commit's fingerprint; the amendments say what had been looked at when they were written.</p>
 <div class="tw sm"><table class="dense"><thead><tr><th>Study</th><th>Protocol committed</th><th>Amendments</th><th>Result file first committed</th></tr></thead><tbody>{{trailRows}}</tbody></table></div>
 <p>Protocols on the repository: <a href="{{repo}}/blob/main/docs/PROTOCOL-harmonization.md">PROTOCOL-harmonization.md</a> (mass-function study), <a href="{{repo}}/blob/main/docs/PROTOCOL-model-form.md">PROTOCOL-model-form.md</a> (cosmic star formation study), <a href="{{repo}}/blob/main/docs/PROTOCOL-joint-reachability.md">PROTOCOL-joint-reachability.md</a> (all-at-once study).</p>
 </section>

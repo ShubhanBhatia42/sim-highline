@@ -168,23 +168,26 @@
   for (const c of CODES) {
     const box = el("fieldset", { class: "rt-code" }, el("legend", {}, el("i", { style: `background:${COL[c]}` }), SHORT[c] === "TNG" ? "IllustrisTNG" : "SIMBA"));
     D.params.forEach((p, j) => {
-      const out = el("output", { id: `o-${c}-${j}` }), id = `s-${c}-${j}`, sensBar = el("span", { class: "rt-sens", title: `Moving this dial across its whole range changes the galaxy properties by ${f2(SENS[c][j], 1)} noise units (rms over all properties)` }, el("i", { style: `width:${Math.max(2, Math.round(100 * SENS[c][j] / SMAX))}%` }));
+      const out = el("output", { id: `o-${c}-${j}`, "aria-live": "off" }), id = `s-${c}-${j}`, sensText = `Moving this dial across its whole range changes the galaxy properties by ${f2(SENS[c][j], 1)} noise units (rms over all properties)`, sensBar = el("span", { class: "rt-sens", title: sensText, role: "img", "aria-label": sensText }, el("i", { style: `width:${Math.max(2, Math.round(100 * SENS[c][j] / SMAX))}%` }));
       const input = el("input", { type: "range", id, min: -1, max: 1, step: 0.05, value: 0, "aria-describedby": `d-${c}-${j}`, oninput: e => { state.a[c][j] = +e.target.value; state.story = null; state.k = ""; update(); } });
       ui[`${c}${j}`] = { input, out, box: null };
-      const dial = el("div", { class: "rt-dial" }, el("label", { for: id }, PLAIN[p.id] || p.label, el("span", { class: "rt-fac" }, out)), input, el("small", { id: `d-${c}-${j}` }, p.label + " · " + p[SHORT[c] === "TNG" ? "TNG" : "SIMBA"] + " · " + p.range), el("span", { class: "rt-edge", "aria-hidden": "true" }, "near the edge of the simulated range: less certain"), sensBar);
+      const dial = el("div", { class: "rt-dial" }, el("label", { for: id }, el("span", { class: "sr" }, (SHORT[c] === "TNG" ? "IllustrisTNG" : "SIMBA") + ": "), PLAIN[p.id] || p.label, el("span", { class: "rt-fac" }, out)), input, el("small", { id: `d-${c}-${j}` }, p.label + " · " + p[SHORT[c] === "TNG" ? "TNG" : "SIMBA"] + " · " + p.range), el("span", { class: "rt-edge", "aria-hidden": "true" }, "near the edge of the simulated range: less certain"), sensBar);
       ui[`${c}${j}`].box = dial;
       box.append(dial);
     });
     ctrl.append(box);
   }
   const snapSel = el("select", { id: "rt-snap", "aria-label": "Redshift", onchange: e => { state.snap = e.target.value; refreshObs(); update(); } }, D.snapshots.map(s => el("option", { value: s.id }, "z = " + f2(s.z))));
-  const matchSel = el("select", { id: "rt-match", "aria-label": "Property to match", onchange: e => { state.matchSet = e.target.value; update(); } }, JOINT.map(f => el("option", { value: f }, D.family_names[f])), (STUCK.length ? [el("option", { value: "matchable" }, "everything that can be matched, together")] : []), el("option", { value: "all" }, "everything, even what cannot be matched"));
+  const matchSel = el("select", { id: "rt-match", "aria-label": "Match on (the property to match)", onchange: e => { state.matchSet = e.target.value; update(); } }, JOINT.map(f => el("option", { value: f }, D.family_names[f])), (STUCK.length ? [el("option", { value: "matchable" }, "everything that can be matched, together")] : []), el("option", { value: "all" }, "everything, even what cannot be matched"));
   matchSel.value = state.matchSet;
-  const holdSel = el("select", { id: "rt-hold", "aria-label": "Keep this property as it is", onchange: e => { state.hold = e.target.value; update(); } }, el("option", { value: "" }, "nothing in particular"), JOINT.map(f => el("option", { value: f }, D.family_names[f])));
+  const holdSel = el("select", { id: "rt-hold", "aria-label": "While keeping (the property to hold as it is)", onchange: e => { state.hold = e.target.value; update(); } }, el("option", { value: "" }, "nothing in particular"), JOINT.map(f => el("option", { value: f }, D.family_names[f])));
   const ovl = el("input", { type: "checkbox", id: "rt-ov", checked: "", onchange: e => { state.overlays = e.target.checked; update(); } });
   const ctl = el("input", { type: "checkbox", id: "rt-ctl", onchange: e => { state.controls = e.target.checked; update(); } });
   const expl = el("input", { type: "checkbox", id: "rt-expl", onchange: e => { state.explain = e.target.checked; update(); } });
   const toast = t => { live.textContent = ""; setTimeout(() => { live.textContent = t; }, 30); };
+  /* what a listener hears: the story of a search when it is new (what moved, what came into line, what was given up), otherwise the one-sentence summary when it changes; the same text is never written twice */
+  let lastBig = "", storySaid = null;
+  const say = t => { live.textContent = ""; setTimeout(() => { live.textContent = t; }, 30); };
   let tweening = 0;
   /* move the dials to a new setting, smoothly unless the visitor prefers reduced motion; the story is written once the dials have arrived */
   function setA(aT, aS, then) {
@@ -236,7 +239,7 @@
   const fitText = el("textarea", { id: "rt-fittext", rows: "4", placeholder: "x,y per line: x is log10 stellar mass (or halo mass), y is log10 of the property as shown in the panel", "aria-label": "Your curve" });
   const fitLin = el("input", { type: "checkbox", id: "rt-fitlin" });
   const fitMsg = el("p", { class: "rt-fitmsg", id: "rt-fitmsg", "aria-live": "polite" });
-  const obsSel = el("select", { id: "rt-obs", "aria-label": "Observed curve" });
+  const obsSel = el("select", { id: "rt-obs", "aria-label": "or an observed curve (choose a published observation)" });
   function parseCurve(text, lin) {
     const pts = [];
     for (const l of String(text || "").replace(/^﻿/, "").split(/\r?\n/)) { const t = l.trim(); if (!t || t.startsWith("#")) continue; const c = (t.includes(";") ? t.split(";").map(v => v.trim().replace(",", ".")) : t.split(/[,\t ]+/)).map(Number); if (Number.isFinite(c[0]) && Number.isFinite(c[1])) pts.push({ x: c[0], y: lin ? (c[1] > 0 ? Math.log10(c[1]) : NaN) : c[1] }); }
@@ -289,7 +292,7 @@
     const a = el("a", { href: URL.createObjectURL(new Blob([head + rows.join("\n") + "\n"], { type: "text/csv" })), download: "sim-highline-dials.csv" }); document.body.append(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
   }
   function sync() {
-    for (const c of CODES) D.params.forEach((p, j) => { const x = state.a[c][j], u = ui[`${c}${j}`]; u.input.value = x; u.out.textContent = "×" + f2(Math.pow(p.base, x), 2); u.input.setAttribute("aria-valuetext", "×" + f2(Math.pow(p.base, x), 2)); u.box.classList.toggle("edge", Math.abs(x) >= 0.9); });
+    for (const c of CODES) D.params.forEach((p, j) => { const x = state.a[c][j], u = ui[`${c}${j}`]; const t = "×" + f2(Math.pow(p.base, x), 2); if (+u.input.value !== x) u.input.value = x; if (u.out.textContent !== t) u.out.textContent = t; if (u.input.getAttribute("aria-valuetext") !== t) u.input.setAttribute("aria-valuetext", t); u.box.classList.toggle("edge", Math.abs(x) >= 0.9); });
     try { history.replaceState(null, "", "#" + hashString()); } catch (e) { /* no history in some embeds */ }
   }
   /* ---- panels */
@@ -341,6 +344,12 @@
       const bw = (W - L - R) / Math.max(ids.length, 1);
       ids.forEach((i, k) => g.append(svgEl("rect", { x: sx(xs[k]) - bw / 2, y: T, width: bw, height: H - T - B, fill: "transparent" }, svgEl("title", {}, `${meta.x} ${xs[k]}: TNG ${f2(yT[k], 3)}, SIMBA ${f2(yS[k], 3)}, difference ${f2(yT[k] - yS[k], 3)}`))));
     }
+    /* the text alternative says what the curves do, not only what the panel is: the values at the ends of the range (or at each category) and how far apart the two codes are */
+    const last = yT.length - 1, zNow = f2(D.snapshots.find(s => s.id === state.snap).z);
+    g.setAttribute("aria-label", `${meta.title} at z = ${zNow}: ` + (meta.kind === "points"
+      ? ids.map((_, k) => `${meta.labels[k]}: IllustrisTNG ${f2(yT[k], 2)}, SIMBA ${f2(yS[k], 2)}`).join("; ")
+      : `over ${meta.x} from ${f2(xs[0], 2)} to ${f2(xs[last], 2)}, IllustrisTNG goes from ${f2(yT[0], 2)} to ${f2(yT[last], 2)} and SIMBA from ${f2(yS[0], 2)} to ${f2(yS[last], 2)}`)
+      + `. Average difference between the codes ${f2(nat, 2)}${unit}; gap ${f2(d)}.`);
     return el("figure", { class: "rt-panel" + (d >= D.margin ? " far" : ""), "data-family": fam }, el("figcaption", { class: "rt-cap" }, el("b", {}, meta.title), nOut ? el("span", { class: "rt-n" }, `${nOut} published outside the frame`) : "", el("span", { class: "rt-d", title: "gap between the two curves; 1 = as far apart as two runs of the same code that differ only in their random seed. After it: the rms difference in the property's own units." }, `gap ${f2(d)} · ${f2(nat, 2)}${unit}`)), el("p", { class: "rt-sub" }, FRIENDLY[fam] || "", state.explain && PHYS[fam] ? el("span", { class: "rt-phys" }, " " + PHYS[fam]) : ""), g);
   }
   /* ---- the figure: one vector drawing of what the page shows now, for the SVG and PNG downloads. Each panel is drawn from the same model() as on the page, with axes, ticks, units, the emulated curves,
@@ -432,24 +441,26 @@
     const A = D.analysis, rows = [];
     for (const f of JOINT) {
       const dcur = fullDist(SETS[f]), an = A && A.point["fam:" + f], sp = A && A.splits["fam:" + f];
-      rows.push(el("tr", {}, el("td", {}, D.family_names[f]), el("td", { class: "n" }, f2(dcur)), el("td", { class: "n" }, an ? f2(an.D_fiducial) : "–"), el("td", { class: "n" }, an ? f2(an.D_corrected != null ? an.D_corrected : an.D) : "–"), el("td", {}, sp ? (VERD[sp.verdict] || sp.verdict) : "–")));
+      rows.push(el("tr", {}, el("th", { scope: "row" }, D.family_names[f]), el("td", { class: "n" }, f2(dcur)), el("td", { class: "n" }, an ? f2(an.D_fiducial) : "–"), el("td", { class: "n" }, an ? f2(an.D_corrected != null ? an.D_corrected : an.D) : "–"), el("td", {}, sp ? (VERD[sp.verdict] || sp.verdict) : "–")));
     }
     const dall = fullDist(SETS.all), an = A && A.point.all, sp = A && A.splits.all;
-    rows.push(el("tr", { class: "tot" }, el("td", {}, "All of them at once"), el("td", { class: "n" }, f2(dall)), el("td", { class: "n" }, an ? f2(an.D_fiducial) : "–"), el("td", { class: "n" }, an ? f2(an.D_corrected != null ? an.D_corrected : an.D) : "–"), el("td", {}, sp ? (VERD[sp.verdict] || sp.verdict) : "–")));
+    rows.push(el("tr", { class: "tot" }, el("th", { scope: "row" }, "All of them at once"), el("td", { class: "n" }, f2(dall)), el("td", { class: "n" }, an ? f2(an.D_fiducial) : "–"), el("td", { class: "n" }, an ? f2(an.D_corrected != null ? an.D_corrected : an.D) : "–"), el("td", {}, sp ? (VERD[sp.verdict] || sp.verdict) : "–")));
     table.setAttribute("tabindex", "0"); table.setAttribute("role", "region"); table.setAttribute("aria-label", "Distance per observable (scrolls sideways on narrow screens)");
     table.replaceChildren(el("table", {}, el("caption", {}, "Gap between the two codes at the dials above, over all redshifts. 1 = as far apart as two runs of the same code that differ only in random seed; below 1 they agree. The last two columns are the registered study’s result."),
       el("thead", {}, el("tr", {}, ["Property", "now", "default dials", "best any dials", "closable by retuning?"].map(t => el("th", { scope: "col" }, t)))), el("tbody", {}, rows)));
     const gs = gaps(), agree = gs.filter(x => x.d < D.margin), worst = gs.filter(x => x.d >= D.margin).sort((x, y) => y.d - x.d).slice(0, 3);
     const big = `At these dials the two universes agree on ${agree.length} of ${JOINT.length} things about galaxies.` + (worst.length ? ` They are furthest apart on ${list(worst.map(x => nameOf(x.f)))}.` : " Nothing is out of line.");
-    const strip = el("div", { class: "rt-strip", role: "group", "aria-label": "Agreement at each redshift" }, el("span", { class: "rt-striplab" }, "Agreement by redshift:"), D.snapshots.map(s => { const a = agreeAt(s.id); return el("button", { type: "button", class: "rt-z" + (s.id === state.snap ? " on" : ""), "aria-pressed": s.id === state.snap ? "true" : "false", onclick: () => { state.snap = s.id; snapSel.value = s.id; refreshObs(); update(); } }, `z = ${f2(s.z)}`, el("b", {}, ` ${a.ok}/${a.n}`)); }));
+    const strip = el("div", { class: "rt-strip", role: "group", "aria-label": "Agreement at each redshift" }, el("span", { class: "rt-striplab" }, "Agreement by redshift:"), D.snapshots.map(s => { const a = agreeAt(s.id); return el("button", { type: "button", class: "rt-z" + (s.id === state.snap ? " on" : ""), "data-z": s.id, "aria-label": `z = ${f2(s.z)}: ${a.ok} of ${a.n} properties agree`, "aria-pressed": s.id === state.snap ? "true" : "false", onclick: () => { state.snap = s.id; snapSel.value = s.id; refreshObs(); update(); } }, `z = ${f2(s.z)}`, el("b", {}, ` ${a.ok}/${a.n}`)); }));
     /* on a narrow screen the panels are far below the dials: keep a small live copy of the property being matched in the pinned headline */
     const miniSrc = panels.querySelector(`figure.rt-panel[data-family="${JOINT.includes(state.matchSet) ? state.matchSet : "gsmf"}"]`) || panels.querySelector("figure.rt-panel"), mini = miniSrc ? miniSrc.cloneNode(true) : null;
-    if (mini) { mini.className = "rt-mini"; mini.removeAttribute("data-family"); mini.removeAttribute("id"); for (const x of mini.querySelectorAll(".rt-expl, .rt-hold")) x.remove(); }
+    if (mini) { mini.className = "rt-mini"; mini.setAttribute("aria-hidden", "true"); mini.removeAttribute("data-family"); mini.removeAttribute("id"); for (const e of mini.querySelectorAll("[id]")) e.setAttribute("id", e.id + "-m"); for (const e of mini.querySelectorAll("[clip-path]")) e.setAttribute("clip-path", e.getAttribute("clip-path").replace(/\)$/, "-m)")); for (const x of mini.querySelectorAll(".rt-expl, .rt-hold")) x.remove(); }
+    const hadFocus = document.activeElement && stick.contains(document.activeElement) ? document.activeElement.getAttribute("data-z") : null;
     stick.replaceChildren(el("p", { class: "rt-big" }, big), strip, ...(mini ? [mini] : []));
+    if (hadFocus) { const again = stick.querySelector(`.rt-z[data-z="${hadFocus}"]`); if (again) again.focus({ preventScroll: true }); } /* the strip is rebuilt on every change: keep the keyboard where it was */
     header.replaceChildren(
       el("p", { class: "rt-sum" }, `Joint gap ${f2(dall)} (1 = as far apart as two runs of one code that differ only in random seed)${an ? `; the smallest the study found with every dial free: ${f2(an.D_corrected != null ? an.D_corrected : an.D)}; with the default dials: ${f2(an.D_fiducial)}` : ""}.`),
       state.story ? el("div", { class: "rt-story" }, state.story.map(t => el("p", {}, t))) : "");
-    if (!tweening || !ANIM) live.textContent = big;
+    if (!tweening || !ANIM) { if (state.story && state.story !== storySaid) { storySaid = state.story; lastBig = big; say(state.story.join(" ")); } else if (big !== lastBig) { lastBig = big; say(big); } }
   }
   function update() { sync(); render(); }
   /* url state: #aT;aS@snap&m=property&k=S|T|B&h=property. A shared link that carries k replays the story from the default dials. */
@@ -470,13 +481,13 @@
     go.hidden = false;
     const STEPS = [
       { sel: ".rt-code", t: "These are the four dials of one universe, in plain words with the code's own name underneath. Drag one: the centre is the setting CAMELS treats as normal, the ends are a factor of two to four weaker and stronger." },
-      { sel: ".rt-big", t: "This sentence is the answer so far: on how many of the eleven galaxy properties the two universes agree at these settings, and which are furthest apart. It updates as you turn the dials." },
+      { sel: ".rt-big", t: `This sentence is the answer so far: on how many of the ${JOINT.length} galaxy properties the two universes agree at these settings, and which are furthest apart. It updates as you turn the dials.` },
       { sel: ".rt-panel", t: "Each panel is one property. Orange is IllustrisTNG, blue is SIMBA, the pale band is how far a universe moves when you turn all four dials. A shaded panel means the two are further apart than two runs of the same universe would be." },
       { sel: ".rt-actions", t: "These buttons search the dials for you. Make SIMBA look like TNG matches the property you choose under Match on, then tells you what that did to everything else. Show me a surprise picks a setting with a striking trade-off." },
       { sel: ".rt-fit", t: "Or bring your own curve, or pick a published observation, and see which dial settings of each universe reproduce it, and what that does to every other property." }
     ];
-    let k = -1, spot = null; const card = el("div", { class: "rt-tour", role: "dialog", "aria-label": "Tour of the dials page", "aria-live": "polite", hidden: "" });
-    const txt = el("p", { class: "rt-tour-t" }), cnt = el("span", { class: "rt-tour-n" });
+    let k = -1, spot = null; const card = el("div", { class: "rt-tour", role: "dialog", "aria-label": "Tour of the dials page", "aria-describedby": "rt-tour-t", hidden: "" });
+    const txt = el("p", { class: "rt-tour-t", id: "rt-tour-t", "aria-live": "polite" }), cnt = el("span", { class: "rt-tour-n" });
     const back = btn("Back", () => show(k - 1), "rt-tour-b"), next = btn("Next", () => show(k + 1), "rt-tour-b"), close = btn("Close", () => end(), "rt-tour-b");
     card.append(txt, el("div", { class: "rt-tour-r" }, cnt, back, next, close)); document.body.append(card);
     function end() { if (spot) spot.classList.remove("rt-spot"); spot = null; card.hidden = true; k = -1; go.focus(); }

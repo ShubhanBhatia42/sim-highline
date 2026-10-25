@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>sim-highline: compare simulated galaxies with each other and with observations</title>
-<meta name="description" content="Compare a simulated galaxy scaling relation with every published simulation and observation, and find out whether the comparison is legitimate: curated curves with their definitions, a definition-aware comparison of your own run, and the data to download.">
+<meta name="description" content="Compare a simulated galaxy scaling relation with every published simulation and observation, and see whether the comparison is fair: curated curves with their definitions, a definition-aware comparison of your own run, and the data to download.">
 {{head}}
 </head>
 <body>
@@ -14,9 +14,9 @@
 <nav class="idx" aria-label="On this page">
 <p class="lab">Contents</p>
 <ol>
-<li><a href="#start"><span>§1</span>Start here</a></li>
-<li><a href="#data"><span>§2</span>What is in it</a></li>
-<li><a href="#studies"><span>§3</span>What it has shown</a></li>
+<li><a href="#start"><span aria-hidden="true">§1</span>Start here</a></li>
+<li><a href="#data"><span aria-hidden="true">§2</span>What is in it</a></li>
+<li><a href="#studies"><span aria-hidden="true">§3</span>What it has shown</a></li>
 </ol>
 </nav>
 <div class="c">
@@ -24,7 +24,7 @@
 <div class="title">
 <p class="lab kicker">Dataset v{{version}} · {{released}} · doi:{{doi}}</p>
 <h1>sim-highline</h1>
-<p class="standfirst">Put your simulated galaxy relation next to every published simulation and observation, and find out which of those comparisons are legitimate. Two curves that look different may measure different things: a different stellar mass aperture, IMF or population cut. Every curve here carries the definitions that decide it.</p>
+<p class="standfirst">Put your simulated galaxy relation next to every published simulation and observation, and see which of those comparisons are fair. Two curves that look different may measure different things: a different stellar mass aperture, IMF or population cut. Every curve here carries the definitions that decide it.</p>
 </div>
 
 <p class="whatsnew" id="whatsnew" role="status" hidden>Since your last visit the site has changed (now v{{version}}). <a href="changes.html">What is new</a> <button type="button" id="whatsnewX" aria-label="Dismiss">Dismiss</button></p>
@@ -33,11 +33,11 @@ if(last&&last!==V)el.hidden=false;else try{localStorage.setItem(K,V)}catch(e){}
 document.getElementById("whatsnewX").onclick=function(){el.hidden=true;try{localStorage.setItem(K,V)}catch(e){}}})()</script>
 
 <section class="sec" id="start" aria-labelledby="start-h">
-<h2 id="start-h"><span class="sn">§1</span>Start here</h2>
+<h2 id="start-h"><span class="sn" aria-hidden="true">§1</span>Start here</h2>
 <dl class="inst">
 <div><dt><a href="retune.html">Turn the physics dials</a></dt><dd>Two simulated universes, IllustrisTNG and SIMBA, each with four feedback dials. Turn them and watch galaxies reshape; ask whether one universe can be made to look like the other, and see which properties stay apart.</dd><dd class="m">{{camelsN}} simulations · in the browser</dd></div>
-<div><dt><a href="../highline.html#r=gsmf&amp;z=0.1">Look up a relation</a></dt><dd>Pick a relation and an epoch: the published simulations and observations on one plot, each labelled with where it came from (official table, paper table, fit or digitized figure) and whether its definitions allow it to be compared with the others.</dd><dd class="m">{{records}} curves · in the browser</dd></div>
-<div><dt><a href="../highline.html#r=gsmf&amp;z=0.1&amp;pn=mine">Check your own run</a></dt><dd>Paste your curve, say what it measures, and get offsets against the published curves that are comparable with it, as a table and a CSV. Nothing leaves your browser; there is an example to try first.</dd><dd class="m">stays in the browser</dd></div>
+<div><dt><a href="../highline.html#r=gsmf&amp;z=0.1">Look up a relation</a></dt><dd>Pick a relation and an epoch: the published simulations and observations on one plot, each labelled with its source (official table, paper table, fit or digitized figure) and whether its definitions allow comparison with the others.</dd><dd class="m">{{records}} curves · in the browser</dd></div>
+<div><dt><a href="../highline.html#r=gsmf&amp;z=0.1&amp;pn=mine">Check your own run</a></dt><dd>Paste your curve, say what it measures, and get offsets against the comparable published curves, as a table and a CSV. Nothing leaves your browser; there is an example to try first.</dd><dd class="m">stays in the browser</dd></div>
 <div><dt><a href="data.html">Take the data</a></dt><dd>Tidy CSV and JSON of every curve with its definitions, BibTeX for what you plot, and a Python loader (<code>pip install .</code>). Cite the dataset and the original papers.</dd><dd class="m">CC BY 4.0</dd></div>
 </dl>
 <p class="shareit"><b>Share it.</b> <a href="summary.html">The whole project on one page</a>, to print or send to a colleague.</p>
@@ -47,11 +47,11 @@ document.getElementById("whatsnewX").onclick=function(){el.hidden=true;try{local
 <dt>If you need predictions to compare with data</dt><dd>Start with <a href="../highline.html#r=gsmf&amp;z=0.1">Look up a relation</a>: simulations and observations on one plot, each with its source and definitions.</dd>
 <dt>If you are learning how feedback shapes galaxies</dt><dd>Start with <a href="retune.html">the dials</a>, then read the <a href="glossary.html">glossary</a>.</dd>
 </dl>
-<p><b>How far to trust it.</b> Not reviewed by any outside expert (see <a href="methods.html#limits">Methods</a>): {{digitizedShare}} of simulation curves are read from published figures by script and are never used for ranking. Where an author or collaboration releases a table, use that. This is not a leaderboard. <a href="methods.html#limits">Methods, limits</a>; to report an error or ask for a takedown, open an issue on the repository.</p>
+<p><b>How far to trust it.</b> Not reviewed by any outside expert. {{digitizedShare}} of simulation curves are read from published figures by script and are never used for ranking. Where an author or collaboration releases a table, use that. This is not a leaderboard. <a href="methods.html#limits">Methods, limits</a> has the details; to report an error or ask for a takedown, open an issue on the repository.</p>
 </section>
 
 <section class="sec" id="data" aria-labelledby="data-h">
-<h2 id="data-h"><span class="sn">§2</span>What is in it</h2>
+<h2 id="data-h"><span class="sn" aria-hidden="true">§2</span>What is in it</h2>
 <figure class="fig sm">
 <div class="chart">{{hero}}</div>
 <div class="key">{{heroKey}}</div>
@@ -62,8 +62,8 @@ document.getElementById("whatsnewX").onclick=function(){el.hidden=true;try{local
 </section>
 
 <section class="sec" id="studies" aria-labelledby="studies-h">
-<h2 id="studies-h"><span class="sn">§3</span>What it has shown</h2>
-<p>The dataset and the CAMELS ensemble ({{camelsN}} simulations of two feedback models) were used to ask six questions, each with the decision rule written down before the outcome was computed where the study is marked pre-registered. Most of the results are null or qualified, and the pages say so. <a href="studies.html">All studies and how they are registered</a>.</p>
+<h2 id="studies-h"><span class="sn" aria-hidden="true">§3</span>What it has shown</h2>
+<p>The dataset and the CAMELS ensemble ({{camelsN}} simulations of two feedback models) were used to ask six questions. Where a study is marked pre-registered, its decision rule was written down before the outcome was computed. Most results are null or qualified, and the pages say so. <a href="studies.html">All studies and how they are registered</a>.</p>
 <div class="tw">{{studiesCompact}}</div>
 </section>
 

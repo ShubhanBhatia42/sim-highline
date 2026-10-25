@@ -80,8 +80,8 @@ for (const page of ["index", "data"]) {
   assert(page.includes(`takes the all-at-once distance from ${f1(R.splits.all.between.p50)} to ${f1(R.sensitivity.S8_no_two_lowest_mass_bins.D)}`), "seeding: the two-lowest-bins sensitivity differs from the saved result");
   const nRem = Object.entries(R.verdicts.J2).filter(([, v]) => v === "removable").length;
   assert(page.includes(`can close ${nRem} of the ${Object.keys(R.verdicts.J2).length} properties`), "seeding: count of removable properties differs from the saved verdicts");
-  assert((page.match(/<tr><td>[^<]+<\/td><td>(structural|removable|unresolved)<\/td>/g) || []).length === Object.keys(R.verdicts.J2).length, "seeding: one table row per property");
-  const bhRows = page.match(/<tr><td>Black hole[^<]*<\/td><td>[a-z]+<\/td><td class="n">[\d.]+<\/td><td class="n">\d+%<\/td><td>yes<\/td>/g) || [];
+  assert((page.match(/<tr><th scope="row">[^<]+<\/th><td>(structural|removable|unresolved)<\/td>/g) || []).length === Object.keys(R.verdicts.J2).length, "seeding: one table row per property");
+  const bhRows = page.match(/<tr><th scope="row">Black hole[^<]*<\/th><td>[a-z]+<\/td><td class="n">[\d.]+<\/td><td class="n">\d+%<\/td><td>yes<\/td>/g) || [];
   assert(bhRows.length === 2, "seeding: the two properties that compare seeding rules are marked");
   // what the page says it is, and what it must not say
   assert(/No outside expert has reviewed/.test(page) && /internal result/.test(page) && /does not claim that the result, or the explanation, is new/.test(page), "seeding: must say it is an internal, unreviewed explanation and makes no novelty claim");
@@ -187,7 +187,7 @@ assert(["study-definitions", "study-harmonization", "study-sfh", "study-joint", 
 assert(/pre-registered|Protocol first/i.test(studies) && /Null results are reported/.test(studies), "studies: how studies are registered");
 for (const [p, n] of [["study-definitions", 3], ["study-harmonization", 1], ["study-sfh", 3]]) {
   assert((html[p].match(/<figure class="fig/g) || []).length === n, `${p}: ${n} figures expected`);
-  for (const s of ["Question", "Data", "Result", "Limits", "Reproduce"]) assert(new RegExp(`<h2 id="[a-z]+-h"><span class="sn">§\\d</span>[^<]*${s}`).test(html[p]), `${p}: section ${s}`);
+  for (const s of ["Question", "Data", "Result", "Limits", "Reproduce"]) assert(new RegExp(`<h2 id="[a-z]+-h"><span class="sn" aria-hidden="true">§\\d</span>[^<]*${s}`).test(html[p]), `${p}: section ${s}`);
   assert(/<div class="abstract">/.test(html[p]) && /Status<\/dt>/.test(html[p]), `${p}: abstract and status line`);
 }
 assert(html["study-harmonization"].includes("PROTOCOL-harmonization.md") && html["study-harmonization"].includes("ANALYSIS-harmonization.md"), "S2 links protocol and analysis");
