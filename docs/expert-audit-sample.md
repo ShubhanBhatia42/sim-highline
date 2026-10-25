@@ -25,13 +25,13 @@ For each record: open the cited figure or table, confirm (1) the curve is the on
 | FLAMINGO | `schaye23.flamingo-gsmf.planck-nu0p24var.z0` | gsmf | 0 | digitized-figure | Schaye et al. 2023, MNRAS 526, 4978, SMF_2_Panel right panel (model variations) |
 | FLAMINGO | `schaye23.flamingo-l1_m8.zstar.z0.1` | zstar | 0.1 | digitized-figure | Schaye et al. 2023, MNRAS 526, 4978, galaxy-properties figure (galaxy_props_z01), zstar |
 | FLARES | `wilkins22.flares.uvlf.intrinsic.z13` | uvlf | 13 | digitized-figure | Wilkins et al. 2023, MNRAS 519, 3118 (arXiv:2204.09431), far-UV luminosity function at z=15 to 10, intrinsic, z=13 |
-| FLARES | `vijayan21.flares.sfrd.obscured` | sfrd | 7.5 | digitized-figure | Vijayan et al. 2021, MNRAS (doi 10.1093/mnras/staa3715; arXiv:2008.06057), composite star formation rate density |
+| FLARES | `vijayan21.flares.uvbeta.z7` | uvbeta | 7 | digitized-figure | Vijayan et al. 2021, MNRAS 501, 3289 (arXiv:2008.06057), UV continuum slope against UV magnitude, z=7 |
 | Horizon-AGN | `kaviraj17.horizon-agn.gsmf.z5` | gsmf | 5 | digitized-figure | Kaviraj et al. 2017, MNRAS (doi 10.1093/mnras/stx126), Fig. 7 (arXiv source numbering; mf.ps), z=5 panel |
 | Horizon-AGN | `dubois16.horizon-agn.size.z3` | size | 3 | digitized-figure | Dubois et al. 2016, MNRAS 463, 3948 (arXiv:1606.03086), size-mass relation of Horizon-AGN galaxies at different redshifts |
 | Illustris | `genel14.illustris-1.gsmf-r2.z3` | gsmf | 3 | digitized-figure | Genel et al. 2014, MNRAS 445, 175, Fig. 3 (arXiv source numbering) |
 | Illustris | `sparre15.illustris-lowres.sfms-median.z2` | sfms | 2 | digitized-figure | Sparre et al. 2015, MNRAS 447, 3548, main-sequence evolution figure (Fig81), z=2 |
 | IllustrisTNG | `dave20.illustristng.ssfr.tng100-1.z0` | ssfr | 0 | digitized-figure | Dave et al. 2020, MNRAS 497, 146 (arXiv:2002.07226), specific star formation rate versus stellar mass at z=0 |
-| IllustrisTNG | `habouzit21.tng3001.bh.z1` | bh | 1 | digitized-figure | Habouzit et al. 2021, MNRAS 503, 1940 (arXiv:2006.10094), median MBH-M* relation of all simulations, z=1 |
+| IllustrisTNG | `hirschmann23.tng300.elf.halpha.intrinsic.z0.5` | elf | 0.5 | digitized-figure | Hirschmann et al. 2023, MNRAS 526, 3610 (arXiv:2212.02522), luminosity-function figure (Fig. 11 by the order of the source's figure environments), top two rows (H-alpha) |
 | Magneticum Pathfinder | `magneticum.box0mr.bhsigma.z0.official` | bhsigma | 0 | official-table | Dolag et al. 2025, Encyclopedia Magneticum |
 | Magneticum Pathfinder | `magneticum.box0mr.gsmf.z0.official` | gsmf | 0 | official-table | Dolag et al. 2025, Encyclopedia Magneticum |
 | NewHorizon | `dubois21.newhorizon.gas-n10.z1` | gas | 1 | digitized-figure | Dubois et al. 2021, A&A 651, A109 (arXiv:2009.10578), cold gas fraction versus stellar mass, z=1 |

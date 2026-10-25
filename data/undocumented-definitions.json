@@ -1,13 +1,31 @@
 {
  "summary": {
-  "simulationRecords": 1587,
-  "recordsWithRecoveredDefinition": 458,
-  "undocumentedValues": 383,
+  "simulationRecords": 1636,
+  "recordsWithRecoveredDefinition": 468,
+  "undocumentedValues": 432,
   "sourceReadNotStated": 343,
-  "sourceNotYetRead": 31,
+  "sourceNotYetRead": 80,
   "noPaperToRead": 9
  },
  "groups": [
+  {
+   "source": "IllustrisTNG",
+   "relation": "elf",
+   "key": "densityFrame",
+   "arxiv": "2212.02522",
+   "citation": "Hirschmann et al. 2023, MNRAS 526, 3610 (arXiv:2212.02522), luminosity-function figure (Fi",
+   "records": 25,
+   "status": "source not yet read for this key"
+  },
+  {
+   "source": "FLARES",
+   "relation": "uvbeta",
+   "key": "betaWindow",
+   "arxiv": "2204.09431",
+   "citation": "Wilkins et al. 2023, MNRAS 519, 3118 (arXiv:2204.09431), UV continuum slope against far-UV",
+   "records": 18,
+   "status": "source not yet read for this key"
+  },
   {
    "source": "Magneticum Pathfinder",
    "relation": "sfms",
@@ -250,6 +268,15 @@
    "citation": "Feldmann et al. 2023, MNRAS 522, 3831 (arXiv:2205.15325), stellar mass function at z=0",
    "records": 6,
    "status": "source read, not stated"
+  },
+  {
+   "source": "FLARES",
+   "relation": "uvbeta",
+   "key": "betaWindow",
+   "arxiv": "2008.06057",
+   "citation": "Vijayan et al. 2021, MNRAS 501, 3289 (arXiv:2008.06057), UV continuum slope against UV mag",
+   "records": 6,
+   "status": "source not yet read for this key"
   },
   {
    "source": "Horizon-AGN",

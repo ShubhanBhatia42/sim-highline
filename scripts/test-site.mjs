@@ -156,7 +156,7 @@ for (const page of ["index", "data"]) {
   const ids = new Set(), TYPES = new Set(["sc:Text", "sc:Integer", "sc:Float", "sc:Boolean", "sc:Date"]);
   for (const rs of cr.recordSet) {
     const file = [...new Set(rs.field.map(f => f.source.fileObject["@id"]))]; assert.equal(file.length, 1, `Croissant: ${rs.name} reads one file`);
-    const { header, comments } = await csvHead(file[0]); assert(cr.description.includes(`${rs.name}: ${comments}`) && comments >= 1, `Croissant: the number of comment lines before the header of ${rs.name} is stated`);
+    const { header, comments } = await csvHead(file[0]); assert.equal(comments, 0, `the CSV export of ${rs.name} is a plain table: the header is the first line`); assert(!/comment lines/.test(cr.description) || comments > 0, `Croissant: it does not speak of comment lines that the files no longer have`);
     assert.deepEqual(rs.field.map(f => f.name), header, `Croissant: ${rs.name} fields are the CSV columns, in order`);
     for (const f of rs.field) { assert(!ids.has(f["@id"]) && f["@id"] === `${rs["@id"]}/${f.name}` && f["@type"] === "cr:Field" && TYPES.has(f.dataType) && fo.has(f.source.fileObject["@id"]) && f.source.extract.column === f.name, `Croissant: field ${f["@id"]}`); ids.add(f["@id"]); }
     if (rs.key) assert(ids.has(rs.key["@id"]), `Croissant: key of ${rs.name} is a field`);

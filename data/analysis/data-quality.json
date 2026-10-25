@@ -1,6 +1,6 @@
 {
- "n_records": 1984,
- "n_sources": 138,
+ "n_records": 2041,
+ "n_sources": 139,
  "tiers": [
   {
    "kind": "empirical-model",
@@ -35,8 +35,8 @@
   {
    "kind": "observation",
    "tier": "published-table",
-   "records": 201,
-   "rankable": 200
+   "records": 209,
+   "rankable": 208
   },
   {
    "kind": "simulation",
@@ -47,7 +47,7 @@
   {
    "kind": "simulation",
    "tier": "digitized-figure",
-   "records": 848,
+   "records": 897,
    "rankable": 0
   },
   {
@@ -70,18 +70,18 @@
   }
  ],
  "digitized": {
-  "n": 848,
-  "share_of_simulation_curves": 0.5343415248897291,
-  "n_simulation_curves": 1587,
+  "n": 897,
+  "share_of_simulation_curves": 0.5482885085574573,
+  "n_simulation_curves": 1636,
   "declared_uncertainty_dex": {
-   "n": 848,
+   "n": 897,
    "median": 0.01,
    "max": 0.05
   },
   "extraction_methods": [
    [
     "vector path vertices from the figure PDF (PyMuPDF get_drawin",
-    836
+    885
    ],
    [
     "vector path vertices (EPS converted with ghostscript",
@@ -409,13 +409,13 @@
     "8": 0
    },
    "elf": {
-    "0.1": 0,
-    "0.5": 0,
-    "1": 0,
-    "2": 0,
-    "3": 0,
-    "4": 0,
-    "6": 1,
+    "0.1": 1,
+    "0.5": 1,
+    "1": 1,
+    "2": 1,
+    "3": 1,
+    "4": 1,
+    "6": 2,
     "8": 1
    },
    "fgas500": {
@@ -615,8 +615,8 @@
     "2": 0,
     "3": 0,
     "4": 1,
-    "6": 2,
-    "8": 0
+    "6": 3,
+    "8": 1
    },
    "uvbetam": {
     "0.1": 0,
@@ -672,8 +672,8 @@
  },
  "vocabulary": {
   "population": {
-   "distinct": 84,
-   "records": 1894,
+   "distinct": 89,
+   "records": 1951,
    "near_duplicates": [
     {
      "spellings": [
@@ -725,12 +725,12 @@
   },
   "imf": {
    "distinct": 4,
-   "records": 1856,
+   "records": 1905,
    "near_duplicates": []
   },
   "densityFrame": {
    "distinct": 2,
-   "records": 671,
+   "records": 704,
    "near_duplicates": []
   },
   "sizeDefinition": {
@@ -754,7 +754,7 @@
   }
  },
  "checksums": {
-  "with_checksum": 1816,
-  "records": 1984
+  "with_checksum": 1865,
+  "records": 2041
  }
 }

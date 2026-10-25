@@ -6,8 +6,8 @@
     "code": "MIT",
     "data": "CC-BY-4.0"
   },
-  "nRecords": 1984,
-  "nPoints": 71210,
+  "nRecords": 2041,
+  "nPoints": 71727,
   "nDistributionRecords": 34,
   "nDistributionCells": 7253,
   "nParametric": 151,
@@ -80,13 +80,13 @@
   },
   "files": {
     "sim-highline-records.csv": {
-      "sha256": "9c976c1161931809f3601a73aa2173e75bd74b4b32d85f591888ca8c9a5dff6a",
-      "bytes": 1848252,
+      "sha256": "a8f77ae9975622d3f84eeb8cb211d2e9cce53b86de54582bfeb319c5d478d2c7",
+      "bytes": 1938990,
       "description": "sim-highline dataset v0.24.0 (2026-10-18); records table, one row per evidence record; join with sim-highline-points.csv on record_id; see sim_highline.py"
     },
     "sim-highline-points.csv": {
-      "sha256": "745d7432903e17b81a8dcbf9413b3f34336da7b8b28fe49badbc8f593a33f363",
-      "bytes": 4327438,
+      "sha256": "6cfbbde21ec4f79fdc80d3370dcab3151ae30f59c3619cee44830146ce4f7395",
+      "bytes": 4360291,
       "description": "sim-highline dataset v0.24.0 (2026-10-18); points table, one row per plotted point (parametric records sampled at 40 points over their domain)"
     },
     "sim-highline-distributions.csv": {
@@ -95,12 +95,12 @@
       "description": "sim-highline dataset v0.24.0 (2026-10-18); per-galaxy distributions, one row per non-empty cell of a record's grid (x = stellar mass or similar, y = specific SFR or colour); join with sim-highline-records.csv on record_id"
     },
     "sim-highline-records.json": {
-      "sha256": "2a47b677a5f97cc43bc114aefc12fb38b8ff2b811ddb28def22a1594abb8be92",
-      "bytes": 6473389
+      "sha256": "0d6573ae4fdbfee0126fbdff453134842afb6303f1f2c75ca7b2ef62d8615184",
+      "bytes": 6775728
     },
     "sim-highline-citations.bib": {
-      "sha256": "956eecd51dd74a0904927c928087db6dc9280e15f4f97cb25c6ef77af9b06862",
-      "bytes": 38536
+      "sha256": "c8299d55e055534e984d0ca464e47e1b856d562bb09a0ec24e6f6a33978cfb08",
+      "bytes": 39053
     },
     "sim-highline-conversions.json": {
       "sha256": "d833fe04453db71ad8c460add0315c17bcf7f5de89b9e9d84f8fa70b6075dca7",

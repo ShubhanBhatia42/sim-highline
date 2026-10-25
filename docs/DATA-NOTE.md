@@ -4,7 +4,7 @@
 
 ## Abstract
 
-Simulated galaxy populations are compared with each other and with observations through scaling relations: the stellar mass function, the star-forming main sequence, the mass-metallicity relation and others. The published curves are not directly comparable, because the quantity plotted often differs by stellar-mass aperture, star formation timescale, initial mass function, cosmology or the population included, and the paper does not always say which. We assembled 1,984 curves (71,210 points) for 44 relations from 138 sources (22 simulation suites or runs) in one table, each with its epoch, its native axis definitions, a structured list of the definitions that matter for the comparison, the tier of how the numbers were obtained and a flag for whether they may be ranked. 53 % of the simulation curves are read from vector figures and are never ranked. A rule per relation says which definitions must agree before two curves count as comparable. The data, the code, a browser Explorer, a Python loader and a submission route for authors are public (DOI 10.5281/zenodo.23217259).
+Simulated galaxy populations are compared with each other and with observations through scaling relations: the stellar mass function, the star-forming main sequence, the mass-metallicity relation and others. The published curves are not directly comparable, because the quantity plotted often differs by stellar-mass aperture, star formation timescale, initial mass function, cosmology or the population included, and the paper does not always say which. We assembled 2,041 curves (71,727 points) for 44 relations from 139 sources (22 simulation suites or runs) in one table, each with its epoch, its native axis definitions, a structured list of the definitions that matter for the comparison, the tier of how the numbers were obtained and a flag for whether they may be ranked. 55 % of the simulation curves are read from vector figures and are never ranked. A rule per relation says which definitions must agree before two curves count as comparable. The data, the code, a browser Explorer, a Python loader and a submission route for authors are public (DOI 10.5281/zenodo.23217259).
 
 ## Background and summary
 
@@ -20,14 +20,14 @@ A reader who wants to know whether two simulations agree on a relation has to fi
 
 ## Data records
 
-Version 0.24.0 (2026-10-18) has 1,984 records and 71,210 points; 34 of the records are distributions (counts on a two-dimensional grid). By kind: simulation 1587, observation 357, empirical-model 40. 932 records (47 %) are rankable. By tier:
+Version 0.24.0 (2026-10-18) has 2,041 records and 71,727 points; 34 of the records are distributions (counts on a two-dimensional grid). By kind: simulation 1636, observation 365, empirical-model 40. 940 records (46 %) are rankable. By tier:
 
 | tier | records | share |
 |---|---|---|
-| digitized-figure | 864 | 44 % |
-| published-table | 392 | 20 % |
-| catalog-derived | 274 | 14 % |
-| official-table | 274 | 14 % |
+| digitized-figure | 913 | 45 % |
+| published-table | 400 | 20 % |
+| catalog-derived | 274 | 13 % |
+| official-table | 274 | 13 % |
 | published-fit | 180 | 9 % |
 
 The files are in `data/export/` (records and points as CSV, the full JSON, the BibTeX of the papers behind the records, the comparability rules, the conversions and corrections) and on Zenodo (DOI 10.5281/zenodo.23217259). The dataset is licensed CC BY 4.0 and the code MIT; records reproduce numbers from the cited papers and data releases, and some of those carry their own terms, listed per record (`docs/SOURCE-TERMS.md`). Cite the dataset and the original papers (the `citation`, `doi` and `attribution` columns).
@@ -36,7 +36,7 @@ The files are in `data/export/` (records and points as CSV, the full JSON, the B
 
 **Schema and audit.** Every record is validated against the schema and audited for units, ranges, monotonic axes, duplicate points and cross-source consistency (1,984 records at the last audit: 0 errors, 0 warnings, 236 informational items, of which 25 are accepted and explained). A plausibility screen compares each curve with the median of other sources at the same relation and redshift: 1039 curves were screened and 19 flagged, each inspected (`docs/PLAUSIBILITY-SCREEN.md`).
 
-**Extraction from figures.** 848 of 1,587 simulation curves (53 %) are read from figures. Where two independent curves of the same simulation, relation and epoch exist, their differences are reported (11 pairs). A second reader re-digitized a random sample by a different method (raster tracing): of 96 curves tried, 20 could be checked, 10 were within tolerance and 10 were not, and each failure was inspected and not traced to a stored curve; this is a check of the curves it could check, not a statement about the rest. For 49 papers behind figure-read curves we looked for released numbers; where a table matching the plotted numbers exactly was found (10 curves), 10 curves have been replaced by the table's numbers and 0 still await it (`docs/DATA-QUALITY.md`).
+**Extraction from figures.** 897 of 1,636 simulation curves (55 %) are read from figures. Where two independent curves of the same simulation, relation and epoch exist, their differences are reported (11 pairs). A second reader re-digitized a random sample by a different method (raster tracing): of 96 curves tried, 20 could be checked, 10 were within tolerance and 10 were not, and each failure was inspected and not traced to a stored curve; this is a check of the curves it could check, not a statement about the rest. For 49 papers behind figure-read curves we looked for released numbers; where a table matching the plotted numbers exactly was found (10 curves), 10 curves have been replaced by the table's numbers and 0 still await it (`docs/DATA-QUALITY.md`).
 
 **Curves taken from a compilation.** 50 curves taken from the SWIFT/VELOCIraptor comparison data were compared with their original papers: 24 agree, 3 agree with the paper's fit, 20 disagree and 3 cannot be checked. 8 curves had a numerical error (for example mass functions in h_70 units treated as h-free) and were corrected by a recorded, reversible correction that keeps a hash of the points as ingested; 16 more had a wrong label or flag. The errors are reported upstream (`docs/UPSTREAM-ISSUES.md`).
 
@@ -48,9 +48,9 @@ The Explorer (`highline/`) draws any relation for any set of runs and shows, for
 
 ## Limitations
 
-- 53 % of the simulation curves are read from figures and are context, not a ranking. The extraction check covered a fraction of them.
+- 55 % of the simulation curves are read from figures and are context, not a ranking. The extraction check covered a fraction of them.
 - Definitions are recorded from what each paper states. Where it does not state one, the record says "unspecified"; we did not infer it, so a comparison involving an unstated key is reported as weaker, not as unfair.
-- Coverage is uneven: 22 simulation sources against 357 observation curves; large parts of the literature are not yet included (`data/literature-backlog.json`).
+- Coverage is uneven: 22 simulation sources against 365 observation curves; large parts of the literature are not yet included (`data/literature-backlog.json`).
 - The measured conversions are for four codes (IllustrisTNG, SIMBA, Astrid, Swift-EAGLE) at CAMELS resolution and box size; they are reported, not a universal correction.
 - Nobody outside the project has used or checked the dataset yet. Such use and checking is the measure of success of the project (`docs/PROJECT.md`) and has not happened.
 
