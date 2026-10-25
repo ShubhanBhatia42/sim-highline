@@ -1,7 +1,7 @@
 {
  "note": "Written by scripts/analyze_observer_layer.py. Offsets are simulation minus observation in log10 number density per dex, the number the Explorer shows. This shows how much of an offset a given scatter could absorb; it does not show that the scatter exists in any survey.",
  "datasetVersion": "0.24.0",
- "inputSha256": "1adb7f65527c4bcffb77bd6e444c05c2a22c689c74021251e2a7d5fdd2408ba6",
+ "inputSha256": "5c50d9b5961c54314afef794663227b4b2445317e77eaecce5b5b29493c511e4",
  "settings": {
   "relation": "gsmf",
   "sigmasDex": [
@@ -26,10 +26,10 @@
   "interiorOnly": "the same, after removing the bins where more than edgeFlag of the scattered density comes from the continuation beyond the curve (before and after on the same bins)"
  },
  "counts": {
-  "simulationRecords": 301,
+  "simulationRecords": 308,
   "observationRecords": 57,
-  "pairsTotal": 17157,
-  "notComparable": 9045,
+  "pairsTotal": 17556,
+  "notComparable": 9444,
   "comparablePairs": 821,
   "comparableButEpochsFarApart": 7291,
   "fewerThanMinBins": 99,

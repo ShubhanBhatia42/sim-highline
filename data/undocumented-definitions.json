@@ -1,11 +1,11 @@
 {
  "summary": {
-  "simulationRecords": 1563,
+  "simulationRecords": 1587,
   "recordsWithRecoveredDefinition": 458,
-  "undocumentedValues": 375,
+  "undocumentedValues": 383,
   "sourceReadNotStated": 343,
   "sourceNotYetRead": 31,
-  "noPaperToRead": 1
+  "noPaperToRead": 9
  },
  "groups": [
   {
@@ -376,6 +376,24 @@
    "citation": "Wilkins et al. 2017, MNRAS 469, 2517 (arXiv:1704.00954)",
    "records": 4,
    "status": "source read, not stated"
+  },
+  {
+   "source": "CoDa II",
+   "relation": "gsmf",
+   "key": "imf",
+   "arxiv": null,
+   "citation": "Ocvirk et al. 2020, MNRAS 496, 4087 (doi 10.1093/mnras/staa1266); galaxy catalogue VizieR ",
+   "records": 4,
+   "status": "no paper to read (data release or website)"
+  },
+  {
+   "source": "CoDa II",
+   "relation": "shmr",
+   "key": "imf",
+   "arxiv": null,
+   "citation": "Ocvirk et al. 2020, MNRAS 496, 4087 (doi 10.1093/mnras/staa1266); galaxy catalogue VizieR ",
+   "records": 4,
+   "status": "no paper to read (data release or website)"
   },
   {
    "source": "DARWIN",

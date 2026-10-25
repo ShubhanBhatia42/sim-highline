@@ -40,7 +40,6 @@ Fifty documents is too many to find anything in, so here they are by what you wa
 
 - [ARCHITECTURE.md](ARCHITECTURE.md): how the pieces fit, in one page.
 - [DECISIONS.md](DECISIONS.md): what was decided, why, and what would reverse it.
-- [changelog-fragments/](changelog-fragments/): changelog fragments written during parallel work, folded into CHANGELOG.md by the coordinator.
 - [PROJECT.md](PROJECT.md): purpose, success measures and the stopping rule.
 - [GOVERNANCE.md](GOVERNANCE.md): who looks after the project, what a backup maintainer would need, what is already redundant.
 - [QUESTIONS.md](QUESTIONS.md): the ten questions a researcher brings; each is a test.

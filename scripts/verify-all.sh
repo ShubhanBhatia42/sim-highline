@@ -37,6 +37,7 @@ node scripts/report-undocumented.mjs
 node scripts/build-curve-index.mjs
 node scripts/export-dataset.mjs
 node scripts/test-export.mjs
+python3 scripts/analyze_observer_layer.py > /dev/null   # a measurement over the current curves: regenerated whenever curves are added (scripts/test_observer_layer.py fails if it is stale)
 python3 scripts/analyze_data_quality.py > /dev/null
 python3 scripts/make-data-note.py > /dev/null
 node scripts/build-static.mjs

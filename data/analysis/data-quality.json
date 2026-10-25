@@ -1,6 +1,6 @@
 {
- "n_records": 1960,
- "n_sources": 136,
+ "n_records": 1984,
+ "n_sources": 138,
  "tiers": [
   {
    "kind": "empirical-model",
@@ -41,13 +41,13 @@
   {
    "kind": "simulation",
    "tier": "catalog-derived",
-   "records": 254,
-   "rankable": 254
+   "records": 262,
+   "rankable": 262
   },
   {
    "kind": "simulation",
    "tier": "digitized-figure",
-   "records": 838,
+   "records": 848,
    "rankable": 0
   },
   {
@@ -59,29 +59,29 @@
   {
    "kind": "simulation",
    "tier": "published-fit",
-   "records": 65,
-   "rankable": 35
+   "records": 67,
+   "rankable": 37
   },
   {
    "kind": "simulation",
    "tier": "published-table",
-   "records": 147,
-   "rankable": 129
+   "records": 151,
+   "rankable": 133
   }
  ],
  "digitized": {
-  "n": 838,
-  "share_of_simulation_curves": 0.5361484325015995,
-  "n_simulation_curves": 1563,
+  "n": 848,
+  "share_of_simulation_curves": 0.5343415248897291,
+  "n_simulation_curves": 1587,
   "declared_uncertainty_dex": {
-   "n": 838,
+   "n": 848,
    "median": 0.01,
    "max": 0.05
   },
   "extraction_methods": [
    [
     "vector path vertices from the figure PDF (PyMuPDF get_drawin",
-    826
+    836
    ],
    [
     "vector path vertices (EPS converted with ghostscript",
@@ -418,6 +418,16 @@
     "6": 1,
     "8": 1
    },
+   "fgas500": {
+    "0.1": 2,
+    "0.5": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "6": 0,
+    "8": 0
+   },
    "fmr": {
     "0.1": 4,
     "0.5": 0,
@@ -445,8 +455,8 @@
     "2": 9,
     "3": 7,
     "4": 11,
-    "6": 11,
-    "8": 10
+    "6": 12,
+    "8": 11
    },
    "h2-fraction": {
     "0.1": 3,
@@ -555,8 +565,8 @@
     "2": 6,
     "3": 4,
     "4": 7,
-    "6": 3,
-    "8": 6
+    "6": 4,
+    "8": 7
    },
    "size": {
     "0.1": 9,
@@ -625,10 +635,20 @@
     "2": 0,
     "3": 0,
     "4": 1,
-    "6": 5,
-    "8": 6
+    "6": 6,
+    "8": 7
    },
    "wp": {
+    "0.1": 1,
+    "0.5": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "6": 0,
+    "8": 0
+   },
+   "ysz": {
     "0.1": 1,
     "0.5": 0,
     "1": 0,
@@ -652,8 +672,8 @@
  },
  "vocabulary": {
   "population": {
-   "distinct": 78,
-   "records": 1870,
+   "distinct": 84,
+   "records": 1894,
    "near_duplicates": [
     {
      "spellings": [
@@ -688,8 +708,8 @@
    ]
   },
   "massDefinition": {
-   "distinct": 51,
-   "records": 1594,
+   "distinct": 53,
+   "records": 1605,
    "near_duplicates": [
     {
      "spellings": [
@@ -705,12 +725,12 @@
   },
   "imf": {
    "distinct": 4,
-   "records": 1832,
+   "records": 1856,
    "near_duplicates": []
   },
   "densityFrame": {
    "distinct": 2,
-   "records": 660,
+   "records": 671,
    "near_duplicates": []
   },
   "sizeDefinition": {
@@ -734,7 +754,7 @@
   }
  },
  "checksums": {
-  "with_checksum": 1792,
-  "records": 1960
+  "with_checksum": 1816,
+  "records": 1984
  }
 }

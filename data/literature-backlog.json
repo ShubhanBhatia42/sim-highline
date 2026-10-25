@@ -427,8 +427,8 @@
       "firstAuthor": "Kugel",
       "title": "FLAMINGO: Calibrating large cosmological hydrodynamical simulations with machine learning",
       "section": "suite in sim-highline",
-      "couldSupply": "ML calibration (variations ingested)",
-      "status": "candidate",
+      "couldSupply": "ML calibration (variations ingested; ingested: best-fitting calibration runs, stellar mass function and gas fraction)",
+      "status": "ingested",
       "statusNote": "Scanned 2026-10-08: captions mention gas, gsmf in vector figures or tables (8); not yet extracted."
     },
     {
@@ -1384,8 +1384,8 @@
       "firstAuthor": "Cui",
       "title": "The Three Hundred project: a large catalogue of theoretically modelled galaxy clusters for cosmological and as",
       "section": "suite not in sim-highline",
-      "couldSupply": "cluster regions: group and cluster relations",
-      "status": "candidate",
+      "couldSupply": "cluster regions: group and cluster relations (ingested; gas fraction inside R500 and the Y500-M500 relation with its fits)",
+      "status": "ingested",
       "statusNote": "Scanned 2026-10-08: captions mention gas, gsmf, shmr in vector figures or tables (3); not yet extracted."
     },
     {
@@ -1637,8 +1637,8 @@
       "firstAuthor": "Ocvirk",
       "title": "Cosmic Dawn II (CoDa II): a new radiation-hydrodynamics simulation of the self-consistent coupling of galaxy f",
       "section": "suite not in sim-highline",
-      "couldSupply": "CoDa II",
-      "status": "candidate",
+      "couldSupply": "CoDa II (ingested; UV luminosity functions from the appendix table, stellar mass function and stellar mass-halo mass relation from the public catalogue)",
+      "status": "ingested",
       "statusNote": "Scanned 2026-10-08: captions mention uvlf in vector figures or tables (1); not yet extracted."
     },
     {
