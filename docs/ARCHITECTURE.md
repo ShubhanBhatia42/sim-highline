@@ -41,7 +41,7 @@ scripts/build-highline.mjs, build-site.mjs, build-static.mjs   → dist/   (high
 | the observer layer | `test-observer`, `test_observer.py`, `test_observer_layer.py` |
 | the studies | `test_harmonization.py`, `test_model_form.py`, `test_joint_reachability.py` (about 2 minutes on four cores), `test_calibration.py`, `test_registration.py`, `test_parity.py` |
 | the pages | `test-site`, `test-explorer-data` (the Explorer's relation files against the index), `lint.mjs`, `check_prose.py`, `test-determinism` |
-| the browser | `test-ui`, `test-journeys`, `test-yourrun`, `test-dials`, `test-layouts`, `test-keyboard`, `test-resilience`, `test-performance`, `test-parity` |
+| the browser | `test-ui`, `test-journeys`, `test-yourrun`, `test-dials`, `test-layouts`, `test-keyboard`, `test-a11y-tree`, `test-resilience`, `test-performance`, `test-parity` |
 
 **One-off scripts kept as provenance.** `ingest_*`, `derive_*`, `digitize_*`, `transcribe_*` and `curate_*` produced records once, from a paper or a catalogue; they are kept so that every record can be traced to the code that made it, and are not part of the build. A new record comes from one of these three routes (see `CONTRIBUTING.md`).
 

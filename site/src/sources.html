@@ -14,10 +14,10 @@
 <nav class="idx" aria-label="On this page">
 <p class="lab">Contents</p>
 <ol>
-<li><a href="#sims"><span>§1</span>Simulations</a></li>
-<li><a href="#obs"><span>§2</span>Observations</a></li>
-<li><a href="#issues"><span>§3</span>Metadata issues</a></li>
-<li><a href="#gaps"><span>§4</span>Not here yet</a></li>
+<li><a href="#sims"><span aria-hidden="true">§1</span>Simulations</a></li>
+<li><a href="#obs"><span aria-hidden="true">§2</span>Observations</a></li>
+<li><a href="#issues"><span aria-hidden="true">§3</span>Metadata issues</a></li>
+<li><a href="#gaps"><span aria-hidden="true">§4</span>Not here yet</a></li>
 </ol>
 <p class="back"><a href="data.html">Data</a></p>
 </nav>
@@ -30,7 +30,7 @@
 </div>
 
 <section class="sec" id="sims" aria-labelledby="sims-h">
-<h2 id="sims-h"><span class="sn">§1</span>Simulations</h2>
+<h2 id="sims-h"><span class="sn" aria-hidden="true">§1</span>Simulations</h2>
 <p class="blurb">Grouped by how the gas is evolved. Dates are the year the flagship paper was posted to arXiv. Set-up, physics and purpose follow the flagship abstracts; code names, box sizes and team names that an abstract does not state come from background knowledge and are not all checked against the full papers, so check the linked papers before quoting them. The “In sim-highline” line under each entry is computed from the data.</p>
 <div class="wide">{{simHtml}}</div>
 <h3 class="grp">Code papers</h3>
@@ -38,20 +38,20 @@
 </section>
 
 <section class="sec" id="obs" aria-labelledby="obs-h">
-<h2 id="obs-h"><span class="sn">§2</span>Observations</h2>
+<h2 id="obs-h"><span class="sn" aria-hidden="true">§2</span>Observations</h2>
 <p class="blurb">{{nObsSources}} sources. Survey, facility and measurement are drafted for {{nProfiled}} of them from titles and abstracts and have not been checked against each paper; the rest are blank and marked, not guessed: open the cited paper. Empirical models (such as UniverseMachine) are constrained by observations but are not measurements.</p>
 <div class="wide">{{obsHtml}}</div>
 </section>
 
 <section class="sec" id="issues" aria-labelledby="issues-h">
-<h2 id="issues-h"><span class="sn">§3</span>Known metadata issues</h2>
+<h2 id="issues-h"><span class="sn" aria-hidden="true">§3</span>Known metadata issues</h2>
 <p>Some observational records come from a machine-readable compilation whose stored citation can name a different paper than the label (flagged above as “check”); four such upstream citations were corrected in v0.6.0 and the original is kept with the record. {{mismatchCount}} remaining mismatches found by the automatic check:</p>
 {{mismatchHtml}}
 <p>The survey and facility entries above are drafted from titles, abstracts and compilation labels and have not been checked with the authors. A source with no entry reads “not yet filled”.</p>
 </section>
 
 <section class="sec" id="gaps" aria-labelledby="gaps-h">
-<h2 id="gaps-h"><span class="sn">§4</span>What is not here yet</h2>
+<h2 id="gaps-h"><span class="sn" aria-hidden="true">§4</span>What is not here yet</h2>
 <p>A search of the simulation literature (specialised dwarf-galaxy suites such as LYRA and EDGE, zoom suites such as Auriga and APOSTLE, reionization suites, cluster suites, and the 2026 COLIBRE papers) is in <a href="{{repo}}/blob/main/docs/literature-candidates.md"><code>docs/literature-candidates.md</code></a>; entries are marked ingested, queued or skipped (with the reason) in <a href="../data/literature-backlog.json"><code>data/literature-backlog.json</code></a>.</p>
 </section>
 
