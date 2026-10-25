@@ -1,0 +1,1397 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "vijayan21.flares.uvbeta.z5",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), dust attenuated, weighted median",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 5,
+        "zNominal": 5,
+        "zMin": 5,
+        "zMax": 5,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (the paper's x axis; dust attenuated, as the figure compares it with observed values)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (weighted median of the galaxies in the M_1500 bin; band: weighted 16th to 84th percentile)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -23.636,
+        "xMax": -17.236
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": -23.636,
+            "y": -2.0444,
+            "yLow": -2.1287,
+            "yHigh": -1.9079
+          },
+          {
+            "x": -23.236,
+            "y": -2.1305,
+            "yLow": -2.15,
+            "yHigh": -2.1229
+          },
+          {
+            "x": -22.836,
+            "y": -1.9889,
+            "yLow": -2.0781,
+            "yHigh": -1.8942
+          },
+          {
+            "x": -22.436,
+            "y": -1.9379,
+            "yLow": -2.0202,
+            "yHigh": -1.7128
+          },
+          {
+            "x": -22.036,
+            "y": -1.9647,
+            "yLow": -2.0546,
+            "yHigh": -1.9102
+          },
+          {
+            "x": -21.636,
+            "y": -1.9058,
+            "yLow": -1.9983,
+            "yHigh": -1.8392
+          },
+          {
+            "x": -21.236,
+            "y": -1.9248,
+            "yLow": -2.1175,
+            "yHigh": -1.7873
+          },
+          {
+            "x": -20.836,
+            "y": -1.888,
+            "yLow": -2.139,
+            "yHigh": -1.7483
+          },
+          {
+            "x": -20.436,
+            "y": -2.0278,
+            "yLow": -2.192,
+            "yHigh": -1.7455
+          },
+          {
+            "x": -20.036,
+            "y": -2.0945,
+            "yLow": -2.2152,
+            "yHigh": -1.835
+          },
+          {
+            "x": -19.636,
+            "y": -2.1551,
+            "yLow": -2.2518,
+            "yHigh": -2.0369
+          },
+          {
+            "x": -19.236,
+            "y": -2.1704,
+            "yLow": -2.2732,
+            "yHigh": -2.0549
+          },
+          {
+            "x": -18.836,
+            "y": -2.1999,
+            "yLow": -2.3124,
+            "yHigh": -2.089
+          },
+          {
+            "x": -18.436,
+            "y": -2.2382,
+            "yLow": -2.3609,
+            "yHigh": -2.1054
+          },
+          {
+            "x": -18.036,
+            "y": -2.2619,
+            "yLow": -2.3893,
+            "yHigh": -2.1155
+          },
+          {
+            "x": -17.636,
+            "y": -2.2893,
+            "yLow": -2.4077,
+            "yHigh": -2.125
+          },
+          {
+            "x": -17.236,
+            "y": -2.2869,
+            "yLow": -2.414,
+            "yHigh": -2.1228
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "weighted 16th percentile",
+        "upper": "weighted 84th percentile"
+      },
+      "selection": {
+        "population": "all FLARES galaxies of the 40 resimulated regions in the bins with more than 5 galaxies, weighted combination",
+        "warning": "Weighted median beta of FLARES galaxies at z = 5 against M_1500, with the weighted 16th to 84th percentile band, read from the vector paths of Vijayan et al. 2021. Only the solid part of the line is read (bins with more than 5 galaxies); the dashed continuation to brighter bins with fewer galaxies is not. The paper gives no wavelength window or fitting method for beta (both unspecified) and does not say that the M_1500 axis is dust attenuated; it is read as attenuated because the figure is compared with observed galaxies. The extinction curve is the paper's own power-law form (flatter in the UV than SMC, steeper than Calzetti), the model is tuned to the z = 5 UV luminosity function."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "attenuated",
+        "dustModel": "two-component line-of-sight dust model of the paper (ISM dust from the metal surface density along the line of sight plus birth-cloud dust; extinction curve flatter in the UV than SMC, steeper than Calzetti)",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "BPASS v2.2.1 with nebular emission",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "M_UV (M_1500)",
+        "uvBand": "rest-frame 1500 A",
+        "statistic": "weighted median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Vijayan et al. 2021, MNRAS 501, 3289 (arXiv:2008.06057), UV continuum slope against UV magnitude, z=5",
+        "doi": "10.1093/mnras/staa3715",
+        "url": "https://arxiv.org/abs/2008.06057",
+        "retrieved": "2026-10-25",
+        "figure": "UV continuum slope against the UV magnitude for z = 5 to 10",
+        "panel": "z=5, weighted median (solid line) with weighted 16th-84th percentile band",
+        "checksumSha256": "972406fe085a524d122823a75209261fa375fd4ae71104f8af2423620db57432",
+        "sourceMember": "figures/beta_lum_z5_10.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xMajorTicks": [
+            [
+              52.72,
+              -17
+            ],
+            [
+              86.72,
+              -18
+            ],
+            [
+              120.72,
+              -19
+            ],
+            [
+              154.72,
+              -20
+            ],
+            [
+              188.72,
+              -21
+            ],
+            [
+              222.72,
+              -22
+            ],
+            [
+              256.72,
+              -23
+            ],
+            [
+              290.72,
+              -24
+            ]
+          ],
+          "yMajorTicks": [
+            [
+              10.66,
+              -1.4
+            ],
+            [
+              32.54,
+              -1.6
+            ],
+            [
+              54.41,
+              -1.8
+            ],
+            [
+              76.29,
+              -2
+            ],
+            [
+              98.17,
+              -2.2
+            ],
+            [
+              120.04,
+              -2.4
+            ],
+            [
+              141.92,
+              -2.6
+            ]
+          ],
+          "labels": "numeric tick labels read from the text layer, assigned to the major ticks in order (the y labels sit 4.4 pt below their ticks)"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "beta": "LF.tex:94",
+          "caption": "LF.tex:82",
+          "bins": "LF.tex:82",
+          "observed_comparison": "LF.tex:96",
+          "extinction": "LF.tex:96",
+          "imf_sps": "simulations.tex:39",
+          "curve": "modeling.tex:43"
+        },
+        "definitionBasis": "beta: 'defined such that f_lambda is proportional to lambda^beta'; the wavelength window and the fitting method are not stated. dustTreatment: read, not stated: the paper compares this curve with observed beta and discusses how the extinction curve changes it. imf: 'we assume a Chabrier initial mass function'. cosmology: as in the other FLARES records of this dataset."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. Checks: the top edge of each row is the major tick of beta = -1.4 (the label of -1.4 stands on it in the rendered figure); the three columns have the same x scale (34.00 pt per mag); both rows the same y scale (109.38 pt per unit of beta); the drawn Bouwens et al. 2012 and 2014 points of the panels z = 5 to 8 sit at the x of the dataset's own records of those papers and within 0.000 in beta of their y values (39 markers; 2 markers have no record point and are not used); median vertices per panel: z=5: 17, z=6: 16, z=7: 14, z=8: 13, z=9: 13, z=10: 10; every median vertex lies inside its 16th to 84th percentile band; z = 10 median against the FLARES V dust-attenuated curve of the same redshift: 10 overlapping vertices, differences -0.04 to +0.22 in beta (two papers, one simulation; the paper-to-paper agreement is not a check of the axes alone)."
+    },
+    {
+      "id": "vijayan21.flares.uvbeta.z6",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), dust attenuated, weighted median",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (the paper's x axis; dust attenuated, as the figure compares it with observed values)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (weighted median of the galaxies in the M_1500 bin; band: weighted 16th to 84th percentile)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -23.26,
+        "xMax": -17.26
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": -23.26,
+            "y": -1.9801,
+            "yLow": -2.0101,
+            "yHigh": -1.9526
+          },
+          {
+            "x": -22.86,
+            "y": -2.0422,
+            "yLow": -2.1079,
+            "yHigh": -1.9738
+          },
+          {
+            "x": -22.46,
+            "y": -1.9537,
+            "yLow": -2.0739,
+            "yHigh": -1.8844
+          },
+          {
+            "x": -22.06,
+            "y": -1.9382,
+            "yLow": -2.0193,
+            "yHigh": -1.827
+          },
+          {
+            "x": -21.66,
+            "y": -1.9537,
+            "yLow": -2.1103,
+            "yHigh": -1.8496
+          },
+          {
+            "x": -21.26,
+            "y": -1.9313,
+            "yLow": -2.1231,
+            "yHigh": -1.8149
+          },
+          {
+            "x": -20.86,
+            "y": -1.8815,
+            "yLow": -2.1624,
+            "yHigh": -1.798
+          },
+          {
+            "x": -20.46,
+            "y": -2.0226,
+            "yLow": -2.2057,
+            "yHigh": -1.78
+          },
+          {
+            "x": -20.06,
+            "y": -2.1283,
+            "yLow": -2.2142,
+            "yHigh": -1.8867
+          },
+          {
+            "x": -19.66,
+            "y": -2.1867,
+            "yLow": -2.27,
+            "yHigh": -2.0722
+          },
+          {
+            "x": -19.26,
+            "y": -2.227,
+            "yLow": -2.3075,
+            "yHigh": -2.1188
+          },
+          {
+            "x": -18.86,
+            "y": -2.2574,
+            "yLow": -2.3497,
+            "yHigh": -2.1481
+          },
+          {
+            "x": -18.46,
+            "y": -2.2986,
+            "yLow": -2.3946,
+            "yHigh": -2.1789
+          },
+          {
+            "x": -18.06,
+            "y": -2.3174,
+            "yLow": -2.4171,
+            "yHigh": -2.1885
+          },
+          {
+            "x": -17.66,
+            "y": -2.3273,
+            "yLow": -2.4315,
+            "yHigh": -2.1906
+          },
+          {
+            "x": -17.26,
+            "y": -2.3223,
+            "yLow": -2.4331,
+            "yHigh": -2.1691
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "weighted 16th percentile",
+        "upper": "weighted 84th percentile"
+      },
+      "selection": {
+        "population": "all FLARES galaxies of the 40 resimulated regions in the bins with more than 5 galaxies, weighted combination",
+        "warning": "Weighted median beta of FLARES galaxies at z = 6 against M_1500, with the weighted 16th to 84th percentile band, read from the vector paths of Vijayan et al. 2021. Only the solid part of the line is read (bins with more than 5 galaxies); the dashed continuation to brighter bins with fewer galaxies is not. The paper gives no wavelength window or fitting method for beta (both unspecified) and does not say that the M_1500 axis is dust attenuated; it is read as attenuated because the figure is compared with observed galaxies. The extinction curve is the paper's own power-law form (flatter in the UV than SMC, steeper than Calzetti), the model is tuned to the z = 5 UV luminosity function."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "attenuated",
+        "dustModel": "two-component line-of-sight dust model of the paper (ISM dust from the metal surface density along the line of sight plus birth-cloud dust; extinction curve flatter in the UV than SMC, steeper than Calzetti)",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "BPASS v2.2.1 with nebular emission",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "M_UV (M_1500)",
+        "uvBand": "rest-frame 1500 A",
+        "statistic": "weighted median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Vijayan et al. 2021, MNRAS 501, 3289 (arXiv:2008.06057), UV continuum slope against UV magnitude, z=6",
+        "doi": "10.1093/mnras/staa3715",
+        "url": "https://arxiv.org/abs/2008.06057",
+        "retrieved": "2026-10-25",
+        "figure": "UV continuum slope against the UV magnitude for z = 5 to 10",
+        "panel": "z=6, weighted median (solid line) with weighted 16th-84th percentile band",
+        "checksumSha256": "972406fe085a524d122823a75209261fa375fd4ae71104f8af2423620db57432",
+        "sourceMember": "figures/beta_lum_z5_10.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xMajorTicks": [
+            [
+              317.92,
+              -17
+            ],
+            [
+              351.92,
+              -18
+            ],
+            [
+              385.92,
+              -19
+            ],
+            [
+              419.92,
+              -20
+            ],
+            [
+              453.92,
+              -21
+            ],
+            [
+              487.92,
+              -22
+            ],
+            [
+              521.92,
+              -23
+            ],
+            [
+              555.92,
+              -24
+            ]
+          ],
+          "yMajorTicks": [
+            [
+              10.66,
+              -1.4
+            ],
+            [
+              32.54,
+              -1.6
+            ],
+            [
+              54.41,
+              -1.8
+            ],
+            [
+              76.29,
+              -2
+            ],
+            [
+              98.17,
+              -2.2
+            ],
+            [
+              120.04,
+              -2.4
+            ],
+            [
+              141.92,
+              -2.6
+            ]
+          ],
+          "labels": "numeric tick labels read from the text layer, assigned to the major ticks in order (the y labels sit 4.4 pt below their ticks)"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "beta": "LF.tex:94",
+          "caption": "LF.tex:82",
+          "bins": "LF.tex:82",
+          "observed_comparison": "LF.tex:96",
+          "extinction": "LF.tex:96",
+          "imf_sps": "simulations.tex:39",
+          "curve": "modeling.tex:43"
+        },
+        "definitionBasis": "beta: 'defined such that f_lambda is proportional to lambda^beta'; the wavelength window and the fitting method are not stated. dustTreatment: read, not stated: the paper compares this curve with observed beta and discusses how the extinction curve changes it. imf: 'we assume a Chabrier initial mass function'. cosmology: as in the other FLARES records of this dataset."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. Checks: the top edge of each row is the major tick of beta = -1.4 (the label of -1.4 stands on it in the rendered figure); the three columns have the same x scale (34.00 pt per mag); both rows the same y scale (109.38 pt per unit of beta); the drawn Bouwens et al. 2012 and 2014 points of the panels z = 5 to 8 sit at the x of the dataset's own records of those papers and within 0.000 in beta of their y values (39 markers; 2 markers have no record point and are not used); median vertices per panel: z=5: 17, z=6: 16, z=7: 14, z=8: 13, z=9: 13, z=10: 10; every median vertex lies inside its 16th to 84th percentile band; z = 10 median against the FLARES V dust-attenuated curve of the same redshift: 10 overlapping vertices, differences -0.04 to +0.22 in beta (two papers, one simulation; the paper-to-paper agreement is not a check of the axes alone)."
+    },
+    {
+      "id": "vijayan21.flares.uvbeta.z7",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), dust attenuated, weighted median",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (the paper's x axis; dust attenuated, as the figure compares it with observed values)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (weighted median of the galaxies in the M_1500 bin; band: weighted 16th to 84th percentile)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -22.812,
+        "xMax": -17.612
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.812,
+            "y": -1.9373,
+            "yLow": -2.0857,
+            "yHigh": -1.9222
+          },
+          {
+            "x": -22.412,
+            "y": -1.9363,
+            "yLow": -1.9516,
+            "yHigh": -1.8717
+          },
+          {
+            "x": -22.012,
+            "y": -1.9503,
+            "yLow": -2.0008,
+            "yHigh": -1.9082
+          },
+          {
+            "x": -21.612,
+            "y": -1.8939,
+            "yLow": -1.9984,
+            "yHigh": -1.7863
+          },
+          {
+            "x": -21.212,
+            "y": -1.8746,
+            "yLow": -2.0272,
+            "yHigh": -1.7645
+          },
+          {
+            "x": -20.812,
+            "y": -1.8993,
+            "yLow": -2.0856,
+            "yHigh": -1.792
+          },
+          {
+            "x": -20.412,
+            "y": -1.9834,
+            "yLow": -2.2164,
+            "yHigh": -1.8122
+          },
+          {
+            "x": -20.012,
+            "y": -2.176,
+            "yLow": -2.2944,
+            "yHigh": -2.0517
+          },
+          {
+            "x": -19.612,
+            "y": -2.2264,
+            "yLow": -2.2872,
+            "yHigh": -2.1307
+          },
+          {
+            "x": -19.212,
+            "y": -2.2565,
+            "yLow": -2.3476,
+            "yHigh": -2.1572
+          },
+          {
+            "x": -18.812,
+            "y": -2.3113,
+            "yLow": -2.3946,
+            "yHigh": -2.2079
+          },
+          {
+            "x": -18.412,
+            "y": -2.3363,
+            "yLow": -2.4211,
+            "yHigh": -2.2245
+          },
+          {
+            "x": -18.012,
+            "y": -2.3573,
+            "yLow": -2.4404,
+            "yHigh": -2.2434
+          },
+          {
+            "x": -17.612,
+            "y": -2.3567,
+            "yLow": -2.4459,
+            "yHigh": -2.2441
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "weighted 16th percentile",
+        "upper": "weighted 84th percentile"
+      },
+      "selection": {
+        "population": "all FLARES galaxies of the 40 resimulated regions in the bins with more than 5 galaxies, weighted combination",
+        "warning": "Weighted median beta of FLARES galaxies at z = 7 against M_1500, with the weighted 16th to 84th percentile band, read from the vector paths of Vijayan et al. 2021. Only the solid part of the line is read (bins with more than 5 galaxies); the dashed continuation to brighter bins with fewer galaxies is not. The paper gives no wavelength window or fitting method for beta (both unspecified) and does not say that the M_1500 axis is dust attenuated; it is read as attenuated because the figure is compared with observed galaxies. The extinction curve is the paper's own power-law form (flatter in the UV than SMC, steeper than Calzetti), the model is tuned to the z = 5 UV luminosity function."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "attenuated",
+        "dustModel": "two-component line-of-sight dust model of the paper (ISM dust from the metal surface density along the line of sight plus birth-cloud dust; extinction curve flatter in the UV than SMC, steeper than Calzetti)",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "BPASS v2.2.1 with nebular emission",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "M_UV (M_1500)",
+        "uvBand": "rest-frame 1500 A",
+        "statistic": "weighted median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Vijayan et al. 2021, MNRAS 501, 3289 (arXiv:2008.06057), UV continuum slope against UV magnitude, z=7",
+        "doi": "10.1093/mnras/staa3715",
+        "url": "https://arxiv.org/abs/2008.06057",
+        "retrieved": "2026-10-25",
+        "figure": "UV continuum slope against the UV magnitude for z = 5 to 10",
+        "panel": "z=7, weighted median (solid line) with weighted 16th-84th percentile band",
+        "checksumSha256": "972406fe085a524d122823a75209261fa375fd4ae71104f8af2423620db57432",
+        "sourceMember": "figures/beta_lum_z5_10.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xMajorTicks": [
+            [
+              583.12,
+              -17
+            ],
+            [
+              617.12,
+              -18
+            ],
+            [
+              651.12,
+              -19
+            ],
+            [
+              685.12,
+              -20
+            ],
+            [
+              719.12,
+              -21
+            ],
+            [
+              753.12,
+              -22
+            ],
+            [
+              787.12,
+              -23
+            ],
+            [
+              821.12,
+              -24
+            ]
+          ],
+          "yMajorTicks": [
+            [
+              10.66,
+              -1.4
+            ],
+            [
+              32.54,
+              -1.6
+            ],
+            [
+              54.41,
+              -1.8
+            ],
+            [
+              76.29,
+              -2
+            ],
+            [
+              98.17,
+              -2.2
+            ],
+            [
+              120.04,
+              -2.4
+            ],
+            [
+              141.92,
+              -2.6
+            ]
+          ],
+          "labels": "numeric tick labels read from the text layer, assigned to the major ticks in order (the y labels sit 4.4 pt below their ticks)"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "beta": "LF.tex:94",
+          "caption": "LF.tex:82",
+          "bins": "LF.tex:82",
+          "observed_comparison": "LF.tex:96",
+          "extinction": "LF.tex:96",
+          "imf_sps": "simulations.tex:39",
+          "curve": "modeling.tex:43"
+        },
+        "definitionBasis": "beta: 'defined such that f_lambda is proportional to lambda^beta'; the wavelength window and the fitting method are not stated. dustTreatment: read, not stated: the paper compares this curve with observed beta and discusses how the extinction curve changes it. imf: 'we assume a Chabrier initial mass function'. cosmology: as in the other FLARES records of this dataset."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. Checks: the top edge of each row is the major tick of beta = -1.4 (the label of -1.4 stands on it in the rendered figure); the three columns have the same x scale (34.00 pt per mag); both rows the same y scale (109.38 pt per unit of beta); the drawn Bouwens et al. 2012 and 2014 points of the panels z = 5 to 8 sit at the x of the dataset's own records of those papers and within 0.000 in beta of their y values (39 markers; 2 markers have no record point and are not used); median vertices per panel: z=5: 17, z=6: 16, z=7: 14, z=8: 13, z=9: 13, z=10: 10; every median vertex lies inside its 16th to 84th percentile band; z = 10 median against the FLARES V dust-attenuated curve of the same redshift: 10 overlapping vertices, differences -0.04 to +0.22 in beta (two papers, one simulation; the paper-to-paper agreement is not a check of the axes alone)."
+    },
+    {
+      "id": "vijayan21.flares.uvbeta.z8",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), dust attenuated, weighted median",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (the paper's x axis; dust attenuated, as the figure compares it with observed values)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (weighted median of the galaxies in the M_1500 bin; band: weighted 16th to 84th percentile)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -22.638,
+        "xMax": -17.838
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.638,
+            "y": -1.9555,
+            "yLow": -1.9591,
+            "yHigh": -1.9323
+          },
+          {
+            "x": -22.238,
+            "y": -1.915,
+            "yLow": -2.0038,
+            "yHigh": -1.8042
+          },
+          {
+            "x": -21.838,
+            "y": -1.9296,
+            "yLow": -2.007,
+            "yHigh": -1.8301
+          },
+          {
+            "x": -21.438,
+            "y": -2.0828,
+            "yLow": -2.0954,
+            "yHigh": -1.8649
+          },
+          {
+            "x": -21.038,
+            "y": -2.0186,
+            "yLow": -2.1863,
+            "yHigh": -1.8815
+          },
+          {
+            "x": -20.638,
+            "y": -1.967,
+            "yLow": -2.1167,
+            "yHigh": -1.7437
+          },
+          {
+            "x": -20.238,
+            "y": -2.1227,
+            "yLow": -2.2921,
+            "yHigh": -1.9035
+          },
+          {
+            "x": -19.838,
+            "y": -2.2053,
+            "yLow": -2.3046,
+            "yHigh": -2.044
+          },
+          {
+            "x": -19.438,
+            "y": -2.2495,
+            "yLow": -2.3321,
+            "yHigh": -2.1464
+          },
+          {
+            "x": -19.038,
+            "y": -2.3101,
+            "yLow": -2.3891,
+            "yHigh": -2.2172
+          },
+          {
+            "x": -18.638,
+            "y": -2.343,
+            "yLow": -2.4174,
+            "yHigh": -2.2509
+          },
+          {
+            "x": -18.238,
+            "y": -2.3695,
+            "yLow": -2.4425,
+            "yHigh": -2.2767
+          },
+          {
+            "x": -17.838,
+            "y": -2.3697,
+            "yLow": -2.4567,
+            "yHigh": -2.2668
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "weighted 16th percentile",
+        "upper": "weighted 84th percentile"
+      },
+      "selection": {
+        "population": "all FLARES galaxies of the 40 resimulated regions in the bins with more than 5 galaxies, weighted combination",
+        "warning": "Weighted median beta of FLARES galaxies at z = 8 against M_1500, with the weighted 16th to 84th percentile band, read from the vector paths of Vijayan et al. 2021. Only the solid part of the line is read (bins with more than 5 galaxies); the dashed continuation to brighter bins with fewer galaxies is not. The paper gives no wavelength window or fitting method for beta (both unspecified) and does not say that the M_1500 axis is dust attenuated; it is read as attenuated because the figure is compared with observed galaxies. The extinction curve is the paper's own power-law form (flatter in the UV than SMC, steeper than Calzetti), the model is tuned to the z = 5 UV luminosity function."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "attenuated",
+        "dustModel": "two-component line-of-sight dust model of the paper (ISM dust from the metal surface density along the line of sight plus birth-cloud dust; extinction curve flatter in the UV than SMC, steeper than Calzetti)",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "BPASS v2.2.1 with nebular emission",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "M_UV (M_1500)",
+        "uvBand": "rest-frame 1500 A",
+        "statistic": "weighted median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Vijayan et al. 2021, MNRAS 501, 3289 (arXiv:2008.06057), UV continuum slope against UV magnitude, z=8",
+        "doi": "10.1093/mnras/staa3715",
+        "url": "https://arxiv.org/abs/2008.06057",
+        "retrieved": "2026-10-25",
+        "figure": "UV continuum slope against the UV magnitude for z = 5 to 10",
+        "panel": "z=8, weighted median (solid line) with weighted 16th-84th percentile band",
+        "checksumSha256": "972406fe085a524d122823a75209261fa375fd4ae71104f8af2423620db57432",
+        "sourceMember": "figures/beta_lum_z5_10.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xMajorTicks": [
+            [
+              52.72,
+              -17
+            ],
+            [
+              86.72,
+              -18
+            ],
+            [
+              120.72,
+              -19
+            ],
+            [
+              154.72,
+              -20
+            ],
+            [
+              188.72,
+              -21
+            ],
+            [
+              222.72,
+              -22
+            ],
+            [
+              256.72,
+              -23
+            ],
+            [
+              290.72,
+              -24
+            ]
+          ],
+          "yMajorTicks": [
+            [
+              152.86,
+              -1.4
+            ],
+            [
+              174.74,
+              -1.6
+            ],
+            [
+              196.61,
+              -1.8
+            ],
+            [
+              218.49,
+              -2
+            ],
+            [
+              240.37,
+              -2.2
+            ],
+            [
+              262.24,
+              -2.4
+            ],
+            [
+              284.12,
+              -2.6
+            ]
+          ],
+          "labels": "numeric tick labels read from the text layer, assigned to the major ticks in order (the y labels sit 4.4 pt below their ticks)"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "beta": "LF.tex:94",
+          "caption": "LF.tex:82",
+          "bins": "LF.tex:82",
+          "observed_comparison": "LF.tex:96",
+          "extinction": "LF.tex:96",
+          "imf_sps": "simulations.tex:39",
+          "curve": "modeling.tex:43"
+        },
+        "definitionBasis": "beta: 'defined such that f_lambda is proportional to lambda^beta'; the wavelength window and the fitting method are not stated. dustTreatment: read, not stated: the paper compares this curve with observed beta and discusses how the extinction curve changes it. imf: 'we assume a Chabrier initial mass function'. cosmology: as in the other FLARES records of this dataset."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. Checks: the top edge of each row is the major tick of beta = -1.4 (the label of -1.4 stands on it in the rendered figure); the three columns have the same x scale (34.00 pt per mag); both rows the same y scale (109.38 pt per unit of beta); the drawn Bouwens et al. 2012 and 2014 points of the panels z = 5 to 8 sit at the x of the dataset's own records of those papers and within 0.000 in beta of their y values (39 markers; 2 markers have no record point and are not used); median vertices per panel: z=5: 17, z=6: 16, z=7: 14, z=8: 13, z=9: 13, z=10: 10; every median vertex lies inside its 16th to 84th percentile band; z = 10 median against the FLARES V dust-attenuated curve of the same redshift: 10 overlapping vertices, differences -0.04 to +0.22 in beta (two papers, one simulation; the paper-to-paper agreement is not a check of the axes alone)."
+    },
+    {
+      "id": "vijayan21.flares.uvbeta.z9",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), dust attenuated, weighted median",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 9,
+        "zNominal": 9,
+        "zMin": 9,
+        "zMax": 9,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (the paper's x axis; dust attenuated, as the figure compares it with observed values)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (weighted median of the galaxies in the M_1500 bin; band: weighted 16th to 84th percentile)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -22.412,
+        "xMax": -17.612
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": -22.412,
+            "y": -1.8982,
+            "yLow": -1.9314,
+            "yHigh": -1.88
+          },
+          {
+            "x": -22.012,
+            "y": -1.9726,
+            "yLow": -2.0748,
+            "yHigh": -1.9392
+          },
+          {
+            "x": -21.612,
+            "y": -1.8777,
+            "yLow": -2.1364,
+            "yHigh": -1.8383
+          },
+          {
+            "x": -21.212,
+            "y": -1.8391,
+            "yLow": -2.0424,
+            "yHigh": -1.8107
+          },
+          {
+            "x": -20.812,
+            "y": -1.8643,
+            "yLow": -2.0951,
+            "yHigh": -1.6593
+          },
+          {
+            "x": -20.412,
+            "y": -2.089,
+            "yLow": -2.2372,
+            "yHigh": -1.9936
+          },
+          {
+            "x": -20.012,
+            "y": -2.1559,
+            "yLow": -2.3465,
+            "yHigh": -1.8609
+          },
+          {
+            "x": -19.612,
+            "y": -2.2512,
+            "yLow": -2.341,
+            "yHigh": -2.141
+          },
+          {
+            "x": -19.212,
+            "y": -2.3173,
+            "yLow": -2.3862,
+            "yHigh": -2.2295
+          },
+          {
+            "x": -18.812,
+            "y": -2.3536,
+            "yLow": -2.4138,
+            "yHigh": -2.2681
+          },
+          {
+            "x": -18.412,
+            "y": -2.3662,
+            "yLow": -2.4295,
+            "yHigh": -2.2716
+          },
+          {
+            "x": -18.012,
+            "y": -2.3896,
+            "yLow": -2.4646,
+            "yHigh": -2.3
+          },
+          {
+            "x": -17.612,
+            "y": -2.384,
+            "yLow": -2.4759,
+            "yHigh": -2.2782
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "weighted 16th percentile",
+        "upper": "weighted 84th percentile"
+      },
+      "selection": {
+        "population": "all FLARES galaxies of the 40 resimulated regions in the bins with more than 5 galaxies, weighted combination",
+        "warning": "Weighted median beta of FLARES galaxies at z = 9 against M_1500, with the weighted 16th to 84th percentile band, read from the vector paths of Vijayan et al. 2021. Only the solid part of the line is read (bins with more than 5 galaxies); the dashed continuation to brighter bins with fewer galaxies is not. The paper gives no wavelength window or fitting method for beta (both unspecified) and does not say that the M_1500 axis is dust attenuated; it is read as attenuated because the figure is compared with observed galaxies. The extinction curve is the paper's own power-law form (flatter in the UV than SMC, steeper than Calzetti), the model is tuned to the z = 5 UV luminosity function."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "attenuated",
+        "dustModel": "two-component line-of-sight dust model of the paper (ISM dust from the metal surface density along the line of sight plus birth-cloud dust; extinction curve flatter in the UV than SMC, steeper than Calzetti)",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "BPASS v2.2.1 with nebular emission",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "M_UV (M_1500)",
+        "uvBand": "rest-frame 1500 A",
+        "statistic": "weighted median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Vijayan et al. 2021, MNRAS 501, 3289 (arXiv:2008.06057), UV continuum slope against UV magnitude, z=9",
+        "doi": "10.1093/mnras/staa3715",
+        "url": "https://arxiv.org/abs/2008.06057",
+        "retrieved": "2026-10-25",
+        "figure": "UV continuum slope against the UV magnitude for z = 5 to 10",
+        "panel": "z=9, weighted median (solid line) with weighted 16th-84th percentile band",
+        "checksumSha256": "972406fe085a524d122823a75209261fa375fd4ae71104f8af2423620db57432",
+        "sourceMember": "figures/beta_lum_z5_10.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xMajorTicks": [
+            [
+              317.92,
+              -17
+            ],
+            [
+              351.92,
+              -18
+            ],
+            [
+              385.92,
+              -19
+            ],
+            [
+              419.92,
+              -20
+            ],
+            [
+              453.92,
+              -21
+            ],
+            [
+              487.92,
+              -22
+            ],
+            [
+              521.92,
+              -23
+            ],
+            [
+              555.92,
+              -24
+            ]
+          ],
+          "yMajorTicks": [
+            [
+              152.86,
+              -1.4
+            ],
+            [
+              174.74,
+              -1.6
+            ],
+            [
+              196.61,
+              -1.8
+            ],
+            [
+              218.49,
+              -2
+            ],
+            [
+              240.37,
+              -2.2
+            ],
+            [
+              262.24,
+              -2.4
+            ],
+            [
+              284.12,
+              -2.6
+            ]
+          ],
+          "labels": "numeric tick labels read from the text layer, assigned to the major ticks in order (the y labels sit 4.4 pt below their ticks)"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "beta": "LF.tex:94",
+          "caption": "LF.tex:82",
+          "bins": "LF.tex:82",
+          "observed_comparison": "LF.tex:96",
+          "extinction": "LF.tex:96",
+          "imf_sps": "simulations.tex:39",
+          "curve": "modeling.tex:43"
+        },
+        "definitionBasis": "beta: 'defined such that f_lambda is proportional to lambda^beta'; the wavelength window and the fitting method are not stated. dustTreatment: read, not stated: the paper compares this curve with observed beta and discusses how the extinction curve changes it. imf: 'we assume a Chabrier initial mass function'. cosmology: as in the other FLARES records of this dataset."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. Checks: the top edge of each row is the major tick of beta = -1.4 (the label of -1.4 stands on it in the rendered figure); the three columns have the same x scale (34.00 pt per mag); both rows the same y scale (109.38 pt per unit of beta); the drawn Bouwens et al. 2012 and 2014 points of the panels z = 5 to 8 sit at the x of the dataset's own records of those papers and within 0.000 in beta of their y values (39 markers; 2 markers have no record point and are not used); median vertices per panel: z=5: 17, z=6: 16, z=7: 14, z=8: 13, z=9: 13, z=10: 10; every median vertex lies inside its 16th to 84th percentile band; z = 10 median against the FLARES V dust-attenuated curve of the same redshift: 10 overlapping vertices, differences -0.04 to +0.22 in beta (two papers, one simulation; the paper-to-paper agreement is not a check of the axes alone)."
+    },
+    {
+      "id": "vijayan21.flares.uvbeta.z10",
+      "source": "FLARES",
+      "run": "40 resimulated regions (EAGLE AGNdT9 model), dust attenuated, weighted median",
+      "kind": "simulation",
+      "relation": "uvbeta",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "absolute UV magnitude M_1500 (the paper's x axis; dust attenuated, as the figure compares it with observed values)",
+        "xUnit": "mag (AB)",
+        "yDefinition": "UV-continuum slope beta, f_lambda ~ lambda^beta (weighted median of the galaxies in the M_1500 bin; band: weighted 16th to 84th percentile)",
+        "yUnit": "dimensionless"
+      },
+      "domain": {
+        "xMin": -21.617,
+        "xMax": -18.017
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": -21.617,
+            "y": -1.8849,
+            "yLow": -2.0615,
+            "yHigh": -1.8443
+          },
+          {
+            "x": -21.217,
+            "y": -1.7695,
+            "yLow": -1.8233,
+            "yHigh": -1.7237
+          },
+          {
+            "x": -20.817,
+            "y": -2.0377,
+            "yLow": -2.2317,
+            "yHigh": -2.008
+          },
+          {
+            "x": -20.417,
+            "y": -1.8534,
+            "yLow": -2.1835,
+            "yHigh": -1.8359
+          },
+          {
+            "x": -20.017,
+            "y": -2.1247,
+            "yLow": -2.3061,
+            "yHigh": -1.6714
+          },
+          {
+            "x": -19.617,
+            "y": -2.27,
+            "yLow": -2.3741,
+            "yHigh": -1.992
+          },
+          {
+            "x": -19.217,
+            "y": -2.3233,
+            "yLow": -2.3874,
+            "yHigh": -2.2638
+          },
+          {
+            "x": -18.817,
+            "y": -2.365,
+            "yLow": -2.4103,
+            "yHigh": -2.2695
+          },
+          {
+            "x": -18.417,
+            "y": -2.3815,
+            "yLow": -2.4402,
+            "yHigh": -2.3002
+          },
+          {
+            "x": -18.017,
+            "y": -2.3897,
+            "yLow": -2.4593,
+            "yHigh": -2.2865
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "weighted 16th percentile",
+        "upper": "weighted 84th percentile"
+      },
+      "selection": {
+        "population": "all FLARES galaxies of the 40 resimulated regions in the bins with more than 5 galaxies, weighted combination",
+        "warning": "Weighted median beta of FLARES galaxies at z = 10 against M_1500, with the weighted 16th to 84th percentile band, read from the vector paths of Vijayan et al. 2021. Only the solid part of the line is read (bins with more than 5 galaxies); the dashed continuation to brighter bins with fewer galaxies is not. The paper gives no wavelength window or fitting method for beta (both unspecified) and does not say that the M_1500 axis is dust attenuated; it is read as attenuated because the figure is compared with observed galaxies. The extinction curve is the paper's own power-law form (flatter in the UV than SMC, steeper than Calzetti), the model is tuned to the z = 5 UV luminosity function."
+      },
+      "definitions": {
+        "betaWindow": "unspecified",
+        "dustTreatment": "attenuated",
+        "dustModel": "two-component line-of-sight dust model of the paper (ISM dust from the metal surface density along the line of sight plus birth-cloud dust; extinction curve flatter in the UV than SMC, steeper than Calzetti)",
+        "betaMethod": "unspecified",
+        "stellarPopulation": "BPASS v2.2.1 with nebular emission",
+        "imf": "chabrier03",
+        "cosmology": {
+          "H0": 67.77,
+          "Om": 0.307
+        },
+        "xVariable": "M_UV (M_1500)",
+        "uvBand": "rest-frame 1500 A",
+        "statistic": "weighted median",
+        "population": "all galaxies of the resimulated regions"
+      },
+      "provenance": {
+        "tier": "digitized-figure",
+        "citation": "Vijayan et al. 2021, MNRAS 501, 3289 (arXiv:2008.06057), UV continuum slope against UV magnitude, z=10",
+        "doi": "10.1093/mnras/staa3715",
+        "url": "https://arxiv.org/abs/2008.06057",
+        "retrieved": "2026-10-25",
+        "figure": "UV continuum slope against the UV magnitude for z = 5 to 10",
+        "panel": "z=10, weighted median (solid line) with weighted 16th-84th percentile band",
+        "checksumSha256": "972406fe085a524d122823a75209261fa375fd4ae71104f8af2423620db57432",
+        "sourceMember": "figures/beta_lum_z5_10.pdf",
+        "extractionMethod": "vector path vertices from the figure PDF (PyMuPDF get_drawings), transformed through axes calibrated on labelled tick marks",
+        "axisCalibrationPixels": {
+          "xMajorTicks": [
+            [
+              583.12,
+              -17
+            ],
+            [
+              617.12,
+              -18
+            ],
+            [
+              651.12,
+              -19
+            ],
+            [
+              685.12,
+              -20
+            ],
+            [
+              719.12,
+              -21
+            ],
+            [
+              753.12,
+              -22
+            ],
+            [
+              787.12,
+              -23
+            ],
+            [
+              821.12,
+              -24
+            ]
+          ],
+          "yMajorTicks": [
+            [
+              152.86,
+              -1.4
+            ],
+            [
+              174.74,
+              -1.6
+            ],
+            [
+              196.61,
+              -1.8
+            ],
+            [
+              218.49,
+              -2
+            ],
+            [
+              240.37,
+              -2.2
+            ],
+            [
+              262.24,
+              -2.4
+            ],
+            [
+              284.12,
+              -2.6
+            ]
+          ],
+          "labels": "numeric tick labels read from the text layer, assigned to the major ticks in order (the y labels sit 4.4 pt below their ticks)"
+        },
+        "digitizationUncertaintyDex": 0.02,
+        "quotes": {
+          "beta": "LF.tex:94",
+          "caption": "LF.tex:82",
+          "bins": "LF.tex:82",
+          "observed_comparison": "LF.tex:96",
+          "extinction": "LF.tex:96",
+          "imf_sps": "simulations.tex:39",
+          "curve": "modeling.tex:43"
+        },
+        "definitionBasis": "beta: 'defined such that f_lambda is proportional to lambda^beta'; the wavelength window and the fitting method are not stated. dustTreatment: read, not stated: the paper compares this curve with observed beta and discusses how the extinction curve changes it. imf: 'we assume a Chabrier initial mass function'. cosmology: as in the other FLARES records of this dataset."
+      },
+      "calibration": "prediction",
+      "rankable": false,
+      "notes": "Vector-path extraction; exact to PDF coordinate precision. Checks: the top edge of each row is the major tick of beta = -1.4 (the label of -1.4 stands on it in the rendered figure); the three columns have the same x scale (34.00 pt per mag); both rows the same y scale (109.38 pt per unit of beta); the drawn Bouwens et al. 2012 and 2014 points of the panels z = 5 to 8 sit at the x of the dataset's own records of those papers and within 0.000 in beta of their y values (39 markers; 2 markers have no record point and are not used); median vertices per panel: z=5: 17, z=6: 16, z=7: 14, z=8: 13, z=9: 13, z=10: 10; every median vertex lies inside its 16th to 84th percentile band; z = 10 median against the FLARES V dust-attenuated curve of the same redshift: 10 overlapping vertices, differences -0.04 to +0.22 in beta (two papers, one simulation; the paper-to-paper agreement is not a check of the axes alone)."
+    }
+  ]
+}
