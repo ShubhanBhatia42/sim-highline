@@ -129,6 +129,7 @@ if (WITH_EXPLORER) { // the Explorer: the fixes listed in docs/ACCESSIBILITY-WAL
   // 1. a closed panel is not in the tab order or the tree
   const hidden = await page.evaluate(() => getComputedStyle(document.getElementById("panel")).visibility);
   if (hidden !== "hidden") P(`the closed details panel is still reachable (visibility ${hidden}): Tab lands on its tabs and close button while it is off screen`);
+  const sd = await page.textContent("#stageDesc"); if (!/press \//.test(sd || "")) P("the chart description does not say how to open a single curve (the search box, key /)");
   // 2. the epoch slider speaks the redshift, not its position
   const zv = await page.getAttribute("#z", "aria-valuetext"); if (!/^z = /.test(zv || "")) P(`the epoch slider's spoken value is "${zv}", expected "z = ..."`);
   // 3. focus survives re-rendering
@@ -138,18 +139,19 @@ if (WITH_EXPLORER) { // the Explorer: the fixes listed in docs/ACCESSIBILITY-WAL
   if (!/^button/.test(await act())) P(`focus is lost after choosing a relation (now ${await act()})`);
   // 4. the details panel takes focus when a visitor opens it, and its content has a name
   await page.focus("#bMine"); await page.keyboard.press("Enter"); await page.waitForTimeout(500);
-  if (!/role|tab|Evidence|My run|Your run/.test(await act()) && !(await page.evaluate(() => !!document.activeElement.closest("#panel")))) P(`opening a panel leaves focus on the button (${await act()}), about 130 Tab stops from the panel's content`);
+  if (!(await page.evaluate(() => !!document.activeElement.closest("#panel")))) P(`opening a panel leaves focus on the button (${await act()}), about 130 Tab stops from the panel's content`);
   if (!(await page.getAttribute("#pbody", "aria-labelledby"))) P("the tab panel has no name (aria-labelledby the selected tab)");
-  const hs = await page.evaluate(() => [...document.querySelectorAll("#pbody h1,#pbody h2,#pbody h3,#pbody h4")].map(h => +h.tagName[1]));
-  if (hs.length && Math.min(...hs) > 3) P(`headings in the panel start at h${Math.min(...hs)}: levels h2 and h3 are skipped`);
+  const hs = await page.evaluate(() => [...document.querySelectorAll("#pbody h1,#pbody h2,#pbody h3,#pbody h4")].map(h => +(h.getAttribute("aria-level") || h.tagName[1])));
+  if (hs.length && Math.min(...hs) > 2) P(`headings in the panel start at level ${Math.min(...hs)}: levels 2 and 3 are skipped (aria-level, or the tag)`);
   if (await page.locator("#uEx").count()) { await page.focus("#uEx"); await page.keyboard.press("Enter"); await page.waitForTimeout(900); if (await act() === "body") P("focus is lost after 'Try an example'"); }
-  const sel = await page.evaluate(() => [...document.querySelectorAll("#pbody select[data-def]")].map(s => (s.labels[0] || {}).textContent.length));
-  if (sel.some(n => n > 60)) P("the definition lists' accessible names include their long help text (move it to aria-describedby)");
+  const mineTree = await page.locator("#pbody").ariaSnapshot();
+  problems.push(...audit(mineTree, { page: "highline.html (Your run)", unique: ["button"] }).filter(p => !/heading level skipped|h1 headings|landmarks/.test(p)));
+  const longNames = parseSnapshot(mineTree).filter(n => n.role === "combobox" && n.name.length > 60).map(n => n.name.slice(0, 40));
+  if (longNames.length) P(`${longNames.length} definition lists have their help sentence in their accessible name, e.g. "${longNames[0]}..." (move it to aria-describedby)`);
   await page.keyboard.press("Escape"); await page.waitForTimeout(300);
   // 5. Get data: unnamed range fields and ambiguous button names
   await page.click("#bData"); await page.waitForTimeout(400);
-  const sb = await page.evaluate(() => [...document.querySelectorAll("#pbody input[type=number]")].filter(i => !i.labels.length && !i.getAttribute("aria-label")).length);
-  if (sb) P(`${sb} number field(s) in Get data have no name`);
+  problems.push(...audit(await page.locator("#pbody").ariaSnapshot(), { page: "highline.html (Get data)", unique: ["button"] }).filter(p => !/heading level skipped|h1 headings|landmarks/.test(p)));
   await page.keyboard.press("Escape"); await page.waitForTimeout(300);
   // 6. the About dialog holds focus and gives it back
   await page.focus("#infoBtn"); await page.keyboard.press("Enter"); await page.waitForTimeout(300);
