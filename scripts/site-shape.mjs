@@ -38,7 +38,7 @@ export function shapeStats(R, CK) {
     qsSensRows: sensRows,
     qsDev: R.deviations.map(d => `<li>${md(d)}</li>`).join(""),
     plainShapeOne: v.Q1 === "removable" && v.Q2 !== "adds separation" && v.Q3 !== "adds separation"
-      ? "Looking at how many galaxies sit between the blue and the red groups, and how wide the blue group is, did not find a new way to tell the two codes apart."
+      ? "Looking at how many galaxies sit between the blue and the red groups, and how wide the blue group is, did not find a way to tell the two codes apart."
       : v.Q2 === "adds separation" || v.Q3 === "adds separation" ? "The shape of the star-forming and quenched populations does add a difference between the two codes." : "The shape of the star-forming and quenched populations does not give a clear answer on whether it separates the two codes.",
     plainShape: `The earlier study found that the two codes cannot be made to agree on everything at once, mainly because of black holes. This study asked whether the finer shape of the star-forming and quenched populations is another place where they differ. With the dials of each code set freely, the shape outputs ${q1w}; ${v.Q2 === v.Q3 ? `adding them to the other star-formation measures, or to everything, ${addw(v.Q2)}` : `adding them to the other star-formation measures ${addw(v.Q2)}, and adding them to everything ${addw(v.Q3)}`}. The distance to the other measures even falls when the shape is added, because the codes already agree on it (an averaging effect, not a sign that the shape closes the gap).${bad.length ? " Some of the checks we set in advance did not hold, so this is a result with limited power: it says that no extra difference was found, not that there is none." : ""}`
   };
