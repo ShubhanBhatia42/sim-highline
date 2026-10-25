@@ -14,6 +14,11 @@ await mkdir(new URL(`dist/${DATA_DIR}/`, root), { recursive: true });
 for (const [rel, f] of split.files) await writeFile(new URL(`dist/${DATA_DIR}/${rel}.json`, root), f.text);
 const compare = await readFile(new URL("compare.js", root), "utf8");
 const exportLib = await readFile(new URL("export-lib.js", root), "utf8");
+// observer-lib.js (the observer layer, docs/OBSERVER-LAYER.md) is inlined like compare.js. Its long comments (the model and its assumptions) stay in the repository file; the page gets the code without its block comments,
+// which is half of its size and of its cost in the first visit. scripts/test-ui.mjs checks that the copy in the page gives the same numbers as the file.
+const observerSource = await readFile(new URL("observer-lib.js", root), "utf8");
+const observerLib = observerSource.replace(/\/\*[\s\S]*?\*\//g, "").replace(/[ \t]+\n/g, "\n").replace(/\n{2,}/g, "\n");
+new (await import("node:vm")).Script(observerLib); // a syntax error from the stripping stops the build
 const logic = await readFile(new URL("highline/logic.js", root), "utf8");
 const release = await readFile(new URL("data/release.json", root), "utf8");
 const palette = await readFile(new URL("data/palette.css", root), "utf8");
@@ -32,7 +37,7 @@ for (const r of records) {
   exprs.set(names.join(",") + "|" + rep.expression, `function(${[...names, "x", "t", "z", "log10"].join(",")}){return ${rep.expression};}`);
 }
 const exprJs = `window.SIMHIGHLINE_EXPR={${[...exprs].map(([k, f]) => JSON.stringify(k) + ":" + f).join(",")}};\n`;
-const html = tpl.replace("/*__PALETTE__*/", () => palette).replace("/*__DATA__*/", () => safe(data)).replace("/*__COMPARE__*/", () => safe(exprJs + compare)).replace("/*__EXPORT__*/", () => safe(exportLib)).replace("/*__LOGIC__*/", () => safe(logic)).replace("/*__RELEASE__*/", () => JSON.stringify(JSON.parse(release))).replace("/*__NOTES__*/", () => JSON.stringify(JSON.parse(notes))).replace("/*__SENS__*/", () => sens).replace("/*__AUDIT__*/", () => audit);
+const html = tpl.replace("/*__PALETTE__*/", () => palette).replace("/*__DATA__*/", () => safe(data)).replace("/*__COMPARE__*/", () => safe(exprJs + compare)).replace("/*__OBSERVER__*/", () => safe(observerLib)).replace("/*__EXPORT__*/", () => safe(exportLib)).replace("/*__LOGIC__*/", () => safe(logic)).replace("/*__RELEASE__*/", () => JSON.stringify(JSON.parse(release))).replace("/*__NOTES__*/", () => JSON.stringify(JSON.parse(notes))).replace("/*__SENS__*/", () => sens).replace("/*__AUDIT__*/", () => audit);
 await mkdir(new URL("dist/", root), { recursive: true });
 await writeFile(new URL("dist/highline.html", root), withCsp(html));
 console.log(`Built dist/highline.html (${(html.length / 1e6).toFixed(2)} MB) and ${split.files.size} relation files in dist/${DATA_DIR}/ (${(split.light.length)} records indexed)`);
