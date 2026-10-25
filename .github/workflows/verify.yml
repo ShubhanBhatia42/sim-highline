@@ -62,7 +62,7 @@ jobs:
       - name: Walk-throughs and the check-your-run flow
         run: node scripts/test-journeys.mjs && node scripts/test-yourrun.mjs && node scripts/test-dials.mjs
       - name: Every page at every width, keyboard only, and when things go wrong
-        run: node scripts/test-layouts.mjs && node scripts/test-keyboard.mjs && node scripts/test-resilience.mjs && node scripts/test-parity.mjs
+        run: node scripts/test-layouts.mjs && node scripts/test-keyboard.mjs && node scripts/test-a11y-tree.mjs && node scripts/test-resilience.mjs && node scripts/test-parity.mjs
       - name: The build is deterministic
         run: node scripts/test-determinism.mjs
       - name: Speed budget on a slow phone
@@ -89,5 +89,5 @@ jobs:
           PW_BROWSER: ${{ matrix.browser }}
         run: |
           fail=0
-          for t in test-ui test-journeys test-dials test-keyboard test-layouts; do node scripts/$t.mjs || fail=1; done
+          for t in test-ui test-journeys test-dials test-keyboard test-a11y-tree test-layouts; do node scripts/$t.mjs || fail=1; done
           exit $fail

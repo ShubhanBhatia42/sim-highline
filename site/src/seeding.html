@@ -14,12 +14,12 @@
 <nav class="idx" aria-label="On this page">
 <p class="lab">Contents</p>
 <ol>
-<li><a href="#meaning"><span>§1</span>What seeding means</a></li>
-<li><a href="#codes"><span>§2</span>The two rules</a></li>
-<li><a href="#data"><span>§3</span>What the catalogues show</a></li>
-<li><a href="#found"><span>§4</span>What the study found</a></li>
-<li><a href="#notshown"><span>§5</span>What it could not show</a></li>
-<li><a href="#sources"><span>§6</span>Sources</a></li>
+<li><a href="#meaning"><span aria-hidden="true">§1</span>What seeding means</a></li>
+<li><a href="#codes"><span aria-hidden="true">§2</span>The two rules</a></li>
+<li><a href="#data"><span aria-hidden="true">§3</span>What the catalogues show</a></li>
+<li><a href="#found"><span aria-hidden="true">§4</span>What the study found</a></li>
+<li><a href="#notshown"><span aria-hidden="true">§5</span>What it could not show</a></li>
+<li><a href="#sources"><span aria-hidden="true">§6</span>Sources</a></li>
 </ol>
 <p class="back"><a href="study-joint.html">The study</a> · <a href="retune.html">Dials</a> · <a href="glossary.html">Glossary</a></p>
 </nav>
@@ -34,7 +34,7 @@
 <p class="limits-first"><b>What this page is.</b> An explanation of one internal result of this project (the <a href="study-joint.html">all-at-once study</a>). No outside expert has reviewed the result or this page. It does not claim that the result, or the explanation, is new: the CAMELS papers already report that the two codes differ, and the seeding rules below are the model authors' own. Every statement about how the codes seed black holes is a quotation from a paper or from a file of this repository, with its place; a statement that is in none of them is left out.</p>
 
 <section class="sec" id="meaning" aria-labelledby="meaning-h">
-<h2 id="meaning-h"><span class="sn">§1</span>What seeding means</h2>
+<h2 id="meaning-h"><span class="sn" aria-hidden="true">§1</span>What seeding means</h2>
 <p>A galaxy simulation follows gas, stars and dark matter. The two models here also include central black holes. In both, the code places a black hole particle into the simulation by a rule, once a halo or a galaxy passes a size threshold. That step is called seeding. Here is how the authors of each model describe it.</p>
 {{seedQTngRule}}
 {{seedQSimbaRule}}
@@ -43,7 +43,7 @@
 </section>
 
 <section class="sec" id="codes" aria-labelledby="codes-h">
-<h2 id="codes-h"><span class="sn">§2</span>The two rules side by side</h2>
+<h2 id="codes-h"><span class="sn" aria-hidden="true">§2</span>The two rules side by side</h2>
 <p>The CAMELS paper describes both models as they were run in the experiment this study uses. For IllustrisTNG:</p>
 {{seedQTngCamels}}
 <p>And for SIMBA:</p>
@@ -63,7 +63,7 @@
 </section>
 
 <section class="sec" id="data" aria-labelledby="data-h">
-<h2 id="data-h"><span class="sn">§3</span>What the saved catalogues show</h2>
+<h2 id="data-h"><span class="sn" aria-hidden="true">§3</span>What the saved catalogues show</h2>
 <p>If the rules are different, the catalogues should show it. They do. The figure counts, in each bin of stellar mass, the share of galaxies that hold a black hole.</p>
 <figure class="fig">
 <div class="chart">{{seedFig}}</div>
@@ -78,7 +78,7 @@
 </section>
 
 <section class="sec" id="found" aria-labelledby="found-h">
-<h2 id="found-h"><span class="sn">§4</span>What the study found</h2>
+<h2 id="found-h"><span class="sn" aria-hidden="true">§4</span>What the study found</h2>
 <p>The study asked whether retuning each code's four dials can make the two agree on galaxy properties. Distances are in noise units: one unit is the scatter between one run of each code. Details are on the <a href="study-joint.html">study page</a>.</p>
 <ul class="flat">
 <li><b>All properties at once.</b> The codes stay {{seedJoint}} noise units apart (half-sample range {{seedJointLo}} to {{seedJointHi}}), far above the margin of 1.</li>
@@ -93,7 +93,7 @@
 </section>
 
 <section class="sec" id="notshown" aria-labelledby="notshown-h">
-<h2 id="notshown-h"><span class="sn">§5</span>What the study could not show</h2>
+<h2 id="notshown-h"><span class="sn" aria-hidden="true">§5</span>What the study could not show</h2>
 <ul class="flat">
 <li><b>That seeding causes the difference.</b> No run changed a seeding rule. The experiment varies four feedback parameters and, in the words quoted in §2, does not vary other baryonic processes. The protocol records that a structural verdict for the two properties that compare seeding rules is "expected by construction", so the result for them says little beyond the fact that the rules differ. The analysis file adds that the codes also differ in other ways:</li>
 </ul>
@@ -113,7 +113,7 @@
 </section>
 
 <section class="sec" id="sources" aria-labelledby="sources-h">
-<h2 id="sources-h"><span class="sn">§6</span>Sources and how this page is made</h2>
+<h2 id="sources-h"><span class="sn" aria-hidden="true">§6</span>Sources and how this page is made</h2>
 <p>The {{seedNQuotes}} quotations on this page are stored in <a href="{{repo}}/blob/main/data/seeding-sources.json">data/seeding-sources.json</a>, each with the paper or file and the place it comes from. For the papers, the entry also holds the sentence as it stands in the TeX source of the arXiv version. The papers were read on {{seedRetrieved}}:</p>
 <ul class="flat">{{seedPapers}}</ul>
 <p>The quotations from this repository are compared with the files word for word by the site test. The numbers on this page are computed by the site build from <code>data/analysis/joint-reachability.json</code>, <code>data/retune/retune.json</code>, <code>data/analysis/third-code.json</code> and <code>data/ensembles/camels-galaxies.json</code>; none is typed here. A reader who knows these codes can check each quotation against its paper, and the most useful correction would be a statement from the model authors about how the rules apply in the CAMELS runs.</p>
