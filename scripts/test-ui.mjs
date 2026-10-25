@@ -3,6 +3,8 @@ import assert from "node:assert/strict";
 import http from "node:http";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import vm from "node:vm";
+import { parseIndex } from "./explorer-data.mjs";
 import { launchBrowser } from "./browser-options.mjs";
 import AxeBuilder from "@axe-core/playwright";
 
@@ -138,6 +140,57 @@ await step("notes show measured definition effects and the figure pack describes
   assert.match(dl.suggestedFilename(), /_pack\.md$/);
   const text = await page.evaluate(() => methodsPack().methods);
   assert.ok(text.includes("compiled from the sim-highline dataset") && text.includes("No curve was interpolated"), "methods text states provenance and the no-interpolation rule");
+  await ctx.close();
+});
+
+// The figure footer, the methods text and the pack carry a caveat line generated from the comparison rules (highline/logic.js plotCaveats, wording from compare.js KEY_LABEL).
+const caveatCase = await (async () => {
+  const cv = {}; vm.runInNewContext(await readFile(new URL("../compare.js", import.meta.url), "utf8"), cv);
+  const { SIMHIGHLINE_CURVES: all } = parseIndex(await readFile(new URL("../data/curve-index.js", import.meta.url), "utf8"));
+  const sims = all.filter(r => r.kind === "simulation" && r.rankable && r.representation.type === "points");
+  for (const a of sims) for (const b of sims) if (a.relation === b.relation && a.source !== b.source && a.epoch.zRepresentative === b.epoch.zRepresentative && a.id < b.id && cv.SimHighlineCompare.compatible(a, b).verdict === "comparable") return { rel: a.relation, z: a.epoch.zRepresentative, srcs: [a.source, b.source], units: [`${a.source}|${a.run || ""}`, `${b.source}|${b.run || ""}`] };
+  return null;
+})();
+await step("figure footer and methods text say which plotted curves are not like for like, in the words of the comparison rules", async () => {
+  const { page, ctx, errors } = await open("/highline.html#r=sfms&z=0.1");
+  await settle(page);
+  const r = await page.evaluate(() => {
+    const C = window.SimHighlineCompare, recs = plottedRecords(), pops = new Set(recs.map(x => C.populationClass(x.definitions.population)));
+    const f = figureSvg(), doc = new DOMParser().parseFromString(f.svg, "image/svg+xml");
+    return { pops: pops.size, label: C.KEY_LABEL.population, parsed: !doc.querySelector("parsererror"), foot: [...doc.querySelectorAll("g[font-family] text")].map(t => t.textContent), methods: methodsPack().methods, pack: methodsPack().pack, h: f.h, plotH: document.getElementById("stage").viewBox.baseVal.height };
+  });
+  assert.ok(r.pops >= 2, "the premise of this check: the sfms curves at this epoch cover more than one population");
+  assert.ok(r.parsed, "the figure is well-formed SVG");
+  const foot = r.foot.join(" ");
+  assert.match(foot, /Not like for like\./); assert.ok(foot.includes(r.label), "the footer names the hard difference with the plain label from compare.js"); assert.match(foot, /Smaller differences remain:/);
+  assert.ok(r.methods.includes("Not like for like:") && r.methods.includes(r.label) && !/All plotted simulation curves state matching definitions/.test(r.methods), "the methods text carries the generated caveat");
+  assert.ok(r.pack.includes("Not like for like."), "the figure pack's caption carries it");
+  assert.ok(r.foot.length <= 16 && r.h - r.plotH <= 14 + 16 * 15, `the footer stays short (${r.foot.length} lines)`);
+  assert.deepEqual(errors, []); await ctx.close();
+});
+await step("figure footer says so when the plotted curves are like for like", async () => {
+  assert.ok(caveatCase, "the data have at least one pair of simulations the rules call comparable");
+  const { page, ctx, errors } = await open(`/highline.html#r=${caveatCase.rel}&z=${caveatCase.z}`);
+  await settle(page);
+  const r = await page.evaluate(c => {
+    state.offBy[c.rel] = new Set(sims.filter(x => x.relation === c.rel && !c.srcs.includes(x.source)).map(x => x.source));
+    for (const x of sims) if (x.relation === c.rel) state.runPref.set(unitOf(x), c.units.includes(unitOf(x)));
+    state.showObs = false; renderAll(false);
+    const f = figureSvg(), doc = new DOMParser().parseFromString(f.svg, "image/svg+xml");
+    return { n: plottedRecords().length, foot: [...doc.querySelectorAll("g[font-family] text")].map(t => t.textContent).join(" "), methods: methodsPack().methods };
+  }, caveatCase);
+  assert.equal(r.n, 2, `only the two comparable curves are plotted (${caveatCase.srcs.join(", ")})`);
+  assert.match(r.foot, /All 2 plotted curves are like for like/); assert.ok(!/Not like for like/.test(r.foot));
+  assert.match(r.methods, /All 2 plotted curves are like for like/); assert.ok(!/Not like for like/.test(r.methods));
+  assert.deepEqual(errors, []); await ctx.close();
+});
+await step("a figure of the stellar mass function parses (source names with an ampersand are escaped) and the PNG still downloads", async () => {
+  const { page, ctx } = await open("/highline.html#r=gsmf&z=0.1");
+  await settle(page); await page.click("#bData");
+  const ok = await page.evaluate(() => !new DOMParser().parseFromString(figureSvg().svg, "image/svg+xml").querySelector("parsererror"));
+  assert.ok(ok, "the SVG of the stellar mass function is well-formed");
+  const [dl] = await Promise.all([page.waitForEvent("download"), page.click("#fPng")]);
+  assert.match(dl.suggestedFilename(), /\.png$/);
   await ctx.close();
 });
 
