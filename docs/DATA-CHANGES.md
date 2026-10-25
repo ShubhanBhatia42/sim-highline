@@ -50,7 +50,7 @@ For 101 records the numbers do not simply come from the paper the record cites: 
 
 ## 6. Definitions added from the papers
 
-459 simulation records carry at least one definition (for example the stellar-mass aperture) that the table or figure left unstated and the source paper states (60 sourced rules in `data/definition-fills.json`, each with paper, section, a short quote and the SHA-256 of the arXiv source read). A stated value is never overwritten. 23 papers were read for a definition and do not state it (listed on the Methods page); those values stay unspecified.
+469 simulation records carry at least one definition (for example the stellar-mass aperture) that the table or figure left unstated and the source paper states (60 sourced rules in `data/definition-fills.json`, each with paper, section, a short quote and the SHA-256 of the arXiv source read). A stated value is never overwritten. 23 papers were read for a definition and do not state it (listed on the Methods page); those values stay unspecified.
 
 ## What the analyses do with this
 

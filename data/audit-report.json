@@ -1,6 +1,6 @@
 {
- "total": 1984,
- "known": 25,
+ "total": 2041,
+ "known": 35,
  "errors": 0,
  "warnings": 0,
  "info": 211,
@@ -11,7 +11,7 @@
   "known:y-out-of-range": 6,
   "known:quenched-decreases": 2,
   "known:duplicate-data": 14,
-  "known:cross-source-offset": 2
+  "known:cross-source-offset": 12
  },
  "yUnitsByRelation": {
   "sfrd": {
@@ -284,7 +284,8 @@
   },
   "elf": {
    "yUnit": [
-    "log10(cMpc^-3 dex^-1)"
+    "log10(cMpc^-3 dex^-1)",
+    "log10(Mpc^-3 dex^-1)"
    ],
    "massDefinitions": [
     "-"
@@ -497,6 +498,54 @@
    "maxAbs": 0.176
   },
   {
+   "a": "vijayan21.flares.uvbeta.z10",
+   "b": "wilkins22.flares.uvbeta.dust.z10",
+   "relation": "uvbeta",
+   "n": 10,
+   "medianOffset": 0,
+   "maxAbs": 0.222
+  },
+  {
+   "a": "vijayan21.flares.uvbeta.z10",
+   "b": "wilkins22.flares.uvbeta.nebular.z10",
+   "relation": "uvbeta",
+   "n": 10,
+   "medianOffset": 0.393,
+   "maxAbs": 0.738
+  },
+  {
+   "a": "vijayan21.flares.uvbeta.z10",
+   "b": "wilkins22.flares.uvbeta.stellar.z10",
+   "relation": "uvbeta",
+   "n": 10,
+   "medianOffset": 0.583,
+   "maxAbs": 0.853
+  },
+  {
+   "a": "wilkins22.flares.uvbeta.dust.z10",
+   "b": "wilkins22.flares.uvbeta.nebular.z10",
+   "relation": "uvbeta",
+   "n": 9,
+   "medianOffset": 0.327,
+   "maxAbs": 0.589
+  },
+  {
+   "a": "wilkins22.flares.uvbeta.dust.z10",
+   "b": "wilkins22.flares.uvbeta.stellar.z10",
+   "relation": "uvbeta",
+   "n": 9,
+   "medianOffset": 0.513,
+   "maxAbs": 0.689
+  },
+  {
+   "a": "wilkins22.flares.uvbeta.nebular.z10",
+   "b": "wilkins22.flares.uvbeta.stellar.z10",
+   "relation": "uvbeta",
+   "n": 9,
+   "medianOffset": 0.194,
+   "maxAbs": 0.292
+  },
+  {
    "a": "vijayan21.flares.uvlf.binned.z10",
    "b": "wilkins22.flares.uvlf.observed.z10",
    "relation": "uvlf",
@@ -567,6 +616,126 @@
    "n": 7,
    "medianOffset": 0,
    "maxAbs": 0.16
+  },
+  {
+   "a": "wilkins22.flares.uvbeta.dust.z15",
+   "b": "wilkins22.flares.uvbeta.nebular.z15",
+   "relation": "uvbeta",
+   "n": 6,
+   "medianOffset": 0.264,
+   "maxAbs": 0.577
+  },
+  {
+   "a": "wilkins22.flares.uvbeta.dust.z15",
+   "b": "wilkins22.flares.uvbeta.stellar.z15",
+   "relation": "uvbeta",
+   "n": 6,
+   "medianOffset": 0.533,
+   "maxAbs": 0.712
+  },
+  {
+   "a": "wilkins22.flares.uvbeta.nebular.z15",
+   "b": "wilkins22.flares.uvbeta.stellar.z15",
+   "relation": "uvbeta",
+   "n": 6,
+   "medianOffset": 0.269,
+   "maxAbs": 0.323
+  },
+  {
+   "a": "wilkins22.flares.uvbeta.dust.z14",
+   "b": "wilkins22.flares.uvbeta.nebular.z14",
+   "relation": "uvbeta",
+   "n": 7,
+   "medianOffset": 0.213,
+   "maxAbs": 0.696
+  },
+  {
+   "a": "wilkins22.flares.uvbeta.dust.z14",
+   "b": "wilkins22.flares.uvbeta.stellar.z14",
+   "relation": "uvbeta",
+   "n": 7,
+   "medianOffset": 0.514,
+   "maxAbs": 0.842
+  },
+  {
+   "a": "wilkins22.flares.uvbeta.nebular.z14",
+   "b": "wilkins22.flares.uvbeta.stellar.z14",
+   "relation": "uvbeta",
+   "n": 7,
+   "medianOffset": 0.266,
+   "maxAbs": 0.328
+  },
+  {
+   "a": "wilkins22.flares.uvbeta.dust.z13",
+   "b": "wilkins22.flares.uvbeta.nebular.z13",
+   "relation": "uvbeta",
+   "n": 7,
+   "medianOffset": 0.205,
+   "maxAbs": 0.682
+  },
+  {
+   "a": "wilkins22.flares.uvbeta.dust.z13",
+   "b": "wilkins22.flares.uvbeta.stellar.z13",
+   "relation": "uvbeta",
+   "n": 7,
+   "medianOffset": 0.468,
+   "maxAbs": 0.836
+  },
+  {
+   "a": "wilkins22.flares.uvbeta.nebular.z13",
+   "b": "wilkins22.flares.uvbeta.stellar.z13",
+   "relation": "uvbeta",
+   "n": 7,
+   "medianOffset": 0.201,
+   "maxAbs": 0.315
+  },
+  {
+   "a": "wilkins22.flares.uvbeta.dust.z12",
+   "b": "wilkins22.flares.uvbeta.nebular.z12",
+   "relation": "uvbeta",
+   "n": 7,
+   "medianOffset": 0.222,
+   "maxAbs": 0.499
+  },
+  {
+   "a": "wilkins22.flares.uvbeta.dust.z12",
+   "b": "wilkins22.flares.uvbeta.stellar.z12",
+   "relation": "uvbeta",
+   "n": 7,
+   "medianOffset": 0.47,
+   "maxAbs": 0.665
+  },
+  {
+   "a": "wilkins22.flares.uvbeta.nebular.z12",
+   "b": "wilkins22.flares.uvbeta.stellar.z12",
+   "relation": "uvbeta",
+   "n": 7,
+   "medianOffset": 0.21,
+   "maxAbs": 0.308
+  },
+  {
+   "a": "wilkins22.flares.uvbeta.dust.z11",
+   "b": "wilkins22.flares.uvbeta.nebular.z11",
+   "relation": "uvbeta",
+   "n": 9,
+   "medianOffset": 0.364,
+   "maxAbs": 0.758
+  },
+  {
+   "a": "wilkins22.flares.uvbeta.dust.z11",
+   "b": "wilkins22.flares.uvbeta.stellar.z11",
+   "relation": "uvbeta",
+   "n": 9,
+   "medianOffset": 0.546,
+   "maxAbs": 0.808
+  },
+  {
+   "a": "wilkins22.flares.uvbeta.nebular.z11",
+   "b": "wilkins22.flares.uvbeta.stellar.z11",
+   "relation": "uvbeta",
+   "n": 9,
+   "medianOffset": 0.192,
+   "maxAbs": 0.299
   },
   {
    "a": "wilkins22.flares.uvlf.observed.z15",
@@ -2780,6 +2949,106 @@
    "source": "IllustrisTNG",
    "msg": "median offset -0.34 vs rodriguezgomez22.tng100.jstar.plate.late.z0 over 8 points",
    "reason": "Compared against a different population (P(Late) late-type) of the same run: early-type kappa_rot < 0.5 galaxies have lower j_stars than late-type ones by construction."
+  },
+  {
+   "sev": "known",
+   "code": "cross-source-offset",
+   "id": "vijayan21.flares.uvbeta.z10",
+   "file": "vijayan21-flares-uvbeta.json",
+   "relation": "uvbeta",
+   "source": "FLARES",
+   "msg": "median offset 0.39 vs wilkins22.flares.uvbeta.nebular.z10 over 10 points",
+   "reason": "Compared against the stellar-only and stellar-plus-nebular curves of FLARES V (the same simulation, no dust): the offset in beta (0.4 to 0.6) is the effect of the dust that this dust-attenuated curve includes, not a disagreement between sources."
+  },
+  {
+   "sev": "known",
+   "code": "cross-source-offset",
+   "id": "vijayan21.flares.uvbeta.z10",
+   "file": "vijayan21-flares-uvbeta.json",
+   "relation": "uvbeta",
+   "source": "FLARES",
+   "msg": "median offset 0.58 vs wilkins22.flares.uvbeta.stellar.z10 over 10 points",
+   "reason": "Compared against the stellar-only and stellar-plus-nebular curves of FLARES V (the same simulation, no dust): the offset in beta (0.4 to 0.6) is the effect of the dust that this dust-attenuated curve includes, not a disagreement between sources."
+  },
+  {
+   "sev": "known",
+   "code": "cross-source-offset",
+   "id": "wilkins22.flares.uvbeta.dust.z10",
+   "file": "wilkins22-flares-uvbeta.json",
+   "relation": "uvbeta",
+   "source": "FLARES",
+   "msg": "median offset 0.33 vs wilkins22.flares.uvbeta.nebular.z10 over 9 points",
+   "reason": "Compared against the stellar-only and stellar-plus-nebular curves of the same galaxies of the same paper: the offset in beta (0.3 to 0.55) is the effect of the dust that the solid curve includes and the others do not, so it is not a disagreement between sources."
+  },
+  {
+   "sev": "known",
+   "code": "cross-source-offset",
+   "id": "wilkins22.flares.uvbeta.dust.z10",
+   "file": "wilkins22-flares-uvbeta.json",
+   "relation": "uvbeta",
+   "source": "FLARES",
+   "msg": "median offset 0.51 vs wilkins22.flares.uvbeta.stellar.z10 over 9 points",
+   "reason": "Compared against the stellar-only and stellar-plus-nebular curves of the same galaxies of the same paper: the offset in beta (0.3 to 0.55) is the effect of the dust that the solid curve includes and the others do not, so it is not a disagreement between sources."
+  },
+  {
+   "sev": "known",
+   "code": "cross-source-offset",
+   "id": "wilkins22.flares.uvbeta.dust.z15",
+   "file": "wilkins22-flares-uvbeta.json",
+   "relation": "uvbeta",
+   "source": "FLARES",
+   "msg": "median offset 0.53 vs wilkins22.flares.uvbeta.stellar.z15 over 6 points",
+   "reason": "Compared against the stellar-only and stellar-plus-nebular curves of the same galaxies of the same paper: the offset in beta (0.3 to 0.55) is the effect of the dust that the solid curve includes and the others do not, so it is not a disagreement between sources."
+  },
+  {
+   "sev": "known",
+   "code": "cross-source-offset",
+   "id": "wilkins22.flares.uvbeta.dust.z14",
+   "file": "wilkins22-flares-uvbeta.json",
+   "relation": "uvbeta",
+   "source": "FLARES",
+   "msg": "median offset 0.51 vs wilkins22.flares.uvbeta.stellar.z14 over 7 points",
+   "reason": "Compared against the stellar-only and stellar-plus-nebular curves of the same galaxies of the same paper: the offset in beta (0.3 to 0.55) is the effect of the dust that the solid curve includes and the others do not, so it is not a disagreement between sources."
+  },
+  {
+   "sev": "known",
+   "code": "cross-source-offset",
+   "id": "wilkins22.flares.uvbeta.dust.z13",
+   "file": "wilkins22-flares-uvbeta.json",
+   "relation": "uvbeta",
+   "source": "FLARES",
+   "msg": "median offset 0.47 vs wilkins22.flares.uvbeta.stellar.z13 over 7 points",
+   "reason": "Compared against the stellar-only and stellar-plus-nebular curves of the same galaxies of the same paper: the offset in beta (0.3 to 0.55) is the effect of the dust that the solid curve includes and the others do not, so it is not a disagreement between sources."
+  },
+  {
+   "sev": "known",
+   "code": "cross-source-offset",
+   "id": "wilkins22.flares.uvbeta.dust.z12",
+   "file": "wilkins22-flares-uvbeta.json",
+   "relation": "uvbeta",
+   "source": "FLARES",
+   "msg": "median offset 0.47 vs wilkins22.flares.uvbeta.stellar.z12 over 7 points",
+   "reason": "Compared against the stellar-only and stellar-plus-nebular curves of the same galaxies of the same paper: the offset in beta (0.3 to 0.55) is the effect of the dust that the solid curve includes and the others do not, so it is not a disagreement between sources."
+  },
+  {
+   "sev": "known",
+   "code": "cross-source-offset",
+   "id": "wilkins22.flares.uvbeta.dust.z11",
+   "file": "wilkins22-flares-uvbeta.json",
+   "relation": "uvbeta",
+   "source": "FLARES",
+   "msg": "median offset 0.36 vs wilkins22.flares.uvbeta.nebular.z11 over 9 points",
+   "reason": "Compared against the stellar-only and stellar-plus-nebular curves of the same galaxies of the same paper: the offset in beta (0.3 to 0.55) is the effect of the dust that the solid curve includes and the others do not, so it is not a disagreement between sources."
+  },
+  {
+   "sev": "known",
+   "code": "cross-source-offset",
+   "id": "wilkins22.flares.uvbeta.dust.z11",
+   "file": "wilkins22-flares-uvbeta.json",
+   "relation": "uvbeta",
+   "source": "FLARES",
+   "msg": "median offset 0.55 vs wilkins22.flares.uvbeta.stellar.z11 over 9 points",
+   "reason": "Compared against the stellar-only and stellar-plus-nebular curves of the same galaxies of the same paper: the offset in beta (0.3 to 0.55) is the effect of the dust that the solid curve includes and the others do not, so it is not a disagreement between sources."
   },
   {
    "sev": "known",
