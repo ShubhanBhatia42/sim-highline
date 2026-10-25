@@ -67,3 +67,55 @@ assert.equal(L.spread([par(0), par(.1), [{ x: 20, y: 0 }, { x: 21, y: 0 }]]), nu
 const gap = par(0).filter((_, i) => i !== 3 && i !== 4);
 assert.ok(L.spread([gap, par(.1), par(-.1)]).grid < L.spread([par(0), par(.1), par(-.1)]).grid, "gaps wider than 0.6 dex are never interpolated");
 console.log("logic: spread OK");
+
+// The caveat line of a figure (plotCaveats): generated from the comparison rules in compare.js, not typed per relation.
+{
+  const c2 = {};
+  vm.runInNewContext(await readFile(new URL("compare.js", root), "utf8"), c2);
+  vm.runInNewContext(await readFile(new URL("highline/logic.js", root), "utf8"), c2);
+  const C = c2.SimHighlineCompare, PC = (...args) => JSON.parse(JSON.stringify(c2.SimHighlineLogic.plotCaveats(...args))), R = C.RULES.sfms; // a JSON copy, so that arrays made inside the vm context compare with the ones here
+  const base = { relation: "sfms", rankable: true, epoch: { zRepresentative: 0 }, definitions: { population: "all galaxies", imf: "chabrier03", massDefinition: "total-bound-subhalo", sfrTimescaleMyr: 100, sfrStatistic: "mean", cosmology: { H0: 67.74, Om: 0.3089 } } };
+  const mk = (id, source, over = {}, top = {}) => ({ ...base, id, source, ...top, definitions: { ...base.definitions, ...over } });
+  const names = { name: r => r.source };
+  // 1. a hard difference (which galaxies) is reported with the plain label from compare.js and the curves on each side
+  const a = mk("a", "Sim A"), b = mk("b", "Sim B", { population: "star-forming" }), c = mk("c", "Obs C", { population: "all" });
+  const h = PC([a, b, c], C, names);
+  assert.equal(h.like, false);
+  assert.deepEqual(h.hard.map(d => d.key), ["population"], "only the population differs");
+  assert.equal(h.hard[0].label, C.KEY_LABEL.population);
+  assert.deepEqual(h.hard[0].groups.map(g => [g.value, g.names]), [["all", ["Obs C", "Sim A"]], ["star-forming", ["Sim B"]]], "spelling variants of one population are one group; the other population stands alone");
+  assert.match(h.long, /^Not like for like: Which galaxies are included: all \(Obs C, Sim A\) against star-forming \(Sim B\)\./);
+  assert.match(h.short[0], /^Not like for like\. Which galaxies are included: all \(Obs C, Sim A\) against star-forming \(Sim B\)\.$/);
+  assert.deepEqual(h.soft, [], "no soft difference among these three");
+  // 2. the words come from compare.js: changing the label there changes the sentence (nothing is typed here)
+  const C2 = { ...C, KEY_LABEL: { ...C.KEY_LABEL, population: "Zzz galaxies" } };
+  assert.match(PC([a, b], C2, names).long, /Zzz galaxies: all \(Sim A\) against star-forming \(Sim B\)/);
+  // 3. the rules decide what is hard: a key that is not in the hard list of the relation is not reported as hard
+  const C3 = { ...C, RULES: { ...C.RULES, sfms: { hard: [], soft: R.soft } } };
+  assert.deepEqual(PC([a, b], C3, names).hard, [], "with no hard keys in the rules, nothing is reported as hard");
+  // 4. all like for like says so, and names the definitions that were checked
+  const same = PC([mk("a", "Sim A"), mk("b", "Sim B", { population: "all" }), mk("c", "Obs C", { population: "All galaxies (PGalF)" })], C, names);
+  assert.equal(same.like, true);
+  assert.match(same.long, /^All 3 plotted curves are like for like: the definitions that must agree for this relation \(which galaxies are included\) agree, and none of the smaller differences/);
+  assert.match(same.short[0], /^All 3 plotted curves are like for like/);
+  // 5. soft differences only: the hard definitions agree, the smaller differences are listed with KEY_LABEL
+  const soft = PC([a, mk("b", "Sim B", { imf: "kroupa01", massDefinition: "aperture-30pkpc" })], C, names);
+  assert.equal(soft.like, false); assert.deepEqual(soft.hard, []);
+  assert.deepEqual(soft.soft.map(d => d.key), ["imf", "massDefinition"], "soft keys come in the order of the rules");
+  assert.match(soft.long, /Smaller differences remain, left as published: Initial mass function \(IMF\): chabrier03 \(Sim A\) against kroupa01 \(Sim B\)\. Which stars count toward the mass:/);
+  assert.ok(!/Not like for like/.test(soft.long));
+  assert.match(soft.short.join(" "), /Smaller differences remain: initial mass function \(IMF\); which stars count toward the mass\./);
+  assert.match(PC([a, mk("b", "Sim B", { imf: "kroupa01" })], C, { ...names, imfConverted: true }).long, /converted to Chabrier in this plot where the IMF is stated/);
+  // 6. an unstated hard definition is not like for like, even when two curves leave it out in the same way
+  const un = PC([mk("a", "Sim A", { population: "unspecified" }), mk("b", "Sim B", { population: "unspecified" })], C, names);
+  assert.equal(un.like, false); assert.match(un.long, /Which galaxies are included: not stated for Sim A, Sim B/);
+  // 7. a curve that is not rankable is named as context only
+  const ctxOnly = PC([a, mk("b", "Fig D", {}, { rankable: false })], C, names);
+  assert.deepEqual(ctxOnly.context, ["Fig D"]); assert.match(ctxOnly.long, /Context only, not rankable: Fig D\./);
+  // 8. duplicates are one curve; one curve has nothing to compare with
+  assert.equal(PC([a, a, a], C, names).n, 1); assert.match(PC([a], C, names).long, /nothing to compare/);
+  // 9. a relation with no hard keys at all
+  const age = { ...base, relation: "age", definitions: { ageWeighting: "mass", imf: "chabrier03", massDefinition: "x", population: "all" } };
+  assert.match(PC([{ ...age, id: "x", source: "S1" }, { ...age, id: "y", source: "S2" }], C, names).long, /this relation has no definition that must agree/);
+  console.log("logic: figure caveats OK");
+}
