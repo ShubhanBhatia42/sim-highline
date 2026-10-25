@@ -165,8 +165,8 @@ main.table .stagehead,main.table .plot{display:none}
 .ramp{display:none;align-items:center;gap:6px;font:11px var(--mono);color:var(--ink3);padding:6px 6px 2px}
 .ramp i{display:block;height:6px;width:90px;background:linear-gradient(90deg,#fde725,#7ad151,#22a884,#2a788e,#414487)}
 .empty{position:absolute;inset:0;display:grid;place-items:center;color:var(--ink3);font-size:15px;pointer-events:none;text-align:center;padding:20px}
-.panel{position:absolute;right:0;top:0;bottom:0;width:min(420px,94vw);background:var(--bg);border-left:1px solid var(--rule-strong);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .3s ease;z-index:5}
-.panel.open{transform:none}
+.panel{position:absolute;right:0;top:0;bottom:0;width:min(420px,94vw);background:var(--bg);border-left:1px solid var(--rule-strong);display:flex;flex-direction:column;transform:translateX(100%);visibility:hidden;transition:transform .3s ease,visibility 0s linear .3s;z-index:5}
+.panel.open{transform:none;visibility:visible;transition:transform .3s ease,visibility 0s}
 .tabs{display:flex;border-bottom:1px solid var(--rule);flex:none}
 .tabs .tl{display:flex;flex:1;min-width:0}
 .tabs .tl button{flex:1;padding:14px 4px 12px;font:500 11px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);border-bottom:2px solid transparent}
@@ -337,7 +337,7 @@ b.classList.add("failed");b.setAttribute("role","alert");b.innerHTML='<div class
 </div>
 </div><button class="shlink" id="shNotes">About this relation</button></div>
     <div class="plot" id="plot">
-      <svg id="stage" role="img" tabindex="0" aria-describedby="stageDesc"></svg>
+      <svg id="stage" role="img" tabindex="0" aria-keyshortcuts="/ Control+K" aria-describedby="stageDesc"></svg>
       <p class="sr" id="stageDesc" aria-live="polite"></p>
       <div class="legend" id="legend"></div>
       <div class="chip" id="chip"></div>
@@ -345,7 +345,7 @@ b.classList.add("failed");b.setAttribute("role","alert");b.innerHTML='<div class
       <div class="tip" id="tip"></div>
     </div>
     <aside class="panel" id="panel" aria-label="Details">
-      <div class="tabs"><div class="tl" role="tablist" aria-label="Details"><button role="tab" data-t="evidence">Evidence</button><button role="tab" data-t="about">Notes</button><button role="tab" data-t="mine">My run</button><button role="tab" data-t="tune">Customise</button><button role="tab" data-t="data">Get data</button></div><button class="x" id="pClose" aria-label="Close panel">×</button></div>
+      <div class="tabs"><div class="tl" role="tablist" aria-label="Details"><button role="tab" id="tab-evidence" aria-controls="pbody" data-t="evidence">Evidence</button><button role="tab" id="tab-about" aria-controls="pbody" data-t="about">Notes</button><button role="tab" id="tab-mine" aria-controls="pbody" data-t="mine">Your run</button><button role="tab" id="tab-tune" aria-controls="pbody" data-t="tune">Customise</button><button role="tab" id="tab-data" aria-controls="pbody" data-t="data">Get data</button></div><button class="x" id="pClose" aria-label="Close panel">×</button></div>
       <div class="pbody" id="pbody" role="tabpanel"></div>
     </aside>
     <section class="atlas" id="atlas" tabindex="0" aria-label="What exists: coverage table"></section>
@@ -378,12 +378,12 @@ b.classList.add("failed");b.setAttribute("role","alert");b.innerHTML='<div class
     </div></section>
   </main>
   <footer>
-    <button class="play" id="play" aria-label="Play through redshift"><svg viewBox="0 0 14 14"><path id="playIcon" d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg></button>
+    <button class="play" id="play" aria-label="Play through redshift" aria-pressed="false"><svg viewBox="0 0 14 14"><path id="playIcon" d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg></button>
     <div class="track"><input type="range" id="z" min="0" max="0" step="1" aria-label="Redshift" title="Redshift: drag, or press ← → anywhere on the page"><div class="ticks" id="ticks"></div></div>
     <div class="zread" id="zread"></div>
   </footer>
 </div>
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast" aria-hidden="true"></div><div class="sr" id="toastLive" role="status" aria-live="polite"></div>
 <script type="application/json" id="curves-data">/*__DATA__*/</script><script>Object.assign(window,JSON.parse(document.getElementById("curves-data").textContent))</script>
 <script>/*__COMPARE__*/</script>
 <script>/*__OBSERVER__*/</script>
@@ -460,7 +460,7 @@ const TIER_GLYPH={"official-table":"O","catalog-derived":"C","published-table":"
 const TIER_SHORT={"official-table":"official table","catalog-derived":"computed from a public catalogue","published-table":"table in the paper","published-fit":"published fit","digitized-figure":"digitized from a figure"};
 const citeShort=r=>String(r.provenance?.citation||"").replace(/\s*\[[^\]]*\]/g,"").replace(/,\s*(Fig\.|Figure|figure|Table).*$/,"").replace(/\s*\(arXiv source numbering\).*$/,"").slice(0,90);
 const provTip=(r,extra="")=>{const p=r.provenance||{};return`${label(r)}${extra} · ${TIER_SHORT[p.tier]||p.tier}${p.tier==="digitized-figure"&&p.figure?` (${p.figure})`:""} · ${citeShort(r)}`};
-const provBadge=r=>{const p=r?.provenance;if(!p)return"";const g=TIER_GLYPH[p.tier]||"?";return`<span class="pv t${g}" title="${esc((TIER_SHORT[p.tier]||p.tier)+": "+citeShort(r))}">${g}</span>`};
+const provBadge=r=>{const p=r?.provenance;if(!p)return"";const g=TIER_GLYPH[p.tier]||"?";return`<span class="pv t${g}" role="img" aria-label="${esc(TIER_SHORT[p.tier]||p.tier)}" title="${esc((TIER_SHORT[p.tier]||p.tier)+": "+citeShort(r))}">${g}</span>`};
 const unitRec=new Map();
 const RAMP=[[0,"#fde725"],[.25,"#7ad151"],[.5,"#22a884"],[.75,"#2a788e"],[1,"#414487"]];
 const isTable=()=>state.mode==="atlas"||state.mode==="tension"||state.mode==="spread"||state.mode==="dist";
@@ -542,7 +542,8 @@ const phys=t=>{const v=Math.pow(10,t);return v>=.01&&v<1e5?String(+v.toPrecision
 function ramp(u){u=Math.max(0,Math.min(1,u));let i=1;while(i<RAMP.length-1&&RAMP[i][0]<u)i++;const [a,ca]=RAMP[i-1],[b,cb]=RAMP[i],t=(u-a)/(b-a||1),h=c=>[1,3,5].map(k=>parseInt(c.slice(k,k+2),16));const A=h(ca),B=h(cb);return"#"+A.map((v,k)=>Math.round(v+(B[k]-v)*t).toString(16).padStart(2,"0")).join("")}
 const dashOf=r=>r.provenance?.tier==="published-fit"?' stroke-dasharray="7 4"':r.provenance?.tier==="digitized-figure"?' stroke-dasharray="2 3"':"";
 const copyTxt=async(t,msg)=>{try{await navigator.clipboard.writeText(t)}catch(e){const a=document.createElement("textarea");a.value=t;document.body.append(a);a.select();try{document.execCommand("copy")}catch(_){}a.remove()}toast(msg||"Copied")};
-function toast(m){const t=$("toast");t.textContent=m;t.style.display="block";clearTimeout(toast.h);toast.h=setTimeout(()=>t.style.display="none",1800)}
+function say(m){const l=$("toastLive");l.textContent="";setTimeout(()=>{l.textContent=m},30)}
+function toast(m){const t=$("toast");say(m);t.textContent=m;t.style.display="block";clearTimeout(toast.h);toast.h=setTimeout(()=>t.style.display="none",1800)}
 
 /* ---------- data per relation ---------- */
 /* SIMHIGHLINE_CURVES holds a thin entry for every record: enough to list, count, search and group them. The rest of a record (points, parameters, distributions, definitions, selection, notes, the full provenance) comes with its relation's file, highline-data/<relation>.json, which is fetched the first time a view needs that relation and then completes the entries in place, so a record keeps its identity. The tension, spread and distribution views read many relations and fetch them all first.
@@ -812,7 +813,7 @@ function renderPlot(animate){
   $("empty").hidden=true;
   ok=chart({series,xrev:!!meta.xrev,xlab,ylab:res?`Δ ${ylab} (curve − reference)`:ylab,zero:res,fit:!res,user:!res,xfmt:axisFmt(meta,"x"),yfmt:res?undefined:axisFmt(meta,"y")});
   svg.setAttribute("aria-label",`${meta.t} at redshift ${fmtZ(z)}`);
-  $("stageDesc").textContent=`${meta.t}${REL[rel].xz?"":" at redshift "+fmtZ(z)}: ${series.filter(o=>!o.obs).length} simulation curves (${[...new Set(series.filter(o=>!o.obs).map(o=>SHORT[o.r.source]||o.r.source))].join(", ")}) and ${series.filter(o=>o.obs).length} observational curves. Use Get data for the numbers.${xfOn()?" "+xfSentence():""}`;
+  $("stageDesc").textContent=`${meta.t}${REL[rel].xz?"":" at redshift "+fmtZ(z)}: ${series.filter(o=>!o.obs).length} simulation curves (${[...new Set(series.filter(o=>!o.obs).map(o=>SHORT[o.r.source]||o.r.source))].join(", ")}) and ${series.filter(o=>o.obs).length} observational curves. Use Get data for the numbers, or press / to search for a curve and open its evidence.${xfOn()?" "+xfSentence():""}`;
   if(ok){if(animate&&!matchMedia("(prefers-reduced-motion: reduce)").matches)tween(ok.next);lastPaths=ok.next}
   if(state.panel&&state.tab==="tune")updateFitReadout();
 }
@@ -826,27 +827,30 @@ function renderChip(){
   if(xfOn()){const z=currentZ(),bad=pick(state.rel,z).filter(pass).filter(xfBad).length;t+=`${t?" · ":""}<span class="xfchip" title="${esc(OBS_WORDS)}">Simulations with ${state.osc} dex of scatter applied, not as published${bad?` (${bad} could not be scattered and ${bad>1?"are":"is"} faded)`:""}</span>`}
   c.innerHTML=t;c.classList.toggle("on",!!t);const b=$("chipX");if(b)b.onclick=()=>{state.resid=false;state.evo=null;renderAll(true)};
 }
+/* keep the keyboard where it was when a list is rebuilt */
+function focusKey(root){const a=document.activeElement;if(!a||a===document.body||!root.contains(a))return null;if(a.id)return"#"+a.id;if(a.type==="radio"&&a.name)return`[name="${a.name}"][value="${a.value}"]`;for(const n of["data-s","data-only","data-u","data-o","data-ev","data-ref","data-an","data-x","data-r","data-def"])if(a.hasAttribute(n))return`[${n}="${CSS.escape(a.getAttribute(n))}"]`;return null}
+function restoreFocus(root,k){if(!k)return;const n=root.querySelector(k);if(n)n.focus({preventScroll:true})}
 function renderLegend(cur){
   const rel=state.rel,z=currentZ(),ref=state.ref?refRecord(z):null,off=offSet();
   const allRuns=sims.filter(r=>r.relation===rel),srcs=[...new Set(allRuns.map(r=>r.source))].sort();
   const present=new Map(cur.map(r=>[unitOf(r),r]));
   const anc=anchorRec(rel,z),rf=ref||anc;
-  const offTxt=r=>{const d=offsetOf(r,anc,z);return d==null?'<span class="off"></span>':`<span class="off${observerOn(r)?" xf":""}" title="median offset from ${esc(anc.source)} over the overlapping x range, in y units${observerOn(r)?"; for the simulation curve with "+state.osc+" dex of scatter applied, not as published":""}">${d>=0?"+":"−"}${Math.abs(d).toFixed(2)}</span>`};
-  const vglyph=r=>{if(!rf||!r||rf===r)return'<span class="v"></span>';const v=verdict(rf,r);if(!v)return'<span class="v"></span>';const k=v.verdict;return`<span class="v ${k==="comparable"?"ok":k==="not-comparable"?"no":"cav"}" title="${esc(k.replace(/-/g," ")+(v.blockers.length?": "+v.blockers.join("; "):v.caveats.length?": "+v.caveats.join("; "):""))}">${k==="comparable"?"✓":k==="not-comparable"?"✕":"~"}</span>`};
+  const offTxt=r=>{const d=offsetOf(r,anc,z);return d==null?'<span class="off"></span>':`<span class="off${observerOn(r)?" xf":""}" title="median offset from ${esc(anc.source)} over the overlapping x range, in y units${observerOn(r)?"; for the simulation curve with "+state.osc+" dex of scatter applied, not as published":""}" role="img" aria-label="offset ${d>=0?"+":"−"}${Math.abs(d).toFixed(2)}">${d>=0?"+":"−"}${Math.abs(d).toFixed(2)}</span>`};
+  const vglyph=r=>{if(!rf||!r||rf===r)return'<span class="v"></span>';const v=verdict(rf,r);if(!v)return'<span class="v"></span>';const k=v.verdict;return`<span class="v ${k==="comparable"?"ok":k==="not-comparable"?"no":"cav"}" title="${esc(k.replace(/-/g," ")+(v.blockers.length?": "+v.blockers.join("; "):v.caveats.length?": "+v.caveats.join("; "):""))}" role="img" aria-label="${k==="comparable"?"comparable":k==="not-comparable"?"not comparable":"comparable with caveats"}">${k==="comparable"?"✓":k==="not-comparable"?"✕":"~"}</span>`};
   const units=[...new Set(allRuns.map(unitOf))],nVar=units.filter(u=>!isPrimary(u)).length;
   let h=`<div class="legctl"><span>${srcs.length} simulation${srcs.length>1?"s":""}</span><span><button class="mini" id="lgAll">all</button><button class="mini" id="lgNone">none</button><button class="mini" id="lgRk" aria-pressed="${state.rankOnly}" title="Hide digitized figures and context-only curves; keep evidence that can be ranked">rankable only</button>${nVar?`<button class="mini" id="lgVar" aria-pressed="${state.variants}" title="Each simulation shows its fiducial run; variants are other runs, resolutions, populations and model variations">variants ${state.variants?"on":"off"} (${nVar})</button>`:""}</span></div>`;
   if(xfOn())h+=`<div class="xfban" role="note"><b>Simulations with ${state.osc} dex of scatter applied</b>, not as published (${esc(OBS_WORDS)}). The thin line is the curve as published; observations are unchanged; the offsets are for the scattered curves.</div>`;
   for(const s of srcs){
     const runs=[...new Set(allRuns.filter(r=>r.source===s).map(unitOf))].sort((a,b)=>isPrimary(b)-isPrimary(a)||a.localeCompare(b)),prim=runs.filter(u=>isPrimary(u)),nv=runs.length-prim.length,open=state.expand.has(s),hasHere=runs.some(u=>present.has(u));
     const anyOn=!off.has(s)&&runs.some(u=>unitOn(u));
-    h+=`<div class="row"><button class="name" data-s="${esc(s)}" aria-pressed="${anyOn}" title="${hasHere?"":"no data at this redshift; "}click to show or hide" ${hasHere?"":' data-nodata="1"'}><span class="sw" style="background:${colorOf(s)}"></span>${esc(SHORT[s]||s)}${nv?` <span style="color:var(--cream3);font-size:11px">+${nv}</span>`:""}</button>${provBadge(present.get(prim[0])||unitFirst(prim[0]))}${offTxt(present.get(prim[0]))}${rf?vglyph(present.get(prim[0])):""}<button class="mini" data-only="${esc(s)}" title="Show only this simulation">only</button><button class="mini" data-ev="${esc(prim[0])}" aria-pressed="${state.evo===prim[0]}" title="Plot every epoch of this run, coloured by redshift">z</button>${runs.length>1?`<button class="mini" data-x="${esc(s)}" aria-label="Show runs" aria-expanded="${open}">${open?"▾":"▸"}</button>`:""}</div>`;
-    if(open&&runs.length>1)for(const u of runs){const name=u.split("|")[1]||s,r=present.get(u),on=unitOn(u);h+=`<div class="row sub"><button class="name" data-u="${esc(u)}" aria-pressed="${on}" title="${esc(name)}${r?"":" (no data at this redshift)"}${isPrimary(u)?" (fiducial)":" (variant)"}" style="${r?"":"opacity:.45"}"><span style="width:8px;color:var(--cream3)">${isPrimary(u)?"●":"○"}</span>${esc(name.length>32?name.slice(0,31)+"…":name)}</button>${provBadge(r||unitFirst(u))}${offTxt(r)}${vglyph(r)}<button class="mini" data-ev="${esc(u)}" aria-pressed="${state.evo===u}" title="Plot every epoch of this run">z</button></div>`}
+    h+=`<div class="row"><button class="name" data-s="${esc(s)}" aria-pressed="${anyOn}" title="${hasHere?"":"no data at this redshift; "}click to show or hide" ${hasHere?"":' data-nodata="1"'}><span class="sw" style="background:${colorOf(s)}"></span>${esc(SHORT[s]||s)}${nv?` <span style="color:var(--cream3);font-size:11px">+${nv}</span>`:""}</button>${provBadge(present.get(prim[0])||unitFirst(prim[0]))}${offTxt(present.get(prim[0]))}${rf?vglyph(present.get(prim[0])):""}<button class="mini" data-only="${esc(s)}" aria-label="Show only ${esc(SHORT[s]||s)}" title="Show only this simulation">only</button><button class="mini" data-ev="${esc(prim[0])}" aria-pressed="${state.evo===prim[0]}" aria-label="Plot every epoch (z) of ${esc(SHORT[s]||s)}, coloured by redshift" title="Plot every epoch of this run, coloured by redshift">z</button>${runs.length>1?`<button class="mini" data-x="${esc(s)}" aria-label="Runs of ${esc(SHORT[s]||s)}" aria-expanded="${open}"><span aria-hidden="true">${open?"▾":"▸"}</span></button>`:""}</div>`;
+    if(open&&runs.length>1)for(const u of runs){const name=u.split("|")[1]||s,r=present.get(u),on=unitOn(u);h+=`<div class="row sub"><button class="name" data-u="${esc(u)}" aria-pressed="${on}" title="${esc(name)}${r?"":" (no data at this redshift)"}${isPrimary(u)?" (fiducial)":" (variant)"}" style="${r?"":"opacity:.45"}"><span style="width:8px;color:var(--cream3)">${isPrimary(u)?"●":"○"}</span>${esc(name.length>32?name.slice(0,31)+"…":name)}</button>${provBadge(r||unitFirst(u))}${offTxt(r)}${vglyph(r)}<button class="mini" data-ev="${esc(u)}" aria-pressed="${state.evo===u}" aria-label="Plot every epoch (z) of ${esc(name)}" title="Plot every epoch of this run">z</button></div>`}
   }
   const oall=obs.filter(r=>r.relation===rel),osrc=[...new Set(oall.map(r=>r.source))].sort(),oopen=state.expand.has("__obs");
-  if(oall.length){h+=`<div class="row obsrow"><button class="name" id="obsBtn" aria-pressed="${state.showObs}"><span class="sw"></span>Observations <span style="color:var(--cream3);font-size:11px">${osrc.length}</span></button><button class="mini" data-x="__obs" aria-expanded="${oopen}">${oopen?"▾":"▸"}</button></div>`;
-    if(oopen)for(const s of osrc)h+=`<div class="row sub"><button class="name" data-o="${esc(s)}" aria-pressed="${!state.obsOff.has(s)}">${esc(s.length>34?s.slice(0,33)+"…":s)}</button>${provBadge(pickObs(rel,z).find(r=>r.source===s)||oall.find(r=>r.source===s))}${vglyph(pickObs(rel,z).find(r=>r.source===s))}<button class="mini" data-ref="${esc(unitOf(oall.find(r=>r.source===s)))}" aria-pressed="${state.ref===unitOf(oall.find(r=>r.source===s))}" title="Compare everything against this">ref</button><button class="mini" data-an="${esc(s)}" aria-pressed="${!!anc&&anc.source===s}" ${pickObs(rel,z).some(r=>r.source===s)?"":"disabled"} title="${pickObs(rel,z).some(r=>r.source===s)?"Use as the bold anchor line and the offsets (also used by the Tension view)":"No curve from this source at this epoch"}">anchor</button></div>`}
+  if(oall.length){h+=`<div class="row obsrow"><button class="name" id="obsBtn" aria-pressed="${state.showObs}"><span class="sw"></span>Observations <span style="color:var(--cream3);font-size:11px">${osrc.length}</span></button><button class="mini" data-x="__obs" aria-label="Observation sources" aria-expanded="${oopen}"><span aria-hidden="true">${oopen?"▾":"▸"}</span></button></div>`;
+    if(oopen)for(const s of osrc)h+=`<div class="row sub"><button class="name" data-o="${esc(s)}" aria-pressed="${!state.obsOff.has(s)}">${esc(s.length>34?s.slice(0,33)+"…":s)}</button>${provBadge(pickObs(rel,z).find(r=>r.source===s)||oall.find(r=>r.source===s))}${vglyph(pickObs(rel,z).find(r=>r.source===s))}<button class="mini" data-ref="${esc(unitOf(oall.find(r=>r.source===s)))}" aria-pressed="${state.ref===unitOf(oall.find(r=>r.source===s))}" aria-label="Compare everything against ${esc(s)}" title="Compare everything against this">ref</button><button class="mini" data-an="${esc(s)}" aria-pressed="${!!anc&&anc.source===s}" aria-label="Use ${esc(s)} as the anchor" ${pickObs(rel,z).some(r=>r.source===s)?"":"disabled"} title="${pickObs(rel,z).some(r=>r.source===s)?"Use as the bold anchor line and the offsets (also used by the Tension view)":"No curve from this source at this epoch"}">anchor</button></div>`}
   h+=`<div class="keyline">${state.imfc?"IMF converted to Chabrier: mass and SFR axes of Kroupa and Salpeter curves are shifted by the standard offsets (curves with an unstated IMF are unchanged)<br>":""}keys: ← → step the epoch · Esc closes panels<br>badge = where the data come from: <b>O</b> official table · <b>C</b> catalogue · <b>T</b> paper table · <b>F</b> fit · <b>D</b> digitized figure<br>line: solid O/C/T · dashed F · dotted D${rf?`<br>✓ comparable · ~ caveats · ✕ not comparable (against ${ref?"the chosen reference":"the anchor"})`:""}${anc&&!ref?`<br>bold grey line = anchor, ${esc(anc.source)}; the number beside each simulation is its median offset from it over the overlap, in y units`:""}</div>`;
-  const L=$("legend");L.classList.toggle("closed",!state.legendOpen);L.innerHTML=`<button class="legtog" id="legTog" aria-expanded="${state.legendOpen}">Legend ${state.legendOpen?"▾":"▸"}</button>`+(state.legendOpen?h:"");const lt=$("legTog");lt.onclick=()=>{state.legendOpen=!state.legendOpen;renderLegend(cur)};
+  const L=$("legend"),fk=focusKey(L);L.classList.toggle("closed",!state.legendOpen);L.innerHTML=`<button class="legtog" id="legTog" aria-expanded="${state.legendOpen}">Legend <span aria-hidden="true">${state.legendOpen?"▾":"▸"}</span></button>`+(state.legendOpen?h:"");restoreFocus(L,fk);const lt=$("legTog");lt.onclick=()=>{state.legendOpen=!state.legendOpen;renderLegend(cur)};
   L.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{const s=b.dataset.s;off.has(s)?off.delete(s):off.add(s);renderAll(false)});
   L.querySelectorAll("[data-only]").forEach(b=>b.onclick=()=>{state.offBy[rel]=new Set(srcs.filter(x=>x!==b.dataset.only));renderAll(false)});
   L.querySelectorAll("[data-u]").forEach(b=>b.onclick=()=>{const u=b.dataset.u,want=!unitOn(u);want===(state.variants||isPrimary(u))?state.runPref.delete(u):state.runPref.set(u,want);renderAll(false)});
@@ -869,7 +873,7 @@ function hideTip(){$("tip").style.display="none"}
 
 /* ---------- panel ---------- */
 let panelOpener=null;
-function openPanel(tab){if(!state.panel)panelOpener=document.activeElement;state.panel=true;state.tab=tab;renderPanel();$("panel").classList.add("open");$("bTune").setAttribute("aria-pressed",tab==="tune");$("bData").setAttribute("aria-pressed",tab==="data");$("bAbout").setAttribute("aria-pressed",tab==="about");$("bMine").setAttribute("aria-pressed",tab==="mine")}
+function openPanel(tab){if(!state.panel)panelOpener=document.activeElement;state.panel=true;state.tab=tab;renderPanel();$("panel").classList.add("open");$("bTune").setAttribute("aria-pressed",tab==="tune");$("bData").setAttribute("aria-pressed",tab==="data");$("bAbout").setAttribute("aria-pressed",tab==="about");$("bMine").setAttribute("aria-pressed",tab==="mine");const sel=$("panel").querySelector('.tabs [data-t="'+tab+'"]');if(sel&&panelOpener&&panelOpener!==document.body&&!$("panel").contains(document.activeElement))sel.focus({preventScroll:true})}
 function closePanel(){const was=state.panel;state.panel=false;if(was&&panelOpener&&document.contains(panelOpener)&&panelOpener!==document.body)panelOpener.focus();$("panel").classList.remove("open");$("bTune").setAttribute("aria-pressed","false");$("bData").setAttribute("aria-pressed","false");$("bAbout").setAttribute("aria-pressed","false");$("bMine").setAttribute("aria-pressed","false")}
 $("bAbout").onclick=()=>state.panel&&state.tab==="about"?closePanel():openPanel("about");
 $("bTune").onclick=()=>state.panel&&state.tab==="tune"?closePanel():openPanel("tune");
@@ -881,20 +885,23 @@ function renderPanel(){
   if(dataMissing().length){panelStale=true;return}
   panelStale=false;
   $("panel").querySelectorAll(".tabs [data-t]").forEach(b=>{b.setAttribute("aria-selected",b.dataset.t===state.tab);b.tabIndex=b.dataset.t===state.tab?0:-1});
+  $("pbody").setAttribute("aria-labelledby","tab-"+state.tab);
   const body=$("pbody");
+  const fk=focusKey(body);
   if(state.tab==="evidence")body.innerHTML=evidenceHtml();else if(state.tab==="about")body.innerHTML=aboutHtml();else if(state.tab==="tune")body.innerHTML=tuneHtml();else if(state.tab==="mine")body.innerHTML=mineHtml();else body.innerHTML=dataHtml();
   if(state.tab==="evidence")wireEvidence();else if(state.tab==="tune")wireTune();else if(state.tab==="mine")wireMine();else if(state.tab==="data")wireData();
+  restoreFocus(body,fk);
 }
 const issueUrl=r=>(hashFlush(),`${SIMHIGHLINE_RELEASE.repo}/issues/new?template=curve-error.yml&title=${encodeURIComponent("Curve error: "+r.id)}&record=${encodeURIComponent(r.id)}&view=${encodeURIComponent(location.href)}`);
 const SURE={"official-table":"The authors' own table, checksummed when downloaded.","published-table":"A table printed in the paper, spot-checked against numbers the paper quotes.","published-fit":"The paper's fitting function evaluated at the plotted points, not refitted.","catalog-derived":"Binned by this project from a catalogue, with fixed cuts and a fixed random seed.","digitized-figure":"Read from a published figure"};
 function sureHtml(r){const p=r.provenance||{},t=p.tier;let s=SURE[t]||"";if(!s)return"";const a=(window.SIMHIGHLINE_AUDIT||{})[r.id];if(t==="digitized-figure"){const u=p.digitizationUncertaintyDex;s+=` (axes calibrated on the printed tick marks${Number.isFinite(u)?`, reading error about ${u} dex`:""}). Not checked against the authors' numbers; shown for context and never used for ranking.`}const chk=a?` Checked by ${esc(a.reviewer)} (${esc(a.verdict)}, ${esc(a.date||"")}).`:" Not yet checked by anyone who knows the source.";return`<p class="sure"><b>How sure are we?</b> ${esc(s)}${chk}</p>`}
 function evidenceHtml(){
   const r=byId.get(state.sel);
-  if(!r)return`<h3>Evidence</h3><p class="hint">Click any curve to see where it comes from, how it was extracted, and which definitions it uses.</p><p class="hint">Tiers: ${TIERS.map(t=>`<b>${t.replace(/-/g," ")}</b> ${TIER_NOTE[t]}`).join("; ")}.</p>`;
+  if(!r)return`<h3 aria-level="2">Evidence</h3><p class="hint">Click any curve to see where it comes from, how it was extracted, and which definitions it uses.</p><p class="hint">Tiers: ${TIERS.map(t=>`<b>${t.replace(/-/g," ")}</b> ${TIER_NOTE[t]}`).join("; ")}.</p>`;
   const d=r.definitions||{},p=r.provenance||{};
   const defs=Object.entries(d).filter(([k])=>!["cosmology"].includes(k)).map(([k,v])=>`<dt>${esc(k.replace(/([A-Z])/g," $1").toLowerCase())}</dt><dd>${esc(typeof v==="object"?JSON.stringify(v):v)}</dd>`).join("");
   const ref=state.ref?refRecord(currentZ()):null,v=verdict(ref,r);
-  return`<h3>${esc(label(r))}</h3><div class="sub">${esc(REL[r.relation]?.t||r.relation)}, z = ${fmtZ(r.epoch.zRepresentative)}${r.epoch.snapshot!=null?`, snapshot ${r.epoch.snapshot}`:""}</div>
+  return`<h3 aria-level="2">${esc(label(r))}</h3><div class="sub">${esc(REL[r.relation]?.t||r.relation)}, z = ${fmtZ(r.epoch.zRepresentative)}${r.epoch.snapshot!=null?`, snapshot ${r.epoch.snapshot}`:""}</div>
   <span class="tier" title="${esc(TIER_NOTE[p.tier]||"")}">${esc((p.tier||"").replace(/-/g," "))}</span><span class="tier">${esc(r.calibration||"")}</span>${r.rankable?"":'<span class="tier" title="Context only: the definitions or sampling do not allow a fair comparison">context only</span>'}
   ${sureHtml(r)}
   <div class="btns"><button class="btn" id="evRef">${state.ref===unitOf(r)?"Clear reference":"Use as reference"}</button><button class="btn" id="evFit">Fit line</button><button class="btn" id="evCsv">CSV</button><button class="btn" id="evBib">Cite</button><a class="btn" id="evIssue" href="${esc(issueUrl(r))}" target="_blank" rel="noopener" title="Open a prefilled issue about this curve on GitHub">Report an issue</a></div>
@@ -916,18 +923,18 @@ function closeRecord(){state.sel=null;if(state.tab==="evidence")closePanel();ren
 
 function aboutHtml(){
   const n=(window.SIMHIGHLINE_NOTES||{}).relations?.[state.rel];
-  if(!n)return`<h3>About</h3><p class="hint">No summary for this relation yet.</p>`;
+  if(!n)return`<h3 aria-level="2">About</h3><p class="hint">No summary for this relation yet.</p>`;
   const rs=sims.filter(r=>r.relation===state.rel),os=obs.filter(r=>r.relation===state.rel);
   const names=[...new Set(rs.map(r=>SHORT[r.source]||r.source))].sort(),zs=rs.map(r=>r.epoch.zRepresentative),zlo=Math.min(...zs),zhi=Math.max(...zs);
   const sens=(window.SIMHIGHLINE_SENS||[]).filter(x=>x.relation===state.rel),fs=v=>(v>=0?"+":"−")+Math.abs(v).toFixed(2),short=v=>String(v).replace(/\s*\(.*$/,"").slice(0,44);
-  const sensHtml=sens.length?`<h4>MEASURED DEFINITION EFFECTS</h4><p class="hint" style="margin-top:0">Inside single runs published under two definitions, the curves differ by this much (y units, median over the shared x range; the largest local offset is in brackets). This is the part of any cross-simulation offset that definitions alone can cause.</p><ul style="padding-left:18px;margin:0;font-size:13px">${sens.map(x=>`<li style="margin:5px 0"><b>${esc(SHORT[x.source]||x.source)}</b>, ${esc(x.key)}: ${esc(short(x.from))} → ${esc(short(x.to))}: <b>${fs(x.median)}</b>${x.epochs>1?` (${fs(x.medianRange[0])} to ${fs(x.medianRange[1])} over ${x.epochs} epochs)`:""} [max ${x.max.toFixed(2)}]</li>`).join("")}</ul>`:"";
+  const sensHtml=sens.length?`<h4 aria-level="3">MEASURED DEFINITION EFFECTS</h4><p class="hint" style="margin-top:0">Inside single runs published under two definitions, the curves differ by this much (y units, median over the shared x range; the largest local offset is in brackets). This is the part of any cross-simulation offset that definitions alone can cause.</p><ul style="padding-left:18px;margin:0;font-size:13px">${sens.map(x=>`<li style="margin:5px 0"><b>${esc(SHORT[x.source]||x.source)}</b>, ${esc(x.key)}: ${esc(short(x.from))} → ${esc(short(x.to))}: <b>${fs(x.median)}</b>${x.epochs>1?` (${fs(x.medianRange[0])} to ${fs(x.medianRange[1])} over ${x.epochs} epochs)`:""} [max ${x.max.toFixed(2)}]</li>`).join("")}</ul>`:"";
   const roleLabel=t=>({review:"review","simulation vs data":"simulation vs data",compilation:"compilation",observation:"observation"}[t]||t);
-  return`<h3>${esc(n.title)}</h3><div class="sub">${esc(REL[state.rel].t)} · what it is, what data say, what simulations do</div>
+  return`<h3 aria-level="2">${esc(n.title)}</h3><div class="sub">${esc(REL[state.rel].t)} · what it is, what data say, what simulations do</div>
   <p class="np">${esc(n.paragraph)}</p>${n.variantNote?`<p class="hint">${esc(n.variantNote)}</p>`:""}
   <div class="warn" style="border-color:var(--mustard)"><b>In this data well:</b> ${rs.length} simulation records from ${names.length} simulation${names.length>1?"s":""} (${esc(names.join(", "))}), z = ${fmtZ(zlo)} to ${fmtZ(zhi)}; ${os.length} observational record${os.length===1?"":"s"}. ${names.length<3?"Coverage of this relation is still thin.":""}</div>
   ${sensHtml}
-  <h4>REFERENCES</h4>
-  <ul style="padding-left:18px;margin:0;font-size:13px">${n.refs.map(r=>`<li style="margin:5px 0"><span class="tier">${esc(roleLabel(r.role))}</span> ${esc(r.cite)} <a href="https://doi.org/${esc(r.doi)}" target="_blank" rel="noopener">doi</a> · <a href="https://arxiv.org/abs/${esc(r.arxiv)}" target="_blank" rel="noopener">arXiv</a></li>`).join("")}</ul>
+  <h4 aria-level="3">REFERENCES</h4>
+  <ul style="padding-left:18px;margin:0;font-size:13px">${n.refs.map(r=>`<li style="margin:5px 0"><span class="tier">${esc(roleLabel(r.role))}</span> ${esc(r.cite)} <a href="https://doi.org/${esc(r.doi)}" target="_blank" rel="noopener" aria-label="doi: ${esc(r.cite)} (opens in a new tab)">doi</a> · <a href="https://arxiv.org/abs/${esc(r.arxiv)}" target="_blank" rel="noopener" aria-label="arXiv: ${esc(r.cite)} (opens in a new tab)">arXiv</a></li>`).join("")}</ul>
   <p class="hint" style="margin-top:14px">Written from the abstracts of these papers, with each result attributed to its source. This is context, not evidence: the curves in the plot carry their own definitions and provenance. Read the papers before quoting a claim.</p>`;
 }
 function tuneHtml(){
@@ -936,28 +943,28 @@ function tuneHtml(){
   const refs=[...new Set([...pick(rel,z),...pickObs(rel,z)].map(unitOf))].sort();
   const cnt=t=>sims.filter(r=>r.relation===rel&&r.provenance?.tier===t).length+obs.filter(r=>r.relation===rel&&r.provenance?.tier===t).length;
   const opt=(v,t,cur)=>`<option value="${esc(v)}" ${v===cur?"selected":""}>${esc(t)}</option>`;
-  return`<h3>Customise</h3><div class="sub">Everything here is reversible and stored in the page link.</div>
-  <h4>AXES</h4>
+  return`<h3 aria-level="2">Customise</h3><div class="sub">Everything here is reversible and stored in the page link.</div>
+  <h4 aria-level="3">AXES</h4>
   <label>Tick labels <select id="tTf">${opt("log","log₁₀ values",state.tf)}${opt("phys","physical values (10ˣ)",state.tf)}</select></label>
   ${yts.length?`<label>y shown as <select id="tYt">${opt("none",meta.y,effYt())}${yts.map(([k,t])=>opt(k,t+(k==="perx"?" (y − x)":" (y + x)"),effYt())).join("")}</select></label>`:""}
   <div class="two"><label>x min <input type="number" step="any" id="tX0" value="${state.xr?state.xr[0]:""}" placeholder="auto"></label><label>x max <input type="number" step="any" id="tX1" value="${state.xr?state.xr[1]:""}" placeholder="auto"></label><label>y min <input type="number" step="any" id="tY0" value="${state.yr?state.yr[0]:""}" placeholder="auto"></label><label>y max <input type="number" step="any" id="tY1" value="${state.yr?state.yr[1]:""}" placeholder="auto"></label></div>
   <div class="btns"><button class="btn" id="tAuto">Reset ranges</button></div><p class="hint">Ranges are in plotted log₁₀ units.</p>
-  <h4>WHAT IS SHOWN</h4>
+  <h4 aria-level="3">WHAT IS SHOWN</h4>
   <label><input type="checkbox" id="tBands" ${state.bands?"checked":""}> uncertainty / scatter bands</label>
   <label><input type="checkbox" id="tSc" ${state.scatter?"checked":""}> individual galaxies (scatter records)</label>
-  <label><input type="checkbox" id="tImf" ${state.imfc?"checked":""}> convert stellar masses and SFRs to a Chabrier IMF (offsets: Kroupa −0.040 dex, Salpeter −0.218 dex, the factors of the comparison-data compilation; unstated IMFs stay as published; downloads always keep the published values)</label>
-  ${state.rel==="gsmf"?`<h4>AS A SURVEY WOULD MEASURE IT</h4>
+  <label><input type="checkbox" id="tImf" aria-label="convert stellar masses and SFRs to a Chabrier IMF" aria-describedby="tImfH" ${state.imfc?"checked":""}> convert stellar masses and SFRs to a Chabrier IMF <span id="tImfH">(offsets: Kroupa −0.040 dex, Salpeter −0.218 dex, the factors of the comparison-data compilation; unstated IMFs stay as published; downloads always keep the published values)</span></label>
+  ${state.rel==="gsmf"?`<h4 aria-level="3">AS A SURVEY WOULD MEASURE IT</h4>
   <label>Scatter in measured stellar mass, applied to the simulation curves only <select id="tOsc">${opt("0","off (as published)",String(state.osc))}${OBS_SIGMAS.map(v=>opt(String(v),v+" dex",String(state.osc))).join("")}</select></label>
   <p class="hint">${esc(OBS_WORDS[0].toUpperCase()+OBS_WORDS.slice(1))}. Each simulation curve is convolved with a Gaussian of this width in log₁₀ stellar mass, which raises the steep high-mass end most. Observations are not changed. Beyond the ends of a curve, a straight line through its three nearest points stands in for the missing values, and the points that depend on it get open circles. The thin lines are the curves as published. The offsets, the Tension and disagreement views, the figure and the methods text follow the setting and say so; downloads keep the published values. The setting is stored in the page link.</p>`:""}
   <label><input type="checkbox" id="tRk" ${state.rankOnly?"checked":""}> only evidence that can be compared fairly (hides curves read off figures, and context-only curves)</label>
   ${TIERS.map(t=>`<label><input type="checkbox" data-tier="${t}" ${state.offTier.has(t)?"":"checked"}> ${t.replace(/-/g," ")} <span style="color:var(--cream3)">${cnt(t)}</span></label>`).join("")}
-  <h4>EVOLUTION</h4>
+  <h4 aria-level="3">EVOLUTION</h4>
   <label>All epochs of one run, coloured by z <select id="tEvo">${opt("","off",state.evo||"")}${units.map(u=>opt(u,ulabel(u),state.evo)).join("")}</select></label>
-  <h4>REFERENCE AND RESIDUALS</h4>
+  <h4 aria-level="3">REFERENCE AND RESIDUALS</h4>
   <label>Compare with <select id="tRef">${opt("","none",state.ref||"")}${refs.map(u=>opt(u,ulabel(u),state.ref)).join("")}</select></label>
   <label><input type="checkbox" id="tRes" ${state.resid?"checked":""} ${state.ref?"":"disabled"}> plot residuals (curve − reference) at the shown epoch</label>
   <p class="hint">Legend marks show ✓ / ~ / ✕ for definition compatibility with the reference; open a curve for the reasons.</p>
-  <h4>FIT</h4>
+  <h4 aria-level="3">FIT</h4>
   <div class="btns"><button class="btn" id="tFit" ${state.sel?"":"disabled"}>Least-squares line to selected curve</button><button class="btn" id="tFitX" ${state.fit?"":"disabled"}>Clear</button></div>
   <p class="hint" id="fitOut">${state.sel?"Fits the plotted points inside the visible x-range.":"Select a curve first."}</p>`;
 }
@@ -1046,11 +1053,11 @@ function mineTable(){
   const f=v=>v==null||!Number.isFinite(v)?"–":(v>=0?"+":"−")+Math.abs(v).toFixed(2);
   const set=Object.values(state.user.defs||{}).some(v=>v&&v!=="unspecified");
   const row=({r,sm,v})=>{const k=v?.verdict,g=k==="comparable"?"✓":k==="not-comparable"?"✕":"~",c=k==="comparable"?"ok":k==="not-comparable"?"no":"cav",why=v?niceWhy(v.blockers.length?v.blockers.join("; "):v.caveats.join("; ")):"";
-    return`<tr data-id="${esc(r.id)}" tabindex="0" title="${esc(why)}"><td>${esc(label(r))}${r.kind==="observation"?' <span class="tier">obs</span>':""}${why&&k!=="comparable"?`<div class="why">${esc(why.length>130?why.slice(0,127)+"…":why)}</div>`:""}</td><td><span class="v ${c}">${v?g:""}</span></td><td>${sm?f(sm.median):"–"}</td><td>${sm?sm.n:"–"}</td></tr>`};
+    return`<tr data-id="${esc(r.id)}" tabindex="0" title="${esc(why)}"><td>${esc(label(r))}${r.kind==="observation"?' <span class="tier">obs</span>':""}${why&&k!=="comparable"?`<div class="why">${esc(why.length>130?why.slice(0,127)+"…":why)}</div>`:""}</td><td><span class="v ${c}"${v?` role="img" aria-label="${k==="comparable"?"comparable":k==="not-comparable"?"not comparable":"comparable with caveats"}"`:""}>${v?g:""}</span></td><td>${sm?f(sm.median):"–"}</td><td>${sm?sm.n:"–"}</td></tr>`};
   const fair=rows.filter(x=>x.v&&x.v.verdict!=="not-comparable"),other=rows.filter(x=>!x.v||x.v.verdict==="not-comparable");
   const head=t=>`<tr class="grp"><th colspan="4">${t}</th></tr>`;
   let h=xfn+mineVerdict(rows,set)+mineWhatIfHtml(rows,set)+mineResidualSvg(rows);
-  h+=`<table class="mt"><thead><tr><th>Published curve</th><th title="definition compatibility with your declared definitions">defs</th><th title="median of (your run − curve) over the shared x range, in y units">Δ</th><th title="shared x bins">n</th></tr></thead><tbody>`;
+  h+=`<table class="mt" aria-label="Your run against each published curve"><thead><tr><th>Published curve</th><th aria-label="Definitions: do they agree with yours" title="definition compatibility with your declared definitions">defs</th><th aria-label="Offset: median of your run minus the curve" title="median of (your run − curve) over the shared x range, in y units">Δ</th><th aria-label="Shared x bins" title="shared x bins">n</th></tr></thead><tbody>`;
   if(fair.length)h+=head("Fair to compare: your definitions agree")+fair.map(row).join("");
   if(other.length)h+=head(set?"Context only: definitions disagree or are missing":"Context only: nothing is comparable until you declare definitions")+other.map(row).join("");
   h+=`</tbody></table><p class="hint">An offset is only a verdict where the definitions agree (✓); ~ means comparable with caveats, ✕ not comparable. Digitized curves are context only. Hover a row for the reasons; click to open the curve.</p>`;
@@ -1058,20 +1065,20 @@ function mineTable(){
 }
 function mineHtml(){
   const rel=state.rel,u=state.user,keys=mineKeys(rel);
-  const sel=keys.map(k=>{const op=mineOptions(rel,k),cur=u?.defs?.[k]||"unspecified";return`<label>${esc(keyLabel(k))}<small>${esc(MINE_HELP[k]||"")}</small><select data-def="${esc(k)}"><option value="unspecified"${cur==="unspecified"?" selected":""}>I do not know / not stated</option>${op.map(o=>`<option value="${esc(o)}"${cur===o?" selected":""}>${esc(niceVal(o))}</option>`).join("")}</select></label>`}).join("");
+  const sel=keys.map(k=>{const op=mineOptions(rel,k),cur=u?.defs?.[k]||"unspecified";return`<label>${esc(keyLabel(k))}<small id="dh-${esc(k)}">${esc(MINE_HELP[k]||"")}</small><select data-def="${esc(k)}" aria-label="${esc(keyLabel(k))}" aria-describedby="dh-${esc(k)}"><option value="unspecified"${cur==="unspecified"?" selected":""}>I do not know / not stated</option>${op.map(o=>`<option value="${esc(o)}"${cur===o?" selected":""}>${esc(niceVal(o))}</option>`).join("")}</select></label>`}).join("");
   const seen=new Set(),like=sims.filter(r=>r.relation===rel&&r.definitions&&mineKeys(rel).some(k=>typeof r.definitions[k]==="string")).filter(r=>{const k=unitOf(r);if(seen.has(k))return false;seen.add(k);return true}).sort((a,b)=>label(a).localeCompare(label(b)));
-  return`<h4>YOUR RUN ON ${esc(REL[rel].t.toUpperCase())}</h4>
+  return`<h4 aria-level="2">YOUR RUN ON ${esc(REL[rel].t.toUpperCase())}</h4>
   <p class="hint">Paste or load x,y rows (an optional third column is the 1σ error; low,high columns and a header row are fine; commas, semicolons, tabs or spaces). Values are log₁₀ as plotted unless you tick the box. Nothing leaves this browser tab.</p>
-  <input type="text" id="uName" placeholder="label" value="${esc(u?.name||"")}" style="margin-bottom:6px">
-  <textarea id="uText" placeholder="x,y per line">${esc(u?.raw||"")}</textarea>
+  <input type="text" id="uName" aria-label="Name for your run" placeholder="label" value="${esc(u?.name||"")}" style="margin-bottom:6px">
+  <textarea id="uText" aria-label="Your curve, one x,y pair per line" placeholder="x,y per line">${esc(u?.raw||"")}</textarea>
   <label><input type="checkbox" id="uLin" ${u?.linear?"checked":""}> values are linear, not log₁₀</label>
   <div class="btns"><button class="btn" id="uPlot">Plot</button><button class="btn" id="uEx" type="button" title="Fills the box with a published curve (a simulation's where there is one) shifted by +0.15, so you can see what the comparison does before pasting your own">Try an example</button><button class="btn" id="uClear">Clear</button><label class="btn" style="margin:0;cursor:pointer">Load file<input type="file" id="uFile" accept=".csv,.txt,text/plain" hidden></label><button class="btn" id="uTpl" type="button">Template</button></div>
   <p class="hint" id="uInfo" aria-live="polite">${mineInfo(u)}</p>
-  <h4>DEFINITIONS OF YOUR RUN</h4>
+  <h4 aria-level="2">DEFINITIONS OF YOUR RUN</h4>
   <p class="hint">Say what your numbers mean; a definition you leave unspecified can never be matched. Options are the values used by the published records.</p>
   <label class="like">Fill in like a published simulation<select id="uLike"><option value="">choose one…</option>${like.map(r=>`<option value="${esc(r.id)}">${esc(label(r))}</option>`).join("")}</select></label>
   <div class="defs">${sel||'<span class="hint">This relation has no comparability keys.</span>'}</div>
-  <h4 id="mineH">AGAINST PUBLISHED CURVES AT z = ${esc(fmtZ(currentZ()))}</h4>
+  <h4 id="mineH" aria-level="2">AGAINST PUBLISHED CURVES AT z = ${esc(fmtZ(currentZ()))}</h4>
   <div id="mineTab">${mineTable()}</div>
   <div class="btns"><button class="btn" id="uCsv" ${u?"":"disabled"}>Download comparison CSV</button><button class="btn" id="uPng" ${u?"":"disabled"}>Download figure (PNG)</button><button class="btn" id="uLink" ${u?"":"disabled"}>Copy link to this comparison</button></div>`;
 }
@@ -1092,7 +1099,7 @@ function wireMine(){
   const refresh=()=>{renderPlot(false);if(state.panel&&state.tab==="mine"){$("mineTab").innerHTML=mineTable();wireMineRows();for(const id of ["uCsv","uPng","uLink"])$(id).disabled=!state.user}};
   const plotUser=txt=>{const lin=$("uLin").checked,r=window.SimHighlineLogic.parseUserCurve(txt,{linear:lin}),old=state.user?.defs||{};
     state.user=r.pts.length?{name:$("uName").value||"your run",raw:txt,linear:lin,defs:old,pts:r.pts}:null;mineSave();
-    renderPlot(false);renderPanel();const i=$("uInfo");if(i){i.innerHTML=state.user?mineInfo(state.user):esc(window.SimHighlineLogic.inspectUserCurve(txt,{linear:lin},mineExpect()).warnings.concat(window.SimHighlineLogic.inspectUserCurve(txt,{linear:lin}).summary).join(" "))}};
+    renderPlot(false);renderPanel();const i=$("uInfo");if(i){i.innerHTML=state.user?mineInfo(state.user):esc(window.SimHighlineLogic.inspectUserCurve(txt,{linear:lin},mineExpect()).warnings.concat(window.SimHighlineLogic.inspectUserCurve(txt,{linear:lin}).summary).join(" "));const rs=state.user?mineRows():[],fair=rs.filter(x=>x.v&&x.v.verdict!=="not-comparable").length;say(i.textContent+(state.user?` Compared with ${rs.length} published curve${rs.length===1?"":"s"} at this epoch; ${fair} fair to compare.`:""))}};
   $("uPlot").onclick=()=>plotUser($("uText").value);
   $("uEx").onclick=()=>{const z=currentZ(),good=s=>!s.scatter&&rawPoints(s.r,z).filter(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)).length,series=[...relationSeries(z),...pickObs(state.rel,z).map(r=>({r}))].filter(s=>good(s)>=3);
     const pick=a=>a.sort((u,v)=>good(v)-good(u))[0],o=pick(series.filter(s=>s.r.kind==="simulation"&&good(s)>=5))||pick(series.filter(s=>s.r.kind==="simulation"))||pick(series);
@@ -1164,25 +1171,25 @@ const citeText=()=>{const R=SIMHIGHLINE_RELEASE;return`${R.author} (${R.released
 const citeBib=()=>{const R=SIMHIGHLINE_RELEASE;return`@misc{simhighline_v${R.version.replace(/\./g,"_")},\n  author = {Bhatia, Shubhan},\n  title = {${R.title}},\n  year = {${R.released.slice(0,4)}},\n  version = {${R.version}},\n  howpublished = {Data set},\n  url = {${R.doi?"https://doi.org/"+R.doi:R.repo}},\n  note = {Code MIT, data CC BY 4.0; cite the original papers of the records used}\n}`};
 function dataHtml(){
   const recs=exportSet(),dl=state.dl,pts=recs.reduce((a,r)=>a+(r.representation.type==="parametric"?SimHighlineExport.NSAMPLE:r.representation.points.length),0),ns=new Set(recs.map(r=>r.source)).size;
-  return`<h3>Get data</h3><div class="sub">${REL[state.rel].t}</div>
-  <h4>WHAT</h4>
+  return`<h3 aria-level="2">Get data</h3><div class="sub">${REL[state.rel].t}</div>
+  <h4 aria-level="3">WHAT</h4>
   <label><input type="radio" name="scope" value="epoch" ${dl.scope==="epoch"?"checked":""}> this epoch, z = ${fmtZ(currentZ())}</label>
   <label><input type="radio" name="scope" value="all" ${dl.scope==="all"?"checked":""}> all epochs</label>
-  <label><input type="radio" name="scope" value="range" ${dl.scope==="range"?"checked":""}> z from <input type="number" step="any" id="dz0" value="${dl.z0}" style="width:70px"> to <input type="number" step="any" id="dz1" value="${dl.z1}" style="width:70px"></label>
+  <label><input type="radio" name="scope" value="range" ${dl.scope==="range"?"checked":""}> z from <input type="number" step="any" id="dz0" aria-label="z from (lowest redshift)" value="${dl.z0}" style="width:70px"> to <input type="number" step="any" id="dz1" aria-label="to (highest redshift)" value="${dl.z1}" style="width:70px"></label>
   <label><input type="checkbox" id="dObs" ${dl.obs?"checked":""}> include observations</label>
   <p class="hint">Follows the legend: hidden simulations, runs, kinds of source and the fair-comparison filter are excluded. Downloads always contain the published values, never IMF-converted ones.${xfOn()?" The observer scatter on the stellar mass function is on in the plot and is not applied to these files.":""}</p>
   <div class="big">${recs.length} <span style="font:13px var(--ui);color:var(--cream3)">records · ${pts} points · ${ns} sources</span></div>
-  <div class="btns"><button class="btn main" id="dCsv" ${recs.length?"":"disabled"}>Download CSV</button><button class="btn" id="dJson" ${recs.length?"":"disabled"}>JSON</button><button class="btn" id="dPy" ${recs.length?"":"disabled"}>Copy Python</button><button class="btn" id="dBib" ${recs.length?"":"disabled"}>Copy BibTeX</button></div>
+  <div class="btns"><button class="btn main" id="dCsv" ${recs.length?"":"disabled"}>Download CSV</button><button class="btn" id="dJson" aria-label="Download JSON" ${recs.length?"":"disabled"}>JSON</button><button class="btn" id="dPy" ${recs.length?"":"disabled"}>Copy Python</button><button class="btn" id="dBib" aria-label="Copy BibTeX of these curves" ${recs.length?"":"disabled"}>Copy BibTeX</button></div>
   <p class="hint">CSV is tidy: one row per point with units, definitions, tier, rankable flag and citation. Parametric curves are the published expression sampled at ${SimHighlineExport.NSAMPLE} points. Nothing is interpolated or smoothed.</p>
-  <h4>FIGURE</h4>
-  <div class="btns"><button class="btn" id="fSvg">SVG</button><button class="btn" id="fPng">PNG</button><button class="btn" id="fLink">Copy link</button><button class="btn" id="fEmb" title="HTML to paste into a web page or slides">Copy embed code</button></div>
+  <h4 aria-level="3">FIGURE</h4>
+  <div class="btns"><button class="btn" id="fSvg" aria-label="Download figure as SVG">SVG</button><button class="btn" id="fPng" aria-label="Download figure as PNG">PNG</button><button class="btn" id="fLink">Copy link</button><button class="btn" id="fEmb" title="HTML to paste into a web page or slides">Copy embed code</button></div>
   <div class="btns"><button class="btn" id="fMeth" title="A paragraph describing exactly what is plotted, with sources and definitions">Copy methods text</button><button class="btn" id="fPack" title="Caption, methods, definitions table and BibTeX for the curves in the plot">Download figure pack (.md)</button></div>
   <p class="hint">Figures carry the relation, the epoch, a line saying which of the plotted curves should not be read as like for like (and which smaller differences remain), and the source citations, in a footer. The methods text and the pack describe the curves currently plotted, with their definitions, tiers and the same caveat, generated from the comparison rules.</p>
-  <h4>CITE THE DATASET</h4>
+  <h4 aria-level="3">CITE THE DATASET</h4>
   <p class="hint">${esc(citeText())}</p>
-  <div class="btns"><button class="btn" id="cTxt">Copy citation</button><button class="btn" id="cBibD">Copy BibTeX</button></div>
+  <div class="btns"><button class="btn" id="cTxt">Copy citation</button><button class="btn" id="cBibD" aria-label="Copy BibTeX of the dataset">Copy BibTeX</button></div>
   <p class="hint">Also cite the original paper of every record you use (the CSV and BibTeX above carry them). Code MIT, data CC BY 4.0.</p>
-  <h4>EVERYTHING</h4>
+  <h4 aria-level="3">EVERYTHING</h4>
   <p class="hint">Full dataset v${esc(SIMHIGHLINE_RELEASE.version)}: <a href="data/export/sim-highline-records.csv">records.csv</a> · <a href="data/export/sim-highline-points.csv">points.csv</a> · <a href="data/export/sim-highline-records.json">records.json</a> · <a href="data/export/sim-highline-citations.bib">citations.bib</a> · <a href="sim_highline.py">sim_highline.py</a> (pandas loader). Links work when this page is served from the sim-highline site.</p>`;
 }
 function wireData(){
@@ -1247,8 +1254,8 @@ function renderPresets(){
   const cnt=k=>new Set(sims.filter(r=>r.relation===k).map(r=>r.source)).size,nObs=k=>new Set(obs.filter(r=>r.relation===k).map(r=>r.source)).size,keys=new Set(Object.keys(REL).filter(k=>cnt(k)||nObs(k))),listed=GROUPS.flatMap(g=>g[1]),other=[...keys].filter(k=>!listed.includes(k));
   const groups=[...GROUPS,...(other.length?[["Other",other]]:[])].map(([n,ks])=>[n,ks.filter(k=>keys.has(k))]).filter(g=>g[1].length);
   const item=k=>`<button data-r="${k}" aria-pressed="${k===state.rel&&!isTable()}" title="${esc(REL[k].t)}: ${cnt(k)?`${cnt(k)} simulation${cnt(k)>1?"s":""}, ${sims.filter(r=>r.relation===k).length} records`:`no simulation yet; ${nObs(k)} observational source${nObs(k)>1?"s":""}`}"><span>${esc(REL[k].t)}</span><span class="n${cnt(k)<3?" sparse":""}">${cnt(k)||"obs"}</span></button>`;
-  $("presets").innerHTML=groups.map(([n,ks])=>`<h2>${esc(n)}</h2>`+ks.map(item).join("")).join("")+`<p class="railnote">The number is how many simulations have data for the relation; <span style="color:var(--mustard);font-weight:600">amber</span> means fewer than three so far.</p>`;
-  $("presets").querySelectorAll("button[data-r]").forEach(b=>b.onclick=()=>selectRelation(b.dataset.r));
+  const fk=focusKey($("presets"));$("presets").innerHTML=groups.map(([n,ks])=>`<h2>${esc(n)}</h2>`+ks.map(item).join("")).join("")+`<p class="railnote">The number is how many simulations have data for the relation; <span style="color:var(--mustard);font-weight:600">amber</span> means fewer than three so far.</p>`;
+  $("presets").querySelectorAll("button[data-r]").forEach(b=>b.onclick=()=>selectRelation(b.dataset.r));restoreFocus($("presets"),fk);
   $("relSel").innerHTML=groups.map(([n,ks])=>`<optgroup label="${esc(n)}">`+ks.map(k=>`<option value="${k}" ${k===state.rel?"selected":""}>${esc(REL[k].t)} (${cnt(k)})</option>`).join("")+`</optgroup>`).join("");
   $("relSel").onchange=e=>selectRelation(e.target.value);
 }
@@ -1258,29 +1265,31 @@ function renderHead(){
   if(state.mode==="evol"){t=`${meta.t} versus redshift`;sub=`Value at x = ${atX()} read from each published curve; points are published epochs and lines only join consecutive ones.`}
   else if(state.resid&&state.ref){t=`${meta.t}: residuals at z = ${fmtZ(z)}`;sub=`Each curve minus ${ulabel(state.ref)} over the x range they share.`}
   else sub=`${ns} simulation${ns===1?"":"s"}${no?` and ${no} observational reference${no===1?"":"s"}`:""}. ${meta.y} against ${meta.x}.${ns<3?" Thin evidence at this epoch: with fewer than three simulations, an offset against them says little about the field.":""}`;
-  $("shTitle").textContent=t;$("shSub").textContent=sub;
+  $("shTitle").textContent=t;$("shSub").textContent=sub;document.title=t+" · sim-highline";
 }
 $("shNotes").onclick=()=>openPanel("about");
 function renderSlider(){
   const evol=state.mode==="evol",inp=$("z");document.querySelector("footer").classList.toggle("nozs",!!REL[state.rel].xz&&!evol);
   if(evol){
     const xs=sims.filter(r=>r.relation===state.rel&&r.representation.type==="points").flatMap(r=>r.representation.points.map(p=>p.x)).sort((a,b)=>a-b);
-    inp.min=xs.length?xs[Math.floor(.03*xs.length)].toFixed(1):0;inp.max=xs.length?xs[Math.floor(.97*(xs.length-1))].toFixed(1):1;inp.step=.05;inp.value=atX();inp.setAttribute("aria-label","Evaluate at x");
+    inp.min=xs.length?xs[Math.floor(.03*xs.length)].toFixed(1):0;inp.max=xs.length?xs[Math.floor(.97*(xs.length-1))].toFixed(1):1;inp.step=.05;inp.value=atX();inp.setAttribute("aria-label","Evaluate at x");inp.setAttribute("aria-valuetext","x = "+atX());
     $("ticks").innerHTML="";$("zread").innerHTML=`x = ${atX()}<small>${esc(REL[state.rel].x)}</small>`;return;
   }
-  if(REL[state.rel].xz){inp.min=0;inp.max=0;inp.value=0;inp.disabled=true;$("ticks").innerHTML="";$("zread").innerHTML=`all redshifts<small>x is redshift</small>`;return}
-  inp.disabled=false;const st=stops(state.rel);inp.min=0;inp.step=1;inp.max=Math.max(st.length-1,0);inp.value=Math.max(0,st.indexOf(currentZ()));inp.setAttribute("aria-label","Redshift");
+  if(REL[state.rel].xz){inp.min=0;inp.max=0;inp.value=0;inp.disabled=true;inp.removeAttribute("aria-valuetext");$("ticks").innerHTML="";$("zread").innerHTML=`all redshifts<small>x is redshift</small>`;return}
+  inp.disabled=false;const st=stops(state.rel);inp.min=0;inp.step=1;inp.max=Math.max(st.length-1,0);inp.value=Math.max(0,st.indexOf(currentZ()));inp.setAttribute("aria-label","Redshift");inp.setAttribute("aria-valuetext","z = "+fmtZ(currentZ()));
   const tw=$("ticks").clientWidth||320,step=Math.max(1,Math.ceil(st.length/Math.max(2,Math.floor(tw/46))));
   $("ticks").innerHTML=st.map((z,i)=>i%step===0||i===st.length-1&&(st.length-1-Math.floor((st.length-1)/step)*step)>=step*.6?`<span style="left:${st.length>1?i/(st.length-1)*100:0}%">${fmtZ(z)}</span>`:"").join("");
   $("zread").innerHTML=`z = ${fmtZ(currentZ())}<small>${st.length} epochs</small>`;
 }
 $("z").oninput=e=>{if(state.mode==="evol"){state.at=+e.target.value;renderAll(false);return}state.z=stops(state.rel)[+e.target.value];renderAll(true)};
+/* the details of a table cell are in its title, which screen readers do not read: copy them to aria-label */
+for(const id of["atlas","tension","spread"])new MutationObserver(()=>$(id).querySelectorAll("td[title]:not([aria-label]),th[title]:not([aria-label])").forEach(c=>c.setAttribute("aria-label",c.title))).observe($(id),{childList:true,subtree:true});
 function renderAtlas(){
   const rels=Object.keys(REL).filter(k=>sims.some(r=>r.relation===k));
   const srcs=[...new Set(sims.map(r=>r.source))].sort((a,b)=>sims.filter(r=>r.source===b).length-sims.filter(r=>r.source===a).length);
   const ZB=[0,.5,1,1.5,2,3,4,5,6,7,8,9,10,12];
   const zbin=z=>ZB.reduce((bi,v,i)=>Math.abs(v-z)<Math.abs(ZB[bi]-z)?i:bi,0);
-  let h=`<div class="thead"><h1>What exists</h1><p>Which simulations have data for which relation, and at which redshifts. Each bar is one epoch bin; empty cells are missing data, not missing physics. Click a cell to open that relation for that simulation.</p></div><table><tr><th></th>${rels.map(k=>`<th title="${esc(REL[k].t)}">${esc(REL[k].c)}</th>`).join("")}</tr>`;
+  let h=`<div class="thead"><h1>What exists</h1><p>Which simulations have data for which relation, and at which redshifts. Each bar is one epoch bin; empty cells are missing data, not missing physics. Click a cell to open that relation for that simulation.</p></div><table><tr><th><span class="sr">Simulation</span></th>${rels.map(k=>`<th title="${esc(REL[k].t)}">${esc(REL[k].c)}</th>`).join("")}</tr>`;
   for(const s of srcs){
     h+=`<tr><th><span class="sw" style="display:inline-block;vertical-align:middle;margin-right:6px;background:${colorOf(s)}"></span>${esc(SHORT[s]||s)}</th>`;
     for(const k of rels){
@@ -1308,7 +1317,7 @@ function renderTension(){
     const d=offsetOf(r,a,zref,true);if(d==null)return"";
     const v=verdict(a,r),vk=v?v.verdict:"unknown",al=Math.min(.8,Math.abs(d)/.8*.8),bg=d>=0?`rgba(235,104,52,${al})`:`rgba(42,120,214,${al})`;
     return`<td data-r="${k}" data-s="${esc(s)}" style="background:${bg};${vk==="not-comparable"?"outline:1px dashed var(--line)":""}" title="${esc(SHORT[s]||s)} · ${esc(label(r))} vs ${esc(a.source)}, z = ${fmtZ(zref)}: ${d>=0?"above":"below"} by ${Math.abs(d).toFixed(2)} in y units (${esc(vk.replace(/-/g," "))}${v&&v.blockers.length?": "+esc(v.blockers.join("; ")):""})${k==="gsmf"&&state.osc?esc("; simulation with "+state.osc+" dex of scatter applied, not as published"):""}"><b>${d>=0?"+":"−"}${Math.abs(d).toFixed(2)}</b> <span class="v ${vk==="comparable"?"ok":vk==="not-comparable"?"no":"cav"}">${vk==="comparable"?"✓":vk==="not-comparable"?"✕":"~"}</span></td>`};
-  let h=`<div class="thead"><h1>Simulations against observations</h1><p>How far each simulation sits from the observations (the chosen reference curve) for each relation, at one reference redshift. An offset is only a verdict when the definitions agree.</p></div><div class="tzbar" role="group" aria-label="Reference redshift">Reference redshift ${TZ.map(z=>`<button class="mini" data-tz="${z}" aria-pressed="${z===zref}">z = ${z}</button>`).join("")}</div><table><tr><th></th>${rels.map(k=>`<th title="${esc(REL[k].t)} against ${esc(REL[k].anchor.replace(/\$$/,""))}">${esc(REL[k].c)}${k==="gsmf"&&state.osc?" "+xfMark():""}</th>`).join("")}</tr>`;
+  let h=`<div class="thead"><h1>Simulations against observations</h1><p>How far each simulation sits from the observations (the chosen reference curve) for each relation, at one reference redshift. An offset is only a verdict when the definitions agree.</p></div><div class="tzbar" role="group" aria-label="Reference redshift">Reference redshift ${TZ.map(z=>`<button class="mini" data-tz="${z}" aria-pressed="${z===zref}">z = ${z}</button>`).join("")}</div><table><tr><th><span class="sr">Simulation</span></th>${rels.map(k=>`<th title="${esc(REL[k].t)} against ${esc(REL[k].anchor.replace(/\$$/,""))}">${esc(REL[k].c)}${k==="gsmf"&&state.osc?" "+xfMark():""}</th>`).join("")}</tr>`;
   for(const s of srcs){const cs=rels.map(k=>cell(s,k));if(!cs.some(Boolean))continue;h+=`<tr><th><span class="sw" style="display:inline-block;vertical-align:middle;margin-right:6px;background:${colorOf(s)}"></span>${esc(SHORT[s]||s)}</th>${cs.map(c=>c||`<td class="none"></td>`).join("")}</tr>`}
   h+=`</table><p class="tnote">Each cell is the median offset of the simulation's fiducial run from the anchor observation of that relation (the bold grey line in the Relation view), over the x range they share, in the relation's y units: dex for logarithmic quantities, a fraction for the quenched fraction. Orange: above the anchor; blue: below. ✓ definitions comparable, ~ caveats, ✕ not comparable (dashed outline): an offset where definitions differ is not a verdict on the simulation. Blank: no data at this epoch. Click a cell to open that relation.${state.osc?` The stellar mass function column (marked σ) is for simulation curves with ${state.osc} dex of Gaussian scatter in log stellar mass applied (${esc(OBS_WORDS)}); it is not the offset of the published curves.`:""}</p>`;
   $("tension").innerHTML=h;
@@ -1335,7 +1344,7 @@ function renderSpread(){
   let h=`<div class="thead"><h1>How much the simulations disagree</h1><p>How much simulations disagree with each other. Each cell is the spread (standard deviation) between the fiducial runs of at least three simulations, at fixed x, in the relation's y units, taken as the median over the x range they share.</p></div>
   <div class="tzbar" role="group" aria-label="Filter"><button class="mini" id="spRk" aria-pressed="${rk}" title="Leave out curves read off figures, and context-only curves">fair comparisons only</button></div>
   <p class="tnote" style="margin:0 0 14px"><b>Most contested:</b> ${big.map(f).join("; ")}.${small.length?` <b>Most settled</b> (four or more simulations): ${small.map(f).join("; ")}.`:""}</p>
-  <table class="sp"><tr><th></th>${TZ.map(z=>`<th>z = ${z}</th>`).join("")}</tr>`;
+  <table class="sp"><tr><th><span class="sr">Relation</span></th>${TZ.map(z=>`<th>z = ${z}</th>`).join("")}</tr>`;
   for(const k of rows){h+=`<tr><th>${esc(REL[k].t)}${k==="gsmf"&&state.osc?" "+xfMark():""}</th>${TZ.map(z=>{const c=cells.get(k+"|"+z);return c?`<td data-r="${k}" data-z="${z}" tabindex="0" title="${esc(REL[k].t)} at z = ${z}: spread ${c.sigma.toFixed(3)} across ${esc(c.names.join(", "))}; ${c.grid} x grid points${c.basis?"; compared on "+esc(c.basis):""}"><b>${c.sigma.toFixed(2)}</b><i class="sbar" style="width:${Math.max(2,Math.round(c.sigma/mx*64))}px"></i><span class="n">${c.suites}</span></td>`:`<td class="none"></td>`}).join("")}</tr>`}
   h+=`</table><p class="tnote">Bar length is proportional to the spread; the small number is how many simulations enter. A small spread is not accuracy: simulations calibrated to the same observations agree by construction. The spread mixes physics, numerics and definitions: the Your-run and Tension views show which curves are definition-compatible, and <a href="https://github.com/ShubhanBhatia42/sim-highline/blob/main/docs/ANALYSIS-definition-budget.md" target="_blank" rel="noopener">the definition-budget analysis</a> asks how much of it definitions alone explain. Only simulations that share the relation's hard definitions (for example the same metallicity quantity) are compared; blank: fewer than three such simulations overlap. Click a cell to open that relation at that epoch.${state.osc?` The stellar mass function row (marked σ) is for simulation curves with ${state.osc} dex of Gaussian scatter in log stellar mass applied (${esc(OBS_WORDS)}); it is not the spread of the published curves.`:""}</p>`;
   $("spread").innerHTML=h;
@@ -1370,7 +1379,7 @@ function renderDist(){
     for(let v=Math.ceil(x0*2)/2;v<=x1;v+=.5)ax+=`<text x="${sx(v).toFixed(1)}" y="${H-12}" text-anchor="middle">${v}</text>`;
     ax+=`<text x="${(L+pw/2).toFixed(0)}" y="${H-1}" text-anchor="middle">${esc(r.axes.xDefinition.split(" (")[0])}</text>`;
     const nAll=sm.n.reduce((a,b)=>a+b,0),yl=r.axes.yUnit;
-    h+=`<figure class="dpanel" tabindex="0" role="img" data-id="${esc(r.id)}" aria-label="${esc(label(r))}, ${nAll} galaxies: distribution of ${esc(r.axes.yDefinition)} by stellar mass. Press Enter to open the record."><h3>${esc(label(r))}${r.kind==="observation"?' <span class="tier">obs</span>':""}</h3><p class="sub">z = ${fmtZ(r.epoch.zRepresentative)} · ${nAll.toLocaleString()} galaxies${d.nSims>1?` pooled over ${d.nSims} boxes`:""}${d.weighting&&d.weighting!=="number"?" · "+esc(d.weighting):""}</p><svg viewBox="0 0 ${W} ${H}" aria-hidden="true"><rect x="${L}" y="${T}" width="${pw}" height="${ph}" fill="var(--panel2)"/>${g}<rect x="${L}" y="${T}" width="${pw}" height="${ph}" fill="none" stroke="var(--rule-strong)"/>${ax}</svg></figure>`;
+    h+=`<figure class="dpanel" tabindex="0" role="img" data-id="${esc(r.id)}" aria-label="${esc(label(r))}, ${nAll} galaxies: distribution of ${esc(r.axes.yDefinition)} by stellar mass. Press Enter to open the record."><h3 aria-level="2">${esc(label(r))}${r.kind==="observation"?' <span class="tier">obs</span>':""}</h3><p class="sub">z = ${fmtZ(r.epoch.zRepresentative)} · ${nAll.toLocaleString()} galaxies${d.nSims>1?` pooled over ${d.nSims} boxes`:""}${d.weighting&&d.weighting!=="number"?" · "+esc(d.weighting):""}</p><svg viewBox="0 0 ${W} ${H}" aria-hidden="true"><rect x="${L}" y="${T}" width="${pw}" height="${ph}" fill="var(--panel2)"/>${g}<rect x="${L}" y="${T}" width="${pw}" height="${ph}" fill="none" stroke="var(--rule-strong)"/>${ax}</svg></figure>`;
   }
   h+=`</div>`;
   const tab=(title,get,fmt,note)=>{
@@ -1388,7 +1397,7 @@ function renderDist(){
   $("dist").querySelectorAll(".dpanel").forEach(f=>{const go=()=>{const r=byId.get(f.dataset.id);state.rel=r.relation;state.z=nearestStop(state.rel,r.epoch.zRepresentative);state.sel=r.id;setMode("plot");openRecord(r.id)};f.onclick=go;f.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}}});
 }
 function syncShell(){for(const [id,k] of [["mPlot","plot"],["mEvol","evol"],["mAtlas","atlas"],["mTension","tension"],["mSpread","spread"],["mDist","dist"]])$(id).setAttribute("aria-pressed",state.mode===k);$("dist").classList.toggle("on",state.mode==="dist");$("atlas").classList.toggle("on",state.mode==="atlas");$("tension").classList.toggle("on",state.mode==="tension");$("spread").classList.toggle("on",state.mode==="spread");$("main").classList.toggle("table",isTable());$("legend").hidden=isTable();document.querySelector("footer").style.display=isTable()?"none":""}
-function setMode(m){state.mode=m;syncShell();if(dataWait(()=>setMode(m)))return;if(m==="atlas")renderAtlas();if(m==="tension")renderTension();if(m==="spread")renderSpread();if(m==="dist")renderDist();renderAll(false)}
+function setMode(m){state.mode=m;syncShell();if(dataWait(()=>setMode(m)))return;if(m==="atlas")renderAtlas();if(m==="tension")renderTension();if(m==="spread")renderSpread();if(m==="dist")renderDist();renderAll(false);say((isTable()?document.querySelector("#"+m+" h1"):$("shTitle")).textContent)}
 $("mPlot").onclick=()=>setMode("plot");$("mEvol").onclick=()=>setMode("evol");$("mAtlas").onclick=()=>setMode("atlas");$("mTension").onclick=()=>setMode("tension");$("mSpread").onclick=()=>setMode("spread");$("mDist").onclick=()=>setMode("dist");
 document.querySelectorAll(".recipes button").forEach(b=>b.onclick=()=>{
   const k=b.dataset.rc;$("about").classList.remove("on");
@@ -1419,17 +1428,20 @@ function palRender(){
   $("palQ").setAttribute("aria-activedescendant",pal.items.length?"palO"+pal.sel:"");
   $("palL").querySelectorAll("li[data-i]").forEach(li=>li.onclick=()=>palGo(+li.dataset.i));
 }
-function palOpen(){$("pal").classList.add("on");$("palQ").value="";pal.sel=0;palRender();$("palQ").focus()}
-function palClose(){$("pal").classList.remove("on")}
+let palFrom=null;
+function palOpen(){palFrom=document.activeElement;$("pal").classList.add("on");$("palQ").value="";pal.sel=0;palRender();$("palQ").focus()}
+function palClose(){$("pal").classList.remove("on");if(palFrom&&document.contains(palFrom))palFrom.focus();palFrom=null}
+/* keep Tab inside whichever dialog is open */
+document.addEventListener("keydown",e=>{if(e.key!=="Tab")return;const d=$("pal").classList.contains("on")?$("pal"):$("about").classList.contains("on")?$("about"):null;if(!d)return;const f=[...d.querySelectorAll('a[href],button,input,select,textarea,[tabindex="0"]')].filter(x=>!x.disabled&&x.getClientRects().length);if(!f.length)return;const first=f[0],last=f[f.length-1],a=document.activeElement;if(!d.contains(a)){e.preventDefault();first.focus()}else if(e.shiftKey&&(a===first||a===d.firstElementChild)){e.preventDefault();last.focus()}else if(!e.shiftKey&&a===last){e.preventDefault();first.focus()}});
 function palGo(i){const a=pal.items[i];if(!a)return;palClose();a.f()}
 $("palQ").oninput=()=>{pal.sel=0;palRender()};
 $("palQ").onkeydown=e=>{if(e.key==="ArrowDown"){e.preventDefault();pal.sel=Math.min(pal.sel+1,pal.items.length-1);palRender()}else if(e.key==="ArrowUp"){e.preventDefault();pal.sel=Math.max(pal.sel-1,0);palRender()}else if(e.key==="Enter"){e.preventDefault();palGo(pal.sel)}else if(e.key==="Escape"){e.stopPropagation();palClose()}};
 $("pal").onclick=e=>{if(e.target===$("pal"))palClose()};
 document.addEventListener("keydown",e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="k"){e.preventDefault();palOpen()}else if(e.key==="/"&&!["INPUT","TEXTAREA","SELECT"].includes(e.target.tagName)){e.preventDefault();palOpen()}});
-document.addEventListener("keydown",e=>{if(e.key==="Escape"){$("about").classList.remove("on");if(state.panel)closePanel();else closeRecord()}if(["INPUT","TEXTAREA","SELECT"].includes(e.target.tagName))return;const n=stops(state.rel).length;if(state.mode==="evol")return;if(e.key==="ArrowRight"){state.z=stops(state.rel)[Math.min(stops(state.rel).indexOf(currentZ())+1,n-1)];renderAll(true)}if(e.key==="ArrowLeft"){state.z=stops(state.rel)[Math.max(stops(state.rel).indexOf(currentZ())-1,0)];renderAll(true)}});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){if($("pal").classList.contains("on")){palClose();return}if($("about").classList.contains("on")){$("about").classList.remove("on");$("infoBtn").focus();return}if(state.panel)closePanel();else closeRecord()}if(["INPUT","TEXTAREA","SELECT"].includes(e.target.tagName))return;const n=stops(state.rel).length;if(state.mode==="evol")return;if(e.key==="ArrowRight"){state.z=stops(state.rel)[Math.min(stops(state.rel).indexOf(currentZ())+1,n-1)];renderAll(true)}if(e.key==="ArrowLeft"){state.z=stops(state.rel)[Math.max(stops(state.rel).indexOf(currentZ())-1,0)];renderAll(true)}});
 $("play").onclick=()=>{
-  if(state.playing){clearInterval(state.playing);state.playing=null;$("playIcon").setAttribute("d","M3 1.5v11l9-5.5z");return}
-  $("playIcon").setAttribute("d","M2.5 1.5h3.5v11h-3.5zM8 1.5h3.5v11h-3.5z");
+  if(state.playing){clearInterval(state.playing);state.playing=null;$("playIcon").setAttribute("d","M3 1.5v11l9-5.5z");$("play").setAttribute("aria-pressed","false");return}
+  $("playIcon").setAttribute("d","M2.5 1.5h3.5v11h-3.5zM8 1.5h3.5v11h-3.5z");$("play").setAttribute("aria-pressed","true");
   state.playing=setInterval(()=>{const st=stops(state.rel);state.z=st[(st.indexOf(currentZ())+1)%st.length];renderAll(true)},1400);
 };
 function renderAll(animate){if(dataWait(()=>renderAll(animate)))return;if(state.mode==="evol"&&REL[state.rel]?.xz){state.mode="plot";$("mPlot").setAttribute("aria-pressed",true);$("mEvol").setAttribute("aria-pressed",false)}renderPresets();renderSlider();renderHead();if(!isTable())renderPlot(animate);if(state.panel&&state.tab==="data")renderPanel();if(state.panel&&state.tab==="mine"){if(mineRel!==state.rel){mineRel=state.rel;renderPanel()}else if($("mineTab")){$("mineTab").innerHTML=mineTable();$("mineH").textContent="AGAINST PUBLISHED CURVES AT z = "+fmtZ(currentZ());wireMineRows()}}syncHash()}
