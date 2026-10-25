@@ -14,12 +14,12 @@
 <nav class="idx" aria-label="On this page">
 <p class="lab">Contents</p>
 <ol>
-<li><a href="#question"><span>§1</span>Question</a></li>
-<li><a href="#built"><span>§2</span>What could be built</a></li>
-<li><a href="#result"><span>§3</span>Result</a></li>
-<li><a href="#reading"><span>§4</span>Reading it</a></li>
-<li><a href="#limits"><span>§5</span>Limits and gaps</a></li>
-<li><a href="#reproduce"><span>§6</span>Reproduce</a></li>
+<li><a href="#question"><span aria-hidden="true">§1</span>Question</a></li>
+<li><a href="#built"><span aria-hidden="true">§2</span>What could be built</a></li>
+<li><a href="#result"><span aria-hidden="true">§3</span>Result</a></li>
+<li><a href="#reading"><span aria-hidden="true">§4</span>Reading it</a></li>
+<li><a href="#limits"><span aria-hidden="true">§5</span>Limits and gaps</a></li>
+<li><a href="#reproduce"><span aria-hidden="true">§6</span>Reproduce</a></li>
 </ol>
 <p class="back"><a href="studies.html">All studies</a> · <a href="retune.html">Dials</a></p>
 </nav>
@@ -44,7 +44,7 @@
 <p class="limits-first"><b>Limits in brief.</b> This is an internal check: no outside expert has reviewed it. It compares published curves of other models; CAMELS itself is not run at a second resolution, so it does not say what IllustrisTNG or SIMBA would give at CAMELS or at a higher resolution. Different papers use different galaxy finders and apertures; each pair compares two curves of one paper only.</p>
 
 <section class="sec" id="question" aria-labelledby="question-h">
-<h2 id="question-h"><span class="sn">§1</span>Question</h2>
+<h2 id="question-h"><span class="sn" aria-hidden="true">§1</span>Question</h2>
 <p>The <a href="study-joint.html">joint study</a> and the <a href="study-shape.html">shape study</a> both name resolution as their largest open weakness: CAMELS boxes are 25 Mpc/h with 256³ dark matter and 256³ gas elements, and nothing in the project measured how much a model's output changes when only the resolution changes. CAMELS has no second resolution, so that cannot be measured on CAMELS. What can be measured is how published curves of other models change between resolutions of the same model, and how large that is next to two numbers the project already has: the run-to-run noise of the CAMELS observables, and the distance between IllustrisTNG and SIMBA that the joint study reports.</p>
 <p>Two questions with rules fixed in advance:</p>
 <ul class="flat">
@@ -54,7 +54,7 @@
 </section>
 
 <section class="sec" id="built" aria-labelledby="built-h">
-<h2 id="built-h"><span class="sn">§2</span>What could be built</h2>
+<h2 id="built-h"><span class="sn" aria-hidden="true">§2</span>What could be built</h2>
 <p>A pair needs two records of the same model at two resolutions with the same axes and definitions and a comparable epoch (within 0.1 in redshift). {{rsPairsN}} pairs of curves met that rule, grouped into {{rsUnitsN}} steps in {{rsLadN}} sets of runs. Tier A means the records or the registry state that the box is the same, so a change can be read as resolution (and, where the authors recalibrate at each resolution, as the effect of that recalibration). Tier B means the box, the sample or the run differs or is not stated.</p>
 <div class="tw" role="region" aria-label="Sets of runs" tabindex="0"><table class="dense"><thead><tr><th>Runs</th><th>Tier</th><th>Box</th><th>Parameters</th><th>Resolutions, coarse to fine</th><th class="n">pairs</th><th class="n">refused</th><th>Observables</th></tr></thead><tbody>{{rsLadderRows}}</tbody></table></div>
 <p>Examined and not built:</p>
@@ -64,7 +64,7 @@
 </section>
 
 <section class="sec" id="result" aria-labelledby="result-h">
-<h2 id="result-h"><span class="sn">§3</span>Result</h2>
+<h2 id="result-h"><span class="sn" aria-hidden="true">§3</span>Result</h2>
 <ul class="flat">{{rsHeadline}}</ul>
 <p><b>Steps between adjacent resolutions, tier A, by label.</b></p>
 <div class="tw sm" role="region" aria-label="Labels by set of runs" tabindex="0"><table class="dense"><thead><tr><th>Runs</th><th class="n">converged</th><th class="n">resolution-dependent</th><th class="n">cannot tell</th></tr></thead><tbody>{{rsP1Rows}}</tbody></table></div>
@@ -75,7 +75,7 @@
 </section>
 
 <section class="sec" id="reading" aria-labelledby="reading-h">
-<h2 id="reading-h"><span class="sn">§4</span>Reading it</h2>
+<h2 id="reading-h"><span class="sn" aria-hidden="true">§4</span>Reading it</h2>
 <p>All tier A steps, with the span from the coarsest to the finest run where there are three. R is the root-mean-square change in noise units, R<sub>c</sub> the same with the digitization noise taken out; the last three columns are in dex (a factor of 10; 0.1 dex is a factor of 1.26), or in fraction for the quenched fraction, finer minus coarser. "Noise basis" says whether the unit is the CAMELS noise of the matching observable and mass bins (reference) or a typical CAMELS noise (yardstick), used where the observable has no counterpart or too few mass bins overlap.</p>
 <div class="tw" role="region" aria-label="All tier A steps" tabindex="0"><table class="dense"><thead><tr><th>Runs</th><th>Observable</th><th>Step</th><th>kind</th><th class="n">pairs</th><th>noise basis</th><th class="n">R</th><th class="n">R<sub>c</sub></th><th class="n">rms</th><th class="n">mean</th><th>label</th></tr></thead><tbody>{{rsTierARows}}</tbody></table></div>
 <p>{{rsTailLine}}</p>
@@ -92,7 +92,7 @@
 </section>
 
 <section class="sec" id="limits" aria-labelledby="limits-h">
-<h2 id="limits-h"><span class="sn">§5</span>Limits and gaps</h2>
+<h2 id="limits-h"><span class="sn" aria-hidden="true">§5</span>Limits and gaps</h2>
 <ul class="flat">
 <li><b>Internal check.</b> No outside expert has reviewed the protocol, the code or the result. The labels are not significance tests: the only uncertainty in R is the digitization of the figures.</li>
 <li><b>CAMELS is not tested at a second resolution.</b> The changes are those of other models, from their papers. SIMBA has no pair that can be evaluated in the dataset (its published fits at two resolutions are parametric and were not evaluated), so nothing here measures the resolution dependence of SIMBA.</li>
@@ -105,7 +105,7 @@
 </section>
 
 <section class="sec" id="reproduce" aria-labelledby="reproduce-h">
-<h2 id="reproduce-h"><span class="sn">§6</span>Reproduce</h2>
+<h2 id="reproduce-h"><span class="sn" aria-hidden="true">§6</span>Reproduce</h2>
 <pre tabindex="0" aria-label="Reproduction commands">python3 scripts/analyze_resolution.py       # a few seconds; writes data/analysis/resolution.json and the report
 python3 scripts/check_resolution.py         # the checks made after the run
 python3 scripts/test_resolution.py          # machinery tests on synthetic ladders and the stale-output check

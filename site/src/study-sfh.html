@@ -14,11 +14,11 @@
 <nav class="idx" aria-label="On this page">
 <p class="lab">Contents</p>
 <ol>
-<li><a href="#question"><span>§1</span>Question</a></li>
-<li><a href="#data"><span>§2</span>Data</a></li>
-<li><a href="#result"><span>§3</span>Result</a></li>
-<li><a href="#limits"><span>§4</span>Limits</a></li>
-<li><a href="#reproduce"><span>§5</span>Reproduce</a></li>
+<li><a href="#question"><span aria-hidden="true">§1</span>Question</a></li>
+<li><a href="#data"><span aria-hidden="true">§2</span>Data</a></li>
+<li><a href="#result"><span aria-hidden="true">§3</span>Result</a></li>
+<li><a href="#limits"><span aria-hidden="true">§4</span>Limits</a></li>
+<li><a href="#reproduce"><span aria-hidden="true">§5</span>Reproduce</a></li>
 </ol>
 <p class="back"><a href="studies.html">All studies</a></p>
 </nav>
@@ -43,13 +43,13 @@
 
 <p class="limits-first"><b>Limits in brief.</b> Two codes, one observable and CAMELS resolution. The structural verdicts need a step between the codes of order a dex that the four parameters cannot absorb, so smaller differences are called removable. One validation of the SIMBA emulator misses its threshold narrowly, and the result is read with that qualification (§4).</p>
 <section class="sec" id="question" aria-labelledby="question-h">
-<h2 id="question-h"><span class="sn">§1</span>Question</h2>
+<h2 id="question-h"><span class="sn" aria-hidden="true">§1</span>Question</h2>
 <p>Two things limit a simulation’s predictions away from the observations it was tuned to: what the model can still do by retuning its own parameters (<em>parametric</em>), and what its form forces whatever the tuning (<em>structural</em>). Climate science separates them with perturbed-physics and multi-model ensembles. Here the cosmic star formation history is the test case.</p>
 <p>Four questions, each with a rule fixed in advance: do published simulations disagree more in the early Universe (E1); how big are the authors’ own changes (E2); can retuning remove the difference between two codes (E3); and tuned to the same observed history, do their predictions beyond it stay apart (E4)?</p>
 </section>
 
 <section class="sec" id="data" aria-labelledby="data-h">
-<h2 id="data-h"><span class="sn">§2</span>Data</h2>
+<h2 id="data-h"><span class="sn" aria-hidden="true">§2</span>Data</h2>
 <aside class="note"><span class="lab">Registration</span><p>The protocol was written before any of these numbers existed and was amended once, before the run, after an internal review (not by an outside expert). Amendment A1 and what had been seen are in <a href="{{repo}}/blob/main/docs/PROTOCOL-model-form.md">PROTOCOL-model-form.md</a>.</p></aside>
 <dl class="kv">
 <dt>Published</dt><dd>Curves of the cosmic star formation rate density of {{mfNFamAll}} model families, and the authors’ own resolution, parameter and cosmology variants (<code>data/model-variants.json</code>).</dd>
@@ -58,7 +58,7 @@
 </section>
 
 <section class="sec" id="result" aria-labelledby="result-h">
-<h2 id="result-h"><span class="sn">§3</span>Result</h2>
+<h2 id="result-h"><span class="sn" aria-hidden="true">§3</span>Result</h2>
 
 <h3>E1 · Do published simulations disagree more in the early Universe?</h3>
 <p>{{mfE1}}</p>
@@ -88,7 +88,7 @@
 </section>
 
 <section class="sec" id="limits" aria-labelledby="limits-h">
-<h2 id="limits-h"><span class="sn">§4</span>Limits</h2>
+<h2 id="limits-h"><span class="sn" aria-hidden="true">§4</span>Limits</h2>
 <ul class="flat">
 <li><b>Validations.</b> {{mfVal}}</li>
 <li><b>Scope.</b> Two codes, one observable and CAMELS resolution are all this can speak to, and the parameters of the two codes are not the same physical quantities.</li>
@@ -99,7 +99,7 @@
 </section>
 
 <section class="sec" id="reproduce" aria-labelledby="reproduce-h">
-<h2 id="reproduce-h"><span class="sn">§5</span>Reproduce</h2>
+<h2 id="reproduce-h"><span class="sn" aria-hidden="true">§5</span>Reproduce</h2>
 <pre tabindex="0"><code>python3 scripts/ingest_camels_sfrd.py   # CAMELS star formation logs to data/ensembles/camels-sfrd.json (public, hashed)
 python3 scripts/analyze_model_form.py   # analysis document and data/analysis/model-form.json (about 20 minutes)
 python3 scripts/power_model_form.py     # power study, data/analysis/model-form-power.json

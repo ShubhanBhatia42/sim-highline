@@ -14,11 +14,11 @@
 <nav class="idx" aria-label="On this page">
 <p class="lab">Contents</p>
 <ol>
-<li><a href="#question"><span>§1</span>Question</a></li>
-<li><a href="#data"><span>§2</span>Data and rule</a></li>
-<li><a href="#result"><span>§3</span>Result</a></li>
-<li><a href="#limits"><span>§4</span>Limits</a></li>
-<li><a href="#reproduce"><span>§5</span>Reproduce</a></li>
+<li><a href="#question"><span aria-hidden="true">§1</span>Question</a></li>
+<li><a href="#data"><span aria-hidden="true">§2</span>Data and rule</a></li>
+<li><a href="#result"><span aria-hidden="true">§3</span>Result</a></li>
+<li><a href="#limits"><span aria-hidden="true">§4</span>Limits</a></li>
+<li><a href="#reproduce"><span aria-hidden="true">§5</span>Reproduce</a></li>
 </ol>
 <p class="back"><a href="studies.html">All studies</a></p>
 </nav>
@@ -30,7 +30,7 @@
 <div class="plain"><p class="lab">In plain words</p><p class="one">{{plainHarmOne}}</p><p>{{plainHarm}}</p></div>
 <div class="abstract">
 <p class="lab">Abstract</p>
-<p>Simulated stellar mass functions at z ≈ 0 differ between suites. With a protocol written before any of the numbers existed, each of {{hSuites}} suites is expressed in one IMF, without added mass scatter and in a 30 pkpc aperture, using only documented definitions and aperture maps measured inside single runs. The statistic R is the fraction of the spread across suites (in the stellar mass at fixed abundance) that disappears. R = {{hR}} (95% interval {{hCI}}; permutation p = {{hP}}): <b>{{hVerdict}}</b> by the rule fixed in advance.</p>
+<p>Simulated stellar mass functions at z ≈ 0 differ between simulations. With a protocol written before any of the numbers existed, each of {{hSuites}} simulations is expressed in one IMF, without added mass scatter and in a 30 pkpc aperture, using only documented definitions and aperture maps measured inside single runs. The statistic R is the fraction of the spread across simulations (in the stellar mass at fixed abundance) that disappears. R = {{hR}} (95% interval {{hCI}}; permutation p = {{hP}}): <b>{{hVerdict}}</b> by the rule fixed in advance.</p>
 </div>
 <dl class="facts">
 <div><dt>Status</dt><dd>Pre-registered · result</dd></div>
@@ -41,29 +41,29 @@
 </dl>
 </div>
 
-<p class="limits-first"><b>Limits in brief.</b> One relation at one epoch, eight suites. The test could not have seen an aperture effect of the size measured inside single runs, so "not detected" is not evidence that definitions do not matter; the power analysis in §4 says what could have been seen.</p>
+<p class="limits-first"><b>Limits in brief.</b> One relation at one epoch, {{hSuites}} simulations. The test could not have seen an aperture effect of the size measured inside single runs, so "not detected" is not evidence that definitions do not matter; the power analysis in §4 says what could have been seen.</p>
 <section class="sec" id="question" aria-labelledby="question-h">
-<h2 id="question-h"><span class="sn">§1</span>Question</h2>
+<h2 id="question-h"><span class="sn" aria-hidden="true">§1</span>Question</h2>
 <p>Do the documented differences in IMF, mass scatter and stellar-mass aperture explain the spread between simulated z ≈ 0 stellar mass functions?</p>
 <p>The <a href="study-definitions.html">definitions study</a> asks a similar question and cannot answer it: it reuses each curve in many pairs, has few matched pairs per test, and {{fBonf}} of {{fTests}} tests survive correction. This study replaces it with one statistic on one relation at one epoch, specified before it was computed.</p>
 </section>
 
 <section class="sec" id="data" aria-labelledby="data-h">
-<h2 id="data-h"><span class="sn">§2</span>Data and rule</h2>
-<p>Each of {{hSuites}} simulation suites’ z ≈ 0 stellar mass function is expressed in one IMF, without added mass scatter and in a 30 pkpc aperture. Only documented definitions and aperture maps measured inside single runs are used. The coordinate is the stellar mass at fixed abundance. R is the fraction of the spread across suites that disappears after harmonizing.</p>
+<h2 id="data-h"><span class="sn" aria-hidden="true">§2</span>Data and rule</h2>
+<p>Each of the {{hSuites}} simulations’ z ≈ 0 stellar mass functions is expressed in one IMF, without added mass scatter and in a 30 pkpc aperture. Only documented definitions and aperture maps measured inside single runs are used. The coordinate is the stellar mass at fixed abundance. R is the fraction of the spread across simulations that disappears after harmonizing.</p>
 <aside class="note"><span class="lab">Decision rule</span><p>The bootstrap interval of R must exclude 0, a label-permutation test must give p &lt; 0.05, and the sign must agree in two sensitivity analyses. All three, or no detection.</p></aside>
 <p>The rule is fixed before the statistic exists. The protocol records what had been looked at when it was written, and each amendment is dated with what had been seen at the time.</p>
 </section>
 
 <section class="sec" id="result" aria-labelledby="result-h">
-<h2 id="result-h"><span class="sn">§3</span>Result</h2>
-<aside class="note"><span class="lab">Reading R</span><p>R = 1: the spread across suites disappears. R = 0: harmonizing changes nothing. R &lt; 0: it increases the spread.</p></aside>
+<h2 id="result-h"><span class="sn" aria-hidden="true">§3</span>Result</h2>
+<aside class="note"><span class="lab">Reading R</span><p>R = 1: the spread across simulations disappears. R = 0: harmonizing changes nothing. R &lt; 0: it increases the spread.</p></aside>
 <p>Result: <b>{{hVerdict}}</b>. R = {{hR}}, 95% interval {{hCI}}, permutation p = {{hP}}.</p>
 
 <figure class="fig">
 <div class="chart">{{hSvg}}</div>
 <div class="key"><span><i style="background:var(--ink)"></i>raw</span><span><i style="background:var(--orange)"></i>harmonized</span></div>
-<figcaption><span class="fl">Fig. 1</span><span>Standard deviation across suites of the stellar mass at which each suite’s mass function reaches a given abundance, before and after harmonizing IMF, mass scatter and aperture. A fall of the harmonized curve below the raw one is the effect R measures.</span></figcaption>
+<figcaption><span class="fl">Fig. 1</span><span>Standard deviation across simulations of the stellar mass at which each simulation’s mass function reaches a given abundance, before and after harmonizing IMF, mass scatter and aperture. A fall of the harmonized curve below the raw one is the effect R measures.</span></figcaption>
 </figure>
 
 <div class="tw sm" role="region" aria-label="Table 1: operator alone" tabindex="0">
@@ -76,18 +76,18 @@
 </section>
 
 <section class="sec" id="limits" aria-labelledby="limits-h">
-<h2 id="limits-h"><span class="sn">§4</span>Limits</h2>
+<h2 id="limits-h"><span class="sn" aria-hidden="true">§4</span>Limits</h2>
 <ul class="flat">
 <li><b>Power.</b> {{hPower}}</li>
 <li><b>Sampling noise is not modelled.</b> Few galaxies per bin in the tail inflate the dispersion before and after harmonization alike and lower the ceiling on R; a sensitivity analysis in the analysis document addresses it.</li>
 <li><b>One relation, one epoch.</b> The result says nothing about other relations or redshifts.</li>
-<li><b>Documented definitions only.</b> Where a suite does not state a definition, no value is assumed (<a href="methods.html#limits">Methods, limits</a>).</li>
+<li><b>Documented definitions only.</b> Where a simulation’s paper does not state a definition, no value is assumed (<a href="methods.html#limits">Methods, limits</a>).</li>
 </ul>
 <p>The pre-specification, every amendment with what had been seen when it was made, the sensitivity analyses and the deviations are in <a href="{{repo}}/blob/main/docs/ANALYSIS-harmonization.md">ANALYSIS-harmonization.md</a>.</p>
 </section>
 
 <section class="sec" id="reproduce" aria-labelledby="reproduce-h">
-<h2 id="reproduce-h"><span class="sn">§5</span>Reproduce</h2>
+<h2 id="reproduce-h"><span class="sn" aria-hidden="true">§5</span>Reproduce</h2>
 <pre tabindex="0"><code>python3 scripts/analyze_harmonization.py    # writes the analysis document and data/analysis/harmonization.json
 python3 scripts/test_harmonization.py
 node scripts/build-site.mjs                 # regenerates this page from the JSON</code></pre>

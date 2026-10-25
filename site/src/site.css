@@ -155,13 +155,18 @@ td.n:last-child,th.n:last-child{padding-right:0}
 td.id,td.mono,td code{font-family:var(--mono);font-size:13px}
 td.mono{white-space:nowrap}
 td:first-child{color:var(--ink)}
+/* the build marks the first cell of each body row as its row header (scripts/build-site.mjs, rowHeaders): set it like the other cells, not like a column heading */
+th[scope=row]{font:inherit;font-weight:400;letter-spacing:normal;text-transform:none;color:var(--ink);white-space:normal;text-align:left;vertical-align:top;border-top:0;border-bottom:1px solid var(--rule);padding:.5rem .9rem .5rem 0;background:none}
+table.dense th[scope=row]{padding-top:.3rem;padding-bottom:.3rem}
+th[scope=row].id,th[scope=row].mono{font-family:var(--mono);font-size:13px}
+th[scope=row].mono,th[scope=row].nw{white-space:nowrap}
 table.long thead th{position:sticky;top:0;z-index:2}
 table.dense{font-size:14.5px;line-height:1.35}
 table.dense td{padding-top:.3rem;padding-bottom:.3rem}
 table.dense th{padding-top:.45rem;padding-bottom:.4rem}
 td.nw{white-space:nowrap}
 @media (min-width:1000px){table.obs th:nth-child(1){width:15%}table.obs th:nth-child(2){width:19%}table.obs th:nth-child(3){width:22%}table.obs th:nth-child(4){width:8%}table.obs th:nth-child(5){width:7%}table.obs th:nth-child(6){width:8%}}
-tr:target td{background:var(--panel)}
+tr:target td,tr:target th[scope=row]{background:var(--panel)}
 tfoot td{font-weight:500;border-bottom:1px solid var(--ink)}
 caption{caption-side:top;text-align:left;font:500 11.5px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);padding:0 0 .5rem}
 td a{overflow-wrap:anywhere}
@@ -169,25 +174,25 @@ td a{overflow-wrap:anywhere}
 
 /* ---- studies listing ---- */
 table.studies td.sid{font:500 13px var(--mono);white-space:nowrap}
-table.studies td.ttl{font-weight:600;width:14rem}
+table.studies .ttl{font-weight:600;width:14rem}
 table.studies td.sid{width:2.4rem}
 table.studies td.st{width:8.5rem}
 table.studies td.hd{width:15.5rem}
-table.studies td.ttl a{color:var(--ink);text-decoration-color:var(--rule-strong)}
-table.studies td.ttl a:hover{text-decoration-color:currentColor}
+table.studies .ttl a{color:var(--ink);text-decoration-color:var(--rule-strong)}
+table.studies .ttl a:hover{text-decoration-color:currentColor}
 table.studies td.st{font:400 12px/1.4 var(--mono);color:var(--ink2)}
 table.studies td.hd{font:400 13px/1.45 var(--mono);color:var(--ink)}
-table.studies tr.todo td{color:var(--ink3)}
-table.studies tr.todo td.ttl a{color:var(--ink3)}
+table.studies tr.todo td,table.studies tr.todo th[scope=row]{color:var(--ink3)}
+table.studies tr.todo .ttl a{color:var(--ink3)}
 @media (max-width:760px){
-  table.stack,table.stack tbody,table.stack tr,table.stack td{display:block;width:100%}
+  table.stack,table.stack tbody,table.stack tr,table.stack td,table.stack th[scope=row]{display:block;width:100%}
   table.stack thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
   table.stack tr{padding:.85rem 0;border-bottom:1px solid var(--rule-strong)}
-  table.stack td{border:0;padding:.12rem 0;text-align:left}
-  table.stack td[data-l]::before{content:attr(data-l);display:block;font:500 11px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);margin-top:.35rem}
+  table.stack td,table.stack th[scope=row]{border:0;padding:.12rem 0;text-align:left}
+  table.stack [data-l]::before{content:attr(data-l);display:block;font:500 11px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);margin-top:.35rem}
   table.stack td.sid{display:inline-block;width:2.4rem;vertical-align:top}
-  table.stack td.ttl{display:inline-block;width:calc(100% - 2.6rem);vertical-align:top;margin-bottom:.2rem}
-  table.stack td.ttl::before{display:none}
+  table.stack .ttl{display:inline-block;width:calc(100% - 2.6rem);vertical-align:top;margin-bottom:.2rem}
+  table.stack .ttl::before{display:none}
 }
 
 /* ---- instruments: two ruled entries ---- */
@@ -292,11 +297,11 @@ pre[tabindex]:focus-visible{outline-offset:0}
 .rt-panel path.ov.observation{stroke:var(--ink);stroke-width:1.4}
 .rt-table{margin-top:1.6rem;overflow-x:auto}
 .rt-table table{font-size:14px;width:100%;min-width:560px}
-.rt-table td:first-child{min-width:10rem;white-space:normal}
+.rt-table td:first-child,.rt-table th[scope=row]{min-width:10rem;white-space:normal}
 .rt-table caption{caption-side:top;text-align:left;font:400 12px/1.4 var(--mono);color:var(--ink2);padding:0 0 .5rem}
 .rt-table td:nth-child(n+2):nth-child(-n+4){font-family:var(--mono);font-size:13px;text-align:right;padding-right:1rem}
 .rt-table th:nth-child(n+2):nth-child(-n+4){text-align:right;padding-right:1rem}
-.rt-table tr.tot td{font-weight:600;border-top:1px solid var(--ink)}
+.rt-table tr.tot td,.rt-table tr.tot th[scope=row]{font-weight:600;border-top:1px solid var(--ink)}
 .resp th{text-align:center}.resp thead th[rowspan]{text-align:left;vertical-align:bottom}
 .resp td.rc{padding:.3rem .5rem .3rem 0;min-width:4.4rem}
 .rb{display:flex;align-items:center;gap:.4rem;position:relative}

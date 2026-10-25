@@ -14,9 +14,9 @@
 <nav class="idx" aria-label="On this page">
 <p class="lab">Contents</p>
 <ol>
-<li><a href="#instrument"><span>§1</span>Instrument</a></li>
-<li><a href="#reading"><span>§2</span>How to read it</a></li>
-<li><a href="#basis"><span>§3</span>Basis and limits</a></li>
+<li><a href="#instrument"><span aria-hidden="true">§1</span>Instrument</a></li>
+<li><a href="#reading"><span aria-hidden="true">§2</span>How to read it</a></li>
+<li><a href="#basis"><span aria-hidden="true">§3</span>Basis and limits</a></li>
 </ol>
 <p class="back"><a href="study-joint.html">The study behind it</a></p>
 </nav>
@@ -29,11 +29,11 @@
 </div>
 
 <section class="sec" id="instrument" aria-labelledby="instrument-h">
-<h2 id="instrument-h"><span class="sn">§1</span>Instrument</h2>
+<h2 id="instrument-h"><span class="sn" aria-hidden="true">§1</span>Instrument</h2>
 <details class="rt-guide" open><summary>What am I looking at? (30 seconds)</summary>
 <ol>
-<li>Each universe has four dials for how hard supernova winds and black holes push gas out of galaxies. Turn one and the eleven panels show how a galaxy property changes in both universes (orange: IllustrisTNG, blue: SIMBA).</li>
-<li>The sentence at the top counts how many of the eleven properties the two universes agree on. A shaded panel means they are further apart than two runs of the same universe with different random seeds.</li>
+<li>Each universe has four dials for how hard supernova winds and black holes push gas out of galaxies. Turn one and the {{jrFamN}} panels show how a galaxy property changes in both universes (orange: IllustrisTNG, blue: SIMBA).</li>
+<li>The sentence at the top counts how many of the {{jrFamN}} properties the two universes agree on. A shaded panel means they are further apart than two runs of the same universe with different random seeds.</li>
 <li>The buttons search the dials. <i>Make SIMBA look like TNG</i> matches the property chosen under <i>Match on</i>, then tells you what that did to everything else. You can also paste a curve of your own, or pick an observation, and see which dials reproduce it.</li>
 </ol></details>
 <p><button type="button" class="rt-btn" id="rt-tourbtn" hidden>Take the tour: five short steps</button></p>
@@ -45,7 +45,7 @@
 </section>
 
 <section class="sec" id="reading" aria-labelledby="reading-h">
-<h2 id="reading-h"><span class="sn">§2</span>How to read it</h2>
+<h2 id="reading-h"><span class="sn" aria-hidden="true">§2</span>How to read it</h2>
 <dl class="kv">
 <dt>Dials</dt><dd>The four feedback strengths that the CAMELS simulations vary in both codes, each over a factor of 4 or 2 either way, shown as a multiplier on the default. The dials of the two codes are not the same physical thing: the first, for example, is the wind energy per unit of star formation in IllustrisTNG and the wind mass loading in SIMBA. The smaller grey line under each dial gives the technical name and what it means in that code. The cosmology is held fixed.</dd>
 <dt>Gap</dt><dd>How far apart the two codes' curves are for one property, in units of the scatter you get between two runs of the same code that differ only in their random seed. Below 1 the codes agree as well as two seeds of one code would; a panel with a gap of 1 or more is shaded.</dd>
@@ -57,8 +57,8 @@
 </section>
 
 <section class="sec" id="basis" aria-labelledby="basis-h">
-<h2 id="basis-h"><span class="sn">§3</span>Basis and limits</h2>
-<p>Each curve is a polynomial emulator (degree 2 or 3, ridge-regularised, weighted towards the fiducial cosmology) fitted to 1,000 Latin-hypercube simulations per code and checked against 27 cosmic-variance seeds; the coefficients are in <a href="../data/retune/retune.json">retune.json</a> and nothing is fitted in the page. The observables are binned summaries of the Subfind catalogues of {{camelsN}} CAMELS simulations at z = 0, 0.95, 2.15, 3 and 4 (<code>data/ensembles/camels-galaxies.json</code>); both codes are read from catalogues made by the same Subfind code with the same field definitions, so no aperture or IMF difference separates them (the codes still differ in solver, star formation algorithm and yields, not only in their feedback dials).</p>
+<h2 id="basis-h"><span class="sn" aria-hidden="true">§3</span>Basis and limits</h2>
+<p>Each curve is a polynomial emulator (degree 2 or 3, ridge-regularised, weighted towards the fiducial cosmology) fitted to 1,000 Latin-hypercube simulations per code and checked against 27 cosmic-variance seeds; the coefficients are in <a href="../data/retune/retune.json">retune.json</a> and nothing is fitted in the page. The observables are binned summaries of the Subfind catalogues of {{camelsN}} CAMELS simulations at z = 0, 0.95, 2.15, 3 and 4 (<code>data/ensembles/camels-galaxies.json</code>). Both codes are read from catalogues made by the same Subfind code with the same field definitions, so no aperture or IMF difference separates them. The codes still differ in solver, star formation algorithm and yields, not only in their feedback dials.</p>
 <h3>How well the emulators predict simulations they have not seen</h3>
 <p>Each simulation within 0.5 of the fiducial cosmology ({{rtValN}} of them) was predicted by an emulator fitted without the tenth of the simulations it belongs to. The table gives the median error over the outputs of each property, in the property's own units, and as a multiple of the scatter between two runs of the same code (which no emulator can beat). A ratio near 1 means the emulator is as good as the simulations allow; the larger ones, such as stellar half-mass radius and the stellar mass function, are around 1.3 to 1.4.</p>
 <div class="tw sm"><table class="dense"><thead><tr><th rowspan="2">Property</th><th rowspan="2">unit</th><th colspan="2">IllustrisTNG</th><th colspan="2">SIMBA</th></tr><tr><th class="n">median error</th><th class="n">× seed scatter</th><th class="n">median error</th><th class="n">× seed scatter</th></tr></thead><tbody>{{rtValRows}}</tbody></table></div>
