@@ -210,7 +210,8 @@
       "relations": [
         "gsmf",
         "shmr",
-        "clusters"
+        "clusters",
+        "fgas500"
       ],
       "source": "https://flamingo.strw.leidenuniv.nl/"
     },
@@ -645,6 +646,54 @@
       ],
       "source": "https://arxiv.org/abs/2610.25786",
       "redshiftRangeBasis": "Lee et al. 2026 (arXiv:2610.25786): DARWIN-1 has reached z = 0.19 (Sect. 2); the star formation rate density curve extends to z = 14, the highest redshift drawn. DARWIN-2 galaxies are plotted at z = 2 to 5."
+    },
+    {
+      "id": "coda2",
+      "family": "independent",
+      "regime": "radiation-hydrodynamics of reionization in a constrained Local-Universe box (RAMSES-CUDATON, fixed grid)",
+      "boxMpc": [
+        94.44
+      ],
+      "baryonMassMsun": [],
+      "redshiftRange": [
+        5.8,
+        150
+      ],
+      "access": "published-fit",
+      "calibration": [
+        "cosmic star formation rate density at z about 6 (star formation efficiency)",
+        "reionization redshift near 6 (escape fraction)"
+      ],
+      "relations": [
+        "uvlf",
+        "gsmf",
+        "shmr"
+      ],
+      "source": "https://cdsarc.cds.unistra.fr/viz-bin/cat/VI/146",
+      "notes": "UV luminosity functions from the paper's appendix table; stellar mass function and stellar mass-halo mass relation counted from the public galaxy catalogues (z = 6, 7, 8, 10).",
+      "redshiftRangeBasis": "Ocvirk et al. 2020 (arXiv:1811.11192), Table 1: the run starts at z = 150 and ends at z = 5.8; the records cover the four epochs of the public catalogue and the paper's table, z = 6 to 10."
+    },
+    {
+      "id": "three-hundred",
+      "family": "independent",
+      "regime": "324 re-simulated cluster regions (15 h^-1 Mpc radius) cut from a 1 h^-1 Gpc parent box, two SPH codes",
+      "boxMpc": [],
+      "baryonMassMsun": [
+        348000000
+      ],
+      "redshiftRange": [
+        0,
+        17
+      ],
+      "access": "published-fit",
+      "calibration": [],
+      "relations": [
+        "ysz",
+        "fgas500"
+      ],
+      "source": "https://arxiv.org/abs/1809.04622",
+      "notes": "Binned medians read from two vector figures and the Table 7 power-law fits of the Y500-M500 relation; z = 0 only. The gas particle mass is 2.36e8 h^-1 Msun converted with h = 0.678. Data are available on request, not public.",
+      "redshiftRangeBasis": "Cui et al. 2018 (arXiv:1809.04622): 128 snapshots from z = 17 to 0 are stored; the records are z = 0."
     }
   ]
 }

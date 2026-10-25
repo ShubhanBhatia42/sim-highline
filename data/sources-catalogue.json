@@ -1492,6 +1492,74 @@
       "redshifts": "z 4.45, 5.30, 6.15",
       "adapter": "scripts/ingest_elf_covelopaz25.py",
       "note": "Observed (not dust-corrected) H-alpha luminosity functions from JWST grism spectra, from the paper's table; the Schechter fits of its Table 4 are used as checks."
+    },
+    {
+      "id": "ocvirk20-coda2-lf-table",
+      "suite": "CoDa II",
+      "status": "ingested",
+      "access": "LaTeX table in the arXiv source",
+      "url": "https://arxiv.org/abs/1811.11192",
+      "relations": [
+        "uvlf"
+      ],
+      "redshifts": "6, 7, 8, 10",
+      "adapter": "scripts/transcribe_coda2_ocvirk20_uvlf.py",
+      "note": "The appendix table of intrinsic UV luminosity functions (median, average, minimum and maximum of five sub-boxes, M_AB1600 = -24 to -3); the median with the minimum-maximum envelope is stored. It differs from a count of the public catalogue by a constant 0.044 dex at the bright end and by up to 0.5 dex at the faint end; not reconciled."
+    },
+    {
+      "id": "ocvirk20-coda2-vizier",
+      "suite": "CoDa II",
+      "status": "ingested",
+      "access": "public catalogue files on VizieR VI/146 (no credentials), one file per snapshot",
+      "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/VI/146",
+      "relations": [
+        "gsmf",
+        "shmr"
+      ],
+      "redshifts": "6, 7, 8, 10",
+      "adapter": "scripts/ingest_coda2_vizier.py",
+      "note": "Halo mass, stellar mass inside r200, SFR over 10 Myr and dust-free M_AB1600 of every friends-of-friends halo above 1e8 Msun; the stellar mass function and the stellar mass-halo mass relation are counted from it. Checked against the paper's printed fractions of the star formation rate in galaxies brighter than M_AB1600 = -17 and -13. Star formation rates (10 Myr, in steps of one star particle) are too coarse for a star-forming main sequence and are not stored."
+    },
+    {
+      "id": "cui18-three-hundred-figs",
+      "suite": "The Three Hundred",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDFs and a LaTeX table",
+      "url": "https://arxiv.org/abs/1809.04622",
+      "relations": [
+        "ysz",
+        "fgas500"
+      ],
+      "redshifts": "0",
+      "adapter": "scripts/digitize_three_hundred_cui18.py",
+      "note": "Gas fraction inside R500 (Fig. 5, left panel) and the Y500-M500 relation (Fig. 10) with the Table 7 power-law fits, for GADGET-MUSIC and GADGET-X. Axes are checked against the Planck 2014 line, the Table 7 fits, the 5/3 self-similar line, the Table A1 completeness limit and the cosmic baryon fraction. Not read: the stellar fraction panel (no matching relation), the central stellar-to-halo mass relation (no printed number to check the axes against) and the satellite mass function (counts per cluster, not a number density)."
+    },
+    {
+      "id": "three-hundred-data",
+      "suite": "The Three Hundred",
+      "status": "request-only",
+      "access": "the authors grant access on request (about 50 TB of simulation data and 4 TB of halo catalogues)",
+      "url": "https://arxiv.org/abs/1809.04622",
+      "relations": [
+        "ysz",
+        "fgas500",
+        "shmr"
+      ],
+      "note": "Stated in the paper's introduction; no public release was found."
+    },
+    {
+      "id": "kugel23-flamingo-calibration-figs",
+      "suite": "FLAMINGO",
+      "status": "ingested",
+      "access": "arXiv source, vector figure PDF",
+      "url": "https://arxiv.org/abs/2306.05492",
+      "relations": [
+        "gsmf",
+        "fgas500"
+      ],
+      "redshifts": "0 (stellar mass function), 0.1 (gas fraction)",
+      "adapter": "scripts/digitize_flamingo_kugel23.py",
+      "note": "The best-fitting calibration simulations (high, intermediate and low resolution in 100, 200 and 400 Mpc boxes) drawn in red in Fig. 8 against the two calibration targets. Axes are checked against the particle masses of Table 1, the mass ranges of Table 3, the X-ray gas fractions of Table 5 drawn in the figure and the stated binning. The stellar masses carry the 0.07 dex random error the paper adds before counting, and the curves are the calibration targets, so they are not predictions. The emulator curves and the observations are not stored."
     }
   ]
 }

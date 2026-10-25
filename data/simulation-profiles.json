@@ -192,7 +192,7 @@
       "codeRef": "SWIFT",
       "method": "SPH",
       "methodDetail": "Smoothed particle hydrodynamics with the SPHENIX scheme in the SWIFT code",
-      "setup": "Boxes up to 1.0 and 2.8 Gpc at several resolutions (the runs used here include L1_m8, L1_m9, L1_m10 and L2p8_m9), plus model and cosmology variations.",
+      "setup": "Boxes up to 1.0 and 2.8 Gpc at several resolutions (the runs used here include L1_m8, L1_m9, L1_m10 and L2p8_m9), plus model and cosmology variations and the 100, 200 and 400 Mpc calibration runs of Kugel et al. 2023.",
       "physics": "Subgrid stellar and AGN feedback calibrated with machine learning to the observed z≈0 galaxy stellar mass function and cluster gas fractions.",
       "introduced": 2023,
       "introducedNote": "overview paper",
@@ -528,6 +528,48 @@
           "arxiv": "2610.25786"
         }
       ]
+    },
+    "CoDa II": {
+      "source": "CoDa II",
+      "short": "CoDa II",
+      "code": "RAMSES-CUDATON",
+      "codeRef": "RAMSES",
+      "method": "AMR + radiation",
+      "methodDetail": "RAMSES gravity and hydrodynamics coupled to the GPU radiative transfer code ATON (RAMSES-CUDATON) with the full speed of light; run on a fixed 4096^3 grid, that is without adaptive mesh refinement",
+      "setup": "A periodic, constrained realization of the Local Universe in a box of 94.44 cMpc (64 h^-1 Mpc) with 4096^3 cells and as many dark matter particles (4.07e5 Msun), cell size 23 ckpc (3.3 kpc proper at z = 6), run from z = 150 to z = 5.8; star particles form in multiples of 11,732 Msun.",
+      "physics": "Star formation at 2 percent efficiency per free-fall time above 50 times the mean gas density, supernova feedback (10 percent of the stellar mass, 1e51 erg after a 10 Myr massive-star lifetime), a stellar ionizing emissivity with a birthplace escape fraction of 0.42 and the galactic escape fraction left to the radiative transfer; no AGN and no chemical enrichment.",
+      "introduced": 2018,
+      "introducedNote": "CoDa II paper (arXiv:1811.11192); the earlier Cosmic Dawn run (CoDa I) is arXiv:1511.00011",
+      "team": "CoDa collaboration (the CoDa II paper is led by Pierre Ocvirk)",
+      "purpose": "Model global and local reionization and the galaxies that cause it, with radiation and galaxy formation coupled, in a volume constrained to reproduce the large-scale structure of the Local Universe.",
+      "papers": [
+        {
+          "cite": "Ocvirk et al. 2020, Cosmic Dawn II (CoDa II)",
+          "arxiv": "1811.11192"
+        }
+      ],
+      "publicData": "Galaxy catalogues at z = 6, 7, 8 and 10 on VizieR (VI/146)."
+    },
+    "The Three Hundred": {
+      "source": "The Three Hundred",
+      "short": "Three Hundred",
+      "code": "GADGET-X and GADGET-MUSIC (GADGET-3 based SPH)",
+      "codeRef": "Gadget",
+      "method": "SPH",
+      "methodDetail": "Two SPH codes on the GADGET-3 gravity solver: GADGET-X (SPH with thermal diffusion, time-dependent artificial viscosity and a Wendland C4 kernel, with AGN feedback) and GADGET-MUSIC (classic entropy-conserving SPH, no AGN)",
+      "setup": "324 spherical re-simulation regions of 15 h^-1 Mpc radius, each centred on one of the most massive clusters of the 1 h^-1 Gpc MultiDark MDPL2 box (M200 above 6.42e14 h^-1 Msun at z = 0), with dark matter and gas particles of 12.7e8 and 2.36e8 h^-1 Msun (1.5e9 h^-1 Msun combined) and a Plummer-equivalent softening of 6.5 h^-1 kpc; 128 snapshots from z = 17 to 0.",
+      "physics": "GADGET-X: metal-dependent cooling, Chabrier IMF, kinetic winds of 350 km/s, black hole seeding and AGN feedback. GADGET-MUSIC: metal-independent cooling, Salpeter IMF, winds of 400 km/s, a two-phase star formation model and no black holes.",
+      "introduced": 2018,
+      "introducedNote": "project paper (arXiv:1809.04622)",
+      "team": "The Three Hundred collaboration (the 2018 paper is led by Weiguang Cui and Alexander Knebe)",
+      "purpose": "A catalogue of full-physics re-simulations of 324 massive galaxy clusters and the many haloes around them, with matching semi-analytic galaxy models, for cosmological and astrophysical applications.",
+      "papers": [
+        {
+          "cite": "Cui et al. 2018, The Three Hundred project",
+          "arxiv": "1809.04622"
+        }
+      ],
+      "publicData": "Not public: the paper says access to the data (about 50 TB of simulation data and 4 TB of halo catalogues) is granted on request."
     }
   }
 }
