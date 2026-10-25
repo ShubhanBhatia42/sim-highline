@@ -74,3 +74,18 @@ No published H-alpha, [OIII] or [OII] luminosity function was found for EAGLE (o
 
 The SPHINX20 records are computed from the release rather than read from the paper's plot, because the plotted function (reddening-corrected along each sight line) has no stated reddening coefficient. The release's columns reproduce the plotted curves to 0.015 dex rms with k(H-alpha) = 2.2, a value fitted here, not taken from the paper; the records therefore hold the two versions that have a stated meaning (intrinsic, and dust attenuated along ten sight lines).
 
+## Papers looked at in the coverage round of 2026-10-24 and not ingested
+
+Reason in one line each; none was read in full. A rejected paper is not a bad paper: it is one where the numbers could not be checked against anything the paper prints.
+
+- Obelisk (2002.04045): vector figures for the mass function, UV luminosity function, SFR density, stellar-to-halo mass and black hole mass at one protocluster zoom; step-function histograms, a units inconsistency between text and axis (h^3 cMpc^-3 against cMpc^-3) and no printed number to check the axes against beyond "about 1e-2".
+- FirstLight (2404.02537): mass and UV luminosity functions are drawn as Poisson bands with no central curve; the integrated efficiency is normalised by a baryon fraction whose value the paper does not give.
+- CROC I (1403.4245): UV luminosity functions at six redshifts in one panel, each shifted by 1 dex, with no table and no printed value to check against.
+- Renaissance (1503.01110), CoDa I (1511.00011), Horizon Run 5 (2408.07258), FLARES I (2004.07283, the main figures): raster images.
+- Aurora (1603.00034): vector figures but their tick labels are outlined paths (no text layer) and the paper has no table; not read.
+- Hydrangea (1703.10610): the mass functions are those of cluster satellites, several normalised by cluster mass, which is not a number density; not read.
+- Dianoga (2006.13951): vector figures of the z = 0 mass function, the z about 2 main sequence and gas fractions exist; not read within the three-paper cap, a candidate for a later round.
+- HESTIA (2008.04926): outlined tick labels; the table of z = 0 Local Group properties could give a stellar-to-halo mass table; not read.
+- LYRA III and LYRA (Sureda) (2209.03366, 2511.10582), VELA (2210.15372), EDGE (1909.04664, 2004.09530), VINTERGATAN III (2006.06012): a handful of individual simulated galaxies each (VELA a larger set of zoom-ins); their tables of z = 0 properties could give stellar-to-halo mass and size points; not read.
+- Romulus25 (Jung et al. 2022, 2203.00016): vector stellar-to-halo mass figure of group centrals; not read, a candidate.
+- THESAN data release and companions (2309.06475, 2110.01628, 2110.02966): mostly data-release and intergalactic-medium content; the THESAN-1 relations they show are already in the dataset, and the THESAN-2 against TNG comparison figures of 2110.01628 were not read.

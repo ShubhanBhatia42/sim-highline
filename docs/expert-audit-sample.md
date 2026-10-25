@@ -1,6 +1,6 @@
 # Expert audit sample
 
-Records for an independent check by someone who knows each suite. Selection is deterministic (two records per simulation source, different relations, digitized figures first, ordered by a hash of the id), so the list is stable between releases of the same data. 40 records from 20 sources.
+Records for an independent check by someone who knows each suite. Selection is deterministic (two records per simulation source, different relations, digitized figures first, ordered by a hash of the id), so the list is stable between releases of the same data. 44 records from 22 sources.
 
 For each record: open the cited figure or table, confirm (1) the curve is the one named (run, population, panel), (2) the axis values at two labelled ticks, (3) the definitions block (mass aperture, IMF, SFR timescale, halo definition), and (4) that the epoch is the published one. Report disagreements with the record id.
 
@@ -10,6 +10,8 @@ For each record: open the cited figure or table, confirm (1) the curve is the on
 | ASTRID | `bird22.astrid.zstar.z3` | zstar | 3 | digitized-figure | Bird et al. 2022, MNRAS 512, 3703, figure stellar_metal (arXiv source numbering), z=3 |
 | BlueTides | `wilkins17.bluetides.ssfr.z10` | ssfr | 10 | published-table | Wilkins et al. 2017, MNRAS 469, 2517 (arXiv:1704.00954), Table physical (median sSFR) |
 | BlueTides | `wilkins17.bluetides.shmr.z12` | shmr | 12 | published-table | Wilkins et al. 2017, MNRAS 469, 2517 (arXiv:1704.00954), Table DM_stellar |
+| CoDa II | `ocvirk20.coda2.gsmf.z10` | gsmf | 10 | catalog-derived | Ocvirk et al. 2020, MNRAS 496, 4087 (doi 10.1093/mnras/staa1266); galaxy catalogue VizieR VI/146 (CDS); mass function counted by sim-highline |
+| CoDa II | `ocvirk20.coda2.uvlf.z8` | uvlf | 8 | published-table | Ocvirk et al. 2020, MNRAS 496, 4087 (doi 10.1093/mnras/staa1266), appendix table of CoDa II UV luminosity functions at four epochs |
 | COLIBRE | `chaikin26.colibre.smd.l400m7.50pkpc-m8` | smd | 4 | digitized-figure | Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, cosmic stellar mass density |
 | COLIBRE | `chaikin26.colibre.quenched.m7.z1` | quenched | 1 | digitized-figure | Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, quenched fraction, z=1 |
 | DARWIN | `lee26.darwin1.gsmf.z0.25` | gsmf | 0.25 | digitized-figure | Lee et al. 2026 (The DARWIN Project; arXiv:2610.25786, submitted to ApJ), Fig. 7 (galaxy stellar mass functions) |
@@ -42,6 +44,8 @@ For each record: open the cited figure or table, confirm (1) the curve is the on
 | SIMBA | `dave19.simba-m100n1024.gsmf.z5.9` | gsmf | 5.9 | digitized-figure | Dave et al. 2019, MNRAS 486, 2827, Fig. 4 (arXiv source numbering), z=5.9 panel |
 | SPHINX20 | `katz23.sphinx20.uvlf.z10` | uvlf | 10 | digitized-figure | Katz et al. 2023, OJAp 6 (arXiv:2309.03269), UV luminosity function of SPHINX20 galaxies |
 | SPHINX20 | `katz23.sphinx20.size.uv-1500A.z10` | size | 10 | catalog-derived | SPHINX20 public data release (Katz et al. 2023; Rosdahl et al. 2018, 2022); medians derived by sim-highline |
+| The Three Hundred | `cui18.three-hundred.fgas500.music` | fgas500 | 0 | digitized-figure | Cui et al. 2018, MNRAS 480, 2898 (The Three Hundred project; arXiv:1809.04622), Fig. 5 (baryonic fractions, gas panel) |
+| The Three Hundred | `cui18.three-hundred.ysz.music.fit` | ysz | 0 | published-fit | Cui et al. 2018, MNRAS 480, 2898 (The Three Hundred project; arXiv:1809.04622), Table 7 (fitted parameters of the Y500-M500 relation) and Fig. 10 |
 | THESAN-1 | `kannan22.thesan.uvlf.t1.z7` | uvlf | 7 | digitized-figure | Kannan et al. 2022, MNRAS 511, 4005 (arXiv:2110.00584), UV luminosity functions at z=6-10, z=7 |
 | THESAN-1 | `thesan1.shmr.z9.official` | shmr | 9 | official-table | Kannan et al. 2022; Garaldi et al. 2024; THESAN data release |
 | THESAN-zoom | `kannan25.thesanzoom.gsmf.z8` | gsmf | 8 | digitized-figure | Kannan et al. 2025, OJAp 8 (arXiv:2502.20437), galaxy stellar mass function, 7.5 <= z < 8.5 |

@@ -32,7 +32,7 @@ Ask a CAMELS team member to read `docs/RESEARCH-NOTE.md` and `docs/ANALYSIS-quen
 
 ## 5. The digitized curves
 
-54 % of simulation curves are read from figures. Each table an author releases replaces a digitized curve and raises the share of the data that is solid; the data-quality page lists which curves with a matching table are replaced and which are not (for example the COLIBRE mass function in a 50 pkpc aperture). The bottleneck is asking. DARWIN is the example of the other route: its catalogues are public, and the mass function is counted from them (it reproduces the paper's figure); the same catalogues could give a black hole mass relation, but the central/satellite definition and the black hole particle sums would have to be checked first, and they hold no radii or metallicities.
+53 % of simulation curves are read from figures. Each table an author releases replaces a digitized curve and raises the share of the data that is solid; the data-quality page lists which curves with a matching table are replaced and which are not (for example the COLIBRE mass function in a 50 pkpc aperture). The bottleneck is asking. DARWIN is the example of the other route: its catalogues are public, and the mass function is counted from them (it reproduces the paper's figure); the same catalogues could give a black hole mass relation, but the central/satellite definition and the black hole particle sums would have to be checked first, and they hold no radii or metallicities.
 
 ## 6. Smaller things
 

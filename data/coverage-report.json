@@ -2,11 +2,11 @@
   "schemaVersion": "1.0.0",
   "generatedAt": "2026-10-18",
   "totals": {
-    "records": 1960,
-    "sources": 136,
+    "records": 1984,
+    "sources": 138,
     "relations": 44,
-    "rankable": 918,
-    "contextOnly": 1042
+    "rankable": 932,
+    "contextOnly": 1052
   },
   "byRelation": {
     "age": {
@@ -358,19 +358,23 @@
       ]
     },
     "fgas500": {
-      "records": 5,
+      "records": 10,
       "epochs": [
+        0,
         0.1
       ],
       "epochRanges": [
+        "0.1:0.1",
+        "0:0",
         "0:0.3"
       ],
       "relations": [
         "fgas500"
       ],
       "rankable": 5,
-      "contextOnly": 0,
+      "contextOnly": 5,
       "tiers": [
+        "digitized-figure",
         "published-table"
       ]
     },
@@ -454,7 +458,7 @@
       ]
     },
     "gsmf": {
-      "records": 358,
+      "records": 365,
       "epochs": [
         0,
         0.03,
@@ -604,8 +608,8 @@
       "relations": [
         "gsmf"
       ],
-      "rankable": 213,
-      "contextOnly": 145,
+      "rankable": 217,
+      "contextOnly": 148,
       "tiers": [
         "catalog-derived",
         "digitized-figure",
@@ -1254,7 +1258,7 @@
       ]
     },
     "shmr": {
-      "records": 144,
+      "records": 148,
       "epochs": [
         0,
         0.033,
@@ -1348,7 +1352,7 @@
       "relations": [
         "shmr"
       ],
-      "rankable": 56,
+      "rankable": 60,
       "contextOnly": 88,
       "tiers": [
         "catalog-derived",
@@ -1678,7 +1682,7 @@
       ]
     },
     "uvlf": {
-      "records": 110,
+      "records": 114,
       "epochs": [
         2.1,
         2.9,
@@ -1741,7 +1745,7 @@
       "relations": [
         "uvlf"
       ],
-      "rankable": 47,
+      "rankable": 51,
       "contextOnly": 63,
       "tiers": [
         "digitized-figure",
@@ -1787,19 +1791,22 @@
       ]
     },
     "ysz": {
-      "records": 4,
+      "records": 8,
       "epochs": [
+        0,
         0.1181
       ],
       "epochRanges": [
-        "0.0564:0.1832"
+        "0.0564:0.1832",
+        "0:0"
       ],
       "relations": [
         "ysz"
       ],
-      "rankable": 4,
-      "contextOnly": 0,
+      "rankable": 6,
+      "contextOnly": 2,
       "tiers": [
+        "digitized-figure",
         "published-fit",
         "published-table"
       ]
@@ -2504,6 +2511,32 @@
         "published-table"
       ]
     },
+    "CoDa II": {
+      "records": 12,
+      "epochs": [
+        6,
+        7,
+        8,
+        10
+      ],
+      "epochRanges": [
+        "10:10",
+        "6:6",
+        "7:7",
+        "8:8"
+      ],
+      "relations": [
+        "gsmf",
+        "shmr",
+        "uvlf"
+      ],
+      "rankable": 12,
+      "contextOnly": 0,
+      "tiers": [
+        "catalog-derived",
+        "published-table"
+      ]
+    },
     "COLIBRE": {
       "records": 194,
       "epochs": [
@@ -3090,7 +3123,7 @@
       ]
     },
     "FLAMINGO": {
-      "records": 176,
+      "records": 182,
       "epochs": [
         0,
         0.1,
@@ -3117,6 +3150,7 @@
       ],
       "relations": [
         "bh",
+        "fgas500",
         "gsmf",
         "quenched",
         "sfrd",
@@ -3126,7 +3160,7 @@
         "zstar"
       ],
       "rankable": 0,
-      "contextOnly": 176,
+      "contextOnly": 182,
       "tiers": [
         "digitized-figure"
       ]
@@ -4755,6 +4789,25 @@
       "contextOnly": 0,
       "tiers": [
         "published-table"
+      ]
+    },
+    "The Three Hundred": {
+      "records": 6,
+      "epochs": [
+        0
+      ],
+      "epochRanges": [
+        "0:0"
+      ],
+      "relations": [
+        "fgas500",
+        "ysz"
+      ],
+      "rankable": 2,
+      "contextOnly": 4,
+      "tiers": [
+        "digitized-figure",
+        "published-fit"
       ]
     },
     "THESAN-1": {

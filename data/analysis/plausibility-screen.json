@@ -1,8 +1,8 @@
 {
  "schemaVersion": "1.0.0",
  "method": "Offset of each curve from the median of other sources' curves (interpolating peers only inside their published range) at the same relation, units and z within 0.15; at least 3 peer sources per point. Flag: |median offset| >= 0.7 dex and robust z >= 3.0 within the relation.",
- "nScreened": 1010,
- "nFlagged": 13,
+ "nScreened": 1039,
+ "nFlagged": 19,
  "systematic": [
   {
    "source": "NewHorizon",
@@ -85,6 +85,22 @@
    "recordWarning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 54 (z = 3.991). Population: every galaxy (self-bound substructure with at least 100 star particles, stellar mass `sub/mstar`) that holds at least one black hole particle"
   },
   {
+   "id": "katz23.sphinx20.shmr.virial.z8",
+   "relation": "shmr",
+   "source": "SPHINX20",
+   "run": "virial",
+   "kind": "simulation",
+   "z": 8.0,
+   "medianOffsetDex": 1.393,
+   "nPoints": 3,
+   "xUnit": "log10(Msun)",
+   "yUnit": "dex",
+   "robustZ": 5.108,
+   "flag": true,
+   "population": "SPHINX20 data-release galaxies",
+   "recordWarning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Halo mass definition as provided"
+  },
+  {
    "id": "diemer19.tng300.h2-fraction.z0",
    "relation": "h2-fraction",
    "source": "IllustrisTNG",
@@ -101,6 +117,22 @@
    "recordWarning": "Read from the vector paths of Diemer et al. 2019 (MNRAS 487, 1529), gas-fraction figure (mstar_fstar_split_h2_nosplit), top panel, z=0; no table exists. The plotted median is the centre of the dark band, whose edges (yLow, yHigh) span the n"
   },
   {
+   "id": "katz23.sphinx20.shmr.virial.z6",
+   "relation": "shmr",
+   "source": "SPHINX20",
+   "run": "virial",
+   "kind": "simulation",
+   "z": 6.0,
+   "medianOffsetDex": 1.216,
+   "nPoints": 4,
+   "xUnit": "log10(Msun)",
+   "yUnit": "dex",
+   "robustZ": 4.433,
+   "flag": true,
+   "population": "SPHINX20 data-release galaxies",
+   "recordWarning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Halo mass definition as provided"
+  },
+  {
    "id": "schaye23.flamingo-l1_m10.gsmf.z0",
    "relation": "gsmf",
    "source": "FLAMINGO",
@@ -111,7 +143,7 @@
    "nPoints": 43,
    "xUnit": "log10(Msun)",
    "yUnit": "log10(Mpc^-3 dex^-1)",
-   "robustZ": -4.361,
+   "robustZ": -4.897,
    "flag": true,
    "population": "all galaxies",
    "recordWarning": "Solid segment only of the curve in Schaye et al. 2023 (MNRAS 526, 4978) Fig. 8 left-top panel, above the resolution-dependent lower mass limit for calibration; the dotted low-mass part is omitted. L1_m10: box 1000 cMpc, fiducial galaxy form"
@@ -143,7 +175,7 @@
    "nPoints": 6,
    "xUnit": "log10(Msun)",
    "yUnit": "log10(Mpc^-3 dex^-1)",
-   "robustZ": -3.065,
+   "robustZ": -3.438,
    "flag": true,
    "population": "massive quiescent galaxies",
    "recordWarning": "phi_low/phi_high are treated as offsets from phi (they are smaller than phi in every row). Quiescent-only mass function: not comparable with total GSMFs."
@@ -163,6 +195,22 @@
    "flag": true,
    "population": "all subhaloes with at least one star particle and stellar mass between 1e9 and 10^11.5 Msun, pooled over the 27 seeds",
    "recordWarning": "Pooled over 27 boxes of 25 Mpc/h (total comoving volume 1395796 Mpc^3); the distribution is of galaxies, not volume-weighted beyond that. Galaxies with zero instantaneous SFR, and those below the lowest sSFR bin, are in the lowest row and c"
+  },
+  {
+   "id": "ocvirk20.coda2.shmr.z10",
+   "relation": "shmr",
+   "source": "CoDa II",
+   "run": "CoDa II (94.44 cMpc box), VizieR VI/146 galaxy catalogue",
+   "kind": "simulation",
+   "z": 10.0,
+   "medianOffsetDex": -0.809,
+   "nPoints": 4,
+   "xUnit": "log10(Msun)",
+   "yUnit": "dex",
+   "robustZ": -3.277,
+   "flag": true,
+   "population": "all friends-of-friends haloes above 1e8 Msun, including those without stars",
+   "recordWarning": "Median stellar-to-halo mass ratio of the whole CoDa II box at z = 10, computed by sim-highline from the public catalogue in 0.25 dex bins of halo mass; haloes without stars count as a ratio of zero, so a bin is kept only where more than hal"
   },
   {
    "id": "katz23.sphinx20.size.uv-1500A.z5",
@@ -197,6 +245,22 @@
    "recordWarning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Sizes from the release's PHOTUTI"
   },
   {
+   "id": "schaye23.flamingo-gsmf.mstar-s-fgas-4s.z0",
+   "relation": "gsmf",
+   "source": "FLAMINGO",
+   "run": "L1_m9 variation M*-sigma_fgas-4sigma (gsmf)",
+   "kind": "simulation",
+   "z": 0.0,
+   "medianOffsetDex": -0.783,
+   "nPoints": 73,
+   "xUnit": "log10(Msun)",
+   "yUnit": "log10(Mpc^-3 dex^-1)",
+   "robustZ": -3.168,
+   "flag": true,
+   "population": "all galaxies",
+   "recordWarning": "Curve read from the vector paths of Schaye et al. 2023 (MNRAS 526, 4978), right panel of the z=0 GSMF figure. Solid segment only, above the resolution-dependent limit (dotted below it is omitted). The paper gives no table. This is one of 12"
+  },
+  {
    "id": "katz23.sphinx20.size.uv-1500A.z6",
    "relation": "size",
    "source": "SPHINX20",
@@ -211,6 +275,38 @@
    "flag": true,
    "population": "SPHINX20 data-release galaxies",
    "recordWarning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Sizes from the release's PHOTUTI"
+  },
+  {
+   "id": "schaye23.flamingo-gsmf.jet-fgas-4s.z0",
+   "relation": "gsmf",
+   "source": "FLAMINGO",
+   "run": "L1_m9 variation Jet_fgas-4sigma (gsmf)",
+   "kind": "simulation",
+   "z": 0.0,
+   "medianOffsetDex": -0.76,
+   "nPoints": 79,
+   "xUnit": "log10(Msun)",
+   "yUnit": "log10(Mpc^-3 dex^-1)",
+   "robustZ": -3.073,
+   "flag": true,
+   "population": "all galaxies",
+   "recordWarning": "Curve read from the vector paths of Schaye et al. 2023 (MNRAS 526, 4978), right panel of the z=0 GSMF figure. Solid segment only, above the resolution-dependent limit (dotted below it is omitted). The paper gives no table. This is one of 12"
+  },
+  {
+   "id": "schaye23.flamingo-gsmf.mstar-s.z0",
+   "relation": "gsmf",
+   "source": "FLAMINGO",
+   "run": "L1_m9 variation M*-sigma (gsmf)",
+   "kind": "simulation",
+   "z": 0.0,
+   "medianOffsetDex": -0.751,
+   "nPoints": 73,
+   "xUnit": "log10(Msun)",
+   "yUnit": "log10(Mpc^-3 dex^-1)",
+   "robustZ": -3.036,
+   "flag": true,
+   "population": "all galaxies",
+   "recordWarning": "Curve read from the vector paths of Schaye et al. 2023 (MNRAS 526, 4978), right panel of the z=0 GSMF figure. Solid segment only, above the resolution-dependent limit (dotted below it is omitted). The paper gives no table. This is one of 12"
   },
   {
    "id": "magneticum.box2hr.jstar.z0.official",

@@ -1,5 +1,5 @@
 {
- "total": 1960,
+ "total": 1984,
  "known": 25,
  "errors": 0,
  "warnings": 0,
@@ -43,6 +43,7 @@
     "stars-within-R200c-excluding-satellites",
     "stars-within-third-Rmax-masked",
     "aperture-0.1rvir",
+    "sphere-R200",
     "integral-of-SFH"
    ]
   },
@@ -152,9 +153,11 @@
     "caesar-6dfof-galaxy-total",
     "bound to a Subfind subhalo, within the variable BaryMP aperture (Stevens+14; 'inherent' definition of Stevens+19)",
     "aperture-Rg",
+    "aperture-50pkpc, 3D, with a lognormal mass error added",
     "aperture-2rhalf-stars",
     "total-subhalo",
     "stars-within-third-Rmax-masked",
+    "sphere-R200",
     "aperture-10pkpc",
     "petrosian-2D"
    ]
@@ -287,6 +290,14 @@
     "-"
    ]
   },
+  "fgas500": {
+   "yUnit": [
+    "dex"
+   ],
+   "massDefinitions": [
+    "-"
+   ]
+  },
   "fmr": {
    "yUnit": [
     "dex"
@@ -326,6 +337,14 @@
   "uvbeta": {
    "yUnit": [
     "dimensionless"
+   ],
+   "massDefinitions": [
+    "-"
+   ]
+  },
+  "ysz": {
+   "yUnit": [
+    "log10(Mpc^2)"
    ],
    "massDefinitions": [
     "-"
