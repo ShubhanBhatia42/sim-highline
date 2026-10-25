@@ -71,7 +71,7 @@ export function dataFiles({ release, manifest, cov, notes, cff, SITE_URL, texts,
   }
   const license = "https://creativecommons.org/licenses/by/4.0/";
   const croissant = {
-    "@context": CONTEXT, "@type": "sc:Dataset", conformsTo: "http://mlcommons.org/croissant/1.0", name: release.title, description: `${description} The CSV files begin with comment lines that start with "#" (${Object.entries(commentLines).map(([f, n]) => `${RECORDSETS[f][0]}: ${n}`).join(", ")}); skip them when reading a table.`, url: `${SITE_URL}/site/data.html`, version: release.version, datePublished: release.released,
+    "@context": CONTEXT, "@type": "sc:Dataset", conformsTo: "http://mlcommons.org/croissant/1.0", name: release.title, description: Object.values(commentLines).some(n => n > 0) ? `${description} The CSV files begin with comment lines that start with "#" (${Object.entries(commentLines).map(([f, n]) => `${RECORDSETS[f][0]}: ${n}`).join(", ")}); skip them when reading a table.` : description, url: `${SITE_URL}/site/data.html`, version: release.version, datePublished: release.released,
     license, identifier: `https://doi.org/${release.doi}`, sameAs: `https://doi.org/${release.doi}`, citeAs: `Bhatia, S. (${release.released.slice(0, 4)}). ${release.title} (v${release.version}). Zenodo. https://doi.org/${release.doi}`,
     creator, keywords, isBasedOn: release.repo, distribution, recordSet
   };

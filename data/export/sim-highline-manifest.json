@@ -80,16 +80,19 @@
   },
   "files": {
     "sim-highline-records.csv": {
-      "sha256": "4fffe7f5117b4df0997b6937dded6b202b185206edd03853e9da95e22efaf261",
-      "bytes": 1848410
+      "sha256": "9c976c1161931809f3601a73aa2173e75bd74b4b32d85f591888ca8c9a5dff6a",
+      "bytes": 1848252,
+      "description": "sim-highline dataset v0.24.0 (2026-10-18); records table, one row per evidence record; join with sim-highline-points.csv on record_id; see sim_highline.py"
     },
     "sim-highline-points.csv": {
-      "sha256": "2ff873322e1957640a47699fc9619753f36ce51c75ce2bd4d46d46dff14d7da0",
-      "bytes": 4327583
+      "sha256": "745d7432903e17b81a8dcbf9413b3f34336da7b8b28fe49badbc8f593a33f363",
+      "bytes": 4327438,
+      "description": "sim-highline dataset v0.24.0 (2026-10-18); points table, one row per plotted point (parametric records sampled at 40 points over their domain)"
     },
     "sim-highline-distributions.csv": {
-      "sha256": "164aa7f255d113534f334d83adad119cea4db29ef0f77af7f52c71a79453eec7",
-      "bytes": 418015
+      "sha256": "491b21dc1148610f226005a295a01c861220cc6dd289c621500bae590b814d58",
+      "bytes": 417791,
+      "description": "sim-highline dataset v0.24.0 (2026-10-18); per-galaxy distributions, one row per non-empty cell of a record's grid (x = stellar mass or similar, y = specific SFR or colour); join with sim-highline-records.csv on record_id"
     },
     "sim-highline-records.json": {
       "sha256": "2a47b677a5f97cc43bc114aefc12fb38b8ff2b811ddb28def22a1594abb8be92",

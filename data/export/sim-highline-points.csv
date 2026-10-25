@@ -1,4 +1,3 @@
-# sim-highline dataset v0.24.0 (2026-10-18); points table, one row per plotted point (parametric records sampled at 40 points over their domain)
 record_id,point_index,x,y,y_low,y_high,x_low,x_high,count
 aird15.bhad.total,0,0,-5.495,-5.5971,-5.3653,,,
 aird15.bhad.total,1,0.012,-5.4706,-5.5716,-5.3441,,,
