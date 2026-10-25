@@ -1,5 +1,5 @@
 {
- "records": 1984,
+ "records": 2041,
  "exactReexpressions": {
   "timeToRedshift": {
    "label": "cosmic time on the x axis turned into redshift (flat LCDM age relation)",
@@ -99,7 +99,7 @@
  },
  "definitionFills": {
   "rules": 60,
-  "records": 459,
+  "records": 469,
   "papersReadWithoutResult": 23
  },
  "correctionsLogged": 14,
