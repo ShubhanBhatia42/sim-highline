@@ -38,6 +38,7 @@ Fifty documents is too many to find anything in, so here they are by what you wa
 
 ## How the project works
 
+- [ACCESSIBILITY-WALKTHROUGH.md](ACCESSIBILITY-WALKTHROUGH.md): the pages read as an accessibility tree (internal software check, not a screen-reader test), what was fixed, patches for the Explorer, and what a person still has to check.
 - [ARCHITECTURE.md](ARCHITECTURE.md): how the pieces fit, in one page.
 - [DECISIONS.md](DECISIONS.md): what was decided, why, and what would reverse it.
 - [PROJECT.md](PROJECT.md): purpose, success measures and the stopping rule.
