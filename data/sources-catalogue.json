@@ -1494,6 +1494,19 @@
       "note": "Observed (not dust-corrected) H-alpha luminosity functions from JWST grism spectra, from the paper's table; the Schechter fits of its Table 4 are used as checks."
     },
     {
+      "id": "hirschmann23-tng-halpha-lf",
+      "suite": "IllustrisTNG",
+      "status": "ingested",
+      "access": "vector figure (EPS) in the arXiv source",
+      "url": "https://arxiv.org/abs/2212.02522",
+      "relations": [
+        "elf"
+      ],
+      "redshifts": "z 0.1 to 6",
+      "adapter": "scripts/digitize_tng_hirschmann23_elf.py",
+      "note": "H-alpha luminosity functions of TNG50, TNG100 and TNG300 galaxies above stellar-mass cuts (25 curves), without dust attenuation outside H II regions, read from the paper vector figure (digitized, not rankable); points at and below each curve peak are left out because the paper says the peaks are resolution limits. The [OIII]+H-beta and [OII] panels of the same figure are not read."
+    },
+    {
       "id": "ocvirk20-coda2-lf-table",
       "suite": "CoDa II",
       "status": "ingested",
