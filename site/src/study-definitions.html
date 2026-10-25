@@ -30,7 +30,7 @@
 <div class="plain"><p class="lab">In plain words</p><p class="one">{{plainDefsOne}}</p><p>{{plainDefs}}</p></div>
 <div class="abstract">
 <p class="lab">Abstract</p>
-<p>Two simulations that plot the same relation often measure different things: a 30 or a 50 kpc stellar mass, a Salpeter or a Chabrier IMF, a 10 or a 100 Myr star formation rate. Without correcting any curve, {{fPairs}} cross-simulation curve pairs are classified by what their documented definitions allow, and the shift caused by one definition is measured inside single runs. {{fMatchedPct}} of pairs have every needed definition documented and equal; {{fUnknownPct}} cannot be classified because a source does not say what it measured. What can be compared cleanly is limited by what the sources document; whether definitions explain the disagreement the data neither show nor rule out (no epoch test survives correction for multiple tests).</p>
+<p>Two simulations that plot the same relation often measure different things: a 30 or a 50 kpc stellar mass, a Salpeter or a Chabrier IMF, a 10 or a 100 Myr star formation rate. Without correcting any curve, {{fPairs}} cross-simulation curve pairs are classified by what their documented definitions allow, and the shift caused by one definition is measured inside single runs. {{fMatchedPct}} of pairs have every needed definition documented and equal; {{fUnknownPct}} cannot be classified because a source does not say what it measured. What can be compared cleanly is limited by what the sources document. Whether definitions explain the disagreement, the data neither show nor rule out (no epoch test survives correction for multiple tests).</p>
 </div>
 <dl class="facts">
 <div><dt>Status</dt><dd>Result · descriptive, no protocol</dd></div>
@@ -88,7 +88,7 @@
 </figure>
 
 <h3 id="went-away">A result that went away</h3>
-<p>Before the definitions were completed from the papers, one stellar-mass-function epoch (z about 6) looked significantly better matched for definition-matched pairs (p = 0.004, recorded in the <a href="{{repo}}/blob/main/CHANGELOG.md">changelog</a> for 0.17.0). After {{fRecRecords}} records were completed it did not (p = {{fP6}}): the apparent detection was produced by undocumented fields. Of {{fTests}} epoch tests, {{fBelow}} fall below p = 0.05 where {{fExpect}} would be expected by chance, and {{fBonf}} survive Bonferroni correction. The data neither show nor exclude a definitional contribution.</p>
+<p>Before the definitions were completed from the papers, one stellar-mass-function epoch (z about 6) looked significantly better matched for definition-matched pairs (p = 0.004, recorded in the <a href="{{repo}}/blob/main/CHANGELOG.md">changelog</a> for 0.17.0). After {{fRecRecords}} records were completed it did not (p = {{fP6}}): the apparent detection was produced by undocumented fields. Of {{fTests}} epoch tests, {{fBelow}} fell below p = 0.05, where {{fExpect}} would be expected by chance, and {{fBonf}} survived Bonferroni correction. The data neither show nor exclude a definitional contribution.</p>
 </section>
 
 <section class="sec" id="limits" aria-labelledby="limits-h">
@@ -98,7 +98,7 @@
 <li><b>Definition labels are coarse.</b> “Unspecified” hides everything, and two labels that read alike may differ in detail.</li>
 <li><b>Within-run pairs are few.</b> The sensitivity catalogue covers {{fSensG}} groups; absence of a measurement is not absence of an effect.</li>
 <li><b>Descriptive.</b> There is no protocol; each curve is reused in many pairs, so the tests are not independent. The mass-function study asks a narrower question with a single pre-specified statistic.</li>
-<li><b>Not independently verified.</b> No expert has checked these records yet; a single author confirming a suite’s definitions would change the status of its curves.</li>
+<li><b>Not independently verified.</b> No expert has checked these records yet; a single author confirming a simulation’s definitions would change the status of its curves.</li>
 </ul>
 </section>
 

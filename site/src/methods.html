@@ -93,7 +93,7 @@
 <h3>b · One cosmology conversion we made ourselves</h3>
 <p>{{cvHRecords}} curves ({{cvHSources}}): the released mass functions are densities in units that carry h. They are converted with h = {{cvH}}, the simulation’s own value, so each curve stays in its run’s own cosmology.</p>
 <h3>c · What the observation compilation did before we received the numbers</h3>
-<p>{{cvCompN}} observation curves come from the SWIFT/VELOCIraptor comparison-data compilation (<a href="{{cvCompRepo}}">calvin-sykes/velociraptor-comparison-data</a>, commit <code>{{cvCompCommit}}</code>), whose scripts re-express each published table in their own conventions. In those scripts, <b>{{cvCompH}}</b> are corrected for h to a Planck15 cosmology. <b>{{cvCompImf}}</b> of those also had their stellar masses converted to a Chabrier IMF by the compilation (Kroupa to Chabrier: mass × {{cvKro}}, {{cvKroDex}} dex; Salpeter to Chabrier: × {{cvSal}}, {{cvSalDex}} dex): {{cvImfList}}. {{cvCompNone}} are taken as published and {{cvCompUntraced}} come from a file whose script could not be matched. These counts come from the constants each script defines, which turned out not to be enough (see below).</p>
+<p>{{cvCompN}} observation curves come from the SWIFT/VELOCIraptor comparison-data compilation (<a href="{{cvCompRepo}}">calvin-sykes/velociraptor-comparison-data</a>, commit <code>{{cvCompCommit}}</code>), whose scripts re-express each published table in their own conventions. In those scripts, <b>{{cvCompH}}</b> are corrected for h to a Planck15 cosmology. <b>{{cvCompImf}}</b> of those also had their stellar masses converted to a Chabrier IMF by the compilation (Kroupa to Chabrier: mass × {{cvKro}}, {{cvKroDex}} dex; Salpeter to Chabrier: × {{cvSal}}, {{cvSalDex}} dex). These are: {{cvImfList}}. {{cvCompNone}} are taken as published and {{cvCompUntraced}} come from a file whose script could not be matched. These counts come from the constants each script defines, which turned out not to be enough (see below).</p>
 <p><b>Checked against the papers.</b> {{cvChecked}} of these curves were compared with the original paper (its printed numbers or figure, after the paper’s own h and IMF): {{cvAgree}} agree, {{cvFit}} agree with the fit the paper prints, {{cvDisagree}} disagree and {{cvNoCheck}} cannot be checked because the paper does not contain the numbers. Where the compilation was wrong, {{cvNumeric}} curves were shifted by a stated amount. The Grazian 2015 mass functions treat h<sub>70</sub> units as h-free, so they were 0.31 dex too high in mass and 0.47 dex too low in density; the Gonzalez 2011 masses were never converted from Salpeter. {{cvLabel}} more curves had a label corrected (cosmology, population, velocity definition, whether they can be ranked) and {{cvFlag}} carry a note. Every change is listed with its evidence in <a href="{{repo}}/blob/main/docs/COMPILATION-CHECK.md">COMPILATION-CHECK.md</a> and written into the record’s warning. One reader made these checks from the papers and the compilation’s scripts; no author or outside expert has reviewed them, and the other curves have not been checked.</p>
 <h3>d · An optional switch on screen</h3>
 <p>The Explorer can shift the stellar-mass and SFR axes of simulation curves to a Chabrier IMF (Kroupa {{cvOnKro}} dex, Salpeter {{cvOnSal}} dex). It is off by default, labelled wherever it is on, never applied to a curve whose IMF is not stated, and <b>downloads and the Python loader always hold the published values</b>. These offsets are population averages and differ slightly from the compilation’s factors in (c).</p>
@@ -104,26 +104,26 @@
 <li>The mass-function study applies IMF offsets and aperture maps inside its own calculation to test whether matching definitions closes the gap between simulated mass functions. It changes no stored curve.</li>
 <li>The definitions study measures how large definition differences are. It corrects no curve.</li>
 <li>The dials page uses the CAMELS simulations as measured (every CAMELS code is measured the same way, so none is converted to match another). The published and observed curves drawn on it are not adjusted to the CAMELS definitions, and the page says so.</li>
-<li>Check your run does not convert your numbers. It tells you which of your definitions differ from each curve’s.</li>
+<li>Your run does not convert your numbers. It tells you which of your definitions differ from each curve’s.</li>
 </ul>
 </section>
 
 <section class="sec" id="explorer" aria-labelledby="explorer-h">
 <h2 id="explorer-h"><span class="sn" aria-hidden="true">§5</span>What the Explorer computes</h2>
-<p>Only exact operations: unit-preserving transforms the reader asks for (per unit mass, times mass, physical axes), residuals against a chosen reference using the plotted points only, and, in the evolution view, reading a published curve at one chosen x inside its plotted range. A simulation with no epoch near the chosen redshift disappears; nothing is interpolated in redshift and nothing is extrapolated.</p>
+<p>Only exact operations: unit-preserving transforms the reader asks for (per unit mass, times mass, physical axes), residuals against a chosen reference using the plotted points only, and, in the Over time view, reading a published curve at one chosen x inside its plotted range. A simulation with no epoch near the chosen redshift disappears; nothing is interpolated in redshift and nothing is extrapolated.</p>
 <p>A simulation can carry dozens of records for one relation (resolutions, model variations, populations, fits). The default view shows one fiducial run per simulation and relation and keeps the rest one click away. The number beside each simulation in the legend is its median offset from a default observational anchor over the x range they share: a picture of where predictions and data differ, not a ranking.</p>
 </section>
 
 <section class="sec" id="audit" aria-labelledby="audit-h">
 <h2 id="audit-h"><span class="sn" aria-hidden="true">§6</span>Audit</h2>
 <p>{{auditNote}}</p>
-<p>Accepted findings are kept with a reason each in <code>data/audit-known.json</code>; anything else fails the build. A stable sample of records for an independent check by people who know each suite is in <a href="{{repo}}/blob/main/docs/expert-audit-sample.md">expert-audit-sample.md</a>; no reply has been recorded yet.</p>
+<p>Accepted findings are kept with a reason each in <code>data/audit-known.json</code>; anything else fails the build. A stable sample of records for an independent check by people who know each simulation is in <a href="{{repo}}/blob/main/docs/expert-audit-sample.md">expert-audit-sample.md</a>; no reply has been recorded yet.</p>
 </section>
 
 <section class="sec" id="limits" aria-labelledby="limits-h">
 <h2 id="limits-h"><span class="sn" aria-hidden="true">§7</span>Limits</h2>
 <ul class="flat">
-<li><b>Not reviewed by anyone outside.</b> No record has been checked by an outside expert. A single author confirming a suite’s definitions would change the status of its curves.</li>
+<li><b>Not reviewed by anyone outside.</b> No record has been checked by an outside expert. A single author confirming a simulation’s definitions would change the status of its curves.</li>
 <li><b>Web fonts.</b> The pages load their fonts from Google, which sends the reader’s address to Google on every visit. Your own curve, in the Explorer’s “Your run”, stays in your browser and is never sent anywhere.</li>
 <li><b>{{digitizedShare}} digitized.</b> Digitized curves carry the original authors’ plotting choices, are as precise as the plotted line, and are never rankable; {{rankableShare}} of simulation curves are rankable. Where an author or collaboration releases a table, use that.</li>
 <li><b>Not a leaderboard.</b> Many curves cannot be compared like for like, and sim-highline says so instead of scoring them.</li>

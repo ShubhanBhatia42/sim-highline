@@ -408,7 +408,7 @@
     go.hidden = false;
     const STEPS = [
       { sel: ".rt-code", t: "These are the four dials of one universe, in plain words with the code's own name underneath. Drag one: the centre is the setting CAMELS treats as normal, the ends are a factor of two to four weaker and stronger." },
-      { sel: ".rt-big", t: "This sentence is the answer so far: on how many of the eleven galaxy properties the two universes agree at these settings, and which are furthest apart. It updates as you turn the dials." },
+      { sel: ".rt-big", t: `This sentence is the answer so far: on how many of the ${JOINT.length} galaxy properties the two universes agree at these settings, and which are furthest apart. It updates as you turn the dials.` },
       { sel: ".rt-panel", t: "Each panel is one property. Orange is IllustrisTNG, blue is SIMBA, the pale band is how far a universe moves when you turn all four dials. A shaded panel means the two are further apart than two runs of the same universe would be." },
       { sel: ".rt-actions", t: "These buttons search the dials for you. Make SIMBA look like TNG matches the property you choose under Match on, then tells you what that did to everything else. Show me a surprise picks a setting with a striking trade-off." },
       { sel: ".rt-fit", t: "Or bring your own curve, or pick a published observation, and see which dial settings of each universe reproduce it, and what that does to every other property." }
