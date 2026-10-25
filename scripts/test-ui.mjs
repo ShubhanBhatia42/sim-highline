@@ -194,6 +194,124 @@ await step("a figure of the stellar mass function parses (source names with an a
   await ctx.close();
 });
 
+// The observer switch (docs/OBSERVER-LAYER.md): Gaussian scatter in log stellar mass on the plotted simulation curves of the stellar mass function. Off, the page plots the records' own numbers; on, the simulation curves change and the observations do not.
+const obsLib = {}; vm.runInNewContext(await readFile(new URL("../observer-lib.js", import.meta.url), "utf8"), obsLib);
+const gsmfFile = JSON.parse(await readFile(new URL("../dist/highline-data/gsmf.json", import.meta.url), "utf8")), gsmfById = new Map(gsmfFile.map(r => [r.id, r]));
+const captureView = page => page.evaluate(() => ({ stage: document.getElementById("stage").innerHTML, legend: document.getElementById("legend").innerHTML, chip: document.getElementById("chip").innerHTML, desc: document.getElementById("stageDesc").textContent, sub: document.getElementById("shSub").textContent }));
+const seriesOf = page => page.evaluate(() => relationSeries(currentZ()).map(o => ({ id: o.r.id, obs: !!o.obs, scatter: !!o.scatter, pts: JSON.stringify(o.pts), op: o.op, bad: xfBad(o.r), edge: o.pts.filter(p => p.edge).length })));
+await step("observer switch off: the plotted stellar mass functions are the records' own numbers, and the page has no trace of the switch", async () => {
+  for (const z of ["0.1", "6", "0"]) {
+    const { page, ctx, errors } = await open(`/highline.html#r=gsmf&z=${z}`);
+    await settle(page);
+    const ser = await seriesOf(page);
+    let n = 0;
+    for (const o of ser) {
+      const rec = gsmfById.get(o.id); if (!rec || rec.representation.type !== "points") continue;
+      const want = rec.representation.points.filter(p => Number.isFinite(p.x) && Number.isFinite(p.y)).map(p => ({ x: p.x, y: p.y, lo: p.yLow, hi: p.yHigh })).sort((a, b) => a.x - b.x);
+      assert.equal(o.pts, JSON.stringify(want), `${o.id} at z = ${z}: the plotted points are the record's points, byte for byte`); n++;
+    }
+    assert.ok(n >= 5, `at least five curves checked at z = ${z}`);
+    const v = await captureView(page);
+    assert.ok(!/curveorig|scatter applied|σ/.test(v.stage + v.legend + v.chip + v.desc), "nothing of the switch is drawn or said while it is off");
+    assert.ok(!/osc=/.test(await page.evaluate(() => location.hash)), "no permalink parameter while it is off");
+    assert.deepEqual(errors, []); await ctx.close();
+  }
+});
+await step("observer switch on: the simulation curves change, the observations do not, and everything that shows them says so; switching it off restores the page byte for byte", async () => {
+  const { page, ctx, errors } = await open("/highline.html#r=gsmf&z=0.1");
+  await settle(page);
+  await page.waitForTimeout(900);
+  const off = await seriesOf(page), vOff = await captureView(page);
+  await page.click("#bTune"); await page.selectOption("#tOsc", "0.2");
+  await page.waitForFunction(() => /osc=0\.2/.test(location.hash));
+  const on = await seriesOf(page), vOn = await captureView(page), byOff = new Map(off.map(o => [o.id, o]));
+  const sims = on.filter(o => !o.obs && !o.scatter), obsS = on.filter(o => o.obs);
+  assert.ok(sims.length >= 8 && obsS.length >= 3, "the premise: several simulations and observations are plotted");
+  assert.deepEqual(on.map(o => o.id), off.map(o => o.id), "the same curves are plotted");
+  for (const o of obsS) assert.equal(o.pts, byOff.get(o.id).pts, `${o.id}: an observation is not changed`);
+  const changed = sims.filter(o => !o.bad && o.pts !== byOff.get(o.id).pts);
+  assert.ok(changed.length >= sims.filter(o => !o.bad).length && changed.length >= 8, `every simulation curve that can be scattered changes (${changed.length} of ${sims.length})`);
+  // the numbers are the library's: the page's scattered curve equals observer-lib.js applied to the record in Node (the page carries a copy without comments)
+  const sample = changed[0], rec = gsmfById.get(sample.id);
+  const input = rec.representation.points.filter(p => Number.isFinite(p.x) && Number.isFinite(p.y)).map(p => ({ x: p.x, y: p.y, yLow: p.yLow, yHigh: p.yHigh })).sort((a, b) => a.x - b.x);
+  const want = obsLib.SimHighlineObserver.scatterPoints(input, 0.2).map(q => ({ x: q.x, y: q.y, lo: q.yLow, hi: q.yHigh, edge: q.edge }));
+  const got = JSON.parse(sample.pts); // the page's JavaScript engine and this one may differ in the last bit of Math.pow and Math.exp, so the numbers are compared to 1e-12 dex
+  assert.equal(got.length, want.length);
+  got.forEach((g, i) => { const w = want[i]; assert.equal(g.x, w.x); assert.equal(g.edge, w.edge); for (const k of ["y", "lo", "hi"]) assert.ok(Math.abs(g[k] - w[k]) < 1e-12, `${sample.id}: ${k} at x = ${w.x} is scatterPoints(record, 0.2) from observer-lib.js (page ${g[k]}, file ${w[k]})`); });
+  assert.ok(Math.max(...got.map((g, i) => Math.abs(g.y - input[i].y))) > 0.02, "the curve is visibly different from the published one");
+  assert.ok(sims.some(o => o.edge > 0), "points that depend on the continuation beyond the curve's ends are flagged");
+  // marked as transformed: plot, chip, legend (banner and the offsets), description, permalink
+  assert.ok(vOn.stage.includes("curveorig") && /Simulations with 0\.2 dex of scatter applied, not as published/.test(vOn.chip), "the plot draws the published curves thin and the chip says what was done");
+  assert.ok(vOn.legend.includes("xfban") && (vOn.legend.match(/class="off xf"/g) || []).length >= 5, "the legend says so and marks the offsets of the simulation curves");
+  assert.match(vOn.desc, /Gaussian scatter of 0\.2 dex in log10 stellar mass/);
+  assert.match(await page.evaluate(() => location.hash), /osc=0\.2/);
+  assert.match(await page.locator("#pbody").innerText(), /what a scatter of this size would do to the simulations; not a model of any survey/i, "the control is labelled in words");
+  // the evidence panel of a scattered curve says the plotted values differ from the record; that of an observation does not
+  await page.evaluate(id => openRecord(id), sample.id);
+  assert.match(await page.locator("#pbody").innerText(), /Plotted values differ from this record/);
+  await page.evaluate(id => openRecord(id), obsS[0].id);
+  assert.ok(!/Plotted values differ from this record/.test(await page.locator("#pbody").innerText()), "an observation's evidence says nothing of it");
+  await page.evaluate(() => { closeRecord(); });
+  // the figure, the methods text and the pack state it; the downloads hold the published values
+  const txt = await page.evaluate(() => ({ foot: [...new DOMParser().parseFromString(figureSvg().svg, "image/svg+xml").querySelectorAll("g[font-family] text")].map(t => t.textContent).join(" "), methods: methodsPack().methods, pack: methodsPack().pack }));
+  assert.match(txt.foot, /simulations with 0\.2 dex of scatter applied/); assert.match(txt.foot, /the plotted values differ from the records/);
+  assert.match(txt.methods, /Apart from the observer scatter described below/); assert.match(txt.methods, /differ from the published records, which are unchanged/); assert.ok(!/No curve was interpolated across epochs, smoothed or extrapolated/.test(txt.methods), "the claim of no smoothing is withdrawn while the scatter is on");
+  assert.match(txt.pack, /Gaussian scatter of 0\.2 dex/);
+  await page.click("#bData");
+  const [csvOn] = await Promise.all([page.waitForEvent("download"), page.click("#dCsv")]), onText = await readFile(await csvOn.path(), "utf8");
+  const [jsonOn] = await Promise.all([page.waitForEvent("download"), page.click("#dJson")]), onJson = JSON.parse(await readFile(await jsonOn.path(), "utf8"));
+  assert.match(onText, /# observer scatter: the plot shows the simulation curves with 0\.2 dex of scatter applied; this file holds the published values/);
+  const rows = t => t.split("\n").filter(l => l && !l.startsWith("#")), pubIds = onJson.records.map(r => r.id);
+  for (const r of onJson.records.filter(r => r.kind === "simulation" && r.representation.type === "points")) assert.equal(JSON.stringify(r.representation.points), JSON.stringify(gsmfById.get(r.id).representation.points), `${r.id}: the JSON holds the published points`);
+  assert.ok(pubIds.length >= 10, "records are exported");
+  // the offsets table (Vs observations) marks the stellar mass function column, and only that column changes
+  await page.click("#mTension"); await page.waitForSelector("#tension table td[data-r]", { timeout: 30000 });
+  const cells = () => page.evaluate(() => [...document.querySelectorAll("#tension td[data-r]")].map(td => [td.dataset.r, td.dataset.s, td.textContent]));
+  const tOn = await cells();
+  assert.ok((await page.locator("#tension th .xf").count()) === 1 && /marked σ/.test(await page.locator("#tension .tnote").innerText()), "the offsets table marks the column and explains it");
+  await page.click("#bTune"); await page.selectOption("#tOsc", "0");
+  await page.waitForFunction(() => !/marked σ/.test(document.querySelector("#tension .tnote").innerText));
+  const tOff = await cells();
+  assert.equal(tOn.length, tOff.length); let gDiff = 0;
+  tOn.forEach((c, i) => { if (c[0] === "gsmf") { if (c[2] !== tOff[i][2]) gDiff++; } else assert.deepEqual(c, tOff[i], `the ${c[0]} column of the offsets table does not change`); });
+  assert.ok(gDiff >= 1 && tOn.some(c => c[0] === "gsmf"), "at least one stellar mass function offset changes");
+  // off again: the same bytes as before, and no parameter in the address
+  await page.click("#mPlot"); await page.waitForFunction(() => document.querySelectorAll("#stage path.curve").length > 5); await page.waitForTimeout(900);
+  const back = await captureView(page);
+  assert.deepEqual(back, vOff, "off again: the plot, legend, chip and text are the bytes they were before");
+  assert.ok(!/osc=/.test(await page.evaluate(() => location.hash)));
+  await page.click("#bData");
+  const [csvOff] = await Promise.all([page.waitForEvent("download"), page.click("#dCsv")]), offText = await readFile(await csvOff.path(), "utf8");
+  assert.ok(!/observer scatter/.test(offText) && JSON.stringify(rows(offText)) === JSON.stringify(rows(onText)), "the CSV rows are the same with the switch on and off (only the comment line differs)");
+  assert.deepEqual(errors, []); await ctx.close();
+});
+await step("observer switch: a shared link opens with it on, it is offered for the stellar mass function only, and a curve that cannot be scattered stays as published", async () => {
+  const { page, ctx, errors } = await open("/highline.html#r=gsmf&z=0.1&osc=0.3");
+  await settle(page);
+  assert.equal(await page.evaluate(() => state.osc), 0.3);
+  await page.click("#bTune");
+  assert.equal(await page.inputValue("#tOsc"), "0.3");
+  assert.deepEqual(await page.$$eval("#tOsc option", os => os.map(o => o.value)), ["0", "0.1", "0.2", "0.3"]);
+  assert.match(await page.locator("#pbody").innerText(), /AS A SURVEY WOULD MEASURE IT/);
+  await page.evaluate(() => selectRelation("sfms"));
+  await page.waitForFunction(() => /Star-forming main sequence/.test(document.getElementById("shTitle").textContent) && !document.getElementById("tOsc"));
+  assert.equal(await page.locator("#tOsc").count(), 0, "no control on other relations");
+  assert.ok(!/scatter applied/.test(await page.locator("#chip").innerHTML()), "nothing is said on other relations");
+  // a value in the address that is not one of the three is ignored
+  const p2 = await ctx.newPage(); await p2.goto(`${BASE}/highline.html#r=gsmf&z=0.1&osc=0.25`); await settle(p2);
+  assert.equal(await p2.evaluate(() => state.osc), 0, "an unknown setting in a link is ignored");
+  // a simulation curve with a gap of more than 1 dex cannot be scattered by the layer: it stays as published and is faded and named
+  const r = await p2.evaluate(() => {
+    const rec = sims.find(x => x.relation === "gsmf" && x.representation.type === "points" && x.representation.points.length >= 4);
+    const saved = rec.representation.points; rec.representation.points = [saved[0], { ...saved[1], x: saved[0].x + 1.5 }, { ...saved[2], x: saved[0].x + 3 }, { ...saved[3], x: saved[0].x + 4.5 }];
+    state.osc = 0.2; const out = rawPoints(rec, rec.epoch.zRepresentative), pub = rawPointsPub(rec, rec.epoch.zRepresentative), bad = xfBad(rec), tip = xfNote(rec);
+    rec.representation.points = saved; state.osc = 0; obsCache.clear();
+    return { same: JSON.stringify(out) === JSON.stringify(pub), bad, tip };
+  });
+  assert.ok(r.same && r.bad && /scatter not applied/.test(r.tip), "a curve the layer cannot scatter is plotted as published and says why");
+  assert.deepEqual(errors, []); await ctx.close();
+});
+
 await step("first visit: a short guide appears once, can be dismissed, and stays dismissed", async () => {
   const { page, ctx } = await open("/highline.html");
   assert.ok(await page.locator("#hello").isVisible(), "guide shown on a first visit");
