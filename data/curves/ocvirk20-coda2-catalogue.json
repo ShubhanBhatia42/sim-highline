@@ -1,0 +1,1246 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "id": "ocvirk20.coda2.gsmf.z6",
+      "source": "CoDa II",
+      "run": "CoDa II (94.44 cMpc box), VizieR VI/146 galaxy catalogue",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass inside r200 of the friends-of-friends halo",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 number density per dex of stellar mass (comoving), Poisson errors",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 5.125,
+        "xMax": 9.625
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 5.125,
+            "y": -0.4282,
+            "yHigh": -0.4266,
+            "count": 78565,
+            "yLow": -0.4297
+          },
+          {
+            "x": 5.375,
+            "y": -0.4251,
+            "yHigh": -0.4235,
+            "count": 79132,
+            "yLow": -0.4266
+          },
+          {
+            "x": 5.625,
+            "y": -0.4606,
+            "yHigh": -0.459,
+            "count": 72909,
+            "yLow": -0.4622
+          },
+          {
+            "x": 5.875,
+            "y": -0.547,
+            "yHigh": -0.5452,
+            "count": 59762,
+            "yLow": -0.5488
+          },
+          {
+            "x": 6.125,
+            "y": -0.6353,
+            "yHigh": -0.6333,
+            "count": 48764,
+            "yLow": -0.6373
+          },
+          {
+            "x": 6.375,
+            "y": -0.7525,
+            "yHigh": -0.7502,
+            "count": 37233,
+            "yLow": -0.7547
+          },
+          {
+            "x": 6.625,
+            "y": -0.8907,
+            "yHigh": -0.888,
+            "count": 27085,
+            "yLow": -0.8933
+          },
+          {
+            "x": 6.875,
+            "y": -1.036,
+            "yHigh": -1.0329,
+            "count": 19383,
+            "yLow": -1.0391
+          },
+          {
+            "x": 7.125,
+            "y": -1.2036,
+            "yHigh": -1.1999,
+            "count": 13176,
+            "yLow": -1.2074
+          },
+          {
+            "x": 7.375,
+            "y": -1.3895,
+            "yHigh": -1.3849,
+            "count": 8588,
+            "yLow": -1.3942
+          },
+          {
+            "x": 7.625,
+            "y": -1.5791,
+            "yHigh": -1.5733,
+            "count": 5550,
+            "yLow": -1.585
+          },
+          {
+            "x": 7.875,
+            "y": -1.7901,
+            "yHigh": -1.7828,
+            "count": 3414,
+            "yLow": -1.7976
+          },
+          {
+            "x": 8.125,
+            "y": -2.0155,
+            "yHigh": -2.006,
+            "count": 2032,
+            "yLow": -2.0252
+          },
+          {
+            "x": 8.375,
+            "y": -2.2446,
+            "yHigh": -2.2322,
+            "count": 1199,
+            "yLow": -2.2573
+          },
+          {
+            "x": 8.625,
+            "y": -2.522,
+            "yHigh": -2.5051,
+            "count": 633,
+            "yLow": -2.5396
+          },
+          {
+            "x": 8.875,
+            "y": -2.821,
+            "yHigh": -2.7973,
+            "count": 318,
+            "yLow": -2.846
+          },
+          {
+            "x": 9.125,
+            "y": -3.2162,
+            "yHigh": -3.1794,
+            "count": 128,
+            "yLow": -3.2564
+          },
+          {
+            "x": 9.375,
+            "y": -3.5752,
+            "yHigh": -3.5207,
+            "count": 56,
+            "yLow": -3.6375
+          },
+          {
+            "x": 9.625,
+            "y": -4.0012,
+            "yHigh": -3.9155,
+            "count": 21,
+            "yLow": -4.1081
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all friends-of-friends haloes above 1e8 Msun that hold stars (each halo counts once, with all stars inside r200)",
+        "warning": "Galaxy stellar mass function of the whole CoDa II box at z = 6, counted by sim-highline from the public catalogue (0.25 dex bins; error bars are Poisson). A galaxy is a friends-of-friends halo, so the satellites of a halo are inside its stellar mass; only haloes above 1e8 Msun (246 particles) are in the catalogue, and bins are kept only where at least 10 galaxies are counted and no more than 1 percent of them live in haloes below 2e8 Msun, so that the missing lighter haloes cannot change the bin (the lowest kept bin is log M* = 5.125). The box is a constrained realization of the Local Universe, not a random volume. The paper states the Kroupa IMF only for its ionizing and UV source model, so the IMF of the stellar mass is left unspecified."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 67.7,
+          "Om": 0.307
+        },
+        "massDefinition": "sphere-R200",
+        "densityFrame": "comoving",
+        "population": "all friends-of-friends haloes above 1e8 Msun that hold stars"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "Ocvirk et al. 2020, MNRAS 496, 4087 (doi 10.1093/mnras/staa1266); galaxy catalogue VizieR VI/146 (CDS); mass function counted by sim-highline",
+        "doi": "10.1093/mnras/staa1266",
+        "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/VI/146",
+        "retrieved": "2026-10-24",
+        "checksumSha256": "245e5f10a62ea2dc1da0fd7e1df7b0864a022a93a30fdfa2a3bf1aa77992b9c8",
+        "sourceMember": "halo6.dat.gz (columns M*, MAB1600)",
+        "extractionMethod": "histogram of the stellar mass column of the public catalogue divided by the box volume 94.44^3 cMpc^3 and the bin width"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Computed by sim-highline from the public catalogue; the same snapshot's UV luminosity function is in ocvirk20-coda2-uvlf.json (the paper's own table)."
+    },
+    {
+      "id": "ocvirk20.coda2.shmr.z6",
+      "source": "CoDa II",
+      "run": "CoDa II (94.44 cMpc box), VizieR VI/146 galaxy catalogue",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 6,
+        "zNominal": 6,
+        "zMin": 6,
+        "zMax": 6,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 friends-of-friends halo mass (linking length 0.2)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 median stellar-to-halo mass ratio M*/Mh (stars inside r200)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 9.125,
+        "xMax": 11.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.125,
+            "y": -3.9418,
+            "count": 222751,
+            "yHigh": -3.4235
+          },
+          {
+            "x": 9.375,
+            "y": -3.5071,
+            "count": 122355,
+            "yLow": -4.1573,
+            "yHigh": -3.1644
+          },
+          {
+            "x": 9.625,
+            "y": -3.2466,
+            "count": 65737,
+            "yLow": -3.7207,
+            "yHigh": -2.9607
+          },
+          {
+            "x": 9.875,
+            "y": -3.0482,
+            "count": 34438,
+            "yLow": -3.5021,
+            "yHigh": -2.7851
+          },
+          {
+            "x": 10.125,
+            "y": -2.8856,
+            "count": 17097,
+            "yLow": -3.3394,
+            "yHigh": -2.6282
+          },
+          {
+            "x": 10.375,
+            "y": -2.7438,
+            "count": 8239,
+            "yLow": -3.2245,
+            "yHigh": -2.4954
+          },
+          {
+            "x": 10.625,
+            "y": -2.6155,
+            "count": 3737,
+            "yLow": -3.1622,
+            "yHigh": -2.3702
+          },
+          {
+            "x": 10.875,
+            "y": -2.5121,
+            "count": 1614,
+            "yLow": -3.1133,
+            "yHigh": -2.2843
+          },
+          {
+            "x": 11.125,
+            "y": -2.438,
+            "count": 644,
+            "yLow": -3.0072,
+            "yHigh": -2.2101
+          },
+          {
+            "x": 11.375,
+            "y": -2.3932,
+            "count": 226,
+            "yLow": -3.0902,
+            "yHigh": -2.1478
+          },
+          {
+            "x": 11.625,
+            "y": -2.3069,
+            "count": 67,
+            "yLow": -2.8755,
+            "yHigh": -2.0773
+          },
+          {
+            "x": 11.875,
+            "y": -2.2035,
+            "count": 19,
+            "yLow": -3.2308,
+            "yHigh": -2.0223
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "all friends-of-friends haloes above 1e8 Msun, including those without stars",
+        "warning": "Median stellar-to-halo mass ratio of the whole CoDa II box at z = 6, computed by sim-highline from the public catalogue in 0.25 dex bins of halo mass; haloes without stars count as a ratio of zero, so a bin is kept only where more than half of its haloes hold stars (the lightest kept bin is log Mh = 9.125; below it the median is zero because star formation is suppressed or has not started) and holds at least 10 haloes; the 16th percentile is given only where it is above zero. The halo mass is the friends-of-friends mass and the stellar mass is all stars inside r200, satellites included. The box is a constrained realization of the Local Universe, not a random volume."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 67.7,
+          "Om": 0.307
+        },
+        "massDefinition": "sphere-R200",
+        "haloMassDefinition": "FOF",
+        "haloMassHistory": "current",
+        "population": "all friends-of-friends haloes above 1e8 Msun, including those without stars"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "Ocvirk et al. 2020, MNRAS 496, 4087 (doi 10.1093/mnras/staa1266); galaxy catalogue VizieR VI/146 (CDS); medians computed by sim-highline",
+        "doi": "10.1093/mnras/staa1266",
+        "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/VI/146",
+        "retrieved": "2026-10-24",
+        "checksumSha256": "245e5f10a62ea2dc1da0fd7e1df7b0864a022a93a30fdfa2a3bf1aa77992b9c8",
+        "sourceMember": "halo6.dat.gz (columns Mhalo, M*)",
+        "extractionMethod": "median and 16th-84th percentiles of M*/Mhalo of the public catalogue in 0.25 dex bins of Mhalo"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Computed by sim-highline from the public catalogue. The paper does not show this relation."
+    },
+    {
+      "id": "ocvirk20.coda2.gsmf.z7",
+      "source": "CoDa II",
+      "run": "CoDa II (94.44 cMpc box), VizieR VI/146 galaxy catalogue",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass inside r200 of the friends-of-friends halo",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 number density per dex of stellar mass (comoving), Poisson errors",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 5.125,
+        "xMax": 9.375
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 5.125,
+            "y": -0.465,
+            "yHigh": -0.4634,
+            "count": 72171,
+            "yLow": -0.4667
+          },
+          {
+            "x": 5.375,
+            "y": -0.4941,
+            "yHigh": -0.4925,
+            "count": 67493,
+            "yLow": -0.4958
+          },
+          {
+            "x": 5.625,
+            "y": -0.5642,
+            "yHigh": -0.5624,
+            "count": 57441,
+            "yLow": -0.566
+          },
+          {
+            "x": 5.875,
+            "y": -0.6857,
+            "yHigh": -0.6836,
+            "count": 43419,
+            "yLow": -0.6878
+          },
+          {
+            "x": 6.125,
+            "y": -0.7957,
+            "yHigh": -0.7934,
+            "count": 33703,
+            "yLow": -0.7981
+          },
+          {
+            "x": 6.375,
+            "y": -0.952,
+            "yHigh": -0.9492,
+            "count": 23516,
+            "yLow": -0.9549
+          },
+          {
+            "x": 6.625,
+            "y": -1.1063,
+            "yHigh": -1.1029,
+            "count": 16486,
+            "yLow": -1.1097
+          },
+          {
+            "x": 6.875,
+            "y": -1.2869,
+            "yHigh": -1.2827,
+            "count": 10878,
+            "yLow": -1.291
+          },
+          {
+            "x": 7.125,
+            "y": -1.4828,
+            "yHigh": -1.4776,
+            "count": 6928,
+            "yLow": -1.488
+          },
+          {
+            "x": 7.375,
+            "y": -1.6935,
+            "yHigh": -1.6869,
+            "count": 4265,
+            "yLow": -1.7002
+          },
+          {
+            "x": 7.625,
+            "y": -1.913,
+            "yHigh": -1.9045,
+            "count": 2573,
+            "yLow": -1.9216
+          },
+          {
+            "x": 7.875,
+            "y": -2.1663,
+            "yHigh": -2.1549,
+            "count": 1436,
+            "yLow": -2.1779
+          },
+          {
+            "x": 8.125,
+            "y": -2.4038,
+            "yHigh": -2.389,
+            "count": 831,
+            "yLow": -2.4191
+          },
+          {
+            "x": 8.375,
+            "y": -2.6899,
+            "yHigh": -2.6695,
+            "count": 430,
+            "yLow": -2.7114
+          },
+          {
+            "x": 8.625,
+            "y": -3.0854,
+            "yHigh": -3.0535,
+            "count": 173,
+            "yLow": -3.1197
+          },
+          {
+            "x": 8.875,
+            "y": -3.531,
+            "yHigh": -3.4791,
+            "count": 62,
+            "yLow": -3.59
+          },
+          {
+            "x": 9.125,
+            "y": -3.8463,
+            "yHigh": -3.7735,
+            "count": 30,
+            "yLow": -3.9338
+          },
+          {
+            "x": 9.375,
+            "y": -4.282,
+            "yHigh": -4.1676,
+            "count": 11,
+            "yLow": -4.4379
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all friends-of-friends haloes above 1e8 Msun that hold stars (each halo counts once, with all stars inside r200)",
+        "warning": "Galaxy stellar mass function of the whole CoDa II box at z = 7, counted by sim-highline from the public catalogue (0.25 dex bins; error bars are Poisson). A galaxy is a friends-of-friends halo, so the satellites of a halo are inside its stellar mass; only haloes above 1e8 Msun (246 particles) are in the catalogue, and bins are kept only where at least 10 galaxies are counted and no more than 1 percent of them live in haloes below 2e8 Msun, so that the missing lighter haloes cannot change the bin (the lowest kept bin is log M* = 5.125). The box is a constrained realization of the Local Universe, not a random volume. The paper states the Kroupa IMF only for its ionizing and UV source model, so the IMF of the stellar mass is left unspecified."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 67.7,
+          "Om": 0.307
+        },
+        "massDefinition": "sphere-R200",
+        "densityFrame": "comoving",
+        "population": "all friends-of-friends haloes above 1e8 Msun that hold stars"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "Ocvirk et al. 2020, MNRAS 496, 4087 (doi 10.1093/mnras/staa1266); galaxy catalogue VizieR VI/146 (CDS); mass function counted by sim-highline",
+        "doi": "10.1093/mnras/staa1266",
+        "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/VI/146",
+        "retrieved": "2026-10-24",
+        "checksumSha256": "49a6979abce8a295bf391eb99f8872b2f43e48946592176ee81832de8f1283ce",
+        "sourceMember": "halo7.dat.gz (columns M*, MAB1600)",
+        "extractionMethod": "histogram of the stellar mass column of the public catalogue divided by the box volume 94.44^3 cMpc^3 and the bin width"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Computed by sim-highline from the public catalogue; the same snapshot's UV luminosity function is in ocvirk20-coda2-uvlf.json (the paper's own table)."
+    },
+    {
+      "id": "ocvirk20.coda2.shmr.z7",
+      "source": "CoDa II",
+      "run": "CoDa II (94.44 cMpc box), VizieR VI/146 galaxy catalogue",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 7,
+        "zNominal": 7,
+        "zMin": 7,
+        "zMax": 7,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 friends-of-friends halo mass (linking length 0.2)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 median stellar-to-halo mass ratio M*/Mh (stars inside r200)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 9.125,
+        "xMax": 11.625
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.125,
+            "y": -3.9538,
+            "count": 171261,
+            "yHigh": -3.4409
+          },
+          {
+            "x": 9.375,
+            "y": -3.5757,
+            "count": 89670,
+            "yLow": -4.2988,
+            "yHigh": -3.2037
+          },
+          {
+            "x": 9.625,
+            "y": -3.3383,
+            "count": 45387,
+            "yLow": -3.9324,
+            "yHigh": -3.0082
+          },
+          {
+            "x": 9.875,
+            "y": -3.1482,
+            "count": 22029,
+            "yLow": -3.7367,
+            "yHigh": -2.8375
+          },
+          {
+            "x": 10.125,
+            "y": -2.9927,
+            "count": 10238,
+            "yLow": -3.6153,
+            "yHigh": -2.6858
+          },
+          {
+            "x": 10.375,
+            "y": -2.8819,
+            "count": 4549,
+            "yLow": -3.573,
+            "yHigh": -2.5741
+          },
+          {
+            "x": 10.625,
+            "y": -2.7396,
+            "count": 1920,
+            "yLow": -3.471,
+            "yHigh": -2.4512
+          },
+          {
+            "x": 10.875,
+            "y": -2.6646,
+            "count": 712,
+            "yLow": -3.4171,
+            "yHigh": -2.3635
+          },
+          {
+            "x": 11.125,
+            "y": -2.7041,
+            "count": 249,
+            "yLow": -3.5624,
+            "yHigh": -2.3199
+          },
+          {
+            "x": 11.375,
+            "y": -2.6313,
+            "count": 86,
+            "yLow": -3.5894,
+            "yHigh": -2.2077
+          },
+          {
+            "x": 11.625,
+            "y": -2.4104,
+            "count": 22,
+            "yLow": -3.1769,
+            "yHigh": -2.2314
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "all friends-of-friends haloes above 1e8 Msun, including those without stars",
+        "warning": "Median stellar-to-halo mass ratio of the whole CoDa II box at z = 7, computed by sim-highline from the public catalogue in 0.25 dex bins of halo mass; haloes without stars count as a ratio of zero, so a bin is kept only where more than half of its haloes hold stars (the lightest kept bin is log Mh = 9.125; below it the median is zero because star formation is suppressed or has not started) and holds at least 10 haloes; the 16th percentile is given only where it is above zero. The halo mass is the friends-of-friends mass and the stellar mass is all stars inside r200, satellites included. The box is a constrained realization of the Local Universe, not a random volume."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 67.7,
+          "Om": 0.307
+        },
+        "massDefinition": "sphere-R200",
+        "haloMassDefinition": "FOF",
+        "haloMassHistory": "current",
+        "population": "all friends-of-friends haloes above 1e8 Msun, including those without stars"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "Ocvirk et al. 2020, MNRAS 496, 4087 (doi 10.1093/mnras/staa1266); galaxy catalogue VizieR VI/146 (CDS); medians computed by sim-highline",
+        "doi": "10.1093/mnras/staa1266",
+        "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/VI/146",
+        "retrieved": "2026-10-24",
+        "checksumSha256": "49a6979abce8a295bf391eb99f8872b2f43e48946592176ee81832de8f1283ce",
+        "sourceMember": "halo7.dat.gz (columns Mhalo, M*)",
+        "extractionMethod": "median and 16th-84th percentiles of M*/Mhalo of the public catalogue in 0.25 dex bins of Mhalo"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Computed by sim-highline from the public catalogue. The paper does not show this relation."
+    },
+    {
+      "id": "ocvirk20.coda2.gsmf.z8",
+      "source": "CoDa II",
+      "run": "CoDa II (94.44 cMpc box), VizieR VI/146 galaxy catalogue",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass inside r200 of the friends-of-friends halo",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 number density per dex of stellar mass (comoving), Poisson errors",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 5.125,
+        "xMax": 8.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 5.125,
+            "y": -0.5972,
+            "yHigh": -0.5953,
+            "count": 53242,
+            "yLow": -0.599
+          },
+          {
+            "x": 5.375,
+            "y": -0.6439,
+            "yHigh": -0.6419,
+            "count": 47809,
+            "yLow": -0.6459
+          },
+          {
+            "x": 5.625,
+            "y": -0.7397,
+            "yHigh": -0.7375,
+            "count": 38344,
+            "yLow": -0.7419
+          },
+          {
+            "x": 5.875,
+            "y": -0.8837,
+            "yHigh": -0.8811,
+            "count": 27523,
+            "yLow": -0.8863
+          },
+          {
+            "x": 6.125,
+            "y": -1.0232,
+            "yHigh": -1.0201,
+            "count": 19963,
+            "yLow": -1.0263
+          },
+          {
+            "x": 6.375,
+            "y": -1.192,
+            "yHigh": -1.1883,
+            "count": 13534,
+            "yLow": -1.1957
+          },
+          {
+            "x": 6.625,
+            "y": -1.385,
+            "yHigh": -1.3804,
+            "count": 8677,
+            "yLow": -1.3897
+          },
+          {
+            "x": 6.875,
+            "y": -1.5822,
+            "yHigh": -1.5764,
+            "count": 5511,
+            "yLow": -1.5881
+          },
+          {
+            "x": 7.125,
+            "y": -1.8114,
+            "yHigh": -1.8038,
+            "count": 3251,
+            "yLow": -1.8191
+          },
+          {
+            "x": 7.375,
+            "y": -2.061,
+            "yHigh": -2.0509,
+            "count": 1830,
+            "yLow": -2.0712
+          },
+          {
+            "x": 7.625,
+            "y": -2.3182,
+            "yHigh": -2.3048,
+            "count": 1012,
+            "yLow": -2.3321
+          },
+          {
+            "x": 7.875,
+            "y": -2.5615,
+            "yHigh": -2.5438,
+            "count": 578,
+            "yLow": -2.5799
+          },
+          {
+            "x": 8.125,
+            "y": -2.9237,
+            "yHigh": -2.8972,
+            "count": 251,
+            "yLow": -2.952
+          },
+          {
+            "x": 8.375,
+            "y": -3.3366,
+            "yHigh": -3.2946,
+            "count": 97,
+            "yLow": -3.3831
+          },
+          {
+            "x": 8.625,
+            "y": -3.7552,
+            "yHigh": -3.6891,
+            "count": 37,
+            "yLow": -3.8332
+          },
+          {
+            "x": 8.875,
+            "y": -4.0224,
+            "yHigh": -3.9347,
+            "count": 20,
+            "yLow": -4.1323
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all friends-of-friends haloes above 1e8 Msun that hold stars (each halo counts once, with all stars inside r200)",
+        "warning": "Galaxy stellar mass function of the whole CoDa II box at z = 8, counted by sim-highline from the public catalogue (0.25 dex bins; error bars are Poisson). A galaxy is a friends-of-friends halo, so the satellites of a halo are inside its stellar mass; only haloes above 1e8 Msun (246 particles) are in the catalogue, and bins are kept only where at least 10 galaxies are counted and no more than 1 percent of them live in haloes below 2e8 Msun, so that the missing lighter haloes cannot change the bin (the lowest kept bin is log M* = 5.125). The box is a constrained realization of the Local Universe, not a random volume. The paper states the Kroupa IMF only for its ionizing and UV source model, so the IMF of the stellar mass is left unspecified."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 67.7,
+          "Om": 0.307
+        },
+        "massDefinition": "sphere-R200",
+        "densityFrame": "comoving",
+        "population": "all friends-of-friends haloes above 1e8 Msun that hold stars"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "Ocvirk et al. 2020, MNRAS 496, 4087 (doi 10.1093/mnras/staa1266); galaxy catalogue VizieR VI/146 (CDS); mass function counted by sim-highline",
+        "doi": "10.1093/mnras/staa1266",
+        "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/VI/146",
+        "retrieved": "2026-10-24",
+        "checksumSha256": "e3a580e0500d95fd721402b383ec9d35f8e17a5b683308ec1f63ee4ceb01f104",
+        "sourceMember": "halo8.dat.gz (columns M*, MAB1600)",
+        "extractionMethod": "histogram of the stellar mass column of the public catalogue divided by the box volume 94.44^3 cMpc^3 and the bin width"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Computed by sim-highline from the public catalogue; the same snapshot's UV luminosity function is in ocvirk20-coda2-uvlf.json (the paper's own table)."
+    },
+    {
+      "id": "ocvirk20.coda2.shmr.z8",
+      "source": "CoDa II",
+      "run": "CoDa II (94.44 cMpc box), VizieR VI/146 galaxy catalogue",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 8,
+        "zNominal": 8,
+        "zMin": 8,
+        "zMax": 8,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 friends-of-friends halo mass (linking length 0.2)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 median stellar-to-halo mass ratio M*/Mh (stars inside r200)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 9.125,
+        "xMax": 11.375
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.125,
+            "y": -4.0749,
+            "count": 125931,
+            "yHigh": -3.4953
+          },
+          {
+            "x": 9.375,
+            "y": -3.6995,
+            "count": 62064,
+            "yLow": -4.6087,
+            "yHigh": -3.2597
+          },
+          {
+            "x": 9.625,
+            "y": -3.4692,
+            "count": 29882,
+            "yLow": -4.2112,
+            "yHigh": -3.0744
+          },
+          {
+            "x": 9.875,
+            "y": -3.2956,
+            "count": 13333,
+            "yLow": -4.0339,
+            "yHigh": -2.9073
+          },
+          {
+            "x": 10.125,
+            "y": -3.1843,
+            "count": 5692,
+            "yLow": -3.9416,
+            "yHigh": -2.7843
+          },
+          {
+            "x": 10.375,
+            "y": -3.0388,
+            "count": 2407,
+            "yLow": -3.8264,
+            "yHigh": -2.6504
+          },
+          {
+            "x": 10.625,
+            "y": -3.0104,
+            "count": 922,
+            "yLow": -3.8533,
+            "yHigh": -2.5688
+          },
+          {
+            "x": 10.875,
+            "y": -2.9617,
+            "count": 321,
+            "yLow": -3.8805,
+            "yHigh": -2.5178
+          },
+          {
+            "x": 11.125,
+            "y": -2.8967,
+            "count": 92,
+            "yLow": -3.6037,
+            "yHigh": -2.4323
+          },
+          {
+            "x": 11.375,
+            "y": -2.7824,
+            "count": 23,
+            "yLow": -3.4622,
+            "yHigh": -2.3648
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "all friends-of-friends haloes above 1e8 Msun, including those without stars",
+        "warning": "Median stellar-to-halo mass ratio of the whole CoDa II box at z = 8, computed by sim-highline from the public catalogue in 0.25 dex bins of halo mass; haloes without stars count as a ratio of zero, so a bin is kept only where more than half of its haloes hold stars (the lightest kept bin is log Mh = 9.125; below it the median is zero because star formation is suppressed or has not started) and holds at least 10 haloes; the 16th percentile is given only where it is above zero. The halo mass is the friends-of-friends mass and the stellar mass is all stars inside r200, satellites included. The box is a constrained realization of the Local Universe, not a random volume."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 67.7,
+          "Om": 0.307
+        },
+        "massDefinition": "sphere-R200",
+        "haloMassDefinition": "FOF",
+        "haloMassHistory": "current",
+        "population": "all friends-of-friends haloes above 1e8 Msun, including those without stars"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "Ocvirk et al. 2020, MNRAS 496, 4087 (doi 10.1093/mnras/staa1266); galaxy catalogue VizieR VI/146 (CDS); medians computed by sim-highline",
+        "doi": "10.1093/mnras/staa1266",
+        "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/VI/146",
+        "retrieved": "2026-10-24",
+        "checksumSha256": "e3a580e0500d95fd721402b383ec9d35f8e17a5b683308ec1f63ee4ceb01f104",
+        "sourceMember": "halo8.dat.gz (columns Mhalo, M*)",
+        "extractionMethod": "median and 16th-84th percentiles of M*/Mhalo of the public catalogue in 0.25 dex bins of Mhalo"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Computed by sim-highline from the public catalogue. The paper does not show this relation."
+    },
+    {
+      "id": "ocvirk20.coda2.gsmf.z10",
+      "source": "CoDa II",
+      "run": "CoDa II (94.44 cMpc box), VizieR VI/146 galaxy catalogue",
+      "kind": "simulation",
+      "relation": "gsmf",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 stellar mass inside r200 of the friends-of-friends halo",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 number density per dex of stellar mass (comoving), Poisson errors",
+        "yUnit": "log10(cMpc^-3 dex^-1)"
+      },
+      "domain": {
+        "xMin": 5.125,
+        "xMax": 8.125
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "uncertainty",
+        "connect": true,
+        "points": [
+          {
+            "x": 5.125,
+            "y": -1.0352,
+            "yHigh": -1.0321,
+            "count": 19417,
+            "yLow": -1.0384
+          },
+          {
+            "x": 5.375,
+            "y": -1.1316,
+            "yHigh": -1.1281,
+            "count": 15554,
+            "yLow": -1.1351
+          },
+          {
+            "x": 5.625,
+            "y": -1.2557,
+            "yHigh": -1.2517,
+            "count": 11688,
+            "yLow": -1.2597
+          },
+          {
+            "x": 5.875,
+            "y": -1.4554,
+            "yHigh": -1.4504,
+            "count": 7379,
+            "yLow": -1.4605
+          },
+          {
+            "x": 6.125,
+            "y": -1.651,
+            "yHigh": -1.6447,
+            "count": 4703,
+            "yLow": -1.6574
+          },
+          {
+            "x": 6.375,
+            "y": -1.8761,
+            "yHigh": -1.868,
+            "count": 2801,
+            "yLow": -1.8844
+          },
+          {
+            "x": 6.625,
+            "y": -2.1413,
+            "yHigh": -2.1303,
+            "count": 1521,
+            "yLow": -2.1526
+          },
+          {
+            "x": 6.875,
+            "y": -2.4064,
+            "yHigh": -2.3916,
+            "count": 826,
+            "yLow": -2.4218
+          },
+          {
+            "x": 7.125,
+            "y": -2.677,
+            "yHigh": -2.6568,
+            "count": 443,
+            "yLow": -2.6981
+          },
+          {
+            "x": 7.375,
+            "y": -3.0706,
+            "yHigh": -3.0393,
+            "count": 179,
+            "yLow": -3.1043
+          },
+          {
+            "x": 7.625,
+            "y": -3.3889,
+            "yHigh": -3.3444,
+            "count": 86,
+            "yLow": -3.4385
+          },
+          {
+            "x": 7.875,
+            "y": -3.8183,
+            "yHigh": -3.7476,
+            "count": 32,
+            "yLow": -3.9027
+          },
+          {
+            "x": 8.125,
+            "y": -4.0224,
+            "yHigh": -3.9347,
+            "count": 20,
+            "yLow": -4.1323
+          }
+        ]
+      },
+      "scatter": null,
+      "selection": {
+        "population": "all friends-of-friends haloes above 1e8 Msun that hold stars (each halo counts once, with all stars inside r200)",
+        "warning": "Galaxy stellar mass function of the whole CoDa II box at z = 10, counted by sim-highline from the public catalogue (0.25 dex bins; error bars are Poisson). A galaxy is a friends-of-friends halo, so the satellites of a halo are inside its stellar mass; only haloes above 1e8 Msun (246 particles) are in the catalogue, and bins are kept only where at least 10 galaxies are counted and no more than 1 percent of them live in haloes below 2e8 Msun, so that the missing lighter haloes cannot change the bin (the lowest kept bin is log M* = 5.125). The box is a constrained realization of the Local Universe, not a random volume. The paper states the Kroupa IMF only for its ionizing and UV source model, so the IMF of the stellar mass is left unspecified."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 67.7,
+          "Om": 0.307
+        },
+        "massDefinition": "sphere-R200",
+        "densityFrame": "comoving",
+        "population": "all friends-of-friends haloes above 1e8 Msun that hold stars"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "Ocvirk et al. 2020, MNRAS 496, 4087 (doi 10.1093/mnras/staa1266); galaxy catalogue VizieR VI/146 (CDS); mass function counted by sim-highline",
+        "doi": "10.1093/mnras/staa1266",
+        "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/VI/146",
+        "retrieved": "2026-10-24",
+        "checksumSha256": "7960979f0131a6a76e1d870ba57b904a032a381dea74bbbff8aae46b0877e335",
+        "sourceMember": "halo10.dat.gz (columns M*, MAB1600)",
+        "extractionMethod": "histogram of the stellar mass column of the public catalogue divided by the box volume 94.44^3 cMpc^3 and the bin width"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Computed by sim-highline from the public catalogue; the same snapshot's UV luminosity function is in ocvirk20-coda2-uvlf.json (the paper's own table)."
+    },
+    {
+      "id": "ocvirk20.coda2.shmr.z10",
+      "source": "CoDa II",
+      "run": "CoDa II (94.44 cMpc box), VizieR VI/146 galaxy catalogue",
+      "kind": "simulation",
+      "relation": "shmr",
+      "epoch": {
+        "zRepresentative": 10,
+        "zNominal": 10,
+        "zMin": 10,
+        "zMax": 10,
+        "mode": "published-epoch",
+        "snapshot": null
+      },
+      "axes": {
+        "xDefinition": "log10 friends-of-friends halo mass (linking length 0.2)",
+        "xUnit": "log10(Msun)",
+        "yDefinition": "log10 median stellar-to-halo mass ratio M*/Mh (stars inside r200)",
+        "yUnit": "dex"
+      },
+      "domain": {
+        "xMin": 9.125,
+        "xMax": 10.875
+      },
+      "representation": {
+        "type": "points",
+        "intervalKind": "scatter",
+        "connect": true,
+        "points": [
+          {
+            "x": 9.125,
+            "y": -4.4459,
+            "count": 52245,
+            "yHigh": -3.6711
+          },
+          {
+            "x": 9.375,
+            "y": -4.0596,
+            "count": 23541,
+            "yLow": -5.4574,
+            "yHigh": -3.4527
+          },
+          {
+            "x": 9.625,
+            "y": -3.851,
+            "count": 9880,
+            "yLow": -4.8811,
+            "yHigh": -3.2765
+          },
+          {
+            "x": 9.875,
+            "y": -3.7321,
+            "count": 3929,
+            "yLow": -4.6222,
+            "yHigh": -3.1444
+          },
+          {
+            "x": 10.125,
+            "y": -3.655,
+            "count": 1500,
+            "yLow": -4.5265,
+            "yHigh": -3.0361
+          },
+          {
+            "x": 10.375,
+            "y": -3.6092,
+            "count": 494,
+            "yLow": -4.5258,
+            "yHigh": -2.9569
+          },
+          {
+            "x": 10.625,
+            "y": -3.536,
+            "count": 144,
+            "yLow": -4.5042,
+            "yHigh": -2.8362
+          },
+          {
+            "x": 10.875,
+            "y": -3.5646,
+            "count": 46,
+            "yLow": -4.8952,
+            "yHigh": -2.7564
+          }
+        ]
+      },
+      "scatter": {
+        "lower": "16th percentile",
+        "upper": "84th percentile"
+      },
+      "selection": {
+        "population": "all friends-of-friends haloes above 1e8 Msun, including those without stars",
+        "warning": "Median stellar-to-halo mass ratio of the whole CoDa II box at z = 10, computed by sim-highline from the public catalogue in 0.25 dex bins of halo mass; haloes without stars count as a ratio of zero, so a bin is kept only where more than half of its haloes hold stars (the lightest kept bin is log Mh = 9.125; below it the median is zero because star formation is suppressed or has not started) and holds at least 10 haloes; the 16th percentile is given only where it is above zero. The halo mass is the friends-of-friends mass and the stellar mass is all stars inside r200, satellites included. The box is a constrained realization of the Local Universe, not a random volume."
+      },
+      "definitions": {
+        "imf": "unspecified",
+        "cosmology": {
+          "H0": 67.7,
+          "Om": 0.307
+        },
+        "massDefinition": "sphere-R200",
+        "haloMassDefinition": "FOF",
+        "haloMassHistory": "current",
+        "population": "all friends-of-friends haloes above 1e8 Msun, including those without stars"
+      },
+      "provenance": {
+        "tier": "catalog-derived",
+        "citation": "Ocvirk et al. 2020, MNRAS 496, 4087 (doi 10.1093/mnras/staa1266); galaxy catalogue VizieR VI/146 (CDS); medians computed by sim-highline",
+        "doi": "10.1093/mnras/staa1266",
+        "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/VI/146",
+        "retrieved": "2026-10-24",
+        "checksumSha256": "7960979f0131a6a76e1d870ba57b904a032a381dea74bbbff8aae46b0877e335",
+        "sourceMember": "halo10.dat.gz (columns Mhalo, M*)",
+        "extractionMethod": "median and 16th-84th percentiles of M*/Mhalo of the public catalogue in 0.25 dex bins of Mhalo"
+      },
+      "calibration": "prediction",
+      "rankable": true,
+      "notes": "Computed by sim-highline from the public catalogue. The paper does not show this relation."
+    }
+  ]
+}

@@ -9,7 +9,7 @@ import sys
 LIGHT = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#4a3aa7", "#e34948"]
 DARK = ["#3987e5", "#d95926", "#199e70", "#c98500", "#d55181", "#008300", "#9085e9", "#e66767"]
 FAMILIES = [["SIMBA", "ASTRID"], ["IllustrisTNG", "Illustris"], ["EAGLE", "COLIBRE", "FLAMINGO"], ["FIRE-2", "FIREbox"], ["NIHAO zoom suite", "Romulus25"],
-            ["FLARES", "BlueTides", "Magneticum Pathfinder"], ["THESAN-1", "THESAN-zoom", "SPHINX20"], ["Horizon-AGN", "NewHorizon", "DARWIN"]]
+            ["FLARES", "BlueTides", "Magneticum Pathfinder", "The Three Hundred"], ["THESAN-1", "THESAN-zoom", "SPHINX20", "CoDa II"], ["Horizon-AGN", "NewHorizon", "DARWIN"]]
 STEP = 0.11
 
 
@@ -41,9 +41,9 @@ def from_oklab(L, a, b):
 
 
 def shade(h, k, sign):
-    """k = 0 the family base; 1 steps toward stronger contrast with the surface (darker on light, lighter on dark); 2 steps the other way."""
+    """k = 0 the family base; 1 steps toward stronger contrast with the surface (darker on light, lighter on dark); 2 steps the other way; 3 steps twice toward stronger contrast."""
     L, a, b = to_oklab(h)
-    L2 = max(0.2, min(0.9, L + (sign if k == 1 else -sign if k == 2 else 0) * STEP))
+    L2 = max(0.2, min(0.9, L + (sign if k == 1 else -sign if k == 2 else 2 * sign if k == 3 else 0) * STEP))
     return from_oklab(L2, a, b)
 
 
