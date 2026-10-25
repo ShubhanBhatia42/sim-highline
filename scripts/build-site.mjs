@@ -92,7 +92,7 @@ const CH = {
   bh: chart({ id: "b", rel: "bh", z: 0, xref: 10.5, xlab: "log M★ [M☉]", ylab: "log M● [M☉]" })
 };
 const dex = v => Math.abs(v).toFixed(1);
-const cap = (c, what, unit, full) => `${c.nSims} simulations reach ${what}${unit ? ` ${unit}` : ""} and span <b>${c.spread != null ? dex(c.spread) : "?"} dex</b>${c.off != null ? `; the median simulation ${Math.abs(c.off) < 0.05 ? "lies within 0.1 dex of" : `lies ${dex(c.off)} dex ${c.off >= 0 ? "above" : "below"}`} the median of the ${c.nObs} observational curve${c.nObs > 1 ? "s" : ""} shown` : ""}. Definitions differ between sources${full ? " (mass aperture, IMF, SFR timescale, metallicity calibration)" : ""}, so part of any offset is not physics.`;
+const cap = (c, what, unit, full) => `${c.nSims} simulations reach ${what}${unit ? ` ${unit}` : ""} and span <b>${c.spread != null ? dex(c.spread) : "?"} dex</b>${c.off != null ? `; the median simulation ${Math.abs(c.off) < 0.05 ? "lies within 0.1 dex of" : `lies ${dex(c.off)} dex ${c.off >= 0 ? "above" : "below"}`} the median of the ${c.nObs} observational curve${c.nObs > 1 ? "s" : ""} shown` : ""}.${full ? " Definitions differ between sources (mass aperture, IMF, SFR timescale, metallicity calibration), so part of any offset is not physics." : ""}`;
 stats.hero = CH.gsmf.svg; stats.heroKey = CH.gsmf.key;
 stats.heroCaption = `Stellar mass function at z ≈ 6 from ${CH.gsmf.curves} simulations (one fiducial run each; zoom samples, which are not volume complete, are left out), straight from the dataset. ${cap(CH.gsmf, "log M★ = 9", "", true)} Dotted lines are digitized from figures; solid lines are tables or catalogues.`;
 for (const [k, c] of Object.entries(CH)) { stats[`${k}Svg`] = c.svg; stats[`${k}Key`] = c.key; }
