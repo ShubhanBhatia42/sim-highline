@@ -12,11 +12,16 @@ for (const f of files) records.push(...JSON.parse(await readFile(new URL(`data/c
 const out = new URL("data/export/", root);
 await mkdir(out, { recursive: true });
 const recRows = records.map(r => X.recordRow(r)), ptRows = records.flatMap(r => X.pointRows(r)), distRows = records.flatMap(r => X.distRows(r)); // not records.map(X.recordRow): map passes the row index as a second argument, which these functions read as the redshift to evaluate at
-const head = [`sim-highline dataset v${release.version} (${release.released}); records table, one row per evidence record`, "join with sim-highline-points.csv on record_id; see sim_highline.py"];
+const DESCRIPTIONS = {
+  "sim-highline-records.csv": `sim-highline dataset v${release.version} (${release.released}); records table, one row per evidence record; join with sim-highline-points.csv on record_id; see sim_highline.py`,
+  "sim-highline-points.csv": `sim-highline dataset v${release.version} (${release.released}); points table, one row per plotted point (parametric records sampled at ${X.NSAMPLE} points over their domain)`,
+  "sim-highline-distributions.csv": `sim-highline dataset v${release.version} (${release.released}); per-galaxy distributions, one row per non-empty cell of a record's grid (x = stellar mass or similar, y = specific SFR or colour); join with sim-highline-records.csv on record_id`
+};
+// the three CSV files are plain tables (a header row first, no comment lines) so that any CSV reader and metadata checker can read them; the description of each file is in the manifest
 const outputs = {
-  "sim-highline-records.csv": X.toCsv(recRows, X.RECORD_COLS, head),
-  "sim-highline-points.csv": X.toCsv(ptRows, X.POINT_COLS, [`sim-highline dataset v${release.version} (${release.released}); points table, one row per plotted point (parametric records sampled at ${X.NSAMPLE} points over their domain)`]),
-  "sim-highline-distributions.csv": X.toCsv(distRows, X.DIST_COLS, [`sim-highline dataset v${release.version} (${release.released}); per-galaxy distributions, one row per non-empty cell of a record's grid (x = stellar mass or similar, y = specific SFR or colour); join with sim-highline-records.csv on record_id`]),
+  "sim-highline-records.csv": X.toCsv(recRows, X.RECORD_COLS),
+  "sim-highline-points.csv": X.toCsv(ptRows, X.POINT_COLS),
+  "sim-highline-distributions.csv": X.toCsv(distRows, X.DIST_COLS),
   "sim-highline-records.json": JSON.stringify({ version: release.version, released: release.released, records }) + "\n",
   "sim-highline-citations.bib": X.bibtex(records),
   "sim-highline-conversions.json": await readFile(new URL("data/conversions.json", root), "utf8"),
@@ -28,7 +33,7 @@ const manifest = { version: release.version, released: release.released, doi: re
   columns: { records: X.RECORD_COLS, points: X.POINT_COLS, distributions: X.DIST_COLS }, files: {} };
 for (const [name, text] of Object.entries(outputs)) {
   await writeFile(new URL(name, out), text);
-  manifest.files[name] = { sha256: createHash("sha256").update(text).digest("hex"), bytes: Buffer.byteLength(text) };
+  manifest.files[name] = { sha256: createHash("sha256").update(text).digest("hex"), bytes: Buffer.byteLength(text), ...(DESCRIPTIONS[name] ? { description: DESCRIPTIONS[name] } : {}) };
 }
 await writeFile(new URL("sim-highline-manifest.json", out), JSON.stringify(manifest, null, 2) + "\n");
 console.log(`Exported v${release.version}: ${records.length} records, ${ptRows.length} points -> data/export/ (${Object.entries(manifest.files).map(([k, v]) => `${k} ${(v.bytes / 1e6).toFixed(1)} MB`).join(", ")})`);
