@@ -324,7 +324,8 @@ await step("first visit: a short guide appears once, can be dismissed, and stays
   const e = await open("/highline.html#embed=1&r=gsmf&z=0.1"); await e.page.waitForTimeout(300);
   assert.ok(!(await e.page.locator("#hello").isVisible()), "not shown in an embed");
   await e.ctx.close();
-  const s = await open("/highline.html#r=sfms&z=0&m=spread"); await s.page.waitForTimeout(300);
+  const s = await open("/highline.html#r=sfms&z=0&m=spread");
+  await s.page.locator("#spread td[data-r]").first().waitFor({ state: "visible", timeout: 15000 });
   assert.ok(await s.page.locator("#spread td[data-r]").first().isVisible(), "other views are not nested inside the plot");
   await s.ctx.close();
 });
@@ -395,6 +396,8 @@ await step("links carry the dataset version, and a link from another version sho
 
 await step("spread map and command palette", async () => {
   const { page, ctx } = await open("/highline.html#m=spread");
+  await settle(page);
+  await page.locator("#spread td[data-r]").first().waitFor({ state: "visible", timeout: 15000 });  // the view reads every relation's file first, which takes longer on a slow runner
   assert.ok(await page.locator("#spread td[data-r]").count() >= 20, "spread map has cells");
   const first = await page.locator("#spread td[data-r] b").first().innerText();
   assert.ok(Number(first) > 0 && Number(first) < 3, "spread values are plausible dex");
