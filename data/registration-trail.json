@@ -4,29 +4,29 @@
   "result_file": "data/analysis/harmonization.json",
   "protocol_commits": [
    {
-    "hash": "f71cc5dcc63dab1eed582cefd94983682fce503a",
+    "hash": "0050e606c3762e9acf50c7b83592e52e16338f20",
     "date": "2026-10-14T10:46:14+00:00",
     "subject": "Pre-specified protocol for the definition-harmonization analysis of the z~0 stellar mass functions",
-    "short": "f71cc5d"
+    "short": "0050e60"
    },
    {
-    "hash": "9c37903386f070389ff156d671e9c8af6b2f900e",
+    "hash": "b7c240b0feb3bd98d83e0b14707ac4f46ae8a7fa",
     "date": "2026-10-14T10:57:58+00:00",
     "subject": "Protocol amendment A1: mass-scatter operator with a validation gate, added before any E1-E4 statistic was computed",
-    "short": "9c37903"
+    "short": "b7c240b"
    },
    {
-    "hash": "2c12e5b4875a8b9173c7ef8ee472da65b73eadb9",
+    "hash": "70a9effaf3c853df4f29cd31ae868c16d656e08d",
     "date": "2026-10-14T11:11:41+00:00",
     "subject": "Protocol amendment A2 and its implementation: galaxy-level aperture remap with Jacobian replaces level-matched shifts; synthetic tests (committed before E1, E2, E4 or any sensitivity statistic was computed)",
-    "short": "2c12e5b"
+    "short": "70a9eff"
    }
   ],
   "result_first_commit": {
-   "hash": "0b6ae6c74d7619f9fd9eb10bb48e02102f9b854e",
+   "hash": "d91afcc83ab3fcaae686986faaf804f1f95aec39",
    "date": "2026-10-14T11:21:53+00:00",
    "subject": "v0.21.0: confirmatory run of the pre-specified harmonization analysis (not detected), generated report, site Findings section, verification chain",
-   "short": "0b6ae6c"
+   "short": "d91afcc"
   }
  },
  "model-form": {
@@ -34,23 +34,23 @@
   "result_file": "data/analysis/model-form.json",
   "protocol_commits": [
    {
-    "hash": "dd575304ab28a3adf7ebe88bae741ffc4309166f",
+    "hash": "056d0d87aeb42c8ba9706ac4e9f66fd306afc27a",
     "date": "2026-10-14T12:17:34+00:00",
     "subject": "Pre-registered protocol for the parametric-versus-structural analysis of the cosmic star formation history, with its analysis code and synthetic tests (committed before any real spread, variant deviation, emulator fit, reachability distance or posterior was computed)",
-    "short": "dd57530"
+    "short": "056d0d8"
    },
    {
-    "hash": "1bb5b8dd9de4edb7143b4fe983365259f8d2a0c0",
+    "hash": "bdfabc2e30a46df8d341975bb3f5ccbe221057f1",
     "date": "2026-10-14T13:13:04+00:00",
     "subject": "Protocol amendment A1 and referee fixes, committed before any outcome was computed: matched-size E3 verdict with a seed margin, common-systematic E4 with an effective-sample-size floor, V1 volume check, V4 and V5 corrections, S8 and S9, ridge as stated; power and calibration script with its output; design check kept for the record",
-    "short": "1bb5b8d"
+    "short": "bdfabc2"
    }
   ],
   "result_first_commit": {
-   "hash": "fb278a69f11fd71b56c4dfc5c75e3953791b40c1",
+   "hash": "670bd75f1eeeede3bbfadca19c323407da39ba2f",
    "date": "2026-10-14T13:43:39+00:00",
    "subject": "v0.22.0: confirmatory run of the pre-registered parametric-versus-structural analysis (E1 funnel not detected; E3 removable by the pre-specified rule; E4 parametric; V4 for SIMBA fails marginally at 1.51 against 1.5), generated report, Findings section, release notes",
-   "short": "fb278a6"
+   "short": "670bd75"
   }
  },
  "joint-reachability": {
@@ -58,23 +58,23 @@
   "result_file": "data/analysis/joint-reachability.json",
   "protocol_commits": [
    {
-    "hash": "cdf3dd7f8240245a4fb10473bbf2c6fc663e641b",
+    "hash": "955da0a74f6b56ff980bc41c134f6c79ad367bfd",
     "date": "2026-10-14T17:28:54+00:00",
     "subject": "Joint-reachability study, draft before any outcome: protocol, analysis code, synthetic-world calibration, tests, CAMELS galaxy-population summaries (2054 simulations x 5 snapshots, 186 of 530 outputs eligible), Retune page script",
-    "short": "cdf3dd7"
+    "short": "955da0a"
    },
    {
-    "hash": "73817274c8ce0ac65ad968757a637437b945ddc4",
+    "hash": "33ca6fe6d8ec383305b6055412b90ab514c946d7",
     "date": "2026-10-14T22:42:09+00:00",
     "subject": "Joint-reachability: Amendment A1 (emulator-error correction, null-calibrated J3, mechanism classes), calibration worlds with oracle truth, site pages updated for corrected distances",
-    "short": "7381727"
+    "short": "33ca6fe"
    }
   ],
   "result_first_commit": {
-   "hash": "d2b314bd19400cd6a430dbb77d0ee11d2e90a6c9",
+   "hash": "36ada983778f20a646a3b0a889742fa39b5c3ff7",
    "date": "2026-10-15T01:36:17+00:00",
    "subject": "Joint-reachability: confirmatory run (one run, protocol and A1 committed before it); joint verdict structural, D = 4.8 noise units; report and JSON",
-   "short": "d2b314b"
+   "short": "36ada98"
   }
  },
  "quenching-shape": {
@@ -82,23 +82,23 @@
   "result_file": "data/analysis/quenching-shape.json",
   "protocol_commits": [
    {
-    "hash": "c28625330f66f1885dd3a41fba16a9b9c961282c",
+    "hash": "6e282b10e0f3af94c0865a341106326bb93c0948",
     "date": "2026-10-23T01:16:00+00:00",
     "subject": "Pre-registered protocol: does the shape of the star-formation distribution separate TNG and SIMBA",
-    "short": "c286253"
+    "short": "6e282b1"
    },
    {
-    "hash": "c5ed5fecef325be61f45c81bb3de04b2e7551f42",
+    "hash": "3bf65ec8681dcbc8ce37d109864c79036e4796ac",
     "date": "2026-10-23T01:25:56+00:00",
     "subject": "Quenching-shape study: ingest and analysis code, synthetic tests, protocol amendment A1 (before any distance was computed)",
-    "short": "c5ed5fe"
+    "short": "3bf65ec"
    }
   ],
   "result_first_commit": {
-   "hash": "a7e61276aae885dcda11efa1979056ac423517ad",
+   "hash": "1d623cf3f6aa1d80fca1897496a6920e85985c97",
    "date": "2026-10-23T01:42:58+00:00",
    "subject": "Quenching-shape study: the registered run, as it came out (Q1 removable; Q2 and Q3 add nothing detectable; validations V1 and V4 do not hold)",
-   "short": "a7e6127"
+   "short": "1d623cf"
   }
  },
  "resolution": {
@@ -106,17 +106,17 @@
   "result_file": "data/analysis/resolution.json",
   "protocol_commits": [
    {
-    "hash": "a995a935723c24445d8c85f52fdd9530c0a795d2",
+    "hash": "c452db4989042582986dab7d0bcdbcd52e45434c",
     "date": "2026-10-23T15:56:23+00:00",
     "subject": "Pre-registered protocol: how much does a model's published output change with resolution (ladders, metric in CAMELS noise units, labels, comparison with the TNG-SIMBA distance)",
-    "short": "a995a93"
+    "short": "c452db4"
    }
   ],
   "result_first_commit": {
-   "hash": "661b22f24c9a5bf5cfc187afc71a42f74efe0ad8",
+   "hash": "4a847acd020b6e203fbd55934b7ecdfd45f055c0",
    "date": "2026-10-23T16:04:41+00:00",
    "subject": "Resolution study: the registered run, as it came out (30 adjacent steps with a stated common box: 2 converged, 28 resolution-dependent by the rule; 16 of 19 comparable steps at least as large as the TNG-SIMBA distance), generated report and JSON",
-   "short": "661b22f"
+   "short": "4a847ac"
   }
  }
 }

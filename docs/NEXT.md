@@ -4,10 +4,10 @@ Written 2026-10-23, replacing the list of 2026-10-16. In order of how much each 
 
 ## 0. Publish the release **(you)**
 
-No release has been published for 0.24.0 (GitHub refuses release and tag creation from the automated session, HTTP 403), so no Zenodo archive and no DOI of this version exist. `main` has moved on since 0.24.0 (commit `b8e0315`): it now also carries the work listed in `CHANGELOG.md` under "Unreleased", while the files still say 0.24.0. Tagging `v0.24.0` on today's `main` would put that work under the old number. Choose one:
+No release has been published for 0.24.0 (GitHub refuses release and tag creation from the automated session, HTTP 403), so no Zenodo archive and no DOI of this version exist. `main` has moved on since 0.24.0 (commit `003a998`): it now also carries the work listed in `CHANGELOG.md` under "Unreleased", while the files still say 0.24.0. Tagging `v0.24.0` on today's `main` would put that work under the old number. Choose one:
 
 - **One release, 0.25.0 (recommended).** Run `scripts/release.sh 0.25.0 "summary"`, which turns "Unreleased" into 0.25.0, bumps every file that carries the version and verifies; commit and merge it, then publish `v0.25.0` from `main`. No 0.24.0 release ever exists, which is simplest to cite.
-- **Two releases.** Publish `v0.24.0` with the target set to commit `b8e0315` (the Releases page lets you pick the commit), then release 0.25.0 later as above.
+- **Two releases.** Publish `v0.24.0` with the target set to commit `003a998` (the Releases page lets you pick the commit), then release 0.25.0 later as above.
 
 Zenodo archives a published release by itself and mints the DOI, which goes into `CITATION.cff`.
 

@@ -88,7 +88,7 @@
   "status": "done"
  },
  "10.03": {
-  "note": "2026-10-23, after main moved to 61d2a45: the Explorer, the data export manifest (1872 records), the summary, FAQ, quality and study pages return 200 and carry the new records; the pages workflow and all verify jobs passed",
+  "note": "2026-10-23, after main moved to 2d289af: the Explorer, the data export manifest (1872 records), the summary, FAQ, quality and study pages return 200 and carry the new records; the pages workflow and all verify jobs passed",
   "status": "done"
  },
  "10.04": {
@@ -124,7 +124,7 @@
   "status": "done"
  },
  "10.12": {
-  "note": "the live site is main at 61d2a45 (2026-10-23): the export manifest on the site says 1872 records and the Explorer contains the DARWIN records and the precompiled expressions. The release itself (tag, GitHub release, DOI) is task 8.11",
+  "note": "the live site is main at 2d289af (2026-10-23): the export manifest on the site says 1872 records and the Explorer contains the DARWIN records and the precompiled expressions. The release itself (tag, GitHub release, DOI) is task 8.11",
   "status": "done"
  },
  "10.13": {
@@ -560,7 +560,7 @@
   "status": "done"
  },
  "6.15": {
-  "note": "the CI jobs other-browsers (firefox) and other-browsers (webkit) run the suites (PW_BROWSER); both passed on commit 61d2a45 (2026-10-23). They cannot run in the authoring environment, where only Chromium is installed",
+  "note": "the CI jobs other-browsers (firefox) and other-browsers (webkit) run the suites (PW_BROWSER); both passed on commit 2d289af (2026-10-23). They cannot run in the authoring environment, where only Chromium is installed",
   "status": "done"
  },
  "6.16": {

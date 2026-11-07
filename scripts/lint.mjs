@@ -10,7 +10,7 @@ async function walk(dir, skip = /^(node_modules|\.git|dist|__pycache__)$/) {
   for (const e of await readdir(dir, { withFileTypes: true })) {
     if (skip.test(e.name)) continue;
     const p = path.join(dir, e.name);
-    if (e.isDirectory()) out.push(...await walk(p, skip)); else out.push(p);
+    if (e.isDirectory()) { if (await stat(path.join(p, ".git")).then(() => true, () => false)) continue; /* another checkout (a worktree), not part of this repository */ out.push(...await walk(p, skip)); } else out.push(p);
   }
   return out;
 }

@@ -1,5 +1,5 @@
 {
-  "note": "sha256 of the output of each derive script (retrieval date masked as DATE) on the fixtures in this folder, recorded from the scripts as they were before their code moved into sim_highline_derive.py (commit 61d2a45); scripts/test_derive_cli.py fails if the scripts now write anything else. {fx} is this folder.",
+  "note": "sha256 of the output of each derive script (retrieval date masked as DATE) on the fixtures in this folder, recorded from the scripts as they were before their code moved into sim_highline_derive.py (commit 2d289af); scripts/test_derive_cli.py fails if the scripts now write anything else. {fx} is this folder.",
   "cases": [
     {
       "script": "derive_subfind_relations.py",

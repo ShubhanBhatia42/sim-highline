@@ -53,6 +53,7 @@ assert not any("qsmf" in p["obs"] for p in saved["pairs"]), "a quiescent-galaxy 
 for sentence in ("none is a calibrated model of any survey", "It does not show that any of the surveys has such scatter", "Internal checks only: no outside expert has reviewed this", "not evidence that any survey has that scatter"):
     assert sentence in doc, sentence
 assert f"**{c['pairsMeasured']} pairs" in doc
-for banned in (r"\bnovel\b", r"\bfirst of its kind\b", r"\bnew method\b", r"\bAI\b", r"\bLLM\b", r"\bS[1-5]\b"):
+# the assistant's name is written in two pieces so that a search of the repository for it finds only real mentions
+for banned in (r"\bnovel\b", r"\bfirst of its kind\b", r"\bnew method\b", r"\bCla" r"ude\b", r"\bAI\b", r"\bLLM\b", r"\bS[1-5]\b"):
     assert not re.search(banned, doc), banned
 print(f"observer-layer tests passed: the saved measurement ({c['pairsMeasured']} pairs) is what the script produces now, the counts add up and the classification follows from the per-pair numbers")

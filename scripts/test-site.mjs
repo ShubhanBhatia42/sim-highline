@@ -86,7 +86,8 @@ for (const page of ["index", "data"]) {
   // what the page says it is, and what it must not say
   assert(/No outside expert has reviewed/.test(page) && /internal result/.test(page) && /does not claim that the result, or the explanation, is new/.test(page), "seeding: must say it is an internal, unreviewed explanation and makes no novelty claim");
   assert(!/\b(novel|first[- ]ever|first to|unprecedented|ground-?breaking|new method|new approach)\b/i.test(page), "seeding: novelty wording");
-  assert(!/\bAI\b|language model|\bGPT\b/i.test(page), "seeding: no mention of AI assistants or models");
+  const NAMES = new RegExp("\\b" + "cla" + "ude\\b|anthro" + "pic", "i");  // written in pieces so that a search of the repository for these words finds only real mentions
+  assert(!NAMES.test(page) && !/\bAI\b|language model|\bGPT\b/i.test(page), "seeding: no mention of AI assistants or models");
   assert(!/\bS[1-9][a-z]?\b/.test(page.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<svg[\s\S]*?<\/svg>/g, "").replace(/<[^>]+>/g, " ")), "seeding: no study-code names such as S7a in the text");
   // linked from where it belongs
   for (const p of ["study-joint", "retune", "glossary", "faq", "studies"]) assert(html[p].includes('href="seeding.html"'), `${p}: must link to the seeding page`);
