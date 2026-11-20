@@ -495,6 +495,9 @@ await step("phone layout: no horizontal overflow, selector instead of rail, tall
   assert(r.sw <= 376, `horizontal overflow ${r.sw}px`);
   assert.equal(r.rail, "none"); assert.equal(r.sel, "block");
   assert(r.h >= 300, `chart height ${r.h}`);
+  const tabs = await page.evaluate(() => [...document.querySelectorAll(".seg button")].map(b => { const q = b.getBoundingClientRect(); return { n: b.textContent, l: q.left, r: q.right, w: q.width }; }));
+  assert.equal(tabs.length, 6, "six views");
+  assert(tabs.every(t => t.l >= 0 && t.r <= 376 && t.w > 40), `every view tab is fully on screen at phone width: ${JSON.stringify(tabs.filter(t => t.r > 376 || t.l < 0).map(t => t.n))}`);
   await ctx.close();
 });
 
