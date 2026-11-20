@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile, access } from "node:fs/promises";
 import { createHash } from "node:crypto";
+import { doiWording } from "./release-doi.mjs";
 const root = new URL("../dist/", import.meta.url);
 const manifest = JSON.parse(await readFile(new URL("../data/export/sim-highline-manifest.json", import.meta.url), "utf8"));
 const release = JSON.parse(await readFile(new URL("../data/release.json", import.meta.url), "utf8"));
@@ -22,7 +23,9 @@ for (const page of [...PAGES, "findings"]) {
   assert(h.includes('<a class="mark" href="index.html" aria-label="sim-highline home">sim-highline</a>'), `${page}: wordmark links home`);
   assert(h.includes("Michroma") === false && h.includes("Jost") === false, `${page}: old fonts must be gone`);
   assert(h.includes('<nav class="menu" aria-label="Main">') && h.includes('href="../highline.html">Explorer</a>') && h.includes('href="methods.html"'), `${page}: main navigation missing`);
-  assert(h.includes(`v${release.version} · doi`), `${page}: version and DOI chip missing`);
+  assert(h.includes(`class="chip" href="changes.html"`) && h.includes(`>v${release.version}</a>`), `${page}: version chip missing`);
+  assert(!h.includes(`v${release.version} · doi`), `${page}: the version chip must not be paired with the DOI`);
+  assert(doiWording(release).current || (h.includes("Zenodo, all versions") && h.includes(`the newest version deposited there is v${release.archivedVersion}`)), `${page}: the DOI is the all-versions one; the cite line must say which version is deposited`);
   assert(!/concord/i.test(h.replace(/concordance/gi, "")), `${page}: no old project name`);
   assert(/<main id="main"/.test(h) && /class="skip"/.test(h), `${page}: landmark and skip link`);
   // sharing: a title, a description and a preview image that exists, at the right size
@@ -211,6 +214,25 @@ for (const k of Object.keys(profiles)) assert(sources.includes(`id="${slug(k)}"`
 assert(/Known metadata issues/.test(sources) && /not yet filled/.test(sources), "sources: must state what is unfilled");
 assert((sources.match(/<article class="sim"/g) || []).length === Object.keys(profiles).length, "sources: one entry per simulation");
 assert(!/class="card"/.test(sources), "sources: no cards");
+
+// the DOI is Zenodo's all-versions record; the newest deposited version can never be newer than the current one
+const ver = v => v.split(".").map(Number), cmp = (a, b) => { for (let i = 0; i < 3; i++) if (a[i] !== b[i]) return a[i] - b[i]; return 0; };
+assert(release.archivedVersion && cmp(ver(release.archivedVersion), ver(release.version)) <= 0, "data/release.json: archivedVersion must be set and not newer than version");
+assert.equal(manifest.doiArchivedVersion, release.archivedVersion, "the export manifest must carry the deposited version of the DOI");
+assert(doiWording(release).current || !/citeAs":\s*"[^"]*\(v[\d.]+\)\. Zenodo\. /.test(html.index + html.data), "no page may cite the current version with the DOI as if it were deposited");
+
+// the front page: a figure and one primary action above the first section, numbers from the data, one meaning for 'simulations'
+{
+  const idx = html.index, start = idx.indexOf('id="start"');
+  const fig = idx.indexOf('<figure class="opening-fig">');
+  assert(fig > 0 && fig < start, "index: the opening figure must come before the first section");
+  assert((idx.match(/class="btn main"/g) || []).length === 1, "index: exactly one primary action");
+  assert(/class="btn main" href="\.\.\/highline\.html#r=gsmf&amp;z=6">Open the Explorer</.test(idx), "index: the primary action opens the Explorer on the figure's relation and epoch");
+  assert(/<p class="standfirst">At z ≈ 6, \d+ simulations span \d\.\d dex in how many galaxies/.test(idx), "index: the lead sentence states the figure's spread from the data");
+  assert(idx.includes('class="chart chart-wide"') && idx.includes('class="chart chart-narrow"'), "index: a wide and a phone-sized chart");
+  assert(!/<h2[^>]*>[^<]*<\/h2>\s*<figure class="fig sm">/.test(idx), "index: the figure is not repeated in the second section");
+  assert(/CAMELS runs · in the browser/.test(idx) && !/simulations · in the browser/.test(idx), "index: the count of CAMELS runs must not be called simulations next to the count of simulation suites");
+}
 
 const app = await readFile(new URL("highline.html", root), "utf8");
 assert(app.includes("site/methods.html") && app.includes("site/sources.html") && app.includes("site/retune.html") && app.includes("site/studies.html"), "app must link to the Methods, Sources, Retune and Studies pages");

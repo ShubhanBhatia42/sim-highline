@@ -28,7 +28,7 @@ const outputs = {
   "sim-highline-corrections.json": await readFile(new URL("data/compilation-corrections.json", root), "utf8"),
   "sim-highline-rules.json": JSON.stringify({ note: "Comparability rules used by the website and by sim_highline.compatible; generated from compare.js", unset: [null, "unspecified", "heterogeneous"], minBins: C.MIN_BINS, imfDex: C.IMF_DEX, rules: C.RULES, labels: C.KEY_LABEL }, null, 1) + "\n"
 };
-const manifest = { version: release.version, released: release.released, doi: release.doi, license: release.license, nRecords: records.length, nPoints: ptRows.length, nDistributionRecords: records.filter(r => r.representation.distribution).length, nDistributionCells: distRows.length, nParametric: records.filter(r => r.representation.type === "parametric").length,
+const manifest = { version: release.version, released: release.released, doi: release.doi, doiArchivedVersion: release.archivedVersion, license: release.license, nRecords: records.length, nPoints: ptRows.length, nDistributionRecords: records.filter(r => r.representation.distribution).length, nDistributionCells: distRows.length, nParametric: records.filter(r => r.representation.type === "parametric").length,
   parametricSampling: `${X.NSAMPLE} points over the record domain at zRepresentative; the published expression is evaluated, nothing else is generated`,
   columns: { records: X.RECORD_COLS, points: X.POINT_COLS, distributions: X.DIST_COLS }, files: {} };
 for (const [name, text] of Object.entries(outputs)) {

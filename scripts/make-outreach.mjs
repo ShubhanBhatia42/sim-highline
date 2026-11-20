@@ -1,7 +1,9 @@
 // Drafts for getting the project in front of people, with the numbers filled in from the data so they cannot drift: announcement, pilot script, forum post, talk outline, registry and software-catalogue entries. Nothing here is sent. Writes docs/outreach/*.md (generated; edit this script, not the files).
+import { doiWording } from "./release-doi.mjs";
 import { readFile, writeFile } from "node:fs/promises";
 const R = p => readFile(new URL(`../${p}`, import.meta.url), "utf8");
 const release = JSON.parse(await R("data/release.json")), rec = JSON.parse(await R("data/export/sim-highline-records.json")).records;
+const DOI = doiWording(release);
 const J = JSON.parse(await R("data/analysis/joint-reachability.json")), Q = JSON.parse(await R("data/analysis/data-quality.json"));
 const sims = new Set(rec.filter(r => r.kind === "simulation").map(r => r.source)).size, obs = new Set(rec.filter(r => r.kind !== "simulation").map(r => r.source)).size; // observations and empirical models, counted the way the site counts them
 const n = x => x.toLocaleString("en-US"), D = J.point.all.D.toFixed(1), URL_ = "https://shubhanbhatia42.github.io/sim-highline", dig = Math.round(100 * Q.digitized.share_of_simulation_curves);
@@ -107,7 +109,7 @@ ${n(rec.length)} curves from ${sims} simulations and ${obs} observational and em
 
 ## Metadata
 
-- Version ${release.version}, released ${release.released}; DOI ${release.doi}
+- Version ${release.version}, released ${release.released}; DOI ${release.doi}${DOI.current ? "" : ` (all versions; ${DOI.aside})`}
 - Creator: ${release.author}
 - Licence: data ${release.license.data}, code ${release.license.code}; some third-party records keep their own terms (see SOURCE-TERMS.md)
 - Keywords: galaxy formation, cosmological simulations, scaling relations, stellar mass function, star formation history, black holes, IllustrisTNG, SIMBA, CAMELS, EAGLE, FLAMINGO, COLIBRE
@@ -124,7 +126,7 @@ files["SOFTWARE-CATALOGUE.md"] = HEAD("Entry for a software catalogue (for examp
 - **Authors:** ${release.author}
 - **Abstract:** sim-highline is a Python package and web application for galaxy scaling relations from cosmological simulations. The package loads a curated dataset of ${n(rec.length)} curves with their definitions and provenance into pandas, selects curves by relation and redshift, and compares a user's curve with the published ones, reporting offsets only where the definitions allow it. The web application plots simulations and observations together and evaluates emulators of the CAMELS IllustrisTNG and SIMBA suites in the browser. Nothing is interpolated.
 - **Code site:** ${release.repo}
-- **Citation:** ${release.author.split(" ").slice(-1)[0]}, ${release.author[0]}. (${release.released.slice(0, 4)}). ${release.title} (v${release.version}). Zenodo. https://doi.org/${release.doi}
+- **Citation:** ${DOI.cite(`${release.author.split(" ").slice(-1)[0]}, ${release.author[0]}.`, release.released.slice(0, 4), release.title)}
 - **Licence:** ${release.license.code} (code); ${release.license.data} (data)
 - **Language:** Python, JavaScript
 - **Keywords:** galaxy formation; cosmological simulations; scaling relations; data compilation

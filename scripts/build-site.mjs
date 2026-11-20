@@ -1,3 +1,4 @@
+import { doiWording } from "./release-doi.mjs";
 import { copyFile, readdir, readFile, writeFile, mkdir } from "node:fs/promises";
 import vm from "node:vm";
 import { jointStats } from "./site-joint.mjs";
@@ -16,6 +17,7 @@ const files = (await readdir(new URL("data/curves/", root))).filter(f => f.endsW
 const all = [];
 for (const f of files) all.push(...JSON.parse(await read(`data/curves/${f}`)).records);
 const release = JSON.parse(await read("data/release.json"));
+const DOI = doiWording(release);
 const audit = JSON.parse(await read("data/audit-report.json"));
 const notes = JSON.parse(await read("data/relation-notes.json")).relations;
 const simProf = JSON.parse(await read("data/simulation-profiles.json"));
@@ -52,7 +54,7 @@ const median = a => { const s = [...a].sort((x, y) => x - y), m = s.length >> 1;
 const ticks = (a, b) => { const span = b - a, step = span > 8 ? 2 : span > 3 ? 1 : 0.5, o = []; for (let v = Math.ceil(a / step) * step; v <= b + 1e-9; v += step) o.push(+v.toFixed(3)); return o; };
 
 function chart(spec) {
-  const { rel, z, tol = 0.3, xref, xlab, ylab, id, filterSim = () => true, filterObs = () => true } = spec;
+  const { rel, z, tol = 0.3, xref, xlab, ylab, id, size = {}, filterSim = () => true, filterObs = () => true } = spec;
   const cand = sims.filter(r => !ZOOM.has(r.source) && r.relation === rel && r.representation.type === "points" && r.representation.connect !== false && Math.abs(r.epoch.zRepresentative - z) <= tol && filterSim(r));
   const pick = new Map();
   const score = r => [FID[r.source]?.test(r.run || "") ? 0 : 1, VARIANT.test(r.run || "") ? 1 : 0, -r.representation.points.length, Math.abs(r.epoch.zRepresentative - z)];
@@ -68,7 +70,7 @@ function chart(spec) {
   const x0 = Math.floor(Math.min(...xs) * 2) / 2, x1 = Math.ceil(Math.max(...xs) * 2) / 2;
   const inr = refs.flatMap(o => o.pts).filter(p => p.x >= x0 && p.x <= x1), ys = [...sp.map(p => p.y), ...inr.map(p => p.y)].sort((a, b) => a - b);
   const y0 = Math.floor(ys[Math.floor(.01 * ys.length)]), y1 = Math.ceil(ys[Math.min(ys.length - 1, Math.floor(.995 * ys.length))]);
-  const W = 760, H = 380, L = 62, R = 18, T = 14, B = 50;
+  const { W = 760, H = 380, L = 62, R = 18, T = 14, B = 50 } = size;
   const sx = x => L + (x - x0) / (x1 - x0) * (W - L - R), sy = y => H - B - (y - y0) / (y1 - y0) * (H - T - B);
   const P = a => "M" + a.map(p => `${sx(p.x).toFixed(1)},${sy(p.y).toFixed(1)}`).join("L");
   let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(`${ylab} versus ${xlab} at z≈${z}: ${curves.length} simulations`)}"><g class="axis">`;
@@ -94,6 +96,9 @@ const CH = {
 const dex = v => Math.abs(v).toFixed(1);
 const cap = (c, what, unit, full) => `${c.nSims} simulations reach ${what}${unit ? ` ${unit}` : ""} and span <b>${c.spread != null ? dex(c.spread) : "?"} dex</b>${c.off != null ? `; the median simulation ${Math.abs(c.off) < 0.05 ? "lies within 0.1 dex of" : `lies ${dex(c.off)} dex ${c.off >= 0 ? "above" : "below"}`} the median of the ${c.nObs} observational curve${c.nObs > 1 ? "s" : ""} shown` : ""}.${full ? " Definitions differ between sources (mass aperture, IMF, SFR timescale, metallicity calibration), so part of any offset is not physics." : ""}`;
 stats.hero = CH.gsmf.svg; stats.heroKey = CH.gsmf.key;
+// the same figure drawn for a phone: narrower, so it fits without sideways scrolling
+stats.heroNarrow = chart({ id: "gp", rel: "gsmf", z: 6, xref: 9, xlab: "log M★ [M☉]", ylab: "log Φ [cMpc⁻³ dex⁻¹]", size: { W: 360, H: 400, L: 50, R: 10, T: 12, B: 48 } }).svg;
+stats.heroLead = CH.gsmf.spread != null ? `At z ≈ 6, ${CH.gsmf.nSims} simulations span ${dex(CH.gsmf.spread)} dex in how many galaxies of a given mass they predict. Some of that gap may be definitions, not physics. Every curve here carries the definitions, so you can see which comparisons are fair.` : "Published simulations and observations on one plot, each curve with the definitions that decide whether a comparison is fair.";
 stats.heroCaption = `Stellar mass function at z ≈ 6 from ${CH.gsmf.curves} simulations (one fiducial run each; zoom samples, which are not volume complete, are left out), straight from the dataset. ${cap(CH.gsmf, "log M★ = 9", "", true)} Dotted lines are digitized from figures; solid lines are tables or catalogues.`;
 for (const [k, c] of Object.entries(CH)) { stats[`${k}Svg`] = c.svg; stats[`${k}Key`] = c.key; }
 stats.gsmfCap = cap(CH.gsmf, "log M★ = 9");
@@ -343,7 +348,8 @@ stats.bibtex = esc(`@dataset{bhatia${release.released.slice(0, 4)}simhighline,
   version   = {${release.version}},
   publisher = {Zenodo},
   doi       = {${release.doi}},
-  url       = {https://doi.org/${release.doi}}
+  url       = {https://doi.org/${release.doi}}${DOI.current ? "" : `,
+  note      = {Zenodo all-versions DOI; ${DOI.aside}}`}
 }`);
 const camelsSims = Object.values(camels.suites).reduce((t, c) => t + Object.keys(c.LH).length + Object.keys(c.CV).length, 0);
 stats.camelsN = n(camelsSims); stats.camelsPerCode = n(camelsSims / Object.keys(camels.suites).length); stats.camelsLH = n(Object.keys(Object.values(camels.suites)[0].LH).length); stats.camelsCV = n(Object.keys(Object.values(camels.suites)[0].CV).length);
@@ -534,12 +540,12 @@ const HEAD = (title, desc, img = "og-default.png", page = "") => `<link rel="pre
 const MENU = [["../highline.html", "Explorer", null], ["retune.html", "Dials", "retune"], ["studies.html", "Studies", "studies"], ["data.html", "Data", "data"], ["methods.html", "Methods", "methods"]];
 const SECTION = page => /^study-/.test(page) || page === "studies.html" || page === "seeding.html" ? "studies" : page === "retune.html" ? "retune" : ["data.html", "sources.html"].includes(page) ? "data" : page === "methods.html" ? "methods" : null;
 const HEADER = page => `<a class="skip" href="#main">Skip to the content</a>
-<header class="top"><div class="wrap bar"><a class="mark" href="index.html" aria-label="sim-highline home">sim-highline</a><nav class="menu" aria-label="Main">${MENU.map(([h, t, k]) => `<a href="${h}"${k && k === SECTION(page) ? ' aria-current="page"' : ""}>${t}</a>`).join("")}</nav><span class="sp"></span><a class="chip" href="https://doi.org/${release.doi}" title="dataset v${release.version}, doi:${release.doi}">v${release.version} · doi</a><button class="ico" id="theme" type="button" aria-label="Switch theme"></button></div>
+<header class="top"><div class="wrap bar"><a class="mark" href="index.html" aria-label="sim-highline home">sim-highline</a><nav class="menu" aria-label="Main">${MENU.map(([h, t, k]) => `<a href="${h}"${k && k === SECTION(page) ? ' aria-current="page"' : ""}>${t}</a>`).join("")}</nav><span class="sp"></span><a class="chip" href="changes.html" title="dataset v${release.version}, released ${release.released}: what is new">v${release.version}</a><button class="ico" id="theme" type="button" aria-label="Switch theme"></button></div>
 <div class="status"><div class="wrap" role="group" aria-label="The dataset at a glance"><span><b>${stats.records}</b> records</span><span><b>${stats.suites}</b> simulations</span><span><b>${stats.obsSources}</b> observational and empirical sources</span><span><b>${stats.relations}</b> relations</span><span>z <b>${stats.zMin}–${stats.zMax}</b></span><span class="opt">released <b>${release.released}</b></span></div></div></header>`;
 const [first, ...lastParts] = release.author.split(" ");
-stats.citeText = `${esc(lastParts.join(" "))}, ${esc(first[0])}. (${stats.year}). ${esc(release.title)} (v${release.version}). Zenodo. https://doi.org/${release.doi}`;
+stats.citeText = esc(DOI.cite(`${lastParts.join(" ")}, ${first[0]}.`, stats.year, release.title));
 const FOOTER = () => `<footer class="foot"><div class="wrap">
-<p>Cite as: ${esc(lastParts.join(" "))}, ${esc(first[0])}. (${stats.year}). <em>${esc(release.title)}</em> (v${release.version}). Zenodo. <a href="https://doi.org/${release.doi}">doi:${release.doi}</a>. Cite the original papers as well: every record carries its citation and DOI.</p>
+<p>Cite as: ${esc(lastParts.join(" "))}, ${esc(first[0])}. (${stats.year}). <em>${esc(release.title)}</em> (v${release.version}). Zenodo${DOI.current ? "" : ", all versions"}: <a href="${DOI.url}">doi:${release.doi}</a>${DOI.current ? "" : ` (${DOI.aside})`}. Cite the original papers as well: every record carries its citation and DOI.</p>
 <p>Code ${esc(release.license.code)}; data ${esc(release.license.data.replace("CC-BY-4.0", "CC BY 4.0"))}, third-party inputs keep their own terms (<a href="${release.repo}/blob/main/docs/SOURCE-TERMS.md">SOURCE-TERMS.md</a>). Maintained by ${esc(release.author)}.</p>
 <p class="tell"><b>Was something confusing, wrong or missing?</b> <a id="tellus" href="${release.repo}/issues/new?template=feedback.yml">Tell us in two sentences</a>. This needs a GitHub account; without one, write to the maintainer at the address in <a href="${release.repo}/blob/main/CITATION.cff">CITATION.cff</a>.</p>
 <nav aria-label="More pages and project files"><p class="links"><a href="../highline.html">Explorer</a><a href="retune.html">Dials</a><a href="studies.html">Studies</a><a href="data.html">Data</a><a href="methods.html">Methods</a><a href="seeding.html">Black hole seeding</a><a href="glossary.html">Glossary</a><a href="faq.html">FAQ</a><a href="quality.html">Data quality</a><a href="changes.html">What is new</a><a id="reportlink" href="${release.repo}/issues/new?template=bug.yml">Report a problem</a><a id="feedbacklink" href="${release.repo}/issues/new?template=feedback.yml">Give feedback</a><a href="${release.repo}">Repository</a><a href="${release.repo}/blob/main/CHANGELOG.md">Changelog</a><a href="${release.repo}/blob/main/CITATION.cff">CITATION.cff</a><a href="${release.repo}/blob/main/LICENSE">LICENSE</a><a href="${release.repo}/blob/main/LICENSE-DATA.md">LICENSE-DATA</a></p></nav>

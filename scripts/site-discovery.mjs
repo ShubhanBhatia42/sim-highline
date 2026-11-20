@@ -3,6 +3,7 @@
 //   siteFiles()  sitemap.xml, robots.txt and an Atom feed generated from CHANGELOG.md
 //   datasetLd()  the schema.org Dataset description (JSON-LD) of the data page
 // Nothing here is typed that a saved file could change; nothing makes a request when a page loads.
+import { doiWording } from "./release-doi.mjs";
 import { createHash } from "node:crypto";
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&apos;" }[c]));
@@ -72,7 +73,7 @@ export function dataFiles({ release, manifest, cov, notes, cff, SITE_URL, texts,
   const license = "https://creativecommons.org/licenses/by/4.0/";
   const croissant = {
     "@context": CONTEXT, "@type": "sc:Dataset", conformsTo: "http://mlcommons.org/croissant/1.0", name: release.title, description: Object.values(commentLines).some(n => n > 0) ? `${description} The CSV files begin with comment lines that start with "#" (${Object.entries(commentLines).map(([f, n]) => `${RECORDSETS[f][0]}: ${n}`).join(", ")}); skip them when reading a table.` : description, url: `${SITE_URL}/site/data.html`, version: release.version, datePublished: release.released,
-    license, identifier: `https://doi.org/${release.doi}`, sameAs: `https://doi.org/${release.doi}`, citeAs: `Bhatia, S. (${release.released.slice(0, 4)}). ${release.title} (v${release.version}). Zenodo. https://doi.org/${release.doi}`,
+    license, identifier: `https://doi.org/${release.doi}`, sameAs: `https://doi.org/${release.doi}`, citeAs: doiWording(release).cite("Bhatia, S.", release.released.slice(0, 4), release.title),
     creator, keywords, isBasedOn: release.repo, distribution, recordSet
   };
   const croissantText = JSON.stringify(croissant, null, 2) + "\n";
@@ -80,7 +81,7 @@ export function dataFiles({ release, manifest, cov, notes, cff, SITE_URL, texts,
   const relations = Object.entries(cov.byRelation).map(([code, v]) => ({ code, title: notes[code]?.title || null, records: v.records, rankable: v.rankable, epochs: v.epochs.length ? [Math.min(...v.epochs), Math.max(...v.epochs)] : null, explorer: `${SITE_URL}/highline.html#r=${code}` })).sort((a, b) => b.records - a.records || a.code.localeCompare(b.code));
   const out = { croissant: { name: "sim-highline-croissant.json", text: croissantText }, creator, relations, rowCounts };
   const index = {
-    schema: "sim-highline export index, version 1", name: release.title, version: release.version, released: release.released, doi: release.doi, doiUrl: `https://doi.org/${release.doi}`, license: release.license, creator: creator.map(c => c.name), homepage: `${SITE_URL}/site/data.html`, repository: release.repo,
+    schema: "sim-highline export index, version 1", name: release.title, version: release.version, released: release.released, doi: release.doi, doiUrl: `https://doi.org/${release.doi}`, doiArchivedVersion: release.archivedVersion, license: release.license, creator: creator.map(c => c.name), homepage: `${SITE_URL}/site/data.html`, repository: release.repo,
     counts: { records: manifest.nRecords, points: manifest.nPoints, distributionRecords: manifest.nDistributionRecords, distributionCells: manifest.nDistributionCells, relations: cov.totals.relations, sources: cov.totals.sources },
     files: [...files, { name: out.croissant.name, url: url(out.croissant.name), path: `data/export/${out.croissant.name}`, mediaType: "application/ld+json", bytes: bytesOf(croissantText), sha256: sha256(croissantText), description: "Croissant (mlcommons) metadata of the three CSV files: file checksums, record sets and typed fields." }],
     discovery: { dataPage: `${SITE_URL}/site/data.html`, sitemap: `${SITE_URL}/sitemap.xml`, feed: `${SITE_URL}/feed.xml`, croissant: url(out.croissant.name) },

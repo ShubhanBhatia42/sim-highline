@@ -16,7 +16,7 @@ Galaxy scaling relations from cosmological simulations and observations, with th
 
 ## Metadata
 
-- Version 0.24.0, released 2026-10-18; DOI 10.5281/zenodo.23217259
+- Version 0.24.0, released 2026-10-18; DOI 10.5281/zenodo.23217259 (all versions; the newest version deposited there is v0.15.0; v0.24.0 is not deposited yet)
 - Creator: Shubhan Bhatia
 - Licence: data CC-BY-4.0, code MIT; some third-party records keep their own terms (see SOURCE-TERMS.md)
 - Keywords: galaxy formation, cosmological simulations, scaling relations, stellar mass function, star formation history, black holes, IllustrisTNG, SIMBA, CAMELS, EAGLE, FLAMINGO, COLIBRE

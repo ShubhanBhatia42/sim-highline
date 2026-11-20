@@ -44,6 +44,28 @@ await step("app loads with a title, curves, and no errors", async () => {
   await ctx.close();
 });
 
+await step("first view: a one-line note, a legend that shows the simulations, observation-only relations listed apart", async () => {
+  const { page, ctx, errors } = await open("/highline.html#r=gsmf&z=0");
+  await settle(page);
+  const hello = await page.locator("#hello").boundingBox();
+  assert.ok(hello && hello.height < 70, `the first-visit note is a line, not a block (height ${hello && hello.height})`);
+  const visible = () => page.evaluate(() => { const L = document.getElementById("legend").getBoundingClientRect(); return [...document.querySelectorAll("#legend [data-s]")].filter(b => { const r = b.getBoundingClientRect(); return r.top >= L.top - 1 && r.bottom <= L.bottom + 1; }).length; });
+  assert.ok((await visible()) >= 8, `at least 8 simulations are visible in the legend without scrolling, got ${await visible()}`);
+  assert.equal(await page.locator("#legend details.keyline[open]").count(), 0, "the reading key starts closed");
+  await page.click("#legend details.keyline summary");
+  assert.equal(await page.locator("#legend details.keyline[open]").count(), 1, "the reading key opens");
+  const first = page.locator("#legend [data-s]").first(); await first.click(); await page.locator("#legend [data-s]").first().click();   // two re-renders of the legend
+  assert.equal(await page.locator("#legend details.keyline[open]").count(), 1, "the reading key stays open when the legend redraws");
+  const rail = await page.evaluate(() => { const g = []; let cur = null; for (const el of document.querySelectorAll("#presets > *")) { if (el.tagName === "H2") { cur = { name: el.textContent, items: [] }; g.push(cur); } else if (cur && el.matches("button[data-r]")) cur.items.push({ r: el.dataset.r, n: el.querySelector(".n")?.textContent }); } return g; });
+  const last = rail.at(-1), main = rail.slice(0, -1);
+  assert.ok(/^Observations only/.test(last.name) && last.items.length >= 5, "relations with no simulation curve are listed in a group of their own, last");
+  assert.ok(last.items.every(x => x.n === "obs"), "that group lists only relations with no simulation");
+  assert.deepEqual(main.flatMap(g => g.items).filter(x => x.n === "obs"), [], "no observation-only relation among the groups that can be compared");
+  assert.ok(main.flatMap(g => g.items).some(x => x.r === "gsmf"), "the compared groups still list the stellar mass function");
+  assert.deepEqual(errors, []);
+  await ctx.close();
+});
+
 await step("the emission-line luminosity function draws its observations and its simulation, and names the line in the legend", async () => {
   for (const [z, prefix] of [["0.84", "sobral13.hizels.elf"], ["5.3", "covelopaz25.fresco-congress.elf"], ["5", "katz23.sphinx20.elf"], ["5", "covelopaz25.fresco-congress.elf"]]) {
     const { page, ctx, errors } = await open(`/highline.html#r=elf&z=${z}`);
