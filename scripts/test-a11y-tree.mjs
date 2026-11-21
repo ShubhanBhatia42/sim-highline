@@ -62,7 +62,7 @@ await new Promise(r => server.listen(0, "127.0.0.1", r));
 const BASE = `http://127.0.0.1:${server.address().port}`;
 const browser = await launchBrowser();
 const problems = []; let checks = 0;
-const SITE = ["index", "studies", "study-definitions", "study-harmonization", "study-sfh", "study-joint", "study-shape", "study-resolution", "seeding", "retune", "data", "methods", "sources", "findings", "glossary", "faq", "changes", "quality", "summary"].map(p => `site/${p}.html`).concat(["404.html"]);
+const SITE = ["index", "answers", "answer-stellar-mass", "answer-metallicity", "answer-uv-luminosity", "studies", "study-definitions", "study-harmonization", "study-sfh", "study-joint", "study-shape", "study-resolution", "seeding", "retune", "data", "methods", "sources", "findings", "glossary", "faq", "changes", "quality", "summary"].map(p => `site/${p}.html`).concat(["404.html"]);
 const open = async (url, w = 1280) => { const ctx = await browser.newContext({ viewport: { width: w, height: 900 } }), page = await ctx.newPage(); await page.goto(`${BASE}/${url}`); await page.waitForFunction(() => document.readyState === "complete" && !document.getElementById("boot")); return { ctx, page }; };
 
 for (const pg of SITE) {

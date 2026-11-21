@@ -49,6 +49,7 @@ Fifty documents is too many to find anything in, so here they are by what you wa
 ## Reviews and plans (all dated)
 
 - [INDEPENDENT-REVIEW.md](INDEPENDENT-REVIEW.md): a separate review of the whole project on 2026-10-16 and what was done about each finding.
+- [REVIEW-2026-11.md](REVIEW-2026-11.md): a review of the whole project on 2026-11-20 (nobody outside the project had used it, how little could be compared, the first minute) and what was done about each point.
 - [REVIEW.md](REVIEW.md): the first candid review, at v0.5.0. Superseded by the line above and by DATA-QUALITY.md; kept as history.
 - [ROADMAP.md](ROADMAP.md) *(generated)*, [RETROSPECTIVE.md](RETROSPECTIVE.md), [NEXT.md](NEXT.md), [DIRECTIONS.md](DIRECTIONS.md), [INVENTORY.md](INVENTORY.md), [LANDSCAPE.md](LANDSCAPE.md): the 200-task plan, what it did and did not do, what would matter next, which pages stay, and what researchers do today.
 - [REVIEW-DAY.md](REVIEW-DAY.md): the numbers to look at on the review date.

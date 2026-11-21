@@ -1,5 +1,5 @@
 {
- "total": 2041,
+ "total": 2130,
  "known": 35,
  "errors": 0,
  "warnings": 0,
@@ -32,9 +32,9 @@
    "massDefinitions": [
     "unspecified",
     "sphere-0.2R200",
+    "total-bound-subhalo",
     "aperture-50pkpc",
     "aperture-30pkpc",
-    "total-bound-subhalo",
     "aperture-Reff-stars",
     "spherical-90pc-of-20kpc",
     "sphere-0.1Rvir",
@@ -54,8 +54,8 @@
    ],
    "massDefinitions": [
     "unspecified",
-    "aperture-Reff-stars",
     "total-bound-subhalo",
+    "aperture-Reff-stars",
     "aperture-0.1Rvir",
     "aperture-50pkpc",
     "integral-of-SFH"
@@ -112,6 +112,52 @@
     "aperture-30pkpc"
    ]
   },
+  "size": {
+   "yUnit": [
+    "log10(kpc)"
+   ],
+   "massDefinitions": [
+    "total-bound-subhalo",
+    "aperture-30pkpc",
+    "total-galaxy-finder",
+    "unspecified",
+    "aperture-2rhalf-stars",
+    "total-subhalo",
+    "aperture-50pkpc",
+    "integral-of-SFH"
+   ]
+  },
+  "mzr": {
+   "yUnit": [
+    "dex",
+    "12+log10(O/H)",
+    "log10(Zgas)",
+    "log10(mass fraction)"
+   ],
+   "massDefinitions": [
+    "total-bound-subhalo",
+    "aperture-50pkpc",
+    "-",
+    "bound-within-Rvir",
+    "aperture-0.2Rvir",
+    "unspecified",
+    "aperture-30pkpc",
+    "aperture-Reff-stars",
+    "caesar-6dfof-galaxy-total"
+   ]
+  },
+  "quenched": {
+   "yUnit": [
+    "fraction"
+   ],
+   "massDefinitions": [
+    "total-bound-subhalo",
+    "aperture-50pkpc",
+    "aperture-2rhalf-stars",
+    "aperture-Rg",
+    "aperture-30pkpc"
+   ]
+  },
   "ssfr": {
    "yUnit": [
     "log10(yr^-1)",
@@ -162,17 +208,6 @@
     "petrosian-2D"
    ]
   },
-  "quenched": {
-   "yUnit": [
-    "fraction"
-   ],
-   "massDefinitions": [
-    "aperture-50pkpc",
-    "aperture-2rhalf-stars",
-    "aperture-Rg",
-    "aperture-30pkpc"
-   ]
-  },
   "smd": {
    "yUnit": [
     "log10(Msun cMpc^-3)",
@@ -186,40 +221,6 @@
     "stars in galaxies with M*>10^9.3 Msun",
     "stars in all identified galaxies",
     "stars-within-third-Rmax-masked"
-   ]
-  },
-  "mzr": {
-   "yUnit": [
-    "dex",
-    "12+log10(O/H)",
-    "log10(Zgas)",
-    "log10(mass fraction)"
-   ],
-   "massDefinitions": [
-    "aperture-50pkpc",
-    "total-bound-subhalo",
-    "-",
-    "bound-within-Rvir",
-    "aperture-0.2Rvir",
-    "unspecified",
-    "aperture-30pkpc",
-    "aperture-Reff-stars",
-    "caesar-6dfof-galaxy-total"
-   ]
-  },
-  "size": {
-   "yUnit": [
-    "log10(kpc)"
-   ],
-   "massDefinitions": [
-    "aperture-30pkpc",
-    "total-galaxy-finder",
-    "unspecified",
-    "aperture-2rhalf-stars",
-    "total-bound-subhalo",
-    "total-subhalo",
-    "aperture-50pkpc",
-    "integral-of-SFH"
    ]
   },
   "metald": {

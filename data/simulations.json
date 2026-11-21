@@ -379,9 +379,14 @@
         "gsmf",
         "mzr",
         "gas",
-        "shmr"
+        "shmr",
+        "bh",
+        "size",
+        "zstar",
+        "quenched"
       ],
-      "source": "https://camels.readthedocs.io/"
+      "source": "https://camels.readthedocs.io/",
+      "redshiftRangeBasis": "CAMELS cosmic-variance boxes: snapshots at z = 0, 0.95, 2.15, 3 and 4 are used for the CAMELS-TNG, CAMELS-SIMBA and CAMELS-Astrid curves"
     },
     {
       "id": "horizon",

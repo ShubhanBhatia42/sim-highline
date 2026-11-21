@@ -8,9 +8,9 @@ How much of the disagreement between simulations at fixed stellar mass (or halo 
 
 ## What the data allow
 
-Of 2567 usable cross-suite record pairs (7 relations, 5 epochs), 4% have every documented key equal (matched), 23% differ in a documented soft key, 13% cannot be classified because a definition is undocumented in at least one record, and 60% differ in a hard key (for example different size definitions) and are not comparable at all.
+Of 3382 usable cross-suite record pairs (7 relations, 5 epochs), 4% have every documented key equal (matched), 26% differ in a documented soft key, 12% cannot be classified because a definition is undocumented in at least one record, and 57% differ in a hard key (for example different size definitions) and are not comparable at all.
 
-Of 18 epoch-by-relation permutation tests with enough matched and differing pairs, 1 have p < 0.05; 0.9 would be expected by chance alone. After Bonferroni correction 0 remain. The honest reading is that the present records neither show nor rule out a definitional contribution; the binding constraint is documentation, not physics.
+Of 24 epoch-by-relation permutation tests with enough matched and differing pairs, 5 have p < 0.05; 1.2 would be expected by chance alone. After Bonferroni correction 0 remain. The honest reading is that the present records neither show nor rule out a definitional contribution; the binding constraint is documentation, not physics.
 
 ## By relation and epoch (all simulation records)
 
@@ -21,35 +21,35 @@ Of 18 epoch-by-relation permutation tests with enough matched and differing pair
 | gsmf | 2 | 4 | 23 (0 / 23 / 0 / 0) | - | 0.14 | - | - | - |
 | gsmf | 4 | 5 | 30 (0 / 20 / 0 / 10) | - | 0.20 | - | - | - |
 | gsmf | 6 | 7 | 53 (3 / 31 / 0 / 19) | 0.13 | 0.22 | - | 0.09 | 0.1269 |
-| mzr | 0 | 6 | 74 (9 / 18 / 15 / 32) | 0.33 | 0.21 | 0.32 | -0.11 | 0.5592 |
-| mzr | 1 | 6 | 76 (9 / 22 / 7 / 38) | 0.21 | 0.12 | 0.46 | -0.09 | 0.5102 |
-| mzr | 2 | 5 | 36 (3 / 11 / 3 / 19) | 0.14 | 0.15 | 0.47 | 0.01 | 0.4653 |
-| mzr | 4 | 5 | 12 (3 / 6 / 0 / 3) | 0.11 | 0.19 | - | 0.09 | 0.3358 |
-| mzr | 6 | 4 | 9 (3 / 3 / 0 / 3) | 0.09 | 0.17 | - | 0.08 | 0.2304 |
-| sfms | 0 | 8 | 81 (3 / 3 / 8 / 67) | 0.22 | 0.15 | 0.36 | -0.07 | 0.6687 |
-| sfms | 1 | 7 | 57 (3 / 3 / 11 / 40) | 0.07 | 0.29 | 0.36 | 0.22 | 0.076 |
-| sfms | 2 | 6 | 54 (3 / 3 / 8 / 40) | 0.06 | 0.19 | 0.28 | 0.13 | 0.1104 |
-| sfms | 4 | 6 | 42 (3 / 3 / 5 / 31) | 0.07 | 0.19 | 0.09 | 0.13 | 0.1449 |
-| sfms | 6 | 7 | 25 (3 / 5 / 0 / 17) | 0.08 | 0.30 | - | 0.21 | 0.015 |
-| shmr | 0 | 9 | 257 (8 / 70 / 0 / 179) | 0.17 | 0.20 | - | 0.03 | 0.2779 |
-| shmr | 1 | 8 | 101 (2 / 26 / 0 / 73) | 0.12 | 0.29 | - | 0.18 | - |
-| shmr | 2 | 6 | 84 (0 / 17 / 0 / 67) | - | 0.28 | - | - | - |
-| shmr | 4 | 7 | 67 (0 / 16 / 0 / 51) | - | 0.35 | - | - | - |
+| mzr | 0 | 9 | 113 (12 / 30 / 15 / 56) | 0.26 | 0.26 | 0.32 | -0.00 | 0.4148 |
+| mzr | 1 | 9 | 118 (12 / 37 / 7 / 62) | 0.22 | 0.13 | 0.46 | -0.09 | 0.4983 |
+| mzr | 2 | 8 | 66 (6 / 26 / 3 / 31) | 0.15 | 0.13 | 0.47 | -0.02 | 0.4848 |
+| mzr | 4 | 8 | 30 (6 / 18 / 0 / 6) | 0.15 | 0.18 | - | 0.03 | 0.4178 |
+| mzr | 6 | 4 | 9 (3 / 3 / 0 / 3) | 0.09 | 0.17 | - | 0.08 | 0.2384 |
+| sfms | 0 | 8 | 81 (3 / 3 / 8 / 67) | 0.22 | 0.15 | 0.36 | -0.07 | 0.6827 |
+| sfms | 1 | 7 | 57 (3 / 3 / 11 / 40) | 0.07 | 0.29 | 0.36 | 0.22 | 0.0705 |
+| sfms | 2 | 6 | 54 (3 / 3 / 8 / 40) | 0.06 | 0.19 | 0.28 | 0.13 | 0.1269 |
+| sfms | 4 | 6 | 42 (3 / 3 / 5 / 31) | 0.07 | 0.19 | 0.09 | 0.13 | 0.1474 |
+| sfms | 6 | 7 | 25 (3 / 5 / 0 / 17) | 0.08 | 0.30 | - | 0.21 | 0.018 |
+| shmr | 0 | 12 | 329 (11 / 103 / 0 / 215) | 0.17 | 0.20 | - | 0.03 | 0.2284 |
+| shmr | 1 | 11 | 146 (5 / 50 / 0 / 91) | 0.13 | 0.28 | - | 0.16 | 0.004 |
+| shmr | 2 | 9 | 129 (3 / 38 / 0 / 88) | 0.08 | 0.32 | - | 0.24 | 0.003 |
+| shmr | 4 | 10 | 100 (3 / 31 / 0 / 66) | 0.09 | 0.33 | - | 0.25 | 0.006 |
 | shmr | 6 | 4 | 6 (0 / 0 / 4 / 2) | - | - | 0.27 | - | - |
-| size | 0 | 8 | 313 (3 / 0 / 0 / 310) | 0.29 | - | - | - | - |
-| size | 1 | 7 | 210 (3 / 0 / 0 / 207) | 0.30 | - | - | - | - |
-| size | 2 | 8 | 223 (3 / 0 / 0 / 220) | 0.24 | - | - | - | - |
-| size | 4 | 6 | 32 (3 / 0 / 0 / 29) | 0.14 | - | - | - | - |
+| size | 0 | 11 | 400 (6 / 0 / 0 / 394) | 0.23 | - | - | - | - |
+| size | 1 | 10 | 279 (6 / 0 / 0 / 273) | 0.20 | - | - | - | - |
+| size | 2 | 11 | 292 (6 / 0 / 0 / 286) | 0.23 | - | - | - | - |
+| size | 4 | 9 | 56 (6 / 0 / 0 / 50) | 0.19 | - | - | - | - |
 | size | 6 | 4 | 6 (3 / 0 / 0 / 3) | 0.11 | - | - | - | - |
-| zstar | 0 | 4 | 9 (3 / 6 / 0 / 0) | 0.23 | 0.17 | - | -0.06 | 0.7956 |
-| zstar | 1 | 5 | 17 (3 / 14 / 0 / 0) | 0.20 | 0.12 | - | -0.09 | 0.9455 |
-| zstar | 2 | 5 | 21 (3 / 18 / 0 / 0) | 0.19 | 0.11 | - | -0.08 | 0.949 |
-| zstar | 4 | 6 | 24 (3 / 13 / 0 / 8) | 0.19 | 0.16 | - | -0.02 | 0.4508 |
-| zstar | 6 | 5 | 10 (3 / 3 / 0 / 4) | 0.21 | 0.39 | - | 0.18 | 0.2414 |
-| bh | 0 | 10 | 154 (0 / 65 / 89 / 0) | - | 0.50 | 0.51 | - | - |
-| bh | 1 | 9 | 71 (0 / 11 / 60 / 0) | - | 0.20 | 0.32 | - | - |
-| bh | 2 | 9 | 90 (0 / 16 / 74 / 0) | - | 1.25 | 0.62 | - | - |
-| bh | 4 | 9 | 67 (0 / 10 / 57 / 0) | - | 1.33 | 1.38 | - | - |
+| zstar | 0 | 7 | 27 (6 / 21 / 0 / 0) | 0.19 | 0.14 | - | -0.06 | 0.7746 |
+| zstar | 1 | 8 | 39 (6 / 33 / 0 / 0) | 0.22 | 0.14 | - | -0.09 | 0.9715 |
+| zstar | 2 | 8 | 45 (6 / 39 / 0 / 0) | 0.21 | 0.12 | - | -0.09 | 0.919 |
+| zstar | 4 | 9 | 45 (6 / 28 / 0 / 11) | 0.15 | 0.15 | - | -0.01 | 0.4883 |
+| zstar | 6 | 5 | 10 (3 / 3 / 0 / 4) | 0.21 | 0.39 | - | 0.18 | 0.2389 |
+| bh | 0 | 13 | 210 (3 / 100 / 107 / 0) | 0.73 | 0.58 | 0.50 | -0.15 | 0.8496 |
+| bh | 1 | 12 | 109 (3 / 25 / 81 / 0) | 0.67 | 0.23 | 0.35 | -0.44 | 0.9815 |
+| bh | 2 | 12 | 132 (3 / 34 / 95 / 0) | 0.54 | 1.02 | 0.52 | 0.48 | 0.0455 |
+| bh | 4 | 11 | 88 (1 / 16 / 71 / 0) | 0.56 | 1.47 | 1.12 | 0.91 | - |
 
 Units: dex in the relation's y axis (log10). excess = median(differing) - median(matched).
 

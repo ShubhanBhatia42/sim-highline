@@ -6,6 +6,8 @@ set -euo pipefail
 SLOW="test_joint_reachability test_model_form test_harmonization test_quenching_shape"
 stamp_of() { cat scripts/*.py data/ensembles/*.json data/analysis/*.json data/retune/retune.json 2>/dev/null | sha256sum | cut -d' ' -f1; }
 python3 scripts/ingest_camels_distributions.py --records
+python3 scripts/camels_cv_curves.py
+python3 scripts/make-palette.py > data/palette.css
 python3 scripts/ingest_darwin1_catalogue.py --records
 node scripts/derive-distributions.mjs
 python3 scripts/ingest_camels_conversions.py --derive

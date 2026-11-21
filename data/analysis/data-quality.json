@@ -1,6 +1,6 @@
 {
- "n_records": 2041,
- "n_sources": 139,
+ "n_records": 2130,
+ "n_sources": 142,
  "tiers": [
   {
    "kind": "empirical-model",
@@ -41,8 +41,8 @@
   {
    "kind": "simulation",
    "tier": "catalog-derived",
-   "records": 262,
-   "rankable": 262
+   "records": 351,
+   "rankable": 351
   },
   {
    "kind": "simulation",
@@ -71,8 +71,8 @@
  ],
  "digitized": {
   "n": 897,
-  "share_of_simulation_curves": 0.5482885085574573,
-  "n_simulation_curves": 1636,
+  "share_of_simulation_curves": 0.52,
+  "n_simulation_curves": 1725,
   "declared_uncertainty_dex": {
    "n": 897,
    "median": 0.01,
@@ -369,12 +369,12 @@
   ],
   "cells": {
    "bh": {
-    "0.1": 11,
+    "0.1": 14,
     "0.5": 3,
-    "1": 9,
-    "2": 9,
-    "3": 6,
-    "4": 9,
+    "1": 12,
+    "2": 12,
+    "3": 9,
+    "4": 11,
     "6": 1,
     "8": 2
    },
@@ -519,22 +519,22 @@
     "8": 0
    },
    "mzr": {
-    "0.1": 7,
+    "0.1": 10,
     "0.5": 1,
-    "1": 6,
-    "2": 5,
-    "3": 6,
-    "4": 6,
+    "1": 9,
+    "2": 8,
+    "3": 9,
+    "4": 9,
     "6": 5,
     "8": 9
    },
    "quenched": {
-    "0.1": 6,
+    "0.1": 9,
     "0.5": 2,
-    "1": 4,
-    "2": 4,
-    "3": 2,
-    "4": 0,
+    "1": 7,
+    "2": 7,
+    "3": 5,
+    "4": 3,
     "6": 0,
     "8": 1
    },
@@ -559,22 +559,22 @@
     "8": 3
    },
    "shmr": {
-    "0.1": 10,
+    "0.1": 13,
     "0.5": 5,
-    "1": 8,
-    "2": 6,
-    "3": 4,
-    "4": 7,
+    "1": 11,
+    "2": 9,
+    "3": 7,
+    "4": 10,
     "6": 4,
     "8": 7
    },
    "size": {
-    "0.1": 9,
+    "0.1": 12,
     "0.5": 6,
-    "1": 7,
-    "2": 8,
-    "3": 5,
-    "4": 7,
+    "1": 10,
+    "2": 11,
+    "3": 8,
+    "4": 10,
     "6": 4,
     "8": 4
    },
@@ -659,12 +659,12 @@
     "8": 0
    },
    "zstar": {
-    "0.1": 6,
+    "0.1": 9,
     "0.5": 2,
-    "1": 5,
-    "2": 5,
-    "3": 4,
-    "4": 6,
+    "1": 8,
+    "2": 8,
+    "3": 7,
+    "4": 9,
     "6": 5,
     "8": 5
    }
@@ -672,8 +672,8 @@
  },
  "vocabulary": {
   "population": {
-   "distinct": 89,
-   "records": 1951,
+   "distinct": 90,
+   "records": 2040,
    "near_duplicates": [
     {
      "spellings": [
@@ -681,7 +681,7 @@
       "all galaxies"
      ],
      "records": [
-      792,
+      837,
       119
      ]
     },
@@ -709,7 +709,7 @@
   },
   "massDefinition": {
    "distinct": 53,
-   "records": 1605,
+   "records": 1694,
    "near_duplicates": [
     {
      "spellings": [
@@ -725,7 +725,7 @@
   },
   "imf": {
    "distinct": 4,
-   "records": 1905,
+   "records": 1994,
    "near_duplicates": []
   },
   "densityFrame": {
@@ -735,7 +735,7 @@
   },
   "sizeDefinition": {
    "distinct": 17,
-   "records": 214,
+   "records": 229,
    "near_duplicates": []
   },
   "population_hard_key": {
@@ -748,13 +748,13 @@
     "differ_only_in_spelling": 0
    },
    "size": {
-    "pairs": 2149,
-    "differ_only_in_spelling": 53
+    "pairs": 2602,
+    "differ_only_in_spelling": 65
    }
   }
  },
  "checksums": {
-  "with_checksum": 1865,
-  "records": 2041
+  "with_checksum": 1954,
+  "records": 2130
  }
 }

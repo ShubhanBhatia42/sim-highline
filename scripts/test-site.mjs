@@ -5,7 +5,7 @@ import { doiWording } from "./release-doi.mjs";
 const root = new URL("../dist/", import.meta.url);
 const manifest = JSON.parse(await readFile(new URL("../data/export/sim-highline-manifest.json", import.meta.url), "utf8"));
 const release = JSON.parse(await readFile(new URL("../data/release.json", import.meta.url), "utf8"));
-const PAGES = ["index", "studies", "study-definitions", "study-harmonization", "study-sfh", "study-joint", "study-shape", "study-resolution", "seeding", "retune", "data", "methods", "sources", "glossary", "faq", "changes", "quality", "summary"];
+const PAGES = ["index", "answers", "answer-stellar-mass", "answer-metallicity", "answer-uv-luminosity", "studies", "study-definitions", "study-harmonization", "study-sfh", "study-joint", "study-shape", "study-resolution", "seeding", "retune", "data", "methods", "sources", "glossary", "faq", "changes", "quality", "summary"];
 const html = {};
 for (const page of [...PAGES, "findings"]) {
   const h = html[page] = await readFile(new URL(`site/${page}.html`, root), "utf8");

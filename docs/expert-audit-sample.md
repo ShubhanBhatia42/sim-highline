@@ -1,6 +1,6 @@
 # Expert audit sample
 
-Records for an independent check by someone who knows each suite. Selection is deterministic (two records per simulation source, different relations, digitized figures first, ordered by a hash of the id), so the list is stable between releases of the same data. 44 records from 22 sources.
+Records for an independent check by someone who knows each suite. Selection is deterministic (two records per simulation source, different relations, digitized figures first, ordered by a hash of the id), so the list is stable between releases of the same data. 50 records from 25 sources.
 
 For each record: open the cited figure or table, confirm (1) the curve is the one named (run, population, panel), (2) the axis values at two labelled ticks, (3) the definitions block (mass aperture, IMF, SFR timescale, halo definition), and (4) that the epoch is the published one. Report disagreements with the record id.
 
@@ -10,6 +10,12 @@ For each record: open the cited figure or table, confirm (1) the curve is the on
 | ASTRID | `bird22.astrid.zstar.z3` | zstar | 3 | digitized-figure | Bird et al. 2022, MNRAS 512, 3703, figure stellar_metal (arXiv source numbering), z=3 |
 | BlueTides | `wilkins17.bluetides.ssfr.z10` | ssfr | 10 | published-table | Wilkins et al. 2017, MNRAS 469, 2517 (arXiv:1704.00954), Table physical (median sSFR) |
 | BlueTides | `wilkins17.bluetides.shmr.z12` | shmr | 12 | published-table | Wilkins et al. 2017, MNRAS 469, 2517 (arXiv:1704.00954), Table DM_stellar |
+| CAMELS-Astrid | `camels-cv.astrid.mzr.z0.95` | mzr | 0.95 | catalog-derived | Villaescusa-Navarro et al. 2021, ApJ 915, 71 (CAMELS), cosmic-variance set, Subfind catalogues; per-box summaries and their mean by this project |
+| CAMELS-Astrid | `camels-cv.astrid.shmr.z0` | shmr | 0 | catalog-derived | Villaescusa-Navarro et al. 2021, ApJ 915, 71 (CAMELS), cosmic-variance set, Subfind catalogues; per-box summaries and their mean by this project |
+| CAMELS-SIMBA | `camels-cv.simba.bh.z0` | bh | 0 | catalog-derived | Villaescusa-Navarro et al. 2021, ApJ 915, 71 (CAMELS), cosmic-variance set, Subfind catalogues; per-box summaries and their mean by this project |
+| CAMELS-SIMBA | `camels-cv.simba.quenched.z3` | quenched | 3 | catalog-derived | Villaescusa-Navarro et al. 2021, ApJ 915, 71 (CAMELS), cosmic-variance set, Subfind catalogues; per-box summaries and their mean by this project |
+| CAMELS-TNG | `camels-cv.tng.mzr.z0.95` | mzr | 0.95 | catalog-derived | Villaescusa-Navarro et al. 2021, ApJ 915, 71 (CAMELS), cosmic-variance set, Subfind catalogues; per-box summaries and their mean by this project |
+| CAMELS-TNG | `camels-cv.tng.zstar.z0` | zstar | 0 | catalog-derived | Villaescusa-Navarro et al. 2021, ApJ 915, 71 (CAMELS), cosmic-variance set, Subfind catalogues; per-box summaries and their mean by this project |
 | CoDa II | `ocvirk20.coda2.gsmf.z10` | gsmf | 10 | catalog-derived | Ocvirk et al. 2020, MNRAS 496, 4087 (doi 10.1093/mnras/staa1266); galaxy catalogue VizieR VI/146 (CDS); mass function counted by sim-highline |
 | CoDa II | `ocvirk20.coda2.uvlf.z8` | uvlf | 8 | published-table | Ocvirk et al. 2020, MNRAS 496, 4087 (doi 10.1093/mnras/staa1266), appendix table of CoDa II UV luminosity functions at four epochs |
 | COLIBRE | `chaikin26.colibre.smd.l400m7.50pkpc-m8` | smd | 4 | digitized-figure | Chaikin et al. 2026, MNRAS 548, stag740 (doi:10.1093/mnras/stag740; arXiv:2509.07960), COLIBRE galaxy stellar mass functions, star formation and quenching, cosmic stellar mass density |

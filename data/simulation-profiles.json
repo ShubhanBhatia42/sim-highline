@@ -570,6 +570,70 @@
         }
       ],
       "publicData": "Not public: the paper says access to the data (about 50 TB of simulation data and 4 TB of halo catalogues) is granted on request."
+    },
+    "CAMELS-TNG": {
+      "source": "CAMELS-TNG",
+      "short": "CAMELS-TNG",
+      "code": "AREPO",
+      "codeRef": "AREPO",
+      "method": "moving mesh",
+      "methodDetail": "Moving Voronoi mesh with ideal magnetohydrodynamics (the IllustrisTNG model)",
+      "setup": "Periodic boxes of 25 Mpc/h with 256³ dark matter particles and 256³ gas cells; the cosmic-variance set is 27 boxes with the fiducial parameters and different random seeds.",
+      "physics": "The IllustrisTNG galaxy-formation model as run in CAMELS; see the IllustrisTNG profile for the model.",
+      "introduced": 2021,
+      "introducedNote": "CAMELS overview paper",
+      "team": "CAMELS (Villaescusa-Navarro and collaborators)",
+      "purpose": "A set of small boxes with the same galaxy-formation model, used here for curves measured with the same code and the same definitions in three codes, and for the cosmic variance of a box of this size. Not the production run of the model.",
+      "papers": [
+        {
+          "cite": "Villaescusa-Navarro et al. 2021, CAMELS overview",
+          "arxiv": "2010.00619"
+        }
+      ]
+    },
+    "CAMELS-SIMBA": {
+      "source": "CAMELS-SIMBA",
+      "short": "CAMELS-SIMBA",
+      "code": "GIZMO",
+      "codeRef": "GIZMO",
+      "method": "meshless",
+      "methodDetail": "Meshless finite-mass hydrodynamics in GIZMO (the SIMBA model)",
+      "setup": "Periodic boxes of 25 Mpc/h with 256³ dark matter particles and 256³ gas elements; the cosmic-variance set is 27 boxes with the fiducial parameters and different random seeds.",
+      "physics": "The SIMBA galaxy-formation model as run in CAMELS; see the SIMBA profile for the model.",
+      "introduced": 2021,
+      "introducedNote": "CAMELS overview paper",
+      "team": "CAMELS (Villaescusa-Navarro and collaborators)",
+      "purpose": "A set of small boxes with the same galaxy-formation model, used here for curves measured with the same code and the same definitions in three codes, and for the cosmic variance of a box of this size. Not the production run of the model.",
+      "papers": [
+        {
+          "cite": "Villaescusa-Navarro et al. 2021, CAMELS overview",
+          "arxiv": "2010.00619"
+        }
+      ]
+    },
+    "CAMELS-Astrid": {
+      "source": "CAMELS-Astrid",
+      "short": "CAMELS-Astrid",
+      "code": "MP-Gadget",
+      "codeRef": "Gadget",
+      "method": "SPH",
+      "methodDetail": "Smoothed particle hydrodynamics with tree-PM gravity (MP-Gadget, a Gadget-3 descendant; the ASTRID model)",
+      "setup": "Periodic boxes of 25 Mpc/h with 256³ dark matter particles and 256³ gas particles; the cosmic-variance set is 27 boxes with the fiducial parameters and different random seeds.",
+      "physics": "The ASTRID galaxy-formation model as run in CAMELS; see the ASTRID profile for the model.",
+      "introduced": 2023,
+      "introducedNote": "CAMELS-ASTRID paper",
+      "team": "CAMELS (Villaescusa-Navarro, Ni and collaborators)",
+      "purpose": "A set of small boxes with the same galaxy-formation model, used here for curves measured with the same code and the same definitions in three codes, and for the cosmic variance of a box of this size. Not the production run of the model.",
+      "papers": [
+        {
+          "cite": "Villaescusa-Navarro et al. 2021, CAMELS overview",
+          "arxiv": "2010.00619"
+        },
+        {
+          "cite": "Ni et al. 2023, CAMELS-ASTRID",
+          "arxiv": "2304.02096"
+        }
+      ]
     }
   }
 }

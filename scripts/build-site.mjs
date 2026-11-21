@@ -1,4 +1,5 @@
 import { doiWording } from "./release-doi.mjs";
+import { answerPages } from "./site-answers.mjs";
 import { copyFile, readdir, readFile, writeFile, mkdir } from "node:fs/promises";
 import vm from "node:vm";
 import { jointStats } from "./site-joint.mjs";
@@ -537,8 +538,8 @@ const HEAD = (title, desc, img = "og-default.png", page = "") => `<link rel="pre
 <meta property="og:type" content="website"><meta property="og:site_name" content="sim-highline"><meta property="og:title" content="${title}"><meta property="og:description" content="${desc}"><meta property="og:image" content="${SITE_URL}/site/${img}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="${esc(title)}: a chart from the page beside its title"><meta name="twitter:card" content="summary_large_image">${page ? `<link rel="canonical" href="${SITE_URL}/site/${CANON[page] || page}"><meta property="og:url" content="${SITE_URL}/site/${CANON[page] || page}">` : ""}<link rel="alternate" type="application/atom+xml" title="sim-highline releases" href="${SITE_URL}/feed.xml">
 <script>try{var t=localStorage.getItem("sh-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 <style>${stats.css}</style>`;
-const MENU = [["../highline.html", "Explorer", null], ["retune.html", "Dials", "retune"], ["studies.html", "Studies", "studies"], ["data.html", "Data", "data"], ["methods.html", "Methods", "methods"]];
-const SECTION = page => /^study-/.test(page) || page === "studies.html" || page === "seeding.html" ? "studies" : page === "retune.html" ? "retune" : ["data.html", "sources.html"].includes(page) ? "data" : page === "methods.html" ? "methods" : null;
+const MENU = [["../highline.html", "Explorer", null], ["answers.html", "Answers", "answers"], ["retune.html", "Dials", "retune"], ["studies.html", "Studies", "studies"], ["data.html", "Data", "data"], ["methods.html", "Methods", "methods"]];
+const SECTION = page => page === "answers.html" || /^answer-/.test(page) ? "answers" : /^study-/.test(page) || page === "studies.html" || page === "seeding.html" ? "studies" : page === "retune.html" ? "retune" : ["data.html", "sources.html"].includes(page) ? "data" : page === "methods.html" ? "methods" : null;
 const HEADER = page => `<a class="skip" href="#main">Skip to the content</a>
 <header class="top"><div class="wrap bar"><a class="mark" href="index.html" aria-label="sim-highline home">sim-highline</a><nav class="menu" aria-label="Main">${MENU.map(([h, t, k]) => `<a href="${h}"${k && k === SECTION(page) ? ' aria-current="page"' : ""}>${t}</a>`).join("")}</nav><span class="sp"></span><a class="chip" href="changes.html" title="dataset v${release.version}, released ${release.released}: what is new">v${release.version}</a><button class="ico" id="theme" type="button" aria-label="Switch theme"></button></div>
 <div class="status"><div class="wrap" role="group" aria-label="The dataset at a glance"><span><b>${stats.records}</b> records</span><span><b>${stats.suites}</b> simulations</span><span><b>${stats.obsSources}</b> observational and empirical sources</span><span><b>${stats.relations}</b> relations</span><span>z <b>${stats.zMin}–${stats.zMax}</b></span><span class="opt">released <b>${release.released}</b></span></div></div></header>`;
@@ -569,9 +570,12 @@ const nameTables = html => { let head = ""; return html.replace(/<h[2-4]\b[^>]*>
 const newTabNote = html => html.replace(/<a\b([^>]*\btarget="_blank"[^>]*)>/g, (m, a) => /\btitle=/.test(a) ? m : `<a${a} title="Opens in a new tab">`);
 const accessible = html => newTabNote(nameTables(rowHeaders(html)));
 await mkdir(new URL("dist/site/", root), { recursive: true });
-const PAGES = ["index.html", "studies.html", "study-definitions.html", "study-harmonization.html", "study-sfh.html", "study-joint.html", "study-shape.html", "study-resolution.html", "seeding.html", "retune.html", "data.html", "methods.html", "sources.html", "findings.html", "glossary.html", "faq.html", "changes.html", "quality.html", "summary.html"];
+// ---- the answer pages: a question answered from the data with the Explorer's own rules (data/answers.json, scripts/site-answers.mjs)
+const ANSWERS = answerPages({ recs: all, spec: JSON.parse(await read("data/answers.json")), compareSrc: await read("compare.js"), logicSrc: await read("highline/logic.js"), colorFor, ticks, esc, release, repo: release.repo });
+const GENERATED = { "answers.html": ANSWERS.index, ...ANSWERS.pages };
+const PAGES = ["index.html", "answers.html", ...Object.keys(ANSWERS.pages), "studies.html", "study-definitions.html", "study-harmonization.html", "study-sfh.html", "study-joint.html", "study-shape.html", "study-resolution.html", "seeding.html", "retune.html", "data.html", "methods.html", "sources.html", "findings.html", "glossary.html", "faq.html", "changes.html", "quality.html", "summary.html"];
 for (const page of PAGES) {
-  let html = await read(`site/src/${page}`);
+  let html = GENERATED[page] ?? await read(`site/src/${page}`);
   const title = (html.match(/<title>([^<]*)<\/title>/) || [])[1], desc = (html.match(/<meta name="description" content="([^"]*)"/) || [])[1];
   if (!title || !desc) throw new Error(`${page}: <title> and <meta name="description"> are required`);
   stats.head = HEAD(title, desc, OG[page], page) + (page === "index.html" || page === "data.html" ? DATASET_LD : ""); stats.header = HEADER(page); stats.footer = FOOTER();

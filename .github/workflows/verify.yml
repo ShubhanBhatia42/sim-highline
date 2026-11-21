@@ -59,8 +59,8 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Browser tests (layout, views, themes, embed, phone, links, accessibility)
         run: node scripts/test-ui.mjs
-      - name: Walk-throughs and the check-your-run flow
-        run: node scripts/test-journeys.mjs && node scripts/test-yourrun.mjs && node scripts/test-dials.mjs
+      - name: Walk-throughs, the check-your-run flow and the answer pages
+        run: node scripts/test-journeys.mjs && node scripts/test-yourrun.mjs && node scripts/test-answers.mjs && node scripts/test-dials.mjs
       - name: Every page at every width, keyboard only, and when things go wrong
         run: node scripts/test-layouts.mjs && node scripts/test-keyboard.mjs && node scripts/test-a11y-tree.mjs --explorer && node scripts/test-resilience.mjs && node scripts/test-parity.mjs
       - name: The build is deterministic

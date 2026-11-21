@@ -1,7 +1,7 @@
 {
  "schemaVersion": "1.0.0",
  "method": "Offset of each curve from the median of other sources' curves (interpolating peers only inside their published range) at the same relation, units and z within 0.15; at least 3 peer sources per point. Flag: |median offset| >= 0.7 dex and robust z >= 3.0 within the relation.",
- "nScreened": 1045,
+ "nScreened": 1159,
  "nFlagged": 19,
  "systematic": [
   {
@@ -9,7 +9,7 @@
    "relation": "bh",
    "records": 5,
    "flagged": 3,
-   "medianOffsetDex": -2.316
+   "medianOffsetDex": -2.29
   },
   {
    "source": "SPHINX20",
@@ -31,7 +31,7 @@
    "nPoints": 12,
    "xUnit": "log10(Msun)",
    "yUnit": "log10(Msun)",
-   "robustZ": -5.656,
+   "robustZ": -5.718,
    "flag": true,
    "population": "secondary MBHs within 2 R_eff of their host galaxy",
    "recordWarning": "Marker centres of secondary MBHs within 2 R_eff of their host galaxy at z=0.25, read from the vector paths of Dubois et al. 2021; no table exists. Seed-mass floor near 10^4 Msun. The figure draws small markers for every MBH at z=0.25 under "
@@ -43,11 +43,11 @@
    "run": "NewHorizon (all MBHs)",
    "kind": "simulation",
    "z": 1.0,
-   "medianOffsetDex": -2.474,
+   "medianOffsetDex": -2.446,
    "nPoints": 255,
    "xUnit": "log10(Msun)",
    "yUnit": "log10(Msun)",
-   "robustZ": -3.367,
+   "robustZ": -3.389,
    "flag": true,
    "population": "all MBHs within 2 R_eff of their host galaxy",
    "recordWarning": "Marker centres of all MBHs within 2 R_eff of their host galaxy at z=1, read from the vector paths of Dubois et al. 2021; no table exists. Seed-mass floor near 10^4 Msun. Zoom region, not volume complete. Observational overlays (RV15, Greene"
@@ -59,30 +59,14 @@
    "run": "NewHorizon (all MBHs)",
    "kind": "simulation",
    "z": 2.0,
-   "medianOffsetDex": -2.316,
+   "medianOffsetDex": -2.29,
    "nPoints": 152,
    "xUnit": "log10(Msun)",
    "yUnit": "log10(Msun)",
-   "robustZ": -3.134,
+   "robustZ": -3.159,
    "flag": true,
    "population": "all MBHs within 2 R_eff of their host galaxy",
    "recordWarning": "Marker centres of all MBHs within 2 R_eff of their host galaxy at z=2, read from the vector paths of Dubois et al. 2021; no table exists. Seed-mass floor near 10^4 Msun. Zoom region, not volume complete. Observational overlays (RV15, Greene"
-  },
-  {
-   "id": "darwin1.catalogue.bh.z4",
-   "relation": "bh",
-   "source": "DARWIN",
-   "run": "DARWIN-1 (65.5 cMpc box)",
-   "kind": "simulation",
-   "z": 3.991,
-   "medianOffsetDex": 1.964,
-   "nPoints": 4,
-   "xUnit": "log10(Msun)",
-   "yUnit": "log10(Msun)",
-   "robustZ": 3.194,
-   "flag": true,
-   "population": "all galaxies with at least 100 star particles and at least one black hole particle, centrals and satellites",
-   "recordWarning": "Counted by this project from the public DARWIN-1 catalogue of snapshot 54 (z = 3.991). Population: every galaxy (self-bound substructure with at least 100 star particles, stellar mass `sub/mstar`) that holds at least one black hole particle"
   },
   {
    "id": "katz23.sphinx20.shmr.virial.z8",
@@ -95,7 +79,7 @@
    "nPoints": 3,
    "xUnit": "log10(Msun)",
    "yUnit": "dex",
-   "robustZ": 5.108,
+   "robustZ": 5.489,
    "flag": true,
    "population": "SPHINX20 data-release galaxies",
    "recordWarning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Halo mass definition as provided"
@@ -127,7 +111,7 @@
    "nPoints": 4,
    "xUnit": "log10(Msun)",
    "yUnit": "dex",
-   "robustZ": 4.433,
+   "robustZ": 4.768,
    "flag": true,
    "population": "SPHINX20 data-release galaxies",
    "recordWarning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Halo mass definition as provided"
@@ -207,7 +191,7 @@
    "nPoints": 4,
    "xUnit": "log10(Msun)",
    "yUnit": "dex",
-   "robustZ": -3.277,
+   "robustZ": -3.473,
    "flag": true,
    "population": "all friends-of-friends haloes above 1e8 Msun, including those without stars",
    "recordWarning": "Median stellar-to-halo mass ratio of the whole CoDa II box at z = 10, computed by sim-highline from the public catalogue in 0.25 dex bins of halo mass; haloes without stars count as a ratio of zero, so a bin is kept only where more than hal"
@@ -223,7 +207,7 @@
    "nPoints": 5,
    "xUnit": "log10(Msun)",
    "yUnit": "log10(kpc)",
-   "robustZ": -4.078,
+   "robustZ": -4.17,
    "flag": true,
    "population": "SPHINX20 data-release galaxies",
    "recordWarning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Sizes from the release's PHOTUTI"
@@ -239,7 +223,7 @@
    "nPoints": 3,
    "xUnit": "log10(Msun)",
    "yUnit": "log10(kpc)",
-   "robustZ": -4.017,
+   "robustZ": -4.105,
    "flag": true,
    "population": "SPHINX20 data-release galaxies",
    "recordWarning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Sizes from the release's PHOTUTI"
@@ -271,7 +255,7 @@
    "nPoints": 5,
    "xUnit": "log10(Msun)",
    "yUnit": "log10(kpc)",
-   "robustZ": -3.924,
+   "robustZ": -4.007,
    "flag": true,
    "population": "SPHINX20 data-release galaxies",
    "recordWarning": "SPHINX20 public data release sample (Katz et al. 2023): haloes selected for the release, not a volume-complete census, so medians at fixed mass are biased toward the selection (bright, star-forming systems). Sizes from the release's PHOTUTI"
@@ -323,6 +307,22 @@
    "flag": true,
    "population": "Magneticum Box2/hr galaxies",
    "recordWarning": "Morphology and radial aperture are not specified in the table header."
+  },
+  {
+   "id": "vanderwel14.size.early.z2.25",
+   "relation": "size",
+   "source": "van der Wel et al. 2014",
+   "run": "early-type",
+   "kind": "observation",
+   "z": 2.25,
+   "medianOffsetDex": -0.722,
+   "nPoints": 11,
+   "xUnit": "log10(Msun)",
+   "yUnit": "log10(kpc)",
+   "robustZ": -3.777,
+   "flag": true,
+   "population": "early-type (UVJ quiescent)",
+   "recordWarning": "UVJ-based type split with 10% assumed misclassification; fit mass limits >3e9 Msun (late) and >2e10 Msun (early). Section 3.1 states a 7e10 Msun pivot while the Table 1 caption gives 5e10 Msun; the caption is used here."
   }
  ]
 }

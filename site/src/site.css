@@ -69,6 +69,8 @@ em{font-style:italic}
   .menu a{padding:12px 0 11px}
   .ico{margin-left:0}
 }
+@media (max-width:420px){.menu{gap:0 8px}.menu a{font-size:11px;letter-spacing:.04em}}
+@media (max-width:340px){.menu{gap:0 5px}.menu a{font-size:10.5px;letter-spacing:.02em}}
 
 /* ---- page frame: index column, content column, notes in the right margin ---- */
 .page{padding-top:2.25rem;padding-bottom:1rem}

@@ -182,6 +182,9 @@
    "relation": "mzr",
    "z": 0,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "COLIBRE",
     "EAGLE",
     "FIREbox",
@@ -189,32 +192,35 @@
     "IllustrisTNG",
     "SIMBA"
    ],
-   "records": 14,
-   "pairs": 74,
+   "records": 17,
+   "pairs": 113,
    "counts": {
-    "matched": 9,
-    "differing": 18,
+    "matched": 12,
+    "differing": 30,
     "unknown": 15,
-    "mismatch": 32
+    "mismatch": 56
    },
    "median_abs_dy": {
-    "matched": 0.327,
-    "differing": 0.2144,
+    "matched": 0.26,
+    "differing": 0.2573,
     "unknown": 0.3183,
-    "mismatch": 8.7878
+    "mismatch": 8.808
    },
-   "documented_fraction": 0.971,
-   "excess_differing_minus_matched": -0.1127,
-   "p_permutation": 0.5592,
+   "documented_fraction": 0.976,
+   "excess_differing_minus_matched": -0.0027,
+   "p_permutation": 0.4148,
    "ci95_excess": [
-    -0.2242,
-    0.3105
+    -0.2222,
+    0.2346
    ]
   },
   {
    "relation": "mzr",
    "z": 1,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "COLIBRE",
     "EAGLE",
     "Illustris",
@@ -222,90 +228,96 @@
     "NewHorizon",
     "SIMBA"
    ],
-   "records": 14,
-   "pairs": 76,
+   "records": 17,
+   "pairs": 118,
    "counts": {
-    "matched": 9,
-    "differing": 22,
+    "matched": 12,
+    "differing": 37,
     "unknown": 7,
-    "mismatch": 38
+    "mismatch": 62
    },
    "median_abs_dy": {
-    "matched": 0.206,
-    "differing": 0.1182,
+    "matched": 0.2168,
+    "differing": 0.1305,
     "unknown": 0.4641,
-    "mismatch": 8.7482
+    "mismatch": 8.7409
    },
-   "documented_fraction": 0.986,
-   "excess_differing_minus_matched": -0.0878,
-   "p_permutation": 0.5102,
+   "documented_fraction": 0.988,
+   "excess_differing_minus_matched": -0.0864,
+   "p_permutation": 0.4983,
    "ci95_excess": [
-    -0.1247,
-    0.361
+    -0.3535,
+    0.2672
    ]
   },
   {
    "relation": "mzr",
    "z": 2,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "EAGLE",
     "Illustris",
     "IllustrisTNG",
     "NewHorizon",
     "SIMBA"
    ],
-   "records": 10,
-   "pairs": 36,
+   "records": 13,
+   "pairs": 66,
    "counts": {
-    "matched": 3,
-    "differing": 11,
+    "matched": 6,
+    "differing": 26,
     "unknown": 3,
-    "mismatch": 19
+    "mismatch": 31
    },
    "median_abs_dy": {
-    "matched": 0.1433,
-    "differing": 0.1539,
+    "matched": 0.1547,
+    "differing": 0.1344,
     "unknown": 0.4709,
-    "mismatch": 8.7509
+    "mismatch": 8.7284
    },
-   "documented_fraction": 0.98,
-   "excess_differing_minus_matched": 0.0107,
-   "p_permutation": 0.4653,
+   "documented_fraction": 0.985,
+   "excess_differing_minus_matched": -0.0203,
+   "p_permutation": 0.4848,
    "ci95_excess": [
-    -0.098,
-    0.3987
+    -0.3906,
+    0.3589
    ]
   },
   {
    "relation": "mzr",
    "z": 4,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "EAGLE",
     "Illustris",
     "IllustrisTNG",
     "NewHorizon",
     "SIMBA"
    ],
-   "records": 6,
-   "pairs": 12,
+   "records": 9,
+   "pairs": 30,
    "counts": {
-    "matched": 3,
-    "differing": 6,
+    "matched": 6,
+    "differing": 18,
     "unknown": 0,
-    "mismatch": 3
+    "mismatch": 6
    },
    "median_abs_dy": {
-    "matched": 0.107,
-    "differing": 0.1939,
+    "matched": 0.1514,
+    "differing": 0.179,
     "unknown": null,
-    "mismatch": 8.3407
+    "mismatch": 8.3428
    },
-   "documented_fraction": 0.967,
-   "excess_differing_minus_matched": 0.0868,
-   "p_permutation": 0.3358,
+   "documented_fraction": 0.978,
+   "excess_differing_minus_matched": 0.0276,
+   "p_permutation": 0.4178,
    "ci95_excess": [
-    -0.1441,
-    0.3888
+    -0.2873,
+    0.2411
    ]
   },
   {
@@ -333,7 +345,7 @@
    },
    "documented_fraction": 0.96,
    "excess_differing_minus_matched": 0.0801,
-   "p_permutation": 0.2304,
+   "p_permutation": 0.2384,
    "ci95_excess": [
     -0.041,
     0.3239
@@ -368,7 +380,7 @@
    },
    "documented_fraction": 0.907,
    "excess_differing_minus_matched": -0.073,
-   "p_permutation": 0.6687,
+   "p_permutation": 0.6827,
    "ci95_excess": [
     -0.1454,
     0.071
@@ -402,7 +414,7 @@
    },
    "documented_fraction": 0.877,
    "excess_differing_minus_matched": 0.2245,
-   "p_permutation": 0.076,
+   "p_permutation": 0.0705,
    "ci95_excess": [
     0.1997,
     0.2552
@@ -435,7 +447,7 @@
    },
    "documented_fraction": 0.862,
    "excess_differing_minus_matched": 0.1291,
-   "p_permutation": 0.1104,
+   "p_permutation": 0.1269,
    "ci95_excess": [
     0.035,
     0.149
@@ -468,7 +480,7 @@
    },
    "documented_fraction": 0.867,
    "excess_differing_minus_matched": 0.1262,
-   "p_permutation": 0.1449,
+   "p_permutation": 0.1474,
    "ci95_excess": [
     0.0169,
     0.1559
@@ -502,7 +514,7 @@
    },
    "documented_fraction": 1.0,
    "excess_differing_minus_matched": 0.2147,
-   "p_permutation": 0.015,
+   "p_permutation": 0.018,
    "ci95_excess": [
     0.0564,
     0.326
@@ -512,6 +524,9 @@
    "relation": "shmr",
    "z": 0,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "COLIBRE",
     "DARWIN",
     "EAGLE",
@@ -522,32 +537,35 @@
     "Magneticum Pathfinder",
     "NIHAO zoom suite"
    ],
-   "records": 25,
-   "pairs": 257,
+   "records": 28,
+   "pairs": 329,
    "counts": {
-    "matched": 8,
-    "differing": 70,
+    "matched": 11,
+    "differing": 103,
     "unknown": 0,
-    "mismatch": 179
+    "mismatch": 215
    },
    "median_abs_dy": {
-    "matched": 0.1721,
-    "differing": 0.2031,
+    "matched": 0.1744,
+    "differing": 0.2032,
     "unknown": null,
     "mismatch": 0.2032
    },
    "documented_fraction": 1.0,
-   "excess_differing_minus_matched": 0.031,
-   "p_permutation": 0.2779,
+   "excess_differing_minus_matched": 0.0288,
+   "p_permutation": 0.2284,
    "ci95_excess": [
-    -0.1936,
-    0.1403
+    -0.2123,
+    0.1175
    ]
   },
   {
    "relation": "shmr",
    "z": 1,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "DARWIN",
     "EAGLE",
     "FIRE-2",
@@ -557,27 +575,35 @@
     "NIHAO zoom suite",
     "NewHorizon"
    ],
-   "records": 16,
-   "pairs": 101,
+   "records": 19,
+   "pairs": 146,
    "counts": {
-    "matched": 2,
-    "differing": 26,
+    "matched": 5,
+    "differing": 50,
     "unknown": 0,
-    "mismatch": 73
+    "mismatch": 91
    },
    "median_abs_dy": {
-    "matched": 0.1171,
-    "differing": 0.293,
+    "matched": 0.1264,
+    "differing": 0.2815,
     "unknown": null,
     "mismatch": 0.2375
    },
    "documented_fraction": 1.0,
-   "excess_differing_minus_matched": 0.1759
+   "excess_differing_minus_matched": 0.1551,
+   "p_permutation": 0.004,
+   "ci95_excess": [
+    -0.0376,
+    0.2415
+   ]
   },
   {
    "relation": "shmr",
    "z": 2,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "DARWIN",
     "EAGLE",
     "Illustris",
@@ -585,28 +611,36 @@
     "NIHAO zoom suite",
     "NewHorizon"
    ],
-   "records": 15,
-   "pairs": 84,
+   "records": 18,
+   "pairs": 129,
    "counts": {
-    "matched": 0,
-    "differing": 17,
+    "matched": 3,
+    "differing": 38,
     "unknown": 0,
-    "mismatch": 67
+    "mismatch": 88
    },
    "median_abs_dy": {
-    "matched": null,
-    "differing": 0.2769,
+    "matched": 0.0843,
+    "differing": 0.3196,
     "unknown": null,
-    "mismatch": 0.2987
+    "mismatch": 0.2844
    },
    "documented_fraction": 1.0,
-   "excess_differing_minus_matched": null
+   "excess_differing_minus_matched": 0.2353,
+   "p_permutation": 0.003,
+   "ci95_excess": [
+    0.0791,
+    0.5928
+   ]
   },
   {
    "relation": "shmr",
    "z": 4,
    "suites": [
     "ASTRID",
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "DARWIN",
     "EAGLE",
     "Illustris",
@@ -614,22 +648,27 @@
     "NIHAO zoom suite",
     "NewHorizon"
    ],
-   "records": 14,
-   "pairs": 67,
+   "records": 17,
+   "pairs": 100,
    "counts": {
-    "matched": 0,
-    "differing": 16,
+    "matched": 3,
+    "differing": 31,
     "unknown": 0,
-    "mismatch": 51
+    "mismatch": 66
    },
    "median_abs_dy": {
-    "matched": null,
-    "differing": 0.3532,
+    "matched": 0.0861,
+    "differing": 0.3313,
     "unknown": null,
-    "mismatch": 0.3209
+    "mismatch": 0.2544
    },
-   "documented_fraction": 0.986,
-   "excess_differing_minus_matched": null
+   "documented_fraction": 0.988,
+   "excess_differing_minus_matched": 0.2452,
+   "p_permutation": 0.006,
+   "ci95_excess": [
+    -0.0315,
+    0.4938
+   ]
   },
   {
    "relation": "shmr",
@@ -661,6 +700,9 @@
    "relation": "size",
    "z": 0,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "COLIBRE",
     "DARWIN",
     "EAGLE",
@@ -670,27 +712,30 @@
     "IllustrisTNG",
     "Magneticum Pathfinder"
    ],
-   "records": 31,
-   "pairs": 313,
+   "records": 34,
+   "pairs": 400,
    "counts": {
-    "matched": 3,
+    "matched": 6,
     "differing": 0,
     "unknown": 0,
-    "mismatch": 310
+    "mismatch": 394
    },
    "median_abs_dy": {
-    "matched": 0.2886,
+    "matched": 0.2327,
     "differing": null,
     "unknown": null,
-    "mismatch": 0.1777
+    "mismatch": 0.1805
    },
-   "documented_fraction": 0.976,
+   "documented_fraction": 0.978,
    "excess_differing_minus_matched": null
   },
   {
    "relation": "size",
    "z": 1,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "COLIBRE",
     "EAGLE",
     "Horizon-AGN",
@@ -699,27 +744,30 @@
     "Magneticum Pathfinder",
     "NewHorizon"
    ],
-   "records": 23,
-   "pairs": 210,
+   "records": 26,
+   "pairs": 279,
    "counts": {
-    "matched": 3,
+    "matched": 6,
     "differing": 0,
     "unknown": 0,
-    "mismatch": 207
+    "mismatch": 273
    },
    "median_abs_dy": {
-    "matched": 0.3023,
+    "matched": 0.1991,
     "differing": null,
     "unknown": null,
-    "mismatch": 0.1878
+    "mismatch": 0.1948
    },
-   "documented_fraction": 0.957,
+   "documented_fraction": 0.962,
    "excess_differing_minus_matched": null
   },
   {
    "relation": "size",
    "z": 2,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "COLIBRE",
     "DARWIN",
     "EAGLE",
@@ -729,27 +777,30 @@
     "Magneticum Pathfinder",
     "NewHorizon"
    ],
-   "records": 24,
-   "pairs": 223,
+   "records": 27,
+   "pairs": 292,
    "counts": {
-    "matched": 3,
+    "matched": 6,
     "differing": 0,
     "unknown": 0,
-    "mismatch": 220
+    "mismatch": 286
    },
    "median_abs_dy": {
-    "matched": 0.2443,
+    "matched": 0.2337,
     "differing": null,
     "unknown": null,
-    "mismatch": 0.226
+    "mismatch": 0.2148
    },
-   "documented_fraction": 0.948,
+   "documented_fraction": 0.954,
    "excess_differing_minus_matched": null
   },
   {
    "relation": "size",
    "z": 4,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "EAGLE",
     "Horizon-AGN",
     "Illustris",
@@ -757,21 +808,21 @@
     "Magneticum Pathfinder",
     "NewHorizon"
    ],
-   "records": 11,
-   "pairs": 32,
+   "records": 14,
+   "pairs": 56,
    "counts": {
-    "matched": 3,
+    "matched": 6,
     "differing": 0,
     "unknown": 0,
-    "mismatch": 29
+    "mismatch": 50
    },
    "median_abs_dy": {
-    "matched": 0.1434,
+    "matched": 0.1894,
     "differing": null,
     "unknown": null,
-    "mismatch": 0.2871
+    "mismatch": 0.2474
    },
-   "documented_fraction": 0.886,
+   "documented_fraction": 0.911,
    "excess_differing_minus_matched": null
   },
   {
@@ -804,95 +855,104 @@
    "relation": "zstar",
    "z": 0,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "EAGLE",
     "Illustris",
     "IllustrisTNG",
     "Magneticum Pathfinder"
    ],
-   "records": 6,
-   "pairs": 9,
+   "records": 9,
+   "pairs": 27,
    "counts": {
-    "matched": 3,
-    "differing": 6,
+    "matched": 6,
+    "differing": 21,
     "unknown": 0,
     "mismatch": 0
    },
    "median_abs_dy": {
-    "matched": 0.2302,
-    "differing": 0.1711,
+    "matched": 0.1943,
+    "differing": 0.137,
     "unknown": null,
     "mismatch": null
    },
    "documented_fraction": 1.0,
-   "excess_differing_minus_matched": -0.0591,
-   "p_permutation": 0.7956,
+   "excess_differing_minus_matched": -0.0573,
+   "p_permutation": 0.7746,
    "ci95_excess": [
-    -0.0818,
-    0.123
+    -0.1567,
+    0.19
    ]
   },
   {
    "relation": "zstar",
    "z": 1,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "EAGLE",
     "Illustris",
     "IllustrisTNG",
     "Magneticum Pathfinder",
     "NewHorizon"
    ],
-   "records": 8,
-   "pairs": 17,
+   "records": 11,
+   "pairs": 39,
    "counts": {
-    "matched": 3,
-    "differing": 14,
+    "matched": 6,
+    "differing": 33,
     "unknown": 0,
     "mismatch": 0
    },
    "median_abs_dy": {
-    "matched": 0.2031,
-    "differing": 0.1163,
+    "matched": 0.2234,
+    "differing": 0.136,
     "unknown": null,
     "mismatch": null
    },
    "documented_fraction": 1.0,
-   "excess_differing_minus_matched": -0.0868,
-   "p_permutation": 0.9455,
+   "excess_differing_minus_matched": -0.0874,
+   "p_permutation": 0.9715,
    "ci95_excess": [
-    -0.1564,
-    0.147
+    -0.2841,
+    0.1197
    ]
   },
   {
    "relation": "zstar",
    "z": 2,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "EAGLE",
     "Illustris",
     "IllustrisTNG",
     "Magneticum Pathfinder",
     "NewHorizon"
    ],
-   "records": 9,
-   "pairs": 21,
+   "records": 12,
+   "pairs": 45,
    "counts": {
-    "matched": 3,
-    "differing": 18,
+    "matched": 6,
+    "differing": 39,
     "unknown": 0,
     "mismatch": 0
    },
    "median_abs_dy": {
-    "matched": 0.1948,
-    "differing": 0.113,
+    "matched": 0.2127,
+    "differing": 0.1192,
     "unknown": null,
     "mismatch": null
    },
    "documented_fraction": 1.0,
-   "excess_differing_minus_matched": -0.0818,
-   "p_permutation": 0.949,
+   "excess_differing_minus_matched": -0.0935,
+   "p_permutation": 0.919,
    "ci95_excess": [
-    -0.1648,
-    0.1138
+    -0.2362,
+    0.1358
    ]
   },
   {
@@ -900,32 +960,35 @@
    "z": 4,
    "suites": [
     "ASTRID",
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "EAGLE",
     "Illustris",
     "IllustrisTNG",
     "Magneticum Pathfinder",
     "NewHorizon"
    ],
-   "records": 9,
-   "pairs": 24,
+   "records": 12,
+   "pairs": 45,
    "counts": {
-    "matched": 3,
-    "differing": 13,
+    "matched": 6,
+    "differing": 28,
     "unknown": 0,
-    "mismatch": 8
+    "mismatch": 11
    },
    "median_abs_dy": {
-    "matched": 0.1867,
-    "differing": 0.1637,
+    "matched": 0.1539,
+    "differing": 0.1451,
     "unknown": null,
-    "mismatch": 8.6674
+    "mismatch": 8.693
    },
-   "documented_fraction": 0.978,
-   "excess_differing_minus_matched": -0.023,
-   "p_permutation": 0.4508,
+   "documented_fraction": 0.983,
+   "excess_differing_minus_matched": -0.0088,
+   "p_permutation": 0.4883,
    "ci95_excess": [
-    -0.1873,
-    0.1075
+    -0.1706,
+    0.1461
    ]
   },
   {
@@ -954,7 +1017,7 @@
    },
    "documented_fraction": 0.96,
    "excess_differing_minus_matched": 0.1839,
-   "p_permutation": 0.2414,
+   "p_permutation": 0.2389,
    "ci95_excess": [
     -0.1369,
     0.4113
@@ -964,6 +1027,9 @@
    "relation": "bh",
    "z": 0,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "DARWIN",
     "EAGLE",
     "FLAMINGO",
@@ -975,27 +1041,35 @@
     "Romulus25",
     "SIMBA"
    ],
-   "records": 20,
-   "pairs": 154,
+   "records": 23,
+   "pairs": 210,
    "counts": {
-    "matched": 0,
-    "differing": 65,
-    "unknown": 89,
+    "matched": 3,
+    "differing": 100,
+    "unknown": 107,
     "mismatch": 0
    },
    "median_abs_dy": {
-    "matched": null,
-    "differing": 0.499,
-    "unknown": 0.5121,
+    "matched": 0.726,
+    "differing": 0.5765,
+    "unknown": 0.5041,
     "mismatch": null
    },
-   "documented_fraction": 0.875,
-   "excess_differing_minus_matched": null
+   "documented_fraction": 0.891,
+   "excess_differing_minus_matched": -0.1495,
+   "p_permutation": 0.8496,
+   "ci95_excess": [
+    -0.7728,
+    0.622
+   ]
   },
   {
    "relation": "bh",
    "z": 1,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "DARWIN",
     "EAGLE",
     "Horizon-AGN",
@@ -1006,27 +1080,73 @@
     "NewHorizon",
     "SIMBA"
    ],
-   "records": 14,
-   "pairs": 71,
+   "records": 17,
+   "pairs": 109,
    "counts": {
-    "matched": 0,
-    "differing": 11,
-    "unknown": 60,
+    "matched": 3,
+    "differing": 25,
+    "unknown": 81,
     "mismatch": 0
    },
    "median_abs_dy": {
-    "matched": null,
-    "differing": 0.2032,
-    "unknown": 0.3169,
+    "matched": 0.6679,
+    "differing": 0.2311,
+    "unknown": 0.3488,
     "mismatch": null
    },
-   "documented_fraction": 0.804,
-   "excess_differing_minus_matched": null
+   "documented_fraction": 0.838,
+   "excess_differing_minus_matched": -0.4368,
+   "p_permutation": 0.9815,
+   "ci95_excess": [
+    -0.7043,
+    0.1761
+   ]
   },
   {
    "relation": "bh",
    "z": 2,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
+    "DARWIN",
+    "EAGLE",
+    "Horizon-AGN",
+    "Illustris",
+    "IllustrisTNG",
+    "Magneticum Pathfinder",
+    "NIHAO zoom suite",
+    "NewHorizon",
+    "SIMBA"
+   ],
+   "records": 19,
+   "pairs": 132,
+   "counts": {
+    "matched": 3,
+    "differing": 34,
+    "unknown": 95,
+    "mismatch": 0
+   },
+   "median_abs_dy": {
+    "matched": 0.5367,
+    "differing": 1.0203,
+    "unknown": 0.5217,
+    "mismatch": null
+   },
+   "documented_fraction": 0.855,
+   "excess_differing_minus_matched": 0.4836,
+   "p_permutation": 0.0455,
+   "ci95_excess": [
+    -0.3088,
+    0.8663
+   ]
+  },
+  {
+   "relation": "bh",
+   "z": 4,
+   "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-TNG",
     "DARWIN",
     "EAGLE",
     "Horizon-AGN",
@@ -1038,52 +1158,21 @@
     "SIMBA"
    ],
    "records": 16,
-   "pairs": 90,
+   "pairs": 88,
    "counts": {
-    "matched": 0,
+    "matched": 1,
     "differing": 16,
-    "unknown": 74,
+    "unknown": 71,
     "mismatch": 0
    },
    "median_abs_dy": {
-    "matched": null,
-    "differing": 1.2523,
-    "unknown": 0.6205,
+    "matched": 0.5635,
+    "differing": 1.4716,
+    "unknown": 1.1243,
     "mismatch": null
    },
    "documented_fraction": 0.828,
-   "excess_differing_minus_matched": null
-  },
-  {
-   "relation": "bh",
-   "z": 4,
-   "suites": [
-    "DARWIN",
-    "EAGLE",
-    "Horizon-AGN",
-    "Illustris",
-    "IllustrisTNG",
-    "Magneticum Pathfinder",
-    "NIHAO zoom suite",
-    "NewHorizon",
-    "SIMBA"
-   ],
-   "records": 14,
-   "pairs": 67,
-   "counts": {
-    "matched": 0,
-    "differing": 10,
-    "unknown": 57,
-    "mismatch": 0
-   },
-   "median_abs_dy": {
-    "matched": null,
-    "differing": 1.3311,
-    "unknown": 1.3759,
-    "mismatch": null
-   },
-   "documented_fraction": 0.804,
-   "excess_differing_minus_matched": null
+   "excess_differing_minus_matched": 0.9082
   }
  ],
  "rankableOnly": [
@@ -1118,6 +1207,9 @@
    "relation": "mzr",
    "z": 0,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "COLIBRE",
     "EAGLE",
     "FIREbox",
@@ -1125,120 +1217,129 @@
     "IllustrisTNG",
     "SIMBA"
    ],
-   "records": 14,
-   "pairs": 74,
+   "records": 17,
+   "pairs": 113,
    "counts": {
-    "matched": 9,
-    "differing": 18,
+    "matched": 12,
+    "differing": 30,
     "unknown": 15,
-    "mismatch": 32
+    "mismatch": 56
    },
    "median_abs_dy": {
-    "matched": 0.327,
-    "differing": 0.2144,
+    "matched": 0.26,
+    "differing": 0.2573,
     "unknown": 0.3183,
-    "mismatch": 8.7878
+    "mismatch": 8.808
    },
-   "documented_fraction": 0.971,
-   "excess_differing_minus_matched": -0.1127,
-   "p_permutation": 0.5612,
+   "documented_fraction": 0.976,
+   "excess_differing_minus_matched": -0.0027,
+   "p_permutation": 0.4358,
    "ci95_excess": [
-    -0.2249,
-    0.3105
+    -0.2016,
+    0.2453
    ]
   },
   {
    "relation": "mzr",
    "z": 1,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "COLIBRE",
     "EAGLE",
     "Illustris",
     "IllustrisTNG",
     "SIMBA"
    ],
-   "records": 13,
-   "pairs": 63,
+   "records": 16,
+   "pairs": 102,
    "counts": {
-    "matched": 9,
-    "differing": 18,
+    "matched": 12,
+    "differing": 30,
     "unknown": 7,
-    "mismatch": 29
+    "mismatch": 53
    },
    "median_abs_dy": {
-    "matched": 0.206,
-    "differing": 0.1182,
+    "matched": 0.2168,
+    "differing": 0.1398,
     "unknown": 0.4641,
-    "mismatch": 8.7343
+    "mismatch": 8.7089
    },
-   "documented_fraction": 0.985,
-   "excess_differing_minus_matched": -0.0878,
-   "p_permutation": 0.5192,
+   "documented_fraction": 0.988,
+   "excess_differing_minus_matched": -0.077,
+   "p_permutation": 0.4993,
    "ci95_excess": [
-    -0.1084,
-    0.3725
+    -0.3191,
+    0.3499
    ]
   },
   {
    "relation": "mzr",
    "z": 2,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "EAGLE",
     "Illustris",
     "IllustrisTNG",
     "SIMBA"
    ],
-   "records": 9,
-   "pairs": 27,
+   "records": 12,
+   "pairs": 54,
    "counts": {
-    "matched": 3,
-    "differing": 7,
+    "matched": 6,
+    "differing": 19,
     "unknown": 3,
-    "mismatch": 14
+    "mismatch": 26
    },
    "median_abs_dy": {
-    "matched": 0.1433,
-    "differing": 0.192,
+    "matched": 0.1547,
+    "differing": 0.1659,
     "unknown": 0.4709,
-    "mismatch": 8.7516
+    "mismatch": 8.6887
    },
-   "documented_fraction": 0.978,
-   "excess_differing_minus_matched": 0.0488,
-   "p_permutation": 0.4268,
+   "documented_fraction": 0.983,
+   "excess_differing_minus_matched": 0.0113,
+   "p_permutation": 0.4133,
    "ci95_excess": [
-    -0.0446,
-    0.3987
+    -0.3322,
+    0.3837
    ]
   },
   {
    "relation": "mzr",
    "z": 4,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "EAGLE",
     "Illustris",
     "IllustrisTNG",
     "SIMBA"
    ],
-   "records": 5,
-   "pairs": 9,
+   "records": 8,
+   "pairs": 27,
    "counts": {
-    "matched": 3,
-    "differing": 3,
+    "matched": 6,
+    "differing": 15,
     "unknown": 0,
-    "mismatch": 3
+    "mismatch": 6
    },
    "median_abs_dy": {
-    "matched": 0.107,
-    "differing": 0.322,
+    "matched": 0.1514,
+    "differing": 0.2334,
     "unknown": null,
-    "mismatch": 8.3407
+    "mismatch": 8.3428
    },
-   "documented_fraction": 0.96,
-   "excess_differing_minus_matched": 0.2149,
-   "p_permutation": 0.2584,
+   "documented_fraction": 0.975,
+   "excess_differing_minus_matched": 0.082,
+   "p_permutation": 0.3098,
    "ci95_excess": [
-    0.0645,
-    0.3888
+    -0.2222,
+    0.2565
    ]
   },
   {
@@ -1266,7 +1367,7 @@
    },
    "documented_fraction": 0.96,
    "excess_differing_minus_matched": 0.0801,
-   "p_permutation": 0.2609,
+   "p_permutation": 0.2449,
    "ci95_excess": [
     -0.041,
     0.3239
@@ -1298,7 +1399,7 @@
    },
    "documented_fraction": 1.0,
    "excess_differing_minus_matched": -0.073,
-   "p_permutation": 0.8496,
+   "p_permutation": 0.8356,
    "ci95_excess": [
     -0.1454,
     0.071
@@ -1329,7 +1430,7 @@
    },
    "documented_fraction": 1.0,
    "excess_differing_minus_matched": 0.2245,
-   "p_permutation": 0.2539,
+   "p_permutation": 0.2734,
    "ci95_excess": [
     0.1997,
     0.2552
@@ -1360,7 +1461,7 @@
    },
    "documented_fraction": 1.0,
    "excess_differing_minus_matched": 0.1291,
-   "p_permutation": 0.2479,
+   "p_permutation": 0.2624,
    "ci95_excess": [
     0.035,
     0.149
@@ -1391,7 +1492,7 @@
    },
    "documented_fraction": 1.0,
    "excess_differing_minus_matched": 0.1262,
-   "p_permutation": 0.2479,
+   "p_permutation": 0.2649,
    "ci95_excess": [
     0.0169,
     0.1559
@@ -1425,7 +1526,7 @@
    },
    "documented_fraction": 1.0,
    "excess_differing_minus_matched": 0.2147,
-   "p_permutation": 0.0215,
+   "p_permutation": 0.021,
    "ci95_excess": [
     0.0564,
     0.326
@@ -1435,73 +1536,183 @@
    "relation": "shmr",
    "z": 0,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "DARWIN",
     "EAGLE",
     "NIHAO zoom suite"
    ],
-   "records": 6,
-   "pairs": 9,
+   "records": 9,
+   "pairs": 30,
    "counts": {
-    "matched": 0,
-    "differing": 2,
+    "matched": 3,
+    "differing": 11,
     "unknown": 0,
-    "mismatch": 7
+    "mismatch": 16
    },
    "median_abs_dy": {
-    "matched": null,
-    "differing": 0.2503,
+    "matched": 0.2307,
+    "differing": 0.2479,
     "unknown": null,
-    "mismatch": 0.263
+    "mismatch": 0.1964
    },
    "documented_fraction": 1.0,
-   "excess_differing_minus_matched": null
+   "excess_differing_minus_matched": 0.0172,
+   "p_permutation": 0.4153,
+   "ci95_excess": [
+    -0.2734,
+    0.2738
+   ]
+  },
+  {
+   "relation": "shmr",
+   "z": 1,
+   "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
+    "DARWIN",
+    "EAGLE"
+   ],
+   "records": 6,
+   "pairs": 14,
+   "counts": {
+    "matched": 3,
+    "differing": 3,
+    "unknown": 0,
+    "mismatch": 8
+   },
+   "median_abs_dy": {
+    "matched": 0.1892,
+    "differing": 0.1787,
+    "unknown": null,
+    "mismatch": 0.1161
+   },
+   "documented_fraction": 1.0,
+   "excess_differing_minus_matched": -0.0106,
+   "p_permutation": 0.4258,
+   "ci95_excess": [
+    -0.0823,
+    0.0738
+   ]
+  },
+  {
+   "relation": "shmr",
+   "z": 2,
+   "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
+    "DARWIN",
+    "EAGLE"
+   ],
+   "records": 7,
+   "pairs": 19,
+   "counts": {
+    "matched": 3,
+    "differing": 3,
+    "unknown": 0,
+    "mismatch": 13
+   },
+   "median_abs_dy": {
+    "matched": 0.0843,
+    "differing": 0.1574,
+    "unknown": null,
+    "mismatch": 0.1161
+   },
+   "documented_fraction": 1.0,
+   "excess_differing_minus_matched": 0.0731,
+   "p_permutation": 0.036,
+   "ci95_excess": [
+    -0.0214,
+    0.1168
+   ]
+  },
+  {
+   "relation": "shmr",
+   "z": 4,
+   "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
+    "DARWIN",
+    "EAGLE"
+   ],
+   "records": 6,
+   "pairs": 14,
+   "counts": {
+    "matched": 3,
+    "differing": 3,
+    "unknown": 0,
+    "mismatch": 8
+   },
+   "median_abs_dy": {
+    "matched": 0.0861,
+    "differing": 0.0363,
+    "unknown": null,
+    "mismatch": 0.1936
+   },
+   "documented_fraction": 1.0,
+   "excess_differing_minus_matched": -0.0498,
+   "p_permutation": 0.4908,
+   "ci95_excess": [
+    -0.0732,
+    -0.0081
+   ]
   },
   {
    "relation": "size",
    "z": 0,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "EAGLE",
     "Illustris",
     "IllustrisTNG"
    ],
-   "records": 4,
-   "pairs": 5,
+   "records": 7,
+   "pairs": 20,
    "counts": {
-    "matched": 3,
+    "matched": 6,
     "differing": 0,
     "unknown": 0,
-    "mismatch": 2
+    "mismatch": 14
    },
    "median_abs_dy": {
-    "matched": 0.2886,
+    "matched": 0.2327,
     "differing": null,
     "unknown": null,
-    "mismatch": 0.2019
+    "mismatch": 0.1491
    },
-   "documented_fraction": 0.938,
+   "documented_fraction": 0.964,
    "excess_differing_minus_matched": null
   },
   {
    "relation": "size",
    "z": 1,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "EAGLE",
     "Illustris",
     "IllustrisTNG"
    ],
-   "records": 3,
-   "pairs": 3,
+   "records": 6,
+   "pairs": 15,
    "counts": {
-    "matched": 3,
+    "matched": 6,
     "differing": 0,
     "unknown": 0,
-    "mismatch": 0
+    "mismatch": 9
    },
    "median_abs_dy": {
-    "matched": 0.3023,
+    "matched": 0.1991,
     "differing": null,
     "unknown": null,
-    "mismatch": null
+    "mismatch": 0.1532
    },
    "documented_fraction": 1.0,
    "excess_differing_minus_matched": null
@@ -1510,23 +1721,26 @@
    "relation": "size",
    "z": 2,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "EAGLE",
     "Illustris",
     "IllustrisTNG"
    ],
-   "records": 3,
-   "pairs": 3,
+   "records": 6,
+   "pairs": 15,
    "counts": {
-    "matched": 3,
+    "matched": 6,
     "differing": 0,
     "unknown": 0,
-    "mismatch": 0
+    "mismatch": 9
    },
    "median_abs_dy": {
-    "matched": 0.2443,
+    "matched": 0.2337,
     "differing": null,
     "unknown": null,
-    "mismatch": null
+    "mismatch": 0.1658
    },
    "documented_fraction": 1.0,
    "excess_differing_minus_matched": null
@@ -1535,23 +1749,26 @@
    "relation": "size",
    "z": 4,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "EAGLE",
     "Illustris",
     "IllustrisTNG"
    ],
-   "records": 3,
-   "pairs": 3,
+   "records": 6,
+   "pairs": 15,
    "counts": {
-    "matched": 3,
+    "matched": 6,
     "differing": 0,
     "unknown": 0,
-    "mismatch": 0
+    "mismatch": 9
    },
    "median_abs_dy": {
-    "matched": 0.1434,
+    "matched": 0.1894,
     "differing": null,
     "unknown": null,
-    "mismatch": null
+    "mismatch": 0.155
    },
    "documented_fraction": 1.0,
    "excess_differing_minus_matched": null
@@ -1586,101 +1803,133 @@
    "relation": "zstar",
    "z": 0,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "EAGLE",
     "Illustris",
     "IllustrisTNG"
    ],
-   "records": 3,
-   "pairs": 3,
+   "records": 6,
+   "pairs": 15,
    "counts": {
-    "matched": 3,
-    "differing": 0,
+    "matched": 6,
+    "differing": 9,
     "unknown": 0,
     "mismatch": 0
    },
    "median_abs_dy": {
-    "matched": 0.2302,
-    "differing": null,
+    "matched": 0.1943,
+    "differing": 0.2426,
     "unknown": null,
     "mismatch": null
    },
    "documented_fraction": 1.0,
-   "excess_differing_minus_matched": null
+   "excess_differing_minus_matched": 0.0483,
+   "p_permutation": 0.4008,
+   "ci95_excess": [
+    -0.1594,
+    0.2461
+   ]
   },
   {
    "relation": "zstar",
    "z": 1,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "EAGLE",
     "Illustris",
     "IllustrisTNG"
    ],
-   "records": 3,
-   "pairs": 3,
+   "records": 6,
+   "pairs": 15,
    "counts": {
-    "matched": 3,
-    "differing": 0,
+    "matched": 6,
+    "differing": 9,
     "unknown": 0,
     "mismatch": 0
    },
    "median_abs_dy": {
-    "matched": 0.2031,
-    "differing": null,
+    "matched": 0.2234,
+    "differing": 0.1507,
     "unknown": null,
     "mismatch": null
    },
    "documented_fraction": 1.0,
-   "excess_differing_minus_matched": null
+   "excess_differing_minus_matched": -0.0727,
+   "p_permutation": 0.8056,
+   "ci95_excess": [
+    -0.2841,
+    0.2506
+   ]
   },
   {
    "relation": "zstar",
    "z": 2,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "EAGLE",
     "Illustris",
     "IllustrisTNG"
    ],
-   "records": 3,
-   "pairs": 3,
+   "records": 6,
+   "pairs": 15,
    "counts": {
-    "matched": 3,
-    "differing": 0,
+    "matched": 6,
+    "differing": 9,
     "unknown": 0,
     "mismatch": 0
    },
    "median_abs_dy": {
-    "matched": 0.1948,
-    "differing": null,
+    "matched": 0.2127,
+    "differing": 0.1192,
     "unknown": null,
     "mismatch": null
    },
    "documented_fraction": 1.0,
-   "excess_differing_minus_matched": null
+   "excess_differing_minus_matched": -0.0935,
+   "p_permutation": 1.0,
+   "ci95_excess": [
+    -0.3225,
+    0.2785
+   ]
   },
   {
    "relation": "zstar",
    "z": 4,
    "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
     "EAGLE",
     "Illustris",
     "IllustrisTNG"
    ],
-   "records": 3,
-   "pairs": 3,
+   "records": 6,
+   "pairs": 15,
    "counts": {
-    "matched": 3,
-    "differing": 0,
+    "matched": 6,
+    "differing": 9,
     "unknown": 0,
     "mismatch": 0
    },
    "median_abs_dy": {
-    "matched": 0.1867,
-    "differing": null,
+    "matched": 0.1539,
+    "differing": 0.1588,
     "unknown": null,
     "mismatch": null
    },
    "documented_fraction": 1.0,
-   "excess_differing_minus_matched": null
+   "excess_differing_minus_matched": 0.0049,
+   "p_permutation": 0.6132,
+   "ci95_excess": [
+    -0.1535,
+    0.161
+   ]
   },
   {
    "relation": "zstar",
@@ -1707,11 +1956,129 @@
    },
    "documented_fraction": 1.0,
    "excess_differing_minus_matched": 0.1839,
-   "p_permutation": 0.2549,
+   "p_permutation": 0.2394,
    "ci95_excess": [
     -0.1369,
     0.4113
    ]
+  },
+  {
+   "relation": "bh",
+   "z": 0,
+   "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
+    "DARWIN"
+   ],
+   "records": 4,
+   "pairs": 6,
+   "counts": {
+    "matched": 3,
+    "differing": 3,
+    "unknown": 0,
+    "mismatch": 0
+   },
+   "median_abs_dy": {
+    "matched": 0.726,
+    "differing": 0.3184,
+    "unknown": null,
+    "mismatch": null
+   },
+   "documented_fraction": 1.0,
+   "excess_differing_minus_matched": -0.4076,
+   "p_permutation": 0.7481,
+   "ci95_excess": [
+    -0.8043,
+    0.506
+   ]
+  },
+  {
+   "relation": "bh",
+   "z": 1,
+   "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
+    "DARWIN"
+   ],
+   "records": 4,
+   "pairs": 6,
+   "counts": {
+    "matched": 3,
+    "differing": 3,
+    "unknown": 0,
+    "mismatch": 0
+   },
+   "median_abs_dy": {
+    "matched": 0.6679,
+    "differing": 0.2397,
+    "unknown": null,
+    "mismatch": null
+   },
+   "documented_fraction": 1.0,
+   "excess_differing_minus_matched": -0.4282,
+   "p_permutation": 1.0,
+   "ci95_excess": [
+    -0.7271,
+    -0.0372
+   ]
+  },
+  {
+   "relation": "bh",
+   "z": 2,
+   "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-SIMBA",
+    "CAMELS-TNG",
+    "DARWIN"
+   ],
+   "records": 5,
+   "pairs": 9,
+   "counts": {
+    "matched": 3,
+    "differing": 6,
+    "unknown": 0,
+    "mismatch": 0
+   },
+   "median_abs_dy": {
+    "matched": 0.5367,
+    "differing": 0.8197,
+    "unknown": null,
+    "mismatch": null
+   },
+   "documented_fraction": 1.0,
+   "excess_differing_minus_matched": 0.283,
+   "p_permutation": 0.1869,
+   "ci95_excess": [
+    -0.2441,
+    0.6521
+   ]
+  },
+  {
+   "relation": "bh",
+   "z": 4,
+   "suites": [
+    "CAMELS-Astrid",
+    "CAMELS-TNG",
+    "DARWIN"
+   ],
+   "records": 3,
+   "pairs": 3,
+   "counts": {
+    "matched": 1,
+    "differing": 2,
+    "unknown": 0,
+    "mismatch": 0
+   },
+   "median_abs_dy": {
+    "matched": 0.5635,
+    "differing": 1.8051,
+    "unknown": null,
+    "mismatch": null
+   },
+   "documented_fraction": 1.0,
+   "excess_differing_minus_matched": 1.2416
   }
  ],
  "sensitivity": {
@@ -3587,16 +3954,16 @@
   ]
  },
  "summary": {
-  "pairs": 2567,
+  "pairs": 3382,
   "byClass": {
-   "matched": 90,
-   "differing": 589,
-   "unknown": 341,
-   "mismatch": 1547
+   "matched": 148,
+   "differing": 879,
+   "unknown": 415,
+   "mismatch": 1940
   },
-  "testsRun": 18,
-  "testsBelow0.05": 1,
-  "expectedBelow0.05UnderNull": 0.9,
+  "testsRun": 24,
+  "testsBelow0.05": 5,
+  "expectedBelow0.05UnderNull": 1.2,
   "bonferroniSignificant": 0
  }
 }
