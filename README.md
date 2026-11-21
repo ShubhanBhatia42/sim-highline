@@ -2,18 +2,22 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23217259.svg)](https://doi.org/10.5281/zenodo.23217259)
 
+**Put a galaxy-formation simulation next to every published simulation and observation of the same relation, and see which comparisons are fair.** Two curves that look different can measure different things (a stellar-mass aperture, an initial mass function, a population cut); every curve here carries the definitions that decide it.
+
+**Start here:** [Read an answer](https://shubhanbhatia42.github.io/sim-highline/site/answers.html) · [Open the Explorer](https://shubhanbhatia42.github.io/sim-highline/highline.html#r=gsmf&z=6) · [Turn the physics dials](https://shubhanbhatia42.github.io/sim-highline/site/retune.html)
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="site/src/img/app-dark.png">
-  <img alt="The sim-highline Explorer showing the stellar mass function at z = 6 for nine simulations next to observations, with a relation list on the left and a legend with evidence-tier badges." src="site/src/img/app-light.png">
+  <img alt="The sim-highline Explorer showing the stellar mass function at z = 6 for 11 simulations next to four observational references, with a relation list on the left and a legend that gives each simulation's evidence-tier badge, its offset from the anchor observation and whether the comparison is fair." src="site/src/img/app-light.png">
 </picture>
 
-**A curated dataset of galaxy scaling relations from cosmological simulations, an instrument for retuning two feedback models against each other, and five pre-registered studies of how far simulated galaxy populations can and cannot be made to agree.**
+In more detail, it is a curated dataset of galaxy scaling relations from cosmological simulations, an instrument for retuning two feedback models against each other, and five pre-registered studies of how far simulated galaxy populations can and cannot be made to agree.
 
 > **Beta, not reviewed by anyone outside the project.** More than half of the simulation curves (52 %) were read from published figures by script; every record carries its source, definitions and evidence tier, but **no record has been checked by an outside expert yet**. Where an author or collaboration publishes its own table, use that. Some records come from third-party releases with their own terms (`terms` column; `docs/SOURCE-TERMS.md`).
 >
 > **Corrections and takedowns:** if you are an author or data owner and want a record corrected, attributed differently or removed, open an issue (the "Curve error" form) or use the contact in `CITATION.cff`. Requests are handled promptly and removal is not contested.
 
-**Live:** [Explorer](https://shubhanbhatia42.github.io/sim-highline/highline.html) · [Retune](https://shubhanbhatia42.github.io/sim-highline/site/retune.html) · [Studies](https://shubhanbhatia42.github.io/sim-highline/site/studies.html) · [Data](https://shubhanbhatia42.github.io/sim-highline/site/data.html) · [Methods](https://shubhanbhatia42.github.io/sim-highline/site/methods.html) · [dataset files](https://shubhanbhatia42.github.io/sim-highline/data/export/)
+**Live:** [Answers](https://shubhanbhatia42.github.io/sim-highline/site/answers.html) · [Explorer](https://shubhanbhatia42.github.io/sim-highline/highline.html) · [Retune](https://shubhanbhatia42.github.io/sim-highline/site/retune.html) · [Studies](https://shubhanbhatia42.github.io/sim-highline/site/studies.html) · [Data](https://shubhanbhatia42.github.io/sim-highline/site/data.html) · [Methods](https://shubhanbhatia42.github.io/sim-highline/site/methods.html) · [dataset files](https://shubhanbhatia42.github.io/sim-highline/data/export/)
 
 ## What it is
 
@@ -133,7 +137,7 @@ out = sim_highline.compare_run(x, y, "gsmf", z=0.1, sigma=err,
 
 One row per published curve at that epoch: definition verdict and reasons (the same rules as the website, exported in `sim-highline-rules.json` and checked against the JavaScript by a parity test), and the median, mean and rms offset of your curve in the relation's y units. Undeclared definitions can never be called comparable.
 
-From a catalogue instead of a curve: `sim-highline derive --format subfind|caesar|soap|eagle --catalog ...` writes records with the dataset's definitions (it refuses to guess units, h, the IMF, the particle mass, the box size or an aperture), and `sim-highline compare run.json` lists the nearest comparable observations and simulations; see `docs/DERIVE-CLI.md`.
+From a catalogue instead of a curve: `sim-highline derive --format subfind|caesar|soap|eagle --catalog ...` writes records with the dataset's definitions (it refuses to guess units, h, the IMF, the particle mass, the box size or an aperture), and `sim-highline compare run.json` lists the nearest comparable observations and simulations; see `docs/DERIVE-CLI.md`. It has been run on one real public catalogue (a CAMELS-TNG box), with an independent check of the numbers: `docs/DERIVE-REAL-CATALOGUE.md`.
 
 ## Install and cite
 

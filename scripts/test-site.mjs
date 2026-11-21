@@ -25,6 +25,7 @@ for (const page of [...PAGES, "findings"]) {
   assert(h.includes('<nav class="menu" aria-label="Main">') && h.includes('href="../highline.html">Explorer</a>') && h.includes('href="methods.html"'), `${page}: main navigation missing`);
   assert(h.includes(`class="chip" href="changes.html"`) && h.includes(`>v${release.version}</a>`), `${page}: version chip missing`);
   assert(!h.includes(`v${release.version} · doi`), `${page}: the version chip must not be paired with the DOI`);
+  assert(h.includes('<link rel="alternate" type="application/atom+xml"') && h.includes('<a href="../feed.xml">Subscribe (Atom feed)</a>'), `${page}: the feed must be discoverable in the head and linked in the footer`);
   assert(doiWording(release).current || (h.includes("Zenodo, all versions") && h.includes(`the newest version deposited there is v${release.archivedVersion}`)), `${page}: the DOI is the all-versions one; the cite line must say which version is deposited`);
   assert(!/concord/i.test(h.replace(/concordance/gi, "")), `${page}: no old project name`);
   assert(/<main id="main"/.test(h) && /class="skip"/.test(h), `${page}: landmark and skip link`);
@@ -215,6 +216,15 @@ assert(/Known metadata issues/.test(sources) && /not yet filled/.test(sources), 
 assert((sources.match(/<article class="sim"/g) || []).length === Object.keys(profiles).length, "sources: one entry per simulation");
 assert(!/class="card"/.test(sources), "sources: no cards");
 
+// following along: the feed exists, and the What is new page says how to subscribe and where the weekly paper list is
+await access(new URL("feed.xml", root)).catch(() => assert.fail("dist/feed.xml missing"));
+assert(html.changes.includes('id="follow"') && html.changes.includes('href="../feed.xml"') && html.changes.includes("label%3Aliterature-watch"), "changes: how to follow along (the feed and the weekly list of new papers)");
+// each answer page and the answers index have a share image of their own, the right size
+const ANSWER_SPEC = JSON.parse(await readFile(new URL("../data/answers.json", import.meta.url), "utf8")).answers;
+for (const [page, img] of [["answers", "og-answers.png"], ...ANSWER_SPEC.map(a => [a.page.replace(".html", ""), `og-answer-${a.id}.png`])]) {
+  assert(html[page].includes(`/site/${img}`), `${page}: share image ${img}`);
+  const b = await readFile(new URL(`site/${img}`, root)); assert(b.readUInt32BE(16) === 1200 && b.readUInt32BE(20) === 630, `${img}: 1200 x 630`);
+}
 // the DOI is Zenodo's all-versions record; the newest deposited version can never be newer than the current one
 const ver = v => v.split(".").map(Number), cmp = (a, b) => { for (let i = 0; i < 3; i++) if (a[i] !== b[i]) return a[i] - b[i]; return 0; };
 assert(release.archivedVersion && cmp(ver(release.archivedVersion), ver(release.version)) <= 0, "data/release.json: archivedVersion must be set and not newer than version");

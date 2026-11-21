@@ -10,9 +10,12 @@ import vm from "node:vm";
 import path from "node:path";
 import { readFile, readdir } from "node:fs/promises";
 import { launchBrowser } from "./browser-options.mjs";
+import { doiWording } from "./release-doi.mjs";
 
 const ROOT = new URL("../", import.meta.url), DIST = new URL("dist/", ROOT).pathname;
 const spec = JSON.parse(await readFile(new URL("data/answers.json", ROOT), "utf8"));
+const release = JSON.parse(await readFile(new URL("data/release.json", ROOT), "utf8")), SITE = "https://shubhanbhatia42.github.io/sim-highline";
+const embeds = [];   // the iframe addresses the pages offer, loaded in the browser below
 const load = async f => { const c = { globalThis: {} }; vm.runInNewContext(await readFile(new URL(f, ROOT), "utf8"), c); return c.globalThis; };
 const C = (await load("compare.js")).SimHighlineCompare, L = (await load("highline/logic.js")).SimHighlineLogic;
 let recs = []; for (const f of (await readdir(new URL("data/curves/", ROOT))).filter(f => f.endsWith(".json"))) recs.push(...JSON.parse(await readFile(new URL(`data/curves/${f}`, ROOT), "utf8")).records);
@@ -81,6 +84,20 @@ for (const a of spec.answers) {
   assert(a.question.includes("z = ") ? a.question.includes(`z = ${lo} to ${hi}`) : true, `${a.id}: the question names the epochs`);
   assert((html.match(/<h1>/g) || []).length === 1 && html.includes(`<h1>${a.question.replace(/&/g, "&amp;")}</h1>`), `${a.page}: one h1, the question`);
   assert(/No outside expert has reviewed this page/.test(main), `${a.page}: says no outside expert has reviewed it`);
+  // the citation: the dataset's own wording (with the DOI caveat) and this page's address
+  const cite = /<blockquote class="cite"><p>([\s\S]*?)<\/p><\/blockquote>/.exec(main);
+  assert(cite, `${a.page}: a citation block`);
+  const want = doiWording(release).cite("Bhatia, S.", release.released.slice(0, 4), release.title), got = text(cite[1]);
+  assert(got.includes(want), `${a.page}: the citation carries the dataset's citation wording:\n  ${want}\nnot found in\n  ${got}`);
+  assert(got.includes(`${SITE}/site/${a.page}`) && got.includes(a.question), `${a.page}: the citation names this page and its question`);
+  // the embed snippet: an iframe on the Explorer at this relation and the middle epoch, with a title and lazy loading
+  const code = /<pre><code>([\s\S]*?)<\/code><\/pre>/.exec(main); assert(code, `${a.page}: an embed snippet`);
+  const m = /^<iframe src="([^"]+)" width="(\d+)" height="(\d+)" title="([^"]+)" loading="lazy"><\/iframe>$/.exec(decode(code[1]).trim());
+  assert(m, `${a.page}: the snippet is one iframe with a title: ${decode(code[1]).slice(0, 120)}`);
+  const mid = a.epochs[a.epochs.length > 1 ? 1 : 0];
+  assert.equal(m[1], `${SITE}/highline.html#embed=1&r=${a.relation}&z=${mid}`, `${a.page}: the iframe address`);
+  assert(+m[2] >= 600 && +m[3] >= 400, `${a.page}: the iframe is a usable size`);
+  embeds.push({ page: a.page, url: m[1].replace(SITE, "") });
   assert(/It does not rank simulations/.test(main) && /not a verdict/i.test(main), `${a.page}: says it is not a ranking and that offsets of curves that cannot be compared are not verdicts`);
   for (const t of a.limits) assert(main.includes(t.replace(/&/g, "&amp;")), `${a.page}: the limit "${t.slice(0, 50)}…" is on the page`);
   assert((main.match(/class="btn main"/g) || []).length === 1 && new RegExp(`class="btn main" href="\\.\\./highline\\.html#r=${a.relation}&amp;z=\\d+"`).test(main), `${a.page}: one primary button into the Explorer on this relation`);
@@ -122,5 +139,15 @@ try {
     }
   }
   assert(compared >= 15, `at least 15 page rows were matched with Tension cells, got ${compared}`);
+  // the snippets on the pages open the Explorer on the right relation, draw curves and hide the chrome
+  for (const e of embeds) {
+    const p = await ctx.newPage(), errors = []; p.on("pageerror", x => errors.push(String(x)));
+    await p.goto(BASE + e.url, { waitUntil: "load" });
+    await p.waitForFunction(() => !document.getElementById("boot") && document.querySelectorAll("#stage path.curve").length >= 3, null, { timeout: 30000 });
+    const r = await p.evaluate(() => ({ rail: getComputedStyle(document.getElementById("presets")).display, title: document.getElementById("shTitle").textContent }));
+    assert.equal(r.rail, "none", `${e.page}: embed mode hides the relation list`);
+    assert.deepEqual(errors, [], `${e.page}: no page errors in the embed`);
+    await p.close();
+  }
 } finally { await browser.close(); server.close(); }
 console.log(`answer pages and the Explorer: ${compared} offsets and verdicts are the same in the Explorer's Tension view`);

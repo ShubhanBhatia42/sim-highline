@@ -11,12 +11,16 @@ const TYPES = { ".html": "text/html", ".js": "text/javascript", ".json": "applic
 const server = http.createServer(async (req, res) => { const p = decodeURIComponent(new URL(req.url, "http://x").pathname); try { const f = path.join(DIST, p), b = await readFile(f); res.writeHead(200, { "content-type": TYPES[path.extname(f)] || "application/octet-stream" }); res.end(b); } catch { res.writeHead(404); res.end(); } });
 await new Promise(r => server.listen(0, "127.0.0.1", r));
 const BASE = `http://127.0.0.1:${server.address().port}`;
+const ANSWERS = JSON.parse(await readFile(new URL("../data/answers.json", import.meta.url), "utf8")).answers;
 const browser = await chromium.launch(launchOptions());
 const CARDS = [
   { name: "default", url: "site/index.html", sel: "figure svg", title: "sim-highline", sub: "Every published simulation and observation of a galaxy relation on one plot, with the definitions that decide whether the comparison is fair." },
   { name: "explorer", url: "highline.html#r=gsmf&z=0.1", sel: "#stage", wait: 1200, title: "Explorer", sub: "Look up a relation at any epoch: simulations against observations, each labelled with where it came from." },
   { name: "retune", url: "site/retune.html", sel: ".rt-panel svg", wait: 1500, title: "Turn the physics dials", sub: "Two simulated universes, four feedback dials each. Can one be made to look like the other?" },
   { name: "study-joint", url: "site/study-joint.html", sel: "figure svg", title: "Can retuning make two codes agree?", sub: "After the best possible retuning, IllustrisTNG and SIMBA stay far apart on some properties. The rules were written first." },
+  // the answer pages: the middle epoch's figure beside the question; no number on a card, so a card does not go stale when the data change (run this script again when a figure changes)
+  ...ANSWERS.map(a => ({ name: `answer-${a.id}`, url: `site/${a.page}`, sel: "#e1 .chart-wide svg", title: a.cardTitle, sub: `${a.short}: which simulations can be fairly compared with the observation, why the others cannot, and how far each lies from it.` })),
+  { name: "answers", url: `site/${ANSWERS[0].page}`, sel: "#e1 .chart-wide svg", title: "Answers", sub: "Three questions people ask of galaxy simulations, answered from the data with the comparison rules of the Explorer." },
 ];
 const shot = async (url, sel, wait) => {
   const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 }, deviceScaleFactor: 2, colorScheme: "light" }); const page = await ctx.newPage();

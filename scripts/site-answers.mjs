@@ -9,7 +9,7 @@ const sgn = v => `${v >= 0 ? "+" : "−"}${Math.abs(v).toFixed(2)}`;
 const median = a => { const s = [...a].sort((x, y) => x - y), n = s.length; return n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2; };
 const ZFMT = z => String(z);
 
-export function answerPages({ recs, spec, compareSrc, logicSrc, colorFor, ticks, esc, release, repo }) {
+export function answerPages({ recs, spec, compareSrc, logicSrc, colorFor, ticks, esc, release, repo, doi, siteUrl, year }) {
   const load = src => { const c = { globalThis: {} }; vm.runInNewContext(src, c); return c.globalThis; };
   const C = load(compareSrc).SimHighlineCompare, L = load(logicSrc).SimHighlineLogic;
   // the Explorer files each record under a relation of its own (the mass-metallicity records split by what the metallicity is), and every rule runs on that key; the same mapping here (highline/index.html: relKey)
@@ -184,6 +184,12 @@ ${sections}
 ${a.limits.map(t => `<li>${esc(t)}</li>`).join("\n")}
 <li>No outside expert has reviewed this page or the records behind it; the counts and offsets are computed from the records, and the records are checked by scripts and by the maintainer. <a href="quality.html">How much to trust the data</a>.</li>
 </ul>
+<h3>Cite or embed this page</h3>
+<p>The counts, offsets and figures on this page are computed from the sim-highline dataset, version v${release.version}. Cite the dataset and name the page:</p>
+<blockquote class="cite"><p>${esc(doi.cite("Bhatia, S.", year, release.title))} Page: “${esc(a.question)}” ${siteUrl}/site/${a.page}</p></blockquote>
+<p>To show the Explorer on this relation and epoch in a page of your own, paste this into it (change <code>z</code> in the address to change the epoch):</p>
+<pre><code>${esc(`<iframe src="${siteUrl}/highline.html#embed=1&r=${a.relation}&z=${Es[Es.length > 1 ? 1 : 0].z}" width="900" height="560" title="${a.short}, from sim-highline" loading="lazy"></iframe>`)}</code></pre>
+<p>Each plot in the Explorer can also be exported as SVG or PNG with its citation footer.</p>
 <p class="dim" style="font-size:15px">Numbers are computed by <code>scripts/site-answers.mjs</code> from <code>data/curves/</code> and <code>data/answers.json</code>, with the rules the Explorer uses. Dataset v${release.version}.</p>
 </section>
 </div>

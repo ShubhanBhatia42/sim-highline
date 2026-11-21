@@ -8,6 +8,7 @@
       "relation": "gsmf",
       "question": "How many galaxies are there of each mass, and do simulations agree with the counts?",
       "short": "Stellar mass function, z = 0 to 6",
+      "cardTitle": "How many galaxies of each mass?",
       "noun": "stellar mass function",
       "epochs": [
         0,
@@ -34,6 +35,7 @@
       "relation": "mzr",
       "question": "How metal-rich are galaxies of a given mass, and how does that change back in time?",
       "short": "Gas-phase mass–metallicity relation, z = 0 to 5",
+      "cardTitle": "How metal-rich are galaxies?",
       "noun": "mass–metallicity relation",
       "epochs": [
         0,
@@ -60,6 +62,7 @@
       "relation": "uvlf",
       "question": "How many galaxies of a given ultraviolet brightness do simulations predict at z = 8 to 12?",
       "short": "UV luminosity function, z = 8 to 12",
+      "cardTitle": "How bright are early galaxies in the UV?",
       "noun": "UV luminosity function",
       "epochs": [
         8,
