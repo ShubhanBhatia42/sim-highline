@@ -26,7 +26,7 @@ const browser = await chromium.launch(launchOptions());
 const BUDGET = [
   { name: "Explorer", url: "/highline.html#r=gsmf&z=0.1", ready: () => !document.getElementById("boot") && document.querySelectorAll("#stage path").length > 5, maxKB: 260, maxMs: 5000,
     then: { name: "the mass-size relation", select: "size", ready: () => /Mass.size/.test(document.getElementById("shTitle").textContent) && document.querySelectorAll("#stage path").length > 5, maxKB: 80, maxMs: 3000 } },
-  { name: "Explorer, disagreement view (reads every relation)", url: "/highline.html#r=gsmf&z=0.1&m=spread", ready: () => !document.getElementById("boot") && document.querySelectorAll("#spread table.sp td[data-r]").length > 10, maxKB: 880, maxMs: 12000 },
+  { name: "Explorer, disagreement view (reads every relation)", url: "/highline.html#r=gsmf&z=0.1&m=spread", ready: () => !document.getElementById("boot") && document.querySelectorAll("#spread table.sp td[data-r]").length > 10, maxKB: 920, maxMs: 12000 },   // reads every relation's file; 880 until 89 CAMELS curves were added (881 kB measured), raised on purpose to 920, which leaves room for about 40 kB more data before the next decision
   { name: "Front page", url: "/site/index.html", ready: () => document.querySelector("h1") && document.fonts.status !== "loading", maxKB: 60, maxMs: 3500 },
   { name: "Dials page", url: "/site/retune.html", ready: () => document.querySelectorAll(".rt-panel").length >= 10, maxKB: 150, maxMs: 6000 },
   { name: "A study page", url: "/site/study-joint.html", ready: () => document.querySelector("h1"), maxKB: 60, maxMs: 3500 },
