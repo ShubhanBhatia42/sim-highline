@@ -141,7 +141,7 @@ export function answerPages({ recs, spec, compareSrc, logicSrc, colorFor, ticks,
 <h2 id="${h}-h"><span class="sn" aria-hidden="true">§${i + 1}</span>z ≈ ${E.z}</h2>
 <p>${S[i].text}</p>
 ${G[i] ? `<p>${agreeText(a, G[i])}</p>\n` : ""}<figure class="fig dual"><div class="chart chart-wide">${f.svg}</div><div class="chart chart-narrow">${g.svg}</div><div class="key">${f.key}</div>
-<figcaption><span class="fl">Fig. ${i + 1}</span><span>${esc(a.short.split(",")[0])} at z ≈ ${E.z}: solid lines are simulations that can be compared with the anchor, dotted grey lines are the ones that cannot, the thick line is the anchor, and the faint dashed lines are other observations. <a href="../highline.html#r=${a.relation}&amp;z=${E.z}">Open this epoch in the Explorer</a>.</span></figcaption></figure>
+<figcaption><span class="fl">Fig. ${i + 1}</span><span>${esc(a.short.split(",")[0])} at z ≈ ${E.z}: solid lines are simulations that can be compared with the anchor, dotted grey lines are the ones that cannot, the thick line is the anchor, and the faint dashed lines are other observations. <a href="../highline.html#r=${a.relation}&amp;z=${E.z}">Open z ≈ ${E.z} in the Explorer</a>.</span></figcaption></figure>
 ${CV[i].short.length ? `<p class="dim" style="font-size:15px"><b>Which of these curves may be read against each other.</b> ${CV[i].short.map(esc).join(" ")}</p>\n` : ""}${table(a, E, `t${i}`)}
 <p class="dim" style="font-size:15px">The observations at this epoch are ${[...new Map(pickObs(a.relation, E.z).filter(r => !isScatter(r)).map(r => [r.source, r])).values()].map(link).join(", ")}.</p>
 </section>`;

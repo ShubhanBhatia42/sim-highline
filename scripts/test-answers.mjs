@@ -84,7 +84,7 @@ for (const a of spec.answers) {
   assert(/It does not rank simulations/.test(main) && /not a verdict/i.test(main), `${a.page}: says it is not a ranking and that offsets of curves that cannot be compared are not verdicts`);
   for (const t of a.limits) assert(main.includes(t.replace(/&/g, "&amp;")), `${a.page}: the limit "${t.slice(0, 50)}…" is on the page`);
   assert((main.match(/class="btn main"/g) || []).length === 1 && new RegExp(`class="btn main" href="\\.\\./highline\\.html#r=${a.relation}&amp;z=\\d+"`).test(main), `${a.page}: one primary button into the Explorer on this relation`);
-  assert(a.epochs.every((z, i) => main.includes(`href="../highline.html#r=${a.relation}&amp;z=${z}">Open this epoch in the Explorer`)), `${a.page}: each epoch links to the Explorer`);
+  assert(a.epochs.every((z, i) => main.includes(`href="../highline.html#r=${a.relation}&amp;z=${z}">Open z ≈ ${z} in the Explorer</a>`)), `${a.page}: each epoch links to the Explorer`);
   const plain = text(main);
   assert(!/\b(novel|first[- ]ever|unprecedented|ground-?breaking|new method|new approach|state[- ]of[- ]the[- ]art)\b/i.test(plain), `${a.page}: novelty wording`);
   assert(!/\bAI\b|language model|\bGPT\b|chatbot/i.test(plain), `${a.page}: no mention of AI`);
