@@ -1,0 +1,183 @@
+{
+ "catalogue": {
+  "url": "https://users.flatironinstitute.org/~camels/Sims/IllustrisTNG/CV/CV_0/groups_090.hdf5",
+  "bytes": 16278844,
+  "sha256": "2c8b25df9c8f7b8c8dd44a5e8b9695250e45fcc7773ae85099ad63de0fc2d3d4",
+  "arraysSha256": "351ec25876380841457ed1e2a279b8ba5d9bcd841391ef46445e92f366c0674c",
+  "arraysMatchStored": true,
+  "perBoxSummaryMatchesStored": true
+ },
+ "derive": {
+  "stated": {
+   "source": "CAMELS-TNG",
+   "run": "CV_0",
+   "imf": "chabrier03",
+   "baryon_particle_mass": 18900000.0
+  },
+  "format": "subfind",
+  "records": [
+   "derived.camels-tng.cv-0.gsmf.all.z0",
+   "derived.camels-tng.cv-0.sfms.sf.z0",
+   "derived.camels-tng.cv-0.ssfr.all.z0",
+   "derived.camels-tng.cv-0.quenched.ssfr1e-11.z0",
+   "derived.camels-tng.cv-0.size.all.z0",
+   "derived.camels-tng.cv-0.shmr.centrals.z0",
+   "derived.camels-tng.cv-0.bh.centrals.z0",
+   "derived.camels-tng.cv-0.zstar.all.z0",
+   "derived.camels-tng.cv-0.mzr.sf.z0"
+  ],
+  "report": [
+   "z = 0 (snapshot 90), camels-tng-cv0: 304 galaxies above the cut; relations written: gsmf, sfms, ssfr, quenched, size, shmr, bh, zstar, mzr"
+  ],
+  "notes": "Derived with the same cuts and definitions as the dataset's own catalogue-derived records. Where each value came from: imf = chabrier03 (stated by you with --imf); baryon particle mass = 1.89e+07 Msun (stated by you); h = 0.6711 (read from the catalogue camels-tng-cv0 (snapshot 90)); omega_m = 0.3 (read from the catalogue camels-tng-cv0 (snapshot 90)); box (comoving Mpc) = 37.2523 (read from the catalogue camels-tng-cv0 (snapshot 90) (BoxSize in ckpc/h divided by h)); units: lengths ckpc/h, masses 1e10 Msun/h (checked against the unit attributes in the file); mass: stellar mass within twice the stellar half-mass radius (SubhaloMassInRadType), SFR from SubhaloSFRinRad (the field's own definitions); SubhaloFlag: absent from the catalogue, so no subhalo is excluded as spurious; calibration: not stated, so every record is marked unknown."
+ },
+ "independentRecomputation": {
+  "galaxiesAboveCut": 304,
+  "quenched": {
+   "points": 8,
+   "agree": true
+  },
+  "size": {
+   "points": 8,
+   "agree": true
+  },
+  "shmr": {
+   "points": 6,
+   "agree": true
+  },
+  "bh": {
+   "points": 7,
+   "agree": true
+  },
+  "zstar": {
+   "points": 8,
+   "agree": true
+  }
+ },
+ "comparison": [
+  {
+   "relation": "quenched",
+   "label": "quenched fraction",
+   "verdict": "comparable-with-caveats",
+   "storedId": "camels-cv.tng.quenched.z0",
+   "differences": [
+    "massDefinition: aperture-2rhalf-stars vs total-bound-subhalo"
+   ],
+   "differenceText": [
+    "massDefinition: aperture-2rhalf-stars vs total-bound-subhalo"
+   ],
+   "nShared": 8,
+   "derivedMinusMean": 0.023,
+   "definitionPart": 0.041,
+   "boxPart": -0.007,
+   "boxScatter": 0.075,
+   "unit": "fraction"
+  },
+  {
+   "relation": "size",
+   "label": "stellar size",
+   "verdict": "comparable-with-caveats",
+   "storedId": "camels-cv.tng.size.z0",
+   "differences": [
+    "massDefinition: aperture-2rhalf-stars vs total-bound-subhalo"
+   ],
+   "differenceText": [
+    "massDefinition: aperture-2rhalf-stars vs total-bound-subhalo"
+   ],
+   "nShared": 8,
+   "derivedMinusMean": 0.02,
+   "definitionPart": 0.018,
+   "boxPart": -0.009,
+   "boxScatter": 0.022,
+   "unit": "log10(kpc)"
+  },
+  {
+   "relation": "shmr",
+   "label": "stellar-to-halo mass ratio",
+   "verdict": "comparable-with-caveats",
+   "storedId": "camels-cv.tng.shmr.z0",
+   "differences": [
+    "massDefinition: aperture-2rhalf-stars vs total-bound-subhalo"
+   ],
+   "differenceText": [
+    "massDefinition: aperture-2rhalf-stars vs total-bound-subhalo"
+   ],
+   "nShared": 6,
+   "derivedMinusMean": -0.113,
+   "definitionPart": -0.091,
+   "boxPart": -0.011,
+   "boxScatter": 0.038,
+   "unit": "dex"
+  },
+  {
+   "relation": "bh",
+   "label": "black-hole mass",
+   "verdict": "comparable-with-caveats",
+   "storedId": "camels-cv.tng.bh.z0",
+   "differences": [
+    "bhMassMethod: intrinsic vs intrinsic-sum-of-bh-particles",
+    "massDefinition: aperture-2rhalf-stars vs total-bound-subhalo",
+    "population: centrals vs bh-hosts"
+   ],
+   "differenceText": [
+    "bhMassMethod: intrinsic vs intrinsic-sum-of-bh-particles",
+    "massDefinition: aperture-2rhalf-stars vs total-bound-subhalo",
+    "population: centrals vs bh-hosts"
+   ],
+   "nShared": 7,
+   "derivedMinusMean": 0.149,
+   "definitionPart": 0.093,
+   "boxPart": -0.009,
+   "boxScatter": 0.09,
+   "unit": "log10(Msun)"
+  },
+  {
+   "relation": "zstar",
+   "label": "stellar metallicity",
+   "verdict": "comparable-with-caveats",
+   "storedId": "camels-cv.tng.zstar.z0",
+   "differences": [
+    "massDefinition: aperture-2rhalf-stars vs total-bound-subhalo"
+   ],
+   "differenceText": [
+    "massDefinition: aperture-2rhalf-stars vs total-bound-subhalo"
+   ],
+   "nShared": 8,
+   "derivedMinusMean": 0.03,
+   "definitionPart": 0.022,
+   "boxPart": 0.0,
+   "boxScatter": 0.012,
+   "unit": "dex"
+  },
+  {
+   "relation": "mzr",
+   "label": "gas metallicity",
+   "verdict": "not-comparable",
+   "storedId": "camels-cv.tng.mzr.z0",
+   "differences": [
+    "metallicityQuantity: gas-O/H vs gas-metal-mass-fraction",
+    "metallicityCalibration: intrinsic-simulation",
+    "population: star-forming vs all galaxies with non-zero SFR",
+    "massDefinition: aperture-2rhalf-stars vs total-bound-subhalo"
+   ],
+   "differenceText": [
+    "metallicityQuantity: gas-O/H vs gas-metal-mass-fraction",
+    "metallicityCalibration: intrinsic-simulation (SFR-weighted) vs intrinsic-simulation (star-forming gas, SFR-weighted; Zsun = 0.0127)",
+    "population: star-forming vs all galaxies with non-zero SFR",
+    "massDefinition: aperture-2rhalf-stars vs total-bound-subhalo"
+   ],
+   "nShared": null,
+   "derivedMinusMean": null,
+   "definitionPart": null,
+   "boxPart": null,
+   "boxScatter": null
+  }
+ ],
+ "massDefinitionTest": {
+  "relation": "shmr",
+  "points": 6,
+  "apertureMinusTotal": -0.112,
+  "totalMinusMean": 0.006,
+  "apertureMinusMean": -0.113
+ }
+}

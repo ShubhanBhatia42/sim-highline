@@ -1,0 +1,1038 @@
+{
+ "schemaVersion": "1.0.0",
+ "records": [
+  {
+   "id": "derived.camels-tng.cv-0.gsmf.all.z0",
+   "source": "CAMELS-TNG",
+   "run": "CV_0",
+   "kind": "simulation",
+   "relation": "gsmf",
+   "epoch": {
+    "zRepresentative": 0.0,
+    "zNominal": 0.0,
+    "zMin": 0.0,
+    "zMax": 0.0,
+    "mode": "snapshot",
+    "snapshot": 90
+   },
+   "axes": {
+    "xDefinition": "log10 stellar mass",
+    "xUnit": "log10(Msun)",
+    "yDefinition": "log10 galaxy number density per dex (Poisson errors)",
+    "yUnit": "log10(cMpc^-3 dex^-1)"
+   },
+   "domain": {
+    "xMin": 9.3,
+    "xMax": 11.7
+   },
+   "representation": {
+    "type": "points",
+    "intervalKind": "uncertainty",
+    "connect": true,
+    "points": [
+     {
+      "x": 9.3,
+      "y": -2.5093,
+      "yLow": -2.5938,
+      "yHigh": -2.4386,
+      "count": 32
+     },
+     {
+      "x": 9.5,
+      "y": -2.2741,
+      "yLow": -2.337,
+      "yHigh": -2.2192,
+      "count": 55
+     },
+     {
+      "x": 9.7,
+      "y": -2.3155,
+      "yLow": -2.3817,
+      "yHigh": -2.2581,
+      "count": 50
+     },
+     {
+      "x": 9.9,
+      "y": -2.3517,
+      "yLow": -2.421,
+      "yHigh": -2.292,
+      "count": 46
+     },
+     {
+      "x": 10.1,
+      "y": -2.4704,
+      "yLow": -2.5508,
+      "yHigh": -2.4026,
+      "count": 35
+     },
+     {
+      "x": 10.3,
+      "y": -2.4582,
+      "yLow": -2.5374,
+      "yHigh": -2.3912,
+      "count": 36
+     },
+     {
+      "x": 10.5,
+      "y": -2.6923,
+      "yLow": -2.7992,
+      "yHigh": -2.6065,
+      "count": 21
+     },
+     {
+      "x": 10.7,
+      "y": -2.9731,
+      "yLow": -3.1289,
+      "yHigh": -2.8586,
+      "count": 11
+     },
+     {
+      "x": 10.9,
+      "y": -3.0602,
+      "yLow": -3.2363,
+      "yHigh": -2.9353,
+      "count": 9
+     },
+     {
+      "x": 11.1,
+      "y": -3.5374,
+      "yLow": -3.9114,
+      "yHigh": -3.3394,
+      "count": 3
+     },
+     {
+      "x": 11.3,
+      "y": -3.4124,
+      "yLow": -3.7135,
+      "yHigh": -3.2363,
+      "count": 4
+     },
+     {
+      "x": 11.5,
+      "y": -4.0145,
+      "yLow": -4.3155,
+      "yHigh": -3.7135,
+      "count": 1
+     },
+     {
+      "x": 11.7,
+      "y": -4.0145,
+      "yLow": -4.3155,
+      "yHigh": -3.7135,
+      "count": 1
+     }
+    ]
+   },
+   "scatter": null,
+   "selection": {
+    "population": "all",
+    "warning": "Derived by sim-highline derive (format subfind) from a catalogue supplied by the user. Galaxies: stellar mass of at least 100 baryon particle masses (1.9e+09 Msun, as stated); No SubhaloFlag in the catalogue, so spurious subhaloes are not excluded; stellar mass and SFR within twice the stellar half-mass radius. Bins of 0.2 dex with at least 10 galaxies for medians. Poisson errors only; cosmic variance of the box not included."
+   },
+   "definitions": {
+    "massDefinition": "aperture-2rhalf-stars",
+    "imf": "chabrier03",
+    "cosmology": {
+     "H0": 67.11,
+     "Om": 0.3
+    },
+    "densityFrame": "comoving",
+    "population": "all"
+   },
+   "provenance": {
+    "tier": "catalog-derived",
+    "citation": "CAMELS-TNG CV_0: catalogue camels-tng-cv0 supplied by the user (format subfind), not a public release; relations derived by sim-highline derive",
+    "doi": null,
+    "url": "https://github.com/ShubhanBhatia42/sim-highline/blob/main/docs/DERIVE-CLI.md",
+    "retrieved": "date of the run",
+    "sourceMember": "camels-tng-cv0/ (1 files of snapshot 90)",
+    "checksumSha256": "2c8b25df9c8f7b8c8dd44a5e8b9695250e45fcc7773ae85099ad63de0fc2d3d4"
+   },
+   "calibration": "unknown",
+   "rankable": true,
+   "notes": "Derived with the same cuts and definitions as the dataset's own catalogue-derived records. Where each value came from: imf = chabrier03 (stated by you with --imf); baryon particle mass = 1.89e+07 Msun (stated by you); h = 0.6711 (read from the catalogue camels-tng-cv0 (snapshot 90)); omega_m = 0.3 (read from the catalogue camels-tng-cv0 (snapshot 90)); box (comoving Mpc) = 37.2523 (read from the catalogue camels-tng-cv0 (snapshot 90) (BoxSize in ckpc/h divided by h)); units: lengths ckpc/h, masses 1e10 Msun/h (checked against the unit attributes in the file); mass: stellar mass within twice the stellar half-mass radius (SubhaloMassInRadType), SFR from SubhaloSFRinRad (the field's own definitions); SubhaloFlag: absent from the catalogue, so no subhalo is excluded as spurious; calibration: not stated, so every record is marked unknown."
+  },
+  {
+   "id": "derived.camels-tng.cv-0.sfms.sf.z0",
+   "source": "CAMELS-TNG",
+   "run": "CV_0",
+   "kind": "simulation",
+   "relation": "sfms",
+   "epoch": {
+    "zRepresentative": 0.0,
+    "zNominal": 0.0,
+    "zMin": 0.0,
+    "zMax": 0.0,
+    "mode": "snapshot",
+    "snapshot": 90
+   },
+   "axes": {
+    "xDefinition": "log10 stellar mass",
+    "xUnit": "log10(Msun)",
+    "yDefinition": "log10 instantaneous SFR, median of star-forming galaxies",
+    "yUnit": "log10(Msun/yr)"
+   },
+   "domain": {
+    "xMin": 9.3,
+    "xMax": 10.1
+   },
+   "representation": {
+    "type": "points",
+    "intervalKind": "scatter",
+    "connect": true,
+    "points": [
+     {
+      "x": 9.3,
+      "y": -0.618,
+      "yLow": -0.8725,
+      "yHigh": -0.4085,
+      "count": 25
+     },
+     {
+      "x": 9.5,
+      "y": -0.4941,
+      "yLow": -0.6886,
+      "yHigh": -0.2056,
+      "count": 43
+     },
+     {
+      "x": 9.7,
+      "y": -0.2744,
+      "yLow": -0.6727,
+      "yHigh": 0.0689,
+      "count": 39
+     },
+     {
+      "x": 9.9,
+      "y": -0.1989,
+      "yLow": -0.5026,
+      "yHigh": 0.1309,
+      "count": 39
+     },
+     {
+      "x": 10.1,
+      "y": -0.0968,
+      "yLow": -0.3911,
+      "yHigh": 0.1129,
+      "count": 23
+     }
+    ]
+   },
+   "scatter": {
+    "lower": "16th percentile",
+    "upper": "84th percentile"
+   },
+   "selection": {
+    "population": "star-forming",
+    "warning": "Derived by sim-highline derive (format subfind) from a catalogue supplied by the user. Galaxies: stellar mass of at least 100 baryon particle masses (1.9e+09 Msun, as stated); No SubhaloFlag in the catalogue, so spurious subhaloes are not excluded; stellar mass and SFR within twice the stellar half-mass radius. Bins of 0.2 dex with at least 10 galaxies for medians. Star-forming: sSFR > 0.2/t_age(z) = 1.42e-11 /yr."
+   },
+   "definitions": {
+    "massDefinition": "aperture-2rhalf-stars",
+    "imf": "chabrier03",
+    "cosmology": {
+     "H0": 67.11,
+     "Om": 0.3
+    },
+    "sfrTimescaleMyr": "instantaneous",
+    "sfrStatistic": "median",
+    "population": "star-forming"
+   },
+   "provenance": {
+    "tier": "catalog-derived",
+    "citation": "CAMELS-TNG CV_0: catalogue camels-tng-cv0 supplied by the user (format subfind), not a public release; relations derived by sim-highline derive",
+    "doi": null,
+    "url": "https://github.com/ShubhanBhatia42/sim-highline/blob/main/docs/DERIVE-CLI.md",
+    "retrieved": "date of the run",
+    "sourceMember": "camels-tng-cv0/ (1 files of snapshot 90)",
+    "checksumSha256": "2c8b25df9c8f7b8c8dd44a5e8b9695250e45fcc7773ae85099ad63de0fc2d3d4"
+   },
+   "calibration": "unknown",
+   "rankable": true,
+   "notes": "Derived with the same cuts and definitions as the dataset's own catalogue-derived records. Where each value came from: imf = chabrier03 (stated by you with --imf); baryon particle mass = 1.89e+07 Msun (stated by you); h = 0.6711 (read from the catalogue camels-tng-cv0 (snapshot 90)); omega_m = 0.3 (read from the catalogue camels-tng-cv0 (snapshot 90)); box (comoving Mpc) = 37.2523 (read from the catalogue camels-tng-cv0 (snapshot 90) (BoxSize in ckpc/h divided by h)); units: lengths ckpc/h, masses 1e10 Msun/h (checked against the unit attributes in the file); mass: stellar mass within twice the stellar half-mass radius (SubhaloMassInRadType), SFR from SubhaloSFRinRad (the field's own definitions); SubhaloFlag: absent from the catalogue, so no subhalo is excluded as spurious; calibration: not stated, so every record is marked unknown."
+  },
+  {
+   "id": "derived.camels-tng.cv-0.ssfr.all.z0",
+   "source": "CAMELS-TNG",
+   "run": "CV_0",
+   "kind": "simulation",
+   "relation": "ssfr",
+   "epoch": {
+    "zRepresentative": 0.0,
+    "zNominal": 0.0,
+    "zMin": 0.0,
+    "zMax": 0.0,
+    "mode": "snapshot",
+    "snapshot": 90
+   },
+   "axes": {
+    "xDefinition": "log10 stellar mass",
+    "xUnit": "log10(Msun)",
+    "yDefinition": "log10 specific SFR, median of all galaxies (floored at 1e-14 /yr)",
+    "yUnit": "log10(yr^-1)"
+   },
+   "domain": {
+    "xMin": 9.3,
+    "xMax": 10.7
+   },
+   "representation": {
+    "type": "points",
+    "intervalKind": "scatter",
+    "connect": true,
+    "points": [
+     {
+      "x": 9.3,
+      "y": -9.9994,
+      "yLow": -14.0,
+      "yHigh": -9.7655,
+      "count": 32
+     },
+     {
+      "x": 9.5,
+      "y": -10.0681,
+      "yLow": -14.0,
+      "yHigh": -9.7482,
+      "count": 55
+     },
+     {
+      "x": 9.7,
+      "y": -10.0701,
+      "yLow": -11.6993,
+      "yHigh": -9.6941,
+      "count": 50
+     },
+     {
+      "x": 9.9,
+      "y": -10.1801,
+      "yLow": -10.612,
+      "yHigh": -9.7706,
+      "count": 46
+     },
+     {
+      "x": 10.1,
+      "y": -10.4246,
+      "yLow": -14.0,
+      "yHigh": -10.0308,
+      "count": 35
+     },
+     {
+      "x": 10.3,
+      "y": -14.0,
+      "yLow": -14.0,
+      "yHigh": -10.4834,
+      "count": 36
+     },
+     {
+      "x": 10.5,
+      "y": -14.0,
+      "yLow": -14.0,
+      "yHigh": -14.0,
+      "count": 21
+     },
+     {
+      "x": 10.7,
+      "y": -14.0,
+      "yLow": -14.0,
+      "yHigh": -11.6711,
+      "count": 11
+     }
+    ]
+   },
+   "scatter": {
+    "lower": "16th percentile",
+    "upper": "84th percentile"
+   },
+   "selection": {
+    "population": "all",
+    "warning": "Derived by sim-highline derive (format subfind) from a catalogue supplied by the user. Galaxies: stellar mass of at least 100 baryon particle masses (1.9e+09 Msun, as stated); No SubhaloFlag in the catalogue, so spurious subhaloes are not excluded; stellar mass and SFR within twice the stellar half-mass radius. Bins of 0.2 dex with at least 10 galaxies for medians."
+   },
+   "definitions": {
+    "massDefinition": "aperture-2rhalf-stars",
+    "imf": "chabrier03",
+    "cosmology": {
+     "H0": 67.11,
+     "Om": 0.3
+    },
+    "sfrTimescaleMyr": "instantaneous",
+    "sfrStatistic": "median",
+    "population": "all"
+   },
+   "provenance": {
+    "tier": "catalog-derived",
+    "citation": "CAMELS-TNG CV_0: catalogue camels-tng-cv0 supplied by the user (format subfind), not a public release; relations derived by sim-highline derive",
+    "doi": null,
+    "url": "https://github.com/ShubhanBhatia42/sim-highline/blob/main/docs/DERIVE-CLI.md",
+    "retrieved": "date of the run",
+    "sourceMember": "camels-tng-cv0/ (1 files of snapshot 90)",
+    "checksumSha256": "2c8b25df9c8f7b8c8dd44a5e8b9695250e45fcc7773ae85099ad63de0fc2d3d4"
+   },
+   "calibration": "unknown",
+   "rankable": true,
+   "notes": "Derived with the same cuts and definitions as the dataset's own catalogue-derived records. Where each value came from: imf = chabrier03 (stated by you with --imf); baryon particle mass = 1.89e+07 Msun (stated by you); h = 0.6711 (read from the catalogue camels-tng-cv0 (snapshot 90)); omega_m = 0.3 (read from the catalogue camels-tng-cv0 (snapshot 90)); box (comoving Mpc) = 37.2523 (read from the catalogue camels-tng-cv0 (snapshot 90) (BoxSize in ckpc/h divided by h)); units: lengths ckpc/h, masses 1e10 Msun/h (checked against the unit attributes in the file); mass: stellar mass within twice the stellar half-mass radius (SubhaloMassInRadType), SFR from SubhaloSFRinRad (the field's own definitions); SubhaloFlag: absent from the catalogue, so no subhalo is excluded as spurious; calibration: not stated, so every record is marked unknown."
+  },
+  {
+   "id": "derived.camels-tng.cv-0.quenched.ssfr1e-11.z0",
+   "source": "CAMELS-TNG",
+   "run": "CV_0",
+   "kind": "simulation",
+   "relation": "quenched",
+   "epoch": {
+    "zRepresentative": 0.0,
+    "zNominal": 0.0,
+    "zMin": 0.0,
+    "zMax": 0.0,
+    "mode": "snapshot",
+    "snapshot": 90
+   },
+   "axes": {
+    "xDefinition": "log10 stellar mass",
+    "xUnit": "log10(Msun)",
+    "yDefinition": "fraction of galaxies with sSFR < 1e-11 /yr (binomial errors)",
+    "yUnit": "fraction"
+   },
+   "domain": {
+    "xMin": 9.3,
+    "xMax": 10.7
+   },
+   "representation": {
+    "type": "points",
+    "intervalKind": "uncertainty",
+    "connect": true,
+    "points": [
+     {
+      "x": 9.3,
+      "y": 0.2188,
+      "yLow": 0.1457,
+      "yHigh": 0.2918,
+      "count": 32
+     },
+     {
+      "x": 9.5,
+      "y": 0.2182,
+      "yLow": 0.1625,
+      "yHigh": 0.2739,
+      "count": 55
+     },
+     {
+      "x": 9.7,
+      "y": 0.22,
+      "yLow": 0.1614,
+      "yHigh": 0.2786,
+      "count": 50
+     },
+     {
+      "x": 9.9,
+      "y": 0.1304,
+      "yLow": 0.0808,
+      "yHigh": 0.1801,
+      "count": 46
+     },
+     {
+      "x": 10.1,
+      "y": 0.2857,
+      "yLow": 0.2094,
+      "yHigh": 0.3621,
+      "count": 35
+     },
+     {
+      "x": 10.3,
+      "y": 0.75,
+      "yLow": 0.6778,
+      "yHigh": 0.8222,
+      "count": 36
+     },
+     {
+      "x": 10.5,
+      "y": 0.8571,
+      "yLow": 0.7808,
+      "yHigh": 0.9335,
+      "count": 21
+     },
+     {
+      "x": 10.7,
+      "y": 0.8182,
+      "yLow": 0.7019,
+      "yHigh": 0.9345,
+      "count": 11
+     }
+    ]
+   },
+   "scatter": null,
+   "selection": {
+    "population": "all",
+    "warning": "Derived by sim-highline derive (format subfind) from a catalogue supplied by the user. Galaxies: stellar mass of at least 100 baryon particle masses (1.9e+09 Msun, as stated); No SubhaloFlag in the catalogue, so spurious subhaloes are not excluded; stellar mass and SFR within twice the stellar half-mass radius. Bins of 0.2 dex with at least 10 galaxies for medians."
+   },
+   "definitions": {
+    "massDefinition": "aperture-2rhalf-stars",
+    "imf": "chabrier03",
+    "cosmology": {
+     "H0": 67.11,
+     "Om": 0.3
+    },
+    "quenchingCriterion": "ssfr<1e-11",
+    "population": "all"
+   },
+   "provenance": {
+    "tier": "catalog-derived",
+    "citation": "CAMELS-TNG CV_0: catalogue camels-tng-cv0 supplied by the user (format subfind), not a public release; relations derived by sim-highline derive",
+    "doi": null,
+    "url": "https://github.com/ShubhanBhatia42/sim-highline/blob/main/docs/DERIVE-CLI.md",
+    "retrieved": "date of the run",
+    "sourceMember": "camels-tng-cv0/ (1 files of snapshot 90)",
+    "checksumSha256": "2c8b25df9c8f7b8c8dd44a5e8b9695250e45fcc7773ae85099ad63de0fc2d3d4"
+   },
+   "calibration": "unknown",
+   "rankable": true,
+   "notes": "Derived with the same cuts and definitions as the dataset's own catalogue-derived records. Where each value came from: imf = chabrier03 (stated by you with --imf); baryon particle mass = 1.89e+07 Msun (stated by you); h = 0.6711 (read from the catalogue camels-tng-cv0 (snapshot 90)); omega_m = 0.3 (read from the catalogue camels-tng-cv0 (snapshot 90)); box (comoving Mpc) = 37.2523 (read from the catalogue camels-tng-cv0 (snapshot 90) (BoxSize in ckpc/h divided by h)); units: lengths ckpc/h, masses 1e10 Msun/h (checked against the unit attributes in the file); mass: stellar mass within twice the stellar half-mass radius (SubhaloMassInRadType), SFR from SubhaloSFRinRad (the field's own definitions); SubhaloFlag: absent from the catalogue, so no subhalo is excluded as spurious; calibration: not stated, so every record is marked unknown."
+  },
+  {
+   "id": "derived.camels-tng.cv-0.size.all.z0",
+   "source": "CAMELS-TNG",
+   "run": "CV_0",
+   "kind": "simulation",
+   "relation": "size",
+   "epoch": {
+    "zRepresentative": 0.0,
+    "zNominal": 0.0,
+    "zMin": 0.0,
+    "zMax": 0.0,
+    "mode": "snapshot",
+    "snapshot": 90
+   },
+   "axes": {
+    "xDefinition": "log10 stellar mass",
+    "xUnit": "log10(Msun)",
+    "yDefinition": "log10 3D stellar half-mass radius",
+    "yUnit": "log10(kpc)"
+   },
+   "domain": {
+    "xMin": 9.3,
+    "xMax": 10.7
+   },
+   "representation": {
+    "type": "points",
+    "intervalKind": "scatter",
+    "connect": true,
+    "points": [
+     {
+      "x": 9.3,
+      "y": 0.6967,
+      "yLow": 0.5724,
+      "yHigh": 0.7976,
+      "count": 32
+     },
+     {
+      "x": 9.5,
+      "y": 0.7005,
+      "yLow": 0.5695,
+      "yHigh": 0.8377,
+      "count": 55
+     },
+     {
+      "x": 9.7,
+      "y": 0.6777,
+      "yLow": 0.5747,
+      "yHigh": 0.8161,
+      "count": 50
+     },
+     {
+      "x": 9.9,
+      "y": 0.6794,
+      "yLow": 0.6145,
+      "yHigh": 0.7933,
+      "count": 46
+     },
+     {
+      "x": 10.1,
+      "y": 0.7542,
+      "yLow": 0.6486,
+      "yHigh": 0.902,
+      "count": 35
+     },
+     {
+      "x": 10.3,
+      "y": 0.8077,
+      "yLow": 0.6439,
+      "yHigh": 0.8858,
+      "count": 36
+     },
+     {
+      "x": 10.5,
+      "y": 0.8354,
+      "yLow": 0.7663,
+      "yHigh": 0.9058,
+      "count": 21
+     },
+     {
+      "x": 10.7,
+      "y": 0.9094,
+      "yLow": 0.8219,
+      "yHigh": 1.086,
+      "count": 11
+     }
+    ]
+   },
+   "scatter": {
+    "lower": "16th percentile",
+    "upper": "84th percentile"
+   },
+   "selection": {
+    "population": "all",
+    "warning": "Derived by sim-highline derive (format subfind) from a catalogue supplied by the user. Galaxies: stellar mass of at least 100 baryon particle masses (1.9e+09 Msun, as stated); No SubhaloFlag in the catalogue, so spurious subhaloes are not excluded; stellar mass and SFR within twice the stellar half-mass radius. Bins of 0.2 dex with at least 10 galaxies for medians."
+   },
+   "definitions": {
+    "massDefinition": "aperture-2rhalf-stars",
+    "imf": "chabrier03",
+    "cosmology": {
+     "H0": 67.11,
+     "Om": 0.3
+    },
+    "sizeDefinition": "stellar-half-mass-3d-bound",
+    "population": "all"
+   },
+   "provenance": {
+    "tier": "catalog-derived",
+    "citation": "CAMELS-TNG CV_0: catalogue camels-tng-cv0 supplied by the user (format subfind), not a public release; relations derived by sim-highline derive",
+    "doi": null,
+    "url": "https://github.com/ShubhanBhatia42/sim-highline/blob/main/docs/DERIVE-CLI.md",
+    "retrieved": "date of the run",
+    "sourceMember": "camels-tng-cv0/ (1 files of snapshot 90)",
+    "checksumSha256": "2c8b25df9c8f7b8c8dd44a5e8b9695250e45fcc7773ae85099ad63de0fc2d3d4"
+   },
+   "calibration": "unknown",
+   "rankable": true,
+   "notes": "Derived with the same cuts and definitions as the dataset's own catalogue-derived records. Where each value came from: imf = chabrier03 (stated by you with --imf); baryon particle mass = 1.89e+07 Msun (stated by you); h = 0.6711 (read from the catalogue camels-tng-cv0 (snapshot 90)); omega_m = 0.3 (read from the catalogue camels-tng-cv0 (snapshot 90)); box (comoving Mpc) = 37.2523 (read from the catalogue camels-tng-cv0 (snapshot 90) (BoxSize in ckpc/h divided by h)); units: lengths ckpc/h, masses 1e10 Msun/h (checked against the unit attributes in the file); mass: stellar mass within twice the stellar half-mass radius (SubhaloMassInRadType), SFR from SubhaloSFRinRad (the field's own definitions); SubhaloFlag: absent from the catalogue, so no subhalo is excluded as spurious; calibration: not stated, so every record is marked unknown."
+  },
+  {
+   "id": "derived.camels-tng.cv-0.shmr.centrals.z0",
+   "source": "CAMELS-TNG",
+   "run": "CV_0",
+   "kind": "simulation",
+   "relation": "shmr",
+   "epoch": {
+    "zRepresentative": 0.0,
+    "zNominal": 0.0,
+    "zMin": 0.0,
+    "zMax": 0.0,
+    "mode": "snapshot",
+    "snapshot": 90
+   },
+   "axes": {
+    "xDefinition": "log10 halo mass M200crit",
+    "xUnit": "log10(Msun)",
+    "yDefinition": "log10 stellar-to-halo mass ratio of centrals",
+    "yUnit": "dex"
+   },
+   "domain": {
+    "xMin": 11.5,
+    "xMax": 12.5
+   },
+   "representation": {
+    "type": "points",
+    "intervalKind": "scatter",
+    "connect": true,
+    "points": [
+     {
+      "x": 11.5,
+      "y": -2.1407,
+      "yLow": -2.2387,
+      "yHigh": -2.0116,
+      "count": 19
+     },
+     {
+      "x": 11.7,
+      "y": -2.0149,
+      "yLow": -2.1952,
+      "yHigh": -1.8582,
+      "count": 47
+     },
+     {
+      "x": 11.9,
+      "y": -1.9641,
+      "yLow": -2.0959,
+      "yHigh": -1.8154,
+      "count": 43
+     },
+     {
+      "x": 12.1,
+      "y": -1.8784,
+      "yLow": -1.9749,
+      "yHigh": -1.7769,
+      "count": 19
+     },
+     {
+      "x": 12.3,
+      "y": -1.9047,
+      "yLow": -1.9879,
+      "yHigh": -1.795,
+      "count": 19
+     },
+     {
+      "x": 12.5,
+      "y": -1.881,
+      "yLow": -2.0527,
+      "yHigh": -1.7426,
+      "count": 10
+     }
+    ]
+   },
+   "scatter": {
+    "lower": "16th percentile",
+    "upper": "84th percentile"
+   },
+   "selection": {
+    "population": "centrals",
+    "warning": "Derived by sim-highline derive (format subfind) from a catalogue supplied by the user. Galaxies: stellar mass of at least 100 baryon particle masses (1.9e+09 Msun, as stated); No SubhaloFlag in the catalogue, so spurious subhaloes are not excluded; stellar mass and SFR within twice the stellar half-mass radius. Bins of 0.2 dex with at least 10 galaxies for medians."
+   },
+   "definitions": {
+    "massDefinition": "aperture-2rhalf-stars",
+    "imf": "chabrier03",
+    "cosmology": {
+     "H0": 67.11,
+     "Om": 0.3
+    },
+    "haloMassDefinition": "M200crit",
+    "haloMassHistory": "current",
+    "population": "centrals"
+   },
+   "provenance": {
+    "tier": "catalog-derived",
+    "citation": "CAMELS-TNG CV_0: catalogue camels-tng-cv0 supplied by the user (format subfind), not a public release; relations derived by sim-highline derive",
+    "doi": null,
+    "url": "https://github.com/ShubhanBhatia42/sim-highline/blob/main/docs/DERIVE-CLI.md",
+    "retrieved": "date of the run",
+    "sourceMember": "camels-tng-cv0/ (1 files of snapshot 90)",
+    "checksumSha256": "2c8b25df9c8f7b8c8dd44a5e8b9695250e45fcc7773ae85099ad63de0fc2d3d4"
+   },
+   "calibration": "unknown",
+   "rankable": true,
+   "notes": "Derived with the same cuts and definitions as the dataset's own catalogue-derived records. Where each value came from: imf = chabrier03 (stated by you with --imf); baryon particle mass = 1.89e+07 Msun (stated by you); h = 0.6711 (read from the catalogue camels-tng-cv0 (snapshot 90)); omega_m = 0.3 (read from the catalogue camels-tng-cv0 (snapshot 90)); box (comoving Mpc) = 37.2523 (read from the catalogue camels-tng-cv0 (snapshot 90) (BoxSize in ckpc/h divided by h)); units: lengths ckpc/h, masses 1e10 Msun/h (checked against the unit attributes in the file); mass: stellar mass within twice the stellar half-mass radius (SubhaloMassInRadType), SFR from SubhaloSFRinRad (the field's own definitions); SubhaloFlag: absent from the catalogue, so no subhalo is excluded as spurious; calibration: not stated, so every record is marked unknown."
+  },
+  {
+   "id": "derived.camels-tng.cv-0.bh.centrals.z0",
+   "source": "CAMELS-TNG",
+   "run": "CV_0",
+   "kind": "simulation",
+   "relation": "bh",
+   "epoch": {
+    "zRepresentative": 0.0,
+    "zNominal": 0.0,
+    "zMin": 0.0,
+    "zMax": 0.0,
+    "mode": "snapshot",
+    "snapshot": 90
+   },
+   "axes": {
+    "xDefinition": "log10 stellar mass",
+    "xUnit": "log10(Msun)",
+    "yDefinition": "log10 black-hole mass, median of centrals",
+    "yUnit": "log10(Msun)"
+   },
+   "domain": {
+    "xMin": 9.3,
+    "xMax": 10.5
+   },
+   "representation": {
+    "type": "points",
+    "intervalKind": "scatter",
+    "connect": true,
+    "points": [
+     {
+      "x": 9.3,
+      "y": 6.2766,
+      "yLow": 6.1878,
+      "yHigh": 6.5287,
+      "count": 16
+     },
+     {
+      "x": 9.5,
+      "y": 6.3488,
+      "yLow": 6.2586,
+      "yHigh": 6.6684,
+      "count": 24
+     },
+     {
+      "x": 9.7,
+      "y": 6.5657,
+      "yLow": 6.4091,
+      "yHigh": 7.0085,
+      "count": 24
+     },
+     {
+      "x": 9.9,
+      "y": 6.8984,
+      "yLow": 6.5073,
+      "yHigh": 7.7652,
+      "count": 32
+     },
+     {
+      "x": 10.1,
+      "y": 7.7235,
+      "yLow": 6.6365,
+      "yHigh": 8.0732,
+      "count": 22
+     },
+     {
+      "x": 10.3,
+      "y": 8.1702,
+      "yLow": 7.9936,
+      "yHigh": 8.2879,
+      "count": 24
+     },
+     {
+      "x": 10.5,
+      "y": 8.3321,
+      "yLow": 8.1925,
+      "yHigh": 8.4163,
+      "count": 13
+     }
+    ]
+   },
+   "scatter": {
+    "lower": "16th percentile",
+    "upper": "84th percentile"
+   },
+   "selection": {
+    "population": "centrals",
+    "warning": "Derived by sim-highline derive (format subfind) from a catalogue supplied by the user. Galaxies: stellar mass of at least 100 baryon particle masses (1.9e+09 Msun, as stated); No SubhaloFlag in the catalogue, so spurious subhaloes are not excluded; stellar mass and SFR within twice the stellar half-mass radius. Bins of 0.2 dex with at least 10 galaxies for medians."
+   },
+   "definitions": {
+    "massDefinition": "aperture-2rhalf-stars",
+    "imf": "chabrier03",
+    "cosmology": {
+     "H0": 67.11,
+     "Om": 0.3
+    },
+    "bhMassMethod": "intrinsic",
+    "population": "centrals"
+   },
+   "provenance": {
+    "tier": "catalog-derived",
+    "citation": "CAMELS-TNG CV_0: catalogue camels-tng-cv0 supplied by the user (format subfind), not a public release; relations derived by sim-highline derive",
+    "doi": null,
+    "url": "https://github.com/ShubhanBhatia42/sim-highline/blob/main/docs/DERIVE-CLI.md",
+    "retrieved": "date of the run",
+    "sourceMember": "camels-tng-cv0/ (1 files of snapshot 90)",
+    "checksumSha256": "2c8b25df9c8f7b8c8dd44a5e8b9695250e45fcc7773ae85099ad63de0fc2d3d4"
+   },
+   "calibration": "unknown",
+   "rankable": true,
+   "notes": "Derived with the same cuts and definitions as the dataset's own catalogue-derived records. Where each value came from: imf = chabrier03 (stated by you with --imf); baryon particle mass = 1.89e+07 Msun (stated by you); h = 0.6711 (read from the catalogue camels-tng-cv0 (snapshot 90)); omega_m = 0.3 (read from the catalogue camels-tng-cv0 (snapshot 90)); box (comoving Mpc) = 37.2523 (read from the catalogue camels-tng-cv0 (snapshot 90) (BoxSize in ckpc/h divided by h)); units: lengths ckpc/h, masses 1e10 Msun/h (checked against the unit attributes in the file); mass: stellar mass within twice the stellar half-mass radius (SubhaloMassInRadType), SFR from SubhaloSFRinRad (the field's own definitions); SubhaloFlag: absent from the catalogue, so no subhalo is excluded as spurious; calibration: not stated, so every record is marked unknown."
+  },
+  {
+   "id": "derived.camels-tng.cv-0.zstar.all.z0",
+   "source": "CAMELS-TNG",
+   "run": "CV_0",
+   "kind": "simulation",
+   "relation": "zstar",
+   "epoch": {
+    "zRepresentative": 0.0,
+    "zNominal": 0.0,
+    "zMin": 0.0,
+    "zMax": 0.0,
+    "mode": "snapshot",
+    "snapshot": 90
+   },
+   "axes": {
+    "xDefinition": "log10 stellar mass",
+    "xUnit": "log10(Msun)",
+    "yDefinition": "log10 mass-weighted stellar metallicity / Zsun (Zsun = 0.0127)",
+    "yUnit": "dex"
+   },
+   "domain": {
+    "xMin": 9.3,
+    "xMax": 10.7
+   },
+   "representation": {
+    "type": "points",
+    "intervalKind": "scatter",
+    "connect": true,
+    "points": [
+     {
+      "x": 9.3,
+      "y": -0.0851,
+      "yLow": -0.2104,
+      "yHigh": -0.0335,
+      "count": 32
+     },
+     {
+      "x": 9.5,
+      "y": -0.054,
+      "yLow": -0.1218,
+      "yHigh": 0.0261,
+      "count": 55
+     },
+     {
+      "x": 9.7,
+      "y": 0.0334,
+      "yLow": -0.0388,
+      "yHigh": 0.0985,
+      "count": 50
+     },
+     {
+      "x": 9.9,
+      "y": 0.0753,
+      "yLow": -0.0142,
+      "yHigh": 0.1303,
+      "count": 46
+     },
+     {
+      "x": 10.1,
+      "y": 0.1265,
+      "yLow": 0.0686,
+      "yHigh": 0.1802,
+      "count": 35
+     },
+     {
+      "x": 10.3,
+      "y": 0.1649,
+      "yLow": 0.1343,
+      "yHigh": 0.1934,
+      "count": 36
+     },
+     {
+      "x": 10.5,
+      "y": 0.1614,
+      "yLow": 0.1315,
+      "yHigh": 0.2025,
+      "count": 21
+     },
+     {
+      "x": 10.7,
+      "y": 0.179,
+      "yLow": 0.1411,
+      "yHigh": 0.2297,
+      "count": 11
+     }
+    ]
+   },
+   "scatter": {
+    "lower": "16th percentile",
+    "upper": "84th percentile"
+   },
+   "selection": {
+    "population": "all",
+    "warning": "Derived by sim-highline derive (format subfind) from a catalogue supplied by the user. Galaxies: stellar mass of at least 100 baryon particle masses (1.9e+09 Msun, as stated); No SubhaloFlag in the catalogue, so spurious subhaloes are not excluded; stellar mass and SFR within twice the stellar half-mass radius. Bins of 0.2 dex with at least 10 galaxies for medians."
+   },
+   "definitions": {
+    "massDefinition": "aperture-2rhalf-stars",
+    "imf": "chabrier03",
+    "cosmology": {
+     "H0": 67.11,
+     "Om": 0.3
+    },
+    "metallicityQuantity": "stellar-Z",
+    "metallicityCalibration": "intrinsic mass-weighted (Zsun=0.0127)",
+    "population": "all"
+   },
+   "provenance": {
+    "tier": "catalog-derived",
+    "citation": "CAMELS-TNG CV_0: catalogue camels-tng-cv0 supplied by the user (format subfind), not a public release; relations derived by sim-highline derive",
+    "doi": null,
+    "url": "https://github.com/ShubhanBhatia42/sim-highline/blob/main/docs/DERIVE-CLI.md",
+    "retrieved": "date of the run",
+    "sourceMember": "camels-tng-cv0/ (1 files of snapshot 90)",
+    "checksumSha256": "2c8b25df9c8f7b8c8dd44a5e8b9695250e45fcc7773ae85099ad63de0fc2d3d4"
+   },
+   "calibration": "unknown",
+   "rankable": true,
+   "notes": "Derived with the same cuts and definitions as the dataset's own catalogue-derived records. Where each value came from: imf = chabrier03 (stated by you with --imf); baryon particle mass = 1.89e+07 Msun (stated by you); h = 0.6711 (read from the catalogue camels-tng-cv0 (snapshot 90)); omega_m = 0.3 (read from the catalogue camels-tng-cv0 (snapshot 90)); box (comoving Mpc) = 37.2523 (read from the catalogue camels-tng-cv0 (snapshot 90) (BoxSize in ckpc/h divided by h)); units: lengths ckpc/h, masses 1e10 Msun/h (checked against the unit attributes in the file); mass: stellar mass within twice the stellar half-mass radius (SubhaloMassInRadType), SFR from SubhaloSFRinRad (the field's own definitions); SubhaloFlag: absent from the catalogue, so no subhalo is excluded as spurious; calibration: not stated, so every record is marked unknown."
+  },
+  {
+   "id": "derived.camels-tng.cv-0.mzr.sf.z0",
+   "source": "CAMELS-TNG",
+   "run": "CV_0",
+   "kind": "simulation",
+   "relation": "mzr",
+   "epoch": {
+    "zRepresentative": 0.0,
+    "zNominal": 0.0,
+    "zMin": 0.0,
+    "zMax": 0.0,
+    "mode": "snapshot",
+    "snapshot": 90
+   },
+   "axes": {
+    "xDefinition": "log10 stellar mass",
+    "xUnit": "log10(Msun)",
+    "yDefinition": "12+log(O/H), SFR-weighted, within twice the stellar half-mass radius",
+    "yUnit": "dex"
+   },
+   "domain": {
+    "xMin": 9.3,
+    "xMax": 10.1
+   },
+   "representation": {
+    "type": "points",
+    "intervalKind": "scatter",
+    "connect": true,
+    "points": [
+     {
+      "x": 9.3,
+      "y": 8.7015,
+      "yLow": 8.59,
+      "yHigh": 8.8193,
+      "count": 25
+     },
+     {
+      "x": 9.5,
+      "y": 8.7872,
+      "yLow": 8.6076,
+      "yHigh": 8.9184,
+      "count": 43
+     },
+     {
+      "x": 9.7,
+      "y": 8.8397,
+      "yLow": 8.7269,
+      "yHigh": 9.0288,
+      "count": 39
+     },
+     {
+      "x": 9.9,
+      "y": 8.8938,
+      "yLow": 8.7672,
+      "yHigh": 9.0426,
+      "count": 39
+     },
+     {
+      "x": 10.1,
+      "y": 9.0587,
+      "yLow": 8.7737,
+      "yHigh": 9.0935,
+      "count": 23
+     }
+    ]
+   },
+   "scatter": {
+    "lower": "16th percentile",
+    "upper": "84th percentile"
+   },
+   "selection": {
+    "population": "star-forming",
+    "warning": "Derived by sim-highline derive (format subfind) from a catalogue supplied by the user. Galaxies: stellar mass of at least 100 baryon particle masses (1.9e+09 Msun, as stated); No SubhaloFlag in the catalogue, so spurious subhaloes are not excluded; stellar mass and SFR within twice the stellar half-mass radius. Bins of 0.2 dex with at least 10 galaxies for medians."
+   },
+   "definitions": {
+    "massDefinition": "aperture-2rhalf-stars",
+    "imf": "chabrier03",
+    "cosmology": {
+     "H0": 67.11,
+     "Om": 0.3
+    },
+    "metallicityQuantity": "gas-O/H",
+    "metallicityCalibration": "intrinsic-simulation (SFR-weighted)",
+    "population": "star-forming"
+   },
+   "provenance": {
+    "tier": "catalog-derived",
+    "citation": "CAMELS-TNG CV_0: catalogue camels-tng-cv0 supplied by the user (format subfind), not a public release; relations derived by sim-highline derive",
+    "doi": null,
+    "url": "https://github.com/ShubhanBhatia42/sim-highline/blob/main/docs/DERIVE-CLI.md",
+    "retrieved": "date of the run",
+    "sourceMember": "camels-tng-cv0/ (1 files of snapshot 90)",
+    "checksumSha256": "2c8b25df9c8f7b8c8dd44a5e8b9695250e45fcc7773ae85099ad63de0fc2d3d4"
+   },
+   "calibration": "unknown",
+   "rankable": true,
+   "notes": "Derived with the same cuts and definitions as the dataset's own catalogue-derived records. Where each value came from: imf = chabrier03 (stated by you with --imf); baryon particle mass = 1.89e+07 Msun (stated by you); h = 0.6711 (read from the catalogue camels-tng-cv0 (snapshot 90)); omega_m = 0.3 (read from the catalogue camels-tng-cv0 (snapshot 90)); box (comoving Mpc) = 37.2523 (read from the catalogue camels-tng-cv0 (snapshot 90) (BoxSize in ckpc/h divided by h)); units: lengths ckpc/h, masses 1e10 Msun/h (checked against the unit attributes in the file); mass: stellar mass within twice the stellar half-mass radius (SubhaloMassInRadType), SFR from SubhaloSFRinRad (the field's own definitions); SubhaloFlag: absent from the catalogue, so no subhalo is excluded as spurious; calibration: not stated, so every record is marked unknown."
+  }
+ ]
+}

@@ -22,6 +22,7 @@ Fifty documents is too many to find anything in, so here they are by what you wa
 - [SOURCE-TERMS.md](SOURCE-TERMS.md): terms of the third-party inputs.
 - [EXPANDING-COVERAGE.md](EXPANDING-COVERAGE.md): adding catalogue-based sources on your own machine.
 - [DERIVE-CLI.md](DERIVE-CLI.md): from your own simulation catalogue to a comparison in two commands (`sim-highline derive`, `sim-highline compare`); what it states, what it refuses to guess.
+- [DERIVE-REAL-CATALOGUE.md](DERIVE-REAL-CATALOGUE.md): the same commands on a real public catalogue (one CAMELS-TNG box), checked against an independent recomputation and the stored CAMELS-TNG curves.
 - [SUBMIT-A-CURVE.md](SUBMIT-A-CURVE.md): give us your published numbers as a table (a folder under `submissions/`, checked automatically).
 - [literature-candidates.md](literature-candidates.md) *(dated)*: papers found by search and not added.
 

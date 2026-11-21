@@ -973,7 +973,7 @@ def derive_run(fmt, catalogs, *, source=None, run=None, imf=None, baryon_particl
         records += made
         have = {r["relation"] for r in made}
         n_res = int(np.sum(ep["arrays"]["resolved"] & np.isfinite(ep["arrays"]["logm"])))
-        line = f"z = {z:.4g} (snapshot {ep['snap']}), {ep['name']}: {n_res} galaxies above the cut; relations written: {', '.join(r for r in RELATIONS_DERIVED if r in have)}"
+        line = f"z = {round(z, 4):.4g} (snapshot {ep['snap']}), {ep['name']}: {n_res} galaxies above the cut; relations written: {', '.join(r for r in RELATIONS_DERIVED if r in have)}"
         skipped = []
         for rel, key, field in OPTIONAL[fmt]:
             if rel not in have:
